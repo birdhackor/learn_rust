@@ -1,0 +1,11 @@
+use ch08_smart_pointers::errors::read_count;
+use ch08_smart_pointers::errors::report;
+
+fn main() {
+    for text in ["3", "abc", "-1"] {
+        match read_count(text) {
+            Ok(count) => println!("成功件數={count}"),
+            Err(error) => println!("{}", report(&error).as_str()),
+        }
+    }
+}

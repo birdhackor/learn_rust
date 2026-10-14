@@ -8,6 +8,7 @@ members = [
     "examples/ch04-lifetimes",
     "examples/ch05-errors",
     "examples/ch06-iterators",
+    "examples/ch08-smart-pointers",
     "examples/ch07-cli/tooling",
     "examples/ch07-cli/io-text",
     "examples/ch07-cli/io-bytes",

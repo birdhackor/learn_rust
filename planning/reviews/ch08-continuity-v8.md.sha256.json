@@ -1,0 +1,6 @@
+{
+  "report_sha256": "4fc7fb3691c31e4bcf6a6939a433eec120f2676a454ac4635bed0a8a94b99930",
+  "snapshot_manifest_sha256": "79036df9490cd5ad5874be7978062928ff185e1d25abc76adf610c2678eae9c1",
+  "input_fingerprints_sha256": "9970fe957c0ffbbd9ea83662a6bd2430dd76b3fa521fe97dcce7c482d02f8331",
+  "sealed_path": "/workspace/learn_rust/work/ch08-continuity-v8/sealed/seal.json"
+}

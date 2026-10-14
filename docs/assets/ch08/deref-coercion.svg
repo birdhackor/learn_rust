@@ -1,0 +1,25 @@
+<svg width="390" height="625" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 625" role="img" aria-labelledby="title desc">
+ <title id="title">同一份文字的借用轉換：Wrapper到String再到str</title>
+ <desc id="desc">函式text_bytes要求str reference，呼叫者提供Wrapper String的reference。Wrapper的Deref將它轉為欄位的String reference，String的Deref再取得文字內容的str reference；兩條箭頭都是借用轉換，沒有建立文字副本。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="625" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="34" text-anchor="middle" font-weight="bold">呼叫 text_bytes(&amp;wrapped)</text>
+  <rect x="20" y="58" width="350" height="113" rx="12" stroke="#2563eb" stroke-width="2" fill="#dbeafe"/>
+  <text x="40" y="99" font-weight="bold">&amp;Wrapper&lt;String&gt;</text>
+  <text x="40" y="141">借用外層wrapper</text>
+  <path d="M100 173V245" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="123" y="203">Wrapper 的 Deref</text>
+  <text x="123" y="232">Target = String</text>
+  <rect x="20" y="258" width="350" height="105" rx="12" stroke="#059669" stroke-width="2" fill="#ecfdf5"/>
+  <text x="40" y="299" font-weight="bold">&amp;String</text>
+  <text x="40" y="337">借用value欄位</text>
+  <path d="M100 365V437" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="123" y="395">String 的 Deref</text>
+  <text x="123" y="424">Target = str</text>
+  <rect x="20" y="450" width="350" height="109" rx="12" stroke="#7c3aed" stroke-width="2" fill="#ede9fe"/>
+  <text x="40" y="491" font-weight="bold">&amp;str</text>
+  <text x="40" y="531">借用同一份UTF-8內容</text>
+  <text x="195" y="598" text-anchor="middle">兩次轉換都不複製文字</text>
+ </g>
+</svg>

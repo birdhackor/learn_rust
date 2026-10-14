@@ -11,3 +11,5 @@ Git index的獨立候選release7-candidate只開第1–7章，workspace僅增加
 證據保存於work/tutorial-implementation/release7-check.log及release7-check-counts.json。首讀者7.5修後局部已另封存；其餘五個受影響BODY單位與原位新版圖的額外局部複查也已完成，root完整讀取新紀錄，沒有新增必要或可選問題。讀者這次另有第8章背景，但其引用的所需前提仍在第1–7章實際已讀正文，沒有以第8章補原第7章的洞；範圍與提示時點另記，舊初判、分級與SHA不改。
 
 所有已報必要與可選處置在對應修後範圍已關閉，固定候選的完整檢查通過，可以發布。遠端Actions與實際公開網址於完成後另行追加，尚未以本機檢查宣稱遠端成功。
+
+提交`14ca5da0de4cbb21249be0b93bedbbf7e62672c7`的[Actions 38608408322](https://github.com/birdhackor/learn_rust/actions/runs/38608408322)已成功完成check／deploy。root實際請求首頁及第1–7章49節，50網址全200且H1相符；未發布8.1仍404，紀錄於work/tutorial-implementation/release7-live-http.json。本段部署證據於發布後追加，下次內容發布帶入，不為僅此紀錄再觸發一輪CI。

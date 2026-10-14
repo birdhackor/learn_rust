@@ -20,6 +20,7 @@ chapters/**
 !chapters/05-*.md
 !chapters/06-*.md
 !chapters/07-*.md
+!chapters/08-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -85,6 +86,18 @@ nav = [
     { "7.7 JSON 與 Serde：文字和 owned 資料模型" = "chapters/07-07-json-and-serde.md" },
     { "7.8 fixture：用專用檔案驗收真正的 CLI" = "chapters/07-08-cli-fixtures.md" },
     { "7.9 第一個完整 CLI：搜尋筆記，再交出文字或 JSON" = "chapters/07-09-complete-cli.md" },
+  ] },
+  { "第 8 章：smart pointer、資源與進階型別" = [
+    { "8.1 型別需要多大空間：Sized、DST 與 Box" = "chapters/08-01-box.md" },
+    { "8.2 用 Drop 觀察 ownership 的收尾" = "chapters/08-02-drop.md" },
+    { "8.3 用 Deref 借用包在裡面的值" = "chapters/08-03-deref.md" },
+    { "8.4 型別內的借用與 'static" = "chapters/08-04-lifetime-bounds.md" },
+    { "8.5 用 dyn 保存不同型別的共同能力" = "chapters/08-05-dyn.md" },
+    { "8.6 以Error介面借讀原因，形成完整報告" = "chapters/08-06-error.md" },
+    { "8.7 用 Rc 共享 ownership，用 Weak 觀察" = "chapters/08-07-rc-weak.md" },
+    { "8.8 用Cell與RefCell管理內部修改" = "chapters/08-08-interior-mutability.md" },
+    { "8.9 用型別邊界保護單位，再選擇可用的trait介面" = "chapters/08-09-newtypes.md" },
+    { "8.10 用Any辨識並取回確切資料型別" = "chapters/08-10-any.md" },
   ] },
 ]
 

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="650" viewBox="0 0 390 650" role="img" aria-labelledby="title desc">
+ <title id="title">source借出每一層錯誤原因，直到最後None</title>
+ <desc id="desc">ReadCountError保存原輸入abc與ParseCountError原因。它的source借到cause欄位，其值是ParseCountError的Integer variant；下一次source再借到這個variant內的ParseIntError，最後得到None。箭頭表示回傳shared reference，不轉移或複製原錯誤。每層Display說自己的工作或最終原因。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="650" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="34" text-anchor="middle" font-weight="bold">沿source借讀有限原因鏈</text>
+  <rect x="20" y="60" width="350" height="98" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="40" y="97" font-weight="bold">ReadCountError</text><text x="40" y="136">讀取件數文字「abc」失敗</text>
+  <path d="M70 160V214" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="102" y="195">source() → Some(&amp;cause)</text>
+  <rect x="20" y="226" width="350" height="98" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="40" y="263" font-weight="bold">ParseCountError::Integer</text><text x="40" y="303">解析件數時無法取得整數</text>
+  <path d="M70 326V380" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="102" y="361">source() → Some(&amp;error)</text>
+  <rect x="20" y="392" width="350" height="132" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="40" y="429" font-weight="bold">ParseIntError</text><text x="40" y="468">invalid digit found</text><text x="40" y="507">in string</text>
+  <path d="M70 526V565" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="102" y="554">source() → None</text>
+  <text x="195" y="612" text-anchor="middle">每層只說自己的訊息</text><text x="195" y="641" text-anchor="middle">箭頭：借下一層原因</text>
+ </g>
+</svg>

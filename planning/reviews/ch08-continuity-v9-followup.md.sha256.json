@@ -1,0 +1,8 @@
+{
+  "report": "/workspace/learn_rust/planning/reviews/ch08-continuity-v9-followup.md",
+  "sha256": "508909ecd6e12931e858228c0c6ccb3295f02f75e947e49508f424861a78c47c",
+  "original_initial_sha256": "4fc7fb3691c31e4bcf6a6939a433eec120f2676a454ac4635bed0a8a94b99930",
+  "snapshot": "/workspace/work/tutorial-implementation/frozen/ch08-review-fixed-v9",
+  "snapshot_manifest_sha256": "92d0d7718b079bd60039245b41166a056b4a815ed653cb69d6bbd06a142b5978",
+  "role": "post-seal prompted continuity cross and local recheck; not second independent initial"
+}

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="595" viewBox="0 0 390 595" role="img" aria-labelledby="title desc">
+ <title id="title">Ref guard讀完之後仍保持借用，直到drop才解除</title>
+ <desc id="desc">value.borrow建立shared guard；println最後讀取guard後，guard仍存在，所以try_borrow_mut會回Err。drop guard才結束活躍shared借用，此後try_borrow_mut能成功取得mutable guard。向下箭頭表示本例按程式順序前進，不表示資料搬動。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="595" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="35" text-anchor="middle" font-weight="bold">讀完guard，還沒解除借用</text>
+  <rect x="20" y="65" width="350" height="111" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="40" y="101" font-weight="bold">建立 view = value.borrow()</text><text x="40" y="143">shared guard仍活躍</text>
+  <path d="M195 178V228" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="20" y="241" width="350" height="132" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="40" y="278" font-weight="bold">println最後讀取view</text><text x="40" y="316">view尚未drop</text><text x="40" y="354">try_borrow_mut → Err</text>
+  <path d="M195 375V425" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="20" y="438" width="350" height="109" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="40" y="475" font-weight="bold">drop(view)解除借用</text><text x="40" y="518">try_borrow_mut → Ok</text>
+  <text x="195" y="580" text-anchor="middle">箭頭：本例的程式順序</text>
+ </g>
+</svg>
