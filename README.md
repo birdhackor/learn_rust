@@ -9,12 +9,13 @@
 ```bash
 bash scripts/bootstrap.sh
 bash scripts/check.sh
+source scripts/env.sh
 uv run --locked --python '3.14+gil' zensical serve
 ```
 
 本機預覽網址為 http://127.0.0.1:8000/。網站輸出在 site/。
 
-bootstrap.sh 會在缺少工具時安裝 uv 和 rustup，依鎖定檔同步 Python 依賴，並準備 Rust 工具鏈與套件快取。首次執行需要網路。
+bootstrap.sh 會在 uv 缺少或版本不足、rustup 缺少時安裝工具，依鎖定檔同步 Python 依賴，並準備 Rust 工具鏈與套件快取。首次執行需要網路。工具路徑與快取由 scripts/env.sh 統一設定；每個新 shell 直接使用 uv 或 cargo 前先載入它。
 
 ## 工具版本
 
@@ -35,6 +36,7 @@ zensical.toml            站點、導覽與 Markdown 設定
 pyproject.toml / uv.lock 文件工具依賴
 Cargo.toml / Cargo.lock  Rust workspace 與依賴
 scripts/bootstrap.sh    本機、Cloud 與 CI 的環境準備
+scripts/env.sh          共用工具路徑與快取設定
 scripts/check.sh        文件建置、格式、Clippy 與測試
 .github/workflows/      GitHub Actions 建置檢查
 ```
@@ -42,6 +44,7 @@ scripts/check.sh        文件建置、格式、Clippy 與測試
 執行第一個 Rust 範例：
 
 ```bash
+source scripts/env.sh
 cargo run -p hello-world --locked
 ```
 

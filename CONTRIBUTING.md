@@ -7,7 +7,9 @@ bash scripts/bootstrap.sh
 bash scripts/check.sh
 ```
 
-bootstrap.sh 可重複執行，並以 --locked 確保依賴設定與鎖定檔一致。check.sh 會建置文件、檢查 Rust 格式、執行 Clippy 與測試。
+bootstrap.sh 可重複執行，會檢查 uv 是否至少為 0.13.0，缺少或版本不足時安裝固定版本，並以 --locked 確保依賴設定與鎖定檔一致。check.sh 會建置文件、檢查 Rust 格式、執行 Clippy 與測試。
+
+兩個腳本都載入 scripts/env.sh，優先使用儲存庫上一層的 .learn-rust-tools/bin，並設定 Rust 工具鏈、Python 安裝及套件快取的位置。工具目錄可用 LEARN_RUST_TOOLS_DIR 指定；已設定的 CARGO_HOME、RUSTUP_HOME、UV_CACHE_DIR 與 UV_PYTHON_INSTALL_DIR 會保留。安裝腳本中的 export 不會沿用到下一個 shell 或 Cloud 任務，因此直接執行工具時，每個新 shell 都須先 source scripts/env.sh。
 
 Python 版本檔保留 3.14，讓 pyenv 正常選擇本機版本。腳本只在 uv 指令中加上 3.14+gil，避免既有的 free-threaded 安裝被自動選中。
 
@@ -16,8 +18,8 @@ Python 版本檔保留 3.14，讓 pyenv 正常選擇本機版本。腳本只在 
 先將此專案提交並推送至 GitHub。建立 Cloud environment 時選擇該儲存庫，讓 Codex 使用以下設定：
 
 - Install script：在儲存庫根目錄執行 bash scripts/bootstrap.sh。
-- Start skill：任務開始時同步依賴並執行檢查；需要預覽時啟動 Zensical。
-- 網路：選擇 Package managers，以便取得 Python、Rust 和套件依賴；額外允許 astral.sh、releases.astral.sh 和 sh.rustup.rs，供缺少 uv 或 rustup 時下載安裝腳本與工具。
+- Start skill：每個新 shell 先載入 scripts/env.sh；任務開始時同步依賴並執行檢查，需要預覽時啟動 Zensical。
+- 網路：選擇 Package managers，以便取得 Python、Rust 和套件依賴；額外允許 astral.sh、releases.astral.sh 和 sh.rustup.rs，供缺少 uv、uv 版本不足或缺少 rustup 時下載安裝腳本與工具。
 
 可貼入環境設定對話的指示：
 
@@ -25,9 +27,13 @@ Python 版本檔保留 3.14，讓 pyenv 正常選擇本機版本。腳本只在 
 請在此儲存庫根目錄執行 bash scripts/bootstrap.sh，
 並以 bash scripts/check.sh 驗證 Python 3.14、Zensical 和 Rust 範例。
 Start skill 請記錄：
-1. 任務開始時執行 uv sync --locked --python '3.14+gil' 與 cargo fetch --locked。
-2. 完成變更後執行 bash scripts/check.sh。
-3. 需要預覽時執行 uv run --locked --python '3.14+gil' zensical serve --dev-addr 0.0.0.0:8000。
+1. 每個新 shell 直接執行工具前，先在儲存庫根目錄 source scripts/env.sh。
+   不依賴 Install script 的 export 或系統預設 PATH。
+2. 任務開始時執行 bash scripts/bootstrap.sh 與 bash scripts/check.sh，
+   同步依賴、確認 uv 版本並驗證環境。
+3. 完成變更後執行 bash scripts/check.sh。
+4. 需要預覽時先 source scripts/env.sh，再執行
+   uv run --locked --python '3.14+gil' zensical serve --dev-addr 0.0.0.0:8000。
 ```
 
 確認設定通過後發布環境。更新工具或依賴時重新測試並 Republish；單純儲存庫更新不會自動重跑環境安裝指令。
@@ -53,6 +59,7 @@ UV_OFFLINE=1 CARGO_NET_OFFLINE=true bash scripts/check.sh
 ## 文件預覽
 
 ```bash
+source scripts/env.sh
 uv run --locked --python '3.14+gil' zensical serve --dev-addr 0.0.0.0:8000
 ```
 
@@ -80,6 +87,7 @@ Zensical 建置負責文件與引用檔案的檢查；Rust 編譯與行為由 Ca
 ## 更新依賴
 
 ```bash
+source scripts/env.sh
 uv add --dev 'zensical==<新版本>' --python '3.14+gil'
 bash scripts/check.sh
 ```

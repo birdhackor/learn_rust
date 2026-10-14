@@ -8,6 +8,7 @@
 - 片段引用以專案根目錄為基準；缺少來源檔案必須讓建置失敗。
 - .python-version 保持與 pyenv 相容的 3.14；uv 指令可用 --python '3.14+gil' 選擇一般版本。
 - Python 依賴透過 uv 管理，修改依賴後同步更新 uv.lock。
+- 工具路徑與 Python／Rust 快取由 scripts/env.sh 統一設定。每個新 shell 直接執行 uv、cargo 或 rustup 前先 source scripts/env.sh；bootstrap.sh 與 check.sh 會自動載入。不要假定安裝階段的 export 會沿用到新任務。
 - Rust 工具鏈由 rust-toolchain.toml 固定，提交 Cargo.lock。
 - 新章節加入 zensical.toml 的 nav，清楚描述學習目標、範例和練習。
 
@@ -28,6 +29,7 @@ bash scripts/check.sh
 本機預覽：
 
 ```bash
+source scripts/env.sh
 uv run --locked --python '3.14+gil' zensical serve
 ```
 
