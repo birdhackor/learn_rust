@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="570" viewBox="0 0 340 570" role="img" aria-labelledby="title desc">
+  <title id="title">單一 async HTTP 的等待與總期限</title>
+  <desc id="desc">Client及URL在上方先準備。量測開始後，send await取得Response，再保存status和最後URL；只有body模式才text await，兩個網路步驟共用同一次請求的十秒期限。下方建立owned報告、結束量測。箭頭為順序而非耗時。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8" fill="#475569"/></marker></defs>
+  <rect x="1" y="1" width="338" height="568" rx="12" fill="#fff" stroke="#cbd5e1"/>
+  <g font-family="sans-serif" text-anchor="middle" fill="#172033">
+    <rect x="30" y="20" width="280" height="66" rx="8" fill="#f1f5f9" stroke="#64748b"/>
+    <text x="170" y="46" font-size="20">先準備 Client／Url</text><text x="170" y="73" font-size="18">解析、build：期限之外</text>
+    <text x="170" y="113" font-size="18">Instant：量測開始</text>
+    <rect x="16" y="127" width="308" height="338" rx="12" fill="#fff7ed" stroke="#b45309" stroke-width="2" stroke-dasharray="7 5"/>
+    <text x="170" y="154" font-size="19" fill="#9a3412">同一次請求：共用 10 秒</text>
+    <rect x="36" y="173" width="268" height="56" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="170" y="207" font-size="20">send().await</text>
+    <line x1="170" y1="231" x2="170" y2="254" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="36" y="263" width="268" height="70" rx="8" fill="#dcfce7" stroke="#15803d"/>
+    <text x="170" y="290" font-size="20">已取得 Response</text><text x="170" y="318" font-size="18">保存 status／最後 URL</text>
+    <line x1="170" y1="335" x2="170" y2="357" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="36" y="366" width="268" height="74" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="170" y="395" font-size="20">text().await</text><text x="170" y="423" font-size="18">僅 --body：接續原預算</text>
+    <line x1="170" y1="442" x2="170" y2="480" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="30" y="489" width="280" height="61" rx="8" fill="#dcfce7" stroke="#15803d"/>
+    <text x="170" y="515" font-size="20">建立 owned 報告</text><text x="170" y="541" font-size="18">讀 elapsed：量測結束</text>
+  </g>
+</svg>

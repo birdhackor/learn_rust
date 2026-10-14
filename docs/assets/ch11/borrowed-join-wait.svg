@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="398" viewBox="0 0 340 398" role="img" aria-labelledby="title desc">
+  <title id="title">取消 join 等待，保留原 task</title>
+  <desc id="desc">停止分支先選中，丟棄借用 JoinSet 的等待 future。函式仍持有同一份 JoinSet 與原 task；放行後重新等待，回收 input 0 的 Value 80，集合與 Id 對照皆空。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#42566d" stroke-width="1.4"/></marker></defs>
+  <rect width="340" height="398" rx="10" fill="#fff"/>
+  <g font-family="sans-serif" font-size="14" text-anchor="middle" fill="#14273b">
+    <rect x="10" y="12" width="320" height="87" rx="8" fill="#fff2e6" stroke="#a97749"/>
+    <text x="170" y="39">select 選中停止分支</text>
+    <text x="170" y="64">drop：join 等待 future</text>
+    <text x="170" y="86">這份 future 只借用 JoinSet</text>
+    <path d="M170 99 V111" fill="none" stroke="#42566d" stroke-width="1.7"/>
+    <text x="170" y="132" font-size="13">等待的借用結束</text>
+    <path d="M170 140 V155" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="161" width="320" height="78" rx="8" fill="#e9f2ff" stroke="#5b7fa3"/>
+    <text x="170" y="187">函式仍持有同一份 JoinSet</text>
+    <text x="170" y="211">原 task input 0 仍被追蹤</text>
+    <text x="170" y="231" font-size="13">release 還沒有放行</text>
+    <path d="M170 239 V251" fill="none" stroke="#42566d" stroke-width="1.7"/>
+    <text x="170" y="272" font-size="13">放行，再次 await join</text>
+    <path d="M170 280 V297" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="303" width="320" height="82" rx="8" fill="#e9f7ef" stroke="#47886b"/>
+    <text x="170" y="332">回收 input 0：Value(80)</text>
+    <text x="170" y="359">集合與 Id 對照都空</text>
+  </g>
+</svg>

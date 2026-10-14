@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="572" viewBox="0 0 340 572" role="img" aria-labelledby="title desc">
+  <title id="title">受控本機 HTTP 的操作順序</title>
+  <desc id="desc">Fixture 保留 listener 並取得 ready 回應；handler 送進入通知後等 gate；測試放行才回200與body；caller最後另通知並等待server。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 Z" fill="#475569"/></marker>
+  </defs>
+  <rect width="340" height="572" rx="12" fill="#f8fafc"/>
+  <g font-family="sans-serif" text-anchor="middle" fill="#0f172a">
+    <text x="170" y="27" font-size="17" font-weight="700">同一份 fixture，由測試控制</text>
+    <rect x="15" y="43" width="310" height="62" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="170" y="67" font-size="15">1　bind 動態 port，保留 listener</text>
+    <text x="170" y="90" font-size="14">/ready 回 200 與 ready，才交 Fixture</text>
+    <path d="M170 105 V128" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="15" y="133" width="310" height="62" rx="8" fill="#dbeafe" stroke="#2563eb"/>
+    <text x="170" y="157" font-size="15">2　client 送 GET /held/0</text>
+    <text x="170" y="180" font-size="14">server 進入 handler，hits 加 1</text>
+    <path d="M170 195 V218" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="15" y="223" width="310" height="68" rx="8" fill="#ffedd5" stroke="#c2410c"/>
+    <text x="170" y="247" font-size="15">3　handler 送 entered(0)，等 gate</text>
+    <text x="170" y="271" font-size="14">測試收到通知；client 尚無 headers</text>
+    <path d="M170 291 V314" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="15" y="319" width="310" height="62" rx="8" fill="#ffedd5" stroke="#c2410c"/>
+    <text x="170" y="343" font-size="15">4　測試 release(0)，handler 回應</text>
+    <text x="170" y="366" font-size="14">client 的 await 取得 200 與 body</text>
+    <path d="M170 381 V404" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="15" y="409" width="310" height="62" rx="8" fill="#dcfce7" stroke="#15803d"/>
+    <text x="170" y="433" font-size="15">5　caller 另呼叫 shutdown().await</text>
+    <text x="170" y="456" font-size="14">關 gate、通知停止、await server</text>
+    <path d="M170 471 V494" stroke="#475569" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="15" y="499" width="310" height="47" rx="8" fill="#dcfce7" stroke="#15803d"/>
+    <text x="170" y="528" font-size="15">雙方已完成；最後工作請求總數 1</text>
+    <text x="170" y="563" font-size="12" fill="#475569">箭頭表示這份示範的等待先後，不表示耗時。</text>
+  </g>
+</svg>

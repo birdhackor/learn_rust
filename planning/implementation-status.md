@@ -29,12 +29,12 @@
 | 7 Cargo 生態系／I/O／CLI | 已審閱並發布 | chapter07_cli | 第5–6章實際正文；原v10、發布修後v13 |
 | 8 smart pointer／進階型別 | 已審閱並發布 | chapter01_foundations | 第4–6章實際正文；完整來源v8 |
 | 9 Cargo 工程／檔案處理 | 已審閱並發布 | chapter07_cli／chapter02_ownership | actual1–8；原v5／發布修後v6 |
-| 10 thread／同步／atomic | 三類原判與修後複查完成；發布候選通過 | chapter10_concurrency | 8.8／8.10与第5–6章實際稿；完整v12 |
-| 11 async／HTTP | 11.1–4、11.6–7先備可用；11.5最後核對，11.8待前置 | chapter11_async／chapter01_foundations | 11.1凍結v3；後節依實際小節前置 |
-| 12 GAT／variance／unsafe／FFI | 六頁先備核對完成；獨立審閱另安排 | chapter12_unsafe | 10.8凍結v11與12-prefix-v1實際前文 |
-| 13 Pin／Future內部 | 13.1先備可用；13.2撰寫，其餘逐gate | chapter03_data | actual13.1-v1／12.4／11.5 |
-| 14 macro／API／測試／效能 | 八頁先備可用；首讀prefix、技術與銜接審閱中 | chapter04_traits／chapter01_foundations | 其他依既定gate；14.6等12.4，14.7已取得11.4 |
-| 15 引導型最終專案與完整答案 | 15.1–6先備可用；完整A核對完成，B等待async前文 | chapter07_cli／chapter11_async | A的實際8.6／14.4／15.5前置已齊；B等async前文 |
+| 10 thread／同步／atomic | 已審閱並發布 | chapter10_concurrency | 第5–8章實際稿；原v12，發布修後v15 |
+| 11 async／HTTP | 八頁先備可用；獨立首讀與技術／銜接審閱中 | chapter11_async／chapter01_foundations | 11.1凍結v3；後節依實際小節前置 |
+| 12 GAT／variance／unsafe／FFI | 六頁先備可用；獨立順序首讀中 | chapter12_unsafe | 10.8凍結v11與12-prefix-v1實際前文 |
+| 13 Pin／Future內部 | 13.1–2先備可用；13.3撰寫，其餘逐gate | chapter03_data | actual13.1-v1／12.4／11.5 |
+| 14 macro／API／測試／效能 | 八頁先備可用；首讀1–5與銜接原判已封存，技術原判及尾段首讀待完成 | chapter04_traits／chapter01_foundations | 完整v8；14.6已取得12.4，14.7已取得11.4 |
+| 15 引導型最終專案與完整答案 | 15.1–6先備可用；完整A核對完成，15.7 B1撰寫 | chapter07_cli／chapter11_async | A的實際8.6／14.4／15.5前置已齊；B等async前文 |
 
 ## 驗收與發布批次
 

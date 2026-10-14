@@ -24,6 +24,7 @@ chapters/**
 !chapters/08-*.md
 !chapters/09-*.md
 !chapters/10-*.md
+!chapters/11-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -117,6 +118,16 @@ nav = [
     { "10.6 Arc 與 Mutex：共同持有，輪流修改" = "chapters/10-06-arc-mutex.md" },
     { "10.7 RwLock 與同步設計：共享讀取，獨佔修改" = "chapters/10-07-rwlock-design.md" },
     { "10.8 atomic 與 memory ordering：單次更新與跨操作同步" = "chapters/10-08-atomic-ordering.md" },
+  ] },
+  { "第 11 章：async、HTTP 與受控測試" = [
+    { "11.1 Future 與 async／await：先保存工作，再取得結果" = "chapters/11-01-future-and-runtime.md" },
+    { "11.2 Task 的生命週期：提交工作，也收回它的結果" = "chapters/11-02-task-lifecycle.md" },
+    { "11.3 有上限的工作排程：完成一份，才補一份" = "chapters/11-03-bounded-scheduling.md" },
+    { "11.4 設定等待範圍，再分辨完成、逾時與取消" = "chapters/11-04-time-and-timeout.md" },
+    { "11.5 select!、取消與收尾：停止提交，也等到清理完成" = "chapters/11-05-cancellation-and-finish.md" },
+    { "11.6 HTTP 基礎：有收到回應，和檢查通過，是兩件事" = "chapters/11-06-http-basics.md" },
+    { "11.7 單一 async HTTP：等待回應，再決定是否讀 body" = "chapters/11-07-single-async-http.md" },
+    { "11.8 受控本機服務：讓 HTTP 測試自己安排條件" = "chapters/11-08-local-service-and-tests.md" },
   ] },
 ]
 

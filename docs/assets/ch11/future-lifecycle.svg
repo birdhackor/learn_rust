@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="532" viewBox="0 0 340 532" role="img" aria-labelledby="title desc">
+  <title id="title">future 建立與本體執行是兩個時點</title>
+  <desc id="desc">依main的順序，建立work保存小計80但尚未執行本體，await後執行本體並取得Output100，交給total。另一份保存小計120的future直接drop，本體不執行。箭頭只表示操作順序，不表示時間或多thread排程。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+  <rect width="340" height="532" rx="12" fill="#f8fafc"/>
+  <g font-family="sans-serif" text-anchor="middle" fill="#0f172a">
+    <text x="170" y="28" font-size="18" font-weight="bold">同一份 work，依序追蹤</text>
+    <rect x="20" y="45" width="300" height="94" rx="8" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="170" y="72" font-size="17">建立 work</text>
+    <text x="170" y="99" font-size="16">future 已保存小計 80</text>
+    <text x="170" y="124" font-size="16">async 本體尚未執行</text>
+    <path d="M170 139V157" fill="none" stroke="#334155" stroke-width="2"/>
+    <text x="170" y="177" font-size="16">main 執行 work.await</text>
+    <path d="M170 185V208" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="20" y="215" width="300" height="95" rx="8" fill="#dcfce7" stroke="#15803d"/>
+    <text x="170" y="242" font-size="17">執行同一份 work 的本體</text>
+    <text x="170" y="269" font-size="16">印出「處理小計 80」</text>
+    <text x="170" y="294" font-size="16">完成，交出 Output 100</text>
+    <path d="M170 310V341" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="20" y="348" width="300" height="67" rx="8" fill="#dcfce7" stroke="#15803d"/>
+    <text x="170" y="374" font-size="17">await 的結果交給 total</text>
+    <text x="170" y="400" font-size="16">main 使用數字 100</text>
+    <rect x="20" y="439" width="300" height="73" rx="8" fill="#f1f5f9" stroke="#64748b"/>
+    <text x="170" y="465" font-size="16">另一份 unused_work：小計 120</text>
+    <text x="170" y="493" font-size="16">直接 drop，本體沒有執行</text>
+  </g>
+</svg>

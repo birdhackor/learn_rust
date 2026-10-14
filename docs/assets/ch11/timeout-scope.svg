@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="730" viewBox="0 0 390 730" role="img" aria-labelledby="title desc">
+ <title id="title">整段期限與每步期限涵蓋不同範圍</title>
+ <desc id="desc">手工timer條件示意。兩步各等三十毫秒；整段共用五十毫秒期限，第一步完成後剩二十毫秒，第二步等不到三十毫秒就逾時，保留完成數一。每一步重新給五十毫秒，兩步都完成，完成數二。向下箭頭表示接著處理第二步，第二種安排重新建立期限，不是時間量測的精確排程截圖。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="730" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="37" text-anchor="middle" font-weight="bold">期限放在哪一層？</text>
+  <rect x="20" y="66" width="350" height="285" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="40" y="104" font-weight="bold">整段只給50ms</text>
+  <text x="40" y="145">第一步30ms：完成數1</text>
+  <path d="M48 161V194" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="79" y="188">剩餘預算20ms</text>
+  <text x="40" y="229">第二步仍需30ms</text>
+  <text x="40" y="271">整段期限先到：Elapsed</text>
+  <text x="40" y="317" font-weight="bold">完成數保留1</text>
+  <rect x="20" y="376" width="350" height="294" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="40" y="415" font-weight="bold">每一步各給50ms</text>
+  <text x="40" y="457">第一步30ms：完成數1</text>
+  <path d="M48 472V505" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="79" y="500">下一步重新給50ms</text>
+  <text x="40" y="546">第二步30ms：完成數2</text>
+  <text x="40" y="588">示意總跨度60ms</text>
+  <text x="40" y="633" font-weight="bold">結果Ok，完成數2</text>
+  <text x="195" y="710" text-anchor="middle">手工示意，不是實測排程</text>
+ </g>
+</svg>

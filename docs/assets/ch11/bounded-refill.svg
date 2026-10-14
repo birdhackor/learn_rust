@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="678" viewBox="0 0 340 678" role="img" aria-labelledby="title desc">
+  <title id="title">上限二的回收與補工</title>
+  <desc id="desc">第一批只提交 input 0 與 1，input 2、3、4 還在 pending。回收 input 1 的 WorkError 後，集合只剩 input 0，空出一位。再提交 input 2，集合有 input 0 與 2，tracked 回到二，submitted 增到三。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#42566d" stroke-width="1.4"/></marker></defs>
+  <rect width="340" height="678" rx="10" fill="#fff"/>
+  <g font-family="sans-serif" text-anchor="middle" font-size="14" fill="#14273b">
+    <rect x="10" y="12" width="320" height="185" rx="8" fill="#fff" stroke="#708397"/>
+    <text x="170" y="39" font-weight="bold">① 第一批：上限 2</text>
+    <rect x="24" y="52" width="292" height="27" rx="4" fill="#e9f2ff"/>
+    <text x="170" y="71">JoinSet：input 0、1</text>
+    <rect x="24" y="88" width="292" height="27" rx="4" fill="#f1f4f7"/>
+    <text x="170" y="107">pending：input 2、3、4</text>
+    <rect x="24" y="124" width="292" height="27" rx="4" fill="#e9f7ef"/>
+    <text x="170" y="143">已回收報告：無</text>
+    <text x="170" y="178">tracked 2 ／ submitted 2</text>
+    <path d="M170 197 V204" fill="none" stroke="#42566d" stroke-width="1.7"/>
+    <text x="170" y="224" font-size="13">回收 input 1（WorkError）</text>
+    <path d="M170 232 V244" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="250" width="320" height="185" rx="8" fill="#fff" stroke="#708397"/>
+    <text x="170" y="277" font-weight="bold">② 回收後，空出一位</text>
+    <rect x="24" y="290" width="292" height="27" rx="4" fill="#e9f2ff"/>
+    <text x="170" y="309">JoinSet：input 0</text>
+    <rect x="24" y="326" width="292" height="27" rx="4" fill="#f1f4f7"/>
+    <text x="170" y="345">pending：input 2、3、4</text>
+    <rect x="24" y="362" width="292" height="27" rx="4" fill="#e9f7ef"/>
+    <text x="170" y="381">已回收報告：input 1</text>
+    <text x="170" y="416">tracked 1 ／ submitted 2</text>
+    <path d="M170 435 V442" fill="none" stroke="#42566d" stroke-width="1.7"/>
+    <text x="170" y="462" font-size="13">fill：提交 input 2 補空位</text>
+    <path d="M170 470 V481" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="488" width="320" height="178" rx="8" fill="#fff" stroke="#708397"/>
+    <text x="170" y="515" font-weight="bold">③ 補工後，仍在上限內</text>
+    <rect x="24" y="528" width="292" height="27" rx="4" fill="#e9f2ff"/>
+    <text x="170" y="547">JoinSet：input 0、2</text>
+    <rect x="24" y="564" width="292" height="27" rx="4" fill="#f1f4f7"/>
+    <text x="170" y="583">pending：input 3、4</text>
+    <rect x="24" y="600" width="292" height="27" rx="4" fill="#e9f7ef"/>
+    <text x="170" y="619">已回收報告：input 1</text>
+    <text x="170" y="650">tracked 2 ／ submitted 3</text>
+  </g>
+</svg>

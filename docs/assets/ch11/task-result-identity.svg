@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="478" viewBox="0 0 340 478" role="img" aria-labelledby="title desc">
+  <title id="title">Task 結果與原輸入的對應</title>
+  <desc id="desc">一份由 JoinSet 追蹤的 task，正常完成時從結果取出 Id，panic 或取消時從 JoinError 取得 Id。兩條結果路線都用 Id 移除對照表 entry，得到原輸入位置，形成 Report。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto" markerUnits="strokeWidth"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#42566d" stroke-width="1.4"/></marker>
+  </defs>
+  <rect width="340" height="478" rx="10" fill="#fff"/>
+  <g font-family="sans-serif" font-size="14" text-anchor="middle" fill="#14273b">
+    <rect x="10" y="14" width="320" height="65" rx="8" fill="#e9f2ff" stroke="#5b7fa3"/>
+    <text x="170" y="40">JoinSet 追蹤的一份 task</text>
+    <text x="170" y="62">有自己的 Id；完成時回收結果</text>
+    <path d="M170 79 V95 H84 V114" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <path d="M170 95 H256 V114" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="120" width="148" height="103" rx="8" fill="#e9f7ef" stroke="#47886b"/>
+    <text x="84" y="148">正常完成</text>
+    <text x="84" y="174" font-size="13">Ok((id, Output))</text>
+    <text x="84" y="201">從結果取出 id</text>
+    <rect x="182" y="120" width="148" height="103" rx="8" fill="#fff2e6" stroke="#a97749"/>
+    <text x="256" y="148">panic／取消</text>
+    <text x="256" y="174" font-size="13">Err(JoinError)</text>
+    <text x="256" y="201">呼叫 error.id()</text>
+    <path d="M84 223 V246 H170 V273" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <path d="M256 223 V246 H170" fill="none" stroke="#42566d" stroke-width="1.7"/>
+    <rect x="10" y="280" width="320" height="92" rx="8" fill="#e9f2ff" stroke="#5b7fa3"/>
+    <text x="170" y="306">相同 Id 查同一份輸入對照</text>
+    <text x="170" y="332">inputs.remove(&amp;id)</text>
+    <text x="170" y="355">得到原 input，移除 entry</text>
+    <path d="M170 372 V397" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="404" width="320" height="60" rx="8" fill="#f1f4f7" stroke="#6c7d90"/>
+    <text x="170" y="428">Report { input, outcome }</text>
+    <text x="170" y="451">原輸入位置 ＋ 結果分類</text>
+  </g>
+</svg>

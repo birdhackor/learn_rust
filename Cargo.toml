@@ -22,6 +22,14 @@ members = [
     "examples/ch09-files",
     "examples/ch09-content",
     "examples/ch10-concurrency",
+    "examples/ch11-http",
+    "examples/ch11-async/foundations",
+    "examples/ch11-async/tasks",
+    "examples/ch11-async/bounded",
+    "examples/ch11-async/cancellation",
+    "examples/ch11-async/timing",
+    "examples/ch11-async/http-single",
+    "examples/ch11-async/local-service",
 ]
 resolver = "3"
 

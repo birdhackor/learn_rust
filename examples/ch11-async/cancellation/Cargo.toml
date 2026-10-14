@@ -1,0 +1,11 @@
+[package]
+name = "ch11-cancellation"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+# --8<-- [start:dependencies]
+[dependencies]
+tokio = { version = "1.53.3", default-features = false, features = ["rt", "macros", "sync", "signal"] }
+# --8<-- [end:dependencies]

@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="620" viewBox="0 0 340 620" role="img" aria-labelledby="title desc">
+  <title id="title">停止之後的完整收尾</title>
+  <desc id="desc">觀察停止事件後不再補工。向 JoinSet 全部提出取消，再逐項 join 回收到 None；保留已完成成果及實際錯誤。清理 pending 中未提交 Job，記成 Unstarted；集合與身分對照都空，才交回完整報告。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="none" stroke="#42566d" stroke-width="1.4"/></marker></defs>
+  <rect width="340" height="620" rx="10" fill="#fff"/>
+  <g font-family="sans-serif" font-size="14" text-anchor="middle" fill="#14273b">
+    <rect x="10" y="12" width="320" height="65" rx="8" fill="#fff2e6" stroke="#a97749"/>
+    <text x="170" y="38">觀察到停止：不再 fill</text>
+    <text x="170" y="62">保留已有結果，開始收尾</text>
+    <path d="M170 77 V104" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="111" width="320" height="79" rx="8" fill="#e9f2ff" stroke="#5b7fa3"/>
+    <text x="170" y="138">JoinSet：abort_all()</text>
+    <text x="170" y="161">提出取消，task 仍在集合</text>
+    <text x="170" y="180" font-size="13">此刻尚未確認清理完成</text>
+    <path d="M170 190 V216" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="223" width="320" height="120" rx="8" fill="#e9f2ff" stroke="#5b7fa3"/>
+    <text x="170" y="248">逐項 await join_next_with_id</text>
+    <text x="170" y="272">正常 Output／JoinError</text>
+    <text x="170" y="296">按 Id 回收並分類，不覆寫成果</text>
+    <text x="170" y="329">直到 None：提交工作全部回收</text>
+    <path d="M170 343 V370" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="377" width="320" height="86" rx="8" fill="#f1f4f7" stroke="#6c7d90"/>
+    <text x="170" y="405">pending：未提交 Job</text>
+    <text x="170" y="429">清理各收端，記成 Unstarted</text>
+    <text x="170" y="450" font-size="13">沒有 task 可以取消</text>
+    <path d="M170 463 V490" fill="none" stroke="#42566d" stroke-width="1.7" marker-end="url(#arrow)"/>
+    <rect x="10" y="497" width="320" height="110" rx="8" fill="#e9f7ef" stroke="#47886b"/>
+    <text x="170" y="524">集合與 Id 對照都空</text>
+    <text x="170" y="550">每份 input 都有最後分類</text>
+    <text x="170" y="577">交回完整 Batch 報告</text>
+  </g>
+</svg>

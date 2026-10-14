@@ -1,0 +1,13 @@
+[package]
+name = "ch11-http"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+# --8<-- [start:dependencies]
+[dependencies]
+clap = { version = "4.6.7", features = ["derive"] }
+reqwest = { version = "0.13.5", default-features = false, features = ["blocking", "rustls"] }
+url = "2.5.8"
+# --8<-- [end:dependencies]
