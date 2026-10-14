@@ -11,3 +11,5 @@ Git index 的獨立發布候選只開第1–6章，workspace只另加入ch06-ite
 完整檢查紀錄在work的release6-check.log；原位文字截圖／DOM紀錄在latest-text-observations.json及screenshots。初次候選工具路徑未載入而遇到uv版本拒絕，載入專案env後重跑才是上述成功紀錄，未將拒絕算成程式檢查通過。後續修後覆核、最終strict與公開部署另行追加。
 
 root 已完整讀技術及銜接交叉檔、原首讀者followup。兩項必要與三項可選處置皆有修後原句與首次位置依據，抽查callback receiver理由、RPIT capture、collect早停與排序的未報通過項亦保持成立，沒有新增必要缺口。各角色沒有把root實跑或他人的獨立圖渲染算自己的實頁證據。最後Vec<T>句子加入後候選strict建置成功；首頁同步更新第1–6章入口，最終strict與遠端結果於完成後追加。
+
+提交 `af1f567101de25a3831ba2dca592c212fc73be1b` 的 [Actions 38587830952](https://github.com/birdhackor/learn_rust/actions/runs/38587830952) check／deploy均成功。root實際請求首頁及第1–6章40節，41網址全200且H1相符；未發布7.1仍404。證據為work的release6-live-http.json。

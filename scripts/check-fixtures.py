@@ -33,4 +33,48 @@ with tempfile.TemporaryDirectory(prefix="rust-tutorial-fixtures-") as temporary:
             raise SystemExit(f"失敗契約不符：{source.relative_to(project_root)}\n"
                              f"預期非零結束並包含 {expected!r}\n{result.stderr}")
         count += 1
+    cargo_modes = [
+        ("cross-crate-fail", "examples", "check", "--example"),
+        ("cargo-test-fail", "tests", "test", "--test"),
+    ]
+    for directory, targets, command, selector in cargo_modes:
+        manifests = sorted(project_root.glob(f"examples/**/fixtures/{directory}/Cargo.toml"))
+        for manifest in manifests:
+            sources = sorted((manifest.parent / targets).glob("*.rs"))
+            if not sources:
+                raise SystemExit(f"沒有失敗target：{manifest.relative_to(project_root)}")
+            if not manifest.with_name("Cargo.lock").is_file():
+                raise SystemExit(f"缺少固定依賴：{manifest.relative_to(project_root)}")
+            for source in sources:
+                expectation = source.with_suffix(".expected")
+                if not expectation.is_file() or not expectation.read_text().strip():
+                    raise SystemExit(f"缺少非空失敗契約：{source.relative_to(project_root)}")
+                expected = expectation.read_text().strip()
+                cargo_arguments = [
+                    "cargo", command, "--manifest-path", str(manifest),
+                    selector, source.stem, "--locked",
+                ]
+                environment = {**os.environ, "RUST_BACKTRACE": "0"}
+                if command == "test":
+                    # A compilation error must never stand in for a failing property.
+                    build_result = subprocess.run(
+                        [*cargo_arguments, "--no-run"], capture_output=True,
+                        text=True, cwd=manifest.parent, env=environment,
+                    )
+                    if build_result.returncode:
+                        raise SystemExit(
+                            f"測試失敗範例未能先通過編譯：{source.relative_to(project_root)}\n"
+                            f"{build_result.stdout}{build_result.stderr}"
+                        )
+                result = subprocess.run(
+                    cargo_arguments, capture_output=True, text=True,
+                    cwd=manifest.parent, env=environment,
+                )
+                diagnostic = result.stdout + result.stderr
+                if not result.returncode or expected not in diagnostic:
+                    raise SystemExit(
+                        f"失敗契約不符：{source.relative_to(project_root)}\n"
+                        f"預期非零結束並包含 {expected!r}\n{diagnostic}"
+                    )
+                count += 1
 print(f"已驗證 {count} 個故意失敗的教學範例")

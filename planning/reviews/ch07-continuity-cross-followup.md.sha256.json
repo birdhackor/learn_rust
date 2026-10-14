@@ -1,0 +1,6 @@
+{
+  "report_sha256": "ca01115e2fbb02c038022f6e6cd6d28167d7bc44ab06b8b472f45830d3a79ecd",
+  "initial_sha256": "65b13249772da61cd8f74cafd46b53952869ed41844293be2238f4dc144a8b06",
+  "v13_manifest_sha256": "87fec0581beb0f2398a81061060c0e47f5d83dfe6cf54b193e9461b38169cfef",
+  "sealed_path": "/workspace/learn_rust/work/ch07-continuity-cross-followup/sealed/seal.json"
+}

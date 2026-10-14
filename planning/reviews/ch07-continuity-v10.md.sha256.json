@@ -1,0 +1,8 @@
+{
+  "report": "/workspace/learn_rust/planning/reviews/ch07-continuity-v10.md",
+  "sha256": "65b13249772da61cd8f74cafd46b53952869ed41844293be2238f4dc144a8b06",
+  "seal_path": "/workspace/learn_rust/work/ch07-continuity-v10/sealed/seal.json",
+  "snapshot_manifest_sha256": "98c33ca8e367f9c46c8ac2d5c60e201f7fb2f2db35db1c1664798f241a0b6472",
+  "input_fingerprints_sha256": "8c6cd8bb90039ce033cf86760d7fcb6e430ad47e60eb723be4e8526f7460437e",
+  "source_scope_sha256": "8cf841e043380d4f996dbadba8ab54de6973e62e5275f1265331f830219e4f7e"
+}

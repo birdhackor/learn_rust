@@ -19,6 +19,7 @@ chapters/**
 !chapters/04-*.md
 !chapters/05-*.md
 !chapters/06-*.md
+!chapters/07-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -73,6 +74,17 @@ nav = [
     { "6.5 逐筆取得資料：Iterator、IntoIterator 與 ownership" = "chapters/06-05-iterators.md" },
     { "6.6 逐筆篩選、轉換，再依目標收集" = "chapters/06-06-adapters-collect.md" },
     { "6.7 整理文字與統計，產生順序明確的報表" = "chapters/06-07-text-collections-sorting.md" },
+  ] },
+  { "第 7 章：Cargo 生態系、I/O 與第一個 CLI" = [
+    { "7.1 讓 Cargo 準備外部程式庫" = "chapters/07-01-dependencies.md" },
+    { "7.2 從使用者角度測試 library" = "chapters/07-02-documentation-tests.md" },
+    { "7.3 讀取文字檔，把失敗交給呼叫者" = "chapters/07-03-text-io.md" },
+    { "7.4 bytes 與 buffer：只處理這次有效的前段" = "chapters/07-04-byte-io.md" },
+    { "7.5 原生路徑與 CLI：檔名、資料、診斷各有自己的表示" = "chapters/07-05-paths-and-cli.md" },
+    { "7.6 clap：讓參數規則產生 owned 設定" = "chapters/07-06-clap.md" },
+    { "7.7 JSON 與 Serde：文字和 owned 資料模型" = "chapters/07-07-json-and-serde.md" },
+    { "7.8 fixture：用專用檔案驗收真正的 CLI" = "chapters/07-08-cli-fixtures.md" },
+    { "7.9 第一個完整 CLI：搜尋筆記，再交出文字或 JSON" = "chapters/07-09-complete-cli.md" },
   ] },
 ]
 

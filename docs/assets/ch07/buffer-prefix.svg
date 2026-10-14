@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="452" viewBox="0 0 340 452" role="img" aria-labelledby="title desc">
+  <title id="title">重用 buffer 時，只取這次讀到的前段</title>
+  <desc id="desc">四格 buffer 第一次讀入 A B C，n 為三；第二次讀入 D E，n 為二。第三格仍留著上次的 C，但不屬於第二次讀到的資料。兩次只合併各自有效前段，得到 A B C D E。</desc>
+  <style>text{font-family:system-ui,sans-serif;font-size:18px;fill:#182d43}.label{font-weight:650}.valid{fill:#e6f3ff;stroke:#2472b3;stroke-width:2}.stale{fill:#f0f1f3;stroke:#79818c;stroke-width:2;stroke-dasharray:5 4}</style>
+  <rect width="340" height="452" rx="12" fill="#fff" stroke="#b6c9da"/>
+  <text x="20" y="31" class="label">同一個 4-byte buffer</text>
+  <text x="20" y="62">第一次：n = 3，讀到 ABC</text>
+  <g text-anchor="middle">
+    <text x="62" y="92">0</text><text x="134" y="92">1</text><text x="206" y="92">2</text><text x="278" y="92">3</text>
+    <rect x="28" y="102" width="68" height="68" rx="6" class="valid"/>
+    <rect x="100" y="102" width="68" height="68" rx="6" class="valid"/>
+    <rect x="172" y="102" width="68" height="68" rx="6" class="valid"/>
+    <rect x="244" y="102" width="68" height="68" rx="6" class="stale"/>
+    <text x="62" y="130">A</text><text x="62" y="155">65</text>
+    <text x="134" y="130">B</text><text x="134" y="155">66</text>
+    <text x="206" y="130">C</text><text x="206" y="155">67</text>
+    <text x="278" y="142">0</text>
+  </g>
+  <text x="28" y="197">藍色前 3 格：本次有效資料</text>
+  <text x="20" y="231">第二次：n = 2，讀到 DE</text>
+  <g text-anchor="middle">
+    <rect x="28" y="246" width="68" height="68" rx="6" class="valid"/>
+    <rect x="100" y="246" width="68" height="68" rx="6" class="valid"/>
+    <rect x="172" y="246" width="68" height="68" rx="6" class="stale"/>
+    <rect x="244" y="246" width="68" height="68" rx="6" class="stale"/>
+    <text x="62" y="274">D</text><text x="62" y="299">68</text>
+    <text x="134" y="274">E</text><text x="134" y="299">69</text>
+    <text x="206" y="274">舊 C</text><text x="206" y="299">67</text>
+    <text x="278" y="286">0</text>
+  </g>
+  <text x="28" y="343">藍色前 2 格：本次有效資料</text>
+  <text x="28" y="373">灰色尾端不屬於本次結果</text>
+  <path d="M28 392H312" stroke="#b6c9da"/>
+  <text x="28" y="418" class="label">每次只使用 buffer[..n]</text>
+  <text x="28" y="442">依序合併：ABC + DE = ABCDE</text>
+</svg>

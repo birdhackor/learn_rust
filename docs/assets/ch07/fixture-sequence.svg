@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="520" viewBox="0 0 340 520" role="img" aria-labelledby="title description">
+  <title id="title">TempDir 持有 fixture 到 child 結束才清理</title>
+  <desc id="description">操作依序建立目錄與檔案、啟動並等待 child、檢查 Output，之後才 close。保存 PathBuf 不會保持目錄存在。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0L10 5L0 10Z" fill="#334155"/></marker>
+  </defs>
+  <rect width="340" height="520" fill="#fff"/>
+  <g font-family="sans-serif" font-size="18" text-anchor="middle" fill="#0f172a">
+    <rect x="12" y="12" width="316" height="330" rx="12" fill="#eff6ff" stroke="#2563eb" stroke-width="2"/>
+    <text x="170" y="40">TempDir owner 仍由測試持有</text>
+    <rect x="32" y="59" width="276" height="64" rx="8" fill="#fff" stroke="#64748b"/>
+    <text x="170" y="84">1. 建立目錄與檔案</text><text x="170" y="108">已知文字：Rust、中</text>
+    <path d="M170 123V153" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <rect x="32" y="158" width="276" height="64" rx="8" fill="#fff" stroke="#64748b"/>
+    <text x="170" y="183">2. output 啟動 child</text><text x="170" y="207">等待結束，收集兩個出口</text>
+    <path d="M170 222V252" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <rect x="32" y="257" width="276" height="64" rx="8" fill="#fff" stroke="#64748b"/>
+    <text x="170" y="282">3. 檢查 Output</text><text x="170" y="306">stdout、stderr、status</text>
+    <path d="M170 342V373" stroke="#334155" stroke-width="2" fill="none" marker-end="url(#arrow)"/>
+    <rect x="32" y="378" width="276" height="56" rx="8" fill="#fef3c7" stroke="#92400e"/>
+    <text x="170" y="401">4. close 接手 owner</text><text x="170" y="425">移除目錄，檢查清理結果</text>
+    <text x="170" y="468">保存 PathBuf 只留下位置資料</text>
+    <text x="170" y="495">目錄資源已由 close 移除</text>
+  </g>
+</svg>

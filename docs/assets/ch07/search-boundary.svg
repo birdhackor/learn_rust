@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="650" viewBox="0 0 340 650" role="img" aria-labelledby="title desc">
+  <title id="title">搜尋資料和診斷的行程邊界</title>
+  <desc id="desc">args_os 解析成 Settings，讀取文字並搜尋成 Report，再排版寫到 stdout，main 檢查 flush。失敗原因交回 main，寫到 stderr 並回傳狀態。</desc>
+  <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#334155"/></marker></defs>
+  <rect width="340" height="650" fill="#fff"/>
+  <g font-family="sans-serif" font-size="18" text-anchor="middle" fill="#0f172a">
+    <text x="170" y="28">實線：成功資料依序交接</text>
+    <rect x="20" y="46" width="262" height="56" rx="8" fill="#eff6ff" stroke="#2563eb"/><text x="151" y="69">args_os → Parser</text><text x="151" y="93">owned Settings</text>
+    <path d="M151 102V126" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="20" y="133" width="262" height="56" rx="8" fill="#eff6ff" stroke="#2563eb"/><text x="151" y="156">read_report</text><text x="151" y="180">讀 UTF-8 → owned Report</text>
+    <path d="M151 189V213" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="20" y="220" width="262" height="56" rx="8" fill="#eff6ff" stroke="#2563eb"/><text x="151" y="243">render 借 Report</text><text x="151" y="267">文字或 JSON String</text>
+    <path d="M151 276V300" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="20" y="307" width="262" height="56" rx="8" fill="#eff6ff" stroke="#2563eb"/><text x="151" y="330">write_all → main flush</text><text x="151" y="354">stdout：只交報告資料</text>
+    <path d="M282 161H311V401H170V426" stroke="#334155" stroke-width="2" stroke-dasharray="5 5" fill="none" marker-end="url(#arrow)"/>
+    <path d="M282 248H311M282 335H311" stroke="#334155" stroke-width="2" stroke-dasharray="5 5" fill="none"/>
+    <rect x="22" y="374" width="273" height="27" fill="#fff"/><text x="157" y="394">虛線：具體 AppError 交回</text>
+    <rect x="20" y="433" width="300" height="66" rx="8" fill="#fef3c7" stroke="#92400e"/><text x="170" y="458">main 寫診斷到 stderr</text><text x="170" y="483">正常返回 ExitCode</text>
+    <text x="170" y="539">正常搜尋 0；作業失敗 1</text>
+    <text x="170" y="568">用法不符／空 query 2</text>
+    <text x="170" y="607">help／version 在 parser 顯示</text>
+    <text x="170" y="633">stdout ＋正常狀態 0</text>
+  </g>
+</svg>

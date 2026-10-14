@@ -9,6 +9,13 @@ members = [
     "examples/ch05-errors",
     "examples/ch06-iterators",
     "examples/ch07-cli/tooling",
+    "examples/ch07-cli/io-text",
+    "examples/ch07-cli/io-bytes",
+    "examples/ch07-cli/path-cli",
+    "examples/ch07-cli/clap",
+    "examples/ch07-cli/json",
+    "examples/ch07-cli/fixtures",
+    "examples/ch07-cli/search",
     "examples/ch09-engineering",
 ]
 resolver = "3"
