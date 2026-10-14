@@ -1,22 +1,19 @@
 [project]
 site_name = "Rust 教學"
-site_description = "從第一個程式開始，學習 Rust 的語法、所有權與借用。"
+site_description = "面向具備基本 Python 經驗讀者的正體中文 Rust 教學。"
 docs_dir = "docs"
 site_dir = "site"
 strict = true
-# 確定發布位置後，再加入 site_url、repo_url 和 edit_uri。
-nav = [
-  { "首頁" = "index.md" },
-  { "開始學習" = [
-    { "開發環境" = "getting-started/installation.md" },
-    { "第一個 Rust 程式" = "getting-started/hello-world.md" },
-  ] },
-  { "語法基礎" = [
-    { "學習路線" = "fundamentals/index.md" },
-    { "變數與型別" = "fundamentals/variables.md" },
-  ] },
-  { "所有權與借用" = "ownership/index.md" },
-]
+site_url = "https://birdhackor.github.io/learn_rust/"
+repo_url = "https://github.com/birdhackor/learn_rust"
+edit_uri = "edit/main/docs/"
+# 編寫中的章節暫不發布，首次上線只包含首頁。
+exclude_docs = """
+getting-started/**
+fundamentals/**
+ownership/**
+"""
+nav = [{ "首頁" = "index.md" }]
 
 [project.theme]
 language = "zh-Hant"

@@ -93,3 +93,13 @@ bash scripts/check.sh
 ```
 
 提交 pyproject.toml 與 uv.lock 的變更。Rust 依賴或工具鏈更新後，同步檢查 Cargo.lock 和 rust-toolchain.toml。
+
+## GitHub Pages 發布
+
+首次設定時，至儲存庫 Settings → Pages，將 Build and deployment 的 Source 設為 GitHub Actions。公開站點為 https://birdhackor.github.io/learn_rust/。
+
+推送 main 或手動執行 Check and publish Rust documentation 後，workflow 先建置文件、檢查 Rust 格式、執行 Clippy 與測試；全部通過後才發布 Pages。PR 只檢查與上傳預覽，不部署正式網站。
+
+部署使用 GitHub Actions 自帶的 GITHUB_TOKEN，workflow 僅在部署 job 授予 pages: write 與 id-token: write，不需要額外 repository secret。啟用 Pages 的管理操作須由具有權限的使用者先完成。
+
+首次上線只發布 docs/index.md。編寫中的 getting-started、fundamentals、ownership 透過 zensical.toml 的 exclude_docs 排除；章節完成審閱後，移除相應排除規則並加入 nav。
