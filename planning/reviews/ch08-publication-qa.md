@@ -13,3 +13,5 @@ Root原先已看八張SVG桌面／手機，原dyn圖穿字由FIRST與CONT獨立�
 三類原初判、交叉與受影響局部閱讀已關閉。下一步在獨立Git index候選只開第1–8章，核對pages/source與修後凍結byte相同，跑AGENTS要求的完整scripts/check.sh。尚未取得候選執行與遠端部署結果，本紀錄不先宣稱發布成功。
 
 獨立release8-candidate已完成完整scripts/check.sh，退出0：strict文件建置、fmt、all-targets Clippy、workspace全targets tests、doctests及90個故意失敗契約全通過。Log含237個test target結果，123個個別tests／doctests通過、零失敗；合計包含前章，不當成本章單獨數量。Root自行核對10頁與150來源共160個路徑，候選byte全部精確匹配v9。workspace／Cargo.lock僅增加本章Std-only package，沒有帶入後章活躍作者的新依賴；預覽導覽已恢复。證據為release8-staged-byte-proof.json、release8-check.log及release8-check-counts.json。三類及修後受查範圍均關閉，候選可發布；遠端結果另行追加。
+
+提交7e53e831e395fa1ca5f6e6b9b3baad7230bdc1e5的[Actions 38624401465](https://github.com/birdhackor/learn_rust/actions/runs/38624401465)已成功完成check／deploy。Root實際請求首頁及第1–8章59節，60個網址全部200且H1相符；另核八份第8章SVG遠端bytes匹配修後凍結SHA，未發布9.1仍404。證據為release8-live-http.json。初次HTTP檢查把產生的¶標題permalink也算進H1而誤報不符；修正檢查器後重請求核實，原失敗保存parser-v1，不是網站內容問題。本段部署證據下次內容發布帶入，不只為紀錄再觸發CI。

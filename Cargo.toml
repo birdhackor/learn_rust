@@ -18,6 +18,9 @@ members = [
     "examples/ch07-cli/fixtures",
     "examples/ch07-cli/search",
     "examples/ch09-engineering",
+    "examples/ch09-build-script",
+    "examples/ch09-files",
+    "examples/ch09-content",
 ]
 resolver = "3"
 

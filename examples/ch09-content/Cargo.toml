@@ -1,0 +1,13 @@
+[package]
+name = "ch09-content"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+ch09-files = { path = "../ch09-files" }
+blake3 = "1.8"
+
+[dev-dependencies]
+tempfile = "3.27"

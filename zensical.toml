@@ -7,6 +7,7 @@ strict = true
 site_url = "https://birdhackor.github.io/learn_rust/"
 repo_url = "https://github.com/birdhackor/learn_rust"
 edit_uri = "edit/main/docs/"
+extra_css = ["stylesheets/tutorial.css"]
 # 草稿先排除；通過驗收的小節用後續 ! 規則逐批釋出。
 exclude_docs = """
 getting-started/**
@@ -21,6 +22,7 @@ chapters/**
 !chapters/06-*.md
 !chapters/07-*.md
 !chapters/08-*.md
+!chapters/09-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -98,6 +100,12 @@ nav = [
     { "8.8 用Cell與RefCell管理內部修改" = "chapters/08-08-interior-mutability.md" },
     { "8.9 用型別邊界保護單位，再選擇可用的trait介面" = "chapters/08-09-newtypes.md" },
     { "8.10 用Any辨識並取回確切資料型別" = "chapters/08-10-any.md" },
+  ] },
+  { "第 9 章：Cargo 工程設定與檔案處理套件" = [
+    { "9.1 管理共同設定與不同建置" = "chapters/09-01-cargo-engineering.md" },
+    { "9.2 在編譯程式之前執行 Rust 工作" = "chapters/09-02-build-scripts.md" },
+    { "9.3 走訪檔案，保留路徑與失敗" = "chapters/09-03-file-traversal.md" },
+    { "9.4 從檔案候選到真正相同的內容" = "chapters/09-04-content-confirmation.md" },
   ] },
 ]
 

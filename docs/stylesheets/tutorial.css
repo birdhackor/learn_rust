@@ -1,0 +1,4 @@
+/* 展開的提示與答案沿用正文大小，程式碼保持一般範例的字級。 */
+.md-typeset details {
+  font-size: inherit;
+}
