@@ -7,7 +7,7 @@ bash scripts/bootstrap.sh
 bash scripts/check.sh
 ```
 
-bootstrap.sh 可重複執行，會檢查 uv 是否至少為 0.13.0，缺少或版本不足時安裝固定版本，並以 --locked 確保依賴設定與鎖定檔一致。check.sh 會建置文件、檢查 Rust 格式、執行 Clippy 與測試。
+bootstrap.sh 可重複執行，會檢查 uv 是否至少為 0.13.0，缺少或版本不足時安裝固定版本；再明確安裝一般 GIL 版本的 Python 3.14，並以 --locked 確保依賴設定與鎖定檔一致。check.sh 會建置文件、檢查 Rust 格式、執行 Clippy 與測試。
 
 兩個腳本都載入 scripts/env.sh，優先使用儲存庫上一層的 .learn-rust-tools/bin，並設定 Rust 工具鏈、Python 安裝及套件快取的位置。工具目錄可用 LEARN_RUST_TOOLS_DIR 指定；已設定的 CARGO_HOME、RUSTUP_HOME、UV_CACHE_DIR 與 UV_PYTHON_INSTALL_DIR 會保留。安裝腳本中的 export 不會沿用到下一個 shell 或 Cloud 任務，因此直接執行工具時，每個新 shell 都須先 source scripts/env.sh。
 

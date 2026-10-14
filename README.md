@@ -15,7 +15,7 @@ uv run --locked --python '3.14+gil' zensical serve
 
 本機預覽網址為 http://127.0.0.1:8000/。網站輸出在 site/。
 
-bootstrap.sh 會在 uv 缺少或版本不足、rustup 缺少時安裝工具，依鎖定檔同步 Python 依賴，並準備 Rust 工具鏈與套件快取。首次執行需要網路。工具路徑與快取由 scripts/env.sh 統一設定；每個新 shell 直接使用 uv 或 cargo 前先載入它。
+bootstrap.sh 會在 uv 缺少或版本不足、rustup 缺少時安裝工具，明確安裝一般 GIL 版本的 Python 3.14，依鎖定檔同步 Python 依賴，並準備 Rust 工具鏈與套件快取。首次執行需要網路。工具路徑與快取由 scripts/env.sh 統一設定；每個新 shell 直接使用 uv 或 cargo 前先載入它。
 
 ## 工具版本
 

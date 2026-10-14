@@ -26,7 +26,9 @@ if ! command -v rustup >/dev/null 2>&1; then
     | sh -s -- -y --profile minimal --default-toolchain none --no-modify-path
 fi
 
-# 保留與 pyenv 相容的 .python-version；只在 uv 指令中指定 GIL 版本。
+# 先下載一般 3.14；+gil 用於選擇已安裝的直譯器，沒有對應的下載項目。
+uv python install --no-bin 3.14
+# 保留與 pyenv 相容的 .python-version；同步時明確選擇 GIL 版本。
 uv sync --locked --python "3.14+gil"
 # 自動安裝 rust-toolchain.toml 指定的工具鏈及元件。
 rustup show
