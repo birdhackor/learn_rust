@@ -11,3 +11,5 @@ Root親看兩章代表位置的1280×800桌面與390×844手機畫面：第2章�
 發布導覽只開第1–3章，後續初稿不進公開閱讀路線。發布候選從Git index建立獨立目錄，使用候選自己的workspace與lockfile做完整檢查，避免把活躍作者尚未提交的程式算成候選已驗。
 
 獨立候選的 `bash scripts/check.sh` 已完整通過：strict文件建置、fmt、Clippy全targets `-D warnings`、workspace tests／doc tests及18個故意失敗契約。候選使用既有穩定workspace，沒有納入活躍作者新增的第4章以後packages。遠端部署結果待實際完成後追加，不以本機成功代替公開結果。
+
+提交 `d13596a275ecdbe7129d94a977c12dd25f0ff63c` 的 [Actions 38575827782](https://github.com/birdhackor/learn_rust/actions/runs/38575827782) check／deploy均成功。Root實際請求公開首頁和第1–3章22節：全部200且H1相符；尚未發布4.1仍404。紀錄在work的release23-live-http.json。候選手機由首頁進1.1、展開第3章導覽再到3.6成功，最後頁沒有第4章連結或下一頁，整頁無橫向溢出；長code仍可在區塊內捲動。

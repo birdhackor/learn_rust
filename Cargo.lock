@@ -77,6 +77,18 @@ name = "ch03-data"
 version = "0.1.0"
 
 [[package]]
+name = "ch04-lifetimes"
+version = "0.1.0"
+
+[[package]]
+name = "ch04-traits"
+version = "0.1.0"
+
+[[package]]
+name = "ch05-errors"
+version = "0.1.0"
+
+[[package]]
 name = "ch07-tooling"
 version = "0.1.0"
 dependencies = [

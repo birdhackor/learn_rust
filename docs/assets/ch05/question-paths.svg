@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="410" viewBox="0 0 340 410" role="img" aria-labelledby="title desc">
+  <title id="title">Result 上的問號運算子：成功繼續，失敗從整個函式回傳</title>
+  <desc id="desc">上方的 Result 操作分成兩路。左路 Ok 取出成功值，繼續下一行。右路 Err 先用 From 轉成回傳型別的錯誤，再讓整個函式提早回傳。箭頭只表示這次執行的流程。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8Z" fill="#536574"/></marker>
+  </defs>
+  <rect width="340" height="410" rx="12" fill="#f5f7fa"/>
+  <g font-family="sans-serif" font-size="24" text-anchor="middle" fill="#172c3c">
+    <rect x="30" y="15" width="280" height="60" rx="10" fill="#fff" stroke="#536574"/>
+    <text x="170" y="54">Result 操作之後的 ?</text>
+    <path d="M170 75V103H84V133" fill="none" stroke="#536574" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M170 103H256V133" fill="none" stroke="#536574" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="8" y="141" width="152" height="68" rx="10" fill="#dff2ed" stroke="#26765e"/>
+    <text x="84" y="184">Ok</text>
+    <rect x="180" y="141" width="152" height="68" rx="10" fill="#fff0db" stroke="#9b641d"/>
+    <text x="256" y="184">Err</text>
+    <path d="M84 209V236" fill="none" stroke="#536574" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M256 209V236" fill="none" stroke="#536574" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="84" y="269">取出 value</text>
+    <text x="256" y="259">From 轉成</text>
+    <text x="256" y="291">回傳的錯誤</text>
+    <path d="M84 290V325" fill="none" stroke="#536574" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M256 303V325" fill="none" stroke="#536574" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="8" y="333" width="152" height="62" rx="10" fill="#dff2ed" stroke="#26765e"/>
+    <text x="84" y="373">繼續下一行</text>
+    <rect x="180" y="333" width="152" height="62" rx="10" fill="#fff0db" stroke="#9b641d"/>
+    <text x="256" y="358">整個函式</text>
+    <text x="256" y="387">提早回傳</text>
+  </g>
+</svg>

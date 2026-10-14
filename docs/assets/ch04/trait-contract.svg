@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="630" viewBox="0 0 400 630" role="img" aria-labelledby="title desc">
+  <title id="title">兩種型別提供金額，共用同一個門檻判斷</title>
+  <desc id="desc">Order把120乘3得到360，Bundle保存固定價格160。兩者都實作Charge的amount方法。兩次呼叫分別借用Order或Bundle，使用相同的meets_threshold規則比較300門檻，結果分別是true與false。圖表示兩次呼叫的資料關係，不表示將兩筆資料合成一個值。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker>
+  </defs>
+  <rect width="400" height="630" rx="16" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="24" fill="#0f172a" text-anchor="middle">
+    <text x="200" y="38" font-weight="bold">兩次呼叫，共用判斷規則</text>
+    <rect x="14" y="68" width="174" height="176" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="101" y="102" font-weight="bold">Order</text>
+    <text x="101" y="145">120 × 3</text>
+    <text x="101" y="182">amount()</text>
+    <text x="101" y="219" font-weight="bold">360</text>
+    <rect x="212" y="68" width="174" height="176" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="299" y="102" font-weight="bold">Bundle</text>
+    <text x="299" y="145">price = 160</text>
+    <text x="299" y="182">amount()</text>
+    <text x="299" y="219" font-weight="bold">160</text>
+    <path d="M101 245V320" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M299 245V320" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="24" y="260" width="154" height="36" rx="6" fill="#f8fafc"/>
+    <rect x="222" y="260" width="154" height="36" rx="6" fill="#f8fafc"/>
+    <text x="101" y="287">&amp;Order</text>
+    <text x="299" y="287">&amp;Bundle</text>
+    <rect x="14" y="332" width="372" height="146" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <text x="200" y="368" font-weight="bold">meets_threshold</text>
+    <text x="200" y="408">T: Charge</text>
+    <text x="200" y="447">金額 &gt;= 300</text>
+    <path d="M101 479V530" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M299 479V530" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="14" y="542" width="174" height="66" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <rect x="212" y="542" width="174" height="66" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="101" y="583" font-weight="bold">true</text>
+    <text x="299" y="583" font-weight="bold">false</text>
+  </g>
+</svg>

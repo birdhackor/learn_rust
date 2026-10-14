@@ -16,6 +16,8 @@ chapters/**
 !chapters/01-*.md
 !chapters/02-*.md
 !chapters/03-*.md
+!chapters/04-*.md
+!chapters/05-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -46,6 +48,21 @@ nav = [
     { "3.4 擁有文字，或借用文字" = "chapters/03-04-strings.md" },
     { "3.5 文字範圍：byte 不等於你看到的字" = "chapters/03-05-utf8.md" },
     { "3.6 用 Vec 整理長度可變的清單" = "chapters/03-06-vectors.md" },
+  ] },
+  { "第 4 章：trait、HashMap 與基本 lifetime annotation" = [
+    { "4.1 用 trait 說清楚型別要提供的能力" = "chapters/04-01-traits.md" },
+    { "4.2 讓資料能檢查、比較與複製" = "chapters/04-02-capabilities.md" },
+    { "4.3 用 HashMap 按名稱分組" = "chapters/04-03-hashmaps.md" },
+    { "4.4 把回傳 reference 的來源寫進契約" = "chapters/04-04-lifetime-annotations.md" },
+    { "4.5 在 struct 中保存借用" = "chapters/04-05-borrowed-models.md" },
+  ] },
+  { "第 5 章：錯誤、格式化與轉換" = [
+    { "5.1 失敗是資料，何時才停止流程" = "chapters/05-01-error-policy.md" },
+    { "5.2 為既有型別取另一個名字" = "chapters/05-02-type-aliases.md" },
+    { "5.3 讓錯誤資料有自己的顯示契約" = "chapters/05-03-display.md" },
+    { "5.4　From、Into 與 TryFrom：轉換是否可能失敗？" = "chapters/05-04-conversions.md" },
+    { "5.5　解析文字，或借出另一種表示？" = "chapters/05-05-parsing-and-borrowed-conversions.md" },
+    { "5.6　? 傳遞錯誤，把決策留給呼叫者" = "chapters/05-06-error-propagation.md" },
   ] },
 ]
 

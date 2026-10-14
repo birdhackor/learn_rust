@@ -4,6 +4,9 @@ members = [
     "examples/ch01-basics",
     "examples/ch02-ownership",
     "examples/ch03-data",
+    "examples/ch04-traits",
+    "examples/ch04-lifetimes",
+    "examples/ch05-errors",
     "examples/ch07-cli/tooling",
     "examples/ch09-engineering",
 ]
