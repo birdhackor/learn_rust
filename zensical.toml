@@ -25,6 +25,7 @@ chapters/**
 !chapters/09-*.md
 !chapters/10-*.md
 !chapters/11-*.md
+!chapters/12-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -129,6 +130,14 @@ nav = [
     { "11.7 單一 async HTTP：等待回應，再決定是否讀 body" = "chapters/11-07-single-async-http.md" },
     { "11.8 受控本機服務：讓 HTTP 測試自己安排條件" = "chapters/11-08-local-service-and-tests.md" },
   ] },
+  { "第 12 章：進階 lifetime、unsafe 與 FFI" = [
+    { "12.1 讓借用結果的型別跟著這次借用：GAT" = "chapters/12-01-gat.md" },
+    { "12.2 借用有效性放進型別後，哪些替換仍合法？" = "chapters/12-02-variance.md" },
+    { "12.3 raw pointer：找到位置，還不等於可以存取" = "chapters/12-03-raw-pointers.md" },
+    { "12.4 unsafe的責任：從呼叫契約到安全抽象" = "chapters/12-04-unsafe-contracts.md" },
+    { "12.5 FFI 所需的 C 基礎" = "chapters/12-05-c-basics.md" },
+    { "12.6 FFI：把 C 契約接成安全的 Rust 介面" = "chapters/12-06-ffi.md" },
+  ] },
 ]
 
 [project.theme]
@@ -139,7 +148,6 @@ features = [
   "content.code.annotate",
   "navigation.footer",
   "navigation.sections",
-  "navigation.top",
   "toc.integrate",
   "search.highlight",
 ]

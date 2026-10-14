@@ -30,6 +30,8 @@ members = [
     "examples/ch11-async/timing",
     "examples/ch11-async/http-single",
     "examples/ch11-async/local-service",
+    "examples/ch12-unsafe",
+    "examples/ch12-ffi",
 ]
 resolver = "3"
 

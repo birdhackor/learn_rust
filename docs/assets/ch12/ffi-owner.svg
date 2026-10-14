@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="660" viewBox="0 0 390 660" role="img" aria-labelledby="title desc">
+  <title id="title">C配置的owner、借用與獨立Rust文字</title>
+  <desc id="desc">五個階段依序是C配置Rust加零並由Greeting管理清理，借CStr讀同一配置，建立Rust String副本後用完view，Drop Greeting呼叫C釋放原配置，最後Rust String副本仍有效。箭頭只是順序，CStr本身沒有複製文字或取得owner。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#34495e"/></marker></defs>
+  <rect width="390" height="660" rx="12" fill="#f5f8fc"/>
+  <g font-family="sans-serif" font-size="24" fill="#172c44" text-anchor="middle">
+    <rect x="20" y="18" width="350" height="98" rx="8" fill="#e0f1e7" stroke="#347359" stroke-width="2"/>
+    <text x="195" y="55">C配置：R u s t 0</text><text x="195" y="89">greeting: Greeting 接手清理</text>
+    <path d="M195 117V145" fill="none" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="20" y="158" width="350" height="98" rx="8" fill="#e4eef9" stroke="#486989" stroke-width="2"/>
+    <text x="195" y="195">view: &amp;CStr 借原配置</text><text x="195" y="229">borrow連到&amp;self</text>
+    <path d="M195 257V285" fill="none" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="20" y="298" width="350" height="98" rx="8" fill="#e4eef9" stroke="#486989" stroke-width="2"/>
+    <text x="195" y="335">另建Rust String副本</text><text x="195" y="369">用完原view的borrow</text>
+    <path d="M195 397V425" fill="none" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="20" y="438" width="350" height="98" rx="8" fill="#fce8d4" stroke="#995924" stroke-width="2"/>
+    <text x="195" y="475">drop(greeting)呼叫C free</text><text x="195" y="509">原五-byte配置結束</text>
+    <path d="M195 537V565" fill="none" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <rect x="20" y="578" width="350" height="62" rx="8" fill="#e0f1e7" stroke="#347359" stroke-width="2"/>
+    <text x="195" y="617">Rust String副本仍可用</text>
+  </g>
+</svg>

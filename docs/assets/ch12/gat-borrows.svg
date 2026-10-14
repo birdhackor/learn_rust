@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="590" viewBox="0 0 480 590" role="img" aria-labelledby="title desc">
+  <title id="title">同一來源的兩次借用</title>
+  <desc id="desc">source持有同一個Vec。第一次slice借用兩項，該次使用結束後才push40；下一次slice借用同一Vec的三項。向下箭頭表示操作順序。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#334155"/></marker></defs>
+  <rect width="480" height="590" rx="16" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="24" fill="#0f172a" text-anchor="middle">
+    <rect x="25" y="25" width="430" height="90" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="240" y="62">source：Numbers</text><text x="240" y="96">持有 Vec [80, 120]</text>
+    <path d="M240 115V171" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="25" y="184" width="430" height="85" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="240" y="218">第一次 view：&amp;'a [i32]</text><text x="240" y="252">借自 source，讀到 2 項</text>
+    <path d="M240 269V325" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="25" y="338" width="430" height="85" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <text x="240" y="372">借用結束，再 push 40</text><text x="240" y="406">同一 Vec：[80, 120, 40]</text>
+    <path d="M240 423V479" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="25" y="492" width="430" height="75" rx="12" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+    <text x="240" y="522">下一次 view：&amp;'b [i32]</text><text x="240" y="554">借自 source，讀到 3 項</text>
+  </g>
+</svg>

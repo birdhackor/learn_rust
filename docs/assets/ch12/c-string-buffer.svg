@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="550" viewBox="0 0 390 550" role="img" aria-labelledby="title desc">
+  <title id="title">C 字串的終止零與一般 buffer 的零</title>
+  <desc id="desc">word 有 R、u、s、t 和零五個 char。strlen 讀到有效終止零，回傳不計入零的長度四；上方箭頭標計入長度的內容範圍，sizeof word 得到五。bytes 的三個元素是 10、0、20；明確的 len 三讓掃描涵蓋三個元素，零仍在範圍裡，非零共二項。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#34495e"/></marker>
+  </defs>
+  <rect width="390" height="550" rx="12" fill="#f5f8fc"/>
+  <g font-family="sans-serif" font-size="24" fill="#172c44">
+    <text x="24" y="40">word：字串 array</text>
+    <g stroke="#486989" stroke-width="2" fill="#e4eef9">
+      <rect x="24" y="66" width="65" height="64"/><rect x="89" y="66" width="65" height="64"/><rect x="154" y="66" width="65" height="64"/><rect x="219" y="66" width="65" height="64"/>
+      <rect x="284" y="66" width="65" height="64" fill="#fce8d4"/>
+    </g>
+    <g text-anchor="middle" font-size="28"><text x="56" y="107">R</text><text x="121" y="107">u</text><text x="186" y="107">s</text><text x="251" y="107">t</text><text x="316" y="107">0</text></g>
+    <path d="M24 147H276" fill="none" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="24" y="184">strlen(word) = 4</text>
+    <text x="24" y="216">讀到終止零；長度不計零</text>
+    <text x="24" y="253">sizeof word = 5 bytes</text>
+    <text x="24" y="318">bytes：一般 buffer</text>
+    <g stroke="#347359" stroke-width="2" fill="#e0f1e7">
+      <rect x="24" y="345" width="98" height="64"/><rect x="122" y="345" width="98" height="64"/><rect x="220" y="345" width="98" height="64"/>
+    </g>
+    <g text-anchor="middle" font-size="28"><text x="73" y="386">10</text><text x="171" y="386">0</text><text x="269" y="386">20</text></g>
+    <path d="M24 430H310" fill="none" stroke="#34495e" stroke-width="2.5" marker-end="url(#arrow)"/>
+    <text x="24" y="468">len = 3，走訪三項</text>
+    <text x="24" y="501">零值仍是資料，非零共 2 項</text>
+  </g>
+</svg>

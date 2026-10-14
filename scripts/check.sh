@@ -11,3 +11,4 @@ cargo clippy --workspace --all-targets --locked -- -D warnings
 cargo test --workspace --all-targets --locked
 cargo test --workspace --doc --locked
 uv run --locked --python "3.14+gil" python scripts/check-fixtures.py
+uv run --locked --python "3.14+gil" python scripts/check-c-examples.py

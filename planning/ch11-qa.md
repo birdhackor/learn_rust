@@ -72,3 +72,7 @@ Root已全文核所有七original、四followup及此彙整；readme局部通過
 候選release11-candidate只含1–11章79小節及首頁，84個本章學生檔在current／INDEX／candidate皆精確相符v16；七original四followup SHA仍相符。Cargo只有已審members及候選獨立lock；C checker與Miri CI尚未納入。首次全check因磁碟ENOSPC停止，失敗raw log保留；只清可重建的舊候選target後重新check。第二次退出0：strict／fmt／all-target Clippy／all-target與doc tests、120個指定故意失敗fixture均通過。359個target結果、198個通過tests、零失敗（不以數量證真人學習）。
 
 公開部署與遠端HTTP仍待完成。
+
+## 公開發布確認
+
+已提交並push 36df1675673e5c2c743524699f6071e15555c803（本機branch work，明確HEAD→remote main）。Actions [38655225227](https://github.com/birdhackor/learn_rust/actions/runs/38655225227) check／deploy及全run completed success。Root實際HTTP首頁＋79小節共80筆皆200/H1精確，9SVG SHA逐項符合v16，12.1仍404。release11-live-http.json保留逐頁資料；複用helper最初commit/run兩metadata欄仍是第10章，後以本次actual successful run校正，HTTP量測不改或冒稱重跑。

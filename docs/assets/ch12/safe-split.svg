@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="585" viewBox="0 0 390 585" role="img" aria-labelledby="title desc">
+ <title id="title">同一份i32數列在mid2借出兩個不重疊區段</title>
+ <desc id="desc">原數列是80、120、40、60。mid為2，left借索引0到2，不含2；right借2到4，不含4。箭頭指認各自借到的原元素，不複製資料。left的第一項加20、right的第一項加5；兩段借用結束後，原數列是100、120、45、60。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="585" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a" text-anchor="middle">
+  <text x="195" y="34" font-weight="bold">同一份數列，切成兩段</text>
+  <text x="195" y="72">mid = 2，原長度 = 4</text>
+  <rect x="20" y="91" width="175" height="65" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <rect x="195" y="91" width="175" height="65" rx="8" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <path d="M107 91V156M282 91V156" stroke="#94a3b8" stroke-width="1"/>
+  <text x="64" y="131">80</text><text x="151" y="131">120</text><text x="239" y="131">40</text><text x="326" y="131">60</text>
+  <text x="64" y="186">0</text><text x="151" y="186">1</text><text x="239" y="186">2</text><text x="326" y="186">3</text>
+  <path d="M107 199V241" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M282 199V241" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <rect x="20" y="253" width="165" height="127" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <rect x="205" y="253" width="165" height="127" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="102" y="287" font-weight="bold">left：0..2</text><text x="102" y="325">借到80、120</text><text x="102" y="363">left[0] += 20</text>
+  <text x="287" y="287" font-weight="bold">right：2..4</text><text x="287" y="325">借到40、60</text><text x="287" y="363">right[0] += 5</text>
+  <text x="195" y="417">借用結束，讀回原數列</text>
+  <rect x="20" y="439" width="350" height="65" rx="8" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <path d="M107 439V504M195 439V504M282 439V504" stroke="#94a3b8" stroke-width="1"/>
+  <text x="64" y="481">100</text><text x="151" y="481">120</text><text x="239" y="481">45</text><text x="326" y="481">60</text>
+  <text x="195" y="544">箭頭：借到哪段原元素</text>
+  <text x="195" y="574">兩段沒有共同元素，不clone</text>
+ </g>
+</svg>

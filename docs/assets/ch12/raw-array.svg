@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="440" viewBox="0 0 500 440" role="img" aria-labelledby="title desc">
+  <title id="title">同一array內的pointer與one-past端點</title>
+  <desc id="desc">三項i32在同一allocation中。start指第一項起點，add1指第二項，add3指allocation端點而不是第四項。第二項由120改成140。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10Z" fill="#334155"/></marker></defs>
+  <rect width="500" height="440" rx="16" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="24" fill="#0f172a" text-anchor="middle">
+    <text x="250" y="42">同一 allocation：三個 i32</text>
+    <text x="110" y="85">索引 0</text><text x="230" y="85">索引 1</text><text x="350" y="85">索引 2</text>
+    <rect x="50" y="110" width="120" height="90" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <rect x="170" y="110" width="120" height="90" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <rect x="290" y="110" width="120" height="90" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="110" y="163">80</text><text x="230" y="163">120 → 140</text><text x="350" y="163">40</text>
+    <path d="M50 290V212" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M170 290V212" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M410 290V212" fill="none" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M410 95V220" stroke="#334155" stroke-width="2" stroke-dasharray="7 6"/>
+    <text x="50" y="321">start</text><text x="170" y="321">add(1)</text><text x="410" y="321">add(3)</text>
+    <text x="250" y="378">add(3) 是 one-past 端點</text><text x="250" y="414">可形成，不能 dereference</text>
+  </g>
+</svg>
