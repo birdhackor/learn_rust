@@ -1,0 +1,56 @@
+[project]
+site_name = "Rust 教學"
+site_description = "從第一個程式開始，學習 Rust 的語法、所有權與借用。"
+docs_dir = "docs"
+site_dir = "site"
+strict = true
+# 確定發布位置後，再加入 site_url、repo_url 和 edit_uri。
+nav = [
+  { "首頁" = "index.md" },
+  { "開始學習" = [
+    { "開發環境" = "getting-started/installation.md" },
+    { "第一個 Rust 程式" = "getting-started/hello-world.md" },
+  ] },
+  { "語法基礎" = [
+    { "學習路線" = "fundamentals/index.md" },
+    { "變數與型別" = "fundamentals/variables.md" },
+  ] },
+  { "所有權與借用" = "ownership/index.md" },
+]
+
+[project.theme]
+language = "zh-Hant"
+font = false
+features = [
+  "content.code.copy",
+  "content.code.annotate",
+  "navigation.footer",
+  "navigation.indexes",
+  "navigation.sections",
+  "navigation.top",
+  "search.highlight",
+]
+
+[[project.theme.palette]]
+scheme = "default"
+toggle.icon = "lucide/sun"
+toggle.name = "切換至深色模式"
+
+[[project.theme.palette]]
+scheme = "slate"
+toggle.icon = "lucide/moon"
+toggle.name = "切換至淺色模式"
+
+[project.markdown_extensions]
+admonition = {}
+attr_list = {}
+pymdownx.details = {}
+pymdownx.highlight.anchor_linenums = true
+pymdownx.highlight.line_spans = "__span"
+pymdownx.highlight.pygments_lang_class = true
+pymdownx.inlinehilite = {}
+pymdownx.snippets.base_path = ["."]
+pymdownx.snippets.check_paths = true
+pymdownx.superfences = {}
+pymdownx.tabbed.alternate_style = true
+toc.permalink = true
