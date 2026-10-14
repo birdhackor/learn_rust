@@ -14,6 +14,8 @@ fundamentals/**
 ownership/**
 chapters/**
 !chapters/01-*.md
+!chapters/02-*.md
+!chapters/03-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -28,6 +30,22 @@ nav = [
     { "1.8 重複工作，用迴圈累積答案" = "chapters/01-08-loops.md" },
     { "1.9 把計算工作放進 library" = "chapters/01-09-modules.md" },
     { "1.10 用測試與工具回饋確認程式" = "chapters/01-10-tests.md" },
+  ] },
+  { "第 2 章：struct、ownership 與 reference" = [
+    { "2.1 用 struct 為資料的角色命名" = "chapters/02-01-structs.md" },
+    { "2.2 值由誰管理：ownership 與 move" = "chapters/02-02-ownership.md" },
+    { "2.3 用 reference 借用資料" = "chapters/02-03-references.md" },
+    { "2.4 借用用到哪裡：lifetime 與 scope" = "chapters/02-04-borrowing.md" },
+    { "2.5 用 method 表達資料能做的工作" = "chapters/02-05-methods.md" },
+    { "2.6 用 slice 借用一段數列" = "chapters/02-06-slices.md" },
+  ] },
+  { "第 3 章：enum、泛型、文字與 Vec" = [
+    { "3.1 用 enum 表示一筆資料的不同情況" = "chapters/03-01-enums.md" },
+    { "3.2 把缺值與失敗留在結果中" = "chapters/03-02-option-result.md" },
+    { "3.3 泛型：保留資料形狀，替換其中型別" = "chapters/03-03-generics.md" },
+    { "3.4 擁有文字，或借用文字" = "chapters/03-04-strings.md" },
+    { "3.5 文字範圍：byte 不等於你看到的字" = "chapters/03-05-utf8.md" },
+    { "3.6 用 Vec 整理長度可變的清單" = "chapters/03-06-vectors.md" },
   ] },
 ]
 

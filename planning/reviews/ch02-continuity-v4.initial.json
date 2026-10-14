@@ -1,0 +1,20 @@
+{
+  "review": "ch02-continuity-v4 independent initial",
+  "reviewer": "chapter07_cli",
+  "phase": "initial sealed before cross-review",
+  "source_manifest_sha256": "9a20a66ce1cd36f9c61e533d1621a43f6e0808fd1e67b639db8218f04297e263",
+  "prerequisite_manifest_sha256": "2ffad984aceb0e9fd822e5f0bb01a6958b6f063319a576e229df2da68c09e2cd",
+  "report_sha256": "c1029c1cf3e6ab2f0461f88559aa4e925113ab414eb53cdc992ee903c3975f9f",
+  "pages": 6,
+  "reading_units": 31,
+  "rust_sources": 22,
+  "necessary_findings": 0,
+  "optional_findings": [
+    "O1 mutable parameter placement in 2.2 exercise"
+  ],
+  "read_other_reviews": false,
+  "changed_tutorial": false,
+  "reran_rust_suite": false,
+  "visual_scope": "Four SVGs with nearby prose plus 2.1 entrance and 2.5 receiver table; desktop 1280x800/mobile 390x844",
+  "visual_artifacts": "/workspace/work/ch02-continuity-v4-visuals"
+}

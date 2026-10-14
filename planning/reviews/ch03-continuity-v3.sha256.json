@@ -1,0 +1,807 @@
+{
+  "review_file": "planning/reviews/ch03-continuity-v3.md",
+  "review_sha256": "194ceda63552edf5d768bbb9f2e02e906114d5cc88f142a4d324f5423611b653",
+  "reviewer": "chapter02_ownership",
+  "date": "2026-10-14",
+  "phase": "independent_initial_before_cross",
+  "blind_first_read": false,
+  "scope": {
+    "ch03-prerequisite-v3": {
+      "manifest_sha256": "0f2135203a1d97836c10810406ce3635a189d33915d91929439430f7edf491c8",
+      "pages": [
+        {
+          "path": "docs/chapters/03-01-enums.md",
+          "sha256": "3625bc0d155bdb29ad3ba86d9f08dc4d77eccda912441ff3d710bdf0f048f7b0"
+        },
+        {
+          "path": "docs/chapters/03-02-option-result.md",
+          "sha256": "69be43a5990adcfeb0f0149f5b103fee399b95b56cd81b718e85d9f05b326a9c"
+        },
+        {
+          "path": "docs/chapters/03-03-generics.md",
+          "sha256": "5925b5f2403f43ae85523b90b0a0e325c1ba43a48172131cb7bd146215b9cc09"
+        },
+        {
+          "path": "docs/chapters/03-04-strings.md",
+          "sha256": "b1bd60def6572f99abb73d340652f2cae454faf4f34c66c58bddafaf6cbfac89"
+        },
+        {
+          "path": "docs/chapters/03-05-utf8.md",
+          "sha256": "3df21c847c3b5b4e551b28fd7369fc168ecd7e36167f8f7622d28f246c96d6f8"
+        },
+        {
+          "path": "docs/chapters/03-06-vectors.md",
+          "sha256": "28a913ef3bb55ef62212b56a9f93bf106d5e7174dd1908d9ffb16b68ade866f2"
+        }
+      ],
+      "chunks": [
+        {
+          "file": "001-001.md",
+          "page": "docs/chapters/03-01-enums.md",
+          "sha256": "e289c0355bde29d993f895228b9c0cf1dc84aaebb571a7ebb1f7856b1cee4fff"
+        },
+        {
+          "file": "001-002.md",
+          "page": "docs/chapters/03-01-enums.md",
+          "sha256": "ace8de888b01fe0600ed4f4e821da66974e1e496a45f4cef601bf29ac917b97e"
+        },
+        {
+          "file": "001-003.md",
+          "page": "docs/chapters/03-01-enums.md",
+          "sha256": "2204b86a6afb03683555dd52cf2485e414abb2561d3ae7ec0ca2548176b95128"
+        },
+        {
+          "file": "001-004.md",
+          "page": "docs/chapters/03-01-enums.md",
+          "sha256": "8caf992adec477fc17a2b3c0ea2df6abdb3655284da9c79c11fc7d4dd81fee68"
+        },
+        {
+          "file": "001-005.md",
+          "page": "docs/chapters/03-01-enums.md",
+          "sha256": "ebb8057dd18ba8df281aea1bcce89f9aeca1036edce55a0c5ff92208e1817946"
+        },
+        {
+          "file": "001-006.md",
+          "page": "docs/chapters/03-01-enums.md",
+          "sha256": "31f69fd0b92c39dc0fa1951a428d2bd39c6d0611add8c031295d039e5b080b86"
+        },
+        {
+          "file": "002-001.md",
+          "page": "docs/chapters/03-02-option-result.md",
+          "sha256": "b149a94427c82ceaa61caac3daf942a96593e01258d896bc88f9813538e55a66"
+        },
+        {
+          "file": "002-002.md",
+          "page": "docs/chapters/03-02-option-result.md",
+          "sha256": "52032f96a5b4364fd8c73821de5f829f0de62f8f16a5e7ff9513f9be0806714e"
+        },
+        {
+          "file": "002-003.md",
+          "page": "docs/chapters/03-02-option-result.md",
+          "sha256": "7e1693b568b99958742b1bdd1bedd6994f26896729f1ac1f95f1f7694f92145c"
+        },
+        {
+          "file": "002-004.md",
+          "page": "docs/chapters/03-02-option-result.md",
+          "sha256": "7fd17a2274138123e9c8241d6c376ef4fd0cf6fa4126870e7773601bc66535ef"
+        },
+        {
+          "file": "002-005.md",
+          "page": "docs/chapters/03-02-option-result.md",
+          "sha256": "99ac6e6741fbe37c98441a3cf50e4b91b248f9f845df3ca9be8398844fb220bd"
+        },
+        {
+          "file": "003-001.md",
+          "page": "docs/chapters/03-03-generics.md",
+          "sha256": "77ae574ccd666231889380ca2bb8abc88b62c8e485634f84aafdaf17dc77bf93"
+        },
+        {
+          "file": "003-002.md",
+          "page": "docs/chapters/03-03-generics.md",
+          "sha256": "639d67c4974d864e644b45060877d539f4574d7afac6208c692fa61c2450193a"
+        },
+        {
+          "file": "003-003.md",
+          "page": "docs/chapters/03-03-generics.md",
+          "sha256": "128f6a5ee5ba23b9cf20151921da01daf5441fc16debfd1cfc25ef70b52ccff6"
+        },
+        {
+          "file": "003-004.md",
+          "page": "docs/chapters/03-03-generics.md",
+          "sha256": "689a589a02dd5a86ef1bc8a7ae0f9b4736f7cdc4f884c2890055b57383b71e4f"
+        },
+        {
+          "file": "003-005.md",
+          "page": "docs/chapters/03-03-generics.md",
+          "sha256": "9f8700d73207cecfbc30743839f2a403dd9b3046add04c3704743ba07e71c42f"
+        },
+        {
+          "file": "003-006.md",
+          "page": "docs/chapters/03-03-generics.md",
+          "sha256": "6b935f0dc7c12e53858b1ca231d0f79a85d9a5ca2558786692f39b497dab5ae8"
+        },
+        {
+          "file": "004-001.md",
+          "page": "docs/chapters/03-04-strings.md",
+          "sha256": "ae1d3fdea12cf49ba147b716f10ff6077ebc92211928345339b80eeb7442009c"
+        },
+        {
+          "file": "004-002.md",
+          "page": "docs/chapters/03-04-strings.md",
+          "sha256": "024e9fcbb78f61673a24a41bd79b202ed99b3a2c261c8f7d15614bba04a61c33"
+        },
+        {
+          "file": "004-003.md",
+          "page": "docs/chapters/03-04-strings.md",
+          "sha256": "17aaa2a55fcf99040a1d0b68caf33c6ed134f55598b06b8cfdd7f26182a4c2c4"
+        },
+        {
+          "file": "004-004.md",
+          "page": "docs/chapters/03-04-strings.md",
+          "sha256": "970f2ecdcc13f42f7a879c27c2fe6a9f9002ebc613ff6f65db2f17900495d4a9"
+        },
+        {
+          "file": "004-005.md",
+          "page": "docs/chapters/03-04-strings.md",
+          "sha256": "65323eb67809a08749982a61d9dcfdb86936633fd86bab12f4df0100a3686160"
+        },
+        {
+          "file": "005-001.md",
+          "page": "docs/chapters/03-05-utf8.md",
+          "sha256": "e1d67b68cbbb49b5a7089eb4a89506081a00f4b1a758a319b4cdb10a344ff343"
+        },
+        {
+          "file": "005-002.md",
+          "page": "docs/chapters/03-05-utf8.md",
+          "sha256": "5376e25f97d81d19591ff1ac533755696618bf90d4de06ac746383db8cbea578"
+        },
+        {
+          "file": "005-003.md",
+          "page": "docs/chapters/03-05-utf8.md",
+          "sha256": "665835fd3119ac1eb95d213070b7fc6736ad943432a6fb9156a5aff1710e7139"
+        },
+        {
+          "file": "005-004.md",
+          "page": "docs/chapters/03-05-utf8.md",
+          "sha256": "82e37cb98ee0158125b37ee383e4a93bb8a8283e7699c06ee536c8fec3679121"
+        },
+        {
+          "file": "005-005.md",
+          "page": "docs/chapters/03-05-utf8.md",
+          "sha256": "5eb2f2f9b44dece809cb6a3d0984e5d2fcec11df87c7a90f5e4dfd2924b61f51"
+        },
+        {
+          "file": "006-001.md",
+          "page": "docs/chapters/03-06-vectors.md",
+          "sha256": "d0a7ef65ebb5958b958b243c8313d70e0f1d987888230687e90654c312473355"
+        },
+        {
+          "file": "006-002.md",
+          "page": "docs/chapters/03-06-vectors.md",
+          "sha256": "f670973dc13d9ed7f0b4e08b1b3668d1684da2f8dca44603783309247fda27ac"
+        },
+        {
+          "file": "006-003.md",
+          "page": "docs/chapters/03-06-vectors.md",
+          "sha256": "5a864d8353b41ac454aa25e9e943a926e99db05a6afdadf73ba2783abf537fc2"
+        },
+        {
+          "file": "006-004.md",
+          "page": "docs/chapters/03-06-vectors.md",
+          "sha256": "a38c4861b4e7c0c83db9bb722c63d2c48dc756192f086d0eb34a2138cf12bdc0"
+        },
+        {
+          "file": "006-005.md",
+          "page": "docs/chapters/03-06-vectors.md",
+          "sha256": "7b78fd9021377a9e507f233796ff67f2ccc5bef94eb142682da6b8961f714810"
+        }
+      ],
+      "sources": {
+        "examples/ch03-data/src/main.rs": "4af23783f4f404e11f3d2197154b40dab8000cc5c4e181f2d8f9e220dae8c4c8",
+        "examples/ch03-data/fixtures/compile-fail/missing_variant.rs": "aed86bc618a2946ccc5ffbac4b0e1dd7eb047caa7d672c4f8d636fcdf10e575b",
+        "examples/ch03-data/examples/borrow_patterns.rs": "f8cbb8e4c67abe68323700efa159419b25003f0a366d885242beaa1be70b1f1d",
+        "examples/ch03-data/examples/branch_patterns.rs": "2bab5e72c4ae0bb7670c396744e7edbf5b3675a1ec86e4b6d1aeb6fd48e0381b",
+        "examples/ch03-data/examples/optional_result.rs": "5c911d434b46c787019f1243298fa368a9a8ae14824e8a878055d09072dcdc77",
+        "examples/ch03-data/examples/generic_holder.rs": "be44a4b9144f699b8648b85d84113467bf2f65e4bf5be410f6e1497206079785",
+        "examples/ch03-data/fixtures/compile-fail/generic_same_type.rs": "b6473382a600431ef5f50f97fdcd4e25974b7ea4b61ac59a728701e431d97645",
+        "examples/ch03-data/examples/generic_results.rs": "8a2c4d6cbe27d3bb16992ab5518e0fdcd7734737c5d826a098d46042bec34940",
+        "examples/ch03-data/examples/strings.rs": "9e5f620fad843577d437c0da8e7cccd1b9597c55310e172dd465796ab6218b8e",
+        "examples/ch03-data/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+        "examples/ch03-data/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+        "docs/assets/ch03/string-view.svg": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27",
+        "examples/ch03-data/examples/utf8.rs": "90ea461e09c93a01353e0e496f0269480c61d4175140539db581c934bb6a4a9f",
+        "examples/ch03-data/fixtures/runtime-fail/utf8_boundary.rs": "d5f242c03f3224b79710370b43627183dbfed717ff2f9f72e77789410f5ca7de",
+        "docs/assets/ch03/utf8-boundaries.svg": "bf40798d5647ee4d3082b0efbfb769540c90751792d1796593e022c5129806fb",
+        "examples/ch03-data/examples/vector_operations.rs": "f067cdeddc8115c76238a5ab5a9dfa0f492c4e2b3c42585cf7714702db29c995",
+        "examples/ch03-data/fixtures/runtime-fail/vector_remove_bounds.rs": "cd28adcc54f2ce3cd6968d9c92a0bf06d2979e3f900292be8f3ec11687b23bbc",
+        "examples/ch03-data/examples/vector_ownership.rs": "4ea0a387a754f80d5cdb360089d80f1ad7594625093115921da491ec3a8dea1b",
+        "examples/ch03-data/fixtures/compile-fail/vector_borrow_overlap.rs": "a31d54b4fab5523e18ce8b971dedf6f68f8660994123e07560022ad8e6993c17",
+        "examples/ch03-data/src/list.rs": "9f21f43e435eaf3dadc1533e8dcbcb0a266fb232da46a991b756f16b6627e218",
+        "examples/ch03-data/examples/list_demo.rs": "f01f5c5d003ab99f99e4ce6bcf7cdcd190f98cafed97ba2f463118bde6affbce",
+        "examples/ch03-data/Cargo.toml": "ad8660fd549f0764df96f4f19d1eed21e959f4e97f9b4fa7a0e8ff9b329a783c",
+        "examples/ch03-data/examples/enum_solution.rs": "82e6d61761ab4d5bd84afc88a94aed4a58fe378e5db8ae7844229e4e896e5c01",
+        "examples/ch03-data/examples/generic_solution.rs": "c16130aa77f8f273f961600897384c764f5383d81071f4dc17a260d548a1852a",
+        "examples/ch03-data/examples/list_solution.rs": "9be46e7d9a8a371d95b0c1581a7e177435570034b7b165490f593daf7188f954",
+        "examples/ch03-data/examples/optional_solution.rs": "a5793a2c7a0b13f760a30ce6ef865e763ca5365e73931f984e48ef34981832e1",
+        "examples/ch03-data/examples/strings_solution.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+        "examples/ch03-data/examples/utf8_solution.rs": "42d296aaef53f4fb44e3c618a19ebb31fb3eea2ed71b58acf077a1d419f259eb",
+        "examples/ch03-data/fixtures/compile-fail/generic_same_type.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+        "examples/ch03-data/fixtures/compile-fail/missing_variant.expected": "388bdc7a4e6e8182c29781d55fae41a770e567dd5d0d81056e6b136176a86712",
+        "examples/ch03-data/fixtures/compile-fail/string_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/ch03-data/fixtures/compile-fail/string_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+        "examples/ch03-data/fixtures/compile-fail/vector_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+        "examples/ch03-data/fixtures/runtime-fail/utf8_boundary.expected": "d2f211c074a9491ae61c68371ce1f9c3d2e1922a27095a81196fcc5a5a6a4ae2",
+        "examples/ch03-data/fixtures/runtime-fail/vector_remove_bounds.expected": "2f8028eb9e12cc60cca8d6b0284df4c9ae179584d49830ce4fe6287160837eef",
+        "examples/ch03-data/src/lib.rs": "200ca1c1f944ed3a18eef48f0806c59a79d5c1816ca7b33ef54fe2a7256f6c49",
+        "examples/ch03-data/src/text.rs": "92681ef26e6ee7c8100315a46d6a5f7bd56491a368fbc8beaba2b34995252568"
+      }
+    },
+    "ch01-complete-source-v8": {
+      "manifest_sha256": "2ffad984aceb0e9fd822e5f0bb01a6958b6f063319a576e229df2da68c09e2cd",
+      "pages": [
+        {
+          "path": "docs/chapters/01-01-start.md",
+          "sha256": "7a26f64158739ff7706feee72ca8b313619dc6334bb462e92c56e0c9bf80346c"
+        },
+        {
+          "path": "docs/chapters/01-02-first-program.md",
+          "sha256": "5d3d0e44d6b3145f9799e0eb517aa1adcf88c789920a59811e0a8cfe040f63b7"
+        },
+        {
+          "path": "docs/chapters/01-03-workspace.md",
+          "sha256": "354a8920079a084d25ca01be8215dd16daeb28f919e9a73a7b3b5d16768265a8"
+        },
+        {
+          "path": "docs/chapters/01-04-variables.md",
+          "sha256": "1aa44d3ac6ef7cbef9e293103e532e1ebd0dc10d955047d76719b27a4bb7df1e"
+        },
+        {
+          "path": "docs/chapters/01-05-functions.md",
+          "sha256": "53fc7b64124b3b66c2811db4bb4192b16a03b6ebb45c3d5b28b004cc247b93db"
+        },
+        {
+          "path": "docs/chapters/01-06-conditions.md",
+          "sha256": "65c92ad076a21e57e7897654c45f217e6c37c4796e45eb5e2196278058cf9afd"
+        },
+        {
+          "path": "docs/chapters/01-07-collections.md",
+          "sha256": "c1b5d1abb88e1e013b51b28ed113a02b950b2a219ab65858dfe83bf8950d489d"
+        },
+        {
+          "path": "docs/chapters/01-08-loops.md",
+          "sha256": "de7bf20a7d01f5868576c75c5dbc29c5bf978dd2d5e1db255d021b9f00087f52"
+        },
+        {
+          "path": "docs/chapters/01-09-modules.md",
+          "sha256": "5396bbb3e46d1acf7da4e6e8d0f54382ab5d9d6bc561d59a42e65e4492ffe8c5"
+        },
+        {
+          "path": "docs/chapters/01-10-tests.md",
+          "sha256": "af33fb034d72ad677b548092d4770bd2da8e30c6afc25ea9c59cbe0e4dd0c85e"
+        }
+      ],
+      "chunks": [
+        {
+          "file": "001-001.md",
+          "page": "docs/chapters/01-01-start.md",
+          "sha256": "2354a07217603840eaeed6bda2a7d5266e44538c80ad659a208557f3ea5acef6"
+        },
+        {
+          "file": "001-002.md",
+          "page": "docs/chapters/01-01-start.md",
+          "sha256": "a54695664a6c37e3d0a011532ead0463cf6c2b414b168730983f6802735aa963"
+        },
+        {
+          "file": "001-003.md",
+          "page": "docs/chapters/01-01-start.md",
+          "sha256": "2105b06e854761011c03535bd493627921506ed62cabe42f635b728ed0df3f72"
+        },
+        {
+          "file": "001-004.md",
+          "page": "docs/chapters/01-01-start.md",
+          "sha256": "b64a9c6a2d0aaa5d5590d37eaadf16badc701dc53a318718dbd61e92fe9434da"
+        },
+        {
+          "file": "002-001.md",
+          "page": "docs/chapters/01-02-first-program.md",
+          "sha256": "2602060eee55888b3d8d90d5eb20d2975e9df6506253571787d1e8dd84e0c418"
+        },
+        {
+          "file": "002-002.md",
+          "page": "docs/chapters/01-02-first-program.md",
+          "sha256": "e2ecb3ed3284fd2e630acebad590803dcada759ff1ef9d32098a4f6dae1fb696"
+        },
+        {
+          "file": "002-003.md",
+          "page": "docs/chapters/01-02-first-program.md",
+          "sha256": "6a559ffbeb667f8017ab46e49f73b46fa2cb371ebc43ad16c6f77bea2345f7b3"
+        },
+        {
+          "file": "002-004.md",
+          "page": "docs/chapters/01-02-first-program.md",
+          "sha256": "94a67b61761a4c0768b2f901a8346605c3af74d9884dba54c93ba4167f13dcf4"
+        },
+        {
+          "file": "002-005.md",
+          "page": "docs/chapters/01-02-first-program.md",
+          "sha256": "d97827a7aabbbcc8c8e3666a3ae357fac0e9c4e6af250630cce3db0b906a8bbd"
+        },
+        {
+          "file": "003-001.md",
+          "page": "docs/chapters/01-03-workspace.md",
+          "sha256": "f6ed7f89d8411686b7f10de114a85c8f89c6c1a67188b926993264bbac26c557"
+        },
+        {
+          "file": "003-002.md",
+          "page": "docs/chapters/01-03-workspace.md",
+          "sha256": "4d40fe31ccd229d8f666f291838a07f9c8443b5d745e517933a1a243f2ddc748"
+        },
+        {
+          "file": "003-003.md",
+          "page": "docs/chapters/01-03-workspace.md",
+          "sha256": "5fdcef4c47d07842764ceb93842b494de9095145cb8e9a080258a5b1d31c5db2"
+        },
+        {
+          "file": "003-004.md",
+          "page": "docs/chapters/01-03-workspace.md",
+          "sha256": "725b3b0f7725a14fa0c616390ce13f6d4f04530c1635816820fa5e7ba7e022ca"
+        },
+        {
+          "file": "003-005.md",
+          "page": "docs/chapters/01-03-workspace.md",
+          "sha256": "b4352ad43b8cf3272dcdd2d8668ee83cdb511b370fff82d7b3e27e1e06a3c8e2"
+        },
+        {
+          "file": "003-006.md",
+          "page": "docs/chapters/01-03-workspace.md",
+          "sha256": "1f0ad0bb4da3bf198215f9bc35e845ac2995a9ed213edab984aa9a6f90c5b119"
+        },
+        {
+          "file": "004-001.md",
+          "page": "docs/chapters/01-04-variables.md",
+          "sha256": "2e80c64bc5db9e1c94d30c1aebcf17d67fd0af1ca2b56563054bdf96f254ee43"
+        },
+        {
+          "file": "004-002.md",
+          "page": "docs/chapters/01-04-variables.md",
+          "sha256": "7c2fd01fb668757f7526b47f1ddb6076d93f733fc21e759f7bd06a7958a59218"
+        },
+        {
+          "file": "004-003.md",
+          "page": "docs/chapters/01-04-variables.md",
+          "sha256": "4606b46151903019bd71d44ce872aaa3b27365d4198efe05a25dfecf547f9fd1"
+        },
+        {
+          "file": "004-004.md",
+          "page": "docs/chapters/01-04-variables.md",
+          "sha256": "fbe27ded08295de01cd00549036ec1afbc4bd081d6161d62227458fd6598c829"
+        },
+        {
+          "file": "004-005.md",
+          "page": "docs/chapters/01-04-variables.md",
+          "sha256": "301b9b842e61236d2f6e5aabf3b78fb8cfc55f8b4bc287d0f09f6ce80169f0ff"
+        },
+        {
+          "file": "004-006.md",
+          "page": "docs/chapters/01-04-variables.md",
+          "sha256": "0cd4d19c7352ffc6ddce7e957044e822708d780499b8dfeb31a4e0280f6cc018"
+        },
+        {
+          "file": "005-001.md",
+          "page": "docs/chapters/01-05-functions.md",
+          "sha256": "277b3a34054b3d5e8fba64e11b1e42827e720bfdcf4c446ba0672fa55b8c4fae"
+        },
+        {
+          "file": "005-002.md",
+          "page": "docs/chapters/01-05-functions.md",
+          "sha256": "3b5c416eedee75eb862ca6fc923e953b04fd779e20896ef4afca7c7c9523e79a"
+        },
+        {
+          "file": "005-003.md",
+          "page": "docs/chapters/01-05-functions.md",
+          "sha256": "23aad8290ed7fccae663d8d895b54fdc52980b9fe9bc037cb187193e3768ce96"
+        },
+        {
+          "file": "005-004.md",
+          "page": "docs/chapters/01-05-functions.md",
+          "sha256": "4e6a026c413231b6ba5fe4273d357e3aedd4ebe6ec10a8f7aadf33adf9fcbeaa"
+        },
+        {
+          "file": "005-005.md",
+          "page": "docs/chapters/01-05-functions.md",
+          "sha256": "e5272a342f02de6020a7436065498a3e3e08c2ffa9ed857509e1f678cc8c62d7"
+        },
+        {
+          "file": "006-001.md",
+          "page": "docs/chapters/01-06-conditions.md",
+          "sha256": "2260edf40c6906689fac49135d42ad0a800ba54386f20e04cfb31f223f27a2f9"
+        },
+        {
+          "file": "006-002.md",
+          "page": "docs/chapters/01-06-conditions.md",
+          "sha256": "ed9e3e9c0bd502e73e7a7a009ab428a0c2f6729000ba9b86d9f816d6a8e6660e"
+        },
+        {
+          "file": "006-003.md",
+          "page": "docs/chapters/01-06-conditions.md",
+          "sha256": "6c1b3c4cd36e4ad94adaf87a831e6352d6ca3a3bc23ee7bf54f40d067130327b"
+        },
+        {
+          "file": "006-004.md",
+          "page": "docs/chapters/01-06-conditions.md",
+          "sha256": "7c9cab73bdc65e6065d6275617883fdc0b66fb3a98c443bd3379e4cb39e5b59e"
+        },
+        {
+          "file": "007-001.md",
+          "page": "docs/chapters/01-07-collections.md",
+          "sha256": "135040c4dabbdc1cdfca3c88cb5e376014798a9a75a6e56f11f3a420e1e7ea66"
+        },
+        {
+          "file": "007-002.md",
+          "page": "docs/chapters/01-07-collections.md",
+          "sha256": "d0d2ffd816100a9ee5c45a1acec45b96b515cb6ba82d9d329d09b85869219252"
+        },
+        {
+          "file": "007-003.md",
+          "page": "docs/chapters/01-07-collections.md",
+          "sha256": "1ec4e123cf5509e276d934b6044b70e6c3162dfcbfeb2e69ab7051035dff0f7c"
+        },
+        {
+          "file": "007-004.md",
+          "page": "docs/chapters/01-07-collections.md",
+          "sha256": "e20f5a0875a336f52b812a487c8ffc85a08fa067c9acfb3293e14f81fbe733a2"
+        },
+        {
+          "file": "007-005.md",
+          "page": "docs/chapters/01-07-collections.md",
+          "sha256": "6e8356f3a11d532668849e0cdf1355f43141a6af1a9b6cf8fc33d7e4319114b9"
+        },
+        {
+          "file": "007-006.md",
+          "page": "docs/chapters/01-07-collections.md",
+          "sha256": "3ac4c01ab87b3df65069d4d5f44b6db4bf3291aeaaba67bf5dfb8c70b349ef73"
+        },
+        {
+          "file": "008-001.md",
+          "page": "docs/chapters/01-08-loops.md",
+          "sha256": "0a42e2fea7f3920d9a5dfd0749343381a0a811d30731fefe3cbab009dc558988"
+        },
+        {
+          "file": "008-002.md",
+          "page": "docs/chapters/01-08-loops.md",
+          "sha256": "22898cc0ab21f5ae6c011c3e6253eb22afeb10e781b3882c491d2ef67c692512"
+        },
+        {
+          "file": "008-003.md",
+          "page": "docs/chapters/01-08-loops.md",
+          "sha256": "39ac8a275a4b3739ad83dbd84be045e7d46f79adfe347e75a4f41fcdc9459530"
+        },
+        {
+          "file": "008-004.md",
+          "page": "docs/chapters/01-08-loops.md",
+          "sha256": "698cbacad3bf30173f1d170a94ea1d0a53c3d2d88c3ad80b8bacdf9849e8fb71"
+        },
+        {
+          "file": "008-005.md",
+          "page": "docs/chapters/01-08-loops.md",
+          "sha256": "f35511b1a8a61d55b010fe850955f24499714e6e48d7f0c4d4a5323107ce843f"
+        },
+        {
+          "file": "009-001.md",
+          "page": "docs/chapters/01-09-modules.md",
+          "sha256": "ab56690c8436926ed14c5ca50f544b50cee53687f6412bec4002647181d7c2d2"
+        },
+        {
+          "file": "009-002.md",
+          "page": "docs/chapters/01-09-modules.md",
+          "sha256": "844ce3f9a1f732cb5e4e530de05e9672b229d3181fac1785156663b442a4d11f"
+        },
+        {
+          "file": "009-003.md",
+          "page": "docs/chapters/01-09-modules.md",
+          "sha256": "9b1e54e21afb8423409f3488ce758c9bc98d86ad02118a2cffd84dd58e242828"
+        },
+        {
+          "file": "009-004.md",
+          "page": "docs/chapters/01-09-modules.md",
+          "sha256": "5cfa2a923a86140c6fc6a42e29ad20f1ec1676c3291d452d5ef491cb5a84fda1"
+        },
+        {
+          "file": "010-001.md",
+          "page": "docs/chapters/01-10-tests.md",
+          "sha256": "8bfcd3b6dde9be2504fdda7dbc29d0e17a4223c9e1de01f6b8c36ef712e3764d"
+        },
+        {
+          "file": "010-002.md",
+          "page": "docs/chapters/01-10-tests.md",
+          "sha256": "50e0feaa4a844bea551bc2b149e40ef320f754eb88fc43bd1f7be67cba8266a0"
+        },
+        {
+          "file": "010-003.md",
+          "page": "docs/chapters/01-10-tests.md",
+          "sha256": "8741fb04fb32a1e675b3bc3a232027543cf5d00a5de6860e12f7aaa3b18f7839"
+        },
+        {
+          "file": "010-004.md",
+          "page": "docs/chapters/01-10-tests.md",
+          "sha256": "b88d546e9740d11c4e57282f210e89238c0618478867a31e2ce34ad2c49d136e"
+        },
+        {
+          "file": "010-005.md",
+          "page": "docs/chapters/01-10-tests.md",
+          "sha256": "cc2a2db6fa0fb0b450fcf98038a465a73e45431d673d4a33837cd3c5de10309d"
+        }
+      ],
+      "sources": {
+        "examples/hello-world/src/main.rs": "0417da49d6287cfc46a7fbd206ce9b7d5a57496222247ed67e43e11f8e720deb",
+        "examples/hello-world/fixtures/standalone-manifest.toml": "4ced375c1536e61600639f2f407d1295e33097647c48cde7355e62bb9e3b7c75",
+        "examples/hello-world/fixtures/two-lines.rs": "5a5efafc4fb3309068a22f11074b4791e4ca963b799c5f52d2ac7779d8a1cf44",
+        "examples/hello-world/fixtures/workspace-excerpt.toml": "5e96bba762699cd7e6747cb99b3d193063729db0fbd44be20f4bcb7234068db3",
+        "examples/hello-world/Cargo.toml": "b5032553a5195bde32cbc6ff087d819e28dbab53624698348cb50333daa18868",
+        "examples/ch01-basics/examples/variables.rs": "917e7b36a78e4b8843f83e42b39e3d2b72738799e41075382c70f86afe421503",
+        "examples/ch01-basics/examples/arithmetic.rs": "3a0945a62b8a710ca9555f364fd7194e533a6f9da52f28d9dccd4cc71158894f",
+        "examples/ch01-basics/fixtures/compile-fail/immutable.rs": "0b45c4faf326a536edaa5060abe5af14ff28c1ffd8e23bbf893e1ae753724147",
+        "examples/ch01-basics/examples/mutability.rs": "4f1a4b899f1d46d1484d28090c18e4fb19693eee83f5d391932a00877df40570",
+        "examples/ch01-basics/examples/shadowing.rs": "aa60ad3c582221e4397272ef7e1c3d0160bfa17f27ce09e24bbaa407514259d5",
+        "examples/ch01-basics/examples/functions.rs": "b8410986c255610c9e81261e185684e9299aa0883a76df0cba9835a2a1a720ed",
+        "examples/ch01-basics/fixtures/compile-fail/return_semicolon.rs": "73741339aa9bd0ebf20dc767b32d551ab8e66b832f6e8ec352881d2ac4552054",
+        "examples/ch01-basics/examples/blocks.rs": "83558e4dfe0a8fd9ee2d5f9468d27ef27ce4f87f47c70ed2eded3096c1337204",
+        "examples/ch01-basics/examples/conditions.rs": "c8d838d800868a62ff42691b4d58c3bd77cb374bd46a34d208b38757cb50964a",
+        "examples/ch01-basics/examples/collections.rs": "d95a363dce909d514843867aa6b3cced7d4ae46d40917ea703f2f7f76702e24b",
+        "examples/ch01-basics/fixtures/runtime-fail/index_bounds.rs": "e3ee167a6a9388e72964b9af95f8f6f41a89ce7546acc1fa93abfdb6e0cf0cfa",
+        "examples/ch01-basics/examples/loops.rs": "7a4130d0315ee52a5c47347acdfe4abeb18332c6987d32b0d244094265ff4b3d",
+        "examples/ch01-basics/src/pricing.rs": "92ad468637b896e70892f7799528b29d51ca42e9946af83df23f4b15be327e0b",
+        "examples/ch01-basics/src/lib.rs": "aa8fc8a3b9f8f9804cbf13ebeb3a2ce5d6093f1fa8ab292fa373239fdec8d2ac",
+        "examples/ch01-basics/src/main.rs": "9345e9f795d58095bda14bf32d3d6b280ca7a8e9c7fa74413ec88e89aa9d533e",
+        "docs/assets/ch01/library-split.svg": "fe3fee8a89ddb9fe00103e5233d9b65dde63a9bbbdfc10f797f58cada7ea7fb2",
+        "examples/ch01-basics/examples/assertions_solution.rs": "b8abdd3efd66773d570f3ec5dcacaac3166b436f3e8facf353ef4e882659a608",
+        "examples/ch01-basics/Cargo.toml": "62d2d5aedcc6490008d508885ec69e392f4169dfc508d96fcee8a2ee07193cbe",
+        "examples/ch01-basics/examples/collections_solution.rs": "76bf721fa600763df5eaf6d195c0ba9e5eeabe1e60a61a92fd9ff35a53298f3f",
+        "examples/ch01-basics/examples/conditions_solution.rs": "6867fdc389e1e82e4dc36e0faab3a484265b74669092d7cdb44d01d8edd596ba",
+        "examples/ch01-basics/examples/functions_solution.rs": "893bf8d2be88708ea4d7eaf61a958cac28683f25db4f356cc3f9d71f0faf812f",
+        "examples/ch01-basics/examples/loops_solution.rs": "426c5b2cc17aab15885f4d0664296f1d05d0ae43901890bea07acfd2e1b0bec8",
+        "examples/ch01-basics/examples/modules_solution.rs": "248db414c8bfbbf4c622171c8ff341b2b442250106aa6e140d4e22a8bfc8eae1",
+        "examples/ch01-basics/examples/variables_solution.rs": "f01f03de46d460de88bf5bb805b609312af875fba5503d53f1d64f1232ecb662",
+        "examples/ch01-basics/fixtures/compile-fail/immutable.expected": "b2422730b38bdbbee63fc0ce08dbd099e69094e77794a601843fa5cd88c79509",
+        "examples/ch01-basics/fixtures/compile-fail/return_semicolon.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+        "examples/ch01-basics/fixtures/runtime-fail/index_bounds.expected": "9bc98e93f7bbaa33ec6e4a45dde7a4f391fb4fa34bf8231cb7c05d099692527b"
+      }
+    },
+    "ch02-complete-source-v4": {
+      "manifest_sha256": "9a20a66ce1cd36f9c61e533d1621a43f6e0808fd1e67b639db8218f04297e263",
+      "pages": [
+        {
+          "path": "docs/chapters/02-01-structs.md",
+          "sha256": "32943260e2d8433e55b3383a832af3c798c63fdd5cf673f8201ac62649d182e6"
+        },
+        {
+          "path": "docs/chapters/02-02-ownership.md",
+          "sha256": "23d559c06fcb310ec65794aacfff5927e4794998ee0e13cbbe1469bf7ef7d9a4"
+        },
+        {
+          "path": "docs/chapters/02-03-references.md",
+          "sha256": "6251c47d69a3548d4227709b19e868b842a2842a149827c0af88c8f20a679dc7"
+        },
+        {
+          "path": "docs/chapters/02-04-borrowing.md",
+          "sha256": "dec631755db9cb4f13b31c9ea231d199df465abf97dc16e4e7cd39886508f5c1"
+        },
+        {
+          "path": "docs/chapters/02-05-methods.md",
+          "sha256": "8d563e100137a6c273c9fc590de4bb303f94937e2c284ce7e62e2d02bf244162"
+        },
+        {
+          "path": "docs/chapters/02-06-slices.md",
+          "sha256": "ebddfcfb0994e31397a50ec77cd57f677e86447c30bd2ed6e1e85fa69dcb84e2"
+        }
+      ],
+      "chunks": [
+        {
+          "file": "001-001.md",
+          "page": "docs/chapters/02-01-structs.md",
+          "sha256": "89a5924cf2517b2a219e1286d3daa8eacc9097a232e08b769622e064c2933646"
+        },
+        {
+          "file": "001-002.md",
+          "page": "docs/chapters/02-01-structs.md",
+          "sha256": "d0ffc9bc546d3923137514e8bfc36ef6bf389b6b4f4c208f99d0904bbc4d590e"
+        },
+        {
+          "file": "001-003.md",
+          "page": "docs/chapters/02-01-structs.md",
+          "sha256": "53726207538402d4af2fe3d36b426d6914f088a2cdc9cc5f36604f7c343f56a4"
+        },
+        {
+          "file": "001-004.md",
+          "page": "docs/chapters/02-01-structs.md",
+          "sha256": "a2fa20224847c02e11ecaa002c87372803ec7b7621d39737789007250bc8cf8b"
+        },
+        {
+          "file": "002-001.md",
+          "page": "docs/chapters/02-02-ownership.md",
+          "sha256": "9d1fefd6df502eceec182f79da410c8a75dd2a0b120745cb1665e74a7cefa7b4"
+        },
+        {
+          "file": "002-002.md",
+          "page": "docs/chapters/02-02-ownership.md",
+          "sha256": "c2148d0b00044e9afaf378cc3084bf025e05c2317e541f2974ce21bd147fa373"
+        },
+        {
+          "file": "002-003.md",
+          "page": "docs/chapters/02-02-ownership.md",
+          "sha256": "7ea346b74823cd83e72f52a646e896a18256cd1b122cd1bfa25a55126216b387"
+        },
+        {
+          "file": "002-004.md",
+          "page": "docs/chapters/02-02-ownership.md",
+          "sha256": "be252581c22075342c00e33c6af1ea949fcfc6af8011446cd65ca9dc06114e41"
+        },
+        {
+          "file": "002-005.md",
+          "page": "docs/chapters/02-02-ownership.md",
+          "sha256": "2b2e4369af86c99ba80a5b83aaa8c962325fe61e27e9d423fd7a0878e0d493ea"
+        },
+        {
+          "file": "002-006.md",
+          "page": "docs/chapters/02-02-ownership.md",
+          "sha256": "e00380beab3129496dd7a7d0debdac6fabd75975f6047fccca0aa4a818c647a1"
+        },
+        {
+          "file": "003-001.md",
+          "page": "docs/chapters/02-03-references.md",
+          "sha256": "ac679d10366069ba23bc049aa80bb3913d66bef83777cc7895b5809533b351c0"
+        },
+        {
+          "file": "003-002.md",
+          "page": "docs/chapters/02-03-references.md",
+          "sha256": "209d8580632179201698a11361d4234e4f87f9beb39189356e23b02b713a150b"
+        },
+        {
+          "file": "003-003.md",
+          "page": "docs/chapters/02-03-references.md",
+          "sha256": "2835629310edda46664fe170b79daeebcdb7fdd25a979350e973176f8b4a06be"
+        },
+        {
+          "file": "003-004.md",
+          "page": "docs/chapters/02-03-references.md",
+          "sha256": "cfcffbc407a5f3360eeea26c515d03c7d03c228a1e0142363a86ec491657abb4"
+        },
+        {
+          "file": "003-005.md",
+          "page": "docs/chapters/02-03-references.md",
+          "sha256": "9c4c6216936226552cce060e5bd03d12744115e91ddc7c603e4780ec2fd1bd62"
+        },
+        {
+          "file": "004-001.md",
+          "page": "docs/chapters/02-04-borrowing.md",
+          "sha256": "9c4ce1f608468fb7b05c7bbff42fe1c86f30c40a3f9857101ce455fc2b7457aa"
+        },
+        {
+          "file": "004-002.md",
+          "page": "docs/chapters/02-04-borrowing.md",
+          "sha256": "2b0f6d3537bd0b44d8d7015d3b1eae6e4e1b6e6d2a65f22197e2e81b7b19b866"
+        },
+        {
+          "file": "004-003.md",
+          "page": "docs/chapters/02-04-borrowing.md",
+          "sha256": "fb9b9704a6b7898c0193f2efb73753c3b86ce94383680033cce0ff5d051989f0"
+        },
+        {
+          "file": "004-004.md",
+          "page": "docs/chapters/02-04-borrowing.md",
+          "sha256": "64c2f5bb274392e10dd6770cd0c7a60b38edfe7e597d09f1db04d2ed2ac92770"
+        },
+        {
+          "file": "004-005.md",
+          "page": "docs/chapters/02-04-borrowing.md",
+          "sha256": "49a2b14fce52a4189129fdc3c7bf2d0b1f23312050753efd4124966dd73eede4"
+        },
+        {
+          "file": "005-001.md",
+          "page": "docs/chapters/02-05-methods.md",
+          "sha256": "f0c4e9a390f061dde14003b9c3cf4be2913563b37e45c663425f13fc06723011"
+        },
+        {
+          "file": "005-002.md",
+          "page": "docs/chapters/02-05-methods.md",
+          "sha256": "3917075fd7a3f0f576b02d87927156d8135f9efa0c490ba62b7b942dd62cbd91"
+        },
+        {
+          "file": "005-003.md",
+          "page": "docs/chapters/02-05-methods.md",
+          "sha256": "91e1ad3c1282fb1782c52023dc18ff8ed077509247786c2527ea62c58e379c04"
+        },
+        {
+          "file": "005-004.md",
+          "page": "docs/chapters/02-05-methods.md",
+          "sha256": "d1b31f942cacc147fb7b0240840dfbedc10a4ee1e09491559921bae111ddf44e"
+        },
+        {
+          "file": "005-005.md",
+          "page": "docs/chapters/02-05-methods.md",
+          "sha256": "241d07867ab13c5bf023aaa1ffbc625deb9be3517f45ecc09b63e0ee1f3b8530"
+        },
+        {
+          "file": "005-006.md",
+          "page": "docs/chapters/02-05-methods.md",
+          "sha256": "d65f8988178494a4957ee233e4fb6e9d28d3cce2f24e9a878879c6cf804ba802"
+        },
+        {
+          "file": "006-001.md",
+          "page": "docs/chapters/02-06-slices.md",
+          "sha256": "a30b64cb5cebe1ce01207ff8b5330bed02ce80c67755425ee2ac1552c0e7f705"
+        },
+        {
+          "file": "006-002.md",
+          "page": "docs/chapters/02-06-slices.md",
+          "sha256": "fc06dbe2abd072002425038f0dbe1db7e0adb5bbee7c31e854e1aff1149671d5"
+        },
+        {
+          "file": "006-003.md",
+          "page": "docs/chapters/02-06-slices.md",
+          "sha256": "fcb57916a35e08297131888a3e399574e72687eb07ebf2f8e62642d439c9262a"
+        },
+        {
+          "file": "006-004.md",
+          "page": "docs/chapters/02-06-slices.md",
+          "sha256": "d8557cef57c1d4d2275d73daa0a1d4b1c73e6983c30df7301c9d0c25ca6a681a"
+        },
+        {
+          "file": "006-005.md",
+          "page": "docs/chapters/02-06-slices.md",
+          "sha256": "0a99cd2f0af41111536c27873c8f77b59d137d4073c0f9fd36390b409317ed77"
+        }
+      ],
+      "sources": {
+        "examples/ch02-ownership/src/main.rs": "5983c42493bbd8c20820e42714dca54d9189fef2476e25f40ec1e61891c8e39f",
+        "examples/ch02-ownership/examples/moves.rs": "2a4b234b3933fae20738511f7e773e3c7fcb6d23443312902e6617d4f6cc3b77",
+        "examples/ch02-ownership/fixtures/compile-fail/use_after_move.rs": "dbc4227dfe470236aa29e846360ad749be19060390d708343a39ebea03d931be",
+        "docs/assets/ch02/move-copy.svg": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e",
+        "examples/ch02-ownership/examples/shared_references.rs": "19909db833fc7c50686e2e3892e20bd748b9f4c40ccff5938d07e52ffbedc4c5",
+        "examples/ch02-ownership/examples/mutable_references.rs": "baf12037040a5b32f52d7d745f7f31835883dccca7aae4cbed97bef0beb7ecee",
+        "examples/ch02-ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+        "examples/ch02-ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+        "docs/assets/ch02/reference-owner.svg": "24c26bb66f067b0d964a05b4e54cbd34359f35036192b3b9ba5a526b2c1f56dc",
+        "examples/ch02-ownership/examples/last_use.rs": "a308e2918368f066f8d62383dc3755d4c748de9e46c14f299e6fb87eebacf239",
+        "examples/ch02-ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+        "examples/ch02-ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+        "examples/ch02-ownership/examples/reborrow.rs": "6f6ca104f784d7fbe86fa59ee8ecdb65541f8c4b4eae5a4d6027ee73f830a3fd",
+        "examples/ch02-ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+        "docs/assets/ch02/borrow-scope.svg": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e",
+        "examples/ch02-ownership/examples/methods.rs": "f7c3a28f54dc022c2a24c230ad2c77461c3bc525bdc94798dfe72aed4c90f34c",
+        "examples/ch02-ownership/fixtures/compile-fail/move_from_borrow.rs": "25d22714815e23ef66b3c53e6c22ba61fbc528e40997bb5773946a4cfe2ca262",
+        "examples/ch02-ownership/examples/slices.rs": "27a8c9416eae9d8e8bf5fc1c907845eaca60e911eda53f20e40fcd798ba7c737",
+        "examples/ch02-ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+        "docs/assets/ch02/slice-part.svg": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4",
+        "examples/ch02-ownership/Cargo.toml": "079df7161c2cc149f2490b84896c78706677f3bc9194d3d7fe6f14a06ee059ff",
+        "examples/ch02-ownership/examples/borrow_solution.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+        "examples/ch02-ownership/examples/lifetime_solution.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+        "examples/ch02-ownership/examples/methods_solution.rs": "d155f99fe1943045602084dcf912f85b29209b2553a55712d973234c27741af4",
+        "examples/ch02-ownership/examples/ownership_solution.rs": "1e1be4d6be32a084b12fa01c151e097768a8ee6b114d094bbaad987bdc9bd367",
+        "examples/ch02-ownership/examples/slices_solution.rs": "6f6c3c30df8a1b4e6d8cc8fb085958b4b2710599ef6046c82f38f50799616915",
+        "examples/ch02-ownership/examples/structs_solution.rs": "f9c26ea5301d08571922b1b3c788e3e3f6e38153ca909696ac9c96b63468c1e1",
+        "examples/ch02-ownership/fixtures/compile-fail/borrow_overlap.expected": "c8af886bbe93c20a7838be9a35690203ff0283d2f62d496811599d8d4890d2be",
+        "examples/ch02-ownership/fixtures/compile-fail/dangling_block.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+        "examples/ch02-ownership/fixtures/compile-fail/double_mutable.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+        "examples/ch02-ownership/fixtures/compile-fail/move_from_borrow.expected": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+        "examples/ch02-ownership/fixtures/compile-fail/shared_write.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727",
+        "examples/ch02-ownership/fixtures/compile-fail/use_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/ch02-ownership/fixtures/runtime-fail/slice_bounds.expected": "9bc98e93f7bbaa33ec6e4a45dde7a4f391fb4fa34bf8231cb7c05d099692527b"
+      }
+    }
+  },
+  "visual_artifacts": {
+    "/workspace/work/ch03-continuity-v3-visual/03-04-strings-390.png": "7ad7e59406221867eead174be2303a6dc3c5a134150eee070fa3b75af77ed2d9",
+    "/workspace/work/ch03-continuity-v3-visual/03-04-strings-1280.png": "92f0e3500831b61d92dea9829ec11e47cd91fd12b0fa998601a468a16d1e7399",
+    "/workspace/work/ch03-continuity-v3-visual/03-05-utf8-1280.png": "66d79f70b92c473779f322e6b6cd839ff72fe3d4296eb0a704ab0c93ddd8d046",
+    "/workspace/work/ch03-continuity-v3-visual/03-05-utf8-390.png": "02dcad95d389bbc8069e90af230146b6301969a385164284cbc2e20be1353cb2",
+    "/workspace/work/ch03-continuity-v3-visual/observations.json": "8f83c6900b0bea802b16bb613012ac79ef09d740cd4fd9872713c3ee020da0b4"
+  },
+  "instructions": {
+    "AGENTS.md": "8fd152b93b11fcdea379118b2306ccf2617f5788e6bcf42f6d116e92842efb8c",
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd"
+  }
+}

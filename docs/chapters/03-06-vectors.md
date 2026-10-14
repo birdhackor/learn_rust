@@ -4,7 +4,7 @@ array 的長度寫在型別中，slice 則借用已有的一段資料。現在�
 
 ## Vec 擁有一列同型別資料
 
-**`Vec<T>`** 是標準函式庫提供的清單型別，也稱 vector。它擁有一列依位置排列、元素型別同為 T 的資料，元素存放在 heap 的連續空間；長度可以在執行時改變。`Vec<i32>` 保存數字，`Vec<String>` 保存 owned 文字，不能在同一份 Vec<i32> 混入 bool。
+**`Vec<T>`** 是標準函式庫提供的清單型別，也稱 vector。它擁有一列依位置排列、元素型別同為 T 的資料，長度可以在執行時改變。對本節的 i32／String，配置的元素空間位於 heap 且連續；`Vec::new()` 先建立空容器，不預先配置元素空間。`Vec<i32>` 保存數字，`Vec<String>` 保存 owned 文字，不能在同一份 `Vec<i32>` 混入 bool。
 
 和 array 相比，Vec 的型別沒有寫元素數量；和 &[i32] 相比，Vec 管理資料本身，slice 只是借用既有內容。Vec 結束時，也結束它持有的各項值，依元素型別清理需要的資源。
 
@@ -16,7 +16,7 @@ array 的長度寫在型別中，slice 則借用已有的一段資料。現在�
 | `vec![120, 80, 200]` | 用已列出的同型別值建立 Vec | 這個 macro 的逗號清單提供初始項目；不會建立固定長度 array。 |
 | `values.push(value)` | 借用以修改 Vec，將值加到末尾，回傳 unit | 接收元素的 ownership；i32 會 Copy，String 則 move。 |
 | `values.len()` | shared 借用，回傳目前項目數，型別 usize | 這裡數元素，不是文字 byte 數。 |
-| `values.pop()` | mutable 借用，移除末尾並回傳 Option<T> | 有項目則 Some 中交回 owned 值；空清單為 None。 |
+| `values.pop()` | mutable 借用，移除末尾並回傳 `Option<T>` | 有項目則 Some 中交回 owned 值；空清單為 None。 |
 | `values.remove(position)` | mutable 借用，移除該索引並交回 T | 索引須小於長度，否則 panic；後面的元素向前補，順序保持。 |
 | `values.as_slice()` | shared 借用整份 Vec，回傳 &[T] | 讓已有的 slice 函式處理資料，不接手清單。 |
 | `values.as_mut_slice()` | mutable 借用整份 Vec，回傳 &mut [T] | 修改既有元素，使用期間不能衝突地存取原 Vec。 |
@@ -58,7 +58,7 @@ pop 接收的是「取末尾」這個請求，空清單會交回 None；remove �
 
 ## 清單中的值仍有 ownership
 
-把 String push 進 Vec<String>，會把文字的管理責任交進清單；原變數不能再使用這份 String。pop 則把最後一個 String 交給接收者，Vec 不再持有它。這和取得 `&String` 的 get 是不同工作。
+把 String push 進 `Vec<String>`，會把文字的管理責任交進清單；原變數不能再使用這份 String。pop 則把最後一個 String 交給接收者，Vec 不再持有它。這和取得 `&String` 的 get 是不同工作。
 
 ```rust
 --8<-- "examples/ch03-data/examples/vector_ownership.rs"
@@ -89,7 +89,7 @@ Option 中保存的也是 reference，沒有因為多包了一層 Some 就避開
 
 ## 第一個清單成果：保留原順序的非負數
 
-現在把資料表示與控制流程組起來。輸入是借來的 &[i32]，輸出是新的 Vec<i32>：原材料保留，結果的長度由實際保留多少項決定。規則是值至少為零就保留，負數略過，重複值仍保留原次數。
+現在把資料表示與控制流程組起來。輸入是借來的 `&[i32]`，輸出是新的 `Vec<i32>`：原材料保留，結果的長度由實際保留多少項決定。規則是值至少為零就保留，負數略過，重複值仍保留原次數。
 
 使用前文已教的 while：position 從 0 開始，每次先檢查它小於輸入長度，再索引該項；符合條件就 push，最後 position 加一。輸入沒有被修改，push 修改的是另一份結果清單。
 

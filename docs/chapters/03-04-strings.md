@@ -24,7 +24,9 @@ Rust 的 **`String`** 是標準函式庫提供的文字型別，持有文字的 
 
 非空 String 管理 heap 上的文字空間，並保存找到內容所需的位置資訊。空 String 可以先沒有已配置的文字空間；追加時若現有空間不足，會請求可容納內容的空間。owner 結束時，依 String 的清理規則歸還它管理的空間。
 
-現在把 `show` 的參數寫成 `text: &str`。這個函式只顯示內容，不需要接手整份 String。String 與 &str 都支援本書已用的 `{}` 文字顯示形式，顯示的是內容。main 把驚嘆號保存為 `ending: &str`，作為追加時借來的片段；整份 String 仍由 greeting 持有。下面透過 `as_str()` 把文字視圖交給 show：
+現在把 `show` 的參數寫成 `text: &str`。這個函式只顯示內容，不需要接手整份 String。String 與 &str 都支援本書已用的 `{}` 文字顯示形式，顯示的是內容。main 把驚嘆號保存為 `ending: &str`，作為追加時借來的片段；整份 String 仍由 greeting 持有。
+
+**String 沒有 Copy 能力。**下面最後的 `let moved = greeting;` 會把整個 String 的 ownership 交給 moved，之後改用 moved，不能再從 greeting 使用這份 String。前面的 show 呼叫則透過 `as_str()` 借用內容，不接手它：
 
 ```rust
 --8<-- "examples/ch03-data/examples/strings.rs"
@@ -48,7 +50,7 @@ show 完成後，那次借用已用完，greeting 因而能追加 `!`。第二�
 
 ## move 轉交的是管理責任
 
-String 沒有 Copy 能力。`let moved = greeting;` 交出整個 String 的 ownership，後面只能透過 moved 使用它。這個 move 不要求把 heap 中的全部文字另外複製一份，也沒有留下兩個可以獨立清理同一份文字的 owner。
+前面最後的指派把管理責任交給 moved。這個 move 不要求把 heap 中的全部文字另外複製一份，也沒有留下兩個可以獨立清理同一份文字的 owner。
 
 下面故意在 move 後使用舊名稱，會收到 `E0382`：
 
