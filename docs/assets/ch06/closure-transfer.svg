@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="610" viewBox="0 0 400 610" role="img" aria-labelledby="title desc">
+  <title id="title">建立 take 與呼叫 take 的兩次 ownership 交接</title>
+  <desc id="desc">text 先把 String 交給 take closure 保存；呼叫 take 後，String 交給 saved，saved 可以追加文字。</desc>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="9" markerHeight="9" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#315c89"/></marker>
+  </defs>
+  <rect width="400" height="610" rx="16" fill="#f4f7fb"/>
+  <g font-family="sans-serif" font-size="24" fill="#17324d">
+    <text x="24" y="36">兩個時點，兩次交接</text>
+    <rect x="24" y="66" width="352" height="96" rx="12" fill="#fff" stroke="#315c89" stroke-width="2"/>
+    <text x="44" y="103">text：String</text>
+    <text x="44" y="139">擁有文字 Rust</text>
+    <path d="M 80 164 V 250" stroke="#315c89" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+    <text x="112" y="203">1. 建立 take</text>
+    <text x="112" y="233">move capture</text>
+    <rect x="24" y="260" width="352" height="96" rx="12" fill="#e2efff" stroke="#315c89" stroke-width="2"/>
+    <text x="44" y="297">take：closure</text>
+    <text x="44" y="333">保存 owned String</text>
+    <path d="M 80 358 V 452" stroke="#315c89" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+    <text x="112" y="400">2. 呼叫 take()</text>
+    <text x="112" y="430">body 移出文字</text>
+    <rect x="24" y="462" width="352" height="96" rx="12" fill="#e4f4e9" stroke="#315c89" stroke-width="2"/>
+    <text x="44" y="499">saved：String</text>
+    <text x="44" y="535">接手文字，可自行追加</text>
+    <text x="24" y="593">同一份文字，沒有 clone</text>
+  </g>
+</svg>

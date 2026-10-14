@@ -11,3 +11,5 @@ Root親看1280×800桌面／390×844手機受查原位：4.1不同資料各次�
 獨立候選第一輪完整檢查通過，35個故意失敗契約相符。workspace test另實際報第2／4章同名lifetime_solution輸出相撞；root將本批新增第4章答案target改名lifetime_annotation_solution，更新4.4連結與指令。Rust bytes、方法／練習內容不變，原審閱封存不改；新v8記錄這項整合修正。修後兩個target分別實跑及候選完整檢查結果另於完成後追加。
 
 修後第4章答案實跑第一空／第一非空皆Rust，第2章原答案仍輸出3、4、8的借用／修改／owned結果；兩個target各自選定。候選完整check.sh再次通過，35個故意失敗契約相符，先前輸出名稱相撞已消除。此重驗由實际新整合修正觸發，未將第一次通過抹去或擴稱新首讀。遠端部署另於完成後追加。
+
+提交 `93e147b3acbcc96131b66216e356d599a3f1d204` 的 [Actions 38577488663](https://github.com/birdhackor/learn_rust/actions/runs/38577488663) check／deploy均成功。Root實際請求公開首頁與第1–5章33節，全部200且H1相符；未發布6.1仍404。紀錄在work的release45-live-http.json。

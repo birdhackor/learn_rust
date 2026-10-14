@@ -18,6 +18,7 @@ chapters/**
 !chapters/03-*.md
 !chapters/04-*.md
 !chapters/05-*.md
+!chapters/06-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -63,6 +64,15 @@ nav = [
     { "5.4　From、Into 與 TryFrom：轉換是否可能失敗？" = "chapters/05-04-conversions.md" },
     { "5.5　解析文字，或借出另一種表示？" = "chapters/05-05-parsing-and-borrowed-conversions.md" },
     { "5.6　? 傳遞錯誤，把決策留給呼叫者" = "chapters/05-06-error-propagation.md" },
+  ] },
+  { "第 6 章：closure、associated type 與 Iterator" = [
+    { "6.1 把小段工作和它需要的環境保存在 closure" = "chapters/06-01-closures.md" },
+    { "6.2 用 associated type 指定一份實作的輸出型別" = "chapters/06-02-associated-types.md" },
+    { "6.3 用 Fn 系列描述共用函式需要的呼叫能力" = "chapters/06-03-callable-contracts.md" },
+    { "6.4 讓函式交回可用的工作：impl Trait 與 lifetime capture" = "chapters/06-04-impl-trait.md" },
+    { "6.5 逐筆取得資料：Iterator、IntoIterator 與 ownership" = "chapters/06-05-iterators.md" },
+    { "6.6 逐筆篩選、轉換，再依目標收集" = "chapters/06-06-adapters-collect.md" },
+    { "6.7 整理文字與統計，產生順序明確的報表" = "chapters/06-07-text-collections-sorting.md" },
   ] },
 ]
 

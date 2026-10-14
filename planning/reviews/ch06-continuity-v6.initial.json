@@ -1,0 +1,38 @@
+{
+  "review": "planning/reviews/ch06-continuity-v6.md",
+  "role": "independent continuity original judgment; prior chapter6 fragments seen; not blind",
+  "sealed_utc": "2026-10-14T14:47:01.289678+00:00",
+  "review_sha256": "97ad53ce4eda1b447ac3226556b7abda8b887e178c89bc51bc73a0848cf8cf9f",
+  "initial_copy": "/workspace/work/tutorial-implementation/reviewer-ch06/continuity-v6/ch06-continuity-v6.initial.md",
+  "initial_sha256": "97ad53ce4eda1b447ac3226556b7abda8b887e178c89bc51bc73a0848cf8cf9f",
+  "source_snapshot": "/workspace/work/tutorial-implementation/frozen/ch06-complete-source-v6",
+  "source_manifest_sha256": "dacb0f09813d368bcdb9c7bf94b23a618c29cb6b29da1d5f55fb37aa39fdfb0b",
+  "source_evidence": "/workspace/work/tutorial-implementation/reviewer-ch06/continuity-v6/source-fingerprints.json",
+  "source_evidence_sha256": "810ce570c048d774755763fbf6b7f4393afcf3e70cb8ab06a705ab90d53c86a0",
+  "read_scope": {
+    "pages": 7,
+    "body_units": 50,
+    "archived_sources": 80,
+    "examples_including_answers": 39,
+    "complete_answers": 7,
+    "library_sources": 7,
+    "tests_read_not_run": 21,
+    "compile_fail_fixtures": 15,
+    "expected_files": 15,
+    "cargo_manifests": 1,
+    "svg_sources": 3
+  },
+  "peer_materials_seen_before_seal": false,
+  "chapter6_author_notes_or_ledgers_seen": false,
+  "chapter6_live_body_or_code_seen": false,
+  "rust_execution_in_this_review": false,
+  "svg_render_or_actual_page_verification_in_this_review": false,
+  "independent_necessary": [
+    "N1 Fn series prelude name source",
+    "N2 Vec Debug contract after first failure-example use"
+  ],
+  "independent_optional": [
+    "I1 generalized Vec<T> FromIterator sentence"
+  ],
+  "next_step": "Stop; parent provides cross/followup materials. Preserve initial judgment."
+}

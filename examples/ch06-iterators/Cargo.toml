@@ -1,0 +1,12 @@
+[package]
+name = "ch06-iterators"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+# TOML 的 # 行是註解；[lints.clippy] 設定本 package 的 Clippy 提醒級別。
+# unnecessary_fold 是工具對加總的 fold 寫法提出簡化建議的一項提醒。
+# "allow" 讓此項不報提醒，以保留本節要教的累計狀態；其他檢查照常。
+[lints.clippy]
+unnecessary_fold = "allow"

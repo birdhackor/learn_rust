@@ -89,6 +89,10 @@ name = "ch05-errors"
 version = "0.1.0"
 
 [[package]]
+name = "ch06-iterators"
+version = "0.1.0"
+
+[[package]]
 name = "ch07-tooling"
 version = "0.1.0"
 dependencies = [
