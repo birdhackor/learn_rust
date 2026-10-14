@@ -1,5 +1,12 @@
 [workspace]
-members = ["examples/hello-world"]
+members = [
+    "examples/hello-world",
+    "examples/ch01-basics",
+    "examples/ch02-ownership",
+    "examples/ch03-data",
+    "examples/ch07-cli/tooling",
+    "examples/ch09-engineering",
+]
 resolver = "3"
 
 [workspace.package]
@@ -7,3 +14,10 @@ version = "0.1.0"
 edition = "2024"
 rust-version = "1.99"
 publish = false
+
+[workspace.dependencies]
+ch01-basics = { path = "examples/ch01-basics" }
+
+[profile.release]
+opt-level = 3
+overflow-checks = true

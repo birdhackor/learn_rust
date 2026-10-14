@@ -1,0 +1,26 @@
+<svg width="390" height="590" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 590" role="img" aria-labelledby="title desc">
+  <title id="title">一個package中的兩個crate與檔案分工</title>
+  <desc id="desc">ch01-basics package包含binary crate與library crate。binary的main.rs使用library公開的計價函式。library的lib.rs以mod宣告pricing模組，內容存放pricing.rs。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+  <rect width="390" height="590" rx="16" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="18" fill="#0f172a">
+    <text x="195" y="36" text-anchor="middle" font-weight="bold">package：ch01-basics</text>
+    <rect x="20" y="58" width="350" height="114" rx="12" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="38" y="86" font-weight="bold">binary crate</text>
+    <text x="38" y="115">src/main.rs</text>
+    <text x="38" y="145">main：呼叫函式、顯示結果</text>
+    <path d="M195 173V228" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="210" y="205">呼叫公開功能</text>
+    <rect x="20" y="236" width="350" height="330" rx="12" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+    <text x="38" y="266" font-weight="bold">library crate：ch01_basics</text>
+    <rect x="36" y="283" width="318" height="93" rx="8" fill="#ffffff" stroke="#059669"/>
+    <text x="51" y="313">src/lib.rs：crate 的根檔案</text>
+    <text x="51" y="346">pub mod pricing;</text>
+    <path d="M195 377V432" stroke="#334155" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="210" y="411">宣告並載入</text>
+    <rect x="36" y="441" width="318" height="106" rx="8" fill="#ffffff" stroke="#059669"/>
+    <text x="51" y="472">src/pricing.rs</text>
+    <text x="51" y="502">pricing module：計價工作</text>
+    <text x="51" y="531">pub fn：對外提供的函式</text>
+  </g>
+</svg>

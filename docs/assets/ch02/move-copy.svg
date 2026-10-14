@@ -1,0 +1,26 @@
+<svg width="340" height="562" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 562" role="img" aria-labelledby="title desc">
+  <title id="title">Order 的 move 與 i32 的 Copy</title>
+  <desc id="desc">完整 Order 從 first 轉交到 second，first 不再可用。i32 從 count 複製到 another_count，兩個名稱分別保有獨立數值，後者加一不影響前者。箭頭表達語意上的轉交或複製，不表示實際記憶體搬動。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+  <rect width="340" height="562" rx="12" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="20" fill="#172033">
+    <text x="24" y="35" font-weight="bold">move：完整 Order</text>
+    <rect x="20" y="52" width="300" height="79" rx="8" fill="#e2e8f0" stroke="#64748b" stroke-dasharray="5 4"/>
+    <text x="36" y="81">first：已交出這筆訂單</text>
+    <text x="36" y="111">原名稱不可再使用</text>
+    <path d="M170 138V181" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="189" y="167">轉交</text>
+    <rect x="20" y="193" width="300" height="83" rx="8" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
+    <text x="36" y="224">second：現在的 owner</text>
+    <text x="36" y="254">單價 120，數量 3</text>
+    <path d="M20 296H320" stroke="#cbd5e1"/>
+    <text x="24" y="330" font-weight="bold">Copy：i32 獨立數值</text>
+    <rect x="20" y="348" width="300" height="63" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="36" y="386">count：3，仍可使用</text>
+    <path d="M170 418V454" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="189" y="443">複製數值</text>
+    <rect x="20" y="466" width="300" height="77" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="36" y="496">another_count：3 → 4</text>
+    <text x="36" y="526">修改它不會改到 count</text>
+  </g>
+</svg>

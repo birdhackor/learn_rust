@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="680" viewBox="0 0 400 680" role="img" aria-labelledby="title desc">
+  <title id="title">A、中、crab 的 UTF-8 byte 分界</title>
+  <desc id="desc">A 占 byte 位置零，中占位置一到三，正文第三項 crab 符號占位置四到七。合法分界為零、一、四、八。range 一到四取完整中，一到二切斷中而無效。</desc>
+  <rect width="400" height="680" rx="14" fill="#ffffff"/>
+  <g font-family="Noto Sans CJK TC, sans-serif" fill="#172554">
+    <text x="200" y="32" text-anchor="middle" font-size="24" font-weight="700">UTF-8：分界在 0、1、4、8</text>
+    <rect x="25" y="54" width="350" height="113" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="43" y="83" font-size="24" font-weight="700">0..1：A，1 byte</text>
+    <text x="43" y="118" font-size="24">值：65</text>
+    <text x="43" y="149" font-size="24">位置：0；下一個分界：1</text>
+    <rect x="25" y="187" width="350" height="113" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+    <text x="43" y="216" font-size="24" font-weight="700">1..4：中，3 bytes</text>
+    <text x="43" y="251" font-size="24">值：228 184 173</text>
+    <text x="43" y="282" font-size="24">位置：1、2、3；下一分界：4</text>
+    <rect x="25" y="320" width="350" height="113" rx="10" fill="#fef3c7" stroke="#a16207" stroke-width="2"/>
+    <text x="43" y="349" font-size="24" font-weight="700">4..8：crab，4 bytes</text>
+    <text x="43" y="384" font-size="24">值：240 159 166 128</text>
+    <text x="43" y="415" font-size="24">位置：4、5、6、7；結尾：8</text>
+    <text x="200" y="472" text-anchor="middle" font-size="24">range 終點不包含在結果中</text>
+    <rect x="25" y="493" width="350" height="67" rx="10" fill="#f0fdf4" stroke="#15803d" stroke-width="2"/>
+    <text x="43" y="520" font-size="24" font-weight="700">1..4：涵蓋完整「中」</text>
+    <text x="43" y="547" font-size="24">起點與終點都是 scalar 分界</text>
+    <rect x="25" y="579" width="350" height="67" rx="10" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+    <text x="43" y="606" font-size="24" font-weight="700">1..2：只取「中」的第一 byte</text>
+    <text x="43" y="633" font-size="24">終點 2 切在 scalar 內部，無效</text>
+  </g>
+</svg>

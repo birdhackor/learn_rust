@@ -2,6 +2,7 @@
 
 - 請用英文思考／規劃，但用正體中文與使用者溝通。
 - 教學內容與維護文件使用正體中文；Rust API、指令與識別字保留原文。
+- 撰寫或審閱 Rust 教材時，使用 [clear-tutorial](.agents/skills/clear-tutorial/SKILL.md)；中英文術語依該 skill 的 [Rust 術語與語言指引](.agents/skills/clear-tutorial/references/rust-terminology.md)。更新 skill 與專案指引不代表教材已改寫或通過審閱。
 - 文件來源在 docs/，站點設定在 zensical.toml。
 - 可執行 Rust 範例放在 examples/，並加入根目錄 Cargo workspace。
 - 文件用 pymdownx.snippets 引用範例原始碼，避免維護兩份相同程式。

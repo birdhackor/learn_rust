@@ -3,12 +3,13 @@
   "commit": "eec3edc59003ec2775578025a436613844a8d72a",
   "directory": ".agents/skills/clear-tutorial",
   "imported_on": "2026-10-14",
-  "scope": "僅匯入通用寫作與審閱準則。",
+  "scope": "匯入通用寫作與審閱準則，另於本地新增 Rust 術語與語言指引。",
   "checksum_scope": "以下雜湊描述固定來源版本的原始檔案，不是本地調整後的檔案。",
   "local_adaptations": [
-    "SKILL.md：將 YOLO 專案背景連結改為通用的專案資料分工，其餘準則保留來源原文。",
+    "SKILL.md：將 YOLO 專案背景連結改為通用的專案資料分工，並連結本地 Rust 術語與語言指引，其餘準則保留來源原文。",
     "references/writing-prompt.md、references/review-protocol.md、references/calibration.md：逐位元組複製。",
-    "README.md：說明本地通用版的文件分工、來源與維護方式。",
+    "README.md：說明通用準則與本地 Rust 術語指引的文件分工、來源與維護方式。",
+    "references/rust-terminology.md：新增 learn_rust 專案的中英文術語約定，記錄使用者已確認的偏好與寫作時的概念區別。",
     "UPSTREAM.json：記錄本次直接來源與原始檔案雜湊；未沿用來源對更早版本的雜湊。"
   ],
   "excluded_files": [

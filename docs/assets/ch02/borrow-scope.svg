@@ -1,0 +1,25 @@
+<svg width="340" height="480" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 480" role="img" aria-labelledby="title desc">
+  <title id="title">shared borrow 的使用區間與 first、second 名稱的 scope</title>
+  <desc id="desc">四個觀察點依序是建立first與second、最後讀取這兩份reference、直接修改count、到達main右大括號。借用使用區間由第一點到第二點，名稱scope則由第一點到第四點。藍線代表借用、灰線代表名稱scope，因此修改原值可發生在最後一次讀取之後。</desc>
+  <rect width="340" height="480" rx="12" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="20" fill="#172033">
+    <text x="22" y="34" font-weight="bold">先讀完，再修改</text>
+    <path d="M37 100V192" stroke="#1d4ed8" stroke-width="7"/>
+    <path d="M308 100V375" stroke="#64748b" stroke-width="7"/>
+    <circle cx="37" cy="100" r="8" fill="#1d4ed8"/>
+    <circle cx="37" cy="192" r="8" fill="#1d4ed8"/>
+    <circle cx="308" cy="100" r="8" fill="#64748b"/>
+    <circle cx="308" cy="375" r="8" fill="#64748b"/>
+    <text x="66" y="100">1. 建立兩份借用</text>
+    <text x="66" y="132" font-family="monospace">&amp;count</text>
+    <text x="66" y="192">2. 最後讀取兩份借用</text>
+    <text x="66" y="224" font-family="monospace">*first、*second</text>
+    <text x="66" y="284">3. 直接修改 count</text>
+    <text x="66" y="316" font-family="monospace">count += 1;</text>
+    <text x="66" y="376">4. main 右大括號</text>
+    <path d="M22 416H52" stroke="#1d4ed8" stroke-width="7"/>
+    <text x="66" y="423">借用的使用區間</text>
+    <path d="M22 451H52" stroke="#64748b" stroke-width="7"/>
+    <text x="66" y="458">first、second 的 scope</text>
+  </g>
+</svg>

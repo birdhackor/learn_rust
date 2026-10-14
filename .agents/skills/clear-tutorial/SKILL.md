@@ -14,6 +14,7 @@ description: 撰寫與審閱易懂的技術教材、概念解說、實驗與圖�
 - 作者使用本文件與[寫作短 prompt](references/writing-prompt.md)。
 - 審閱協調者依[審閱流程](references/review-protocol.md)安排閱讀與證據檢查。
 - 專案背景、技術事實與操作約定依所在專案另行指定，作者及技術審閱者按需要查核。首次閱讀者的背景由實際閱讀路線設定，不提前取得技術解說或檢查答案。
+- 在 learn_rust 撰寫或審閱教材時，作者與技術審閱者先讀 [Rust 術語與語言指引](references/rust-terminology.md)，依本專案已確認的中英文用法寫作；首次閱讀者仍只取得實際閱讀路線中的教材。
 
 ## 核心標準
 

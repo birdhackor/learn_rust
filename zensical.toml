@@ -7,13 +7,29 @@ strict = true
 site_url = "https://birdhackor.github.io/learn_rust/"
 repo_url = "https://github.com/birdhackor/learn_rust"
 edit_uri = "edit/main/docs/"
-# 編寫中的章節暫不發布，首次上線只包含首頁。
+# 草稿先排除；通過驗收的小節用後續 ! 規則逐批釋出。
 exclude_docs = """
 getting-started/**
 fundamentals/**
 ownership/**
+chapters/**
+!chapters/01-*.md
 """
-nav = [{ "首頁" = "index.md" }]
+nav = [
+  { "首頁" = "index.md" },
+  { "第 1 章：工具與程式基礎" = [
+    { "1.1 從 Python 出發，準備 Rust 環境" = "chapters/01-01-start.md" },
+    { "1.2 第一個可執行程式" = "chapters/01-02-first-program.md" },
+    { "1.3 在教材 workspace 選對 package" = "chapters/01-03-workspace.md" },
+    { "1.4 用變數保存數字" = "chapters/01-04-variables.md" },
+    { "1.5 把計算變成函式" = "chapters/01-05-functions.md" },
+    { "1.6 依訂單大小選擇運費" = "chapters/01-06-conditions.md" },
+    { "1.7 一組資料：tuple、array 與 range" = "chapters/01-07-collections.md" },
+    { "1.8 重複工作，用迴圈累積答案" = "chapters/01-08-loops.md" },
+    { "1.9 把計算工作放進 library" = "chapters/01-09-modules.md" },
+    { "1.10 用測試與工具回饋確認程式" = "chapters/01-10-tests.md" },
+  ] },
+]
 
 [project.theme]
 language = "zh-Hant"
@@ -22,9 +38,9 @@ features = [
   "content.code.copy",
   "content.code.annotate",
   "navigation.footer",
-  "navigation.indexes",
   "navigation.sections",
   "navigation.top",
+  "toc.integrate",
   "search.highlight",
 ]
 

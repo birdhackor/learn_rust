@@ -1,0 +1,17 @@
+# --8<-- [start:package]
+[package]
+name = "ch09-engineering"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+ch01-basics.workspace = true
+# --8<-- [end:package]
+
+# --8<-- [start:features]
+[features]
+default = []
+batch = []
+# --8<-- [end:features]

@@ -1,0 +1,6 @@
+[workspace.dependencies]
+ch01-basics = { path = "examples/ch01-basics" }
+
+[profile.release]
+opt-level = 3
+overflow-checks = true
