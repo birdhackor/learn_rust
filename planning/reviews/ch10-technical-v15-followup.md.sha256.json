@@ -1,0 +1,8 @@
+{
+  "report": "/workspace/learn_rust/planning/reviews/ch10-technical-v15-followup.md",
+  "sha256": "277b293fd2cc396152e6d7a8243ebbd334d94f8d3d6d91bed24ed7e11e678fdb",
+  "scope": "CROSS after immutable originals; v15 three material units and local transitions; own same-theme explicit CSS actual views",
+  "original_technical_sha256": "61c9d095c761620d571af0d04412625aff7802793695de5e697e5a5a882215cd",
+  "new_Rust_runs": 0,
+  "actual_views": 14
+}

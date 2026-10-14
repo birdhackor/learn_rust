@@ -12,3 +12,6 @@ FIRST局部1566df08…只在兩個fixedunits依原closed filter先保存四問�
 
 
 獨立候選完整scripts/check.sh退出0：strict文件建置、fmt、全target Clippy、workspace全targets tests、doctests与90指定故意失敗fixture皆通過。共有256 test-target結果、151個個別tests／doctests通過、0失敗；合計包括前章，沒有當成第9章獨立數量。證據release9-check.log／release9-check-counts.json。ROOT再核44student候選與v6完全同byte及三份originalSHA保持後，可發布；遠端Actions／HTTP結果另追加。
+
+
+提交28950f12208c0dcc09f5422c69c86e29f2c5e91a的[Actions 38631102083](https://github.com/birdhackor/learn_rust/actions/runs/38631102083)已完成check／deploy成功。ROOT實請求首頁与第1–9章63節共64網址，全部200且H1相符；第9章三SVG及共享CSS遠端bytes全部匹配frozen v6 SHA，尚未发布10.1实际route為404。證據release9-live-http.json。部署證據下次內容批次帶入，不只為metadata另觸發CI。

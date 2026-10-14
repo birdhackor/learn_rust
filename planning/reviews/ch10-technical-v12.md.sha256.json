@@ -1,0 +1,14 @@
+{
+  "report": "/workspace/learn_rust/planning/reviews/ch10-technical-v12.md",
+  "sha256": "61c9d095c761620d571af0d04412625aff7802793695de5e697e5a5a882215cd",
+  "snapshot_manifest_sha256": "b22762f35195ce6fc287cca720b5fa6812b519aaa0f8ef4e9a76c9e2e291632e",
+  "initial": "Non-author independent TECH ORIGINAL; prior author/CONT8 background, not blind; no peer10 before sealing",
+  "required": [
+    "N1",
+    "N2"
+  ],
+  "optional": [
+    "O1",
+    "O2"
+  ]
+}

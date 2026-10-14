@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800" viewBox="0 0 400 800" role="img" aria-labelledby="title desc">
+  <title id="title">channel 傳送權限、drain 與 worker 收尾</title>
+  <desc id="desc">main 先建立兩份 Sender clone 再丟棄原始 Sender。兩個 worker 各自傳送後丟棄 Sender。main 逐項取走待收訊息；所有 Sender 消失而且 buffer 已空才收到 Err。最後另外 join 兩個 worker 並檢查成果。箭頭表示關係，不是固定排程。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#346c99"/></marker>
+    <marker id="gray" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#596579"/></marker>
+  </defs>
+  <rect width="400" height="800" rx="14" fill="#fff"/>
+  <g font-family="sans-serif" font-size="24" fill="#172b41">
+    <text x="200" y="33" text-anchor="middle" font-weight="bold">三份 Sender，都要收尾</text>
+    <rect x="20" y="55" width="360" height="90" rx="10" fill="#f1f4f8" stroke="#596579" stroke-width="2"/>
+    <text x="200" y="91" text-anchor="middle">main：先 clone 兩份</text>
+    <text x="200" y="124" text-anchor="middle">再 drop 原始 Sender</text>
+    <path d="M110 145 V174" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#gray)"/>
+    <path d="M290 145 V174" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#gray)"/>
+    <rect x="20" y="183" width="172" height="157" rx="10" fill="#edf6ff" stroke="#346c99" stroke-width="2"/>
+    <rect x="208" y="183" width="172" height="157" rx="10" fill="#edf6ff" stroke="#346c99" stroke-width="2"/>
+    <text x="106" y="216" text-anchor="middle">worker A</text>
+    <text x="106" y="250" text-anchor="middle">clone 1</text>
+    <text x="106" y="284" text-anchor="middle">送80、120</text>
+    <text x="106" y="318" text-anchor="middle">Sender drop</text>
+    <text x="294" y="216" text-anchor="middle">worker B</text>
+    <text x="294" y="250" text-anchor="middle">clone 2</text>
+    <text x="294" y="284" text-anchor="middle">送1、2、3</text>
+    <text x="294" y="318" text-anchor="middle">Sender drop</text>
+    <path d="M106 340 V393" fill="none" stroke="#346c99" stroke-width="2" marker-end="url(#arrow)"/>
+    <path d="M294 340 V393" fill="none" stroke="#346c99" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="200" y="375" text-anchor="middle">訊息</text>
+    <rect x="20" y="404" width="360" height="139" rx="10" fill="#edf6ff" stroke="#346c99" stroke-width="2"/>
+    <text x="200" y="436" text-anchor="middle" font-weight="bold">同一個 channel</text>
+    <text x="200" y="469" text-anchor="middle">buffer：待收訊息</text>
+    <text x="200" y="501" text-anchor="middle">Sender 全部消失後</text>
+    <text x="200" y="532" text-anchor="middle">已送訊息仍可收</text>
+    <path d="M200 543 V568" fill="none" stroke="#346c99" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="20" y="579" width="360" height="103" rx="10" fill="#edf7ef" stroke="#387448" stroke-width="2"/>
+    <text x="200" y="609" text-anchor="middle">main：持續 recv</text>
+    <text x="200" y="639" text-anchor="middle">有訊息 → Ok(value)</text>
+    <text x="200" y="670" text-anchor="middle">全 Sender 消失且空 → Err</text>
+    <path d="M200 682 V706" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#gray)"/>
+    <rect x="20" y="716" width="360" height="68" rx="10" fill="#f1f4f8" stroke="#596579" stroke-width="2"/>
+    <text x="200" y="744" text-anchor="middle">再 join 兩份 worker</text>
+    <text x="200" y="774" text-anchor="middle">檢查工作成功／失敗</text>
+  </g>
+</svg>

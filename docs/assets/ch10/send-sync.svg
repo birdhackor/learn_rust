@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="680" viewBox="0 0 400 680" role="img" aria-labelledby="title desc">
+  <title id="title">Send 移交值，Sync 允許 shared reference 跨 thread</title>
+  <desc id="desc">上半部表示 String 的 ownership 從 thread A 移交給 thread B。下半部的 String 仍由 thread A 持有，thread B 只有借用它的 shared reference。String 是 Sync，與它的 shared reference 是 Send 是同一項條件。圖表示允許的關係，不是實際執行紀錄。</desc>
+  <defs>
+    <marker id="transfer" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#15803d"/></marker>
+    <marker id="borrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect width="400" height="680" rx="12" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="24" fill="#0f172a">
+    <text x="20" y="38" font-weight="bold">Send：移交一份值</text>
+    <rect x="20" y="64" width="150" height="100" rx="10" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+    <text x="36" y="101">thread A</text>
+    <text x="36" y="140">交出 String</text>
+    <rect x="230" y="64" width="150" height="100" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+    <text x="246" y="101">thread B</text>
+    <text x="246" y="140">接手 String</text>
+    <path d="M172 113H228" fill="none" stroke="#15803d" stroke-width="3" marker-end="url(#transfer)"/>
+    <text x="200" y="205" text-anchor="middle" fill="#15803d">箭頭：ownership 移交</text>
+    <text x="200" y="243" text-anchor="middle">String: Send</text>
+    <path d="M20 274H380" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="20" y="316" font-weight="bold">Sync：共享借用可跨 thread</text>
+    <rect x="20" y="338" width="360" height="86" rx="10" fill="#dcfce7" stroke="#15803d" stroke-width="2"/>
+    <text x="40" y="372">thread A 仍持有 String</text>
+    <text x="40" y="407">原文字的 owner 沒有換人</text>
+    <rect x="20" y="512" width="360" height="86" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+    <text x="40" y="549">thread B 持有 &amp;String</text>
+    <text x="40" y="584">借用同一份原文字</text>
+    <path d="M200 510V426" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#borrow)"/>
+    <text x="218" y="476" fill="#2563eb">借用</text>
+    <text x="200" y="635" text-anchor="middle">&amp;String: Send</text>
+    <text x="200" y="667" text-anchor="middle">等價於 String: Sync</text>
+  </g>
+</svg>

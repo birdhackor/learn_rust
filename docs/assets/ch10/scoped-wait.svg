@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800" viewBox="0 0 400 800" role="img" aria-labelledby="title desc">
+  <title id="title">scope 自動等待與外部資料借用</title>
+  <desc id="desc">外部values是80與120，total起初為0，來源覆蓋整段scope。主thread的callback建立工作並丟棄handle後返回，scope繼續等待；worker借讀values並獨占更新total為200，body結束後scope才返回，主thread再讀取200。這是callback先返回的一種可能進度，不代表固定排程或thread-local清理全部完成。</desc>
+  <defs>
+    <marker id="flow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#334155"/></marker>
+    <marker id="wait" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#1d4ed8"/></marker>
+  </defs>
+  <rect width="400" height="800" rx="18" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="24" fill="#0f172a" text-anchor="middle">
+    <rect x="16" y="16" width="368" height="112" rx="12" fill="#d1fae5" stroke="#047857"/>
+    <text x="200" y="49">main 的外部資料</text>
+    <text x="200" y="82">values = [80, 120]</text>
+    <text x="200" y="113">total = 0</text>
+    <rect x="16" y="145" width="368" height="480" rx="12" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+    <text x="200" y="177">受管理的 scope 區段</text>
+    <text x="104" y="211">主 thread</text><text x="300" y="211">worker</text>
+    <rect x="30" y="226" width="150" height="80" rx="10" fill="white" stroke="#64748b"/>
+    <text x="105" y="257">callback</text><text x="105" y="290">建立工作</text>
+    <path d="M184 265 H211" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <rect x="224" y="226" width="150" height="80" rx="10" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="299" y="257">&amp;values</text><text x="299" y="290">&amp;mut total</text>
+    <path d="M105 314 V341" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <path d="M299 314 V341" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <rect x="30" y="350" width="150" height="80" rx="10" fill="white" stroke="#64748b"/>
+    <text x="105" y="381">drop handle</text><text x="105" y="414">callback返回</text>
+    <rect x="224" y="350" width="150" height="80" rx="10" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="299" y="381">計算並寫入</text><text x="299" y="414">total=200</text>
+    <path d="M105 438 V462" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <path d="M299 438 V462" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <rect x="30" y="472" width="150" height="80" rx="10" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="105" y="503">自動等待</text><text x="105" y="536">工作 body</text>
+    <rect x="224" y="472" width="150" height="80" rx="10" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="299" y="503">body 結束</text><text x="299" y="536">借用用完</text>
+    <path d="M105 560 V593" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <path d="M299 560 V607 H105" fill="none" stroke="#1d4ed8" stroke-width="3" marker-end="url(#wait)"/>
+    <path d="M105 615 V652" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <rect x="30" y="664" width="344" height="120" rx="10" fill="#d1fae5" stroke="#047857"/>
+    <text x="202" y="696">scope 返回</text><text x="202" y="730">main 再讀 total=200</text><text x="202" y="764">原 values 仍在</text>
+  </g>
+</svg>

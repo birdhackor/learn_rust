@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800" viewBox="0 0 400 800" role="img" aria-labelledby="title desc">
+  <title id="title">兩個 Arc 保活同一 Mutex，兩份 guard 輪流更新</title>
+  <desc id="desc">藍線表示 main 與 worker 的 Arc 都連同一份 Mutex。示意 main 先取得 guard 加120並釋放，worker 才取得 guard 再加80得到200；main 最後 join 後取得guard讀結果。另一種先後也合法，圖不表示固定排程或量測時間。</desc>
+  <defs>
+    <marker id="blue" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#346c99"/></marker>
+    <marker id="gray" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#596579"/></marker>
+  </defs>
+  <rect width="400" height="800" rx="14" fill="#fff"/>
+  <g font-family="sans-serif" font-size="24" fill="#172b41">
+    <text x="200" y="33" text-anchor="middle" font-weight="bold">共享 owner，輪流 guard</text>
+    <rect x="20" y="55" width="171" height="85" rx="10" fill="#edf6ff" stroke="#346c99" stroke-width="2"/>
+    <rect x="209" y="55" width="171" height="85" rx="10" fill="#edf6ff" stroke="#346c99" stroke-width="2"/>
+    <text x="105" y="89" text-anchor="middle">main 的 Arc</text>
+    <text x="105" y="123" text-anchor="middle">原 owner</text>
+    <text x="295" y="89" text-anchor="middle">worker 的 Arc</text>
+    <text x="295" y="123" text-anchor="middle">clone owner</text>
+    <path d="M105 140 V162 H173 V183" fill="none" stroke="#346c99" stroke-width="2" marker-end="url(#blue)"/>
+    <path d="M295 140 V162 H227 V183" fill="none" stroke="#346c99" stroke-width="2" marker-end="url(#blue)"/>
+    <rect x="20" y="194" width="360" height="89" rx="10" fill="#edf6ff" stroke="#346c99" stroke-width="2"/>
+    <text x="200" y="228" text-anchor="middle" font-weight="bold">同一份 Mutex&lt;i32&gt;</text>
+    <text x="200" y="263" text-anchor="middle">起始總額0</text>
+    <path d="M200 283 V308" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#gray)"/>
+    <rect x="20" y="319" width="360" height="118" rx="10" fill="#edf7ef" stroke="#387448" stroke-width="2"/>
+    <text x="200" y="350" text-anchor="middle">此例：main 先 lock</text>
+    <text x="200" y="384" text-anchor="middle">guard 更新：0 + 120</text>
+    <text x="200" y="419" text-anchor="middle">得到120，guard drop</text>
+    <path d="M200 437 V475" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#gray)"/>
+    <rect x="20" y="486" width="360" height="133" rx="10" fill="#edf7ef" stroke="#387448" stroke-width="2"/>
+    <text x="200" y="516" text-anchor="middle">釋放後 worker 才 lock</text>
+    <text x="200" y="548" text-anchor="middle">guard 更新：120 + 80</text>
+    <text x="200" y="580" text-anchor="middle">得到200，guard drop</text>
+    <text x="200" y="608" text-anchor="middle">工作 body 結束</text>
+    <path d="M200 619 V661" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#gray)"/>
+    <rect x="20" y="672" width="360" height="110" rx="10" fill="#f1f4f8" stroke="#596579" stroke-width="2"/>
+    <text x="200" y="704" text-anchor="middle">main：join 等工作收尾</text>
+    <text x="200" y="738" text-anchor="middle">再 lock，借讀總額200</text>
+    <text x="200" y="771" text-anchor="middle">解鎖與工作收尾分開</text>
+  </g>
+</svg>

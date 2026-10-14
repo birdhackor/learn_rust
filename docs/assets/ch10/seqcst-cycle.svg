@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="660" viewBox="0 0 400 660" role="img" aria-labelledby="title desc">
+  <title id="title">SeqCst雙旗標不能都讀到零的理由</title>
+  <desc id="desc">假設A與B都讀到零。在所有四步皆SeqCst的共同順序中，A1先A2、A2必先B1、B1先B2，而B2又必先A1，形成不可能的循環。灰箭頭來自各thread內先後，紅箭頭來自假設讀到初值零。</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#58657d"/></marker>
+    <marker id="red" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#a33232"/></marker>
+  </defs>
+  <rect width="400" height="660" rx="12" fill="#fff"/>
+  <g font-family="Arial, 'Noto Sans CJK TC', sans-serif" font-size="24" text-anchor="middle" fill="#183049">
+    <text x="200" y="34" font-weight="bold">假設 A、B 都讀到0</text>
+    <text x="200" y="69">四步皆 SeqCst，X/Y 初值0</text>
+    <rect x="70" y="110" width="310" height="70" rx="10" fill="#edf5ff" stroke="#3272ae" stroke-width="2"/>
+    <text x="225" y="140">A1：X.store(1)</text><text x="225" y="169">SeqCst</text>
+    <path d="M225 180 V240" fill="none" stroke="#58657d" stroke-width="2" marker-end="url(#gray)"/>
+    <text x="310" y="220" font-size="24">A內先後</text>
+    <rect x="70" y="240" width="310" height="70" rx="10" fill="#edf5ff" stroke="#3272ae" stroke-width="2"/>
+    <text x="225" y="270">A2：Y.load()=0</text><text x="225" y="299">SeqCst</text>
+    <path d="M225 310 V370" fill="none" stroke="#a33232" stroke-width="2" marker-end="url(#red)"/>
+    <rect x="82" y="321" width="286" height="31" fill="#fff"/>
+    <text x="225" y="345" fill="#a33232">讀0，須早於 B1 的寫1</text>
+    <rect x="70" y="370" width="310" height="70" rx="10" fill="#edf7ee" stroke="#367944" stroke-width="2"/>
+    <text x="225" y="400">B1：Y.store(1)</text><text x="225" y="429">SeqCst</text>
+    <path d="M225 440 V500" fill="none" stroke="#58657d" stroke-width="2" marker-end="url(#gray)"/>
+    <text x="310" y="480">B內先後</text>
+    <rect x="70" y="500" width="310" height="70" rx="10" fill="#edf7ee" stroke="#367944" stroke-width="2"/>
+    <text x="225" y="530">B2：X.load()=0</text><text x="225" y="559">SeqCst</text>
+    <path d="M70 535 H32 V145 H70" fill="none" stroke="#a33232" stroke-width="2" marker-end="url(#red)"/>
+    <text x="200" y="613" fill="#a33232">B2 也須早於 A1：形成循環</text>
+    <text x="200" y="647" font-weight="bold">共同順序不能滿足這個假設</text>
+  </g>
+</svg>

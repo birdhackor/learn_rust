@@ -23,6 +23,7 @@ chapters/**
 !chapters/07-*.md
 !chapters/08-*.md
 !chapters/09-*.md
+!chapters/10-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -106,6 +107,16 @@ nav = [
     { "9.2 在編譯程式之前執行 Rust 工作" = "chapters/09-02-build-scripts.md" },
     { "9.3 走訪檔案，保留路徑與失敗" = "chapters/09-03-file-traversal.md" },
     { "9.4 從檔案候選到真正相同的內容" = "chapters/09-04-content-confirmation.md" },
+  ] },
+  { "第 10 章：thread、同步與 atomic" = [
+    { "10.1 工作交給另一個 thread：Send 與 Sync" = "chapters/10-01-send-sync.md" },
+    { "10.2 thread、join 與 panic payload" = "chapters/10-02-thread-join.md" },
+    { "10.3 HRTB：讓 callback 接受當次的借用" = "chapters/10-03-hrtb-callbacks.md" },
+    { "10.4 scoped thread：借用外部資料，安排區段收尾" = "chapters/10-04-scoped-threads.md" },
+    { "10.5 channel：交接訊息，也安排工作收尾" = "chapters/10-05-channels.md" },
+    { "10.6 Arc 與 Mutex：共同持有，輪流修改" = "chapters/10-06-arc-mutex.md" },
+    { "10.7 RwLock 與同步設計：共享讀取，獨佔修改" = "chapters/10-07-rwlock-design.md" },
+    { "10.8 atomic 與 memory ordering：單次更新與跨操作同步" = "chapters/10-08-atomic-ordering.md" },
   ] },
 ]
 

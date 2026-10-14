@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="870" viewBox="0 0 400 870" role="img" aria-labelledby="title desc">
+  <title id="title">唯一一次Release與Acquire發布</title>
+  <desc id="desc">producer先把DATA寫成230再Release寫READY為true；consumer的Acquire load R1必須讀自這次P2，才使稍後Relaxed讀DATA的R2得到230。灰箭頭是同一thread的先後，藍箭頭是讀自P2時成立的跨thread同步，不是共用時間軸。</desc>
+  <defs>
+    <marker id="gray" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#58657d"/></marker>
+    <marker id="blue" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="9" markerHeight="9" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#2864ad"/></marker>
+  </defs>
+  <rect width="400" height="870" rx="12" fill="#fff"/>
+  <g font-family="Arial, 'Noto Sans CJK TC', sans-serif" font-size="24" fill="#183049" text-anchor="middle">
+    <text x="200" y="33" font-weight="bold">唯一一次發布</text>
+    <text x="100" y="88">producer</text><text x="300" y="88">consumer</text>
+    <rect x="20" y="140" width="160" height="110" rx="10" fill="#edf5ff" stroke="#3272ae" stroke-width="2"/>
+    <text x="100" y="172">P1 DATA</text><text x="100" y="202">寫入230</text><text x="100" y="232">Relaxed</text>
+    <path d="M100 250 V300" fill="none" stroke="#58657d" stroke-width="2" marker-end="url(#gray)"/>
+    <rect x="20" y="300" width="160" height="110" rx="10" fill="#edf5ff" stroke="#3272ae" stroke-width="2"/>
+    <text x="100" y="332">P2 READY</text><text x="100" y="362">寫入true</text><text x="100" y="392">Release</text>
+    <path d="M180 355 H200 V535 H220" fill="none" stroke="#2864ad" stroke-width="3" marker-end="url(#blue)"/>
+    <rect x="104" y="410" width="192" height="65" fill="#fff"/>
+    <text x="200" y="435" fill="#2864ad">R1 讀自 P2</text><text x="200" y="466" fill="#2864ad">才形成同步</text>
+    <rect x="220" y="480" width="160" height="110" rx="10" fill="#edf7ee" stroke="#367944" stroke-width="2"/>
+    <text x="300" y="512">R1 READY</text><text x="300" y="542">讀到true</text><text x="300" y="572">Acquire</text>
+    <path d="M300 590 V640" fill="none" stroke="#58657d" stroke-width="2" marker-end="url(#gray)"/>
+    <rect x="220" y="640" width="160" height="110" rx="10" fill="#edf7ee" stroke="#367944" stroke-width="2"/>
+    <text x="300" y="672">R2 DATA</text><text x="300" y="702">讀到230</text><text x="300" y="732">Relaxed</text>
+    <rect x="20" y="780" width="360" height="72" rx="10" fill="#f2f4f8" stroke="#58657d" stroke-width="2"/>
+    <text x="200" y="810">P1 → P2 → R1 → R2</text><text x="200" y="840">成立時，P1 happens-before R2</text>
+  </g>
+</svg>

@@ -21,6 +21,7 @@ members = [
     "examples/ch09-build-script",
     "examples/ch09-files",
     "examples/ch09-content",
+    "examples/ch10-concurrency",
 ]
 resolver = "3"
 

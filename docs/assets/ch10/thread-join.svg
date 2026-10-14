@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="870" viewBox="0 0 400 870" role="img" aria-labelledby="title desc">
+  <title id="title">thread 分工與 join 收尾</title>
+  <desc id="desc">主 thread 建立 worker 後計算6，worker 接手 Vec 計算200。join 等待 worker 結束後取回200，主 thread 合併成206。兩條路徑沒有指定排程順序；圖中距離不是時間比例。</desc>
+  <defs>
+    <marker id="flow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#334155"/></marker>
+    <marker id="transfer" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#047857"/></marker>
+  </defs>
+  <rect width="400" height="870" rx="18" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="24" fill="#0f172a" text-anchor="middle">
+    <text x="96" y="43">主 thread</text><text x="302" y="43">worker</text>
+    <rect x="16" y="68" width="164" height="74" rx="10" fill="#e2e8f0" stroke="#64748b"/>
+    <text x="98" y="112">spawn</text>
+    <path d="M180 105 H214" stroke="#047857" stroke-width="3" marker-end="url(#transfer)"/>
+    <rect x="224" y="68" width="160" height="74" rx="10" fill="#d1fae5" stroke="#047857"/>
+    <text x="304" y="97">接手 Vec</text><text x="304" y="126">80、120</text>
+    <path d="M98 150 V192" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <path d="M304 150 V192" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <rect x="16" y="202" width="164" height="102" rx="10" fill="#e2e8f0" stroke="#64748b"/>
+    <text x="98" y="238">自己計算</text><text x="98" y="270">1 + 2 + 3</text>
+    <rect x="224" y="202" width="160" height="102" rx="10" fill="#d1fae5" stroke="#047857"/>
+    <text x="304" y="238">工作計算</text><text x="304" y="270">80 + 120</text>
+    <path d="M98 312 V349" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <path d="M304 312 V349" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <rect x="16" y="359" width="164" height="69" rx="10" fill="#e2e8f0" stroke="#64748b"/>
+    <text x="98" y="401">小計 6</text>
+    <rect x="224" y="359" width="160" height="69" rx="10" fill="#d1fae5" stroke="#047857"/>
+    <text x="304" y="401">成果 200</text>
+    <path d="M98 436 V474" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <path d="M304 436 V474" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <rect x="16" y="484" width="164" height="113" rx="10" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="98" y="526">join</text><text x="98" y="564">等待結束</text>
+    <rect x="224" y="484" width="160" height="113" rx="10" fill="#d1fae5" stroke="#047857"/>
+    <text x="304" y="526">工作結束</text><text x="304" y="564">包含清理</text>
+    <path d="M98 605 V670" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <path d="M304 605 V720 H190" fill="none" stroke="#047857" stroke-width="3" marker-end="url(#transfer)"/>
+    <text x="248" y="653" fill="#047857">交回 200</text>
+    <rect x="16" y="680" width="164" height="82" rx="10" fill="#dbeafe" stroke="#1d4ed8"/>
+    <text x="98" y="713">取得成果</text><text x="98" y="743">6 + 200</text>
+    <path d="M98 770 V801" stroke="#334155" stroke-width="3" marker-end="url(#flow)"/>
+    <text x="98" y="836">總和 206</text>
+  </g>
+</svg>

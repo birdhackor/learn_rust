@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="800" viewBox="0 0 400 800" role="img" aria-labelledby="title desc">
+  <title id="title">兩份 read guard 都釋放後，writer 才取得</title>
+  <desc id="desc">first 與 second 是同一 RwLock 的兩份讀取權限。兩者仍在時 try_write 回 WouldBlock。drop first 後 second 仍阻止 writer；drop second 後 try_write 才取得寫權限，追加30，後續讀到長度3、總和230。圖按單thread例子順序，不表示排程或時間。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#596579"/></marker></defs>
+  <rect width="400" height="800" rx="14" fill="#fff"/>
+  <g font-family="sans-serif" font-size="24" fill="#172b41">
+    <text x="200" y="33" text-anchor="middle" font-weight="bold">reader 活躍，writer 未取得</text>
+    <rect x="20" y="55" width="360" height="78" rx="10" fill="#edf6ff" stroke="#346c99" stroke-width="2"/>
+    <text x="200" y="86" text-anchor="middle">同一個 RwLock</text>
+    <text x="200" y="118" text-anchor="middle">清單80、120，總和200</text>
+    <path d="M200 133 V151 H105 V171 M200 151 H295 V171" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="20" y="182" width="171" height="81" rx="10" fill="#edf7ef" stroke="#387448" stroke-width="2"/>
+    <rect x="209" y="182" width="171" height="81" rx="10" fill="#edf7ef" stroke="#387448" stroke-width="2"/>
+    <text x="105" y="214" text-anchor="middle">read1 / first</text>
+    <text x="105" y="249" text-anchor="middle">讀取權限活躍</text>
+    <text x="295" y="214" text-anchor="middle">read2</text>
+    <text x="295" y="249" text-anchor="middle">second 活躍</text>
+    <rect x="20" y="281" width="360" height="67" rx="10" fill="#f1f4f8" stroke="#596579" stroke-width="2"/>
+    <text x="200" y="309" text-anchor="middle">try_write → WouldBlock</text>
+    <text x="200" y="339" text-anchor="middle">沒有取得 writer guard</text>
+    <path d="M200 348 V405" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="245" y="382">drop(first)</text>
+    <rect x="20" y="416" width="171" height="81" rx="10" fill="#f1f4f8" stroke="#596579" stroke-width="2"/>
+    <rect x="209" y="416" width="171" height="81" rx="10" fill="#edf7ef" stroke="#387448" stroke-width="2"/>
+    <text x="105" y="449" text-anchor="middle">first</text>
+    <text x="105" y="481" text-anchor="middle">已解除讀取</text>
+    <text x="295" y="449" text-anchor="middle">second</text>
+    <text x="295" y="481" text-anchor="middle">仍持讀取權限</text>
+    <rect x="20" y="516" width="360" height="67" rx="10" fill="#f1f4f8" stroke="#596579" stroke-width="2"/>
+    <text x="200" y="544" text-anchor="middle">try_write → WouldBlock</text>
+    <text x="200" y="574" text-anchor="middle">second 還沒有 drop</text>
+    <path d="M200 583 V650" fill="none" stroke="#596579" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="222" y="621">drop(second)</text>
+    <rect x="20" y="662" width="360" height="120" rx="10" fill="#edf7ef" stroke="#387448" stroke-width="2"/>
+    <text x="200" y="693" text-anchor="middle">writer 取得獨佔權限</text>
+    <text x="200" y="727" text-anchor="middle">追加30，再釋放 writer</text>
+    <text x="200" y="763" text-anchor="middle">後續讀：長度3，總和230</text>
+  </g>
+</svg>
