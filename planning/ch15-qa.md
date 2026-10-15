@@ -1,6 +1,6 @@
 # 第15章 QA 閉環與發布紀錄
 
-**最新狀態：review／cross／local與正式候選本機驗證均完成；遠端CI與公開發布仍待確認。** Root已全文核對本稿182行、十二份ORIGINAL、三份followup及兩份精確Stage A；正式候選通過完整check與固定nightly Miri，詳文末。以下保留協調者交稿時的狀態與歸屬，不回寫原判或未知，也不以局部N0、作者17項CLI或先備precheck代替正式候選驗證。
+**最新狀態：review／cross／local、正式候選本機驗證、遠端正常profile CI與公開部署確認均已完成。** Root已全文核對協調稿182行、十二份ORIGINAL、三份followup及兩份精確Stage A；正式候選通過完整check與固定nightly Miri，首頁與109小節均已公開，證據見文末。以下保留協調者交稿時的狀態與歸屬，不回寫原判或未知，也不以局部N0、作者17項CLI或先備precheck代替正式候選驗證。
 
 本次角色是協調彙整者，並非第15章的第四份獨立原判，也沒有自行再審教材。曾寫第2章、4.4–4.5、第5章、9.2–9.4及做過12／14等審閱的背景保留；沒有把自己的專業知識補成原讀者已懂。只寫本草稿及自有 work 證據，沒有改學生稿、workspace、lock、nav、Git index或任何原報告；沒有將這份彙整傳給TECH01／CONT04／FIRST04／作者07。
 
@@ -190,3 +190,13 @@ Root使用封存修後v16及明列的35項維護文件建立`release15-candidate
 本機僅將dev／test除錯符號設0並關閉incremental以控制磁碟使用；opt-level、debug assertions、範例自訂profile及正式CI設定不變。這次Cargo test的benchmark target只屬驗收模式，沒有重跑原效能量測。`git diff --check`的兩處空白是兩份`invalid-urls.txt`刻意保留的index2單一空白行，須保留以驗原行索引，並非待刪排版錯誤。
 
 同一正式候選的`bash scripts/check-miri.sh`實際退出0：固定`nightly-2026-10-01`使用既有sysroot，3個miri_contracts及1個owner答案通過，隔離負例命中指定freed allocation診斷。raw為`release15-miri-check.log`；故意UB只交Miri，正常host未執行。此證據限指定路徑，不推所有unsafe或平台皆已驗。遠端正常profile CI、nightly安裝／Miri步驟與公開頁面將在實際完成後追加。
+
+## 公開部署與遠端Miri確認
+
+教材提交`ce8275febe2a1a4eba943cd97b9f7ec7f37d28bc`已push。[Actions 38677655876](https://github.com/birdhackor/learn_rust/actions/runs/38677655876) completed success，check及deploy兩job與固定nightly安裝／Miri兩步驟均實際success。遠端使用正常profile，沒有沿用本機省空間的除錯符號設定。Root核run的head SHA精確，再請求首頁及109小節共110頁：全部HTTP200且H1相符；本章八SVG的HTTP200及SHA逐份符合v16。逐項結果保存於`release15-actions-success.json`、`release15-actions-jobs-success.json`及`release15-live-http.json`。
+
+另核公開首頁實際包含15章／109小節及兩個引導型專案；15.11的原index0–4表格、空行／單一空白對應、Clippy旗標說明均存在，誤導的raw fixture複製區已移除，證據為`release15-selected-public-text.json`。兩個實戰均有可編譯起點、分步驗收、收合提示及可用完整答案；約千行指核心，不將全套tests／fixture算成讀者須一次手寫的量。
+
+提交範圍檢查曾把未變更的既有`ch15-b.md`研究筆記也算入changed paths，Python保護檢查報錯但當次shell沒有失敗即停止，仍繼續commit／push。Root隨即逐檔核**全部1569個committed files**與通過測試的正式candidate完全一致，228個changed paths只落在明列範圍；191學生檔與16封存報告均維持SHA，證據為`release15-commit-proof.json`。這是範圍計數／命令保護錯誤，不冒稱保護檢查首次就成功；後續mutation命令使用失敗即停止。正式CI及公開驗證均綁定上述實際教材commit，不借其他版本。
+
+本段只記這個教材commit的實測；之後僅補QA與進度文件不改學生稿，仍由正常push工作流程檢查。各原判、後文釐清、cross與LOCAL保留原角色與時點；AI審閱不等真人Python新手測試，所選平台／輸入的成功也不外推全部故障或所有OS。
