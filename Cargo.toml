@@ -32,6 +32,7 @@ members = [
     "examples/ch11-async/local-service",
     "examples/ch12-unsafe",
     "examples/ch12-ffi",
+    "examples/ch13-futures",
 ]
 resolver = "3"
 

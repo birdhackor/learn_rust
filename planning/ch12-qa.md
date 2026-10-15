@@ -1,6 +1,6 @@
 # 第12章 QA 閉環與發布待辦
 
-三份original、兩份cross與FIRST指定六單位LOCAL已封存，review／cross／local閉環。**Root指定實頁、共享navigation.top取消及候選完整C／Rust check已通過；live發布驗證仍pending**；目前不能寫已發布、候選全套PASS或全域UI已修。本文件是協調彙整，引用已封存角色與root處置，不算新獨立QA；不修改教材、staging、Git index、任何original或全域設定。
+三份original、兩份cross與FIRST指定六單位LOCAL已封存。**Root指定實頁、共享navigation.top取消、候選完整C／Rust check及公開部署驗證均已完成**；commit、Actions與86頁HTTP證據見文末。以下保留各角色封存當時的待辦與限制，不將後續驗證回填成原判已完成。本文件是協調彙整，不算新獨立QA，也不修改任何original。
 
 ## 封存報告
 
@@ -81,3 +81,7 @@ root12-minimal-fix-visual-proof.json／兩份views保存scope和served SHA。C�
 ## 完整發布候選驗證
 
 release12-candidate僅1–12章85小節＋首頁；本章77學生檔current／INDEX／candidate精確符合v5，六report SHA保護。C checker納入check.sh，Miri CI／script未提前納入，Cargo只已審members／候選獨立lock，nav無navigation.top。bash scripts/check.sh退出0：strict／fmt／all-target Clippy／all-target與doc tests、134指定negative、3正常C11與1指定C編譯失敗通過。381個test target結果，213個通過tests、零失敗。指定C checker只執行有效材料，無host intentional UB。候選使用前章已生成target快取節省空間，來源與lock獨立；不把快取代檢查。公開部署仍待完成。
+
+## 公開部署與UI確認
+
+已提交並push 564916103b28f40c503cf34294b7065744c198a0。Actions [38656033726](https://github.com/birdhackor/learn_rust/actions/runs/38656033726) completed success。Root實際首頁＋85小節共86頁200/H1精確，7 SVG逐SHA符合v5，未釋出的13.1為404。公開GAT另以1280×800／390×844實際圖頂180停2300ms、親看兩張，末框讀到3項均完整，top component0且無整頁overflow，故共享取消navigation.top已完成公開確認；不是用localpreview代發布。逐頁proof／原位UI在release12-live-http.json、release12-live-gat.json。

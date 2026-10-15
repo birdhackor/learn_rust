@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="850" viewBox="0 0 400 850" role="img" aria-labelledby="title desc">
+  <title id="title">交換整份值，saved仍保存原地址</title>
+  <desc id="desc">A與B是原left.value與right.value的欄位位置標號。交換前，left保存value80及地址A，right保存value120及地址B。整份值交換後，欄位位置A保存value120，saved記錄B；欄位位置B保存value80，saved記錄A。藍箭頭表示saved記錄的地址，兩份地址沒有自動更新；箭頭不是合法存取的保證。</desc>
+  <defs>
+    <marker id="step" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#42566d"/></marker>
+    <marker id="address" markerWidth="9" markerHeight="9" refX="8" refY="4.5" orient="auto"><path d="M0 0L9 4.5L0 9Z" fill="#2563eb"/></marker>
+  </defs>
+  <rect width="400" height="850" rx="12" fill="#fff"/>
+  <g font-family="sans-serif" font-size="24" fill="#14273b" text-anchor="middle">
+    <text x="200" y="34" font-weight="bold">交換前：各自記下位置</text>
+    <rect x="60" y="55" width="280" height="107" rx="10" fill="#e9f7ef" stroke="#47886b" stroke-width="2"/>
+    <text x="200" y="85">欄位 A：left.value</text>
+    <text x="200" y="118">value = 80</text>
+    <text x="200" y="150">saved = A</text>
+    <rect x="60" y="179" width="280" height="107" rx="10" fill="#e9f7ef" stroke="#47886b" stroke-width="2"/>
+    <text x="200" y="209">欄位 B：right.value</text>
+    <text x="200" y="242">value = 120</text>
+    <text x="200" y="274">saved = B</text>
+    <path d="M200 300V349" fill="none" stroke="#42566d" stroke-width="3" marker-end="url(#step)"/>
+    <text x="200" y="380">交換整份 AddressNote</text>
+    <text x="200" y="414" font-weight="bold">交換後：記錄一起移交</text>
+    <rect x="70" y="433" width="260" height="115" rx="10" fill="#fff2e6" stroke="#a97749" stroke-width="2"/>
+    <text x="200" y="463">欄位 A：left.value</text>
+    <text x="200" y="497">value = 120</text>
+    <text x="200" y="532" fill="#2563eb">saved = B</text>
+    <rect x="70" y="607" width="260" height="115" rx="10" fill="#fff2e6" stroke="#a97749" stroke-width="2"/>
+    <text x="200" y="637">欄位 B：right.value</text>
+    <text x="200" y="671">value = 80</text>
+    <text x="200" y="706" fill="#2563eb">saved = A</text>
+    <path d="M304 529H364V668H334" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#address)"/>
+    <path d="M96 703H36V494H66" fill="none" stroke="#2563eb" stroke-width="3" marker-end="url(#address)"/>
+    <text x="200" y="772">藍箭頭：saved 的地址</text>
+    <text x="200" y="811">位置 A／B 沒有互換</text>
+  </g>
+</svg>

@@ -26,6 +26,7 @@ chapters/**
 !chapters/10-*.md
 !chapters/11-*.md
 !chapters/12-*.md
+!chapters/13-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -137,6 +138,13 @@ nav = [
     { "12.4 unsafe的責任：從呼叫契約到安全抽象" = "chapters/12-04-unsafe-contracts.md" },
     { "12.5 FFI 所需的 C 基礎" = "chapters/12-05-c-basics.md" },
     { "12.6 FFI：把 C 契約接成安全的 Rust 介面" = "chapters/12-06-ffi.md" },
+  ] },
+  { "第 13 章：Pin、Future 與 executor 內部" = [
+    { "13.1 self-reference：資料還活著，地址也可能對不上" = "chapters/13-01-self-reference.md" },
+    { "13.2 Pin 與 Unpin：把地址穩定放進介面約定" = "chapters/13-02-pin-and-unpin.md" },
+    { "13.3 Poll、Context 與 Waker：通知之後，誰再次檢查？" = "chapters/13-03-poll-and-waker.md" },
+    { "13.4 外部事件 Future：檢查與登記之間，不能漏掉通知" = "chapters/13-04-controlled-event-future.md" },
+    { "13.5 小型 executor：收到通知，再安排下一次 poll" = "chapters/13-05-small-executor.md" },
   ] },
 ]
 

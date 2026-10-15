@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="885" viewBox="0 0 400 885" role="img" aria-labelledby="title desc">
+  <title id="title">通知channel把事件接回executor的再次poll</title>
+  <desc id="desc">單工作executor持有同一份pinned future。首次內層poll保存Waker並回Pending，控制例准許worker供80。worker在State存80並解鎖，wake回呼只把unit通知送入通知channel，buffer保留待收通知。executor收到後再次poll同一工作，才取得Ready80並停止。灰箭頭表示訊號及操作順序，不固定wake相對recv開始的時間；藍色點線表示executor仍持有同一工作，不是通知傳送Future。main取得Output後還要join外部worker。</desc>
+  <defs>
+    <marker id="step" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#64748b"/></marker>
+    <marker id="owner" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#356fab"/></marker>
+  </defs>
+  <rect width="400" height="885" rx="12" fill="#fff"/>
+  <g font-family="sans-serif" font-size="24" fill="#14273b" text-anchor="middle">
+    <text x="200" y="34" font-weight="bold">通知讓 executor 再檢查</text>
+    <rect x="34" y="55" width="344" height="114" rx="12" fill="#e9f2ff" stroke="#5b7fa3" stroke-width="2"/>
+    <text x="206" y="89" font-weight="bold">executor 持有 pin owner</text>
+    <text x="206" y="125">首次 poll，登記 Waker</text>
+    <text x="206" y="156">內層 future 回 Pending</text>
+    <path d="M206 177V208" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#step)"/>
+    <rect x="34" y="220" width="344" height="114" rx="12" fill="#fff2e6" stroke="#a97749" stroke-width="2"/>
+    <text x="206" y="255" font-weight="bold">worker：State 存 80</text>
+    <text x="206" y="289">解鎖 wake，回呼送 ()</text>
+    <text x="206" y="321">送通知，不 poll</text>
+    <path d="M206 342V373" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#step)"/>
+    <rect x="34" y="385" width="344" height="94" rx="12" fill="#e9f7ef" stroke="#47886b" stroke-width="2"/>
+    <text x="206" y="423" font-weight="bold">通知 channel 的 buffer</text>
+    <text x="206" y="461">保存待收 ()</text>
+    <path d="M206 487V518" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#step)"/>
+    <rect x="34" y="530" width="344" height="114" rx="12" fill="#e9f2ff" stroke="#5b7fa3" stroke-width="2"/>
+    <text x="206" y="565" font-weight="bold">executor 收到通知</text>
+    <text x="206" y="599">再 poll 同一份 future</text>
+    <text x="206" y="631">Ready(80)，停止 poll</text>
+    <path d="M34 108H10V580H32" fill="none" stroke="#356fab" stroke-width="3" stroke-dasharray="6 5" marker-end="url(#owner)"/>
+    <path d="M206 652V683" fill="none" stroke="#64748b" stroke-width="3" marker-end="url(#step)"/>
+    <rect x="34" y="695" width="344" height="94" rx="12" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="206" y="733" font-weight="bold">main 取得 Output 80</text>
+    <text x="206" y="771">仍須 join 外部 worker</text>
+    <text x="200" y="829">灰線：操作／訊號順序</text>
+    <text x="200" y="865">藍點線：持有同一工作</text>
+  </g>
+</svg>

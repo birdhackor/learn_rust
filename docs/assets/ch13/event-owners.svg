@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="610" viewBox="0 0 400 610" role="img" aria-labelledby="title desc">
+  <title id="title">Future與事件端共同持有State</title>
+  <desc id="desc">main的EventAmount保存Arc、polls及completed。worker的AmountEvent保存另一份Arc及一次供值權限。兩條藍箭頭都指同一Mutex中的State，表示共同ownership，不是兩份資料。State起始value為None、waiting為None。polls與completed留在main自己的Future，不在共同State內。</desc>
+  <defs><marker id="owner" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#356fab"/></marker></defs>
+  <rect width="400" height="610" rx="12" fill="#fff"/>
+  <g font-family="sans-serif" font-size="24" fill="#14273b" text-anchor="middle">
+    <text x="200" y="36" font-weight="bold">兩份 owner，一份 State</text>
+    <rect x="22" y="65" width="320" height="118" rx="12" fill="#e9f2ff" stroke="#5b7fa3" stroke-width="2"/>
+    <text x="182" y="103" font-weight="bold">main：EventAmount</text>
+    <text x="182" y="140">Arc / polls / completed</text>
+    <rect x="22" y="239" width="320" height="118" rx="12" fill="#fff2e6" stroke="#a97749" stroke-width="2"/>
+    <text x="182" y="277" font-weight="bold">worker：AmountEvent</text>
+    <text x="182" y="314">Arc / 一次供值權限</text>
+    <path d="M342 140H365V413H338V441" fill="none" stroke="#356fab" stroke-width="3" marker-end="url(#owner)"/>
+    <path d="M182 357V441" fill="none" stroke="#356fab" stroke-width="3" marker-end="url(#owner)"/>
+    <rect x="22" y="443" width="356" height="117" rx="12" fill="#e9f7ef" stroke="#47886b" stroke-width="2"/>
+    <text x="200" y="477" font-weight="bold">同一 Mutex 中的 State</text>
+    <text x="200" y="513">value = None</text>
+    <text x="200" y="548">waiting = None</text>
+    <text x="200" y="592">藍箭頭：共同保活同一份</text>
+  </g>
+</svg>

@@ -390,6 +390,10 @@ name = "ch12-unsafe"
 version = "0.1.0"
 
 [[package]]
+name = "ch13-futures"
+version = "0.1.0"
+
+[[package]]
 name = "chacha20"
 version = "0.10.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"

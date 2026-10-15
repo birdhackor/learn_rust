@@ -31,7 +31,7 @@
 | 9 Cargo 工程／檔案處理 | 已審閱並發布 | chapter07_cli／chapter02_ownership | actual1–8；原v5／發布修後v6 |
 | 10 thread／同步／atomic | 已審閱並發布 | chapter10_concurrency | 第5–8章實際稿；原v12，發布修後v15 |
 | 11 async／HTTP | 已審閱並發布；最終v16、79累計小節 | chapter11_async／chapter01_foundations | 11.1凍結v3；後節依實際小節前置 |
-| 12 GAT／variance／unsafe／FFI | 六頁v5 review/cross/local閉環；指定實頁完成、候選待驗 | chapter12_unsafe | 10.8凍結v11與12-prefix-v1實際前文 |
+| 12 GAT／variance／unsafe／FFI | 已審閱並發布；六頁v5、85累計小節 | chapter12_unsafe | 10.8凍結v11與12-prefix-v1實際前文 |
 | 13 Pin／Future內部 | 五頁完整v5先備可用；三角色獨立整章審閱中 | chapter03_data | actual13.1-v1／12.4／11.5 |
 | 14 macro／API／測試／效能 | 八頁v10 review/cross/local閉環；候選待13發布 | chapter04_traits／chapter01_foundations | 完整v8；14.6已取得12.4，14.7已取得11.4 |
 | 15 引導型最終專案與完整答案 | 15.1–9先備可用；A與B1–3逐gate完成，15.10 B4撰寫，15.11待gate | chapter07_cli／chapter11_async | A的實際8.6／14.4／15.5前置已齊；B等async前文 |
@@ -74,3 +74,5 @@
 依root核對課程覆蓋後的明確追加指示，在8.1 Sized／?Sized之後、Box之前補常數泛型最小契約：區分T型別與const N:usize值參數、N在array型別及body中的角色、推導與turbofish明選。作者先實讀英文Reference與中文RustCourse對應，新增一份normal example及一份長度不符E0308 fixture，fmt／Clippy與相應執行通過；不為純helper增加鏡像tests。新段不改既有Box／Deref／borrow契約或章節順序，舊freeze及首讀原判保留；作者紀錄見第8章ledger，修後先備釋出與獨立驗收由root分開確認。
 
 - 第11章已發布36df167；Actions38655225227成功，Root80公開頁面與9SVG精確、12.1為404。QA見ch11-qa.md。候選首次ENOSPC失敗保留，清舊生成快取後完整check0，198tests＋120negative。
+
+- 第12章已發布5649161；Actions38656033726成功，Root86公開頁面與7SVG精確、13.1為404；公開GAT兩尺寸停留無topchip遮末框。完整check213tests／134negative／C正常3＋指定compilefail1通過，Miri CI留第14章。

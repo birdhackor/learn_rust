@@ -2,6 +2,10 @@
 
 以正體中文撰寫的 Rust 教學專案。文件由 Zensical 建置，程式範例由 Cargo workspace 管理。
 
+[線上閱讀](https://birdhackor.github.io/learn_rust/)｜[課程規劃](planning/curriculum-plan-v2.md)｜[實作與發布進度](planning/implementation-status.md)
+
+讀者起點是基本 Python。教學與範例依已教概念排列，進階篇與最後的引導型專案也包含在課程中；完成審閱的章節逐批發布。
+
 ## 開始開發
 
 在專案根目錄執行：
@@ -38,6 +42,8 @@ Cargo.toml / Cargo.lock  Rust workspace 與依賴
 scripts/bootstrap.sh    本機、Cloud 與 CI 的環境準備
 scripts/env.sh          共用工具路徑與快取設定
 scripts/check.sh        文件建置、格式、Clippy 與測試
+scripts/check-fixtures.py 故意失敗範例的編譯／panic 契約
+planning/               課程、來源研究、作者先備與審閱紀錄
 .github/workflows/      GitHub Actions 建置檢查
 ```
 
@@ -54,4 +60,4 @@ cargo run -p hello-world --locked
 
 Cloud 的 Install script 可使用 bash scripts/bootstrap.sh。Start skill 的設定、Legacy 環境和寫作方式見 [貢獻指南](CONTRIBUTING.md)。
 
-GitHub Actions 會檢查文件與 Rust 範例，並提供 documentation-site 建置產物。發布網址確定後，可再設定 site_url 與部署流程。
+GitHub Actions 會檢查文件與 Rust 範例，並提供 documentation-site 建置產物。main 通過檢查後，自動發布至 [GitHub Pages](https://birdhackor.github.io/learn_rust/)；PR 只提供檢查與預覽。
