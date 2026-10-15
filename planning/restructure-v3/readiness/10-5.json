@@ -1,0 +1,148 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "10.5"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round10-cargo-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round10-cli-fixtures.md",
+    "planning/restructure-v3/reviews/technical-early/round10-complete-note-search.md",
+    "planning/restructure-v3/reviews/technical-early/round10-native-path-clap-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round10-serde-json.md",
+    "planning/restructure-v3/reviews/technical-early/round10-text-bytes-io-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/10-05-lesson.md": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+    "examples/intro-workspace/path-cli/examples/path_types.rs": "b4c72588edc038a837e803f28bee7a9ff726eab28ff5e3856985cc15601c0370",
+    "examples/intro-workspace/path-cli/examples/os_strings.rs": "2f2b0d8ceb0aad5bc08b4299ece2b5118726545152babb4302a0d5e6926dabee",
+    "examples/intro-workspace/path-cli/examples/working_directory.rs": "8bcba0175b70732d280241b9eacecd9295599795cf079140bdab4119d04685f3",
+    "examples/intro-workspace/path-cli/examples/arguments.rs": "e8c966464f0702ed7499c3af8933c51a410051f32e288de587df44376169bd2a",
+    "examples/intro-workspace/path-cli/src/main.rs": "5b502a5cd6c42ac0dcbb0f70b772cb0287c0a2296766c094e35ed35bde91d41c",
+    "examples/intro-workspace/path-cli/Cargo.toml": "26532c670174fe88ec62f48afb2db631d7cad2b89aea973332e18967cb4cfbe2",
+    "examples/intro-workspace/io-text/fixtures/note.txt": "a581105a3e3bce0d0ae0ff57955745e4c5df376a9a751acec1f5f5e08a6be213",
+    "examples/intro-workspace/path-cli/examples/argument_pair_solution.rs": "25a656c4bdee4191d4a142def05402412ef167a69d559821141fb4322afce20b"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 3,
+      "quote": "前兩節使用固定檔名讀取筆記。現在要讓呼叫程式的人指定檔案，成功就交出原文字，失敗則回報原因與結束狀態。這份需要還包含一項區別：**檔名是作業系統接受的路徑，檔案內容才是這個工具要求的 UTF-8 文字**。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 9,
+      "quote": "**path（路徑）** 指向檔案系統中的位置，可能包含目錄與檔名。`std::path` 的 **`Path`** 表示路徑內容，本節透過 `&Path` 借用它；**`PathBuf`** 擁有這份路徑資料，可以在 mutable 存取下修改。它們的借用／owned 分工，和 str／String 相似。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 26,
+      "quote": "顯示時選用 **`path.display()`**：它交回供格式化使用的 `std::path::Display` 物件，實作 第 8.3 節的 Display trait；它借用原路徑，**不是產生一份 String**。若路徑不能完整表示成 Unicode，這項顯示可能有失真，所以供人閱讀，不拿顯示文字重新建立檔名或作唯一識別。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 28,
+      "quote": "若確實需要 UTF-8 文字，**`path.to_str()`** 回傳 `Option<&str>`：可表示就 Some，否則 None。None 不代表路徑資料本身不存在或一定無效，只表示不能借成這份文字表示。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 42,
+      "quote": "**OS** 是 operating system（作業系統）。原生檔名不保證能用 UTF-8 表示，因此標準庫另有 **`OsString`** 保存 owned 的 OS 字串，**`&OsStr`** 借用其內容；型別位於 `std::ffi` module。ffi 是 foreign function interface（外部函式介面），這個 module 提供和外部系統交換資料的型別；本節先用其中的原生字串。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 57,
+      "quote": "into_string 的 Err 中是**原生資料本身**，不是新增的一段錯誤訊息；caller 仍可以保存它或轉成 PathBuf。下面先借用再交成路徑，最後另用一份固定 OsString 觀察 owned 文字轉換："
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 67,
+      "quote": "**`std::env::current_dir()`** 取得目前行程的工作目錄，回傳 `io::Result<PathBuf>`；不是 crate 原始碼的位置，也不是一定指向執行檔所在目錄。caller 可以借用這份 owned 路徑，再 join 相對檔名。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 69,
+      "quote": "第 10.3 節的 fs::read_to_string 不只接受文字檔名，也接受 **`&Path`**。它的輸入需要能借成 Path，這是 第 8.5 節的 `AsRef<Path>` 關係；本節明確傳 `filename.as_path()`，不靠把原生路徑先轉成 String。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 79,
+      "quote": "**CLI** 是 command-line interface（命令列介面），也就是透過命令列參數、輸出與結束狀態使用程式的方式。arguments 是啟動程式時交給它的參數資料。本次只接受一個檔名；少了或多了，先回報用法錯誤，不開始讀檔。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 81,
+      "quote": "**`env::args_os()`** 建立標準型別 `ArgsOs` 的 iterator，其 **Item 是 owned OsString**。第 9.4 節的 next 每次取得 Some 中的一筆，結束是 None；不必先收集成 Vec，再冒著索引越界去取參數。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 91,
+      "quote": "這份範例的 parse_filename 不自行向 OS 取資料。它接收 **`I: IntoIterator<Item = OsString>`**，讓呼叫者交入完整參數序列，也能以已教的 owned array 驗證。IntoIterator 建立工作，next 推進狀態，取得的 OsString move 成 PathBuf。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 121,
+      "quote": "行程有兩個常用輸出出口：**stdout（standard output，標準輸出）** 交出工具的資料；**stderr（standard error，標準錯誤）** 交出診斷訊息。終端機通常都顯示兩者，但 caller 可以分別保存；本次成功的筆記內容只進 stdout。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 127,
+      "quote": "**exit status（結束狀態）** 是程式結束時交給啟動者的結果。Rust 的 **`std::process::ExitCode`** 可以由 main 正常回傳："
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 135,
+      "quote": "**`writeln!`** 沿用 write! 的出口與格式字串，額外加上一個換行；寫入 Stderr 時同樣回傳 io::Result<()>。先建立報告函式，成功就交回希望的狀態；連診斷出口都失敗，就交回標準失敗。沒有遞迴要求同一個已失敗的 stderr 再報告自己："
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 149,
+      "quote": "Cargo 指令的 **`--`** 表示後面的 arguments 交給我們的程式，而非 Cargo。**`--quiet`** 則減少 Cargo 自己的例行建置／執行訊息，程式的 stdout／stderr 仍照常存在。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 157,
+      "quote": "以下是 Bash 中的觀察方式：**`>`** 把 stdout 存到指定檔案，**`2>`** 把 stderr 存到另一個檔案，既有輸出檔會被清空；本次只使用兩個專用 captured 檔案。`echo $?` 顯示上一個指令的結束狀態，要立即放在 run 後面。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 170,
+      "quote": "本節 package **沒有 library**。前面的 path_types、os_strings、working_directory 與 arguments examples 都是獨立crate，只編譯各自完整程式；最早的路徑例子不會連帶載入參數與輸出處理。"
+    },
+    {
+      "section_id": "10.5",
+      "path": "docs/chapters/10-05-lesson.md",
+      "line": 202,
+      "quote": "先定義 PairError，包含 MissingFilename 與 TooManyArguments 兩個 variants，再寫 `parse_pair<I: IntoIterator<Item = OsString>>(input: I) -> Result<(PathBuf, PathBuf), PairError>`。同樣略過程式名稱，改為剛好接收兩個檔名；不夠兩個回 MissingFilename，再多一個回 TooManyArguments。不要轉成 String，也不要開檔案。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

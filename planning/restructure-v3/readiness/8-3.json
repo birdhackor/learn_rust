@@ -1,0 +1,93 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "8.3"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round08-errors-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08-quote-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-crossref-followup-final.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/08-03-lesson.md": "3502f84b5de589e26c1c6d6ee64bfc1f7da197b8ca6de40f78924a1580d29a66",
+    "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/display/main.rs": "1dc1d6b642bde7ec3e428612a4a2106baab26f766f5d4c949efd445f3a55d059",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/display/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/display_answer.rs": "0e82ea0752a59936003cc0f6b3afd52d5dc0ed21fae84d385c37d4ab3edc5c9e"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 3,
+      "quote": "第 8.1 節用 Debug 顯示 `Negative(-1)`，也讓呼叫者用 match 寫出拒絕原因。若數個呼叫者都要給使用者相同的說明，可以把這項文字規則放在型別上，避免每個地方重寫一次。"
+    },
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 7,
+      "quote": "**`Display`** 是標準函式庫的格式化 trait，提供 `{}`、`{error}` 這類格式所用的表示。第 6.2 節的 Debug 方便開發者檢查型別與內容；Display 則由實作者選定給使用者看的文字。"
+    },
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 13,
+      "quote": "Display 的必要方法叫 `fmt`：借讀要顯示的值，接收本次格式化操作的輸出狀態，將文字交給它。本節用 `use std::fmt;` 引入 **fmt module**；fmt 是 formatting（格式化）的縮寫，`fmt::Display` 等路徑都從這個 module 取名稱。"
+    },
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 17,
+      "quote": "**`Formatter`** 保存一次格式化操作所需的狀態，包括文字寫入的出口與格式設定。Rust 的格式化流程會提供這份狀態，不需要我們手動建立。"
+    },
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 28,
+      "quote": "**`fmt::Result`** 是 `Result<(), fmt::Error>` 的 type alias，沿用第 8.2 節：它沒有建立另一種結果容器。`Ok(())` 表示文字寫入完成，沒有另外交回數字；`fmt::Error` 則代表寫入這次格式化出口時失敗。"
+    },
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 34,
+      "quote": "**`write!`** 接收「寫入對象、格式字串、插入值」，把文字交給指定對象。對這裡的 Formatter，它交回 fmt::Result；它不固定向終端機輸出，也不自動加換行。"
+    },
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 42,
+      "quote": "**`format!`** 使用相同的格式字串規則，產生一份 owned String。它不直接顯示到終端機，也不自動加換行。和 println 一樣，格式化會借讀插入的值；產生的新 String 則可獨立保存。"
+    },
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 46,
+      "quote": "完整呼叫者如下。`pub mod formatting;` 載入上面的 trait impl 後，CountError 就有 Display；不需要先呼叫某個初始化函式。這個 target 只載入 policy 與 formatting，完整模組都在本頁後面。"
+    },
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 70,
+      "quote": "這些程式仍用 no-lib 的 intro-error-stages，完整 member manifest 如下："
+    },
+    {
+      "section_id": "8.3",
+      "path": "docs/chapters/08-03-lesson.md",
+      "line": 96,
+      "quote": "建立 LimitError，保存 `value: i32`、`maximum: i32`。實作 Display，顯示 `件數 101 超過上限 100`；兩個數字都從欄位取得。再用 value 151、maximum 150，確認同一份實作顯示 `件數 151 超過上限 150`。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

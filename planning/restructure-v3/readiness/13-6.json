@@ -1,0 +1,150 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "13.6"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round13-root-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round13-scoped-channel-lock-atomic-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round13-send-thread-hrtb-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-addendum-array.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-array-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-summary.md",
+    "planning/restructure-v3/reviews/continuity-late/13tail-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/13-06-lesson.md": "6f3d25a1cbab3fc40b75594280cd0c957878a70665d2f49b542349c747d26e24",
+    "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+    "examples/concurrency-stages/examples/mutex_guard/main.rs": "fcba5280879da0b62c48bc2ff110a7635174725a4f0e06673b8b3fa01ea7101f",
+    "examples/concurrency-stages/examples/arc_shared_read/main.rs": "ce4ae2f1f309e270b35adcf776732fac313f62516749553e6a6d01bba1580537",
+    "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.rs": "e8b1bdba69a0c75ea9560b239311409fead2846adb10bfde900e761c622a0ff2",
+    "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.rs": "11a2b939b67b0eb8d2ddc9af4f948d037dc6a7ef5da3faa64664f267b5e450e6",
+    "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.expected": "018106396268d6a7b58a9dfe8e469b87a44509ceb5bcdd5757200ba813f9aab8",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.rs": "a800476756cfce262a8a6825d18493c7a5b236e1c41cdde459bbe675e7a29c08",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/examples/arc_mutex/main.rs": "e7ee31786a6929bb17cb341072caa7e0a1d66c454b6eef24cf738b76bc6dfa6b",
+    "examples/concurrency-stages/examples/mutex_cell/main.rs": "436d8442ddefb6ba6a7435981f981800f16213a9c621125f0e05fc988efe6234",
+    "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.rs": "b61a092ba66888b45113dfd4ab938b64ef9dec9cc6e1e561ddb408df588cf517",
+    "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/examples/mutex_poison/workers/mod.rs": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+    "examples/concurrency-stages/examples/mutex_poison/main.rs": "19702d31b97a6a89457b89da33db19bc6f6a9292433d47daa7c86040ce38385d",
+    "examples/concurrency-stages/examples/mutex_answer/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/mutex_answer/main.rs": "15bfde9955c62f0b62066192cbf10c6dcaaa0d32ee414189dce4e6c79c85fa95",
+    "docs/assets/ch10/arc-mutex-guard.svg": "ecc01c4c5ea60f0dacbbd2df7b89dbf70d050d7beba54da4f436622a4e1c6af8"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 3,
+      "quote": "上一節讓各 worker 把訊息交給 main，再由 main 集中處理。現在改成 **多份工作共同使用一個仍留在共享模型裡的總額，各自短暫取得修改權限，完成後 main 讀回結果**。channel 仍能安排集中處理；這次要學的是共享資料的另一種分工，不是宣稱它一定更快。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 15,
+      "quote": "**Mutex** 來自 **mutual exclusion（互斥）**。`std::sync::Mutex<T>` 持有 T，讓呼叫者取得鎖（lock）後才存取內部資料；同一份 Mutex 一次只交出一份持鎖權限。其他 thread 要取得這個鎖時，可能 blocking 等待目前持有者釋放。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 19,
+      "quote": "**`MutexGuard<'a, T>`** 是持有鎖、借用 Mutex 內部資料的管理值。它和11.9的 RefMut 一樣，不是普通 `&mut T`："
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 31,
+      "quote": "先介紹 **poisoning**：若 Mutex 偵測到持鎖 thread panic，會留下 **poison（中毒）** 標記，提醒後來的使用者檢查資料是否只修改了一部分。`PoisonError<G>` 是攜帶這項警告及操作成果 G 的錯誤型別。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 39,
+      "quote": "因此 lock 的兩個分支都與 **已取得的 guard** 有關：Ok 交回 guard；poison 時 Err 裡也持有 guard，並不是鎖永遠拿不到。下面先使用正常路徑，稍後才教如何檢查並修復 poison 的資料。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 68,
+      "quote": "**`Arc<T>`** 位於 `std::sync`，名稱展開為 **Atomically Reference Counted**。它沿11.8的 reference counting 模型，讓多個 strong handle 共同保活同一份 heap 資料；差別是 **計數更新可由不同 thread 安全地進行**。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 129,
+      "quote": "**`Arc<Mutex<T>>`** 讓多份 Arc 保活同一個 Mutex；每個使用者再透過 Mutex 的 lock，取得對同一份內部 T 的 guard。clone Arc 沒有取得鎖，lock 也沒有增加 strong owner。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 131,
+      "quote": "跨 thread 的能力分開推：**`Mutex<T>` 的 Send 和 Sync 都需要 `T: Send`，不另外要求 `T: Sync`**。它安排內部資料輪流由持鎖者存取，而不讓非 Sync 的 T 被多個 shared caller 任意同時使用。把符合這兩項能力的 Mutex 放進 Arc，就能滿足 Arc 對內容的 Send／Sync 要求；因此本節的 `Arc<Mutex<i32>>` 可以交給不同 worker。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 159,
+      "quote": "圖畫出 **main 先取得 guard** 的一種可能次序。藍箭頭表示兩個 Arc 都連同一 Mutex；灰箭頭是這種次序下的取得／釋放流程。worker 必須等 main 的 guard 解鎖才取得自己的 guard；改成 worker 先取得時，兩份工作的先後可對調，總額仍是200："
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 167,
+      "quote": "用已教的 Cell 讓這個 bound 差別可見。`Cell<i32>` 有 Send，所以 `Mutex<Cell<i32>>` 可以有 Send／Sync，再由 Arc 共同持有。Cell 的 get／set 必須透過取得的 guard 使用；本例 **從 get、計算到 set 都保留同一份 guard**。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 177,
+      "quote": "取得 guard 後，哪怕已經完成最後一次讀取，guard 仍可能留在目前 scope 裡。用短 block 或 drop 表示這份存取權限何時結束，不把不相關工作放在持鎖區段內。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 181,
+      "quote": "同一個 thread 若尚未釋放 guard，又對同一個 Mutex 呼叫 lock，官方契約不指定確切結果：第二次可能 panic，也可能形成 deadlock，**不保證正常返回**。不要把它當成可以重複取得同一鎖的介面；本節不執行永久等待的反例。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 201,
+      "quote": "現在保存 `Totals { total: i32, count: usize }`：total 是已完成項目的總額，count 是完成筆數。每完成一項，總額與筆數都要更新；尤其 count 是0時，總額應是0。這項資料必須維持的關係，叫 **invariant（不變條件）**。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 203,
+      "quote": "故意讓 worker 只把 total 加80，還沒加完成筆數就 panic。MutexGuard 在 unwind 時清理，解除鎖並留下 poison 警告；資料已成為80與0。**互斥存取避免同時改寫，不保證多行業務操作會自動全部成功或全部還原**。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 210,
+      "quote": "本例選擇 **捨棄這批未完成狀態，重設為總額0、完成筆數0**；不是一般應用都應採用的復原政策。我們在 guard 還持鎖時先重設，再清標記，最後讓 guard 清理。Totals 只含具備 Send 的數字欄位；欄位存取 guard.total 沿11.4的 Deref 找到 Totals："
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 236,
+      "quote": "poison 是 **檢查提醒**，panic 偵測不是所有情境都完整。沒有 poison 不能單獨證明業務資料正確；取得 guard 也不能單獨證明整份工作成功。這裡沿13.2的 unwind 設定讓故意 panic 可由 join 處理，不把 abort 也當成相同復原流程。"
+    },
+    {
+      "section_id": "13.6",
+      "path": "docs/chapters/13-06-lesson.md",
+      "line": 240,
+      "quote": "main 建立 `Arc<Mutex<Vec<i32>>>`，保留自己的 Arc。兩份 worker 各接手一份 Arc clone，把 `[80, 120]` 與 `[1, 2, 3]` 逐項 push 到同一個清單；不在 worker 裡複製兩份清單。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

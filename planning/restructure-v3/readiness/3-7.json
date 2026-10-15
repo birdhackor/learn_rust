@@ -1,0 +1,73 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "3.7"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round03-copy-before-diagram-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round03-ownership.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/03-07-lesson.md": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+    "examples/intro-workspace/ownership/examples/slices.rs": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+    "examples/intro-workspace/ownership/examples/slices_answer.rs": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+    "docs/assets/ch02/slice-part.svg": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "3.7",
+      "path": "docs/chapters/03-07-lesson.md",
+      "line": 3,
+      "quote": "第 2.3 節用固定長度的 array 計算總和。現在同一個加總函式還要處理五項價格的中間三項、全部五項，以及另一份只有兩項的資料。我們可以讓函式接受 **slice**：原資料中連續的一段，不必為每種 array 長度重寫函式。"
+    },
+    {
+      "section_id": "3.7",
+      "path": "docs/chapters/03-07-lesson.md",
+      "line": 7,
+      "quote": "array 型別 `[i32; 5]` 把長度 5 寫進型別；slice 型別 `[i32]` 不把固定長度寫進型別。本節透過 shared reference 使用它，參數型別寫成 `&[i32]`。這份 slice reference 帶著起點與長度，供程式定位原資料中的連續區間；它不另建一份元素的 array。"
+    },
+    {
+      "section_id": "3.7",
+      "path": "docs/chapters/03-07-lesson.md",
+      "line": 17,
+      "quote": "函式只需逐項加總，不需知道呼叫者原本的 array 長度，因此參數改成 `&[i32]`。對這個具體型別使用 `for value in values`，每次取得一份 `&i32`，依 slice 順序借讀一個元素。`*value` 讀出 Copy 的 i32 再加入 total："
+    },
+    {
+      "section_id": "3.7",
+      "path": "docs/chapters/03-07-lesson.md",
+      "line": 35,
+      "quote": "在這份五項 array 上，省略範圍端點有以下意思："
+    },
+    {
+      "section_id": "3.7",
+      "path": "docs/chapters/03-07-lesson.md",
+      "line": 68,
+      "quote": "五項 array 的中段、整段、空段，以及兩項 array，現在都交給同一份 sum_values。它統一處理的是「這次借來的那一段」，原 array 的長度仍各自保留。"
+    },
+    {
+      "section_id": "3.7",
+      "path": "docs/chapters/03-07-lesson.md",
+      "line": 72,
+      "quote": "下面是完整的預期執行失敗例。函式的 position 型別用 usize，因為它作為索引："
+    },
+    {
+      "section_id": "3.7",
+      "path": "docs/chapters/03-07-lesson.md",
+      "line": 84,
+      "quote": "現在希望只替中間兩項各加 10，保留其餘價格。型別 `&mut [i32]` 提供這一段的獨占修改借用。建立時寫 `&mut prices[1..3]`，而 prices 自己要宣告為 mut。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

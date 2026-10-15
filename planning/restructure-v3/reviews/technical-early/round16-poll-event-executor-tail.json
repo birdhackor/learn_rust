@@ -1,0 +1,1256 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "16.3",
+    "16.4",
+    "16.5"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "method": "Whole-page16.3→16.5 technical reread and actual target/source closure. Copies compared only to personally read sources; no author PASS used as evidence.",
+    "prior_knowledge": "Basic Python plus actually read1–15 and sealed16.1–16.2. Separately read17/18 are not used to fill16 prerequisites. Parent's18.4 optional-fix notice is deferred until this own initial seal."
+  },
+  "evidence": {
+    "scope": [
+      "16.3",
+      "16.4",
+      "16.5"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch13/event-order.svg",
+        "sha256": "e7495c3fc6e6e321128a2da6ae50effcf067ef837d684e8712946ff850308cfc"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch13/event-owners.svg",
+        "sha256": "0c94c9de37a1fb8b345563f4b0b9802bc95c86d706744667d58599d4a92ca8f8"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch13/executor-notice.svg",
+        "sha256": "a905c8914a5b0ac9cd30e96936186bf1507180fa3dd90de92d7bb364990604b3"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch13/poll-cycle.svg",
+        "sha256": "dd2eef4ada9c5eb4e1147b3e9fe6559a025b53d901c9a58e4df336b44e1ff417"
+      },
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/16-03-lesson.md",
+        "sha256": "a95a5c1a963f7dce7c6be06c75e077f696a4dd6ffc01cc5d26f77155452e81d1"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/16-04-lesson.md",
+        "sha256": "812dd287942e8bdfe9835c8dafe5f0039b76bd2058c0c7c2a12937b411faa1d1"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/16-05-lesson.md",
+        "sha256": "682ee2b551cda73f3589643ce3f9827570e368d10377759af42a9182fd0755e7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/Cargo.toml",
+        "sha256": "967b0de23ab6cfa47c3450d3f57356c6d34e23f33fcece5fb27d7f82b8d4e926"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/already_ready.rs",
+        "sha256": "72bfb1187efff3f10aa793eacccf2fce94d6ef0d491948eb95fa2434437af92b"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/box_handles.rs",
+        "sha256": "a4027c95c248fb141af796e17fed38a45f63f48b67dc156ce6037b601949280a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/event_after_poll.rs",
+        "sha256": "8526ff4104be143df302cb7b861c6397be5a06ce5c7759532bfbb3aec7628698"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/event_before_poll.rs",
+        "sha256": "2b8e32b6b57489d98bec3e73eb55f8abdfa4d3d5bdc29dd66faf3d12628b7ce4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/event_solution.rs",
+        "sha256": "e91c275615dd836690117705ad8b6ece9148eb61bd1bb321a0cae47f3f873eee"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/executor_early_notice.rs",
+        "sha256": "687fb33a44fe32811e693479c80deb298be420ddf5475113a2134a3d2bba3fe4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/executor_event.rs",
+        "sha256": "2456c06604755605b5eb5ae48b8980e0cfae132abf24266c6898e217470425b9"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/executor_pinned.rs",
+        "sha256": "e7542eb97d8323f0dac022a4ac3795570193506264765e3b0aa0a8e1045f03fd"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/executor_solution.rs",
+        "sha256": "fee789eb7cac0ea9a42015256beca4e873f9572e4809c6ab80b27c1776cc6b21"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/field_swap_solution.rs",
+        "sha256": "c2a6047a648b4853f0edb5b982ed98f52c4306a4601cd8a219ca1bc7119f7da0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/inline_swap.rs",
+        "sha256": "dad2a68787777585cf82b9b22b4c9e943910dc5981d64df71bbe7b530031f2b5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/manual_poll.rs",
+        "sha256": "6060ef9dd08eaecfe8d43031ed39cc9c97e54e161e058cba4f5f2f59b632e8d3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/pinned_owner_swap.rs",
+        "sha256": "e9486de4049afeb4e752075e91e731394c7888c00e66092524d6d1a85b0085d6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/pinning_solution.rs",
+        "sha256": "6286d949367108d2d00de67f6ce50e6895ffe3770bc735f12e40b9ebfbd24105"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/polling_solution.rs",
+        "sha256": "c67988fcf6c60ce57ac31eecbb5f2aa501abf0da12323a7c3843a90e4f951bb8"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/examples/unpin_access.rs",
+        "sha256": "0de2e89d4777b51204c65d440ff38b88ec41dd3669ba018f9832d19016392de0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cargo-test-fail/Cargo.lock",
+        "sha256": "e06d2cd2dd22e254033c7bf3891315c63ecca0d0c586e01bd07d7f39a17264ba"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml",
+        "sha256": "4b72336031c53782ad6c2d33d84326b8a2954e01ae7d7fc45550cd6f88ea6d22"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.expected",
+        "sha256": "19bb7307840ec56041dfec745a61f88160ea6130b01e6cfce9f3f52dbede1ad8"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.rs",
+        "sha256": "607a6ccbbfb4f4c8d37441be494eb2e13af65512860a70659fff0da0a038501b"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.expected",
+        "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.rs",
+        "sha256": "d45e8d0513919c543d76adf58985ab796f074ba066178171639bdfa73fc80ffa"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.expected",
+        "sha256": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.rs",
+        "sha256": "acd705401e4f16dee4345ed8aad999c96b9182cb4c2bf7a315d3f35afd20be8f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cross-crate-fail/Cargo.lock",
+        "sha256": "5da64c7aac59dca9ffe91c6f8d1f35ea707af436f5a5f77aebefe11bb67ff31a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml",
+        "sha256": "e6a4b9c9d14e9ade7b5b9c7ff1cd0b56c53080aed2cffdaa8e1cb1c66b599d6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.expected",
+        "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.rs",
+        "sha256": "36f90656e05584c3860c9557ae6249b0f0dd0388ec63bdaf09116e5f64e90cba"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.expected",
+        "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.rs",
+        "sha256": "73facf00cbd6bf5009ed5adccfdd251b4cd453eb7c00fa6bdc1bcdbc51e94560"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/src/addresses.rs",
+        "sha256": "ecc28b64aebb05adbeb3ab5a8a53f25f7e93816844cdb5ffb5fc58ed94f871d3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/src/lib.rs",
+        "sha256": "2b784372e0fe76ee40b7fcc35685070ee9c937721d25aa2a66b656b30d1922d2"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/src/pinning.rs",
+        "sha256": "e52fbf2e64735c17bf2153f8d22e85c8dd1916cea2e637a05153da45b8c2a42e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/src/polling.rs",
+        "sha256": "86aaaa646c3b17d44dfad9767c027b6c180024f5b005a47f670e942c7adaf551"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/src/readiness.rs",
+        "sha256": "2b5d14ae4112f5d8e03dfea6b98a967fe42249fdfdb8a278f0e85d611621c212"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/src/runner.rs",
+        "sha256": "164639b5c9ce64a8ca5c7bbcc0829ebfc6a6745d254c677452f329afe31c6e60"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/Cargo.toml",
+        "sha256": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/already_ready/main.rs",
+        "sha256": "7caac0f53381ef35b2fe291faa0f402d773240c663467fdf11d63f88f1458448"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/already_ready/polling/mod.rs",
+        "sha256": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/event_after_poll/main.rs",
+        "sha256": "7b5e77417bf51d138827e26e798dfa8d654e1ca95ee8d709ba88eff5d940e17f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs",
+        "sha256": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/event_before_poll/main.rs",
+        "sha256": "c7831481bf74a2ac54307d43c70e0708130bbef3bde86f0e4d039cbe03763bcf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/event_before_poll/polling/mod.rs",
+        "sha256": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/event_before_poll/readiness/mod.rs",
+        "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/event_solution/main.rs",
+        "sha256": "6af8f93dcb3d2f3366c5701e5f90fc9f2dec9bbe9deff745295bbde1527f9e08"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/event_solution/polling/mod.rs",
+        "sha256": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/event_solution/readiness/mod.rs",
+        "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_early_notice/main.rs",
+        "sha256": "c70fd4fb60272af991ea9b6a4b480054c86cb7ee93c8edad323c684f3342408a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_early_notice/runner/mod.rs",
+        "sha256": "4d2a7e133bc4b9d2d971c4adccf2008c0611d8a9703953fc56256953aaba7279"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_event/main.rs",
+        "sha256": "173327762bdba78ed56c3d8db71c4e6c0b40945f2dd2fae133e376c3b4185b7a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_event/readiness/mod.rs",
+        "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_event/runner/mod.rs",
+        "sha256": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_pinned/main.rs",
+        "sha256": "3b102e0a8ff80f5c6abe7c4789ce89dd52a49023ab15be334e86ff73fbb00942"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_pinned/runner/mod.rs",
+        "sha256": "849f283a3a2506d66ab4c8d6b2ca64d29ef20ba6772aa4b33aef66d050457521"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_solution/main.rs",
+        "sha256": "d93c4eb719c80d0ffe85effc1780777157abb7629d26e132d56a712fd70ed8ae"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_solution/readiness/mod.rs",
+        "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/executor_solution/runner/mod.rs",
+        "sha256": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/manual_poll/main.rs",
+        "sha256": "3a98225b4cf93386783c961ca6099ac3785e122fcd205ef6364ce75de4238a38"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs",
+        "sha256": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/polling_complete/main.rs",
+        "sha256": "873ae1f09fadc840bc161e7d9e7136bdc5299ced1ca600257c2cd4d9e75a4b08"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs",
+        "sha256": "86aaaa646c3b17d44dfad9767c027b6c180024f5b005a47f670e942c7adaf551"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/polling_solution/main.rs",
+        "sha256": "b6b001be4854f1089c01cccf07618ec281f13b233b2a505a4f1152c940035143"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/polling_solution/polling/mod.rs",
+        "sha256": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/readiness_complete/main.rs",
+        "sha256": "0754827c78129cd61f46040184dcda8b858a2b915061c27e7e776a7a87130cd2"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/readiness_complete/polling/mod.rs",
+        "sha256": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs",
+        "sha256": "2b5d14ae4112f5d8e03dfea6b98a967fe42249fdfdb8a278f0e85d611621c212"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.expected",
+        "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.rs",
+        "sha256": "41f51ef1533c9ea72498ef8399ec7f91de83e4b9ebefbbd36fbbf75eb40eb26d"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.expected",
+        "sha256": "19bb7307840ec56041dfec745a61f88160ea6130b01e6cfce9f3f52dbede1ad8"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.rs",
+        "sha256": "64bdbabc8be1f73aac2f9cc623c04c6b8a6401035fde20195c8a6f27bcd8fc3b"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/src/main.rs",
+        "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch13-futures/Cargo.toml",
+      "examples/ch13-futures/examples/already_ready.rs",
+      "examples/ch13-futures/examples/box_handles.rs",
+      "examples/ch13-futures/examples/event_after_poll.rs",
+      "examples/ch13-futures/examples/event_before_poll.rs",
+      "examples/ch13-futures/examples/event_solution.rs",
+      "examples/ch13-futures/examples/executor_early_notice.rs",
+      "examples/ch13-futures/examples/executor_event.rs",
+      "examples/ch13-futures/examples/executor_pinned.rs",
+      "examples/ch13-futures/examples/executor_solution.rs",
+      "examples/ch13-futures/examples/field_swap_solution.rs",
+      "examples/ch13-futures/examples/inline_swap.rs",
+      "examples/ch13-futures/examples/manual_poll.rs",
+      "examples/ch13-futures/examples/pinned_owner_swap.rs",
+      "examples/ch13-futures/examples/pinning_solution.rs",
+      "examples/ch13-futures/examples/polling_solution.rs",
+      "examples/ch13-futures/examples/unpin_access.rs",
+      "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.lock",
+      "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml",
+      "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.expected",
+      "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.rs",
+      "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.expected",
+      "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.rs",
+      "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.expected",
+      "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.rs",
+      "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.lock",
+      "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml",
+      "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.expected",
+      "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.rs",
+      "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.expected",
+      "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.rs",
+      "examples/ch13-futures/src/addresses.rs",
+      "examples/ch13-futures/src/lib.rs",
+      "examples/ch13-futures/src/pinning.rs",
+      "examples/ch13-futures/src/polling.rs",
+      "examples/ch13-futures/src/readiness.rs",
+      "examples/ch13-futures/src/runner.rs",
+      "examples/ch13-futures/stages/Cargo.toml",
+      "examples/ch13-futures/stages/examples/already_ready/main.rs",
+      "examples/ch13-futures/stages/examples/already_ready/polling/mod.rs",
+      "examples/ch13-futures/stages/examples/event_after_poll/main.rs",
+      "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs",
+      "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+      "examples/ch13-futures/stages/examples/event_before_poll/main.rs",
+      "examples/ch13-futures/stages/examples/event_before_poll/polling/mod.rs",
+      "examples/ch13-futures/stages/examples/event_before_poll/readiness/mod.rs",
+      "examples/ch13-futures/stages/examples/event_solution/main.rs",
+      "examples/ch13-futures/stages/examples/event_solution/polling/mod.rs",
+      "examples/ch13-futures/stages/examples/event_solution/readiness/mod.rs",
+      "examples/ch13-futures/stages/examples/executor_early_notice/main.rs",
+      "examples/ch13-futures/stages/examples/executor_early_notice/runner/mod.rs",
+      "examples/ch13-futures/stages/examples/executor_event/main.rs",
+      "examples/ch13-futures/stages/examples/executor_event/readiness/mod.rs",
+      "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs",
+      "examples/ch13-futures/stages/examples/executor_pinned/main.rs",
+      "examples/ch13-futures/stages/examples/executor_pinned/runner/mod.rs",
+      "examples/ch13-futures/stages/examples/executor_solution/main.rs",
+      "examples/ch13-futures/stages/examples/executor_solution/readiness/mod.rs",
+      "examples/ch13-futures/stages/examples/executor_solution/runner/mod.rs",
+      "examples/ch13-futures/stages/examples/manual_poll/main.rs",
+      "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs",
+      "examples/ch13-futures/stages/examples/polling_complete/main.rs",
+      "examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs",
+      "examples/ch13-futures/stages/examples/polling_solution/main.rs",
+      "examples/ch13-futures/stages/examples/polling_solution/polling/mod.rs",
+      "examples/ch13-futures/stages/examples/readiness_complete/main.rs",
+      "examples/ch13-futures/stages/examples/readiness_complete/polling/mod.rs",
+      "examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs",
+      "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.expected",
+      "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.rs",
+      "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.expected",
+      "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.rs",
+      "examples/ch13-futures/stages/src/main.rs"
+    ],
+    "snippet_references": [
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 52,
+        "source": "examples/ch13-futures/stages/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 56,
+        "source": "examples/ch13-futures/stages/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 62,
+        "source": "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs",
+        "anchor": "observer"
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 92,
+        "source": "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 102,
+        "source": "examples/ch13-futures/stages/examples/manual_poll/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 132,
+        "source": "examples/ch13-futures/stages/examples/already_ready/polling/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 136,
+        "source": "examples/ch13-futures/stages/examples/already_ready/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 160,
+        "source": "examples/ch13-futures/stages/examples/polling_solution/polling/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 164,
+        "source": "examples/ch13-futures/stages/examples/polling_solution/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 180,
+        "source": "examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 184,
+        "source": "examples/ch13-futures/stages/examples/polling_complete/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 196,
+        "source": "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 200,
+        "source": "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 22,
+        "source": "examples/ch13-futures/stages/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 26,
+        "source": "examples/ch13-futures/stages/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 32,
+        "source": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "anchor": "imports"
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 33,
+        "source": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "anchor": "state"
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 43,
+        "source": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "anchor": "pair"
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 75,
+        "source": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "anchor": "event"
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 91,
+        "source": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "anchor": "future"
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 107,
+        "source": "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 111,
+        "source": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 117,
+        "source": "examples/ch13-futures/stages/examples/event_after_poll/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 139,
+        "source": "examples/ch13-futures/stages/examples/event_before_poll/polling/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 143,
+        "source": "examples/ch13-futures/stages/examples/event_before_poll/readiness/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 147,
+        "source": "examples/ch13-futures/stages/examples/event_before_poll/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 163,
+        "source": "examples/ch13-futures/stages/examples/event_solution/polling/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 167,
+        "source": "examples/ch13-futures/stages/examples/event_solution/readiness/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 171,
+        "source": "examples/ch13-futures/stages/examples/event_solution/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 191,
+        "source": "examples/ch13-futures/stages/examples/readiness_complete/polling/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 195,
+        "source": "examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 199,
+        "source": "examples/ch13-futures/stages/examples/readiness_complete/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 213,
+        "source": "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 217,
+        "source": "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 20,
+        "source": "examples/ch13-futures/stages/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 24,
+        "source": "examples/ch13-futures/stages/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 52,
+        "source": "examples/ch13-futures/stages/examples/executor_event/readiness/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 56,
+        "source": "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 62,
+        "source": "examples/ch13-futures/stages/examples/executor_event/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 96,
+        "source": "examples/ch13-futures/stages/examples/executor_early_notice/runner/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 100,
+        "source": "examples/ch13-futures/stages/examples/executor_early_notice/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 118,
+        "source": "examples/ch13-futures/stages/examples/executor_pinned/runner/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 122,
+        "source": "examples/ch13-futures/stages/examples/executor_pinned/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 138,
+        "source": "examples/ch13-futures/stages/examples/executor_solution/readiness/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 142,
+        "source": "examples/ch13-futures/stages/examples/executor_solution/runner/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 146,
+        "source": "examples/ch13-futures/stages/examples/executor_solution/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 172,
+        "source": "examples/ch13-futures/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 176,
+        "source": "examples/ch13-futures/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 184,
+        "source": "examples/ch13-futures/src/addresses.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 188,
+        "source": "examples/ch13-futures/src/pinning.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 192,
+        "source": "examples/ch13-futures/src/polling.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 196,
+        "source": "examples/ch13-futures/src/readiness.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 200,
+        "source": "examples/ch13-futures/src/runner.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 214,
+        "source": "examples/ch13-futures/examples/executor_event.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 218,
+        "source": "examples/ch13-futures/examples/executor_early_notice.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 222,
+        "source": "examples/ch13-futures/examples/executor_pinned.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 226,
+        "source": "examples/ch13-futures/examples/executor_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 241,
+        "source": "examples/ch13-futures/examples/inline_swap.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 245,
+        "source": "examples/ch13-futures/examples/box_handles.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 249,
+        "source": "examples/ch13-futures/examples/field_swap_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 253,
+        "source": "examples/ch13-futures/examples/unpin_access.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 257,
+        "source": "examples/ch13-futures/examples/pinned_owner_swap.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 261,
+        "source": "examples/ch13-futures/examples/pinning_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 265,
+        "source": "examples/ch13-futures/examples/manual_poll.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 269,
+        "source": "examples/ch13-futures/examples/already_ready.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 273,
+        "source": "examples/ch13-futures/examples/polling_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 277,
+        "source": "examples/ch13-futures/examples/event_after_poll.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 281,
+        "source": "examples/ch13-futures/examples/event_before_poll.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 285,
+        "source": "examples/ch13-futures/examples/event_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 295,
+        "source": "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 299,
+        "source": "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 303,
+        "source": "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 307,
+        "source": "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 311,
+        "source": "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 326,
+        "source": "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 330,
+        "source": "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 334,
+        "source": "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 338,
+        "source": "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 348,
+        "source": "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 352,
+        "source": "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 356,
+        "source": "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 364,
+        "source": "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.lock",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 368,
+        "source": "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.lock",
+        "anchor": null
+      }
+    ],
+    "commands": [
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 106,
+        "command": "cargo run -p ch16-future-stages --example manual_poll --locked"
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 140,
+        "command": "cargo run -p ch16-future-stages --example already_ready --locked"
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 168,
+        "command": "cargo run -p ch16-future-stages --example polling_solution --locked"
+      },
+      {
+        "document": "docs/chapters/16-03-lesson.md",
+        "line": 188,
+        "command": "cargo test -p ch16-future-stages --example polling_complete --locked"
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 121,
+        "command": "cargo run -p ch16-future-stages --example event_after_poll --locked"
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 151,
+        "command": "cargo run -p ch16-future-stages --example event_before_poll --locked"
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 175,
+        "command": "cargo run -p ch16-future-stages --example event_solution --locked"
+      },
+      {
+        "document": "docs/chapters/16-04-lesson.md",
+        "line": 203,
+        "command": "cargo test -p ch16-future-stages --example readiness_complete --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 66,
+        "command": "cargo run -p ch16-future-stages --example executor_event --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 104,
+        "command": "cargo run -p ch16-future-stages --example executor_early_notice --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 126,
+        "command": "cargo run -p ch16-future-stages --example executor_pinned --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 150,
+        "command": "cargo run -p ch16-future-stages --example executor_solution --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 204,
+        "command": "cargo test -p ch13-futures --lib --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 230,
+        "command": "cargo run -p ch13-futures --example executor_event --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 231,
+        "command": "cargo run -p ch13-futures --example executor_early_notice --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 232,
+        "command": "cargo run -p ch13-futures --example executor_pinned --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 233,
+        "command": "cargo run -p ch13-futures --example executor_solution --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 315,
+        "command": "cargo check --manifest-path examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml --example pinned_get_mut --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 316,
+        "command": "cargo check --manifest-path examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml --example event_send_once --locked"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 374,
+        "command": "cargo test --manifest-path examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml --test poll_after_ready --locked --no-run"
+      },
+      {
+        "document": "docs/chapters/16-05-lesson.md",
+        "line": 375,
+        "command": "cargo test --manifest-path examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml --test poll_after_ready --locked"
+      }
+    ],
+    "package_manifests": {
+      "examples/ch13-futures/Cargo.toml": {
+        "package": {
+          "name": "ch13-futures",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        }
+      },
+      "examples/ch13-futures/stages/Cargo.toml": {
+        "package": {
+          "name": "ch16-future-stages",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        }
+      },
+      "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml": {
+        "package": {
+          "name": "ch13-pinning-fail",
+          "version": "0.1.0",
+          "edition": "2024",
+          "publish": false
+        },
+        "workspace": {},
+        "dependencies": {
+          "ch13-futures": {
+            "path": "../.."
+          }
+        }
+      },
+      "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml": {
+        "package": {
+          "name": "ch13-polling-test-fail",
+          "version": "0.1.0",
+          "edition": "2024",
+          "publish": false
+        },
+        "workspace": {},
+        "dependencies": {
+          "ch13-futures": {
+            "path": "../.."
+          }
+        }
+      }
+    },
+    "selected_root_lock_entries": [
+      {
+        "name": "ch13-futures",
+        "version": "0.1.0"
+      },
+      {
+        "name": "ch16-future-stages",
+        "version": "0.1.0"
+      }
+    ],
+    "copy_checks": [
+      {
+        "path": "examples/ch13-futures/stages/examples/already_ready/polling/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/event_before_poll/polling/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/event_before_poll/readiness/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/event_solution/polling/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/event_solution/readiness/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/executor_event/readiness/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/executor_solution/readiness/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/polling_solution/polling/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/readiness_complete/polling/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/src/addresses.rs",
+        "same_as": "examples/ch13-futures/stages/examples/addresses_complete/addresses/mod.rs",
+        "kind": "byte-identical including tests"
+      },
+      {
+        "path": "examples/ch13-futures/src/pinning.rs",
+        "same_as": "examples/ch13-futures/stages/examples/pinning_complete/pinning/mod.rs",
+        "kind": "byte-identical including tests"
+      },
+      {
+        "path": "examples/ch13-futures/src/polling.rs",
+        "same_as": "examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs",
+        "kind": "byte-identical including tests"
+      },
+      {
+        "path": "examples/ch13-futures/src/readiness.rs",
+        "same_as": "examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs",
+        "kind": "byte-identical including tests"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs",
+        "kind": "identical implementation prefix, tests fully read"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "kind": "identical implementation prefix, tests fully read"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/executor_solution/runner/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs",
+        "kind": "byte-identical"
+      }
+    ],
+    "counts": {
+      "owned_files": 73,
+      "hashes": 85,
+      "snippets": 83,
+      "commands": 21,
+      "copy_checks": 16,
+      "normal_library_tests": 18,
+      "stage_polling_tests": 4,
+      "stage_readiness_tests": 4,
+      "deliberate_failing_integration_tests": 1,
+      "normal_library_examples": 16,
+      "sidecars": 7
+    }
+  },
+  "assessments": [
+    {
+      "section": "16.3",
+      "judgment": "Poll Pending/Ready(Output), result output versus task failure and safe repeated-poll policy are accurate. Context/waker lifetime, owned clone, Wake receiver Arc and Waker::from conversion bounds are fully taught before use. WakeCounter only counts; ManualAmount is Unpin, stores current Waker every Pending, releases state before waking, and Ready does not consume future ownership. Before-first-poll readiness and latest-context/owned-clone tests agree. Runtime-fail has full own model and actually repolls completed state, supporting exact panic text."
+    },
+    {
+      "section": "16.4",
+      "judgment": "EventAmount and single-use AmountEvent share one Arc<Mutex<State>>; only future owns poll/completed counters. Poll atomically takes value or registers latest Waker under same guard, avoiding stated lost-wake interleaving. Clone, previous Waker Drop and wake occur outside State guard, avoiding callback reentry lock. Event first versus poll first, worker control channel/join and counter snapshots match. AmountEvent::send consumes self, public state/Clone escape absent, E0382 negative real. Drop of supply handle produces no invented closed/error result. Short Mutex contention is honestly not lock-free/nonblocking. ReadinessObserver callback really locks same State and reads zero without stealing Copy value; main later Ready0."
+    },
+    {
+      "section": "16.5 early executor",
+      "judgment": "run_one owns F, Box::pin accommodates !Unpin and generic bound really lacks Send/static/Unpin; no F captured by Waker. Unit unbounded notification channel buffers early wakes, receiver blocking is after poll returned in driver. ChannelWake only sends; failed delivery ignored, no synchronous recursive poll. StartAmount registers inner EventAmount before first control send, so first Pending is forced; second poll returns80/120 and external worker still joined. Projection only uses known Unpin inner type. Recheck wake_by_ref before Pending preserves notification; PinnedAnswer only reads shared pinned value and returns Ready0. Driver stops on Ready without consuming stale notices. No timeout/cancellation/multi-task/runtime I/O guarantee, or closed-event termination, is falsely claimed."
+    },
+    {
+      "section": "complete package closure",
+      "judgment": "Complete normal library first used only after five modules/source are taught; library loads all five normally,18 cfg tests with all visible helpers. Four full modules exactly match stage complete snapshots, runner's three tests are full read. All16 retained example source bodies are available; selected run examples cannot hide normal lib loading. Two isolated failure workspaces have complete manifest/locks and path dep normal lib closure; cross-crate E0277/E0382 and no-run-then-intentional-failing integration panic match source. std-only standalone negative copies remain full. No unintroduced later API/source or Clippy allow is needed."
+    },
+    {
+      "section": "figures/output",
+      "judgment": "Four SVG XML sources distinguish operation sequence, internal state, shared Arc ownership and notice buffer. Poll-cycle1→notification1 withpoll1/completedfalse→Ready80/poll2, event120-before-first-poll versus80-afterregistration, and notice not carrying80/future ownership all match programs. Exact stdout scenarios and answer120 are statically consistent."
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Read all73referenced owned source/manifest/sidecar/lock files, with16verified copies/prefixes of already fully read sources.",
+      "Validate83snippets/exact tags,21Cargo commands,all local semicolon mod declarations and normal/pathdep library closures.",
+      "Parse4manifests/rootlock+2fixture locks and4SVG XML; inspect18normal+8stage tests and1intentional failing integration function.",
+      "Trace7sidecar failure causes and no-run execution distinction statically."
+    ],
+    "not_performed": [
+      "No Cargo/rustc/Clippy/test/example/thread program run.",
+      "No browser/SVG visual/reader experiment, lost-wake stress test or custom executor execution."
+    ]
+  },
+  "conclusion": "No necessary or optional technical correction found in current16.3–16.5."
+}

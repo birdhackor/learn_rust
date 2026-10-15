@@ -1,0 +1,119 @@
+{
+  "sealed_utc": "2026-10-15T07:27:40.166824+00:00",
+  "role": "independent continuity and rendered-page reviewer",
+  "scope": "actual frozen chapter4.4–4.7, continuing actual chapters1–4.3 previously read; not author/technical/blind firstreader/full-book pass",
+  "contamination_control": {
+    "not_read": [
+      "author ledgers",
+      "technical conclusions",
+      "firstreader conclusions",
+      "historical issues/audits",
+      "root dispositions",
+      "chapter5 drafts"
+    ],
+    "parent_scope_prompt": "Parent requested complete sources/fixtures/manifests, 4.6 mobile table and 4.5 wording/borrow mapping; explicitly supplied no known tail findings. Prefix4.2 own findings adopted notice received, but tail uses already-known same semantic match result rule.",
+    "initial_source_changes": []
+  },
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "C4b-01",
+      "classification": "optional",
+      "severity": "low",
+      "confidence": "high",
+      "path": "docs/chapters/04-06-lesson.md",
+      "lines": [
+        53,
+        58
+      ],
+      "quote": "| 呼叫前剩餘量 | next_batch 回傳 | 呼叫後剩餘量 | body 是否執行 | / | 0 | Done | 0 | 否，結束 |",
+      "reason": "390×844 viewport has 375px content scroll container and a 434px table wrapper (table 402px). Default left position clips the final body column text; full right pan (59px) hides first-column before values. All data is accessible and paragraphs47/60/81 already explain Done does not run body, so this is an optional comparison/readability improvement, not a prerequisite or correctness failure.",
+      "actual_first_use": "4.6:45 explains recomputation and match; :47 introduces Done skips body; :49–50 loop snippet precedes table; :60 explains state and termination.",
+      "previous_position": "2.4 batch precondition/state tracking; 3.4–3.5 mutable numeric borrow; 4.1–4.5 enum and payload patterns. No missing earlier rule.",
+      "recommendation": "Retain before/returned/after/body data while shortening headers or making a compact three-column table (e.g. before→after state, result, body). Preserve all four rows and final Done/0/no-body contrast.",
+      "benefit": "Allows the final Done call, unchanged remaining0, and skipped body to be compared in one normal mobile view without manual horizontal switching.",
+      "evidence": [
+        "round04-ch04b-visual/mobile-batch-table-left.png",
+        "round04-ch04b-visual/mobile-batch-table-right.png",
+        "round04-ch04b-visual/table-metadata.json"
+      ]
+    }
+  ],
+  "positive_evidence": [
+    {
+      "section": "4.4",
+      "evidence": "3 announces four independent needs;7/9 gives Amount|Estimate shared binding before full or_patterns;23 explains same names/types/borrow before E0408 fixture;33–35 defines one-value range membership and contrasts for traversal;49 explains shadow binding before example;63–67 explains guard selection, false fallthrough and whole-or scope before guards;79 explains nonexhaustiveness before E0004 fixture;89–91 explains @ checks and actual value before source.",
+      "example_scope": "299/300 and499/500 test endpoints; Amount80 fails threshold100; count1,false proves ready applies to first or option; exercise combines only earlier mechanisms and for tuple pattern from4.3."
+    },
+    {
+      "section": "4.5",
+      "evidence": "3 identifies String/&String/&mut String question;7/9 explains owned move before consume;27 partial move before source and37 explains remaining count and whole-borrow failure before fixture;47/49 gives automatic borrowed binding types and operations before borrow_patterns;61 explains attempted owned extraction through shared reference before E0507.71/73 distinguishes ref, ref mut, mut and disjoint fields before explicit_bindings;85 distinguishes pattern & from expression & and ref;87 names both lint allows and teaching reason before full reference_pattern.101/103 gives edition2024 restriction before fail;109 introduces binding-mode name after rule already known;115/125 explains _ versus _text behavior before success/failure programs.",
+      "example_scope": "String::new/push_str/as_str already taught3.8. consume no later owned reuse; partial move only remaining count reused; repeated show, append, show correspond to borrowed types. Explicit ref uses different label/count fields and last-use rule3.5. Borrow answer mutates String without moving it. No new ownership internals needed."
+    },
+    {
+      "section": "4.6",
+      "evidence": "7 gives right evaluation, pattern match and body binding scope before if_let;9 states &Quote gives &i32 before code and defines else;29 explains deliberate one-variant policy versus match classification.33/35 defines More/Done and mutable remaining helper behavior before named next snippet;41 makes state source explicit.45 defines evaluation before every body;47 Done skip precedes loop;60 states per-iteration processed, persistent remaining/batches and helper-driven termination.85 capacity-positive/nonnegative work precedes answer assertions.",
+      "example_scope": "Three More batches3/3/1 then Done update7→4→1→0→0, final body false; zero initial work first yields Done so0 batches. Full enum/helper/main appears inline64–67. Optional mobile table issue is C4b-01."
+    },
+    {
+      "section": "4.7",
+      "evidence": "3 gives need for successful name in later steps and early missing exit;7 defines scope, failure exit and final semicolon;9 defines &i32 and unit return before focused source;19 explains match/if let/let else comparison before complete program.48–50 explains diverge and bad non-exit before E0308;58 defines continue/break direction,60 maps &[Quote]→&Quote→&i32 before loops;76 compares200 vs120 and whole-function return.80–84 defines combined types, pricing policy, missing/rejected distinctness and shared access before complete quote_report;107–109 states answer and repeat-borrow checks.",
+      "example_scope": "Uses array/slice and owned String construction already taught; no new container/API. Offered order remains borrowed; full classification show_status retains Missing/Rejected distinction while numeric contribution0 is explicitly local policy. Successful loop path leaves amount for addition; Missing continue still reaches80, break does not. Answer asserts waiting0, small180, boundary300, zero0 and repeat180."
+    }
+  ],
+  "source_scope": {
+    "frozen_files": 43,
+    "hashes": "round04-ch04b-sourcehashes.json",
+    "frozen_copies": "round04-ch04b-frozen",
+    "full_inline_check": "Every full-source include in four actual rendered pages matches normalized source after only stripping snippet marker comments/whitespace; scoped partial includes also have whole corresponding file later same page. All examples/answers/fixtures read. All current selected Rust uses already-taught or before-use same-section explanation.",
+    "configuration": "patterns manifest package/name/version/edition only, default main read, no lib/build.rs/dependencies/helpers in selected package. Workspace/lock/toolchain read as configuration metadata; no chapter5 source read. Seven fixture .expected files read and diagnostics match page claims.",
+    "not_run": [
+      "Cargo",
+      "build",
+      "Rust tests",
+      "source/doc/config edits"
+    ]
+  },
+  "render_scope": {
+    "url_base": "http://127.0.0.1:8097/chapters/",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "actual_image_count": 0,
+    "necessary_image_judgment": "No inline SVG/raster in any four pages. Source/prose mappings and the batch trace table establish needed relationships; no missing necessary figure identified.",
+    "actual_screenshots_viewed": [
+      "round04-ch04b-visual/desktop-range-single-value.png",
+      "round04-ch04b-visual/desktop-guard-or-scope.png",
+      "round04-ch04b-visual/desktop-borrow-binding-types.png",
+      "round04-ch04b-visual/desktop-explicit-field-borrows.png",
+      "round04-ch04b-visual/desktop-reference-pattern-comparison.png",
+      "round04-ch04b-visual/desktop-while-evaluate-again.png",
+      "round04-ch04b-visual/desktop-batch-table.png",
+      "round04-ch04b-visual/desktop-let-else-scope.png",
+      "round04-ch04b-visual/desktop-report-context.png",
+      "round04-ch04b-visual/mobile-range-single-value.png",
+      "round04-ch04b-visual/mobile-guard-or-scope.png",
+      "round04-ch04b-visual/mobile-borrow-binding-types.png",
+      "round04-ch04b-visual/mobile-explicit-field-borrows.png",
+      "round04-ch04b-visual/mobile-reference-pattern-comparison.png",
+      "round04-ch04b-visual/mobile-while-evaluate-again.png",
+      "round04-ch04b-visual/mobile-batch-table.png",
+      "round04-ch04b-visual/mobile-let-else-scope.png",
+      "round04-ch04b-visual/mobile-report-context.png",
+      "round04-ch04b-visual/mobile-batch-table-left.png",
+      "round04-ch04b-visual/mobile-batch-table-right.png"
+    ],
+    "metadata": [
+      "round04-ch04b-visual/metadata.json",
+      "round04-ch04b-visual/table-metadata.json"
+    ],
+    "limitations": "Focused actual page views and complete inline DOM verification, not every pixel on all long pages; preview partial nav is not final strict-site acceptance."
+  }
+}

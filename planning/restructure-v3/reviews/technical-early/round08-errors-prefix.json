@@ -1,0 +1,379 @@
+{
+  "review_id": "technical-early-round08-errors-prefix",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/08-01-lesson.md",
+    "docs/chapters/08-02-lesson.md"
+  ],
+  "independent_initial": true,
+  "reader_background": "Basic Python and actual1–7 main prose. No8.3 onward,9or11 draft/source prerequisite.",
+  "independence": "No chapter8 authorverification,continuity,reader,otherreviews or historicalissues read before seal. Chapter7 independently sealed before beginning8.1.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary or optional technical,first-use,sourceclosure,flow/type/ownership/alias rule,output/testcount or fixture mismatch found.",
+  "method": "Sequential whole-page technical reread plusallactualselectedsource/helper/test/manifests/fixtures/expected. Static reasoning;notblindfirstread orreaderexperiment.",
+  "execution": {
+    "cargo_rustc_clippy_tests": [],
+    "browser_visual": false,
+    "author_evidence_used_as_own": false,
+    "python_checks": [
+      "hash/snippet markers",
+      "simple manifest/no library/build script",
+      "four policy module snapshots byte-identical"
+    ]
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:01:45.265649+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/chapters/08-01-lesson.md": "6b6e05083de08537dfecc183be29d55efea0867fe12f0706d09a926476098df4",
+    "docs/chapters/08-02-lesson.md": "a820550d86c7919bde3602543e4a085c81579815e092ca331c71a117b61d344f",
+    "examples/intro-workspace/Cargo.lock": "549d3112349bbc321ffa7c0c5ebdf985532bac5953f3c6a6539ef899f28adfbb",
+    "examples/intro-workspace/Cargo.toml": "e9e3773e89e2d210c65b8c5972cc1dc7d36a2e1cda6cb202c07747fb8b83b058",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/alias_answer.rs": "f99058ae3ebe2abf766007e9c87ce882153e73c15bb1cfe1fe6e1fe38ef90b6c",
+    "examples/intro-workspace/error-stages/examples/alias_is_name.rs": "30daa29359dc9da8bea878a6be946d3716f972481c17e04e983e5c66da82c86a",
+    "examples/intro-workspace/error-stages/examples/aliases/aliases/mod.rs": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+    "examples/intro-workspace/error-stages/examples/aliases/main.rs": "ae8dff48f777f25e0460310cd3d5955962cba6533a1a719c82a58448ffdf547c",
+    "examples/intro-workspace/error-stages/examples/aliases/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/policy/main.rs": "949f8ee0a1035fdfcb4d5c31e39727d37b186b8b155691cfb6589b9dcdf2b98a",
+    "examples/intro-workspace/error-stages/examples/policy/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/policy_answer/main.rs": "6b37c00a2a86fdcb61cc99e66edbae2222e3d00dfcd7b91382c23cbf055690eb",
+    "examples/intro-workspace/error-stages/examples/policy_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/unwrapping/main.rs": "ddd96f2c671880b5c833bb782928c509106f211c47302579b6f17f82e91bfc36",
+    "examples/intro-workspace/error-stages/examples/unwrapping/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/fixtures/compile-fail/unwrap_without_debug.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/error-stages/fixtures/compile-fail/unwrap_without_debug.rs": "a83af15232565031500d05bb6d0f58e4a94e5a02aa10fe4202d79ec6d8b66768",
+    "examples/intro-workspace/error-stages/fixtures/runtime-fail/expect_error.expected": "63b25a33c5519bade43eb614f4fbd75b1509bf1931273584d8731f311fff2e98",
+    "examples/intro-workspace/error-stages/fixtures/runtime-fail/expect_error.rs": "6d25be136315e8cd77e4758341d8db716f038eb4e22d0fdc382d6ee296ce7a4c",
+    "examples/intro-workspace/error-stages/fixtures/runtime-fail/panic_contract.expected": "07016f65b838df7e979fc0e1c08e5efc0454e3a8ed95cee6028d826b3cadf4cd",
+    "examples/intro-workspace/error-stages/fixtures/runtime-fail/panic_contract.rs": "2cdd692bc6d5c8327f69ec96de98cdbeca2a4621de83a8103dbac9f25a93e55e",
+    "examples/intro-workspace/error-stages/fixtures/runtime-fail/unwrap_error.expected": "909c4ac41ff66729fbae4c9ad365b1d997ecf3e75b9ece5940805c55b2cb1172",
+    "examples/intro-workspace/error-stages/fixtures/runtime-fail/unwrap_error.rs": "a7d6d0563ab48a745369c25554cbee88064134a320f19e627597767c45d85c72",
+    "examples/intro-workspace/error-stages/src/main.rs": "c4de1a6f74dd0ad75e13bab47630f07a2186826785768d239c76fb0c422cae80",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/policy/policy/mod.rs:count-error",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/policy/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/fixtures/runtime-fail/panic_contract.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/unwrapping/main.rs:result-values",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/unwrapping/main.rs:option-values",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/unwrapping/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/fixtures/runtime-fail/unwrap_error.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/fixtures/runtime-fail/expect_error.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/fixtures/compile-fail/unwrap_without_debug.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/policy/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/unwrapping/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/policy_answer/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/policy_answer/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/aliases/aliases/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/aliases/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/alias_is_name.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/aliases/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/alias_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "command_review": [
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example policy --locked"
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example unwrapping --locked"
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example policy --locked"
+    },
+    {
+      "document": "docs/chapters/08-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example policy_answer --locked"
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example aliases --locked"
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example alias_is_name --locked"
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example aliases --locked"
+    },
+    {
+      "document": "docs/chapters/08-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example alias_answer --locked"
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-error-stages",
+    "manifest": "examples/intro-workspace/error-stages/Cargo.toml",
+    "no_library": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "targets": [
+      {
+        "target": "policy",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/policy/main.rs",
+          "examples/intro-workspace/error-stages/examples/policy/policy/mod.rs"
+        ],
+        "unit_tests_when_requested": 2
+      },
+      {
+        "target": "unwrapping",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/unwrapping/main.rs",
+          "examples/intro-workspace/error-stages/examples/unwrapping/policy/mod.rs"
+        ],
+        "unit_tests_when_requested": "not requested"
+      },
+      {
+        "target": "policy_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/policy_answer/main.rs",
+          "examples/intro-workspace/error-stages/examples/policy_answer/policy/mod.rs"
+        ],
+        "unit_tests_when_requested": "not requested"
+      },
+      {
+        "target": "aliases",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/aliases/main.rs",
+          "examples/intro-workspace/error-stages/examples/aliases/aliases/mod.rs",
+          "examples/intro-workspace/error-stages/examples/aliases/policy/mod.rs"
+        ],
+        "unit_tests_when_requested": 2
+      },
+      {
+        "target": "alias_is_name",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/alias_is_name.rs"
+        ]
+      },
+      {
+        "target": "alias_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/alias_answer.rs"
+        ]
+      }
+    ],
+    "snapshot_identity": "Allfourpolicy module files arebyte-identical. Normalrunexcludescfgtestbody;selectedpolicy/aliases testloadsitsowncomplete2testmodule. No Display/conversion/later-module source.",
+    "inline": "8.1 fullpolicydefinition16/root26/fullpolicy+tests139;unwrappingfullroot90/exactpolicy159;answerroot169/policy175.8.2 aliasesfullhelper12/root24/policy66 beforetest70;singlefilecomplete42/82. Eachpackagecomplete manifestprovidedwithonlyprior-known3fields,role/no-libdescribed8.1:19/148 and8.2:57.",
+    "unselected_main": "src/main.rs inspected butnotloadedby--example. No all-targets or hiddenlib."
+  },
+  "concept_evidence": [
+    {
+      "concept": "Result error data and caller continuation policy",
+      "identity": "8.1:9–13 definespublicdata-carryingCountError,Debug/PartialEqandchecked_countResultbeforefirstsource16.",
+      "need": "8.1:3 processallbatchinputswith0..100inclusive,negativeandtoolargedistinctreasons;5 contrastsinternal-guaranteestopcase.",
+      "operation": "mainmatchOk/Errprintsandrepeats[-1,0,3,100,101],finalcompletedline. Errconstructiondoesnotitselfstop/panic.",
+      "evidence_and_limits": "Rejected-1followedbyvalid0,3,100andrejected101. Testschecktwoinclusiveboundsanddistinctpayloads. Internalpositive-onlypanicfixtureexplicitlyseparatecontract52doesnotchangezerovalidcountpolicy.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "panic!, unwrap and expect contracts",
+      "identity": "8.1:48–50 definesmacropanicanduncaughtsingle-mainfailureflow.62–73definesconsumingself,CopywholeResultconditionsT+E,unwrap/expectfourcases,message&strandResultE:Debugrequirement.",
+      "need": "Exposebrokeninternalguarantee,orusefixedsuccessmaterialswhilerecordingwhyexpectsuccess;notreplaceordinaryinvalidinputhandling.",
+      "operation": "Known3/0validResult;twoelementsslice.get(1)returnsOption<&i32>,methodsreturnreferenceand*prints4. BorrowedErrpatternthenunwrapmovesnonCopyResultafterlastborrow.",
+      "evidence_and_limits": "CountErrornotCopymeansResultnonCopyevenOkpayloadi32Copy. ResultunwraprequiresE DebugnotT;Optionmethodsrequire noDebugerror. PanicfixtureandErr/Nonefixturesallstopafterdocumentedprelude;scopeexplicitlynotwholearbitrarypanicrecoverypolicy.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Result comparison and unit tests",
+      "identity": "8.1:132 requiresT/EbothPartialEqforResultequality,andbothDebugforwholeDebug,beforefulltestsource139.",
+      "need": "Checklegalboundsandpreservefailureclassification/originalinputwithoutdiscardingErr.",
+      "operation": "assert_eq!Resultusesborrowedcomparison/Debugper6.2;twotestsforpolicy,twosameforaliases.",
+      "evidence_and_limits": "No prematureResultwholecomparisoninpriorfullroots;unwrappingonlyprintsextractedvalues. Testassertionfailurepurpose distinguishedfromnormalvalidationcontinuation146.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Type alias versus associated type/new validation",
+      "identity": "8.2:7 definesmodulealiasanothernameforalreadyknownResult,notruntimevalue;9pubvisibility;15explicitcontrasts6.4traittypeOutputposition.",
+      "need": "Shorterrepeatedresultsignaturespreserveoriginalworkflowandownership.",
+      "operation": "count_with_aliasreturnschecked_countdirectly;shortCountResultmovesintoexplicitResult<i32,CountError>,thenassert/Debugknowncontracts.",
+      "evidence_and_limits": "CountNumber=i32stillpermits-1anddoesnotinvokevalidation. TuplePriceAndCount=(i32,i32)answerreads.0/.1withprevious1.8rulesandbounded80*3=240,doesnotinventnewfields/types/conversion.",
+      "status": "sufficient"
+    }
+  ],
+  "fixtures": [
+    {
+      "source": "examples/intro-workspace/error-stages/fixtures/runtime-fail/panic_contract.rs",
+      "expected": "examples/intro-workspace/error-stages/fixtures/runtime-fail/panic_contract.expected",
+      "stable_expected": "內部契約要求正數",
+      "reason": "take_positive0printsstartthenpanic,noafterline.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/error-stages/fixtures/runtime-fail/unwrap_error.rs",
+      "expected": "examples/intro-workspace/error-stages/fixtures/runtime-fail/unwrap_error.expected",
+      "stable_expected": "TooLarge(101)",
+      "reason": "ResultErrborrowedpatternfirstprints101thenunwrapfails.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/error-stages/fixtures/runtime-fail/expect_error.rs",
+      "expected": "examples/intro-workspace/error-stages/fixtures/runtime-fail/expect_error.expected",
+      "stable_expected": "本案例故意沒有預期中的數字",
+      "reason": "OptionNoneexpectpanicwithsuppliedmessage.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/error-stages/fixtures/compile-fail/unwrap_without_debug.rs",
+      "expected": "examples/intro-workspace/error-stages/fixtures/compile-fail/unwrap_without_debug.expected",
+      "stable_expected": "E0277",
+      "reason": "ResultunwraprequiresCountErrorDebugevenwithoutsuccessfulvalue.",
+      "executed": false
+    }
+  ],
+  "static_outputs": [
+    {
+      "target": "policy",
+      "expected": [
+        "拒絕這筆，原因=Negative(-1)",
+        "接受件數=0",
+        "接受件數=3",
+        "接受件數=100",
+        "拒絕這筆，原因=TooLarge(101)",
+        "所有資料都已檢查"
+      ]
+    },
+    {
+      "target": "unwrapping",
+      "expected": [
+        "固定件數=3，空批次件數=0",
+        "Some中的數字=4、4"
+      ]
+    },
+    {
+      "target": "policy_answer",
+      "expected": [
+        "件數 -1 不能為負數",
+        "接受件數=0",
+        "接受件數=100",
+        "件數 101 超過批次上限100",
+        "四筆資料都已回報"
+      ]
+    },
+    {
+      "target": "aliases",
+      "expected": [
+        "兩種型別名稱都表示=Ok(3)"
+      ]
+    },
+    {
+      "target": "alias_is_name",
+      "expected": [
+        "alias沒有自動驗證，數字仍是=-1"
+      ]
+    },
+    {
+      "target": "alias_answer",
+      "expected": [
+        "使用另一個名稱後，小計=240"
+      ]
+    }
+  ],
+  "test_counts": {
+    "policy": 2,
+    "aliases": 2,
+    "static_only": true
+  },
+  "limits": "6runoutputs/2+2unitcountsand4fixtureexpectationsstaticnotnewRustexecution. No laterchapter8or9contentused;actualrenderingnotverified.",
+  "sealed_at_utc": "2026-10-15T08:02:45.037488+00:00"
+}

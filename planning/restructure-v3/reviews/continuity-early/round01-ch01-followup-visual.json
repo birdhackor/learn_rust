@@ -1,0 +1,73 @@
+{
+  "at_utc": "2026-10-15T06:40:06.220547+00:00",
+  "kind": "post-fix actual-page followup; original initial report and source-only followup retained",
+  "page_evidence": [
+    {
+      "kind": "chapter1-fix",
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "at": "2026-10-15T06:38:55.289Z",
+      "url": "http://127.0.0.1:8097/chapters/01-07-lesson/",
+      "strongTerms": [
+        "process",
+        "RAM",
+        "CPU",
+        "bit",
+        "byte"
+      ],
+      "rawAsteriskParagraphs": []
+    },
+    {
+      "kind": "chapter1-fix",
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "at": "2026-10-15T06:39:06.161Z",
+      "url": "http://127.0.0.1:8097/chapters/01-07-lesson/",
+      "strongTerms": [
+        "process",
+        "RAM",
+        "CPU",
+        "bit",
+        "byte"
+      ],
+      "rawAsteriskParagraphs": []
+    }
+  ],
+  "sources": [
+    {
+      "path": "docs/chapters/01-07-lesson.md",
+      "sha256": "cf49b1d604a23ed49d28f10d592b6ee662d7a46803062681c8fa7f2c97f6bcee"
+    },
+    {
+      "path": "docs/chapters/01-08-lesson.md",
+      "sha256": "d64133800925f9ded95a43efe017914a502de000096bafda6c4b7637789571c6"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C1-01",
+      "status": "fixed and actual-page rechecked at 1280x800 and390x844",
+      "evidence": "Existing mutation-permission prose appears before first repeat snippet at both viewports. No extra conceptual material added."
+    },
+    {
+      "id": "C1-02",
+      "status": "fixed and actual-page rechecked at1280x800 and390x844",
+      "evidence": "process/RAM/CPU/bit/byte render as strong text; no raw double-asterisk paragraph remains."
+    }
+  ],
+  "actually_viewed_screenshots": [
+    "desktop-followup-bold-top.png",
+    "desktop-followup-bit-byte.png",
+    "desktop-followup-array-mutation-section.png",
+    "mobile-followup-bold-top.png",
+    "mobile-followup-bit-byte.png",
+    "mobile-followup-array-mutation-section.png"
+  ],
+  "limited_scope": "Only affected paragraphs, first-use placement, and emphasis rendering; no full-book/build/test claim."
+}

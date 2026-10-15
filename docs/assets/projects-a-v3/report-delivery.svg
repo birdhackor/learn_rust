@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="570" viewBox="0 0 340 570" role="img" aria-labelledby="title desc">
+  <title id="title">輸出完成後才按掃描完整性選狀態</title>
+  <desc id="desc">Report已保存complete的true或false。先write_all再flush，兩步都Ok才按true選0、false選1；任一步Err則選2，不被掃描完整性抵銷。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#39536a"/></marker></defs>
+  <rect width="340" height="570" rx="12" fill="#ffffff"/>
+  <g font-family="Noto Sans CJK TC, sans-serif" text-anchor="middle" fill="#16354b">
+    <rect x="15" y="12" width="310" height="90" rx="12" fill="#e7f1fa" stroke="#39536a"/>
+    <text x="170" y="46" font-size="22">Report 已建立</text>
+    <text x="170" y="81" font-size="20">complete = true / false</text>
+    <path d="M170 108 V153" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="15" y="160" width="310" height="105" rx="12" fill="#e7f1fa" stroke="#39536a"/>
+    <text x="170" y="196" font-size="21">write_all 交出 bytes</text>
+    <text x="170" y="235" font-size="21">flush 完成緩衝輸出</text>
+    <path d="M170 271 L85 336" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M170 271 L255 336" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="15" y="345" width="140" height="145" rx="12" fill="#edf5e4" stroke="#39536a"/>
+    <text x="85" y="381" font-size="20">兩步都 Ok</text>
+    <text x="85" y="425" font-size="22">true → 0</text>
+    <text x="85" y="463" font-size="22">false → 1</text>
+    <rect x="185" y="345" width="140" height="145" rx="12" fill="#fcebe5" stroke="#39536a"/>
+    <text x="255" y="381" font-size="20">任一步 Err</text>
+    <text x="255" y="442" font-size="26">→ 2</text>
+    <text x="170" y="527" font-size="19">complete 描述掃描結果</text>
+    <text x="170" y="557" font-size="19">退出狀態也檢查輸出是否完成</text>
+  </g>
+</svg>

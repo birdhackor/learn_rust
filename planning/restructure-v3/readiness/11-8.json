@@ -1,0 +1,101 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.8"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-08-lesson.md": "c871b4acacc1f6b522277756de0604796bb44e81468506af3ae33b0ce6dd8114",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/rc_handles.rs": "4951bf7fdc83e188d6f8640f980df115e50b263ad5b84b7b78d0ae1dbe453eee",
+    "examples/intro-workspace/type-stages/examples/shared_tail/shared_chain/mod.rs": "0f215f4c1c1a647af82df7865480f6aeb5d57a62c700e8a60eec5dc8f2237b5f",
+    "examples/intro-workspace/type-stages/examples/shared_tail/main.rs": "9063fa5ab33ecd2d432b76bb04cc580a778b26a6cee9a446214f75390b2b1290",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_mutate.rs": "0e51ae571710a23c068740442e77a069afe84ff35fc0319c108ea6409bb1458b",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_mutate.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_move_out.rs": "efb4b01548c878a3f57f69414a6ee9a0c72c77fcec2426b47e3d6dcad30ade30",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_move_out.expected": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+    "examples/intro-workspace/type-stages/examples/weak_observer.rs": "1ded459b027e71fa83e6daa58db013492db03bf09fed86fa11528d1f811dd5ba",
+    "examples/intro-workspace/type-stages/examples/rc_complete/shared_chain/mod.rs": "49f00d0e0679351f0dd1da1138acb41fd271f51eade531cc8d54bd4a3e255fc0",
+    "examples/intro-workspace/type-stages/examples/rc_complete/main.rs": "184ed72a21443c85ff6f88ac0f88228e7dc5c76f41f9018eecbcdcb334df2146",
+    "docs/assets/types-v3/shared-tail.svg": "eccb2e83c9873c06ca513418653cb3dcf1546151066dc618611065ad575f5663",
+    "docs/assets/types-v3/strong-cycle.svg": "1d5a085fb785ab0636284d6031d1cf280e9b491398a3d643f15561afb46994d0"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 3,
+      "quote": "第 11.2 節每段鏈由前一份 Box 管理。現在要兩條鏈分別是80接120、40接120，而且尾端120是**同一份資料**；任何一條先結束，另一條仍能讀它。重建兩份120能算相同數字，卻沒有保留這項共享關係；只借同一尾段則需另外維持 owner。"
+    },
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 7,
+      "quote": "**`Rc<T>`** 位於 std::rc，Rc 是 **Reference Counted**。它用 **reference counting** 記下有多少個共享 owner 持有同一份 heap 資料。保活 T 的 owner 稱 **strong handle**；handle 自己仍是普通值，受 move 與 scope 規則管理。"
+    },
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 52,
+      "quote": "SharedChain 保留 End／Link，只把 next 改成 `Rc<SharedChain>`，讓不同開頭共同持有尾段。total 這次接受 `&SharedChain`，不消耗它。"
+    },
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 88,
+      "quote": "Rc 有 Deref，沒有 DerefMut。宣告 mutable handle 只允許修改 handle binding，不會替共享 T 取得獨占修改借用。以下完整負例執行 `cargo check` 得到 **E0594**："
+    },
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 98,
+      "quote": "也不能像 Box 一樣，直接以星號移出非 Copy 的 String；Deref 借用沒有給我們取走其他 owner 仍需資料的權限。以下得到 **E0507**："
+    },
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 112,
+      "quote": "**`Weak<T>`** 也位於 std::rc，保存不保活 T 的觀察關係。它能在 T 結束後繼續存在，因此不能直接當成有效的 `&T` 讀取，必須先嘗試取得 strong handle："
+    },
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 122,
+      "quote": "**值與配置的清理要分開**：最後 strong 結束就清理 T；若還有 Weak，管理計數與位置所需的配置仍保留。這不表示 T 還能讀，upgrade 也不會復活已清理的值；Weak 結束後才不再因它保留配置。"
+    },
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 149,
+      "quote": "**reference cycle** 是沿連結又回到原對象的關係。下圖是用來推理的**假設資料圖**，不是本節已建立的可執行程式：A 裡的 Rc 保活 B，B 裡的 Rc 也保活 A。"
+    },
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 153,
+      "quote": "外部 handle 全結束，A、B 仍各有 strong1，兩邊都不能開始清理，內部 Rc 也無法跟著移除，形成 **memory leak**：沒有外部使用者，資料仍未釋放。Rust 的 borrowing 檢查不會自動清除這種 ownership 循環。"
+    },
+    {
+      "section_id": "11.8",
+      "path": "docs/chapters/11-08-lesson.md",
+      "line": 159,
+      "quote": "建立保存120的 Rc，clone 成三個 owner，再建立一個 Weak。確認 strong3；drop 前兩份，第三份仍讀120、strong1。用短暫 match upgrade 後，讓新增 owner 離開分支；最後 drop 第三份，確認 Weak 得到 None。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,9 @@
+{
+  "finding": "FINAL7-O1",
+  "read_only_recheck": true,
+  "root_applied": true,
+  "current_path": "docs/chapters/18-08-lesson.md",
+  "line": 53,
+  "quote": "runner借用同一份Client，取得每筆期限Duration。Duration 是 14.5 已教的時間跨度；這個標準型別具備 Copy，可以把相同跨度交給每次B1 `check`；**每筆開始時各建立自己的期限**，不是整批只共用一個十秒倒數。client建立失敗仍在開始批次前處理。",
+  "sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34"
+}

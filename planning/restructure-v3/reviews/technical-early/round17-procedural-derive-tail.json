@@ -1,0 +1,492 @@
+{
+  "review_id": "round17-procedural-derive-tail",
+  "scope": [
+    "17.3"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python及實際已讀前綴，尤其12.2 host/target與17.1–17.2；未讀17.4當先備。",
+  "independence": "初判封存前未讀root作者validation/ledger、peer、reader或historical findings。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "全文、27snippets、三個packages的完整actual libraries/helper、consumer examples/tests、5組cross-crate fixtures與manifest/lock靜態核對。",
+    "核對2runs/1lib test（2函式）、1明列expected-fail command及4可替換same-manifest target；未執行。",
+    "實讀syn 2.0.119與quote 1.0.47、proc-macro2 1.0.107原始API的feature、AST、parse／error／conversion／ToTokens契約；8 cached source hashes。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "proc_macro_run": false,
+    "note": "本波未執行Rust/Cargo或直接呼叫compiler macro entry；輸出與5組診斷為靜態核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:20:28.542692+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "f71fbeedefb6f784f754cda7052427df3d8bb84e825579b64071f6f9305957e7",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/assets/ch14/derive-pipeline.svg": "ad2dbe412df2915c13f2b4473f2c709705b98c7d9a3237833f2034e560a8fb9d",
+    "docs/chapters/17-03-lesson.md": "aff60066fc4adbf85439864d9aa32d8f7d9054ef218d3bd02bf450b81c26212c",
+    "examples/ch14-macros/Cargo.toml": "29c1cb5909d8d8cd0d10a950209eb518d5db41452b400aeabdb37d064c391475",
+    "examples/ch14-macros/derive-consumer/Cargo.toml": "ae731223a1f61462388be1df2faa68ffcbe8266ab5530abbef7655448be79b88",
+    "examples/ch14-macros/derive-consumer/examples/macro_derive_demo.rs": "3e5db8124396fde2492963aa9d5703b0e3e550c0f40e8516838f908d02fafbb1",
+    "examples/ch14-macros/derive-consumer/examples/macro_derive_solution.rs": "e18434909bb9dc17c2a0937caaacd0c023991571fcee3d6774116b2c19b5e310",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/Cargo.lock": "f120958d212c4784804fc195d42354c1cdd897e28aa339f1ab142059bfb82a95",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/Cargo.toml": "42d7b4f149050487077bd227573a45f8217ca7738cbfd8ee5cf4a8f870d3e01c",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.rs": "8b6d91a9607a990ab545611b703f254ee2f3b209ab417dea53cbbe2fa621109f",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.expected": "992c872b563a87b3c10638c4f5005b79ec83e9b9c51389e41ee29752c0e72ce8",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.rs": "a71dce847ec0d51bdf57f051fa6a972a5426614fa9e4de032987385e63d74bde",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.expected": "8d28a7a96b29a1e96cc26949a88c47c768228d1becd9e45f1cf88ab77f7c611b",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.rs": "6431cbc222069e44921c6153b16ccd0f2b38eb8ff78de9762954592a4547cbbd",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.expected": "da039a627eeb82d0e54ef1eafdd1374886f08cfc6de4a55efd096e27284f73c6",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.rs": "e2c4adc1e6a5a0f81d3a5ec61bcf0653a23f22a60313dea05726cfe47c604ee1",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.expected": "028dee00b08fcd09fca0d1ed8e5bb1308cf8cc8c86b33ccd0309da95ee6b694f",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.rs": "b5f9d5858bf1ba6e50d1f3898d2576af6f6a946f0d82c69d954ddf570fe4b0cf",
+    "examples/ch14-macros/derive-consumer/src/lib.rs": "8e17e0fe726b4afedc8168c79c867b112807729494a133516c9f0b976862452f",
+    "examples/ch14-macros/derive/Cargo.toml": "fcb45a22f215f019c40d9f43059322d09730b01e950b5a23d2dccd9add512437",
+    "examples/ch14-macros/derive/src/lib.rs": "eae33bebe4429252d2e4b3e4ca213b620ec5ed21d1c2915f868f4cbbc45f2408",
+    "examples/ch14-macros/src/hygiene.rs": "e7ed6bad0d8b2e2332be207ec7a80d117cbd045f81100646e78f9fcc0c540335",
+    "examples/ch14-macros/src/lib.rs": "61a35c3450fc7cab01dbe6b78fdcf1e59263208386e97b2efb0cb55cbe715358",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "external_source_hashes": {
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.119/Cargo.toml": "da8b83ac2c66a7b404dc55d88ae42592f70714823251f51b620ae349b246a18f",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.119/src/parse_macro_input.rs": "e4e22b63d0496d06a4ca17742a22467ed93f08a739081324773828bad63175ee",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.119/src/error.rs": "34a045645056452a76862f08084ae9a92aa24a38daa25586e9ab12f5fa9c3b23",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.119/src/punctuated.rs": "89b2666be8354215c63f8af7c92d6aed3a6d309cf384965ae360d351a5007afd",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.119/src/derive.rs": "4927cfd64d2c61bb9ee8462b83d5bbce77e3f85c3a03a5565ecf6f08d55367c3",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/syn-2.0.119/src/data.rs": "68b36f6feca19ad9cd2780a29113f3ca8bdd21df3276c54b71595c8ed06cb774",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/quote-1.0.47/src/to_tokens.rs": "1b07b676afce2f666bac6f454758d066758033fc85e9cd9d2d12d58ad2eb36e1",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proc-macro2-1.0.107/src/lib.rs": "ed6bf5e3c3b4fc952d4bdf9b48b149087bceaebf5392befce0bc6cae590a008d"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "ch14-macros",
+      "version": "0.1.0"
+    },
+    {
+      "name": "ch14-reading-consumer",
+      "version": "0.1.0",
+      "dependencies": [
+        "ch14-macros",
+        "ch14-reading-derive"
+      ]
+    },
+    {
+      "name": "ch14-reading-derive",
+      "version": "0.1.0",
+      "dependencies": [
+        "quote",
+        "syn 2.0.119"
+      ]
+    },
+    {
+      "name": "proc-macro2",
+      "version": "1.0.107",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9",
+      "dependencies": [
+        "unicode-ident"
+      ]
+    },
+    {
+      "name": "quote",
+      "version": "1.0.47",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001",
+      "dependencies": [
+        "proc-macro2"
+      ]
+    },
+    {
+      "name": "syn",
+      "version": "2.0.119",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297",
+      "dependencies": [
+        "proc-macro2",
+        "quote",
+        "unicode-ident"
+      ]
+    },
+    {
+      "name": "unicode-ident",
+      "version": "1.0.27",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "a2c754d6c33795a1c324727428e5a7dedb5b06195f9890bdbcba760d3e246563"
+    }
+  ],
+  "nonloaded_lock_note": "全域lock另有syn 3.0.9；本波derive明確=2.0.119，未以其他版本補契約。",
+  "fixture_lock": {
+    "version": 4,
+    "package": [
+      {
+        "name": "ch14-macros",
+        "version": "0.1.0"
+      },
+      {
+        "name": "ch14-reading-cross-crate-fail",
+        "version": "0.1.0",
+        "dependencies": [
+          "ch14-macros",
+          "ch14-reading-derive"
+        ]
+      },
+      {
+        "name": "ch14-reading-derive",
+        "version": "0.1.0",
+        "dependencies": [
+          "quote",
+          "syn"
+        ]
+      },
+      {
+        "name": "proc-macro2",
+        "version": "1.0.107",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "985e7ec9bb745e6ce6535b544d84d6cd6f7ad8bd711c398938ae983b91a766d9",
+        "dependencies": [
+          "unicode-ident"
+        ]
+      },
+      {
+        "name": "quote",
+        "version": "1.0.47",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "1fbf4db142a473a8d80c26bbf18454ed458bf8d26c8219c331daecfdbd079001",
+        "dependencies": [
+          "proc-macro2"
+        ]
+      },
+      {
+        "name": "syn",
+        "version": "2.0.119",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "872831b642d1a07999a962a351ed35b955ea2cfc8f3862091e2a240a84f17297",
+        "dependencies": [
+          "proc-macro2",
+          "quote",
+          "unicode-ident"
+        ]
+      },
+      {
+        "name": "unicode-ident",
+        "version": "1.0.27",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "a2c754d6c33795a1c324727428e5a7dedb5b06195f9890bdbcba760d3e246563"
+      }
+    ]
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 44,
+      "source": "examples/ch14-macros/derive/Cargo.toml",
+      "tag": null,
+      "included_sha256": "fcb45a22f215f019c40d9f43059322d09730b01e950b5a23d2dccd9add512437",
+      "included_lines": 13
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 50,
+      "source": "examples/ch14-macros/derive-consumer/Cargo.toml",
+      "tag": null,
+      "included_sha256": "ae731223a1f61462388be1df2faa68ffcbe8266ab5530abbef7655448be79b88",
+      "included_lines": 10
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 86,
+      "source": "examples/ch14-macros/derive/src/lib.rs",
+      "tag": "imports",
+      "included_sha256": "58b90b060226daa4a3837462a6a333041c08fb2797ee66e25b834a387685a39a",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 99,
+      "source": "examples/ch14-macros/derive/src/lib.rs",
+      "tag": "reject",
+      "included_sha256": "21f0071450e12419460d896768825541e806743cca331a79b4900dc069e716fb",
+      "included_lines": 5
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 115,
+      "source": "examples/ch14-macros/derive/src/lib.rs",
+      "tag": "generate",
+      "included_sha256": "955da12200d88f5c88ff178fc45f3eac319ec73ffb20161017a0fb29619891fd",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 129,
+      "source": "examples/ch14-macros/derive/src/lib.rs",
+      "tag": "derive-entry",
+      "included_sha256": "2c09148102f34289cedce0f65d807498c0d7dc45a1e547d329d30fa97161d574",
+      "included_lines": 34
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 139,
+      "source": "examples/ch14-macros/derive-consumer/src/lib.rs",
+      "tag": "consumer-models",
+      "included_sha256": "ef3840b1cc779673d14d45591b40af0b9217f47a70f7bb1bfd55bd3458d040ef",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 145,
+      "source": "examples/ch14-macros/derive-consumer/examples/macro_derive_demo.rs",
+      "tag": null,
+      "included_sha256": "3e5db8124396fde2492963aa9d5703b0e3e550c0f40e8516838f908d02fafbb1",
+      "included_lines": 17
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 159,
+      "source": "examples/ch14-macros/derive-consumer/src/lib.rs",
+      "tag": "consumer-tests",
+      "included_sha256": "01eb92c80d27edba0574c0a3880849f0d1c85057c7ecc8fd6fbbc6962856e3e0",
+      "included_lines": 31
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 169,
+      "source": "examples/ch14-macros/derive/src/lib.rs",
+      "tag": null,
+      "included_sha256": "eae33bebe4429252d2e4b3e4ca213b620ec5ed21d1c2915f868f4cbbc45f2408",
+      "included_lines": 54
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 175,
+      "source": "examples/ch14-macros/derive-consumer/src/lib.rs",
+      "tag": null,
+      "included_sha256": "8e17e0fe726b4afedc8168c79c867b112807729494a133516c9f0b976862452f",
+      "included_lines": 43
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 183,
+      "source": "examples/ch14-macros/Cargo.toml",
+      "tag": null,
+      "included_sha256": "29c1cb5909d8d8cd0d10a950209eb518d5db41452b400aeabdb37d064c391475",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 187,
+      "source": "examples/ch14-macros/src/lib.rs",
+      "tag": null,
+      "included_sha256": "61a35c3450fc7cab01dbe6b78fdcf1e59263208386e97b2efb0cb55cbe715358",
+      "included_lines": 11
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 191,
+      "source": "examples/ch14-macros/src/hygiene.rs",
+      "tag": null,
+      "included_sha256": "e7ed6bad0d8b2e2332be207ec7a80d117cbd045f81100646e78f9fcc0c540335",
+      "included_lines": 73
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 222,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.rs",
+      "tag": null,
+      "included_sha256": "6431cbc222069e44921c6153b16ccd0f2b38eb8ff78de9762954592a4547cbbd",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 226,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.expected",
+      "tag": null,
+      "included_sha256": "8d28a7a96b29a1e96cc26949a88c47c768228d1becd9e45f1cf88ab77f7c611b",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 232,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.rs",
+      "tag": null,
+      "included_sha256": "a71dce847ec0d51bdf57f051fa6a972a5426614fa9e4de032987385e63d74bde",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 236,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.expected",
+      "tag": null,
+      "included_sha256": "992c872b563a87b3c10638c4f5005b79ec83e9b9c51389e41ee29752c0e72ce8",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 242,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.rs",
+      "tag": null,
+      "included_sha256": "e2c4adc1e6a5a0f81d3a5ec61bcf0653a23f22a60313dea05726cfe47c604ee1",
+      "included_lines": 8
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 246,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.expected",
+      "tag": null,
+      "included_sha256": "da039a627eeb82d0e54ef1eafdd1374886f08cfc6de4a55efd096e27284f73c6",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 252,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.rs",
+      "tag": null,
+      "included_sha256": "b5f9d5858bf1ba6e50d1f3898d2576af6f6a946f0d82c69d954ddf570fe4b0cf",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 256,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.expected",
+      "tag": null,
+      "included_sha256": "028dee00b08fcd09fca0d1ed8e5bb1308cf8cc8c86b33ccd0309da95ee6b694f",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 262,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.rs",
+      "tag": null,
+      "included_sha256": "8b6d91a9607a990ab545611b703f254ee2f3b209ab417dea53cbbe2fa621109f",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 266,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.expected",
+      "tag": null,
+      "included_sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 272,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.rs",
+      "tag": null,
+      "included_sha256": "8b6d91a9607a990ab545611b703f254ee2f3b209ab417dea53cbbe2fa621109f",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 280,
+      "source": "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/Cargo.toml",
+      "tag": null,
+      "included_sha256": "42d7b4f149050487077bd227573a45f8217ca7738cbfd8ee5cf4a8f870d3e01c",
+      "included_lines": 11
+    },
+    {
+      "chapter": "docs/chapters/17-03-lesson.md",
+      "line": 300,
+      "source": "examples/ch14-macros/derive-consumer/examples/macro_derive_solution.rs",
+      "tag": null,
+      "included_sha256": "e18434909bb9dc17c2a0937caaacd0c023991571fcee3d6774116b2c19b5e310",
+      "included_lines": 18
+    }
+  ],
+  "commands": [
+    "cargo run -p ch14-reading-consumer --example macro_derive_demo --locked",
+    "cargo test -p ch14-reading-consumer --lib --locked",
+    "cargo check --manifest-path examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/Cargo.toml --example macro_derive_bool --locked",
+    "cargo run -p ch14-reading-consumer --example macro_derive_solution --locked"
+  ],
+  "loaded_closures": [
+    {
+      "kind": "2selected consumer example runs",
+      "targets": [
+        "macro_derive_demo",
+        "macro_derive_solution"
+      ],
+      "owned": [
+        "derive-consumer/examples/各自target.rs",
+        "derive-consumer/src/lib.rs",
+        "derive/src/lib.rs",
+        "src/lib.rs",
+        "src/hygiene.rs"
+      ],
+      "third_party": [
+        "syn 2.0.119 (derive/parsing/proc-macro; no full/printing)",
+        "quote 1.0.47 (default proc-macro)",
+        "proc-macro2 1.0.107",
+        "unicode-ident 1.0.27"
+      ],
+      "notes": "derive工具host編譯並由compiler使用；consumer normal library自動載入，trait normal library完整內聯。無build.rs。"
+    },
+    {
+      "kind": "selected consumer --lib test",
+      "targets": [
+        "ch14-reading-consumer"
+      ],
+      "tests": 2,
+      "owned": [
+        "derive-consumer/src/lib.rs（含cfg(test)）",
+        "derive/src/lib.rs",
+        "src/lib.rs",
+        "src/hygiene.rs"
+      ],
+      "notes": "PrivateReading使用alias及私有欄位的derive在同test module產生impl，沒有普通test直接執行proc_macro entry。"
+    },
+    {
+      "kind": "nested cross-crate expected fail",
+      "targets": [
+        "macro_derive_generic",
+        "macro_derive_enum",
+        "macro_derive_named",
+        "macro_derive_two_fields",
+        "macro_derive_bool"
+      ],
+      "owned": [
+        "各獨立fixtures/cross-crate-fail/examples/target.rs",
+        "derive/src/lib.rs",
+        "src/lib.rs",
+        "src/hygiene.rs"
+      ],
+      "notes": "fixture只依賴trait library與derive工具，不載consumer library或其examples；path依fixture manifest解析。前四組由reject發compile_error，bool由generated impl產生E0308。"
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "docs/chapters/17-03-lesson.md:11",
+      "finding": "derive保留原item並添加生成items，proc-macro只在編譯期處理語法。三種macro形式、host工具與consumer runtime分工準確。"
+    },
+    {
+      "source": "docs/chapters/17-03-lesson.md:39",
+      "finding": "特殊lib proc-macro設定、syn最小features及quote來源先教；syn error/AST/parse功能不依賴full或printing，對照實際原始碼成立。"
+    },
+    {
+      "source": "examples/ch14-macros/derive/src/lib.rs:20",
+      "finding": "entry借用AST依序拒絕generic／非struct／非tuple／非單欄；parse失敗early return compile_error tokens，reject message經Error::new和into_compile_error/.into。"
+    },
+    {
+      "source": "docs/chapters/17-03-lesson.md:113",
+      "finding": "quote #name透過Ident ToTokens插入原名稱，生成::ch14_macros::Reading依consumer固定dependency名稱，沒有錯用$crate；rename限制明說。"
+    },
+    {
+      "source": "examples/ch14-macros/derive-consumer/src/lib.rs:11",
+      "finding": "兩項tests維持0/-5 wrapper，type alias和privatefield可用；self.0回傳Copy i32不使wrapper成Copy。完整答案80/-5及caller私有Millimeters符合契約。"
+    },
+    {
+      "source": "docs/assets/ch14/derive-pipeline.svg",
+      "finding": "XML/source分開compiler TokenStream、syn AST、quote proc_macro2 tokens、轉回compiler及最後runtime；未作visual觀察。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:21:07.617Z"
+}

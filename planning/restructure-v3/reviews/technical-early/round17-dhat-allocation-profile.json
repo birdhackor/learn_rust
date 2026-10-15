@@ -1,0 +1,443 @@
+{
+  "review_id": "round17-dhat-allocation-profile",
+  "scope": [
+    "17.8"
+  ],
+  "role": "獨立技術／先教後用／實際source closure與primary profile紀錄審查",
+  "independent_initial": true,
+  "reader_background": "基本Python與實際已讀前綴，尤其17.7的count/black_box/bench邊界；不以尚未讀14/15後段填補本節。",
+  "independence": "未讀root作者validation/peer/reader或historical issue/review；parent明確授權讀2026-10-14原始profile/reproduction primary evidence。版本時點：曾先讀較早正文但當時未量page SHA；root僅通知current8ff6ed...後，完整重讀當前全頁並以此版封存，未開root17.8diff作提示，也不捏造舊稿hash。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現額外必要或可選技術修正。",
+  "method": [
+    "全文、17snippets、16owned package/profile檔與performance正常library/manifest完整source、5條test/run commands靜態核對。",
+    "實讀dhat0.3.3 selected API/HeapStats/Drop來源；解碼三份primary JSON與frames，逐項stdout/stderr/reproduction/歷史source SHA比對。",
+    "兩SVG只查XML/source，未作viewer或新profile實驗。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "allocation_profile_run": false,
+    "viewer_opened": false,
+    "note": "沒有本波Cargo/Rust/profile執行、沒有browser/actual viewer驗證。原始JSON數字與callchain已讀；原record viewer_load_verified不是本人的新操作。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:45:20.384859+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f",
+    "Cargo.toml": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f",
+    "docs/assets/ch14/profile-boundary.svg": "68ae7c3c8e56b64dd6c3a329f74453e651c4a2318778a847f1db236d890f9c6d",
+    "docs/assets/ch14/profile-source.svg": "2aa142ed3bb90bd7d42e544733712d8168c75fe286f085a96d8d749867f69627",
+    "docs/chapters/17-08-lesson.md": "8ff6edb77f3d98afd663717b4b2e9fe10b93dd6b20890f69cfe5613c02c19898",
+    "examples/ch14-performance/Cargo.toml": "94ca37c793af418c5dec68b48d8d4d162b844d844d663bec9f2c5bd87768b221",
+    "examples/ch14-performance/src/lib.rs": "bd0b9932612439aca85ff21ce952749dbf93f89b3c4861bb0bfadc3092c54ee1",
+    "examples/ch14-profiling/Cargo.toml": "89f66e3c2ee8143e56c45d9f0347b7abb27acc5268d6cbbcae80fecb4bac16ca",
+    "examples/ch14-profiling/examples/allocation_borrowed.rs": "e0ccb93fe67e3fc02fd6783645012782f286b8138a74c209b0fc61d861a656e6",
+    "examples/ch14-profiling/examples/allocation_cloned.rs": "afe7199c0b7fc1d7de8462a0b55e37e812ad7bdf12759bda5c4d589ff60e23af",
+    "examples/ch14-profiling/examples/allocation_solution.rs": "86dcd0d789ec1ac556fa7794f7fcab4774a762a144e796018fb9bde07fa2bfae",
+    "examples/ch14-profiling/profiles/borrowed.json": "514c2c24d9ecb996a821095491400482bc93c1efb23951f502b942cc42b22fc2",
+    "examples/ch14-profiling/profiles/borrowed.stderr.txt": "1dfb40c43dd8b86f51e74abfb80bc0cb3ee5af70b20957f204f0b16407a6e1fd",
+    "examples/ch14-profiling/profiles/borrowed.stdout.txt": "c7e15c9c3872a1d4a3abf6e4fad4763a5a1873625d1d73a4af5d8543394ae1a6",
+    "examples/ch14-profiling/profiles/cloned.json": "c5be975a4116a1aba4bf6dce4b9765a413b1a8a059210c1fd377b0ccc35709c9",
+    "examples/ch14-profiling/profiles/cloned.stderr.txt": "955d7a88fb13999ead3bdecc16e271c47949cd3593e5bf55f3b10783f962646d",
+    "examples/ch14-profiling/profiles/cloned.stdout.txt": "a494f76ab7a829a22d9583d7f0453c732c5e3b2fdfd3ab9896b577f15ca3ecb5",
+    "examples/ch14-profiling/profiles/reproduction.json": "ef336e96410a6da8bd341ff92d98878e11012a605bad84dc6a539fc1ec6afdaa",
+    "examples/ch14-profiling/profiles/solution.json": "f858873a8c10fb4af37145853202b1490de253dadf1a093418c7823364f522a4",
+    "examples/ch14-profiling/profiles/solution.stderr.txt": "28254398fcdfd63e542e8212d0f5318040e011519e55683a2dd7c8a71fc49c54",
+    "examples/ch14-profiling/profiles/solution.stdout.txt": "19d313943f7e833ee388c4ef38e78eb2c839a27da06b3e10138ed3def12969d9",
+    "examples/ch14-profiling/src/lib.rs": "a57e6ac616bd68cfef0d17d1a80e94fb04237006a06344086ae4cc88b162575c",
+    "examples/ch14-profiling/tests/repeated_results.rs": "fbc98bee75f8b1ce2d7ac15d04d190bd779dda143016ae9b77713d2e500f8d2b",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "external_source_hashes": {
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/dhat-0.3.3/src/lib.rs": "a9eda549ebabbb4f114efe194d280d02a08a817204c0836eacec7280efb3abab"
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 16,
+      "source": "examples/ch14-profiling/src/lib.rs",
+      "tag": "repeat",
+      "included_sha256": "6c05d386452e37f3ecf7d89da8447ea5c727be01749f70296a9a2f709ae3b38e",
+      "included_lines": 14
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 22,
+      "source": "examples/ch14-profiling/tests/repeated_results.rs",
+      "tag": null,
+      "included_sha256": "fbc98bee75f8b1ce2d7ac15d04d190bd779dda143016ae9b77713d2e500f8d2b",
+      "included_lines": 23
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 28,
+      "source": "examples/ch14-profiling/Cargo.toml",
+      "tag": null,
+      "included_sha256": "89f66e3c2ee8143e56c45d9f0347b7abb27acc5268d6cbbcae80fecb4bac16ca",
+      "included_lines": 14
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 34,
+      "source": "examples/ch14-profiling/src/lib.rs",
+      "tag": null,
+      "included_sha256": "a57e6ac616bd68cfef0d17d1a80e94fb04237006a06344086ae4cc88b162575c",
+      "included_lines": 20
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 40,
+      "source": "examples/ch14-performance/Cargo.toml",
+      "tag": null,
+      "included_sha256": "94ca37c793af418c5dec68b48d8d4d162b844d844d663bec9f2c5bd87768b221",
+      "included_lines": 19
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 44,
+      "source": "examples/ch14-performance/src/lib.rs",
+      "tag": null,
+      "included_sha256": "bd0b9932612439aca85ff21ce952749dbf93f89b3c4861bb0bfadc3092c54ee1",
+      "included_lines": 43
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 67,
+      "source": "examples/ch14-profiling/examples/allocation_cloned.rs",
+      "tag": "allocator",
+      "included_sha256": "324b17f69ace3247cb05b5257ddbcd13b98281faf1eb81b32d333f4f1226e148",
+      "included_lines": 2
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 108,
+      "source": "examples/ch14-profiling/examples/allocation_cloned.rs",
+      "tag": "profile",
+      "included_sha256": "622151910c277c47022ad5107e7bcb91af6e11388e88de3765b70c4be8f4de6e",
+      "included_lines": 20
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 120,
+      "source": "examples/ch14-profiling/examples/allocation_cloned.rs",
+      "tag": null,
+      "included_sha256": "afe7199c0b7fc1d7de8462a0b55e37e812ad7bdf12759bda5c4d589ff60e23af",
+      "included_lines": 31
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 124,
+      "source": "examples/ch14-profiling/examples/allocation_borrowed.rs",
+      "tag": null,
+      "included_sha256": "e0ccb93fe67e3fc02fd6783645012782f286b8138a74c209b0fc61d861a656e6",
+      "included_lines": 27
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 193,
+      "source": "examples/ch14-profiling/examples/allocation_solution.rs",
+      "tag": null,
+      "included_sha256": "86dcd0d789ec1ac556fa7794f7fcab4774a762a144e796018fb9bde07fa2bfae",
+      "included_lines": 27
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 209,
+      "source": "examples/ch14-profiling/profiles/cloned.stdout.txt",
+      "tag": null,
+      "included_sha256": "a494f76ab7a829a22d9583d7f0453c732c5e3b2fdfd3ab9896b577f15ca3ecb5",
+      "included_lines": 4
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 215,
+      "source": "examples/ch14-profiling/profiles/cloned.stderr.txt",
+      "tag": null,
+      "included_sha256": "955d7a88fb13999ead3bdecc16e271c47949cd3593e5bf55f3b10783f962646d",
+      "included_lines": 38
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 221,
+      "source": "examples/ch14-profiling/profiles/borrowed.stdout.txt",
+      "tag": null,
+      "included_sha256": "c7e15c9c3872a1d4a3abf6e4fad4763a5a1873625d1d73a4af5d8543394ae1a6",
+      "included_lines": 4
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 227,
+      "source": "examples/ch14-profiling/profiles/borrowed.stderr.txt",
+      "tag": null,
+      "included_sha256": "1dfb40c43dd8b86f51e74abfb80bc0cb3ee5af70b20957f204f0b16407a6e1fd",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 233,
+      "source": "examples/ch14-profiling/profiles/solution.stdout.txt",
+      "tag": null,
+      "included_sha256": "19d313943f7e833ee388c4ef38e78eb2c839a27da06b3e10138ed3def12969d9",
+      "included_lines": 4
+    },
+    {
+      "chapter": "docs/chapters/17-08-lesson.md",
+      "line": 239,
+      "source": "examples/ch14-profiling/profiles/solution.stderr.txt",
+      "tag": null,
+      "included_sha256": "28254398fcdfd63e542e8212d0f5318040e011519e55683a2dd7c8a71fc49c54",
+      "included_lines": 7
+    }
+  ],
+  "owned_files": [
+    "examples/ch14-profiling/Cargo.toml",
+    "examples/ch14-profiling/examples/allocation_borrowed.rs",
+    "examples/ch14-profiling/examples/allocation_cloned.rs",
+    "examples/ch14-profiling/examples/allocation_solution.rs",
+    "examples/ch14-profiling/profiles/borrowed.json",
+    "examples/ch14-profiling/profiles/borrowed.stderr.txt",
+    "examples/ch14-profiling/profiles/borrowed.stdout.txt",
+    "examples/ch14-profiling/profiles/cloned.json",
+    "examples/ch14-profiling/profiles/cloned.stderr.txt",
+    "examples/ch14-profiling/profiles/cloned.stdout.txt",
+    "examples/ch14-profiling/profiles/reproduction.json",
+    "examples/ch14-profiling/profiles/solution.json",
+    "examples/ch14-profiling/profiles/solution.stderr.txt",
+    "examples/ch14-profiling/profiles/solution.stdout.txt",
+    "examples/ch14-profiling/src/lib.rs",
+    "examples/ch14-profiling/tests/repeated_results.rs"
+  ],
+  "commands": [
+    "cargo test -p ch14-profiling --test repeated_results --locked",
+    "cargo test -p ch14-profiling --test repeated_results --release --locked",
+    "CARGO_PROFILE_RELEASE_DEBUG=1 cargo run -p ch14-profiling --example allocation_cloned --release --locked",
+    "CARGO_PROFILE_RELEASE_DEBUG=1 cargo run -p ch14-profiling --example allocation_borrowed --release --locked",
+    "CARGO_PROFILE_RELEASE_DEBUG=1 cargo run -p ch14-profiling --example allocation_solution --release --locked"
+  ],
+  "selected_lock_entries": [
+    {
+      "name": "ch14-performance",
+      "version": "0.1.0",
+      "dependencies": [
+        "criterion"
+      ]
+    },
+    {
+      "name": "ch14-profiling",
+      "version": "0.1.0",
+      "dependencies": [
+        "ch14-performance",
+        "dhat"
+      ]
+    },
+    {
+      "name": "dhat",
+      "version": "0.3.3",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "98cd11d84628e233de0ce467de10b8633f4ddaecafadefc86e13b84b8739b827",
+      "dependencies": [
+        "backtrace",
+        "lazy_static",
+        "mintex",
+        "parking_lot",
+        "rustc-hash 1.1.0",
+        "serde",
+        "serde_json",
+        "thousands"
+      ]
+    }
+  ],
+  "historical_source_check": {
+    "examples/ch14-profiling/Cargo.toml": {
+      "recorded": "89f66e3c2ee8143e56c45d9f0347b7abb27acc5268d6cbbcae80fecb4bac16ca",
+      "current": "89f66e3c2ee8143e56c45d9f0347b7abb27acc5268d6cbbcae80fecb4bac16ca",
+      "same": true
+    },
+    "examples/ch14-profiling/examples/allocation_borrowed.rs": {
+      "recorded": "e0ccb93fe67e3fc02fd6783645012782f286b8138a74c209b0fc61d861a656e6",
+      "current": "e0ccb93fe67e3fc02fd6783645012782f286b8138a74c209b0fc61d861a656e6",
+      "same": true
+    },
+    "examples/ch14-profiling/examples/allocation_cloned.rs": {
+      "recorded": "afe7199c0b7fc1d7de8462a0b55e37e812ad7bdf12759bda5c4d589ff60e23af",
+      "current": "afe7199c0b7fc1d7de8462a0b55e37e812ad7bdf12759bda5c4d589ff60e23af",
+      "same": true
+    },
+    "examples/ch14-profiling/examples/allocation_solution.rs": {
+      "recorded": "86dcd0d789ec1ac556fa7794f7fcab4774a762a144e796018fb9bde07fa2bfae",
+      "current": "86dcd0d789ec1ac556fa7794f7fcab4774a762a144e796018fb9bde07fa2bfae",
+      "same": true
+    },
+    "examples/ch14-profiling/src/lib.rs": {
+      "recorded": "a57e6ac616bd68cfef0d17d1a80e94fb04237006a06344086ae4cc88b162575c",
+      "current": "a57e6ac616bd68cfef0d17d1a80e94fb04237006a06344086ae4cc88b162575c",
+      "same": true
+    },
+    "examples/ch14-profiling/tests/repeated_results.rs": {
+      "recorded": "fbc98bee75f8b1ce2d7ac15d04d190bd779dda143016ae9b77713d2e500f8d2b",
+      "current": "fbc98bee75f8b1ce2d7ac15d04d190bd779dda143016ae9b77713d2e500f8d2b",
+      "same": true
+    }
+  },
+  "historical_root_lock_sha256": "1e104f31a9842905deaed85cf1d90a5685c7ce7018b666b0c9df5aa278e6db27",
+  "primary_profile_checks": {
+    "cloned": {
+      "file": "examples/ch14-profiling/profiles/cloned.json",
+      "profile_sha256_matches_original": true,
+      "pp_count": 1,
+      "metrics_from_raw_json": {
+        "total_blocks": 25600,
+        "total_bytes": 326400,
+        "at_global_peak_bytes": 15,
+        "at_end_bytes": 0
+      },
+      "snapshot_metrics_from_original": {
+        "total_blocks": 25600,
+        "total_bytes": 326400,
+        "max_bytes": 15,
+        "curr_bytes": 0
+      },
+      "frames": [
+        "[root]",
+        "0x55d9b4ff2f1f: <alloc::alloc::Global as core::alloc::Allocator>::allocate (alloc/src/alloc.rs:541:14)",
+        "0x55d9b4ff2f1f: <alloc::raw_vec::RawVecInner>::try_allocate_in (src/raw_vec/mod.rs:466:47)",
+        "0x55d9b4ff2f1f: <alloc::raw_vec::RawVecInner>::with_capacity_in (src/raw_vec/mod.rs:435:15)",
+        "0x55d9b4ff2f1f: <alloc::raw_vec::RawVec<u8>>::with_capacity_in (src/raw_vec/mod.rs:177:20)",
+        "0x55d9b4ff2f1f: <alloc::vec::Vec<u8>>::with_capacity_in (src/vec/mod.rs:969:20)",
+        "0x55d9b4ff2f1f: <u8 as <[_]>::to_vec_in::ConvertVec>::to_vec::<alloc::alloc::Global> (alloc/src/slice.rs:448:29)",
+        "0x55d9b4ff2f1f: <[u8]>::to_vec_in::<alloc::alloc::Global> (alloc/src/slice.rs:400:16)",
+        "0x55d9b4ff2f1f: <alloc::vec::Vec<u8> as core::clone::Clone>::clone (src/vec/mod.rs:3878:9)",
+        "0x55d9b4ff2f1f: <alloc::string::String as core::clone::Clone>::clone (alloc/src/string.rs:2389:32)",
+        "0x55d9b4fbaccc: ch14_performance::count_cloned (ch14-performance/src/lib.rs:21:38)",
+        "0x55d9b4fba9b4: ch14_profiling::repeat_counts (ch14-profiling/src/lib.rs:12:13)",
+        "0x55d9b4f788bf: allocation_cloned::main (ch14-profiling/examples/allocation_cloned.rs:18:22)"
+      ],
+      "original_stdout_matches": true,
+      "original_stderr_matches": true
+    },
+    "borrowed": {
+      "file": "examples/ch14-profiling/profiles/borrowed.json",
+      "profile_sha256_matches_original": true,
+      "pp_count": 0,
+      "metrics_from_raw_json": {
+        "total_blocks": 0,
+        "total_bytes": 0,
+        "at_global_peak_bytes": 0,
+        "at_end_bytes": 0
+      },
+      "snapshot_metrics_from_original": {
+        "total_blocks": 0,
+        "total_bytes": 0,
+        "max_bytes": 0,
+        "curr_bytes": 0
+      },
+      "frames": [
+        "[root]"
+      ],
+      "original_stdout_matches": true,
+      "original_stderr_matches": true
+    },
+    "solution": {
+      "file": "examples/ch14-profiling/profiles/solution.json",
+      "profile_sha256_matches_original": true,
+      "pp_count": 1,
+      "metrics_from_raw_json": {
+        "total_blocks": 6400,
+        "total_bytes": 81600,
+        "at_global_peak_bytes": 15,
+        "at_end_bytes": 0
+      },
+      "snapshot_metrics_from_original": {
+        "total_blocks": 6400,
+        "total_bytes": 81600,
+        "max_bytes": 15,
+        "curr_bytes": 0
+      },
+      "frames": [
+        "[root]",
+        "0x561247be6f1f: <alloc::alloc::Global as core::alloc::Allocator>::allocate (alloc/src/alloc.rs:541:14)",
+        "0x561247be6f1f: <alloc::raw_vec::RawVecInner>::try_allocate_in (src/raw_vec/mod.rs:466:47)",
+        "0x561247be6f1f: <alloc::raw_vec::RawVecInner>::with_capacity_in (src/raw_vec/mod.rs:435:15)",
+        "0x561247be6f1f: <alloc::raw_vec::RawVec<u8>>::with_capacity_in (src/raw_vec/mod.rs:177:20)",
+        "0x561247be6f1f: <alloc::vec::Vec<u8>>::with_capacity_in (src/vec/mod.rs:969:20)",
+        "0x561247be6f1f: <u8 as <[_]>::to_vec_in::ConvertVec>::to_vec::<alloc::alloc::Global> (alloc/src/slice.rs:448:29)",
+        "0x561247be6f1f: <[u8]>::to_vec_in::<alloc::alloc::Global> (alloc/src/slice.rs:400:16)",
+        "0x561247be6f1f: <alloc::vec::Vec<u8> as core::clone::Clone>::clone (src/vec/mod.rs:3878:9)",
+        "0x561247be6f1f: <alloc::string::String as core::clone::Clone>::clone (alloc/src/string.rs:2389:32)",
+        "0x561247baeccc: ch14_performance::count_cloned (ch14-performance/src/lib.rs:21:38)",
+        "0x561247bae9b4: ch14_profiling::repeat_counts (ch14-profiling/src/lib.rs:12:13)",
+        "0x561247b6c83f: allocation_solution::main (ch14-profiling/examples/allocation_solution.rs:15:22)"
+      ],
+      "original_stdout_matches": true,
+      "original_stderr_matches": true
+    }
+  },
+  "loaded_closures": [
+    {
+      "targets": [
+        "repeated_results (dev/release)"
+      ],
+      "own_roots": [
+        "tests/repeated_results.rs",
+        "src/lib.rs"
+      ],
+      "path_dependency": [
+        "examples/ch14-performance/src/lib.rs",
+        "examples/ch14-performance/Cargo.toml"
+      ],
+      "tests": 2,
+      "notes": "只normal library，不載任何profile example或performance benches/dev tests。dhat為devdependency但不把它全部API當已教。"
+    },
+    {
+      "targets": [
+        "allocation_cloned",
+        "allocation_borrowed",
+        "allocation_solution"
+      ],
+      "own_roots": [
+        "各自examples/*.rs",
+        "src/lib.rs"
+      ],
+      "path_dependency": [
+        "examples/ch14-performance/src/lib.rs",
+        "examples/ch14-performance/Cargo.toml"
+      ],
+      "third_party": "dhat0.3.3",
+      "notes": "每target獨立binary各一個global_allocator，完整程式於first profile command前已列。source未引其他module。"
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "examples/ch14-profiling/src/lib.rs:6",
+      "finding": "每次loop真呼叫固定非空Rust query的完整count，再累加；0repetitions與空清單正常0；相同case/lines/100遍，非把一次答案乘100。"
+    },
+    {
+      "source": "docs/chapters/17-08-lesson.md:63",
+      "finding": "global_allocator/static/unit struct、Sync與static不靠scope Drop、局部Profiler控制tracking等必要概念先教。builder/file_name/build/get/Drop契約與dhat0.3.3來源一致；Drop寫檔錯誤不經Result，正文要求確認本次檔案而不混舊檔。"
+    },
+    {
+      "source": "examples/ch14-profiling/examples/allocation_cloned.rs:11",
+      "finding": "資料/已知答案先準備，build後只repeat/get，再drop；輸出/assert/input最終drop在外。stats owned數字可於profilerdrop後顯示，outside allocations只借讀未冒充全process零heap。"
+    },
+    {
+      "source": "examples/ch14-profiling/profiles/cloned.json",
+      "finding": "1個PP，tb326400/tbk25600/gb15/eb0，frames含StringClone→count_cloned:21→repeat_counts:12→main:18。借讀0PP/root；solution6400blocks81600bytes/peak15/end0，全部profile SHA/原stdout/stderr對reproduction。"
+    },
+    {
+      "source": "docs/chapters/17-08-lesson.md:167",
+      "finding": "原cloned/borrowed6400hits同答案，64行solution1600；15/12byte分布×100之累計正確。總量/同時峰值/目前存量、requested bytes/實體process記憶體、allocation與CPU時間各分清，沒有配source改寫成新量測。"
+    },
+    {
+      "source": "docs/assets/ch14/profile-source.svg",
+      "finding": "SVG/XML明說節錄實際callchain而省略std allocator frames，不重算同一份PP；boundaries圖與source一致。未作visual觀察。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:46:07.689Z"
+}

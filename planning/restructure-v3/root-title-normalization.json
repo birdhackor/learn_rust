@@ -1,0 +1,10 @@
+[
+  {
+    "source": "docs/chapters/01-07-lesson.md",
+    "change": "H1 only: 計算機基礎：程式、記憶體、stack 與 heap",
+    "reason": "在導覽明列常用概念名，保留正文的具體問句與教法",
+    "previous_sha256": "017a1fa288e5545af8878f752fc7b4730ca639df1025ba8a90c4e5ffc41fc49d",
+    "current_sha256": "bfb2f7bfe932726dd5c3d16a61128105f1783e6bd12b9cef9ca07a9b3f06f36a",
+    "teaching_or_source_changes": false
+  }
+]

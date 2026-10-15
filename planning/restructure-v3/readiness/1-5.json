@@ -1,0 +1,69 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "1.5"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round01-ch01-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round01-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round01-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-source.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-visual.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-report.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/01-05-lesson.md": "88627f3d2734717abff22fc4929ec6c8a24cfe33c7975a7d5b4a1cd60ec671c1",
+    "examples/intro-workspace/steps/fixtures/compile-fail/immutable.rs": "3480d3cbc086adf259cbd928d4db42f5e14706c9f58dfc02e034ad7019fbfdf9",
+    "examples/intro-workspace/steps/examples/mutability.rs": "c48d64a718af19cc58192b8194f5e92b827d2a65226bc4d843fb49f2cab536ac",
+    "examples/intro-workspace/steps/fixtures/compile-fail/type_change.rs": "a702ccfb7e36043df1520bef92a4b3b385e23cce8076fdeefedeb9860e4b8811",
+    "examples/intro-workspace/steps/examples/mutability_answer.rs": "fad62a34e971695ac415b7fba96d6f19d4eff729e433b776ffdca286d473f1fc"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "1.5",
+      "path": "docs/chapters/01-05-lesson.md",
+      "line": 3,
+      "quote": "訂單原本 360 元，加入運費後變成 380。這可以是「同一個總額繼續更新」，也可以是「把下一個階段的答案另存起來」。Rust 用不同寫法表達這兩種安排。"
+    },
+    {
+      "section_id": "1.5",
+      "path": "docs/chapters/01-05-lesson.md",
+      "line": 7,
+      "quote": "上一節的 `let total: i32 = 360;` 是 **immutable** binding：初始值指定後，不能再經由這個 binding 重新指派。下面是完整的預期失敗程式，並非可執行答案："
+    },
+    {
+      "section_id": "1.5",
+      "path": "docs/chapters/01-05-lesson.md",
+      "line": 17,
+      "quote": "若確實要繼續累計，宣告時在名稱前加 `mut`，讓 binding 成為 **mutable**。重新指派時不再寫 `let`，而是以 `名稱 = 新值;` 更新。若新值是原值加上某個數，`total += 20;` 是 `total = total + 20;` 的縮寫；它先算右邊所需的加法，再寫回同一變數："
+    },
+    {
+      "section_id": "1.5",
+      "path": "docs/chapters/01-05-lesson.md",
+      "line": 33,
+      "quote": "另一種需要是沿用同一名稱表示下一階段的材料。再次寫 `let count = ...;` 會建立**新的 binding**，讓後面的同名使用找到新的值；這叫 **shadowing**（遮蔽）。"
+    },
+    {
+      "section_id": "1.5",
+      "path": "docs/chapters/01-05-lesson.md",
+      "line": 62,
+      "quote": "最後的 `4` 是浮點數的顯示結果；少了小數點不會把型別改成整數。型別由程式決定，不是由顯示的外觀決定。"
+    },
+    {
+      "section_id": "1.5",
+      "path": "docs/chapters/01-05-lesson.md",
+      "line": 66,
+      "quote": "用同一個 mutable `total` 從 160 加上 20 運費，再扣掉 10 折扣，各顯示一次。扣除可用 `total -= 10;`，它是 `total = total - 10;` 的縮寫。最後用 shadowing 建立同名的下一階段總額，值為折扣後的兩倍；最後這個 binding 不需要 `mut`。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,28 @@
+{
+  "sealed_utc": "2026-10-15T07:42:23.228646+00:00",
+  "scope": "independent actual chapter5.1–5.5 initial",
+  "necessary_findings": 0,
+  "optional_findings": 2,
+  "files": {
+    "round05-ch05.md": "fdac251bde8c4d2e4c42256a96fe9d2da01cafe35b1921e940c6e10da5543d80",
+    "round05-ch05.json": "dc5cab5f89648d9d25916d3456cf0932ee49181200a1ad7a1286c87a50279bb8",
+    "round05-ch05-sourcehashes.json": "7898fc263b5c64d1122b03eef2a39136b9da00605249febd650be7e4740cd602"
+  },
+  "source_changes": [
+    {
+      "path": "docs/chapters/05-05-lesson.md",
+      "initial": "412a3eeb91594615ee24961d5bff56b0189dfba194cc3976344f16b64e74afd5",
+      "current": "20882bf65c17e9bdca514bf41ed27f8a80314d615bc894e06e06d7a3595f888c"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial": "7161d333dd2b49cb74eee31661e7762ec3e6b234a7b550202dc5079b109608f1",
+      "current": "ab2450344449650f23553c189af2af1032be26ac133de130245ef47fc612da66"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial": "95fc150a6f4c104bbd7c775cc52c79c180e5a5bfe584110800e07047e99f5dcb",
+      "current": "bdcccb63479540b1f3f2c275d50e3b6cc8c4047fdb768eea0e7014a85bda1084"
+    }
+  ]
+}

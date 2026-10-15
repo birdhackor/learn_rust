@@ -1,0 +1,397 @@
+{
+  "review_id": "round10-text-bytes-io-middle",
+  "scope": [
+    "10.3",
+    "10.4"
+  ],
+  "role": "獨立技術／先教後用／實際 source closure 審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 實際已讀1–9、10.1–10.2；本波不以已另讀11章填補10章先備。",
+  "independence": "本波全文、source首次閱讀與封存前未讀作者validation/ledger、peer、reader、歷史問題或author freeze verdict。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "逐頁全文、全部Rust完整source/tests、兩個manifest、三份實際fixture bytes與不存在條件核對。",
+    "26 snippet anchors/source完整性；各selectedrun/test的normal library closure與工作目錄逐項核對。",
+    "buffer-prefix.svg僅讀source/XML；未進行browser視覺或讀者實驗。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "note": "無新增Cargo/Rust執行；未寫note-output.txt，未以作者驗證替代本波static判斷。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:36:07.567502+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "docs/assets/ch07/buffer-prefix.svg": "3d08f577d1cee9743b01de0955a6d7ae301481560f3e51fd9ca6da3a637cd738",
+    "docs/chapters/10-03-lesson.md": "0ef86d599bc6a201968cededd1b0971904d3b0a957545558e6654170f626deca",
+    "docs/chapters/10-04-lesson.md": "3fc73a9915ecedebe2589e981615aed0271a906fdfafe7bd8741367a20bf2171",
+    "examples/intro-workspace/Cargo.lock": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/io-bytes/Cargo.toml": "d63de70287cc50c8860614cebe1a6a5fa3e3fba509e8f84b70400094ddfeddac",
+    "examples/intro-workspace/io-bytes/examples/byte_count_solution.rs": "1a9bd1ffe6aa8a6512a76b8100132fefe764187e15b4bea71b54907231c781e2",
+    "examples/intro-workspace/io-bytes/examples/error_reader.rs": "bc69a8efde1c48e07df4b95c589fd039397803110077db6186940117635e7cd5",
+    "examples/intro-workspace/io-bytes/examples/short_reader.rs": "d6ad84d1a9e13db789b322d810f2e3975afc720485bb1ed30a24f01dfa6625d3",
+    "examples/intro-workspace/io-bytes/examples/short_writer.rs": "b421cc76c53abf6f454845ed0f549ff133dff16ef7a225dbaa71cca73c69090e",
+    "examples/intro-workspace/io-bytes/src/lib.rs": "b4c6beeca2694dfbdecd3a6dc7d33ca2580b9dc87a592455cb14ec375f349f81",
+    "examples/intro-workspace/io-bytes/src/main.rs": "8690d6a5ff5261182fe23b9ce1040acb94374d1d4cc61372763a65596ae26f13",
+    "examples/intro-workspace/io-text/Cargo.toml": "c722b0e121ef7e98d464e18f54ca26e3de4df4f3f60d828b7d880c01736caa87",
+    "examples/intro-workspace/io-text/examples/file_handle.rs": "1567df1d2cf4727874a38defaf6fa4d53ac927c90f7897711a53ce3c13e70414",
+    "examples/intro-workspace/io-text/examples/text_io_solution.rs": "636e686ac05866e33939820519792f25b89d18a2379c69d5cb6f0f893438cb75",
+    "examples/intro-workspace/io-text/examples/write_note.rs": "a133e5579239493b758e2cfc9a368e277f3fb3cdf806a65a1f2a2e5dcedb267b",
+    "examples/intro-workspace/io-text/fixtures/empty.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "examples/intro-workspace/io-text/fixtures/not-utf8.bin": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+    "examples/intro-workspace/io-text/fixtures/note.txt": "a581105a3e3bce0d0ae0ff57955745e4c5df376a9a751acec1f5f5e08a6be213",
+    "examples/intro-workspace/io-text/src/main.rs": "399032ac09c3425516bf4ba059ae5697fea6310d482acfbb88e33327f73cd353",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 27,
+      "source": "examples/intro-workspace/io-text/fixtures/note.txt",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 50,
+      "source": "examples/intro-workspace/io-text/src/main.rs",
+      "tag": "read-example",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 80,
+      "source": "examples/intro-workspace/io-text/examples/file_handle.rs",
+      "tag": "handle-example",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 106,
+      "source": "examples/intro-workspace/io-text/examples/write_note.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 122,
+      "source": "examples/intro-workspace/io-text/src/main.rs",
+      "tag": "read-tests",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 126,
+      "source": "examples/intro-workspace/io-text/examples/file_handle.rs",
+      "tag": "handle-tests",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 143,
+      "source": "examples/intro-workspace/io-text/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 149,
+      "source": "examples/intro-workspace/io-text/src/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 155,
+      "source": "examples/intro-workspace/io-text/examples/file_handle.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-03-lesson.md",
+      "line": 171,
+      "source": "examples/intro-workspace/io-text/examples/text_io_solution.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 38,
+      "source": "examples/intro-workspace/io-bytes/src/lib.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 52,
+      "source": "examples/intro-workspace/io-bytes/src/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 70,
+      "source": "examples/intro-workspace/io-bytes/examples/short_reader.rs",
+      "tag": "short-reader",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 76,
+      "source": "examples/intro-workspace/io-bytes/examples/short_reader.rs",
+      "tag": "short-reader-main",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 90,
+      "source": "examples/intro-workspace/io-bytes/examples/error_reader.rs",
+      "tag": "error-reader",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 94,
+      "source": "examples/intro-workspace/io-bytes/examples/error_reader.rs",
+      "tag": "error-main",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 115,
+      "source": "examples/intro-workspace/io-bytes/examples/short_writer.rs",
+      "tag": "short-writer",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 121,
+      "source": "examples/intro-workspace/io-bytes/examples/short_writer.rs",
+      "tag": "short-writer-main",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 131,
+      "source": "examples/intro-workspace/io-bytes/examples/short_reader.rs",
+      "tag": "short-reader-tests",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 137,
+      "source": "examples/intro-workspace/io-bytes/examples/short_writer.rs",
+      "tag": "short-writer-tests",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 155,
+      "source": "examples/intro-workspace/io-bytes/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 165,
+      "source": "examples/intro-workspace/io-bytes/examples/short_reader.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 171,
+      "source": "examples/intro-workspace/io-bytes/examples/error_reader.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 177,
+      "source": "examples/intro-workspace/io-bytes/examples/short_writer.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 183,
+      "source": "examples/intro-workspace/io-text/fixtures/note.txt",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-04-lesson.md",
+      "line": 197,
+      "source": "examples/intro-workspace/io-bytes/examples/byte_count_solution.rs",
+      "tag": null,
+      "source_anchor_found": true
+    }
+  ],
+  "selected_target_closure": {
+    "intro_io_text": {
+      "no_lib": true,
+      "no_build_script": true,
+      "dependencies": [],
+      "targets": {
+        "bin intro-io-text": [
+          "src/main.rs（test模式2tests）"
+        ],
+        "file_handle": [
+          "examples/file_handle.rs（test模式1test）"
+        ],
+        "write_note": [
+          "examples/write_note.rs"
+        ],
+        "text_io_solution": [
+          "examples/text_io_solution.rs"
+        ]
+      },
+      "commands": "4run+2selectedtest；先從repo根cd到examples/intro-workspace/io-text，所有後續command的manifest-path=Cargo.toml，fixture相對路徑以此為起點。"
+    },
+    "intro_io_bytes": {
+      "no_build_script": true,
+      "dependencies": [],
+      "normal_library": "所有selectedbinary/example均會編譯src/lib.rs，包括未直接use read_all的short_writer與byte_count_solution；該lib已在10.4:38完整提供，只有已教read_all。",
+      "targets": {
+        "bin intro-io-bytes": [
+          "src/main.rs",
+          "src/lib.rs"
+        ],
+        "short_reader": [
+          "examples/short_reader.rs（test模式3tests）",
+          "src/lib.rs"
+        ],
+        "error_reader": [
+          "examples/error_reader.rs（test模式1test）",
+          "src/lib.rs"
+        ],
+        "short_writer": [
+          "examples/short_writer.rs（test模式2tests）",
+          "src/lib.rs"
+        ],
+        "byte_count_solution": [
+          "examples/byte_count_solution.rs",
+          "src/lib.rs"
+        ]
+      },
+      "commands": "5run+3selectedtest；先從repo根cd到examples/intro-workspace/io-bytes。../io-text/fixtures相對資料路徑和Rust來源路徑分清。"
+    }
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/10-03-lesson.md:34",
+      "judgment": "fs/io、read_to_string、io::Result別名、Error/Debug/Display/kind/ErrorKind與non-exhaustive wildcard在首用前；分類不靠OS錯誤文字。"
+    },
+    {
+      "source": "docs/chapters/10-03-lesson.md:71",
+      "judgment": "File::open唯讀取得handle而非完整內容、Read trait import、mutable來源位置、read_to_string追加與新讀入bytes在首用前準確。無效UTF8時給定String不變，其他I/O錯誤可能已有部分讀入的界線正確。"
+    },
+    {
+      "source": "docs/chapters/10-03-lesson.md:99",
+      "judgment": "File::create可能清空既有檔案已明說，專用note-output；Write/write!的io::Result<()>與Formatter fmt::Result區別先教。不冒稱持久化保證。"
+    },
+    {
+      "source": "docs/chapters/10-03-lesson.md:117",
+      "judgment": "Cargo測試以package根作cwd；ErrorKind Debug/PartialEq而io::Error無PartialEq，所以測試先match再比kind，source一致。"
+    },
+    {
+      "source": "docs/chapters/10-04-lesson.md:9",
+      "judgment": "u8 0..255、byte slice/array/Vec、Copy初始化、Read::read有效前段與回傳型別、短讀不等於EOF均在read_all前解釋。"
+    },
+    {
+      "source": "docs/chapters/10-04-lesson.md:27",
+      "judgment": "Ok(0)結束明限非空buffer及本輪有限來源，承認檔案後續追加可再讀；Interrupted重試，其餘Err不變完整部分成功。Read::read符合契約的n≤buffer和Err無成功bytes表述準確。"
+    },
+    {
+      "source": "docs/chapters/10-04-lesson.md:45",
+      "judgment": "String::from_utf8接手Vec<u8>並分開I/O/UTF8錯誤；完整收集後驗證跨批scalar，沒有逐塊誤解碼。"
+    },
+    {
+      "source": "docs/chapters/10-04-lesson.md:63",
+      "judgment": "ShortReader正數max_per_read假設明定；算法min(剩餘資料,buffer,上限)，零長buffer/EOF零，position精準前進。as_bytes/byte slice to_owned的owned Vec角色先教。"
+    },
+    {
+      "source": "docs/chapters/10-04-lesson.md:83",
+      "judgment": "PermissionDenied、Error::from(kind)、slice::is_empty先解釋；event state允許在Err後更新而非假裝讀取資料。三次event Interrupted→R→PermissionDenied符合source。"
+    },
+    {
+      "source": "docs/chapters/10-04-lesson.md:101",
+      "judgment": "write短寫、write_all重試Interrupted/零進展WriteZero/部分不rollback、flush不保永久儲存都正確；ShortWriter必要flush無中介緩衝故Ok，default write_all即可。"
+    },
+    {
+      "source": "docs/chapters/10-04-lesson.md:190",
+      "judgment": "count_bytes答案只累加成功n，四格固定buffer，不建立累積Vec；三fixture分別9/0/1，無UTF8要求。"
+    }
+  ],
+  "fixture_materials": {
+    "note": {
+      "path": "examples/intro-workspace/io-text/fixtures/note.txt",
+      "bytes": [
+        82,
+        117,
+        115,
+        116,
+        10,
+        228,
+        184,
+        173,
+        10
+      ],
+      "length": 9,
+      "checked_actual_bytes": true
+    },
+    "empty": {
+      "path": "examples/intro-workspace/io-text/fixtures/empty.txt",
+      "bytes": [],
+      "length": 0,
+      "checked_actual_bytes": true
+    },
+    "invalid": {
+      "path": "examples/intro-workspace/io-text/fixtures/not-utf8.bin",
+      "bytes": [
+        255
+      ],
+      "length": 1,
+      "checked_actual_bytes": true
+    },
+    "missing": {
+      "path": "examples/intro-workspace/io-text/fixtures/missing.txt",
+      "exists": false,
+      "checked": true
+    }
+  },
+  "static_outputs": {
+    "io_text": "note9bytes完整Rust\\n中\\n；missing NotFound；FF InvalidData；三結果都處理",
+    "file_handle": "new9,total19，前綴筆記：\\n=10bytes",
+    "write_note": "重新讀取Rust\\n中\\n（source推導，未寫入執行）",
+    "text_io_solution": "note+empty9；note+FF InvalidData，無成功部分長度",
+    "io_bytes": "完整9bytes再UTF8成功",
+    "short_reader": "讀取3/2/0；第二次buffer[2]仍67；UTF8批次上限1/2/3/8均完整",
+    "error_reader": "step3，PermissionDenied，先前R不成完整成功",
+    "short_writer": "first write2，後3write_all，ABCDE；禁寫出口WriteZero",
+    "byte_count_solution": "note9,empty0,FF1"
+  },
+  "tests": {
+    "io_text": 2,
+    "file_handle": 1,
+    "short_reader": 3,
+    "short_writer": 2,
+    "error_reader": 1,
+    "total": 9
+  },
+  "limits": [
+    "整頁技術重讀，非盲首讀。",
+    "沒有新增Rust/Cargo成功或失敗執行；9run+5selectedtest的結果為靜態核對。",
+    "無rendered SVG/browser視覺檢查；未以未讀10.5以後補先備。",
+    "workspace的其他members只metadata，這兩個package沒有第三方或path dependencies。"
+  ],
+  "sealed_at_utc": "2026-10-15T08:37:04.678Z"
+}

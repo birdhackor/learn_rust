@@ -1,0 +1,107 @@
+{
+  "chapter": 10,
+  "first_unit": 200,
+  "last_unit": 208,
+  "entries": [
+    {
+      "source": "docs/chapters/10-01-lesson.md",
+      "file": "units/200.md",
+      "sha256": "66c3234031cb18db847ded23bc1a84428c2b152eaab842067944fc329ba27c9c",
+      "source_sha256": "2d8fdc5ae52f16c2bce057f6b59f272f79af58d051e932a88ee8b1d552aa6564",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/10-02-lesson.md",
+      "file": "units/201.md",
+      "sha256": "119c2d17417e0fbcfa8bde5c164f8ab85649df837779e3ea0439589c4238ff1d",
+      "source_sha256": "394da63f7182a1c977beae9f11180ce370e1efe18851f4fbb0964a5dca4fb79a",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/10-03-lesson.md",
+      "file": "units/202.md",
+      "sha256": "a2b6ed1395ad681611adca79a75c9a6856c2786004683b96eafcd6480a264e3e",
+      "source_sha256": "0ef86d599bc6a201968cededd1b0971904d3b0a957545558e6654170f626deca",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/10-04-lesson.md",
+      "file": "units/203.md",
+      "sha256": "02fcee3d0924853d03e6dda6b83af9a3babd43a1e61bd7ab1cd80f5e014fc6a5",
+      "source_sha256": "3fc73a9915ecedebe2589e981615aed0271a906fdfafe7bd8741367a20bf2171",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch07/buffer-prefix.svg",
+          "source_sha256": "3d08f577d1cee9743b01de0955a6d7ae301481560f3e51fd9ca6da3a637cd738",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch10-buffer-prefix.png",
+          "png_sha256": "4848ed1047a6a78adcac8dc1dc8c10f9d96bb467acc3745ef7353f41b6b2c6d6",
+          "alt": "第一次只有前三格ABC有效，第二次只有前兩格DE有效，尾端舊C不能加入新結果"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/10-05-lesson.md",
+      "file": "units/204.md",
+      "sha256": "58ff5e66d3fdc7daeec49a42ad315fd52142620b54ff594000c847e19d1787af",
+      "source_sha256": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/10-06-lesson.md",
+      "file": "units/205.md",
+      "sha256": "58cc1f42ac4644d030ec756a9cea4e5eee8170227bc6e5567a016e749e32bf44",
+      "source_sha256": "1a66bbad509d726af4d6c6b8697c854ce1878fba9dd23b3311f22d471130a99c",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/10-07-lesson.md",
+      "file": "units/206.md",
+      "sha256": "722684da5da5b4cd16b92459840b0e75fd0d9f437196165883aff9fc1b9507fe",
+      "source_sha256": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch07/json-model.svg",
+          "source_sha256": "d614744ae58f91f324a1be6dc4eb47debe1149b4116b8f70d2ea8a82ec445448",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch10-json-model.png",
+          "png_sha256": "5c0c94dcf54508fb7ae36d0aa4034660b60f5ecbaf19b0316365b73e5549f5a8",
+          "alt": "借入JSON文字解碼成owned Notebook，再借模型產生新的JSON String，資料保持而排版可不同"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/10-08-lesson.md",
+      "file": "units/207.md",
+      "sha256": "3d4d3ad529a5f9b6f0a6f7544d2b8bd547e07b5d93311f39e1c9ae359a9beb18",
+      "source_sha256": "301e423c4f1e2cd6541442c1bb47c0bf839b335031c6a9dec281ca57c1a4c2e7",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch07/fixture-sequence.svg",
+          "source_sha256": "d300657daac7ba35c30454a180509d275ace4856455141c694d7e8475e61f539",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch10-fixture-sequence.png",
+          "png_sha256": "366f0791033d0f27d08cac4c05b60eef3b9d34430be6a4b1ba5cffaa9d516faa",
+          "alt": "先建立fixture，再啟動並等待child，檢查Output後才close TempDir；保存PathBuf不能保持目錄存在"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md",
+      "file": "units/208.md",
+      "sha256": "5fb0c36a0c23803803648d650d6c0623e442ac60cdfb42da375a01df469aba17",
+      "source_sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch07/search-boundary.svg",
+          "source_sha256": "4acde7637d99c851a64afbe5ac53309fd71a6da4d8a18939e7d78371013517e7",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch10-search-boundary.png",
+          "png_sha256": "536492150f94f291ac0cc2b66eeb9c21dcfa41a42124bbe2b684d714aa1b7ca8",
+          "alt": "arguments解析成Settings後讀取UTF-8文字並搜尋成owned Report，再render與write_all；main確認stdout flush，失敗交回main寫stderr並返回ExitCode"
+        }
+      ]
+    }
+  ],
+  "route": "whole prerequisite pages;  actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed"
+}

@@ -2,9 +2,9 @@
 
 以正體中文撰寫的 Rust 教學專案。文件由 Zensical 建置，程式範例由 Cargo workspace 管理。
 
-[線上閱讀](https://birdhackor.github.io/learn_rust/)｜[課程規劃](planning/curriculum-plan-v2.md)｜[實作與發布進度](planning/implementation-status.md)
+[線上閱讀](https://birdhackor.github.io/learn_rust/)｜[課程規劃](planning/restructure-v3/outline.md)｜[實作與發布進度](planning/restructure-v3/status.md)
 
-讀者起點是基本 Python。全書共 15 章、109 小節，教學與範例依已教概念排列，進階篇也是完整課程的一部分。最後以重複檔案搜尋器、網址檢查器兩個引導型專案練習，各有可編譯起點、分步驗收、提示與可實際使用的完整參考版。
+讀者起點是基本 Python。全書共 18 章、131 小節，教學與範例依已教概念排列，進階篇也是完整課程的一部分。最後以重複檔案搜尋器、網址檢查器兩個引導型專案練習，各有可編譯起點、分步驗收、提示與可實際使用的完整參考版。
 
 ## 開始開發
 
@@ -41,7 +41,8 @@ pyproject.toml / uv.lock 文件工具依賴
 Cargo.toml / Cargo.lock  Rust workspace 與依賴
 scripts/bootstrap.sh    本機、Cloud 與 CI 的環境準備
 scripts/env.sh          共用工具路徑與快取設定
-scripts/check.sh        文件建置、格式、Clippy 與測試
+scripts/check.sh        文件建置、結構、格式、Clippy 與測試
+scripts/check-tutorial-structure.py 新章節、舊入口、來源與審閱指紋
 scripts/check-fixtures.py 故意失敗範例的編譯／panic 契約
 scripts/check-c-examples.py C11 正常程式與指定編譯失敗
 scripts/check-miri.sh    固定 nightly 的純 Rust 路徑與 Miri 負例
@@ -53,10 +54,10 @@ planning/               課程、來源研究、作者先備與審閱紀錄
 
 ```bash
 source scripts/env.sh
-cargo run -p hello-world --locked
+cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-hello --locked
 ```
 
-預期輸出為 Hello, Rust!。教學文件直接引用 examples/hello-world/src/main.rs。
+預期輸出為 Hello, Rust!。教學文件直接引用 examples/intro-workspace/hello/src/main.rs。
 
 ## Codex Cloud 與 CI
 

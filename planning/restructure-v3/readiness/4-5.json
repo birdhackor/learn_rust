@@ -1,0 +1,126 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "4.5"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch04.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/04-05-lesson.md": "8284e571e9214f593c57dbb24870b1915d59cd910aba3268d927e58334804765",
+    "examples/intro-workspace/patterns/Cargo.toml": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+    "examples/intro-workspace/patterns/examples/owned_patterns.rs": "5a02e058f5486cde7c3e6637c9714d5bbf998692502a599f7e495f1f631c3f1d",
+    "examples/intro-workspace/patterns/examples/partial_move.rs": "0a88adf17468943520ec84e2fe64c9750bccbf494dfd8463a5b4d6b397687830",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/partial_move.rs": "272d0a70cf68a533b98a98aecdcf02c35ac358855c74174cd587671167eff89e",
+    "examples/intro-workspace/patterns/examples/borrow_patterns.rs": "508e83c6e6bf41a21d3f278c7f2ab14ddb70d88e0cda587faa724e5c116737a8",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/move_from_pattern_borrow.rs": "51769d8c136068cf56564d4c9e924937cc4fca51bda107c394eeca7469bb15d2",
+    "examples/intro-workspace/patterns/examples/explicit_bindings.rs": "9d758b64dc659ce4ab17d77b4f8b03ea23fb87b14925b820864f7f31d4b9ab66",
+    "examples/intro-workspace/patterns/examples/reference_pattern.rs": "9a5114b61e1d934d5c0d6307e0850bae4e7db07774ab932f7db6ff08408b6a7e",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/edition2024_redundant_ref.rs": "8f27dccc4815f5a5a1ea67215c327dca05ebee85871fcbffe03cb5f85dad5690",
+    "examples/intro-workspace/patterns/examples/ignore_patterns.rs": "fc6d0b26c88e7e3b8a2becac6ef71b82327b2ef68feca631e93a9e7b7df60f38",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/underscore_binding_move.rs": "1b3d8f6d4860d16f1ef0c4c4fbd6920656982ccce1c2f6e1f512b4e9bb3e6711",
+    "examples/intro-workspace/patterns/examples/borrow_patterns_answer.rs": "13cb1082c16e5fa24eb55152ca395d6a727ae3c7ef0e5da7fae730b0183e0485"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 3,
+      "quote": "前幾節主要取出 i32。因為 i32 能 Copy，只看數字不容易看見交接後的限制。這次把材料換成第 3.8 節已會建立的 String：QuoteText 可能沒有標籤，也可能以 Label(String) 保存一份文字。觀察同樣的解構外框，如何因為配對的對象不同，讓 binding 取得 String、&String 或 &mut String。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 7,
+      "quote": "對 owned 資料解構時，一般的名稱 binding 會依它取得的那一部分型別，做 Copy 或 move。`QuoteText::Label(text)` 若取得的是 String，就會把那份文字 move 給 text；它不會因為位在 pattern 裡，就突然產生第二份文字。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 27,
+      "quote": "再看上一章出現過的文字訂單。這份小例只保留 label 與 count：`let LabelledOrder { label, .. } = order;` 把 String 欄位移給新 label，略過 count。這稱為 **partial move**：只移走一部分。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 37,
+      "quote": "新 label 顯示訂單A，`order.count` 仍能讀到 3，因為這個欄位沒有被移走。不過 order 已缺少被移出的 label，不能再當成完整訂單借給其他函式；以下完整失敗例會得到 **E0382**："
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 47,
+      "quote": "如果只是顯示標籤，應像第 3 章一樣接收 `&QuoteText`。當 pattern 寫 Label(text)，而外面的配對對象是 &QuoteText 時，Rust 會自動沿著這層 reference 配對 enum，讓內部 text 成為 **&String**。這種自動安排 binding 的寫法稱為 **match ergonomics**。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 49,
+      "quote": "對 `&mut QuoteText` 使用相同外框，這裡的 text 則是 **&mut String**，可以呼叫 push_str 修改原文字。`text.as_str()` 仍可借讀內容；不需要為了顯示而把 String move 出來。兩種借用都受第 3.5 節的使用範圍與衝突檢查限制。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 61,
+      "quote": "以下反例在 shared reference 的 pattern 中取得 &String，卻試圖以 `*text` 交出 owned String，會得到 **E0507**："
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 71,
+      "quote": "有時候配對對象是 owned 值，卻只想從其中幾個欄位建立借用。**`ref 名稱`** 讓該 binding 借讀符合的部分；**`ref mut 名稱`** 則讓它借改。這與只寫 `mut 名稱` 不同：單獨 mut 允許重新指派 binding，並不把它變成 reference。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 85,
+      "quote": "反過來，**reference pattern** 的 `&` 是去配對一個**已經存在的 reference 層**，而不是替 binding 建立借用。例如配對 &QuoteText 時，可以把外層明寫成 `&QuoteText::Label(ref text)`：外面的 & 配對那層 reference，裡面的 ref 再決定 text 要借讀 String。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 101,
+      "quote": "本書使用 edition 2024。當 pattern 已經自動略過 reference 層、轉成借用 binding 時，不能再在那個位置隨意加 ref、ref mut 或 mut；也不能在這種自動配對的內部突然再插入 & pattern。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 109,
+      "quote": "本書工具鏈的診斷重點是 `cannot explicitly borrow within an implicitly-borrowing pattern`，並標出 ref 不能加在這個自動借用的位置。**binding mode** 指「pattern 預設讓名稱接收值，還是借用」；自動略過 &QuoteText 那層後，預設已經是借用。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 115,
+      "quote": "第 4.1 節已說 _name 仍是 binding。對 String 就能看見這項差異：`Label(_)` 只確認形態，不 Copy、move 或借用那個欄位；之後原 QuoteText 仍能借讀。"
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 125,
+      "quote": "如果改為 `Label(_text)`，那是名叫 _text 的新 binding，會接手 String；只是名稱開頭的底線避免未使用警告。這份完整失敗例在之後借用原 QuoteText，因 partial move 得到 **E0382**："
+    },
+    {
+      "section_id": "4.5",
+      "path": "docs/chapters/04-05-lesson.md",
+      "line": 133,
+      "quote": "建立 Label 形態，文字為訂單B。寫接受 &mut QuoteText 的 append，追加「：完成」，再用接受 &QuoteText 的 show 連續顯示兩次。Missing 的 append 不做修改，show 則顯示沒有標籤。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

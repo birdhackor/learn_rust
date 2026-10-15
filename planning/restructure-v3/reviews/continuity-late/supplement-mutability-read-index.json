@@ -1,0 +1,112 @@
+{
+  "prefix": [
+    {
+      "doc": "docs/chapters/03-04-lesson.md",
+      "doc_sha256": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+      "actual_doc_read_lines": [
+        1,
+        88
+      ],
+      "complete_sourcehashes": {
+        "examples/intro-workspace/ownership/examples/mutable_references.rs": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+        "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+        "examples/intro-workspace/ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+        "examples/intro-workspace/ownership/examples/borrow_answer.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727"
+      }
+    },
+    {
+      "doc": "docs/chapters/03-05-lesson.md",
+      "doc_sha256": "78535d28170efdde36e18a62911cb9c4779e14bbc3559dccfe876761fe47e776",
+      "actual_doc_read_lines": [
+        1,
+        144
+      ],
+      "complete_sourcehashes": {
+        "examples/intro-workspace/ownership/examples/last_use.rs": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+        "examples/intro-workspace/ownership/examples/reborrow.rs": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+        "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+        "examples/intro-workspace/ownership/examples/lifetime_answer.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.expected": "c8af886bbe93c20a7838be9a35690203ff0283d2f62d496811599d8d4890d2be",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea"
+      }
+    },
+    {
+      "doc": "docs/chapters/03-07-lesson.md",
+      "doc_sha256": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+      "actual_doc_read_lines": [
+        1,
+        109
+      ],
+      "complete_sourcehashes": {
+        "examples/intro-workspace/ownership/examples/slices.rs": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+        "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+        "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+        "examples/intro-workspace/ownership/examples/slices_answer.rs": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+        "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.expected": "9bc98e93f7bbaa33ec6e4a45dde7a4f391fb4fa34bf8231cb7c05d099692527b"
+      }
+    },
+    {
+      "doc": "docs/chapters/03-08-lesson.md",
+      "doc_sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+      "actual_doc_read_lines": [
+        1,
+        130
+      ],
+      "complete_sourcehashes": {
+        "examples/intro-workspace/ownership/examples/strings.rs": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+        "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+        "examples/intro-workspace/ownership/examples/text_order.rs": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+        "examples/intro-workspace/ownership/examples/strings_answer.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af"
+      }
+    }
+  ],
+  "all_actual_read_sourcehashes": {
+    "examples/intro-workspace/ownership/examples/mutable_references.rs": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+    "examples/intro-workspace/ownership/examples/borrow_answer.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727",
+    "examples/intro-workspace/ownership/examples/last_use.rs": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+    "examples/intro-workspace/ownership/examples/reborrow.rs": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+    "examples/intro-workspace/ownership/examples/lifetime_answer.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.expected": "c8af886bbe93c20a7838be9a35690203ff0283d2f62d496811599d8d4890d2be",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/ownership/examples/slices.rs": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+    "examples/intro-workspace/ownership/examples/slices_answer.rs": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.expected": "9bc98e93f7bbaa33ec6e4a45dde7a4f391fb4fa34bf8231cb7c05d099692527b",
+    "examples/intro-workspace/ownership/examples/strings.rs": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+    "examples/intro-workspace/ownership/examples/text_order.rs": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+    "examples/intro-workspace/ownership/examples/strings_answer.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py": "aa453c1322033fdb4c5b4d18af275455822d51b5b5f426178dbf01607172c622",
+    "examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js": "fe4dce7f84e63fcbafb5c06ea5ce00ef59a93675372fe6948185ce6e38269a8a",
+    "examples/intro-workspace/ownership/examples/mutability_comparison.rs": "47abde143fd22a9b3ca6ab2d0b6770b3aba481767b42b909274d35a61ac29c1e",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/ownership/src/main.rs": "5d01b2ee14dd9b2dbcba67a83a7a47c1d960a0ee685f0b49af8d7d0d0ead13c6"
+  },
+  "all_read_sourcefiles_current_equal_frozen": true,
+  "selected_target_loading": "intro-ownership有src/main.rs提示入口但無library/build.rs/dependency；所選mutability_comparison只用同檔append/main。Python與JS無imports。workspace member清單不當成其他member code已讀。"
+}

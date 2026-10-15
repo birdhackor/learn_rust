@@ -1,0 +1,471 @@
+{
+  "captured_utc": "2026-10-15T09:15:52.589155+00:00",
+  "scope": "actual10.1–10.9 independently after1–9, no11+asprior; previously saw10.4 subsection headings only, not正文；11.11已知footer窄核exposure separate, notprecondition",
+  "regions": [
+    "examples/intro-workspace/cargo-docs/src/lib.rs:documented-function",
+    "examples/intro-workspace/cargo-docs/src/lib.rs:unit-tests",
+    "examples/intro-workspace/io-text/src/main.rs:read-example",
+    "examples/intro-workspace/io-text/examples/file_handle.rs:handle-example",
+    "examples/intro-workspace/io-text/src/main.rs:read-tests",
+    "examples/intro-workspace/io-text/examples/file_handle.rs:handle-tests",
+    "examples/intro-workspace/io-bytes/examples/short_reader.rs:short-reader",
+    "examples/intro-workspace/io-bytes/examples/short_reader.rs:short-reader-main",
+    "examples/intro-workspace/io-bytes/examples/error_reader.rs:error-reader",
+    "examples/intro-workspace/io-bytes/examples/error_reader.rs:error-main",
+    "examples/intro-workspace/io-bytes/examples/short_writer.rs:short-writer",
+    "examples/intro-workspace/io-bytes/examples/short_writer.rs:short-writer-main",
+    "examples/intro-workspace/io-bytes/examples/short_reader.rs:short-reader-tests",
+    "examples/intro-workspace/io-bytes/examples/short_writer.rs:short-writer-tests",
+    "examples/intro-workspace/path-cli/examples/arguments.rs:argument-error",
+    "examples/intro-workspace/path-cli/examples/arguments.rs:argument-parser",
+    "examples/intro-workspace/path-cli/examples/arguments.rs:argument-tests",
+    "examples/intro-workspace/path-cli/src/main.rs:streams",
+    "examples/intro-workspace/path-cli/src/main.rs:cli-main",
+    "examples/intro-workspace/clap-stage/src/lib.rs:settings",
+    "examples/intro-workspace/clap-stage/src/lib.rs:settings-tests",
+    "examples/intro-workspace/json-stage/examples/json_core/codec.rs:codec",
+    "examples/intro-workspace/json-stage/examples/json_files/mod.rs:file-error",
+    "examples/intro-workspace/json-stage/examples/json_files/mod.rs:read-notebook",
+    "examples/intro-workspace/json-stage/examples/json_core/codec.rs:codec-tests",
+    "examples/intro-workspace/cli-fixtures/tests/cli.rs:cli-helper",
+    "examples/intro-workspace/cli-fixtures/tests/cli.rs:success-test",
+    "examples/intro-workspace/cli-fixtures/tests/cli.rs:failure-tests",
+    "examples/intro-workspace/cli-fixtures/tests/cli.rs:empty-solution",
+    "examples/intro-workspace/note-search/src/search.rs:search",
+    "examples/intro-workspace/note-search/src/search.rs:search-tests",
+    "examples/intro-workspace/note-search/src/render.rs:render",
+    "examples/intro-workspace/note-search/src/lib.rs:run",
+    "examples/intro-workspace/note-search/tests/cli.rs:cli-helper",
+    "examples/intro-workspace/note-search/tests/cli.rs:json-cli-test"
+  ],
+  "files": [
+    {
+      "path": "docs/chapters/10-01-lesson.md",
+      "sha256": "2d8fdc5ae52f16c2bce057f6b59f272f79af58d051e932a88ee8b1d552aa6564",
+      "bytes": 10110
+    },
+    {
+      "path": "examples/intro-workspace/cargo-setup/Cargo.toml",
+      "sha256": "a91b0656e41cf9060a8cc48bc4c1ae26a832160cae9f62c7a302b0f0c0303a87",
+      "bytes": 232
+    },
+    {
+      "path": "examples/intro-workspace/cargo-setup/src/main.rs",
+      "sha256": "56f0bf62412665451465f79d2d0f32aa8f58440c75f3328c487d10a66fe00363",
+      "bytes": 219
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/Cargo.toml",
+      "sha256": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+      "bytes": 74
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/src/lib.rs",
+      "sha256": "a2730bc5b8092f7a450369a65582404dbb83895caf104941af12d8a39024e534",
+      "bytes": 17
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/src/pricing.rs",
+      "sha256": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+      "bytes": 667
+    },
+    {
+      "path": "docs/chapters/10-02-lesson.md",
+      "sha256": "394da63f7182a1c977beae9f11180ce370e1efe18851f4fbb0964a5dca4fb79a",
+      "bytes": 8363
+    },
+    {
+      "path": "examples/intro-workspace/cargo-docs/src/lib.rs",
+      "sha256": "cc99406eb027f27c2f5cd9a1fee0c488c27c49e552c526812dc290e0e48735b2",
+      "bytes": 819
+    },
+    {
+      "path": "examples/intro-workspace/cargo-docs/tests/public_orders.rs",
+      "sha256": "c7421c74e587c8d05427af66fd09b3ee8148cf25bf835c191b93630c733ffa12",
+      "bytes": 289
+    },
+    {
+      "path": "examples/intro-workspace/cargo-docs/Cargo.toml",
+      "sha256": "fcdc783f7055df7bc31514d9a270d1d7bfadb5cd49243af716f3e36d369b84ff",
+      "bytes": 139
+    },
+    {
+      "path": "examples/intro-workspace/cargo-docs-answer/Cargo.toml",
+      "sha256": "ae58275b66b484490ff17704274b49bf6c27097a232871a3b39b68a11f9d6c56",
+      "bytes": 146
+    },
+    {
+      "path": "examples/intro-workspace/cargo-docs-answer/src/lib.rs",
+      "sha256": "fd2dbcffe2aa5b0a9ca1bcda0a4c3d372ffb9832e36dc83594ac8ae839cec98a",
+      "bytes": 1016
+    },
+    {
+      "path": "docs/chapters/10-03-lesson.md",
+      "sha256": "0ef86d599bc6a201968cededd1b0971904d3b0a957545558e6654170f626deca",
+      "bytes": 10976
+    },
+    {
+      "path": "examples/intro-workspace/io-text/fixtures/note.txt",
+      "sha256": "a581105a3e3bce0d0ae0ff57955745e4c5df376a9a751acec1f5f5e08a6be213",
+      "bytes": 9
+    },
+    {
+      "path": "examples/intro-workspace/io-text/src/main.rs",
+      "sha256": "399032ac09c3425516bf4ba059ae5697fea6310d482acfbb88e33327f73cd353",
+      "bytes": 1698
+    },
+    {
+      "path": "examples/intro-workspace/io-text/examples/file_handle.rs",
+      "sha256": "1567df1d2cf4727874a38defaf6fa4d53ac927c90f7897711a53ce3c13e70414",
+      "bytes": 1295
+    },
+    {
+      "path": "examples/intro-workspace/io-text/examples/write_note.rs",
+      "sha256": "a133e5579239493b758e2cfc9a368e277f3fb3cdf806a65a1f2a2e5dcedb267b",
+      "bytes": 678
+    },
+    {
+      "path": "examples/intro-workspace/io-text/Cargo.toml",
+      "sha256": "c722b0e121ef7e98d464e18f54ca26e3de4df4f3f60d828b7d880c01736caa87",
+      "bytes": 68
+    },
+    {
+      "path": "examples/intro-workspace/io-text/examples/text_io_solution.rs",
+      "sha256": "636e686ac05866e33939820519792f25b89d18a2379c69d5cb6f0f893438cb75",
+      "bytes": 797
+    },
+    {
+      "path": "docs/chapters/10-04-lesson.md",
+      "sha256": "3fc73a9915ecedebe2589e981615aed0271a906fdfafe7bd8741367a20bf2171",
+      "bytes": 14464
+    },
+    {
+      "path": "examples/intro-workspace/io-bytes/src/lib.rs",
+      "sha256": "b4c6beeca2694dfbdecd3a6dc7d33ca2580b9dc87a592455cb14ec375f349f81",
+      "bytes": 621
+    },
+    {
+      "path": "examples/intro-workspace/io-bytes/src/main.rs",
+      "sha256": "8690d6a5ff5261182fe23b9ce1040acb94374d1d4cc61372763a65596ae26f13",
+      "bytes": 655
+    },
+    {
+      "path": "examples/intro-workspace/io-bytes/examples/short_reader.rs",
+      "sha256": "d6ad84d1a9e13db789b322d810f2e3975afc720485bb1ed30a24f01dfa6625d3",
+      "bytes": 2901
+    },
+    {
+      "path": "examples/intro-workspace/io-bytes/examples/error_reader.rs",
+      "sha256": "bc69a8efde1c48e07df4b95c589fd039397803110077db6186940117635e7cd5",
+      "bytes": 1641
+    },
+    {
+      "path": "examples/intro-workspace/io-bytes/examples/short_writer.rs",
+      "sha256": "b421cc76c53abf6f454845ed0f549ff133dff16ef7a225dbaa71cca73c69090e",
+      "bytes": 2386
+    },
+    {
+      "path": "examples/intro-workspace/io-bytes/Cargo.toml",
+      "sha256": "d63de70287cc50c8860614cebe1a6a5fa3e3fba509e8f84b70400094ddfeddac",
+      "bytes": 69
+    },
+    {
+      "path": "examples/intro-workspace/io-bytes/examples/byte_count_solution.rs",
+      "sha256": "1a9bd1ffe6aa8a6512a76b8100132fefe764187e15b4bea71b54907231c781e2",
+      "bytes": 1044
+    },
+    {
+      "path": "docs/chapters/../assets/ch07/buffer-prefix.svg",
+      "sha256": "3d08f577d1cee9743b01de0955a6d7ae301481560f3e51fd9ca6da3a637cd738",
+      "bytes": 2535
+    },
+    {
+      "path": "docs/chapters/10-05-lesson.md",
+      "sha256": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+      "bytes": 15946
+    },
+    {
+      "path": "examples/intro-workspace/path-cli/examples/path_types.rs",
+      "sha256": "b4c72588edc038a837e803f28bee7a9ff726eab28ff5e3856985cc15601c0370",
+      "bytes": 625
+    },
+    {
+      "path": "examples/intro-workspace/path-cli/examples/os_strings.rs",
+      "sha256": "2f2b0d8ceb0aad5bc08b4299ece2b5118726545152babb4302a0d5e6926dabee",
+      "bytes": 803
+    },
+    {
+      "path": "examples/intro-workspace/path-cli/examples/working_directory.rs",
+      "sha256": "8bcba0175b70732d280241b9eacecd9295599795cf079140bdab4119d04685f3",
+      "bytes": 662
+    },
+    {
+      "path": "examples/intro-workspace/path-cli/examples/arguments.rs",
+      "sha256": "e8c966464f0702ed7499c3af8933c51a410051f32e288de587df44376169bd2a",
+      "bytes": 2345
+    },
+    {
+      "path": "examples/intro-workspace/path-cli/src/main.rs",
+      "sha256": "5b502a5cd6c42ac0dcbb0f70b772cb0287c0a2296766c094e35ed35bde91d41c",
+      "bytes": 3664
+    },
+    {
+      "path": "examples/intro-workspace/path-cli/Cargo.toml",
+      "sha256": "26532c670174fe88ec62f48afb2db631d7cad2b89aea973332e18967cb4cfbe2",
+      "bytes": 69
+    },
+    {
+      "path": "examples/intro-workspace/path-cli/examples/argument_pair_solution.rs",
+      "sha256": "25a656c4bdee4191d4a142def05402412ef167a69d559821141fb4322afce20b",
+      "bytes": 1622
+    },
+    {
+      "path": "docs/chapters/10-06-lesson.md",
+      "sha256": "1a66bbad509d726af4d6c6b8697c854ce1878fba9dd23b3311f22d471130a99c",
+      "bytes": 9333
+    },
+    {
+      "path": "examples/intro-workspace/clap-stage/Cargo.toml",
+      "sha256": "55a8f5afea9eb11af78a25bd6c7b1a82b8692a916ea90b3e67ad71d70b6f7f9e",
+      "bytes": 139
+    },
+    {
+      "path": "examples/intro-workspace/clap-stage/src/lib.rs",
+      "sha256": "edca0e0379f2fb8a5cb9d146901a6d3f7152e2dc5b04bd911a776f273c8e34a4",
+      "bytes": 3117
+    },
+    {
+      "path": "examples/intro-workspace/clap-stage/src/main.rs",
+      "sha256": "d979c7dc71da233061c44000cbe4ab5130890fb8e4817810754b86ddfdc369fc",
+      "bytes": 1122
+    },
+    {
+      "path": "examples/intro-workspace/clap-stage/examples/flag_solution.rs",
+      "sha256": "ca1f376a0080652341a6394d704d661125b2ea0fb04290194203ae321f1b3ab2",
+      "bytes": 1094
+    },
+    {
+      "path": "docs/chapters/10-07-lesson.md",
+      "sha256": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+      "bytes": 13207
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/fixtures/notebook.json",
+      "sha256": "f38fbd09edfc230e497af6d0742d74faa79b7c3ed27a692f4e8bfc0c6dc63102",
+      "bytes": 68
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/Cargo.toml",
+      "sha256": "1dfc5ec041f44a96cbb4c1b3c30e7e1aad0a47d01e71dcaeaaeb1f85bc425ef7",
+      "bytes": 165
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/examples/json_core/model.rs",
+      "sha256": "40889f6c69e2fdf08e705fd37040805bdcc0df2c75c2e4552ec13462085b61ed",
+      "bytes": 226
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/examples/json_core/mod.rs",
+      "sha256": "847451479d9dbc3ce77d9fe4841859d9f571fc0819c4201ce8ef1da59b9e3954",
+      "bytes": 30
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/examples/json_core/codec.rs",
+      "sha256": "b61262ca3f716f4689448d6c873ac33dbcac7ec9395ccf7d69e4ed3e25653901",
+      "bytes": 2408
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/examples/basic_json.rs",
+      "sha256": "1d25f1c0b73bee4cfbc0b56db65de1b6b585e869c475826581229794758ab0f7",
+      "bytes": 865
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/fixtures/broken-syntax.json",
+      "sha256": "15c0680da9ba7e7ce1481594612e8e2ddb08ef61be67826645f931c7ebce3e13",
+      "bytes": 69
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/fixtures/missing-title.json",
+      "sha256": "a853f5b8f4f9553f7e97069dfb3b3afaf85ca7cde590270aaa4487a5eadb2dc2",
+      "bytes": 47
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/fixtures/unknown-field.json",
+      "sha256": "7219d52232d4554e25f2ae3352de50f497b84e5ffef401f2c1eec19da74ec16d",
+      "bytes": 89
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/fixtures/wrong-value-type.json",
+      "sha256": "a58060bbc21ad21d9a09d1313f93216501a69be5ed656e36300f936e55f10ce1",
+      "bytes": 70
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/fixtures/number-out-of-range.json",
+      "sha256": "897ef1d15b3217a9a6feb32fd26374e1b2990587d7732f40124899b6fc383689",
+      "bytes": 71
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/fixtures/quoted-title.json",
+      "sha256": "c6d189fb9fef04f0b8c079ef628d2fb5812f1ce257bb392f3e6e8ba9844bdba4",
+      "bytes": 83
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/examples/json_files/mod.rs",
+      "sha256": "a1d523c239b9d276ad14bc14fe7a09ffeeb20e3621bdd525ad18543e1baba256",
+      "bytes": 1964
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/examples/file_errors.rs",
+      "sha256": "fc1d186795c80ae9f71fd7bb6470ea899c62092633abb2d61c0167266923d7e2",
+      "bytes": 676
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/src/main.rs",
+      "sha256": "977fa333c3713c33e8f83b1a1580b37fcc15d2e192092875685079bb3279948a",
+      "bytes": 98
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/examples/json_solution.rs",
+      "sha256": "ed95bbc81ed4028acede3a4ef0b0c8a71475fda543989ae3183d9bc78a315e65",
+      "bytes": 863
+    },
+    {
+      "path": "docs/chapters/../assets/ch07/json-model.svg",
+      "sha256": "d614744ae58f91f324a1be6dc4eb47debe1149b4116b8f70d2ea8a82ec445448",
+      "bytes": 2186
+    },
+    {
+      "path": "docs/chapters/10-08-lesson.md",
+      "sha256": "301e423c4f1e2cd6541442c1bb47c0bf839b335031c6a9dec281ca57c1a4c2e7",
+      "bytes": 12664
+    },
+    {
+      "path": "examples/intro-workspace/cli-fixtures/Cargo.toml",
+      "sha256": "ae0a41d096cc4b7a71167a7a713c806550a9a91b2710903b1670a1c004a9684d",
+      "bytes": 113
+    },
+    {
+      "path": "examples/intro-workspace/cli-fixtures/src/main.rs",
+      "sha256": "c060b7a3f5338bc68f26f1ed46120f4e4864ecd60e55f386d64a1d3789f45f09",
+      "bytes": 2655
+    },
+    {
+      "path": "examples/intro-workspace/cli-fixtures/tests/directory.rs",
+      "sha256": "9b4e6b9fcd4122fcbf46b510ce68ded1ab66d4e4232d35cf378e4c76a9af1a38",
+      "bytes": 763
+    },
+    {
+      "path": "examples/intro-workspace/cli-fixtures/tests/cli.rs",
+      "sha256": "a4cbb5f45e393b72237c70b02bfdb24b3c6f59f63b9b3c5bda539971536d29f3",
+      "bytes": 4286
+    },
+    {
+      "path": "docs/chapters/../assets/ch07/fixture-sequence.svg",
+      "sha256": "d300657daac7ba35c30454a180509d275ace4856455141c694d7e8475e61f539",
+      "bytes": 2124
+    },
+    {
+      "path": "docs/chapters/10-09-lesson.md",
+      "sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+      "bytes": 16874
+    },
+    {
+      "path": "examples/intro-workspace/note-search/fixtures/note.txt",
+      "sha256": "1cffe74a69086abf4c34ebc7293bc6cd0992b97bbd39cc960816ece402f432a2",
+      "bytes": 52
+    },
+    {
+      "path": "examples/intro-workspace/note-search/Cargo.toml",
+      "sha256": "9a991be13051f4f07151bf462cbb54c723298fd7582cfeb0e58b8b206a33541b",
+      "bytes": 258
+    },
+    {
+      "path": "examples/intro-workspace/note-search/src/config.rs",
+      "sha256": "9df86f58882ed8c94bb241d7a0060118592037bcb869974ea0e539d3c1c5f8b7",
+      "bytes": 492
+    },
+    {
+      "path": "examples/intro-workspace/note-search/src/model.rs",
+      "sha256": "dba14dbf9674d7ac7420c369b5312cecbaeb104bc90878219290b3d38fd8f909",
+      "bytes": 384
+    },
+    {
+      "path": "examples/intro-workspace/note-search/src/error.rs",
+      "sha256": "e166d31ffa4964bee7661847cea761d1566f3d30faabaf7ec295fdb331545a85",
+      "bytes": 955
+    },
+    {
+      "path": "examples/intro-workspace/note-search/src/search.rs",
+      "sha256": "2513d8c37803964cbff17b134b37efd70d29d7b295f01d77f3c12677bdd330cd",
+      "bytes": 3603
+    },
+    {
+      "path": "examples/intro-workspace/note-search/src/render.rs",
+      "sha256": "b1a05b92798d5b96196f4c291719a3df3ede675c844577a8256769d51e5f1ae6",
+      "bytes": 1775
+    },
+    {
+      "path": "examples/intro-workspace/note-search/src/lib.rs",
+      "sha256": "835f724c9aa3597b67cbc0cad200eddfceefbe6b64ddcb7eed1c81c05c8a604c",
+      "bytes": 1205
+    },
+    {
+      "path": "examples/intro-workspace/note-search/src/main.rs",
+      "sha256": "65178d509012583bbbefd210f6707cc9fc339dca5b1959a9a1ba1268c07e2025",
+      "bytes": 1560
+    },
+    {
+      "path": "examples/intro-workspace/note-search/tests/writer.rs",
+      "sha256": "9df9a8b674ce66c1a8ed86cdbe188abd6b1996032ccd90c9c991c7172290342d",
+      "bytes": 947
+    },
+    {
+      "path": "examples/intro-workspace/note-search/tests/cli.rs",
+      "sha256": "5f891844a0f5f2d16d1649a26d0bd52a38e37a99e66ae4719648ca14ae600f8c",
+      "bytes": 6290
+    },
+    {
+      "path": "examples/intro-workspace/note-search/examples/count_solution.rs",
+      "sha256": "56fed4073481b3b73f5f466c801adaec1e3cead0ae39fafab7e070116d346917",
+      "bytes": 393
+    },
+    {
+      "path": "docs/chapters/../assets/ch07/search-boundary.svg",
+      "sha256": "4acde7637d99c851a64afbe5ac53309fd71a6da4d8a18939e7d78371013517e7",
+      "bytes": 2586
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+      "bytes": 506
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+      "bytes": 10561
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    },
+    {
+      "path": "examples/intro-workspace/io-text/fixtures/empty.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0,
+      "added_utc": "2026-10-15T09:17:22.372844+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/io-text/fixtures/not-utf8.bin",
+      "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "bytes": 1,
+      "added_utc": "2026-10-15T09:17:22.373064+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/json-stage/fixtures/not-utf8.bin",
+      "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+      "bytes": 1,
+      "added_utc": "2026-10-15T09:21:59.696693+00:00"
+    }
+  ]
+}

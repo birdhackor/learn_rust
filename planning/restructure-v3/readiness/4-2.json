@@ -1,0 +1,78 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "4.2"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch04.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/04-02-lesson.md": "5bbb8a9a5406962e325218feb6f35ab4adbaeccea828d6f512bc7ba07562e066",
+    "examples/intro-workspace/patterns/examples/match_numbers.rs": "d53e1f7c5df21c34c220decffcc7f9db12293a5199d3d4cdf7bd4082fc2a6c28",
+    "examples/intro-workspace/patterns/Cargo.toml": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+    "examples/intro-workspace/patterns/examples/match_quotes.rs": "a7b5f8b04a4d1dca0c239e4af556a8073e75b3bf1970ab63e17c4e7c956ebe42",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/missing_variant.rs": "2cfeca3dd70afac5f0d8577265268af6864081a7556f8c95521344f31fdd2feb",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/arm_type.rs": "0ca3497d2d23c5bf804323202656294b9fceec74298fdfcc8ab92fb2a131b099",
+    "examples/intro-workspace/patterns/examples/match_answer.rs": "498ec18345a8bf0687106d369e014ab0b6a70a75d10b405850d771f06b80c734"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "4.2",
+      "path": "docs/chapters/04-02-lesson.md",
+      "line": 3,
+      "quote": "現在能保存三種 Quote，卻還不能把一個未知形態的 Quote 直接當金額相乘。要先分辨它是哪一種，再使用該形態附帶的資料。先用已懂的數字看分支如何選，再回到報價。"
+    },
+    {
+      "section_id": "4.2",
+      "path": "docs/chapters/04-02-lesson.md",
+      "line": 7,
+      "quote": "**pattern**（模式）描述要符合的值或資料形狀。**match** 將一個值依序與各個 pattern 配對，只執行第一個符合的分支；每個 `pattern => expression` 稱為一個 **arm（分支）**。`=>` 左側是要符合的 pattern，右側是選中後執行的工作。"
+    },
+    {
+      "section_id": "4.2",
+      "path": "docs/chapters/04-02-lesson.md",
+      "line": 47,
+      "quote": "Quote 的 pattern 沿用建立值時的外框，但用途反過來：`Quote::Amount(amount)` 表示「符合 Amount，並把裡面的數字命名為 amount」。`amount` 是在這個 arm 建立的變數，只供該分支使用，不是要求金額等於一個名叫 amount 的既有值。"
+    },
+    {
+      "section_id": "4.2",
+      "path": "docs/chapters/04-02-lesson.md",
+      "line": 80,
+      "quote": "match 必須**完整涵蓋**要配對型別的可能情況，英文稱 **exhaustive**。下面完整失敗例的 Quote 簡化為兩種形態，卻只處理 Amount："
+    },
+    {
+      "section_id": "4.2",
+      "path": "docs/chapters/04-02-lesson.md",
+      "line": 86,
+      "quote": "放入獨立練習專案的 `src/main.rs`，執行 `cargo check`，錯誤 **E0004** 指出 Missing 未涵蓋。即使某次呼叫只打算傳 Amount，接受 Quote 的函式仍須處理其型別允許的 Missing。修正前先決定缺報價時要做什麼，再加入相應 arm；任意補上 0 可能又把兩種意思混起來。"
+    },
+    {
+      "section_id": "4.2",
+      "path": "docs/chapters/04-02-lesson.md",
+      "line": 94,
+      "quote": "它會得到型別不符的 **E0308**。完整涵蓋沒有保證結果型別相容；要將 match 的結果當運費使用，各個交出結果的分支就都要提供相容的數字型別。"
+    },
+    {
+      "section_id": "4.2",
+      "path": "docs/chapters/04-02-lesson.md",
+      "line": 98,
+      "quote": "沿用上一節的 Shipment。寫 `ready_count(shipment: Shipment) -> i32`：Ready 交出 count；Waiting 對目前可出貨總數貢獻 0。原始資料仍以 Waiting 保存情況，0 是這項**統計工作**選定的結果。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="490" viewBox="0 0 390 490" role="img" aria-labelledby="title desc">
+ <title id="title">只有內部strong連結仍可能互相保活</title>
+ <desc id="desc">此為假設資料關係，不是本節可執行程式。A內保存指向B的Rc，B內保存指向A的Rc；外部handle全移除後，A與B仍各有一個strong owner。左右實線表示這兩個內部Rc，因此任何一邊都不會因為strong變零而啟動清理。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="490" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="35" text-anchor="middle" font-weight="bold">假設：兩個內部strong連結</text>
+  <rect x="70" y="70" width="250" height="90" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="195" y="106" text-anchor="middle" font-weight="bold">A配置</text><text x="195" y="142" text-anchor="middle">strong: 1（來自B）</text>
+  <rect x="70" y="270" width="250" height="90" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="195" y="306" text-anchor="middle" font-weight="bold">B配置</text><text x="195" y="342" text-anchor="middle">strong: 1（來自A）</text>
+  <path d="M70 115H35V315H65" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M320 315H355V115H325" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="5" y="215">Rc</text><text x="323" y="215">Rc</text>
+  <text x="195" y="399" text-anchor="middle">外部handle都移除後</text>
+  <text x="195" y="435" text-anchor="middle">A、B仍各有一份strong</text>
+  <text x="195" y="471" text-anchor="middle">彼此保活，無法啟動收尾</text>
+ </g>
+</svg>

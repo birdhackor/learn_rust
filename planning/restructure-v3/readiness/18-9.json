@@ -1,0 +1,139 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.9"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18b-complete-tool.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-report-cli.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-root-final-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-sequential-bounded-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-single-url-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop-reviewer-erratum.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-09-lesson.md": "7c78f41be377d1b845d5274883b4f927370411e091b2f50761febee3965fed13",
+    "examples/ch15-projects/b3-starter/src/lib.rs": "3d26395634365c9eaaa64d9a3bdecc3d7cd34860723ebc85a73b0e7ad91e0bb5",
+    "examples/ch15-projects/b3-starter/Cargo.toml": "362e5d9be46aa6af8162c631977be6e142a7e082e5263d491b186b0f3e55bc2c",
+    "examples/ch15-projects/b3-starter/src/input.rs": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e",
+    "examples/ch15-projects/b3-starter/src/single.rs": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+    "examples/ch11-async/local-service/Cargo.toml": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee",
+    "examples/ch11-async/local-service/src/lib.rs": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119",
+    "examples/ch11-async/http-single/Cargo.toml": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f",
+    "examples/ch11-async/http-single/src/lib.rs": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a",
+    "examples/ch11-async/http-single/src/config.rs": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7",
+    "examples/ch11-async/http-single/src/error.rs": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+    "examples/ch11-async/http-single/src/reply.rs": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0",
+    "examples/ch15-projects/b3-starter/checks/bounded-tests.rs": "6275fd6977eda5f0a295e4d938141867b1768881ea101a754447e9d172810795",
+    "examples/ch15-projects/b3-complete/Cargo.toml": "a80c0838e1d89350770f811ec085c4f9789f6e64c345590df0b982e7ffe78e28",
+    "examples/ch15-projects/b3-complete/src/input.rs": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e",
+    "examples/ch15-projects/b3-complete/src/single.rs": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+    "examples/ch15-projects/b3-complete/src/lib.rs": "c8cc8bfedb549e4a9ec702bb74b7eac8af6264874123df07454672a4fa08e93e",
+    "examples/ch15-projects/b3-complete/examples/b3_bounded_demo.rs": "ada8dee892b7aca77f1b73ee5f55584149f6b447b2e1a29336f2e584f45ac8dd",
+    "docs/assets/ch15/bounded-url-slots.svg": "8053366aa07ef231914ff9023d41530e49e1a63a9175a3389024ea516c734fcf"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 3,
+      "quote": "B2 每次先等一份網址完成，才取下一份。若前一份正在等伺服器的 headers，後面幾份還沒有機會送出。本步希望**允許幾份工作同時等待，仍保有每筆原文與原行位置，而且不一次提交整張清單**。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 9,
+      "quote": "三份網址分別送往本機 `/held/0`、`/held/1`、`/held/2`。每個handler通知「已進入」後，等我們放行才回headers；沿14.9的 `Fixture`，不靠sleep猜測請求進度。這三份沒有空白行，原 `input_index` 就是0、1、2。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 13,
+      "quote": "沿14.4，`JoinSet::len()` 算**已提交、尚未收取**的task，包含已完成但結果還在集合裡的task。因此「1完成」還沒有空位；是 `join_next_with_id()` 取走1，才讓len少一份。用這個數字判名額，可以把正在等待與完成待收的工作一起控制在jobs內。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 17,
+      "quote": "沿第14.6節，暫將本例 `tasks` 這份JoinSet標為 **S1**。圖中的task0／1指原輸入0／1所建立的工作，不是Tokio印出的Id值。每次spawn回的opaque Id，另外登記到完整Input；只有對照表能找回原文與原索引。下圖的框與數字一直追同一份S1的內容，不是每步另建集合。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 21,
+      "quote": "起始檔沿用B2的 `src/single.rs`，單筆core不變：GET最多五次redirect、final2xx通過、只等finalheaders、不主動讀body、每筆Tokio deadline預設十秒。`Duration` 是每次工作的新跨度，不是整批共同的十秒倒數。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 23,
+      "quote": "B2的 `Input`／`prepare_inputs` 移到 `src/input.rs`，以已教的 `pub mod input;` 公開，型別與讀行規則不改。空白行略過，invalid行與duplicates都保留，索引仍是略行前的0-based原行位置。公開runner與Scheduler的caller契約是：交入 `prepare_inputs` 產生的清單，或同樣具有**唯一、遞增原行索引**的Input；不自行用相同index指兩份輸入。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 41,
+      "quote": "沿14.4，把待辦放進 `std::vec::IntoIter<Input>`，只在有名額時取下一份資料。`JoinSet<single::Check>` 保存tasks；`HashMap<Id, Input>` 登記每份task對應的完整Input。立即登記的目的，是panic／abort沒有Check時也找得到原行與原文；Id只是回收時的查找key，不是報告順序。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 43,
+      "quote": "每份task需要owned Client。這裡選reqwest0.13.5的 **`Client::clone()`**：Client具備Clone，複本共享原Client的連線池。把複本move進task，便不再借用排程外的Client，也不需要每筆重新builder。沿ownership規則，clone不是所有型別一律深層複製；此處依Client自己的契約解讀。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 61,
+      "quote": "從 `b3-starter` 保存 `Cargo.toml`、整個 `src` 與 `checks/bounded-tests.rs` 到自己的 `url-b3-work`。下面列出本節完整起始來源，片段只協助定位。Input與single已完成，`fill`／`next`／`run_bounded` 的三個body尚未完成。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 91,
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 150,
+      "quote": "七項checks分別驗零jobs／空清單拒絕、全invalid、混合與duplicates、收取後補工與兩種順序、panic／abort對應、完成未收取仍占名額。Input處理與單筆能力已在前兩步驗過，本步不重寫它們。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 156,
+      "quote": "收尾新增 **`JoinSet::abort_all()`**：向集合中所有tasks要求abort，但沒有移除它們，也沒有等它們結束。接著逐次await `join_next_with_id()`，直到None，才表示集合全被收取；收尾不呼叫會補工的Scheduler.next。最後shutdown Fixture再panic或做assert。沿14.3，Drop JoinSet只要求abort，不能當作已await每份child。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 194,
+      "quote": "第一步改 `fill`。只要tasks.len小於jobs，從pending取一份Input；沒有資料就break。複製Client與original、保存Duration，spawn owned async工作；**spawn後立刻用AbortHandle.id登記完整Input**。這裡的AbortHandle只是取得Id／必要時要求abort的能力，不是可await的結果handle。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 198,
+      "quote": "第二步改 `next`。先等 `join_next_with_id()`；集合空回None。成功有 `(Id, Check)`，JoinError則用error.id取得同一份查找key。移除Id表Input，保存索引，再將Check包成Checked，或用Input.original與JoinError形成TaskFailure。**記好這份Entry之後才fill**，最後交回它。"
+    },
+    {
+      "section_id": "18.9",
+      "path": "docs/chapters/18-09-lesson.md",
+      "line": 273,
+      "quote": "Demo沿B2建立本機材料，使用正預設jobs8。先收妥Fixture，確認三份工作GET，再印四份Entry；索引1／2／3／4，分類HTTP200／Input／HTTP200／HTTP404。Debug與動態port不作固定字樣；這裡看的是輸入對應與逐項分類，不是速度比較。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

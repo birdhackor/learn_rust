@@ -1,0 +1,140 @@
+{
+  "sealed_utc": "2026-10-15T07:50:51.457101+00:00",
+  "role": "independent continuity and rendered-page reviewer",
+  "scope": "actual6.1→6.2 frozen prefix only, prioractual1–5; notauthor/technical/blindfirstreader/fullbook",
+  "contamination_control": {
+    "not_read": [
+      "6authorledger",
+      "6technical/firstreader conclusions",
+      "historicalissues/audits",
+      "rootdispositions",
+      "6.3+ or7prose/Rust"
+    ],
+    "parent_notice": "While initial6prefix under review, parent said5optionalfixes adopted and preview45existingcanonical rebuilt; no6knownfinding supplied. Futurepage titles visible in nav not treated as prior.",
+    "earlier_source_lookup": "Targeted actual1–5 lookup for println/move/borrow done after reading6.2 to establish true earlier coverage; not other review reports."
+  },
+  "necessary_findings": [
+    {
+      "id": "C6a-01",
+      "classification": "necessary",
+      "severity": "medium",
+      "confidence": "high",
+      "path": "docs/chapters/06-02-lesson.md",
+      "lines": [
+        7,
+        14
+      ],
+      "quote": [
+        "Debug 提供供開發者檢查的文字表示。println!(\"{summary:?}\") 中的 :? 要求用 Debug",
+        "debug.rs:12 println!(\"整筆資料={summary:?}\"); then13 assert_eq!(summary.amount,360);14 assert_eq!(summary.count,3);"
+      ],
+      "reason": "First Debug program formats the whole owned nonCopy summary and then reuses its fields. Before that include, the prose defines Debug/derive/field capability but not that this formatting call borrows the value rather than receiving it by ownership. Earlier ownership model explains by-value function parameters move nonCopy values; earlier String display deliberately passes as_str view. Reader therefore lacks the basic access contract explaining why this first whole-value display permits reuse.",
+      "actual_first_use": "docs6.2:13–14 includes full debug.rs; actual code12 whole-summary formatting,13–14 later field accesses. Actual desktop/mobile show same order.",
+      "previous_position": "3.2:21/27/35 owned parameter handoff;3.6:78 custom Order lacks Copy;3.8:11–17 show(text:&str) only borrows supplied text view;5.5:9 explicitly uses taken.as_str() for borrowing display. No prior actual1–5 explanation that println formatting borrows an owned nonCopy argument found.6.2:41 correctly explains comparison borrowing, but refers to comparisons later, not the earlier formatting call.",
+      "recommendation": "Before the first Debug full program, add a short contract such as「這裡的 println! 只借讀 summary 來顯示；顯示後仍可讀它的欄位。」No Formatter/fmt internals or new program required.",
+      "benefit": "Connects first Debug use to the established move/borrow model and explains following assertions without suggesting Debug also makes a struct Copy.",
+      "scope_calibration": "Debug identity, independent need, {:?}/derive syntax and field requirements are already sufficient. Only formatting access/reuse bridge is missing; no request for formatting internals, trait object dispatch or deeper PartialEq theory.",
+      "evidence": [
+        "round06-ch06a-frozen/docs/chapters/06-02-lesson.md",
+        "round06-ch06a-frozen/examples/intro-workspace/trait-stages/examples/debug.rs",
+        "round06-ch06a-visual/desktop-debug-first-program.png",
+        "round06-ch06a-visual/mobile-debug-first-program.png"
+      ]
+    }
+  ],
+  "optional_findings": [],
+  "positive_evidence": [
+    {
+      "section": "6.1",
+      "positions": "3/5/9/11;21/23/29;33/39;43/45/47;53–60;64/66/68;89/95;99/105/115;119/121",
+      "evidence": "Independent need is two data shapes with one threshold rule; material contract nonnegative small arithmetic is scoped. Model/public fields and helper module path known before snippet. Charge defines shared amount→i32 method signature and no-body semicolon before trait; no promise of automatic implementation. implChargeforOrder/Bundle matches contract with differing body, no fake shared representation. T:Charge and &T privileges explained before generic body; table computes360 true and160 false. Dot-method trait scope/import and example crate root explained before external caller. Bound failure is complete and explicitly about generic definition guarantee, not business result. Two tests compare numeric/bool and inclusive300/301 boundaries. Answer adds DiscountedBundle360−80=280 with same generic threshold and old models.",
+      "complete_scope": "Full charges and charge_support module incl2tests, package-only manifest, missing_bound fixture and fullanswer on samepage. selectedcharges/charges_answer load exactly this helper; no lib/build.rs/dependency. No hidden later traits loaded."
+    },
+    {
+      "section": "6.2",
+      "positions": "3/7/9/11/25/27;35/37/39/41/58;62/64/70;74/80;84/86/92/96/114;122/124/139",
+      "evidence": "Concrete need is complete summary view and application-specific field equality. Debug format/derive/field support and unstable external-format warning are explicit. MissingDebug fixture follows named failure. PartialEq supplies ==/!=; derives compare allfields, enumvariant thenpayload; multi-derive and assert_eq! Debug/PartialEq roles explained before whole comparisons. Comparison borrowing is correctly explicit before retained originals. Examples isolate samefields, countdifference, variantdifference and samevariantpayload difference. String/&str content equality before textcode; sharedreferences compare borrowedvalues, notaddresses; Option shape/content and conditional trait support before Option<usize>/Option<&usize> direct equality/debug. Allstandard snippets have fullsamepage source. Answer builds two independent Strings manually and changes only second amount, retaining labels and original280.",
+      "scope_calibration": "No new generic equality/display operation is used before its trait ability. No deriveCopy/Clone assumed; no Eq/float/deepPartialEq theory needed for current ints/strings. The one necessary gap is initial whole-value Debug formatting access contract C6a-01, not missing trait definition/motivation."
+    }
+  ],
+  "sources": {
+    "frozen_files": 18,
+    "frozen_copy_check": "all18 hashes match",
+    "hashes": "round06-ch06a-sourcehashes.json",
+    "frozen": "round06-ch06a-frozen",
+    "end_changes": [
+      {
+        "path": "examples/intro-workspace/Cargo.toml",
+        "initial": "ab2450344449650f23553c189af2af1032be26ac133de130245ef47fc612da66",
+        "current": "0fe0c68b5753558a7b9d650faa209317c7268d0ad40ec1284952bb66117aa7bf"
+      },
+      {
+        "path": "examples/intro-workspace/Cargo.lock",
+        "initial": "bdcccb63479540b1f3f2c275d50e3b6cc8c4047fdb768eea0e7014a85bda1084",
+        "current": "ce0b4e0a6f7a6475a272ba794f8e8686e2de531eb1e372b5c5af7be4be54fc51"
+      }
+    ],
+    "complete_inline": "Every fullsourceinclude matches normalized actualDOM code; partialregions also have fullsource later samepage. Allselectedsources/answers/tests/fixtures/manifest/defaultmain actually read.",
+    "configuration": "trait-stages haspackage/name/version/edition only, no lib/build.rs/dependencies; each selectedexample selfcontained or loads onlysamepagecharge_support. workspace/lock/toolchain read. Futureerror-stages manifestpackage-only readmetadata, nofutureprose/source read.",
+    "prior_lookup_hashes": [
+      {
+        "path": "docs/chapters/03-02-lesson.md",
+        "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89"
+      },
+      {
+        "path": "docs/chapters/03-06-lesson.md",
+        "sha256": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8"
+      },
+      {
+        "path": "docs/chapters/03-08-lesson.md",
+        "sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143"
+      },
+      {
+        "path": "docs/chapters/05-05-lesson.md",
+        "sha256": "20882bf65c17e9bdca514bf41ed27f8a80314d615bc894e06e06d7a3595f888c"
+      }
+    ],
+    "not_run": [
+      "Cargo",
+      "build",
+      "Rusttests",
+      "repositorysource/doc/configedits"
+    ]
+  },
+  "render": {
+    "base_url": "http://127.0.0.1:8097/chapters/",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "images": 0,
+    "necessary_image_judgment": "Bothactualpages have noimg. Traitdefinition, twoimplementationbodies, oneboundandcomparison table supply neededmapping; no missingnecessaryfigureidentified.",
+    "screenshots_actually_viewed": [
+      "round06-ch06a-visual/desktop-trait-contract.png",
+      "round06-ch06a-visual/desktop-bound-and-shared-rule.png",
+      "round06-ch06a-visual/desktop-trait-in-caller-scope.png",
+      "round06-ch06a-visual/desktop-debug-first-program.png",
+      "round06-ch06a-visual/desktop-derived-equality-contract.png",
+      "round06-ch06a-visual/desktop-reference-value-equality.png",
+      "round06-ch06a-visual/desktop-option-equality-contract.png",
+      "round06-ch06a-visual/mobile-trait-contract.png",
+      "round06-ch06a-visual/mobile-bound-and-shared-rule.png",
+      "round06-ch06a-visual/mobile-trait-in-caller-scope.png",
+      "round06-ch06a-visual/mobile-debug-first-program.png",
+      "round06-ch06a-visual/mobile-derived-equality-contract.png",
+      "round06-ch06a-visual/mobile-reference-value-equality.png",
+      "round06-ch06a-visual/mobile-option-equality-contract.png"
+    ],
+    "metadata": "round06-ch06a-visual/metadata.json",
+    "full_inline_all": true,
+    "raw_asterisk_paragraphs": [],
+    "visual_judgment": "Coretraittable readableallthreecolumnsmobile. Prose/inlinecodewrap withcomplete symbols; longsourceuses localhorizontalcode scrolling. No new renderedpagefinding.",
+    "limitations": "Focusedactualrelationships pluscompleteinlineDOMverification, noteverypixel oflongpages, partialnavpreview notfinalstrictsite."
+  }
+}

@@ -1,0 +1,357 @@
+[
+  {
+    "path": "docs/chapters/01-01-lesson.md",
+    "line": 43,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "前面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/01-03-lesson.md",
+    "line": 11,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/01-03-lesson.md",
+    "line": 63,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/01-04-lesson.md",
+    "line": 29,
+    "hit": {
+      "kind": "section",
+      "text": "3.5",
+      "target": "docs/chapters/03-05-lesson.md"
+    },
+    "reason": "數值／compiler版本，不是節號"
+  },
+  {
+    "path": "docs/chapters/01-05-lesson.md",
+    "line": 25,
+    "hit": {
+      "kind": "section",
+      "text": "3.5",
+      "target": "docs/chapters/03-05-lesson.md"
+    },
+    "reason": "數值／compiler版本，不是節號"
+  },
+  {
+    "path": "docs/chapters/01-05-lesson.md",
+    "line": 33,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/01-05-lesson.md",
+    "line": 39,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/01-06-lesson.md",
+    "line": 54,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "前面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/01-06-lesson.md",
+    "line": 54,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/01-06-lesson.md",
+    "line": 58,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/01-08-lesson.md",
+    "line": 35,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "值後接點號的語法位置"
+  },
+  {
+    "path": "docs/chapters/01-08-lesson.md",
+    "line": 79,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/06-02-lesson.md",
+    "line": 9,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "前面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/06-04-lesson.md",
+    "line": 33,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "前面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/06-04-lesson.md",
+    "line": 51,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/06-05-lesson.md",
+    "line": 51,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "上面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/06-05-lesson.md",
+    "line": 51,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "下面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/06-05-lesson.md",
+    "line": 75,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/10-01-lesson.md",
+    "line": 100,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "下面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/10-02-lesson.md",
+    "line": 9,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "前面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/10-04-lesson.md",
+    "line": 25,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/10-04-lesson.md",
+    "line": 118,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後段"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/10-05-lesson.md",
+    "line": 149,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/10-05-lesson.md",
+    "line": 157,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/10-07-lesson.md",
+    "line": 108,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "上方"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/10-07-lesson.md",
+    "line": 108,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "下方"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/10-08-lesson.md",
+    "line": 116,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/15-04-lesson.md",
+    "line": 130,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "下方"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/15-05-lesson.md",
+    "line": 7,
+    "hit": {
+      "kind": "section",
+      "text": "14.2",
+      "target": "docs/chapters/14-02-lesson.md"
+    },
+    "reason": "數值／compiler版本，不是節號"
+  },
+  {
+    "path": "docs/chapters/15-05-lesson.md",
+    "line": 11,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "前面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/15-05-lesson.md",
+    "line": 107,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "上方"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/15-05-lesson.md",
+    "line": 107,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "下方"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/15-05-lesson.md",
+    "line": 148,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/15-05-lesson.md",
+    "line": 162,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/15-05-lesson.md",
+    "line": 192,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "上方"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/15-06-lesson.md",
+    "line": 7,
+    "hit": {
+      "kind": "section",
+      "text": "14.2",
+      "target": "docs/chapters/14-02-lesson.md"
+    },
+    "reason": "數值／compiler版本，不是節號"
+  },
+  {
+    "path": "docs/chapters/15-06-lesson.md",
+    "line": 146,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "後面"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/16-01-lesson.md",
+    "line": 3,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "稍後"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  },
+  {
+    "path": "docs/chapters/16-01-lesson.md",
+    "line": 11,
+    "hit": {
+      "kind": "relative_candidate",
+      "text": "稍後"
+    },
+    "reason": "程式時間、token位置或圖內方位，沒有指向教材段落"
+  }
+]

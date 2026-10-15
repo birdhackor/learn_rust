@@ -1,0 +1,2321 @@
+{
+  "role": "獨立銜接與實頁，非作者/technical/firstreader",
+  "scope": "actual1–9已讀前綴→10.1–10.9順序完整ownsource/manifest/tests/fixtures/answers；封存前未讀他角/作者validation/knownaudit，也未用11+能力補。",
+  "captured_utc": "2026-10-15T09:15:52.589155+00:00",
+  "sealed_utc": "2026-10-15T09:30:38.064428+00:00",
+  "source_files": 85,
+  "concept_checks": [
+    {
+      "concept": "dependency/path/registry",
+      "first_needed": "10.1 manifest39/main57前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 3,
+          "text": "前面的程式使用標準函式庫與自己寫的 library。接下來要讀檔案、處理命令列參數，也會使用別人維護的程式庫。這一節先回答：**Cargo 如何知道到哪裡找程式庫、需要哪些功能，以及使用哪一組版本？**"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 9,
+          "text": "**dependency** 是目前 package 所需要的另一個 package。Cargo 依 manifest 找到它、準備所需的 library crate，讓我們的程式能使用其公開項目。加入依賴本身不會執行那個 library 的功能。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 11,
+          "text": "先使用本機的 `intro-modules-basic`。它與本節 package 都在 `intro-workspace/` 下，因此從 `cargo-setup/Cargo.toml` 所在資料夾出發，先以 `..` 往上一層，再進入 `modules-basic/`。依賴的 `path` 寫成 `../modules-basic`；起點是**宣告依賴的 manifest 所在資料夾**，不是執行命令時的所在資料夾。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 13,
+          "text": "`[dependencies]` 是放一般程式依賴的 TOML 區段。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 15,
+          "text": "即使兩個 package 已列在同一 workspace，呼叫者仍須宣告這項 dependency。workspace 管理成員，dependency 則表達「這個 package 要使用另一個 package 的 library」。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 19,
+          "text": "[crates.io](https://crates.io/) 是 Cargo 預設使用的 **registry**，保存已發布 package 的名稱、版本與下載資訊。沒有指定 `path` 等其他來源時，Cargo 依名稱與版本要求從這個 registry 找依賴。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 21,
+          "text": "`std` 是工具鏈提供的標準函式庫，不必在 manifest 加入名為 `std` 的 dependency。接下來會設定的 `clap` 與 `tempfile` 則是第三方 package："
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 26,
+          "text": "本節先準備設定；數字程式只呼叫已教過的計價函式。第三方程式庫內部如何實作，不是這份數字程式需要自行重寫的工作。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 36,
+          "text": "以下是本節**完整** `cargo-setup/Cargo.toml`。前三個欄位仍是第一章已教的 package 名稱、版本與 edition。依賴有不只一項設定時，用 TOML 的**行內表格** `{ 欄位 = 值, 欄位 = 值 }` 放在同一組；下面的本機依賴與 `clap` 設定就是這種形式："
+        }
+      ],
+      "q1": "package依賴另一package library；workspace成員不自動表使用關係，接2.6 crate/library。",
+      "q2_mechanism": {
+        "answer": "path從宣告manifest目錄，registry按名稱版本找；加入不執行library。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "後續要用別人維護library，先知道來源/功能/版本；數字工作不換運費規則。",
+        "verdict": "已足夠"
+      },
+      "q3": "dependencies TOML區段與行內表格；path ../modules-basic，Rust ::名稱路徑不同檔案路徑。",
+      "q4": "80/120分開加20→240，完整舊計價lib同頁；只證本機依賴能接，不證clap解析。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "features/dev-dependencies",
+      "first_needed": "10.1 manifest39前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 23,
+          "text": "- `clap` 用來解讀命令列參數，第 10.6 節才會使用它的 Rust 介面。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 24,
+          "text": "- `tempfile` 用來準備測試中的暫存檔案與資料夾，第 10.8 節才會呼叫它。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 30,
+          "text": "**feature** 是 library 提供的具名功能開關。`clap` 的 `derive` 功能支援後面要學的宣告式參數設定，所以本例明確請求 `features = [\"derive\"]`。這個功能名稱屬於 `clap`，不會替我們自己的 package 定義一個同名 feature。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 32,
+          "text": "`clap` 已有預設啟用的功能，本例保留它們，再加上 `derive`。若某個 library 的文件要求關閉預設功能，可在它的行內表格加入 `default-features = false`，再列出需要的 features。每個 library 的開關與相依規則不同，要查對應版本的文件，不能只依名稱猜測。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 34,
+          "text": "`[dev-dependencies]` 放測試、範例等開發工作需要的依賴。本例將 `tempfile` 放在這裡；一般 library 或 binary 不會因此就能把它當成一般依賴使用。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 36,
+          "text": "以下是本節**完整** `cargo-setup/Cargo.toml`。前三個欄位仍是第一章已教的 package 名稱、版本與 edition。依賴有不只一項設定時，用 TOML 的**行內表格** `{ 欄位 = 值, 欄位 = 值 }` 放在同一組；下面的本機依賴與 `clap` 設定就是這種形式："
+        }
+      ],
+      "q1": "具名feature屬特定library；dev依賴為測試/example開發target。",
+      "q2_mechanism": {
+        "answer": "clap derive加既有預設；default-features false只說可選關閉，非任意library同規則。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "先準備後續參數解析/臨時測試能力，10.6/10.8才用API，不現在要求其內部。",
+        "verdict": "已足夠"
+      },
+      "q3": "features陣列；tempfile dev，不因dev讓一般binary可直接用。",
+      "q4": "完整manifest可定位來源與開關；不虛構準備設定已執行功能。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "SemVer/lockfile/tree/update",
+      "first_needed": "10.1版本推理44–48與後續commands前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 44,
+          "text": "`4.6.7` 的三段稱為 major、minor、patch。**Semantic Versioning**，簡稱 **SemVer**，是發布者表達版本相容性的約定：對已進入 1.0 的版本，major 改動表示不相容的公開介面變更，minor 與 patch 分別用於相容的功能新增與修正。這是發布約定，並非編譯器保證 library 沒有行為問題。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 46,
+          "text": "對本例 major 大於零的版本，`version = \"4.6.7\"` 表示允許從 4.6.7 起、尚未進入 5.0.0 的相容版本；它沒有精確鎖在 4.6.7。同理，`tempfile = \"3.27.0\"` 允許從 3.27.0 起至 4.0.0 之前的版本。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 48,
+          "text": "若真的要在 manifest 寫精確要求，字串才改成 `\"=4.6.7\"`。本頁實際 manifest 保留相容版本要求，由 lockfile 保存這次真正選到的版本。0.x 的相容範圍有另一套界線，這裡不把上述 major 規則直接套過去。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 79,
+          "text": "`cargo add` 將依賴加入 manifest，並更新需要的版本解析紀錄。名稱後的 `@版本` 指定版本要求，`--features derive` 加上具名功能，`--dev` 選開發依賴區段；`--manifest-path` 與 `-p` 仍明確選擇入門 workspace 與本節 package。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 81,
+          "text": "在**自己的練習副本**可以用下列指令重建本頁兩個 registry 設定。已有同名依賴時，它會更新現有項目，不會新增第二個 `clap`："
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 88,
+          "text": "這是刻意修改依賴設定的工作，不要求維持原 lockfile。完成後，再用前面的 `cargo check ... --locked` 確認 manifest 與解析紀錄相符。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 92,
+          "text": "入門 workspace 共用 `examples/intro-workspace/Cargo.lock`。它保存本次解析到的實際版本組合，也包含「依賴的依賴」。未修改設定時，後續建置會沿用紀錄；`--locked` 再要求此次操作不能修改它。通常由 Cargo 維護，不手動填一份依賴清單。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 94,
+          "text": "想看某個 package 連到哪些依賴，可以用 `cargo tree`。`--depth 1` 將顯示深度限制為一層，先只看直接依賴："
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 100,
+          "text": "先找樹根的 `intro-cargo-setup`，下面可看到 `clap` 與 `intro-modules-basic`，以及開發依賴區段的 `tempfile`。每個名稱旁的版本是實際解析版本。移除 `--depth 1` 會展開更多層；若出現 `(*)`，表示那個 package 的後續依賴已在別處列過，此處省略重複內容。這是閱讀依賴關係的工具，不能取代程式行為的測試。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 102,
+          "text": "`cargo update` 則刻意重新選擇符合 manifest 要求的版本。下列指令只在練習副本嘗試更新 `clap`，仍可能連帶改動相關依賴："
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 108,
+          "text": "這裡的 `clap` 是**要更新的依賴 package**，不同於 `cargo run -p intro-cargo-setup` 選要執行的 package。更新後檢查 manifest、lockfile 的差異，再執行適當程式與測試。不要為了讓 `--locked` 過關就刪除 lockfile；先判斷這次是否真的要改依賴。"
+        },
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 110,
+          "text": "lockfile 沒有保存作業系統與所有編譯環境，因此也不是跨平台結果完全相同的保證。"
+        }
+      ],
+      "q1": "SemVer發布相容約定，manifest要求範圍；lock實際組合含轉依賴。",
+      "q2_mechanism": {
+        "answer": "4.6.7≤v<5、3.27≤v<4只限major>0；精確=另寫；locked不改lock，update刻意重選。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "重用第三方需知道實際哪組版本與功能；tree查依賴關係非測行為。",
+        "verdict": "已足夠"
+      },
+      "q3": "cargo add自副本修改、tree depth1與(*)、update clap更新依賴非run -p target；不刪lock硬過。",
+      "q4": "本輪lock確clap4.6.7/serde1.0.229/json1.0.154/tempfile3.27；尚非OS環境完全重現保證。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "API文件與使用契約",
+      "first_needed": "10.1:50→10.2文件讀法25",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-01-lesson.md",
+          "line": 50,
+          "text": "[docs.rs](https://docs.rs/) 提供 library 的 **API** 文件。API 是給其他程式使用的公開介面，例如公開函式、型別與方法。crates.io 回答「有哪些版本可取得」，docs.rs 回答「這個版本提供什麼公開功能、如何使用」。例如 [clap 4.6.7 的功能清單](https://docs.rs/crate/clap/4.6.7/features) 可核對預設功能與 `derive`；呼叫特定 API 前，還要閱讀它的輸入、輸出與使用條件，下一節會實作一份這樣的文件。"
+        }
+      ],
+      "q1": "公開函式/型別/method的給其他程式使用介面，中文意義已給。",
+      "q2_mechanism": {
+        "answer": "docs.rs對版本功能/用法，crates.io對可取得版本。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "使用API前需簽名/行為/限制/例子，免只看i32就猜免運單位。",
+        "verdict": "已足夠"
+      },
+      "q3": "10.2按公開名簽名、行為、限制、例子讀，Result/Option需失敗/缺值條件。",
+      "q4": "本機pair_total兩筆分開運費是實例；只缺英文全名查找連結的可選C10-01，非理解缺口。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "文件註解/rustdoc/doc test",
+      "first_needed": "10.2 region18前，commands34/42前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 3,
+          "text": "第 2.7 節已把規則寫成測試。現在再問：**另一個 crate 能否依公開文件使用 library，文件中的例子是否真的正確？** 本節用 `intro-cargo-docs` 回答，資料夾是 `examples/intro-workspace/cargo-docs/`；上一節的依賴設定快照仍保留原樣。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 5,
+          "text": "例子仍是兩筆訂單、各買一件商品。80 元與 120 元各加 20 元運費，合計 240。兩筆 150 元的訂單也各自判斷運費，總額是 170 + 170 = 340；不能把商品合計 300 當成每一筆都免運。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 9,
+          "text": "**文件註解 `///`** 將文字附在下一個程式項目上。第 2.7 節的 `//` 是普通註解；多出的第三個 `/` 讓 Rust 的文件工具 **rustdoc** 能將這些文字整理為 API 文件。本例把它放在公開函式 `pair_total` 前面。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 11,
+          "text": "文件註解內使用 Markdown。`# Examples` 形成「使用例」標題，三個反引號加 `rust` 圍住 Rust 程式。這份例子從 library 的使用者角度寫 `use intro_cargo_docs::pair_total;`，取得函式後再呼叫。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 13,
+          "text": "文件中的可執行 Rust 例子稱為 **doc test**。rustdoc 會取出一般 Rust fence 裡的程式，編譯並執行；這種簡單例子可以省略 `main`，工具會補上執行所需的外框。`assert_eq!` 也會真的執行，並非只供閱讀。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 21,
+          "text": "`pair_total` 分別呼叫兩次 `total_with_shipping`，每次數量都是 1，最後才加總。函式接收兩個 `i32`，回傳 `i32`；輸入採用非負、小整數且計算不溢位的約定。這份 API 沒有替任意負值或極大值另外驗證輸入，因此文件必須把限制寫明。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 25,
+          "text": "使用這個函式前，先找到公開名稱與簽名，知道要提供兩個單價、會得到一個總額。接著讀行為說明：它計算兩筆分開的訂單，運費也各自判斷。再讀輸入限制，最後以例子核對呼叫形式與答案。只看到回傳型別 `i32`，還不足以知道免運門檻按哪一筆判斷。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 31,
+          "text": "`cargo doc` 呼叫 rustdoc 產生文件。`--lib` 選 library，`--no-deps` 不連帶替所有依賴產生文件，`--open` 在產生後請求開啟瀏覽器。在 repo 根目錄執行："
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 39,
+          "text": "`cargo doc` 產生頁面，本身不執行例子。要檢查這份文件中的程式，用 `--doc` 選 library 的文件測試："
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 45,
+          "text": "應有一項 doc test 通過。它同時確認使用者找得到公開函式、呼叫形式正確，而且這個輸入的總額符合預期。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 96,
+          "text": "如果在自己的練習副本將文件中的 240 暫改為 200，文件仍能產生，但 doc test 會因 assertion 不成立而失敗。若刪掉 assertion，例子又可能成功執行，卻沒有檢查總額。可執行的例子還需要安排明確預期，才能檢查想保留的行為。觀察後將例子還原。"
+        }
+      ],
+      "q1": "///給下一項文件，Markdown Examples/rust fence；rustdoc產API文件/取程式測。",
+      "q2_mechanism": {
+        "answer": "doc可省main由工具外框，assert真的執行；cargo doc不執行，test --doc才執行。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "另一crate能依文件正確使用且例子答案可保留，非只把註解排好看。",
+        "verdict": "已足夠"
+      },
+      "q3": "pair_total各call一次計價再加；非負小整數不驗任意溢位；cargo doc開啟/無瀏覽器輸出路徑。",
+      "q4": "240→改200仍能產文件但assert fail；刪assert又失答案檢查，理由與執行成功分開；答案兩完整fences440。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "integration test crate邊界",
+      "first_needed": "10.2 public_orders65前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 49,
+          "text": "**integration test** 是放在 package 的 `tests/` 資料夾中的測試。Cargo 將這一層每份 `.rs` 檔當成獨立測試 crate，透過 library 的公開介面完成檢查。它不能直接使用 library 的私有項目。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 51,
+          "text": "本節的檔案關係如下："
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 62,
+          "text": "第 2.7 節的 library 同檔測試用 `crate::...` 從 library 自己的根找項目。這裡若在 `public_orders.rs` 寫 `crate::...`，起點則是**這份測試 crate**。因此完整 `tests/public_orders.rs` 使用 library 名稱："
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 68,
+          "text": "兩項測試分別檢查小訂單總額，以及「兩筆分開判斷門檻」。如果有人把實作改成先合併商品、再套一次運費規則，第二項就能抓到答案變成 300 的錯誤。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 70,
+          "text": "`#[test]` 的意義仍與第 2.7 節相同。這裡不另包 `#[cfg(test)] mod tests`，因為 Cargo 已只在測試工作中建置這份測試 target。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 72,
+          "text": "`--test public_orders` 選這個 integration test target，名稱不帶 `.rs`："
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 78,
+          "text": "應有兩項通過。它驗證的是選定的公開行為，並非所有可能的單價。"
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 88,
+          "text": "這裡確認一筆商品小計達 300、另一筆是 120 時，結果為 300 + 140 = 440。`crate::pair_total` 從目前 library 的根取函式。使用已教的 `--lib` 單獨檢查："
+        },
+        {
+          "path": "docs/chapters/10-02-lesson.md",
+          "line": 94,
+          "text": "應有一項通過。至此共有一項同檔測試、兩項 integration tests、一項 doc test；三種安排從不同位置使用程式，仍須各自選有意義的材料與預期答案。"
+        }
+      ],
+      "q1": "tests直下一.rs獨立testcrate，只公開library介面；crate::起點不同。",
+      "q2_mechanism": {
+        "answer": "不另cfg mod，Cargo測試target；--test選basename，--lib同檔另選。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "需要由外部使用者位置確知公開可達且商業規則不被改掉。",
+        "verdict": "已足夠"
+      },
+      "q3": "public_orders用intro_cargo_docs名，兩test；同檔crate::另1；doc1。",
+      "q4": "150/150各170→340，能抓先合300免運錯誤；不是所有單價窮舉。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "fs讀文字與ErrorKind",
+      "first_needed": "10.3 read50前/tests122前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 3,
+          "text": "第 8 章已能解析文字、保留具體錯誤，再由呼叫者決定是否繼續。現在文字來自檔案：我們要讀出一份筆記，保留換行與中文；檔案不存在，或內容不是 UTF-8 時，也要得到可處理的失敗。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 7,
+          "text": "本節使用 `intro-io-text` package。從 repo 根目錄切到它的資料夾，**本節的全部指令都在這個資料夾執行**："
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 13,
+          "text": "目前的工作目錄，就是程式解讀相對檔名的起點。下面的 `fixtures/note.txt` 因而指這個資料夾中的檔案，不是 Rust 原始碼檔案所在位置。第 10.5 節會進一步處理路徑型別與工作目錄的 API；此刻先固定起點，讓讀取對象明確。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 19,
+          "text": "| `fixtures/note.txt` | 下方的兩行文字，最後也有換行 | 取得完整 UTF-8 文字，長度 9 bytes |"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 20,
+          "text": "| `fixtures/empty.txt` | 沒有內容的檔案 | 取得空 String，屬於成功 |"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 21,
+          "text": "| `fixtures/not-utf8.bin` | 單一 byte 值 255，不是合法 UTF-8 | 取得文字讀取失敗 |"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 22,
+          "text": "| `fixtures/missing.txt` | 不存在；請不要建立它 | 取得找不到檔案的失敗 |"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 30,
+          "text": "依第 5.3 節的 byte 規則，Rust 的四個 ASCII 字母加換行占 5 bytes，「中」加換行占 4 bytes，共 9。換行在 Rust 的字串 literal 中寫成 `\\n`，所以完整內容可以表示為 `\"Rust\\n中\\n\"`。檔案沒有替我們分成 Rust 的字串清單；先讀回一份完整文字。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 34,
+          "text": "**I/O** 是 input/output（輸入／輸出），此處指程式讀取或寫入外部資料。`std::fs` 是 filesystem（檔案系統）module，提供讀檔操作；`std::io` 提供 I/O 的共同結果與能力。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 36,
+          "text": "本節先使用 **`fs::read_to_string(filename)`**：傳入 `&str` 表示的檔名，它開啟並讀完整檔案。成功回傳 owned 的 `String`，內容必須是合法 UTF-8。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 38,
+          "text": "結果型別是 **`io::Result<String>`**，等同 `Result<String, io::Error>`。這延續第 8.2 節的 type alias：`io::Result` 替 I/O 工作固定錯誤型別為 **`io::Error`**，角括號只需要指定成功型別。它仍然是已教的 Ok／Err，沒有新的結果容器。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 40,
+          "text": "`io::Error` 保存這次 I/O 失敗；它已提供 Debug 與 Display，可以檢查或顯示。其 **`kind()`** method 借用錯誤，交回 **`io::ErrorKind`**：一個描述錯誤類別的 enum。本次先用兩個 variants："
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 45,
+          "text": "`ErrorKind` 還有其他類別，標準函式庫也保留未來增加類別的空間，所以從外部 match 時必須用已教的 `_` 處理其餘情況。不依作業系統產生的錯誤文字猜分類；類別供程式判斷，Display 訊息供人閱讀。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 65,
+          "text": "不存在與格式不合法都沒有成功文字可供讀取，但原因不同。Err 沒有自動停止程式；這個 caller 選擇逐筆報告。若檔案是合法的空文字，則得到 `Ok` 中的空 String，不能把它當成上述失敗。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 119,
+          "text": "ErrorKind 已有 Debug 與 PartialEq，能沿用第 6.2 節的 `assert_eq!` 比較類別。io::Error 本身不提供這項相等比較；因此先處理 Ok／Err，再比較 kind，不直接拿完整 I/O Result 做相等檢查。"
+        }
+      ],
+      "q1": "I/O完整名、fs/io來源；read_to_string→ownedUTF8String，ioResult alias固定ioError。",
+      "q2_mechanism": {
+        "answer": "error.kind借讀回enum，NotFound/InvalidData且外部wildcard；error本身不PartialEq，kind可比。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "真筆記保中文/換行，缺檔與非UTF8要可分別回報且繼續，空成功別當失敗。",
+        "verdict": "已足夠"
+      },
+      "q3": "固定cd工作目錄；一次一Result match，Debug顯示字串換行escape。",
+      "q4": "note實9bytes/empty0/invalid[255]/missing不存在全查；fixture期待有獨立準備理由，不依寫出步驟先跑。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "File/Read追加文字",
+      "first_needed": "10.3 handle80前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 69,
+          "text": "剛才需要的是整份文字，所以一次呼叫就能完成。另一項需要是**把讀出的文字接在既有前綴之後**。先保留一個開啟的檔案，再指定文字要追加到哪裡，能把這兩份狀態分開。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 71,
+          "text": "**`std::fs::File`** 是開啟檔案的操作對象，管理和作業系統之間的檔案資源。`File::open(filename)` 以唯讀方式嘗試開啟檔案，回傳 `io::Result<File>`；取得 File 本身不代表已取得完整內容。正常離開 scope 時，File 會關閉它管理的檔案資源。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 73,
+          "text": "**`std::io::Read`** 是讀取來源的 trait，提供讀取資料的操作。File 已實作它；沿用第 6.1 節的規則，先 `use std::io::Read;`，才能以點號呼叫其 methods。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 75,
+          "text": "本次選用 **`file.read_to_string(&mut text)`**。它 mutable 借用 File，從目前位置讀到來源結尾，把合法 UTF-8 文字**追加**到給定的 String，不清除原內容。成功回傳 `io::Result<usize>` 中的**本次讀入 byte 數量**，不是 String 追加後的總長度。讀取會往後推進 File 的位置，因此 file 需要 mutable 存取。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 77,
+          "text": "helper 的回傳型別 `io::Result<(String, usize)>` 可以保留完整文字與新讀入量。這裡的 `?` 遇到 io::Error 就從 helper 回傳同一種錯誤；main 再決定顯示方式："
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 93,
+          "text": "前綴的三個中文 scalar 加換行占 10 bytes；追加原檔案的 9 bytes，總長才是 19。兩個數字不同，正好確認 method 回報的是哪項工作。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 95,
+          "text": "若 UTF-8 無效，這個 method 回傳錯誤，給定的 String 不變。其他 I/O 錯誤則可能發生在已有部分讀入之後，不應把「取得 Err」推成所有外部工作從未發生。這個 helper 遇到失敗就回傳 Err，沒有把局部文字當成完整成功結果交出去。"
+        }
+      ],
+      "q1": "File管理開啟資源，open只開未讀完；Read trait用use methods。",
+      "q2_mechanism": {
+        "answer": "mutable來源位置推進，read_to_string追加到已有String，回本次byte數非總量。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "需保既有前綴並分開來源/目的狀態，非為展示File名稱硬改工作。",
+        "verdict": "已足夠"
+      },
+      "q3": "read_with_prefix→ioResult(String,usize)，?同ioError；scope正常關File。",
+      "q4": "三中文字前綴+LF10，讀9→總19；無效UTF8String不改，其他I/O錯可能已有部分工作，不回局部成功。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "File::create與Write/write!",
+      "first_needed": "10.3 write_note106前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 99,
+          "text": "現在要把相同的 `\"Rust\\n中\\n\"` 存成 `note-output.txt`，再讀回確認。**`File::create(filename)`** 回傳 `io::Result<File>` 中可寫入的檔案：不存在就建立；**已存在就清空原內容**。因此範例只使用本 package 中專用的 `note-output.txt`，沒有拿教材輸入檔當輸出。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 101,
+          "text": "**`std::io::Write`** 是寫入出口的 trait。File 已提供它；先引入 Write，再用第 8.3 節的 **`write!`** 格式化文字到這個出口。這次 `write!` 的結果是 **`io::Result<()>`**：Ok 表示這次寫入完成，Err 保存 I/O 原因。它不固定寫到終端機，也不自動加換行；換行來自傳入文字。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 103,
+          "text": "第 8.3 節的 `write!(f, ...)` 寫到 Formatter，回傳 fmt::Result；這裡寫到 File，回傳 io::Result。macro 的形式沿用，出口與失敗型別則由各自的能力決定。"
+        },
+        {
+          "path": "docs/chapters/10-03-lesson.md",
+          "line": 113,
+          "text": "結果是 `重新讀取確認=\"Rust\\n中\\n\"`。`save_note` 返回後，File 已正常結束，再重新開啟讀取檔案。寫入成功與重新讀取成功是兩次工作；後者可能單獨失敗，所以 caller 分別處理。"
+        }
+      ],
+      "q1": "create可寫File，既有清空；Write出口trait，write!形式延8.3。",
+      "q2_mechanism": {
+        "answer": "File出口→ioResultunit，Formatter→fmtResult；無自動LF；新讀回是另一步。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "保存同文字再讀回確認，專用note-output避免改教材輸入。",
+        "verdict": "已足夠"
+      },
+      "q3": "useWrite、write!(file,text)?；main分寫失敗與再讀失敗。",
+      "q4": "完整source包含兩工作，內容一致；不將重新讀回當寫入保證或永久存儲驗證。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "u8/buffer/有效前段",
+      "first_needed": "10.4 圖21/lib38前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 3,
+          "text": "前節把完整 UTF-8 文字一次保存成 String。現在希望分批讀取檔案，或處理不一定是文字的資料。讀取來源每次交出多少資料，要由結果告訴我們；不能要求每次剛好填滿，也不能把 buffer 原本留下的內容混入新結果。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 9,
+          "text": "**`u8`** 是 8-bit unsigned integer，也就是不保存負數、可表示 0 到 255 的整數型別。這份範圍剛好保存一個 byte 的值。它有 Copy、Debug 與數值比較能力，能沿用先前數字的讀取、顯示與檢查。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 11,
+          "text": "因此 `[u8; 4]` 是四個 byte 值的 array，`&[u8]` 借用一段 byte 資料，`&mut [u8]` 則允許修改借來的那段。`Vec<u8>` 擁有可增長的 byte 清單；使用第 5.4 節的 new／push／as_slice，就能保存分次收到的資料。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 13,
+          "text": "**buffer（緩衝區）** 是這次讀取暫時放資料的區域。本節用四格 array，寫成 `let mut buffer: [u8; 4] = [0; 4];`。右側的 **`[值; 次數]`** 會用同一個 Copy 值初始化每一格，此處四格都先是零；它和型別位置的 `[u8; 4]` 分別指定初始值與資料形狀。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 17,
+          "text": "第 10.3 節已引入 Read trait。現在選用其 **`read(&mut buffer[..])`** method：mutable 借用來源與一段可填入的 byte 空間，回傳 **`io::Result<usize>`**。成功的 `n` 表示本次讀入多少 bytes，這些新資料位於 **`buffer[0..n]`**；符合契約的來源不會回傳大於 buffer 長度的 n。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 19,
+          "text": "先用 ASCII 的 `ABCDE` 觀察長度，因為每個字母恰是一個 byte。假設來源第一次交出 ABC、第二次交出 DE；同一個四格 buffer 可以留下以下狀態："
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 23,
+          "text": "圖中第一列的 0、1、2、3 是 buffer 索引。藍格代表這次 n 指定的前段；灰格即使有數字，也不屬於這次新資料。第二次的索引 2 還是上次留下的 C，只能加入 DE，不能加入 DEC。上次的 ABC 已在當時處理過，不靠 buffer 替我們永久保存。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 25,
+          "text": "**短讀取** 指成功的 n 小於 buffer 長度。它不是錯誤，也不代表來源結束：第一次的 3 小於 4，後面仍有 DE。只要 n 大於零，就處理有效前段，再要求下一次讀取。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 27,
+          "text": "**EOF** 是 end of file（檔案結尾）。本節處理有結尾的有限來源，使用非空 buffer；`Ok(0)` 表示這次沒有更多資料，就結束此輪完整讀取。若給零長度 buffer，同樣可能得到 Ok(0)，卻不能藉此判斷來源已結束，所以我們固定使用四格。檔案之後若又被追加，也可能再次讀到資料；這裡沒有承諾它從此永遠不會改變。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 29,
+          "text": "讀取可能回傳 **`ErrorKind::Interrupted`**，表示這次操作被中斷，應再重試。read 回傳 Err 時，這次沒有成功讀入可供處理的 bytes；其他錯誤則傳回 caller，不把先前已收集的部分資料當成完整成功。"
+        }
+      ],
+      "q1": "u8 8bit unsigned0..255 Copy/Debug；byte array/slice/Vec，buffer暫時放資料。",
+      "q2_mechanism": {
+        "answer": "[值;次數]初始化，read成功n只前段0..n；短n非結束，非空buffer0才本次EOF；Interrupted重試。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "分批或非文字資料需不混舊bytes，不要求每次填滿；固定有限來源與四格給EOF判斷條件。",
+        "verdict": "已足夠"
+      },
+      "q3": "read_all R:Read借&mut，copy每byte到Vec；Err別當完整局部成功。",
+      "q4": "圖ABC65/66/67後DE68/69+舊C67，索引/藍/灰對應本次n；能預測DEC錯，非數字零結束哨兵。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "完整bytes轉文字與as_bytes/to_owned",
+      "first_needed": "10.4 main52、short_reader-main76前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 41,
+          "text": "四格 buffer 可以重用，結果 Vec 則保存全部 bytes，所以總記憶體仍隨輸入增長。這個例子教的是分次讀取的正確接合；如果工作只需統計，可以像本節練習那樣不保存整份資料。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 45,
+          "text": "**`String::from_utf8(bytes)`** 接手 `Vec<u8>`，檢查完整資料是否為合法 UTF-8，回傳 `Result<String, std::string::FromUtf8Error>`。成功取得 owned String；失敗原因是 UTF-8 格式，而非讀檔 I/O。FromUtf8Error 已有 Debug／Display，可以檢查或顯示；本節只用這項回饋。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 47,
+          "text": "一個 UTF-8 scalar 可能跨越兩次讀取。如果每次都把短 buffer 當成完整文字檢查，合法檔案也可能被誤判。例如「中」的三個 bytes 在不同批次到達時，各批都不一定是完整 UTF-8。本次先收集完整資料，再轉成 String。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 49,
+          "text": "File 已實作 Read，所以相同 library 函式可以接收真實檔案。`Ok(mut file)` 的 pattern 先取出 File，再把接收它的 binding 宣告為 mutable，供 `&mut file` 使用。依第 2.6 節的 package／crate 規則，`intro-io-bytes` 的 library 路徑從 `intro_io_bytes` 開始："
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 59,
+          "text": "得到 `取得=9 bytes` 和 `完整文字=\"Rust\\n中\\n\"`。如果換成前節的 not-utf8.bin，byte 讀取仍可成功，但文字轉換失敗。開啟、讀取與文字格式是三個不同步驟，各自保留失敗。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 73,
+          "text": "為了建立原資料，再選用 **`str::as_bytes()`**：只借出該文字的 UTF-8 byte slice `&[u8]`，不複製或解析內容。沿用第 8.5 節的 ToOwned，這份 byte slice 的 `to_owned()` 建立 `Vec<u8>`，複製 byte 值供 ShortReader 擁有；只複製 reference 本身則沒有得到 owned 資料。ToOwned 也由 prelude 提供名稱，本例仍明寫 `use std::borrow::ToOwned;` 方便對照來源，後面可直接使用這個已教的 method。"
+        }
+      ],
+      "q1": "String::from_utf8接Vec檢格式回String/FromUtf8Error；as_bytes借UTF8slice。",
+      "q2_mechanism": {
+        "answer": "完整資料檢驗避免scalar跨批誤判；u8slice.to_owned新Vec，非只Copyref。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "分批接合後要回原中文；若只數bytes則練習不保存整份，清楚記憶體仍增長。",
+        "verdict": "已足夠"
+      },
+      "q3": "File→read_all→from_utf8分三錯誤步；ShortReader own輸入bytes。",
+      "q4": "note9、invalidI/O讀成功格式失敗；中3bytes跨批仍原字，不擴FromUtf8Error內部。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "可控制ShortReader/事件來源",
+      "first_needed": "10.4 impl70/90與main76/94前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 63,
+          "text": "真實 File 不保證每次讀取的批次大小；若它剛好一次填滿 buffer，就不能由此確認我們有處理短讀取。現在自己實作 **ShortReader**：資料已在記憶體中，每次最多交出指定數量，供相同 read_all 使用。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 65,
+          "text": "它保存三項狀態：data 是全部 owned bytes；position 是下一個尚未交出的資料索引；max_per_read 是每次最多交幾個 bytes，本節建立它時都使用正數。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 67,
+          "text": "**`impl Read for ShortReader`** 提供 read 的具體做法，簽名遵循剛才的契約。每次從 copied=0 開始，直到 buffer 滿、達到本次上限，或原資料用完；每交一個 byte，就更新 copied 與 position。空 buffer 不進入 while，回傳零；原資料結束也回傳零。它不把任何舊 buffer 值算成新資料。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 79,
+          "text": "執行 `cargo run --manifest-path Cargo.toml -p intro-io-bytes --example short_reader --locked`，取得完整 ABCDE。這份來源對四格 buffer 依序回傳 3、2、0，直接呈現圖中兩段新資料與結束點。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 83,
+          "text": "再設計一份可預測的來源：第一次 Interrupted，第二次交出一個 byte，第三次 PermissionDenied。**`PermissionDenied`** 是權限不允許這項操作的 ErrorKind；此例是在記憶體中指定錯誤來驗證流程，沒有改動真實檔案權限。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 85,
+          "text": "標準庫提供 **`io::Error::from(kind)`**，以 From 把 ErrorKind 建成具體 io::Error；這個錯誤只保存類別，不需要額外文字。slice 的 **`is_empty()`** 回傳 len 是否為零的 bool；先處理空 buffer，可避免存取不存在的第一格。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 87,
+          "text": "這份來源以 step 保存下一次要發生的事件。讀取 Err 沒有交出 bytes，但測試來源仍可更新自己的事件狀態：這是模擬「中斷已發生，下一次再試」的安排，不是把讀取位置前進一個 byte。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 97,
+          "text": "執行 `cargo run --manifest-path Cargo.toml -p intro-io-bytes --example error_reader --locked`。結果確認總共三次呼叫，且最後回傳 PermissionDenied。先前取得的 R 不能把後續失敗變成完整成功，Interrupted 也沒有直接讓整個工作結束。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 128,
+          "text": "ShortReader 的第一項測試直接檢查 3、2、0 與舊 C，第二項換不同短讀取上限，確認 UTF-8 bytes 分批後仍能接成原文字，第三項確認空來源是成功："
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 148,
+          "text": "error_reader 另有一項測試，確認三次事件與最終錯誤。三個 targets 合計六項，不依真實檔案的短讀寫次數或目前登入者權限決定結果。"
+        }
+      ],
+      "q1": "Read實作保存data/position/max；另一source用step保存事件不是資料位置。",
+      "q2_mechanism": {
+        "answer": "限制每批正上限；空buffer/耗盡0；Interrupted→一R→PermissionDenied三次。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "真File剛好填滿不能證短讀處理，故獨立可控來源驗收同read_all，不依OS權限碰巧失敗。",
+        "verdict": "已足夠"
+      },
+      "q3": "while三條件copy更新；Error::fromkind與sliceisempty先教；borrow同來源推進。",
+      "q4": "3/2/0與舊C，max1/2/3/8跨UTF8、empty成功、step3最終錯，未拿讀1byte當完整成功。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "短write/write_all/flush",
+      "first_needed": "10.4 ShortWriter115/121前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 105,
+          "text": "| `write(bytes)` | 接收 `&[u8]`，回傳 `io::Result<usize>` 中已寫入的 n | 成功可能只接受前 n bytes，剩餘資料仍需處理。 |"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 106,
+          "text": "| `write_all(bytes)` | 接收 `&[u8]`，回傳 `io::Result<()>` | 會重複寫到全部完成，並重試 Interrupted；其他失敗就回傳 Err。 |"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 108,
+          "text": "對非空資料，write_all 遇到 write 回傳零，會以 **`ErrorKind::WriteZero`** 回報無法繼續完成。它不能永遠重試一個沒有進展的出口。寫入已部分完成後才遇到錯誤時，先前寫入不會自動撤回。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 110,
+          "text": "Write 的另一項必要操作 **`flush()`** 回傳 `io::Result<()>`，要求把中間緩衝的資料推送到出口。它不等同保證資料已保存到永久儲存裝置；此處要依輸出型別的契約理解完成位置。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 112,
+          "text": "以下 ShortWriter 的出口就是記憶體中的 bytes。write 每次最多接受兩個 bytes；accepts_data 為 false 時則不再接受，回傳零。flush 沒有中間緩衝需要推送，所以直接 Ok。write_all 是 Write 已提供的方法，會依這份實作的 write 反覆完成工作；我們不用再實作一份 write_all。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 118,
+          "text": "先呼叫一次 write，再把**尚未寫入的後段**交給 write_all："
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 124,
+          "text": "執行 `cargo run --manifest-path Cargo.toml -p intro-io-bytes --example short_writer --locked`，先寫入 2 bytes，剩下 3，再得到完整 ABCDE。這個出口是記憶體資料，不是新增的檔案；將最後 owned Vec 轉成文字，只為核對我們沒有漏寫或重寫。"
+        },
+        {
+          "path": "docs/chapters/10-04-lesson.md",
+          "line": 134,
+          "text": "ShortWriter 的兩項測試確認反覆短寫入得到完整資料，以及無進展時的 WriteZero："
+        }
+      ],
+      "q1": "write→實n，write_all→unit且反覆，flush要求推中間緩衝非永久存儲。",
+      "q2_mechanism": {
+        "answer": "非空write0→WriteZero避免無進展重試；已部分寫不回滾。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "一次成功可能只寫前段，需要續後段確實完整；可控記憶體出口不靠真File短寫機率。",
+        "verdict": "已足夠"
+      },
+      "q3": "ShortWriter最多2bytes，false0，flushOk無buffer；先write2再remaining3write_all。",
+      "q4": "ABCDE無漏重、拒絕A→WriteZero，default write_all用implwrite運作在碼前112，無未教trait內部要求。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Path/PathBuf與顯示",
+      "first_needed": "10.5 path_types31前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 3,
+          "text": "前兩節使用固定檔名讀取筆記。現在要讓呼叫程式的人指定檔案，成功就交出原文字，失敗則回報原因與結束狀態。這份需要還包含一項區別：**檔名是作業系統接受的路徑，檔案內容才是這個工具要求的 UTF-8 文字**。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 9,
+          "text": "**path（路徑）** 指向檔案系統中的位置，可能包含目錄與檔名。`std::path` 的 **`Path`** 表示路徑內容，本節透過 `&Path` 借用它；**`PathBuf`** 擁有這份路徑資料，可以在 mutable 存取下修改。它們的借用／owned 分工，和 str／String 相似。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 11,
+          "text": "路徑資料不是已開啟的 File。組好 `notes/2026/note.txt` 這份路徑，沒有因此建立目錄、驗證檔案存在或讀出檔案內容；真正開啟與讀取仍由 I/O 操作完成。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 17,
+          "text": "| `Path::new(\"notes\")` | 從給定文字借出 `&Path` | 借用已有的目錄表示，不建立 owned 的複本。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 18,
+          "text": "| `path.join(\"2026\")` | shared 借用 Path，交回新的 PathBuf | 保存加入相對路徑後的結果，原 Path 不變。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 19,
+          "text": "| `filename.push(\"note.txt\")` | mutable 操作 PathBuf，回傳 unit | 將相對的檔名接到已有路徑。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 20,
+          "text": "| `filename.as_path()` | shared 借用 PathBuf，交回 `&Path` | 交給只需讀路徑的工作，保留 caller 的 owner。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 22,
+          "text": "join 與 push 使用平台的路徑規則安排分隔符號。本例加入的都是相對片段；傳入完整的絕對路徑時，可以替換原路徑，不能把它們當成一律追加文字的 String 操作。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 24,
+          "text": "Path／PathBuf 提供 Debug 與 PartialEq，可以檢查或比較路徑表示。比較依路徑組成進行，沒有查詢檔案系統證明兩份路徑指同一個真實檔案。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 26,
+          "text": "顯示時選用 **`path.display()`**：它交回供格式化使用的 `std::path::Display` 物件，實作 第 8.3 節的 Display trait；它借用原路徑，**不是產生一份 String**。若路徑不能完整表示成 Unicode，這項顯示可能有失真，所以供人閱讀，不拿顯示文字重新建立檔名或作唯一識別。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 28,
+          "text": "若確實需要 UTF-8 文字，**`path.to_str()`** 回傳 `Option<&str>`：可表示就 Some，否則 None。None 不代表路徑資料本身不存在或一定無效，只表示不能借成這份文字表示。"
+        }
+      ],
+      "q1": "&Path借路徑，PathBuf own可改，非File；分工類str/String。",
+      "q2_mechanism": {
+        "answer": "new借view，join新owner/push修改；絕對片段可替換，非String總追加。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "caller指定檔案而檔名原生/內容UTF8分開，組路徑不代表建立或存在。",
+        "verdict": "已足夠"
+      },
+      "q3": "as_path給讀取；display借wrapper供人閱讀非String/to_strOption檢UTF8；Path比較不證同真file。",
+      "q4": "notes不變、三段新path；合法文字例不推所有OS路徑UTF8，未需平台binary內部。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "OsString/OsStr/current_dir",
+      "first_needed": "10.5 os_strings60/working_directory72前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 42,
+          "text": "**OS** 是 operating system（作業系統）。原生檔名不保證能用 UTF-8 表示，因此標準庫另有 **`OsString`** 保存 owned 的 OS 字串，**`&OsStr`** 借用其內容；型別位於 `std::ffi` module。ffi 是 foreign function interface（外部函式介面），這個 module 提供和外部系統交換資料的型別；本節先用其中的原生字串。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 44,
+          "text": "OsString 沒有 Copy；交出去會 move，需要獨立副本時則已有 Clone。這些型別也有 Debug、PartialEq，能檢查或比較原生內容。不要因為名稱含 String，就把它當成必定合法 UTF-8 的 String。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 50,
+          "text": "| `OsString::from(\"中文筆記.txt\")` | 從 `&str` 建立 owned OsString | 合法文字一定能成為原生字串。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 51,
+          "text": "| `native.as_os_str()` | 借出 `&OsStr` | 沒有接手 native。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 52,
+          "text": "| `os_text.to_str()` | 回傳 `Option<&str>` | 成功則借出 UTF-8 表示，失敗沒有文字 reference。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 53,
+          "text": "| `native.into_string()` | 接手 OsString，回傳 `Result<String, OsString>` | 成功交回 owned 文字；失敗把原 OsString 的 ownership 交回 Err。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 54,
+          "text": "| `PathBuf::from(native)` | 接手 OsString，交回 owned PathBuf | 保留原生資料成為路徑，不要求先轉成 UTF-8。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 55,
+          "text": "| `path.as_os_str()` | 從 `&Path` 借出 `&OsStr` | 需要原生字串的 API 可以使用，仍不轉成 UTF-8。 |"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 57,
+          "text": "into_string 的 Err 中是**原生資料本身**，不是新增的一段錯誤訊息；caller 仍可以保存它或轉成 PathBuf。下面先借用再交成路徑，最後另用一份固定 OsString 觀察 owned 文字轉換："
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 63,
+          "text": "執行 `cargo run --manifest-path Cargo.toml -p intro-path-cli --example os_strings --locked`。中文檔名原本來自合法文字，所以本例能借成 UTF-8。實際從 OS 取得的字串則需要處理 None／Err，不能只依這個成功例保證所有原生檔名都能轉換。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 67,
+          "text": "**`std::env::current_dir()`** 取得目前行程的工作目錄，回傳 `io::Result<PathBuf>`；不是 crate 原始碼的位置，也不是一定指向執行檔所在目錄。caller 可以借用這份 owned 路徑，再 join 相對檔名。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 69,
+          "text": "第 10.3 節的 fs::read_to_string 不只接受文字檔名，也接受 **`&Path`**。它的輸入需要能借成 Path，這是 第 8.5 節的 `AsRef<Path>` 關係；本節明確傳 `filename.as_path()`，不靠把原生路徑先轉成 String。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 75,
+          "text": "執行 `cargo run --manifest-path Cargo.toml -p intro-path-cli --example working_directory --locked`。工作目錄依你的 repo 存放位置而不同，讀到的教材筆記仍是 `\"Rust\\n中\\n\"`。本例沒有另外解析或清理 `..`；最後仍將路徑交給讀檔操作，由檔案系統解讀這份位置。"
+        }
+      ],
+      "q1": "OS/ffi完整名；ownedOsString可move/Clone，&OsStr借，不保UTF8。",
+      "q2_mechanism": {
+        "answer": "to_str借Option；into_string接owner成功String失敗原OsString；PathBuffrom保原生內容。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "保留不能轉UTF8的原生檔名，不以顯示損失建新路徑；currentdir才是相對讀取起點。",
+        "verdict": "已足夠"
+      },
+      "q3": "current_dir→ioResultPathBuf，join後以&Path讀AsRef<Path>延8.5；..由FS解讀不自行clean。",
+      "q4": "中文成功例明限來源合法Unicode；Err原資料角色清楚，工作目錄非source/executable位置。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "args_os/原生參數解析",
+      "first_needed": "10.5 error88/parser96/tests106前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 79,
+          "text": "**CLI** 是 command-line interface（命令列介面），也就是透過命令列參數、輸出與結束狀態使用程式的方式。arguments 是啟動程式時交給它的參數資料。本次只接受一個檔名；少了或多了，先回報用法錯誤，不開始讀檔。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 81,
+          "text": "**`env::args_os()`** 建立標準型別 `ArgsOs` 的 iterator，其 **Item 是 owned OsString**。第 9.4 節的 next 每次取得 Some 中的一筆，結束是 None；不必先收集成 Vec，再冒著索引越界去取參數。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 83,
+          "text": "第一筆按慣例是程式名稱，這個工具略過它，再讀真正的檔名。它可以是任意啟動名稱，不能把它當成保證存在的執行檔路徑。args_os 保留原生資料；如果使用要求 Unicode 的 args，遇到不合法 Unicode 的參數可能 panic，因此本章選擇前者。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 85,
+          "text": "先在獨立 `arguments` example 以具體 enum 保存兩種用法失敗；Debug／PartialEq／Display 都沿用第 6.2、8.3 節："
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 91,
+          "text": "這份範例的 parse_filename 不自行向 OS 取資料。它接收 **`I: IntoIterator<Item = OsString>`**，讓呼叫者交入完整參數序列，也能以已教的 owned array 驗證。IntoIterator 建立工作，next 推進狀態，取得的 OsString move 成 PathBuf。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 93,
+          "text": "`let _program_name = arguments.next();` 仍有執行 next，因此略過第一筆。變數名稱以底線開頭表示刻意不再使用這份結果；不是省略了這次推進。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 99,
+          "text": "只有略過名稱後剛好一個檔名，才會取得 Ok 中的 PathBuf。沒有先把檔名轉成 UTF-8，再決定能否讀檔。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 103,
+          "text": "PathBuf 與 ArgumentError 都已提供 PartialEq／Debug，所以 Result 的比較符合 第 8.1 節已教的條件。以下測試保存合法中文檔名、少參數與多參數三個結果："
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 109,
+          "text": "執行 `cargo test --manifest-path Cargo.toml -p intro-path-cli --example arguments --locked`，這兩項測試沒有啟動外部 process。實際 CLI 的 stdout／stderr／結束狀態，要在接上 main 之後另驗證。"
+        }
+      ],
+      "q1": "CLI完整名，args_os IteratorItemownedOsString；第一筆慣例程式名非保可用exe path。",
+      "q2_mechanism": {
+        "answer": "Next略過再剛好一個檔名，多/少具體enum；底線binding仍執行next。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "一檔工具先檢用法不開檔，避免收Vec索引且保native，args非法Unicode可能panic故選os。",
+        "verdict": "已足夠"
+      },
+      "q3": "I:IntoIterator<Item=OsString>可array固定測，PathBuf move；pair答案剛好兩個原生路徑。",
+      "q4": "中文/少/多二test不啟動child，不能當真stdout/status驗收。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "標準出口/ExitCode/完成位置",
+      "first_needed": "10.5 streams138/main144與shell160前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 121,
+          "text": "行程有兩個常用輸出出口：**stdout（standard output，標準輸出）** 交出工具的資料；**stderr（standard error，標準錯誤）** 交出診斷訊息。終端機通常都顯示兩者，但 caller 可以分別保存；本次成功的筆記內容只進 stdout。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 123,
+          "text": "`io::stdout()` 交回 Stdout，`io::stderr()` 交回 Stderr。它們是操作對應標準出口的物件，都提供 第 10.3、10.4 節的 Write，可以以 mutable binding 呼叫 write!／write_all 並處理 io::Error。它們沒有替程式選擇該輸出哪些內容。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 125,
+          "text": "Stdout 可能先把資料留在行程共用的 buffer；連到終端機時通常以換行為推送邊界。這次要保留原筆記，不能假定最後一定有換行。因此 write_all 成功後，還要呼叫 第 10.4 節已教的 flush，檢查緩衝資料能否交給標準出口，再選成功狀態。正常結束時的自動清理不能替 main 回報這一步的錯誤；flush 成功也沒有承諾永久儲存。Stderr 預設沒有這份緩衝，下面仍直接檢查每次診斷寫入的結果。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 127,
+          "text": "**exit status（結束狀態）** 是程式結束時交給啟動者的結果。Rust 的 **`std::process::ExitCode`** 可以由 main 正常回傳："
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 129,
+          "text": "- `ExitCode::SUCCESS` 是標準成功值，`ExitCode::FAILURE` 是標準失敗值。這些大寫名稱是型別提供的既定值，不需加小括號。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 130,
+          "text": "- `ExitCode::from(status)` 接收 u8，依 From 建立指定數字的結果；本章用 2 表示參數用法不符。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 131,
+          "text": "- main 寫成 `fn main() -> ExitCode`，各返回路徑都交出這個型別。正常離開 scope，仍會完成值的清理，再將結果交給啟動者。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 133,
+          "text": "`process::exit` 是立即停止目前行程的另一個 API，會略過目前 scope 的正常清理；本章使用 main 回傳 ExitCode，讓之後臨時目錄等資源也能依正常 scope 結束。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 135,
+          "text": "**`writeln!`** 沿用 write! 的出口與格式字串，額外加上一個換行；寫入 Stderr 時同樣回傳 io::Result<()>。先建立報告函式，成功就交回希望的狀態；連診斷出口都失敗，就交回標準失敗。沒有遞迴要求同一個已失敗的 stderr 再報告自己："
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 141,
+          "text": "接著讓主要 binary 的 main 取得 arguments、呼叫相同的 parse_filename，再用 &Path 讀取。format／to_string 都沿用第 8.3、8.5 節，Path 的 display 只進診斷；操作真正使用的是原生 Path。先 write_all 原文字的 bytes，再 flush；兩步都成功才回傳成功狀態，沒有加標題或額外換行："
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 149,
+          "text": "Cargo 指令的 **`--`** 表示後面的 arguments 交給我們的程式，而非 Cargo。**`--quiet`** 則減少 Cargo 自己的例行建置／執行訊息，程式的 stdout／stderr 仍照常存在。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 157,
+          "text": "以下是 Bash 中的觀察方式：**`>`** 把 stdout 存到指定檔案，**`2>`** 把 stderr 存到另一個檔案，既有輸出檔會被清空；本次只使用兩個專用 captured 檔案。`echo $?` 顯示上一個指令的結束狀態，要立即放在 run 後面。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 164,
+          "text": "本教材的 Linux 環境中，成功顯示 0；captured-note.txt 是原筆記，captured-errors.txt 是空檔。改為不存在的檔名，正常失敗顯示 1，資料檔空白而診斷檔有原因；未提供檔名則是 2。若以 PowerShell 操作，保存兩個出口後用 `echo $LASTEXITCODE` 觀察上一個原生程式的狀態。"
+        },
+        {
+          "path": "docs/chapters/10-05-lesson.md",
+          "line": 166,
+          "text": "資料、診斷與狀態各回答一個問題：工具產出什麼？失敗為什麼？caller 能否把這次當成成功？把三者分開，下一個程式才不會把錯誤訊息誤當筆記內容。"
+        }
+      ],
+      "q1": "stdout資料/stderr診斷；ExitCode main回給啟動者，fromu8/既定值正常清理。",
+      "q2_mechanism": {
+        "answer": "WriteAll後Stdoutflush也須成功；stderr寫失敗回FAILURE不遞迴；process exit另會略清理。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "讓caller分開資料/為何失敗/是否成功，避免錯誤文字當筆記；最後不必LF故不能靠行緩衝。",
+        "verdict": "已足夠"
+      },
+      "q3": "writeln加LF/ioResult；args_os→path讀→stdout原bytes/flush；cargo --/quiet與Bash > 2> $?即刻查狀態。",
+      "q4": "完整CLI與三狀態0/1/2，2.6fnmain舊unit在此明教ExitCode，不偷11Drop內部作先備。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "clap derive/owned Settings",
+      "first_needed": "10.6 settings47前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 3,
+          "text": "第 10.5 節的工具只接受一個檔名，手寫 next 已足以完成它。接下來要為文字搜尋準備兩個必要資料：要找的文字、要讀的檔名；呼叫者還可以要求忽略大小寫，並查詢用法與版本。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 5,
+          "text": "這些規則可以繼續手寫，但需要自己維護位置、開關與說明之間的對應。**clap** 是 command-line argument parser（命令列參數解析 library），這次讓它依 struct 欄位建立規則、產生說明，再交回 owned 設定。搜尋行為留到 第 10.9 節；本節只驗收參數如何成為設定，以及顯示請求如何交給呼叫者。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 19,
+          "text": "| `Rust` | 第一個 positional（位置參數），以順序決定角色 | `query: String`，擁有要找的文字 |"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 20,
+          "text": "| `中文筆記.txt` | 第二個 positional，指定檔名 | `filename: PathBuf`，擁有原生路徑 |"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 21,
+          "text": "| `--ignore-case` | flag（開關），用名稱選擇是否啟用，不再跟一個值 | `ignore_case: bool`，有它為 true，省略為 false |"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 23,
+          "text": "query 是文字，必須能成為 UTF-8 String；filename 保存 PathBuf，可保留原生檔名。clap 解析 filename 不會替我們開檔案或保證檔案存在，仍保留 第 10.5 節「路徑表示與真正 I/O 分開」的關係。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 25,
+          "text": "開關使用兩個連字號的 long 名稱。本次只接受宣告過的名稱；拼成 `--unknown` 應是用法錯誤。ignore-case 在此只保存選擇，尚未執行任何大小寫轉換或搜尋。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 29,
+          "text": "沿用 第 10.1 節的依賴與 feature 契約，選用 clap 的 derive feature。版本要求仍是範圍，實際解析版本由 Cargo.lock 保存。以下是本節完整manifest，name/version/edition仍明寫，不繼承後續的工程設定："
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 35,
+          "text": "**`clap::Parser`** 是將命令列資料解析成設定型別的 trait。**`#[derive(Parser)]`** 依欄位和 attributes 生成相關實作；第 6.2 節已教的 derive 仍是編譯時工作，並不是啟動程式時先執行某個 Parser 函式。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 39,
+          "text": "- **`#[command(name = \"...\", version = \"...\", about = \"...\")]`** 設定工具的顯示名稱（例如版本輸出）、版本與用途；version 同時提供 `--version` 顯示請求。用法中的啟動名稱可取自 arguments 第一筆，所以本教材的 Cargo run 會顯示 intro-clap-stage。這些設定字串不是用來尋找執行檔。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 40,
+          "text": "- 欄位若沒有 short／long 設定，本次的 String／PathBuf 就是必要 positional，依宣告順序接受 query、filename。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 41,
+          "text": "- **`#[arg(long)]`** 在 bool 欄位上建立 long 開關；欄位 `ignore_case` 對應命令列的 `--ignore-case`。沒有輸入時為 false，有輸入時為 true。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 42,
+          "text": "- **`help = \"...\"`** 可放在 arg attribute，將欄位用途放入說明。clap 也提供 `--help`，呼叫者不用先給兩個必要 positional 就能查看用法。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 44,
+          "text": "它們是給 derive 的設定。生成的 parser 使用這些設定決定接受什麼；我們的程式使用成功回傳的欄位決定要做什麼。先保留 Debug，方便檢查意外得到的設定："
+        }
+      ],
+      "q1": "clap全名argumentparser library，Parser trait+derive生成；attributes編譯時設定。",
+      "q2_mechanism": {
+        "answer": "順序String/PathBuf必要positional，bool long snake到kebab、預設false；version/help。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "新增query/filename/flag/help版本，手寫可做但要維護對應，derive統一欄位/規則/說明。",
+        "verdict": "已足夠"
+      },
+      "q3": "完整manifestderivefeature；queryUTF8、filenamenative不開檔，flag僅存選擇搜尋10.9待教。",
+      "q4": "三筆輸入→三欄材料先給，省/啟flag兩成功及未知flag/缺參數；範圍未縮成只教derive語法。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "try_parse_from/顯示請求與真正CLI",
+      "first_needed": "10.6 tests70/main84前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 52,
+          "text": "這次選用 **`Settings::try_parse_from(input)`**，回傳 `Result<Settings, clap::Error>`。先引入 `use clap::Parser;`，才在型別上呼叫這個 trait 提供的方法。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 54,
+          "text": "input 必須是 `IntoIterator<Item = T>`，元素 T 要有 `Into<OsString> + Clone`：每筆能交成原生字串，並能依 Clone 的契約建立副本。第 10.5 節已教 OsString 的 Clone；它也能以 Into 交回相同型別，因此 owned OsString array 與 args_os 都符合。這裡的第一筆仍是程式名稱，**把完整序列交給 clap，不自行先 next 略過**。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 56,
+          "text": "**`clap::Error`** 保存沒有產生 Settings 的結果，提供 Debug／Display。但 **Err 不全是使用者輸入錯誤**：`--help`、`--version` 需要顯示資訊並正常完成，同樣透過這個型別交回。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 62,
+          "text": "| `error.use_stderr()` | bool；true 表示訊息該進 stderr，false 表示進 stdout |"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 63,
+          "text": "| `error.exit_code()` | i32；此版本對 stderr 訊息回 2，對 stdout 顯示請求回 0 |"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 65,
+          "text": "因此缺必要資料／未知開關的預期是 stderr、2；help／version 的預期是 stdout、0。try_parse_from 本身只交回結果，這一步不印訊息或結束行程。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 67,
+          "text": "下面先在 library 內測試。兩個成功情況分別核對開關省略與啟用；失敗保存用法判別；顯示請求則驗收正常結果。測試不依說明文字的整份排版，也不直接比較 clap::Error："
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 73,
+          "text": "執行 `cargo test --manifest-path Cargo.toml -p intro-clap-stage --lib --locked`，共四項。這一步證明參數規則符合我們的設定介面；還沒證明真實 CLI 訊息寫到正確出口。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 77,
+          "text": "現在將 args_os 的完整序列交給相同方法，成功就以 第 10.5 節的 Stdout／Write 顯示三個設定。這份程式是設定檢查工具，所以輸出欄位標示；不是已完成的文字搜尋結果。show_settings寫完三行後，再交回flush的結果，沿用上一節「寫入與推送都成功才回報完成」的政策。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 79,
+          "text": "Err 分支選用 **`error.print()`**：shared 借用 Error，依其訊息角色寫到 stdout 或 stderr，回傳 `io::Result<()>`。它只負責顯示，不會自行終止行程；顯示自身也可能遇到 I/O 失敗。caller 保留前一步的 exit_code，印成功才交回對應的 0 或 2；印失敗則交回標準 FAILURE。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 81,
+          "text": "有些範例使用 `Parser::parse` 或 `error.exit()` 直接結束行程。本節選 try_parse_from 加正常返回的 ExitCode，讓 library 可測試、呼叫邊界清楚，也保留 第 10.5 節已教的 scope 清理。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 100,
+          "text": "help 的 stdout 列出兩個必要位置參數與已宣告開關，version 顯示 query-settings 0.1.0；兩者結束狀態為 0。沿用 第 10.5 節的分流保存與緊接 `echo $?`，少一個位置參數或改用 `--unknown` 時，可觀察 stdout 空白、stderr 有用法訊息、狀態為 2。"
+        },
+        {
+          "path": "docs/chapters/10-06-lesson.md",
+          "line": 102,
+          "text": "這裡解析成 Settings、回傳顯示請求／用法錯誤、真正寫出訊息，是三件不同的工作。讓它們分開，純參數測試就能先保存規則，main 再處理行程介面；第 10.8 節會測真正的輸出與狀態。"
+        }
+      ],
+      "q1": "ResultSettings/clapError；T IntoOsString+Clone且完整序列含程式名。",
+      "q2_mechanism": {
+        "answer": "Err包含help/version正常顯示；use_stderr與code分角色，try只回結果，print寫出口可能I/O失敗不自exit。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "library可先測規則、main另選顯示狀態/清理；不把四解析tests當真CLI出口證據。",
+        "verdict": "已足夠"
+      },
+      "q3": "args_os交parser；成功show三行flush；Err保code印成功回0/2，印失敗FAILURE。",
+      "q4": "四tests與help/versioncode0、用法2，說明輸出內容與顯示name不同啟動name先39交代。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "JSON材料與Serde能力",
+      "first_needed": "10.7 model51前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 3,
+          "text": "第 10.3 節已能讀到完整 UTF-8 文字。現在筆記不只是一段內容，還要保存標題、數值清單與是否封存，讓下一次程式啟動能讀回這些角色。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 5,
+          "text": "我們使用 **JSON（JavaScript Object Notation，JavaScript 物件表示法）**：一種讓不同程式交換資料的文字格式，不需要執行 JavaScript。先決定檔案的資料形狀，再把它轉成已教的 Rust 型別。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 17,
+          "text": "JSON 的 **object** 以大括號保存名稱與值，名稱要以雙引號包住，冒號後是值，逗號分隔各項。**array** 以方括號保存依順序排列的值。下面的對應就是我們希望讀回的資料："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 21,
+          "text": "| `\"title\": \"筆記\"` | 名為 title 的文字值 | `title: String`，擁有標題 |"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 22,
+          "text": "| `\"values\": [80, 120]` | 名為 values 的 array，兩項整數依序排列 | `values: Vec<i32>`，擁有數值清單 |"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 23,
+          "text": "| `\"archived\": false` | 名為 archived 的 boolean，值為 false | `archived: bool` |"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 25,
+          "text": "JSON 還有 null 與其他組合，但它們不會自動成為這個模型接受的資料。例如 values 裡若放 `\"120\"`，那是文字，不是數字；若放超出 i32 範圍的整數，也不能塞進此欄位。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 27,
+          "text": "這些大括號是檔案格式，不是 Rust 的 struct 建立語法。JSON 不接受註解或最後一項之後的逗號。文字值中的換行要寫成 `\\n`，雙引號要寫成 `\\\"`，這些 **escape（跳脫）** 形式讓格式能分辨資料內容與文字的邊界。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 31,
+          "text": "**serialization（序列化）** 把資料轉成可以保存或交換的格式；**deserialization（反序列化）** 從格式讀出資料。**Serde** 是 Rust 的相關能力框架，名稱由 serialize／deserialize 組成："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 33,
+          "text": "- **`Serialize`** 描述資料型別如何交出要編碼的內容。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 34,
+          "text": "- **`Deserialize<'a>`** 描述資料型別如何從一份輸入解碼。它有 lifetime 參數，用來連到當次輸入來源；不同模型可以選擇 owned 或借用的內容。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 36,
+          "text": "**`serde_json`** 則是選定 JSON 格式的實作，使用模型提供的上述能力，將文字與模型接起來。Serde 的能力並不限於 JSON；在本節使用它們，是為了讓相同欄位規則有明確的 JSON 編碼與讀回方式。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 38,
+          "text": "沿用第 10.1 節的 dependencies／版本要求／features，serde 的 **derive feature** 提供生成這兩項 trait 實作的能力。下面是本節完整manifest；版本仍是範圍要求，實際選定版本由入門 workspace 共用的 Cargo.lock 保存："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 44,
+          "text": "`#[derive(Serialize, Deserialize)]` 的安排和第 6.2 節相同：讓編譯時的生成工作依欄位建立實作。Serde 已替 String、`Vec<i32>`、bool 提供必要能力，所以這個模型的全部欄位都能參與。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 46,
+          "text": "我們另選 **`#[serde(deny_unknown_fields)]`**，要求反序列化時拒絕模型沒有的欄位。預設 JSON 的未知欄位會被忽略；這個筆記檔希望拼錯或多出的名稱得到回饋，因此明確選擇拒絕。它是給 Serde derive 的 attribute 設定，不是執行時呼叫的函式。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 48,
+          "text": "保留已教的 Debug／PartialEq 供檢查。String 的比較看文字內容；`Vec<i32>` 的相等要求長度相同、各位置的數值也相同，因此 Notebook 的 derive 會檢查全部欄位與清單內容："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 54,
+          "text": "這是 **owned model**：欄位中沒有 reference。標題與清單屬於 Notebook，不需要像第 7.3 節的 TextView 一樣，繼續依賴原輸入 String 的存活。"
+        }
+      ],
+      "q1": "JSON完整名，object名稱/array/boolean/escape；serialization/反序列化角色，Serde能力與json格式實作分工。",
+      "q2_mechanism": {
+        "answer": "derive按欄位能力，denyunknown為拼錯給回饋；ownedString/Vec/bool無reference。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "筆記需標題/數值/封存能下次啟動讀回，先定資料形狀，非為serde產物反推需求。",
+        "verdict": "已足夠"
+      },
+      "q3": "manifestserde derive/json；JSON雙引號/逗號/不註解不尾comma，數字與文字不同及i32範圍。",
+      "q4": "原notebook實檔先給，三角色對應；未知archvied不被忽略，完整六額外fixtures可同頁展開，非新語義留選讀。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "JSON編解碼/lifetime/錯誤層",
+      "first_needed": "10.7 codec80/caller86/圖110/error163/read169前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 62,
+          "text": "| `serde_json::from_str::<Notebook>(text)` | `text: &str`；Notebook 提供對該輸入的 Deserialize 能力 | `Result<Notebook, serde_json::Error>` |"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 63,
+          "text": "| `serde_json::to_string_pretty(&notebook)` | shared 借用 Notebook；模型有 Serialize | `Result<String, serde_json::Error>`，含方便閱讀的換行與縮排 |"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 65,
+          "text": "這裡的 from_str 是 serde_json 提供的泛型函式，依 Deserialize 能力解碼；模型不需要另實作 第 8.5 節的 FromStr。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 67,
+          "text": "from_str 對結果型別 T 的要求是 `Deserialize<'a>`，其中 `'a` 代表借入的 JSON 文字來源。這是 trait 使用 lifetime 參數的形式，延續第 7.3 節在型別契約中表達來源的規則。**它不要求每個結果都保存輸入 reference**；我們生成的是欄位全為 owned 的 Notebook，所以成功後可以讓原文字結束。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 69,
+          "text": "`serde_json::Error` 保存 JSON 工作的失敗，已有 Debug／Display。解碼時可能是語法不合法、缺少必要欄位、欄位型別不符、未知名稱，或數字不能由模型型別表示；不是所有 UTF-8 文字都能成為 Notebook。編碼 API 同樣回傳 Result，caller 要依接口保留其可能的錯誤。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 71,
+          "text": "本節package沒有library。`basic_json` example以 `pub mod json_core;` 載入以下完整root；裡面只宣告model與codec，沒有先載入後面的檔案錯誤封裝。pub沿用第2.6節的module公開規則；這些名稱仍屬於各自的example crate，不會因此替package建立library："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 77,
+          "text": "json_core的codec module沿用第2.6節的公開函式分工，把這個模型的編解碼放在一起："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 83,
+          "text": "使用 String 作輸入時，先以 as_str 明確借出 &str。接下來的程式讀取教材檔，解析、檢查角色，再借用模型產生 JSON；開檔失敗和 JSON 失敗各在自己的步驟處理："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 108,
+          "text": "圖中的三個方框是**不同資料表示**。from_str 借入上方文字，建立中間 owned 模型；to_string_pretty 再借用中間模型，建立下方新 String。沒有把模型變成一份仍借原文字的 reference："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 112,
+          "text": "資料往返要保存欄位的內容，不保證恢復原檔案的空白、縮排或其他文字排版。若標題有換行或雙引號，JSON 也需要正確的跳脫形式；交給格式實作處理，可以再解析確認原資料沒有被改掉。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 116,
+          "text": "所有教材JSON內容都在本頁，包含開頭的notebook.json，以及以下用來驗證格式、欄位與跳脫的完整材料。missing.json刻意不存在；not-utf8.bin的完整原始byte序列只有255（十六進位FF），沒有換行。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 158,
+          "text": "先前兩個步驟各自用 match。現在把「讀到 Notebook」整理成 helper：可能遇到 io::Error，也可能遇到 serde_json::Error。這是第 8.5 節的封裝場景，使用具體 **NotebookError**，兩個 variants 保存原錯誤。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 160,
+          "text": "這份定義放在獨立的json_files module，只有本段的file_errors與後面的答案才會載入。它只 derive Debug，不比較完整錯誤。Display 借用其中的原因顯示，依第 8.3 節已教的 `&T: Display` 契約；From 實作則把各種原錯誤交進正確 variant："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 166,
+          "text": "read_notebook 的兩個 `?` 沿用第 8.6 節：讀檔失敗就以 From 封裝 Io，文字解析失敗則封裝 Json。第一個步驟沒拿到文字時，不會執行第二個："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 178,
+          "text": "執行 `cargo run --manifest-path Cargo.toml -p intro-json-stage --example file_errors --locked`。合法檔案得到標題；不存在是 Io／NotFound；文字已讀到但 JSON 語法錯是 Json；非 UTF-8 的 not-utf8.bin 在文字讀取時就成為 Io／InvalidData。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 182,
+          "text": "以下第一項測試把輸入 String 放在內層，原文字結束後仍使用 Notebook，再編碼與讀回，核對全部欄位。第二項使用真實的 UTF-8 教材檔，分別確認語法、缺欄位、未知名稱、錯型別與數字超出範圍都會被拒絕。第三項確認換行與雙引號的資料可以往返，沒有手寫一套跳脫規則："
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 194,
+          "text": "這些檢查保存的是我們的模型與政策，不是證明任何 JSON 都符合任意 Rust 型別。"
+        },
+        {
+          "path": "docs/chapters/10-07-lesson.md",
+          "line": 220,
+          "text": "三個examples的不同只在載入哪些模組：basic_json只宣告json_core，file_errors與下面的答案宣告json_core、json_files。資料夾內沒有main.rs的helper不會自行變成example target，沿用第2.6節的Cargo檔名規則。"
+        }
+      ],
+      "q1": "serde_json from_str泛型非FromStr；Deserialize<input lifetime>不保結果一定借用，ownedNotebook可離來源。",
+      "q2_mechanism": {
+        "answer": "from_str借JSON→ownModel；pretty借model→newString，排版可變欄位要保；原io/json錯各具體variant。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "用同欄位規則交換/保存，保拼錯/格式/缺欄/型別/範圍原因；跨讀檔與解碼仍辨來源。",
+        "verdict": "已足夠"
+      },
+      "q3": "模組basic只core，file_errors加files；From封裝?先讀再decode，borrowed錯誤Display已8.3。",
+      "q4": "三框圖不同表示；innerString結束/全欄roundtrip/escape，五拒絕/非UTF8仍Io，非所有JSON都任意Rust型別。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "fixture/TempDir owner與位置",
+      "first_needed": "10.8 directory53前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 3,
+          "text": "前面先測 library，再以命令列觀察輸出。現在要把「指定一份筆記，得到原內容；失敗有診斷與狀態」保存為可重複執行的測試，讓日後調整 main 也能發現出口或狀態被改壞。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 5,
+          "text": "**test fixture（測試材料）** 是為特定檢查準備、內容與用途已知的資料。本節的 fixture 是測試自己建立的目錄與檔案；每項測試使用自己的目錄，既不依賴別人的筆記，也不共用會被同時覆寫的固定檔名。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 11,
+          "text": "先沿用第 10.5 節的單檔筆記工具，這樣新增工作集中在測試工具。本package保存第10.5節已完成的ArgumentError、parse_filename與main完整快照，使用同樣的讀取與分流行為；不需要另外載入library。測試啟動的是**本 package 的 binary**，不是拿另一個 package 的執行檔路徑猜測。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 20,
+          "text": "tempfile 是建立臨時檔案／目錄的 library。它只在測試中使用，放在已教的 dev-dependencies；版本要求與lock的分工仍和第10.1節相同。完整manifest只有基本package欄位與這項開發依賴："
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 26,
+          "text": "這份受測 main 沿用第 10.5 節的輸出完成條件：write_all 後還要檢查 flush，再選成功狀態。沒有新的 Rust API："
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 34,
+          "text": "先選用 **`tempfile::tempdir()`**。它在系統的臨時位置建立新目錄，名字由 library 產生，回傳 `io::Result<TempDir>`；建立失敗就是 io::Error。**TempDir** 是管理這份目錄的 owner，**`directory.path()`** 只借出 `&Path`，供 join、讀寫與後面的子行程使用。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 36,
+          "text": "TempDir 正常離開 scope 時會嘗試刪除目錄及其中的內容，但自動清理遇到的錯誤會被忽略。如果需要知道清理是否成功，使用 **`directory.close()`**：它接手 TempDir，移除目錄，回傳 `io::Result<()>`。close 之後原 owner 已 move，不能再借它的 path；這是此型別的使用契約，這裡已可依上述行為操作；第11.3節再說明實作資源收尾的Drop trait。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 38,
+          "text": "不要只留下 PathBuf 就讓 TempDir 先結束。PathBuf 擁有的是路徑資料，**沒有接管目錄資源**；依第 10.5 節的區分，保存路徑不會讓檔案持續存在。測試將 owner 留到讀寫／子行程結束，才清理。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 44,
+          "text": "| `fs::write(filename.as_path(), text)` | 接收 `&Path` 與 `&str`，回傳 io::Result<()>；不存在就建立，存在就完整取代內容。也接受 `&[u8]`，稍後用來建立非法 UTF-8。文字會以其 UTF-8 bytes 寫入；資料符合 `AsRef<[u8]>` 的借用能力。 |"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 45,
+          "text": "| `path.to_path_buf()` | shared 借用 Path，建立 owned PathBuf 複本；保存位置，方便在 TempDir 結束後查詢。 |"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 46,
+          "text": "| `path.try_exists()` | 查詢當下是否存在，回傳 `io::Result<bool>`；能確定有／沒有就回 true／false，無法判定則 Err，不把查詢失敗算成不存在。 |"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 48,
+          "text": "fs::write 不替我們建立缺少的上層目錄；這裡的目錄已由 tempdir 建好。try_exists 只用來核對我們剛建立與移除的 fixture，不能保證之後讀取時位置仍未改變；工具本身仍直接讀檔並處理結果。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 50,
+          "text": "第一項 integration test 放在 tests/directory.rs，形式沿用第 10.2 節。先檢查材料，再以 close 確認清理，保存的 PathBuf 最後仍能表示原位置，但該位置已不存在："
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 62,
+          "text": "這裡的 expect 用來說明測試需要的環境條件，例如能在自有臨時目錄寫入；不是受測工具處理使用者檔案的策略。材料準備失敗，測試要失敗，不能假裝工具已被驗收。"
+        }
+      ],
+      "q1": "fixture專用已知材料；TempDir資源owner、PathBuf僅位置；close消耗owner/檢清理。",
+      "q2_mechanism": {
+        "answer": "正常scope嘗刪錯忽略，close回Result；fswrite覆寫可接bytes、to_path_buf複位置、try_exists可Err。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "每test自己目錄避免並行覆寫/別人筆記依賴，需owner留到child/assert結束才清理。",
+        "verdict": "已足夠"
+      },
+      "q3": "tempdirpath join/write/read/close後savedpath查不存在；Drop正式內部11.3可待教，現契約已足夠。",
+      "q4": "目錄圖外框持有到Output檢查，箭頭先後→close後位置仍存；expect是測試環境必要條件非使用者檔案策略。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Command/Output/環境路徑與UTF8view",
+      "first_needed": "10.8 helper101/success109前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 66,
+          "text": "**`std::process::Command`** 是新行程的設定物件。測試程式是 parent（啟動者），被啟動的筆記工具是 child（子行程）；兩者各有工作目錄與結束狀態。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 72,
+          "text": "| `Command::new(program)` | 從程式路徑建立設定；本次傳 `&str` 或 `&OsStr`，能以 AsRef 借成 OsStr。此時還沒有啟動。 |"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 73,
+          "text": "| `command.current_dir(directory)` | 傳 `&Path`，設定 child 的工作目錄；parent 的工作目錄不變。 |"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 74,
+          "text": "| `command.arg(argument)` | 本次傳 `&OsStr`，加入**一筆**原生 argument；沒有透過 shell 再拆成多筆。 |"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 75,
+          "text": "| `command.output()` | mutable 使用設定，啟動 child、等待它結束並收集 stdout／stderr，回傳 `io::Result<Output>`。 |"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 77,
+          "text": "current_dir／arg 修改 Command 的設定，回傳 `&mut Command` 供接續操作；本節直接分行呼叫，不需要保存這份回傳 reference。arg 的空白仍是資料：傳入「中文 筆記.txt」一筆，就不是把「中文」與「筆記.txt」分開。也不在其中加入 shell 的引號或 `>` 語法。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 79,
+          "text": "**`Output`** 保存已結束 child 的三個公開欄位："
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 81,
+          "text": "- **`status: ExitStatus`** 是觀察 child 的結束結果。它和由我們自己的 main 回傳的 ExitCode 是不同角色。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 82,
+          "text": "- **`stdout: Vec<u8>`** 與 **`stderr: Vec<u8>`** 分別保存捕捉到的 bytes，不保證本來就是文字。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 84,
+          "text": "**`output.status.success()`** 回 bool，正常成功的零狀態才是 true。**`output.status.code()`** 回 `Option<i32>`：有正常數字狀態時是 Some；在 Unix 被 signal（作業系統送出的行程控制訊號）終止可能是 None，因此不能一律當成數字。本節期待受測工具正常返回的 Some(0)／Some(1)／Some(2)。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 86,
+          "text": "output 的 **Ok 不等於工具工作成功**。如果子行程啟動並完成，自己回傳 1，仍得到 Ok(Output)，失敗在 status；沒能啟動、無法收集輸出或等待失敗，才是外層 io::Error。不要把使用者缺檔和測試沒能啟動工具混為一談。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 88,
+          "text": "output 會等到結束才交回收集好的資料，適合這個有界、小輸出的測試；不拿它收集可能一直輸出的服務。本工具不讀標準輸入，本節也不設定額外的輸入串流。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 92,
+          "text": "**environment variable（環境變數）** 是建置／執行環境提供的具名資料。這次選用 **`env!(\"名稱\")`** macro：在編譯時取指定環境變數，產生 `&str`；沒有該值會使編譯失敗，不是執行中查詢 Option／Result 的函式。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 94,
+          "text": "Cargo 建置 integration test 時，提供 **`CARGO_BIN_EXE_<name>`**，值是該 package 對應 binary 的絕對執行檔路徑，並建好該 binary。name 是 binary target 名稱，連字號保留；本 package 的預設 binary 叫 intro-cli-fixtures，因此寫 `env!(\"CARGO_BIN_EXE_intro-cli-fixtures\")`。它供此測試使用，不是每份 main／unit test 都有的通用變數，也不會替我們定位 dependency 的 binary。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 96,
+          "text": "捕捉到的bytes要先檢查UTF-8；這次選用**`std::str::from_utf8(bytes)`** 接收 `&[u8]`，檢查 UTF-8 後回傳 `Result<&str, Utf8Error>`，錯誤有 Debug／Display。這次只是借出 Output bytes 的文字 view，和第 10.4 節接手 Vec 的 String::from_utf8 不同；Output 仍保存兩份原 bytes，讓我們分項檢查。"
+        }
+      ],
+      "q1": "Command設定未啟動，output啟動等待；Output三欄及ExitStatus不同ExitCode；env!編譯時&str。",
+      "q2_mechanism": {
+        "answer": "arg一筆原生資料空白不shell拆，childcwd不改parent；OkOutput不等child成功，codeOption可signalNone。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "測真正本packagebinary資料/診斷/狀態，需Cargo定位exe非猜路徑；有界小輸出才等待全收。",
+        "verdict": "已足夠"
+      },
+      "q3": "CARGO_BIN_EXE目標名含hyphen只integration上下文；strfrom_utf8借bytes→Result&str不同StringfromUTF8接手。",
+      "q4": "missing/invalid/usage正常完成child1/2，missingexe外Io無Output；中文空白參數完整，scope順序圖先說。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "CLI測試判準與材料",
+      "first_needed": "10.8 failure121/full137前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 106,
+          "text": "第一個 child test 用含中文與空白的相對檔名，核對完整 stdout、空 stderr、正常成功與數字 0。同一個 TempDir owner 一直留到 output 返回與 assertions 完成："
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 112,
+          "text": "圖中箭頭是**操作先後**；外框是 TempDir 仍由測試持有的範圍。先讓 child 用完資料，才 close；下面留下的 PathBuf 只是位置表示，不能延長資源的存在："
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 116,
+          "text": "失敗情況還要保持相同的介面判準。為了驗收我們的診斷前綴，選用 **`text.starts_with(\"無法讀取 \")`**：shared 借用 str，檢查是否以這段文字開頭，回 bool；OS 後面的詳細錯誤文字可能不同，不把它整份寫死。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 118,
+          "text": "下面分別檢查不存在的檔案、非法 UTF-8、缺少 argument，還有**不存在的執行檔**。最後一項在自有目錄指定刻意沒建立的程式位置，應得到外層 NotFound；沒有 Output 或 child status 可供檢查。Output 也提供 Debug，若意外得到 Ok，測試可以在 panic! 中列出它。不依權限、特權帳號或外部服務碰巧失敗："
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 130,
+          "text": "cli 的四項主文測試，加上下面空檔練習的答案共五項；directory 有一項，共六項。CLI 每次都是真正啟動 binary，沒有拿 library 回傳值當成已驗收 stdout／stderr／status。本節沒有為main另加同檔測試；這不影響兩個已選integration targets的六項檢查。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 134,
+          "text": "前面已完整列出manifest、受測src/main.rs與tests/directory.rs。以下是完整tests/cli.rs，包含helper、四項主文測試與下一題空檔測試的完整答案："
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 140,
+          "text": "所有fixture都由上面的測試程式建立：成功檔案完整文字為`\"Rust\\n中\\n\"`；非法UTF-8完整byte序列為`[255]`；空檔完整文字為`\"\"`。不存在的檔案與執行檔都刻意不建立。沒有額外下載、共享檔案或GitHub上的隱藏答案。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 144,
+          "text": "加入一項 integration test：建立 empty.txt，寫入空文字，啟動工具。預期兩個出口都是零 bytes，但狀態是成功的 Some(0)。它和讀取失敗都沒有 stdout 資料，差別在 status 與 stderr，所以三項一起檢查。"
+        },
+        {
+          "path": "docs/chapters/10-08-lesson.md",
+          "line": 152,
+          "text": "    本題沿用同頁完整manifest、main與tests/cli.rs的helper。`--test cli`後再接測試名稱，會只執行名稱符合的測試，其餘顯示filtered out；整份target仍會先編譯。"
+        }
+      ],
+      "q1": "starts_with檢我方診斷prefix，OS細文不硬寫；OutputDebug供意外成功顯示。",
+      "q2_mechanism": {
+        "answer": "每次真child，stdoutbytes/err/status各看；empty兩出口0但success0與readfailure分開。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "調main不能默改程式對caller介面；libraryResult不足以代表真CLI。",
+        "verdict": "已足夠"
+      },
+      "q3": "directory1、cli5含empty答案，完整srcmain只較10.5去舊同檔tests，所有剩餘bytes前綴相等。",
+      "q4": "專用全部fixtures由完整tests建立，invalid[255]/空/缺檔/缺exe分清，名稱篩選只執行不省編譯已解釋。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "搜尋規則與比較表示",
+      "first_needed": "10.9 search98/tests106前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 3,
+          "text": "前面已分別完成原生檔名、參數設定、文字讀取、JSON 與真正的 child 測試。現在把它們接成可使用的文字搜尋工具：呼叫者指定要找的文字與檔案，工具交出符合的整行及原行號，也能改用 JSON 報告。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 5,
+          "text": "這次仍讀完整的小文字檔，結果保存為 owned 資料。先用一份明確的材料決定答案，再寫純文字工作，最後接上 I/O 與行程邊界；每一層都有自己的可觀察結果。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 17,
+          "text": "預設找連續的文字片段，區分大小寫，保留原行內容與順序。例如查 Rust，符合第 1 與第 4 行；一行含兩次 Rust 仍只交出那一行一筆資料。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 19,
+          "text": "**ASCII（American Standard Code for Information Interchange，美國資訊交換標準碼）** 是包含英文字母、數字與基本符號等的字元編碼。本工具的 `--ignore-case` 只忽略其中 A–Z／a–z 的大小寫，其他字元保持原樣；例如 Ä 與 ä 仍不同。這個明確的小範圍讓目前的做法有完整的行為約定。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 23,
+          "text": "| query 為 Rust，預設設定 | 第 1、4 行；文字輸出是 `1:Rust 很清楚`、`4:中有 Rust`，每筆有換行 |"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 24,
+          "text": "| query 為 RUST，加入 `--ignore-case` | 第 1、3、4 行；原字母大小寫仍保留 |"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 26,
+          "text": "| 查沒有符合行的文字 | 正常完成；文字輸出空白，JSON 的 matches 是空 array |"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 27,
+          "text": "| query 是空字串 | 用法錯誤，先拒絕，不開始讀檔 |"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 29,
+          "text": "lines 沿用第9.6節：LF／CRLF 分行、不包含行尾、最後的行尾不增加一行。行號從 1 開始，**空行也占原行號**；結果只是沒有符合的空行，不重新編號已保留的行。文字模式在每筆後加入 LF，並不重建原檔案的行尾格式。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 31,
+          "text": "行程結果也先固定：正常搜尋（包含零筆）、help／version 是 0；檔案／編碼／輸出失敗是 1；缺必要參數、未知開關或空 query 是 2。資料只進 stdout，診斷只進 stderr。讀取或用法失敗時尚未寫出資料；若寫 stdout 本身失敗，則可能已寫出部分 bytes，保留第10.4節的 Write 失敗邊界。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 85,
+          "text": "| `line.contains(query)` | shared 借用 str，query 本次也是 &str；有這段連續文字片段回 true，否則 false。它不要求是完整單字。 |"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 86,
+          "text": "| `text.to_ascii_lowercase()` | shared 借用 str，產生新 String；ASCII 大寫 A–Z 改為 a–z，其餘內容保持原樣。原文字不變。 |"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 87,
+          "text": "| `iterator.enumerate()` | 接手原 iterator，建立另一份 iterator；每筆 Item 是 `(usize, 原 Item)`，數字從 0 依序增加。對 lines 得到 `(usize, &str)`，仍只借原文字。 |"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 89,
+          "text": "忽略大小寫時，把 query 與每行都轉成上述比較表示，再 contains。例如 RUST 與 Rust 都變成 rust；一行 Trust me. 轉成 trust me. 也包含 rust，因為規則查的是片段。**只轉 query 而不轉行內容，兩邊仍可能不同。**"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 91,
+          "text": "這份新 String 用於判斷，符合時卻保存原 line 的 to_owned，所以輸出仍是讀者原來寫的大小寫。query 的比較表示只建立一次，每行的表示則在處理該行時建立；為了先讓流程清楚，區分大小寫的路徑也用 owned 複本，這份程式沒有宣稱最省配置或適合大型串流。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 93,
+          "text": "validate_query 保存非空規則。search 與稍後的檔案入口都呼叫它，避免 library 的不同入口接受空 query。第8.6節已教同型別的 From 會原樣交回錯誤，因此這些 AppError 之間的 `?` 不需要另寫轉換。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 95,
+          "text": "每次 enumerate 交出 index 與一行，index + 1 就是從 1 開始的原行號；只有符合時 push Match。index 對全部原行增加，沒有只數已保留的行。這個來源本來有行序，結果沿該順序保存，不用把 第9.6節的HashMap 任意順序問題帶進來："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 103,
+          "text": "測試中的Rust字串literal用 `\\\"` 表示內容的一個雙引號，`\\n`仍表示已教的LF；例如 `\"Rust \\\"筆記\\\"\\n\"` 產生的內容是Rust、空白、帶雙引號的筆記與LF。這是Rust source的表示；稍後Serde會另將這份資料編成JSON表示。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 109,
+          "text": "這五項的預期來自前面的材料與規則，不由程式輸出反推答案。本節先保存測試，等完整library各module都說明後再執行；名稱篩選只決定執行哪些測試，同一份library的其餘module仍會編譯。"
+        }
+      ],
+      "q1": "contains連續片段非整字，to_ascii_lowercase新String只ASCII，enumerate Itemusize/line0起。",
+      "q2_mechanism": {
+        "answer": "query與line都轉比較表示，但保存原line；index全部行+1含空，match不重新編號。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "指定片段/保原行序與行號、ASCII flag、小檔owned結果，材料先定1/4或1/3/4，非程式輸出反推。",
+        "verdict": "已足夠"
+      },
+      "q3": "validatequery拒空兩entry皆用；只一次query比較表示、每行轉，未宣稱最省配置/大型stream。",
+      "q4": "非ASCII Ä/ä、Trust包含rust、CRLF/空行/innerString結束/emptyquery測五項；空結果正常0，非每次片段次數。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Report/AppError與分層I/O",
+      "first_needed": "10.9 config44/model52/error60/render118/run128/main142前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 41,
+          "text": "Settings 保留兩個 positional 與 ignore_case，再增加本節的 json long bool flag。這兩個開關都只保存選擇，執行工作交給後面的 helper："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 47,
+          "text": "一筆 **Match** 保存原行號與 owned 文字；**Report** 保存 query、ignore_case 與依原行序排列的 `Vec<Match>`。報告描述搜尋資料，檔名仍由 Settings 的原生 PathBuf 保存並交給讀取工作。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 49,
+          "text": "Serde 已替 usize 提供編解碼能力，在 JSON 中表示整數；能讀回的數字仍受目前平台 usize 範圍限制。Serde 的 `Vec<T>` 在元素 T 有相應能力時也能編解碼，因此 Match 的 derive 先建立能力，Report 的清單才能使用它。Debug／PartialEq 同樣逐欄作用，Vec 比較內容的規則已由第9.5節教過："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 55,
+          "text": "**AppError** 分開 EmptyQuery、Read、Encode、Output，讓「資料還沒讀到」與「報告已完成但出口失敗」有不同原因。只對 serde_json::Error 提供 From；io::Error 可能來自讀或寫，因此在發生的那一層明確放入對應 variant。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 57,
+          "text": "Display 沿用第8.3、10.7節的 borrowed 原因格式化。自訂 method **`status(&self) -> u8`** 只依 variant 交回我們剛定的 1 或 2，最後由 main 轉成 ExitCode；它不會自行終止行程："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 63,
+          "text": "檔案分工如下。lib.rs以第2.6節的公開module宣告納入各部分；它另外提供read_report、write_report與run，將各層連接起來。下面會先逐項說明工作，再列出完整library root："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 113,
+          "text": "render shared 借用 Report。文字模式依原序產生 `行號:原內容`，用已教的 format!／push_str 拼成 String；JSON 模式用第10.7節的 to_string_pretty，最後也加一個換行。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 115,
+          "text": "這裡另選 **`String::push(character)`**：mutable 使用 String，接收一個 char，將該字元的 UTF-8 bytes 追加到內容，回傳 unit。`'\\n'` 是單一 LF 字元，和雙引號的 `\"\\n\"` 文字 view 角色不同；我們用它追加 JSON 最後的換行。JSON 編碼可能失敗時，由既有 From 交成 AppError::Encode："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 121,
+          "text": "無符合行時，文字沒有任何資料可拼接，結果是空 String；JSON 則仍保存 query、選擇與空 matches。兩者描述的是同一次正常搜尋。render 的兩項 tests 分別核對文字的原行號／原內容，以及 JSON 全部欄位往返、雙引號跳脫與空結果。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 123,
+          "text": "接著連接真正的檔案。read_report **先檢查 query，再讀取**，因此空 query 配上不存在的檔案，仍是用法錯誤 2；正常 query 才可能遇到 Read。取得完整文字後交給純 search，回傳 owned Report，不借用已結束的檔案文字。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 125,
+          "text": "write_report 先 render，再用第10.4節的 write_all 交給 `W: Write` 的出口。它既能接 main 的 Stdout，也能接已教的可控制 writer；不自行寫診斷。本函式完成把bytes交給writer，沒有替它flush；若writer有buffer，由仍持有它的caller在需要確認送出時處理flush。run 將 read_report 與 write_report 接起來，沿用同型別 AppError 的 `?`："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 131,
+          "text": "這份分工讓純搜尋不需模擬檔案，排版不需啟動 process，讀寫入口則保存各自的失敗。main 最後只決定 caller 看見哪些資料、診斷與狀態。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 135,
+          "text": "沿用第10.6節的 try_parse_from：help／version 的 Err 是正常顯示請求；其餘用法訊息進 stderr、狀態 2。取得 Settings 後才呼叫 run。AppError 的診斷透過已教的 ToString／writeln! 交到 stderr，status 再由 ExitCode::from 建立數字結果。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 137,
+          "text": "main持有Stdout，沿第10.5節在run成功後明確flush；這一步也成功，才回正常狀態。flush失敗用已有的AppError::Output保存io原因，再顯示診斷並回作業失敗1。library交付writer與真正CLI確認出口完成，各自有明確責任。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 139,
+          "text": "資料路徑只由 write_report 寫 stdout，沒有搜尋進度、檔案標題等其他訊息。這樣 --json 的完整 stdout 就能交給下一個程式解析："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 145,
+          "text": "圖中實線箭頭是資料依序交接，虛線箭頭是沒有得到下一份成功資料時，把原因交回 main。不同錯誤仍由具體 variant 保留；help／version 在 parser 階段直接完成顯示，沒有進入檔案搜尋："
+        }
+      ],
+      "q1": "Settings原生檔名、Matchownline、Reportownquery/flag/Vec；AppError Empty/Read/Encode/Output。",
+      "q2_mechanism": {
+        "answer": "Serdeusize平台範圍/Vec元素能力先說；Io不統一From因可能讀或寫，僅jsonFrom→Encode。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "純search不模擬檔案、render不啟process、讀/寫錯別混；資料不夾標題進JSON，caller可解析完整stdout。",
+        "verdict": "已足夠"
+      },
+      "q3": "render文字format/pushstr或JSONpretty/StringpushcharLF；read先validate所以emptyquery+missing仍2；write_report交writer不flush、mainownerflush後success。",
+      "q4": "資料流實線/錯誤虛線及help/version另路；writer非空且called確觸發→Output，13tests完整驗parse整stdout/empty優先/缺檔/非法/help分流。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "完整CLI測試／同頁答案",
+      "first_needed": "10.9第一Cargo命令178與writer198/clihelper206前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 151,
+          "text": "上面已全檔列出config.rs、model.rs、error.rs與main.rs。以下保存完整lib.rs，以及含同檔測試的search.rs、render.rs；最早的Cargo命令放在這些能力都已解釋之後，會編譯這份已完成的library。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 175,
+          "text": "現在可以先選library內的search測試，觀察五項通過；第10.8節已教名稱篩選，這裡仍會編譯全部library module："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 193,
+          "text": "現在除了純 search 與 render，還要測兩個原本無法由它們回答的問題：**出口失敗有沒有被誤認為讀取失敗？完整 stdout 真的能作為報告解析嗎？**"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 195,
+          "text": "writer.rs 沿用第10.4節的自訂 Write 形式：RefusingWriter 的 called 記錄是否真正寫入；write 刻意回傳 ErrorKind 的 PermissionDenied（存取權限被拒絕）所建立的錯誤，沒有成功接收本次 bytes。這份可控制的 writer 不依賴真實檔案權限。它沒有中間 buffer，flush 直接 Ok。下面測試使用非空結果，保證 write_all 有工作，而不是拿空輸出誤當已測到 write："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 201,
+          "text": "CLI tests 沿用第10.8節的 TempDir、Command、Output 與借用 UTF-8 view。execute 把測試準備的 OsString array 借為 slice，逐筆 arg；**不包含程式名稱**，因為啟動 child 時 OS／Rust 已安排 argv 第一筆。這與直接傳給 try_parse_from 的完整序列分開。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 203,
+          "text": "assert_failure 分別核對失敗的 code、空 stdout 與診斷前綴，不把 OS 的完整訊息寫死。helper 的全部工作在這裡可見："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 209,
+          "text": "JSON 的 child test 解析**整份 stdout**，再核對全部模型角色；如果有人在資料前面插入「正在搜尋」，它就不能成為這份合法 JSON："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 215,
+          "text": "其餘CLI tests使用同樣的已教helper，保存文字／ASCII開關、無符合行的文字與JSON、缺檔／非法UTF-8、空query優先判用法，以及parser用法／help／version的出口與狀態。完整tests/cli.rs在這裡，不需跳到外部網站取得其他測試或答案："
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 223,
+          "text": "測試中的所有材料也都在這份來源中：文字以完整Rust literal建立，非法UTF-8是單byte255，缺檔與缺少參數的情況則刻意不提供。TempDir與child的順序沿用上一節。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 231,
+          "text": "應有七項 library tests、一項 writer integration test、五項 CLI integration tests 通過。測試會真正啟動 child，而本頁明確選這三個targets，不用main的零項同檔測試取代它們。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 235,
+          "text": "使用本節 search 取得 Report，沿用第9.5節的 slice iter／fold 計算 matches 的筆數。輸入 `Rust\\nPython\\nRust Rust\\n`，預期是 2：它數符合的行，不數片段總共出現幾次。query 與原文規則不變。"
+        },
+        {
+          "path": "docs/chapters/10-09-lesson.md",
+          "line": 245,
+          "text": "這個工具已能接受原生檔名、搜尋 UTF-8 文字、選擇文字／JSON，並留下從純工作到完整行程的驗收。之後擴充時，先決定新行為與已教前置，再修改對應層；第11章會進一步介紹資源收尾、smart pointer 與完整錯誤介面。"
+        }
+      ],
+      "q1": "全library能力解完才命令編全部；writer可控故不依真權限；childargs不含程式名不同parser完整輸入。",
+      "q2_mechanism": {
+        "answer": "write_all非空才保證callwriter，parse整stdout可抓進度文字；count_solution fold數符合行非片段。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "兩個獨立未答問題193：輸出錯分層及完整stdout可解析，驗收材料各對問題而非只main短。",
+        "verdict": "已足夠"
+      },
+      "q3": "五純search/二render、一writer、五cli，helper和fixtures/答案都在同頁，selectedtarget無隱藏lib。",
+      "q4": "不同分工測不同界面不互代；沒有用11Box/dyn/Error/Drop內部當必要先備，尾預告不當已教。",
+      "verdict": "已足夠"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C10-01",
+      "classification": "選讀改善／可選：縮寫查找",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 50,
+      "verbatim_quote": "[docs.rs](https://docs.rs/) 提供 library 的 **API** 文件。API 是給其他程式使用的公開介面，例如公開函式、型別與方法。crates.io 回答「有哪些版本可取得」，docs.rs 回答「這個版本提供什麼公開功能、如何使用」。例如 [clap 4.6.7 的功能清單](https://docs.rs/crate/clap/4.6.7/features) 可核對預設功能與 `derive`；呼叫特定 API 前，還要閱讀它的輸入、輸出與使用條件，下一節會實作一份這樣的文件。",
+      "first_needed": "10.1:50首次正式給API角色，10.2以API文件為主要問題",
+      "actual_previous": "4.6/8.4/9.7僅泛稱其他API或sliceAPI，未要求讀者用縮寫推新規則；此處已完整說給其他程式用的公開介面。",
+      "reason": "中文意義和具體例子已足夠，沒有必要理解缺口；但重要縮寫只有API，尚無Application Programming Interface全名可連到英文文件用語。",
+      "benefit": "首次正式介紹時加英文全名與中文應用程式介面，讓基本Python讀者查英文API文件可連回本節；不用增加機制內容。",
+      "minimal_suggestion": "只在50既有API說明加括號Application Programming Interface／應用程式介面，保留現有公開函式型別方法例子。"
+    }
+  ],
+  "necessary_count": 0,
+  "optional_count": 1,
+  "closure": "85檔；3不直接snippet的完整材料另加：io-text empty0與invalid[255]、json-stage invalid[255]；兩missing確認不存在。模組/targets閉包與全部實際test/answer讀完，外部library只需所用API契約，不要求先教第三方內部Rust。",
+  "inline": {
+    "complete_include_occurrences_per_viewport": 72,
+    "all_match": true,
+    "method": "article pre code去空白/marker逐一比對完整檔；namedregions人工核首用/fullsource；binary/empty完整材料由正文給全序列",
+    "folds": [
+      {
+        "page": "10-01-lesson",
+        "titles": [
+          {
+            "title": "展開 modules-basic 的 manifest 與 library 全部來源",
+            "initialOpen": false
+          }
+        ]
+      },
+      {
+        "page": "10-02-lesson",
+        "titles": [
+          {
+            "title": "展開 modules-basic 的完整 manifest 與 library",
+            "initialOpen": false
+          }
+        ]
+      },
+      {
+        "page": "10-03-lesson",
+        "titles": [
+          {
+            "title": "完整參考答案",
+            "initialOpen": false
+          }
+        ]
+      },
+      {
+        "page": "10-04-lesson",
+        "titles": [
+          {
+            "title": "展開 short_reader.rs、error_reader.rs、short_writer.rs 全檔",
+            "initialOpen": false
+          },
+          {
+            "title": "完整參考答案",
+            "initialOpen": false
+          }
+        ]
+      },
+      {
+        "page": "10-05-lesson",
+        "titles": [
+          {
+            "title": "展開 arguments 範例全檔",
+            "initialOpen": false
+          },
+          {
+            "title": "展開可直接執行的完整CLI",
+            "initialOpen": false
+          },
+          {
+            "title": "完整參考答案",
+            "initialOpen": false
+          }
+        ]
+      },
+      {
+        "page": "10-06-lesson",
+        "titles": [
+          {
+            "title": "完整參考答案",
+            "initialOpen": false
+          }
+        ]
+      },
+      {
+        "page": "10-07-lesson",
+        "titles": [
+          {
+            "title": "展開其餘六份完整JSON fixture",
+            "initialOpen": false
+          },
+          {
+            "title": "展開完整codec與json_files來源",
+            "initialOpen": false
+          },
+          {
+            "title": "完整參考答案",
+            "initialOpen": false
+          }
+        ]
+      },
+      {
+        "page": "10-08-lesson",
+        "titles": [
+          {
+            "title": "完整參考答案",
+            "initialOpen": false
+          }
+        ]
+      },
+      {
+        "page": "10-09-lesson",
+        "titles": [
+          {
+            "title": "展開完整library root、search與render",
+            "initialOpen": false
+          },
+          {
+            "title": "展開CLI helper與全部五項integration tests",
+            "initialOpen": false
+          },
+          {
+            "title": "完整參考答案",
+            "initialOpen": false
+          }
+        ]
+      }
+    ]
+  },
+  "visual": {
+    "viewports": [
+      "1280x800",
+      "390x844"
+    ],
+    "metadata": "round10-ch10-visual/metadata.json",
+    "screenshots_actually_viewed": [
+      "desktop-clap-complete-display-tests.png",
+      "desktop-clap-input-mapping.png",
+      "desktop-command-contract.png",
+      "desktop-complete-cli-tests-tail.png",
+      "desktop-doc-answer-tail.png",
+      "desktop-figure-4-0.png",
+      "desktop-figure-7-0.png",
+      "desktop-figure-8-0.png",
+      "desktop-figure-9-0.png",
+      "desktop-json-data-mapping.png",
+      "desktop-json-helper-closed.png",
+      "desktop-json-helper-open-tests-tail.png",
+      "desktop-local-library-fold-closed.png",
+      "desktop-local-library-fold-open-tail.png",
+      "desktop-native-cli-closed.png",
+      "desktop-native-cli-open-tail.png",
+      "desktop-path-operations.png",
+      "desktop-search-cli-tests-closed.png",
+      "desktop-search-cli-tests-open-tail.png",
+      "desktop-search-expected-material.png",
+      "desktop-search-library-closed.png",
+      "desktop-search-library-open-render-tests-tail.png",
+      "desktop-short-writer-full-tests-tail.png",
+      "desktop-streams-and-status.png",
+      "desktop-text-answer-closed.png",
+      "desktop-text-answer-open-tail.png",
+      "desktop-text-fixtures.png",
+      "desktop-version-requirement.png",
+      "desktop-write-contracts.png",
+      "mobile-clap-complete-display-tests.png",
+      "mobile-clap-input-mapping.png",
+      "mobile-command-contract.png",
+      "mobile-complete-cli-tests-tail.png",
+      "mobile-doc-answer-tail.png",
+      "mobile-figure-4-0.png",
+      "mobile-figure-7-0.png",
+      "mobile-figure-8-0.png",
+      "mobile-figure-9-0.png",
+      "mobile-json-data-mapping.png",
+      "mobile-json-helper-closed.png",
+      "mobile-json-helper-open-tests-tail.png",
+      "mobile-local-library-fold-closed.png",
+      "mobile-local-library-fold-open-tail.png",
+      "mobile-native-cli-closed.png",
+      "mobile-native-cli-open-tail.png",
+      "mobile-path-operations.png",
+      "mobile-search-cli-tests-closed.png",
+      "mobile-search-cli-tests-open-tail.png",
+      "mobile-search-expected-material.png",
+      "mobile-search-library-closed.png",
+      "mobile-search-library-open-render-tests-tail.png",
+      "mobile-short-writer-full-tests-tail.png",
+      "mobile-streams-and-status.png",
+      "mobile-text-answer-closed.png",
+      "mobile-text-answer-open-tail.png",
+      "mobile-text-fixtures.png",
+      "mobile-version-requirement.png",
+      "mobile-write-contracts.png"
+    ],
+    "method": "29pair圖內58原始截圖全部親看，四必要SVG皆雙尺寸原位；每頁代表正文/長頁完整source與foldclosed/open，非只圖檔存在。",
+    "images_actually_viewed": [
+      {
+        "page": "10-04-lesson",
+        "viewport": "desktop",
+        "url": "http://127.0.0.1:8097/assets/ch07/buffer-prefix.svg",
+        "sha256": "3d08f577d1cee9743b01de0955a6d7ae301481560f3e51fd9ca6da3a637cd738",
+        "alt": "第一次只有前三格ABC有效，第二次只有前兩格DE有效，尾端舊C不能加入新結果",
+        "dimensions": {
+          "width": 340,
+          "height": 452,
+          "naturalWidth": 340,
+          "naturalHeight": 452
+        }
+      },
+      {
+        "page": "10-07-lesson",
+        "viewport": "desktop",
+        "url": "http://127.0.0.1:8097/assets/ch07/json-model.svg",
+        "sha256": "d614744ae58f91f324a1be6dc4eb47debe1149b4116b8f70d2ea8a82ec445448",
+        "alt": "借入JSON文字解碼成owned Notebook，再借模型產生新的JSON String，資料保持而排版可不同",
+        "dimensions": {
+          "width": 340,
+          "height": 462,
+          "naturalWidth": 340,
+          "naturalHeight": 462
+        }
+      },
+      {
+        "page": "10-08-lesson",
+        "viewport": "desktop",
+        "url": "http://127.0.0.1:8097/assets/ch07/fixture-sequence.svg",
+        "sha256": "d300657daac7ba35c30454a180509d275ace4856455141c694d7e8475e61f539",
+        "alt": "先建立fixture，再啟動並等待child，檢查Output後才close TempDir；保存PathBuf不能保持目錄存在",
+        "dimensions": {
+          "width": 340,
+          "height": 520,
+          "naturalWidth": 340,
+          "naturalHeight": 520
+        }
+      },
+      {
+        "page": "10-09-lesson",
+        "viewport": "desktop",
+        "url": "http://127.0.0.1:8097/assets/ch07/search-boundary.svg",
+        "sha256": "4acde7637d99c851a64afbe5ac53309fd71a6da4d8a18939e7d78371013517e7",
+        "alt": "arguments解析成Settings後讀取UTF-8文字並搜尋成owned Report，再render與write_all；main確認stdout flush，失敗交回main寫stderr並返回ExitCode",
+        "dimensions": {
+          "width": 340,
+          "height": 650,
+          "naturalWidth": 340,
+          "naturalHeight": 650
+        }
+      },
+      {
+        "page": "10-04-lesson",
+        "viewport": "mobile",
+        "url": "http://127.0.0.1:8097/assets/ch07/buffer-prefix.svg",
+        "sha256": "3d08f577d1cee9743b01de0955a6d7ae301481560f3e51fd9ca6da3a637cd738",
+        "alt": "第一次只有前三格ABC有效，第二次只有前兩格DE有效，尾端舊C不能加入新結果",
+        "dimensions": {
+          "width": 340,
+          "height": 452,
+          "naturalWidth": 340,
+          "naturalHeight": 452
+        }
+      },
+      {
+        "page": "10-07-lesson",
+        "viewport": "mobile",
+        "url": "http://127.0.0.1:8097/assets/ch07/json-model.svg",
+        "sha256": "d614744ae58f91f324a1be6dc4eb47debe1149b4116b8f70d2ea8a82ec445448",
+        "alt": "借入JSON文字解碼成owned Notebook，再借模型產生新的JSON String，資料保持而排版可不同",
+        "dimensions": {
+          "width": 340,
+          "height": 462,
+          "naturalWidth": 340,
+          "naturalHeight": 462
+        }
+      },
+      {
+        "page": "10-08-lesson",
+        "viewport": "mobile",
+        "url": "http://127.0.0.1:8097/assets/ch07/fixture-sequence.svg",
+        "sha256": "d300657daac7ba35c30454a180509d275ace4856455141c694d7e8475e61f539",
+        "alt": "先建立fixture，再啟動並等待child，檢查Output後才close TempDir；保存PathBuf不能保持目錄存在",
+        "dimensions": {
+          "width": 340,
+          "height": 520,
+          "naturalWidth": 340,
+          "naturalHeight": 520
+        }
+      },
+      {
+        "page": "10-09-lesson",
+        "viewport": "mobile",
+        "url": "http://127.0.0.1:8097/assets/ch07/search-boundary.svg",
+        "sha256": "4acde7637d99c851a64afbe5ac53309fd71a6da4d8a18939e7d78371013517e7",
+        "alt": "arguments解析成Settings後讀取UTF-8文字並搜尋成owned Report，再render與write_all；main確認stdout flush，失敗交回main寫stderr並返回ExitCode",
+        "dimensions": {
+          "width": 340,
+          "height": 650,
+          "naturalWidth": 340,
+          "naturalHeight": 650
+        }
+      }
+    ],
+    "table_overflow": "全部桌面/手機表實量，手機無table超375；實視代表表可讀"
+  },
+  "end_changes": [],
+  "limits": [
+    "無Cargo/build/tests執行，非技術實跑驗收",
+    "partialpreview非strictsite或全書導航驗收",
+    "continuity角色不是盲firstreader；先看10.4小節標題，以及root授權11.11footer窄核含相鄰答案片段，已另記；無倒算11為已教。",
+    "手機長碼仍橫捲，完整DOM同頁，不稱一屏能容全部",
+    "外部clap/serde/tempfile實作不在自寫source先教閉包；其當下所有用到API角色/操作有正文來源"
+  ]
+}

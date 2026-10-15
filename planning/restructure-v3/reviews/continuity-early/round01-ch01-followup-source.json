@@ -1,0 +1,41 @@
+{
+  "at_utc": "2026-10-15T06:35:24.935531+00:00",
+  "kind": "source-only post-fix followup; original initial judgment remains sealed",
+  "prompt_source": "root reported adopted fixes after initial seal",
+  "changed_source_hashes": [
+    {
+      "path": "docs/chapters/01-07-lesson.md",
+      "sha256": "cf49b1d604a23ed49d28f10d592b6ee662d7a46803062681c8fa7f2c97f6bcee"
+    },
+    {
+      "path": "docs/chapters/01-08-lesson.md",
+      "sha256": "d64133800925f9ded95a43efe017914a502de000096bafda6c4b7637789571c6"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "a0339cd7d528d67876df3dd1a2b1fb2169063d31e4cba666c575f6564756f8e0"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "77708bcc8ed7d4cbfc5b2e01156df0f081606a1e25894fd86697008685288b87"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C1-01",
+      "status": "source fix verified; visual placement pending rebuilt preview",
+      "source": "docs/chapters/01-08-lesson.md:53-56",
+      "evidence": "Existing prose now explains counts[1] = 2 and mut element-write permission before repeat snippet. No new concept, Rust change, or SVG change."
+    },
+    {
+      "id": "C1-02",
+      "status": "source fix verified; visual bold rendering pending rebuilt preview",
+      "source": "docs/chapters/01-07-lesson.md:9,19",
+      "evidence": "Strong markup now wraps only process/RAM/CPU/bit/byte; Chinese meanings, full names, role explanations and figures unchanged."
+    }
+  ],
+  "unchanged_reviewed_rust_and_svgs": true,
+  "execution": "none; no cargo/build/test",
+  "original_initial_report_edited": false,
+  "additional_workspace_manifest_and_lock_changes": "Observed and recorded in changed_source_hashes; queued for Chapter 2 configuration-dependency inspection, not treated as part of the two prose fixes."
+}

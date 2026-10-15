@@ -1,0 +1,122 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "12.3"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round12-build-script.md",
+    "planning/restructure-v3/reviews/technical-early/round12-cargo-engineering-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round12-cargo-order-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round12-content-confirmation-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round12-content-direction-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round12-file-walking.md",
+    "planning/restructure-v3/reviews/continuity-early/round12-ch12.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/12-03-lesson.md": "35e30859aa3cfac9752493c2e76843cfcd36c65d674bfa37c79bd8dc0c7ea8b2",
+    "examples/ch09-files/fixtures/tree/first.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/fixtures/tree/nested/second.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/fixtures/tree/.hidden/third.txt": "8cdc25affa8f5596abad0771e21fb098e26a1d786de961d96b6510915a386899",
+    "examples/ch09-files/src/scan.rs": "e9635e1b8beb72d33a812bbaae8e669a1f4191fed612cc8a4669387f11bc48ae",
+    "examples/ch09-files/src/lib.rs": "4e2a6babc78a01f9e8f41dbe0492df1ffec6fffabe36ebe4f7d219ccee2acebf",
+    "examples/ch09-files/Cargo.toml": "f11d8eabef03672f39cd9051f1f2cfd990ffa8abab0545ad24aedde9c27ba640",
+    "examples/ch09-files/src/main.rs": "a9f4575f8f7eb4176d6737f61aec648c61c798c71da5d2a508ffd79062f77cab",
+    "examples/ch09-files/tests/scan.rs": "d9deabaf58c0898b4f5b45dcad079bdc8dbe3a7f3f73b52e090e3cac13b1618d",
+    "examples/ch09-files/examples/path_identity_solution.rs": "d7914019c49126f1b677be9cd24243ad086a02626dd41f4d222466b1ca346c8b"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 3,
+      "quote": "第10.5節已能把一個原生路徑交給讀檔工作。現在把輸入改為一個目錄：要列出它與子目錄中的一般檔案，包括隱藏目錄內的檔案，保存原生路徑、byte 長度及修改時間，供後面的內容工作使用。"
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 5,
+      "quote": "這次先不讀內容，也不判重複。成功清單旁邊還要保存失敗項目；否則遇到不可處理的檔案時，「沒有列出」可能被誤認為「不存在」。**根設定不成立則整個工作無法開始；個別項目失敗則保留原因，繼續其他項目。**"
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 11,
+      "quote": "root固定為`examples/ch09-files/fixtures/tree`。三份完整輸入如下，最後都有換行；相對路徑仍從教材repo根目錄解讀："
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 35,
+      "quote": "**symbolic link（符號連結）** 是檔案系統中的一種項目，保存指向另一個位置的資訊。它可以指向檔案或目錄，也可能指向不存在的位置。追蹤 link 表示改去處理指向的目標；若目錄 link 又指回上層，追蹤還可能遇到循環。"
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 51,
+      "quote": "**metadata** 是檔案系統回報的資料，例如項目類別、長度與修改時間。它不是檔案內容，也不是替檔案上鎖。"
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 95,
+      "quote": "自己管理每層目錄的待辦也能完成走訪。這裡選 **`walkdir`** crate，把逐層進入目錄與保留走訪進度交給它；我們專注於項目政策和輸出資料。依第10.1節在 manifest 宣告依賴，測試則回收第10.8節的 `tempfile`："
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 101,
+      "quote": "`walkdir::WalkDir::new(root)` 接受原生路徑，交回一份走訪設定；它有 `IntoIterator`，所以第9.4節的 `for` 可以接手這份工作。逐筆的 **Item 是 `Result<walkdir::DirEntry, walkdir::Error>`**。`walkdir::Error` 已有 Debug／Display，供前面 `ScanCause` 保存和顯示。遇到錯誤會交出 Err，仍可繼續下一項；若某個目錄打不開，就不能取得那個目錄內的內容。"
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 107,
+      "quote": "`follow_links(false)` 接手設定、回傳更新後的設定，控制**裡面遇到的** link；預設就是 false。另一個 `follow_root_links(false)` 控制**root 自己**的 link，其預設是 true。因此只寫前者不能完成我們的 root 政策。"
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 128,
+      "quote": "這裡另外用 **`Option::is_none()`**：shared 借用 Option、回傳 bool，只有 None 才是 true。它檢查的是能否表示路徑，不會自動改造資料。"
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 130,
+      "quote": "為了保存錯誤裡可能有的路徑，再選 **`Option::map(callback)`**：接手 Option，Some 時將內容交給 `FnOnce` callback，再把回傳值包成 Some；None 時不執行 callback，仍交回 None。因此把 `Option<&Path>` 轉成 `Option<PathBuf>` 可以只寫 `map(|path: &Path| path.to_path_buf())`。這與第9.5節逐筆 iterator map 的數量不同，只處理零或一份資料；沒有丟棄原始 walkdir 錯誤。"
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 134,
+      "quote": "第10.5節已教 `Path::display()` 可能無法忠實表示非 Unicode 路徑。兩份不同原生資料可能顯示成相同文字，所以不能把 `format!(\"{}\", path.display())` 當成核心身分或再拿去開檔。"
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 148,
+      "quote": "上面按工作拆開閱讀；這是`src/scan.rs`的**完整檔案**，包含所有imports、資料型別與helpers。fmt、Display、Formatter及write!沿用第8.3節；SystemTime與WalkDir則是本頁已介紹的標準／第三方型別："
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 170,
+      "quote": "第10.8節的 `TempDir` 適合建立獨立材料，owner 保留到掃描完才清理。再補兩項 fixture API 的契約："
+    },
+    {
+      "section_id": "12.3",
+      "path": "docs/chapters/12-03-lesson.md",
+      "line": 193,
+      "quote": "把 `scan` 的成功記錄放到 `HashMap<PathBuf, u64>`，再用 `&Path` 查教材的 `nested/second.txt`，應得到 `Some(&5)`。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

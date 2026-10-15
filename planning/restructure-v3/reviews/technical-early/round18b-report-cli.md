@@ -1,0 +1,13 @@
+# 18.11 獨立技術初判
+
+必要0項；可選0項。current頁hash `39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a`。未讀作者驗證／其他角色／歷史問題，也未用18.12補洞。
+
+核對19個owned檔、29個snippet、4處命令、1張SVG原文；26份hash見JSON。起始normal library實際只有root與七個private modules；test_fixture未宣告，config integration也未由本節--lib選取。兩份完整答案各自的cfg(test)尾段，精確等於頁面要求追加的checks；直接替換app／report可在原starter root得到同樣九項測試，沒有載入正式工具的七項batch tests。
+
+映射逐份保原index／original與owned資料；只有HTTP有status／final_url，Check才有其實際elapsed，task未交Check與Unstarted等不捏造量測。批次Requested與單列Cancelled分開；來源失敗保typed fatal。Serde Option／整數與文字欄位JSON引用皆在首次使用前說明。人工12ms／1000ms與帶LF detail材料沒有被當作真HTTP證據。
+
+資料狀態130優先於1／0；render→write_all→flush全成功才回資料碼。拒write與已收bytes後拒flush都成Output，main回2。Read與Output的io來源不混用；source保留真錯誤鏈。正數驗證先jobs再期限，再讀原生路徑UTF-8；clap解析整數與0的產品規則分開。listener在提交前進入、run完成後等待收尾，直接drop整份future的限制已交代。
+
+九項checks起點3過6敗、只映射5／4、加status6／3、完成出口9／0可由source支持。替換答案保留同一checks；起點Fixture雖未載入仍全文提供並實讀，ready小body讀取不混成產品headers邊界。獨立lock實際1774行／183packages、無path dependency，與workspace root lock範圍已分清。SVG原文對得上狀態與錯誤優先序。
+
+只做靜態source／manifest／lock／hash／anchor核對，未跑Cargo、CLI、HTTP或瀏覽器；未宣稱圖像視覺或reader實驗。一份README只留hash未採證。

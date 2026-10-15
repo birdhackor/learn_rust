@@ -1,0 +1,530 @@
+[
+  {
+    "path": "examples/ch15-projects/a1-starter/Cargo.toml",
+    "lines": 12,
+    "sha256": "c0f63eb3de54abe64e3fc25114c2ec159a4d010b5085103e901d06ea47741805",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a1-starter/README.md",
+    "lines": 11,
+    "sha256": "f0f9390ae524d1fdf7abaeae6f8bd1e84ab40a6e0fc609f31fa322c2078bf2dd",
+    "direct_embedded_ref": false
+  },
+  {
+    "path": "examples/ch15-projects/a1-starter/checks/collection-tests.rs",
+    "lines": 186,
+    "sha256": "c23652a6fbcf9b97c717f796e447ad6b76bd2394a5b3411fc983e435b2dfc8ab",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a1-starter/src/collection.rs",
+    "lines": 94,
+    "sha256": "7938fef9321c56f1a8cfb539786416eaa11816aea47f0511a8c913b26790df20",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a1-starter/src/lib.rs",
+    "lines": 1,
+    "sha256": "8ea07aa7463342f930d2aa012852a74e6d4d77f9fcb91adba8dba7bd9a05b6bc",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a1-complete/Cargo.toml",
+    "lines": 12,
+    "sha256": "f60323c1fec090a7b4de0a05119edf73b03ad3b335a82dcf206a789954390d5f",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a1-complete/README.md",
+    "lines": 20,
+    "sha256": "36efedae7210d26b4ed3b6a9bc47926d44fb1955709ed6d81040ba878dc1a3f8",
+    "direct_embedded_ref": false
+  },
+  {
+    "path": "examples/ch15-projects/a1-complete/examples/inventory.rs",
+    "lines": 25,
+    "sha256": "522cea8fb144ac9d47a2b4c7ca04f938cf5de3f46b7601e8d944865873665d62",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a1-complete/src/collection.rs",
+    "lines": 347,
+    "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a1-complete/src/lib.rs",
+    "lines": 1,
+    "sha256": "8ea07aa7463342f930d2aa012852a74e6d4d77f9fcb91adba8dba7bd9a05b6bc",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-starter/Cargo.toml",
+    "lines": 13,
+    "sha256": "ba0edbf847d15091d4a533aed5bc88050c1290ae831ed27ec2accd6f7ec9e64a",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-starter/README.md",
+    "lines": 11,
+    "sha256": "b1cc3460d7b3dff280f95bb60894eeece28fd08b7f3b462280c2969d441e7f53",
+    "direct_embedded_ref": false
+  },
+  {
+    "path": "examples/ch15-projects/a2-starter/checks/content-tests.rs",
+    "lines": 357,
+    "sha256": "79c0c0ee318a32f8e6cf4a83f64f4ac615559a1ce24c08f55eb764007fa74377",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-starter/src/collection.rs",
+    "lines": 347,
+    "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-starter/src/content.rs",
+    "lines": 97,
+    "sha256": "5d6d2fddf975be0e7efb342df1a80d6c87af44d9a5d596d02296a1ed93663dbe",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-starter/src/files.rs",
+    "lines": 144,
+    "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-starter/src/lib.rs",
+    "lines": 4,
+    "sha256": "1d565ff089c0d764067cd3c5e68b2fcb15e81256f3f6298d24e463b64761ac84",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-starter/src/stream.rs",
+    "lines": 76,
+    "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-complete/Cargo.toml",
+    "lines": 13,
+    "sha256": "2091ca16e1b592f879e2e1975494a769b621e7ca89fb380ca27c0a06faf274a7",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-complete/README.md",
+    "lines": 22,
+    "sha256": "f2a1b152e133b200121145aee1be6206fd4ff5db6e0dcf05b0f3610bc604b87c",
+    "direct_embedded_ref": false
+  },
+  {
+    "path": "examples/ch15-projects/a2-complete/examples/a2_groups.rs",
+    "lines": 27,
+    "sha256": "da1ab0e6e7e4077a966507d629246e56fb93b620298324cfe9477d3fef3e6f92",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-complete/src/collection.rs",
+    "lines": 347,
+    "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-complete/src/content.rs",
+    "lines": 550,
+    "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-complete/src/files.rs",
+    "lines": 144,
+    "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-complete/src/lib.rs",
+    "lines": 4,
+    "sha256": "1d565ff089c0d764067cd3c5e68b2fcb15e81256f3f6298d24e463b64761ac84",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a2-complete/src/stream.rs",
+    "lines": 76,
+    "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/Cargo.toml",
+    "lines": 15,
+    "sha256": "bbd5f17df26dde37503fa2b149ad35cf9062b3c579ed37ed39895da7de7a6e30",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/README.md",
+    "lines": 11,
+    "sha256": "bc578f7dd5cf541c8ccde03ab5664899d4d7c9f03ed88e84cc7bc89cd3a58a32",
+    "direct_embedded_ref": false
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/checks/report-tests.rs",
+    "lines": 270,
+    "sha256": "b010cf009fa618003124e58f020c1df7ada61c8b48dfe2f21b4002ec2c01b97e",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/src/collection.rs",
+    "lines": 347,
+    "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/src/content.rs",
+    "lines": 550,
+    "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/src/files.rs",
+    "lines": 144,
+    "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/src/lib.rs",
+    "lines": 6,
+    "sha256": "0a9dfdc9c20b30e02b80265ce0fda41a2079e41923696f277cc639e7f71f21dc",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/src/metrics.rs",
+    "lines": 30,
+    "sha256": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/src/report.rs",
+    "lines": 125,
+    "sha256": "ff0440b01e80081ec79e452cff9387af68eb23b81d58e60bb8e972b6a9bd362e",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-starter/src/stream.rs",
+    "lines": 76,
+    "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/Cargo.toml",
+    "lines": 15,
+    "sha256": "9d2963525d2add003ef0ba19784d85e9fcda9a175220c251213d1dc41d985daa",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/README.md",
+    "lines": 23,
+    "sha256": "d201320c15e9cdc5d94f50efc9731387a9edf51323c4debcccfcfea4bba6873d",
+    "direct_embedded_ref": false
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/examples/a3_json.rs",
+    "lines": 20,
+    "sha256": "4413d137822826deb5b91a806417d0e4b6c03bbc3cf3d9a6b9ca6ad900b827a0",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/examples/a3_text.rs",
+    "lines": 20,
+    "sha256": "3ba907c1f92cf45dfff91e30a869db8e3b342c705baaf4b7cb9dc6e6a1e40359",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/src/collection.rs",
+    "lines": 347,
+    "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/src/content.rs",
+    "lines": 550,
+    "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/src/files.rs",
+    "lines": 144,
+    "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/src/lib.rs",
+    "lines": 6,
+    "sha256": "0a9dfdc9c20b30e02b80265ce0fda41a2079e41923696f277cc639e7f71f21dc",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/src/metrics.rs",
+    "lines": 30,
+    "sha256": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/src/report.rs",
+    "lines": 487,
+    "sha256": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a3-complete/src/stream.rs",
+    "lines": 76,
+    "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/Cargo.toml",
+    "lines": 16,
+    "sha256": "458eb9ac1d079f53addd605fbd011614b958600c00ca44cce9922dc05ac2ab73",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/README.md",
+    "lines": 11,
+    "sha256": "15593a8cd2e7600138ced22eaf374d083044c6441b331c236ce26bdb58a0adea",
+    "direct_embedded_ref": false
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/checks/app-tests.rs",
+    "lines": 196,
+    "sha256": "04214db9cc611921e18e258b5981c02d86a9c4866e850e429649981258d13030",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/checks/cli-tests.rs",
+    "lines": 149,
+    "sha256": "81b43bc488634e3bd3a7d8f5adedbcdb0cbca6c215d237c271ed249d05a10ca2",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/src/app.rs",
+    "lines": 98,
+    "sha256": "7660a84167a7ad6a91aaae9bf886283be9446c180e5728ca15b09754eaeb604e",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/src/collection.rs",
+    "lines": 347,
+    "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/src/content.rs",
+    "lines": 550,
+    "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/src/files.rs",
+    "lines": 144,
+    "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/src/lib.rs",
+    "lines": 7,
+    "sha256": "2a6ce946703416068c2f9e0e10adbb440d6d548d69088af66de7985fe5b3f5b5",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/src/main.rs",
+    "lines": 44,
+    "sha256": "f45b816daa9e5bd9399e2e7c980e2859e1a76ff584c72cd3ed69cf9fcb909286",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/src/metrics.rs",
+    "lines": 30,
+    "sha256": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/src/report.rs",
+    "lines": 487,
+    "sha256": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-starter/src/stream.rs",
+    "lines": 76,
+    "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/Cargo.toml",
+    "lines": 16,
+    "sha256": "92879593c8aa0a44d4a10b0d8a050a0896bb23f0809a8ad2d80641f975cabe47",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/README.md",
+    "lines": 19,
+    "sha256": "8017ca870235313f4d5ff6e227cf3ac31a8ed1863ea7dfe14da102858ef839a1",
+    "direct_embedded_ref": false
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/src/app.rs",
+    "lines": 295,
+    "sha256": "a75b1312788a3249c5005881fa4d50dcf1dbc7e0358832fdeb16a15835ecdaf7",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/src/collection.rs",
+    "lines": 347,
+    "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/src/content.rs",
+    "lines": 550,
+    "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/src/files.rs",
+    "lines": 144,
+    "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/src/lib.rs",
+    "lines": 7,
+    "sha256": "2a6ce946703416068c2f9e0e10adbb440d6d548d69088af66de7985fe5b3f5b5",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/src/main.rs",
+    "lines": 44,
+    "sha256": "e16dc9535529296ed9db24de5a3b8013847be6b1b6357090c7e1ea377c019983",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/src/metrics.rs",
+    "lines": 30,
+    "sha256": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/src/report.rs",
+    "lines": 487,
+    "sha256": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/src/stream.rs",
+    "lines": 76,
+    "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/a4-complete/tests/cli.rs",
+    "lines": 149,
+    "sha256": "2aa98c160c35c1b3bc0f0de32b98005ac7615c5c174bff5256defadc3f0da604",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/Cargo.toml",
+    "lines": 16,
+    "sha256": "28b420b2a4400b057ede8ea5b99b98fa598aaa69a15bbf9d6a03bd8968bbb9d6",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/README.md",
+    "lines": 60,
+    "sha256": "1a02a694fd507f141ee722e900fdc1f39aa61424d8e53b5c82f83be2dfeab72f",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/app.rs",
+    "lines": 131,
+    "sha256": "c6138d69c5bd24d91e50882fc077b50aa8b934ecd7ce9517f1854b7481688c51",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/collection.rs",
+    "lines": 152,
+    "sha256": "efc48b93c3ad6c60f7bbdf584571bbff163b524c3a4299093e9746b8657902fd",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/content.rs",
+    "lines": 182,
+    "sha256": "2a03f1ca369c22c70df34c7c23384d0b13c1cdffcbdd39f147adec94bd4f0191",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/files.rs",
+    "lines": 136,
+    "sha256": "fbced494226c33ba73ec4851c148d5e62ca68106614ff8e7bd3398d52e444034",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/lib.rs",
+    "lines": 25,
+    "sha256": "a18cfdacb40ef716fe0bf1ff09c9be23a062c7acb038ba87ce50e2fe07b356ce",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/main.rs",
+    "lines": 67,
+    "sha256": "3fcd498bf13c80829d6b876eebcc03e18a33b44fd4c98d6c7f4ba7bf59735e64",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/metrics.rs",
+    "lines": 28,
+    "sha256": "1909aed4a5728a18fd5b0b3a997204ed41112a34dd15d55a4e55308e6ab622f0",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/report.rs",
+    "lines": 204,
+    "sha256": "5591d35878e2755d003785983556035911dab0d1d41eeb17467988e386bdeba3",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/stream.rs",
+    "lines": 70,
+    "sha256": "136512514845c458595f88ee83739612c1b7748f29b305803bfe851297d08241",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/src/tests.rs",
+    "lines": 445,
+    "sha256": "7787b6fb4f6c4106e5353236e730d79bb542f380a71cb32d397c2290faf9dbdf",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/tests/cli.rs",
+    "lines": 189,
+    "sha256": "861589beb3fe4c2c1cc07bc021814a93c4ecd5ca4fed1b10b25e0adb7b05a3a9",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/tests/public_api.rs",
+    "lines": 28,
+    "sha256": "6cf58a811534bdf13bf48c7c8841c839ec06fc1a6db144a9b1267e9b7684dd7f",
+    "direct_embedded_ref": true
+  },
+  {
+    "path": "Cargo.toml",
+    "lines": 93,
+    "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f",
+    "role": "command workspace/toolchain metadata read full"
+  },
+  {
+    "path": "rust-toolchain.toml",
+    "lines": 4,
+    "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "role": "command workspace/toolchain metadata read full"
+  }
+]

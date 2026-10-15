@@ -1,0 +1,190 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "17.2"
+  ],
+  "author": "root",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round17-api-cross-references-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-criterion-benchmark.md",
+    "planning/restructure-v3/reviews/technical-early/round17-declarative-macro-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round17-dhat-allocation-profile.md",
+    "planning/restructure-v3/reviews/technical-early/round17-library-and-string-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-loom-miri.md",
+    "planning/restructure-v3/reviews/technical-early/round17-macro-hygiene-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round17-procedural-derive-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round17-property-testing.md",
+    "planning/restructure-v3/reviews/technical-early/round17-public-api-contracts.md",
+    "planning/restructure-v3/reviews/technical-early/round17-root-cross-references-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/17-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/17-02-lesson.md": "4aa35385366a486d4e354ed7975a11209684e73c903d97f71605b42592d8b863",
+    "examples/ch14-macros/src/hygiene.rs": "e7ed6bad0d8b2e2332be207ec7a80d117cbd045f81100646e78f9fcc0c540335",
+    "examples/ch14-macros/fixtures/compile-fail/macro_before_definition.rs": "14af9e20c0fa771e4de0fdbb1acd47691047619493b755a33d863e3b975200bb",
+    "examples/ch14-macros/fixtures/compile-fail/macro_before_definition.expected": "e89182c1e2fd4ee8e7ba6c26c24dcc13d990717e2b0090be0ada4883864afd39",
+    "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_unqualified_trait.rs": "22d5bd53e020d478cf59f5bd2bbcfa4fe149a08d50c6523ac2b35e4c87775737",
+    "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_unqualified_trait.expected": "bf5e5b2af1484040c34be1b1295aca99ac4c3e20ea4c91faf88cb0d4f6fd0061",
+    "examples/ch14-macros/examples/macro_export_consumer.rs": "b17a22da6b68f33218799c7984ca27808a2db262baa1766821b45b15ce43e0b4",
+    "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_private_helper.rs": "94b0c1c9943d38bdc14ac296b47e65f6e02e0afeb563a176980d5d8be5e63bdf",
+    "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_private_helper.expected": "fa3b46bb839e843f9da990ecc9151edb533235701c1c55d831b1fe783f6b8a48",
+    "examples/ch14-macros/examples/macro_hygiene.rs": "8ddfe84b6ae415711e638e0e61f3b17ed3340408df1e79407ac8e4b313a7f19b",
+    "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_custom_error.rs": "bd18b9c318fddf62bb08d055842968463fe35730c3222894ff845d0bc772fb28",
+    "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_custom_error.expected": "14c04c565125c250e0d6797cb972f60f7f548fb5e4f481e26e397c25f4a375af",
+    "examples/ch14-macros/fixtures/cross-crate-fail/Cargo.toml": "f75340cbea99c668b50ca419bf160b8a5092b16c369f109a116b8ac542237092",
+    "examples/ch14-macros/Cargo.toml": "29c1cb5909d8d8cd0d10a950209eb518d5db41452b400aeabdb37d064c391475",
+    "examples/ch14-macros/src/lib.rs": "61a35c3450fc7cab01dbe6b78fdcf1e59263208386e97b2efb0cb55cbe715358",
+    "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_first_rule_duplicate.rs": "9c93d91abae65ed09c9912b53f6799437f6b949b0a45bcb94ee1cd5f0471b85f",
+    "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_first_rule_duplicate.expected": "684038c0edf197913e6fa28d4d3d9b0a570d4fd87f39fd131de9330ad76de4b8",
+    "examples/ch14-macros/examples/macro_hygiene_solution.rs": "2a359e008a51e9f1298b43eab164b1a2f11d192937c852bdcca1a1a3805ab8c7",
+    "docs/assets/ch14/macro-hygiene.svg": "ee1710566e1eba0c5c906261dea8945b0d35bfdfa9a3c288cfa632642b7c4aec"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 3,
+      "quote": "17.1 的模板已能產生不同單位的 struct 與 Reading 實作。現在要把模板放到 library，讓其他 crate 使用；也想一次借讀路程與等待，交回 `(80, 30)`。兩個問題隨之出現：模板裡的名字應找 library 還是 caller？同名變數會不會讓第二份來源變成第一份？"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 9,
+      "quote": "兩個輸入可以是 Meters、Seconds，所以分別用 `T: Reading`、`U: Reading`；借讀後交回兩個 i32，仍不消耗原 wrapper。本節的公有 `read_pair_values` 先完成這份工作。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 11,
+      "quote": "為了觀察稍後的可見性差別，library 把取值的一步放在私有 **read_internal**，再由公有函式呼叫它。read_internal 沒有 pub，外部 crate 不能直接使用；同一 module 的公有函式則可呼叫它、把結果交給 caller，延續 2.6 的分工："
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 17,
+      "quote": "source 先以 `use crate::Reading;` 引入 trait，lib.rs 另以 `pub mod hygiene;` 公開 module。一般呼叫 `read_pair_values(&distance, &waiting)` 就能取得 `(80, 30)`。接下來的 macro 是用來觀察**生成的程式怎麼找名字**，不是因為普通函式無法借讀兩份資料。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 21,
+      "quote": "前節的 `reading_type!` 是本地的 **textual scope（依文字順序的作用域）**：定義之後、同一包圍 scope 內的呼叫才找得到它。把呼叫放在定義前，以下 fixture 會包含 `cannot find macro`，還沒有進入模板匹配："
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 31,
+      "quote": "現在要讓其他 crate 使用，選擇 **`#[macro_export]`**：它把這個 macro 以 public 形式提供在**定義 crate 的根路徑**，即使定義寫在 hygiene module 裡。caller 因而可以 `use ch14_macros::reading_type;`，或直接寫 `ch14_macros::reading_type!(Meters)`。這叫 **path-based scope（以路徑找名稱）**，沿用已教的 crate 路徑與 use。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 39,
+      "quote": "從外部 example 只引入這個 macro，卻沒有 Reading 名稱，產生的 impl 會找不到 trait，得到 **E0405**："
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 53,
+      "quote": "**`$crate`** 是 macro_rules 的特殊 metavariable，表示**定義這個 macro 的 crate**。它不是 caller 的 `crate` 起點，也不是這次呼叫的 runtime 參數。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 75,
+      "quote": "但 `$crate` **不取消 private 限制**。本節的 read_internal 是 library 內部 helper；普通公有函式的 body 在 library 內可用它。若 export 的 macro 把它直接寫進 caller 的程式，caller 仍沒有存取權："
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 77,
+      "quote": "這份模式先使用 **`expr`**：它匹配已在1.6學過的 Rust expression；本例的 `&distance` 就是取得 shared reference 的 expression，不只是一個型別名字。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 91,
+      "quote": "這個失敗是 **E0603**。因此接下來的可用模板會呼叫公有的 `$crate::read_value`；若用到 module 裡的 item，還要寫完整的 module 路徑。macro 幫 caller 產生程式，沒有把 caller 變成 library 的私有實作區塊。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 95,
+      "quote": "現在回到兩份來源的借讀。新的 `read_pair!` 接收**兩個產生 shared reference 的 expression**，例如 `&distance` 與 `value`；輸出兩個 i32。輸入模式中的 **`expr`** 指匹配一個 Rust expression，而非前節的型別名字 ident。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 99,
+      "quote": "**hygiene（名稱在展開時的隔離與解析規則）** 用來源上下文區分名字。macro_rules 採 **mixed-site hygiene**：本例模板的局部變數依定義處的上下文解析，插入的輸入片段保留 caller 的上下文；像前面裸 Reading 這類其他名稱則在呼叫處解析，所以需要時才用 `$crate` 固定來源。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 109,
+      "quote": "先把 distance、waiting 都建立好，再讓 caller 的 value 借用 waiting。圖中箭頭追蹤**名稱來源**，不是 move 或程式執行次序：綠框沿右側線連到讀右的30，藍框沿中間線連到讀左的80。上下兩個 value 拼法相同，來源不同："
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 126,
+      "quote": "第一行支持同名 value 的來源沒有混淆；第二行支持這份模板每個輸入只求值一次。**hygiene 本身不保證只求值一次**：這份規則只各插入一次 `$left`、`$right`，才有這項結果。若樣板把同一 expression 插入兩次，其中的計數工作也會執行兩次。測試另保存左先右後的 `[1, 2]`，不只看最終數字。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 128,
+      "quote": "生成的 **item 名稱也不會自動唯一**。像 Meters 這種由 caller 傳入的 identifier，在同一 module 生成兩次仍是同名型別；hygiene 的局部變數規則沒有替它另取兩個型別名字。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 132,
+      "quote": "如果要讓錯誤更直接指出這份模板需要什麼，可以加入另一條輸入規則。Rust 預先提供 **`compile_error!`**，接收文字訊息、在編譯時產生診斷並令建置失敗；它不是程式執行時的 panic，也沒有成功值供後續使用。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 134,
+      "quote": "下面先匹配單一 ident；第二條是回報其他輸入的 **fallback rule**。其中 **`tt`（token tree）** 是一個 token，或由配對括號圈住的一組 tokens，`$($other:tt)*` 接住零或更多這些語法片段。先試上面的規則，成功後就使用那份展開；只有未匹配時才試下一條。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 150,
+      "quote": "對80，第一條 ident 不匹配，第二條會給 `reading_type_checked! 需要一個型別名字`。對 Meters，第一條匹配；如果再次產生 Meters，會得到 **E0428** 的重複型別錯誤，**不會**因生成程式失敗就回退到第二條規則。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 168,
+      "quote": "`path` 相對於**這份 Cargo.toml 所在目錄**，`../..` 往上兩層，找到提供 library 的 ch14-macros package；不是相對執行命令時的目錄。空的 `[workspace]` 讓這份 fixture 自成 workspace，隔離故意失敗的 example targets，不加入 repo 根工作區的普通 all-targets 檢查。其 Cargo.lock 固定本地依賴選擇，沿用已教的 `--locked`。"
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 172,
+      "quote": "到這裡，library 實際保存的規則都已解釋。完整 manifest 沿第 12.1 節採用根 workspace 的共同欄位，沒有外部 dependency："
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 224,
+      "quote": "沿第 10.1 節的 path dependency 與第 12.1 節獨立 workspace 根，前面完整的 fixture manifest 讓呼叫端真正處於另一個 crate。`--manifest-path` 與 `--example` 都沿第 1.3 節；下面各命令**預期失敗**，分別核對同頁 `.expected` 中的原因："
+    },
+    {
+      "section_id": "17.2",
+      "path": "docs/chapters/17-02-lesson.md",
+      "line": 237,
+      "quote": "寫一個本地 `read_pair_reverse!`，依原順序各取得一次 reference，卻將讀值以 `(右, 左)` 交回。沿用 Meters(80)、Seconds(30)：結果應是 `(30, 80)`，取得兩份 reference 的記錄仍是 `[1, 2]`。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

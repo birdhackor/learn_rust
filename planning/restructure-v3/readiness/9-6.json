@@ -1,0 +1,94 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "9.6"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round09-adaptors-text-sorting-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round09-closures-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round09-impl-iterator-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/09-06-lesson.md": "c9afa16ffac66f6df5a1173b48e3bac422c17d17322e1b2cffabd65a2689f197",
+    "examples/intro-workspace/iterators/Cargo.toml": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+    "examples/intro-workspace/iterators/examples/text_units.rs": "9e0db4b945036d79475663f56e26224d3583f8dc4259b1f0031a96ac0f1611ed",
+    "examples/intro-workspace/iterators/examples/text_counts.rs": "8c1aff6c857d0f4cd5743f887e8ff81e1867479e00db3f124ee710ea70b68a73",
+    "examples/intro-workspace/iterators/examples/entry_callbacks.rs": "7938af42552d9a4e90e65c8e474296679f8097a4b88b96e20b4cda212a6a8fcc",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/entry_borrow_overlap.rs": "e445a378b743d197559773bc4714e025bfae3cd3e62650cfc5db7598fbbe07c1",
+    "examples/intro-workspace/iterators/examples/map_iteration.rs": "6f0fac204fc85df26fd554a18e64befe6734e01195b115f00d9c42f82ba16af6",
+    "examples/intro-workspace/iterators/examples/text_counts_answer.rs": "dad2ced3f016007c44f2df69c21d6c59db16a4d2614bee1e48b996a9317e0693"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 3,
+      "quote": "第 6.6 節已能按名稱計數，第 9.5 節又能把逐筆操作接成流程。現在輸入換成一段多行文字：每行是一個名稱，空行略過，相同名稱合併計數，結果自己擁有名稱。"
+    },
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 15,
+      "quote": "**`str::chars()`** 借用文字，回傳 `Item = char` 的 iterator，依序取得 Unicode scalar。它沿用第 5.3 節的 char 意義，不是每次取一個 byte，也不保證每筆就是一個畫面上的完整字形。"
+    },
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 17,
+      "quote": "下面的文字 `é` 是字母 e 加上結合重音符號，通常顯示成一個字形，但有兩個 scalar、三個 UTF-8 bytes。char 已有標準 Debug，可以檢查它；Debug 把這個結合符號顯示為 **`'\\u{301}'`**。這是 Unicode escape，用 scalar 編號表示一個 char，不是一串反斜線、字母與數字；U+0301 是該重音符號的常用編號。"
+    },
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 19,
+      "quote": "報表需要整行名稱，因此接著選 **`str::lines()`**。它借用文字，回傳 `Item = &str` 的 iterator，每筆是原文字中的一行，不會為每行建立 owned String。"
+    },
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 21,
+      "quote": "字串 literal 中的 **`\\n`** 表示 LF（Line Feed，換行），**`\\r`** 表示 CR（Carriage Return，回車）。lines 以 LF 或 CRLF（`\\r\\n`）分行，結果不含行尾；最後一個行尾不會額外產生一行，空文字產生零行。單獨 CR 沒有跟著 LF 時仍留在內容中，連續行尾之間的空行則是一份空 `&str`。"
+    },
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 40,
+      "quote": "**`str::is_empty()`** shared 借用文字、回傳 bool，byte 長度為零就是 true，否則 false；它不修剪空白。lines 的 Item 是 `&str`，filter 參數因此是 `&&str`；`*line` 取得裡面的文字 reference，再以 is_empty 判斷，保留的仍是原 `&str`。"
+    },
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 50,
+      "quote": "第 6.6 節用 get_mut／match 區分已有鍵與缺鍵。現在用 **`HashMap::entry(key)`** 取得一份描述這個鍵位置的工作：它 mutable 借用 map、接手候選鍵，回傳 **`Entry`**，代表「已有對應值」或「目前缺鍵」。Entry 不會讓借用規則消失；它保存操作這份 map 的借用關係。"
+    },
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 60,
+      "quote": "**and_modify 的 callback 要求 `FnOnce(&mut usize) -> ()`**：一份 Entry 至多執行它一次，修改參數指向的值後不另交回數字。**or_insert_with 要求 `FnOnce() -> usize`**，只有需要新值時才呼叫。即使提供的 closure 也有重複呼叫能力，這些 method 只需要最低的一次呼叫契約，沿用第 9.2 節的能力包含關係。"
+    },
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 106,
+      "quote": "對本節的 map，Item 是 tuple，鍵與值各有自己的 ownership："
+    },
+    {
+      "section_id": "9.6",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 124,
+      "quote": "沿用 count_names，把輸入改成 Rust、Rust、rust、尾端有一個空白的 Rust，以及空行。將原文字放在內層，讓外層只接回 map。確認 Rust 為2，rust 為1，`\"Rust \"` 也為1；空行沒有鍵，map共有三種名稱。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

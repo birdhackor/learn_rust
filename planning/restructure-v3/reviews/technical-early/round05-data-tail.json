@@ -1,0 +1,585 @@
+{
+  "review_id": "technical-early-round05-data-tail",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/05-03-lesson.md",
+    "docs/chapters/05-04-lesson.md",
+    "docs/chapters/05-05-lesson.md"
+  ],
+  "reader_background": "Basic Python and actual required chapters1–4 plus5.1/5.2, with author-discovered markup-only prefix fix checked separately before5.3→5.5. No chapter6/7 draft or source prerequisite.",
+  "independent_initial": true,
+  "independence": "No chapter5 author ledger/validation/freeze conclusions, peer/continuity/audit/reader results read before sealing. Parent supplied generic scope and target-closure dimensions, not this finding. Prefix markup issue was explicitly author-discovered and is separate from own tail judgment.",
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "TC05T-O1",
+      "classification": "local prior-section cross-reference precision",
+      "severity": "選讀改善",
+      "necessity": "optional; complete needed concept and source already available",
+      "location": [
+        "docs/chapters/05-05-lesson.md:69",
+        "docs/chapters/05-05-lesson.md:109"
+      ],
+      "quote": [
+        "text 保留上一節已教的文字取得函式",
+        "data/src/text.rs與上一節text-only版本相同"
+      ],
+      "evidence": "The actual preceding5.4 teaches Vec operations; selected_byte_len and its target-local text module occur in5.3:84–112. Actual data/src/text.rs is byte-for-byte identical to5.3's utf8_answer/text/mod.rs.",
+      "reader_impact": "A reader following 上一節 literally may look through5.4 for the text-only version. The function identity, full inline source and actual earlier5.3 explanation make current reasoning sufficient, so no necessary concept gap or Rust semantic error.",
+      "minimal_change": "Replace these two 上一節 references with 第5.3節; keep all existing source and explanations.",
+      "rust_semantic_error": false,
+      "independent_discovery": true
+    }
+  ],
+  "result": "No necessary technical, UTF-8 fact, API failure-contract, first-use, selected-source completeness, output, answer or fixture-code/string mismatch found. One optional exact previous-section reference correction.",
+  "method": "Sequential whole-page technical reread and all actual selected Rust/helpers/test modules/manifests/fixture expectations plus SVG source/XML. Static type, ownership, borrow, loop and output reasoning. Not blind first-read or reader experiment.",
+  "execution": {
+    "cargo_rustc_clippy_test_or_fixture_commands": [],
+    "python_source_checks": [
+      "SHA-256 and snippet start/end existence",
+      "UTF-8 encode A/中/🦀 to verify shown decimal bytes",
+      "XML parse of utf8-boundaries.svg",
+      "Byte-for-byte comparison of two text modules"
+    ],
+    "browser_or_visual": false,
+    "author_validation_used_as_own_evidence": false
+  },
+  "source_snapshot_at_utc": "2026-10-15T07:34:21.940769+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/assets/ch03/utf8-boundaries.svg": "bf40798d5647ee4d3082b0efbfb769540c90751792d1796593e022c5129806fb",
+    "docs/chapters/05-01-lesson.md": "25f1b41ae6846b38b0c012775e0e44992eb493b1e957d5453debd4f4baf3378a",
+    "docs/chapters/05-02-lesson.md": "95c65c1f820872f041c5c67e765d179549bfd0e98712bfb1ce5650bad961051e",
+    "docs/chapters/05-03-lesson.md": "27780e39eca8f727f1778633a360f083729e42062cd4fcf47e89be4375aeb9d2",
+    "docs/chapters/05-04-lesson.md": "4cb07186300bda41c45650b300549d883789665aa2bcd17ddc83cf520e94df1d",
+    "docs/chapters/05-05-lesson.md": "412a3eeb91594615ee24961d5bff56b0189dfba194cc3976344f16b64e74afd5",
+    "examples/intro-workspace/Cargo.lock": "ce13e30e21c30bd1db9f271fb97ce9f6ef88791aebec7d556e67f45d64c94acb",
+    "examples/intro-workspace/Cargo.toml": "83d74f7ef737eebe060848faaed2606e530319b458ba17ad027f038a44830c51",
+    "examples/intro-workspace/data-steps/Cargo.toml": "37c9cbefb5ff5e6412887e4932d12a2063bda8f52b547e417064133c1fcb9a33",
+    "examples/intro-workspace/data-steps/examples/utf8.rs": "c71aa5ebc36777b1508664c0d796b572ece9f6e270d7fd843d1ce639ecf0ee6e",
+    "examples/intro-workspace/data-steps/examples/utf8_answer/main.rs": "5d874fe4204e912901ac0f46f0c2c3034cba7a9a4f8694f8f5470e3e6ae2505e",
+    "examples/intro-workspace/data-steps/examples/utf8_answer/text/mod.rs": "73efe1c88f1d5b5e12eb3b95ad89e2af0d0a6fe87e9c09e828fa3f56c09eb213",
+    "examples/intro-workspace/data-steps/examples/vector_answer.rs": "1f5060aaac921a08836a1b8ba0159101308eaf000f02fc2e433706fb3239c7a5",
+    "examples/intro-workspace/data-steps/examples/vector_operations.rs": "44fc79c43b1dc7cd187541fe329564b2249bcbebc9dcec73c16b9d890c067b20",
+    "examples/intro-workspace/data-steps/examples/vector_ownership.rs": "4ea0a387a754f80d5cdb360089d80f1ad7594625093115921da491ec3a8dea1b",
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.rs": "a31d54b4fab5523e18ce8b971dedf6f68f8660994123e07560022ad8e6993c17",
+    "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.expected": "d2f211c074a9491ae61c68371ce1f9c3d2e1922a27095a81196fcc5a5a6a4ae2",
+    "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.rs": "d5f242c03f3224b79710370b43627183dbfed717ff2f9f72e77789410f5ca7de",
+    "examples/intro-workspace/data-steps/fixtures/runtime-fail/vector_remove_bounds.expected": "2f8028eb9e12cc60cca8d6b0284df4c9ae179584d49830ce4fe6287160837eef",
+    "examples/intro-workspace/data-steps/fixtures/runtime-fail/vector_remove_bounds.rs": "cd28adcc54f2ce3cd6968d9c92a0bf06d2979e3f900292be8f3ec11687b23bbc",
+    "examples/intro-workspace/data-steps/src/main.rs": "f6f48effd040804b3bb4be2efe3b3fa4fbd4db0a8ccf7782dd72925e3d8d8668",
+    "examples/intro-workspace/data/Cargo.toml": "89e56810ae50094574be68877298c8a70896cc6d768678921ad9b2750b063d3b",
+    "examples/intro-workspace/data/examples/list_answer.rs": "23e9115c65cf9fca7331a0a909155984d9df6d655057dee6014380f975dcbebd",
+    "examples/intro-workspace/data/examples/list_demo.rs": "d6716a2ca72845c514caa4f27065dcc903b13941c84ddc3ed612137139cfbf10",
+    "examples/intro-workspace/data/src/lib.rs": "200ca1c1f944ed3a18eef48f0806c59a79d5c1816ca7b33ef54fe2a7256f6c49",
+    "examples/intro-workspace/data/src/list.rs": "e43f53e87faa6fb916b7fc0a9948f6e2fcf3b0d2bbd8f5b6629aeeac8dedc29d",
+    "examples/intro-workspace/data/src/main.rs": "338920c2560142afad43627ba111612d2dc96ebd8a4cac034d677843e8501eab",
+    "examples/intro-workspace/data/src/text.rs": "73efe1c88f1d5b5e12eb3b95ad89e2af0d0a6fe87e9c09e828fa3f56c09eb213",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/05-03-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/utf8.rs:show-range",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-03-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-03-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/utf8.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-03-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-03-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/utf8_answer/text/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-03-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/utf8_answer/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/vector_operations.rs:build",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/vector_operations.rs:get",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/vector_operations.rs:remove",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/vector_operations.rs:pop",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/vector_operations.rs:modify",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/vector_operations.rs:macro",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/vector_operations.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/fixtures/runtime-fail/vector_remove_bounds.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-04-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/vector_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/vector_ownership.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data/src/list.rs:list-rule",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data/examples/list_demo.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data/src/list.rs:list-tests",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data/src/lib.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data/src/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data/src/text.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data/src/list.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-05-lesson.md",
+      "reference": "examples/intro-workspace/data/examples/list_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "selected_target_closure": {
+    "staged_package": {
+      "name": "intro-data-steps",
+      "manifest": "examples/intro-workspace/data-steps/Cargo.toml",
+      "no_library": true,
+      "no_build_script": true,
+      "dependencies": [],
+      "targets": [
+        {
+          "target": "utf8",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/data-steps/examples/utf8.rs"
+          ],
+          "full_inline": "5.3:46–50"
+        },
+        {
+          "target": "utf8_answer",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/data-steps/examples/utf8_answer/main.rs",
+            "examples/intro-workspace/data-steps/examples/utf8_answer/text/mod.rs"
+          ],
+          "run_and_test_same_module_closure": true,
+          "test_functions": 4,
+          "full_inline": "5.3:98–107; before run/test111–112"
+        },
+        {
+          "target": "vector_operations",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/data-steps/examples/vector_operations.rs"
+          ],
+          "full_inline": "5.4:84–88"
+        },
+        {
+          "target": "vector_answer",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/data-steps/examples/vector_answer.rs"
+          ],
+          "full_inline": "5.4:122–123; same page manifest"
+        },
+        {
+          "target": "vector_ownership",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/data-steps/examples/vector_ownership.rs"
+          ],
+          "full_inline": "5.5:14–18"
+        }
+      ],
+      "unselected_future_sources": "Other no-lib examples do not enter these chosen compilation closures. No Vec source/module is loaded by utf8_answer. No all-targets command."
+    },
+    "integrated_package": {
+      "name": "intro-data",
+      "manifest": "examples/intro-workspace/data/Cargo.toml",
+      "dependencies": [],
+      "no_build_script": true,
+      "normal_library_sources": [
+        "examples/intro-workspace/data/src/lib.rs",
+        "examples/intro-workspace/data/src/text.rs",
+        "examples/intro-workspace/data/src/list.rs"
+      ],
+      "targets": [
+        {
+          "target": "list_demo",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/data/examples/list_demo.rs",
+            "examples/intro-workspace/data/src/lib.rs",
+            "examples/intro-workspace/data/src/text.rs",
+            "examples/intro-workspace/data/src/list.rs"
+          ],
+          "library_tests_compiled": false
+        },
+        {
+          "target": "list_answer",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/data/examples/list_answer.rs",
+            "examples/intro-workspace/data/src/lib.rs",
+            "examples/intro-workspace/data/src/text.rs",
+            "examples/intro-workspace/data/src/list.rs"
+          ],
+          "library_even_if_not_explicitly_used": "Cargo selected example builds normal library; all library source is shown and already taught by this point.",
+          "library_tests_compiled": false
+        },
+        {
+          "target": "--lib tests",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/data/src/lib.rs",
+            "examples/intro-workspace/data/src/text.rs",
+            "examples/intro-workspace/data/src/list.rs"
+          ],
+          "test_functions": 6,
+          "breakdown": {
+            "text": 4,
+            "list": 2
+          },
+          "main_or_other_examples_compiled": false
+        }
+      ],
+      "all_loaded_source_inline_before_commands": "5.5:74 list_demo,92 manifest,98 lib root,104 unselected main root,112 text and118 list (latter two in explicitly labeled complete-source fold), before run/test124–125; list_answer full146 before its run150.",
+      "module_edges": "lib.rs declares pub mod list/text, each a matching .rs source. No external helper or later API.",
+      "text_copy_identity": "data/src/text.rs is byte-identical to target-local5.3 text/mod.rs, including tests and local manual_map allowance."
+    },
+    "configuration_roles": "Both package manifests use only taught name/version/edition fields. Intro workspace members and lockfile contain both packages; root workspace excludes intro workspace. No dependency configuration, feature, build target or broad-check setting added.",
+    "no_repository_cargo_config": "Previously inspected root/examples/intro-workspace/data-steps ancestor Cargo config paths absent; no source requires configuration outside shown manifests."
+  },
+  "command_review": [
+    {
+      "page": "5.3",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example utf8 --locked",
+      "kind": "run"
+    },
+    {
+      "page": "5.3",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example utf8_answer --locked",
+      "kind": "run"
+    },
+    {
+      "page": "5.3",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example utf8_answer --locked",
+      "kind": "4 unit tests"
+    },
+    {
+      "page": "5.4",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example vector_operations --locked",
+      "kind": "run"
+    },
+    {
+      "page": "5.4",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example vector_answer --locked",
+      "kind": "run"
+    },
+    {
+      "page": "5.5",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example vector_ownership --locked",
+      "kind": "run"
+    },
+    {
+      "page": "5.5",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data --example list_demo --locked",
+      "kind": "run"
+    },
+    {
+      "page": "5.5",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-data --lib --locked",
+      "kind": "6 unit tests"
+    },
+    {
+      "page": "5.5",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data --example list_answer --locked",
+      "kind": "run"
+    }
+  ],
+  "first_use_and_concept_evidence": [
+    {
+      "concept": "char/scalar/UTF-8 bytes versus glyph and range",
+      "identity": "5.3:7 defines Unicode scalar and single-quoted char vs double-quoted &str;9 givesUTF-8 scalar1–4byte encoding and str.len()->usize bytes, explicitly not char layout.",
+      "need": "5.3:3 wants just 中 from A中🦀; numeric-slice element indices do not specify UTF-8 text ranges.",
+      "operation": "13–21 give actual byte positions and complete boundaries before diagram23 and range reasoning25.",
+      "evidence_and_limits": "Table/alt/SVG source match independently encoded bytes; scalar is distinguished from multi-scalar visible glyph11, so no grapheme guarantee is claimed.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "str.get(range), valid empty text and failure versus direct indexing",
+      "identity": "5.3:29 gives Option<&str>,borrowed view/no String copy and None on range failure.",
+      "need": "Recover valid selected text while preserving absence versus legal empty text.",
+      "operation": "31 statesstart<=end,bounds,bothscalarboundaries and8..8 Some empty vs2..2 None before show_range.33 explains match binding;39 connects existing String.as_str and borrow lifetime rules.",
+      "evidence_and_limits": "72 contrasts directrange panic and singleinteger unsupported;80's stable panic string matches fixture expectation.84 gives owned usize Option return;None is not collapsed into0.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Target-local helper tests and precise allowance",
+      "identity": "5.3:88 explicitly identifies target-local main.rs+text/mod.rs based on2.6;92 defines Clippy manual_map purpose and exact scoped allowance before first full helper101.",
+      "need": "Keep already-taught explicit Some/None paths while postponing shorthand requiring later syntax.",
+      "operation": "94 explains presence bool check to prevent false success on None;helper/test source includes pub,cfg(test),test,use crate already taught2.6/2.7.",
+      "evidence_and_limits": "4 test functions cover3byte 中,Some empty0,partial1..2 andinterior empty2..2,None beyond4..9;no Option equality/derive/closure API required.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Vec ownership/heap and construction",
+      "identity": "5.4:3–9 motivates varying-length same-T owned sequence, no length in type, contiguous heap element storage fori32, Vec::new empty/no element allocation, inference and prelude.",
+      "need": "Add,remove and retrieve prices while length changes, unlike fixed array shape.",
+      "operation": "11 definespush(&mut requirement,ownedT,unit)/len(shared,usize) before build14;73 defineslist-formvec! before firstmacro snippet.",
+      "evidence_and_limits": "i32 storage qualification avoids conflating zero-sized types or String's separate character storage; no reserve/capacity/iterator knowledge assumed.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Vec/slice API contracts and active references",
+      "identity": "5.4:21–25 definesas_slice,element-index get()->Option<&i32>,*valueCopy;33 directly indexedcopy/bounds.",
+      "need": "Borrow an item,remove specified element,pop ownedlast,and modify retained items with distinguishable contracts.",
+      "operation": "37–39 removeownedT/shiftstableorder/panic;49 popOption<T>/emptyNone;61 as_mut_slice existingitems/no lengthchange. Each precedes firstsnippet.",
+      "evidence_and_limits": "Values80,120,200 ->remove80 ->pop200 ->borrowmodify120to130. Last-use ofwritable explained63 beforecode. remove runtimepanic stable substring. Stringsownedpush/pop in5.5:7–9 before source;30 says wholeVecmoves eveni32,drop responsibilities scopedcorrectly.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Element borrow and push conflict",
+      "identity": "5.5:34 gives possible reallocation/move reason;36 explains storedOption<&i32> and laterreferenceuse.",
+      "need": "Preserve valid borrowed element access; cannot depend on current capacity avoiding relocation.",
+      "operation": "Whole failureexample39 uses first afterpush;42 correctly predicts E0502 and finishing borrow before mutation.",
+      "evidence_and_limits": "No borrow conflict is claimed merely because a reference variable remains in scope; actual later use keeps it active. No need introduce capacity or allocator APIs.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Keep-nonnegative and capped-answer loops/library/tests",
+      "identity": "5.5:3,46 defineborrowedinput/newVec,stableorder,duplicates,zero retained and negatives omitted;48–57 trace all four samplevalues beforefirstfunction62.",
+      "need": "Produce filtered owned result while retaining source contents and ordering.",
+      "operation": "57 states bounds check before indexing,Copyi32,pushseparateVec,increment;69 explains new librarymemberpublicmodules/path;77 definesempty[i32;0] beforetests82.",
+      "evidence_and_limits": "Loopvisits eachindex once;emptyrunszeroiterations;allnegativepushesnone. Text4/list2testfunctions match;listcases retaintwo80s,zero,andinput−5. Capexerciseexplicitlyassumesnonnegativeceiling,firstomitsnegative,thenboundsretainedvalues;sourceandassertionsmatch120−5,0,80→100,0,80 andinput120.",
+      "status": "sufficient"
+    }
+  ],
+  "figure_check": {
+    "path": "docs/assets/ch03/utf8-boundaries.svg",
+    "source_and_xml_only": true,
+    "xml_well_formed": true,
+    "independent_scalar_bytes": {
+      "A": [
+        65
+      ],
+      "中": [
+        228,
+        184,
+        173
+      ],
+      "🦀": [
+        240,
+        159,
+        166,
+        128
+      ]
+    },
+    "mapping": "SVGtitle/desc/text,table andalt all agree: A0..1 byte65;中1..4 bytes228184173;crab4..8 bytes240159166128;valid0,1,4,8 andbad1..2endpoint2. crab explicitly maps to🦀 in main prose beforefigure.",
+    "browser_or_visual": false
+  },
+  "fixtures": [
+    {
+      "source": "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.rs",
+      "expected": "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.expected",
+      "stable_expected": "not a char boundary",
+      "static_reason": "String.as_str()[1..2] ends inside 中's byte sequence.",
+      "execution": false
+    },
+    {
+      "source": "examples/intro-workspace/data-steps/fixtures/runtime-fail/vector_remove_bounds.rs",
+      "expected": "examples/intro-workspace/data-steps/fixtures/runtime-fail/vector_remove_bounds.expected",
+      "stable_expected": "removal index",
+      "static_reason": "values.len()==2,remove(2) requiresindex<2 andpanics.",
+      "execution": false
+    },
+    {
+      "source": "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.rs",
+      "expected": "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.expected",
+      "stable_expected": "E0502",
+      "static_reason": "first contains elementsharedreference laterusedafterpushmutableborrow.",
+      "execution": false
+    }
+  ],
+  "static_outputs": [
+    {
+      "target": "utf8",
+      "expected": [
+        "一個 char=中",
+        "UTF-8 長度=8 bytes",
+        "0..1：有文字「A」",
+        "1..4：有文字「中」",
+        "4..8：有文字「🦀」",
+        "1..2：不是有效文字區段",
+        "8..8：有文字「」",
+        "4..9：不是有效文字區段"
+      ]
+    },
+    {
+      "target": "utf8_answer",
+      "expected": [
+        "1..4：取得 3 bytes",
+        "1..2：無效區段",
+        "8..8：取得 0 bytes"
+      ]
+    },
+    {
+      "target": "vector_operations",
+      "expected": [
+        "新增後的長度=3",
+        "索引1的數字=120",
+        "沒有索引9",
+        "移除索引0的數字=80",
+        "剩下的第一項=120",
+        "取回最後一項=200",
+        "修改剩下的第一項=130",
+        "vec! 建立的長度=3"
+      ]
+    },
+    {
+      "target": "vector_answer",
+      "expected": [
+        "移除第一項=10",
+        "留下的第一項=25",
+        "取回末尾=30",
+        "取回末尾=25",
+        "清單已空",
+        "剩餘項目=0"
+      ]
+    },
+    {
+      "target": "vector_ownership",
+      "expected": [
+        "從清單取回=Rust",
+        "清單剩下的項目=0"
+      ]
+    },
+    {
+      "target": "list_demo",
+      "expected": [
+        "保留的項目=3",
+        "索引0=120",
+        "索引1=0",
+        "索引2=80"
+      ]
+    },
+    {
+      "target": "list_answer",
+      "expected": [
+        "索引0=100",
+        "索引1=0",
+        "索引2=80"
+      ]
+    }
+  ],
+  "limits": "Outputs,test counts and fixture diagnostic substrings/codes are static contracts checked against actual source and expected files, not fresh compiler/run observations. Actual layout/figure visibility and target-reader understanding remain unverified. No chapter6/7 or future APIs read.",
+  "workspace_metadata_drift_at_seal": {
+    "before": {
+      "examples/intro-workspace/Cargo.toml": "83d74f7ef737eebe060848faaed2606e530319b458ba17ad027f038a44830c51",
+      "examples/intro-workspace/Cargo.lock": "ce13e30e21c30bd1db9f271fb97ce9f6ef88791aebec7d556e67f45d64c94acb"
+    },
+    "after": {
+      "examples/intro-workspace/Cargo.toml": "cee8e1b26cf2e6082c7cf227776cd014baa9468cb746152986e3b963882792a0",
+      "examples/intro-workspace/Cargo.lock": "6037515b4fd76694e8a3e614bca9d311b5c0446244ce6770d37574736754ed15"
+    },
+    "actual_change_checked": "Intro workspace adds trait-stages and lifetimes members and matching dependency-free lock package entries. Resolver and all selected data/data-steps package manifests are unchanged. No future package source read or used as prerequisite; selected chapter5 closures unaffected."
+  },
+  "sealed_at_utc": "2026-10-15T07:37:06.149496+00:00"
+}

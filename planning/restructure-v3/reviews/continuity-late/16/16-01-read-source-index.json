@@ -1,0 +1,74 @@
+[
+  {
+    "path": "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.rs",
+    "sha256": "acd705401e4f16dee4345ed8aad999c96b9182cb4c2bf7a315d3f35afd20be8f",
+    "lines": 21,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.expected",
+    "sha256": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "lines": 1,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/Cargo.toml",
+    "sha256": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "lines": 6,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/src/main.rs",
+    "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "lines": 3,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs",
+    "sha256": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939",
+    "lines": 25,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/inline_swap/main.rs",
+    "sha256": "af99115c19f4f070dbe9a134b3a6c3161a64c92fed868532a665c1af8b244b33",
+    "lines": 30,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/box_handles/addresses/mod.rs",
+    "sha256": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939",
+    "lines": 25,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/box_handles/main.rs",
+    "sha256": "8159d50e707b656dbdd601cd34e75dc1eb17b867a60d59e6cbdfc937348f9574",
+    "lines": 30,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/field_swap_solution/addresses/mod.rs",
+    "sha256": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939",
+    "lines": 25,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/field_swap_solution/main.rs",
+    "sha256": "8e4201a68817157223060a17fd44cdbad929019c6ec5618503e62c963b8a28e6",
+    "lines": 26,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/addresses_complete/addresses/mod.rs",
+    "sha256": "ecc28b64aebb05adbeb3ab5a8a53f25f7e93816844cdb5ffb5fc58ed94f871d3",
+    "lines": 92,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/addresses_complete/main.rs",
+    "sha256": "90cdc6b5c6b5c89b1c5c0bb8df58e486e736a283d98e9fe2e71757afd75eebe0",
+    "lines": 5,
+    "method": "full physical source printed/read"
+  }
+]

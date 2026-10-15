@@ -1,0 +1,458 @@
+{
+  "review_id": "technical-early-round02-control-prefix",
+  "sealed_at_utc": "2026-10-15T06:31:06.660804+00:00",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/02-01-lesson.md",
+    "docs/chapters/02-02-lesson.md",
+    "docs/chapters/02-03-lesson.md",
+    "docs/chapters/02-04-lesson.md",
+    "docs/chapters/02-05-lesson.md"
+  ],
+  "reader_background": "Basic Python plus actual main-prose chapter 1 already reviewed; no future 2.6–2.8 prerequisite.",
+  "initial_judgment_sealed_before_peer_or_historical_material": true,
+  "independence": "No author ledger, first-reader/continuity/audit record, root conclusion, or historical issue/review read before sealing. Root supplied only scope/readiness and the explicit 1.7 heading-only update.",
+  "method": "Sequential whole-page technical reread with all selected owned sources/manifests and static output/control-path verification; not blind first-read or target-reader experiment.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary technical, first-use prerequisite, actual-selected-target completeness, or answer/command mismatch found in 2.1–2.5.",
+  "execution": {
+    "commands_executed": [],
+    "reason": "Root requested no Cargo during chapter-2 author work; existing author execution results were not used as independent evidence.",
+    "browser_or_visual_verified": false
+  },
+  "documented_commands_static_checked": [
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "comparisons",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "comparisons_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "conditions",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "conditions_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "for_range",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "for_range_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "while_work",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "while_work_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "loop_control",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "loop_control_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "loop_labels",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-control-steps",
+      "--example",
+      "loop_labels_answer",
+      "--locked"
+    ]
+  ],
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/02-01-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/comparisons.rs:comparisons",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-01-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/comparisons.rs:logic",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-01-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/comparisons.rs:count-check",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-01-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/comparisons.rs:short-circuit",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-01-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-01-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/comparisons.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-01-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/comparisons_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-02-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/conditions.rs:shipping-value",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-02-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/fixtures/compile-fail/if_number.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-02-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/conditions.rs:early-return",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-02-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/conditions.rs:index-check",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-02-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-02-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/conditions.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-02-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/conditions_answer.rs:tiers",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-02-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/conditions_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-03-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/for_range.rs:array-loop",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-03-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/for_range.rs:range-function",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-03-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/for_range.rs:inclusive-loop",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-03-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-03-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/for_range.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-03-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/for_range_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-04-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/while_work.rs:batch-function",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-04-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-04-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/while_work.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-04-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/while_work_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/loop_control.rs:plain-break",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/loop_control.rs:break-value",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/loop_control.rs:continue",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/loop_control.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/loop_labels.rs:labeled-break",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/loop_labels.rs:labeled-continue",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/loop_labels.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/loop_control_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-05-lesson.md",
+      "reference": "examples/intro-workspace/control-steps/examples/loop_labels_answer.rs",
+      "source_exists": true
+    }
+  ],
+  "compile_closure": {
+    "package": "intro-control-steps",
+    "selected_success_targets": [
+      "comparisons",
+      "comparisons_answer",
+      "conditions",
+      "conditions_answer",
+      "for_range",
+      "for_range_answer",
+      "while_work",
+      "while_work_answer",
+      "loop_control",
+      "loop_control_answer",
+      "loop_labels",
+      "loop_labels_answer"
+    ],
+    "root_source_for_each_target": "One independent examples/<target>.rs file including its own main and every helper it calls.",
+    "src_lib_rs_exists": false,
+    "build_rs_exists": false,
+    "external_dependencies": false,
+    "mod_or_include_dependencies": [],
+    "clippy_allow_or_attributes_in_selected_sources": false,
+    "fixture": "if_number.rs is a complete independent main; E0308 expected marker is consistent with bool-vs-i32 condition."
+  },
+  "static_predictions": {
+    "comparisons": "At subtotal 300: equality true, below false, above false, both inclusive bounds true; only calls B and D execute positive_count.",
+    "comparisons_answer": "can_ship outputs true/false/false; needs_preparation(false) true.",
+    "conditions": "Small 180, exact threshold 300, large 360, empty 0; index3 is rejected before array read.",
+    "conditions_answer": "Shipping for 299/300/499/500 is 20/10/10/0.",
+    "for_range": "Array total400; 0..3 total3; 0..=3 total6; 3..3 total0.",
+    "for_range_answer": "400 and0.",
+    "while_work": "Remaining7→4→1→0 in3 batches; initial0 executes no body and returns0.",
+    "while_work_answer": "(7,3)→3; (6,3)→2; (0,3)→0 under explicit work>=0/capacity>0/small integer contract.",
+    "loop_control": "Remaining0; loop result3; skip2 total4.",
+    "loop_control_answer": "First positive even2; 1..=5 skipping3 gives12.",
+    "loop_labels": "Labeled break checks5 cells; labeled continue processes only column1 over3 rows, count3.",
+    "loop_labels_answer": "Search count6 stops in row2; row-skipping processes columns1/2 in all3 rows, count6 with different traversal coverage."
+  },
+  "chapter1_heading_recheck": {
+    "checked_at_utc": "2026-10-15T06:31:06.660804+00:00",
+    "trigger": "Root explicitly reported a heading-only change; this is a prompted narrow recheck, not an independent finding.",
+    "previous_heading": "# 1.7 程式執行時，電腦如何保存資料",
+    "current_heading": "# 1.7 計算機基礎：程式、記憶體、stack 與 heap",
+    "previous_sha256": "017a1fa288e5545af8878f752fc7b4730ca639df1025ba8a90c4e5ffc41fc49d",
+    "current_sha256": "bfb2f7bfe932726dd5c3d16a61128105f1783e6bd12b9cef9ca07a9b3f06f36a",
+    "restoring_previous_heading_reproduces_previous_hash": true,
+    "new_execution_or_visual_check": false,
+    "tail_sources_and_five_svgs_unchanged": true
+  },
+  "verification_limits": [
+    "No Cargo/rustc/Clippy/test/fixture or clean-room command execution; command and stdout/diagnostic predictions are static.",
+    "No browser or responsive-layout verification.",
+    "Future 2.6–2.8 prose and Rust source bodies were not read or assumed as prerequisites.",
+    "No claim that illustrative examples prove arbitrary programs correct or cover all possible i32 input ranges."
+  ],
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    "docs/chapters/02-01-lesson.md": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3",
+    "docs/chapters/02-02-lesson.md": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2",
+    "docs/chapters/02-03-lesson.md": "2140dec17d8eb06bc9caa8d7325dfd7cadf48ebbd494d7f5d5c103ee5271c2c7",
+    "docs/chapters/02-04-lesson.md": "88c06bf4a6f5e99f84339055b359eb649f5207e1a5cbeb46b33288c63d3528e6",
+    "docs/chapters/02-05-lesson.md": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e",
+    "examples/intro-workspace/control-steps/examples/comparisons.rs": "1aafbf0c821aa4ab21f390fcfd341e00749f343c34aa4e913a0cc195cdc01f38",
+    "examples/intro-workspace/control-steps/examples/comparisons_answer.rs": "b22865080da18b649f071aa1bbfd3b8bad34f130bc4799a7d4e65cad39de2f2e",
+    "examples/intro-workspace/control-steps/examples/conditions.rs": "d46f7a449761358e22dc6b91eb176be4bbf9d682f823acba3591fc893c6d384e",
+    "examples/intro-workspace/control-steps/examples/conditions_answer.rs": "6152f6bb02b4dfe8d9a1f1f30f53046c7c52fbefd3b0d3bb2727d88e59ebcb4c",
+    "examples/intro-workspace/control-steps/examples/for_range.rs": "9173e92fa4f5c8c4247a43fb39720498b1a5daa2c96bfd51f0cf71a3dfb86b97",
+    "examples/intro-workspace/control-steps/examples/for_range_answer.rs": "426c5b2cc17aab15885f4d0664296f1d05d0ae43901890bea07acfd2e1b0bec8",
+    "examples/intro-workspace/control-steps/examples/while_work.rs": "a238562954b21df44248e50b045377c4c5e2b91f4fdebb12e1107ec14ed0f1c8",
+    "examples/intro-workspace/control-steps/examples/while_work_answer.rs": "d4d6ccdaf2cae8973bb7917bdd3884e41954dc853b36ab9253148d07eaaebd56",
+    "examples/intro-workspace/control-steps/examples/loop_control.rs": "7c1640b31c181ac50b6922533218f2ccf184e5e768579be1bd68003aad8dd03f",
+    "examples/intro-workspace/control-steps/examples/loop_control_answer.rs": "21df03e8173ebbf8c3706184edfae6ec0ac88fe86a2d3d4772f1c7168b7d1208",
+    "examples/intro-workspace/control-steps/examples/loop_labels.rs": "dc9fd3e1da02ebbb9fdba212f5406060526405fb01dc1451322389080b3c0b85",
+    "examples/intro-workspace/control-steps/examples/loop_labels_answer.rs": "bc295b0b9b2fe6cb2b2cbb4fc8402943e783f8f8c45fd449d1ab8d8c1bca19a7",
+    "examples/intro-workspace/control-steps/fixtures/compile-fail/if_number.rs": "f495674b4a7d313b76ddfcd87deae95165f6f122f2b422dbfc29eefae41baf70",
+    "examples/intro-workspace/control-steps/fixtures/compile-fail/if_number.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/Cargo.toml": "1f8bc83d5bc4795f113de8ca98f2ba49e8c94af2c43264d22effe9b98e8e27ad",
+    "examples/intro-workspace/Cargo.lock": "f98bced86fbd54a67d0cba9e8b06dae8e8f0be1659d616ad1de990d3da33988c",
+    "examples/intro-workspace/control-steps/Cargo.toml": "52011d81554362fc0008e34c86caab53d1da8f6e599cb7b335e0b3b2dd5d8c6e",
+    "examples/intro-workspace/control-steps/src/main.rs": "9d77c241170f05328e057efed81ad48b15cb9ce56ca87821ccf28a1c05365fc0",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5",
+    "AGENTS.md": "04687339ba4b38681e0c7e33e19851a3b0272ec9dfe283ead91454ce939b956b",
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c"
+  }
+}

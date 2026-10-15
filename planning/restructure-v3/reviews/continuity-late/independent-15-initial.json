@@ -1,0 +1,443 @@
+{
+  "wave": "15",
+  "findings": [],
+  "notes": {
+    "15-01": [
+      "GAT把associated type的結果型別接到每次receiver借用；View不是資料欄位。",
+      "Self:a與&'a self關係、View與method各自a再由Self::View<a>帶入、slice與Ref guard兩種結果分開。",
+      "共用借出操作但保留普通slice和runtime guard的型別與責任，並非只重新包裝Vec。",
+      "gat_views不含後段測試；mutable答案與gat_complete測試晚段才出現，Result::is_err在使用前明教。",
+      "同一Numbers兩次借用中間push；GuardedNumbers須drop Ref再寫，GAT不改Drop規則。"
+    ],
+    "15-02": [
+      "subtyping是滿足使用端契約，variance描述放入型別參數後的替換方向。",
+      "mut reference自身lifetime可縮，內部T invariant；Cell shared可set故不能改T；fn輸入逆向輸出同向。",
+      "要判已有較長借用放到容器或callback後能否繼續合法替換，原存活不變。",
+      "references→mutable target失敗→Cell假設破壞→callback adapter→新Cell答案，理由與泛型body證據分開。",
+      "copied_cell取得Copy reference再建另一容器可縮借用，不表示原Cell covariant。"
+    ],
+    "15-03": [
+      "raw pointer保存位置／來源資訊，不負責owner或reference lifetime；型別星號與表達式dereference分開。",
+      "safe建立/查null，unsafe存取須非null aligned initialized valid provenance及aliasing；add以元素計並限同allocation/one-past。",
+      "為後續安全抽象與FFI追蹤責任，普通reference本來可完成此數值修改，未捏造優勢。",
+      "local讀寫、array第二項、第三項答案與compile-fail均完整；array→slice coercion先教，Debug/PartialEq array契約先教。",
+      "add(3)對三項是可形成不可讀的端點；is_null false不能證明存取合法。此頁自稱首次coercion引發13.2自發查漏，另封存addendum。"
+    ],
+    "15-04": [
+      "unsafe fn把額外前提交caller；safe abstraction接手全部隱藏unsafe責任，soundness涵蓋合法safe client。",
+      "split輸入reference供有效範圍，mid檢查供界線，不重疊支援雙mutable；readonly wrapper真reference保來源，private invariant支援unsafe Send/Sync。",
+      "重用介面時要分caller責任與實作可接手者；有限wrapper特意重複表示使raw與借用可追蹤。",
+      "read/indices失敗/safe split/readonly threads與complete測試逐段獨立快照；六項測試不冒充全部安全證明。",
+      "mid0/len/空Vec形成零長slice仍需non-null aligned；改constructor來源後即使read不變原理由也失效。"
+    ],
+    "15-05": [
+      "C宣告、header/prototype、pointer、buffer/string、malloc/free、object/linker皆先教角色，入口不假設C經驗。",
+      "array參數退化pointer需額外len；signed overflow UB；NUL與NULL及0資料不同；pointer副本不增cleanup。",
+      "Rust要讀外部契約，先獨立C程式理解存取/長度/清理責任再跨語言。",
+      "完整main/counts/header/checks/compile-fail/solution及cc命令全讀；printf格式、PRId32與相鄰literal先解釋。",
+      "copy到新malloc後改第一項，原240新260；只copy pointer會改同配置，來源規則足以預測。"
+    ],
+    "15-06": [
+      "extern C/ABI聲明與build/link分工；repr(C) layout、CString借出與Greeting接手C配置責任分開。",
+      "scalar→buffer→label三stage不載未教後段；count length先TryFrom；CStr view連owner，Drop回指定free一次。",
+      "既要使用C能力又讓safe caller不處理raw；固定小接口使宣告/型別/borrow/cleanup逐項核對。",
+      "三stage及永久版的C/header/build/sys/lib/examples與六測試、四fixture、答案全讀；新CStr API與associated constants都在使用前解釋。",
+      "buffer含終止零時零1非零4；不含時零0非零4；新Rust String可在Greeting Drop後使用，view不可。"
+    ]
+  },
+  "loaded_sources": "15.1–4 no-lib stages全部target-local modules；15.5 cc命令載counts.c/header與driver/checks/solution；15.6各stage及permanent library/sys/build/C/header均完整讀取，無未列入的owned helper。",
+  "prefix_newly_read": {
+    "03-07": "full",
+    "06-04": "full",
+    "12-02": [
+      [
+        1,
+        75
+      ],
+      [
+        105,
+        139
+      ]
+    ],
+    "08-05": [
+      [
+        75,
+        98
+      ],
+      [
+        105,
+        152
+      ]
+    ],
+    "10-04": [
+      [
+        45,
+        73
+      ],
+      [
+        90,
+        135
+      ]
+    ]
+  },
+  "visual": {
+    "viewports": [
+      [
+        1280,
+        800
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "actually_viewed_images": [
+      "15-01-390-image0.png",
+      "15-02-390-image0.png",
+      "15-03-390-image0.png",
+      "15-04-390-image0.png",
+      "15-05-390-image0.png",
+      "15-05-390-image1.png",
+      "15-06-390-image0.png",
+      "15-01-1280-image0.png",
+      "15-02-1280-image0.png",
+      "15-03-1280-image0.png",
+      "15-04-1280-image0.png",
+      "15-05-1280-image0.png",
+      "15-05-1280-image1.png",
+      "15-06-1280-image0.png",
+      "15-05-390-answer.png"
+    ],
+    "judgment": "七張圖均可依相鄰文字追蹤來源/借用/範圍/ownership與編譯階段；手機必要文字可讀。15.5手機C長答案已實開，可橫捲。"
+  },
+  "not_issues": [
+    "15.6 to_owned稱沿10.4雖該處直接示byte slice→Vec，8.5已明教str→String並可正常複習；未列為必要缺口。"
+  ],
+  "coverage": [
+    {
+      "section": "15-01",
+      "doc_hash": "4d4b83c88f8ba6ccfcac7866d71b7a0730e55a2f5afed39f4e3d7f7ce8ef3b4b",
+      "read_doc_lines": [
+        1,
+        169
+      ],
+      "all_snippet_files_read": [
+        "examples/ch12-unsafe/stages/Cargo.toml",
+        "examples/ch12-unsafe/stages/src/main.rs",
+        "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+        "examples/ch12-unsafe/stages/examples/gat_views/main.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.expected",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.expected",
+        "examples/ch12-unsafe/stages/examples/gat_solution.rs",
+        "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs",
+        "examples/ch12-unsafe/stages/examples/gat_complete/main.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+        "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+        "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs": "ef541e5bd9598efcbfab50be3c730585b74223554719984a277e72caea242677",
+        "examples/ch12-unsafe/stages/examples/gat_views/main.rs": "87a819749e77075f6918aec8353fac04afc4c785b8a4edb479426ad65364c4a1",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.rs": "3b62cb6b3de53f40f17ed6079b630769693b1678a967ef62d5416493c0e71a63",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.expected": "db9b0a861a4d072c963491b101255b726ab04d032aacffbb751e48aa927afffe",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.rs": "70433146de34a5f82f244102def92225e5705ef2de36bc08dd47ee8785841a26",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+        "examples/ch12-unsafe/stages/examples/gat_solution.rs": "d60c0d4c64845ca684696de07ea2bd52beef6ec8de8dbd3d0294e62358142ebd",
+        "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+        "examples/ch12-unsafe/stages/examples/gat_complete/main.rs": "87a819749e77075f6918aec8353fac04afc4c785b8a4edb479426ad65364c4a1"
+      },
+      "four_question_evidence": {
+        "identity": "GAT把associated type的結果型別接到每次receiver借用；View不是資料欄位。",
+        "mechanism": "Self:a與&'a self關係、View與method各自a再由Self::View<a>帶入、slice與Ref guard兩種結果分開。",
+        "need": "共用借出操作但保留普通slice和runtime guard的型別與責任，並非只重新包裝Vec。",
+        "operation_and_example": "gat_views不含後段測試；mutable答案與gat_complete測試晚段才出現，Result::is_err在使用前明教。",
+        "small_change": "同一Numbers兩次借用中間push；GuardedNumbers須drop Ref再寫，GAT不改Drop規則。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "15-02",
+      "doc_hash": "e87a0ee7d3577ac6d9d472acb519b57ac60eac6e23d52cb2e8caa17eddba1cc0",
+      "read_doc_lines": [
+        1,
+        178
+      ],
+      "all_snippet_files_read": [
+        "examples/ch12-unsafe/stages/Cargo.toml",
+        "examples/ch12-unsafe/stages/src/main.rs",
+        "examples/ch12-unsafe/stages/examples/variance_references/variance/mod.rs",
+        "examples/ch12-unsafe/stages/examples/variance_references/main.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.expected",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.expected",
+        "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.expected",
+        "examples/ch12-unsafe/stages/examples/variance_callbacks/main.rs",
+        "examples/ch12-unsafe/stages/examples/variance_solution.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+        "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+        "examples/ch12-unsafe/stages/examples/variance_references/variance/mod.rs": "68fad97329ebd267052760c2212d3689f936db7fedc333947a07b25a01305756",
+        "examples/ch12-unsafe/stages/examples/variance_references/main.rs": "4640a523722b0dbbbf180226ce119649d638a29a7f2d79c940fe1a16ade28d26",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.rs": "221f69f992a0b3d1f574203b63fd04318e42e46d8faf4907c9466419d5bd9b22",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.rs": "f07212bd6704766332b640ec4016f9534bd375191a9a92bfb10147ccbeb173ab",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.expected": "d83902e1e30c09dee3580e58c61b1ed08051895a509820a119a252c082224edb",
+        "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.rs": "ee45c5aeb8973fc03b4be7f61186f5e4b7ead5278d6a60c97cf46441d8e5b4ad",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+        "examples/ch12-unsafe/stages/examples/variance_callbacks/main.rs": "7376368396063bcb137e10975ed37d15323402a6d65fb706a2dad6c9ad6c8ff2",
+        "examples/ch12-unsafe/stages/examples/variance_solution.rs": "cc60c1d4ad328750975051cc283003ce84dabe65c7c52fc6f08f95a7efc437fb"
+      },
+      "four_question_evidence": {
+        "identity": "subtyping是滿足使用端契約，variance描述放入型別參數後的替換方向。",
+        "mechanism": "mut reference自身lifetime可縮，內部T invariant；Cell shared可set故不能改T；fn輸入逆向輸出同向。",
+        "need": "要判已有較長借用放到容器或callback後能否繼續合法替換，原存活不變。",
+        "operation_and_example": "references→mutable target失敗→Cell假設破壞→callback adapter→新Cell答案，理由與泛型body證據分開。",
+        "small_change": "copied_cell取得Copy reference再建另一容器可縮借用，不表示原Cell covariant。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "15-03",
+      "doc_hash": "8dab364a2465746176fc776a154b507efc35ba3c4e0b89b69d9b19a96512f18e",
+      "read_doc_lines": [
+        1,
+        173
+      ],
+      "all_snippet_files_read": [
+        "examples/ch12-unsafe/stages/Cargo.toml",
+        "examples/ch12-unsafe/stages/src/main.rs",
+        "examples/ch12-unsafe/stages/examples/raw_construction.rs",
+        "examples/ch12-unsafe/stages/examples/raw_local.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.expected",
+        "examples/ch12-unsafe/stages/examples/raw_array.rs",
+        "examples/ch12-unsafe/stages/examples/raw_solution.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+        "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+        "examples/ch12-unsafe/stages/examples/raw_construction.rs": "3a0488f94e2c0b0785b205b5f19176894b82f41757c4ac75f8992f7f28d65804",
+        "examples/ch12-unsafe/stages/examples/raw_local.rs": "b6b10b0acccc27cc5200f12e2b50c4d7b6619e27f79aece418b2bdc04634c109",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.rs": "02bf53ece868e4f54fb6d145502267159ac3bca1f87ec29657cce24e32aa6a8d",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.expected": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+        "examples/ch12-unsafe/stages/examples/raw_array.rs": "ec00d80a6d4a53a308e2693de79aca05e105957c30ff0a7f49e43824aaf36878",
+        "examples/ch12-unsafe/stages/examples/raw_solution.rs": "c56d23b11eec610f10581192a0e6e0940052a71629137459dc6556552052d2f1"
+      },
+      "four_question_evidence": {
+        "identity": "raw pointer保存位置／來源資訊，不負責owner或reference lifetime；型別星號與表達式dereference分開。",
+        "mechanism": "safe建立/查null，unsafe存取須非null aligned initialized valid provenance及aliasing；add以元素計並限同allocation/one-past。",
+        "need": "為後續安全抽象與FFI追蹤責任，普通reference本來可完成此數值修改，未捏造優勢。",
+        "operation_and_example": "local讀寫、array第二項、第三項答案與compile-fail均完整；array→slice coercion先教，Debug/PartialEq array契約先教。",
+        "small_change": "add(3)對三項是可形成不可讀的端點；is_null false不能證明存取合法。此頁自稱首次coercion引發13.2自發查漏，另封存addendum。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "15-04",
+      "doc_hash": "3f60eb8974d39620c01dd5719914f728739bfbca6fe7507ce091d712b78ecd4f",
+      "read_doc_lines": [
+        1,
+        287
+      ],
+      "all_snippet_files_read": [
+        "examples/ch12-unsafe/stages/Cargo.toml",
+        "examples/ch12-unsafe/stages/src/main.rs",
+        "examples/ch12-unsafe/stages/examples/unsafe_read/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/examples/unsafe_read/main.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.expected",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.expected",
+        "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/examples/safe_split/main.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.expected",
+        "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.rs",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.expected",
+        "examples/ch12-unsafe/stages/examples/readonly_threads/main.rs",
+        "examples/ch12-unsafe/stages/examples/unsafe_solution/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/examples/unsafe_solution/main.rs",
+        "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/examples/contracts_complete/main.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+        "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+        "examples/ch12-unsafe/stages/examples/unsafe_read/contracts/mod.rs": "58df1d4937fc07ab63215454e20f359be2af157f0b8bbb909460058911e0e54f",
+        "examples/ch12-unsafe/stages/examples/unsafe_read/main.rs": "9a9068291c1961b1d286051fa136abe704ef2994b47d6a8bbb9169c90ba904bb",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.rs": "05265ce1ffe9aba7e192becf533dc5e5f5d5c8bcfbfa75c9dbd4cc0927327c38",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.expected": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.rs": "0b1139176ba851764b2faeba52717c26c66974efabd8a76a3701872dd0d54e5d",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+        "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs": "dda61e9cbf87331c319d11c781ed4b5a7d2db8a050658c141f853d9246c316ef",
+        "examples/ch12-unsafe/stages/examples/safe_split/main.rs": "aca13d411d9fc8fddad12ba5ef716908109fa4f0cc0d8601375a5c771181e9ae",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.rs": "be5ddfa3e352ab719d67067460709c86c38b5eb1c2da9f728a53e9779ee8b586",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs": "0a098b656e7b7912093b4f80e2d6993ddd2233bfed8130d9d9048f2c9484542d",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.rs": "d94289238708c8a9aada39e14498d59e13a8d339c2a43401afccab0d2440a07d",
+        "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+        "examples/ch12-unsafe/stages/examples/readonly_threads/main.rs": "57ad881be656415f365c7acde81deb2d65096ec853dde5d9185161e164ae3668",
+        "examples/ch12-unsafe/stages/examples/unsafe_solution/contracts/mod.rs": "dda61e9cbf87331c319d11c781ed4b5a7d2db8a050658c141f853d9246c316ef",
+        "examples/ch12-unsafe/stages/examples/unsafe_solution/main.rs": "140272fd7190952dd46ca86ca8a3704fc0fbd746e951639e48046a88e6fb5407",
+        "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+        "examples/ch12-unsafe/stages/examples/contracts_complete/main.rs": "57ad881be656415f365c7acde81deb2d65096ec853dde5d9185161e164ae3668"
+      },
+      "four_question_evidence": {
+        "identity": "unsafe fn把額外前提交caller；safe abstraction接手全部隱藏unsafe責任，soundness涵蓋合法safe client。",
+        "mechanism": "split輸入reference供有效範圍，mid檢查供界線，不重疊支援雙mutable；readonly wrapper真reference保來源，private invariant支援unsafe Send/Sync。",
+        "need": "重用介面時要分caller責任與實作可接手者；有限wrapper特意重複表示使raw與借用可追蹤。",
+        "operation_and_example": "read/indices失敗/safe split/readonly threads與complete測試逐段獨立快照；六項測試不冒充全部安全證明。",
+        "small_change": "mid0/len/空Vec形成零長slice仍需non-null aligned；改constructor來源後即使read不變原理由也失效。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "15-05",
+      "doc_hash": "d7a229d638429477507f1ca2beb0d742c008be9380f724d527f8ec583d15f04a",
+      "read_doc_lines": [
+        1,
+        302
+      ],
+      "all_snippet_files_read": [
+        "examples/ch12-c-basics/main.c",
+        "examples/ch12-c-basics/counts.c",
+        "examples/ch12-c-basics/counts.h",
+        "examples/ch12-c-basics/fixtures/compile-fail/missing_length.c",
+        "examples/ch12-c-basics/fixtures/compile-fail/missing_length.expected",
+        "examples/ch12-c-basics/checks.c",
+        "examples/ch12-c-basics/solution.c"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch12-c-basics/main.c": "5ecc59e814841ad90957f3fc2506d02550786897873ed19c6032b70f2845b146",
+        "examples/ch12-c-basics/counts.c": "dfff9a207dfe0f8510785765e19097729e048475d2e1441fcfa397dff712dbf3",
+        "examples/ch12-c-basics/counts.h": "81e96a58f431dbc50655d77bff37b6da9e85fea54dc2c86c0c020467aff11807",
+        "examples/ch12-c-basics/fixtures/compile-fail/missing_length.c": "b49c22686e6ac8a81c3341d56b4dc0f85869eadc790dd41046af7bb00c23d4a7",
+        "examples/ch12-c-basics/fixtures/compile-fail/missing_length.expected": "d91b2c63f23b2086de51cb8e8ab0f16200033bbc712a336cba8817e4f5117ef2",
+        "examples/ch12-c-basics/checks.c": "73dc95771cb060bcc415ad207a496c69a4ab404f4d363510246d46ca9d418f31",
+        "examples/ch12-c-basics/solution.c": "a5e2d7c839c0e1d0b50cfb53073b76aa28e4dc23e4d64978c536fa9ebbbbe018"
+      },
+      "four_question_evidence": {
+        "identity": "C宣告、header/prototype、pointer、buffer/string、malloc/free、object/linker皆先教角色，入口不假設C經驗。",
+        "mechanism": "array參數退化pointer需額外len；signed overflow UB；NUL與NULL及0資料不同；pointer副本不增cleanup。",
+        "need": "Rust要讀外部契約，先獨立C程式理解存取/長度/清理責任再跨語言。",
+        "operation_and_example": "完整main/counts/header/checks/compile-fail/solution及cc命令全讀；printf格式、PRId32與相鄰literal先解釋。",
+        "small_change": "copy到新malloc後改第一項，原240新260；只copy pointer會改同配置，來源規則足以預測。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "15-06",
+      "doc_hash": "ed5a9511f205772cacba2f95e4c4b5b25744e59c039fdd4c656e78d090e713a7",
+      "read_doc_lines": [
+        1,
+        579
+      ],
+      "all_snippet_files_read": [
+        "examples/ch12-ffi/stages/scalar/c/tutorial.h",
+        "examples/ch12-ffi/stages/scalar/c/tutorial.c",
+        "examples/ch12-ffi/stages/scalar/src/sys.rs",
+        "examples/ch12-ffi/stages/scalar/src/lib.rs",
+        "examples/ch12-ffi/stages/scalar/examples/scalar_call.rs",
+        "examples/ch12-ffi/stages/scalar/Cargo.toml",
+        "examples/ch12-ffi/stages/scalar/build.rs",
+        "examples/ch12-ffi/stages/buffer/c/tutorial.h",
+        "examples/ch12-ffi/stages/buffer/c/tutorial.c",
+        "examples/ch12-ffi/stages/buffer/src/lib.rs",
+        "examples/ch12-ffi/stages/buffer/src/sys.rs",
+        "examples/ch12-ffi/stages/buffer/examples/buffer_count.rs",
+        "examples/ch12-ffi/stages/buffer/Cargo.toml",
+        "examples/ch12-ffi/stages/buffer/build.rs",
+        "examples/ch12-ffi/stages/label/c/tutorial.c",
+        "examples/ch12-ffi/stages/label/src/sys.rs",
+        "examples/ch12-ffi/stages/label/src/lib.rs",
+        "examples/ch12-ffi/stages/label/examples/borrowed_label.rs",
+        "examples/ch12-ffi/stages/label/Cargo.toml",
+        "examples/ch12-ffi/stages/label/build.rs",
+        "examples/ch12-ffi/stages/label/c/tutorial.h",
+        "examples/ch12-ffi/c/tutorial.h",
+        "examples/ch12-ffi/c/tutorial.c",
+        "examples/ch12-ffi/src/sys.rs",
+        "examples/ch12-ffi/src/lib.rs",
+        "examples/ch12-ffi/examples/owned_greeting.rs",
+        "examples/ch12-ffi/Cargo.toml",
+        "examples/ch12-ffi/build.rs",
+        "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.rs",
+        "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.expected",
+        "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.rs",
+        "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.expected",
+        "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.rs",
+        "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.expected",
+        "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.rs",
+        "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.expected",
+        "examples/ch12-ffi/examples/ffi_solution.rs",
+        "examples/ch12-ffi/examples/scalar_call.rs",
+        "examples/ch12-ffi/examples/buffer_count.rs",
+        "examples/ch12-ffi/examples/borrowed_label.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch12-ffi/stages/scalar/c/tutorial.h": "0602c74a5a83ac110ebf8570fed1cb79905e4986db2b07e67bffc4173a873dc3",
+        "examples/ch12-ffi/stages/scalar/c/tutorial.c": "be311a6c84a4210da0dc3e3c5f557c129dcfdd336d2814af6318527798578316",
+        "examples/ch12-ffi/stages/scalar/src/sys.rs": "3059fe42f3f34b49a86d9e861665a1bcc90b75818b16eaf298412bb0cdd161a3",
+        "examples/ch12-ffi/stages/scalar/src/lib.rs": "c2a3aea0ef3d6055025273125e93a19c1199741cf54d32910330357ae03f4e0f",
+        "examples/ch12-ffi/stages/scalar/examples/scalar_call.rs": "f4deb48291c28a74174a8fa2f45cddafdbcd59b6f817c13f31e1003adcbdf497",
+        "examples/ch12-ffi/stages/scalar/Cargo.toml": "15912b97f4ba8fd25089414cd2469e0bc100e880efb7c4988ed922f893d46998",
+        "examples/ch12-ffi/stages/scalar/build.rs": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5",
+        "examples/ch12-ffi/stages/buffer/c/tutorial.h": "51e614e570131c844c0206ba0236ec2718d9eb19c4246b057cab41dd80ad2748",
+        "examples/ch12-ffi/stages/buffer/c/tutorial.c": "e02c3ef0cdeb483fe40bd9539647ae212ef9ac2c85c3da3b505392df0153b086",
+        "examples/ch12-ffi/stages/buffer/src/lib.rs": "1fa443c23b6bb4e775e2c137d53086c64ba85121523c69368e5977b3b7bb2967",
+        "examples/ch12-ffi/stages/buffer/src/sys.rs": "c2ef56d88e7755a3365a1cb514e068f00592dbaa622c2327c69f61c5bd03579e",
+        "examples/ch12-ffi/stages/buffer/examples/buffer_count.rs": "9ed4532cf2676cb4e85ffc5393b3219b34c8c305a6813bdce63abb93ab6588f9",
+        "examples/ch12-ffi/stages/buffer/Cargo.toml": "ee48a3e0112959f48e322cef931996694101cb2fc7c0ad118028cf6edd8090e6",
+        "examples/ch12-ffi/stages/buffer/build.rs": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5",
+        "examples/ch12-ffi/stages/label/c/tutorial.c": "3bfb2a4ec2dd99b47f09d73641fd9597aafa21abe9a26049ee902a416e841e91",
+        "examples/ch12-ffi/stages/label/src/sys.rs": "fcd6c960c5b60ffc098f25773897562c7bc79e1b55f79530da86cb6f3dde3a9a",
+        "examples/ch12-ffi/stages/label/src/lib.rs": "8af3b0ffc968d219eb50451c1175072457776eaa0de59f1061e218ad8a58d338",
+        "examples/ch12-ffi/stages/label/examples/borrowed_label.rs": "c38155ed41ed163c3823ca68b5f343a447c04c51383a3ed054415316a7e808ed",
+        "examples/ch12-ffi/stages/label/Cargo.toml": "390990913a5fa9399e3911ce5c1e270957d3849a749bda6aecfc2db2f5bf48cf",
+        "examples/ch12-ffi/stages/label/build.rs": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5",
+        "examples/ch12-ffi/stages/label/c/tutorial.h": "74ff187b54ca1c44aded37e982a6e451d960b946b23aa4f05b067d1c2244c656",
+        "examples/ch12-ffi/c/tutorial.h": "9ecb778f1c0237eae7c97fef9a023eae4b119ec3db994b6f7e6bf3f0e10ecf65",
+        "examples/ch12-ffi/c/tutorial.c": "a812216a2ea7eb6d0f5713680ce045767cbb350e08b352c4a436a80597290309",
+        "examples/ch12-ffi/src/sys.rs": "30edb686f9a4fe09e3a818c33a3b0657e3f03af64c71bc12a57582dc6b220a91",
+        "examples/ch12-ffi/src/lib.rs": "0739016349249bf5ffe4e008a99a7d8606b572a66e19a12b4faba301c3a5ff2a",
+        "examples/ch12-ffi/examples/owned_greeting.rs": "44b4c7b801890ce886d1a613530b7bc0928741d2956732477d49d8a8431046ed",
+        "examples/ch12-ffi/Cargo.toml": "c63efb8533165dfd83f7f4d5584634ae0da22a94acb3a707927295626cbd870f",
+        "examples/ch12-ffi/build.rs": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5",
+        "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.rs": "7c763eba4ddd0febc0422f32dd30c29435284644948b7d877106697be063ff0c",
+        "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.expected": "9d5bdfd30fd746cb62c0f251e6e257050dcc38aa8d43d29b91952611a583717e",
+        "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.rs": "1af081f04d4dc58a98899cb5be98073d321ba7b43f28faff8596c36f47fd3f78",
+        "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.expected": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+        "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.rs": "2dd71b93380d1c8bfba0b7f0792a28f040a5a28462752c7e54a6ffed7671ae45",
+        "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.expected": "d723d4594aee7fcb25e097de1c1ce1f477abd7a95853766dbc50758f588763a9",
+        "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.rs": "b600232b35c179592054fd07f6593b453d519de4019605008671067a0be0c1fd",
+        "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+        "examples/ch12-ffi/examples/ffi_solution.rs": "36475b2170016b6225bc33026d9cb8c9fef20d187786974d6c0c48c03f2c1830",
+        "examples/ch12-ffi/examples/scalar_call.rs": "d257807977f0da4a1eef47c270ba39c1f2ced1988c6c03c1f178eb45f16537dc",
+        "examples/ch12-ffi/examples/buffer_count.rs": "c33e9257456d3dba2ed73fcd6b65b6de736c3d18381e7d6abc11bac1e166b50e",
+        "examples/ch12-ffi/examples/borrowed_label.rs": "5cf760bbf402b4b30a3a8577b88f6745bd18669759ed2b156e57d549048bf978"
+      },
+      "four_question_evidence": {
+        "identity": "extern C/ABI聲明與build/link分工；repr(C) layout、CString借出與Greeting接手C配置責任分開。",
+        "mechanism": "scalar→buffer→label三stage不載未教後段；count length先TryFrom；CStr view連owner，Drop回指定free一次。",
+        "need": "既要使用C能力又讓safe caller不處理raw；固定小接口使宣告/型別/borrow/cleanup逐項核對。",
+        "operation_and_example": "三stage及永久版的C/header/build/sys/lib/examples與六測試、四fixture、答案全讀；新CStr API與associated constants都在使用前解釋。",
+        "small_change": "buffer含終止零時零1非零4；不含時零0非零4；新Rust String可在Greeting Drop後使用，view不可。"
+      },
+      "rendered_full_source_missing": []
+    }
+  ],
+  "role": "independent non-author continuity reviewer",
+  "prior_author_ledgers_or_peer_findings_seen": false,
+  "limitations": [
+    "必要前文定點銜接審閱，非全書首讀盲測。",
+    "未重跑Rust；不以此報告代替執行驗證。"
+  ],
+  "sealed_utc": "2026-10-15"
+}

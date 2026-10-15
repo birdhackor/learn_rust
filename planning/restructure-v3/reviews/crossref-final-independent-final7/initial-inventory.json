@@ -1,0 +1,1877 @@
+{
+  "files": [
+    {
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "lines": 115,
+      "sha256": "e81574e0e1ba75b2702ad6c25a144c8441d532563dc362cf6d52dc9aedb010be"
+    },
+    {
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "lines": 259,
+      "sha256": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209"
+    },
+    {
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "lines": 244,
+      "sha256": "88f5224655b0d0b037c4e51795f0bd71d81be264a33f5583d9d0a12c57a92d7c"
+    },
+    {
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "lines": 281,
+      "sha256": "7c78f41be377d1b845d5274883b4f927370411e091b2f50761febee3965fed13"
+    },
+    {
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "lines": 306,
+      "sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e"
+    },
+    {
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "lines": 324,
+      "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a"
+    },
+    {
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "lines": 164,
+      "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0"
+    }
+  ],
+  "hits": [
+    {
+      "id": "1.7:L1:C3",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 1,
+      "text": "1.7",
+      "quote": "# 1.7 計算機基礎：程式、記憶體、stack 與 heap",
+      "context": "# 1.7 計算機基礎：程式、記憶體、stack 與 heap\n\n上一節已經算出 `subtotal(120, 3)` 的結果是 360。現在追問：原始碼中的數字和執行中的數字在哪裡？`subtotal` 已經結束，為什麼 `main` 還能使用結果？這些問題會把型別、函式與電腦保存資料的方式連起來。\n\n## 檔案留在儲存裝置，執行形成一次 process\n\n你保存的 `.rs` 原始碼是一份檔案，編譯後產生的執行檔也是檔案。它們放在 SSD、硬碟等**儲存裝置**；關閉程式後，檔案仍能保留。上一節的 `cargo run` 則會建置需要更新的部分，再啟動執行檔。"
+    },
+    {
+      "id": "1.7:L3:C1",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 3,
+      "text": "上一節",
+      "quote": "上一節已經算出 `subtotal(120, 3)` 的結果是 360。現在追問：原始碼中的數字和執行中的數字在哪裡？`subtotal` 已經結束，為什麼 `main` 還能使用結果？這些問題會把型別、函式與電腦保存資料的方式連起來。",
+      "context": "# 1.7 計算機基礎：程式、記憶體、stack 與 heap\n\n上一節已經算出 `subtotal(120, 3)` 的結果是 360。現在追問：原始碼中的數字和執行中的數字在哪裡？`subtotal` 已經結束，為什麼 `main` 還能使用結果？這些問題會把型別、函式與電腦保存資料的方式連起來。\n\n## 檔案留在儲存裝置，執行形成一次 process\n\n你保存的 `.rs` 原始碼是一份檔案，編譯後產生的執行檔也是檔案。它們放在 SSD、硬碟等**儲存裝置**；關閉程式後，檔案仍能保留。上一節的 `cargo run` 則會建置需要更新的部分，再啟動執行檔。\n\n**process**（行程）是這次正在執行的程式。它需要工作空間保存輸入、中間結果與目前做到哪裡。**RAM**（Random Access Memory，隨機存取記憶體）提供執行時使用的記憶體；本節談的資料位置，主要就在這個工作空間中。**CPU**（Central Processing Unit，中央處理器）依程式指令執行運算，例如讀取 120、3，再算出 360。"
+    },
+    {
+      "id": "1.7:L7:C69",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 7,
+      "text": "上一節",
+      "quote": "你保存的 `.rs` 原始碼是一份檔案，編譯後產生的執行檔也是檔案。它們放在 SSD、硬碟等**儲存裝置**；關閉程式後，檔案仍能保留。上一節的 `cargo run` 則會建置需要更新的部分，再啟動執行檔。",
+      "context": "## 檔案留在儲存裝置，執行形成一次 process\n\n你保存的 `.rs` 原始碼是一份檔案，編譯後產生的執行檔也是檔案。它們放在 SSD、硬碟等**儲存裝置**；關閉程式後，檔案仍能保留。上一節的 `cargo run` 則會建置需要更新的部分，再啟動執行檔。\n\n**process**（行程）是這次正在執行的程式。它需要工作空間保存輸入、中間結果與目前做到哪裡。**RAM**（Random Access Memory，隨機存取記憶體）提供執行時使用的記憶體；本節談的資料位置，主要就在這個工作空間中。**CPU**（Central Processing Unit，中央處理器）依程式指令執行運算，例如讀取 120、3，再算出 360。\n\n下面是角色圖。向下的「啟動」箭頭連起檔案與一次執行；RAM 與 CPU 之間的兩條箭頭分別表示提供運算材料、交回結果。\n\n![原始碼編譯成執行檔，啟動後的 process 使用 RAM 保存工作資料，由 CPU 執行乘法](../assets/foundations-v3/program-process.svg)"
+    },
+    {
+      "id": "1.7:L11:C1",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 11,
+      "text": "下面",
+      "quote": "下面是角色圖。向下的「啟動」箭頭連起檔案與一次執行；RAM 與 CPU 之間的兩條箭頭分別表示提供運算材料、交回結果。",
+      "context": "**process**（行程）是這次正在執行的程式。它需要工作空間保存輸入、中間結果與目前做到哪裡。**RAM**（Random Access Memory，隨機存取記憶體）提供執行時使用的記憶體；本節談的資料位置，主要就在這個工作空間中。**CPU**（Central Processing Unit，中央處理器）依程式指令執行運算，例如讀取 120、3，再算出 360。\n\n下面是角色圖。向下的「啟動」箭頭連起檔案與一次執行；RAM 與 CPU 之間的兩條箭頭分別表示提供運算材料、交回結果。\n\n![原始碼編譯成執行檔，啟動後的 process 使用 RAM 保存工作資料，由 CPU 執行乘法](../assets/foundations-v3/program-process.svg)\n\n`let price = 120;` 在這次執行中建立資料，並沒有把 120 重新寫回 `.rs` 檔。修改原始碼、保存並重新建置，才會改變後續啟動的程式。也可以用同一個執行檔啟動多次，每次都有各自的執行狀態。\n\n## 值、大小與位置是三件事"
+    },
+    {
+      "id": "1.7:L19:C3",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 19,
+      "text": "1.4",
+      "quote": "第 1.4 節說過，`i32` 名稱中的 32 是表示空間的 bit 數。**bit**（位元）是一個可表示 0 或 1 的單位；**byte**（位元組）由 8 個 bits 組成。因此，一個 `i32` 的表示大小是 32 bits，也就是 **4 bytes**。",
+      "context": "## 值、大小與位置是三件事\n\n第 1.4 節說過，`i32` 名稱中的 32 是表示空間的 bit 數。**bit**（位元）是一個可表示 0 或 1 的單位；**byte**（位元組）由 8 個 bits 組成。因此，一個 `i32` 的表示大小是 32 bits，也就是 **4 bytes**。\n\n這 4 bytes 用來表示整個整數，不是把十進位的 `1`、`2`、`0` 各存一格。現在先掌握所需空間，不必手算它的二進位編碼。\n\n再把三個問題分開：**值**是保存什麼，例如 120；**大小**是這個型別的表示需要多少空間，例如 4 bytes；**位置**是這份資料放在哪裡。下面用 P、Q 標記兩個示意位置。它們不是程式印出的實際地址，變數名稱則寫在資料框外，方便對回程式。\n\n![main 與 subtotal 可以各自保存值 120 的 i32，位置不同但每個值都需要 4 bytes；值換成 80 仍是 4 bytes](../assets/foundations-v3/i32-value-size-location.svg)"
+    },
+    {
+      "id": "1.7:L23:C76",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 23,
+      "text": "下面",
+      "quote": "再把三個問題分開：**值**是保存什麼，例如 120；**大小**是這個型別的表示需要多少空間，例如 4 bytes；**位置**是這份資料放在哪裡。下面用 P、Q 標記兩個示意位置。它們不是程式印出的實際地址，變數名稱則寫在資料框外，方便對回程式。",
+      "context": "這 4 bytes 用來表示整個整數，不是把十進位的 `1`、`2`、`0` 各存一格。現在先掌握所需空間，不必手算它的二進位編碼。\n\n再把三個問題分開：**值**是保存什麼，例如 120；**大小**是這個型別的表示需要多少空間，例如 4 bytes；**位置**是這份資料放在哪裡。下面用 P、Q 標記兩個示意位置。它們不是程式印出的實際地址，變數名稱則寫在資料框外，方便對回程式。\n\n![main 與 subtotal 可以各自保存值 120 的 i32，位置不同但每個值都需要 4 bytes；值換成 80 仍是 4 bytes](../assets/foundations-v3/i32-value-size-location.svg)\n\n同樣的 120 可以出現在兩個位置，不能因數字相等就把它們當成同一份存放。把一個 `i32` 的值換成 80，也不會讓型別需要的表示空間變成 2 bytes；**數值大小和占用多少 bytes 是不同問題**。\n\n## 沿著 A、B、C 追蹤一次函式呼叫"
+    },
+    {
+      "id": "1.7:L31:C15",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 31,
+      "text": "前面已",
+      "quote": "先看同頁的完整程式。它只使用前面已學過的數值、變數、函式、乘法與顯示；`subtotal` 多保存一個 `result`，讓我們能在回傳前觀察它，再用尾端 expression 交出同一個值。",
+      "context": "## 沿著 A、B、C 追蹤一次函式呼叫\n\n先看同頁的完整程式。它只使用前面已學過的數值、變數、函式、乘法與顯示；`subtotal` 多保存一個 `result`，讓我們能在回傳前觀察它，再用尾端 expression 交出同一個值。\n\n`//` 之後直到行尾是註解，不作為程式執行；本節用 A、B、C 標示觀察點。\n\n```rust\n--8<-- \"examples/intro-workspace/steps/examples/memory.rs\"\n```"
+    },
+    {
+      "id": "1.7:L64:C65",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 64,
+      "text": "上一節",
+      "quote": "frame 圖用來追蹤呼叫與值的關係；編譯器可能把數值放進 CPU 內部的暫存空間，或省掉不需要保留的資料，不保證照圖逐格存放。上一節內部 `{ ... }` 的 block 也沒有呼叫新函式，不能每看到一組大括號就新增一個函式 frame。scope 回答名稱在哪段程式可用，這裡則追蹤哪一次呼叫正在工作。",
+      "context": "第二次呼叫用 80、2，會開始新的一次 `subtotal` 工作，這次 `result` 是 160。兩次呼叫使用相同的函式定義，卻各有本次的參數與結果；因此第二行小計觀察不會仍是 360。\n\nframe 圖用來追蹤呼叫與值的關係；編譯器可能把數值放進 CPU 內部的暫存空間，或省掉不需要保留的資料，不保證照圖逐格存放。上一節內部 `{ ... }` 的 block 也沒有呼叫新函式，不能每看到一組大括號就新增一個函式 frame。scope 回答名稱在哪段程式可用，這裡則追蹤哪一次呼叫正在工作。\n\n## 另一種需要：內容量不同的訂單明細\n\n上面的數字程式沒有為這些數值額外配置 heap。接下來用訂單明細說明另一種安排：這次收到 2 項，下次收到 5 項，保存整份明細所需的空間會不同。這裡畫資料關係，後面再用可保存文字與多項資料的 Rust 型別操作它。\n\n**heap** 提供可以獨立請求的記憶體區塊。程式需要一塊空間時，**記憶體配置器（memory allocator）**安排可用區塊，記錄它正在被使用；這個動作叫**配置**。使用這份資料時，還要能找到它，因此另外保存位置資訊。表示資料位置的值稱為 **pointer（指標）**：它回答「到哪裡找」，內容則回答「找到什麼」。"
+    },
+    {
+      "id": "1.7:L68:C1",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 68,
+      "text": "上面",
+      "quote": "上面的數字程式沒有為這些數值額外配置 heap。接下來用訂單明細說明另一種安排：這次收到 2 項，下次收到 5 項，保存整份明細所需的空間會不同。這裡畫資料關係，後面再用可保存文字與多項資料的 Rust 型別操作它。",
+      "context": "## 另一種需要：內容量不同的訂單明細\n\n上面的數字程式沒有為這些數值額外配置 heap。接下來用訂單明細說明另一種安排：這次收到 2 項，下次收到 5 項，保存整份明細所需的空間會不同。這裡畫資料關係，後面再用可保存文字與多項資料的 Rust 型別操作它。\n\n**heap** 提供可以獨立請求的記憶體區塊。程式需要一塊空間時，**記憶體配置器（memory allocator）**安排可用區塊，記錄它正在被使用；這個動作叫**配置**。使用這份資料時，還要能找到它，因此另外保存位置資訊。表示資料位置的值稱為 **pointer（指標）**：它回答「到哪裡找」，內容則回答「找到什麼」。\n\n下圖每個案例都有一個位置資訊框，以及它所指向的內容區塊。實線箭頭表示「沿位置找到內容」，不是時間前進，也不是把整份內容複製到位置框裡。\n\n![兩項明細配置在 H1，五項明細配置在 H2；各自的位置資訊指向內容區塊，定位資訊和整份內容分開](../assets/foundations-v3/heap-location-content.svg)"
+    },
+    {
+      "id": "1.7:L90:C116",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 90,
+      "text": "第 3 章",
+      "quote": "**釋放**是把這塊空間歸還給配置器，讓它能供後續配置使用；不是把原內容改成零。歸還後，不能繼續靠舊位置資訊使用原來的資料。過早歸還會妨礙後續使用；一直保留不再需要的區塊，則會占住可用空間。程式因此需要清楚的使用、交接與清理責任，第 3 章會用 ownership 正式處理。",
+      "context": "heap 區塊的使用期間不直接綁在建立它的那次呼叫上。圖中的 H1 因外層還要使用而保留；如果工作在內層就已完成，也可以在那裡歸還。不能把「heap」解讀成一律比函式活得久。\n\n**釋放**是把這塊空間歸還給配置器，讓它能供後續配置使用；不是把原內容改成零。歸還後，不能繼續靠舊位置資訊使用原來的資料。過早歸還會妨礙後續使用；一直保留不再需要的區塊，則會占住可用空間。程式因此需要清楚的使用、交接與清理責任，第 3 章會用 ownership 正式處理。\n\n配置與歸還都是程式執行時的工作。Rust 在編譯時檢查用法，與執行時才真的計算、取得空間、歸還空間，是兩個不同階段。\n\n## 練習與完整答案\n\n把第一筆的 `price` 改成 80、`count` 改成 2，只保留這一筆呼叫。執行前，先沿 A、B、C 回答：B 的 `result` 是多少？C 的 `first` 是多少？`price` 的型別仍是 `i32`，需要幾個 bytes？"
+    },
+    {
+      "id": "1.7:L98:C7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 98,
+      "text": "如下",
+      "quote": "完整參考答案如下，設定沿用第 1.3 節的 `intro-steps`：",
+      "context": "把第一筆的 `price` 改成 80、`count` 改成 2，只保留這一筆呼叫。執行前，先沿 A、B、C 回答：B 的 `result` 是多少？C 的 `first` 是多少？`price` 的型別仍是 `i32`，需要幾個 bytes？\n\n完整參考答案如下，設定沿用第 1.3 節的 `intro-steps`：\n\n```rust\n--8<-- \"examples/intro-workspace/steps/examples/memory_answer.rs\"\n```\n\n```bash"
+    },
+    {
+      "id": "1.7:L98:C16",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 98,
+      "text": "1.3",
+      "quote": "完整參考答案如下，設定沿用第 1.3 節的 `intro-steps`：",
+      "context": "把第一筆的 `price` 改成 80、`count` 改成 2，只保留這一筆呼叫。執行前，先沿 A、B、C 回答：B 的 `result` 是多少？C 的 `first` 是多少？`price` 的型別仍是 `i32`，需要幾個 bytes？\n\n完整參考答案如下，設定沿用第 1.3 節的 `intro-steps`：\n\n```rust\n--8<-- \"examples/intro-workspace/steps/examples/memory_answer.rs\"\n```\n\n```bash"
+    },
+    {
+      "id": "1.7:L115:C2",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 115,
+      "text": "下一節",
+      "quote": "[下一節：tuple 與 array](01-08-lesson.md)",
+      "context": "B 的乘法改成 `80 * 2`，所以 `result` 是 160；它回傳後，C 的 `first` 也是 160。改變的是本次的值，`i32` 的表示大小仍是 4 bytes。函式回傳這個數字就能讓外層繼續使用結果，不需要讓已結束的 `subtotal` frame 留下來，也不需要為此額外配置 heap。\n\n[下一節：tuple 與 array](01-08-lesson.md)"
+    },
+    {
+      "id": "18.7:L1:C3",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 1,
+      "text": "18.7",
+      "quote": "# 18.7 單筆 URL 檢查：保留原文、HTTP 分類與期限",
+      "context": "# 18.7 單筆 URL 檢查：保留原文、HTTP 分類與期限\n\n第 14 章已能送出 async HTTP 請求，也能用本機服務控制結果。現在開始專案 B：網址檢查器。工具要回答的第一個問題很小：給一份原始網址文字，最後是否得到 2xx？若失敗，究竟是輸入不合法、請求失敗，還是等待逾時？\n\n這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。\n\n## 一筆結果必須回答什麼"
+    },
+    {
+      "id": "18.7:L3:C1",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 3,
+      "text": "第 14 章",
+      "quote": "第 14 章已能送出 async HTTP 請求，也能用本機服務控制結果。現在開始專案 B：網址檢查器。工具要回答的第一個問題很小：給一份原始網址文字，最後是否得到 2xx？若失敗，究竟是輸入不合法、請求失敗，還是等待逾時？",
+      "context": "# 18.7 單筆 URL 檢查：保留原文、HTTP 分類與期限\n\n第 14 章已能送出 async HTTP 請求，也能用本機服務控制結果。現在開始專案 B：網址檢查器。工具要回答的第一個問題很小：給一份原始網址文字，最後是否得到 2xx？若失敗，究竟是輸入不合法、請求失敗，還是等待逾時？\n\n這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。\n\n## 一筆結果必須回答什麼\n\n沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。"
+    },
+    {
+      "id": "18.7:L5:C20",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 5,
+      "text": "下一節",
+      "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。",
+      "context": "第 14 章已能送出 async HTTP 請求，也能用本機服務控制結果。現在開始專案 B：網址檢查器。工具要回答的第一個問題很小：給一份原始網址文字，最後是否得到 2xx？若失敗，究竟是輸入不合法、請求失敗，還是等待逾時？\n\n這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。\n\n## 一筆結果必須回答什麼\n\n沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。\n\n**scheme** 是 URL 中冒號前的部分，例如 `http`、`https` 或 `file`；本工具只接受前兩種。"
+    },
+    {
+      "id": "18.7:L5:C41",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 5,
+      "text": "14.5",
+      "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。",
+      "context": "第 14 章已能送出 async HTTP 請求，也能用本機服務控制結果。現在開始專案 B：網址檢查器。工具要回答的第一個問題很小：給一份原始網址文字，最後是否得到 2xx？若失敗，究竟是輸入不合法、請求失敗，還是等待逾時？\n\n這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。\n\n## 一筆結果必須回答什麼\n\n沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。\n\n**scheme** 是 URL 中冒號前的部分，例如 `http`、`https` 或 `file`；本工具只接受前兩種。"
+    },
+    {
+      "id": "18.7:L5:C79",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 5,
+      "text": "14.8",
+      "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。",
+      "context": "第 14 章已能送出 async HTTP 請求，也能用本機服務控制結果。現在開始專案 B：網址檢查器。工具要回答的第一個問題很小：給一份原始網址文字，最後是否得到 2xx？若失敗，究竟是輸入不合法、請求失敗，還是等待逾時？\n\n這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。\n\n## 一筆結果必須回答什麼\n\n沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。\n\n**scheme** 是 URL 中冒號前的部分，例如 `http`、`https` 或 `file`；本工具只接受前兩種。"
+    },
+    {
+      "id": "18.7:L5:C118",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 5,
+      "text": "14.9",
+      "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。",
+      "context": "第 14 章已能送出 async HTTP 請求，也能用本機服務控制結果。現在開始專案 B：網址檢查器。工具要回答的第一個問題很小：給一份原始網址文字，最後是否得到 2xx？若失敗，究竟是輸入不合法、請求失敗，還是等待逾時？\n\n這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。\n\n## 一筆結果必須回答什麼\n\n沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。\n\n**scheme** 是 URL 中冒號前的部分，例如 `http`、`https` 或 `file`；本工具只接受前兩種。"
+    },
+    {
+      "id": "18.7:L5:C153",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 5,
+      "text": "18.1",
+      "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。",
+      "context": "第 14 章已能送出 async HTTP 請求，也能用本機服務控制結果。現在開始專案 B：網址檢查器。工具要回答的第一個問題很小：給一份原始網址文字，最後是否得到 2xx？若失敗，究竟是輸入不合法、請求失敗，還是等待逾時？\n\n這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。\n\n## 一筆結果必須回答什麼\n\n沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。\n\n**scheme** 是 URL 中冒號前的部分，例如 `http`、`https` 或 `file`；本工具只接受前兩種。"
+    },
+    {
+      "id": "18.7:L9:C4",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 9,
+      "text": "14.9",
+      "quote": "沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。",
+      "context": "## 一筆結果必須回答什麼\n\n沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。\n\n**scheme** 是 URL 中冒號前的部分，例如 `http`、`https` 或 `file`；本工具只接受前兩種。\n\n| 輸入或服務行為 | 一筆檢查應保存的答案 |\n| --- | --- |\n| `/notes` 這份原文字 | 缺少完整 URL，在送請求前拒絕 |"
+    },
+    {
+      "id": "18.7:L9:C38",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 9,
+      "text": "以下",
+      "quote": "沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。",
+      "context": "## 一筆結果必須回答什麼\n\n沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。\n\n**scheme** 是 URL 中冒號前的部分，例如 `http`、`https` 或 `file`；本工具只接受前兩種。\n\n| 輸入或服務行為 | 一筆檢查應保存的答案 |\n| --- | --- |\n| `/notes` 這份原文字 | 缺少完整 URL，在送請求前拒絕 |"
+    },
+    {
+      "id": "18.7:L26:C106",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 26,
+      "text": "下一節",
+      "quote": "原始文字也要保留。解析後的 `Url` 是送請求用的位置，這個型別短名由 `use url::Url;` 引入；redirect 後的 URL 是最後回應的位置。這兩者不能取代呼叫者交來的原文字。此時只有一筆，下一節再加入輸入編號與重複網址的對應。",
+      "context": "我們只需要最後的 URL 與狀態，收到 final headers 就完成；不呼叫 `text()` 或 `bytes()` 主動讀完 body。伺服器可能已經送來一些 body bytes，這不影響工作界線；我們沒有承諾網路完全沒收到 body。\n\n原始文字也要保留。解析後的 `Url` 是送請求用的位置，這個型別短名由 `use url::Url;` 引入；redirect 後的 URL 是最後回應的位置。這兩者不能取代呼叫者交來的原文字。此時只有一筆，下一節再加入輸入編號與重複網址的對應。\n\n## 用 owned 資料保存分類與時間\n\n把答案表示成 `Check`：`original` 擁有原文字，`outcome` 保存本次分類。`Outcome::Http` 擁有最後 URL，另存 `u16` 狀態碼與 `bool` 通過判定；其他情況各有自己的 variant。\n\n輸入問題再分成 `InputIssue::Url` 與 `InputIssue::Scheme`。前者保留 `Url::parse` 的 `url::ParseError`，後者保留已解析但不支援的 scheme。請求問題保存實際的 `reqwest::Error`，不先壓成一段無法再分類的文字。"
+    },
+    {
+      "id": "18.7:L36:C1",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 36,
+      "text": "下列",
+      "quote": "下列型別只 derive 已教的 `Debug`，方便測試印出分類。內含的錯誤型別不需要可用 `==` 比較；測試以 `match` 取出要驗的欄位。對 `Option<u128>` 比較 `None` 則可使用標準型別已提供的 `PartialEq`：`u128` 可比較，因此這份 `Option` 也可比較。",
+      "context": "`elapsed_ms` 使用 `Option<u128>`，單位是毫秒，來源仍是 `std::time::Instant` 的 `elapsed().as_millis()`。輸入在解析處拒絕時是 `None`，表示尚未開始請求。已開始嘗試後是 `Some(...)`：HTTP 結果量到最後 headers；請求失敗或逾時量到該失敗結束。這不表示失敗也有 headers。client 準備、URL 解析及最後報告都在量測外，`Some(0)` 則仍是已嘗試，只是整毫秒顯示為零。\n\n下列型別只 derive 已教的 `Debug`，方便測試印出分類。內含的錯誤型別不需要可用 `==` 比較；測試以 `match` 取出要驗的欄位。對 `Option<u128>` 比較 `None` 則可使用標準型別已提供的 `PartialEq`：`u128` 可比較，因此這份 `Option` 也可比較。\n\n```rust\n--8<-- \"examples/ch15-projects/b1-starter/src/lib.rs:models\"\n```\n\n![一份原文字經過解析與受限的 headers 工作，形成一份 owned 結果](../assets/ch15/one-url-result.svg)"
+    },
+    {
+      "id": "18.7:L50:C12",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 50,
+      "text": "10.1",
+      "quote": "manifest 沿 10.1 的版本要求寫法，`0.13.5` 等仍是相容版本要求；repo 的 `Cargo.lock` 記錄本教材實際使用的版本。這份快照核對 reqwest 0.13.5、Tokio 1.53.3、url 2.5.8。直接使用的 reqwest `rustls`、Tokio `rt`／`macros`／`net`／`time` 都在 14.8 教過；測試另開 14.5 的 `test-util`。",
+      "context": "起始檔 在 `examples/ch15-projects/b1-starter`。請把其中完整的 `Cargo.toml` 與 `src/lib.rs` 保存到自己的 `url-b1-work` 目錄，另保存 `checks/single-tests.rs`，稍後才加入測試。下方先解釋要修改的位置，再提供全部起始檔與 checks；不需要到外部網站補齊程式。\n\nmanifest 沿 10.1 的版本要求寫法，`0.13.5` 等仍是相容版本要求；repo 的 `Cargo.lock` 記錄本教材實際使用的版本。這份快照核對 reqwest 0.13.5、Tokio 1.53.3、url 2.5.8。直接使用的 reqwest `rustls`、Tokio `rt`／`macros`／`net`／`time` 都在 14.8 教過；測試另開 14.5 的 `test-util`。\n\n`[dev-dependencies]` 可供測試與 example targets 使用，普通 library 不依賴 `Fixture`。測試重用 14.9 的 `ch11-local-service`，以已教的 path dependency 指向它的 package。起始檔的相對路徑適用於原 repo 位置；**複製到 repo 外後，先把那一行 `path` 換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑，再執行 Cargo**。例如教材在 `/work/learn_rust`，就填 `/work/learn_rust/examples/ch11-async/local-service`。這只是選定既有測試材料，不必再寫一份 server。\n\n```toml\n--8<-- \"examples/ch15-projects/b1-starter/Cargo.toml\"\n```"
+    },
+    {
+      "id": "18.7:L50:C181",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 50,
+      "text": "14.8",
+      "quote": "manifest 沿 10.1 的版本要求寫法，`0.13.5` 等仍是相容版本要求；repo 的 `Cargo.lock` 記錄本教材實際使用的版本。這份快照核對 reqwest 0.13.5、Tokio 1.53.3、url 2.5.8。直接使用的 reqwest `rustls`、Tokio `rt`／`macros`／`net`／`time` 都在 14.8 教過；測試另開 14.5 的 `test-util`。",
+      "context": "起始檔 在 `examples/ch15-projects/b1-starter`。請把其中完整的 `Cargo.toml` 與 `src/lib.rs` 保存到自己的 `url-b1-work` 目錄，另保存 `checks/single-tests.rs`，稍後才加入測試。下方先解釋要修改的位置，再提供全部起始檔與 checks；不需要到外部網站補齊程式。\n\nmanifest 沿 10.1 的版本要求寫法，`0.13.5` 等仍是相容版本要求；repo 的 `Cargo.lock` 記錄本教材實際使用的版本。這份快照核對 reqwest 0.13.5、Tokio 1.53.3、url 2.5.8。直接使用的 reqwest `rustls`、Tokio `rt`／`macros`／`net`／`time` 都在 14.8 教過；測試另開 14.5 的 `test-util`。\n\n`[dev-dependencies]` 可供測試與 example targets 使用，普通 library 不依賴 `Fixture`。測試重用 14.9 的 `ch11-local-service`，以已教的 path dependency 指向它的 package。起始檔的相對路徑適用於原 repo 位置；**複製到 repo 外後，先把那一行 `path` 換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑，再執行 Cargo**。例如教材在 `/work/learn_rust`，就填 `/work/learn_rust/examples/ch11-async/local-service`。這只是選定既有測試材料，不必再寫一份 server。\n\n```toml\n--8<-- \"examples/ch15-projects/b1-starter/Cargo.toml\"\n```"
+    },
+    {
+      "id": "18.7:L50:C194",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 50,
+      "text": "14.5",
+      "quote": "manifest 沿 10.1 的版本要求寫法，`0.13.5` 等仍是相容版本要求；repo 的 `Cargo.lock` 記錄本教材實際使用的版本。這份快照核對 reqwest 0.13.5、Tokio 1.53.3、url 2.5.8。直接使用的 reqwest `rustls`、Tokio `rt`／`macros`／`net`／`time` 都在 14.8 教過；測試另開 14.5 的 `test-util`。",
+      "context": "起始檔 在 `examples/ch15-projects/b1-starter`。請把其中完整的 `Cargo.toml` 與 `src/lib.rs` 保存到自己的 `url-b1-work` 目錄，另保存 `checks/single-tests.rs`，稍後才加入測試。下方先解釋要修改的位置，再提供全部起始檔與 checks；不需要到外部網站補齊程式。\n\nmanifest 沿 10.1 的版本要求寫法，`0.13.5` 等仍是相容版本要求；repo 的 `Cargo.lock` 記錄本教材實際使用的版本。這份快照核對 reqwest 0.13.5、Tokio 1.53.3、url 2.5.8。直接使用的 reqwest `rustls`、Tokio `rt`／`macros`／`net`／`time` 都在 14.8 教過；測試另開 14.5 的 `test-util`。\n\n`[dev-dependencies]` 可供測試與 example targets 使用，普通 library 不依賴 `Fixture`。測試重用 14.9 的 `ch11-local-service`，以已教的 path dependency 指向它的 package。起始檔的相對路徑適用於原 repo 位置；**複製到 repo 外後，先把那一行 `path` 換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑，再執行 Cargo**。例如教材在 `/work/learn_rust`，就填 `/work/learn_rust/examples/ch11-async/local-service`。這只是選定既有測試材料，不必再寫一份 server。\n\n```toml\n--8<-- \"examples/ch15-projects/b1-starter/Cargo.toml\"\n```"
+    },
+    {
+      "id": "18.7:L52:C77",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 52,
+      "text": "14.9",
+      "quote": "`[dev-dependencies]` 可供測試與 example targets 使用，普通 library 不依賴 `Fixture`。測試重用 14.9 的 `ch11-local-service`，以已教的 path dependency 指向它的 package。起始檔的相對路徑適用於原 repo 位置；**複製到 repo 外後，先把那一行 `path` 換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑，再執行 Cargo**。例如教材在 `/work/learn_rust`，就填 `/work/learn_rust/examples/ch11-async/local-service`。這只是選定既有測試材料，不必再寫一份 server。",
+      "context": "manifest 沿 10.1 的版本要求寫法，`0.13.5` 等仍是相容版本要求；repo 的 `Cargo.lock` 記錄本教材實際使用的版本。這份快照核對 reqwest 0.13.5、Tokio 1.53.3、url 2.5.8。直接使用的 reqwest `rustls`、Tokio `rt`／`macros`／`net`／`time` 都在 14.8 教過；測試另開 14.5 的 `test-util`。\n\n`[dev-dependencies]` 可供測試與 example targets 使用，普通 library 不依賴 `Fixture`。測試重用 14.9 的 `ch11-local-service`，以已教的 path dependency 指向它的 package。起始檔的相對路徑適用於原 repo 位置；**複製到 repo 外後，先把那一行 `path` 換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑，再執行 Cargo**。例如教材在 `/work/learn_rust`，就填 `/work/learn_rust/examples/ch11-async/local-service`。這只是選定既有測試材料，不必再寫一份 server。\n\n```toml\n--8<-- \"examples/ch15-projects/b1-starter/Cargo.toml\"\n```\n\n起始版已提供三個小工具，使用方式都沿已讀的 API："
+    },
+    {
+      "id": "18.7:L66:C14",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 66,
+      "text": "14.8",
+      "quote": "這份 client 保留 14.8 的建立與重用方式，但**不設定 reqwest 的請求期限**。本題把預算放在 14.5 的 `tokio::time::timeout`：之後整份單筆工作由 caller 提供同一個 `Duration`，現在先包住 GET 到 final headers。不是另外再設定一個互相競爭的十秒預算。",
+      "context": "| `parse_http_url(input)` | 借用文字，解析並檢查 scheme；成功交回 owned `Url`，失敗交回本節的 `InputIssue` |\n\n這份 client 保留 14.8 的建立與重用方式，但**不設定 reqwest 的請求期限**。本題把預算放在 14.5 的 `tokio::time::timeout`：之後整份單筆工作由 caller 提供同一個 `Duration`，現在先包住 GET 到 final headers。不是另外再設定一個互相競爭的十秒預算。\n\n```rust\n--8<-- \"examples/ch15-projects/b1-starter/src/lib.rs:helpers\"\n```\n\n`check` 的介面借用共用的 `Client`，取得 `original: String` 的 ownership 與本次 `limit: Duration`，async Output 固定是 `Check`。每筆輸入或網路問題都應進入結果，client 初始化失敗則已在呼叫前處理。"
+    },
+    {
+      "id": "18.7:L66:C59",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 66,
+      "text": "14.5",
+      "quote": "這份 client 保留 14.8 的建立與重用方式，但**不設定 reqwest 的請求期限**。本題把預算放在 14.5 的 `tokio::time::timeout`：之後整份單筆工作由 caller 提供同一個 `Duration`，現在先包住 GET 到 final headers。不是另外再設定一個互相競爭的十秒預算。",
+      "context": "| `parse_http_url(input)` | 借用文字，解析並檢查 scheme；成功交回 owned `Url`，失敗交回本節的 `InputIssue` |\n\n這份 client 保留 14.8 的建立與重用方式，但**不設定 reqwest 的請求期限**。本題把預算放在 14.5 的 `tokio::time::timeout`：之後整份單筆工作由 caller 提供同一個 `Duration`，現在先包住 GET 到 final headers。不是另外再設定一個互相競爭的十秒預算。\n\n```rust\n--8<-- \"examples/ch15-projects/b1-starter/src/lib.rs:helpers\"\n```\n\n`check` 的介面借用共用的 `Client`，取得 `original: String` 的 ownership 與本次 `limit: Duration`，async Output 固定是 `Check`。每筆輸入或網路問題都應進入結果，client 初始化失敗則已在呼叫前處理。"
+    },
+    {
+      "id": "18.7:L90:C1",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 90,
+      "text": "以下",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.7:L90:C6",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 90,
+      "text": "14.8",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.7:L90:C11",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 90,
+      "text": "14.9",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.7:L90:C130",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 90,
+      "text": "下面",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.7:L92:C119",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 92,
+      "text": "12.1",
+      "quote": "本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。",
+      "context": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`：\n\n    ```toml"
+    },
+    {
+      "id": "18.7:L138:C9",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 138,
+      "text": "18.1",
+      "quote": "repo 外沿 18.1 指定固定 toolchain。在自己的起始目錄執行：",
+      "context": "    ```\n\nrepo 外沿 18.1 指定固定 toolchain。在自己的起始目錄執行：\n\n```bash\ncargo +1.99.0 check --lib\ncargo +1.99.0 test --lib\n```\n"
+    },
+    {
+      "id": "18.7:L149:C152",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 149,
+      "text": "14.9",
+      "quote": "驗收重用 `Fixture::start` 的 ready 確認與動態 port、`url` 的固定路徑、`next_started` 的 handler 通知、`release` 的一次使用 gate，最後用 `shutdown` 收尾。這些介面與 server／client 各自等待的規則都來自 14.9。本節不靠公共網站的固定輸出，也不用 sleep 猜測請求已進入。",
+      "context": "## 先讓驗收有明確的失敗\n\n驗收重用 `Fixture::start` 的 ready 確認與動態 port、`url` 的固定路徑、`next_started` 的 handler 通知、`release` 的一次使用 gate，最後用 `shutdown` 收尾。這些介面與 server／client 各自等待的規則都來自 14.9。本節不靠公共網站的固定輸出，也不用 sleep 猜測請求已進入。\n\n完整 checks 有六項測試。它們依序驗輸入分類、共用 client 的 200／404／500、成功 redirect、redirect 上限、放行前後的等待，以及整份工作逾時。`assert_http` helper 借用 `Check`，驗指定 URL／狀態／通過判定，另確認已開始嘗試有 `Some` 耗時；它不要求某次真毫秒數。\n\nheld 測試還需要 `held_request(limit)`。它建立一份 gate、把 client 與網址 move 進 request task，再等待 handler 回報已進入第零份 gate。沿 14.3／14.9 的 `spawn` 要求，task 擁有 client 與文字；`Check` 的欄位使用可 `Send` 的 `String`、數值、`Option` 與這些具體錯誤型別，因此 Output 可交回 task 的等待者，沒有借用 fixture 的資料。成功交回 `(Fixture, JoinHandle<Check>)`，交回時尚未放行。起始版根本不送網路，因此通知也不會出現；加一個五秒的**觀察期限** 才能指出這種錯碼，然後 abort／await request task，再 shutdown server。測試用 `expect` 或 `panic!` 報材料、契約不符；這不是正式網址檢查器對一般輸入的處理方式。\n\n```rust"
+    },
+    {
+      "id": "18.7:L153:C106",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 153,
+      "text": "14.3",
+      "quote": "held 測試還需要 `held_request(limit)`。它建立一份 gate、把 client 與網址 move 進 request task，再等待 handler 回報已進入第零份 gate。沿 14.3／14.9 的 `spawn` 要求，task 擁有 client 與文字；`Check` 的欄位使用可 `Send` 的 `String`、數值、`Option` 與這些具體錯誤型別，因此 Output 可交回 task 的等待者，沒有借用 fixture 的資料。成功交回 `(Fixture, JoinHandle<Check>)`，交回時尚未放行。起始版根本不送網路，因此通知也不會出現；加一個五秒的**觀察期限** 才能指出這種錯碼，然後 abort／await request task，再 shutdown server。測試用 `expect` 或 `panic!` 報材料、契約不符；這不是正式網址檢查器對一般輸入的處理方式。",
+      "context": "完整 checks 有六項測試。它們依序驗輸入分類、共用 client 的 200／404／500、成功 redirect、redirect 上限、放行前後的等待，以及整份工作逾時。`assert_http` helper 借用 `Check`，驗指定 URL／狀態／通過判定，另確認已開始嘗試有 `Some` 耗時；它不要求某次真毫秒數。\n\nheld 測試還需要 `held_request(limit)`。它建立一份 gate、把 client 與網址 move 進 request task，再等待 handler 回報已進入第零份 gate。沿 14.3／14.9 的 `spawn` 要求，task 擁有 client 與文字；`Check` 的欄位使用可 `Send` 的 `String`、數值、`Option` 與這些具體錯誤型別，因此 Output 可交回 task 的等待者，沒有借用 fixture 的資料。成功交回 `(Fixture, JoinHandle<Check>)`，交回時尚未放行。起始版根本不送網路，因此通知也不會出現；加一個五秒的**觀察期限** 才能指出這種錯碼，然後 abort／await request task，再 shutdown server。測試用 `expect` 或 `panic!` 報材料、契約不符；這不是正式網址檢查器對一般輸入的處理方式。\n\n```rust\n--8<-- \"examples/ch15-projects/b1-starter/checks/single-tests.rs:observation-helper\"\n```\n\n逾時測試另有一個需要先說清的等待形式：具體的 `&mut JoinHandle<Check>` 也可作為等待 task 的 Future，Output 和直接 `request.await` 一樣是 `Result<Check, JoinError>`。借用等待保留 handle 的 owner，適合把等待放進測試的 timeout。若這個 timeout 到期，丟掉的是借用的等待，**task 還在跑**；仍需用原 handle abort，再 await 收尾。若已取得成功等待的 Output，就使用那份結果，不從同一把 handle 再取一次。"
+    },
+    {
+      "id": "18.7:L153:C111",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 153,
+      "text": "14.9",
+      "quote": "held 測試還需要 `held_request(limit)`。它建立一份 gate、把 client 與網址 move 進 request task，再等待 handler 回報已進入第零份 gate。沿 14.3／14.9 的 `spawn` 要求，task 擁有 client 與文字；`Check` 的欄位使用可 `Send` 的 `String`、數值、`Option` 與這些具體錯誤型別，因此 Output 可交回 task 的等待者，沒有借用 fixture 的資料。成功交回 `(Fixture, JoinHandle<Check>)`，交回時尚未放行。起始版根本不送網路，因此通知也不會出現；加一個五秒的**觀察期限** 才能指出這種錯碼，然後 abort／await request task，再 shutdown server。測試用 `expect` 或 `panic!` 報材料、契約不符；這不是正式網址檢查器對一般輸入的處理方式。",
+      "context": "完整 checks 有六項測試。它們依序驗輸入分類、共用 client 的 200／404／500、成功 redirect、redirect 上限、放行前後的等待，以及整份工作逾時。`assert_http` helper 借用 `Check`，驗指定 URL／狀態／通過判定，另確認已開始嘗試有 `Some` 耗時；它不要求某次真毫秒數。\n\nheld 測試還需要 `held_request(limit)`。它建立一份 gate、把 client 與網址 move 進 request task，再等待 handler 回報已進入第零份 gate。沿 14.3／14.9 的 `spawn` 要求，task 擁有 client 與文字；`Check` 的欄位使用可 `Send` 的 `String`、數值、`Option` 與這些具體錯誤型別，因此 Output 可交回 task 的等待者，沒有借用 fixture 的資料。成功交回 `(Fixture, JoinHandle<Check>)`，交回時尚未放行。起始版根本不送網路，因此通知也不會出現；加一個五秒的**觀察期限** 才能指出這種錯碼，然後 abort／await request task，再 shutdown server。測試用 `expect` 或 `panic!` 報材料、契約不符；這不是正式網址檢查器對一般輸入的處理方式。\n\n```rust\n--8<-- \"examples/ch15-projects/b1-starter/checks/single-tests.rs:observation-helper\"\n```\n\n逾時測試另有一個需要先說清的等待形式：具體的 `&mut JoinHandle<Check>` 也可作為等待 task 的 Future，Output 和直接 `request.await` 一樣是 `Result<Check, JoinError>`。借用等待保留 handle 的 owner，適合把等待放進測試的 timeout。若這個 timeout 到期，丟掉的是借用的等待，**task 還在跑**；仍需用原 handle abort，再 await 收尾。若已取得成功等待的 Output，就使用那份結果，不從同一把 handle 再取一次。"
+    },
+    {
+      "id": "18.7:L195:C286",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 195,
+      "text": "14.8",
+      "quote": "第二步讓合法 URL 得到 HTTP 或請求問題。記錄 `Instant::now()` 後開始 GET，等待 `send()`，保存 `elapsed().as_millis()`。成功回應先讀 `status()` 與 `url()`：把 URL 轉成 owned `String`，再 `drop(response)`，用狀態的 `as_u16()`、`is_success()` 建立 `Outcome::Http`。這樣收到 headers 便完成，沒有下一次讀 body 的 await。請求失敗保存 `Outcome::Request(error)`；沿 14.8 的 `error.is_timeout()` 若辨認到 timeout，就歸入 `Outcome::Timeout`。本 client 沒設定 reqwest 請求預算，但分類仍不假設依賴永遠不會回報自己的 timeout。",
+      "context": "第一步只處理輸入。用 `parse_http_url(original.as_str())`，失敗立即組合 `Check`：保留 `original`、`None` 耗時、真正的 `Outcome::Input(issue)`。成功先保留 `Url`，其餘仍可用尚未完成的標記。重跑測試，應先讓輸入那一項通過。\n\n第二步讓合法 URL 得到 HTTP 或請求問題。記錄 `Instant::now()` 後開始 GET，等待 `send()`，保存 `elapsed().as_millis()`。成功回應先讀 `status()` 與 `url()`：把 URL 轉成 owned `String`，再 `drop(response)`，用狀態的 `as_u16()`、`is_success()` 建立 `Outcome::Http`。這樣收到 headers 便完成，沒有下一次讀 body 的 await。請求失敗保存 `Outcome::Request(error)`；沿 14.8 的 `error.is_timeout()` 若辨認到 timeout，就歸入 `Outcome::Timeout`。本 client 沒設定 reqwest 請求預算，但分類仍不假設依賴永遠不會回報自己的 timeout。\n\n此時固定 HTTP／redirect／放行測試可以成立，逾時測試仍應失敗：handler 未放行，單純 `send().await` 不會自行實作本題的十秒期限。二十秒觀察期限會指出缺少這一步。\n\n第三步把整份 GET 等待放進 `work = async { ... }`，再 `timeout(limit, work).await`。沿 14.8，`send()` 是普通方法呼叫形成 Future；放在 async block 內，GET 建立與 send 呼叫也在 wrapper 的工作內。本步 `work` 的 Output 是 `Result<Response, reqwest::Error>`，wrapper 因而形成兩層 `Result`：\n\n| 等待結果 | 應組合的分類 |"
+    },
+    {
+      "id": "18.7:L199:C73",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 199,
+      "text": "14.8",
+      "quote": "第三步把整份 GET 等待放進 `work = async { ... }`，再 `timeout(limit, work).await`。沿 14.8，`send()` 是普通方法呼叫形成 Future；放在 async block 內，GET 建立與 send 呼叫也在 wrapper 的工作內。本步 `work` 的 Output 是 `Result<Response, reqwest::Error>`，wrapper 因而形成兩層 `Result`：",
+      "context": "此時固定 HTTP／redirect／放行測試可以成立，逾時測試仍應失敗：handler 未放行，單純 `send().await` 不會自行實作本題的十秒期限。二十秒觀察期限會指出缺少這一步。\n\n第三步把整份 GET 等待放進 `work = async { ... }`，再 `timeout(limit, work).await`。沿 14.8，`send()` 是普通方法呼叫形成 Future；放在 async block 內，GET 建立與 send 呼叫也在 wrapper 的工作內。本步 `work` 的 Output 是 `Result<Response, reqwest::Error>`，wrapper 因而形成兩層 `Result`：\n\n| 等待結果 | 應組合的分類 |\n| --- | --- |\n| `Ok(Ok(response))` | 有最後 headers，讀出欄位並建立 `Http` |\n| `Ok(Err(error))` | 工作已結束但請求失敗，依上述規則分類 |\n| `Err(_)` | wrapper 逾時，建立 `Timeout` |"
+    },
+    {
+      "id": "18.7:L207:C68",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 207,
+      "text": "14.5",
+      "quote": "這裡用 `match` 收攏結果，而不是用 `?` 提早離開：函式承諾一筆總有一份 `Check`。wrapper 的合作式限制仍沿 14.5；期限不搶占阻塞的同步工作，也不撤銷伺服器已做的事。此處包住的是可等待的網路工作。",
+      "context": "| `Err(_)` | wrapper 逾時，建立 `Timeout` |\n\n這裡用 `match` 收攏結果，而不是用 `?` 提早離開：函式承諾一筆總有一份 `Check`。wrapper 的合作式限制仍沿 14.5；期限不搶占阻塞的同步工作，也不撤銷伺服器已做的事。此處包住的是可等待的網路工作。\n\n每步都重跑 checks。完成後六項應全部通過；每筆錯誤也保留輸入，下一節才能把所有結果放回清單中。\n\n??? tip \"提示 1：先畫資料流，不急著寫所有分支\"\n\n    `original` 一直保留。解析失敗沒有請求，所以先交回 `Input` 與 `None`；解析成功取得 `url` 才開始計時。無論網路結果是哪一種，最後都用同一份原文字與 `Some` 時間組合 `Check`。"
+    },
+    {
+      "id": "18.7:L209:C35",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 209,
+      "text": "下一節",
+      "quote": "每步都重跑 checks。完成後六項應全部通過；每筆錯誤也保留輸入，下一節才能把所有結果放回清單中。",
+      "context": "這裡用 `match` 收攏結果，而不是用 `?` 提早離開：函式承諾一筆總有一份 `Check`。wrapper 的合作式限制仍沿 14.5；期限不搶占阻塞的同步工作，也不撤銷伺服器已做的事。此處包住的是可等待的網路工作。\n\n每步都重跑 checks。完成後六項應全部通過；每筆錯誤也保留輸入，下一節才能把所有結果放回清單中。\n\n??? tip \"提示 1：先畫資料流，不急著寫所有分支\"\n\n    `original` 一直保留。解析失敗沒有請求，所以先交回 `Input` 與 `None`；解析成功取得 `url` 才開始計時。無論網路結果是哪一種，最後都用同一份原文字與 `Some` 時間組合 `Check`。\n\n??? tip \"提示 2：先分 wrapper 與工作\""
+    },
+    {
+      "id": "18.7:L229:C9",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 229,
+      "text": "如下",
+      "quote": "    完整設定如下：",
+      "context": "    ```\n\n    完整設定如下：\n\n    ```toml\n    --8<-- \"examples/ch15-projects/b1-complete/Cargo.toml\"\n    ```\n\n    完整快照是 `b1-complete`。它已包含完整六項 checks 與小型本機 example。教材 repo 根目錄可執行："
+    },
+    {
+      "id": "18.7:L259:C2",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 259,
+      "text": "下一節",
+      "quote": "[下一節：原行位置與依序批次](18-08-lesson.md)",
+      "context": "現在一筆 owned `Check` 已把輸入、最後 HTTP 或失敗、嘗試時間連在一起。下一步才把逐行輸入與這個單筆核心接起來，保留每行的原位置。\n\n[下一節：原行位置與依序批次](18-08-lesson.md)"
+    },
+    {
+      "id": "18.8:L1:C3",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 1,
+      "text": "18.8",
+      "quote": "# 18.8 原行身分與依序批次：每份輸入都有結果",
+      "context": "# 18.8 原行身分與依序批次：每份輸入都有結果\n\n上一節已有一份網址變成一份 owned `Check` 的能力。現在要處理多行文字：有空白行、重複網址，也有無法解析的行。要先回答「每份結果屬於哪一行」，再把單筆能力接成批次。\n\n本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。\n\n## 同一份文字，哪些行成為工作？"
+    },
+    {
+      "id": "18.8:L3:C1",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 3,
+      "text": "上一節",
+      "quote": "上一節已有一份網址變成一份 owned `Check` 的能力。現在要處理多行文字：有空白行、重複網址，也有無法解析的行。要先回答「每份結果屬於哪一行」，再把單筆能力接成批次。",
+      "context": "# 18.8 原行身分與依序批次：每份輸入都有結果\n\n上一節已有一份網址變成一份 owned `Check` 的能力。現在要處理多行文字：有空白行、重複網址，也有無法解析的行。要先回答「每份結果屬於哪一行」，再把單筆能力接成批次。\n\n本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。\n\n## 同一份文字，哪些行成為工作？\n\n假設本次本機服務的 port 是41000，材料如下。這是手工示意；真正測試仍由 `Fixture` 取得動態 port。第一列的「空白行」是說明標記，實際該行沒有文字："
+    },
+    {
+      "id": "18.8:L5:C6",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 5,
+      "text": "18.7",
+      "quote": "本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。",
+      "context": "上一節已有一份網址變成一份 owned `Check` 的能力。現在要處理多行文字：有空白行、重複網址，也有無法解析的行。要先回答「每份結果屬於哪一行」，再把單筆能力接成批次。\n\n本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。\n\n## 同一份文字，哪些行成為工作？\n\n假設本次本機服務的 port 是41000，材料如下。這是手工示意；真正測試仍由 `Fixture` 取得動態 port。第一列的「空白行」是說明標記，實際該行沒有文字：\n\n```text"
+    },
+    {
+      "id": "18.8:L5:C39",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 5,
+      "text": "9.6",
+      "quote": "本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。",
+      "context": "上一節已有一份網址變成一份 owned `Check` 的能力。現在要處理多行文字：有空白行、重複網址，也有無法解析的行。要先回答「每份結果屬於哪一行」，再把單筆能力接成批次。\n\n本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。\n\n## 同一份文字，哪些行成為工作？\n\n假設本次本機服務的 port 是41000，材料如下。這是手工示意；真正測試仍由 `Fixture` 取得動態 port。第一列的「空白行」是說明標記，實際該行沒有文字：\n\n```text"
+    },
+    {
+      "id": "18.8:L5:C82",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 5,
+      "text": "前面已",
+      "quote": "本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。",
+      "context": "上一節已有一份網址變成一份 owned `Check` 的能力。現在要處理多行文字：有空白行、重複網址，也有無法解析的行。要先回答「每份結果屬於哪一行」，再把單筆能力接成批次。\n\n本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。\n\n## 同一份文字，哪些行成為工作？\n\n假設本次本機服務的 port 是41000，材料如下。這是手工示意；真正測試仍由 `Fixture` 取得動態 port。第一列的「空白行」是說明標記，實際該行沒有文字：\n\n```text"
+    },
+    {
+      "id": "18.8:L9:C25",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 9,
+      "text": "如下",
+      "quote": "假設本次本機服務的 port 是41000，材料如下。這是手工示意；真正測試仍由 `Fixture` 取得動態 port。第一列的「空白行」是說明標記，實際該行沒有文字：",
+      "context": "## 同一份文字，哪些行成為工作？\n\n假設本次本機服務的 port 是41000，材料如下。這是手工示意；真正測試仍由 `Fixture` 取得動態 port。第一列的「空白行」是說明標記，實際該行沒有文字：\n\n```text\n（空白行）\nhttp://127.0.0.1:41000/ok\n/notes\nhttp://127.0.0.1:41000/ok"
+    },
+    {
+      "id": "18.8:L31:C2",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 31,
+      "text": "9.6",
+      "quote": "沿9.6，`text.lines()` 借用文字、逐行交回 `&str`。LF與CRLF分隔符不在行內容中；尾端換行不多產生一行，單獨CR沒有跟LF時仍是內容。這裡保存的「原行」指這份內容，不含已由lines取走的分隔符。",
+      "context": "## 先編號，只用空白視圖決定略行\n\n沿9.6，`text.lines()` 借用文字、逐行交回 `&str`。LF與CRLF分隔符不在行內容中；尾端換行不多產生一行，單獨CR沒有跟LF時仍是內容。這裡保存的「原行」指這份內容，不含已由lines取走的分隔符。\n\n回用第10.9、14.6節的 **`Iterator::enumerate()`**：它取得原iterator，交回新的iterator，每筆Item是 `(usize索引, 原Item)`，索引由0開始。用在lines時，就是 `(input_index, line)`；原行即使稍後略過，也已經占過自己的索引。先取得這個對應，再判斷行是否空白。\n\n新增 **`str::trim()`**：它 shared 借用文字，交回去除兩端空白的 `&str` 視圖，不修改原文字。空白依Unicode的 `White_Space` 字元集合判定，包括一般空格與全形空白。若整行只有這些字元，trim後的視圖就為空；用9.6的 `str::is_empty()` 判斷即可。\n\n本題**只用trim視圖判空**。保留下來與送進B1的仍是原 `line.to_owned()`；例如 `\" first \"` 的兩端空格仍在original中。讀行不先判URL是否有效，也沒有新增註解行或拆字詞規則。"
+    },
+    {
+      "id": "18.8:L33:C4",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 33,
+      "text": "10.9",
+      "quote": "回用第10.9、14.6節的 **`Iterator::enumerate()`**：它取得原iterator，交回新的iterator，每筆Item是 `(usize索引, 原Item)`，索引由0開始。用在lines時，就是 `(input_index, line)`；原行即使稍後略過，也已經占過自己的索引。先取得這個對應，再判斷行是否空白。",
+      "context": "沿9.6，`text.lines()` 借用文字、逐行交回 `&str`。LF與CRLF分隔符不在行內容中；尾端換行不多產生一行，單獨CR沒有跟LF時仍是內容。這裡保存的「原行」指這份內容，不含已由lines取走的分隔符。\n\n回用第10.9、14.6節的 **`Iterator::enumerate()`**：它取得原iterator，交回新的iterator，每筆Item是 `(usize索引, 原Item)`，索引由0開始。用在lines時，就是 `(input_index, line)`；原行即使稍後略過，也已經占過自己的索引。先取得這個對應，再判斷行是否空白。\n\n新增 **`str::trim()`**：它 shared 借用文字，交回去除兩端空白的 `&str` 視圖，不修改原文字。空白依Unicode的 `White_Space` 字元集合判定，包括一般空格與全形空白。若整行只有這些字元，trim後的視圖就為空；用9.6的 `str::is_empty()` 判斷即可。\n\n本題**只用trim視圖判空**。保留下來與送進B1的仍是原 `line.to_owned()`；例如 `\" first \"` 的兩端空格仍在original中。讀行不先判URL是否有效，也沒有新增註解行或拆字詞規則。\n\n## 保存 owned 輸入，再包住單筆結果"
+    },
+    {
+      "id": "18.8:L33:C9",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 33,
+      "text": "14.6",
+      "quote": "回用第10.9、14.6節的 **`Iterator::enumerate()`**：它取得原iterator，交回新的iterator，每筆Item是 `(usize索引, 原Item)`，索引由0開始。用在lines時，就是 `(input_index, line)`；原行即使稍後略過，也已經占過自己的索引。先取得這個對應，再判斷行是否空白。",
+      "context": "沿9.6，`text.lines()` 借用文字、逐行交回 `&str`。LF與CRLF分隔符不在行內容中；尾端換行不多產生一行，單獨CR沒有跟LF時仍是內容。這裡保存的「原行」指這份內容，不含已由lines取走的分隔符。\n\n回用第10.9、14.6節的 **`Iterator::enumerate()`**：它取得原iterator，交回新的iterator，每筆Item是 `(usize索引, 原Item)`，索引由0開始。用在lines時，就是 `(input_index, line)`；原行即使稍後略過，也已經占過自己的索引。先取得這個對應，再判斷行是否空白。\n\n新增 **`str::trim()`**：它 shared 借用文字，交回去除兩端空白的 `&str` 視圖，不修改原文字。空白依Unicode的 `White_Space` 字元集合判定，包括一般空格與全形空白。若整行只有這些字元，trim後的視圖就為空；用9.6的 `str::is_empty()` 判斷即可。\n\n本題**只用trim視圖判空**。保留下來與送進B1的仍是原 `line.to_owned()`；例如 `\" first \"` 的兩端空格仍在original中。讀行不先判URL是否有效，也沒有新增註解行或拆字詞規則。\n\n## 保存 owned 輸入，再包住單筆結果"
+    },
+    {
+      "id": "18.8:L35:C131",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 35,
+      "text": "9.6",
+      "quote": "新增 **`str::trim()`**：它 shared 借用文字，交回去除兩端空白的 `&str` 視圖，不修改原文字。空白依Unicode的 `White_Space` 字元集合判定，包括一般空格與全形空白。若整行只有這些字元，trim後的視圖就為空；用9.6的 `str::is_empty()` 判斷即可。",
+      "context": "回用第10.9、14.6節的 **`Iterator::enumerate()`**：它取得原iterator，交回新的iterator，每筆Item是 `(usize索引, 原Item)`，索引由0開始。用在lines時，就是 `(input_index, line)`；原行即使稍後略過，也已經占過自己的索引。先取得這個對應，再判斷行是否空白。\n\n新增 **`str::trim()`**：它 shared 借用文字，交回去除兩端空白的 `&str` 視圖，不修改原文字。空白依Unicode的 `White_Space` 字元集合判定，包括一般空格與全形空白。若整行只有這些字元，trim後的視圖就為空；用9.6的 `str::is_empty()` 判斷即可。\n\n本題**只用trim視圖判空**。保留下來與送進B1的仍是原 `line.to_owned()`；例如 `\" first \"` 的兩端空格仍在original中。讀行不先判URL是否有效，也沒有新增註解行或拆字詞規則。\n\n## 保存 owned 輸入，再包住單筆結果\n\n本步新增 `Input`：保存 `input_index: usize` 與 owned `original: String`。因此讀行時借用的整份文字結束後，清單仍可使用；不需要讓批次一直借用來源。"
+    },
+    {
+      "id": "18.8:L43:C63",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 43,
+      "text": "2.6",
+      "quote": "`Entry` 保存同一份索引與B1的 `Check`。快照把已驗收的單筆core保存為 `src/single.rs`，沿2.6的 `pub mod single;` 公開module；`single::Check` 是這個module內的型別，沒有跨另一個crate的同名型別轉換。本步不改這份core，只改新的讀行與依序函式。",
+      "context": "本步新增 `Input`：保存 `input_index: usize` 與 owned `original: String`。因此讀行時借用的整份文字結束後，清單仍可使用；不需要讓批次一直借用來源。\n\n`Entry` 保存同一份索引與B1的 `Check`。快照把已驗收的單筆core保存為 `src/single.rs`，沿2.6的 `pub mod single;` 公開module；`single::Check` 是這個module內的型別，沒有跨另一個crate的同名型別轉換。本步不改這份core，只改新的讀行與依序函式。\n\n`InputError::Empty` 表示清單沒有任何非空白行，是整份工作不能開始的設定問題。兩行無效URL仍是非空清單，應有兩份 `Outcome::Input`；不能把「沒有成功URL」混成Empty。型別只derive已教的Debug，方便checks診斷。\n\n```rust\n--8<-- \"examples/ch15-projects/b2-starter/src/lib.rs:models\"\n```"
+    },
+    {
+      "id": "18.8:L53:C35",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 53,
+      "text": "14.5",
+      "quote": "runner借用同一份Client，取得每筆期限Duration。沿14.5，Duration具備Copy，可以把相同跨度交給每次B1 `check`；**每筆開始時各建立自己的期限**，不是整批只共用一個十秒倒數。client建立失敗仍在開始批次前處理。",
+      "context": "選 **`Vec::is_empty()`** 作零項檢查：它 shared 借用Vec，沒有元素時回true。`prepare_inputs(&str)` 交回 `Result<Vec<Input>, InputError>`，保留後零項就回Empty。`run_sequential` 取得 `Vec<Input>` ownership，也拒絕caller直接交來的零項清單；成功Output是 `Vec<Entry>`，依輸入Vec順序保存每份結果。\n\nrunner借用同一份Client，取得每筆期限Duration。沿14.5，Duration具備Copy，可以把相同跨度交給每次B1 `check`；**每筆開始時各建立自己的期限**，不是整批只共用一個十秒倒數。client建立失敗仍在開始批次前處理。\n\n![原行先取得索引，再略過空白；三份owned輸入依序形成三份結果，重複網址索引不同](../assets/ch15/line-index-to-results.svg)\n\n圖中U指最初材料中的同一份 `/ok` URL。index0在判空白後略過，index1與index3的U各有自己的位置。中間 `/notes` 得到 `Outcome::Input` 後，仍繼續index3；Input Vec保存原索引與原文，Entry Vec保存原索引與Check，不把索引壓成0、1、2。\n\n## 保存起始檔，再讓 checks 指出缺少的工作"
+    },
+    {
+      "id": "18.8:L61:C92",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 61,
+      "text": "以下",
+      "quote": "完整起始版在 `b2-starter`。把 `Cargo.toml`、整個 `src` 與 `checks/batch-tests.rs` 保存到自己的 `url-b2-work`。以下同頁列出全部起始檔；`single.rs` 已是B1答案，兩個新函式目前都只回空Ok。",
+      "context": "## 保存起始檔，再讓 checks 指出缺少的工作\n\n完整起始版在 `b2-starter`。把 `Cargo.toml`、整個 `src` 與 `checks/batch-tests.rs` 保存到自己的 `url-b2-work`。以下同頁列出全部起始檔；`single.rs` 已是B1答案，兩個新函式目前都只回空Ok。\n\nmanifest的直接依賴與features沿B1固定版本契約。本步checks不暫停clock，所以沒有另開test-util。dev-dependency重用14.9 Fixture；複製到repo外後，**先將path換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑**，再執行Cargo，和B1相同。\n\n```toml\n--8<-- \"examples/ch15-projects/b2-starter/Cargo.toml\"\n```"
+    },
+    {
+      "id": "18.8:L63:C82",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 63,
+      "text": "14.9",
+      "quote": "manifest的直接依賴與features沿B1固定版本契約。本步checks不暫停clock，所以沒有另開test-util。dev-dependency重用14.9 Fixture；複製到repo外後，**先將path換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑**，再執行Cargo，和B1相同。",
+      "context": "完整起始版在 `b2-starter`。把 `Cargo.toml`、整個 `src` 與 `checks/batch-tests.rs` 保存到自己的 `url-b2-work`。以下同頁列出全部起始檔；`single.rs` 已是B1答案，兩個新函式目前都只回空Ok。\n\nmanifest的直接依賴與features沿B1固定版本契約。本步checks不暫停clock，所以沒有另開test-util。dev-dependency重用14.9 Fixture；複製到repo外後，**先將path換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑**，再執行Cargo，和B1相同。\n\n```toml\n--8<-- \"examples/ch15-projects/b2-starter/Cargo.toml\"\n```\n\n??? example \"展開本節完整起始 library 與已完成的 single\""
+    },
+    {
+      "id": "18.8:L85:C1",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 85,
+      "text": "以下",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.8:L85:C6",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 85,
+      "text": "14.8",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.8:L85:C11",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 85,
+      "text": "14.9",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.8:L85:C130",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 85,
+      "text": "下面",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.8:L87:C119",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 87,
+      "text": "12.1",
+      "quote": "本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。",
+      "context": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`：\n\n    ```toml"
+    },
+    {
+      "id": "18.8:L133:C9",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 133,
+      "text": "18.1",
+      "quote": "自己的工作目錄沿18.1選toolchain。先確認起始library可編譯；尚未追加checks時應零項測試，空Ok沒有完成讀行與Empty規則：",
+      "context": "    ```\n\n自己的工作目錄沿18.1選toolchain。先確認起始library可編譯；尚未追加checks時應零項測試，空Ok沒有完成讀行與Empty規則：\n\n```bash\ncargo +1.99.0 check --lib\ncargo +1.99.0 test --lib\n```\n"
+    },
+    {
+      "id": "18.8:L148:C39",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 148,
+      "text": "8.2",
+      "quote": "held材料用兩份gate，沿B1的有限觀察期限。`BatchTask` 是8.2的type alias，指 `JoinHandle<Result<Vec<Entry>, InputError>>`；task擁有Client和Input Vec，Output也為owned。Input／Entry的具體欄位沿已教Send能力，標準Vec在元素可Send時也可交給task，不借用來源文字。",
+      "context": "`assert_http(&Entry, status, passed)` 沿B1借用結果做match，驗狀態與判定，對數值reference明確使用 `*`。混合測試用已教的iter／map／collect取得索引Vec，再比預期順序；它會確認兩份相同URL都真的送出。`/loop` 六份請求加兩份 `/ok`、一份 `/missing` 共九份，Input問題沒有送請求。\n\nheld材料用兩份gate，沿B1的有限觀察期限。`BatchTask` 是8.2的type alias，指 `JoinHandle<Result<Vec<Entry>, InputError>>`；task擁有Client和Input Vec，Output也為owned。Input／Entry的具體欄位沿已教Send能力，標準Vec在元素可Send時也可交給task，不借用來源文字。\n\n`observe_started` 等指定held通知，成功交回Fixture與原task handle，還沒有放行；五秒觀察不符就abort／await task、shutdown server，再使test失敗。`finish_batch` 在放行後以五秒觀察期限等待借用handle，取得Output後另shutdown，再交回rows與hits。借用handle的Future／到期不自動取消task／成功不再取得第二次Output，都沿B1已教契約。這些觀察期限是測試觀察範圍，沒有加整批正式期限。\n\n```rust\n--8<-- \"examples/ch15-projects/b2-starter/checks/batch-tests.rs:gate-helpers\"\n```"
+    },
+    {
+      "id": "18.8:L172:C60",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 172,
+      "text": "9.4",
+      "quote": "第二步改 `run_sequential`。先拒絕零項，建立結果Vec；`for input in inputs` 沿9.4取得每份Input ownership。先保存可Copy的usize索引，再把String move進 `single::check(client, input.original, limit).await`，最後push包著同一索引的Entry。",
+      "context": "此時行處理與零有效行兩項應通過；runner三種批次情況與直接零項仍失敗。核對第一項的index1／3／4：略過的是原index0與2，不是把留下的項目重編號。\n\n第二步改 `run_sequential`。先拒絕零項，建立結果Vec；`for input in inputs` 沿9.4取得每份Input ownership。先保存可Copy的usize索引，再把String move進 `single::check(client, input.original, limit).await`，最後push包著同一索引的Entry。\n\n這個圈的順序是「取一份→await完成→保存→取下一份」。B1的單筆錯誤已經是Check資料，因此照樣push；runner不需要因Input、Request或Timeout提早返回。混合清單中間出現 `/notes` 後，後面的重複URL與404／redirect問題也都應留下。\n\n```rust\n--8<-- \"examples/ch15-projects/b2-starter/checks/batch-tests.rs:mixed-test\"\n```"
+    },
+    {
+      "id": "18.8:L202:C12",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 202,
+      "text": "如下",
+      "quote": "    本階段全部來源如下，沒有加入後面的JoinSet或停止機制：",
+      "context": "??? success \"完成快照：完整設定、單筆核心、批次與六項測試\"\n\n    本階段全部來源如下，沒有加入後面的JoinSet或停止機制：\n\n    `examples/ch15-projects/b2-complete/Cargo.toml`：\n\n    ```toml\n    --8<-- \"examples/ch15-projects/b2-complete/Cargo.toml\"\n    ```"
+    },
+    {
+      "id": "18.8:L242:C20",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 242,
+      "text": "下一節",
+      "quote": "現在輸入位置、原文與單筆結果已連起來。下一節改排程時，要繼續保留這份對應，再讓多份工作同時等待。",
+      "context": "結果索引是1、2、3、4；兩份HTTP200、一份Input、一份HTTP404。批次成功交回結果並不表示每筆都通過，之後接CLI時才把這份分類回收成工具的退出狀態。\n\n現在輸入位置、原文與單筆結果已連起來。下一節改排程時，要繼續保留這份對應，再讓多份工作同時等待。\n\n[下一節：有上限的 URL 工作](18-09-lesson.md)"
+    },
+    {
+      "id": "18.8:L244:C2",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 244,
+      "text": "下一節",
+      "quote": "[下一節：有上限的 URL 工作](18-09-lesson.md)",
+      "context": "現在輸入位置、原文與單筆結果已連起來。下一節改排程時，要繼續保留這份對應，再讓多份工作同時等待。\n\n[下一節：有上限的 URL 工作](18-09-lesson.md)"
+    },
+    {
+      "id": "18.9:L1:C3",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 1,
+      "text": "18.9",
+      "quote": "# 18.9 有上限的 URL 排程：先回收，再補工作",
+      "context": "# 18.9 有上限的 URL 排程：先回收，再補工作\n\nB2 每次先等一份網址完成，才取下一份。若前一份正在等伺服器的 headers，後面幾份還沒有機會送出。本步希望**允許幾份工作同時等待，仍保有每筆原文與原行位置，而且不一次提交整張清單**。\n\n沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。\n\n## 哪些工作可以開始，何時才空出名額？"
+    },
+    {
+      "id": "18.9:L5:C4",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 5,
+      "text": "18.8",
+      "quote": "沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。",
+      "context": "B2 每次先等一份網址完成，才取下一份。若前一份正在等伺服器的 headers，後面幾份還沒有機會送出。本步希望**允許幾份工作同時等待，仍保有每筆原文與原行位置，而且不一次提交整張清單**。\n\n沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。\n\n## 哪些工作可以開始，何時才空出名額？\n\n三份網址分別送往本機 `/held/0`、`/held/1`、`/held/2`。每個handler通知「已進入」後，等我們放行才回headers；沿14.9的 `Fixture`，不靠sleep猜測請求進度。這三份沒有空白行，原 `input_index` 就是0、1、2。\n\njobs2時，最初只提交0、1，2仍是owned `Input` 資料，沒有task。若先放行1，收取1的結果後才能提交2。再放行2、最後放行0，完成順序便是1、2、0；最後報告仍依原行位置排列0、1、2。"
+    },
+    {
+      "id": "18.9:L5:C37",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 5,
+      "text": "14.4",
+      "quote": "沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。",
+      "context": "B2 每次先等一份網址完成，才取下一份。若前一份正在等伺服器的 headers，後面幾份還沒有機會送出。本步希望**允許幾份工作同時等待，仍保有每筆原文與原行位置，而且不一次提交整張清單**。\n\n沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。\n\n## 哪些工作可以開始，何時才空出名額？\n\n三份網址分別送往本機 `/held/0`、`/held/1`、`/held/2`。每個handler通知「已進入」後，等我們放行才回headers；沿14.9的 `Fixture`，不靠sleep猜測請求進度。這三份沒有空白行，原 `input_index` 就是0、1、2。\n\njobs2時，最初只提交0、1，2仍是owned `Input` 資料，沒有task。若先放行1，收取1的結果後才能提交2。再放行2、最後放行0，完成順序便是1、2、0；最後報告仍依原行位置排列0、1、2。"
+    },
+    {
+      "id": "18.9:L5:C76",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 5,
+      "text": "14.3",
+      "quote": "沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。",
+      "context": "B2 每次先等一份網址完成，才取下一份。若前一份正在等伺服器的 headers，後面幾份還沒有機會送出。本步希望**允許幾份工作同時等待，仍保有每筆原文與原行位置，而且不一次提交整張清單**。\n\n沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。\n\n## 哪些工作可以開始，何時才空出名額？\n\n三份網址分別送往本機 `/held/0`、`/held/1`、`/held/2`。每個handler通知「已進入」後，等我們放行才回headers；沿14.9的 `Fixture`，不靠sleep猜測請求進度。這三份沒有空白行，原 `input_index` 就是0、1、2。\n\njobs2時，最初只提交0、1，2仍是owned `Input` 資料，沒有task。若先放行1，收取1的結果後才能提交2。再放行2、最後放行0，完成順序便是1、2、0；最後報告仍依原行位置排列0、1、2。"
+    },
+    {
+      "id": "18.9:L9:C76",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 9,
+      "text": "14.9",
+      "quote": "三份網址分別送往本機 `/held/0`、`/held/1`、`/held/2`。每個handler通知「已進入」後，等我們放行才回headers；沿14.9的 `Fixture`，不靠sleep猜測請求進度。這三份沒有空白行，原 `input_index` 就是0、1、2。",
+      "context": "## 哪些工作可以開始，何時才空出名額？\n\n三份網址分別送往本機 `/held/0`、`/held/1`、`/held/2`。每個handler通知「已進入」後，等我們放行才回headers；沿14.9的 `Fixture`，不靠sleep猜測請求進度。這三份沒有空白行，原 `input_index` 就是0、1、2。\n\njobs2時，最初只提交0、1，2仍是owned `Input` 資料，沒有task。若先放行1，收取1的結果後才能提交2。再放行2、最後放行0，完成順序便是1、2、0；最後報告仍依原行位置排列0、1、2。\n\n沿14.4，`JoinSet::len()` 算**已提交、尚未收取**的task，包含已完成但結果還在集合裡的task。因此「1完成」還沒有空位；是 `join_next_with_id()` 取走1，才讓len少一份。用這個數字判名額，可以把正在等待與完成待收的工作一起控制在jobs內。\n\njobs不限制整張輸入Vec或結果Vec的記憶體。待辦與已收結果仍隨清單長度增加；我們目前限制的是已提交尚未收取的task數。也不由這份安排推論所有網路情況都更快。"
+    },
+    {
+      "id": "18.9:L13:C2",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 13,
+      "text": "14.4",
+      "quote": "沿14.4，`JoinSet::len()` 算**已提交、尚未收取**的task，包含已完成但結果還在集合裡的task。因此「1完成」還沒有空位；是 `join_next_with_id()` 取走1，才讓len少一份。用這個數字判名額，可以把正在等待與完成待收的工作一起控制在jobs內。",
+      "context": "jobs2時，最初只提交0、1，2仍是owned `Input` 資料，沒有task。若先放行1，收取1的結果後才能提交2。再放行2、最後放行0，完成順序便是1、2、0；最後報告仍依原行位置排列0、1、2。\n\n沿14.4，`JoinSet::len()` 算**已提交、尚未收取**的task，包含已完成但結果還在集合裡的task。因此「1完成」還沒有空位；是 `join_next_with_id()` 取走1，才讓len少一份。用這個數字判名額，可以把正在等待與完成待收的工作一起控制在jobs內。\n\njobs不限制整張輸入Vec或結果Vec的記憶體。待辦與已收結果仍隨清單長度增加；我們目前限制的是已提交尚未收取的task數。也不由這份安排推論所有網路情況都更快。\n\n沿第14.6節，暫將本例 `tasks` 這份JoinSet標為 **S1**。圖中的task0／1指原輸入0／1所建立的工作，不是Tokio印出的Id值。每次spawn回的opaque Id，另外登記到完整Input；只有對照表能找回原文與原索引。下圖的框與數字一直追同一份S1的內容，不是每步另建集合。\n\n## 保留單筆分類，也保留沒有 Check 的 task 故障"
+    },
+    {
+      "id": "18.9:L17:C3",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 17,
+      "text": "14.6",
+      "quote": "沿第14.6節，暫將本例 `tasks` 這份JoinSet標為 **S1**。圖中的task0／1指原輸入0／1所建立的工作，不是Tokio印出的Id值。每次spawn回的opaque Id，另外登記到完整Input；只有對照表能找回原文與原索引。下圖的框與數字一直追同一份S1的內容，不是每步另建集合。",
+      "context": "jobs不限制整張輸入Vec或結果Vec的記憶體。待辦與已收結果仍隨清單長度增加；我們目前限制的是已提交尚未收取的task數。也不由這份安排推論所有網路情況都更快。\n\n沿第14.6節，暫將本例 `tasks` 這份JoinSet標為 **S1**。圖中的task0／1指原輸入0／1所建立的工作，不是Tokio印出的Id值。每次spawn回的opaque Id，另外登記到完整Input；只有對照表能找回原文與原索引。下圖的框與數字一直追同一份S1的內容，不是每步另建集合。\n\n## 保留單筆分類，也保留沒有 Check 的 task 故障\n\n起始檔沿用B2的 `src/single.rs`，單筆core不變：GET最多五次redirect、final2xx通過、只等finalheaders、不主動讀body、每筆Tokio deadline預設十秒。`Duration` 是每次工作的新跨度，不是整批共同的十秒倒數。\n\nB2的 `Input`／`prepare_inputs` 移到 `src/input.rs`，以已教的 `pub mod input;` 公開，型別與讀行規則不改。空白行略過，invalid行與duplicates都保留，索引仍是略行前的0-based原行位置。公開runner與Scheduler的caller契約是：交入 `prepare_inputs` 產生的清單，或同樣具有**唯一、遞增原行索引**的Input；不自行用相同index指兩份輸入。"
+    },
+    {
+      "id": "18.9:L25:C114",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 25,
+      "text": "14.3",
+      "quote": "task正常交回的仍是typed `single::Check`，其中Input／Request／Timeout都是單筆結果。但task若panic或被abort，就沒有Check，收取層交回 `JoinError`。這兩層沿14.3：網路問題不必被改寫成task panic，task故障也不能捏造一份HTTP狀態。",
+      "context": "B2的 `Input`／`prepare_inputs` 移到 `src/input.rs`，以已教的 `pub mod input;` 公開，型別與讀行規則不改。空白行略過，invalid行與duplicates都保留，索引仍是略行前的0-based原行位置。公開runner與Scheduler的caller契約是：交入 `prepare_inputs` 產生的清單，或同樣具有**唯一、遞增原行索引**的Input；不自行用相同index指兩份輸入。\n\ntask正常交回的仍是typed `single::Check`，其中Input／Request／Timeout都是單筆結果。但task若panic或被abort，就沒有Check，收取層交回 `JoinError`。這兩層沿14.3：網路問題不必被改寫成task panic，task故障也不能捏造一份HTTP狀態。\n\n因此新增 `Completion::Checked(Check)` 與 `TaskFailure { original, error: JoinError }`。本節的 `Entry` 保存原 `input_index` 與Completion，取代B2直接包Check的Entry；`original()` 借讀兩個variant中的原文，供同一份報告對應使用。\n\n`ConfigError::ZeroJobs`／`Empty` 是開始前拒絕設定。正jobs與非空清單才可以建立排程；兩份invalidURL仍是非空清單。若同時零jobs與零項，這份介面先回ZeroJobs。`default_jobs()` 回8，後續工具入口可使用同一個預設值。\n\n```rust"
+    },
+    {
+      "id": "18.9:L41:C2",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 41,
+      "text": "14.4",
+      "quote": "沿14.4，把待辦放進 `std::vec::IntoIter<Input>`，只在有名額時取下一份資料。`JoinSet<single::Check>` 保存tasks；`HashMap<Id, Input>` 登記每份task對應的完整Input。立即登記的目的，是panic／abort沒有Check時也找得到原行與原文；Id只是回收時的查找key，不是報告順序。",
+      "context": "## 把可提交資料與已提交工作分開保存\n\n沿14.4，把待辦放進 `std::vec::IntoIter<Input>`，只在有名額時取下一份資料。`JoinSet<single::Check>` 保存tasks；`HashMap<Id, Input>` 登記每份task對應的完整Input。立即登記的目的，是panic／abort沒有Check時也找得到原行與原文；Id只是回收時的查找key，不是報告順序。\n\n每份task需要owned Client。這裡選reqwest0.13.5的 **`Client::clone()`**：Client具備Clone，複本共享原Client的連線池。把複本move進task，便不再借用排程外的Client，也不需要每筆重新builder。沿ownership規則，clone不是所有型別一律深層複製；此處依Client自己的契約解讀。\n\n原Input留在Id表，task另取得 `input.original.as_str().to_owned()`。這份String複本的空間，是為了task失敗仍有原文可報；jobs不會消除整份輸入、登記資料與報告的成本。每次也複製可Copy的Duration跨度。\n\n起始版的欄位尚未全部使用，會遇到編譯器 `dead_code` lint：提醒有未使用的程式項目。`#[allow(dead_code)]` 是attribute，只允許其下方Scheduler內的這項提醒，讓未完成快照能專注在功能checks。完整快照刪掉它；它不會讓stub變正確，也不以公開mutable欄位繞過設計。"
+    },
+    {
+      "id": "18.9:L53:C131",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 53,
+      "text": "14.4",
+      "quote": "`Scheduler::new(&Client, Vec<Input>, jobs, limit)` 先檢查設定，再把Input移進pending、建立空JoinSet／Id表、保存Client複本。之後呼叫 `fill` 補初始名額。它可能spawn，因此和14.4相同，必須在正在執行的Tokio runtime內呼叫；本節demo與async tests都用已教的current-thread runtime。",
+      "context": "```\n\n`Scheduler::new(&Client, Vec<Input>, jobs, limit)` 先檢查設定，再把Input移進pending、建立空JoinSet／Id表、保存Client複本。之後呼叫 `fill` 補初始名額。它可能spawn，因此和14.4相同，必須在正在執行的Tokio runtime內呼叫；本節demo與async tests都用已教的current-thread runtime。\n\n```rust\n--8<-- \"examples/ch15-projects/b3-starter/src/lib.rs:constructor\"\n```\n\n## 保存完整起點，先讓 checks 顯示缺少的機制"
+    },
+    {
+      "id": "18.9:L61:C88",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 61,
+      "text": "下面",
+      "quote": "從 `b3-starter` 保存 `Cargo.toml`、整個 `src` 與 `checks/bounded-tests.rs` 到自己的 `url-b3-work`。下面列出本節完整起始來源，片段只協助定位。Input與single已完成，`fill`／`next`／`run_bounded` 的三個body尚未完成。",
+      "context": "## 保存完整起點，先讓 checks 顯示缺少的機制\n\n從 `b3-starter` 保存 `Cargo.toml`、整個 `src` 與 `checks/bounded-tests.rs` 到自己的 `url-b3-work`。下面列出本節完整起始來源，片段只協助定位。Input與single已完成，`fill`／`next`／`run_bounded` 的三個body尚未完成。\n\n直接依賴與runtime features沿B2。checks另用14.3的mpsc控制合成task，因此dev-dependency開Tokio的 `sync`，不用test-util。Fixture仍是已教的path dependency；repo外先換成你電腦上 `examples/ch11-async/local-service` 的實際絕對路徑，才執行Cargo。\n\n```toml\n--8<-- \"examples/ch15-projects/b3-starter/Cargo.toml\"\n```"
+    },
+    {
+      "id": "18.9:L63:C34",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 63,
+      "text": "14.3",
+      "quote": "直接依賴與runtime features沿B2。checks另用14.3的mpsc控制合成task，因此dev-dependency開Tokio的 `sync`，不用test-util。Fixture仍是已教的path dependency；repo外先換成你電腦上 `examples/ch11-async/local-service` 的實際絕對路徑，才執行Cargo。",
+      "context": "從 `b3-starter` 保存 `Cargo.toml`、整個 `src` 與 `checks/bounded-tests.rs` 到自己的 `url-b3-work`。下面列出本節完整起始來源，片段只協助定位。Input與single已完成，`fill`／`next`／`run_bounded` 的三個body尚未完成。\n\n直接依賴與runtime features沿B2。checks另用14.3的mpsc控制合成task，因此dev-dependency開Tokio的 `sync`，不用test-util。Fixture仍是已教的path dependency；repo外先換成你電腦上 `examples/ch11-async/local-service` 的實際絕對路徑，才執行Cargo。\n\n```toml\n--8<-- \"examples/ch15-projects/b3-starter/Cargo.toml\"\n```\n\n??? example \"展開完整起始 library、input 與單筆核心\""
+    },
+    {
+      "id": "18.9:L91:C1",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 91,
+      "text": "以下",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.9:L91:C6",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 91,
+      "text": "14.8",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.9:L91:C11",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 91,
+      "text": "14.9",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.9:L91:C130",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 91,
+      "text": "下面",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.9:L93:C119",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 93,
+      "text": "12.1",
+      "quote": "本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。",
+      "context": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`：\n\n    ```toml"
+    },
+    {
+      "id": "18.9:L139:C2",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 139,
+      "text": "18.1",
+      "quote": "沿18.1選toolchain，在自己的工作目錄先確認起始library：",
+      "context": "    ```\n\n沿18.1選toolchain，在自己的工作目錄先確認起始library：\n\n```bash\ncargo +1.99.0 check --lib\ncargo +1.99.0 test --lib\n```\n"
+    },
+    {
+      "id": "18.9:L156:C176",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 156,
+      "text": "14.3",
+      "quote": "收尾新增 **`JoinSet::abort_all()`**：向集合中所有tasks要求abort，但沒有移除它們，也沒有等它們結束。接著逐次await `join_next_with_id()`，直到None，才表示集合全被收取；收尾不呼叫會補工的Scheduler.next。最後shutdown Fixture再panic或做assert。沿14.3，Drop JoinSet只要求abort，不能當作已await每份child。",
+      "context": "已提供的 `Scheduler::tracked(&self) -> usize` 只讀取 `tasks.len()`，交回已提交且尚未收取的 task 數；已完成但尚未收取的 task 也在其中。checks 用它觀察名額是否被過早釋放。\n\n收尾新增 **`JoinSet::abort_all()`**：向集合中所有tasks要求abort，但沒有移除它們，也沒有等它們結束。接著逐次await `join_next_with_id()`，直到None，才表示集合全被收取；收尾不呼叫會補工的Scheduler.next。最後shutdown Fixture再panic或做assert。沿14.3，Drop JoinSet只要求abort，不能當作已await每份child。\n\n```rust\n--8<-- \"examples/ch15-projects/b3-starter/checks/bounded-tests.rs:drain\"\n```\n\n`entered` 等一份handler通知，交回原Fixture與通知索引；前兩份可能是0／1或1／0。`release` 消耗一份gate，確認放行成功；`take` 等一份Entry並確認是哪份原index。每個觀察最多五秒，條件不符也先收妥tasks與server再panic。這是測試觀察上限，與每筆十秒工作期限不同。"
+    },
+    {
+      "id": "18.9:L200:C2",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 200,
+      "text": "14.3",
+      "quote": "和14.3相同，移除登記的expect只檢查作者自己的不變條件：「每份spawn的task立即登記，並且只移除一次」。漏登記是程式錯誤，不是正常HTTP問題；不以這份panic取代Input／Request／Timeout的逐項回報。觀察期限能處理上述等待到期與條件不符，不承諾捕捉任意錯碼的同步panic或不讓出runtime的無限圈。",
+      "context": "第二步改 `next`。先等 `join_next_with_id()`；集合空回None。成功有 `(Id, Check)`，JoinError則用error.id取得同一份查找key。移除Id表Input，保存索引，再將Check包成Checked，或用Input.original與JoinError形成TaskFailure。**記好這份Entry之後才fill**，最後交回它。\n\n和14.3相同，移除登記的expect只檢查作者自己的不變條件：「每份spawn的task立即登記，並且只移除一次」。漏登記是程式錯誤，不是正常HTTP問題；不以這份panic取代Input／Request／Timeout的逐項回報。觀察期限能處理上述等待到期與條件不符，不承諾捕捉任意錯碼的同步panic或不讓出runtime的無限圈。\n\nheld測試讓0／1先進入，再放行1、收取1、確認2此時才進入。接著放行2與0，得到完成順序1／2／0；每次都有可追蹤的通知、名額與原index。\n\n```rust\n--8<-- \"examples/ch15-projects/b3-starter/checks/bounded-tests.rs:held-test\"\n```"
+    },
+    {
+      "id": "18.9:L210:C167",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 210,
+      "text": "9.7",
+      "quote": "第三步改 `run_bounded`。還原四個參數名稱，建立Scheduler（設定錯誤用已教的?傳回），用 `while let Some(entry) = scheduler.next().await` 保存每份結果。最後以既有 `order_entries(entries.as_mut_slice())` 排序並回Ok；它沿9.7用 `sort_by_key` 取input_index，排序修改slice排列，沒有更改索引或original。",
+      "context": "fill與next完成後，應三項通過、四項失敗：held、合成故障、完成待收已通過，runner仍固定空Ok。\n\n第三步改 `run_bounded`。還原四個參數名稱，建立Scheduler（設定錯誤用已教的?傳回），用 `while let Some(entry) = scheduler.next().await` 保存每份結果。最後以既有 `order_entries(entries.as_mut_slice())` 排序並回Ok；它沿9.7用 `sort_by_key` 取input_index，排序修改slice排列，沒有更改索引或original。\n\n混合測試沿B2：兩份 `/ok`、一份 `/missing` 與redirect loop六份請求共九份；invalid沒有送出GET。即使中間有Input或Request問題，仍回五份按原索引1／3／4／5／6排列的Entry。整批取得結果不等於每筆通過。\n\n```rust\n--8<-- \"examples/ch15-projects/b3-starter/checks/bounded-tests.rs:mixed-test\"\n```"
+    },
+    {
+      "id": "18.9:L279:C37",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 279,
+      "text": "下一節",
+      "quote": "本步已把依序等待換成有限提交與逐份收取，保留前兩步的單筆政策與原行身分。下一節先讓使用者要求中止並收妥工作；正式CLI參數與輸出形式在第18.11節整合。本節的測試收尾還不是產品停止功能。",
+      "context": "```\n\n本步已把依序等待換成有限提交與逐份收取，保留前兩步的單筆政策與原行身分。下一節先讓使用者要求中止並收妥工作；正式CLI參數與輸出形式在第18.11節整合。本節的測試收尾還不是產品停止功能。\n\n[下一節：停止提交與完整收尾](18-10-lesson.md)"
+    },
+    {
+      "id": "18.9:L279:C69",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 279,
+      "text": "18.11",
+      "quote": "本步已把依序等待換成有限提交與逐份收取，保留前兩步的單筆政策與原行身分。下一節先讓使用者要求中止並收妥工作；正式CLI參數與輸出形式在第18.11節整合。本節的測試收尾還不是產品停止功能。",
+      "context": "```\n\n本步已把依序等待換成有限提交與逐份收取，保留前兩步的單筆政策與原行身分。下一節先讓使用者要求中止並收妥工作；正式CLI參數與輸出形式在第18.11節整合。本節的測試收尾還不是產品停止功能。\n\n[下一節：停止提交與完整收尾](18-10-lesson.md)"
+    },
+    {
+      "id": "18.9:L281:C2",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 281,
+      "text": "下一節",
+      "quote": "[下一節：停止提交與完整收尾](18-10-lesson.md)",
+      "context": "本步已把依序等待換成有限提交與逐份收取，保留前兩步的單筆政策與原行身分。下一節先讓使用者要求中止並收妥工作；正式CLI參數與輸出形式在第18.11節整合。本節的測試收尾還不是產品停止功能。\n\n[下一節：停止提交與完整收尾](18-10-lesson.md)"
+    },
+    {
+      "id": "18.10:L1:C3",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 1,
+      "text": "18.10",
+      "quote": "# 18.10 停止與收尾：停止補工，保留每份原輸入",
+      "context": "# 18.10 停止與收尾：停止補工，保留每份原輸入\n\nB3 已能在有限名額內檢查清單。現在使用者按 Ctrl+C，不再需要剩餘工作；我們仍要回答**每份原輸入留下什麼：已完成、已取消，或根本沒有提交？** 直接退出會丟掉這份對應，也無法確認 client 與測試服務的收尾。\n\n沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。\n\n## 停止後，每份原行要留下什麼？"
+    },
+    {
+      "id": "18.10:L5:C4",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 5,
+      "text": "18.9",
+      "quote": "沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。",
+      "context": "B3 已能在有限名額內檢查清單。現在使用者按 Ctrl+C，不再需要剩餘工作；我們仍要回答**每份原輸入留下什麼：已完成、已取消，或根本沒有提交？** 直接退出會丟掉這份對應，也無法確認 client 與測試服務的收尾。\n\n沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。\n\n## 停止後，每份原行要留下什麼？\n\n沿本機 Fixture，先用以下五份輸入、jobs2。空白行略過後保有的原索引是1、3、4、5、6；`U` 指這次本機 `/ok` 的同一份 URL，表格是手工材料對應，測試會使用真動態 port：\n\n| 原 input_index | original 的材料 | 觀察停止時的狀態 |"
+    },
+    {
+      "id": "18.10:L5:C48",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 5,
+      "text": "14.6",
+      "quote": "沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。",
+      "context": "B3 已能在有限名額內檢查清單。現在使用者按 Ctrl+C，不再需要剩餘工作；我們仍要回答**每份原輸入留下什麼：已完成、已取消，或根本沒有提交？** 直接退出會丟掉這份對應，也無法確認 client 與測試服務的收尾。\n\n沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。\n\n## 停止後，每份原行要留下什麼？\n\n沿本機 Fixture，先用以下五份輸入、jobs2。空白行略過後保有的原索引是1、3、4、5、6；`U` 指這次本機 `/ok` 的同一份 URL，表格是手工材料對應，測試會使用真動態 port：\n\n| 原 input_index | original 的材料 | 觀察停止時的狀態 |"
+    },
+    {
+      "id": "18.10:L5:C148",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 5,
+      "text": "下一節",
+      "quote": "沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。",
+      "context": "B3 已能在有限名額內檢查清單。現在使用者按 Ctrl+C，不再需要剩餘工作；我們仍要回答**每份原輸入留下什麼：已完成、已取消，或根本沒有提交？** 直接退出會丟掉這份對應，也無法確認 client 與測試服務的收尾。\n\n沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。\n\n## 停止後，每份原行要留下什麼？\n\n沿本機 Fixture，先用以下五份輸入、jobs2。空白行略過後保有的原索引是1、3、4、5、6；`U` 指這次本機 `/ok` 的同一份 URL，表格是手工材料對應，測試會使用真動態 port：\n\n| 原 input_index | original 的材料 | 觀察停止時的狀態 |"
+    },
+    {
+      "id": "18.10:L9:C15",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 9,
+      "text": "以下",
+      "quote": "沿本機 Fixture，先用以下五份輸入、jobs2。空白行略過後保有的原索引是1、3、4、5、6；`U` 指這次本機 `/ok` 的同一份 URL，表格是手工材料對應，測試會使用真動態 port：",
+      "context": "## 停止後，每份原行要留下什麼？\n\n沿本機 Fixture，先用以下五份輸入、jobs2。空白行略過後保有的原索引是1、3、4、5、6；`U` 指這次本機 `/ok` 的同一份 URL，表格是手工材料對應，測試會使用真動態 port：\n\n| 原 input_index | original 的材料 | 觀察停止時的狀態 |\n| --- | --- | --- |\n| 1 | 本機 `/held/0` URL | 已進入 handler，尚未放行 |\n| 3 | U | 已取得 HTTP200 並收取 |\n| 4 | 本機 `/held/1` URL | 收取3後才補入，尚未放行 |"
+    },
+    {
+      "id": "18.10:L23:C83",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 23,
+      "text": "14.6",
+      "quote": "停止不會撤銷已送出的GET或server已增加的計數。client task全收回後，Fixture還要解除gate並shutdown，才能確認server完成；沿14.6與14.9分開處理兩方的owner。",
+      "context": "這時觀察到停止，應保留3的HTTP200、取消1與4，5與6標為未提交。`/notes` 若真的交給single會得到Input問題；本例還沒提交它，所以答案是未開始。取消已提交task與未提交資料都不是transport failure，也不改寫成Timeout。\n\n停止不會撤銷已送出的GET或server已增加的計數。client task全收回後，Fixture還要解除gate並shutdown，才能確認server完成；沿14.6與14.9分開處理兩方的owner。\n\n## 把整批理由與每筆分類分開保存\n\n`Completion` 沿B3的Checked／TaskFailure，新增 **Cancelled** 與 **Unstarted**，兩者各保存original。Cancelled來自JoinError的is_cancelled；Unstarted直接來自pending Input，沒有Tokio Id。兩者沒有Check，因此不捏造HTTP狀態或elapsed_ms。\n\n`Entry` 仍有原索引；`original()` 增加借讀兩種新variant。單筆core不改：GET、最多五次redirect、final2xx、只等finalheaders與每筆十秒預設，仍由B1的Check保存。"
+    },
+    {
+      "id": "18.10:L23:C88",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 23,
+      "text": "14.9",
+      "quote": "停止不會撤銷已送出的GET或server已增加的計數。client task全收回後，Fixture還要解除gate並shutdown，才能確認server完成；沿14.6與14.9分開處理兩方的owner。",
+      "context": "這時觀察到停止，應保留3的HTTP200、取消1與4，5與6標為未提交。`/notes` 若真的交給single會得到Input問題；本例還沒提交它，所以答案是未開始。取消已提交task與未提交資料都不是transport failure，也不改寫成Timeout。\n\n停止不會撤銷已送出的GET或server已增加的計數。client task全收回後，Fixture還要解除gate並shutdown，才能確認server完成；沿14.6與14.9分開處理兩方的owner。\n\n## 把整批理由與每筆分類分開保存\n\n`Completion` 沿B3的Checked／TaskFailure，新增 **Cancelled** 與 **Unstarted**，兩者各保存original。Cancelled來自JoinError的is_cancelled；Unstarted直接來自pending Input，沒有Tokio Id。兩者沒有Check，因此不捏造HTTP狀態或elapsed_ms。\n\n`Entry` 仍有原索引；`original()` 增加借讀兩種新variant。單筆core不改：GET、最多五次redirect、final2xx、只等finalheaders與每筆十秒預設，仍由B1的Check保存。"
+    },
+    {
+      "id": "18.10:L31:C6",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 31,
+      "text": "14.6",
+      "quote": "停止來源沿14.6：容量1 channel送 **StopEvent**，Requested表示明確要求停止，SignalFailed保留監聽錯誤。**EndReason** 另加Finished與StopSourceClosed；channel關閉沒有事件，不能解讀成使用者按了Ctrl+C。**Batch** 把整批理由與所有Entry放在一起；Finished只表示清單做完，不保證每筆通過。",
+      "context": "`Entry` 仍有原索引；`original()` 增加借讀兩種新variant。單筆core不改：GET、最多五次redirect、final2xx、只等finalheaders與每筆十秒預設，仍由B1的Check保存。\n\n停止來源沿14.6：容量1 channel送 **StopEvent**，Requested表示明確要求停止，SignalFailed保留監聽錯誤。**EndReason** 另加Finished與StopSourceClosed；channel關閉沒有事件，不能解讀成使用者按了Ctrl+C。**Batch** 把整批理由與所有Entry放在一起；Finished只表示清單做完，不保證每筆通過。\n\n```rust\n--8<-- \"examples/ch15-projects/b4-starter/src/lib.rs:models\"\n```\n\n![原index三已完成，停止後一與四取消，五與六尚未提交；全收尾後按原index排列Batch](../assets/ch15/stop-url-work.svg)"
+    },
+    {
+      "id": "18.10:L43:C2",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 43,
+      "text": "14.6",
+      "quote": "第14.6節曾把JoinSet標成S1、其中一份工作標T0，借集合的join等待標W1。這些是對象標記，不是固定的input編號或Tokio Id。本頁同樣由Scheduler擁有S1；當前原input1／4各有一份已登記Id的task。select丟棄W1只結束借用的等待，S1仍持有它們，必須明確abort並逐份收回。",
+      "context": "## 先分清集合、task 與這次等待\n\n第14.6節曾把JoinSet標成S1、其中一份工作標T0，借集合的join等待標W1。這些是對象標記，不是固定的input編號或Tokio Id。本頁同樣由Scheduler擁有S1；當前原input1／4各有一份已登記Id的task。select丟棄W1只結束借用的等待，S1仍持有它們，必須明確abort並逐份收回。\n\n前表五份輸入同時涵蓋已收HTTP、已提交等headers、以及尚未提交的資料。停止後仍按每份實際情況形成結果，不能因為整批Requested就把五份都改成Cancelled。gate0／1只是server放行入口，Id是Tokio身分，input_index才是原行位置。\n\n## 補工前先查停止，必須改哪兩個時點？\n\nB3的new會立刻fill，next收取後也立刻fill。現在沿14.6改成：**new只準備資料；收取只record；每輪先查停止，再決定fill。** 這讓提前排入的事件能阻止第一批，也讓收取後不會先補工作、才看到已排入的停止。"
+    },
+    {
+      "id": "18.10:L49:C33",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 49,
+      "text": "14.6",
+      "quote": "B3的new會立刻fill，next收取後也立刻fill。現在沿14.6改成：**new只準備資料；收取只record；每輪先查停止，再決定fill。** 這讓提前排入的事件能阻止第一批，也讓收取後不會先補工作、才看到已排入的停止。",
+      "context": "## 補工前先查停止，必須改哪兩個時點？\n\nB3的new會立刻fill，next收取後也立刻fill。現在沿14.6改成：**new只準備資料；收取只record；每輪先查停止，再決定fill。** 這讓提前排入的事件能阻止第一批，也讓收取後不會先補工作、才看到已排入的停止。\n\nScheduler仍保存pending、JoinSet、Id→完整Input、共享pool的Client複本及每筆Duration；新增`entries`保存已收成果。所有TaskFailure／Cancelled仍從Id表取得原文，String複本的成本與jobs不能限制整張清單記憶體的範圍，沿B3。\n\n起始版沿B3暫用`#[allow(dead_code)]`，這次分別放在Scheduler、其impl及尚未接上的stop_reason helper，只允許各自範圍的未使用提醒；完成版不用它。這份lint設定不會替stub實作功能。\n\n```rust"
+    },
+    {
+      "id": "18.10:L69:C30",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 69,
+      "text": "14.6",
+      "quote": "`stop_and_finish(&mut self)`沿14.6先abort_all，再逐份join與record到None，保留真正收回的成果。已完成但尚未收取的task仍可能交Check或task故障；不能把集合內每份都覆寫為Cancelled。接著才把pending每份Input取出、保存Unstarted；沒有task可以對它abort。",
+      "context": "要自行完成的`record(&mut self, Result<(Id, Check), JoinError>)`不等待：從成功Id或error.id找到Input、移除登記；成功保Check，is_cancelled保存Cancelled，其他JoinError仍保存TaskFailure。把Entry推進entries，**這裡不fill**。登記的expect沿B3檢查作者自己的不變條件，不把漏登記當正常HTTP問題。\n\n`stop_and_finish(&mut self)`沿14.6先abort_all，再逐份join與record到None，保留真正收回的成果。已完成但尚未收取的task仍可能交Check或task故障；不能把集合內每份都覆寫為Cancelled。接著才把pending每份Input取出、保存Unstarted；沒有task可以對它abort。\n\n這裡局部新增 **`Iterator::by_ref()`**：mutable借原iterator，交回同一iterator的mutable reference。`for input in self.pending.by_ref()`可以走訪並取得owned Input，同時保留Scheduler對pending欄位的ownership；不是建立一份獨立iterator副本。走到末尾後，原pending也已耗盡。這是此處需要的借用介面，不必先看標準library內部泛型實作。\n\n停止收尾後，`into_batch(self, reason)`接手Scheduler，確認集合與Id登記皆空，再沿9.7用sort_by_key按input_index排列entries。索引的空洞與original保持不變。其assert只檢查實作契約；使用者輸入問題仍用已教的typed結果。\n\nrunner的等待沿14.6：每輪try_recv先取已排入事件，Empty繼續、Disconnected保存來源失去；再fill。集合空便Finished；否則biased select把停止放在join之前。join分支只record，回圈頂端再查停止。**不再提交從觀察到停止起算**，不是對OS訊號抵達的某個瞬間提供原子性的禁止。"
+    },
+    {
+      "id": "18.10:L73:C59",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 73,
+      "text": "9.7",
+      "quote": "停止收尾後，`into_batch(self, reason)`接手Scheduler，確認集合與Id登記皆空，再沿9.7用sort_by_key按input_index排列entries。索引的空洞與original保持不變。其assert只檢查實作契約；使用者輸入問題仍用已教的typed結果。",
+      "context": "這裡局部新增 **`Iterator::by_ref()`**：mutable借原iterator，交回同一iterator的mutable reference。`for input in self.pending.by_ref()`可以走訪並取得owned Input，同時保留Scheduler對pending欄位的ownership；不是建立一份獨立iterator副本。走到末尾後，原pending也已耗盡。這是此處需要的借用介面，不必先看標準library內部泛型實作。\n\n停止收尾後，`into_batch(self, reason)`接手Scheduler，確認集合與Id登記皆空，再沿9.7用sort_by_key按input_index排列entries。索引的空洞與original保持不變。其assert只檢查實作契約；使用者輸入問題仍用已教的typed結果。\n\nrunner的等待沿14.6：每輪try_recv先取已排入事件，Empty繼續、Disconnected保存來源失去；再fill。集合空便Finished；否則biased select把停止放在join之前。join分支只record，回圈頂端再查停止。**不再提交從觀察到停止起算**，不是對OS訊號抵達的某個瞬間提供原子性的禁止。\n\n起始版提供`stop_reason`，將事件或來源關閉轉成整批理由；也提供`run_batch`入口。它借Client、取得Input Vec與停止收端，在自己本體內建立Scheduler；設定錯誤用`?`傳回，成功await run，再接手owner形成Batch。普通caller應以停止channel要求中止並await入口到結果；測試另直接持有Scheduler，以便觀察失敗後仍能收尾。\n\n```rust"
+    },
+    {
+      "id": "18.10:L75:C11",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 75,
+      "text": "14.6",
+      "quote": "runner的等待沿14.6：每輪try_recv先取已排入事件，Empty繼續、Disconnected保存來源失去；再fill。集合空便Finished；否則biased select把停止放在join之前。join分支只record，回圈頂端再查停止。**不再提交從觀察到停止起算**，不是對OS訊號抵達的某個瞬間提供原子性的禁止。",
+      "context": "停止收尾後，`into_batch(self, reason)`接手Scheduler，確認集合與Id登記皆空，再沿9.7用sort_by_key按input_index排列entries。索引的空洞與original保持不變。其assert只檢查實作契約；使用者輸入問題仍用已教的typed結果。\n\nrunner的等待沿14.6：每輪try_recv先取已排入事件，Empty繼續、Disconnected保存來源失去；再fill。集合空便Finished；否則biased select把停止放在join之前。join分支只record，回圈頂端再查停止。**不再提交從觀察到停止起算**，不是對OS訊號抵達的某個瞬間提供原子性的禁止。\n\n起始版提供`stop_reason`，將事件或來源關閉轉成整批理由；也提供`run_batch`入口。它借Client、取得Input Vec與停止收端，在自己本體內建立Scheduler；設定錯誤用`?`傳回，成功await run，再接手owner形成Batch。普通caller應以停止channel要求中止並await入口到結果；測試另直接持有Scheduler，以便觀察失敗後仍能收尾。\n\n```rust\n--8<-- \"examples/ch15-projects/b4-starter/src/lib.rs:runner\"\n```"
+    },
+    {
+      "id": "18.10:L87:C32",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 87,
+      "text": "14.6",
+      "quote": "普通library現在使用停止channel與ctrl_c，將14.6已教的 **sync／signal**放在普通Tokio dependency；其餘features沿前文。version要求與lock沿10.1。repo外**先把Fixture path換成你電腦上教材examples/ch11-async/local-service的實際絕對路徑**，才跑Cargo：",
+      "context": "從`b4-starter`保存Cargo.toml、整個src與checks/stop-tests.rs到自己的url-b4-work。完整Input／single與fill沿B3；record／stop_and_finish／run三份body尚未完成。全部起始source、checks與完成版都在同頁，片段只用於定位。\n\n普通library現在使用停止channel與ctrl_c，將14.6已教的 **sync／signal**放在普通Tokio dependency；其餘features沿前文。version要求與lock沿10.1。repo外**先把Fixture path換成你電腦上教材examples/ch11-async/local-service的實際絕對路徑**，才跑Cargo：\n\n```toml\n--8<-- \"examples/ch15-projects/b4-starter/Cargo.toml\"\n```\n\n在自己的工作目錄沿18.1："
+    },
+    {
+      "id": "18.10:L87:C105",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 87,
+      "text": "10.1",
+      "quote": "普通library現在使用停止channel與ctrl_c，將14.6已教的 **sync／signal**放在普通Tokio dependency；其餘features沿前文。version要求與lock沿10.1。repo外**先把Fixture path換成你電腦上教材examples/ch11-async/local-service的實際絕對路徑**，才跑Cargo：",
+      "context": "從`b4-starter`保存Cargo.toml、整個src與checks/stop-tests.rs到自己的url-b4-work。完整Input／single與fill沿B3；record／stop_and_finish／run三份body尚未完成。全部起始source、checks與完成版都在同頁，片段只用於定位。\n\n普通library現在使用停止channel與ctrl_c，將14.6已教的 **sync／signal**放在普通Tokio dependency；其餘features沿前文。version要求與lock沿10.1。repo外**先把Fixture path換成你電腦上教材examples/ch11-async/local-service的實際絕對路徑**，才跑Cargo：\n\n```toml\n--8<-- \"examples/ch15-projects/b4-starter/Cargo.toml\"\n```\n\n在自己的工作目錄沿18.1："
+    },
+    {
+      "id": "18.10:L93:C10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 93,
+      "text": "18.1",
+      "quote": "在自己的工作目錄沿18.1：",
+      "context": "```\n\n在自己的工作目錄沿18.1：\n\n??? example \"展開完整起始 library、input 與單筆核心\"\n\n    `examples/ch15-projects/b4-starter/src/lib.rs`：\n\n    ```rust"
+    },
+    {
+      "id": "18.10:L117:C1",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 117,
+      "text": "以下",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.10:L117:C6",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 117,
+      "text": "14.8",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.10:L117:C11",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 117,
+      "text": "14.9",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.10:L117:C130",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 117,
+      "text": "下面",
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。",
+      "context": "## 本頁測試真正載入的本機服務來源\n\n以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`："
+    },
+    {
+      "id": "18.10:L119:C119",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 119,
+      "text": "12.1",
+      "quote": "本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。",
+      "context": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。\n\n本節命令不選兩個依賴 package 的 binary、examples 或 integration tests。它們自己的 dev-dependencies 也不是這份依賴的 normal source。共同 package 欄位依第12.1節的 repo root workspace 繼承；在 repo 外做工作副本時，服務依賴仍指向教材內原位置，沒有把單一繼承式 manifest 孤立複製出去。\n\n??? example \"展開 Fixture 與其 HTTP 依賴的全部 normal library 來源\"\n\n    `examples/ch11-async/local-service/Cargo.toml`：\n\n    ```toml"
+    },
+    {
+      "id": "18.10:L212:C25",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 212,
+      "text": "14.6",
+      "quote": "第二步完成run。在檔案imports加入本節沿14.6使用的`use tokio::sync::mpsc::error::TryRecvError;`。每輪先try_recv，停止／來源失去便await stop_and_finish再回理由；Empty才fill。集合空回Finished；其他情況biased select先停止，或收取並record。回圈頂端再次查停止，不能在join handler直接補工。",
+      "context": "先完成record與stop_and_finish。Id表一次移除、保存真正Output、等待全部已提交tasks，再以by_ref走訪pending。合成完成待收的檢查應成立，於是**兩項通過、五項失敗**；run仍固定Finished，沒有觀察停止或實際提交。\n\n第二步完成run。在檔案imports加入本節沿14.6使用的`use tokio::sync::mpsc::error::TryRecvError;`。每輪先try_recv，停止／來源失去便await stop_and_finish再回理由；Empty才fill。集合空回Finished；其他情況biased select先停止，或收取並record。回圈頂端再次查停止，不能在join handler直接補工。\n\n提前Requested這項應沒有任何GET，原index1／3／4皆Unstarted，包含重複網址與尚未解析的`/notes`：\n\n```rust\n--8<-- \"examples/ch15-projects/b4-starter/checks/stop-tests.rs:prequeued-test\"\n```"
+    },
+    {
+      "id": "18.10:L274:C2",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 274,
+      "text": "14.6",
+      "quote": "沿14.6，`signal_controller(stop, entered)`擁有兩份送端；biased select先實際執行ctrl_c，註冊listener後才送entered，另一支路pending不會結束等待。收到通知送Requested；監聽失敗送SignalFailed。Output bool只表示事件是否送入channel，不能替代整批理由。",
+      "context": "## 把已驗收的停止來源換成真正 Ctrl+C\n\n沿14.6，`signal_controller(stop, entered)`擁有兩份送端；biased select先實際執行ctrl_c，註冊listener後才送entered，另一支路pending不會結束等待。收到通知送Requested；監聽失敗送SignalFailed。Output bool只表示事件是否送入channel，不能替代整批理由。\n\n`finish_signal_controller`接手handle、abort後await；已完成或已取消都能收尾。Unix的SIGINT處理不會因drop listener恢復預設，因此正常完成與取消路線都要明確結束這份等待。\n\n```rust\n--8<-- \"examples/ch15-projects/b4-complete/src/lib.rs:signal\"\n```"
+    },
+    {
+      "id": "18.10:L282:C110",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 282,
+      "text": "前面已",
+      "quote": "這份`b4_signal_demo`改用四筆：原index1為`/held/0`、3為`/held/1`，4再放相同`/held/0`，5為`/notes`。因此這份demo的gate0／1對應原index1／3。省去前面已完成的`/ok`，是為了在READY時保有兩份等待中的task，讓真Ctrl+C操作有固定的取消材料；保留成果的那條路已由前面的受控測試驗收，原索引、duplicates與未提交invalid仍保留。",
+      "context": "```\n\n這份`b4_signal_demo`改用四筆：原index1為`/held/0`、3為`/held/1`，4再放相同`/held/0`，5為`/notes`。因此這份demo的gate0／1對應原index1／3。省去前面已完成的`/ok`，是為了在READY時保有兩份等待中的task，讓真Ctrl+C操作有固定的取消材料；保留成果的那條路已由前面的受控測試驗收，原索引、duplicates與未提交invalid仍保留。\n\n`ready`借Fixture觀察兩個gate，先核對0／1，再寫READY並flush；這時listener已進入，而且真HTTP已開始。`close`先await Scheduler的停止收尾，再保存listener與server的收尾結果，兩者皆等完才使用`?`。`print_batch`在資源完成後寫結果，最後flush確認輸出，沿10.9。entered收端保留到controller收尾，符合這份helper的caller契約。\n\ndemo對listener入口等五秒，對run／ready的借用工作等十五秒；觀察失敗也先close才回String診斷。早期事件讓entered回None時，run從同一channel取得真正Requested或來源失敗，不把None當ready成功。`observed`則保存ready的Result：若有Err，收尾後保留其診斷；若仍None，表示run先結束，並不宣稱已印READY。這些是有限demo觀察，正式工具只保每項工作期限。\n\n```rust"
+    },
+    {
+      "id": "18.10:L282:C174",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 282,
+      "text": "前面的",
+      "quote": "這份`b4_signal_demo`改用四筆：原index1為`/held/0`、3為`/held/1`，4再放相同`/held/0`，5為`/notes`。因此這份demo的gate0／1對應原index1／3。省去前面已完成的`/ok`，是為了在READY時保有兩份等待中的task，讓真Ctrl+C操作有固定的取消材料；保留成果的那條路已由前面的受控測試驗收，原索引、duplicates與未提交invalid仍保留。",
+      "context": "```\n\n這份`b4_signal_demo`改用四筆：原index1為`/held/0`、3為`/held/1`，4再放相同`/held/0`，5為`/notes`。因此這份demo的gate0／1對應原index1／3。省去前面已完成的`/ok`，是為了在READY時保有兩份等待中的task，讓真Ctrl+C操作有固定的取消材料；保留成果的那條路已由前面的受控測試驗收，原索引、duplicates與未提交invalid仍保留。\n\n`ready`借Fixture觀察兩個gate，先核對0／1，再寫READY並flush；這時listener已進入，而且真HTTP已開始。`close`先await Scheduler的停止收尾，再保存listener與server的收尾結果，兩者皆等完才使用`?`。`print_batch`在資源完成後寫結果，最後flush確認輸出，沿10.9。entered收端保留到controller收尾，符合這份helper的caller契約。\n\ndemo對listener入口等五秒，對run／ready的借用工作等十五秒；觀察失敗也先close才回String診斷。早期事件讓entered回None時，run從同一channel取得真正Requested或來源失敗，不把None當ready成功。`observed`則保存ready的Result：若有Err，收尾後保留其診斷；若仍None，表示run先結束，並不宣稱已印READY。這些是有限demo觀察，正式工具只保每項工作期限。\n\n```rust"
+    },
+    {
+      "id": "18.10:L284:C172",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 284,
+      "text": "10.9",
+      "quote": "`ready`借Fixture觀察兩個gate，先核對0／1，再寫READY並flush；這時listener已進入，而且真HTTP已開始。`close`先await Scheduler的停止收尾，再保存listener與server的收尾結果，兩者皆等完才使用`?`。`print_batch`在資源完成後寫結果，最後flush確認輸出，沿10.9。entered收端保留到controller收尾，符合這份helper的caller契約。",
+      "context": "這份`b4_signal_demo`改用四筆：原index1為`/held/0`、3為`/held/1`，4再放相同`/held/0`，5為`/notes`。因此這份demo的gate0／1對應原index1／3。省去前面已完成的`/ok`，是為了在READY時保有兩份等待中的task，讓真Ctrl+C操作有固定的取消材料；保留成果的那條路已由前面的受控測試驗收，原索引、duplicates與未提交invalid仍保留。\n\n`ready`借Fixture觀察兩個gate，先核對0／1，再寫READY並flush；這時listener已進入，而且真HTTP已開始。`close`先await Scheduler的停止收尾，再保存listener與server的收尾結果，兩者皆等完才使用`?`。`print_batch`在資源完成後寫結果，最後flush確認輸出，沿10.9。entered收端保留到controller收尾，符合這份helper的caller契約。\n\ndemo對listener入口等五秒，對run／ready的借用工作等十五秒；觀察失敗也先close才回String診斷。早期事件讓entered回None時，run從同一channel取得真正Requested或來源失敗，不把None當ready成功。`observed`則保存ready的Result：若有Err，收尾後保留其診斷；若仍None，表示run先結束，並不宣稱已印READY。這些是有限demo觀察，正式工具只保每項工作期限。\n\n```rust\n--8<-- \"examples/ch15-projects/b4-complete/examples/b4_signal_demo.rs\"\n```"
+    },
+    {
+      "id": "18.10:L302:C19",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 302,
+      "text": "下一節",
+      "quote": "現在停止仍能保有原行對應與實際成果；下一節把這份已驗收的Batch接到真正CLI、穩定文字／JSON與完整錯誤政策，提供獨立可用版本。階段快照不累加成讀者反覆作業。",
+      "context": "一般caller使用provided run_batch並await到結果，以停止channel要求中止。不要drop整份run_batch future來替代這套收尾：它在本體內擁有Scheduler，drop仍只有JoinSet的abort要求。測試直接持有owner與借用run，才有觀察失敗後另await清理的能力。\n\n現在停止仍能保有原行對應與實際成果；下一節把這份已驗收的Batch接到真正CLI、穩定文字／JSON與完整錯誤政策，提供獨立可用版本。階段快照不累加成讀者反覆作業。\n\n延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。\n\n[下一節：報告映射與最後 CLI 整合](18-11-lesson.md)"
+    },
+    {
+      "id": "18.10:L306:C2",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 306,
+      "text": "下一節",
+      "quote": "[下一節：報告映射與最後 CLI 整合](18-11-lesson.md)",
+      "context": "延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。\n\n[下一節：報告映射與最後 CLI 整合](18-11-lesson.md)"
+    },
+    {
+      "id": "18.11:L1:C3",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 1,
+      "text": "18.11",
+      "quote": "# 18.11 報告與 CLI 整合：完成映射、狀態與輸出三步",
+      "context": "# 18.11 報告與 CLI 整合：完成映射、狀態與輸出三步\n\nB4 已在停止後收妥所有已提交工作，也能指出哪些原行尚未開始。現在讓別人真的拿它檢查一份網址清單：指定檔案、選名額與期限，取得依原行排列的文字或JSON；呼叫者還要從退出碼分辨全過、項目未通過、取消及致命錯誤。\n\n本節沿[18.10 的停止流程](18-10-lesson.md)，只新增報告映射、CLI邊界與輸出完成責任。本節先做下方三個小步；第18.12節另提供整份可用工具的全部檔案與使用方式。各階段是同一工具的快照，不是把B1–4重寫一次。\n\n## 先固定工具真正交出的答案"
+    },
+    {
+      "id": "18.11:L5:C5",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 5,
+      "text": "18.10",
+      "quote": "本節沿[18.10 的停止流程](18-10-lesson.md)，只新增報告映射、CLI邊界與輸出完成責任。本節先做下方三個小步；第18.12節另提供整份可用工具的全部檔案與使用方式。各階段是同一工具的快照，不是把B1–4重寫一次。",
+      "context": "B4 已在停止後收妥所有已提交工作，也能指出哪些原行尚未開始。現在讓別人真的拿它檢查一份網址清單：指定檔案、選名額與期限，取得依原行排列的文字或JSON；呼叫者還要從退出碼分辨全過、項目未通過、取消及致命錯誤。\n\n本節沿[18.10 的停止流程](18-10-lesson.md)，只新增報告映射、CLI邊界與輸出完成責任。本節先做下方三個小步；第18.12節另提供整份可用工具的全部檔案與使用方式。各階段是同一工具的快照，不是把B1–4重寫一次。\n\n## 先固定工具真正交出的答案\n\n每個非空白原行仍是一份輸入，索引從0開始，空行留下空洞；相同網址不合併。只接受http／https、GET、最多五次redirect，最終2xx通過；每筆預設十秒，最多八份已提交工作。工作只等最終headers，沒有主動讀完整body；失敗的elapsed_ms量到該失敗結束，並不聲稱已取得headers。\n\n退出政策先整份列清楚，後面的函式只實作這個約定："
+    },
+    {
+      "id": "18.11:L5:C68",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 5,
+      "text": "18.12",
+      "quote": "本節沿[18.10 的停止流程](18-10-lesson.md)，只新增報告映射、CLI邊界與輸出完成責任。本節先做下方三個小步；第18.12節另提供整份可用工具的全部檔案與使用方式。各階段是同一工具的快照，不是把B1–4重寫一次。",
+      "context": "B4 已在停止後收妥所有已提交工作，也能指出哪些原行尚未開始。現在讓別人真的拿它檢查一份網址清單：指定檔案、選名額與期限，取得依原行排列的文字或JSON；呼叫者還要從退出碼分辨全過、項目未通過、取消及致命錯誤。\n\n本節沿[18.10 的停止流程](18-10-lesson.md)，只新增報告映射、CLI邊界與輸出完成責任。本節先做下方三個小步；第18.12節另提供整份可用工具的全部檔案與使用方式。各階段是同一工具的快照，不是把B1–4重寫一次。\n\n## 先固定工具真正交出的答案\n\n每個非空白原行仍是一份輸入，索引從0開始，空行留下空洞；相同網址不合併。只接受http／https、GET、最多五次redirect，最終2xx通過；每筆預設十秒，最多八份已提交工作。工作只等最終headers，沒有主動讀完整body；失敗的elapsed_ms量到該失敗結束，並不聲稱已取得headers。\n\n退出政策先整份列清楚，後面的函式只實作這個約定："
+    },
+    {
+      "id": "18.11:L22:C62",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 22,
+      "text": "10.4",
+      "quote": "資料只進stdout，診斷只進stderr。輸出失敗可能已有部分bytes送出，不能把那份stdout當完整JSON；這沿10.4／10.9的Write邊界。取消要求也不會撤銷已送出的GET。",
+      "context": "| help／version | 顯示成功回0；顯示本身失敗仍回2 |\n\n資料只進stdout，診斷只進stderr。輸出失敗可能已有部分bytes送出，不能把那份stdout當完整JSON；這沿10.4／10.9的Write邊界。取消要求也不會撤銷已送出的GET。\n\n## 同一份Batch如何變成可交換的資料？\n\n沿B4把整批理由與每筆分類分開。這次的 **Report** 保存cancelled與依原index排列的items；只有Requested令cancelled為true，不由某一列是否Cancelled猜整批理由。SignalFailed或StopSourceClosed則交typed RunError，沒有冒充取消報告。\n\n一筆 **Row** 保存原index、original與固定kind。HTTP仍用status／passed分辨通過與未通過；其餘kind是input、request、timeout、task_failure、cancelled、unstarted。final_url只有HTTP取得；elapsed_ms沿單筆Check，未開始量測、task未交Check或尚未提交時保None。detail供人讀原因，不是用來解析分類的固定錯誤格式。"
+    },
+    {
+      "id": "18.11:L22:C67",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 22,
+      "text": "10.9",
+      "quote": "資料只進stdout，診斷只進stderr。輸出失敗可能已有部分bytes送出，不能把那份stdout當完整JSON；這沿10.4／10.9的Write邊界。取消要求也不會撤銷已送出的GET。",
+      "context": "| help／version | 顯示成功回0；顯示本身失敗仍回2 |\n\n資料只進stdout，診斷只進stderr。輸出失敗可能已有部分bytes送出，不能把那份stdout當完整JSON；這沿10.4／10.9的Write邊界。取消要求也不會撤銷已送出的GET。\n\n## 同一份Batch如何變成可交換的資料？\n\n沿B4把整批理由與每筆分類分開。這次的 **Report** 保存cancelled與依原index排列的items；只有Requested令cancelled為true，不由某一列是否Cancelled猜整批理由。SignalFailed或StopSourceClosed則交typed RunError，沒有冒充取消報告。\n\n一筆 **Row** 保存原index、original與固定kind。HTTP仍用status／passed分辨通過與未通過；其餘kind是input、request、timeout、task_failure、cancelled、unstarted。final_url只有HTTP取得；elapsed_ms沿單筆Check，未開始量測、task未交Check或尚未提交時保None。detail供人讀原因，不是用來解析分類的固定錯誤格式。"
+    },
+    {
+      "id": "18.11:L30:C1",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 30,
+      "text": "10.7",
+      "quote": "10.7／10.9已教Serde的String、bool、usize與Vec。這裡補本模型需要的能力：**u16／u128**編解碼成JSON整數；**`Option<T>`**在T有相應能力時也可編解碼，Some保存其值，None成為 **null**。本模型不略過None欄位；null不是數字0，也不是一個空字串。`Vec<Row>`的順序沿原清單，沒有引入HashMap的任意順序。",
+      "context": "一筆 **Row** 保存原index、original與固定kind。HTTP仍用status／passed分辨通過與未通過；其餘kind是input、request、timeout、task_failure、cancelled、unstarted。final_url只有HTTP取得；elapsed_ms沿單筆Check，未開始量測、task未交Check或尚未提交時保None。detail供人讀原因，不是用來解析分類的固定錯誤格式。\n\n10.7／10.9已教Serde的String、bool、usize與Vec。這裡補本模型需要的能力：**u16／u128**編解碼成JSON整數；**`Option<T>`**在T有相應能力時也可編解碼，Some保存其值，None成為 **null**。本模型不略過None欄位；null不是數字0，也不是一個空字串。`Vec<Row>`的順序沿原清單，沒有引入HashMap的任意順序。\n\nderive與deny_unknown_fields沿10.7；Deserialize用於讀回驗收，不會令網路錯誤型別自動可以序列化。我們先把typed結果轉成這份只含資料的owned模型，報告不再借用Batch或原錯誤：\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/report.rs:model\"\n```"
+    },
+    {
+      "id": "18.11:L30:C6",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 30,
+      "text": "10.9",
+      "quote": "10.7／10.9已教Serde的String、bool、usize與Vec。這裡補本模型需要的能力：**u16／u128**編解碼成JSON整數；**`Option<T>`**在T有相應能力時也可編解碼，Some保存其值，None成為 **null**。本模型不略過None欄位；null不是數字0，也不是一個空字串。`Vec<Row>`的順序沿原清單，沒有引入HashMap的任意順序。",
+      "context": "一筆 **Row** 保存原index、original與固定kind。HTTP仍用status／passed分辨通過與未通過；其餘kind是input、request、timeout、task_failure、cancelled、unstarted。final_url只有HTTP取得；elapsed_ms沿單筆Check，未開始量測、task未交Check或尚未提交時保None。detail供人讀原因，不是用來解析分類的固定錯誤格式。\n\n10.7／10.9已教Serde的String、bool、usize與Vec。這裡補本模型需要的能力：**u16／u128**編解碼成JSON整數；**`Option<T>`**在T有相應能力時也可編解碼，Some保存其值，None成為 **null**。本模型不略過None欄位；null不是數字0，也不是一個空字串。`Vec<Row>`的順序沿原清單，沒有引入HashMap的任意順序。\n\nderive與deny_unknown_fields沿10.7；Deserialize用於讀回驗收，不會令網路錯誤型別自動可以序列化。我們先把typed結果轉成這份只含資料的owned模型，報告不再借用Batch或原錯誤：\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/report.rs:model\"\n```"
+    },
+    {
+      "id": "18.11:L32:C28",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 32,
+      "text": "10.7",
+      "quote": "derive與deny_unknown_fields沿10.7；Deserialize用於讀回驗收，不會令網路錯誤型別自動可以序列化。我們先把typed結果轉成這份只含資料的owned模型，報告不再借用Batch或原錯誤：",
+      "context": "10.7／10.9已教Serde的String、bool、usize與Vec。這裡補本模型需要的能力：**u16／u128**編解碼成JSON整數；**`Option<T>`**在T有相應能力時也可編解碼，Some保存其值，None成為 **null**。本模型不略過None欄位；null不是數字0，也不是一個空字串。`Vec<Row>`的順序沿原清單，沒有引入HashMap的任意順序。\n\nderive與deny_unknown_fields沿10.7；Deserialize用於讀回驗收，不會令網路錯誤型別自動可以序列化。我們先把typed結果轉成這份只含資料的owned模型，報告不再借用Batch或原錯誤：\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/report.rs:model\"\n```\n\n為了先驗每種欄位，映射checks改用**六份手工結果**。它不是一次實測HTTP清單；沿相同的原index／original責任，刻意涵蓋以下變化："
+    },
+    {
+      "id": "18.11:L38:C71",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 38,
+      "text": "以下",
+      "quote": "為了先驗每種欄位，映射checks改用**六份手工結果**。它不是一次實測HTTP清單；沿相同的原index／original責任，刻意涵蓋以下變化：",
+      "context": "```\n\n為了先驗每種欄位，映射checks改用**六份手工結果**。它不是一次實測HTTP清單；沿相同的原index／original責任，刻意涵蓋以下變化：\n\n| 原index | 原結果 | Row應保存什麼 |\n| --- | --- | --- |\n| 1 | HTTP200，12ms | http、passed=true、status200、最終網址、elapsed12 |\n| 3 | ftp的Input問題 | input、原文、detail；status／final_url／elapsed皆null |\n| 4 | 與1相同原網址，另一次HTTP404，12ms | 另一筆http、passed=false、status404；不能合併為1 |"
+    },
+    {
+      "id": "18.11:L55:C32",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 55,
+      "text": "10.7",
+      "quote": "本節先提供render，讓動手練習集中在映射與出口。JSON沿10.7使用to_string_pretty，最後加LF。文字模式先寫cancelled及項數，再一筆一行，欄位順序固定。",
+      "context": "圖的藍色向下箭頭是資料交接；右側橘線把Batch來源理由、編碼或write／flush的失敗交fatal2。下方0／1／130是**已成功完成出口**才可交出的狀態，不是render得到String就已完成工具。兩種表示都借同一個Report。\n\n本節先提供render，讓動手練習集中在映射與出口。JSON沿10.7使用to_string_pretty，最後加LF。文字模式先寫cancelled及項數，再一筆一行，欄位順序固定。\n\n新選 **`serde_json::to_string`**，同樣借Serialize資料、回`Result<String, serde_json::Error>`，但不加入pretty縮排；直接借str也有Serialize能力。文字行的original／final_url／detail等資料用它形成JSON引用，讓雙引號或內含換行不會破壞一筆一行。數值Option則顯示數字或null，不手寫另一套跳脫規則。\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/report.rs:render\"\n```"
+    },
+    {
+      "id": "18.11:L63:C129",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 63,
+      "text": "11.7",
+      "quote": "**RunError**用ZeroJobs／ZeroTimeout／Empty保存設定問題，Read／Client保存準備工作，Signal／StopSourceClosed／Controller分開來源與收尾；Encode／Output保存報告失敗。它沿11.7／17.4，Display只說這一層，source借出標準io、reqwest client準備或JSON錯誤；String型signal診斷沒有另一層Error，不捏造source。From對io只放Output，讀檔在發生處明確放Read；不把兩種來源混掉。",
+      "context": "```\n\n**RunError**用ZeroJobs／ZeroTimeout／Empty保存設定問題，Read／Client保存準備工作，Signal／StopSourceClosed／Controller分開來源與收尾；Encode／Output保存報告失敗。它沿11.7／17.4，Display只說這一層，source借出標準io、reqwest client準備或JSON錯誤；String型signal診斷沒有另一層Error，不捏造source。From對io只放Output，讀檔在發生處明確放Read；不把兩種來源混掉。\n\n`#[non_exhaustive]`沿第17.4節：這個Error enum將來可增加variant，外部caller的match保留其餘分支；本crate內的Display／source仍能列完目前variants。`impl Error`與借讀source沿第11.7節，與Display產生人讀文字分開。\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/error.rs:error\"\n```"
+    },
+    {
+      "id": "18.11:L63:C134",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 63,
+      "text": "17.4",
+      "quote": "**RunError**用ZeroJobs／ZeroTimeout／Empty保存設定問題，Read／Client保存準備工作，Signal／StopSourceClosed／Controller分開來源與收尾；Encode／Output保存報告失敗。它沿11.7／17.4，Display只說這一層，source借出標準io、reqwest client準備或JSON錯誤；String型signal診斷沒有另一層Error，不捏造source。From對io只放Output，讀檔在發生處明確放Read；不把兩種來源混掉。",
+      "context": "```\n\n**RunError**用ZeroJobs／ZeroTimeout／Empty保存設定問題，Read／Client保存準備工作，Signal／StopSourceClosed／Controller分開來源與收尾；Encode／Output保存報告失敗。它沿11.7／17.4，Display只說這一層，source借出標準io、reqwest client準備或JSON錯誤；String型signal診斷沒有另一層Error，不捏造source。From對io只放Output，讀檔在發生處明確放Read；不把兩種來源混掉。\n\n`#[non_exhaustive]`沿第17.4節：這個Error enum將來可增加variant，外部caller的match保留其餘分支；本crate內的Display／source仍能列完目前variants。`impl Error`與借讀source沿第11.7節，與Display產生人讀文字分開。\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/error.rs:error\"\n```"
+    },
+    {
+      "id": "18.11:L65:C22",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 65,
+      "text": "17.4",
+      "quote": "`#[non_exhaustive]`沿第17.4節：這個Error enum將來可增加variant，外部caller的match保留其餘分支；本crate內的Display／source仍能列完目前variants。`impl Error`與借讀source沿第11.7節，與Display產生人讀文字分開。",
+      "context": "**RunError**用ZeroJobs／ZeroTimeout／Empty保存設定問題，Read／Client保存準備工作，Signal／StopSourceClosed／Controller分開來源與收尾；Encode／Output保存報告失敗。它沿11.7／17.4，Display只說這一層，source借出標準io、reqwest client準備或JSON錯誤；String型signal診斷沒有另一層Error，不捏造source。From對io只放Output，讀檔在發生處明確放Read；不把兩種來源混掉。\n\n`#[non_exhaustive]`沿第17.4節：這個Error enum將來可增加variant，外部caller的match保留其餘分支；本crate內的Display／source仍能列完目前variants。`impl Error`與借讀source沿第11.7節，與Display產生人讀文字分開。\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/error.rs:error\"\n```\n\n## CLI設定與可以獨立保存的起點"
+    },
+    {
+      "id": "18.11:L65:C134",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 65,
+      "text": "11.7",
+      "quote": "`#[non_exhaustive]`沿第17.4節：這個Error enum將來可增加variant，外部caller的match保留其餘分支；本crate內的Display／source仍能列完目前variants。`impl Error`與借讀source沿第11.7節，與Display產生人讀文字分開。",
+      "context": "**RunError**用ZeroJobs／ZeroTimeout／Empty保存設定問題，Read／Client保存準備工作，Signal／StopSourceClosed／Controller分開來源與收尾；Encode／Output保存報告失敗。它沿11.7／17.4，Display只說這一層，source借出標準io、reqwest client準備或JSON錯誤；String型signal診斷沒有另一層Error，不捏造source。From對io只放Output，讀檔在發生處明確放Read；不把兩種來源混掉。\n\n`#[non_exhaustive]`沿第17.4節：這個Error enum將來可增加variant，外部caller的match保留其餘分支；本crate內的Display／source仍能列完目前variants。`impl Error`與借讀source沿第11.7節，與Display產生人讀文字分開。\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/error.rs:error\"\n```\n\n## CLI設定與可以獨立保存的起點"
+    },
+    {
+      "id": "18.11:L73:C2",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 73,
+      "text": "10.6",
+      "quote": "沿10.6的try_parse_from、原生PathBuf與long bool。本次兩個整數long參數要跟一個值：<code style=\"white-space: nowrap\">--jobs 2</code>與<code style=\"white-space: nowrap\">--timeout-secs 5</code>。u64是64-bit的非負整數型別，本節交給 `Duration::from_secs`表示秒數；jobs的usize則用於名額與長度。clap按usize／u64解析，無法成為整數或超出型別範圍是用法錯誤；**解析成0仍是整數，正數規則由我們先驗，再讀檔**。",
+      "context": "## CLI設定與可以獨立保存的起點\n\n沿10.6的try_parse_from、原生PathBuf與long bool。本次兩個整數long參數要跟一個值：<code style=\"white-space: nowrap\">--jobs 2</code>與<code style=\"white-space: nowrap\">--timeout-secs 5</code>。u64是64-bit的非負整數型別，本節交給 `Duration::from_secs`表示秒數；jobs的usize則用於名額與長度。clap按usize／u64解析，無法成為整數或超出型別範圍是用法錯誤；**解析成0仍是整數，正數規則由我們先驗，再讀檔**。\n\n新增 **`#[arg(default_value_t = 值)]`**，設定省略這一項時使用的typed值；這些數字有ToString能力，clap能將其交回同一個欄位解析規則。它不是對Settings derive Default，也不替我們驗正數。filename仍必要，json仍是不跟值的bool開關。\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/config.rs:settings\"\n```"
+    },
+    {
+      "id": "18.11:L83:C20",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 83,
+      "text": "14.9",
+      "quote": "為了讓整個目錄能獨立建置，測試內置前文14.9的Fixture，沒有依賴教材repo外的path。axum只在dev-dependencies，features仍是已教的http1／tokio；產品依賴沿前文clap／Serde／reqwest／Tokio，Tokio的sync／signal仍供普通程式使用。固定版本與lock分工沿10.1。",
+      "context": "先保存完整`b-final-starter`為自己的工作目錄，包含Cargo.toml、Cargo.lock、src、checks與fixtures。起點的舊排程、單筆工作與signal流程都已提供；新題目只有build_report、Report.status、write_report三份未完body。下方列出全部起始檔、checks與材料，片段只協助定位。\n\n為了讓整個目錄能獨立建置，測試內置前文14.9的Fixture，沒有依賴教材repo外的path。axum只在dev-dependencies，features仍是已教的http1／tokio；產品依賴沿前文clap／Serde／reqwest／Tokio，Tokio的sync／signal仍供普通程式使用。固定版本與lock分工沿10.1。\n\n內置Fixture保留動態port、ready、held通知與shutdown。本次私有 **`ready_response(&Client, Url)`** 只替測試確認ready的status與body，回`Result<(u16, String), reqwest::Error>`；選用`response.text().await`接手Response，等完整body並回`Result<String, reqwest::Error>`；先保存status，再交出Response。此處只核對固定小字串ready。外面的十秒timeout涵蓋send與讀body，任何ready失敗先shutdown server才交錯誤。**產品single仍只等headers，這個body讀取只屬測試服務就緒確認。** 沒有增加另一套未知的server API。\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/test_fixture.rs:ready-probe\"\n```"
+    },
+    {
+      "id": "18.11:L83:C168",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 83,
+      "text": "10.1",
+      "quote": "為了讓整個目錄能獨立建置，測試內置前文14.9的Fixture，沒有依賴教材repo外的path。axum只在dev-dependencies，features仍是已教的http1／tokio；產品依賴沿前文clap／Serde／reqwest／Tokio，Tokio的sync／signal仍供普通程式使用。固定版本與lock分工沿10.1。",
+      "context": "先保存完整`b-final-starter`為自己的工作目錄，包含Cargo.toml、Cargo.lock、src、checks與fixtures。起點的舊排程、單筆工作與signal流程都已提供；新題目只有build_report、Report.status、write_report三份未完body。下方列出全部起始檔、checks與材料，片段只協助定位。\n\n為了讓整個目錄能獨立建置，測試內置前文14.9的Fixture，沒有依賴教材repo外的path。axum只在dev-dependencies，features仍是已教的http1／tokio；產品依賴沿前文clap／Serde／reqwest／Tokio，Tokio的sync／signal仍供普通程式使用。固定版本與lock分工沿10.1。\n\n內置Fixture保留動態port、ready、held通知與shutdown。本次私有 **`ready_response(&Client, Url)`** 只替測試確認ready的status與body，回`Result<(u16, String), reqwest::Error>`；選用`response.text().await`接手Response，等完整body並回`Result<String, reqwest::Error>`；先保存status，再交出Response。此處只核對固定小字串ready。外面的十秒timeout涵蓋send與讀body，任何ready失敗先shutdown server才交錯誤。**產品single仍只等headers，這個body讀取只屬測試服務就緒確認。** 沒有增加另一套未知的server API。\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/src/test_fixture.rs:ready-probe\"\n```"
+    },
+    {
+      "id": "18.11:L91:C97",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 91,
+      "text": "18.12",
+      "quote": "起點暫在私有batch／single module允許dead_code，因尚未映射而未讀取結果欄位；沿B4限定的lint用途，不會替stub補功能。本步工作副本可保留這兩項局部allow；第18.12節的正式root已移除它們，沒有因此變更功能。內置Fixture等完成版原有排程tests才會編入；本節新增的純報告checks不先啟動服務。",
+      "context": "```\n\n起點暫在私有batch／single module允許dead_code，因尚未映射而未讀取結果欄位；沿B4限定的lint用途，不會替stub補功能。本步工作副本可保留這兩項局部allow；第18.12節的正式root已移除它們，沒有因此變更功能。內置Fixture等完成版原有排程tests才會編入；本節新增的純報告checks不先啟動服務。\n\n```toml\n--8<-- \"examples/ch15-projects/b-final-starter/Cargo.toml\"\n```\n\n已提供的 `validate_limits(jobs, timeout_secs)`先拒絕零jobs，再拒絕零秒；`validate`將Settings交給它。`load_inputs`先validate，再以原生Path讀完整UTF-8，讀失敗明確包Read，最後prepare_inputs；因此零設定配上不存在檔名仍先回設定錯誤。`write_output(&str, &mut W)`依序write_all與flush，交回io::Result；`write_report`的三步任務才決定怎樣用它交資料狀態。"
+    },
+    {
+      "id": "18.11:L99:C100",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 99,
+      "text": "17.4",
+      "quote": "batch與single是B4完整core的本地快照，改從 `crate::input` 找輸入型別；沒有借最終另一package的library。root的private mod與pub use沿17.4，對外型別與函式仍是這些同一份定義。`explain(&dyn Error)`先顯示外層，再用source逐層借讀原因；`fatal`嘗試stderr寫出與flush，連診斷自身失敗也回2，不遞迴panic。以下完整main只連接這些已教契約。",
+      "context": "已提供的 `validate_limits(jobs, timeout_secs)`先拒絕零jobs，再拒絕零秒；`validate`將Settings交給它。`load_inputs`先validate，再以原生Path讀完整UTF-8，讀失敗明確包Read，最後prepare_inputs；因此零設定配上不存在檔名仍先回設定錯誤。`write_output(&str, &mut W)`依序write_all與flush，交回io::Result；`write_report`的三步任務才決定怎樣用它交資料狀態。\n\nbatch與single是B4完整core的本地快照，改從 `crate::input` 找輸入型別；沒有借最終另一package的library。root的private mod與pub use沿17.4，對外型別與函式仍是這些同一份定義。`explain(&dyn Error)`先顯示外層，再用source逐層借讀原因；`fatal`嘗試stderr寫出與flush，連診斷自身失敗也回2，不遞迴panic。以下完整main只連接這些已教契約。\n\n## 接上真正入口，也維持library邊界\n\n本節起點沿17.4把實作module保持private，root以pub use公開Settings、Report／Row、RunError與必要函式。搬動內部檔案不需要caller改用私有路徑；公有型別、結果與失敗約定仍是契約。\n\n`run(&Settings)`先驗jobs與期限，再讀完整UTF-8小清單；Empty也是fatal。client沿B1使用共享pool；普通CLI保留環境的proxy設定。建立Scheduler時還沒有提交工作，先spawn signal_controller並等其entered收端；Some表示listener已進入，None則由同一stop channel取得真正理由。"
+    },
+    {
+      "id": "18.11:L99:C208",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 99,
+      "text": "以下",
+      "quote": "batch與single是B4完整core的本地快照，改從 `crate::input` 找輸入型別；沒有借最終另一package的library。root的private mod與pub use沿17.4，對外型別與函式仍是這些同一份定義。`explain(&dyn Error)`先顯示外層，再用source逐層借讀原因；`fatal`嘗試stderr寫出與flush，連診斷自身失敗也回2，不遞迴panic。以下完整main只連接這些已教契約。",
+      "context": "已提供的 `validate_limits(jobs, timeout_secs)`先拒絕零jobs，再拒絕零秒；`validate`將Settings交給它。`load_inputs`先validate，再以原生Path讀完整UTF-8，讀失敗明確包Read，最後prepare_inputs；因此零設定配上不存在檔名仍先回設定錯誤。`write_output(&str, &mut W)`依序write_all與flush，交回io::Result；`write_report`的三步任務才決定怎樣用它交資料狀態。\n\nbatch與single是B4完整core的本地快照，改從 `crate::input` 找輸入型別；沒有借最終另一package的library。root的private mod與pub use沿17.4，對外型別與函式仍是這些同一份定義。`explain(&dyn Error)`先顯示外層，再用source逐層借讀原因；`fatal`嘗試stderr寫出與flush，連診斷自身失敗也回2，不遞迴panic。以下完整main只連接這些已教契約。\n\n## 接上真正入口，也維持library邊界\n\n本節起點沿17.4把實作module保持private，root以pub use公開Settings、Report／Row、RunError與必要函式。搬動內部檔案不需要caller改用私有路徑；公有型別、結果與失敗約定仍是契約。\n\n`run(&Settings)`先驗jobs與期限，再讀完整UTF-8小清單；Empty也是fatal。client沿B1使用共享pool；普通CLI保留環境的proxy設定。建立Scheduler時還沒有提交工作，先spawn signal_controller並等其entered收端；Some表示listener已進入，None則由同一stop channel取得真正理由。"
+    },
+    {
+      "id": "18.11:L103:C6",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 103,
+      "text": "17.4",
+      "quote": "本節起點沿17.4把實作module保持private，root以pub use公開Settings、Report／Row、RunError與必要函式。搬動內部檔案不需要caller改用私有路徑；公有型別、結果與失敗約定仍是契約。",
+      "context": "## 接上真正入口，也維持library邊界\n\n本節起點沿17.4把實作module保持private，root以pub use公開Settings、Report／Row、RunError與必要函式。搬動內部檔案不需要caller改用私有路徑；公有型別、結果與失敗約定仍是契約。\n\n`run(&Settings)`先驗jobs與期限，再讀完整UTF-8小清單；Empty也是fatal。client沿B1使用共享pool；普通CLI保留環境的proxy設定。建立Scheduler時還沒有提交工作，先spawn signal_controller並等其entered收端；Some表示listener已進入，None則由同一stop channel取得真正理由。\n\n接著直接借用owned Scheduler執行run，完成後全等listener，再接手Batch形成Report。Requested與正常完成都走相同listener收尾；controller故障或來源失去仍fatal。沒有把任務owner藏進另一個可以直接drop的外層controller。\n\n```rust"
+    },
+    {
+      "id": "18.11:L115:C6",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 115,
+      "text": "10.6",
+      "quote": "main沿10.6取完整args_os。help／version或用法訊息也交write_output確認flush；工作成功後才選文字／JSON出口。RunError沿Error.source形成診斷，正常返回ExitCode；診斷出口自己失敗仍回2，不再引發panic。",
+      "context": "library另提供`check_text(&Client, &str, jobs, timeout_secs, Receiver<StopEvent>)`，借caller共用client、回owned Report；先驗正數設定，再解析原行。caller保持送端有效，或送Requested要求停止並await返回；直接丟掉整份future仍不能替代等待children。這沿B4已有的caller責任，沒有承諾任意取消都會自動完成清理。\n\nmain沿10.6取完整args_os。help／version或用法訊息也交write_output確認flush；工作成功後才選文字／JSON出口。RunError沿Error.source形成診斷，正常返回ExitCode；診斷出口自己失敗仍回2，不再引發panic。\n\n完整main只連接這些已教邊界；參考版不靠公共網站提供固定答案，測試也不靠sleep猜請求進度。\n\n## 先看全部起始檔，再執行本節 target\n\n`src/test_fixture.rs`雖隨起點保存，這份root**沒有**`mod test_fixture`宣告，因此本節library與bin都不載它，追加報告checks也不會自動載它。它是下一節完整排程測試會用的198行材料，下面同樣給全檔；不像前四步再透過path依賴另一個教材package。`tests/config.rs`只有兩項Parser檢查，不發HTTP；本節先選library，下一節再選integration target。"
+    },
+    {
+      "id": "18.11:L121:C102",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 121,
+      "text": "下一節",
+      "quote": "`src/test_fixture.rs`雖隨起點保存，這份root**沒有**`mod test_fixture`宣告，因此本節library與bin都不載它，追加報告checks也不會自動載它。它是下一節完整排程測試會用的198行材料，下面同樣給全檔；不像前四步再透過path依賴另一個教材package。`tests/config.rs`只有兩項Parser檢查，不發HTTP；本節先選library，下一節再選integration target。",
+      "context": "## 先看全部起始檔，再執行本節 target\n\n`src/test_fixture.rs`雖隨起點保存，這份root**沒有**`mod test_fixture`宣告，因此本節library與bin都不載它，追加報告checks也不會自動載它。它是下一節完整排程測試會用的198行材料，下面同樣給全檔；不像前四步再透過path依賴另一個教材package。`tests/config.rs`只有兩項Parser檢查，不發HTTP；本節先選library，下一節再選integration target。\n\n`fixtures/invalid-urls.txt`第0行空、第1行ftp、第2行只有一個一般空白、第3行/notes、第4行另一份ftp，最後有LF；完整內容在折疊中，空白與重複原樣保留。lock保存本目錄在repo外的解析版本，並非要求手填1774行設定。\n\n??? example \"展開起始目錄的全部 Rust 來源、lock 與固定輸入\"\n\n    `examples/ch15-projects/b-final-starter/Cargo.lock`："
+    },
+    {
+      "id": "18.11:L121:C121",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 121,
+      "text": "下面",
+      "quote": "`src/test_fixture.rs`雖隨起點保存，這份root**沒有**`mod test_fixture`宣告，因此本節library與bin都不載它，追加報告checks也不會自動載它。它是下一節完整排程測試會用的198行材料，下面同樣給全檔；不像前四步再透過path依賴另一個教材package。`tests/config.rs`只有兩項Parser檢查，不發HTTP；本節先選library，下一節再選integration target。",
+      "context": "## 先看全部起始檔，再執行本節 target\n\n`src/test_fixture.rs`雖隨起點保存，這份root**沒有**`mod test_fixture`宣告，因此本節library與bin都不載它，追加報告checks也不會自動載它。它是下一節完整排程測試會用的198行材料，下面同樣給全檔；不像前四步再透過path依賴另一個教材package。`tests/config.rs`只有兩項Parser檢查，不發HTTP；本節先選library，下一節再選integration target。\n\n`fixtures/invalid-urls.txt`第0行空、第1行ftp、第2行只有一個一般空白、第3行/notes、第4行另一份ftp，最後有LF；完整內容在折疊中，空白與重複原樣保留。lock保存本目錄在repo外的解析版本，並非要求手填1774行設定。\n\n??? example \"展開起始目錄的全部 Rust 來源、lock 與固定輸入\"\n\n    `examples/ch15-projects/b-final-starter/Cargo.lock`："
+    },
+    {
+      "id": "18.11:L121:C205",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 121,
+      "text": "下一節",
+      "quote": "`src/test_fixture.rs`雖隨起點保存，這份root**沒有**`mod test_fixture`宣告，因此本節library與bin都不載它，追加報告checks也不會自動載它。它是下一節完整排程測試會用的198行材料，下面同樣給全檔；不像前四步再透過path依賴另一個教材package。`tests/config.rs`只有兩項Parser檢查，不發HTTP；本節先選library，下一節再選integration target。",
+      "context": "## 先看全部起始檔，再執行本節 target\n\n`src/test_fixture.rs`雖隨起點保存，這份root**沒有**`mod test_fixture`宣告，因此本節library與bin都不載它，追加報告checks也不會自動載它。它是下一節完整排程測試會用的198行材料，下面同樣給全檔；不像前四步再透過path依賴另一個教材package。`tests/config.rs`只有兩項Parser檢查，不發HTTP；本節先選library，下一節再選integration target。\n\n`fixtures/invalid-urls.txt`第0行空、第1行ftp、第2行只有一個一般空白、第3行/notes、第4行另一份ftp，最後有LF；完整內容在折疊中，空白與重複原樣保留。lock保存本目錄在repo外的解析版本，並非要求手填1774行設定。\n\n??? example \"展開起始目錄的全部 Rust 來源、lock 與固定輸入\"\n\n    `examples/ch15-projects/b-final-starter/Cargo.lock`："
+    },
+    {
+      "id": "18.11:L205:C7",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 205,
+      "text": "18.1",
+      "quote": "repo外依18.1明選已安裝的工具鏈，在自己的目錄：",
+      "context": "    ```\n\nrepo外依18.1明選已安裝的工具鏈，在自己的目錄：\n\n```bash\ncargo +1.99.0 check --lib --locked\ncargo +1.99.0 test --lib --locked\n```\n"
+    },
+    {
+      "id": "18.11:L246:C185",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 246,
+      "text": "下面",
+      "quote": "現在把checks/report-tests.rs整份追加到src/report.rs，checks/app-tests.rs整份追加到src/app.rs；每份自帶cfg及tests module，不再包一層。執行相同的`cargo +1.99.0 test --lib --locked`，起點應3項通過、6項失敗；只完成映射後5／4。這是同一份九項checks，下面的例子對照前表：",
+      "context": "    ```\n\n現在把checks/report-tests.rs整份追加到src/report.rs，checks/app-tests.rs整份追加到src/app.rs；每份自帶cfg及tests module，不再包一層。執行相同的`cargo +1.99.0 test --lib --locked`，起點應3項通過、6項失敗；只完成映射後5／4。這是同一份九項checks，下面的例子對照前表：\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/checks/report-tests.rs:map-test\"\n```\n\n完成映射後，task_failure仍保存原index／原文，不捏造status或elapsed。來源錯誤仍是Err。排程已有的真HTTP混合測試，在完整答案也把同一份Batch交給映射驗http／input／request，沒有把手工材料當真網路驗收。"
+    },
+    {
+      "id": "18.11:L266:C71",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 266,
+      "text": "10.4",
+      "quote": "write_report目前沒有寫出任何內容。請先render，再交給已提供的`write_output(text, output)`：它依10.4／10.9對`W: Write`呼叫write_all，成功後呼叫flush，兩者都保留io::Result。這次將完成出口的責任放在同一個helper，main與測試使用相同安排。",
+      "context": "## 第三步：write與flush都成功，才交資料狀態\n\nwrite_report目前沒有寫出任何內容。請先render，再交給已提供的`write_output(text, output)`：它依10.4／10.9對`W: Write`呼叫write_all，成功後呼叫flush，兩者都保留io::Result。這次將完成出口的責任放在同一個helper，main與測試使用相同安排。\n\napp.rs imports加入`use crate::report::render;`。編碼失敗用RunError::Encode；寫入／flush用Output，因而整份write_report回Err時，main統一fatal2。只在這些步驟全成功後，回`Ok(report.status())`。\n\n以下核對前面已介紹的ControlledWriter，特別是bytes已接受、flush仍失敗的情況：\n\n```rust"
+    },
+    {
+      "id": "18.11:L266:C76",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 266,
+      "text": "10.9",
+      "quote": "write_report目前沒有寫出任何內容。請先render，再交給已提供的`write_output(text, output)`：它依10.4／10.9對`W: Write`呼叫write_all，成功後呼叫flush，兩者都保留io::Result。這次將完成出口的責任放在同一個helper，main與測試使用相同安排。",
+      "context": "## 第三步：write與flush都成功，才交資料狀態\n\nwrite_report目前沒有寫出任何內容。請先render，再交給已提供的`write_output(text, output)`：它依10.4／10.9對`W: Write`呼叫write_all，成功後呼叫flush，兩者都保留io::Result。這次將完成出口的責任放在同一個helper，main與測試使用相同安排。\n\napp.rs imports加入`use crate::report::render;`。編碼失敗用RunError::Encode；寫入／flush用Output，因而整份write_report回Err時，main統一fatal2。只在這些步驟全成功後，回`Ok(report.status())`。\n\n以下核對前面已介紹的ControlledWriter，特別是bytes已接受、flush仍失敗的情況：\n\n```rust"
+    },
+    {
+      "id": "18.11:L270:C1",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 270,
+      "text": "以下",
+      "quote": "以下核對前面已介紹的ControlledWriter，特別是bytes已接受、flush仍失敗的情況：",
+      "context": "app.rs imports加入`use crate::report::render;`。編碼失敗用RunError::Encode；寫入／flush用Output，因而整份write_report回Err時，main統一fatal2。只在這些步驟全成功後，回`Ok(report.status())`。\n\n以下核對前面已介紹的ControlledWriter，特別是bytes已接受、flush仍失敗的情況：\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/checks/app-tests.rs:writer\"\n```\n\n```rust"
+    },
+    {
+      "id": "18.11:L270:C5",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 270,
+      "text": "前面已",
+      "quote": "以下核對前面已介紹的ControlledWriter，特別是bytes已接受、flush仍失敗的情況：",
+      "context": "app.rs imports加入`use crate::report::render;`。編碼失敗用RunError::Encode；寫入／flush用Output，因而整份write_report回Err時，main統一fatal2。只在這些步驟全成功後，回`Ok(report.status())`。\n\n以下核對前面已介紹的ControlledWriter，特別是bytes已接受、flush仍失敗的情況：\n\n```rust\n--8<-- \"examples/ch15-projects/b-final-starter/checks/app-tests.rs:writer\"\n```\n\n```rust"
+    },
+    {
+      "id": "18.11:L297:C17",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 297,
+      "text": "下面",
+      "quote": "先完成自己的三個body，再對照下面真實參考檔。完整report.rs包含empty_row／row／build_report／status／render與五項報告測試；完整app.rs包含同樣入口、write_output、完成的write_report與四項測試。它們使用 `crate::` 路徑，能直接放回本頁工作副本；其他manifest、root、input、batch、single、config、error、main維持上面的完整起點。",
+      "context": "## 本步完整答案：兩份全檔，連同相同九項 checks\n\n先完成自己的三個body，再對照下面真實參考檔。完整report.rs包含empty_row／row／build_report／status／render與五項報告測試；完整app.rs包含同樣入口、write_output、完成的write_report與四項測試。它們使用 `crate::` 路徑，能直接放回本頁工作副本；其他manifest、root、input、batch、single、config、error、main維持上面的完整起點。\n\n若以全檔替換來核對，**不要再把checks追加第二次**：兩份答案已含完全相同的九項checks。這個本步完成副本仍叫url-checker-starter，並未偷偷載入完整工具另外七項batch tests或其test_fixture module。第18.12節才一起提供正式工具的所有檔案、完整16+2測試及使用方式。\n\n??? example \"展開本步可直接替換的完整 report.rs 與 app.rs\"\n\n    `examples/ch15-projects/url-checker/src/report.rs`："
+    },
+    {
+      "id": "18.11:L297:C219",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 297,
+      "text": "上面",
+      "quote": "先完成自己的三個body，再對照下面真實參考檔。完整report.rs包含empty_row／row／build_report／status／render與五項報告測試；完整app.rs包含同樣入口、write_output、完成的write_report與四項測試。它們使用 `crate::` 路徑，能直接放回本頁工作副本；其他manifest、root、input、batch、single、config、error、main維持上面的完整起點。",
+      "context": "## 本步完整答案：兩份全檔，連同相同九項 checks\n\n先完成自己的三個body，再對照下面真實參考檔。完整report.rs包含empty_row／row／build_report／status／render與五項報告測試；完整app.rs包含同樣入口、write_output、完成的write_report與四項測試。它們使用 `crate::` 路徑，能直接放回本頁工作副本；其他manifest、root、input、batch、single、config、error、main維持上面的完整起點。\n\n若以全檔替換來核對，**不要再把checks追加第二次**：兩份答案已含完全相同的九項checks。這個本步完成副本仍叫url-checker-starter，並未偷偷載入完整工具另外七項batch tests或其test_fixture module。第18.12節才一起提供正式工具的所有檔案、完整16+2測試及使用方式。\n\n??? example \"展開本步可直接替換的完整 report.rs 與 app.rs\"\n\n    `examples/ch15-projects/url-checker/src/report.rs`："
+    },
+    {
+      "id": "18.11:L299:C129",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 299,
+      "text": "18.12",
+      "quote": "若以全檔替換來核對，**不要再把checks追加第二次**：兩份答案已含完全相同的九項checks。這個本步完成副本仍叫url-checker-starter，並未偷偷載入完整工具另外七項batch tests或其test_fixture module。第18.12節才一起提供正式工具的所有檔案、完整16+2測試及使用方式。",
+      "context": "先完成自己的三個body，再對照下面真實參考檔。完整report.rs包含empty_row／row／build_report／status／render與五項報告測試；完整app.rs包含同樣入口、write_output、完成的write_report與四項測試。它們使用 `crate::` 路徑，能直接放回本頁工作副本；其他manifest、root、input、batch、single、config、error、main維持上面的完整起點。\n\n若以全檔替換來核對，**不要再把checks追加第二次**：兩份答案已含完全相同的九項checks。這個本步完成副本仍叫url-checker-starter，並未偷偷載入完整工具另外七項batch tests或其test_fixture module。第18.12節才一起提供正式工具的所有檔案、完整16+2測試及使用方式。\n\n??? example \"展開本步可直接替換的完整 report.rs 與 app.rs\"\n\n    `examples/ch15-projects/url-checker/src/report.rs`：\n\n    ```rust"
+    },
+    {
+      "id": "18.11:L322:C106",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 322,
+      "text": "下一節",
+      "quote": "現在資料保留原input_index／original，未知欄位用null，型別錯誤仍有原因；出口完成後才交0／1／130，編碼、write或flush失敗則fatal2。這三個小步已把Batch接到工具邊界。下一節直接保存正式完整工具，再驗真正binary與使用限制。",
+      "context": "```\n\n現在資料保留原input_index／original，未知欄位用null，型別錯誤仍有原因；出口完成後才交0／1／130，編碼、write或flush失敗則fatal2。這三個小步已把Batch接到工具邊界。下一節直接保存正式完整工具，再驗真正binary與使用限制。\n\n[下一節：B 的完整可用答案](18-12-lesson.md)"
+    },
+    {
+      "id": "18.11:L324:C2",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 324,
+      "text": "下一節",
+      "quote": "[下一節：B 的完整可用答案](18-12-lesson.md)",
+      "context": "現在資料保留原input_index／original，未知欄位用null，型別錯誤仍有原因；出口完成後才交0／1／130，編碼、write或flush失敗則fatal2。這三個小步已把Batch接到工具邊界。下一節直接保存正式完整工具，再驗真正binary與使用限制。\n\n[下一節：B 的完整可用答案](18-12-lesson.md)"
+    },
+    {
+      "id": "18.12:L1:C3",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 1,
+      "text": "18.12",
+      "quote": "# 18.12 完整 URL checker：保存全部來源，驗收真正工具",
+      "context": "# 18.12 完整 URL checker：保存全部來源，驗收真正工具\n\n上一節完成報告映射、資料狀態與write／flush。這一節提供正式 `url-checker` 的整份可用答案：一份UTF-8網址清單，受jobs限制的HTTP工作，最後依原行排列文字或JSON。可以直接保存完整目錄建置，也可以與自己的最後工作副本逐檔比較。\n\n本頁沒有新的實作題。先核對入口與每份來源的角色，再取得全檔、執行限定targets；同一份工具的早期快照不累加成額外作業。\n\n## 完整版多帶了哪些驗收檔？"
+    },
+    {
+      "id": "18.12:L3:C1",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 3,
+      "text": "上一節",
+      "quote": "上一節完成報告映射、資料狀態與write／flush。這一節提供正式 `url-checker` 的整份可用答案：一份UTF-8網址清單，受jobs限制的HTTP工作，最後依原行排列文字或JSON。可以直接保存完整目錄建置，也可以與自己的最後工作副本逐檔比較。",
+      "context": "# 18.12 完整 URL checker：保存全部來源，驗收真正工具\n\n上一節完成報告映射、資料狀態與write／flush。這一節提供正式 `url-checker` 的整份可用答案：一份UTF-8網址清單，受jobs限制的HTTP工作，最後依原行排列文字或JSON。可以直接保存完整目錄建置，也可以與自己的最後工作副本逐檔比較。\n\n本頁沒有新的實作題。先核對入口與每份來源的角色，再取得全檔、執行限定targets；同一份工具的早期快照不累加成額外作業。\n\n## 完整版多帶了哪些驗收檔？\n\nnormal library仍是18.11的app／batch／config／error／input／report／single，root以pub use提供公開入口，main連接args_os、stdout／stderr與ExitCode。正式root不再保留起點的兩項dead_code allow。"
+    },
+    {
+      "id": "18.12:L9:C17",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 9,
+      "text": "18.11",
+      "quote": "normal library仍是18.11的app／batch／config／error／input／report／single，root以pub use提供公開入口，main連接args_os、stdout／stderr與ExitCode。正式root不再保留起點的兩項dead_code allow。",
+      "context": "## 完整版多帶了哪些驗收檔？\n\nnormal library仍是18.11的app／batch／config／error／input／report／single，root以pub use提供公開入口，main連接args_os、stdout／stderr與ExitCode。正式root不再保留起點的兩項dead_code allow。\n\n`src/batch.rs`另外含七項本地HTTP／停止測試；`src/report.rs`有五項，`src/app.rs`有四項，共16項lib tests。`src/lib.rs`以 **`#[cfg(test)] mod test_fixture;`** 載入本地服務，因此只有lib test harness載入它；normal binary、integration test借用的normal library不會編譯這份fixture module。名字filter只決定執行哪些測試，不能把同一library其餘module藏掉。\n\n這份 `src/test_fixture.rs`不再path依賴教材HTTP package；它從本package的single借build_client／parse_http_url，直接使用14.9已教的axum／IntoFuture／TcpListener／Arc／Mutex／AtomicUsize／mpsc。`ready_response`先保存status，再text().await讀約定body；外層10秒timeout涵蓋send和body。啟動失敗先shutdown，held handler短guard移出gate後才await；shutdown先關gate、通知停止、await server。fixture的body等待與產品single只等final headers仍分開。\n\n七項batch tests沿18.10的bounded owner安排：每份觀察都有期限，先保存原tracked／Id登記數，再fallback drain與shutdown，最後才assert。保留提前Requested不提交、來源失敗不是取消、完成未收取保原Check／TaskFailure、真HTTP混合與Id→完整Input的驗收。合成task的panic hook可能顯示診斷，不等於整份test未處理失敗。"
+    },
+    {
+      "id": "18.12:L13:C98",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 13,
+      "text": "14.9",
+      "quote": "這份 `src/test_fixture.rs`不再path依賴教材HTTP package；它從本package的single借build_client／parse_http_url，直接使用14.9已教的axum／IntoFuture／TcpListener／Arc／Mutex／AtomicUsize／mpsc。`ready_response`先保存status，再text().await讀約定body；外層10秒timeout涵蓋send和body。啟動失敗先shutdown，held handler短guard移出gate後才await；shutdown先關gate、通知停止、await server。fixture的body等待與產品single只等final headers仍分開。",
+      "context": "`src/batch.rs`另外含七項本地HTTP／停止測試；`src/report.rs`有五項，`src/app.rs`有四項，共16項lib tests。`src/lib.rs`以 **`#[cfg(test)] mod test_fixture;`** 載入本地服務，因此只有lib test harness載入它；normal binary、integration test借用的normal library不會編譯這份fixture module。名字filter只決定執行哪些測試，不能把同一library其餘module藏掉。\n\n這份 `src/test_fixture.rs`不再path依賴教材HTTP package；它從本package的single借build_client／parse_http_url，直接使用14.9已教的axum／IntoFuture／TcpListener／Arc／Mutex／AtomicUsize／mpsc。`ready_response`先保存status，再text().await讀約定body；外層10秒timeout涵蓋send和body。啟動失敗先shutdown，held handler短guard移出gate後才await；shutdown先關gate、通知停止、await server。fixture的body等待與產品single只等final headers仍分開。\n\n七項batch tests沿18.10的bounded owner安排：每份觀察都有期限，先保存原tracked／Id登記數，再fallback drain與shutdown，最後才assert。保留提前Requested不提交、來源失敗不是取消、完成未收取保原Check／TaskFailure、真HTTP混合與Id→完整Input的驗收。合成task的panic hook可能顯示診斷，不等於整份test未處理失敗。\n\n`tests/config.rs`是獨立integration target，只有兩項Parser測試：預設jobs8／timeout10秒／json=false，以及指定jobs2／timeout5秒／json=true、help與用法錯誤。它不啟動HTTP，也不能代替真binary的出口驗收。\n\n## 依檔名保存完整答案"
+    },
+    {
+      "id": "18.12:L15:C15",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 15,
+      "text": "18.10",
+      "quote": "七項batch tests沿18.10的bounded owner安排：每份觀察都有期限，先保存原tracked／Id登記數，再fallback drain與shutdown，最後才assert。保留提前Requested不提交、來源失敗不是取消、完成未收取保原Check／TaskFailure、真HTTP混合與Id→完整Input的驗收。合成task的panic hook可能顯示診斷，不等於整份test未處理失敗。",
+      "context": "這份 `src/test_fixture.rs`不再path依賴教材HTTP package；它從本package的single借build_client／parse_http_url，直接使用14.9已教的axum／IntoFuture／TcpListener／Arc／Mutex／AtomicUsize／mpsc。`ready_response`先保存status，再text().await讀約定body；外層10秒timeout涵蓋send和body。啟動失敗先shutdown，held handler短guard移出gate後才await；shutdown先關gate、通知停止、await server。fixture的body等待與產品single只等final headers仍分開。\n\n七項batch tests沿18.10的bounded owner安排：每份觀察都有期限，先保存原tracked／Id登記數，再fallback drain與shutdown，最後才assert。保留提前Requested不提交、來源失敗不是取消、完成未收取保原Check／TaskFailure、真HTTP混合與Id→完整Input的驗收。合成task的panic hook可能顯示診斷，不等於整份test未處理失敗。\n\n`tests/config.rs`是獨立integration target，只有兩項Parser測試：預設jobs8／timeout10秒／json=false，以及指定jobs2／timeout5秒／json=true、help與用法錯誤。它不啟動HTTP，也不能代替真binary的出口驗收。\n\n## 依檔名保存完整答案\n\n以下是全部檔案，包含library root、main、helpers、同檔tests、本機fixture、integration tests、manifest、lock、README與固定輸入。Rust片段直接引用實際可編譯來源；沒有省略imports或只顯示solution region。Cargo.lock由Cargo維護，隨整個目錄保存，不要求手抄解析項目。"
+    },
+    {
+      "id": "18.12:L21:C1",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 21,
+      "text": "以下",
+      "quote": "以下是全部檔案，包含library root、main、helpers、同檔tests、本機fixture、integration tests、manifest、lock、README與固定輸入。Rust片段直接引用實際可編譯來源；沒有省略imports或只顯示solution region。Cargo.lock由Cargo維護，隨整個目錄保存，不要求手抄解析項目。",
+      "context": "## 依檔名保存完整答案\n\n以下是全部檔案，包含library root、main、helpers、同檔tests、本機fixture、integration tests、manifest、lock、README與固定輸入。Rust片段直接引用實際可編譯來源；沒有省略imports或只顯示solution region。Cargo.lock由Cargo維護，隨整個目錄保存，不要求手抄解析項目。\n\n??? example \"展開完整設定、全部 Rust 來源與測試材料\"\n\n    `examples/ch15-projects/url-checker/Cargo.toml`：\n\n    ```toml"
+    },
+    {
+      "id": "18.12:L117:C70",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 117,
+      "text": "以下",
+      "quote": "在教材repo根目錄先進入`examples/ch15-projects/url-checker`，或把**整個目錄**保存到repo外。以下命令的相對檔名以該目錄為起點，`--manifest-path`不會替程式換工作目錄。",
+      "context": "## 使用完整答案，核對真實可用的範圍\n\n在教材repo根目錄先進入`examples/ch15-projects/url-checker`，或把**整個目錄**保存到repo外。以下命令的相對檔名以該目錄為起點，`--manifest-path`不會替程式換工作目錄。\n\n隨附fixtures/invalid-urls.txt是有空行、兩份相同ftp網址與一份`/notes`的真材料。下表明示原檔每行的內容；執行時使用隨完整目錄提供的檔案，最後LF不增加一份輸入。\n\n| 原index | 該行完整內容 | 處理方式 |\n| --- | --- | --- |\n| 0 | 空行 | 略過，仍占原行索引 |"
+    },
+    {
+      "id": "18.12:L134:C23",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 134,
+      "text": "10.5",
+      "quote": "run的退出狀態不是只看終端機有沒有報告。沿10.5在上一條命令後緊接 `echo $?`（PowerShell使用 `echo $LASTEXITCODE`），應觀察1；不要因非零就把這份正確保存Input問題的報告改成成功0。",
+      "context": "```\n\nrun的退出狀態不是只看終端機有沒有報告。沿10.5在上一條命令後緊接 `echo $?`（PowerShell使用 `echo $LASTEXITCODE`），應觀察1；不要因非零就把這份正確保存Input問題的報告改成成功0。\n\n這份材料不送HTTP；報告原index為1／3／4，三筆kind=input，各自保留original，時間與HTTP欄位null，退出1。換成自己的http／https清單才是真網路檢查，結果依環境與當時服務而定；可用`--jobs 2 --timeout-secs 5`選兩個正數設定，或省略--json取得同份資料的文字表示。一般取消操作是按Ctrl+C，等報告與130；不要用強制終止代替這份收尾。\n\n這次讓 Clippy 回報的警告也使檢查失敗：`--` 將後面的選項交給 Clippy，`-D warnings` 把警告提升為錯誤。沿2.7，沒有警告仍不代表功能已正確。\n\n```bash"
+    },
+    {
+      "id": "18.12:L138:C69",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 138,
+      "text": "2.7",
+      "quote": "這次讓 Clippy 回報的警告也使檢查失敗：`--` 將後面的選項交給 Clippy，`-D warnings` 把警告提升為錯誤。沿2.7，沒有警告仍不代表功能已正確。",
+      "context": "這份材料不送HTTP；報告原index為1／3／4，三筆kind=input，各自保留original，時間與HTTP欄位null，退出1。換成自己的http／https清單才是真網路檢查，結果依環境與當時服務而定；可用`--jobs 2 --timeout-secs 5`選兩個正數設定，或省略--json取得同份資料的文字表示。一般取消操作是按Ctrl+C，等報告與130；不要用強制終止代替這份收尾。\n\n這次讓 Clippy 回報的警告也使檢查失敗：`--` 將後面的選項交給 Clippy，`-D warnings` 把警告提升為錯誤。沿2.7，沒有警告仍不代表功能已正確。\n\n```bash\ncargo +1.99.0 test --lib --locked\ncargo +1.99.0 test --test config --locked\ncargo +1.99.0 clippy --lib --bin url-checker --test config --locked -- -D warnings\n```"
+    },
+    {
+      "id": "18.12:L154:C159",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 154,
+      "text": "前述",
+      "quote": "shell能找到Cargo binary目錄後，便可用`url-checker 自己的清單.txt --json`。README也列建置、執行、測試、輸出政策與限制。本參考版按實際檔案行數計核心825、測試898、本機Fixture198，共1921行Rust（含空白與snippet標記，不含lock）；新練習只補前述三個動作，不要求一次手寫全部參考tests，也不累加階段副本。這份工具仍讀完整小清單、保存所有結果；jobs限制已提交tasks，不限制整張輸入與報告的記憶體。",
+      "context": "```\n\nshell能找到Cargo binary目錄後，便可用`url-checker 自己的清單.txt --json`。README也列建置、執行、測試、輸出政策與限制。本參考版按實際檔案行數計核心825、測試898、本機Fixture198，共1921行Rust（含空白與snippet標記，不含lock）；新練習只補前述三個動作，不要求一次手寫全部參考tests，也不累加階段副本。這份工具仍讀完整小清單、保存所有結果；jobs限制已提交tasks，不限制整張輸入與報告的記憶體。\n\n延伸閱讀：[English Book：TDD](https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html)、[English Book：stdout／stderr](https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html)。本節採其小步驗收與出口分工，實作依本書已教的typed錯誤、owned資源及flush契約。\n\n## 交回可使用的答案，也保留界線\n\n本工具已完成單筆分類、原行身分、有限提交、每筆期限、停止後回收、完整報告與CLI。jobs數的是已提交尚未收回的task，完成未收也在其中；它沒有限制所有輸入／結果／格式化String的總記憶體。輸入仍須是完整可讀的UTF-8小清單。"
+    }
+  ],
+  "links": [
+    {
+      "id": "1.7:L13:C2",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 13,
+      "label": "原始碼編譯成執行檔，啟動後的 process 使用 RAM 保存工作資料，由 CPU 執行乘法",
+      "target": "../assets/foundations-v3/program-process.svg",
+      "quote": "![原始碼編譯成執行檔，啟動後的 process 使用 RAM 保存工作資料，由 CPU 執行乘法](../assets/foundations-v3/program-process.svg)"
+    },
+    {
+      "id": "1.7:L25:C2",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 25,
+      "label": "main 與 subtotal 可以各自保存值 120 的 i32，位置不同但每個值都需要 4 bytes；值換成 80 仍是 4 bytes",
+      "target": "../assets/foundations-v3/i32-value-size-location.svg",
+      "quote": "![main 與 subtotal 可以各自保存值 120 的 i32，位置不同但每個值都需要 4 bytes；值換成 80 仍是 4 bytes](../assets/foundations-v3/i32-value-size-location.svg)"
+    },
+    {
+      "id": "1.7:L56:C2",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 56,
+      "label": "A 時 main 保存 price 和 count；B 時 main 等待而 subtotal 保存自己的參數與 result；C 時 subtotal 呼叫已結束，main 的 first 保存回傳的 360",
+      "target": "../assets/foundations-v3/subtotal-frames.svg",
+      "quote": "![A 時 main 保存 price 和 count；B 時 main 等待而 subtotal 保存自己的參數與 result；C 時 subtotal 呼叫已結束，main 的 first 保存回傳的 360](../assets/foundations-v3/subtotal-frames.svg)"
+    },
+    {
+      "id": "1.7:L74:C2",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 74,
+      "label": "兩項明細配置在 H1，五項明細配置在 H2；各自的位置資訊指向內容區塊，定位資訊和整份內容分開",
+      "target": "../assets/foundations-v3/heap-location-content.svg",
+      "quote": "![兩項明細配置在 H1，五項明細配置在 H2；各自的位置資訊指向內容區塊，定位資訊和整份內容分開](../assets/foundations-v3/heap-location-content.svg)"
+    },
+    {
+      "id": "1.7:L86:C2",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 86,
+      "label": "內層建立 H1 後交出位置資訊，內層結束時外層仍能使用 H1，最後外層用完才歸還空間",
+      "target": "../assets/foundations-v3/heap-lifecycle.svg",
+      "quote": "![內層建立 H1 後交出位置資訊，內層結束時外層仍能使用 H1，最後外層用完才歸還空間](../assets/foundations-v3/heap-lifecycle.svg)"
+    },
+    {
+      "id": "1.7:L115:C1",
+      "path": "docs/chapters/01-07-lesson.md",
+      "section": "1.7",
+      "line": 115,
+      "label": "下一節：tuple 與 array",
+      "target": "01-08-lesson.md",
+      "quote": "[下一節：tuple 與 array](01-08-lesson.md)"
+    },
+    {
+      "id": "18.7:L5:C40",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 5,
+      "label": "14.5 的 timeout 與時間",
+      "target": "14-05-lesson.md",
+      "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。"
+    },
+    {
+      "id": "18.7:L5:C78",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 5,
+      "label": "14.8 的單一 async HTTP",
+      "target": "14-08-lesson.md",
+      "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。"
+    },
+    {
+      "id": "18.7:L5:C117",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 5,
+      "label": "14.9 的受控本機服務",
+      "target": "14-09-lesson.md",
+      "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。"
+    },
+    {
+      "id": "18.7:L5:C152",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 5,
+      "label": "18.1 的練功方式",
+      "target": "18-01-lesson.md",
+      "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。"
+    },
+    {
+      "id": "18.7:L42:C2",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 42,
+      "label": "一份原文字經過解析與受限的 headers 工作，形成一份 owned 結果",
+      "target": "../assets/ch15/one-url-result.svg",
+      "quote": "![一份原文字經過解析與受限的 headers 工作，形成一份 owned 結果](../assets/ch15/one-url-result.svg)"
+    },
+    {
+      "id": "18.7:L259:C1",
+      "path": "docs/chapters/18-07-lesson.md",
+      "section": "18.7",
+      "line": 259,
+      "label": "下一節：原行位置與依序批次",
+      "target": "18-08-lesson.md",
+      "quote": "[下一節：原行位置與依序批次](18-08-lesson.md)"
+    },
+    {
+      "id": "18.8:L5:C5",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 5,
+      "label": "18.7 的單筆模型與期限",
+      "target": "18-07-lesson.md",
+      "quote": "本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。"
+    },
+    {
+      "id": "18.8:L5:C38",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 5,
+      "label": "9.6 的 lines 與 owned 文字",
+      "target": "09-06-lesson.md",
+      "quote": "本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。"
+    },
+    {
+      "id": "18.8:L55:C2",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 55,
+      "label": "原行先取得索引，再略過空白；三份owned輸入依序形成三份結果，重複網址索引不同",
+      "target": "../assets/ch15/line-index-to-results.svg",
+      "quote": "![原行先取得索引，再略過空白；三份owned輸入依序形成三份結果，重複網址索引不同](../assets/ch15/line-index-to-results.svg)"
+    },
+    {
+      "id": "18.8:L244:C1",
+      "path": "docs/chapters/18-08-lesson.md",
+      "section": "18.8",
+      "line": 244,
+      "label": "下一節：有上限的 URL 工作",
+      "target": "18-09-lesson.md",
+      "quote": "[下一節：有上限的 URL 工作](18-09-lesson.md)"
+    },
+    {
+      "id": "18.9:L5:C3",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 5,
+      "label": "18.8 的輸入與依序版本",
+      "target": "18-08-lesson.md",
+      "quote": "沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。"
+    },
+    {
+      "id": "18.9:L5:C36",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 5,
+      "label": "14.4 的有限 JoinSet 排程",
+      "target": "14-04-lesson.md",
+      "quote": "沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。"
+    },
+    {
+      "id": "18.9:L35:C2",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 35,
+      "label": "jobs二的三筆手工示意：完成尚未收取仍占名額，收取一後才提交二，最後按原索引整理",
+      "target": "../assets/ch15/bounded-url-slots.svg",
+      "quote": "![jobs二的三筆手工示意：完成尚未收取仍占名額，收取一後才提交二，最後按原索引整理](../assets/ch15/bounded-url-slots.svg)"
+    },
+    {
+      "id": "18.9:L281:C1",
+      "path": "docs/chapters/18-09-lesson.md",
+      "section": "18.9",
+      "line": 281,
+      "label": "下一節：停止提交與完整收尾",
+      "target": "18-10-lesson.md",
+      "quote": "[下一節：停止提交與完整收尾](18-10-lesson.md)"
+    },
+    {
+      "id": "18.10:L5:C3",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 5,
+      "label": "18.9 的 owned Scheduler",
+      "target": "18-09-lesson.md",
+      "quote": "沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。"
+    },
+    {
+      "id": "18.10:L5:C47",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 5,
+      "label": "14.6 的停止、取消與等待",
+      "target": "14-06-lesson.md",
+      "quote": "沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。"
+    },
+    {
+      "id": "18.10:L37:C2",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 37,
+      "label": "原index三已完成，停止後一與四取消，五與六尚未提交；全收尾後按原index排列Batch",
+      "target": "../assets/ch15/stop-url-work.svg",
+      "quote": "![原index三已完成，停止後一與四取消，五與六尚未提交；全收尾後按原index排列Batch](../assets/ch15/stop-url-work.svg)"
+    },
+    {
+      "id": "18.10:L304:C6",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 304,
+      "label": "Tokio Graceful Shutdown",
+      "target": "https://tokio.rs/tokio/topics/shutdown",
+      "quote": "延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。"
+    },
+    {
+      "id": "18.10:L304:C72",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 304,
+      "label": "RustCourse優雅關閉",
+      "target": "https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md",
+      "quote": "延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。"
+    },
+    {
+      "id": "18.10:L304:C181",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 304,
+      "label": "Tokio1.53.3 ctrl_c",
+      "target": "https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html",
+      "quote": "延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。"
+    },
+    {
+      "id": "18.10:L304:C260",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 304,
+      "label": "Iterator::by_ref",
+      "target": "https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref",
+      "quote": "延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。"
+    },
+    {
+      "id": "18.10:L306:C1",
+      "path": "docs/chapters/18-10-lesson.md",
+      "section": "18.10",
+      "line": 306,
+      "label": "下一節：報告映射與最後 CLI 整合",
+      "target": "18-11-lesson.md",
+      "quote": "[下一節：報告映射與最後 CLI 整合](18-11-lesson.md)"
+    },
+    {
+      "id": "18.11:L5:C4",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 5,
+      "label": "18.10 的停止流程",
+      "target": "18-10-lesson.md",
+      "quote": "本節沿[18.10 的停止流程](18-10-lesson.md)，只新增報告映射、CLI邊界與輸出完成責任。本節先做下方三個小步；第18.12節另提供整份可用工具的全部檔案與使用方式。各階段是同一工具的快照，不是把B1–4重寫一次。"
+    },
+    {
+      "id": "18.11:L51:C2",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 51,
+      "label": "Batch先成為owned Report，再選文字或JSON；成功完成write及flush才交資料狀態，失敗改回fatal2",
+      "target": "../assets/ch15/url-report-boundary.svg",
+      "quote": "![Batch先成為owned Report，再選文字或JSON；成功完成write及flush才交資料狀態，失敗改回fatal2](../assets/ch15/url-report-boundary.svg)"
+    },
+    {
+      "id": "18.11:L324:C1",
+      "path": "docs/chapters/18-11-lesson.md",
+      "section": "18.11",
+      "line": 324,
+      "label": "下一節：B 的完整可用答案",
+      "target": "18-12-lesson.md",
+      "quote": "[下一節：B 的完整可用答案](18-12-lesson.md)"
+    },
+    {
+      "id": "18.12:L156:C6",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 156,
+      "label": "English Book：TDD",
+      "target": "https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html",
+      "quote": "延伸閱讀：[English Book：TDD](https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html)、[English Book：stdout／stderr](https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html)。本節採其小步驗收與出口分工，實作依本書已教的typed錯誤、owned資源及flush契約。"
+    },
+    {
+      "id": "18.12:L156:C105",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 156,
+      "label": "繁中對應",
+      "target": "https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html",
+      "quote": "延伸閱讀：[English Book：TDD](https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html)、[English Book：stdout／stderr](https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html)。本節採其小步驗收與出口分工，實作依本書已教的typed錯誤、owned資源及flush契約。"
+    },
+    {
+      "id": "18.12:L156:C190",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 156,
+      "label": "English Book：stdout／stderr",
+      "target": "https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html",
+      "quote": "延伸閱讀：[English Book：TDD](https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html)、[English Book：stdout／stderr](https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html)。本節採其小步驗收與出口分工，實作依本書已教的typed錯誤、owned資源及flush契約。"
+    },
+    {
+      "id": "18.12:L156:C300",
+      "path": "docs/chapters/18-12-lesson.md",
+      "section": "18.12",
+      "line": 156,
+      "label": "繁中對應",
+      "target": "https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html",
+      "quote": "延伸閱讀：[English Book：TDD](https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html)、[English Book：stdout／stderr](https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html)。本節採其小步驗收與出口分工，實作依本書已教的typed錯誤、owned資源及flush契約。"
+    }
+  ]
+}

@@ -1,0 +1,522 @@
+[
+  {
+    "id": "1.7:L13:C2",
+    "path": "docs/chapters/01-07-lesson.md",
+    "section": "1.7",
+    "line": 13,
+    "label": "原始碼編譯成執行檔，啟動後的 process 使用 RAM 保存工作資料，由 CPU 執行乘法",
+    "target": "../assets/foundations-v3/program-process.svg",
+    "quote": "![原始碼編譯成執行檔，啟動後的 process 使用 RAM 保存工作資料，由 CPU 執行乘法](../assets/foundations-v3/program-process.svg)",
+    "resolved": {
+      "path": "docs/assets/foundations-v3/program-process.svg",
+      "sha256": "03367eb5f7d3bef3aaa637ba242b0e90a2a96d8cd0ef2536ca94132fb64db561",
+      "lines": 71
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "1.7:L25:C2",
+    "path": "docs/chapters/01-07-lesson.md",
+    "section": "1.7",
+    "line": 25,
+    "label": "main 與 subtotal 可以各自保存值 120 的 i32，位置不同但每個值都需要 4 bytes；值換成 80 仍是 4 bytes",
+    "target": "../assets/foundations-v3/i32-value-size-location.svg",
+    "quote": "![main 與 subtotal 可以各自保存值 120 的 i32，位置不同但每個值都需要 4 bytes；值換成 80 仍是 4 bytes](../assets/foundations-v3/i32-value-size-location.svg)",
+    "resolved": {
+      "path": "docs/assets/foundations-v3/i32-value-size-location.svg",
+      "sha256": "00c15a22127e47bef1c326c613aeb9ed9e521830f16aae6723041e576a48e891",
+      "lines": 85
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "1.7:L56:C2",
+    "path": "docs/chapters/01-07-lesson.md",
+    "section": "1.7",
+    "line": 56,
+    "label": "A 時 main 保存 price 和 count；B 時 main 等待而 subtotal 保存自己的參數與 result；C 時 subtotal 呼叫已結束，main 的 first 保存回傳的 360",
+    "target": "../assets/foundations-v3/subtotal-frames.svg",
+    "quote": "![A 時 main 保存 price 和 count；B 時 main 等待而 subtotal 保存自己的參數與 result；C 時 subtotal 呼叫已結束，main 的 first 保存回傳的 360](../assets/foundations-v3/subtotal-frames.svg)",
+    "resolved": {
+      "path": "docs/assets/foundations-v3/subtotal-frames.svg",
+      "sha256": "4d20deebd597037398e621e19d50132de691b599646e6d4f65bbbf7ef54ce37c",
+      "lines": 81
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "1.7:L74:C2",
+    "path": "docs/chapters/01-07-lesson.md",
+    "section": "1.7",
+    "line": 74,
+    "label": "兩項明細配置在 H1，五項明細配置在 H2；各自的位置資訊指向內容區塊，定位資訊和整份內容分開",
+    "target": "../assets/foundations-v3/heap-location-content.svg",
+    "quote": "![兩項明細配置在 H1，五項明細配置在 H2；各自的位置資訊指向內容區塊，定位資訊和整份內容分開](../assets/foundations-v3/heap-location-content.svg)",
+    "resolved": {
+      "path": "docs/assets/foundations-v3/heap-location-content.svg",
+      "sha256": "cbf0c1a2d8e130303093a37246f15096a1e08b70ed4d15175e5e1b3315b074ab",
+      "lines": 68
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "1.7:L86:C2",
+    "path": "docs/chapters/01-07-lesson.md",
+    "section": "1.7",
+    "line": 86,
+    "label": "內層建立 H1 後交出位置資訊，內層結束時外層仍能使用 H1，最後外層用完才歸還空間",
+    "target": "../assets/foundations-v3/heap-lifecycle.svg",
+    "quote": "![內層建立 H1 後交出位置資訊，內層結束時外層仍能使用 H1，最後外層用完才歸還空間](../assets/foundations-v3/heap-lifecycle.svg)",
+    "resolved": {
+      "path": "docs/assets/foundations-v3/heap-lifecycle.svg",
+      "sha256": "e53c8727d4f10625fe015d1836372806985c432ebd1271dc29711916e419cd9a",
+      "lines": 109
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "1.7:L115:C1",
+    "path": "docs/chapters/01-07-lesson.md",
+    "section": "1.7",
+    "line": 115,
+    "label": "下一節：tuple 與 array",
+    "target": "01-08-lesson.md",
+    "quote": "[下一節：tuple 與 array](01-08-lesson.md)",
+    "resolved": {
+      "path": "docs/chapters/01-08-lesson.md",
+      "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+      "lines": 111
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.7:L5:C40",
+    "path": "docs/chapters/18-07-lesson.md",
+    "section": "18.7",
+    "line": 5,
+    "label": "14.5 的 timeout 與時間",
+    "target": "14-05-lesson.md",
+    "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。",
+    "resolved": {
+      "path": "docs/chapters/14-05-lesson.md",
+      "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+      "lines": 222
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.7:L5:C78",
+    "path": "docs/chapters/18-07-lesson.md",
+    "section": "18.7",
+    "line": 5,
+    "label": "14.8 的單一 async HTTP",
+    "target": "14-08-lesson.md",
+    "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。",
+    "resolved": {
+      "path": "docs/chapters/14-08-lesson.md",
+      "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+      "lines": 175
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.7:L5:C117",
+    "path": "docs/chapters/18-07-lesson.md",
+    "section": "18.7",
+    "line": 5,
+    "label": "14.9 的受控本機服務",
+    "target": "14-09-lesson.md",
+    "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。",
+    "resolved": {
+      "path": "docs/chapters/14-09-lesson.md",
+      "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+      "lines": 289
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.7:L5:C152",
+    "path": "docs/chapters/18-07-lesson.md",
+    "section": "18.7",
+    "line": 5,
+    "label": "18.1 的練功方式",
+    "target": "18-01-lesson.md",
+    "quote": "這一步只完成一筆。先有可信的單筆結果，下一節才有材料安排多筆輸入。必要前文是 [14.5 的 timeout 與時間](14-05-lesson.md)、[14.8 的單一 async HTTP](14-08-lesson.md)、[14.9 的受控本機服務](14-09-lesson.md)，以及 [18.1 的練功方式](18-01-lesson.md)。沿用小步自行實作、分層提示與完成快照；這些快照是同一工具逐步成長的版本，練習負擔不把每份副本累加。",
+    "resolved": {
+      "path": "docs/chapters/18-01-lesson.md",
+      "sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+      "lines": 109
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.7:L42:C2",
+    "path": "docs/chapters/18-07-lesson.md",
+    "section": "18.7",
+    "line": 42,
+    "label": "一份原文字經過解析與受限的 headers 工作，形成一份 owned 結果",
+    "target": "../assets/ch15/one-url-result.svg",
+    "quote": "![一份原文字經過解析與受限的 headers 工作，形成一份 owned 結果](../assets/ch15/one-url-result.svg)",
+    "resolved": {
+      "path": "docs/assets/ch15/one-url-result.svg",
+      "sha256": "bcfe5079689e15848e3d027cd1be2c6651dbe83ac4532df787a3771102a2d44f",
+      "lines": 34
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "18.7:L259:C1",
+    "path": "docs/chapters/18-07-lesson.md",
+    "section": "18.7",
+    "line": 259,
+    "label": "下一節：原行位置與依序批次",
+    "target": "18-08-lesson.md",
+    "quote": "[下一節：原行位置與依序批次](18-08-lesson.md)",
+    "resolved": {
+      "path": "docs/chapters/18-08-lesson.md",
+      "sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34",
+      "lines": 244
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.8:L5:C5",
+    "path": "docs/chapters/18-08-lesson.md",
+    "section": "18.8",
+    "line": 5,
+    "label": "18.7 的單筆模型與期限",
+    "target": "18-07-lesson.md",
+    "quote": "本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。",
+    "resolved": {
+      "path": "docs/chapters/18-07-lesson.md",
+      "sha256": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209",
+      "lines": 259
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.8:L5:C38",
+    "path": "docs/chapters/18-08-lesson.md",
+    "section": "18.8",
+    "line": 5,
+    "label": "9.6 的 lines 與 owned 文字",
+    "target": "09-06-lesson.md",
+    "quote": "本步沿 [18.7 的單筆模型與期限](18-07-lesson.md)、[9.6 的 lines 與 owned 文字](09-06-lesson.md)，以及前面已實作的 `Fixture`。先完成依序版本，之後才改工作排程；本步的結果對應也要能沿用。",
+    "resolved": {
+      "path": "docs/chapters/09-06-lesson.md",
+      "sha256": "c9afa16ffac66f6df5a1173b48e3bac422c17d17322e1b2cffabd65a2689f197",
+      "lines": 150
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.8:L55:C2",
+    "path": "docs/chapters/18-08-lesson.md",
+    "section": "18.8",
+    "line": 55,
+    "label": "原行先取得索引，再略過空白；三份owned輸入依序形成三份結果，重複網址索引不同",
+    "target": "../assets/ch15/line-index-to-results.svg",
+    "quote": "![原行先取得索引，再略過空白；三份owned輸入依序形成三份結果，重複網址索引不同](../assets/ch15/line-index-to-results.svg)",
+    "resolved": {
+      "path": "docs/assets/ch15/line-index-to-results.svg",
+      "sha256": "80022f8f09795349f1778cf5634c36ca8b129383fa6232c062989e1a429e891c",
+      "lines": 28
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "18.8:L244:C1",
+    "path": "docs/chapters/18-08-lesson.md",
+    "section": "18.8",
+    "line": 244,
+    "label": "下一節：有上限的 URL 工作",
+    "target": "18-09-lesson.md",
+    "quote": "[下一節：有上限的 URL 工作](18-09-lesson.md)",
+    "resolved": {
+      "path": "docs/chapters/18-09-lesson.md",
+      "sha256": "7c78f41be377d1b845d5274883b4f927370411e091b2f50761febee3965fed13",
+      "lines": 281
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.9:L5:C3",
+    "path": "docs/chapters/18-09-lesson.md",
+    "section": "18.9",
+    "line": 5,
+    "label": "18.8 的輸入與依序版本",
+    "target": "18-08-lesson.md",
+    "quote": "沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。",
+    "resolved": {
+      "path": "docs/chapters/18-08-lesson.md",
+      "sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34",
+      "lines": 244
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.9:L5:C36",
+    "path": "docs/chapters/18-09-lesson.md",
+    "section": "18.9",
+    "line": 5,
+    "label": "14.4 的有限 JoinSet 排程",
+    "target": "14-04-lesson.md",
+    "quote": "沿 [18.8 的輸入與依序版本](18-08-lesson.md)、[14.4 的有限 JoinSet 排程](14-04-lesson.md) 與14.3的Id／JoinError。本節把已學的排程接到真HTTP；沒有增加CLI或使用者取消功能。jobs選正整數，本專案的預設值是8；先用2份名額與3份held材料看清狀態。",
+    "resolved": {
+      "path": "docs/chapters/14-04-lesson.md",
+      "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+      "lines": 154
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.9:L35:C2",
+    "path": "docs/chapters/18-09-lesson.md",
+    "section": "18.9",
+    "line": 35,
+    "label": "jobs二的三筆手工示意：完成尚未收取仍占名額，收取一後才提交二，最後按原索引整理",
+    "target": "../assets/ch15/bounded-url-slots.svg",
+    "quote": "![jobs二的三筆手工示意：完成尚未收取仍占名額，收取一後才提交二，最後按原索引整理](../assets/ch15/bounded-url-slots.svg)",
+    "resolved": {
+      "path": "docs/assets/ch15/bounded-url-slots.svg",
+      "sha256": "8053366aa07ef231914ff9023d41530e49e1a63a9175a3389024ea516c734fcf",
+      "lines": 31
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "18.9:L281:C1",
+    "path": "docs/chapters/18-09-lesson.md",
+    "section": "18.9",
+    "line": 281,
+    "label": "下一節：停止提交與完整收尾",
+    "target": "18-10-lesson.md",
+    "quote": "[下一節：停止提交與完整收尾](18-10-lesson.md)",
+    "resolved": {
+      "path": "docs/chapters/18-10-lesson.md",
+      "sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e",
+      "lines": 306
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.10:L5:C3",
+    "path": "docs/chapters/18-10-lesson.md",
+    "section": "18.10",
+    "line": 5,
+    "label": "18.9 的 owned Scheduler",
+    "target": "18-09-lesson.md",
+    "quote": "沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。",
+    "resolved": {
+      "path": "docs/chapters/18-09-lesson.md",
+      "sha256": "7c78f41be377d1b845d5274883b4f927370411e091b2f50761febee3965fed13",
+      "lines": 281
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.10:L5:C47",
+    "path": "docs/chapters/18-10-lesson.md",
+    "section": "18.10",
+    "line": 5,
+    "label": "14.6 的停止、取消與等待",
+    "target": "14-06-lesson.md",
+    "quote": "沿 [18.9 的 owned Scheduler](18-09-lesson.md) 與 [14.6 的停止、取消與等待](14-06-lesson.md)，本步完成 typed Batch、可控制停止來源及真 Ctrl+C demo。正式 CLI 參數、文字／JSON報告與完整退出優先序在下一節接上；最終功能仍維持原規劃。先把停止流程驗清楚，再包成工具入口。",
+    "resolved": {
+      "path": "docs/chapters/14-06-lesson.md",
+      "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+      "lines": 256
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.10:L37:C2",
+    "path": "docs/chapters/18-10-lesson.md",
+    "section": "18.10",
+    "line": 37,
+    "label": "原index三已完成，停止後一與四取消，五與六尚未提交；全收尾後按原index排列Batch",
+    "target": "../assets/ch15/stop-url-work.svg",
+    "quote": "![原index三已完成，停止後一與四取消，五與六尚未提交；全收尾後按原index排列Batch](../assets/ch15/stop-url-work.svg)",
+    "resolved": {
+      "path": "docs/assets/ch15/stop-url-work.svg",
+      "sha256": "95ab1e126e46778b36a3f53ec4462e957af55547f4ffe5c7e070a5899ed290dc",
+      "lines": 36
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "18.10:L304:C6",
+    "path": "docs/chapters/18-10-lesson.md",
+    "section": "18.10",
+    "line": 304,
+    "label": "Tokio Graceful Shutdown",
+    "target": "https://tokio.rs/tokio/topics/shutdown",
+    "quote": "延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。",
+    "kind": "external_extension",
+    "judgment": "已取得真頁／原始Markdown並讀相應主題段落，label相符"
+  },
+  {
+    "id": "18.10:L304:C72",
+    "path": "docs/chapters/18-10-lesson.md",
+    "section": "18.10",
+    "line": 304,
+    "label": "RustCourse優雅關閉",
+    "target": "https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md",
+    "quote": "延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。",
+    "kind": "external_extension",
+    "judgment": "已取得真頁／原始Markdown並讀相應主題段落，label相符"
+  },
+  {
+    "id": "18.10:L304:C181",
+    "path": "docs/chapters/18-10-lesson.md",
+    "section": "18.10",
+    "line": 304,
+    "label": "Tokio1.53.3 ctrl_c",
+    "target": "https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html",
+    "quote": "延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。",
+    "kind": "external_extension",
+    "judgment": "已取得真頁／原始Markdown並讀相應主題段落，label相符"
+  },
+  {
+    "id": "18.10:L304:C260",
+    "path": "docs/chapters/18-10-lesson.md",
+    "section": "18.10",
+    "line": 304,
+    "label": "Iterator::by_ref",
+    "target": "https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref",
+    "quote": "延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。",
+    "kind": "external_extension",
+    "judgment": "已取得真頁／原始Markdown並讀相應主題段落，label相符"
+  },
+  {
+    "id": "18.10:L306:C1",
+    "path": "docs/chapters/18-10-lesson.md",
+    "section": "18.10",
+    "line": 306,
+    "label": "下一節：報告映射與最後 CLI 整合",
+    "target": "18-11-lesson.md",
+    "quote": "[下一節：報告映射與最後 CLI 整合](18-11-lesson.md)",
+    "resolved": {
+      "path": "docs/chapters/18-11-lesson.md",
+      "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+      "lines": 324
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.11:L5:C4",
+    "path": "docs/chapters/18-11-lesson.md",
+    "section": "18.11",
+    "line": 5,
+    "label": "18.10 的停止流程",
+    "target": "18-10-lesson.md",
+    "quote": "本節沿[18.10 的停止流程](18-10-lesson.md)，只新增報告映射、CLI邊界與輸出完成責任。本節先做下方三個小步；第18.12節另提供整份可用工具的全部檔案與使用方式。各階段是同一工具的快照，不是把B1–4重寫一次。",
+    "resolved": {
+      "path": "docs/chapters/18-10-lesson.md",
+      "sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e",
+      "lines": 306
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.11:L51:C2",
+    "path": "docs/chapters/18-11-lesson.md",
+    "section": "18.11",
+    "line": 51,
+    "label": "Batch先成為owned Report，再選文字或JSON；成功完成write及flush才交資料狀態，失敗改回fatal2",
+    "target": "../assets/ch15/url-report-boundary.svg",
+    "quote": "![Batch先成為owned Report，再選文字或JSON；成功完成write及flush才交資料狀態，失敗改回fatal2](../assets/ch15/url-report-boundary.svg)",
+    "resolved": {
+      "path": "docs/assets/ch15/url-report-boundary.svg",
+      "sha256": "f60e2e1d1e8bcf996fcf094c4aa14befa560bda768d2ef425113dac12f5afa8b",
+      "lines": 25
+    },
+    "kind": "image_alt_reference",
+    "judgment": "已讀實際SVG title/desc/文字節點；數值、標記與label相符"
+  },
+  {
+    "id": "18.11:L324:C1",
+    "path": "docs/chapters/18-11-lesson.md",
+    "section": "18.11",
+    "line": 324,
+    "label": "下一節：B 的完整可用答案",
+    "target": "18-12-lesson.md",
+    "quote": "[下一節：B 的完整可用答案](18-12-lesson.md)",
+    "resolved": {
+      "path": "docs/chapters/18-12-lesson.md",
+      "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+      "lines": 164
+    },
+    "kind": "canonical_navigation",
+    "judgment": "已讀實際新版目標正文與必要source；label對應所教能力"
+  },
+  {
+    "id": "18.12:L156:C6",
+    "path": "docs/chapters/18-12-lesson.md",
+    "section": "18.12",
+    "line": 156,
+    "label": "English Book：TDD",
+    "target": "https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html",
+    "quote": "延伸閱讀：[English Book：TDD](https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html)、[English Book：stdout／stderr](https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html)。本節採其小步驗收與出口分工，實作依本書已教的typed錯誤、owned資源及flush契約。",
+    "kind": "external_extension",
+    "judgment": "已取得真頁／原始Markdown並讀相應主題段落，label相符"
+  },
+  {
+    "id": "18.12:L156:C105",
+    "path": "docs/chapters/18-12-lesson.md",
+    "section": "18.12",
+    "line": 156,
+    "label": "繁中對應",
+    "target": "https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html",
+    "quote": "延伸閱讀：[English Book：TDD](https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html)、[English Book：stdout／stderr](https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html)。本節採其小步驗收與出口分工，實作依本書已教的typed錯誤、owned資源及flush契約。",
+    "kind": "external_extension",
+    "judgment": "已取得真頁／原始Markdown並讀相應主題段落，label相符"
+  },
+  {
+    "id": "18.12:L156:C190",
+    "path": "docs/chapters/18-12-lesson.md",
+    "section": "18.12",
+    "line": 156,
+    "label": "English Book：stdout／stderr",
+    "target": "https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html",
+    "quote": "延伸閱讀：[English Book：TDD](https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html)、[English Book：stdout／stderr](https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html)。本節採其小步驗收與出口分工，實作依本書已教的typed錯誤、owned資源及flush契約。",
+    "kind": "external_extension",
+    "judgment": "已取得真頁／原始Markdown並讀相應主題段落，label相符"
+  },
+  {
+    "id": "18.12:L156:C300",
+    "path": "docs/chapters/18-12-lesson.md",
+    "section": "18.12",
+    "line": 156,
+    "label": "繁中對應",
+    "target": "https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html",
+    "quote": "延伸閱讀：[English Book：TDD](https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html)、[English Book：stdout／stderr](https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html)、[繁中對應](https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html)。本節採其小步驗收與出口分工，實作依本書已教的typed錯誤、owned資源及flush契約。",
+    "kind": "external_extension",
+    "judgment": "已取得真頁／原始Markdown並讀相應主題段落，label相符"
+  }
+]

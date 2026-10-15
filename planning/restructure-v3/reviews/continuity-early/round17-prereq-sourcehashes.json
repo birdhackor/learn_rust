@@ -1,0 +1,110 @@
+{
+  "utc": "2026-10-15T10:39:26.667728+00:00",
+  "scope": "actual17.4body+sourceonlyprereqfor18.11,no17review/nopeerfinding",
+  "files": [
+    {
+      "path": "docs/chapters/17-04-lesson.md",
+      "sha256": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa"
+    },
+    {
+      "path": "examples/ch14-api/src/limits.rs",
+      "sha256": "67188064c69cc27ab2eb4168521c0f465c91d0d25991ed1c527bf8df1b2cceb5"
+    },
+    {
+      "path": "examples/ch14-api/fixtures/runtime-fail/derived_default.rs",
+      "sha256": "4f5c18e43b17b2e1c065c153fb96277d470b629cf2d023a7a01bbee10219c3d7"
+    },
+    {
+      "path": "examples/ch14-api/src/options.rs",
+      "sha256": "baf8b9f75ecac2f6f5d71aacf3e265aa0e8d7c0b5b7f69e0e3db1941d28a83c1"
+    },
+    {
+      "path": "examples/ch14-api/src/errors.rs",
+      "sha256": "8e0472a9b201b0bcaa4f93452b2312bf4c2cb3f085286f574ef2a4cc3a7a8e00"
+    },
+    {
+      "path": "examples/ch14-api/src/search.rs",
+      "sha256": "c96cd01dae2befb6895c41a45b27036121f635a00eaa7fdb08c4b4727be46f71"
+    },
+    {
+      "path": "examples/ch14-api/src/lib.rs",
+      "sha256": "b33bc13b239c98169218858b6812469c022d2c728926c99cdb806b55fa5a5679"
+    },
+    {
+      "path": "examples/ch14-api/src/text.rs",
+      "sha256": "5b4075ad54d8b6c962aa0dfbfb2fe8b0b07496757e0d60b7c9fa02fcd793714b"
+    },
+    {
+      "path": "examples/ch14-api/Cargo.toml",
+      "sha256": "c62849529e7c0eff512385ca3b3ce9fea7e61e15a94bd30449fbb58d6fa7854a"
+    },
+    {
+      "path": "examples/ch14-api/examples/consumer.rs",
+      "sha256": "324cb8012d050df7abb7ae7c44e1f37a63c1c748b1552981d3f82d4d76748483"
+    },
+    {
+      "path": "examples/ch14-api/examples/typed_errors.rs",
+      "sha256": "9f517443e825a2e22b76563297352d1e6867849a23f98cd55b925cb819359f32"
+    },
+    {
+      "path": "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.rs",
+      "sha256": "1e326081c34ceb9423af94b65f8d5513f063947dd1605ea385493b781774ee50"
+    },
+    {
+      "path": "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.rs",
+      "sha256": "9049d98096e1bf666f7e010342801ed28984e5f17f3b181b625da3c510aa3d2d"
+    },
+    {
+      "path": "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.rs",
+      "sha256": "74ff54714dd7ff5caccf8323d65412b2d9fac4410bcb838b3ed08de7b787129c"
+    },
+    {
+      "path": "examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml",
+      "sha256": "6d2f47403d2e208b67863290fe2b980f513a9c760654c0e6a8ef88c8e742ac66"
+    },
+    {
+      "path": "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.expected",
+      "sha256": "c376b4ed1e702a45cb10b54ea688073d63511a4ac43a8eb61471f604c7e71c1c"
+    },
+    {
+      "path": "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.expected",
+      "sha256": "388bdc7a4e6e8182c29781d55fae41a770e567dd5d0d81056e6b136176a86712"
+    },
+    {
+      "path": "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.expected",
+      "sha256": "fa3b46bb839e843f9da990ecc9151edb533235701c1c55d831b1fe783f6b8a48"
+    },
+    {
+      "path": "examples/ch14-api/compatibility/v1/src/lib.rs",
+      "sha256": "ed7981b9708216c5a106493f062dba6eff912012b83387dfd7ab00cb7b232ba4"
+    },
+    {
+      "path": "examples/ch14-api/compatibility/v1_1/src/lib.rs",
+      "sha256": "a96f498eec48419b170d52a3a6f4caab1ec2de953891a1c4820309b4d79f2571"
+    },
+    {
+      "path": "examples/ch14-api/compatibility/consumer.rs",
+      "sha256": "5a0f921550b9d7f7ece716d65f2788df87b5efa4045f397aeac1e326f90b3899"
+    },
+    {
+      "path": "examples/ch14-api/compatibility/v1/Cargo.toml",
+      "sha256": "3fb9df4ddf3920ebecf1bce6347cd3a1ed80e0ed3bf90d66d38c83222efdce2a"
+    },
+    {
+      "path": "examples/ch14-api/compatibility/v1_1/Cargo.toml",
+      "sha256": "ca00cdffa141c7212435e9b27c4273f070b20bcc03f8a4ed1c919b27f751f717"
+    },
+    {
+      "path": "examples/ch14-api/examples/limit_solution.rs",
+      "sha256": "844521e4a96339cb816e54fdc9e85f0ca23bbd4c18eeef4d5d02784c98892037"
+    },
+    {
+      "path": "examples/ch14-api/fixtures/note.txt",
+      "sha256": "1ca933853c174efc7edd3134eeae8fa7fa2e779f411391ea076843dfd8df57fc"
+    },
+    {
+      "path": "examples/ch14-api/tests/public_contract.rs",
+      "sha256": "5a26a8894fe80ec68850b683bd34dc5c8a06dd2b06e0eaaff190f263451fcc47"
+    }
+  ]
+}

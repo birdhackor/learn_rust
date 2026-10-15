@@ -1,0 +1,302 @@
+{
+  "wave": "13tail",
+  "findings": [],
+  "notes": {
+    "13-05": [
+      "mpsc端點是傳送／接收權限，buffer與thread區別清楚。",
+      "send移走owned值，失敗SendError.0返還；所有Sender消失且buffer空才recv Err，bounded滿時阻塞。",
+      "join只交最後成果，現在需工作進行中逐項交接；容量限制避免待收訊息無上限累積。",
+      "single→drain→recover→producers→bounded→stop→answer均完整；send成功、收到訊息、工作收尾三界線分開。",
+      "容量0只recv一次使120必為未送值；若先join bounded producer形成互等，文字有完整等待鏈。"
+    ],
+    "13-06": [
+      "Mutex以guard管理獨占存取，Arc以同步計數保活共同資料，兩層責任分開。",
+      "guard Drop解鎖，最後使用不代替Drop；Arc沒有DerefMut；Mutex T:Send可使Cell受控共用。",
+      "工作需直接更新共享模型，與channel讓main集中處理是不同分工，未虛稱更快。",
+      "單thread lock→Arc只讀→Arc/Mutex共同更新→Cell→guard範圍→poison重設→共享清單答案均有完整source。",
+      "只清poison不修復不一致仍在；持guard再join需同鎖worker造成deadlock，原文有依賴說明。"
+    ],
+    "13-07": [
+      "read guard可並存、write獨占；try回WouldBlock與Poisoned分別有無guard。",
+      "重取write有窗口故必須重查，downgrade直接write到read無插入writer窗口；reader panic不poison而writer會。",
+      "多人各自借看同一清單，再輪流寫；需保留剛寫狀態時使用downgrade，具體原需求獨立於方法。",
+      "兩reader逐一drop、窗口模擬、downgrade、reader/writer panic、writer先完成再讀答案均與說明一致。",
+      "若只看舊observed決定push可變四項；若仍留second reader則writer拿不到，圖中first/second對應明確。"
+    ],
+    "13-08": [
+      "AtomicUsize單位置操作、RMW舊值返回、atomic Ordering與cmp Ordering分開。",
+      "Relaxed只管單位置；join完成同步；Release/Acquire讀自同一次旗標發布接起payload，SeqCst共同順序仍不合併讀改寫。",
+      "五次工作完成需不漏計；看到READY須保證230已發布；兩個不同需要各有不同保證。",
+      "刻意lost update與SeqCst split、五次counter、一次發布、雙旗標循環與兩payload答案均完整且限制假設明確。",
+      "改旗標Relaxed缺跨位置同步；發布後再改payload失去同批結果保證；四步全SeqCst不能都0由循環理由支持。"
+    ]
+  },
+  "visual": {
+    "viewports": [
+      [
+        1280,
+        800
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "actually_viewed_images": [
+      "13-05-390-image0.png",
+      "13-06-390-image0.png",
+      "13-07-390-image0.png",
+      "13-08-390-image0.png",
+      "13-08-390-image1.png",
+      "13-05-1280-image0.png",
+      "13-06-1280-image0.png",
+      "13-07-1280-image0.png",
+      "13-08-1280-image0.png",
+      "13-08-1280-image1.png",
+      "13-08-390-answer.png"
+    ],
+    "judgment": "三份Sender與buffer/recv/join、Arc雙owner單Mutex、read1/first與read2/second、發布P1/P2/R1/R2及SeqCst紅假設循環均可依相鄰原文逐項定位；手機文字與箭頭可辨。長答案實開並可橫捲。"
+  },
+  "prefix_newly_read": {
+    "11-10": [
+      1,
+      60
+    ],
+    "08-01": [
+      70,
+      110
+    ],
+    "08-06": [
+      1,
+      90
+    ]
+  },
+  "loaded_sources": "無lib/build.rs/dependencies；所有target-local modules已直接完整嵌入。13.7/8少數完全相同helper與expected按SHA256比對去重，內容已於前頁完整實讀。",
+  "coverage": [
+    {
+      "section": "13-05",
+      "doc_hash": "c845832a2d68530200fb59fc705bbc9f128df007922888a0f5c388cdb9728481",
+      "read_doc_lines": [
+        1,
+        272
+      ],
+      "all_snippet_files_read": [
+        "examples/concurrency-stages/Cargo.toml",
+        "examples/concurrency-stages/examples/channel_single/workers/mod.rs",
+        "examples/concurrency-stages/examples/channel_single/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.expected",
+        "examples/concurrency-stages/examples/channel_drain/main.rs",
+        "examples/concurrency-stages/examples/channel_recover/workers/mod.rs",
+        "examples/concurrency-stages/examples/channel_recover/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.expected",
+        "examples/concurrency-stages/examples/channel_producers/messages/mod.rs",
+        "examples/concurrency-stages/examples/channel_producers/main.rs",
+        "examples/concurrency-stages/examples/channel_bounded/bounded_messages/mod.rs",
+        "examples/concurrency-stages/examples/channel_bounded/main.rs",
+        "examples/concurrency-stages/examples/channel_stop/bounded_messages/mod.rs",
+        "examples/concurrency-stages/examples/channel_stop/main.rs",
+        "examples/concurrency-stages/examples/channel_answer/bounded_messages/mod.rs",
+        "examples/concurrency-stages/examples/channel_answer/main.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+        "examples/concurrency-stages/examples/channel_single/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/channel_single/main.rs": "a1a5d52c42c6b7f4552c06f161b2bf28ddec9e20587ab59e5b179344f5708be6",
+        "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.rs": "05d22888681ab3a20d2e93519a50f162ba99858b64e77c081e572b5e5cefe618",
+        "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/concurrency-stages/examples/channel_drain/main.rs": "82fbeec6cc8c1de790e499f8b327934d4bc2065d11acd2346e37fc9026319e5a",
+        "examples/concurrency-stages/examples/channel_recover/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/channel_recover/main.rs": "d9288ec2828fa19eedfd86ceb84228dc25f6cab310d162450b211adaf295345d",
+        "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.rs": "4b11ed927b6bbb28ef4117d03e1ceec705ac3d8e77d6d95dd4047410bc7324d8",
+        "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/examples/channel_producers/messages/mod.rs": "ba226ed5ec6a7acbd3957fe3cdc803947e3252bbeb35803d1152c9ea94fad1ab",
+        "examples/concurrency-stages/examples/channel_producers/main.rs": "5653bf89211dce7e3894a6c7ecae8a96f70f9ecc26b020dfb0b2c8672ab36288",
+        "examples/concurrency-stages/examples/channel_bounded/bounded_messages/mod.rs": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+        "examples/concurrency-stages/examples/channel_bounded/main.rs": "3daf6e81c8f18cef69de2c298f25695c99440de8499c71ab3f775845eb87d63f",
+        "examples/concurrency-stages/examples/channel_stop/bounded_messages/mod.rs": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+        "examples/concurrency-stages/examples/channel_stop/main.rs": "b78a7167a758eb29f8f29a82d8e5b36dbd7685a87d6436ccdeb2ea6d1a072001",
+        "examples/concurrency-stages/examples/channel_answer/bounded_messages/mod.rs": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+        "examples/concurrency-stages/examples/channel_answer/main.rs": "784588d5e8247ef9d783fff5f04e72471227a6730c896c7f429bb02e66e87196"
+      },
+      "four_question_evidence": {
+        "identity": "mpsc端點是傳送／接收權限，buffer與thread區別清楚。",
+        "mechanism": "send移走owned值，失敗SendError.0返還；所有Sender消失且buffer空才recv Err，bounded滿時阻塞。",
+        "need": "join只交最後成果，現在需工作進行中逐項交接；容量限制避免待收訊息無上限累積。",
+        "operation_and_example": "single→drain→recover→producers→bounded→stop→answer均完整；send成功、收到訊息、工作收尾三界線分開。",
+        "small_change": "容量0只recv一次使120必為未送值；若先join bounded producer形成互等，文字有完整等待鏈。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "13-06",
+      "doc_hash": "6f3d25a1cbab3fc40b75594280cd0c957878a70665d2f49b542349c747d26e24",
+      "read_doc_lines": [
+        1,
+        269
+      ],
+      "all_snippet_files_read": [
+        "examples/concurrency-stages/Cargo.toml",
+        "examples/concurrency-stages/examples/mutex_guard/main.rs",
+        "examples/concurrency-stages/examples/arc_shared_read/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.expected",
+        "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.expected",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.expected",
+        "examples/concurrency-stages/examples/arc_mutex/main.rs",
+        "examples/concurrency-stages/examples/mutex_cell/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.expected",
+        "examples/concurrency-stages/examples/mutex_poison/workers/mod.rs",
+        "examples/concurrency-stages/examples/mutex_poison/main.rs",
+        "examples/concurrency-stages/examples/mutex_answer/workers/mod.rs",
+        "examples/concurrency-stages/examples/mutex_answer/main.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+        "examples/concurrency-stages/examples/mutex_guard/main.rs": "fcba5280879da0b62c48bc2ff110a7635174725a4f0e06673b8b3fa01ea7101f",
+        "examples/concurrency-stages/examples/arc_shared_read/main.rs": "ce4ae2f1f309e270b35adcf776732fac313f62516749553e6a6d01bba1580537",
+        "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.rs": "e8b1bdba69a0c75ea9560b239311409fead2846adb10bfde900e761c622a0ff2",
+        "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.rs": "11a2b939b67b0eb8d2ddc9af4f948d037dc6a7ef5da3faa64664f267b5e450e6",
+        "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.expected": "018106396268d6a7b58a9dfe8e469b87a44509ceb5bcdd5757200ba813f9aab8",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.rs": "a800476756cfce262a8a6825d18493c7a5b236e1c41cdde459bbe675e7a29c08",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/examples/arc_mutex/main.rs": "e7ee31786a6929bb17cb341072caa7e0a1d66c454b6eef24cf738b76bc6dfa6b",
+        "examples/concurrency-stages/examples/mutex_cell/main.rs": "436d8442ddefb6ba6a7435981f981800f16213a9c621125f0e05fc988efe6234",
+        "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.rs": "b61a092ba66888b45113dfd4ab938b64ef9dec9cc6e1e561ddb408df588cf517",
+        "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/examples/mutex_poison/workers/mod.rs": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+        "examples/concurrency-stages/examples/mutex_poison/main.rs": "19702d31b97a6a89457b89da33db19bc6f6a9292433d47daa7c86040ce38385d",
+        "examples/concurrency-stages/examples/mutex_answer/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/mutex_answer/main.rs": "15bfde9955c62f0b62066192cbf10c6dcaaa0d32ee414189dce4e6c79c85fa95"
+      },
+      "four_question_evidence": {
+        "identity": "Mutex以guard管理獨占存取，Arc以同步計數保活共同資料，兩層責任分開。",
+        "mechanism": "guard Drop解鎖，最後使用不代替Drop；Arc沒有DerefMut；Mutex T:Send可使Cell受控共用。",
+        "need": "工作需直接更新共享模型，與channel讓main集中處理是不同分工，未虛稱更快。",
+        "operation_and_example": "單thread lock→Arc只讀→Arc/Mutex共同更新→Cell→guard範圍→poison重設→共享清單答案均有完整source。",
+        "small_change": "只清poison不修復不一致仍在；持guard再join需同鎖worker造成deadlock，原文有依賴說明。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "13-07",
+      "doc_hash": "c96f26ad8707450d399d650accd91132140788e5e5153b2373bbbcaae4892dd5",
+      "read_doc_lines": [
+        1,
+        294
+      ],
+      "all_snippet_files_read": [
+        "examples/concurrency-stages/Cargo.toml",
+        "examples/concurrency-stages/examples/rwlock_guards/workers/mod.rs",
+        "examples/concurrency-stages/examples/rwlock_guards/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_reader_no_deref_mut.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_reader_no_deref_mut.expected",
+        "examples/concurrency-stages/examples/rwlock_readers/workers/mod.rs",
+        "examples/concurrency-stages/examples/rwlock_readers/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_cell_not_sync.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_cell_not_sync.expected",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_guards_not_send.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_guards_not_send.expected",
+        "examples/concurrency-stages/examples/rwlock_recheck/main.rs",
+        "examples/concurrency-stages/examples/rwlock_downgrade/workers/mod.rs",
+        "examples/concurrency-stages/examples/rwlock_downgrade/main.rs",
+        "examples/concurrency-stages/examples/rwlock_reader_panic/workers/mod.rs",
+        "examples/concurrency-stages/examples/rwlock_reader_panic/main.rs",
+        "examples/concurrency-stages/examples/rwlock_writer_panic/workers/mod.rs",
+        "examples/concurrency-stages/examples/rwlock_writer_panic/main.rs",
+        "examples/concurrency-stages/examples/rwlock_answer/workers/mod.rs",
+        "examples/concurrency-stages/examples/rwlock_answer/main.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+        "examples/concurrency-stages/examples/rwlock_guards/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/rwlock_guards/main.rs": "2159bd7b662ed0509ab6e6a01a47dabe27c29a3405a1570858f25547b736e4f7",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_reader_no_deref_mut.rs": "62921fee0b521deea66c58e3b066c7c5d64a8717ab940b1d25d26ee1b3b5f5ef",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_reader_no_deref_mut.expected": "018106396268d6a7b58a9dfe8e469b87a44509ceb5bcdd5757200ba813f9aab8",
+        "examples/concurrency-stages/examples/rwlock_readers/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/rwlock_readers/main.rs": "d33dba59e966e9b2b5530f8d496909dea1a9b9fdc15b9271d4b0f3c6924ba216",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_cell_not_sync.rs": "5f2b3550c154d26e4c6ff5d8ccd9c18e69caa53feaf941fab4b164e03c1c27fa",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_cell_not_sync.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_guards_not_send.rs": "dd1853ff1608f2540a3d3c4e0b31c7c167c9190b4e41f5011baceb7a5fcf5c3c",
+        "examples/concurrency-stages/fixtures/compile-fail/rwlock_guards_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/examples/rwlock_recheck/main.rs": "afd779c4564097334926ea9761997c8710a5ade803befb2a972b965b0b45dd4a",
+        "examples/concurrency-stages/examples/rwlock_downgrade/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/rwlock_downgrade/main.rs": "6b1817bde328259bef8e1fd6b79ab9e09908de60ce19b342f5b22def8efc76a3",
+        "examples/concurrency-stages/examples/rwlock_reader_panic/workers/mod.rs": "6cd1ea85cafb2c4f68c8694b6677fe562dfde95deb82b43a0b9126d4f87b6920",
+        "examples/concurrency-stages/examples/rwlock_reader_panic/main.rs": "1c467492c2dbeee5903a6f618e55754e9b7fa67a4170b3baed1a6952846fb740",
+        "examples/concurrency-stages/examples/rwlock_writer_panic/workers/mod.rs": "6cd1ea85cafb2c4f68c8694b6677fe562dfde95deb82b43a0b9126d4f87b6920",
+        "examples/concurrency-stages/examples/rwlock_writer_panic/main.rs": "0e862c64c85ad45db5e16aa80781f8d39bc7ddc9c3327d5b1cb7e92dd8b0a081",
+        "examples/concurrency-stages/examples/rwlock_answer/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/rwlock_answer/main.rs": "12a27399a772feb9b86fa611253c937a675e5a3fca885e81c2825aa2abf681e0"
+      },
+      "four_question_evidence": {
+        "identity": "read guard可並存、write獨占；try回WouldBlock與Poisoned分別有無guard。",
+        "mechanism": "重取write有窗口故必須重查，downgrade直接write到read無插入writer窗口；reader panic不poison而writer會。",
+        "need": "多人各自借看同一清單，再輪流寫；需保留剛寫狀態時使用downgrade，具體原需求獨立於方法。",
+        "operation_and_example": "兩reader逐一drop、窗口模擬、downgrade、reader/writer panic、writer先完成再讀答案均與說明一致。",
+        "small_change": "若只看舊observed決定push可變四項；若仍留second reader則writer拿不到，圖中first/second對應明確。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "13-08",
+      "doc_hash": "b111cb10d4c1dfddb8986cc1ee89902eafa89e78fca5b6329bc09b8df3f64a79",
+      "read_doc_lines": [
+        1,
+        240
+      ],
+      "all_snippet_files_read": [
+        "examples/concurrency-stages/Cargo.toml",
+        "examples/concurrency-stages/examples/atomic_values/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/atomic_move.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/atomic_move.expected",
+        "examples/concurrency-stages/examples/atomic_lost_update/main.rs",
+        "examples/concurrency-stages/examples/atomic_counter/main.rs",
+        "examples/concurrency-stages/examples/atomic_publish/main.rs",
+        "examples/concurrency-stages/fixtures/runtime-fail/atomic_load_release.rs",
+        "examples/concurrency-stages/fixtures/runtime-fail/atomic_load_release.expected",
+        "examples/concurrency-stages/fixtures/runtime-fail/atomic_store_acqrel.rs",
+        "examples/concurrency-stages/fixtures/runtime-fail/atomic_store_acqrel.expected",
+        "examples/concurrency-stages/examples/atomic_seqcst/main.rs",
+        "examples/concurrency-stages/examples/atomic_seqcst_split/main.rs",
+        "examples/concurrency-stages/examples/atomic_answer/main.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+        "examples/concurrency-stages/examples/atomic_values/main.rs": "8c5bedd1c31f178e8924bf4a326e2c8ed8d013c833ffe429ce0e2ecf11c27d42",
+        "examples/concurrency-stages/fixtures/compile-fail/atomic_move.rs": "294756f9ab17098b7d947087ae2108f382802264f3571ae4c0a91ecf53526cea",
+        "examples/concurrency-stages/fixtures/compile-fail/atomic_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/concurrency-stages/examples/atomic_lost_update/main.rs": "1b604726f4aca3e94695e583074e0920a9197785f4fe09beda4db93393f6b61b",
+        "examples/concurrency-stages/examples/atomic_counter/main.rs": "73719d4f51200802f956ceab8ed4fec9decd17078df91dc5c2271bd4b6f3a737",
+        "examples/concurrency-stages/examples/atomic_publish/main.rs": "b79b91f12165c69071feebcda39842a5c4bfab90c748542a2775ff46ddc9849b",
+        "examples/concurrency-stages/fixtures/runtime-fail/atomic_load_release.rs": "283e49a193b158d5ec869c2e1c27a4fcb826a4c5f093430b6bfaa6bea012b236",
+        "examples/concurrency-stages/fixtures/runtime-fail/atomic_load_release.expected": "57a63984d8750b3b51bd4aa249bcaeded88cdc6f6f988ad2e99a44f82842a958",
+        "examples/concurrency-stages/fixtures/runtime-fail/atomic_store_acqrel.rs": "3f7e70b6795bffe02102df89e13c0a866c1b50019827441a1d29cb0df477328d",
+        "examples/concurrency-stages/fixtures/runtime-fail/atomic_store_acqrel.expected": "3c1a2f773eed1e968e6845115d54d00ee67da273b27d04f721a33749718039aa",
+        "examples/concurrency-stages/examples/atomic_seqcst/main.rs": "e74524b41670c71bffa68845ab25b3458da8d2b6a5cc7a4bd727f8b27090bba9",
+        "examples/concurrency-stages/examples/atomic_seqcst_split/main.rs": "57a34dfba09ecbfe260fc9e5cfc275a46f670c8eeb855d4cad53d1b008d137d6",
+        "examples/concurrency-stages/examples/atomic_answer/main.rs": "3c3ac78faca945756294f1acc4dec3c78a24bc7923be277a30c1634db099dfc1"
+      },
+      "four_question_evidence": {
+        "identity": "AtomicUsize單位置操作、RMW舊值返回、atomic Ordering與cmp Ordering分開。",
+        "mechanism": "Relaxed只管單位置；join完成同步；Release/Acquire讀自同一次旗標發布接起payload，SeqCst共同順序仍不合併讀改寫。",
+        "need": "五次工作完成需不漏計；看到READY須保證230已發布；兩個不同需要各有不同保證。",
+        "operation_and_example": "刻意lost update與SeqCst split、五次counter、一次發布、雙旗標循環與兩payload答案均完整且限制假設明確。",
+        "small_change": "改旗標Relaxed缺跨位置同步；發布後再改payload失去同批結果保證；四步全SeqCst不能都0由循環理由支持。"
+      },
+      "rendered_full_source_missing": []
+    }
+  ],
+  "role": "independent non-author continuity reviewer",
+  "prior_author_ledgers_or_peer_findings_seen": false,
+  "limitations": [
+    "必要前文定點銜接審閱，非全書首讀盲測。",
+    "未重跑Rust；不以此報告代替執行驗證。"
+  ],
+  "sealed_utc": "2026-10-15"
+}

@@ -1,0 +1,278 @@
+{
+  "kind": "sealed independent initial continuity/page judgment",
+  "sealed_at_utc": "2026-10-15T06:49:33.151343+00:00",
+  "role": "continuity/page, not author/technical/firstreader",
+  "reader_background": "basic Python variables/functions/conditions/loops plus actually taught Chapter1",
+  "scope": [
+    "docs/chapters/02-01-lesson.md",
+    "docs/chapters/02-02-lesson.md",
+    "docs/chapters/02-03-lesson.md",
+    "docs/chapters/02-04-lesson.md",
+    "docs/chapters/02-05-lesson.md",
+    "docs/chapters/02-06-lesson.md",
+    "docs/chapters/02-07-lesson.md",
+    "docs/chapters/02-08-lesson.md"
+  ],
+  "independence": {
+    "author_ledger_read": false,
+    "technical_or_firstreader_reports_read": false,
+    "historical_audits_read": false,
+    "root_dispositions_read": false,
+    "chapter3_source_read": false,
+    "blind_firstread_claim": false
+  },
+  "source_hashes": "round02-ch02-sourcehashes.json",
+  "source_drift": "2.7 and2.8 changed after original reading/captures; initial text reconstructed from current and exact full-file hashes verified, saved underround02-ch02-frozen. Initial observations preserved; latest source reviewed only in separate followup.",
+  "findings": [
+    {
+      "id": "C2-01",
+      "necessity": "necessary",
+      "severity": "增加理解負擔",
+      "confidence": "medium",
+      "type": [
+        "時序",
+        "先備依賴"
+      ],
+      "initial_source": "docs/chapters/02-02-lesson.md:29-39",
+      "first_use": {
+        "page": "02-02-lesson.md:33-35",
+        "source": "examples/intro-workspace/control-steps/examples/conditions.rs:3-5",
+        "quote": "if count == 0 { return 0; }"
+      },
+      "previous_teaching": [
+        {
+          "position": "01-06-lesson.md:7-17",
+          "meaning": "Return type and tail expression, without return keyword"
+        },
+        {
+          "position": "02-02-lesson.md:9-19",
+          "meaning": "if branches and block expression values"
+        }
+      ],
+      "already_supported": "Heading states early function termination; preceding paragraph independently motivates zero answer and skipping subtotal/shipping. Do not report a motivation gap.",
+      "explanation_position": "02-02-lesson.md:37-39",
+      "quote": "return 0; 立刻結束這次函式呼叫，把0交回呼叫者；函式後面的工作不再執行。",
+      "minimum_missing_relation": "Precise Rust return-value-and-whole-call-exit operation is explained after its first program use, against this round’s explain-before-use requirement.",
+      "impact": "Narrow first-snippet ordering burden; same-unit following prose fully explains it. Basic Python may enable a correct guess, not prior Rust teaching.",
+      "smallest_fix": "Move existing paragraph37 before the early-return snippet; retain absent-else explanation after it.",
+      "evidence": [
+        "desktop-return-section.png",
+        "mobile-return-section.png"
+      ],
+      "status_at_initial_judgment": "unfixed"
+    },
+    {
+      "id": "C2-02",
+      "necessity": "necessary",
+      "severity": "增加理解負擔",
+      "confidence": "high",
+      "type": [
+        "實際載入能力",
+        "工具範圍",
+        "時序"
+      ],
+      "initial_source": "docs/chapters/02-07-lesson.md:74-93",
+      "first_confirmed_explicit_load": {
+        "position": "02-07-lesson.md:77",
+        "quote": "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --all-targets --locked",
+        "loaded_source": "examples/intro-workspace/control/examples/lint_return.rs:2",
+        "loaded_quote": "#[allow(clippy::needless_return)]"
+      },
+      "scope_claim_quote": "此處選的是內容都已教過的 intro-control",
+      "previous_teaching": [
+        {
+          "position": "02-07-lesson.md:21-27",
+          "meaning": "Attribute shape, test and cfg(test)"
+        },
+        {
+          "position": "02-07-lesson.md:72",
+          "meaning": "General lint role"
+        }
+      ],
+      "later_teaching": [
+        {
+          "position": "02-07-lesson.md:86",
+          "meaning": "Named needless_return lint"
+        },
+        {
+          "position": "02-07-lesson.md:88",
+          "meaning": "Precise allow role, function scope and preservation rationale"
+        },
+        {
+          "position": "02-07-lesson.md:93",
+          "meaning": "Full lint_return source"
+        }
+      ],
+      "minimum_missing_relation": "A command processes an example containing the still-untaught named allow before the page introduces its basic meaning and purpose.",
+      "impact": "Violates actual-loaded-code-only-uses-prior-teaching requirement and the page’s claim. Does not imply execution or lint results are incorrect.",
+      "fmt_scope_limit": "Package fmt commands occur earlier at66-67; no cargo execution or independently verified target traversal was performed. Confirmed evidence uses explicit --all-targets.",
+      "smallest_fix": "Keep earlier lint command restricted to a taught target; expand package scope after allow explanation and complete sources, potentially at2.8.",
+      "evidence": [
+        "desktop-clippy-all-targets.png",
+        "mobile-clippy-all-targets.png"
+      ],
+      "status_at_initial_judgment": "initial observation preserved; source changed before seal and requires separate followup"
+    },
+    {
+      "id": "C2-03",
+      "necessity": "optional",
+      "severity": "選讀改善",
+      "confidence": "high",
+      "type": [
+        "手機頁面",
+        "表格對應"
+      ],
+      "initial_source": "docs/chapters/02-04-lesson.md:17-26",
+      "quote": "最後一列只檢查，沒有再多算一批。",
+      "actual_prior_teaching": "While condition/update and batches accumulator explained at2.4:7-15; full code/output and following explanation support answer without relying only on table.",
+      "observation": "At390x844, five-column table width500px in375px scrolling wrapper hides batches at left view. Panning right reveals1,2,3,3 but loses preceding remaining and condition columns.",
+      "minimum_missing_relation": "No conceptual relation missing; simultaneously viewing pre/post remaining and batch count requires horizontal switching.",
+      "benefit": "A narrower mobile presentation would make the finalfalse/no-extra-batch relation easier to inspect within one row.",
+      "smallest_fix": "Shorten headers with adjacent variable legend or adjust this table’s narrow-screen layout; do not globally change code-block scrolling.",
+      "evidence": [
+        "desktop-while-batch-table.png",
+        "mobile-while-batch-table.png",
+        "mobile-while-batch-table-panned-right.png",
+        "mobile-table-scroll.json"
+      ],
+      "status_at_initial_judgment": "unfixed"
+    }
+  ],
+  "initial_counts": {
+    "necessary": 2,
+    "optional": 1
+  },
+  "positive_evidence": [
+    {
+      "unit": "2.1",
+      "identity_operation": "Six comparison forms, boolean operators and short-circuit order taught at7-40 before examples needing each operation.",
+      "q2_mechanism": "Right operand may be skipped; helper print makes occurrence observable.",
+      "q2_need": "Determine whether subtotal reaches300, then combine validity conditions; stated3,28,42.",
+      "q4_example": "Four calls cover both left answers for both operators; onlyB/D print,102. Final policies and demonstration rules separated56.",
+      "judgment": "sufficient"
+    },
+    {
+      "unit": "2.2",
+      "identity_operation": "if/block value links to1.6; bool condition; return operation explained37-39; index guard uses priorusize/len; else-if order79,85.",
+      "q2_mechanism": "Only chosen branch executes; zero order exits function; bounds guard avoids invalid index operation.",
+      "q2_need": "Explicit0/20/free shipping and empty-order rules at3.",
+      "q4_example": "160/300/360/empty outputs plus299/300/499/500 distinguish inclusive thresholds and order.",
+      "judgment": "sufficient exceptC2-01 narrow ordering"
+    },
+    {
+      "unit": "2.3",
+      "identity_operation": "for yields eachi32 value not index7; persistent accumulator vs per-iterationname13-23; ranges and endpoints27-35; array parameter before answer78.",
+      "q2_mechanism": "Same body visits every item and accumulates in outer total; empty range performs zero bodies.",
+      "q2_need": "Avoid writing repeated indexed additions for every price3.",
+      "q4_example": "120→200→400 table, half-open3 versus inclusive6, empty0; second array rejects unconditional400 claim only.",
+      "judgment": "sufficient; iterator traits and ownership internals reasonably deferred"
+    },
+    {
+      "unit": "2.4",
+      "identity_operation": "While precondition/zero iterations7; mutable persistent state9; processed and state/scopes15,26,32; input invariants before answer60-62.",
+      "q2_mechanism": "Remaining decreases bymin(capacity,remaining), next condition re-evaluates; zero capacity would prevent termination.",
+      "q2_need": "Seven work items in batches of at most3, then recompute remaining3.",
+      "q4_example": "7→4→1→0 plus finalfalse, empty workload0; for/while comparison fairly limited56.",
+      "judgment": "conceptually sufficient; mobile table optionalC2-03"
+    },
+    {
+      "unit": "2.5",
+      "identity_operation": "Loop/break7, break-value17, permitted result scope25, continue31/39, nested traversal63, named labels65/73.",
+      "q2_mechanism": "Exit loop versus exit function versus skip remainder; nearest loop versus named outer loop.",
+      "q2_need": "Stop or skip at a selected body position3.",
+      "q4_example": "sum4 vs break1; labeled search5 vs three rows eachone; answer counts both6 yet explicitly distinguishes trajectories125.",
+      "judgment": "sufficient; positions described bytwo integer ranges, no hidden2Darray assumption or necessary missing image"
+    },
+    {
+      "unit": "2.6",
+      "identity_operation": "Package and two crate roots7-14; mod/pub26-28; ::/crate/use55-59; folderexampletarget97 andmod.rs alternatives113-115 before answer.",
+      "q2_mechanism": "Binary/example callers use same public library functions, private shipping retained behind total.",
+      "q2_need": "Another program should reuse same calculation without copied functions3.",
+      "q4_example": "Main and order_answer use shared pricing; all lib/module/display sources inline;91 allows same-file small program.",
+      "judgment": "sufficient; genuine same-rule reuse shown, not just file rearrangement"
+    },
+    {
+      "unit": "2.7",
+      "identity_operation": "Assert semantics7-9; attributes/test/module/cfg/runner21-27; crate paths35; tool roles63/72 and named allow86-90.",
+      "q2_mechanism": "Assertions compare selected rule answers; >=→> compiles but changes300-boundary result; local allow only suppresses a named lint.",
+      "q2_need": "Retest known expected answers after future shipping changes3; preserve explicit-vs-tail syntax comparison88-100.",
+      "q4_example": "left320/right300 connected to boundary rule;59 limits four tests’ evidence; allow reason adjacent to function.",
+      "judgment": "explanations sufficient except original all-target-load timingC2-02"
+    },
+    {
+      "unit": "2.8",
+      "identity_operation": "Known public functions and assumptions7-15; known implementation and caller paths19-37; ownexample/test setup80-100.",
+      "q2_mechanism": "Shared library rules support separate display and tests; example selection limits test count.",
+      "q2_need": "Rebuild complete small program from fixedspecification3,7-15.",
+      "q4_example": "Main280/300/400, boundary andempty assertions, twoarray cases;2exampletests distinct from4librarytests113.",
+      "judgment": "initial version adds no new Rust syntax; no Chapter3 knowledge needed"
+    }
+  ],
+  "visual": {
+    "preview": "http://127.0.0.1:8097/chapters/02-01-lesson/ through02-08-lesson/; real sources/styles withpartialnav, not finalstrictsite",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "device_scale_factor": 1,
+    "images_or_svgs": [],
+    "actual_page_text_diagrams_viewed": [
+      {
+        "position": "02-06-lesson.md:18-22",
+        "relationship": "mod arrowlib→pricing and callable publicfunctionmain→samepricing, distinct compile structure versus runtimecall"
+      },
+      {
+        "position": "02-06-lesson.md:99-111",
+        "relationship": "src roots/pricing andexample/order_answer/main/display/mod hierarchy"
+      }
+    ],
+    "other_graphic_evidence": "Short-circuit table bothviewports; while table bothviewports plusrightpan; nested-label positions andcounts.",
+    "actually_viewed_screenshots": [
+      "desktop-short-circuit-table.png",
+      "desktop-return-section.png",
+      "desktop-while-batch-table.png",
+      "desktop-loop-labels-section.png",
+      "desktop-module-relations-diagram.png",
+      "desktop-module-files-tree.png",
+      "desktop-clippy-all-targets.png",
+      "desktop-full-source-collapsed.png",
+      "desktop-full-source-expanded.png",
+      "desktop-integration-source-collapsed.png",
+      "desktop-integration-source-expanded.png",
+      "mobile-short-circuit-table.png",
+      "mobile-return-section.png",
+      "mobile-while-batch-table.png",
+      "mobile-loop-labels-section.png",
+      "mobile-module-relations-diagram.png",
+      "mobile-module-files-tree.png",
+      "mobile-clippy-all-targets.png",
+      "mobile-full-source-collapsed.png",
+      "mobile-full-source-expanded.png",
+      "mobile-integration-source-collapsed.png",
+      "mobile-integration-source-expanded.png",
+      "mobile-while-batch-table-panned-right.png",
+      "desktop-02-03-lesson-top.png",
+      "desktop-02-07-lesson-top.png",
+      "mobile-02-03-lesson-top.png",
+      "mobile-02-07-lesson-top.png"
+    ],
+    "all_eight_pages_loaded_and_captured_at_both_sizes": true,
+    "all_full_page_layouts_visually_reviewed": false,
+    "details_closed_and_open_checked": "2.7and2.8 atbothsizes; fullsourcesinline, repeated calculations previouslytaught; newtest modulealready showninmaintext. No necessaryconcept hiddenonlyinoptionalreading.",
+    "mobile_module_diagram_clip": "Right texttail partly outside viewport; essentialpricing.rs andarrowjunction visible, adjacentmaintext supplies relationship. Not reported asnecessarygap."
+  },
+  "execution_or_edits": "No Cargo, build, test, or source/config mutations. Scratch/capture/report files only.",
+  "limitations": [
+    "No blindfirstreader or realhumanconfusion claim",
+    "No executionor technicalcorrectness acceptance",
+    "No fullbookor finalstrictsite acceptance",
+    "Some sourceversiondrift before seal tracked explicitly",
+    "Chapter3nav titles seen butnot treatedasprior teaching"
+  ]
+}

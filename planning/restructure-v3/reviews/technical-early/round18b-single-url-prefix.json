@@ -1,0 +1,648 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "18.7"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "method": "Read entire current18.7, all B1 source/check/example/manifests and actual normal-library dependency closure. No18.8+ manuscript/source read before own initial seal; root later gave version-only releases for those future scopes.",
+    "prior_knowledge": "Basic Python plus personally read1–17 and18.1–18.6, including current narrow fixes. Actual14.8/14.9 source is reverified by hash, not assumed from author claim."
+  },
+  "evidence": {
+    "scope": [
+      "18.7"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.5/src/error.rs",
+        "sha256": "b7aa133184a6519cd71d6f28fe2424f2db55ea4b9bef3a17b5df2d8be176a0d5"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/runtime/task/join.rs",
+        "sha256": "e1c5c5730743d901ce375f0c46eb3050a9d69b5c28ebe275fb2a585a3e22debb"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch15/one-url-result.svg",
+        "sha256": "bcfe5079689e15848e3d027cd1be2c6651dbe83ac4532df787a3771102a2d44f"
+      },
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-07-lesson.md",
+        "sha256": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/Cargo.toml",
+        "sha256": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/config.rs",
+        "sha256": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/error.rs",
+        "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/lib.rs",
+        "sha256": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/reply.rs",
+        "sha256": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/Cargo.toml",
+        "sha256": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/src/lib.rs",
+        "sha256": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b1-complete/Cargo.toml",
+        "sha256": "3beeec75230397b5bcbd265a65b7a518f688dfe90f56bcd526da028ae367de43"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b1-complete/README.md",
+        "sha256": "55df227aef35a620fb5558bc92f050e62f8258928e965c5968930215aab3c8fc"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b1-complete/examples/b1_single_demo.rs",
+        "sha256": "c18f8f5cde18af03d3306c09a3592b74fa06b970beefecf4dc6b5b1c7e7a6496"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b1-complete/src/lib.rs",
+        "sha256": "eda21ca300f6058e2d438a1961b8e2b4c9b6e740c8a3cf7dc3e2c039b0e0e9f9"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b1-starter/Cargo.toml",
+        "sha256": "a7903bd9469d606139e031cba89e54df00cfea41afb6fe06ae2b509d46fe4f4c"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b1-starter/README.md",
+        "sha256": "c553bf4e0e4dca8fe4c7da0cc988e76beeaef45e180d898cc23f5e128b6d47ab"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b1-starter/checks/single-tests.rs",
+        "sha256": "cdd5ece5a407556733c94c91670122ae98627bcfd6a06c7ff80784d57ee59a14"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b1-starter/src/lib.rs",
+        "sha256": "1d12898ed14744ef3945e226c8b844c7d03c377a287b1210d5e1f015a470eda1"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch11-async/http-single/Cargo.toml",
+      "examples/ch11-async/http-single/src/config.rs",
+      "examples/ch11-async/http-single/src/error.rs",
+      "examples/ch11-async/http-single/src/lib.rs",
+      "examples/ch11-async/http-single/src/reply.rs",
+      "examples/ch11-async/local-service/Cargo.toml",
+      "examples/ch11-async/local-service/src/lib.rs",
+      "examples/ch15-projects/b1-complete/Cargo.toml",
+      "examples/ch15-projects/b1-complete/README.md",
+      "examples/ch15-projects/b1-complete/examples/b1_single_demo.rs",
+      "examples/ch15-projects/b1-complete/src/lib.rs",
+      "examples/ch15-projects/b1-starter/Cargo.toml",
+      "examples/ch15-projects/b1-starter/README.md",
+      "examples/ch15-projects/b1-starter/checks/single-tests.rs",
+      "examples/ch15-projects/b1-starter/src/lib.rs"
+    ],
+    "loaded_source_or_config_files": [
+      "examples/ch11-async/http-single/Cargo.toml",
+      "examples/ch11-async/http-single/src/config.rs",
+      "examples/ch11-async/http-single/src/error.rs",
+      "examples/ch11-async/http-single/src/lib.rs",
+      "examples/ch11-async/http-single/src/reply.rs",
+      "examples/ch11-async/local-service/Cargo.toml",
+      "examples/ch11-async/local-service/src/lib.rs",
+      "examples/ch15-projects/b1-complete/Cargo.toml",
+      "examples/ch15-projects/b1-complete/examples/b1_single_demo.rs",
+      "examples/ch15-projects/b1-complete/src/lib.rs",
+      "examples/ch15-projects/b1-starter/Cargo.toml",
+      "examples/ch15-projects/b1-starter/checks/single-tests.rs",
+      "examples/ch15-projects/b1-starter/src/lib.rs"
+    ],
+    "snippet_references": [
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 39,
+        "source": "examples/ch15-projects/b1-starter/src/lib.rs",
+        "anchor": "models"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 55,
+        "source": "examples/ch15-projects/b1-starter/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 69,
+        "source": "examples/ch15-projects/b1-starter/src/lib.rs",
+        "anchor": "helpers"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 77,
+        "source": "examples/ch15-projects/b1-starter/src/lib.rs",
+        "anchor": "stub"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 85,
+        "source": "examples/ch15-projects/b1-starter/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 99,
+        "source": "examples/ch11-async/local-service/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 105,
+        "source": "examples/ch11-async/local-service/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 111,
+        "source": "examples/ch11-async/http-single/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 117,
+        "source": "examples/ch11-async/http-single/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 123,
+        "source": "examples/ch11-async/http-single/src/config.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 129,
+        "source": "examples/ch11-async/http-single/src/error.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 135,
+        "source": "examples/ch11-async/http-single/src/reply.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 156,
+        "source": "examples/ch15-projects/b1-starter/checks/single-tests.rs",
+        "anchor": "observation-helper"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 172,
+        "source": "examples/ch15-projects/b1-starter/checks/single-tests.rs",
+        "anchor": "timeout-test"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 180,
+        "source": "examples/ch15-projects/b1-starter/checks/single-tests.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 226,
+        "source": "examples/ch15-projects/b1-complete/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 232,
+        "source": "examples/ch15-projects/b1-complete/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 248,
+        "source": "examples/ch15-projects/b1-complete/examples/b1_single_demo.rs",
+        "anchor": null
+      }
+    ],
+    "commands": [
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 141,
+        "command": "cargo +1.99.0 check --lib",
+        "kind": "fenced"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 142,
+        "command": "cargo +1.99.0 test --lib",
+        "kind": "fenced"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 145,
+        "command": "cargo check -p url-b1-starter --lib --locked",
+        "kind": "inline"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 186,
+        "command": "cargo +1.99.0 test --lib",
+        "kind": "fenced"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 238,
+        "command": "cargo test -p url-b1 --lib --locked",
+        "kind": "fenced"
+      },
+      {
+        "document": "docs/chapters/18-07-lesson.md",
+        "line": 252,
+        "command": "cargo run --quiet -p url-b1 --example b1_single_demo --locked",
+        "kind": "fenced"
+      }
+    ],
+    "package_manifests": {
+      "examples/ch11-async/http-single/Cargo.toml": {
+        "package": {
+          "name": "ch11-http-single",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "derive"
+            ]
+          },
+          "reqwest": {
+            "version": "0.13.5",
+            "default-features": false,
+            "features": [
+              "rustls"
+            ]
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time"
+            ]
+          },
+          "url": "2.5.8",
+          "serde": {
+            "version": "1.0.229",
+            "features": [
+              "derive"
+            ]
+          },
+          "serde_json": "1.0.154"
+        }
+      },
+      "examples/ch15-projects/b1-complete/Cargo.toml": {
+        "package": {
+          "name": "url-b1",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "reqwest": {
+            "version": "0.13.5",
+            "default-features": false,
+            "features": [
+              "rustls"
+            ]
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time"
+            ]
+          },
+          "url": "2.5.8"
+        },
+        "dev-dependencies": {
+          "ch11-local-service": {
+            "path": "../../ch11-async/local-service"
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "test-util"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/local-service/Cargo.toml": {
+        "package": {
+          "name": "ch11-local-service",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "axum": {
+            "version": "0.8.9",
+            "default-features": false,
+            "features": [
+              "http1",
+              "tokio"
+            ]
+          },
+          "ch11-http-single": {
+            "path": "../http-single"
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time",
+              "sync"
+            ]
+          }
+        },
+        "dev-dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "test-util"
+            ]
+          }
+        }
+      },
+      "examples/ch15-projects/b1-starter/Cargo.toml": {
+        "package": {
+          "name": "url-b1-starter",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "reqwest": {
+            "version": "0.13.5",
+            "default-features": false,
+            "features": [
+              "rustls"
+            ]
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time"
+            ]
+          },
+          "url": "2.5.8"
+        },
+        "dev-dependencies": {
+          "ch11-local-service": {
+            "path": "../../ch11-async/local-service"
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "test-util"
+            ]
+          }
+        }
+      }
+    },
+    "selected_lock_entries": [
+      {
+        "name": "ch11-http-single",
+        "version": "0.1.0",
+        "dependencies": [
+          "clap",
+          "reqwest",
+          "serde",
+          "serde_json",
+          "tokio",
+          "url"
+        ]
+      },
+      {
+        "name": "ch11-local-service",
+        "version": "0.1.0",
+        "dependencies": [
+          "axum",
+          "ch11-http-single",
+          "tokio"
+        ]
+      },
+      {
+        "name": "reqwest",
+        "version": "0.13.5",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "16a1cfa75cc186dd73d5818e510e042e40927bccc9c236b061cea97e1eb08029",
+        "dependencies": [
+          "base64",
+          "bytes",
+          "futures-channel",
+          "futures-core",
+          "futures-util",
+          "http",
+          "http-body",
+          "http-body-util",
+          "hyper",
+          "hyper-rustls",
+          "hyper-util",
+          "js-sys",
+          "log",
+          "percent-encoding",
+          "pin-project-lite",
+          "quinn",
+          "rustls",
+          "rustls-pki-types",
+          "rustls-platform-verifier",
+          "sync_wrapper",
+          "tokio",
+          "tokio-rustls",
+          "tower",
+          "tower-http",
+          "tower-service",
+          "url",
+          "wasm-bindgen",
+          "wasm-bindgen-futures",
+          "web-sys"
+        ]
+      },
+      {
+        "name": "tokio",
+        "version": "1.53.3",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "ce3335fa71841cda333a58d7615b03901380ecf09d59b3296d21f8bbac0dde4e",
+        "dependencies": [
+          "bytes",
+          "libc",
+          "mio",
+          "pin-project-lite",
+          "signal-hook-registry",
+          "socket2",
+          "tokio-macros",
+          "windows-sys 0.61.2"
+        ]
+      },
+      {
+        "name": "url",
+        "version": "2.5.8",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "ff67a8a4397373c3ef660812acab3268222035010ab8680ec4215f38ba3d0eed",
+        "dependencies": [
+          "form_urlencoded",
+          "idna",
+          "percent-encoding",
+          "serde"
+        ]
+      },
+      {
+        "name": "url-b1",
+        "version": "0.1.0",
+        "dependencies": [
+          "ch11-local-service",
+          "reqwest",
+          "tokio",
+          "url"
+        ]
+      },
+      {
+        "name": "url-b1-starter",
+        "version": "0.1.0",
+        "dependencies": [
+          "ch11-local-service",
+          "reqwest",
+          "tokio",
+          "url"
+        ]
+      }
+    ],
+    "normal_dependency_files_identical_to_sealed14_tail": [
+      "examples/ch11-async/local-service/Cargo.toml",
+      "examples/ch11-async/local-service/src/lib.rs",
+      "examples/ch11-async/http-single/Cargo.toml",
+      "examples/ch11-async/http-single/src/lib.rs",
+      "examples/ch11-async/http-single/src/config.rs",
+      "examples/ch11-async/http-single/src/error.rs",
+      "examples/ch11-async/http-single/src/reply.rs"
+    ],
+    "starter_checks_identical_to_completed_test_suffix": true,
+    "counts": {
+      "owned_files": 15,
+      "loaded_source_or_config_files": 13,
+      "hashes": 24,
+      "snippets": 18,
+      "commands": 6,
+      "test_functions_per_copy": 6,
+      "external_api_hashes": 2
+    }
+  },
+  "assessments": [
+    {
+      "item": "model and contract",
+      "judgment": "Original String ownership is preserved independently from parsed/final URL. Invalid URL versus supported-scheme rejection, HTTP2xx/non2xx, Request actual error and Timeout remain distinct. Headers-only boundary is accurate: response status/final URL copied then response dropped, no body-read await, no false claim that transport received zero bytes. Option<u128> None denotes no request attempt, Some(0) is possible; std elapsed measures only real attempt, not paused Tokio10seconds. Debug-only derives avoid needing equality on error payloads."
+    },
+    {
+      "item": "completion logic",
+      "judgment": "Client has limited5 redirects/direct choice with no explicit reqwest request deadline. Parse rejects before Instant/timeout. Work async block contains GET/send factory and wait, so single Tokio timeout covers redirect to final headers; pinned cooperative timeout limitation is preserved. Nested results handled without? because every attempted record returns Check; reqwest is_timeout maps separately. Successful HTTP200/404/500 and loop6hits/redirect2hits align with previously reviewed API/source."
+    },
+    {
+      "item": "source and manifests",
+      "judgment": "B1 starter is honest fixed incomplete Scheme marker; standalone copied manifest literal fields and absolute adjustment of dev path dependency are explicitly taught before Cargo. Checks directory is not auto-target, full cfg(test) module appends exactly once. Complete tests exactly equal checks suffix. Local-service normal lib and its http-single dependency config/error/reply complete sources are all inline; no dependency examples/binary/integration/cfg(test) code is compiled by selected B1 test/example. Seven normal dependency files match own sealed14 source hashes."
+    },
+    {
+      "item": "tests, lifetimes and cleanup",
+      "judgment": "All six finite tests/helpers are visible. Check fields/reqwestError are Send; owned client/original in spawned async block do not borrow Fixture. held_request has real5second entered observation and on mismatch abort+await request before server shutdown. Timeout test waits true entered before pause, then20second borrowed&mutJoinHandle guard; resume occurs on every returned route before cleanup. Successful output is not awaited twice; guard expiry still aborts+awaits original handle. Under pinned Tokio JoinHandle is Unpin+Future, matching borrowed wait syntax taught before first timeout-test snippet. Invalid/scheme/work/request/timeout distinctions and output-time assertions use match/None appropriately. Missing work timer remains finitely observable rather than hanging test."
+    },
+    {
+      "item": "demo/figure",
+      "judgment": "Complete example only runs after full lib/config source; dev Fixture dependency is legitimate for examples and does not become normal B1 API. Server shutdown checked for2hits before printing original redirect/finalok/200passed/Some real elapsed. Dynamicport/time not fixed expected bytes. SVG source separates parse early return from timing, preserves original along side arrow and distinguishes successful Response from Request/Timeout."
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Read15owned package/dependency files(13loaded Rust/config,2uncompiled README),18snippet references and6fenced/inline commands.",
+      "Verify seven normal dependency file hashes equal independently sealed14 tail and complete B1 check suffix exactly matches starter checks.",
+      "Parse four manifests/rootlock; inspect cached reqwestError Send+Sync storage and Tokio1.53.3 JoinHandle Future+Unpin source.",
+      "Parse/read one SVG XML and statically trace six tests per copy, stub expected failures and response/cleanup paths."
+    ],
+    "not_performed": [
+      "No Cargo/rustc/Clippy/tests/example/HTTP/thread program run.",
+      "No timer manipulation, browser/SVG visual inspection or reader experiment."
+    ]
+  },
+  "conclusion": "No necessary or optional technical correction found in measured18.7."
+}

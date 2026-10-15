@@ -1,0 +1,812 @@
+{
+  "captured_utc": "2026-10-15T10:10:10.153781+00:00",
+  "scope": "learningactual13asnecessaryprecedingmaterialforindependent14; notduplicateindependentchapter13review, nopeerconclusions, nostatement13passed",
+  "files": [
+    {
+      "path": "docs/chapters/13-01-lesson.md",
+      "sha256": "c5b392ba306e20d36ba848860b03f669a09fabc7f76d28e5eefa168815aab654",
+      "bytes": 15901
+    },
+    {
+      "path": "examples/concurrency-stages/Cargo.toml",
+      "sha256": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+      "bytes": 143
+    },
+    {
+      "path": "examples/concurrency-stages/src/main.rs",
+      "sha256": "05f138089b8ea0b57cc37ad7a055b1c39d35bb416a84e3b8d44aee02a33c7f48",
+      "bytes": 72
+    },
+    {
+      "path": "examples/concurrency-stages/examples/send_sync/contracts/mod.rs",
+      "sha256": "1229d68ce99f4a191c995572211e341254d7cfeddfd9e13b07e6c1801b363398",
+      "bytes": 240
+    },
+    {
+      "path": "examples/concurrency-stages/examples/send_sync/main.rs",
+      "sha256": "51957b840e96795b6260b8371a286d3736df03fc143909f42c73f9d1b8fea60f",
+      "bytes": 767
+    },
+    {
+      "path": "examples/concurrency-stages/examples/cells_send/contracts/mod.rs",
+      "sha256": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+      "bytes": 114
+    },
+    {
+      "path": "examples/concurrency-stages/examples/cells_send/main.rs",
+      "sha256": "ee7b3a3612c2b66efa80bc6e6e4f4df0f64865f875bd982c33cf4e5fffa0486b",
+      "bytes": 647
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.rs",
+      "sha256": "e055963f805c582de1a180171e0d187dad21a99c8b66757caea2dbbe754e9507",
+      "bytes": 205
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.rs",
+      "sha256": "c69903c795745616bbb9c380c1e6527ee6d5acc99ca9b33f3369e03e06abe8c0",
+      "bytes": 225
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.rs",
+      "sha256": "00e923024cef8e6ff9d1ac24d7026156bdf2a20174bd107107c0caf47be3449c",
+      "bytes": 181
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/capture_send/contracts/mod.rs",
+      "sha256": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+      "bytes": 114
+    },
+    {
+      "path": "examples/concurrency-stages/examples/capture_send/main.rs",
+      "sha256": "dc0c647e639212ba573a6f029c9d0962d8866e1786a6fd5585f4fc7075da2dc0",
+      "bytes": 306
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.rs",
+      "sha256": "becc92eb86816854f5a06772f6f6de9d0225c03f6531359084433b426a0efa70",
+      "bytes": 249
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/borrow_bounds/contracts/mod.rs",
+      "sha256": "59c86469ab6b0901005645663655defe7d3de8612c48998a2ef584760ff99e18",
+      "bytes": 386
+    },
+    {
+      "path": "examples/concurrency-stages/examples/borrow_bounds/main.rs",
+      "sha256": "91329108bbdfc1bb1576ec3bc4bf93bbd6201b76b9af95746d395acfa9fd46bf",
+      "bytes": 623
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.rs",
+      "sha256": "a300e2c213c0c2c6d2ed6a38463de568f4c47b50f7b7d834aa86b3e9b968c0a9",
+      "bytes": 222
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.expected",
+      "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/send_sync_answer/contracts/mod.rs",
+      "sha256": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+      "bytes": 114
+    },
+    {
+      "path": "examples/concurrency-stages/examples/send_sync_answer/main.rs",
+      "sha256": "a6f6f10d10d8372a57cccc4aafd65ddee8e3c4916f3fab759faad12437e86b22",
+      "bytes": 616
+    },
+    {
+      "path": "docs/chapters/../assets/ch10/send-sync.svg",
+      "sha256": "936141fc68e09cc82db071da91d796481aefa8d3f7108be1c26ec1a68aa8ce72",
+      "bytes": 2600
+    },
+    {
+      "path": "docs/chapters/13-02-lesson.md",
+      "sha256": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e",
+      "bytes": 15289
+    },
+    {
+      "path": "examples/concurrency-stages/examples/thread_join/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/thread_join/main.rs",
+      "sha256": "90a77a8021bbf6402e3e0dbdde2f1d71cd9f971e2d95f1205ee526f16103debe",
+      "bytes": 637
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.rs",
+      "sha256": "d9db1b180bc91f0598b3fd9d0f3eb88e9c84f54c7f22f89f76cb6a20aa3082a3",
+      "bytes": 239
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.expected",
+      "sha256": "88cc33d2d6a2d0766b29618c0b0dc8577cbd335f4117adf98cfc33068ea0f7d1",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.rs",
+      "sha256": "19d99ed8850c6151e11601410f0890052c760dfad220324453b6cecaa0ee945f",
+      "bytes": 306
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.expected",
+      "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.rs",
+      "sha256": "73b7b3449ca5c22881ce71762da1b108b0b0a6807319c02d8b87e3efe8c08284",
+      "bytes": 221
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/thread_result/workers/mod.rs",
+      "sha256": "8dae063c27b797debba09f94cb09d2ed6cb21ec57f7d436f04461c0845f18421",
+      "bytes": 281
+    },
+    {
+      "path": "examples/concurrency-stages/examples/thread_result/main.rs",
+      "sha256": "a9f2cdf2dd29c3aab77bc0ca3606803ab646a3f031c64139f61f70b8fd6d4811",
+      "bytes": 624
+    },
+    {
+      "path": "examples/concurrency-stages/examples/panic_worker/workers/mod.rs",
+      "sha256": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+      "bytes": 1259
+    },
+    {
+      "path": "examples/concurrency-stages/examples/panic_worker/main.rs",
+      "sha256": "02ad2e4ea8a577e6ffdea82d07a41691697853b8e947969b326940a81afe7fda",
+      "bytes": 513
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/join_twice.rs",
+      "sha256": "13ea4c6d246f86c77464d1d5bca015441e0e5ef4acc9b1a5ac5296cc925fcfc4",
+      "bytes": 338
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/join_twice.expected",
+      "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/thread_join_answer/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/thread_join_answer/main.rs",
+      "sha256": "40ded1b92481231e3099453d56f5d60ffe9dd1596cc114ea0fc0098bd8ee7eae",
+      "bytes": 810
+    },
+    {
+      "path": "docs/chapters/../assets/ch10/thread-join.svg",
+      "sha256": "c35ff54e7d368c6c59e4778c8096a4ecb6ee5a90d445f610a20a9f0812da437e",
+      "bytes": 3389
+    },
+    {
+      "path": "docs/chapters/13-03-lesson.md",
+      "sha256": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d",
+      "bytes": 13192
+    },
+    {
+      "path": "examples/concurrency-stages/examples/caller_input/higher_ranked/mod.rs",
+      "sha256": "e96c4a0a6113321a6ee102feeece6e672f4f93e3c6e8e4620f40aea76466a92c",
+      "bytes": 181
+    },
+    {
+      "path": "examples/concurrency-stages/examples/caller_input/main.rs",
+      "sha256": "844741aff60d398250ea31651ab1224ff4d40083019b2fdadee3d54a07eb5937",
+      "bytes": 248
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.rs",
+      "sha256": "3f267d03116a413f2f3fcebae2ebc1492d7d263f4b6b2e9a268f9fdf128744b4",
+      "bytes": 207
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.expected",
+      "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/local_callback/higher_ranked/mod.rs",
+      "sha256": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+      "bytes": 188
+    },
+    {
+      "path": "examples/concurrency-stages/examples/local_callback/main.rs",
+      "sha256": "0cf90ec78f259d63c57a476d0f4585537228d9aea4fe9ac1da85f64ec309522a",
+      "bytes": 222
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.rs",
+      "sha256": "135e0f39bc495b7c1a576ab2fed7a47fe11c7e555108b105dd626214a0ec3390",
+      "bytes": 307
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.expected",
+      "sha256": "98156c76a4149a9ba9ac1b02aaed46c3ff518335e15c280d9efffbb29c2c0dfd",
+      "bytes": 49
+    },
+    {
+      "path": "examples/concurrency-stages/examples/callback_borrow/higher_ranked/mod.rs",
+      "sha256": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+      "bytes": 188
+    },
+    {
+      "path": "examples/concurrency-stages/examples/callback_borrow/main.rs",
+      "sha256": "fcc06e0a5e2eecb843f95bb864d6dee21ef453c44cd5ecbbe5277381ef2575cb",
+      "bytes": 406
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.rs",
+      "sha256": "2171ebfebde5af1589c18469d4b1ed288008da374458d192a177d63c9376c520",
+      "bytes": 230
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.expected",
+      "sha256": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+      "bytes": 34
+    },
+    {
+      "path": "examples/concurrency-stages/examples/callback_once_hrtb/higher_ranked/mod.rs",
+      "sha256": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+      "bytes": 188
+    },
+    {
+      "path": "examples/concurrency-stages/examples/callback_once_hrtb/main.rs",
+      "sha256": "f69da17d1e3200df2439f95f6c751d8921fd3805ca63aefc49c9e0bbf981a60c",
+      "bytes": 363
+    },
+    {
+      "path": "examples/concurrency-stages/examples/callback_projection/higher_ranked/mod.rs",
+      "sha256": "4a90f10ee8931a9d15e6fc7b1c657c040f094911fa3f269faa9c370c9306a9f8",
+      "bytes": 349
+    },
+    {
+      "path": "examples/concurrency-stages/examples/callback_projection/main.rs",
+      "sha256": "652209acbd956950ddc8bf0e24df85b9efc25254d7a94f2da48fb05b1f77243b",
+      "bytes": 318
+    },
+    {
+      "path": "examples/concurrency-stages/examples/hrtb_answer/main.rs",
+      "sha256": "ce9bf7a850f8d5d7ff0ce2aefafe52ec2babe17aba4200158e3549effdabbd62",
+      "bytes": 629
+    },
+    {
+      "path": "docs/chapters/../assets/ch10/hrtb-local.svg",
+      "sha256": "2a79b19cf773ad6245c6045b2966931f4f0dec24f58e82d430929ba91915aa08",
+      "bytes": 2247
+    },
+    {
+      "path": "docs/chapters/13-04-lesson.md",
+      "sha256": "452f05337ef7610197fe9908167c9ffd5dcb447b3fda33fe6e189e345a678da9",
+      "bytes": 15281
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_borrow/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_borrow/main.rs",
+      "sha256": "3fe748f2d33fd4fbaa0724a469b14301e42a12bf2bf4c00d11a124ecb5879f13",
+      "bytes": 577
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_local_source.rs",
+      "sha256": "54787b1f53667a5c1b5aa0967783538fb9c6430c29c648d3aec54a4f0754b4f4",
+      "bytes": 297
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_local_source.expected",
+      "sha256": "88cc33d2d6a2d0766b29618c0b0dc8577cbd335f4117adf98cfc33068ea0f7d1",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_auto_wait/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_auto_wait/main.rs",
+      "sha256": "436da6f70b77527482c39759efad7476e40a9764c91c60fc66c8fd7971663df8",
+      "bytes": 460
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_two_mutable.rs",
+      "sha256": "a105bf1d224f08c4b3d77719f2031052bfe6a4605b3ce468f2ab3bcd2033f337",
+      "bytes": 316
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_two_mutable.expected",
+      "sha256": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_cell_shared.rs",
+      "sha256": "a31b8653d42acd4130c484b9f53b61abfd34fab975bfd38eadba815b1859d512",
+      "bytes": 310
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_cell_shared.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_borrowed_result/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_borrowed_result/main.rs",
+      "sha256": "b45d7614d88fdfe756375a2980fe2adc72ab240688b6c3f9918ec7cc45592351",
+      "bytes": 688
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_handle_escape.rs",
+      "sha256": "5226f1a55538085234eb92a74e14e921b47a29612155342c76cbedbad125a2e5",
+      "bytes": 217
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_handle_escape.expected",
+      "sha256": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+      "bytes": 34
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_panic/workers/mod.rs",
+      "sha256": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+      "bytes": 1259
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_panic/main.rs",
+      "sha256": "96d9484a5569e8419614d502a2f48d7674f5d78ac367c498a6a1b138f00c46a0",
+      "bytes": 734
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/runtime-fail/scoped_auto_panic.rs",
+      "sha256": "f7cd1a58db6b9e93dd5f9f70215f4841753351d3749e8d522d49f022bd992b8b",
+      "bytes": 337
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/runtime-fail/scoped_auto_panic.expected",
+      "sha256": "67facfef8d01f471999393d0135edf3d1eef365bf455fc66fa0072d97be793e4",
+      "bytes": 25
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_answer/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/scoped_answer/main.rs",
+      "sha256": "b3bf5483e8fc09dc5e4b6c1675b11261759265342fe2b5cf537cdd3e4a7c10cf",
+      "bytes": 1257
+    },
+    {
+      "path": "docs/chapters/../assets/ch10/scoped-wait.svg",
+      "sha256": "3e247305a06d6f9891909a700cbd4841644cd8b42442800c382ad35a1ef3899d",
+      "bytes": 3532
+    },
+    {
+      "path": "docs/chapters/13-05-lesson.md",
+      "sha256": "c845832a2d68530200fb59fc705bbc9f128df007922888a0f5c388cdb9728481",
+      "bytes": 19240
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_single/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_single/main.rs",
+      "sha256": "a1a5d52c42c6b7f4552c06f161b2bf28ddec9e20587ab59e5b179344f5708be6",
+      "bytes": 723
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.rs",
+      "sha256": "05d22888681ab3a20d2e93519a50f162ba99858b64e77c081e572b5e5cefe618",
+      "bytes": 235
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.expected",
+      "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_drain/main.rs",
+      "sha256": "82fbeec6cc8c1de790e499f8b327934d4bc2065d11acd2346e37fc9026319e5a",
+      "bytes": 618
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_recover/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_recover/main.rs",
+      "sha256": "d9288ec2828fa19eedfd86ceb84228dc25f6cab310d162450b211adaf295345d",
+      "bytes": 644
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.rs",
+      "sha256": "4b11ed927b6bbb28ef4117d03e1ceec705ac3d8e77d6d95dd4047410bc7324d8",
+      "bytes": 363
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_producers/messages/mod.rs",
+      "sha256": "ba226ed5ec6a7acbd3957fe3cdc803947e3252bbeb35803d1152c9ea94fad1ab",
+      "bytes": 330
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_producers/main.rs",
+      "sha256": "5653bf89211dce7e3894a6c7ecae8a96f70f9ecc26b020dfb0b2c8672ab36288",
+      "bytes": 1133
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_bounded/bounded_messages/mod.rs",
+      "sha256": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+      "bytes": 299
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_bounded/main.rs",
+      "sha256": "3daf6e81c8f18cef69de2c298f25695c99440de8499c71ab3f775845eb87d63f",
+      "bytes": 780
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_stop/bounded_messages/mod.rs",
+      "sha256": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+      "bytes": 299
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_stop/main.rs",
+      "sha256": "b78a7167a758eb29f8f29a82d8e5b36dbd7685a87d6436ccdeb2ea6d1a072001",
+      "bytes": 804
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_answer/bounded_messages/mod.rs",
+      "sha256": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+      "bytes": 299
+    },
+    {
+      "path": "examples/concurrency-stages/examples/channel_answer/main.rs",
+      "sha256": "784588d5e8247ef9d783fff5f04e72471227a6730c896c7f429bb02e66e87196",
+      "bytes": 1189
+    },
+    {
+      "path": "docs/chapters/../assets/ch10/channel-drain.svg",
+      "sha256": "56077fabd2076b4ac956067f1bf149b5b679cad42e0b806db1f22f89f0ee7f39",
+      "bytes": 3753
+    },
+    {
+      "path": "docs/chapters/13-06-lesson.md",
+      "sha256": "6f3d25a1cbab3fc40b75594280cd0c957878a70665d2f49b542349c747d26e24",
+      "bytes": 17335
+    },
+    {
+      "path": "examples/concurrency-stages/examples/mutex_guard/main.rs",
+      "sha256": "fcba5280879da0b62c48bc2ff110a7635174725a4f0e06673b8b3fa01ea7101f",
+      "bytes": 506
+    },
+    {
+      "path": "examples/concurrency-stages/examples/arc_shared_read/main.rs",
+      "sha256": "ce4ae2f1f309e270b35adcf776732fac313f62516749553e6a6d01bba1580537",
+      "bytes": 746
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.rs",
+      "sha256": "e8b1bdba69a0c75ea9560b239311409fead2846adb10bfde900e761c622a0ff2",
+      "bytes": 340
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.rs",
+      "sha256": "11a2b939b67b0eb8d2ddc9af4f948d037dc6a7ef5da3faa64664f267b5e450e6",
+      "bytes": 139
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.expected",
+      "sha256": "018106396268d6a7b58a9dfe8e469b87a44509ceb5bcdd5757200ba813f9aab8",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.rs",
+      "sha256": "a800476756cfce262a8a6825d18493c7a5b236e1c41cdde459bbe675e7a29c08",
+      "bytes": 421
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/arc_mutex/main.rs",
+      "sha256": "e7ee31786a6929bb17cb341072caa7e0a1d66c454b6eef24cf738b76bc6dfa6b",
+      "bytes": 793
+    },
+    {
+      "path": "examples/concurrency-stages/examples/mutex_cell/main.rs",
+      "sha256": "436d8442ddefb6ba6a7435981f981800f16213a9c621125f0e05fc988efe6234",
+      "bytes": 859
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.rs",
+      "sha256": "b61a092ba66888b45113dfd4ab938b64ef9dec9cc6e1e561ddb408df588cf517",
+      "bytes": 225
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/mutex_poison/workers/mod.rs",
+      "sha256": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+      "bytes": 1259
+    },
+    {
+      "path": "examples/concurrency-stages/examples/mutex_poison/main.rs",
+      "sha256": "19702d31b97a6a89457b89da33db19bc6f6a9292433d47daa7c86040ce38385d",
+      "bytes": 1625
+    },
+    {
+      "path": "examples/concurrency-stages/examples/mutex_answer/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/mutex_answer/main.rs",
+      "sha256": "15bfde9955c62f0b62066192cbf10c6dcaaa0d32ee414189dce4e6c79c85fa95",
+      "bytes": 1578
+    },
+    {
+      "path": "docs/chapters/../assets/ch10/arc-mutex-guard.svg",
+      "sha256": "ecc01c4c5ea60f0dacbbd2df7b89dbf70d050d7beba54da4f436622a4e1c6af8",
+      "bytes": 3425
+    },
+    {
+      "path": "docs/chapters/13-07-lesson.md",
+      "sha256": "c96f26ad8707450d399d650accd91132140788e5e5153b2373bbbcaae4892dd5",
+      "bytes": 18372
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_guards/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_guards/main.rs",
+      "sha256": "2159bd7b662ed0509ab6e6a01a47dabe27c29a3405a1570858f25547b736e4f7",
+      "bytes": 1312
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rwlock_reader_no_deref_mut.rs",
+      "sha256": "62921fee0b521deea66c58e3b066c7c5d64a8717ab940b1d25d26ee1b3b5f5ef",
+      "bytes": 171
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rwlock_reader_no_deref_mut.expected",
+      "sha256": "018106396268d6a7b58a9dfe8e469b87a44509ceb5bcdd5757200ba813f9aab8",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_readers/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_readers/main.rs",
+      "sha256": "d33dba59e966e9b2b5530f8d496909dea1a9b9fdc15b9271d4b0f3c6924ba216",
+      "bytes": 990
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rwlock_cell_not_sync.rs",
+      "sha256": "5f2b3550c154d26e4c6ff5d8ccd9c18e69caa53feaf941fab4b164e03c1c27fa",
+      "bytes": 465
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rwlock_cell_not_sync.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rwlock_guards_not_send.rs",
+      "sha256": "dd1853ff1608f2540a3d3c4e0b31c7c167c9190b4e41f5011baceb7a5fcf5c3c",
+      "bytes": 384
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/rwlock_guards_not_send.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_recheck/main.rs",
+      "sha256": "afd779c4564097334926ea9761997c8710a5ade803befb2a972b965b0b45dd4a",
+      "bytes": 667
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_downgrade/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_downgrade/main.rs",
+      "sha256": "6b1817bde328259bef8e1fd6b79ab9e09908de60ce19b342f5b22def8efc76a3",
+      "bytes": 826
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_reader_panic/workers/mod.rs",
+      "sha256": "6cd1ea85cafb2c4f68c8694b6677fe562dfde95deb82b43a0b9126d4f87b6920",
+      "bytes": 1430
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_reader_panic/main.rs",
+      "sha256": "1c467492c2dbeee5903a6f618e55754e9b7fa67a4170b3baed1a6952846fb740",
+      "bytes": 973
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_writer_panic/workers/mod.rs",
+      "sha256": "6cd1ea85cafb2c4f68c8694b6677fe562dfde95deb82b43a0b9126d4f87b6920",
+      "bytes": 1430
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_writer_panic/main.rs",
+      "sha256": "0e862c64c85ad45db5e16aa80781f8d39bc7ddc9c3327d5b1cb7e92dd8b0a081",
+      "bytes": 1587
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_answer/workers/mod.rs",
+      "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+      "bytes": 170
+    },
+    {
+      "path": "examples/concurrency-stages/examples/rwlock_answer/main.rs",
+      "sha256": "12a27399a772feb9b86fa611253c937a675e5a3fca885e81c2825aa2abf681e0",
+      "bytes": 1511
+    },
+    {
+      "path": "docs/chapters/../assets/ch10/rwlock-readers.svg",
+      "sha256": "c8c0b5a7dfdf3afa5d22325c84ad795d20039467191e71d7423aa68f21c11413",
+      "bytes": 3449
+    },
+    {
+      "path": "docs/chapters/13-08-lesson.md",
+      "sha256": "b111cb10d4c1dfddb8986cc1ee89902eafa89e78fca5b6329bc09b8df3f64a79",
+      "bytes": 19119
+    },
+    {
+      "path": "examples/concurrency-stages/examples/atomic_values/main.rs",
+      "sha256": "8c5bedd1c31f178e8924bf4a326e2c8ed8d013c833ffe429ce0e2ecf11c27d42",
+      "bytes": 489
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/atomic_move.rs",
+      "sha256": "294756f9ab17098b7d947087ae2108f382802264f3571ae4c0a91ecf53526cea",
+      "bytes": 288
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/compile-fail/atomic_move.expected",
+      "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+      "bytes": 6
+    },
+    {
+      "path": "examples/concurrency-stages/examples/atomic_lost_update/main.rs",
+      "sha256": "1b604726f4aca3e94695e583074e0920a9197785f4fe09beda4db93393f6b61b",
+      "bytes": 503
+    },
+    {
+      "path": "examples/concurrency-stages/examples/atomic_counter/main.rs",
+      "sha256": "73719d4f51200802f956ceab8ed4fec9decd17078df91dc5c2271bd4b6f3a737",
+      "bytes": 994
+    },
+    {
+      "path": "examples/concurrency-stages/examples/atomic_publish/main.rs",
+      "sha256": "b79b91f12165c69071feebcda39842a5c4bfab90c748542a2775ff46ddc9849b",
+      "bytes": 831
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/runtime-fail/atomic_load_release.rs",
+      "sha256": "283e49a193b158d5ec869c2e1c27a4fcb826a4c5f093430b6bfaa6bea012b236",
+      "bytes": 240
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/runtime-fail/atomic_load_release.expected",
+      "sha256": "57a63984d8750b3b51bd4aa249bcaeded88cdc6f6f988ad2e99a44f82842a958",
+      "bytes": 41
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/runtime-fail/atomic_store_acqrel.rs",
+      "sha256": "3f7e70b6795bffe02102df89e13c0a866c1b50019827441a1d29cb0df477328d",
+      "bytes": 224
+    },
+    {
+      "path": "examples/concurrency-stages/fixtures/runtime-fail/atomic_store_acqrel.expected",
+      "sha256": "3c1a2f773eed1e968e6845115d54d00ee67da273b27d04f721a33749718039aa",
+      "bytes": 51
+    },
+    {
+      "path": "examples/concurrency-stages/examples/atomic_seqcst/main.rs",
+      "sha256": "e74524b41670c71bffa68845ab25b3458da8d2b6a5cc7a4bd727f8b27090bba9",
+      "bytes": 985
+    },
+    {
+      "path": "examples/concurrency-stages/examples/atomic_seqcst_split/main.rs",
+      "sha256": "57a34dfba09ecbfe260fc9e5cfc275a46f670c8eeb855d4cad53d1b008d137d6",
+      "bytes": 496
+    },
+    {
+      "path": "examples/concurrency-stages/examples/atomic_answer/main.rs",
+      "sha256": "3c3ac78faca945756294f1acc4dec3c78a24bc7923be277a30c1634db099dfc1",
+      "bytes": 1200
+    },
+    {
+      "path": "docs/chapters/../assets/ch10/atomic-publication.svg",
+      "sha256": "fa5e529c2a9e969650f7df4f7347ca40249628ac9eb59877c8081676403b52c7",
+      "bytes": 2765
+    },
+    {
+      "path": "docs/chapters/../assets/ch10/seqcst-cycle.svg",
+      "sha256": "5589976736e8605735685f080741218d8eb4d5cc90a57fbf2a86ce7e2b7eb25b",
+      "bytes": 2694
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f",
+      "bytes": 3064
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f",
+      "bytes": 66011
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    }
+  ],
+  "regions": [
+    "examples/concurrency-stages/examples/send_sync/contracts/mod.rs:send-check",
+    "examples/concurrency-stages/examples/send_sync/contracts/mod.rs:sync-check",
+    "examples/concurrency-stages/examples/borrow_bounds/contracts/mod.rs:send-static-check",
+    "examples/concurrency-stages/examples/panic_worker/workers/mod.rs:panic-message"
+  ]
+}

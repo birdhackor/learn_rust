@@ -1,0 +1,62 @@
+{
+  "review_id": "round12-content-direction-followup",
+  "scope": [
+    "12.4 TC12T-O1"
+  ],
+  "independent_initial": false,
+  "attribution": "parent/root採納既有初判後通知，這是窄修複查，非新獨立發現。原round12-content-confirmation-tail不修改。",
+  "status": "resolved",
+  "evidence": "實際:52改成「完整內容保存在下方的答案與測試程式中」，準確指向下方TempDir答案與測試。以新文替換回原句，SHA-256完全重建初判舊稿，證明只有這一句措辭差異。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "source_snapshot_at_utc": "2026-10-15T09:30:10.578048+00:00",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/assets/engineering-v3/candidate-content-groups.svg": "0711cc1bca61f99a9103ebebd84f4977bea58dbd192f932d032f5e8086d4bc3c",
+    "docs/assets/engineering-v3/short-read-comparison.svg": "8910b09b852c9ef5b56078e3b9287e4165303a3262232c80141dcbdebd06da45",
+    "docs/chapters/12-04-lesson.md": "55f1886f0d40f920a3dff640c0b2a3b3f0d0647951e739e805b717a750e68754",
+    "examples/ch09-content/lesson-workspace/Cargo.lock": "0061cea6ba37214a5effc07bf23694ba07f26b9c0bf8d31907655a5f56d74caf",
+    "examples/ch09-content/lesson-workspace/Cargo.toml": "e21b8b6f8b79f1951045e3e4e1758af9a41c5c5cabc483eb63a0246cfbe205a5",
+    "examples/ch09-content/lesson-workspace/checked-files/Cargo.toml": "49404433875c77a9605eea803380a2381477affc1fce472c84755bd534ce4264",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/candidates.rs": "50aed7433859a79b2185a54aec11867ca501a59c1a2741126dab10717bf197d4",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/main.rs": "0add04aa9e8eb8fd2674576598e0c3d2b410630c5ff2221cc3a7d78298928571",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/file_confirmation.rs": "a5c254204049564c400dd9f8861b034373ce1ad1b1f702721acc9912758f8dc1",
+    "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs": "064dbe5c907ef32753da2c054579f6f6b9636eb34e9a679442d8cd13a7007187",
+    "examples/ch09-content/lesson-workspace/groups/Cargo.toml": "cb027d81c94ccfd8ac48ad6de098e6d442d4935e261f2d3da30298ed58b8be8b",
+    "examples/ch09-content/lesson-workspace/groups/src/lib.rs": "c5b7d75d460d3fd35c85cb863bb5a1f007651edd2b38e214092342cb5351e712",
+    "examples/ch09-content/lesson-workspace/groups/src/main.rs": "6e5ba2cf244a0f271c55a37dc5052d2ebd5d67cabe5c53916420db2a23df006b",
+    "examples/ch09-content/lesson-workspace/groups/tests/files_groups.rs": "4ddf97dbd5d334fb301c027b98b07656cb635c65b7262c138dabcc7d891b0533",
+    "examples/ch09-content/lesson-workspace/size/Cargo.toml": "e1345ee9e8b65656417ffdcfc9abbab08f0a3a4bb5b5d6ad9bc06cce69f0df87",
+    "examples/ch09-content/lesson-workspace/size/src/main.rs": "72b77f2af72e32ac21ef6aa7f3b65f7f96aa1f76272a02f82d13e93c15268ce6",
+    "examples/ch09-content/lesson-workspace/streams/Cargo.toml": "8d2a5fbcbb4a21508dbdd9e057ed030f9fac14abaecc5d8645bb8812842cc003",
+    "examples/ch09-content/lesson-workspace/streams/src/lib.rs": "202292bca873e510489885658f096460b5ddb14480f1c5367f02d30249cab97f",
+    "examples/ch09-content/lesson-workspace/streams/src/main.rs": "55b76610e3a7456a5571c2ccc792968639c8b539e5e96e9c6e5c2965d1cd0e87",
+    "examples/ch09-content/lesson-workspace/streams/src/readers.rs": "acbe127b2d079a46f6a92497621d78d0d404b6c6ed8bd9013ea0b16ab8c9434c",
+    "examples/ch09-content/lesson-workspace/streams/tests/streams.rs": "4743135e855741a6ed6d1367db169811792cbef7c39012f1f781ae9561ac413d",
+    "examples/ch09-files/Cargo.toml": "f11d8eabef03672f39cd9051f1f2cfd990ffa8abab0545ad24aedde9c27ba640",
+    "examples/ch09-files/fixtures/tree/.hidden/third.txt": "8cdc25affa8f5596abad0771e21fb098e26a1d786de961d96b6510915a386899",
+    "examples/ch09-files/fixtures/tree/first.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/fixtures/tree/nested/second.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/src/lib.rs": "4e2a6babc78a01f9e8f41dbe0492df1ffec6fffabe36ebe4f7d219ccee2acebf",
+    "examples/ch09-files/src/scan.rs": "e9635e1b8beb72d33a812bbaae8e669a1f4191fed612cc8a4669387f11bc48ae",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "changed_files": {
+    "docs/chapters/12-04-lesson.md": {
+      "before": "7c6341a95b41053d26bdca48d58d84d2ba76d7c905b0e5b1eb205fb5674826bf",
+      "after": "55f1886f0d40f920a3dff640c0b2a3b3f0d0647951e739e805b717a750e68754"
+    }
+  },
+  "exact_one_sentence_reconstruction": true,
+  "execution": {
+    "cargo_or_rustc": false,
+    "note": "Rust、manifest、commands與其餘34份原snapshot sources全部hash未變；未重跑。"
+  },
+  "sealed_at_utc": "2026-10-15T09:30:25.698Z"
+}

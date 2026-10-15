@@ -1,0 +1,84 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "3.6"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round03-copy-before-diagram-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round03-ownership.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/03-06-lesson.md": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+    "examples/intro-workspace/ownership/examples/methods.rs": "8cd7fb3cdcf50009299b7c38a5b62ebcdfdb8195f4a6a013909fa8a28fcb3ec1",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.rs": "25d22714815e23ef66b3c53e6c22ba61fbc528e40997bb5773946a4cfe2ca262",
+    "examples/intro-workspace/ownership/examples/methods_answer.rs": "d155f99fe1943045602084dcf912f85b29209b2553a55712d973234c27741af4"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "3.6",
+      "path": "docs/chapters/03-06-lesson.md",
+      "line": 3,
+      "quote": "目前 subtotal、set_count 都是獨立函式，第一個參數告訴我們它處理哪一筆訂單。如果希望從訂單寫出 `order.subtotal()`、`order.add_count(1)`，可以把這些操作放進 Order 的 **impl 區塊**。借讀、借改、接手的規則仍然相同。"
+    },
+    {
+      "section_id": "3.6",
+      "path": "docs/chapters/03-06-lesson.md",
+      "line": 7,
+      "quote": "`impl Order { ... }` 為 Order 定義操作。在其中，`Self` 代表這個 Order 型別。第一個參數若是 **self 參數**，這個函式就是 method，可以用 `值.方法名(...)` 呼叫。"
+    },
+    {
+      "section_id": "3.6",
+      "path": "docs/chapters/03-06-lesson.md",
+      "line": 19,
+      "quote": "要把數量加上 additional，方法需要修改借用。`&mut self` 是 `self: &mut Self` 的簡寫："
+    },
+    {
+      "section_id": "3.6",
+      "path": "docs/chapters/03-06-lesson.md",
+      "line": 29,
+      "quote": "若希望操作結束後交出各欄位，而呼叫者不再保留原訂單，就使用 `self`，即 `self: Self`："
+    },
+    {
+      "section_id": "3.6",
+      "path": "docs/chapters/03-06-lesson.md",
+      "line": 39,
+      "quote": "建立訂單時還沒有 order 可當 self，因此把建立函式寫在 impl 內，但不設 self 參數。這種與型別連在一起的函式稱為 **associated function**。"
+    },
+    {
+      "section_id": "3.6",
+      "path": "docs/chapters/03-06-lesson.md",
+      "line": 68,
+      "quote": "`Order::new` 先建立 owned 值；兩次 subtotal 借讀，中間 add_count 借改，最後 into_parts 接手。依照這個順序，每一份借用都在後續動作前完成。"
+    },
+    {
+      "section_id": "3.6",
+      "path": "docs/chapters/03-06-lesson.md",
+      "line": 72,
+      "quote": "下面故意以 &self 借讀，卻想把整筆值交出去："
+    },
+    {
+      "section_id": "3.6",
+      "path": "docs/chapters/03-06-lesson.md",
+      "line": 78,
+      "quote": "`*self` 指到借來的 Order。這個自訂型別沒有 Copy，不能經由 shared reference 把它 move 出來，編譯器回報 **E0507**。借讀並未取得接手權。若原本工作就是要交出整筆值，方法的 self 參數應表明它接收 owned 的 Self。"
+    },
+    {
+      "section_id": "3.6",
+      "path": "docs/chapters/03-06-lesson.md",
+      "line": 82,
+      "quote": "新增 `reset_count(&mut self)`，只把 count 歸零。用單價 80、數量 3 的訂單驗證：原小計是 240，歸零後 count 是 0、unit_price 仍是 80，小計是 0。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

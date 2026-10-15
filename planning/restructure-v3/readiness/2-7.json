@@ -1,0 +1,106 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "2.7"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round02-control-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch02.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/02-07-lesson.md": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886",
+    "examples/intro-workspace/control/examples/assertions_answer.rs": "a5d624eed1ec93683354d1d0deb23f1557a3f4e5c5e60ce98c1f353c6e273066",
+    "examples/intro-workspace/control/src/lib.rs": "aa8fc8a3b9f8f9804cbf13ebeb3a2ce5d6093f1fa8ab292fa373239fdec8d2ac",
+    "examples/intro-workspace/control/examples/lint_return.rs": "e0f68b7ca14eb3ff532ae81717b81821738584db30f0a768d6816663043d1f80",
+    "examples/intro-workspace/control/Cargo.toml": "18abe91283c11f1a1f1109a64b28d1de3cf39d17dc8223e48cec3bd65df6b7bf",
+    "examples/intro-workspace/control/src/pricing.rs": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+    "examples/intro-workspace/control/src/main.rs": "5d78165a15d701ea5c666890114c085df879766bf7e6c1eaf0102d92ede8f87e"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 3,
+      "quote": "計價程式已能顯示幾個正確答案。現在想保存依規則算出的預期值，讓下一次改運費條件時，工具能重新檢查這些答案。本節在另一個 package `intro-control` 保存有測試的版本，資料夾為 `examples/intro-workspace/control/`；第 2.6 節的無測試 library 仍保留。"
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 7,
+      "quote": "**assertion** 是程式中「這項條件應該成立」的檢查。`assert!(條件)` 要求一個 `bool`：為 true 時繼續，為 false 時 panic。第一章已看到 panic 會停止正常執行；若發生在測試函式，該測試就會失敗。"
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 21,
+      "quote": "**屬性**（attribute）是附在 Rust 程式項目前面的標記，告訴工具如何處理該項目。`#[...]` 是此處屬性的外框；它是 Rust 語法，和 TOML 區段的中括號不同。"
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 23,
+      "quote": "在函式前加 `#[test]`，會將它標記為測試函式。這裡的測試函式沒有參數，回傳 unit；`cargo test` 建立的**測試執行器**會呼叫它、記錄通過或失敗，不需要在 main 手動列出每個測試。"
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 27,
+      "quote": "在整個 module 前加 `#[cfg(test)]`，表示只在測試建置時納入它。`cfg` 來自 **configuration**，意指依建置條件選擇程式部分；這次的條件是 `test`，由 Rust 的測試建置啟用。本書透過 `cargo test` 建置它；一般 `cargo run` 不納入這個 module。"
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 35,
+      "quote": "`crate::pricing::...` 從**目前這個 library** 的根找計價 module，這是第 2.6 節已教的路徑規則。三行 use 各自把函式引入 tests 的範圍；外層的名稱不會因為我們想用，就自動成為這個 module 的短名稱。"
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 41,
+      "quote": "這次用 `--lib` 只選這個 package 的 library 測試。在 repo 根目錄執行："
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 63,
+      "quote": "`cargo fmt` 使用 `rustfmt` 整理縮排與排版，會修改檔案。若只想檢查，用 `-- --check`；第一個 `--` 把後面的選項交給 rustfmt，`--check` 要求它只報告排版差異。"
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 67,
+      "quote": "`cargo clippy` 使用 **Clippy** 檢查常見寫法問題。這種針對可能不理想寫法的檢查叫作 **lint**；它可能指出多餘操作或容易出錯的安排，不能代替運費規則的測試。"
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 83,
+      "quote": "有時教材刻意並列兩種寫法，要保留它們供比較。這時可以在**那個函式**前加 `#[allow(clippy::needless_return)]`：只讓這個具名 lint 在此函式內不報告。`allow` 不會使型別錯誤合法，也不會保證計算正確；理由應寫在相鄰說明或註解中，不能為了消除所有提醒而一概關掉檢查。"
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 105,
+      "quote": "這是本頁實際使用的 member manifest、library、計價 module 與主要 binary。各檔案都在 `examples/intro-workspace/control/`："
+    },
+    {
+      "section_id": "2.7",
+      "path": "docs/chapters/02-07-lesson.md",
+      "line": 141,
+      "quote": "單價 140、數量 2，商品小計 280，加運費後總額剛好 300。請替這個情況新增測試，分別確認小計 280 與完整總額 300。免運判斷使用**商品小計**，不能因加運費後等於 300，就倒過來認定原訂單應免運。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

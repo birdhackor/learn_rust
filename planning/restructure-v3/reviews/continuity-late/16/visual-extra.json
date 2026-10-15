@@ -1,0 +1,46 @@
+[
+  {
+    "id": "16-01",
+    "width": 1280,
+    "file": "16-01-1280-image1-top.png"
+  },
+  {
+    "id": "16-03",
+    "width": 1280,
+    "file": "16-03-1280-image0-top.png"
+  },
+  {
+    "id": "16-04",
+    "width": 1280,
+    "file": "16-04-1280-image1-top.png"
+  },
+  {
+    "id": "16-05",
+    "width": 1280,
+    "file": "16-05-1280-image0-top.png"
+  },
+  {
+    "id": "16-05",
+    "width": 1280,
+    "top": "16-05-1280-normal-fold-top.png",
+    "end": "16-05-1280-normal-fold-end-scroll.png",
+    "sourceBlocks": 5,
+    "scroll": {
+      "left": 0,
+      "width": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "16-05",
+    "width": 390,
+    "top": "16-05-390-normal-fold-top.png",
+    "end": "16-05-390-normal-fold-end-scroll.png",
+    "sourceBlocks": 5,
+    "scroll": {
+      "left": 0,
+      "width": 311,
+      "scroll": 311
+    }
+  }
+]

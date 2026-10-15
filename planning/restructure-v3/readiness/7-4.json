@@ -1,0 +1,89 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "7.4"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round07-and14-root-wording-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round07-lifetimes.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch07.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/07-04-lesson.md": "21a01d6a373aa5db5df05479d23e7b40c0119fcc98116e6f8af3f210b32acc64",
+    "examples/intro-workspace/lifetimes/examples/receiver_only/views/mod.rs": "70717aeb7d57ea69fed91a90fbaa1ef88d73e6f1a85730b68254b97325517f56",
+    "examples/intro-workspace/lifetimes/examples/receiver_only/main.rs": "cbd9a8e84c186f77c45acdf82e3f26e395e412d08c2b15a52ff17c900a1ef425",
+    "examples/intro-workspace/lifetimes/Cargo.toml": "5a6a50a4a6c478dd29dd81e26874b7e7661433be82ce20aea2075dc7ea2fee41",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/method_receiver_too_short.rs": "49bc371b79667979fdbae2e272d30e41fa00e7872d0af517b937a76432ea6767",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/method_receiver_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/lifetimes/complete/src/views.rs": "696bd8c2ab83a054e5ebc6f7cabf250fa0b4a40ca192a7630220b9cacb76b8b1",
+    "examples/intro-workspace/lifetimes/complete/Cargo.toml": "460850058139aec355bff8b34439f5ecfb69087c0c36e03579bc706399c6cd14",
+    "examples/intro-workspace/lifetimes/complete/src/lib.rs": "ccf3731415a2638f0a5f43e99cacceb2672cec6be9eb561370ff57189c7786a5",
+    "examples/intro-workspace/lifetimes/complete/src/source.rs": "33be33df8af539fbca3125c1d16ea1f78e435b003019d88cd01e832e3b2e154c",
+    "examples/intro-workspace/lifetimes/complete/src/main.rs": "e45ad3777a9e88ae8417c84cf1766fad0a0437f83e22f6ddf46609df51a38ee8",
+    "examples/intro-workspace/lifetimes/complete/examples/two_models.rs": "979396fed52e719043dc1ab3a9bac3d4d20b05a3b6c7c9bfe0948f7ceabc57bf",
+    "examples/intro-workspace/lifetimes/complete/examples/label_answer.rs": "6e1b70c9cbdde3f396e1fff7b2d712f78d4473e6aaf084c72ee1c3ab1dad6f9b"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "7.4",
+      "path": "docs/chapters/07-04-lesson.md",
+      "line": 3,
+      "quote": "第 7.3 節的 TextView 保存文字借用，byte_len 則交回獨立數字。現在 method 也要交回文字 reference：外部 String 還留著，模型卻只建在內層。我們能不能在模型結束後，繼續借讀原文字？要先分清楚兩份借用：模型欄位借用原文字，method 的 `&self` 又借用模型。"
+    },
+    {
+      "section_id": "7.4",
+      "path": "docs/chapters/07-04-lesson.md",
+      "line": 7,
+      "quote": "第 3.6 節的 **receiver** 就是 method 的 self 參數；`view.text()` 會為 `&self` 借讀 view。現在有三個對象："
+    },
+    {
+      "section_id": "7.4",
+      "path": "docs/chapters/07-04-lesson.md",
+      "line": 31,
+      "quote": "source 在外層保存 `Rust tutorial`。在內層建立 view，先立刻使用 text 的結果，再把 original 的結果交到外層："
+    },
+    {
+      "section_id": "7.4",
+      "path": "docs/chapters/07-04-lesson.md",
+      "line": 76,
+      "quote": "放進獨立練習專案執行 `cargo check`，得到 **E0597**；這次被指出太早結束的是 **view**。source 的原文字雖然還有效，text 的簽名卻沒有提供一份可以脫離模型借用的輸出。完整 `.expected` 是："
+    },
+    {
+      "section_id": "7.4",
+      "path": "docs/chapters/07-04-lesson.md",
+      "line": 86,
+      "quote": "再把模型擴成 TextPair，同時保存 first 與 second 的借用。第一份原文字留在外層，第二份只在內層用；最後希望只保留第一份借用。"
+    },
+    {
+      "section_id": "7.4",
+      "path": "docs/chapters/07-04-lesson.md",
+      "line": 94,
+      "quote": "使用整份模型的兩個欄位時，兩份來源都要有效。把參數分開命名的用途，是讓 first_source 的**輸出**只依賴第一來源，不必為了保存它而讓第二來源或模型繼續存在。這裡不需要 `'b: 'a`，因為沒有要求第二來源提供第一來源所需的借用。"
+    },
+    {
+      "section_id": "7.4",
+      "path": "docs/chapters/07-04-lesson.md",
+      "line": 98,
+      "quote": "到這裡，本章的來源函式與兩種模型都已完成。現在另用 `lifetimes/complete/` 的 `intro-lifetimes-complete` package，整理成可以由呼叫者使用的 library。早期的 no-lib package 保持原來的階段範例。"
+    },
+    {
+      "section_id": "7.4",
+      "path": "docs/chapters/07-04-lesson.md",
+      "line": 163,
+      "quote": "沿用第 7.3 節只有文字借用欄位的 `Label<'a>`。這次提供 original method，讓輸出直接連到欄位來源。在外層建立內容為 Rust 的 String，內層建立 Label 並交回 original，外層確認文字為 Rust。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

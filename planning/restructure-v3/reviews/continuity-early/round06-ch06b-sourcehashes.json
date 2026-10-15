@@ -1,0 +1,189 @@
+{
+  "captured_utc": "2026-10-15T07:55:23.236776+00:00",
+  "scope": "actual6.3–6.6 initial; preceding actual1–6.2 withC6a borrow clarification checked",
+  "prior_change_notice": "Parent already disclosed6.5 SVG intrinsic420x680 cap and PartialEq exact6.2pointer; currenttail evaluated as changedversion, not originalfirstreadfinding. Nootherknown-tailfindings received.",
+  "regions": [
+    "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:models",
+    "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:extract-trait",
+    "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:extract-impls",
+    "examples/intro-workspace/trait-stages/examples/associated.rs:direct",
+    "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:extract-generic",
+    "examples/intro-workspace/trait-stages/examples/associated.rs:generic",
+    "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:numeric-only",
+    "examples/intro-workspace/trait-stages/examples/map_lookup.rs:new-insert",
+    "examples/intro-workspace/trait-stages/examples/map_lookup.rs:replace",
+    "examples/intro-workspace/trait-stages/examples/map_lookup.rs:query",
+    "examples/intro-workspace/trait-stages/examples/map_lookup.rs:missing",
+    "examples/intro-workspace/trait-stages/examples/grouping_support/mod.rs:count-labels"
+  ],
+  "files": [
+    {
+      "path": "docs/chapters/06-03-lesson.md",
+      "sha256": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807",
+      "bytes": 5189
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/cloning.rs",
+      "sha256": "f88172a04c70f704fb0aefefabf7f670219ba9badba2e2415a1b31d05c068f53",
+      "bytes": 899
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/copying.rs",
+      "sha256": "8467e40d475365deb3af8633e39314fa3a3e1e49e8ec5c20cb06c6653274734c",
+      "bytes": 455
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.rs",
+      "sha256": "c193600f7afbeb09298fc1ad2100d6af6c8e6638ee5e96d650440a82b16c1467",
+      "bytes": 100
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/Cargo.toml",
+      "sha256": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+      "bytes": 73
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/cloning_answer.rs",
+      "sha256": "89a4e6e0b47fffd0524d41a0df3b9d1f3d49d9a64a9ad6b9814255306f64423c",
+      "bytes": 560
+    },
+    {
+      "path": "docs/chapters/06-04-lesson.md",
+      "sha256": "aa304cf004199a6d7fe5925854539614d1781f80072f40f77e3fff4dfea53cba",
+      "bytes": 7006
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs",
+      "sha256": "8116faa4739db768fdabd25015c468879d42e9621743633def82579ee9449ba1",
+      "bytes": 1965
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/associated.rs",
+      "sha256": "1105dacc52be55109dbd9f2b797778b3e6597ef04a0df54e6efeb7cf18bec0f5",
+      "bytes": 913
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.rs",
+      "sha256": "9e7be66747981927a947cd4f0efb797572e8aba9f7435950e74c72fda7103536",
+      "bytes": 413
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/associated_answer.rs",
+      "sha256": "999cfa843c2ab28b26f123525cd33597787594dff951a6453998b5a1862a0304",
+      "bytes": 985
+    },
+    {
+      "path": "docs/chapters/06-05-lesson.md",
+      "sha256": "2b15a18fcedcfe1d602caaddbb570b6e921f776a67ea932f49f965a7d3a947f5",
+      "bytes": 7541
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/map_support/mod.rs",
+      "sha256": "c8b46307d1e61c6c9211cc252bb5acd277c5db5b42a2e839384ca6109e3d2ee6",
+      "bytes": 115
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/map_lookup.rs",
+      "sha256": "71cfb0ba0659f76c15e3346522ef8e9b98b066bc436e6df416ddc1c03e547271",
+      "bytes": 1361
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.rs",
+      "sha256": "751545c6c6e80065bf407cdafa3152a2327260b34bc781752c7cda159f9cd225",
+      "bytes": 400
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/map_update.rs",
+      "sha256": "13cd0c65e377dbb880a087bc741ee69e59ac374097b8a14dd90082e88d46bff9",
+      "bytes": 609
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/map_lookup_answer.rs",
+      "sha256": "23319161dd7f4830085b89a4f226b91e3ffc620a042f132e5d1758c091f48489",
+      "bytes": 812
+    },
+    {
+      "path": "docs/assets/traits-v3/map-query.svg",
+      "sha256": "634c559c2141a9e2bda9e4616a1e0b5eaebc29e64428ab06250ab9b7900aba20",
+      "bytes": 2275
+    },
+    {
+      "path": "docs/chapters/06-06-lesson.md",
+      "sha256": "7e30cb746015e9d5a76fa7e57d866869893717fae34cd09b895cd60bab2a2850",
+      "bytes": 6927
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/grouping_support/mod.rs",
+      "sha256": "ea8a57e573e122aacf57972ecd74f0774495d31b63d56b150a6a1e3a409fbffc",
+      "bytes": 1558
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/grouping.rs",
+      "sha256": "25a3f006640450d57e61272513c52fe9fa32bfafa77157aea83db1f2236df152",
+      "bytes": 575
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/custom_keys.rs",
+      "sha256": "3b8ff510cbeee0f954659ea3bb98b8b33c3eb907a905d99c95fc1880008dd416",
+      "bytes": 1219
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.rs",
+      "sha256": "3c3591bc011548ec70846763eb92085e2a35c69e89c02ca8ed4446552ebb0d99",
+      "bytes": 306
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/grouping_answer.rs",
+      "sha256": "0785f255f09a505c58da74c1f76b88aba22b5fdb711d54afdaaaa1e9eda49499",
+      "bytes": 1259
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "e9e3773e89e2d210c65b8c5972cc1dc7d36a2e1cda6cb202c07747fb8b83b058",
+      "bytes": 322
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "549d3112349bbc321ffa7c0c5ebdf985532bac5953f3c6a6539ef899f28adfbb",
+      "bytes": 1008
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/src/main.rs",
+      "sha256": "018c7d106ed7e348d943c40674e26c48ee5965208ace26ca9127a294908b0b30",
+      "bytes": 62,
+      "added_utc": "2026-10-15T07:58:48.079383+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.expected",
+      "sha256": "cb4611f64327a3a3e8c8733ec7967c163ae478479c01703e2816e6466fc68341",
+      "bytes": 6,
+      "added_utc": "2026-10-15T07:58:48.079685+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.expected",
+      "sha256": "43322ecdbfcad1364df631b6713d4c750abbf95dd7dbe533851c6a229a195efa",
+      "bytes": 6,
+      "added_utc": "2026-10-15T07:58:48.079834+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.expected",
+      "sha256": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+      "bytes": 6,
+      "added_utc": "2026-10-15T07:58:48.079894+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.expected",
+      "sha256": "e03b27f19f221f0ea2a3809e0da4983870354d9db49f275f5692df404d9c0312",
+      "bytes": 6,
+      "added_utc": "2026-10-15T07:58:48.079956+00:00"
+    }
+  ],
+  "end_recheck_utc": "2026-10-15T08:05:18.432452+00:00",
+  "end_changes": [],
+  "frozen_copy_mismatches": []
+}

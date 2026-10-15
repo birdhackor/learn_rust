@@ -1,0 +1,197 @@
+{
+  "browser": "Playwright global Node /usr/bin/chromium --no-sandbox",
+  "site": "http://127.0.0.1:8110/supplements/python-javascript-mutability/",
+  "current_html_sha256": "38ef52bf6508f6a3016e4d33a229d5a53a93e165a21e2c0b4e16b7d9af75eb38",
+  "records": [
+    {
+      "width": 1280,
+      "height": 800,
+      "httpStatus": 200,
+      "title": "選讀：Python、JavaScript 與 Rust 的可變性¶",
+      "bodyOverflow": false,
+      "shots": [
+        "supplement-mutability-1280-table-top.png",
+        "supplement-mutability-1280-table-bottom.png",
+        "supplement-mutability-1280-python.png",
+        "supplement-mutability-1280-javascript.png",
+        "supplement-mutability-1280-rust.png"
+      ],
+      "table": {
+        "text": "要問的事\tPython 本例\tJavaScript 本例\tRust 本例\n名稱能否重新指派？\titems、alias、name 可以\tconst binding 不可以\ttext 有 mut；reference 沒有 mut\n內容能否修改？\tlist 可以；既有 str 不可以\tobject 的 count 可以\tString 可經由修改借用追加\n另一個名稱／reference 帶來什麼規則？\talias 可共同指到同一 list\talias 可共同指到同一 object\t&mut 提供獨占修改借用；&str 提供 shared 借讀，使用區間受檢查",
+        "chain": [
+          {
+            "tag": "TABLE",
+            "class": "",
+            "client": 936,
+            "scroll": 936,
+            "overflow": "auto"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-typeset__table",
+            "client": 970,
+            "scroll": 970,
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-typeset__scrollwrap",
+            "client": 970,
+            "scroll": 970,
+            "overflow": "auto"
+          },
+          {
+            "tag": "ARTICLE",
+            "class": "md-content__inner md-typeset",
+            "client": 938,
+            "scroll": 954,
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-content",
+            "client": 978,
+            "scroll": 978,
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-main__inner md-grid",
+            "client": 1220,
+            "scroll": 1220,
+            "overflow": "visible"
+          },
+          {
+            "tag": "MAIN",
+            "class": "md-main",
+            "client": 1265,
+            "scroll": 1265,
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-container",
+            "client": 1265,
+            "scroll": 1265,
+            "overflow": "visible"
+          }
+        ],
+        "box": {
+          "width": 938,
+          "height": 262.21875
+        }
+      }
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "httpStatus": 200,
+      "title": "選讀：Python、JavaScript 與 Rust 的可變性¶",
+      "bodyOverflow": false,
+      "shots": [
+        "supplement-mutability-390-table-top.png",
+        "supplement-mutability-390-table-bottom.png",
+        "supplement-mutability-390-python.png",
+        "supplement-mutability-390-javascript.png",
+        "supplement-mutability-390-rust.png",
+        "supplement-mutability-390-rust-scrolled.png"
+      ],
+      "table": {
+        "text": "要問的事\tPython 本例\tJavaScript 本例\tRust 本例\n名稱能否重新指派？\titems、alias、name 可以\tconst binding 不可以\ttext 有 mut；reference 沒有 mut\n內容能否修改？\tlist 可以；既有 str 不可以\tobject 的 count 可以\tString 可經由修改借用追加\n另一個名稱／reference 帶來什麼規則？\talias 可共同指到同一 list\talias 可共同指到同一 object\t&mut 提供獨占修改借用；&str 提供 shared 借讀，使用區間受檢查",
+        "chain": [
+          {
+            "tag": "TABLE",
+            "class": "",
+            "client": 400,
+            "scroll": 400,
+            "overflow": "auto"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-typeset__table",
+            "client": 434,
+            "scroll": 434,
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-typeset__scrollwrap",
+            "client": 375,
+            "scroll": 434,
+            "overflow": "auto"
+          },
+          {
+            "tag": "ARTICLE",
+            "class": "md-content__inner md-typeset",
+            "client": 343,
+            "scroll": 359,
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-content",
+            "client": 375,
+            "scroll": 375,
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-main__inner md-grid",
+            "client": 375,
+            "scroll": 375,
+            "overflow": "visible"
+          },
+          {
+            "tag": "MAIN",
+            "class": "md-main",
+            "client": 375,
+            "scroll": 375,
+            "overflow": "visible"
+          },
+          {
+            "tag": "DIV",
+            "class": "md-container",
+            "client": 375,
+            "scroll": 375,
+            "overflow": "visible"
+          }
+        ],
+        "box": {
+          "width": 402,
+          "height": 446.46875
+        }
+      },
+      "rustCodeScroll": {
+        "left": 22,
+        "client": 375,
+        "scroll": 397
+      }
+    }
+  ],
+  "mobile_table_horizontal_scroll": {
+    "width": 390,
+    "height": 844,
+    "state": {
+      "class": "md-typeset__scrollwrap",
+      "left": 59,
+      "client": 375,
+      "scroll": 434
+    },
+    "file": "supplement-mutability-390-table-right.png"
+  },
+  "actually_viewed_with_view_image": {
+    "supplement-mutability-1280-table-top.png": "93fb3372b5567f5ca738679bcb170097bd324928b2021c2fd145be52e544df2e",
+    "supplement-mutability-390-table-top.png": "e73eacb88e934fdc00cbddf677a158ec832de65d10e87001822a85a65f892a1d",
+    "supplement-mutability-390-table-bottom.png": "6ff50f9ea7745051168431ab89d4663c9c2bc447b827f629aa7c5d192bc15d94",
+    "supplement-mutability-390-rust.png": "7011b0bde1d6429743a20aadd3448d1e337b121fe3824a5987c603a21d0526f9",
+    "supplement-mutability-390-rust-scrolled.png": "8760428ca9ecc789bc66d2e8062cb197bb7a79554a647b036d0dff2897c49ec8",
+    "supplement-mutability-390-javascript.png": "a7be1e390f042a2d310474bf0c6258857e2ce4dedfe7ca3ff8326a4e2451232c",
+    "supplement-mutability-390-python.png": "e4d4e58af98ca61a7afcbbecace2a635f806f070cb0dbc4cce51d8fd2e81ba5d",
+    "supplement-mutability-390-table-right.png": "2f7791aff3989ff6c5307b38ab7fae7eb0943b6a2eebf0adb24120034b81339c",
+    "supplement-mutability-1280-python.png": "b918bfc58b3cd2599cd6dff864bca1bbde8b752b02d5f116711001372717df3f",
+    "supplement-mutability-1280-javascript.png": "ece9a929ec5197d61bba0fe9957d78d3a31f348f7b3301746f5ad79602ec5b69",
+    "supplement-mutability-1280-rust.png": "ccbda28e6646ef3249ea3824956fc8bf8a614752ab17f8633a7747fb59fffff7"
+  },
+  "visual_judgment": "桌機三語source與表格可讀；手機三語source可讀。390表格寬402，局部scrollwrap需左右滑59px；已實際捲到右側讀完整Rust欄，並回看左側問題欄，body不橫向溢出。Rust code局部橫捲22px可讀完整行。這是可用的局部捲動，不聲稱四欄同時完整塞入手機。",
+  "visual_findings": []
+}

@@ -1,0 +1,420 @@
+{
+  "captured_utc": "2026-10-15T08:46:05.331044+00:00",
+  "scope": "independentactual8.1–8.6initial; prioractual1–7, no9+body/source asprior",
+  "regions": [
+    "examples/intro-workspace/error-stages/examples/policy/policy/mod.rs:count-error",
+    "examples/intro-workspace/error-stages/examples/unwrapping/main.rs:result-values",
+    "examples/intro-workspace/error-stages/examples/unwrapping/main.rs:option-values",
+    "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs:count-display",
+    "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs:count-model",
+    "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs:count-try-from",
+    "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs:count-from",
+    "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs:parse-count-error",
+    "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs:parse-error-from",
+    "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs:count-from-str",
+    "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs:manual-propagation",
+    "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs:question-propagation",
+    "examples/intro-workspace/error-stages/examples/option_question.rs:second-number"
+  ],
+  "files": [
+    {
+      "path": "docs/chapters/08-01-lesson.md",
+      "sha256": "6b6e05083de08537dfecc183be29d55efea0867fe12f0706d09a926476098df4",
+      "bytes": 10270
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/policy/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/policy/main.rs",
+      "sha256": "949f8ee0a1035fdfcb4d5c31e39727d37b186b8b155691cfb6589b9dcdf2b98a",
+      "bytes": 331
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/runtime-fail/panic_contract.rs",
+      "sha256": "2cdd692bc6d5c8327f69ec96de98cdbeca2a4621de83a8103dbac9f25a93e55e",
+      "bytes": 281
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/unwrapping/main.rs",
+      "sha256": "ddd96f2c671880b5c833bb782928c509106f211c47302579b6f17f82e91bfc36",
+      "bytes": 651
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/runtime-fail/unwrap_error.rs",
+      "sha256": "a7d6d0563ab48a745369c25554cbee88064134a320f19e627597767c45d85c72",
+      "bytes": 439
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/runtime-fail/expect_error.rs",
+      "sha256": "6d25be136315e8cd77e4758341d8db716f038eb4e22d0fdc382d6ee296ce7a4c",
+      "bytes": 114
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/compile-fail/unwrap_without_debug.rs",
+      "sha256": "a83af15232565031500d05bb6d0f58e4a94e5a02aa10fe4202d79ec6d8b66768",
+      "bytes": 139
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/Cargo.toml",
+      "sha256": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+      "bytes": 73
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/unwrapping/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/policy_answer/main.rs",
+      "sha256": "6b37c00a2a86fdcb61cc99e66edbae2222e3d00dfcd7b91382c23cbf055690eb",
+      "bytes": 602
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/policy_answer/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "docs/chapters/08-02-lesson.md",
+      "sha256": "a820550d86c7919bde3602543e4a085c81579815e092ca331c71a117b61d344f",
+      "bytes": 4438
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/aliases/aliases/mod.rs",
+      "sha256": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+      "bytes": 195
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/aliases/main.rs",
+      "sha256": "ae8dff48f777f25e0460310cd3d5955962cba6533a1a719c82a58448ffdf547c",
+      "bytes": 368
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/alias_is_name.rs",
+      "sha256": "30daa29359dc9da8bea878a6be946d3716f972481c17e04e983e5c66da82c86a",
+      "bytes": 208
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/aliases/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/alias_answer.rs",
+      "sha256": "f99058ae3ebe2abf766007e9c87ce882153e73c15bb1cfe1fe6e1fe38ef90b6c",
+      "bytes": 317
+    },
+    {
+      "path": "docs/chapters/08-03-lesson.md",
+      "sha256": "3502f84b5de589e26c1c6d6ee64bfc1f7da197b8ca6de40f78924a1580d29a66",
+      "bytes": 6558
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs",
+      "sha256": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+      "bytes": 844
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/display/main.rs",
+      "sha256": "1dc1d6b642bde7ec3e428612a4a2106baab26f766f5d4c949efd445f3a55d059",
+      "bytes": 385
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/display_answer.rs",
+      "sha256": "0e82ea0752a59936003cc0f6b3afd52d5dc0ed21fae84d385c37d4ab3edc5c9e",
+      "bytes": 701
+    },
+    {
+      "path": "docs/chapters/08-04-lesson.md",
+      "sha256": "10b3fbb207966ec067ca57a26e4d55d47d906a8e715b1fcb86a44999f5a30d8e",
+      "bytes": 7968
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/from_into.rs",
+      "sha256": "70c1bdf44bd335690bd043a8cfffbba6d629bbf301caba1d83877e228ad7aa27",
+      "bytes": 326
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs",
+      "sha256": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+      "bytes": 1780
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/conversions/main.rs",
+      "sha256": "a5582724872889ecb842f271e9eff1c2d5c3ef4cfeedf47acf6b83953d9f6526",
+      "bytes": 460
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/conversions/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/conversions/formatting/mod.rs",
+      "sha256": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+      "bytes": 844
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/conversion_answer/main.rs",
+      "sha256": "70dbc233eab6b85da036650ec766d80f7a0e469262f2fc945704ddbce9f5f43f",
+      "bytes": 596
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/conversion_answer/conversions/mod.rs",
+      "sha256": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+      "bytes": 1780
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/conversion_answer/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/conversion_answer/formatting/mod.rs",
+      "sha256": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+      "bytes": 844
+    },
+    {
+      "path": "docs/chapters/08-05-lesson.md",
+      "sha256": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+      "bytes": 12667
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/integer_parsing.rs",
+      "sha256": "3fae898f10055629512fdd9ab7da45bf6249e612adbb6760262f8069d89e26d0",
+      "bytes": 461
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs",
+      "sha256": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+      "bytes": 2968
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing/main.rs",
+      "sha256": "ab072061fe922054bff2adfed8d42657bc079390cf70b1893a1a3a44be2d75f8",
+      "bytes": 882
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/as_ref.rs",
+      "sha256": "1933b8b6e325c5c570c6f19f4604e25d11ced9fd96df4bb960a868e3412f8af4",
+      "bytes": 943
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/owned_text/main.rs",
+      "sha256": "4626ae246fd6116014787dd45396a2fe6e4a80a8a688fd9fdbb217e5f365b816",
+      "bytes": 1065
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing/conversions/mod.rs",
+      "sha256": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+      "bytes": 1780
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing/formatting/mod.rs",
+      "sha256": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+      "bytes": 844
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/owned_text/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/owned_text/formatting/mod.rs",
+      "sha256": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+      "bytes": 844
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing_answer/main.rs",
+      "sha256": "df24380e4cd1eb4df14e1866c65a0068a5b9853ffdbf553962139163aef394ee",
+      "bytes": 909
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing_answer/parsing/mod.rs",
+      "sha256": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+      "bytes": 2968
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing_answer/conversions/mod.rs",
+      "sha256": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+      "bytes": 1780
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing_answer/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/parsing_answer/formatting/mod.rs",
+      "sha256": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+      "bytes": 844
+    },
+    {
+      "path": "docs/chapters/08-06-lesson.md",
+      "sha256": "15b4c6f9ad3fa382090f532d2094f81f5e8779464a8c31e00cdafe5d4c8895ac",
+      "bytes": 9620
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs",
+      "sha256": "39342314705963bb06e0063679ef6b82192e8c62f01f80ba3cd9acd03057ab87",
+      "bytes": 1715
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/main.rs",
+      "sha256": "45a79a2094abb4b6532085313f83463f936a590b7ef9737af49e39d9e9f90eda",
+      "bytes": 619
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_in_unit.rs",
+      "sha256": "e160305097ebcf7fa46eb0ae3ca2e0e41bde1b47887986c589f937e5670098c8",
+      "bytes": 76
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_without_conversion.rs",
+      "sha256": "153fd77d955377abfc37a909a8d64f0e5e8f4bd1ee197f0dbadf75972ca6293a",
+      "bytes": 554
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/option_question.rs",
+      "sha256": "b808b015b65c4171258db7f26557e0bdb3de40e69f9a8c284c442f37a07112bd",
+      "bytes": 423
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/aliases/mod.rs",
+      "sha256": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+      "bytes": 195
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/formatting/mod.rs",
+      "sha256": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+      "bytes": 844
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/conversions/mod.rs",
+      "sha256": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+      "bytes": 1780
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/parsing/mod.rs",
+      "sha256": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+      "bytes": 2968
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/main.rs",
+      "sha256": "6c07510338d9803f4eb13efd7181bd80546fff0e49a288abb345d69783dba928",
+      "bytes": 1090
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/propagation/mod.rs",
+      "sha256": "39342314705963bb06e0063679ef6b82192e8c62f01f80ba3cd9acd03057ab87",
+      "bytes": 1715
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/aliases/mod.rs",
+      "sha256": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+      "bytes": 195
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/policy/mod.rs",
+      "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+      "bytes": 926
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/formatting/mod.rs",
+      "sha256": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+      "bytes": 844
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/conversions/mod.rs",
+      "sha256": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+      "bytes": 1780
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/parsing/mod.rs",
+      "sha256": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+      "bytes": 2968
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+      "bytes": 506
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+      "bytes": 10561
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/src/main.rs",
+      "sha256": "c4de1a6f74dd0ad75e13bab47630f07a2186826785768d239c76fb0c422cae80",
+      "bytes": 80,
+      "added_utc": "2026-10-15T08:52:33.739611+00:00",
+      "reason": "actual adjacent fixture expectation or default main inspected"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/runtime-fail/panic_contract.expected",
+      "sha256": "07016f65b838df7e979fc0e1c08e5efc0454e3a8ed95cee6028d826b3cadf4cd",
+      "bytes": 25,
+      "added_utc": "2026-10-15T08:52:33.739781+00:00",
+      "reason": "actual adjacent fixture expectation or default main inspected"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/runtime-fail/unwrap_error.expected",
+      "sha256": "909c4ac41ff66729fbae4c9ad365b1d997ecf3e75b9ece5940805c55b2cb1172",
+      "bytes": 14,
+      "added_utc": "2026-10-15T08:52:33.739872+00:00",
+      "reason": "actual adjacent fixture expectation or default main inspected"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/runtime-fail/expect_error.expected",
+      "sha256": "63b25a33c5519bade43eb614f4fbd75b1509bf1931273584d8731f311fff2e98",
+      "bytes": 40,
+      "added_utc": "2026-10-15T08:52:33.739939+00:00",
+      "reason": "actual adjacent fixture expectation or default main inspected"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/compile-fail/unwrap_without_debug.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6,
+      "added_utc": "2026-10-15T08:52:33.740020+00:00",
+      "reason": "actual adjacent fixture expectation or default main inspected"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_in_unit.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6,
+      "added_utc": "2026-10-15T08:52:33.740136+00:00",
+      "reason": "actual adjacent fixture expectation or default main inspected"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_without_conversion.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6,
+      "added_utc": "2026-10-15T08:52:33.740213+00:00",
+      "reason": "actual adjacent fixture expectation or default main inspected"
+    }
+  ]
+}

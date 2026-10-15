@@ -1,0 +1,106 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "1.6"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round01-ch01-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round01-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round01-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-source.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-visual.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-report.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/01-06-lesson.md": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+    "examples/intro-workspace/steps/examples/functions.rs": "8f0caa2a677c7c3725b22537796e8b0f99060bff2ac3a309b58509e19ad20f47",
+    "examples/intro-workspace/steps/fixtures/compile-fail/return_semicolon.rs": "048b719e16026c84a919edda1a7a1ebca77daf02ee229cfd174555e39888fb05",
+    "examples/intro-workspace/steps/examples/blocks.rs": "553033a4b67ceebba84ed19b98fe39300a9c86d147c09ce20303ca55c438bb6e",
+    "examples/intro-workspace/steps/fixtures/compile-fail/scope.rs": "c24c09f780beed9232e15db57bfa50fda770a523422f7d6afc1fe541dcb03d81",
+    "examples/intro-workspace/steps/examples/functions_answer.rs": "c1c964d47748ac981f02569af3f29db82bb4d4b71b2f5b1ea5b3baf69b911be1"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 3,
+      "quote": "單價乘數量的規則會用在多筆訂單。直接寫兩次乘法也能算對，但規則改變時，就要找到每個重複位置。現在把這項工作命名為 `subtotal`，讓每次呼叫提供不同材料，規則只保存在一處。"
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 7,
+      "quote": "`fn subtotal(price: i32, count: i32) -> i32` 定義一個叫 `subtotal` 的函式。括號中的 `price`、`count` 是**參數**：這次呼叫收到資料後，在函式內使用的名稱。每個參數都要寫型別，逗號分開兩個參數。箭頭 `-> i32` 表示函式會交回一個 `i32`，叫作**回傳值**。"
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 9,
+      "quote": "要交回乘法的結果，在函式最後寫 `price * count`，這一行**不加分號**："
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 15,
+      "quote": "`price * count` 是 **expression**（表達式）：能算出一個值。相對地，`let total = ...;` 是 **statement**（陳述式）：完成宣告，不能把整個 `let` 當成乘法那樣的數值使用。"
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 17,
+      "quote": "函式的 `{ ... }` 是一個 **block**，也就是大括號圈起的一段工作。block 最後的不帶分號 expression 會成為它的值；函式本體的這個值就交回呼叫者。因此上面兩個參數決定這次乘法的材料，尾端決定交出的答案。"
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 21,
+      "quote": "呼叫寫成 `subtotal(120, 3)`，括號中的實際輸入按位置對應：`price` 得到 120，`count` 得到 3。呼叫算出 360 後，這個值可以成為另一個變數的初始值。"
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 29,
+      "quote": "Rust 用 **unit 型別 `()`** 表示沒有額外內容的結果，這個型別只有一個值，也寫作 `()`。函式省略 `-> ...` 時，回傳型別就是 `()`；上面的 block 沒有尾端值，因此結果是 unit。它仍是值與型別，不能拿來當 `i32` 相加。第一個程式中的 `main` 也是這種情況。"
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 54,
+      "quote": "程式仍從 `main` 開始，函式定義本身不會立刻執行。這裡把兩個被呼叫的函式寫在前面方便閱讀，寫在 `main` 後面也可以。在同一檔案的這個安排中，Rust 能先找到函式定義，再檢查呼叫是否提供正確數量與型別的材料。"
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 58,
+      "quote": "`price * count;` 仍完成乘法，但分號把它變成一項不留下該數值的工作。若後面沒有其他尾端 expression，block 的結果就成為 unit。"
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 70,
+      "quote": "現在計算含 20 元運費的總額。先在內部 block 命名小計，再交出小計加運費的結果："
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 78,
+      "quote": "block 同時界定名稱的 **scope**（作用範圍）。內部可以讀到外層的 `price`、`count`；內部宣告的 `item_total` 從宣告後到該 block 結束可用。離開後，外層可使用收到的 `total`，卻不能再以 `item_total` 這個名稱取得小計。"
+    },
+    {
+      "section_id": "1.6",
+      "path": "docs/chapters/01-06-lesson.md",
+      "line": 108,
+      "quote": "定義 `with_shipping`，收到單價、數量、運費三個 `i32`，回傳完整總額。讓它呼叫已完成的 `subtotal`，再加運費；用 `120, 3, 20` 與 `80, 2, 20` 取得 380、180。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.2"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18a-cli-complete-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-collection-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-content-report-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-option-order-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-02-lesson.md": "cd7c87d654ab92944d6d0e9b186fe7b791ee2577ba05161be80478a68ff0b7a8",
+    "examples/ch15-projects/a1-starter/Cargo.toml": "c0f63eb3de54abe64e3fc25114c2ec159a4d010b5085103e901d06ea47741805",
+    "examples/ch15-projects/a1-starter/src/lib.rs": "8ea07aa7463342f930d2aa012852a74e6d4d77f9fcb91adba8dba7bd9a05b6bc",
+    "examples/ch15-projects/a1-starter/src/collection.rs": "7938fef9321c56f1a8cfb539786416eaa11816aea47f0511a8c913b26790df20",
+    "examples/ch15-projects/a1-starter/checks/collection-tests.rs": "c23652a6fbcf9b97c717f796e447ad6b76bd2394a5b3411fc983e435b2dfc8ab",
+    "examples/ch15-projects/a1-complete/Cargo.toml": "f60323c1fec090a7b4de0a05119edf73b03ad3b335a82dcf206a789954390d5f",
+    "examples/ch15-projects/a1-complete/src/lib.rs": "8ea07aa7463342f930d2aa012852a74e6d4d77f9fcb91adba8dba7bd9a05b6bc",
+    "examples/ch15-projects/a1-complete/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "examples/ch15-projects/a1-complete/examples/inventory.rs": "522cea8fb144ac9d47a2b4c7ca04f938cf5de3f46b7601e8d944865873665d62"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 3,
+      "quote": "上一節固定了重複檔案搜尋器的範圍，也準備了六份真實材料。這一步先回答：**哪些一般檔案可以交給後面的內容判定？哪些項目沒能完成收集？** 完成 A1 時，六份材料都要成為檔案記錄，包含 different 與兩個空檔；還不把其中任何幾份合併成重複群組。"
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 9,
+      "quote": "`scan(&Path)` 接收一個 root，交回 `Result<ScanReport, RootError>`。ScanReport 分開持有一般檔案 files 與項目問題 issues。RootError 表示工作根本不能開始，不是一份成功的空清單。"
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 27,
+      "quote": "繼續使用 18.1 在 repo 外建立的 duplicate-finder。這一階段只建立 library：用編輯器移除 Cargo new 產生的 `src/main.rs`，再保存以下三份起始檔。原來的資料夾名稱可以不變；Cargo 以 manifest 的 package name 管理此階段，兩者不是一定要相同。"
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 57,
+      "quote": "**validate_root 固定回傳 NotDirectory，並沒有真的看 root；observe 固定拒絕，collect_entries 也沒有走來源。** 不要把它們的暫時結果解讀成材料本身的判定。已提供的 scan 只負責接上三份工作："
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 83,
+      "quote": "工作版另有 `checks/collection-tests.rs`。**checks 不是 Cargo 自動辨認的 tests 目錄**；這份檔案目前只是要加入的材料。用編輯器把其中整個 tests module 加到自己的 `src/collection.rs` 末尾，保留既有函式；module 前的條件屬性也要一起保留。它沿用 2.7 的同檔 unit tests；`crate::collection` 從本 library 的 crate 根開始，不需要另外猜外部 crate 的名稱。"
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 107,
+      "quote": "起始版應出現**行為失敗**。例如 six_material_files 這項測試會在期待合法 root 成功時得到固定 NotDirectory；其他測試還會發現沒有保留 walker 錯誤。這和找不到 module、缺少 import、lock 尚未更新的編譯或設定失敗不同。先修好檔案與設定問題，才用 assertion 回饋完成函式。"
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 113,
+      "quote": "建議照 root → 單檔觀察 → 逐筆收集的順序做；每步改一個函式，重跑同一組驗收，觀察哪些失敗原因改變。三份工作都用 12.3 已教的 std::fs；開始實作時，在 collection.rs 的 module import 區加入 `use std::fs;`。"
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 119,
+      "quote": "注意第三步的 Result 有兩個層次：**scan 的 Err 是 root 不能開始，來源 item 的 Err 是已開始工作裡的一項問題。** 在 collect_entries 遇到 Err 時直接提前交回空清單，會漏掉後面的成功；先丟掉 Err 再累積 files，則會讓報告失去不完整的證據。"
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 145,
+      "quote": "驗收不是只看總數。完整材料另有下列能分辨錯誤做法的檢查；若某項失敗，先用它指出的政策找對責任函式："
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 164,
+      "quote": "參考版是 [A1 完成快照目錄](https://github.com/birdhackor/learn_rust/tree/main/examples/ch15-projects/a1-complete)，package name 為 `duplicate-a1`。`src/collection.rs` 保存本階段完整實作與同一份驗收，沒有 A2 的內容演算法。需要對照時，先找目前仍失敗的那個函式，而不是覆蓋自己的整份工作版。"
+    },
+    {
+      "section_id": "18.2",
+      "path": "docs/chapters/18-02-lesson.md",
+      "line": 200,
+      "quote": "另外準備了 inventory example，沿用 12.3 的資料顯示：借用選定 root、收集後列出長度與路徑，項目問題交到 stderr。這份固定材料的階段示範仍沒有完整 CLI 的錯誤與狀態政策。它的相對 root 是 `../materials/duplicate-demo`，因此**操作入口固定為這個 package 的目錄**；不是相對於原始碼位置。在教材 repo 根目錄開始："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

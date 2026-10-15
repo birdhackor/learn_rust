@@ -1,0 +1,21 @@
+// --8<-- [start:fields]
+struct Order {
+    unit_price: i32,
+    count: i32,
+}
+// --8<-- [end:fields]
+
+fn main() {
+    // --8<-- [start:instance]
+    let mut order = Order {
+        unit_price: 120,
+        count: 3,
+    };
+    // --8<-- [end:instance]
+    // --8<-- [start:update]
+    let before = order.unit_price * order.count;
+    order.count += 1;
+    let after = order.unit_price * order.count;
+    println!("原小計={before}，加一件後={after}");
+    // --8<-- [end:update]
+}

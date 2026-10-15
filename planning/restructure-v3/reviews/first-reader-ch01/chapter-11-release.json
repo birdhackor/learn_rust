@@ -1,0 +1,155 @@
+{
+  "chapter": 11,
+  "first_unit": 209,
+  "last_unit": 219,
+  "entries": [
+    {
+      "source": "docs/chapters/11-01-lesson.md",
+      "file": "units/209.md",
+      "sha256": "e474c587717f0f4a61a59bc212b83fa33521d38d21d44b78738a69240453ca8c",
+      "source_sha256": "01206a2c8b69a641f4b04083178c43cb5a528bd097ef2c5edd490256231c3776",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/11-02-lesson.md",
+      "file": "units/210.md",
+      "sha256": "9dfea9ddd8906307e7c959b9bf31d9181dafc40a99a4e99b7988cbef23b8af79",
+      "source_sha256": "b36a80e90643d0be470e9708dd7b118c994d9c44118ccd5c0ed16b38df53991a",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/types-v3/boxed-chain.svg",
+          "source_sha256": "dc4a7ca6b5116da4b4479d99c277404b45d5fa52078afd5cca036a4b426a3679",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch11-boxed-chain.png",
+          "png_sha256": "d3e971757a88a4d39ee5600e010b16e7c305108a57f58937e1819842eac4e1f0",
+          "alt": "chain 中的 80 經由 next Box 管理另一處的 120，120 再經由 Box 管理另一份 End"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/11-03-lesson.md",
+      "file": "units/211.md",
+      "sha256": "2037ada90703bb4308d8b3b7230be07ef85fb0d5d90a9cb0dd3c88071a5ef495",
+      "source_sha256": "376a205191cf19ed9b01de2b838586ad84f1341abe6c928d9136f504016c66d1",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/11-04-lesson.md",
+      "file": "units/212.md",
+      "sha256": "e6c66c4ebe69749857abfcc9485fcaa571a368fd2f0121fbc8b4b7e50eed3a63",
+      "source_sha256": "05c14435f34625a260be02454fecb4daad4e6d8fc6d150aca0910e64808f4fab",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/types-v3/deref-coercion.svg",
+          "source_sha256": "d74fb8a3d77009bc84ecaa486cfa4bf83a002e172ac595ab72ee781c2cdb6599",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch11-deref-coercion.png",
+          "png_sha256": "a95c921cc4835f4463b19c9b9b07e0a138f7828e7a83535a79d1ea5eccc7ce26",
+          "alt": "從 Wrapper 的 shared reference 經由 Deref 借到 String，再借到原文字的 str"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/11-05-lesson.md",
+      "file": "units/213.md",
+      "sha256": "773b645823f2616d675cbd9a6a49c3d17766f1db580d25907104bfed69e741f1",
+      "source_sha256": "936a3788cf246573cc9f93075af806f8e1b7cef938a10573de4f1508a0ddeeb6",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/11-06-lesson.md",
+      "file": "units/214.md",
+      "sha256": "215c6c48f2868a5ab2c18fccbeb9c4b591ba2bab8970b0cc71ca724a601ad5ed",
+      "source_sha256": "ec492344b90ad5c776fd17550cde8540c2241161b42d13a70ce72632d6dbb76f",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/types-v3/dyn-dispatch.svg",
+          "source_sha256": "87b6e9c27fa1626382a12875d04d56bab0c3436b4e5d15fbd75644d42eb5ccca",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch11-dyn-dispatch.png",
+          "png_sha256": "73e4fa7c9026cd7c1a1a740112ec19e9d932b1893455aab7456e732af3a29b57",
+          "alt": "兩個 Box dyn Charge handle 分別找到 Order 與 Bundle 資料，以及各自 amount 的方法入口"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/11-07-lesson.md",
+      "file": "units/215.md",
+      "sha256": "3e1d3e1c019bcd83c3367c33c96c0590fca587736b87bfd28aaa4cee502db4d3",
+      "source_sha256": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/types-v3/error-chain.svg",
+          "source_sha256": "1a77580f6cc6f481b9689d20ce8b157acb23f005dcddc17dc1cc4038759ef146",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch11-error-chain.png",
+          "png_sha256": "e02e81916f1b993fbf43e82015000340b4778ad58abd268dfcfd62e6a19863c6",
+          "alt": "ReadCountError 借出 ParseCountError，再借出 ParseIntError，最後 source 為 None"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/11-08-lesson.md",
+      "file": "units/216.md",
+      "sha256": "8ce6d14f8a34535d3a6db2ecd3f07a21b74bd1ea27a426967214ca83a8ade24f",
+      "source_sha256": "c871b4acacc1f6b522277756de0604796bb44e81468506af3ae33b0ce6dd8114",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/types-v3/shared-tail.svg",
+          "source_sha256": "eccb2e83c9873c06ca513418653cb3dcf1546151066dc618611065ad575f5663",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch11-shared-tail.png",
+          "png_sha256": "e7e54c17e9ad51574b6c8d6cdd210e1d0ce97973ef7661facd8d4878c75878ed",
+          "alt": "tail、第一條鏈的 next 與第二條鏈的 next，三個 strong handle 共用120尾段"
+        },
+        {
+          "source": "docs/assets/types-v3/strong-cycle.svg",
+          "source_sha256": "1d5a085fb785ab0636284d6031d1cf280e9b491398a3d643f15561afb46994d0",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch11-strong-cycle.png",
+          "png_sha256": "340b0c15206ffb8e37647218f7606bde59e8c036f86076d152cb11a3763b3144",
+          "alt": "假設A與B各有strong連結保活對方，外部handle消失後，兩邊strong仍各為1"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/11-09-lesson.md",
+      "file": "units/217.md",
+      "sha256": "6a3b014cbe9a8b7b08f5b606382c9b89414b43d5564dbca898279ca6d967edf3",
+      "source_sha256": "8f935f8c0f04181dd4321c8505c8ac8aac8c27813e4a1a1d7a8dec865d795925",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/types-v3/guard-lifetime.svg",
+          "source_sha256": "1b5fbebf9a2a4b41704ab4816739135318890361fb26a2b11ad71ae60c9e79b6",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch11-guard-lifetime.png",
+          "png_sha256": "c5ef02e638bde3eaf695ac45f5bae92c62a1b9e33694f2de82073f4d8117b77f",
+          "alt": "view最後讀取後仍持有shared借用，try_borrow_mut回Err；drop後才可取得mutable guard"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/11-10-lesson.md",
+      "file": "units/218.md",
+      "sha256": "c8e209e394233ee8bf100756bee7fa4358e3d7411cd65978693db7c9598f416c",
+      "source_sha256": "fd6e3084792dfc1368451e3340f03bf8d33ff4c4283d527dd1100a8a4c716536",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/11-11-lesson.md",
+      "file": "units/219.md",
+      "sha256": "5796ee7e70f0423388f33d68ee8a575e0a9f032bc31047141abbab16735fd69d",
+      "source_sha256": "5e87899ccd41749a6a6eb79f6923f101e0d9a6629c6a3a03e73e759456adbca2",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/types-v3/owned-downcast.svg",
+          "source_sha256": "c726615dd61789b855dd3f28ee1d4617ef784110bb724bb4cd5dd3f548087be8",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch11-owned-downcast.png",
+          "png_sha256": "59a450de12445810121f582ea51a242c860f8ee63cc519d214a281cab3e8e3ab",
+          "alt": "String Rust的Box先請求i32而回傳原Box，再請求String取得具體owned Box"
+        }
+      ]
+    }
+  ],
+  "route": "whole prerequisite pages;  actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed"
+}

@@ -16,4 +16,4 @@ Unix應有29項既有加6app與6CLI，共41項；其他平台不編入七項Unix
 
 一般項目問題放在報告的issues裡，保持整份JSON可解析；fatal診斷送stderr。輸出失敗時stdout可能已有部分bytes，狀態2不宣稱那些bytes是成功交付的報告。fatal診斷若也不可寫，仍回2，不panic。
 
-15.6再整理完整參考版的API邊界、文件與整份驗收；此階段已能使用，但不把重複stagecopies計入最終專案行數。
+18.6再整理完整參考版的API邊界、文件與整份驗收；此階段已能使用，但不把重複stagecopies計入最終專案行數。

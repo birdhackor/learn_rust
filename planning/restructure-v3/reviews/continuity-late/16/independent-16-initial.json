@@ -1,0 +1,469 @@
+{
+  "wave": "16",
+  "findings": [],
+  "notes": {
+    "16-01": [
+      "self-reference是同一值內的位置關係；controlled_work保存owned收端，recv等待借那份收端，圖不是compiler layout承諾。",
+      "lifetime管來源有效期、move交ownership、地址穩定管所指資料位置。swap整個AddressNote連saved一起交接；swap Box只交handle；swap value只改欄位內容。ptr::eq只比地址，不證明可解參考。",
+      "14.3的等待必須繼續找到同一收端；值仍存活不能自行修正內部記錄，因此需要下一節介面約定。i32模型隔離String heap變因，不拿相同內容代答相同位置。",
+      "實讀14.1–3完整normal與stage source後讀本節；reference負例、no-lib manifest/main、三種交換完整module/main、四tests均實讀。normal五module尚未載入，無後文helper。",
+      "兩值都80仍有兩個false；只交換i32則true；再remember才明確重記。前者驗位置，後者驗內容及更新責任，原句與四tests共同支持。"
+    ],
+    "16-02": [
+      "Pin包pointer，約定作用在pointee；Unpin表示該T不依賴pinning，!Unpin不表示建立起就不能move。",
+      "safe Pin::new/get_mut要T:Unpin；Box::pin和pin!提供!Unpin safe安置。as_ref/as_mut重借同一T；PhantomPinned阻止自動Unpin。受控unsafe getter不移整份Self，Drop仍以&mut self負責原位收尾。",
+      "在交接owner及修改數字時維持原位置，並在回收/重用前完成原位Drop；普通Box做不到這份後續API限制。數字模型與local pin對照使位置約定、ownership和儲存來源分開。",
+      "全部methods/SAFETY/Drop、兩負例與expected、local_pin、答案和三tests全讀。receiver Pin<&Self>/Pin<&mut Self>在完整模型前教；mutable wrapper重借在完整tests前教。",
+      "i32進Pin仍可get_mut後swap；PinnedNote不能由safe get_mut取普通mutable；轉交Pin<Box>後改100不重記，Drop見100且地址一致。local wrapper交接不延長來源。"
+    ],
+    "16-03": [
+      "Future::poll借工作回當次Poll；Pending無Output，Ready帶Output。driver再次執行；Context借Waker，owned Waker clone只保活通知位置。",
+      "WakeCounter::wake只短鎖加計數，不poll。ManualAmount每次Pending換成本次Waker；release先授權再take/wake；poll用Unpin get_mut更新狀態。Ready後再poll的panic是模型政策，safe契約仍不許UB。",
+      "等待條件可能變化時要讓負責的driver重查，且通知不能被誤認為已產生答案。保留最近owned handle，分開短Context借用和後續通知責任，不忙等。",
+      "observer、全部model/methods、四tests、三main/答案、完整runtime-fail與expected都讀完；take/wake/wake_by_ref、Wake required receiver及Waker::from bounds在使用前說明。",
+      "換第二Context而未release仍Pending；release只通知第二觀察器1次，poll仍2、completed false，第3次才Ready。先release則首次Ready且通知0；clone可在原Context結束後通知。"
+    ],
+    "16-04": [
+      "EventAmount和AmountEvent各持Arc，共用一份State；future私有completed/polls不共享。事件handle以按值send只供一次，並非std Sender限制。",
+      "同guard內取答案或登記最新Waker；事件同鎖存值取通知，解鎖才wake。clone新handle和drop舊handle也在鎖外；避免漏通知及回呼再取State鎖的等待循環。",
+      "外部worker與driver先後無法靠sleep猜；兩邊即使每次都加鎖，分開檢查與登記仍會漏通知。同鎖將兩種先後接成可繼續的流程，鎖外wake讓回呼能看到已存資料。",
+      "完整readiness、observer、兩順序main、答案、四tests含ReadinessObserver、一次send負例/expected均讀。控制channel、join與真正poll分置；poll沒有recv/join，Mutex本身可能等鎖的界線明說。",
+      "先供120再poll可直接Ready且通知0；先兩次Pending換Context再供80，只通知第二份，第三poll才取80。回呼讀0不take答案，main仍可poll取0；drop未供值event不自動完成。"
+    ],
+    "16-05": [
+      "單工作executor接手owned F並保有同一Pin<Box<F>>；事件供i32、回呼送unit、driver再次poll，三份責任分開。",
+      "run_one先poll，Pending後在driver recv，Ready立即return且不重poll；buffer保留早通知。StartAmount先讓內層登記才送控制值；Recheck在poll內wake後Pending。PinnedAnswer無Unpin也能由shared Pin讀Copy數字。",
+      "不再讓main先join後手動猜重查時機；仍維持16.4資料同步。通知不攜future/Output，所以future無須跨thread，F不用Send/static/Unpin；Waker回呼仍須自己的跨thread bounds。",
+      "早期三runner快照/答案先讀，normal完整root及五module直到本節165行後才讀。normal18tests、16入口、所有nested manifest/lock與負例/expected都讀；四module逐bytes等同已讀完整tests快照，runner新三tests全讀。",
+      "控制值改120只改i32控制channel，unit通知不變；早wake仍兩次poll，PinnedAnswer首次Ready不recv。run_one返回後worker可能仍收尾，仍需join；供值端消失不等於通知Sender關閉，不能保證終止。"
+    ]
+  },
+  "concept_evidence": {
+    "16-01": [
+      {
+        "location": "同一份工作裡，可能有指向內部的借用",
+        "quote": "不是每份 future 都實際自我參照，但使用端不能把所有 future 都當成沒有這種關係。",
+        "interpretation": "有限地址模型服務共同介面動機，不推斷每個future實際layout。"
+      },
+      {
+        "location": "改成地址記錄，先觀察整份值交換",
+        "quote": "true 不能單獨證明可 dereference；false 足以看出記錄與目前欄位位置不一致。",
+        "interpretation": "地址觀察與unsafe存取分開，沒有用有限true結果證明一般安全。"
+      },
+      {
+        "location": "換 Box owner，裡面的資料留在哪裡？",
+        "quote": "普通 Box 仍允許移出內容，或透過 mutable 存取替換資料",
+        "interpretation": "owner交換成功不代答後續禁止移出原值的需求。"
+      }
+    ],
+    "16-02": [
+      {
+        "location": "Pin 包住 pointer，約定作用在 pointee",
+        "quote": "Pin 是 library contract",
+        "interpretation": "safe介面限制與unsafe作者持續責任共同維持位置，不改寫move。"
+      },
+      {
+        "location": "method 接收哪一份 wrapper？",
+        "quote": "constructor 只寫 saved；set_value 只寫數字。",
+        "interpretation": "具體指出unsafe能力只用於哪些操作，不只引用unsafe getter簽名。"
+      },
+      {
+        "location": "Drop 也必須維持原位關係",
+        "quote": "Drop 的 receiver 仍是 &mut self，不會自動換成 Pin。",
+        "interpretation": "特殊receiver不是Drop責任替身，有限模型的Drop只讀/比較，不移出Self。"
+      },
+      {
+        "location": "固定也能使用局部儲存",
+        "quote": "地址約定與儲存來源是兩個問題",
+        "interpretation": "local Pin借用不可逃來源；async外層儲存不一律stack。"
+      }
+    ],
+    "16-03": [
+      {
+        "location": "一次 poll，回答現在能不能交出結果",
+        "quote": "Pending 後，future 還要安排條件改變時的通知",
+        "interpretation": "Pending不是錯誤或立刻忙等指示，driver與future有各自責任。"
+      },
+      {
+        "location": "Context 借出通知 handle，Waker 可以保存",
+        "quote": "Pending 之後要保存的是 owned clone",
+        "interpretation": "短Context借用來源與owned通知權限分開，不延長借用。"
+      },
+      {
+        "location": "Pending 每次保存目前 Context",
+        "quote": "每次 Pending 都保存本次 Context 的 Waker",
+        "interpretation": "同工作可換負責通知位置，兩counter答案實際驗最近一次。"
+      },
+      {
+        "location": "兩次 poll 中間，只發通知",
+        "quote": "第三行資料已授權，通知也到達，poll 次數卻仍是1",
+        "interpretation": "同一組狀態觀察直接區別事件/通知/poll/Output，不靠印出通知推測執行。"
+      }
+    ],
+    "16-04": [
+      {
+        "location": "每次存取都加鎖，仍可能漏通知",
+        "quote": "同一份 guard 內完成「取到答案，或在沒有答案時登記這次 Waker」",
+        "interpretation": "固定需要是兩種先後都能取答案；錯誤四步與正確兩順序說明同鎖設計的作用。"
+      },
+      {
+        "location": "先更新，離鎖後才 wake",
+        "quote": "回呼等解鎖，持鎖端卻等回呼返回",
+        "interpretation": "鎖外回呼目的由實際等待循環支持；ReadinessObserver test在同State再取鎖檢查。"
+      },
+      {
+        "location": "poll 取走結果，或保存最新 handle",
+        "quote": "舊 handle 的 Drop 也在解鎖後",
+        "interpretation": "不把任意回呼物件清理放入State臨界區，具體block傳出owned tuple及顯式drop可對應。"
+      }
+    ],
+    "16-05": [
+      {
+        "location": "只有一份工作，通知不必攜帶 future",
+        "quote": "通知 channel 只傳 unit ()，意義是「請再檢查」",
+        "interpretation": "executor已知道工作身分，所以通知不需轉交工作或答案。"
+      },
+      {
+        "location": "先讓內層登記，再啟動事件",
+        "quote": "首次 Pending 表示已完成16.4的通知登記",
+        "interpretation": "StartAmount為觀察通知循環安排受控先後，不改State事件同步；控制和通知兩channel清楚。"
+      },
+      {
+        "location": "driver 不需要 F 有 Unpin",
+        "quote": "Box::pin 提供共用介面，不是讓每份工作都必須先等待",
+        "interpretation": "!Unpin可立即Ready與Unpin可Pending，兩維度由三對照分開。"
+      },
+      {
+        "location": "能完成什麼，也要說清不能繼續的條件",
+        "quote": "供值端消失，不代表通知 channel 已關閉",
+        "interpretation": "仍保有Sender，recv的expect不能製造事件；正常完成模型不誇成通用終止/公平保證。"
+      },
+      {
+        "location": "接回完整 library，保留所有原測試",
+        "quote": "root 一次宣告五個 module，因此到這裡才讓它參與編譯",
+        "interpretation": "16.1–4 stage無lib、target-local最小快照；到16.5整library才完整載入，不能靠選target隱藏未知module。"
+      }
+    ]
+  },
+  "loaded_sources": "所有直接snippet完整實源、target-local pub mod、normal五module與本地path依賴、全部tests/fixture/expected/answer/manifest/兩份lock均讀。無未列入的owned Rust/config檔。早節no-lib直到16.5才切normal library。",
+  "prefix_actual_read": "14.1–14.3完整正文及全部normal/stage source/helper/tests/manifests/answers，詳14-prefix-read-index.json；13/15及其他必要前綴沿原28節實讀索引，不聲稱全書01–12完整通讀。",
+  "visual": "真正Chromium1280×800及390×844；全部7張原位圖雙viewport，長圖桌機補上緣；長折疊答案及16.5完整五module正常展開。code內實際水平scrollLeft326，body無橫向溢出。詳visual-evidence.json。",
+  "limitations": [
+    "獨立非作者銜接/實頁初判，未看16作者驗證、ledger或其他16 review finding；非首次盲讀，未假借自己的Rust知識當作已教。",
+    "第14章只為本波補讀必要前綴14.1–3，不代替原14審閱，不讀14.4–9補16。",
+    "原28節initial與總報保留，此波另存追加；未修改repo、未spawn、未執行Rust。",
+    "必要前文定點銜接審閱，非全書首讀盲測。",
+    "未重跑Rust；不以此報告代替執行驗證。"
+  ],
+  "coverage": [
+    {
+      "section": "16-01",
+      "doc_hash": "a02196df700ac59c39a0d5d0a73a457d54661a69110d145086deac890aca84a3",
+      "read_doc_lines": [
+        1,
+        168
+      ],
+      "all_snippet_files_read": [
+        "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.rs",
+        "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.expected",
+        "examples/ch13-futures/stages/Cargo.toml",
+        "examples/ch13-futures/stages/src/main.rs",
+        "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs",
+        "examples/ch13-futures/stages/examples/inline_swap/main.rs",
+        "examples/ch13-futures/stages/examples/box_handles/addresses/mod.rs",
+        "examples/ch13-futures/stages/examples/box_handles/main.rs",
+        "examples/ch13-futures/stages/examples/field_swap_solution/addresses/mod.rs",
+        "examples/ch13-futures/stages/examples/field_swap_solution/main.rs",
+        "examples/ch13-futures/stages/examples/addresses_complete/addresses/mod.rs",
+        "examples/ch13-futures/stages/examples/addresses_complete/main.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.rs": "acd705401e4f16dee4345ed8aad999c96b9182cb4c2bf7a315d3f35afd20be8f",
+        "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+        "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+        "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+        "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939",
+        "examples/ch13-futures/stages/examples/inline_swap/main.rs": "af99115c19f4f070dbe9a134b3a6c3161a64c92fed868532a665c1af8b244b33",
+        "examples/ch13-futures/stages/examples/box_handles/addresses/mod.rs": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939",
+        "examples/ch13-futures/stages/examples/box_handles/main.rs": "8159d50e707b656dbdd601cd34e75dc1eb17b867a60d59e6cbdfc937348f9574",
+        "examples/ch13-futures/stages/examples/field_swap_solution/addresses/mod.rs": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939",
+        "examples/ch13-futures/stages/examples/field_swap_solution/main.rs": "8e4201a68817157223060a17fd44cdbad929019c6ec5618503e62c963b8a28e6",
+        "examples/ch13-futures/stages/examples/addresses_complete/addresses/mod.rs": "ecc28b64aebb05adbeb3ab5a8a53f25f7e93816844cdb5ffb5fc58ed94f871d3",
+        "examples/ch13-futures/stages/examples/addresses_complete/main.rs": "90cdc6b5c6b5c89b1c5c0bb8df58e486e736a283d98e9fe2e71757afd75eebe0"
+      },
+      "four_question_evidence": {
+        "identity": "self-reference是同一值內的位置關係；controlled_work保存owned收端，recv等待借那份收端，圖不是compiler layout承諾。",
+        "mechanism": "lifetime管來源有效期、move交ownership、地址穩定管所指資料位置。swap整個AddressNote連saved一起交接；swap Box只交handle；swap value只改欄位內容。ptr::eq只比地址，不證明可解參考。",
+        "need": "14.3的等待必須繼續找到同一收端；值仍存活不能自行修正內部記錄，因此需要下一節介面約定。i32模型隔離String heap變因，不拿相同內容代答相同位置。",
+        "operation_and_example": "實讀14.1–3完整normal與stage source後讀本節；reference負例、no-lib manifest/main、三種交換完整module/main、四tests均實讀。normal五module尚未載入，無後文helper。",
+        "small_change": "兩值都80仍有兩個false；只交換i32則true；再remember才明確重記。前者驗位置，後者驗內容及更新責任，原句與四tests共同支持。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "16-02",
+      "doc_hash": "e23aa436d2fae0c6d9a0d80d17f053ae3bed168bc40a1cd42ea00fdce2a54aca",
+      "read_doc_lines": [
+        1,
+        212
+      ],
+      "all_snippet_files_read": [
+        "examples/ch13-futures/stages/Cargo.toml",
+        "examples/ch13-futures/stages/src/main.rs",
+        "examples/ch13-futures/stages/examples/unpin_access.rs",
+        "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.rs",
+        "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected",
+        "examples/ch13-futures/stages/examples/pinned_owner_swap/pinning/mod.rs",
+        "examples/ch13-futures/stages/examples/pinned_owner_swap/main.rs",
+        "examples/ch13-futures/stages/examples/local_pin.rs",
+        "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.rs",
+        "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.expected",
+        "examples/ch13-futures/stages/examples/pinning_solution/pinning/mod.rs",
+        "examples/ch13-futures/stages/examples/pinning_solution/main.rs",
+        "examples/ch13-futures/stages/examples/pinning_complete/pinning/mod.rs",
+        "examples/ch13-futures/stages/examples/pinning_complete/main.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+        "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+        "examples/ch13-futures/stages/examples/unpin_access.rs": "0de2e89d4777b51204c65d440ff38b88ec41dd3669ba018f9832d19016392de0",
+        "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.rs": "d45e8d0513919c543d76adf58985ab796f074ba066178171639bdfa73fc80ffa",
+        "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/ch13-futures/stages/examples/pinned_owner_swap/pinning/mod.rs": "def51b90a93c3d2ba3beae8d236a82d9155fa3f5424bbad45cbc3df05a53cd3d",
+        "examples/ch13-futures/stages/examples/pinned_owner_swap/main.rs": "0160d59235dfb83ec1123c29ca2a507405035b1f53015637424688f59af4fcda",
+        "examples/ch13-futures/stages/examples/local_pin.rs": "46d5c4efaad029128963556b2072840af2e4cdacae53e4b6161295c03cf810a5",
+        "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.rs": "bd65619ed471574ff29e9e8c0febc87f554860cf469ad7a2e920a71d9cd435fc",
+        "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/ch13-futures/stages/examples/pinning_solution/pinning/mod.rs": "def51b90a93c3d2ba3beae8d236a82d9155fa3f5424bbad45cbc3df05a53cd3d",
+        "examples/ch13-futures/stages/examples/pinning_solution/main.rs": "b051496f6a8c048af6ffaf99403ce199d2f84426a9e590491d95a415b997eaa6",
+        "examples/ch13-futures/stages/examples/pinning_complete/pinning/mod.rs": "e52fbf2e64735c17bf2153f8d22e85c8dd1916cea2e637a05153da45b8c2a42e",
+        "examples/ch13-futures/stages/examples/pinning_complete/main.rs": "197fa4836d423b5e4b0f4b08eb59c4137d47b29da891744b6aa63fb2121d1b16"
+      },
+      "four_question_evidence": {
+        "identity": "Pin包pointer，約定作用在pointee；Unpin表示該T不依賴pinning，!Unpin不表示建立起就不能move。",
+        "mechanism": "safe Pin::new/get_mut要T:Unpin；Box::pin和pin!提供!Unpin safe安置。as_ref/as_mut重借同一T；PhantomPinned阻止自動Unpin。受控unsafe getter不移整份Self，Drop仍以&mut self負責原位收尾。",
+        "need": "在交接owner及修改數字時維持原位置，並在回收/重用前完成原位Drop；普通Box做不到這份後續API限制。數字模型與local pin對照使位置約定、ownership和儲存來源分開。",
+        "operation_and_example": "全部methods/SAFETY/Drop、兩負例與expected、local_pin、答案和三tests全讀。receiver Pin<&Self>/Pin<&mut Self>在完整模型前教；mutable wrapper重借在完整tests前教。",
+        "small_change": "i32進Pin仍可get_mut後swap；PinnedNote不能由safe get_mut取普通mutable；轉交Pin<Box>後改100不重記，Drop見100且地址一致。local wrapper交接不延長來源。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "16-03",
+      "doc_hash": "a95a5c1a963f7dce7c6be06c75e077f696a4dd6ffc01cc5d26f77155452e81d1",
+      "read_doc_lines": [
+        1,
+        209
+      ],
+      "all_snippet_files_read": [
+        "examples/ch13-futures/stages/Cargo.toml",
+        "examples/ch13-futures/stages/src/main.rs",
+        "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs",
+        "examples/ch13-futures/stages/examples/manual_poll/main.rs",
+        "examples/ch13-futures/stages/examples/already_ready/polling/mod.rs",
+        "examples/ch13-futures/stages/examples/already_ready/main.rs",
+        "examples/ch13-futures/stages/examples/polling_solution/polling/mod.rs",
+        "examples/ch13-futures/stages/examples/polling_solution/main.rs",
+        "examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs",
+        "examples/ch13-futures/stages/examples/polling_complete/main.rs",
+        "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.rs",
+        "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.expected"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+        "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+        "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7",
+        "examples/ch13-futures/stages/examples/manual_poll/main.rs": "3a98225b4cf93386783c961ca6099ac3785e122fcd205ef6364ce75de4238a38",
+        "examples/ch13-futures/stages/examples/already_ready/polling/mod.rs": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7",
+        "examples/ch13-futures/stages/examples/already_ready/main.rs": "7caac0f53381ef35b2fe291faa0f402d773240c663467fdf11d63f88f1458448",
+        "examples/ch13-futures/stages/examples/polling_solution/polling/mod.rs": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7",
+        "examples/ch13-futures/stages/examples/polling_solution/main.rs": "b6b001be4854f1089c01cccf07618ec281f13b233b2a505a4f1152c940035143",
+        "examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs": "86aaaa646c3b17d44dfad9767c027b6c180024f5b005a47f670e942c7adaf551",
+        "examples/ch13-futures/stages/examples/polling_complete/main.rs": "873ae1f09fadc840bc161e7d9e7136bdc5299ced1ca600257c2cd4d9e75a4b08",
+        "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.rs": "64bdbabc8be1f73aac2f9cc623c04c6b8a6401035fde20195c8a6f27bcd8fc3b",
+        "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.expected": "19bb7307840ec56041dfec745a61f88160ea6130b01e6cfce9f3f52dbede1ad8"
+      },
+      "four_question_evidence": {
+        "identity": "Future::poll借工作回當次Poll；Pending無Output，Ready帶Output。driver再次執行；Context借Waker，owned Waker clone只保活通知位置。",
+        "mechanism": "WakeCounter::wake只短鎖加計數，不poll。ManualAmount每次Pending換成本次Waker；release先授權再take/wake；poll用Unpin get_mut更新狀態。Ready後再poll的panic是模型政策，safe契約仍不許UB。",
+        "need": "等待條件可能變化時要讓負責的driver重查，且通知不能被誤認為已產生答案。保留最近owned handle，分開短Context借用和後續通知責任，不忙等。",
+        "operation_and_example": "observer、全部model/methods、四tests、三main/答案、完整runtime-fail與expected都讀完；take/wake/wake_by_ref、Wake required receiver及Waker::from bounds在使用前說明。",
+        "small_change": "換第二Context而未release仍Pending；release只通知第二觀察器1次，poll仍2、completed false，第3次才Ready。先release則首次Ready且通知0；clone可在原Context結束後通知。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "16-04",
+      "doc_hash": "812dd287942e8bdfe9835c8dafe5f0039b76bd2058c0c7c2a12937b411faa1d1",
+      "read_doc_lines": [
+        1,
+        226
+      ],
+      "all_snippet_files_read": [
+        "examples/ch13-futures/stages/Cargo.toml",
+        "examples/ch13-futures/stages/src/main.rs",
+        "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+        "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs",
+        "examples/ch13-futures/stages/examples/event_after_poll/main.rs",
+        "examples/ch13-futures/stages/examples/event_before_poll/polling/mod.rs",
+        "examples/ch13-futures/stages/examples/event_before_poll/readiness/mod.rs",
+        "examples/ch13-futures/stages/examples/event_before_poll/main.rs",
+        "examples/ch13-futures/stages/examples/event_solution/polling/mod.rs",
+        "examples/ch13-futures/stages/examples/event_solution/readiness/mod.rs",
+        "examples/ch13-futures/stages/examples/event_solution/main.rs",
+        "examples/ch13-futures/stages/examples/readiness_complete/polling/mod.rs",
+        "examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs",
+        "examples/ch13-futures/stages/examples/readiness_complete/main.rs",
+        "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.rs",
+        "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.expected"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+        "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+        "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+        "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+        "examples/ch13-futures/stages/examples/event_after_poll/main.rs": "7b5e77417bf51d138827e26e798dfa8d654e1ca95ee8d709ba88eff5d940e17f",
+        "examples/ch13-futures/stages/examples/event_before_poll/polling/mod.rs": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+        "examples/ch13-futures/stages/examples/event_before_poll/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+        "examples/ch13-futures/stages/examples/event_before_poll/main.rs": "c7831481bf74a2ac54307d43c70e0708130bbef3bde86f0e4d039cbe03763bcf",
+        "examples/ch13-futures/stages/examples/event_solution/polling/mod.rs": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+        "examples/ch13-futures/stages/examples/event_solution/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+        "examples/ch13-futures/stages/examples/event_solution/main.rs": "6af8f93dcb3d2f3366c5701e5f90fc9f2dec9bbe9deff745295bbde1527f9e08",
+        "examples/ch13-futures/stages/examples/readiness_complete/polling/mod.rs": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+        "examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs": "2b5d14ae4112f5d8e03dfea6b98a967fe42249fdfdb8a278f0e85d611621c212",
+        "examples/ch13-futures/stages/examples/readiness_complete/main.rs": "0754827c78129cd61f46040184dcda8b858a2b915061c27e7e776a7a87130cd2",
+        "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.rs": "41f51ef1533c9ea72498ef8399ec7f91de83e4b9ebefbbd36fbbf75eb40eb26d",
+        "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf"
+      },
+      "four_question_evidence": {
+        "identity": "EventAmount和AmountEvent各持Arc，共用一份State；future私有completed/polls不共享。事件handle以按值send只供一次，並非std Sender限制。",
+        "mechanism": "同guard內取答案或登記最新Waker；事件同鎖存值取通知，解鎖才wake。clone新handle和drop舊handle也在鎖外；避免漏通知及回呼再取State鎖的等待循環。",
+        "need": "外部worker與driver先後無法靠sleep猜；兩邊即使每次都加鎖，分開檢查與登記仍會漏通知。同鎖將兩種先後接成可繼續的流程，鎖外wake讓回呼能看到已存資料。",
+        "operation_and_example": "完整readiness、observer、兩順序main、答案、四tests含ReadinessObserver、一次send負例/expected均讀。控制channel、join與真正poll分置；poll沒有recv/join，Mutex本身可能等鎖的界線明說。",
+        "small_change": "先供120再poll可直接Ready且通知0；先兩次Pending換Context再供80，只通知第二份，第三poll才取80。回呼讀0不take答案，main仍可poll取0；drop未供值event不自動完成。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "16-05",
+      "doc_hash": "682ee2b551cda73f3589643ce3f9827570e368d10377759af42a9182fd0755e7",
+      "read_doc_lines": [
+        1,
+        382
+      ],
+      "all_snippet_files_read": [
+        "examples/ch13-futures/stages/Cargo.toml",
+        "examples/ch13-futures/stages/src/main.rs",
+        "examples/ch13-futures/stages/examples/executor_event/readiness/mod.rs",
+        "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs",
+        "examples/ch13-futures/stages/examples/executor_event/main.rs",
+        "examples/ch13-futures/stages/examples/executor_early_notice/runner/mod.rs",
+        "examples/ch13-futures/stages/examples/executor_early_notice/main.rs",
+        "examples/ch13-futures/stages/examples/executor_pinned/runner/mod.rs",
+        "examples/ch13-futures/stages/examples/executor_pinned/main.rs",
+        "examples/ch13-futures/stages/examples/executor_solution/readiness/mod.rs",
+        "examples/ch13-futures/stages/examples/executor_solution/runner/mod.rs",
+        "examples/ch13-futures/stages/examples/executor_solution/main.rs",
+        "examples/ch13-futures/Cargo.toml",
+        "examples/ch13-futures/src/lib.rs",
+        "examples/ch13-futures/src/addresses.rs",
+        "examples/ch13-futures/src/pinning.rs",
+        "examples/ch13-futures/src/polling.rs",
+        "examples/ch13-futures/src/readiness.rs",
+        "examples/ch13-futures/src/runner.rs",
+        "examples/ch13-futures/examples/executor_event.rs",
+        "examples/ch13-futures/examples/executor_early_notice.rs",
+        "examples/ch13-futures/examples/executor_pinned.rs",
+        "examples/ch13-futures/examples/executor_solution.rs",
+        "examples/ch13-futures/examples/inline_swap.rs",
+        "examples/ch13-futures/examples/box_handles.rs",
+        "examples/ch13-futures/examples/field_swap_solution.rs",
+        "examples/ch13-futures/examples/unpin_access.rs",
+        "examples/ch13-futures/examples/pinned_owner_swap.rs",
+        "examples/ch13-futures/examples/pinning_solution.rs",
+        "examples/ch13-futures/examples/manual_poll.rs",
+        "examples/ch13-futures/examples/already_ready.rs",
+        "examples/ch13-futures/examples/polling_solution.rs",
+        "examples/ch13-futures/examples/event_after_poll.rs",
+        "examples/ch13-futures/examples/event_before_poll.rs",
+        "examples/ch13-futures/examples/event_solution.rs",
+        "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml",
+        "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.rs",
+        "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.expected",
+        "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.rs",
+        "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.expected",
+        "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.rs",
+        "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.expected",
+        "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.rs",
+        "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.expected",
+        "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml",
+        "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.rs",
+        "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.expected",
+        "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.lock",
+        "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.lock"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+        "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+        "examples/ch13-futures/stages/examples/executor_event/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+        "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df",
+        "examples/ch13-futures/stages/examples/executor_event/main.rs": "173327762bdba78ed56c3d8db71c4e6c0b40945f2dd2fae133e376c3b4185b7a",
+        "examples/ch13-futures/stages/examples/executor_early_notice/runner/mod.rs": "4d2a7e133bc4b9d2d971c4adccf2008c0611d8a9703953fc56256953aaba7279",
+        "examples/ch13-futures/stages/examples/executor_early_notice/main.rs": "c70fd4fb60272af991ea9b6a4b480054c86cb7ee93c8edad323c684f3342408a",
+        "examples/ch13-futures/stages/examples/executor_pinned/runner/mod.rs": "849f283a3a2506d66ab4c8d6b2ca64d29ef20ba6772aa4b33aef66d050457521",
+        "examples/ch13-futures/stages/examples/executor_pinned/main.rs": "3b102e0a8ff80f5c6abe7c4789ce89dd52a49023ab15be334e86ff73fbb00942",
+        "examples/ch13-futures/stages/examples/executor_solution/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+        "examples/ch13-futures/stages/examples/executor_solution/runner/mod.rs": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df",
+        "examples/ch13-futures/stages/examples/executor_solution/main.rs": "d93c4eb719c80d0ffe85effc1780777157abb7629d26e132d56a712fd70ed8ae",
+        "examples/ch13-futures/Cargo.toml": "967b0de23ab6cfa47c3450d3f57356c6d34e23f33fcece5fb27d7f82b8d4e926",
+        "examples/ch13-futures/src/lib.rs": "2b784372e0fe76ee40b7fcc35685070ee9c937721d25aa2a66b656b30d1922d2",
+        "examples/ch13-futures/src/addresses.rs": "ecc28b64aebb05adbeb3ab5a8a53f25f7e93816844cdb5ffb5fc58ed94f871d3",
+        "examples/ch13-futures/src/pinning.rs": "e52fbf2e64735c17bf2153f8d22e85c8dd1916cea2e637a05153da45b8c2a42e",
+        "examples/ch13-futures/src/polling.rs": "86aaaa646c3b17d44dfad9767c027b6c180024f5b005a47f670e942c7adaf551",
+        "examples/ch13-futures/src/readiness.rs": "2b5d14ae4112f5d8e03dfea6b98a967fe42249fdfdb8a278f0e85d611621c212",
+        "examples/ch13-futures/src/runner.rs": "164639b5c9ce64a8ca5c7bbcc0829ebfc6a6745d254c677452f329afe31c6e60",
+        "examples/ch13-futures/examples/executor_event.rs": "2456c06604755605b5eb5ae48b8980e0cfae132abf24266c6898e217470425b9",
+        "examples/ch13-futures/examples/executor_early_notice.rs": "687fb33a44fe32811e693479c80deb298be420ddf5475113a2134a3d2bba3fe4",
+        "examples/ch13-futures/examples/executor_pinned.rs": "e7542eb97d8323f0dac022a4ac3795570193506264765e3b0aa0a8e1045f03fd",
+        "examples/ch13-futures/examples/executor_solution.rs": "fee789eb7cac0ea9a42015256beca4e873f9572e4809c6ab80b27c1776cc6b21",
+        "examples/ch13-futures/examples/inline_swap.rs": "dad2a68787777585cf82b9b22b4c9e943910dc5981d64df71bbe7b530031f2b5",
+        "examples/ch13-futures/examples/box_handles.rs": "a4027c95c248fb141af796e17fed38a45f63f48b67dc156ce6037b601949280a",
+        "examples/ch13-futures/examples/field_swap_solution.rs": "c2a6047a648b4853f0edb5b982ed98f52c4306a4601cd8a219ca1bc7119f7da0",
+        "examples/ch13-futures/examples/unpin_access.rs": "0de2e89d4777b51204c65d440ff38b88ec41dd3669ba018f9832d19016392de0",
+        "examples/ch13-futures/examples/pinned_owner_swap.rs": "e9486de4049afeb4e752075e91e731394c7888c00e66092524d6d1a85b0085d6",
+        "examples/ch13-futures/examples/pinning_solution.rs": "6286d949367108d2d00de67f6ce50e6895ffe3770bc735f12e40b9ebfbd24105",
+        "examples/ch13-futures/examples/manual_poll.rs": "6060ef9dd08eaecfe8d43031ed39cc9c97e54e161e058cba4f5f2f59b632e8d3",
+        "examples/ch13-futures/examples/already_ready.rs": "72bfb1187efff3f10aa793eacccf2fce94d6ef0d491948eb95fa2434437af92b",
+        "examples/ch13-futures/examples/polling_solution.rs": "c67988fcf6c60ce57ac31eecbb5f2aa501abf0da12323a7c3843a90e4f951bb8",
+        "examples/ch13-futures/examples/event_after_poll.rs": "8526ff4104be143df302cb7b861c6397be5a06ce5c7759532bfbb3aec7628698",
+        "examples/ch13-futures/examples/event_before_poll.rs": "2b8e32b6b57489d98bec3e73eb55f8abdfa4d3d5bdc29dd66faf3d12628b7ce4",
+        "examples/ch13-futures/examples/event_solution.rs": "e91c275615dd836690117705ad8b6ece9148eb61bd1bb321a0cae47f3f873eee",
+        "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml": "e6a4b9c9d14e9ade7b5b9c7ff1cd0b56c53080aed2cffdaa8e1cb1c66b599d6a",
+        "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.rs": "73facf00cbd6bf5009ed5adccfdd251b4cd453eb7c00fa6bdc1bcdbc51e94560",
+        "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.rs": "36f90656e05584c3860c9557ae6249b0f0dd0388ec63bdaf09116e5f64e90cba",
+        "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.rs": "acd705401e4f16dee4345ed8aad999c96b9182cb4c2bf7a315d3f35afd20be8f",
+        "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+        "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.rs": "d45e8d0513919c543d76adf58985ab796f074ba066178171639bdfa73fc80ffa",
+        "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml": "4b72336031c53782ad6c2d33d84326b8a2954e01ae7d7fc45550cd6f88ea6d22",
+        "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.rs": "607a6ccbbfb4f4c8d37441be494eb2e13af65512860a70659fff0da0a038501b",
+        "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.expected": "19bb7307840ec56041dfec745a61f88160ea6130b01e6cfce9f3f52dbede1ad8",
+        "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.lock": "5da64c7aac59dca9ffe91c6f8d1f35ea707af436f5a5f77aebefe11bb67ff31a",
+        "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.lock": "e06d2cd2dd22e254033c7bf3891315c63ecca0d0c586e01bd07d7f39a17264ba"
+      },
+      "four_question_evidence": {
+        "identity": "單工作executor接手owned F並保有同一Pin<Box<F>>；事件供i32、回呼送unit、driver再次poll，三份責任分開。",
+        "mechanism": "run_one先poll，Pending後在driver recv，Ready立即return且不重poll；buffer保留早通知。StartAmount先讓內層登記才送控制值；Recheck在poll內wake後Pending。PinnedAnswer無Unpin也能由shared Pin讀Copy數字。",
+        "need": "不再讓main先join後手動猜重查時機；仍維持16.4資料同步。通知不攜future/Output，所以future無須跨thread，F不用Send/static/Unpin；Waker回呼仍須自己的跨thread bounds。",
+        "operation_and_example": "早期三runner快照/答案先讀，normal完整root及五module直到本節165行後才讀。normal18tests、16入口、所有nested manifest/lock與負例/expected都讀；四module逐bytes等同已讀完整tests快照，runner新三tests全讀。",
+        "small_change": "控制值改120只改i32控制channel，unit通知不變；早wake仍兩次poll，PinnedAnswer首次Ready不recv。run_one返回後worker可能仍收尾，仍需join；供值端消失不等於通知Sender關閉，不能保證終止。"
+      },
+      "rendered_full_source_missing": []
+    }
+  ],
+  "role": "independent non-author continuity reviewer",
+  "prior_author_ledgers_or_peer_findings_seen": false,
+  "sealed_utc": "2026-10-15"
+}

@@ -1,0 +1,387 @@
+{
+  "review_id": "technical-early-round10-cargo-prefix",
+  "scope": [
+    "docs/chapters/10-01-lesson.md",
+    "docs/chapters/10-02-lesson.md"
+  ],
+  "role": "independent technical reviewer, not author",
+  "independent_initial": true,
+  "reader_background": "Actual1–8 and9.1–9.4;noneof9.5+,10.3+,11usedasprerequisite.",
+  "independence": "No authorvalidation,peer/continuity/readerorhistoricalfindingsreportreadbeforeseal. Parentnotifiedauthorinline-tablewordingrelocationwhileinprogress;firstactual10.1readalreadyshowedparagraph36immediatelybeforemanifest. No independentdiscoveryoroldmeasuredhashclaimedforthatauthorchange.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary or optional dependency/config-role/command-syntax/path-sourceclosure,doc/integrationtest,outputorfirst-useissuefound.",
+  "method": "Sequential whole-page technical/source/manifest/lockreread,plusread-onlyCargohelpandlocallycachedregistrymanifestmetadata. Notblindfirstread,readerexperiment,browserorrebuildvalidation.",
+  "execution": {
+    "cargo_build_check_run_doc_tree_test_add_update_commands": [],
+    "readonly_command": {
+      "command": "cargo update --help",
+      "cwd": "/workspace/learn_rust",
+      "setup": "source scripts/env.sh",
+      "environment": {
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_PROFILE_DEV_DEBUG": "0",
+        "CARGO_PROFILE_TEST_DEBUG": "0",
+        "CARGO_BUILD_JOBS": "2"
+      },
+      "exit": 0,
+      "observed_usage": "cargo update [OPTIONS] [SPEC]...",
+      "observed_spec_description": "Package to update",
+      "reason": "VerifypositionaldependencySPECsyntaxwithoutupdatinglockormetadata."
+    },
+    "network_downloads": false,
+    "browser_visual": false,
+    "author_evidence_used_as_own": false
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:24:46.570465+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/chapters/10-01-lesson.md": "2d8fdc5ae52f16c2bce057f6b59f272f79af58d051e932a88ee8b1d552aa6564",
+    "docs/chapters/10-02-lesson.md": "394da63f7182a1c977beae9f11180ce370e1efe18851f4fbb0964a5dca4fb79a",
+    "examples/intro-workspace/Cargo.lock": "bc4d31239fe58a3e6a897c265cde1bd9a26562a62fb37406347e134c673fc38c",
+    "examples/intro-workspace/Cargo.toml": "8858a9a16546805c4b0024a3d90b2e961adfd52e9f04efb9e9f25d860b5575aa",
+    "examples/intro-workspace/cargo-docs-answer/Cargo.toml": "ae58275b66b484490ff17704274b49bf6c27097a232871a3b39b68a11f9d6c56",
+    "examples/intro-workspace/cargo-docs-answer/src/lib.rs": "fd2dbcffe2aa5b0a9ca1bcda0a4c3d372ffb9832e36dc83594ac8ae839cec98a",
+    "examples/intro-workspace/cargo-docs/Cargo.toml": "fcdc783f7055df7bc31514d9a270d1d7bfadb5cd49243af716f3e36d369b84ff",
+    "examples/intro-workspace/cargo-docs/src/lib.rs": "cc99406eb027f27c2f5cd9a1fee0c488c27c49e552c526812dc290e0e48735b2",
+    "examples/intro-workspace/cargo-docs/tests/public_orders.rs": "c7421c74e587c8d05427af66fd09b3ee8148cf25bf835c191b93630c733ffa12",
+    "examples/intro-workspace/cargo-setup/Cargo.toml": "a91b0656e41cf9060a8cc48bc4c1ae26a832160cae9f62c7a302b0f0c0303a87",
+    "examples/intro-workspace/cargo-setup/src/main.rs": "56f0bf62412665451465f79d2d0f32aa8f58440c75f3328c487d10a66fe00363",
+    "examples/intro-workspace/modules-basic/Cargo.toml": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+    "examples/intro-workspace/modules-basic/src/lib.rs": "a2730bc5b8092f7a450369a65582404dbb83895caf104941af12d8a39024e534",
+    "examples/intro-workspace/modules-basic/src/pricing.rs": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "reference": "examples/intro-workspace/cargo-setup/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "reference": "examples/intro-workspace/cargo-setup/src/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/lib.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/pricing.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "reference": "examples/intro-workspace/cargo-setup/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/cargo-docs/src/lib.rs:documented-function",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/cargo-docs/tests/public_orders.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/cargo-docs/src/lib.rs:unit-tests",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/cargo-docs/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/cargo-docs/src/lib.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/lib.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/pricing.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/cargo-docs-answer/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "reference": "examples/intro-workspace/cargo-docs-answer/src/lib.rs",
+      "file_exists": true
+    }
+  ],
+  "command_review": [
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "command": "cargo check --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-setup --locked"
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-setup --locked"
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "command": "cargo add --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-setup clap@4.6.7 --features derive"
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "command": "cargo add --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-setup tempfile@3.27.0 --dev"
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "command": "cargo tree --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-setup --depth 1 --locked"
+    },
+    {
+      "document": "docs/chapters/10-01-lesson.md",
+      "command": "cargo update --manifest-path examples/intro-workspace/Cargo.toml clap"
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "command": "cargo doc --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-docs --lib --no-deps --open --locked"
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-docs --doc --locked"
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-docs --test public_orders --locked"
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-docs --lib --locked"
+    },
+    {
+      "document": "docs/chapters/10-02-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-docs-answer --doc --locked"
+    }
+  ],
+  "selected_lock_entries": {
+    "clap": {
+      "name": "clap",
+      "version": "4.6.7",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+      "dependencies": [
+        "clap_builder",
+        "clap_derive"
+      ]
+    },
+    "intro-cargo-docs": {
+      "name": "intro-cargo-docs",
+      "version": "0.1.0",
+      "dependencies": [
+        "intro-modules-basic"
+      ]
+    },
+    "intro-cargo-docs-answer": {
+      "name": "intro-cargo-docs-answer",
+      "version": "0.1.0",
+      "dependencies": [
+        "intro-modules-basic"
+      ]
+    },
+    "intro-cargo-setup": {
+      "name": "intro-cargo-setup",
+      "version": "0.1.0",
+      "dependencies": [
+        "clap",
+        "intro-modules-basic",
+        "tempfile"
+      ]
+    },
+    "intro-modules-basic": {
+      "name": "intro-modules-basic",
+      "version": "0.1.0"
+    },
+    "tempfile": {
+      "name": "tempfile",
+      "version": "3.27.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd",
+      "dependencies": [
+        "fastrand",
+        "getrandom",
+        "once_cell",
+        "rustix",
+        "windows-sys"
+      ]
+    }
+  },
+  "external_registry_manifest_evidence": [
+    {
+      "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.6.7/Cargo.toml",
+      "sha256": "4c4829a1a916d2c47e3299ca4c3e607721fc62998d2d3628afc10a85f0a8169a",
+      "package": "clap4.6.7",
+      "default_features": [
+        "std",
+        "color",
+        "help",
+        "usage",
+        "error-context",
+        "suggestions"
+      ],
+      "derive_feature": [
+        "dep:clap_derive"
+      ],
+      "clap_derive_dependency": {
+        "version": "=4.6.7",
+        "optional": true
+      }
+    },
+    {
+      "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tempfile-3.27.0/Cargo.toml",
+      "sha256": "4ffd8ce684ce8f34075633101c8e627761387b5e66e5efe95010b0aa1414bf1b",
+      "package": "tempfile3.27.0"
+    }
+  ],
+  "selected_target_closure": {
+    "path_dependency": {
+      "manifest": "examples/intro-workspace/modules-basic/Cargo.toml",
+      "normal_library_sources": [
+        "examples/intro-workspace/modules-basic/src/lib.rs",
+        "examples/intro-workspace/modules-basic/src/pricing.rs"
+      ],
+      "dependencies": [],
+      "unselected_targets": "modules-basicbinary/examplesnotcompiledaspathdependency",
+      "all_body_already_taught": true
+    },
+    "packages": [
+      {
+        "package": "intro-cargo-setup",
+        "manifest": "examples/intro-workspace/cargo-setup/Cargo.toml",
+        "owned_sources": [
+          "examples/intro-workspace/cargo-setup/src/main.rs",
+          "examples/intro-workspace/modules-basic/src/lib.rs",
+          "examples/intro-workspace/modules-basic/src/pricing.rs"
+        ],
+        "no_library": true,
+        "no_build_script": true,
+        "normal_external_registry": "clapwithdefault+deriveanditsregistrydependencyclosure compiledasdeclareddependency;noexternalRustAPIcalledbyownmain.",
+        "development_dependency": "tempfiledeclared/lockresolved/treevisible,butordinarycheck/runbinarydoesnotgrantnormaldependencyaccessorcompiledevtesttargets."
+      },
+      {
+        "package": "intro-cargo-docs",
+        "manifest": "examples/intro-workspace/cargo-docs/Cargo.toml",
+        "library_sources": [
+          "examples/intro-workspace/cargo-docs/src/lib.rs",
+          "examples/intro-workspace/modules-basic/src/lib.rs",
+          "examples/intro-workspace/modules-basic/src/pricing.rs"
+        ],
+        "integration_test_sources": [
+          "examples/intro-workspace/cargo-docs/tests/public_orders.rs",
+          "examples/intro-workspace/cargo-docs/src/lib.rs",
+          "examples/intro-workspace/modules-basic/src/lib.rs",
+          "examples/intro-workspace/modules-basic/src/pricing.rs"
+        ],
+        "no_binary": true,
+        "no_registry_dependency": true,
+        "counts": {
+          "doc": 1,
+          "integration_public_orders": 2,
+          "unit_lib": 1
+        }
+      },
+      {
+        "package": "intro-cargo-docs-answer",
+        "manifest": "examples/intro-workspace/cargo-docs-answer/Cargo.toml",
+        "doc_test_sources": [
+          "examples/intro-workspace/cargo-docs-answer/src/lib.rs",
+          "examples/intro-workspace/modules-basic/src/lib.rs",
+          "examples/intro-workspace/modules-basic/src/pricing.rs"
+        ],
+        "no_binary": true,
+        "no_registry_dependency": true,
+        "counts": {
+          "doc": 2
+        },
+        "unit_test_module_present_but_not_run_by_doc": true
+      }
+    ],
+    "inline": "Allownedsource/manifestsincludingpathdependencylib/pricingfullyshownsamepage. setupconfigallrolesbeforemanifest/commands;docsconfigreuses10.1pathrole. Registryinternalsnotauthored/requiredsourceprerequisite;role/featuresintroducedbeforebuilding.",
+    "no_hidden_own_targets": "Actualpackagefilelistingmatchesonlysetupmain,docslib/integration,andanswerlib;nocustombuild.rs/srcbin orhiddenCLIcode."
+  },
+  "concept_evidence": [
+    {
+      "concept": "Dependency source/path/registry/features/dev section",
+      "identity": "10.1:9–15 dependency/preparationnotautomaticAPIexecution,relativepathmanifestorigin,dependencyvsworkspace;19registryvsstd;30–36features/defaults/devdependency/inlineTOMLbeforefullmanifest39.",
+      "need": "Findlocalpricinglibraryandprepareexplicitthirdpartysource/version/capabilitiesforlaterCLI/tempfileworkwithoutrequiringthoseAPIsnow.",
+      "operation": "Path../modules-basic resolvesnormalpricinglib;clapversioncaret+derive retainsdefaults;tempfiledevonly. Actualcachedmanifestconfirmsderiveanddefaults.",
+      "evidence_and_limits": "Ownmainonlypricingcalls80/120qty1→100+140=240;75explicitlynotproofclapAPIworks. Allownloadeddependencyfunctions areactual2.6-levelplainRust,nohiddenlaterlib.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "SemVer/lock/tree/add/update roles",
+      "identity": "10.1:44–50 major/minor/patch,SemVerfullterm,major>=1caretrangesversusexact=,0.xscopecaveat;79addflags;92sharedlock;94tree;102update.",
+      "need": "Separateallowedversionsfromresolvedactualversionsandreaddependencyedgeswithoutclaimingenvironmentreproducibility.",
+      "operation": "Clap4.6.7>=..<5,tempfile3.27>=..<4. Actualselectedlockversionsmatchandpreserveregistrychecksums. Tree depth1includesnormal/local/dev;updatepositionalclapverifiedhelp.",
+      "evidence_and_limits": "Mutatingadd/updateonlypracticecopy,not--lockedpreservation;locknotdeletedtoconcealchange,mayupdateotherdeps;locknotfullOS/environmentguarantee110. Actualpracticecommandsnotexecuted.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Rustdoc documentation and executable examples",
+      "identity": "10.2:9–13 ///itemdocs,Markdown#Examples/Rustfences,rustdoc/doc testwrapperandexecutionbeforefirstsource18;31docflags;39docgenerationnotdoc-testexecution.",
+      "need": "Publicuserknowstwoindependentorders,inputs/nonoverflowlimits,andcorrectuse/expectedanswers.",
+      "operation": "pair_total80/120=240;300/120=440. Docselected--lib,no-deps,open;doc testsimportpubliccratenameandsupplyassertions.",
+      "evidence_and_limits": "Eachdocpagefullownlib/pathdepprovided;answer2fencescorrectcrateunderscoreandtwoexpectedtotals. Actualbrowsergeneration/render/doc executionnotdone. Changing240to200wouldmakeassertfalsebutnotpreventdocgeneration;notafreshexperimentclaim.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Integration/public interface versus unit/doc targets",
+      "identity": "10.2:49 independenttop-leveltestsrscrates,62crate::originchanges,70testattrswithoutcfgwrapper,72--testselectorbeforecommand75.",
+      "need": "Verifyexternalcallabilityandseparate-per-orderthresholdratherthanonlyinternalcodeaccess.",
+      "operation": "public_orders2cases240/340;libraryunit300/120=440;doc1case240. Dependencylibrarynormalcfg,notdependencytests/main. Answer--docruns2fencesnotitsunitmodule.",
+      "evidence_and_limits": "150+150must340notcombined300;explicitnonnegativeboundedinputsavoidunclaimedvalidation. Testcount1unit+2integration+1doc andanswer2docmatchesactualfunctions/fences.",
+      "status": "sufficient"
+    }
+  ],
+  "fixtures": "No manuscriptcompile-fail/runtime-failfixturesreferencedinthiswave. Deliberatewrongdocassertionisonlypractice-copyexercise,notperformedhere.",
+  "static_outputs": {
+    "cargo_setup": "兩筆訂單總額=240",
+    "pair_total_checks": {
+      "80,120": 240,
+      "150,150": 340,
+      "300,120": 440
+    }
+  },
+  "version_note": {
+    "chapter10_1_sha256": "2d8fdc5ae52f16c2bce057f6b59f272f79af58d051e932a88ee8b1d552aa6564",
+    "author_inline_table_adjustment_not_own_discovery": true
+  },
+  "limits": "OnlyCargo--helpwasexecuted. Ownbuild/run/test/doc/treeoutputsremainstaticexpectations;externalfeatureevidenceiscachedoriginalmanifestmetadata,nofreshdownload/browser. No10.3or11contentused.",
+  "sealed_at_utc": "2026-10-15T08:26:25.708742+00:00"
+}

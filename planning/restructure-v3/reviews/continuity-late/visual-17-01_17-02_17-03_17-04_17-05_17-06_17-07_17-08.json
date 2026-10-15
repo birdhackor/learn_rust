@@ -1,0 +1,404 @@
+[
+  {
+    "id": "17-01",
+    "width": 1280,
+    "title": "17.1 用 macro_rules! 產生已看懂的 Rust 宣告¶",
+    "images": [
+      {
+        "name": "17-01-1280-image0.png",
+        "alt": "reading_type接收Meters名字，依模板產生Meters的struct與Reading實作，程式執行時才借讀80",
+        "box": {
+          "x": 288.5,
+          "y": 40.3125,
+          "width": 400,
+          "height": 720
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 4,
+    "answer": "17-01-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "17-02",
+    "width": 1280,
+    "title": "17.2 macro 的名字從哪裡來，錯誤又發生在哪裡？¶",
+    "images": [
+      {
+        "name": "17-02-1280-image0.png",
+        "alt": "caller的value借用Seconds，模板自己的value保存Meters的reference，右輸入保留caller來源，兩筆讀值是80和30",
+        "box": {
+          "x": 288.5,
+          "y": 45.21875,
+          "width": 400,
+          "height": 710
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 2,
+    "answer": "17-02-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "17-03",
+    "width": 1280,
+    "title": "17.3 讓自訂 derive 讀宣告、增加 trait 實作¶",
+    "images": [
+      {
+        "name": "17-03-1280-image0.png",
+        "alt": "編譯器交入Meters宣告，syn讀取名字與外形，quote產生impl的tokens，轉回compiler型別後，consumer才建立值並借讀80",
+        "box": {
+          "x": 288.5,
+          "y": -50.09375,
+          "width": 400,
+          "height": 900
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 3,
+    "answer": "17-03-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "17-04",
+    "width": 1280,
+    "title": "17.4 讓library的公開契約能驗證，也能持續維護¶",
+    "images": [],
+    "bodyOverflow": false,
+    "details": 3,
+    "answer": "17-04-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "17-05",
+    "width": 1280,
+    "title": "17.5 從明確性質產生材料，再把失敗縮成可理解的反例¶",
+    "images": [
+      {
+        "name": "17-05-1280-image0.png",
+        "alt": "四筆零與兩筆零都因insert覆寫少算，一筆零通過，所以保留兩筆零反例",
+        "box": {
+          "x": 288.5,
+          "y": 89.5,
+          "width": 390,
+          "height": 620
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "17-05-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "17-06",
+    "width": 1280,
+    "title": "17.6 用 Loom 與 Miri 檢查普通 PASS 尚未涵蓋的責任¶",
+    "images": [
+      {
+        "name": "17-06-1280-image0.png",
+        "alt": "同一份分開load和store的程式，在兩次從0開始的探索中，交錯甲得到2，交錯乙得到1；只通過甲無法排除乙",
+        "box": {
+          "x": 288.5,
+          "y": 180.21875,
+          "width": 400,
+          "height": 620
+        }
+      },
+      {
+        "name": "17-06-1280-image1.png",
+        "alt": "Box owner原本保活heap的80，raw pointer指向同一份資料；drop owner釋放後，舊pointer仍保存資訊，但之後的dereference是UB",
+        "box": {
+          "x": 288.5,
+          "y": 100.21875,
+          "width": 400,
+          "height": 600
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 3,
+    "answer": "17-06-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "17-07",
+    "width": 1280,
+    "title": "17.7 固定同一項工作，再判斷量測數字¶",
+    "images": [
+      {
+        "name": "17-07-1280-image0.png",
+        "alt": "清單與答案檢查在iter外；計時內借讀方法巡訪文字，複本方法另建立與釋放candidate，兩者交相同行數",
+        "box": {
+          "x": 288.5,
+          "y": 77.21875,
+          "width": 390,
+          "height": 645
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 4,
+    "answer": "17-07-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "17-08",
+    "width": 1280,
+    "title": "17.8 找到配置來源，再核對改善仍完成相同工作¶",
+    "images": [
+      {
+        "name": "17-08-1280-image0.png",
+        "alt": "先建立清單並核對答案，在Profiler存活期間做100次計數與取得snapshot，再drop停止及輸出；原清單不算本段新配置",
+        "box": {
+          "x": 288.5,
+          "y": 59.71875,
+          "width": 390,
+          "height": 680
+        }
+      },
+      {
+        "name": "17-08-1280-image1.png",
+        "alt": "實際配置來源鏈從allocation_cloned main第18行到repeat_counts第12行、count_cloned第21行，再到String的Clone；同一來源累計25600次配置326400bytes",
+        "box": {
+          "x": 288.5,
+          "y": 100.3125,
+          "width": 390,
+          "height": 600
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 4,
+    "answer": "17-08-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "17-01",
+    "width": 390,
+    "title": "17.1 用 macro_rules! 產生已看懂的 Rust 宣告¶",
+    "images": [
+      {
+        "name": "17-01-390-image0.png",
+        "alt": "reading_type接收Meters名字，依模板產生Meters的struct與Reading實作，程式執行時才借讀80",
+        "box": {
+          "x": 16,
+          "y": 113.5625,
+          "width": 342.984375,
+          "height": 617.390625
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 4,
+    "answer": "17-01-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "17-02",
+    "width": 390,
+    "title": "17.2 macro 的名字從哪裡來，錯誤又發生在哪裡？¶",
+    "images": [
+      {
+        "name": "17-02-390-image0.png",
+        "alt": "caller的value借用Seconds，模板自己的value保存Meters的reference，右輸入保留caller來源，兩筆讀值是80和30",
+        "box": {
+          "x": 16,
+          "y": 117.28125,
+          "width": 342.984375,
+          "height": 608.8125
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 2,
+    "answer": "17-02-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "17-03",
+    "width": 390,
+    "title": "17.3 讓自訂 derive 讀宣告、增加 trait 實作¶",
+    "images": [
+      {
+        "name": "17-03-390-image0.png",
+        "alt": "編譯器交入Meters宣告，syn讀取名字與外形，quote產生impl的tokens，轉回compiler型別後，consumer才建立值並借讀80",
+        "box": {
+          "x": 16,
+          "y": 35.6875,
+          "width": 343,
+          "height": 771.75
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 3,
+    "answer": "17-03-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "17-04",
+    "width": 390,
+    "title": "17.4 讓library的公開契約能驗證，也能持續維護¶",
+    "images": [],
+    "bodyOverflow": false,
+    "details": 3,
+    "answer": "17-04-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "17-05",
+    "width": 390,
+    "title": "17.5 從明確性質產生材料，再把失敗縮成可理解的反例¶",
+    "images": [
+      {
+        "name": "17-05-390-image0.png",
+        "alt": "四筆零與兩筆零都因insert覆寫少算，一筆零通過，所以保留兩筆零反例",
+        "box": {
+          "x": 16,
+          "y": 149.21875,
+          "width": 342.984375,
+          "height": 545.28125
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "17-05-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "17-06",
+    "width": 390,
+    "title": "17.6 用 Loom 與 Miri 檢查普通 PASS 尚未涵蓋的責任¶",
+    "images": [
+      {
+        "name": "17-06-390-image0.png",
+        "alt": "同一份分開load和store的程式，在兩次從0開始的探索中，交錯甲得到2，交錯乙得到1；只通過甲無法排除乙",
+        "box": {
+          "x": 16,
+          "y": 155.84375,
+          "width": 342.984375,
+          "height": 531.640625
+        }
+      },
+      {
+        "name": "17-06-390-image1.png",
+        "alt": "Box owner原本保活heap的80，raw pointer指向同一份資料；drop owner釋放後，舊pointer仍保存資訊，但之後的dereference是UB",
+        "box": {
+          "x": 16,
+          "y": 164.859375,
+          "width": 343,
+          "height": 514.5
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 3,
+    "answer": "17-06-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "17-07",
+    "width": 390,
+    "title": "17.7 固定同一項工作，再判斷量測數字¶",
+    "images": [
+      {
+        "name": "17-07-390-image0.png",
+        "alt": "清單與答案檢查在iter外；計時內借讀方法巡訪文字，複本方法另建立與釋放candidate，兩者交相同行數",
+        "box": {
+          "x": 16,
+          "y": 138.1875,
+          "width": 342.984375,
+          "height": 567.265625
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 4,
+    "answer": "17-07-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "17-08",
+    "width": 390,
+    "title": "17.8 找到配置來源，再核對改善仍完成相同工作¶",
+    "images": [
+      {
+        "name": "17-08-390-image0.png",
+        "alt": "先建立清單並核對答案，在Profiler存活期間做100次計數與取得snapshot，再drop停止及輸出；原清單不算本段新配置",
+        "box": {
+          "x": 16,
+          "y": 123.21875,
+          "width": 342.984375,
+          "height": 598.046875
+        }
+      },
+      {
+        "name": "17-08-390-image1.png",
+        "alt": "實際配置來源鏈從allocation_cloned main第18行到repeat_counts第12行、count_cloned第21行，再到String的Clone；同一來源累計25600次配置326400bytes",
+        "box": {
+          "x": 16,
+          "y": 157.703125,
+          "width": 342.984375,
+          "height": 527.6875
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 4,
+    "answer": "17-08-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  }
+]

@@ -1,0 +1,394 @@
+{
+  "review_id": "technical-early-round06-traits-prefix",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/06-01-lesson.md",
+    "docs/chapters/06-02-lesson.md"
+  ],
+  "reader_background": "Basic Python and actual required chapters1–5 read in sequence, including generic type/function/impl,ownership/references,modules/tests,Option/Result/Vec. No6.3–6.6 or chapter7 prerequisite.",
+  "independent_initial": true,
+  "independence": "No chapter6 author validation/evidence/ledger, continuity, reader, peer or known-problem record read before initial seal. Parent only supplied scope. Later notice that own5.5 optional cross-reference suggestion had been adopted is unrelated; its narrow source followup is deferred until after this independent seal.",
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "TC06P-O1",
+      "classification": "local material/type wording precision",
+      "severity": "選讀改善",
+      "necessity": "optional; declared i32 and example already identify integer materials",
+      "location": "docs/chapters/06-01-lesson.md:119",
+      "quote": "材料採非負小數，折扣不超過原價",
+      "evidence": "This very exercise declares original_price:i32 and discount:i32;6.1:5 explicitly scopes nonnegative small integers, and actual answer uses360,80 with integer subtraction. 小數 ordinarily denotes fractional/decimal values, so it is less precise than the intended small integers.",
+      "reader_impact": "May briefly suggest fractional prices are valid exercise inputs, conflicting with already-taught i32. Local type annotations, prior scope and actual materials resolve it, so it does not block the trait lesson or create a code defect.",
+      "minimal_change": "Replace 非負小數 with 非負小整數, matching6.1:5; no decimal type/API or new paragraph.",
+      "rust_semantic_error": false,
+      "independent_discovery": true
+    }
+  ],
+  "result": "No necessary technical, exact loaded-source completeness, first-use prerequisite, ownership/trait/derive rule, output, answer or fixture-code mismatch found. One optional word-precision suggestion.",
+  "method": "Sequential whole-page technical reread and actual referenced full Rust/helper/test modules,manifests,fixtures/expected. Static method resolution,type/borrow/output reasoning. Not blind first-read, target-reader experiment or browser verification.",
+  "execution": {
+    "cargo_rustc_clippy_tests": [],
+    "author_execution_used_as_own_evidence": false,
+    "browser_visual": false,
+    "reason": "No unresolved source uncertainty warranted rerunning these focused targets."
+  },
+  "source_snapshot_at_utc": "2026-10-15T07:41:55.523424+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/chapters/06-01-lesson.md": "2ae67ddfedea1c5feafc589171a8277879502eb56bcab4b5b9773bd9d94624b5",
+    "docs/chapters/06-02-lesson.md": "a4c6d3934cae52521b282cd9fb52132a62d2f43a9a8ee669f79f74452ffa40c9",
+    "examples/intro-workspace/Cargo.lock": "bdcccb63479540b1f3f2c275d50e3b6cc8c4047fdb768eea0e7014a85bda1084",
+    "examples/intro-workspace/Cargo.toml": "ab2450344449650f23553c189af2af1032be26ac133de130245ef47fc612da66",
+    "examples/intro-workspace/trait-stages/Cargo.toml": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+    "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs": "29b686ddbd39006071e407063d8e2207b39c21e6ed0863f31f1f0e2d4586fce7",
+    "examples/intro-workspace/trait-stages/examples/charges.rs": "e549a9efda165828e133c81d0d4a65cbed40df215b4727bf6716f18b2bbe1540",
+    "examples/intro-workspace/trait-stages/examples/charges_answer.rs": "7ecb507c30a3d3afaa6c01a8badd1d1a6af717f1045e38e43001bda4cf1fb38e",
+    "examples/intro-workspace/trait-stages/examples/debug.rs": "e77daf767da69e7348c871ecc70b91fb2043727fba61df9fb483704a498755fb",
+    "examples/intro-workspace/trait-stages/examples/equality.rs": "c3a730043d5774e5462a5cfd54fedc8332f0fcdb44a5e63ef3ec80cae101ce0b",
+    "examples/intro-workspace/trait-stages/examples/equality_answer.rs": "5bd909d17e425094a33529f75546e1b5a837d624f8d41a8b6df7c43f35deeb6b",
+    "examples/intro-workspace/trait-stages/examples/standard_equality.rs": "e442e57e01a4c7f9bccf7a4e96076a5a106f1a6da75376c87511c0d80e98b33d",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.expected": "e03b27f19f221f0ea2a3809e0da4983870354d9db49f275f5692df404d9c0312",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.rs": "efade76c33ff192ef1b0460cb45199a138a8b5d24646f766b985adceb5f76810",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.rs": "e8c8eeb215523bd8a67d4af2cbfe1ba1c35b27ad0c13c2e045ce99e62cbb037a",
+    "examples/intro-workspace/trait-stages/src/main.rs": "018c7d106ed7e348d943c40674e26c48ee5965208ace26ca9127a294908b0b30",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/06-01-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs:charge-model",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-01-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs:charge-trait",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-01-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs:charge-implementations",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-01-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs:charge-bound",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-01-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/charges.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-01-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-01-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-01-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-01-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/charges_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-02-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/debug.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-02-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-02-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/equality.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-02-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/standard_equality.rs:text",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-02-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/standard_equality.rs:references",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-02-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/standard_equality.rs:options",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-02-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/standard_equality.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-02-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-02-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/equality_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-trait-stages",
+    "manifest": "examples/intro-workspace/trait-stages/Cargo.toml",
+    "no_library": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "extra_repo_cargo_config": false,
+    "targets": [
+      {
+        "target": "charges",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/charges.rs",
+          "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs"
+        ],
+        "external_modules": [
+          "charge_support"
+        ],
+        "unit_test_count_when_tested": 2
+      },
+      {
+        "target": "charges_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/charges_answer.rs",
+          "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs"
+        ],
+        "external_modules": [
+          "charge_support"
+        ],
+        "library_or_other_examples": false
+      },
+      {
+        "target": "debug",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/debug.rs"
+        ],
+        "external_modules": [],
+        "library_or_other_examples": false
+      },
+      {
+        "target": "equality",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/equality.rs"
+        ],
+        "external_modules": [],
+        "library_or_other_examples": false
+      },
+      {
+        "target": "standard_equality",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/standard_equality.rs"
+        ],
+        "external_modules": [],
+        "library_or_other_examples": false
+      },
+      {
+        "target": "equality_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/equality_answer.rs"
+        ],
+        "external_modules": [],
+        "library_or_other_examples": false
+      }
+    ],
+    "cargo_auto_discovery": "charge_support has mod.rs but no main.rs, so it supplies a module rather than a separately runnable example. A directory itself does not load future targets.",
+    "unselected_main": "src/main.rs inspected; no selected --example command loads it.",
+    "manifest_role_order": "6.1:11 identifies member/package,no-library and module role before first selected use. Complete manifest at99–102 contains only prior-known name/version/edition and no newly needed dependency/configuration.6.2 reuses that manifest and repeats it at114–117.",
+    "source_display": "6.1 model,trait,implementations,bound fragments cover all normal helper definitions before charges main71 and first run75. Complete helper including cfg(test) tests at108 appears before targeted test112, and is already fully available before answer124.6.2 every example is a complete file; standard_equality snippets are followed by entire file99 before run103.",
+    "future_targets": "6.3–6.6 source bodies not read or used as prerequisites. No --all-targets,test-all,fmt or broad Clippy command."
+  },
+  "command_review": [
+    {
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example charges --locked",
+      "expected_kind": "success/output below"
+    },
+    {
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example charges --locked",
+      "expected_kind": "2 unit tests"
+    },
+    {
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example charges_answer --locked",
+      "expected_kind": "success/output below"
+    },
+    {
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example debug --locked",
+      "expected_kind": "success/output below"
+    },
+    {
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example equality --locked",
+      "expected_kind": "success/output below"
+    },
+    {
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example standard_equality --locked",
+      "expected_kind": "success/output below"
+    },
+    {
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example equality_answer --locked",
+      "expected_kind": "success/output below"
+    }
+  ],
+  "concept_evidence": [
+    {
+      "concept": "Trait operation contract and separate implementations",
+      "identity": "6.1:21–23 says Charge requires borrowed amount(&self)->i32, pub visibility, signature without body and semicolon before trait snippet26;33 defines impl Charge for Order before implementations36;39 explains no pub on trait impl methods.",
+      "need": "6.1:3 keeps one threshold rule while Order(unit_price,count) and Bundle(price) retain different storage shapes and amount calculations;5 scopes small nonnegative non-overflowing integers.",
+      "operation": "Each impl matches signature and uses its own fields; trait declaration alone adds no methods29. Existing3.6 receiver/method and field borrowing rules suffice.",
+      "example_and_limits": "Order120*3=360 andBundle160 provide same amount operation with distinct computation;60 explains sharedcomparison location without claiming separate functions impossible. Trait guarantees interface, not commercial correctness95/115.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Trait bound and method availability in generic body",
+      "identity": "6.1:43 connects5.1 generic save/return inability to assume arbitrary operations;45 states T:Charge requires impl and permits value.amount() before function50.",
+      "need": "One generic threshold function must have a justified operation usable for every accepted T, rather than assuming all types have amount.",
+      "operation": "Function receives&T,thresholdi32 and returnsbool via>=;53/table58 connect concreteimpl selection while borrowing.",
+      "example_and_limits": "360>=300 true,160>=300 false;tests cover300>=300 andnot>=301 for both types. Complete missing_bound fixture has no call but method fails while checking generic definition, staticallyE0599.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Trait import,example crate and modules",
+      "identity": "6.1:64 gives mod.rs path/no Cargo main target;66 says trait must be in caller scope for actual concrete trait-method dot calls, and use changes method visibility rather than ownership/dependency.",
+      "need": "Caller outside charge_support must construct public fields and resolve Charge.amount without hidden library/source.",
+      "operation": "71 full main imports Bundle,Charge,Order,meets_threshold via crate::charge_support. Module declarations and cfg/test/assertions already taught2.6/2.7.",
+      "example_and_limits": "order.count remains readable85 due shared borrow. DiscountedBundle answer implements known trait and reuses same genericfunction,with same helper fullsource already shown.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Debug and derive",
+      "identity": "6.2:7 explains developer-oriented Debug and :? format marker;9 defines derive attribute requests generated implementation,using already-known attribute syntax;11 states each field needsDebug,i32alreadyhasit before fullsource14.",
+      "need": "6.2:3/9 wants entire summary type/field/value view rather than separately choosing two fields.",
+      "operation": "deriveDebug on OrderSummary,printlnwholevalue with:?;fieldprimitive assertions are already taught.",
+      "example_and_limits": "OutputOrderSummary{amount360,count3} agrees withsource;25 explicitly does not promise stable external serialization format. Full not_debug fixture lacks impl and givesE0277.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "PartialEq,derivedstruct/enum equality and assertion borrowing",
+      "identity": "6.2:35 selects all-fields equal;37 defines==/!=bool andderivefieldrequirement;39 explains samevariant plusallpayload values.",
+      "need": "Distinguish same amount/different count and samevariant/differentpayload without inventing domain equality by field names.",
+      "operation": "41 introduces multi-derive and separates Debug failure-display vsPartialEqcomparison roles forassert_eq before equality44;statesborrowedoperands/continueduse.",
+      "example_and_limits": "Actual comparisons first/same=true,differentcount=false,Waiting/Ready=false,Ready3/Ready4=false. Derive not assumed to ignore fields or infer business sameness58. No Eq/ordering/hash/methodimpl syntax needed in these sources.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Standard String/&str/usize/reference and Option equality",
+      "identity": "6.2:62 defines String/&str content comparison,Debug/PartialEq beforetextsnippet67;64 givesDebugquotes;74 states usize and sharedreference capabilities before77;84 statesOptionconditional capabilities before89.",
+      "need": "Text-labelled summaries and later result-query assertions need compare both outer presence and inner value,including borrowed values.",
+      "operation": "IndependentlybuiltStringRust values comparetrue withoutmove. Distinct&usize variables containing2 comparevalues,notaddresses;Option<usize> andOption<&usize> inherittheappropriate rules.",
+      "example_and_limits": "OptionNone=None,Some2=Some2,Some2!=Some3andNone;borrowedSome(first_ref)=Some(other_ref). No loss of missing-vs-zero. Fullsource all variables defined;standardtraits preexist and derive builtin syntax does not require a hiddenuse statement.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Text-labelled answer ownership after comparison",
+      "identity": "6.2:122–124 sets String label/i32 amount,Debug/PartialEq and explicitly independent construction,thenchangeonlysecondamount.",
+      "need": "Confirm equality depends on both contents and can change after mutation while retaining first summary.",
+      "operation": "EachString isbuiltwithnew/push_str andmoved into itsownstruct. assert_eq and != onlyborrow;second.amount +=20 legal;as_str labelcomparison usesrule62.",
+      "example_and_limits": "First280,second300,bothlabels訂單A;wholefalse;Debugoutputmatches. No Clone/Copy method or6.3 API enters code.",
+      "status": "sufficient"
+    }
+  ],
+  "fixture_checks": [
+    {
+      "source": "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.rs",
+      "expected": "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.expected",
+      "stable_code": "E0599",
+      "reason": "Unconstrained &T has no guaranteed amount method despite Charge trait declaration;noimpl/call necessary to reject definition.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.rs",
+      "expected": "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.expected",
+      "stable_code": "E0277",
+      "reason": "StructwithoutDebugimpl used with{:?}.",
+      "executed": false
+    }
+  ],
+  "static_output_checks": [
+    {
+      "target": "charges",
+      "expected": [
+        "訂單小計=360，組合價=160",
+        "訂單達300=true",
+        "組合達300=false",
+        "訂單仍可讀，數量=3"
+      ]
+    },
+    {
+      "target": "charges_answer",
+      "expected": [
+        "折扣後=280，達300=false"
+      ],
+      "assertions": "Order140*2,Bundle280,Discounted360-80 all280;not>=300and>=280."
+    },
+    {
+      "target": "debug",
+      "expected": [
+        "整筆資料=OrderSummary { amount: 360, count: 3 }"
+      ]
+    },
+    {
+      "target": "equality",
+      "expected": [
+        "相同欄位=true",
+        "同金額、不同數量=false",
+        "等待與可出貨相等=false",
+        "相同形態、不同數量=false"
+      ]
+    },
+    {
+      "target": "standard_equality",
+      "expected": [
+        "owned=\"Rust\"，借用=\"Rust\"",
+        "比較後仍可讀=Rust",
+        "兩份借用的內容相等=true",
+        "有值=Some(2)，缺值=None",
+        "借到的結果=Some(2)"
+      ]
+    },
+    {
+      "target": "equality_answer",
+      "expected": [
+        "原摘要=LabelledSummary { label: \"訂單A\", amount: 280 }",
+        "改金額後=LabelledSummary { label: \"訂單A\", amount: 300 }"
+      ]
+    }
+  ],
+  "limits": "Output formatting/fixture codes/test counts statically checked against pinned-toolchain source contracts, not newexecution. No browser/layout or target-reader validation. No later6.3–6.6 content reviewed.",
+  "sealed_at_utc": "2026-10-15T07:43:48.254820+00:00"
+}

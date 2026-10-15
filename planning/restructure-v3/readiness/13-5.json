@@ -1,0 +1,139 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "13.5"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round13-root-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round13-scoped-channel-lock-atomic-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round13-send-thread-hrtb-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-addendum-array.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-array-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-summary.md",
+    "planning/restructure-v3/reviews/continuity-late/13tail-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/13-05-lesson.md": "c845832a2d68530200fb59fc705bbc9f128df007922888a0f5c388cdb9728481",
+    "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+    "examples/concurrency-stages/examples/channel_single/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/channel_single/main.rs": "a1a5d52c42c6b7f4552c06f161b2bf28ddec9e20587ab59e5b179344f5708be6",
+    "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.rs": "05d22888681ab3a20d2e93519a50f162ba99858b64e77c081e572b5e5cefe618",
+    "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/concurrency-stages/examples/channel_drain/main.rs": "82fbeec6cc8c1de790e499f8b327934d4bc2065d11acd2346e37fc9026319e5a",
+    "examples/concurrency-stages/examples/channel_recover/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/channel_recover/main.rs": "d9288ec2828fa19eedfd86ceb84228dc25f6cab310d162450b211adaf295345d",
+    "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.rs": "4b11ed927b6bbb28ef4117d03e1ceec705ac3d8e77d6d95dd4047410bc7324d8",
+    "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/examples/channel_producers/messages/mod.rs": "ba226ed5ec6a7acbd3957fe3cdc803947e3252bbeb35803d1152c9ea94fad1ab",
+    "examples/concurrency-stages/examples/channel_producers/main.rs": "5653bf89211dce7e3894a6c7ecae8a96f70f9ecc26b020dfb0b2c8672ab36288",
+    "examples/concurrency-stages/examples/channel_bounded/bounded_messages/mod.rs": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+    "examples/concurrency-stages/examples/channel_bounded/main.rs": "3daf6e81c8f18cef69de2c298f25695c99440de8499c71ab3f775845eb87d63f",
+    "examples/concurrency-stages/examples/channel_stop/bounded_messages/mod.rs": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+    "examples/concurrency-stages/examples/channel_stop/main.rs": "b78a7167a758eb29f8f29a82d8e5b36dbd7685a87d6436ccdeb2ea6d1a072001",
+    "examples/concurrency-stages/examples/channel_answer/bounded_messages/mod.rs": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+    "examples/concurrency-stages/examples/channel_answer/main.rs": "784588d5e8247ef9d783fff5f04e72471227a6730c896c7f429bb02e66e87196",
+    "docs/assets/ch10/channel-drain.svg": "56077fabd2076b4ac956067f1bf149b5b679cad42e0b806db1f22f89f0ee7f39"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 3,
+      "quote": "13.2 用 join 取得 worker 最後回傳的一份成果。現在希望 **worker 能逐項交出資料，main 持續收取，最後確認收完整份資料並等待 worker 結束**。例如一份工作依序提供80與120，另一份提供1、2、3，main 收到五項後加總成206。join 仍可取得最後成果；這次另外需要工作進行中的訊息交接。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 5,
+      "quote": "**message passing（訊息傳遞）** 是把資料當成訊息，交給接收方使用。標準函式庫的 **channel（通道）** 提供傳送端和接收端：傳送端把值交進 channel，接收端再取出值。它不是新 thread；哪個 thread 傳、哪個 thread 收，由程式安排。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 15,
+      "quote": "`std::sync::mpsc` 是提供這些 channel 的 module。**mpsc** 展開為 **multiple producer, single consumer**：多個傳送方可以交出訊息，由一個接收端取走。先用一個傳送端，稍後再增加傳送方。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 23,
+      "quote": "channel 會保留已送入、尚未取走的訊息；這段待收空間叫 **buffer（緩衝區）**。這個 channel 沒有預先設定訊息數量上限，送得比收得快時，待收訊息可能累積並占用更多記憶體。這不表示電腦有無限記憶體。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 31,
+      "quote": "send 的 receiver 是 `&self`，會保留 Sender，能再送下一份；訊息參數是 owned T。recv 的 receiver 也是 `&self`，每次成功取走一份 T，能再收下一份。**send 成功只表示本次傳送被 channel 接受，不保證接收方最後一定收到，更不保證已完成處理**：接收端仍可能在成功傳送後被丟棄。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 45,
+      "quote": "沿用 `[80, 120]` 和已教 sum。跨 thread 交接 owned 訊息仍受13.1的 Send 規則限制：**T 符合 Send，`Sender<T>` 才符合 Send**。這裡的 `Vec<i32>` 有 Send，這份 Sender 也不依賴局部借用，能滿足普通 spawn 的 Send 與 static bound。channel 的建立本身沒有要求所有 T 都是 static；此處是工作介面的限制。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 81,
+      "quote": "recv 等待的理由是「現在沒有訊息，但仍可能有人送」。只要任一 Sender 還存在，空 buffer 的 recv 就不能把它當作結束；**原始 Sender 和每一份 clone 都必須丟棄**，才表示不會有新的傳送。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 120,
+      "quote": "要讓兩份 worker 都傳送到同一個 channel，可以呼叫 `sender.clone()`。這個 Clone **建立連到同一 channel 的另一份傳送權限**，不複製 channel 中的訊息，也不要求訊息 T 本身符合 Clone。每份 Sender 都要納入收尾。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 122,
+      "quote": "跨 thread 時仍看13.1的型別能力：T 符合 Send，`Sender<T>` 才符合 Send 和 Sync，`Receiver<T>` 才符合 Send。**Receiver 不符合 Sync，也沒有 Clone**；不要把它當成可以任意複製、讓多份 shared reference 同時收訊息的物件。本節讓 main 獨自持有 Receiver，各 worker 各持有一份 Sender。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 162,
+      "quote": "下圖把 **傳送權限、待收訊息和工作完成** 分開。灰箭頭指向 clone 的持有者或後續收尾，藍箭頭表示訊息交接，綠框是 main 的接收操作。這些是關係，不是固定排程或量測時間："
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 172,
+      "quote": "channel 沒有訊息數量上限。若 producer 持續供應、consumer 處理較慢，待收資料可能累積；希望 **最多只在 buffer 裡保留固定筆數，滿了就讓 producer 等待**，可以使用 `mpsc::sync_channel`。這種有容量限制的 channel 叫 **bounded channel**；滿了會反過來限制供應進度，這種作用叫 **backpressure（背壓）**。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 202,
+      "quote": "容量1，worker 要傳送三項。如果 main 在第一個 recv 之前先 join，可能形成 **deadlock（死鎖）**，也就是各方互相等對方才能繼續的情況："
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 212,
+      "quote": "如果 main 已不需要後面的訊息，丟棄 Receiver 會讓後續 send 失敗；正在等空位的傳送也能得到失敗。producer 要檢查這份 Result，決定結束自己的工作。**這是協作停止**：消費端關閉接收，producer 在傳送處得知後自行返回；丟棄接收端沒有強制取消任何 thread。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 214,
+      "quote": "為了讓停止發生在哪一筆可以確定，這次用容量0。這是 **rendezvous channel（傳送和接收會合的通道）**：不放待收 buffer，send 要與一次 recv 配對，成功返回時對方已收到那一項。這仍不保證對方已處理完它。"
+    },
+    {
+      "section_id": "13.5",
+      "path": "docs/chapters/13-05-lesson.md",
+      "line": 243,
+      "quote": "把前面的多 producer 加總改成容量1。材料仍是 `[80, 120]` 與 `[1, 2, 3]`；一份訊息就是一個 i32，main 逐項加總。使用已教的 send_bounded_values，不引入新的等待 API。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

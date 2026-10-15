@@ -1,0 +1,38 @@
+{
+  "review_id": "technical-early-round05-prefix-markup-followup",
+  "checked_at_utc": "2026-10-15T07:33:10.564726+00:00",
+  "discovered_by": "author HTML self-check, parent prompt after own prefix seal",
+  "independent_discovery": false,
+  "own_initial_judgment_unchanged": true,
+  "scope": "Source-only narrow markup differences in5.1/5.2, before independent5.3–5.5 review.",
+  "status": "source_fix_confirmed",
+  "evidence": "Bare generic type spellings now enclosed in code spans; removal of backtick characters from both old/current text gives identical prose in each page. Angle-bracket generic syntax is preserved as code text.",
+  "source_checks": {
+    "docs/chapters/05-01-lesson.md": {
+      "before": "5591d4b1bdc74705aa3e2569259a7f76c59e71a6ddf56290858061828f4199cf",
+      "after": "25f1b41ae6846b38b0c012775e0e44992eb493b1e957d5453debd4f4baf3378a",
+      "only_backtick_characters_changed": true
+    },
+    "docs/chapters/05-02-lesson.md": {
+      "before": "3cb416c39b9653df37fac70e6041723b8bcb9ad00356c156fce9c1cc439d370f",
+      "after": "95c65c1f820872f041c5c67e765d179549bfd0e98712bfb1ce5650bad961051e",
+      "only_backtick_characters_changed": true
+    }
+  },
+  "unchanged_loaded_rust_fixture_and_package_config": {
+    "examples/intro-workspace/data-steps/Cargo.toml": true,
+    "examples/intro-workspace/data-steps/examples/generic_answer.rs": true,
+    "examples/intro-workspace/data-steps/examples/generic_holder.rs": true,
+    "examples/intro-workspace/data-steps/examples/generic_impl.rs": true,
+    "examples/intro-workspace/data-steps/examples/option_result.rs": true,
+    "examples/intro-workspace/data-steps/examples/result_answer.rs": true,
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.expected": true,
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.rs": true,
+    "examples/intro-workspace/data-steps/src/main.rs": true
+  },
+  "execution": {
+    "cargo_rustc_tests": [],
+    "browser_visual": false
+  },
+  "limit": "Original actual-HTML parsing discovery and visual observations belong to author; this reviewer did not reproduce a browser finding."
+}

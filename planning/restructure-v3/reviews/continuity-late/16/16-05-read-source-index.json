@@ -1,0 +1,296 @@
+[
+  {
+    "path": "examples/ch13-futures/stages/Cargo.toml",
+    "sha256": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "lines": 6,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/Cargo.toml"
+  },
+  {
+    "path": "examples/ch13-futures/stages/src/main.rs",
+    "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "lines": 3,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/src/main.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_event/readiness/mod.rs",
+    "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "lines": 101,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs",
+    "sha256": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df",
+    "lines": 74,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_event/main.rs",
+    "sha256": "173327762bdba78ed56c3d8db71c4e6c0b40945f2dd2fae133e376c3b4185b7a",
+    "lines": 22,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/executor_event/main.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_early_notice/runner/mod.rs",
+    "sha256": "4d2a7e133bc4b9d2d971c4adccf2008c0611d8a9703953fc56256953aaba7279",
+    "lines": 69,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/executor_early_notice/runner/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_early_notice/main.rs",
+    "sha256": "c70fd4fb60272af991ea9b6a4b480054c86cb7ee93c8edad323c684f3342408a",
+    "lines": 10,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/executor_early_notice/main.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_pinned/runner/mod.rs",
+    "sha256": "849f283a3a2506d66ab4c8d6b2ca64d29ef20ba6772aa4b33aef66d050457521",
+    "lines": 64,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/executor_pinned/runner/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_pinned/main.rs",
+    "sha256": "3b102e0a8ff80f5c6abe7c4789ce89dd52a49023ab15be334e86ff73fbb00942",
+    "lines": 10,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/executor_pinned/main.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_solution/readiness/mod.rs",
+    "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "lines": 101,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_solution/runner/mod.rs",
+    "sha256": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df",
+    "lines": 74,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_solution/main.rs",
+    "sha256": "d93c4eb719c80d0ffe85effc1780777157abb7629d26e132d56a712fd70ed8ae",
+    "lines": 22,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/executor_solution/main.rs"
+  },
+  {
+    "path": "examples/ch13-futures/Cargo.toml",
+    "sha256": "967b0de23ab6cfa47c3450d3f57356c6d34e23f33fcece5fb27d7f82b8d4e926",
+    "lines": 6,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/src/lib.rs",
+    "sha256": "2b784372e0fe76ee40b7fcc35685070ee9c937721d25aa2a66b656b30d1922d2",
+    "lines": 5,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/src/addresses.rs",
+    "sha256": "ecc28b64aebb05adbeb3ab5a8a53f25f7e93816844cdb5ffb5fc58ed94f871d3",
+    "lines": 92,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/addresses_complete/addresses/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/src/pinning.rs",
+    "sha256": "e52fbf2e64735c17bf2153f8d22e85c8dd1916cea2e637a05153da45b8c2a42e",
+    "lines": 102,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/pinning_complete/pinning/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/src/polling.rs",
+    "sha256": "86aaaa646c3b17d44dfad9767c027b6c180024f5b005a47f670e942c7adaf551",
+    "lines": 209,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/src/readiness.rs",
+    "sha256": "2b5d14ae4112f5d8e03dfea6b98a967fe42249fdfdb8a278f0e85d611621c212",
+    "lines": 234,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/src/runner.rs",
+    "sha256": "164639b5c9ce64a8ca5c7bbcc0829ebfc6a6745d254c677452f329afe31c6e60",
+    "lines": 175,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/executor_event.rs",
+    "sha256": "2456c06604755605b5eb5ae48b8980e0cfae132abf24266c6898e217470425b9",
+    "lines": 19,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/executor_early_notice.rs",
+    "sha256": "687fb33a44fe32811e693479c80deb298be420ddf5475113a2134a3d2bba3fe4",
+    "lines": 8,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/executor_pinned.rs",
+    "sha256": "e7542eb97d8323f0dac022a4ac3795570193506264765e3b0aa0a8e1045f03fd",
+    "lines": 8,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/executor_solution.rs",
+    "sha256": "fee789eb7cac0ea9a42015256beca4e873f9572e4809c6ab80b27c1776cc6b21",
+    "lines": 19,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/inline_swap.rs",
+    "sha256": "dad2a68787777585cf82b9b22b4c9e943910dc5981d64df71bbe7b530031f2b5",
+    "lines": 28,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/box_handles.rs",
+    "sha256": "a4027c95c248fb141af796e17fed38a45f63f48b67dc156ce6037b601949280a",
+    "lines": 28,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/field_swap_solution.rs",
+    "sha256": "c2a6047a648b4853f0edb5b982ed98f52c4306a4601cd8a219ca1bc7119f7da0",
+    "lines": 24,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/unpin_access.rs",
+    "sha256": "0de2e89d4777b51204c65d440ff38b88ec41dd3669ba018f9832d19016392de0",
+    "lines": 13,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/unpin_access.rs"
+  },
+  {
+    "path": "examples/ch13-futures/examples/pinned_owner_swap.rs",
+    "sha256": "e9486de4049afeb4e752075e91e731394c7888c00e66092524d6d1a85b0085d6",
+    "lines": 36,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/pinning_solution.rs",
+    "sha256": "6286d949367108d2d00de67f6ce50e6895ffe3770bc735f12e40b9ebfbd24105",
+    "lines": 13,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/manual_poll.rs",
+    "sha256": "6060ef9dd08eaecfe8d43031ed39cc9c97e54e161e058cba4f5f2f59b632e8d3",
+    "lines": 50,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/already_ready.rs",
+    "sha256": "72bfb1187efff3f10aa793eacccf2fce94d6ef0d491948eb95fa2434437af92b",
+    "lines": 31,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/polling_solution.rs",
+    "sha256": "c67988fcf6c60ce57ac31eecbb5f2aa501abf0da12323a7c3843a90e4f951bb8",
+    "lines": 45,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/event_after_poll.rs",
+    "sha256": "8526ff4104be143df302cb7b861c6397be5a06ce5c7759532bfbb3aec7628698",
+    "lines": 50,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/event_before_poll.rs",
+    "sha256": "2b8e32b6b57489d98bec3e73eb55f8abdfa4d3d5bdc29dd66faf3d12628b7ce4",
+    "lines": 31,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/examples/event_solution.rs",
+    "sha256": "e91c275615dd836690117705ad8b6ece9148eb61bd1bb321a0cae47f3f873eee",
+    "lines": 54,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml",
+    "sha256": "e6a4b9c9d14e9ade7b5b9c7ff1cd0b56c53080aed2cffdaa8e1cb1c66b599d6a",
+    "lines": 10,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.rs",
+    "sha256": "73facf00cbd6bf5009ed5adccfdd251b4cd453eb7c00fa6bdc1bcdbc51e94560",
+    "lines": 8,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "lines": 1,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.rs",
+    "sha256": "36f90656e05584c3860c9557ae6249b0f0dd0388ec63bdaf09116e5f64e90cba",
+    "lines": 7,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.expected",
+    "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "lines": 1,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.expected"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.rs",
+    "sha256": "acd705401e4f16dee4345ed8aad999c96b9182cb4c2bf7a315d3f35afd20be8f",
+    "lines": 21,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.rs"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.expected",
+    "sha256": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "lines": 1,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.expected"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.rs",
+    "sha256": "d45e8d0513919c543d76adf58985ab796f074ba066178171639bdfa73fc80ffa",
+    "lines": 7,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.rs"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "lines": 1,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml",
+    "sha256": "4b72336031c53782ad6c2d33d84326b8a2954e01ae7d7fc45550cd6f88ea6d22",
+    "lines": 10,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.rs",
+    "sha256": "607a6ccbbfb4f4c8d37441be494eb2e13af65512860a70659fff0da0a038501b",
+    "lines": 22,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.expected",
+    "sha256": "19bb7307840ec56041dfec745a61f88160ea6130b01e6cfce9f3f52dbede1ad8",
+    "lines": 1,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.expected"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.lock",
+    "sha256": "5da64c7aac59dca9ffe91c6f8d1f35ea707af436f5a5f77aebefe11bb67ff31a",
+    "lines": 14,
+    "method": "full source read in three explicit batches"
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.lock",
+    "sha256": "e06d2cd2dd22e254033c7bf3891315c63ecca0d0c586e01bd07d7f39a17264ba",
+    "lines": 14,
+    "method": "full source read in three explicit batches"
+  }
+]

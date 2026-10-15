@@ -1,0 +1,556 @@
+{
+  "review_id": "round17-public-api-contracts",
+  "scope": [
+    "17.4"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python+實際已讀1–13相應前綴、17.1–17.3；未以未讀15內容補本節。",
+  "independence": "未讀root作者validation/ledger、peer、reader或historical findings後才形成初判。",
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "TC17A-O1",
+      "classification": "optional",
+      "source": "docs/chapters/17-04-lesson.md:33",
+      "evidence": "「derive明選4.2的Debug／Clone／Copy／PartialEq」；實際4.2為match結果，6.2教Debug/PartialEq及derive、6.3教Clone/Copy。",
+      "reader_impact": "回查會到無關頁面；這些能力在真正前綴都已教過，本節也說明copy有效值仍有效，所以非必要概念缺口。",
+      "suggested_change": "改成「derive明選第6.2／6.3節的Debug／Clone／Copy／PartialEq」。"
+    },
+    {
+      "id": "TC17A-O2",
+      "classification": "optional",
+      "source": "docs/chapters/17-04-lesson.md:67",
+      "evidence": "「這兩項method仍用2.5的owned self接手整份設定」；2.5是loop，owned self在3.6:27–35。",
+      "reader_impact": "建構式設定的ownership解釋在本段已充分，單一錯誤回指仍會讓讀者搜尋錯頁。",
+      "suggested_change": "2.5改3.6。"
+    }
+  ],
+  "result": "必要問題0；可選回指節號2項。",
+  "method": [
+    "全文、35snippets、全部29owned package/nested-package檔、6份正常library sources、3examples、7integration tests與1doctest靜態核對。",
+    "檢查feature on/off、3cross-crate fail/expected、1runtime-fail/expected、同一physical caller配兩個版本的完整manifest/library/lock；讀回實際被回指正文確認節號。",
+    "所有測試／all-targets／doc／本機package命令建立閉包與source availability，沒有執行。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "package_created": false,
+    "note": "本波未跑Cargo、Rust、doctests、Clippy或package；結果、診斷及打包界線皆為靜態核對，沒有下載或發布。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:29:03.473848+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "f71fbeedefb6f784f754cda7052427df3d8bb84e825579b64071f6f9305957e7",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/chapters/02-05-lesson.md": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e",
+    "docs/chapters/03-06-lesson.md": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+    "docs/chapters/04-02-lesson.md": "5bbb8a9a5406962e325218feb6f35ab4adbaeccea828d6f512bc7ba07562e066",
+    "docs/chapters/06-02-lesson.md": "f10544e1c8c5bba31e648e597ffa8fe05c8c48305bfaba692cdea1d8033be3f7",
+    "docs/chapters/06-03-lesson.md": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807",
+    "docs/chapters/17-04-lesson.md": "477a5bb48d1019593fd2497b5873b3074be5123ee5b5651419860802606afdc8",
+    "examples/ch14-api/Cargo.toml": "c62849529e7c0eff512385ca3b3ce9fea7e61e15a94bd30449fbb58d6fa7854a",
+    "examples/ch14-api/compatibility/consumer.rs": "5a0f921550b9d7f7ece716d65f2788df87b5efa4045f397aeac1e326f90b3899",
+    "examples/ch14-api/compatibility/v1/Cargo.lock": "a996b65d5f81f4a90e00222e1a4391511699b4d65d5e772504ab78bd6148069c",
+    "examples/ch14-api/compatibility/v1/Cargo.toml": "3fb9df4ddf3920ebecf1bce6347cd3a1ed80e0ed3bf90d66d38c83222efdce2a",
+    "examples/ch14-api/compatibility/v1/src/lib.rs": "ed7981b9708216c5a106493f062dba6eff912012b83387dfd7ab00cb7b232ba4",
+    "examples/ch14-api/compatibility/v1_1/Cargo.lock": "822b0084e099c619fa274e3cb7dc71547a1d23835e7768d48b7bd0d70e228841",
+    "examples/ch14-api/compatibility/v1_1/Cargo.toml": "ca00cdffa141c7212435e9b27c4273f070b20bcc03f8a4ed1c919b27f751f717",
+    "examples/ch14-api/compatibility/v1_1/src/lib.rs": "a96f498eec48419b170d52a3a6f4caab1ec2de953891a1c4820309b4d79f2571",
+    "examples/ch14-api/examples/consumer.rs": "324cb8012d050df7abb7ae7c44e1f37a63c1c748b1552981d3f82d4d76748483",
+    "examples/ch14-api/examples/limit_solution.rs": "844521e4a96339cb816e54fdc9e85f0ca23bbd4c18eeef4d5d02784c98892037",
+    "examples/ch14-api/examples/typed_errors.rs": "9f517443e825a2e22b76563297352d1e6867849a23f98cd55b925cb819359f32",
+    "examples/ch14-api/fixtures/cross-crate-fail/Cargo.lock": "7b810ed593267aeffd53462f5c37806eebed7a15031da8032a908a83594c7816",
+    "examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml": "6d2f47403d2e208b67863290fe2b980f513a9c760654c0e6a8ef88c8e742ac66",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.expected": "388bdc7a4e6e8182c29781d55fae41a770e567dd5d0d81056e6b136176a86712",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.rs": "9049d98096e1bf666f7e010342801ed28984e5f17f3b181b625da3c510aa3d2d",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.expected": "c376b4ed1e702a45cb10b54ea688073d63511a4ac43a8eb61471f604c7e71c1c",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.rs": "1e326081c34ceb9423af94b65f8d5513f063947dd1605ea385493b781774ee50",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.expected": "fa3b46bb839e843f9da990ecc9151edb533235701c1c55d831b1fe783f6b8a48",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.rs": "74ff54714dd7ff5caccf8323d65412b2d9fac4410bcb838b3ed08de7b787129c",
+    "examples/ch14-api/fixtures/note.txt": "1ca933853c174efc7edd3134eeae8fa7fa2e779f411391ea076843dfd8df57fc",
+    "examples/ch14-api/fixtures/runtime-fail/derived_default.expected": "2d0d674cfe17bc19af67d3b44a1d3eba16d393ba84d7ea5cf81149df5fe314cb",
+    "examples/ch14-api/fixtures/runtime-fail/derived_default.rs": "4f5c18e43b17b2e1c065c153fb96277d470b629cf2d023a7a01bbee10219c3d7",
+    "examples/ch14-api/src/errors.rs": "8e0472a9b201b0bcaa4f93452b2312bf4c2cb3f085286f574ef2a4cc3a7a8e00",
+    "examples/ch14-api/src/lib.rs": "b33bc13b239c98169218858b6812469c022d2c728926c99cdb806b55fa5a5679",
+    "examples/ch14-api/src/limits.rs": "67188064c69cc27ab2eb4168521c0f465c91d0d25991ed1c527bf8df1b2cceb5",
+    "examples/ch14-api/src/options.rs": "baf8b9f75ecac2f6f5d71aacf3e265aa0e8d7c0b5b7f69e0e3db1941d28a83c1",
+    "examples/ch14-api/src/search.rs": "c96cd01dae2befb6895c41a45b27036121f635a00eaa7fdb08c4b4727be46f71",
+    "examples/ch14-api/src/text.rs": "5b4075ad54d8b6c962aa0dfbfb2fe8b0b07496757e0d60b7c9fa02fcd793714b",
+    "examples/ch14-api/tests/public_contract.rs": "5a26a8894fe80ec68850b683bd34dc5c8a06dd2b06e0eaaff190f263451fcc47",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 30,
+      "source": "examples/ch14-api/src/limits.rs",
+      "tag": "limit-error",
+      "included_sha256": "317a9f824c303af6e4313bd4c554ca1f7808128ed3da4950b10d29d60ee96b9b",
+      "included_lines": 17
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 38,
+      "source": "examples/ch14-api/src/limits.rs",
+      "tag": "limit",
+      "included_sha256": "f3cf95d7192606302630b313b1a386989f83d8e35f0dc0b39925bf056fc6cc27",
+      "included_lines": 28
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 52,
+      "source": "examples/ch14-api/fixtures/runtime-fail/derived_default.rs",
+      "tag": null,
+      "included_sha256": "4f5c18e43b17b2e1c065c153fb96277d470b629cf2d023a7a01bbee10219c3d7",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 58,
+      "source": "examples/ch14-api/src/limits.rs",
+      "tag": "limit-default",
+      "included_sha256": "a74da126ca70db774f994024f7dbe59508f4aee03c6785c7c07b169673f62781",
+      "included_lines": 5
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 72,
+      "source": "examples/ch14-api/src/options.rs",
+      "tag": "options",
+      "included_sha256": "9d653fb5144463eb580824cb92c6d50d9ce913cc5954be3a6797d8fec616b477",
+      "included_lines": 25
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 82,
+      "source": "examples/ch14-api/src/errors.rs",
+      "tag": "search-error",
+      "included_sha256": "31a3ce4ae94a9f3e69e963854cc6f8451f389c507eb6d353b6c444b3323e7153",
+      "included_lines": 24
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 90,
+      "source": "examples/ch14-api/src/search.rs",
+      "tag": "hit",
+      "included_sha256": "6711c82d3885c02445c84a791c107188866e84a66eb8781c72eb102a768af25d",
+      "included_lines": 5
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 96,
+      "source": "examples/ch14-api/src/search.rs",
+      "tag": "search",
+      "included_sha256": "1426cd7e540a53bb5422d61591805ffbd94ef48c065079d60d21cff8f6bb906c",
+      "included_lines": 37
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 102,
+      "source": "examples/ch14-api/src/search.rs",
+      "tag": "read-matches",
+      "included_sha256": "65b765372890fbb16b095faaf58cfe727663a31e9d016577a88c7125f7c8d2a4",
+      "included_lines": 13
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 112,
+      "source": "examples/ch14-api/src/lib.rs",
+      "tag": "exports",
+      "included_sha256": "5322874a568153e376bb66eae663bfa1fa79555afd3c7e77256042bc8616f9c6",
+      "included_lines": 17
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 122,
+      "source": "examples/ch14-api/src/text.rs",
+      "tag": "text",
+      "included_sha256": "fec4dc03ac13f75c8273b8bd0257aa715ac5f40dad1f0fe602322e59f69da240",
+      "included_lines": 8
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 128,
+      "source": "examples/ch14-api/Cargo.toml",
+      "tag": null,
+      "included_sha256": "c62849529e7c0eff512385ca3b3ce9fea7e61e15a94bd30449fbb58d6fa7854a",
+      "included_lines": 14
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 138,
+      "source": "examples/ch14-api/src/lib.rs",
+      "tag": null,
+      "included_sha256": "b33bc13b239c98169218858b6812469c022d2c728926c99cdb806b55fa5a5679",
+      "included_lines": 21
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 144,
+      "source": "examples/ch14-api/src/limits.rs",
+      "tag": null,
+      "included_sha256": "67188064c69cc27ab2eb4168521c0f465c91d0d25991ed1c527bf8df1b2cceb5",
+      "included_lines": 61
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 150,
+      "source": "examples/ch14-api/src/options.rs",
+      "tag": null,
+      "included_sha256": "baf8b9f75ecac2f6f5d71aacf3e265aa0e8d7c0b5b7f69e0e3db1941d28a83c1",
+      "included_lines": 29
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 156,
+      "source": "examples/ch14-api/src/errors.rs",
+      "tag": null,
+      "included_sha256": "8e0472a9b201b0bcaa4f93452b2312bf4c2cb3f085286f574ef2a4cc3a7a8e00",
+      "included_lines": 30
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 162,
+      "source": "examples/ch14-api/src/search.rs",
+      "tag": null,
+      "included_sha256": "c96cd01dae2befb6895c41a45b27036121f635a00eaa7fdb08c4b4727be46f71",
+      "included_lines": 68
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 168,
+      "source": "examples/ch14-api/src/text.rs",
+      "tag": null,
+      "included_sha256": "5b4075ad54d8b6c962aa0dfbfb2fe8b0b07496757e0d60b7c9fa02fcd793714b",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 174,
+      "source": "examples/ch14-api/examples/consumer.rs",
+      "tag": null,
+      "included_sha256": "324cb8012d050df7abb7ae7c44e1f37a63c1c748b1552981d3f82d4d76748483",
+      "included_lines": 29
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 208,
+      "source": "examples/ch14-api/examples/typed_errors.rs",
+      "tag": null,
+      "included_sha256": "9f517443e825a2e22b76563297352d1e6867849a23f98cd55b925cb819359f32",
+      "included_lines": 35
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 218,
+      "source": "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.rs",
+      "tag": null,
+      "included_sha256": "1e326081c34ceb9423af94b65f8d5513f063947dd1605ea385493b781774ee50",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 222,
+      "source": "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.rs",
+      "tag": null,
+      "included_sha256": "9049d98096e1bf666f7e010342801ed28984e5f17f3b181b625da3c510aa3d2d",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 226,
+      "source": "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.rs",
+      "tag": null,
+      "included_sha256": "74ff54714dd7ff5caccf8323d65412b2d9fac4410bcb838b3ed08de7b787129c",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 234,
+      "source": "examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml",
+      "tag": null,
+      "included_sha256": "6d2f47403d2e208b67863290fe2b980f513a9c760654c0e6a8ef88c8e742ac66",
+      "included_lines": 11
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 248,
+      "source": "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.expected",
+      "tag": null,
+      "included_sha256": "c376b4ed1e702a45cb10b54ea688073d63511a4ac43a8eb61471f604c7e71c1c",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 252,
+      "source": "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.expected",
+      "tag": null,
+      "included_sha256": "388bdc7a4e6e8182c29781d55fae41a770e567dd5d0d81056e6b136176a86712",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 256,
+      "source": "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.expected",
+      "tag": null,
+      "included_sha256": "fa3b46bb839e843f9da990ecc9151edb533235701c1c55d831b1fe783f6b8a48",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 266,
+      "source": "examples/ch14-api/compatibility/v1/src/lib.rs",
+      "tag": null,
+      "included_sha256": "ed7981b9708216c5a106493f062dba6eff912012b83387dfd7ab00cb7b232ba4",
+      "included_lines": 10
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 270,
+      "source": "examples/ch14-api/compatibility/v1_1/src/lib.rs",
+      "tag": null,
+      "included_sha256": "a96f498eec48419b170d52a3a6f4caab1ec2de953891a1c4820309b4d79f2571",
+      "included_lines": 23
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 276,
+      "source": "examples/ch14-api/compatibility/consumer.rs",
+      "tag": null,
+      "included_sha256": "5a0f921550b9d7f7ece716d65f2788df87b5efa4045f397aeac1e326f90b3899",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 282,
+      "source": "examples/ch14-api/compatibility/v1/Cargo.toml",
+      "tag": null,
+      "included_sha256": "3fb9df4ddf3920ebecf1bce6347cd3a1ed80e0ed3bf90d66d38c83222efdce2a",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 286,
+      "source": "examples/ch14-api/compatibility/v1_1/Cargo.toml",
+      "tag": null,
+      "included_sha256": "ca00cdffa141c7212435e9b27c4273f070b20bcc03f8a4ed1c919b27f751f717",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 323,
+      "source": "examples/ch14-api/examples/limit_solution.rs",
+      "tag": null,
+      "included_sha256": "844521e4a96339cb816e54fdc9e85f0ca23bbd4c18eeef4d5d02784c98892037",
+      "included_lines": 13
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 339,
+      "source": "examples/ch14-api/fixtures/note.txt",
+      "tag": null,
+      "included_sha256": "1ca933853c174efc7edd3134eeae8fa7fa2e779f411391ea076843dfd8df57fc",
+      "included_lines": 3
+    },
+    {
+      "chapter": "docs/chapters/17-04-lesson.md",
+      "line": 347,
+      "source": "examples/ch14-api/tests/public_contract.rs",
+      "tag": null,
+      "included_sha256": "5a26a8894fe80ec68850b683bd34dc5c8a06dd2b06e0eaaff190f263451fcc47",
+      "included_lines": 94
+    }
+  ],
+  "owned_files": [
+    "examples/ch14-api/Cargo.toml",
+    "examples/ch14-api/compatibility/consumer.rs",
+    "examples/ch14-api/compatibility/v1/Cargo.lock",
+    "examples/ch14-api/compatibility/v1/Cargo.toml",
+    "examples/ch14-api/compatibility/v1/src/lib.rs",
+    "examples/ch14-api/compatibility/v1_1/Cargo.lock",
+    "examples/ch14-api/compatibility/v1_1/Cargo.toml",
+    "examples/ch14-api/compatibility/v1_1/src/lib.rs",
+    "examples/ch14-api/examples/consumer.rs",
+    "examples/ch14-api/examples/limit_solution.rs",
+    "examples/ch14-api/examples/typed_errors.rs",
+    "examples/ch14-api/fixtures/cross-crate-fail/Cargo.lock",
+    "examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.expected",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.rs",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.expected",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.rs",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.expected",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.rs",
+    "examples/ch14-api/fixtures/note.txt",
+    "examples/ch14-api/fixtures/runtime-fail/derived_default.expected",
+    "examples/ch14-api/fixtures/runtime-fail/derived_default.rs",
+    "examples/ch14-api/src/errors.rs",
+    "examples/ch14-api/src/lib.rs",
+    "examples/ch14-api/src/limits.rs",
+    "examples/ch14-api/src/options.rs",
+    "examples/ch14-api/src/search.rs",
+    "examples/ch14-api/src/text.rs",
+    "examples/ch14-api/tests/public_contract.rs"
+  ],
+  "nested_locks": {
+    "examples/ch14-api/compatibility/v1/Cargo.lock": {
+      "version": 4,
+      "package": [
+        {
+          "name": "api-contract-demo",
+          "version": "1.0.0"
+        }
+      ]
+    },
+    "examples/ch14-api/compatibility/v1_1/Cargo.lock": {
+      "version": 4,
+      "package": [
+        {
+          "name": "api-contract-demo",
+          "version": "1.1.0"
+        }
+      ]
+    },
+    "examples/ch14-api/fixtures/cross-crate-fail/Cargo.lock": {
+      "version": 4,
+      "package": [
+        {
+          "name": "ch14-api",
+          "version": "0.1.0"
+        },
+        {
+          "name": "ch14-api-negative",
+          "version": "0.1.0",
+          "dependencies": [
+            "ch14-api"
+          ]
+        }
+      ]
+    }
+  },
+  "selected_lock_entries": [
+    {
+      "name": "ch14-api",
+      "version": "0.1.0"
+    }
+  ],
+  "commands": [
+    "cargo run -p ch14-api --example consumer --locked",
+    "cargo run -p ch14-api --example consumer --no-default-features --locked",
+    "cargo run -p ch14-api --example consumer --no-default-features --features text --locked",
+    "cargo check --manifest-path examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml --example private_limit --locked",
+    "cargo check --manifest-path examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml --example non_exhaustive_match --locked",
+    "cargo check --manifest-path examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml --example private_module --locked",
+    "cargo run --manifest-path examples/ch14-api/compatibility/v1/Cargo.toml --locked",
+    "cargo run --manifest-path examples/ch14-api/compatibility/v1_1/Cargo.toml --locked",
+    "cargo run -p ch14-api --example limit_solution --locked",
+    "cargo test -p ch14-api --locked",
+    "cargo test -p ch14-api --no-default-features --locked",
+    "cargo test -p ch14-api --all-features --locked",
+    "cargo clippy -p ch14-api --all-targets --all-features --locked",
+    "cargo doc -p ch14-api --no-deps --locked",
+    "cargo package -p ch14-api --list --allow-dirty --locked",
+    "cargo package -p ch14-api --allow-dirty --locked"
+  ],
+  "inline_command": "cargo run -p ch14-api --example typed_errors --locked",
+  "loaded_closures": [
+    {
+      "targets": [
+        "consumer",
+        "typed_errors",
+        "limit_solution"
+      ],
+      "normal_library": [
+        "src/lib.rs",
+        "src/errors.rs",
+        "src/limits.rs",
+        "src/options.rs",
+        "src/search.rs",
+        "src/text.rs（只啟用text時）"
+      ],
+      "dependencies": [],
+      "notes": "完整library與所有首用能力在首run前；no-default未載text，cfg caller也不呼叫render_text。"
+    },
+    {
+      "targets": [
+        "cargo test -p ch14-api (default/no-default/all-features)",
+        "cargo clippy --all-targets --all-features",
+        "cargo doc --no-deps",
+        "cargo package"
+      ],
+      "normal_library": "同上",
+      "other_owned": [
+        "3完整examples",
+        "tests/public_contract.rs",
+        "fixtures/note.txt",
+        "BatchLimit::new文件範例"
+      ],
+      "notes": "7integration tests（no-default6）及1doctest；隔離nested packages不納normal checks。package本機組裝不傳registry，publish=false仍維持。"
+    },
+    {
+      "targets": [
+        "private_limit",
+        "non_exhaustive_match",
+        "private_module"
+      ],
+      "kind": "nested cross-crate fail",
+      "dependency": "../../ → ch14-api完整normal lib",
+      "expected": [
+        "E0423",
+        "E0004",
+        "E0603"
+      ],
+      "notes": "真正外crate，否則non_exhaustive無法測目標契約。"
+    },
+    {
+      "targets": [
+        "compatibility/v1",
+        "compatibility/v1_1"
+      ],
+      "kind": "isolated compatibility runs",
+      "owned": [
+        "各自src/lib.rs",
+        "各自Cargo.toml/Cargo.lock",
+        "共用../consumer.rs"
+      ],
+      "notes": "[[bin]] path先教，兩次使用同一實體caller，僅驗此caller涉及default false/getter契約。"
+    },
+    {
+      "targets": [
+        "derived_default"
+      ],
+      "kind": "standalone runtime fail",
+      "owned": [
+        "fixtures/runtime-fail/derived_default.rs"
+      ],
+      "expected": [
+        "預設必須符合非零規則"
+      ]
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "examples/ch14-api/src/limits.rs:28",
+      "finding": "private BatchLimit只有驗證new與有效Default100入口；derive Copy/Clone不破1..1000。Default手寫非0，Options derived Default連到有效limit。"
+    },
+    {
+      "source": "examples/ch14-api/src/options.rs:12",
+      "finding": "mut self是owned binding，builder修改後回Self，不等&mut self；getter不暴露field layout。non_exhaustive、pub use/root/private module的source/visibility區分準確。"
+    },
+    {
+      "source": "examples/ch14-api/src/search.rs:29",
+      "finding": "query先拒，ASCIIfold保原text/行號，達有效limit退出；read error保存io::Error且source借讀，回owned Hit可超過input作用域。"
+    },
+    {
+      "source": "docs/chapters/17-04-lesson.md:363",
+      "finding": "source/behavior compatibility分開；同一caller版本快照只證明其使用契約，SemVer與Cargo0.x相容邊界準確。feature移除／default改變／public enum新增variant風險都有明確範圍。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:29:48.772Z"
+}

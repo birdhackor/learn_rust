@@ -1,0 +1,116 @@
+{
+  "captured_at_utc": "2026-10-15T07:08:46.423307+00:00",
+  "root": "/workspace/learn_rust",
+  "scope": "Chapter4.1-4.3 only; 4.4+ notreadorfrozen",
+  "files": [
+    {
+      "path": "docs/chapters/04-01-lesson.md",
+      "sha256": "9487c85aed9cc3682591a88d62aaf046dd06abed9b6927624a606bfd3a3a697f",
+      "bytes": 4187
+    },
+    {
+      "path": "docs/chapters/04-02-lesson.md",
+      "sha256": "262f9c33eb424515abb9be65146314d24d08650610a54674ce7977f43cfcf1da",
+      "bytes": 5173
+    },
+    {
+      "path": "docs/chapters/04-03-lesson.md",
+      "sha256": "42d2fb6ad95eeacaf4d01ed3a84155f7f065763ded9bbb1538212671849b5352",
+      "bytes": 6727
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "814f49ab55f61166079a9a123eb144402c7fe7940480f502498a7538cc66d761",
+      "bytes": 547
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "b85720032a875d06ca88e96607c0fbdf16cfb1b90507788c5ffeb76e6913e6b7",
+      "bytes": 173
+    },
+    {
+      "path": "examples/intro-workspace/patterns/Cargo.toml",
+      "sha256": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+      "bytes": 69
+    },
+    {
+      "path": "examples/intro-workspace/patterns/examples/destructure.rs",
+      "sha256": "3f2170e715dcb87d67258964d6f3eb45892951677d76a4ea46b65d94d7a51b87",
+      "bytes": 855
+    },
+    {
+      "path": "examples/intro-workspace/patterns/examples/destructure_answer.rs",
+      "sha256": "e749b6afda35408a48324df952ac96e516c659d4cfdf6d7809cd04ce1ed0e163",
+      "bytes": 619
+    },
+    {
+      "path": "examples/intro-workspace/patterns/examples/enums.rs",
+      "sha256": "0ce9a9d64a262dfcb6a3704a414b75cb9e43ec5a35c9f78b8cd64e431da9cbae",
+      "bytes": 487
+    },
+    {
+      "path": "examples/intro-workspace/patterns/examples/enums_answer.rs",
+      "sha256": "a3e4a1c2f7047c7fc09662de58dbe429df7bd6dda678cd0e9b830c9ea3ffc558",
+      "bytes": 303
+    },
+    {
+      "path": "examples/intro-workspace/patterns/examples/match_answer.rs",
+      "sha256": "498ec18345a8bf0687106d369e014ab0b6a70a75d10b405850d771f06b80c734",
+      "bytes": 454
+    },
+    {
+      "path": "examples/intro-workspace/patterns/examples/match_numbers.rs",
+      "sha256": "d53e1f7c5df21c34c220decffcc7f9db12293a5199d3d4cdf7bd4082fc2a6c28",
+      "bytes": 368
+    },
+    {
+      "path": "examples/intro-workspace/patterns/examples/match_quotes.rs",
+      "sha256": "a7b5f8b04a4d1dca0c239e4af556a8073e75b3bf1970ab63e17c4e7c956ebe42",
+      "bytes": 535
+    },
+    {
+      "path": "examples/intro-workspace/patterns/examples/nested_patterns.rs",
+      "sha256": "7af61eebb9fbc18a62e95722791b9e8005a55d704df4096be6388c16277ff14e",
+      "bytes": 502
+    },
+    {
+      "path": "examples/intro-workspace/patterns/examples/pattern_places.rs",
+      "sha256": "4b6838c8ae6dacbee9079a5cc4793b7abfa894733f97df35a6fca153783ceb5f",
+      "bytes": 457
+    },
+    {
+      "path": "examples/intro-workspace/patterns/fixtures/compile-fail/arm_type.rs",
+      "sha256": "0ca3497d2d23c5bf804323202656294b9fceec74298fdfcc8ab92fb2a131b099",
+      "bytes": 141
+    },
+    {
+      "path": "examples/intro-workspace/patterns/fixtures/compile-fail/missing_variant.rs",
+      "sha256": "2cfeca3dd70afac5f0d8577265268af6864081a7556f8c95521344f31fdd2feb",
+      "bytes": 251
+    },
+    {
+      "path": "examples/intro-workspace/patterns/fixtures/compile-fail/refutable_let.rs",
+      "sha256": "9ba10b51182aeee8694a7edda483f25d8be337a8ace34ba8a167c0ce5cb39ee3",
+      "bytes": 215
+    },
+    {
+      "path": "examples/intro-workspace/patterns/src/main.rs",
+      "sha256": "9d77c241170f05328e057efed81ad48b15cb9ce56ca87821ccf28a1c05365fc0",
+      "bytes": 63
+    }
+  ],
+  "end_recheck_at_utc": "2026-10-15T07:14:48.981030+00:00",
+  "changes_since_snapshot": [
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial_sha256": "814f49ab55f61166079a9a123eb144402c7fe7940480f502498a7538cc66d761",
+      "end_sha256": "95fc150a6f4c104bbd7c775cc52c79c180e5a5bfe584110800e07047e99f5dcb"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial_sha256": "b85720032a875d06ca88e96607c0fbdf16cfb1b90507788c5ffeb76e6913e6b7",
+      "end_sha256": "7161d333dd2b49cb74eee31661e7762ec3e6b234a7b550202dc5079b109608f1"
+    }
+  ],
+  "end_config_drift_note": "Workspace/lock added data-steps/data members during review. All current member manifests inspected as metadata and remain only previously-taught package/name/version/edition. No later-chapter source read. Initial workspace/lock reconstructed by removing added members/package entries; exact full-file hash verified."
+}

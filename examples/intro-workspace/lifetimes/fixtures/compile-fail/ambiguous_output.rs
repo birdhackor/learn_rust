@@ -1,0 +1,11 @@
+fn longer(first: &str, second: &str) -> &str {
+    if first.len() >= second.len() {
+        first
+    } else {
+        second
+    }
+}
+
+fn main() {
+    println!("{}", longer("Rust", "hi"));
+}

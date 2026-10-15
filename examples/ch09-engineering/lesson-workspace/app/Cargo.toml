@@ -1,0 +1,13 @@
+[package]
+name = "lesson-engineering"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+lesson-subtotal.workspace = true
+
+[features]
+default = ["batch"]
+batch = []

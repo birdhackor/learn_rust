@@ -1,0 +1,235 @@
+{
+  "captured_at_utc": "2026-10-15T06:38:21.152862+00:00",
+  "root": "/workspace/learn_rust",
+  "role": "independent continuity/page reviewer",
+  "files": [
+    {
+      "path": "docs/chapters/02-01-lesson.md",
+      "sha256": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3",
+      "bytes": 5481
+    },
+    {
+      "path": "docs/chapters/02-02-lesson.md",
+      "sha256": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2",
+      "bytes": 5000
+    },
+    {
+      "path": "docs/chapters/02-03-lesson.md",
+      "sha256": "2140dec17d8eb06bc9caa8d7325dfd7cadf48ebbd494d7f5d5c103ee5271c2c7",
+      "bytes": 4105
+    },
+    {
+      "path": "docs/chapters/02-04-lesson.md",
+      "sha256": "88c06bf4a6f5e99f84339055b359eb649f5207e1a5cbeb46b33288c63d3528e6",
+      "bytes": 3625
+    },
+    {
+      "path": "docs/chapters/02-05-lesson.md",
+      "sha256": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e",
+      "bytes": 5977
+    },
+    {
+      "path": "docs/chapters/02-06-lesson.md",
+      "sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+      "bytes": 7290
+    },
+    {
+      "path": "docs/chapters/02-07-lesson.md",
+      "sha256": "0fdb1af3846531b6dfc9f27bca568e78164256472f45e1ac83607521a6233339",
+      "bytes": 9201
+    },
+    {
+      "path": "docs/chapters/02-08-lesson.md",
+      "sha256": "b69bbd89d449943fd3665683069201b7f8bc829fb6d0d6b665f476c41b3b88ce",
+      "bytes": 5141
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "a0339cd7d528d67876df3dd1a2b1fb2169063d31e4cba666c575f6564756f8e0",
+      "bytes": 492
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "77708bcc8ed7d4cbfc5b2e01156df0f081606a1e25894fd86697008685288b87",
+      "bytes": 157
+    },
+    {
+      "path": "examples/intro-workspace/control/Cargo.toml",
+      "sha256": "18abe91283c11f1a1f1109a64b28d1de3cf39d17dc8223e48cec3bd65df6b7bf",
+      "bytes": 68
+    },
+    {
+      "path": "examples/intro-workspace/control/examples/assertions_answer.rs",
+      "sha256": "a5d624eed1ec93683354d1d0deb23f1557a3f4e5c5e60ce98c1f353c6e273066",
+      "bytes": 653
+    },
+    {
+      "path": "examples/intro-workspace/control/examples/integration_answer.rs",
+      "sha256": "3ef2a593ee398e521593908f6a0679253b0ae0c01b9152b643c0865026436db9",
+      "bytes": 938
+    },
+    {
+      "path": "examples/intro-workspace/control/examples/lint_return.rs",
+      "sha256": "e0f68b7ca14eb3ff532ae81717b81821738584db30f0a768d6816663043d1f80",
+      "bytes": 434
+    },
+    {
+      "path": "examples/intro-workspace/control/src/lib.rs",
+      "sha256": "aa8fc8a3b9f8f9804cbf13ebeb3a2ce5d6093f1fa8ab292fa373239fdec8d2ac",
+      "bytes": 894
+    },
+    {
+      "path": "examples/intro-workspace/control/src/main.rs",
+      "sha256": "5d78165a15d701ea5c666890114c085df879766bf7e6c1eaf0102d92ede8f87e",
+      "bytes": 247
+    },
+    {
+      "path": "examples/intro-workspace/control/src/pricing.rs",
+      "sha256": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+      "bytes": 667
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/Cargo.toml",
+      "sha256": "52011d81554362fc0008e34c86caab53d1da8f6e599cb7b335e0b3b2dd5d8c6e",
+      "bytes": 74
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/comparisons.rs",
+      "sha256": "1aafbf0c821aa4ab21f390fcfd341e00749f343c34aa4e913a0cc195cdc01f38",
+      "bytes": 1658
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/comparisons_answer.rs",
+      "sha256": "b22865080da18b649f071aa1bbfd3b8bad34f130bc4799a7d4e65cad39de2f2e",
+      "bytes": 464
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/conditions.rs",
+      "sha256": "d46f7a449761358e22dc6b91eb176be4bbf9d682f823acba3591fc893c6d384e",
+      "bytes": 1038
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/conditions_answer.rs",
+      "sha256": "6152f6bb02b4dfe8d9a1f1f30f53046c7c52fbefd3b0d3bb2727d88e59ebcb4c",
+      "bytes": 459
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/for_range.rs",
+      "sha256": "9173e92fa4f5c8c4247a43fb39720498b1a5daa2c96bfd51f0cf71a3dfb86b97",
+      "bytes": 834
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/for_range_answer.rs",
+      "sha256": "426c5b2cc17aab15885f4d0664296f1d05d0ae43901890bea07acfd2e1b0bec8",
+      "bytes": 285
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/loop_control.rs",
+      "sha256": "7c1640b31c181ac50b6922533218f2ccf184e5e768579be1bd68003aad8dd03f",
+      "bytes": 739
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/loop_control_answer.rs",
+      "sha256": "21df03e8173ebbf8c3706184edfae6ec0ac88fe86a2d3d4772f1c7168b7d1208",
+      "bytes": 392
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/loop_labels.rs",
+      "sha256": "dc9fd3e1da02ebbb9fdba212f5406060526405fb01dc1451322389080b3c0b85",
+      "bytes": 743
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/loop_labels_answer.rs",
+      "sha256": "bc295b0b9b2fe6cb2b2cbb4fc8402943e783f8f8c45fd449d1ab8d8c1bca19a7",
+      "bytes": 597
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/while_work.rs",
+      "sha256": "a238562954b21df44248e50b045377c4c5e2b91f4fdebb12e1107ec14ed0f1c8",
+      "bytes": 576
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/examples/while_work_answer.rs",
+      "sha256": "d4d6ccdaf2cae8973bb7917bdd3884e41954dc853b36ab9253148d07eaaebd56",
+      "bytes": 526
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/fixtures/compile-fail/if_number.rs",
+      "sha256": "f495674b4a7d313b76ddfcd87deae95165f6f122f2b422dbfc29eefae41baf70",
+      "bytes": 90
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/src/main.rs",
+      "sha256": "9d77c241170f05328e057efed81ad48b15cb9ce56ca87821ccf28a1c05365fc0",
+      "bytes": 63
+    },
+    {
+      "path": "examples/intro-workspace/greeting/Cargo.toml",
+      "sha256": "83300e56501d71d423e9a1aebbfd2cd1c6c4599238ed4884fcad8e93847615c5",
+      "bytes": 69
+    },
+    {
+      "path": "examples/intro-workspace/hello/Cargo.toml",
+      "sha256": "946345ebb5bcb3465019d4d501ec888da32b198c9a87d4b2d91edb2fec085e9d",
+      "bytes": 66
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/Cargo.toml",
+      "sha256": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+      "bytes": 74
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/examples/order_answer/display/mod.rs",
+      "sha256": "5994928cbb96e5c9e5f407b5ecd09df3b596918f48fbf804ed7295677c75cbf0",
+      "bytes": 107
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/examples/order_answer/main.rs",
+      "sha256": "35dc799103c50b34828d6b4b05aab0adce46a6ff86bfef5d163ef7ef3cfde641",
+      "bytes": 246
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/src/lib.rs",
+      "sha256": "a2730bc5b8092f7a450369a65582404dbb83895caf104941af12d8a39024e534",
+      "bytes": 17
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/src/main.rs",
+      "sha256": "83572d3c55811d1579ef9ed372dafedc16502b8b731d926b2ab5db5868423ec2",
+      "bytes": 259
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/src/pricing.rs",
+      "sha256": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+      "bytes": 667
+    },
+    {
+      "path": "examples/intro-workspace/ownership/Cargo.toml",
+      "sha256": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+      "bytes": 70
+    },
+    {
+      "path": "examples/intro-workspace/steps/Cargo.toml",
+      "sha256": "ba433fca9aa7ac14673d3b3727bf391f285a6013ec75ffa2a6ba60942e245dfb",
+      "bytes": 66
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    }
+  ],
+  "end_recheck_at_utc": "2026-10-15T06:44:10.268648+00:00",
+  "changed_since_snapshot": [
+    {
+      "path": "docs/chapters/02-07-lesson.md",
+      "initial_sha256": "0fdb1af3846531b6dfc9f27bca568e78164256472f45e1ac83607521a6233339",
+      "end_sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886"
+    },
+    {
+      "path": "docs/chapters/02-08-lesson.md",
+      "initial_sha256": "b69bbd89d449943fd3665683069201b7f8bc829fb6d0d6b665f476c41b3b88ce",
+      "end_sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    }
+  ]
+}

@@ -1,0 +1,282 @@
+[
+  {
+    "id": "16-01",
+    "width": 1280,
+    "title": "16.1 self-reference：資料還活著，地址也可能對不上¶",
+    "images": [
+      {
+        "name": "16-01-1280-image0.png",
+        "alt": "同一份controlled_work future保存owned release收端，recv等待借用這份收端；箭頭表示內部借用",
+        "box": {
+          "x": 288.5,
+          "y": 420.21875,
+          "width": 400,
+          "height": 380
+        }
+      },
+      {
+        "name": "16-01-1280-image1.png",
+        "alt": "整份交換前A保存80與地址A、B保存120與地址B；交換後A保存120與地址B、B保存80與地址A，記錄沒有自動更新",
+        "box": {
+          "x": 288.5,
+          "y": -25.15625,
+          "width": 400,
+          "height": 850
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "16-01-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "16-02",
+    "width": 1280,
+    "title": "16.2 Pin 與 Unpin：把地址穩定放進介面約定¶",
+    "images": [
+      {
+        "name": "16-02-1280-image0.png",
+        "alt": "first把Pin Box owner交給next，next仍找到同一份heap中的PinnedNote；value位置V與saved記錄V保留",
+        "box": {
+          "x": 288.5,
+          "y": 64.53125,
+          "width": 400,
+          "height": 670
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "16-02-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "16-03",
+    "width": 1280,
+    "title": "16.3 Poll、Context 與 Waker：通知之後，誰再次檢查？¶",
+    "images": [
+      {
+        "name": "16-03-1280-image0.png",
+        "alt": "首次poll為Pending；release授權並通知但poll仍為1且未完成；driver再poll才Ready80，最後停止",
+        "box": {
+          "x": 288.5,
+          "y": -10.34375,
+          "width": 400,
+          "height": 820
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 4,
+    "answer": "16-03-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "16-04",
+    "width": 1280,
+    "title": "16.4 外部事件 Future：檢查與登記之間，不能漏掉通知¶",
+    "images": [
+      {
+        "name": "16-04-1280-image0.png",
+        "alt": "main的EventAmount與worker的AmountEvent各持Arc，共同保活同一Mutex中的value與waiting；polls和completed留在Future",
+        "box": {
+          "x": 288.5,
+          "y": 190.21875,
+          "width": 400,
+          "height": 610
+        }
+      },
+      {
+        "name": "16-04-1280-image1.png",
+        "alt": "先事件可首次poll直接Ready；先poll則同guard檢查並登記，事件存值取通知後解鎖，wake之後driver再poll",
+        "box": {
+          "x": 288.5,
+          "y": -10.46875,
+          "width": 400,
+          "height": 820
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 5,
+    "answer": "16-04-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "16-05",
+    "width": 1280,
+    "title": "16.5 小型 executor：收到通知，再安排下一次 poll¶",
+    "images": [
+      {
+        "name": "16-05-1280-image0.png",
+        "alt": "executor保留同一pinned future，外部事件存80並wake，channel保留unit，driver收到後再poll才Ready80；main仍須join外部worker",
+        "box": {
+          "x": 288.5,
+          "y": -42.96875,
+          "width": 400,
+          "height": 885
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 11,
+    "answer": "16-05-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "16-01",
+    "width": 390,
+    "title": "16.1 self-reference：資料還活著，地址也可能對不上¶",
+    "images": [
+      {
+        "name": "16-01-390-image0.png",
+        "alt": "同一份controlled_work future保存owned release收端，recv等待借用這份收端；箭頭表示內部借用",
+        "box": {
+          "x": 16,
+          "y": 258.84375,
+          "width": 342.984375,
+          "height": 325.84375
+        }
+      },
+      {
+        "name": "16-01-390-image1.png",
+        "alt": "整份交換前A保存80與地址A、B保存120與地址B；交換後A保存120與地址B、B保存80與地址A，記錄沒有自動更新",
+        "box": {
+          "x": 16,
+          "y": 57.3125,
+          "width": 343,
+          "height": 728.875
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "16-01-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "16-02",
+    "width": 390,
+    "title": "16.2 Pin 與 Unpin：把地址穩定放進介面約定¶",
+    "images": [
+      {
+        "name": "16-02-390-image0.png",
+        "alt": "first把Pin Box owner交給next，next仍找到同一份heap中的PinnedNote；value位置V與saved記錄V保留",
+        "box": {
+          "x": 16,
+          "y": 134.59375,
+          "width": 342.984375,
+          "height": 574.515625
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "16-02-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "16-03",
+    "width": 390,
+    "title": "16.3 Poll、Context 與 Waker：通知之後，誰再次檢查？¶",
+    "images": [
+      {
+        "name": "16-03-390-image0.png",
+        "alt": "首次poll為Pending；release授權並通知但poll仍為1且未完成；driver再poll才Ready80，最後停止",
+        "box": {
+          "x": 16,
+          "y": 70.28125,
+          "width": 342.984375,
+          "height": 703.140625
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 4,
+    "answer": "16-03-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "16-04",
+    "width": 390,
+    "title": "16.4 外部事件 Future：檢查與登記之間，不能漏掉通知¶",
+    "images": [
+      {
+        "name": "16-04-390-image0.png",
+        "alt": "main的EventAmount與worker的AmountEvent各持Arc，共同保活同一Mutex中的value與waiting；polls和completed留在Future",
+        "box": {
+          "x": 16,
+          "y": 160.34375,
+          "width": 342.984375,
+          "height": 523.0625
+        }
+      },
+      {
+        "name": "16-04-390-image1.png",
+        "alt": "先事件可首次poll直接Ready；先poll則同guard檢查並登記，事件存值取通知後解鎖，wake之後driver再poll",
+        "box": {
+          "x": 16,
+          "y": 70.71875,
+          "width": 342.984375,
+          "height": 703.140625
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 5,
+    "answer": "16-04-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "16-05",
+    "width": 390,
+    "title": "16.5 小型 executor：收到通知，再安排下一次 poll¶",
+    "images": [
+      {
+        "name": "16-05-390-image0.png",
+        "alt": "executor保留同一pinned future，外部事件存80並wake，channel保留unit，driver收到後再poll才Ready80；main仍須join外部worker",
+        "box": {
+          "x": 16,
+          "y": 42.59375,
+          "width": 342.984375,
+          "height": 758.875
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 11,
+    "answer": "16-05-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  }
+]

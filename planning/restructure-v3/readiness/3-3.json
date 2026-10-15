@@ -1,0 +1,78 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "3.3"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round03-copy-before-diagram-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round03-ownership.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/03-03-lesson.md": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e",
+    "examples/intro-workspace/ownership/examples/shared_references.rs": "ef65a9a1ef397ee82c6b244a63413e42c7f98edf7a90b0a03dfd3c6862298823",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/shared_answer.rs": "2788556bba6d288b06dbee1190321da44936e29c6ed699c28528c0f7d09bd288",
+    "docs/assets/ch02/reference-owner.svg": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "3.3",
+      "path": "docs/chapters/03-03-lesson.md",
+      "line": 3,
+      "quote": "上一節的 subtotal 接手整筆 Order，只交回數字；若呼叫者還想用訂單，就得另行交回它。現在我們希望函式只讀欄位算小計，呼叫之後原訂單仍留在 main。要改的是函式取得資料的方式，乘法規則保持相同。"
+    },
+    {
+      "section_id": "3.3",
+      "path": "docs/chapters/03-03-lesson.md",
+      "line": 7,
+      "quote": "**reference**（參照）是用來借用既有資料的值。它保存找到資料的資訊，並受 Rust 的有效性與存取規則檢查；可以接回第 1.7 節 pointer「到哪裡找」的角色，但不是直接取得原資料的 ownership。"
+    },
+    {
+      "section_id": "3.3",
+      "path": "docs/chapters/03-03-lesson.md",
+      "line": 9,
+      "quote": "`&count` 建立對 count 的借用，結果型別為 `&i32`。**borrowing** 就是建立這種借用的動作。在 expression 裡的 `&` 建立 reference；型別中的 `&i32` 則說明它借用一個 i32，兩者位置與角色不同。"
+    },
+    {
+      "section_id": "3.3",
+      "path": "docs/chapters/03-03-lesson.md",
+      "line": 11,
+      "quote": "這種 `&i32`、`&Order` 稱為 **shared reference**。它可與其他 shared borrow 一起讀取；對本章的普通數字欄位，不能透過它修改原資料。借用使用期間，原資料也必須仍有效；第 3.5 節會具體追蹤這個範圍。"
+    },
+    {
+      "section_id": "3.3",
+      "path": "docs/chapters/03-03-lesson.md",
+      "line": 19,
+      "quote": "`subtotal(order: &Order)` 接受 reference。函式只讀兩個數字欄位、交回小計。讀 `order.count` 時，欄位存取會自動跟隨這份 reference 找到原訂單；不是讓 Order 突然具備 Copy。"
+    },
+    {
+      "section_id": "3.3",
+      "path": "docs/chapters/03-03-lesson.md",
+      "line": 35,
+      "quote": "`*reference` 是 **dereference**，也就是解參照：沿 reference 找到所指的值。對 `i32`，可以把讀到的數字 Copy 出來："
+    },
+    {
+      "section_id": "3.3",
+      "path": "docs/chapters/03-03-lesson.md",
+      "line": 64,
+      "quote": "與上一節相比，乘法答案相同；改變的是呼叫者不必先交出再收回訂單，因為這項工作只需要讀取。"
+    },
+    {
+      "section_id": "3.3",
+      "path": "docs/chapters/03-03-lesson.md",
+      "line": 68,
+      "quote": "寫 `total_with_shipping(order: &Order, shipping: i32) -> i32`，只借讀訂單，回傳商品小計加運費。以單價 80、數量 2、運費 20，確認結果 180，呼叫後原數量仍是 2。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

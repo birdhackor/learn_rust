@@ -1,0 +1,8 @@
+{
+  "sealed_utc": "2026-10-15T09:11:34.670064+00:00",
+  "report_sha256": "b3ac96ae6a10146e9414e462fd03a1bb94e680f6aa3417d60933ee580644137e",
+  "json_sha256": "f86e2af6f803d672079d1c71eb4f212c8547903907913c9f6e252c87376549dd",
+  "sourcehashes_sha256": "2c0b829c830f34fed2258e920ff0226fbc854825f4400f126dfb13a69fbdcee8",
+  "end_changes": [],
+  "judgment": "necessary0 optional2; original immutable"
+}

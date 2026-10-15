@@ -1,0 +1,454 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "18.1",
+    "18.2"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "method": "Read 18.1→18.2 complete body and exact starter/complete source closure. Freeze metadata used solely to locate released files, not validation values.",
+    "prior_knowledge": "Basic Python plus personally read 1–15 and17; A1 only needs actually taught 1–12 APIs. No18.3–18.6 answer was read to fill A1."
+  },
+  "evidence": {
+    "scope": [
+      "18.1",
+      "18.2"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-01-lesson.md",
+        "sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-02-lesson.md",
+        "sha256": "cd7c87d654ab92944d6d0e9b186fe7b791ee2577ba05161be80478a68ff0b7a8"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-complete/Cargo.toml",
+        "sha256": "f60323c1fec090a7b4de0a05119edf73b03ad3b335a82dcf206a789954390d5f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-complete/README.md",
+        "sha256": "36efedae7210d26b4ed3b6a9bc47926d44fb1955709ed6d81040ba878dc1a3f8"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-complete/examples/inventory.rs",
+        "sha256": "522cea8fb144ac9d47a2b4c7ca04f938cf5de3f46b7601e8d944865873665d62"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-complete/src/collection.rs",
+        "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-complete/src/lib.rs",
+        "sha256": "8ea07aa7463342f930d2aa012852a74e6d4d77f9fcb91adba8dba7bd9a05b6bc"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-starter/Cargo.toml",
+        "sha256": "c0f63eb3de54abe64e3fc25114c2ec159a4d010b5085103e901d06ea47741805"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-starter/README.md",
+        "sha256": "f0f9390ae524d1fdf7abaeae6f8bd1e84ab40a6e0fc609f31fa322c2078bf2dd"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-starter/checks/collection-tests.rs",
+        "sha256": "c23652a6fbcf9b97c717f796e447ad6b76bd2394a5b3411fc983e435b2dfc8ab"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-starter/src/collection.rs",
+        "sha256": "7938fef9321c56f1a8cfb539786416eaa11816aea47f0511a8c913b26790df20"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a1-starter/src/lib.rs",
+        "sha256": "8ea07aa7463342f930d2aa012852a74e6d4d77f9fcb91adba8dba7bd9a05b6bc"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/.saved/notes-c.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/different.txt",
+        "sha256": "87ee07307593493b96730dcbb36fd51e9fa4ba189696dad60758e89e6e7750bf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/empty-a.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/empty-b.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/notes-a.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/sub/notes-b.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch15-projects/a1-complete/Cargo.toml",
+      "examples/ch15-projects/a1-complete/README.md",
+      "examples/ch15-projects/a1-complete/examples/inventory.rs",
+      "examples/ch15-projects/a1-complete/src/collection.rs",
+      "examples/ch15-projects/a1-complete/src/lib.rs",
+      "examples/ch15-projects/a1-starter/Cargo.toml",
+      "examples/ch15-projects/a1-starter/README.md",
+      "examples/ch15-projects/a1-starter/checks/collection-tests.rs",
+      "examples/ch15-projects/a1-starter/src/collection.rs",
+      "examples/ch15-projects/a1-starter/src/lib.rs"
+    ],
+    "material_bytes": [
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/.saved/notes-c.txt",
+        "bytes": [
+          82,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/different.txt",
+        "bytes": [
+          114,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/empty-a.bin",
+        "bytes": []
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/empty-b.bin",
+        "bytes": []
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/notes-a.txt",
+        "bytes": [
+          82,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/sub/notes-b.txt",
+        "bytes": [
+          82,
+          117,
+          115,
+          116,
+          10
+        ]
+      }
+    ],
+    "snippet_references": [
+      {
+        "document": "docs/chapters/18-01-lesson.md",
+        "line": 35,
+        "source": "examples/ch15-projects/materials/duplicate-demo/notes-a.txt",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 34,
+        "source": "examples/ch15-projects/a1-starter/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 40,
+        "source": "examples/ch15-projects/a1-starter/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 54,
+        "source": "examples/ch15-projects/a1-starter/src/collection.rs",
+        "anchor": "work"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 60,
+        "source": "examples/ch15-projects/a1-starter/src/collection.rs",
+        "anchor": "wire"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 70,
+        "source": "examples/ch15-projects/a1-starter/src/collection.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 88,
+        "source": "examples/ch15-projects/a1-starter/checks/collection-tests.rs",
+        "anchor": "material-test"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 98,
+        "source": "examples/ch15-projects/a1-starter/checks/collection-tests.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 173,
+        "source": "examples/ch15-projects/a1-complete/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 179,
+        "source": "examples/ch15-projects/a1-complete/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 185,
+        "source": "examples/ch15-projects/a1-complete/src/collection.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 191,
+        "source": "examples/ch15-projects/a1-complete/examples/inventory.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 220,
+        "source": "examples/ch15-projects/a1-complete/src/collection.rs",
+        "anchor": "root"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 224,
+        "source": "examples/ch15-projects/a1-complete/src/collection.rs",
+        "anchor": "observe"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 228,
+        "source": "examples/ch15-projects/a1-complete/src/collection.rs",
+        "anchor": "scan"
+      }
+    ],
+    "commands": [
+      {
+        "document": "docs/chapters/18-01-lesson.md",
+        "line": 71,
+        "command": "cargo +1.99.0 new duplicate-finder"
+      },
+      {
+        "document": "docs/chapters/18-01-lesson.md",
+        "line": 72,
+        "command": "cd duplicate-finder"
+      },
+      {
+        "document": "docs/chapters/18-01-lesson.md",
+        "line": 73,
+        "command": "cargo +1.99.0 check"
+      },
+      {
+        "document": "docs/chapters/18-01-lesson.md",
+        "line": 74,
+        "command": "cargo +1.99.0 test --locked"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 76,
+        "command": "cargo +1.99.0 check"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 104,
+        "command": "cargo +1.99.0 test --locked"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 197,
+        "command": "cargo test -p duplicate-a1 --locked"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 203,
+        "command": "cd examples/ch15-projects/a1-complete"
+      },
+      {
+        "document": "docs/chapters/18-02-lesson.md",
+        "line": 204,
+        "command": "cargo run --example inventory --locked"
+      }
+    ],
+    "package_manifests": {
+      "examples/ch15-projects/a1-complete/Cargo.toml": {
+        "package": {
+          "name": "duplicate-a1",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "walkdir": "2.5"
+        },
+        "dev-dependencies": {
+          "tempfile": "3.27"
+        }
+      },
+      "examples/ch15-projects/a1-starter/Cargo.toml": {
+        "package": {
+          "name": "duplicate-a1-starter",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "walkdir": "2.5"
+        },
+        "dev-dependencies": {
+          "tempfile": "3.27"
+        }
+      }
+    },
+    "selected_lock_entries": [
+      {
+        "name": "duplicate-a1",
+        "version": "0.1.0",
+        "dependencies": [
+          "tempfile",
+          "walkdir"
+        ]
+      },
+      {
+        "name": "duplicate-a1-starter",
+        "version": "0.1.0",
+        "dependencies": [
+          "tempfile",
+          "walkdir"
+        ]
+      },
+      {
+        "name": "tempfile",
+        "version": "3.27.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd",
+        "dependencies": [
+          "fastrand",
+          "getrandom 0.4.3",
+          "once_cell",
+          "rustix",
+          "windows-sys 0.61.2"
+        ]
+      },
+      {
+        "name": "walkdir",
+        "version": "2.5.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b",
+        "dependencies": [
+          "same-file",
+          "winapi-util"
+        ]
+      }
+    ],
+    "test_copy_identical": true,
+    "counts": {
+      "owned_package_files": 10,
+      "source_or_config_files": 8,
+      "material_files": 6,
+      "hashes": 23,
+      "snippets": 15,
+      "commands": 9,
+      "test_functions_per_copy": 8,
+      "unix_test_functions_per_copy": 3
+    },
+    "version_notes": [
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-01-lesson.md",
+        "original_first_read_sha256": "a22da7d2db2d4e3d159739c36ff8939038666aa014970bf1487a2a7835a6d982",
+        "current_full_reread_sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+        "sequence": "Old body first read and snapshot measured. Hash validation rejected initial write when root revised18.1 concurrently; no initial artifact existed. Parent gave version-only notification; current18.1 then reread in full before this first seal. No author/root verdict or diff was read.",
+        "change_scope": "Full-reference B route wording; no Rust/config/snippet/command change."
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "section": "18.1",
+      "judgment": "All six physical materials match exact listed bytes, including hidden .saved file, two empty files and case-different same-size5-byte file. Expected groups/path-based duplicate10 bytes and no guaranteed disk reclamation are accurate. No full duplicate algorithm/CLI completeness is claimed. Repo-external cargo +1.99.0 selection, generated check/lock then test, and explicit zero-test limitation are reproducible statically."
+    },
+    {
+      "section": "18.2 starter",
+      "judgment": "Only collection module and explicit model/stubs load. validate_root always NotDirectory, observe always NotRegular, collector always empty; text honestly predicts behavioral failure. checks/collection-tests.rs is not an automatic test target; instruction copies entire cfg(test) module into same collection.rs before local test. All imports/helper/source are inline; check precedes locked test after dependency resolution. Removing generated main and replacing manifest avoids unspecified starter binary."
+    },
+    {
+      "section": "18.2 completed",
+      "judgment": "Normal library only loads collection.rs; tests append exactly same bytes as starter check material. symlink_metadata root refuses missing/file/link; follow_links(false) and follow_root_links(false) agree. Ordinary entry/Unicode/observation branching retains native path and issues, continues after error, sorts native paths; observe captures len/modified and refuses current nonregular. Five universal+three Unix tests have stated meanings, controlled Ok/Err/Ok does not require account permissions. Snapshot does not freeze filesystem; simultaneous path substitution caveat is explicit."
+    },
+    {
+      "section": "18.2 commands/answer",
+      "judgment": "Full four-file completed source precedes cargo test; inventory full caller has explicit package-directory cwd so ../materials/duplicate-demo resolves correctly. Six files/zero issues with four5byte and two0byte values follow, without duplicate judgment. eprintln stderr/panic behavior is taught; demo's incomplete final-CLI exit policy is explicitly distinguished. Two source/config-only packages do not load later A2 sibling packages."
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Read all ten package-owned files and six material byte sequences.",
+      "Validate15snippet references/exact anchors and9literal shell command lines.",
+      "Parse two manifests/rootlock; confirm starter check module exactly equals completed library test suffix.",
+      "Static evaluation of eight tests per copy: five universal, three Unix; no implicit checks-directory execution."
+    ],
+    "not_performed": [
+      "No Cargo/rustc/Clippy/tests or inventory executed; no own directory/project created.",
+      "No file-walking or symlink experiment."
+    ]
+  },
+  "conclusion": "No necessary or optional technical correction found in current18.1–18.2.",
+  "version_notes": [
+    {
+      "path": "/workspace/learn_rust/docs/chapters/18-01-lesson.md",
+      "original_first_read_sha256": "a22da7d2db2d4e3d159739c36ff8939038666aa014970bf1487a2a7835a6d982",
+      "current_full_reread_sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+      "sequence": "Old body first read and snapshot measured. Hash validation rejected initial write when root revised18.1 concurrently; no initial artifact existed. Parent gave version-only notification; current18.1 then reread in full before this first seal. No author/root verdict or diff was read.",
+      "change_scope": "Full-reference B route wording; no Rust/config/snippet/command change."
+    }
+  ]
+}

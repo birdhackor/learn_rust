@@ -1,0 +1,61 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "2.3"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round02-control-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch02.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/02-03-lesson.md": "2140dec17d8eb06bc9caa8d7325dfd7cadf48ebbd494d7f5d5c103ee5271c2c7",
+    "examples/intro-workspace/control-steps/examples/for_range.rs": "9173e92fa4f5c8c4247a43fb39720498b1a5daa2c96bfd51f0cf71a3dfb86b97",
+    "examples/intro-workspace/control-steps/Cargo.toml": "52011d81554362fc0008e34c86caab53d1da8f6e599cb7b335e0b3b2dd5d8c6e",
+    "examples/intro-workspace/control-steps/examples/for_range_answer.rs": "426c5b2cc17aab15885f4d0664296f1d05d0ae43901890bea07acfd2e1b0bec8"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "2.3",
+      "path": "docs/chapters/02-03-lesson.md",
+      "line": 3,
+      "quote": "價目表 `[120, 80, 200]` 的總和是 400。現在可以逐項索引再相加，但每多一筆就得再寫一次操作。我們想保留「每項都加進總額」這個規則，讓程式自行走完材料。"
+    },
+    {
+      "section_id": "2.3",
+      "path": "docs/chapters/02-03-lesson.md",
+      "line": 7,
+      "quote": "**迴圈**讓同一段工作執行數次。`for price in prices { ... }` 會依 array 順序取出每項，這次把該值命名為 `price`，執行一次大括號內的 body。這裡走訪的是整數 array，因此每次得到一個 `i32` 價格，並非索引。"
+    },
+    {
+      "section_id": "2.3",
+      "path": "docs/chapters/02-03-lesson.md",
+      "line": 27,
+      "quote": "有時候要處理的材料是 0、1、2 這樣連續的數字，不需要先寫一個 array。**range** 表達一段範圍；把它放在 for 的 `in` 後，便能依序取得範圍中的整數。"
+    },
+    {
+      "section_id": "2.3",
+      "path": "docs/chapters/02-03-lesson.md",
+      "line": 74,
+      "quote": "這裡「半開範圍」只是指包含起點、排除終點的 `..` 範圍。總和不同，來自是否真的多處理了最後一個 3。"
+    },
+    {
+      "section_id": "2.3",
+      "path": "docs/chapters/02-03-lesson.md",
+      "line": 78,
+      "quote": "定義 `sum_three(values: [i32; 3]) -> i32`，用 for 加總後回傳結果。參數型別 `[i32; 3]` 已在第一章學過，現在把整個三項 array 提供給函式；本題只接受三項，不需要其他資料型別。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

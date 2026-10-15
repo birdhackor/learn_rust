@@ -1,0 +1,1655 @@
+{
+  "role": "獨立銜接與實頁，非作者/技術/firstreader",
+  "scope": "actual1–8前綴→9.1–9.7正文及完整closure；封存前未讀10/11正文或他角/作者validation/knownaudit",
+  "snapshot_note": "actual9.1–9.7 independently from actual1–8, no10+asprior; initial9.1first14lines read just before snapshot while verifying8quote precision, no otherrole hints",
+  "captured_utc": "2026-10-15T08:59:27.927160+00:00",
+  "sealed_utc": "2026-10-15T09:11:34.670064+00:00",
+  "source_files": 82,
+  "concept_checks": [
+    {
+      "concept": "closure與capture",
+      "first_needed": "9.1 fee28前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 3,
+          "text": "第 1.6 節已把計算整理成函式。這次想先保存一個運費計算工作，之後交給不同訂單使用；免運門檻已經保存在旁邊的變數，不想在每次呼叫時再傳一次。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 5,
+          "text": "普通函式也能完成計算，只要把門檻列為參數。本節要學的是另一種組合：把這段工作與它使用的周圍資料收在一起，形成一個可以保存、之後呼叫的值。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 9,
+          "text": "**closure**（閉包）是沒有另取函式名稱的函式形式，可以保存到變數中。它除了收到呼叫時的參數，還可以使用定義位置周圍的變數。這項保存所需資料或借用資訊的行為叫 **capture**（捕捉）；「環境」在這裡指那些外部變數，不是電腦的作業系統。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 23,
+          "text": "closure 用兩個直線符號包住參數，例如 **`|amount: i32|`**。後面可以接 `-> i32` 與 body，輸入、回傳值和 block 的規則沿用第 1.6 節。將它存進 `shipping_fee` 後，以 `shipping_fee(280)` 呼叫。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 25,
+          "text": "這次規則是金額至少 300 時免運，其餘收 60。下面的 `amount` 是每次呼叫才提供的訂單金額；`free_limit` 則在建立 closure 的位置就已存在，body 從環境取得它。只有門檻這項資料需要 capture："
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 40,
+          "text": "280 未達門檻，所以取得 60；320 已達門檻，所以取得 0。建立 closure 時還沒有計算某筆訂單的運費；呼叫時才執行 body。這兩個時點分開，才能把準備好的工作先保存，再處理後來到達的金額。"
+        }
+      ],
+      "q1": "函式形式可保存值，capture周圍資料/借用。",
+      "q2_mechanism": {
+        "answer": "建立保存工作與門檻；呼叫才提供amount計算。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "來源3明定每次不想再傳已存在門檻；普通fn也能完成，改變工作保存的分工。",
+        "verdict": "已足夠"
+      },
+      "q3": "直線參數/回傳與body；shipping_fee(280)，free_limit外部而amount是此次輸入。",
+      "q4": "280/320跨門檻、300 assertion支持規則及兩時點，非性能證據。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "closure推導固定型別",
+      "first_needed": "9.1 inference49/fixture57前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 44,
+          "text": "編譯器常能從 body 與呼叫位置推導 closure 的輸入、輸出型別。單一 expression body 可以略去大括號，像下面的 `|number| number * 2`；若有多個 statement，仍用 block。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 46,
+          "text": "`let result: i32` 讓這次計算的型別要求清楚可見。推導成功後，同一個 closure 的參數型別不會在每次呼叫時任意更換："
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 54,
+          "text": "這與第 5.1 節的泛型函式有別。下面先要求 identity 接收、回傳 `i32`，再想用同一個 identity 處理 `bool`，會得到 `E0308`："
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 60,
+          "text": "省略註記讓編譯器補出型別，不代表宣告了泛型參數。初學時可以先寫完整型別，看清輸入／輸出契約，再省略容易辨認的部分。"
+        }
+      ],
+      "q1": "接5.1推導，但省略型別非宣告泛型。",
+      "q2_mechanism": {
+        "answer": "body/呼叫/接收變數提供線索；同closure輸入不每次任意改。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "減可辨認註記仍保契約，防把省略當泛型。",
+        "verdict": "已足夠"
+      },
+      "q3": "double省略型別，result:i32；identity先i32再bool失敗。",
+      "q4": "8/12成功和E0308，未需推導演算法。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "shared/mutable capture",
+      "first_needed": "9.1 shared69/mutable91/fixture109前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 64,
+          "text": "接著把材料換成已教的 `String`，以便分辨 owner 與借用。工作只需讀取 byte 長度，不需要接手整份文字。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 66,
+          "text": "無參數的 closure 寫 **`||`**，這裡兩個直線之間沒有參數；它出現在 closure 的開頭，不是在兩個布林值之間做運算。下面 body 只使用 `as_str()` 和 `len()`，因此編譯器可以用 shared borrow capture `text`。closure 保存這份借用，原 `String` 仍由 `text` 管理："
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 82,
+          "text": "讀原文字和呼叫 closure 都只需要 shared borrow，可以同時保持這些讀取用途。這不是複製另一份 owned 文字；若原文字過早結束，借用它的 closure 也不能繼續使用，仍遵守第 3.5 節 reference 使用時來源必須有效的規則。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 86,
+          "text": "現在換一項工作：每次呼叫，將原計數增加一，並交回新數字。body 需要修改 `count`，因此 capture 改成 mutable borrow。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 88,
+          "text": "`count` 要宣告為 `mut`，才允許修改原數字；保存工作的 `tick` 也要宣告為 `mut`，因為呼叫需要透過 mutable 借用操作它保存的環境。兩個 `mut` 分別作用在原資料與 closure 值，不能只留其中一個："
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 104,
+          "text": "最後一次使用 tick 之後，這份 mutable borrow 不再需要，於是可以直接讀 `count`。第 3.5 節的最後使用點規則沒有因 capture 而消失。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 106,
+          "text": "如果在建立 tick 與後續呼叫之間讀 `count`，兩項用途就重疊：closure 仍要持有 mutable borrow，格式化輸出又需要借用原數字。以下完整失敗範例得到 `E0502`："
+        }
+      ],
+      "q1": "延3.3–3.5借用與最後使用；空直線是無參數。",
+      "q2_mechanism": {
+        "answer": "只讀長度保存shared；改count保存mutable。count mut與tick mut各有作用。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "讀長度不需接手String；新計數工作需持續改同一原狀態，換材料有需要。",
+        "verdict": "已足夠"
+      },
+      "q3": "shared可並讀原text；tick最後用後讀count，仍將呼叫時先讀則E0502。",
+      "q4": "兩次1/2與重疊失敗，無永久鎖/複製文字誤推。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "move capture與呼叫移出",
+      "first_needed": "9.1 owned121/copy129/take139/圖152前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 116,
+          "text": "如果工作需要自己擁有那份文字，在參數直線前加 **`move`**，寫成 `move || ...`。它要求按值保存所使用的環境資料，和前面的借用 capture 不同。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 118,
+          "text": "對沒有 `Copy` 的 `String`，這表示 ownership 從外面的變數交給 closure。下面 body 仍然只讀它保存的文字，沒有把文字交出去，所以能重複呼叫："
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 126,
+          "text": "對 `Copy` 資料，按值 capture 會複製值本身。下面的 `i32` 與 shared reference 都符合；特別注意，複製 `&str` 是複製借用資訊，並沒有取得原 `String` 的 ownership："
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 132,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example closure_move_copy --locked`，第一行兩個數字都是 `300`；第二行仍能直接讀 `view`，closure 讀到 `4`。原 `text` 仍要在這份 reference 使用期間有效。`move` 不會把借來的文字變成獨立 owned 文字。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 136,
+          "text": "最後把 body 改成直接交回保存的 `String`：`move || text`。這次先在建立時把文字交給 closure，再在呼叫時把文字交給呼叫者，讓後者可以獨立管理、追加內容。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 150,
+          "text": "圖中第一條箭頭對應建立 `take`，第二條對應執行 `take()`。文字的 owner 從 `text` 轉到 closure，再轉到 `saved`；不是先 clone 兩份文字。"
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 154,
+          "text": "這裡交出的 `String` 沒有 `Copy`；呼叫 take 會消耗這份 closure，不能再要求同一份 take 交出第二份文字。若重複呼叫，下面的 fixture 得到 `E0382`："
+        },
+        {
+          "path": "docs/chapters/09-01-lesson.md",
+          "line": 160,
+          "text": "所以要分開追蹤兩件事：建立時，環境按值或借用保存；呼叫時，body 讀取、修改或移出什麼。前一個 `move` 只讀範例能呼叫兩次，這個移出範例則消耗 closure，差別在 body 的工作。"
+        }
+      ],
+      "q1": "move按值保存；String move、i32/sharedref Copy；body另決定移出。",
+      "q2_mechanism": {
+        "answer": "只讀自有String可多次；交回nonCopyString的body消耗closure。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "需要自有文字或交給caller獨立追加，非僅換語法；move ref仍依賴原文字是當下ownership界線。",
+        "verdict": "已足夠"
+      },
+      "q3": "byte_count兩次4；limit/view仍可讀；take()->saved追加教學。",
+      "q4": "圖text→take→saved兩箭頭兩時點、同一文字無clone；E0382二次take對照只讀成功。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "FnOnce callback",
+      "first_needed": "9.2 callback_once26前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 3,
+          "text": "上一節已能保存並呼叫 closure。接著希望把「收到一份工作，再按約定執行」整理成共用函式：有的只執行一次，有的重複執行，有的只借用原工作。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 5,
+          "text": "這些共用函式不需要知道 closure 使用哪些外部變數，但必須知道它能接受什麼參數、交回什麼，以及用哪種方式呼叫。第 6.4 節的 trait 與 associated type 關係，現在可以用在這份契約。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 9,
+          "text": "把其他程式提供、由共用函式負責呼叫的工作稱為 **callback**（回呼）。例如提供一份「交出 owned 文字」的工作，共用函式接手後執行它，取回文字交給呼叫者。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 11,
+          "text": "**`FnOnce`** 是 Rust 的可呼叫 trait，提供按值接手這份工作的呼叫能力。closure 的 body 可以在呼叫中移出保存的 non-Copy 內容，像上一節的 take。只知道 `F: FnOnce` 時，共用函式不能假定同一份 F 還能再用。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 13,
+          "text": "`FnOnce` 與稍後的 `FnMut`、`Fn` 都由 `std::ops` 提供，也已在 Rust 的 prelude 中，因此本節可以直接在 bound 使用這些名稱。這是這三個標準 trait 的名稱來源；自訂 trait 仍沿第 6.1 節以 `use` 引入。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 15,
+          "text": "這裡的 bound 採專用語法 **`FnOnce() -> T`**：空括號表示不接收參數，箭頭表示回傳 T。回傳型別對應這組 trait 的 associated type `Output`，和第 6.4 節一樣是該實作的輸出選擇；不用手寫標準函式庫內部的呼叫 method。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 17,
+          "text": "每個 closure 表達式都有自己的具體型別，通常不能在原始碼中寫出該型別的名稱。因此用泛型 `F` 表示工作型別，再用 trait 說清楚它能做什麼。下面 `T` 是結果型別，`run_once` 接手 task 並呼叫一次，交回取得的 T；沒有保存供後續第二次呼叫的 task。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 35,
+          "text": "`FnOnce` 是最低呼叫能力，**不是每個符合它的 closure 都必定只能呼叫一次**。上面的 `|| 7` 沒有移出需管理的資源，也符合契約；共用函式選擇只依承諾使用一次。"
+        }
+      ],
+      "q1": "callback由共用fn呼叫，FnOnce專用括號bound、Output沿6.4。",
+      "q2_mechanism": {
+        "answer": "按值呼叫，已知FnOnce只承諾一次，不是實作都只能一次。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "共用工作只執行一次，無需知道環境形狀但需輸入輸出與能力。",
+        "verdict": "已足夠"
+      },
+      "q3": "run_once<T,F:FnOnce()->T>接F後task()交T；標準prelude來源先說。",
+      "q4": "takeString與無捕捉7都可，後者防互斥分類誤讀。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "FnMut",
+      "first_needed": "9.2 mutable44/repeatfail58前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 39,
+          "text": "如果要讓計數工作連做兩次，只知道 FnOnce 就不夠。**`FnMut`** 提供透過 mutable reference 呼叫自身的能力，可以重複呼叫，並讓 body 修改保存的環境。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 41,
+          "text": "`FnMut() -> i32` 表示每次不接收參數、交回一個 i32。本例的 `call_twice` 接手工作後，參數寫 `mut task`，允許借用 task 作兩次呼叫；結果按照第一次、第二次的順序放進 tuple："
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 51,
+          "text": "輸出 `兩次結果=1、2，原計數=2`。呼叫程式中的 tick 沒有直接被呼叫，只被交給函式，因此它的 binding 不需要 mut；接手之後要實際呼叫兩次的 task 才需要 mut。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 53,
+          "text": "call_twice 結束時沒有交回 closure，保存的 mutable borrow 也不再使用，因此外面可以讀 count。這裡是重複使用同一份計數狀態，不是建立兩份從零開始的工作。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 55,
+          "text": "下面故意要求同一份工作回傳兩個 String，但提供的 take 會移出唯一保存的文字。它只能提供 FnOnce 的按值呼叫，不能滿足 FnMut，所以得到 `E0525`："
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 61,
+          "text": "把兩次呼叫需求改成一次，或重新設計成每次都能產生一份文字，是兩種不同的工作。只替參數加 mut，不能替已移出的資料補出第二份。"
+        }
+      ],
+      "q1": "mutable receiver可反覆呼叫，沿tick與3.6。",
+      "q2_mechanism": {
+        "answer": "mut task供接手後兩次呼叫，外tick未直接呼叫毋須mut；fn結束borrow完。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "連做兩次共用計數狀態，FnOnce最低承諾不足。",
+        "verdict": "已足夠"
+      },
+      "q3": "call_twice回tuple1/2，外count2；移出唯一String不能滿FnMut。",
+      "q4": "常數7也可、E0525對照；不是補mut就造出第二份資源。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Fn與能力包含",
+      "first_needed": "9.2 shared72前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 65,
+          "text": "如果共用函式只收到對工作本身的 shared reference，它不能用 mutable receiver 呼叫。**`Fn`** 提供透過 shared reference 呼叫自身的能力，也能重複呼叫。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 67,
+          "text": "本例的加法工作只讀取保存的 base，適合這項要求。**`Fn(i32) -> i32`** 表示呼叫時收到一個 i32，回傳一個 i32；不是宣告名為 i32 的環境欄位。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 69,
+          "text": "`apply_shared` 收到 `&F`，保留呼叫者的工作，而不接手它。這裡選 Fn 的理由是只有 shared access；只是「需要呼叫多次」的工作，通常 FnMut 已足夠："
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 79,
+          "text": "| trait | 呼叫如何使用這份工作 | 這份契約允許共用函式做什麼 |"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 85,
+          "text": "符合 Fn 的工作也符合 FnMut 與 FnOnce；符合 FnMut 的也符合 FnOnce。因此 call_twice 能接受不修改環境的 `|| 7`，run_once 也能接受前兩種能力的工作。這是可提供能力的包含關係，不是三個互斥分類。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 87,
+          "text": "還要保留上一節的區分：`move` 只規定按值 capture。擁有 String 但只讀它的 closure 仍可有 Fn；把 String 移出 body 才使這個例子只能有 FnOnce。Fn 描述 shared receiver 能力，不保證每次回傳相同值，也不把所有可能間接可達的資料都宣稱成永遠不變。"
+        }
+      ],
+      "q1": "Fn為shared receiver呼叫；Fn→FnMut→FnOnce非互斥。",
+      "q2_mechanism": {
+        "answer": "&F可呼叫並保留；Fn不保同結果/一切間接資料不變。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "只有shared access才需Fn，單多次FnMut夠，選擇理由非更多能力必好。",
+        "verdict": "已足夠"
+      },
+      "q3": "Fn(i32)->i32，base10只讀，apply_shared&add得13後仍add4→14。",
+      "q4": "table與常數7支持包含；間接資料限定不依賴Cell/RefCell細節，僅限制過度推論。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "function pointer",
+      "first_needed": "9.2 pointer98/failure106前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 91,
+          "text": "有時工作已經是一個普通函式，不需要重新寫一個會捕捉環境的 closure。**function pointer**（函式指標）是保存可呼叫函式位置的值；型別以小寫 **`fn(i32) -> i32`** 表示，指定輸入與輸出。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 93,
+          "text": "`fn` 在這裡是具體型別，`Fn` 則是能力 trait，兩者不同。可以把普通函式名稱指定到這個型別，編譯器會轉成對應的 function pointer。不捕捉環境的 closure 也能作這種轉換；pointer 本身沒有位置保存任意外部環境資料。"
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 95,
+          "text": "這種 function pointer 提供 Fn、FnMut、FnOnce，所以也可交給前面的共用函式。下面先直接呼叫兩個 pointer，再將其中一個借給 apply_shared："
+        },
+        {
+          "path": "docs/chapters/09-02-lesson.md",
+          "line": 103,
+          "text": "若 closure 需要 capture base，就不能只用同樣的 pointer 型別保存它；以下範例得到 `E0308`。這時使用接受 Fn 等 trait 的泛型介面，而不是把環境偷偷塞進 function pointer："
+        }
+      ],
+      "q1": "小寫fn具體型別、Fn是trait；保存函式位置。",
+      "q2_mechanism": {
+        "answer": "普通fn與無captureclosure可轉pointer，提供Fn系列，沒有任意環境儲存。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "已有函式可直接共用callback介面，需base capture時用泛型Fn。",
+        "verdict": "已足夠"
+      },
+      "q3": "add_one→fn(i32)->i32；double不capture；&pointer給apply_shared。",
+      "q4": "4/6/4與E0308捕捉base反例；不要求ABI/位址內部。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "參數與回傳impl Trait",
+      "first_needed": "9.3 parameter24/owned34前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 3,
+          "text": "上一節讓函式收到工作並執行它。現在希望函式收到設定值，建立好一份工作，交回去讓呼叫者之後反覆使用。例如保存加數 10，之後把不同輸入各加 10。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 5,
+          "text": "這個 closure 需要 capture 設定值，不能只用上一節的 function pointer 表示。它有具體型別，但通常不能在 source 中寫出型別名稱；回傳介面仍必須說清楚呼叫者可以做什麼。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 9,
+          "text": "**`impl Trait`** 在型別位置表示「符合指定 trait 的具體型別」。先看參數位置：`task: impl Fn(i32) -> i32` 接受一份有對應呼叫能力的工作。具體工作由呼叫者提供，函式 body 只能依已宣告的能力使用它。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 11,
+          "text": "這裡保留上一節的輸入／輸出契約，但省略另取泛型參數 F 的步驟。它是匿名的型別參數；若要在多個位置表達同一個型別，仍可用原來的具名泛型。這項匿名參數也不能像第 5.1 節的具名參數一樣在呼叫處指定 turbofish。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 21,
+          "text": "這組參數／回傳對照先使用同一種 Fn 契約，讓差別集中在誰提供具體型別。evaluate 本身只呼叫一次，單獨設計這項工作時，FnOnce 就已足夠；此處的 Fn 是本例選定的介面能力。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 27,
+          "text": "把 `impl Trait` 放在**回傳位置**，選擇方向反過來：由函式實作選定具體結果型別，呼叫者取得符合這份介面的結果，不能自行改選另一個型別。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 29,
+          "text": "這種隱藏具體型別的介面稱為 **opaque type**。這裡隱藏的是原始碼需要寫出的型別細節，不是讓結果沒有型別，也不是把型別改成執行期任選。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 31,
+          "text": "`make_adder` 回傳 `impl Fn(i32) -> i32`，承諾結果可接受 i32、交回 i32，且能透過 shared receiver 呼叫。body 選擇一個按值保存 base 的 closure；base 是 Copy 整數，工作不借用函式內會結束的區域變數："
+        }
+      ],
+      "q1": "參數匿名泛型由caller提供；回傳opaque由實作選具體型別。",
+      "q2_mechanism": {
+        "answer": "同Fn介面選擇方向相反，opaque隱名稱非無型別；匿名無F多處關係/turbofish。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "設定→工作需capture而型別通常無可寫名，pointer不適用；介面仍須保留可做什麼。",
+        "verdict": "已足夠"
+      },
+      "q3": "evaluate收implFn，make_adder moveCopybase回implFn；沒有借結束區域。",
+      "q4": "6與13/14、方向表；21明說evaluate選Fn為同能力教學對照，非最低必需。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "opaque單一具體回傳型別",
+      "first_needed": "9.3 fixture49/branches55前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 44,
+          "text": "同一函式的所有回傳分支，必須有相同的具體型別。每個不同 closure 表達式都有自己的型別，所以「它們都實作 Fn」不代表能作為同一個回傳結果。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 46,
+          "text": "下面故意在兩個分支寫不同的 closure，得到 `E0308`："
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 52,
+          "text": "本項工作只需要依設定選擇加或減，不需要兩種資料形狀。因此把分支放進**同一個 closure 的 body**：建立的仍是一種 closure 型別，保存的 subtract 值決定每次執行哪項算術。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 75,
+          "text": "evaluate 將 3 交給乘二工作，得到 6；make_adder 保存 10，收到 3、4 後分別得到 13、14。subtract 為 true 時做 30 減 10，否則做 30 加 10，因此是 20、40。不同 base 值可以保存不同設定，但同一個 closure 表達式的型別仍相同；回傳介面保留它能做的工作。"
+        }
+      ],
+      "q1": "每closure表達式獨有型別，實作Fn不等同一型。",
+      "q2_mechanism": {
+        "answer": "兩分支不同closure E0308，分支放同closurebody保一型。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "工作只依設定加減，不需兩種資料形狀；保原算術選擇並符合介面。",
+        "verdict": "已足夠"
+      },
+      "q3": "make_adjuster capture subtract/base，body依bool選+/-。",
+      "q4": "30/base10→20/40與失敗對照，不暗用後章dyn補。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "RPIT lifetime capture與precise use",
+      "first_needed": "9.3 borrowed84/implicit108/precise119前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 79,
+          "text": "現在要交回一份讀文字 byte 長度的工作，讀的仍是既有 String 的內容，不重建另一份文字。輸入使用第 7.1 節的省略形式 `&str`，但來源 lifetime 仍然存在。回傳 closure 用 move 保存這個 shared reference 值；第 9.1 節已說明，按值保存 reference 不會取得被借文字的 ownership。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 81,
+          "text": "回傳位置的 `impl Trait` 簡稱 **RPIT**（return-position impl Trait）。本專案採 edition 2024：沒有明確限制時，這個 opaque 型別會自動 capture scope 內的泛型參數，**包含 lifetime 參數，省略名稱的輸入 lifetime 也在其中**。因此下面的隱藏型別可以依賴輸入 lifetime，保存借自輸入的 reference："
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 87,
+          "text": "這裡的「RPIT capture」是在型別契約上允許隱藏型別依賴哪些泛型參數；第 9.1 節的「closure capture」則是建立值時保存哪些資料或 reference。兩者相關，但不是同一項動作，前者不會配置或複製原文字。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 95,
+          "text": "若把來源移到內層，卻在內層結束後才呼叫回傳工作，便不符合這項依賴，得到 `E0597`。回傳值有 opaque 介面，不會取消原資料的 lifetime 要求："
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 103,
+          "text": "有時隱含 capture 比這次實作真正使用的資料更廣。以下對照刻意保留一個 `&str` 輸入，但工作只交回固定數字 4，不讀輸入；它只為展示回傳契約的差異。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 105,
+          "text": "在 edition 2024，省略明確限制仍會 capture 輸入的 lifetime，即使本次 closure 沒有保存該 reference。呼叫端仍依介面允許的依賴檢查，所以這個 fixture 也得到 `E0597`："
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 111,
+          "text": "要表達較窄的依賴，可用 **precise capture**（精確捕捉）的 `use<...>`。它放在回傳 bound，和第 2.6 節引入名稱的 use statement 是不同用途："
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 113,
+          "text": "- **`use<'a>`** 明確允許隱藏型別依賴 `'a`。真的保存輸入 reference 的 reader 需要這份來源關係。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 114,
+          "text": "- **`use<>`** 不 capture 泛型參數。本例沒有其他型別參數，固定工作也沒有保存輸入 reference，才可以這樣排除來源 lifetime。"
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 116,
+          "text": "`impl Fn() -> usize + use<>` 中的加號，把呼叫能力與 capture 約定放進同一個回傳介面，不是數值相加。下面第一個函式保留來源，第二個明確排除不需要的來源："
+        },
+        {
+          "path": "docs/chapters/09-03-lesson.md",
+          "line": 128,
+          "text": "`use<>` 沒有延長 inside，也不能用來消除一份真實保存的 reference。若實作仍使用那份借用，隱藏型別就需要 capture 相應 lifetime。現行語法若有具名型別參數，也要求 capture 清單列入 scope 中全部型別參數；不能把這個只有 lifetime 的示例推成任意省略 T 的規則。"
+        }
+      ],
+      "q1": "完整縮寫81；型別契約依賴參數與值保存資料分開；接7章來源有效。",
+      "q2_mechanism": {
+        "answer": "2024預設含scope泛型/lifetime及省略輸入；use<a>允a，use<>排本例唯一lifetime，+組介面。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "79讀既有文字不重建所以借用；103固定4不讀輸入的對照揭預設依賴妨礙inside結束後用，精確排除回應具體限制。",
+        "verdict": "已足夠"
+      },
+      "q3": "move&str reader需來源有效；fixed_reader use<>可獨立；counter答案moveownedstate FnMut。",
+      "q4": "真借用E0597、未借但契約E0597、use<>成功；128不延長真borrow/有T須列全只防泛化，不需泛型capture內部。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Iterator/next/lazy",
+      "first_needed": "9.4 countdown32/圖39前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 3,
+          "text": "第 5.5 節的清單整理器用索引迴圈，每次要處理下一項，同時維護索引與結束條件。現在希望把「怎麼取得下一筆」收在來源中，讓讀取端不必知道來源是否有索引、是否已先保存全部資料。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 5,
+          "text": "本節先建立一個只保存剩餘數字的倒數來源，再將同一套讀取方式用在清單。索引迴圈仍然能完成原工作；新的分工是讓來源負責推進，讀取端只處理交來的每筆資料。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 9,
+          "text": "**iterator**（迭代器）是可逐筆交出資料的值，在 Rust 中由標準 trait **`Iterator`** 描述。它保存推進所需的狀態，例如下一個數字或清單目前位置。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 11,
+          "text": "這個 trait 的 associated type 叫 **`Item`**，表示每次交出資料的型別，沿用第 6.4 節的型別關係。Item 可以是 owned 值，也可以是 reference；不能只由「走訪」一詞判斷 ownership。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 13,
+          "text": "核心 method 是 **`next(&mut self) -> Option<Self::Item>`**：透過 mutable receiver 更新 iterator 狀態；有下一筆就交回 Some 包住的 Item，這次走訪結束則交回 None。沒有額外的輸入參數，也不以數字零當成結束訊號。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 15,
+          "text": "Iterator 的一般契約允許某些實作在 None 後再次交出 Some；後面的 for 會在**第一個 None** 結束。這節的有限倒數與 slice iterator 則在結束後持續回傳 None，不把這份實作的性質推成所有 iterator 的必要保證。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 19,
+          "text": "倒數來源從 `start` 開始，每次先保存目前正整數，把 remaining 減一，再交回剛才保存的數字。start 小於或等於零，直接交回 None；沒有需要先建立一份倒數清單。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 29,
+          "text": "`type Item = i32` 選定每筆數字型別。count_down 這次直接回傳具名的 Countdown，方便對照 remaining 保存在誰身上；它建立的值再依下面的 Iterator 實作逐筆交數字。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 35,
+          "text": "建立工作只保存 start，尚未取得第一筆。**lazy**（惰性）在本例表示數字由 next 推進時才逐筆交出，不是在建立時就先算出並保存整份清單。建構值本身仍然有發生，不表示任何初始化都沒有成本。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 37,
+          "text": "下圖追蹤從 3 開始的前四次 next。remaining 是保留在同一份 Countdown 中的狀態，Some 中的數字則交給呼叫者；第四次沒有下一筆，剩餘狀態仍是零。"
+        }
+      ],
+      "q1": "Iterator保存推進狀態，Item associatedtype可owned/ref；next&mut→OptionItem。",
+      "q2_mechanism": {
+        "answer": "先current後remaining−1交Somecurrent；<=0 None；lazy在next逐筆產生非零初始化成本。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "來源可不索引/不先存全部，倒數只remaining；來源推進與reader處理分工，原索引法仍能做。",
+        "verdict": "已足夠"
+      },
+      "q3": "mut stream next3/2/1/None/None；0/-4 None。",
+      "q4": "圖同工作四列state3→2/2→1/1→0/0→0對Some3/2/1/None；一般None後可Some限定正服務for首None結束。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "IntoIterator與共同來源",
+      "first_needed": "9.4 for74/NumberList86/sum92前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 65,
+          "text": "**`IntoIterator`** 描述「這種輸入如何轉成 iterator」。它與 Iterator 分工不同：前者建立走訪工作，後者負責逐筆交出 Item。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 67,
+          "text": "它也有 Item，另外有 **`IntoIter`**，指定所建立的 iterator 型別。對 IntoIter 的要求是 **`Iterator<Item = Self::Item>`**：工作交出的元素，必須和這份 IntoIterator 宣告的一致。associated type 也可以有這種能力要求，不是只放一個沒有條件的名稱。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 69,
+          "text": "**`into_iter(self) -> Self::IntoIter`** 按值接收輸入，交回工作。若輸入本身是 reference，接收的是那份 reference；若輸入是 owned collection，接收的才是該 collection。方法名稱中的 into 不會讓所有情況都自動取得原資料的 ownership。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 71,
+          "text": "`for value in source` 會先依 source 的 IntoIterator 建立工作，再反覆呼叫 next。Some 的內容進入這次迴圈，第一個 None 結束。所有 Iterator 本身也有 IntoIterator，轉換時直接交回同一份 iterator，所以 Countdown 可以直接交給 for："
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 77,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example iterator_for --locked`，依序取得 `3`、`2`、`1`，合計 `6`。這裡 for 接手 stream，自己以可修改的方式推進，原 binding 不必寫 mut。沒有重新建立另一個從 3 開始的 iterator。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 81,
+          "text": "`Vec<i32>` 的 owned `into_iter()` 會接手 Vec，從頭到尾逐筆交出 i32。回傳工作有標準型別名稱 **`std::vec::IntoIter<i32>`**：std 是標準函式庫 crate，vec 是其中的 module，IntoIter 是 iterator 的型別名稱，不是 IntoIterator trait。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 83,
+          "text": "現在以 NumberList 包住 Vec，讓它也能直接交給 for。它的 into_iter 只把欄位中的 owned Vec 轉成工作，沒有重建元素。實作的 `IntoIter` 必須寫出具體型別，所以使用剛才的標準工作型別："
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 89,
+          "text": "共用的加總函式只要求 **`S: IntoIterator<Item = i32>`**，不需要知道欄位名稱，也不需要來源能依索引存取。它接手 source、逐筆相加，空來源交回零："
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 95,
+          "text": "第 2.3 節的 range 與剛才的 Countdown 都符合 i32 Item 的要求，所以同一個函式能接收三種來源："
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 101,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example iterator_sources --locked`，三種合計都是 `6`。清單與 range 交出 1、2、3，Countdown 交出 3、2、1；同一份加總工作都依序加進 total。空清單沒有下一筆，因此保留初值 0。共同的逐筆操作不再綁住特定清單欄位；它仍沒有自動證明資料或加總的商業規則正確。"
+        }
+      ],
+      "q1": "IntoIterator建立工作，IntoIter具體Iterator且Item相同，分工不同Iterator。",
+      "q2_mechanism": {
+        "answer": "self接收到的reference或owned值各自ownership；Iterator本身into_iter交同工作。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "共同加總不依欄位或索引，同一工作接NumberList/range/倒數。",
+        "verdict": "已足夠"
+      },
+      "q3": "std::vec::IntoIter具名；NumberList交ownedVec；S:IntoIterator<Item=i32>for加總。",
+      "q4": "不同順序三來源sum6、空0；StepDown先next5再for3/1 sum4證同進度不重設。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "slice/Vec三種ownership",
+      "first_needed": "9.4 table107/ownership120/borrowed142/fixtures152/158",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 105,
+          "text": "資料改成 `Vec<String>`，才能看清楚是否複製文字、借用文字或交出文字。依工作需要選以下建立方式，Item 型別也跟著不同："
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 107,
+          "text": "| 建立工作 | 借用或接手什麼 | Item | 結束後原 Vec |"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 109,
+          "text": "| `texts.as_slice().iter()` | shared borrow slice | `&String` | 仍可用；沒有交出 owned String |"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 110,
+          "text": "| `texts.as_mut_slice().iter_mut()` | mutable borrow slice | `&mut String` | 借用結束後可用，內容可能已改 |"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 111,
+          "text": "| `texts.into_iter()` | 接手 owned Vec | `String` | 原 Vec 已交出，不能再用 |"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 113,
+          "text": "**slice 的 `iter`** 從頭到尾交出各元素的 shared reference。**`iter_mut`** 從頭到尾交出各元素的 mutable reference，讓每個元素能個別修改。建立這些 iterator 本身不會走完所有元素；空 slice 的下一筆就是 None，不會因為空清單越界。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 115,
+          "text": "借用來源必須在 iterator 與交出 reference 的使用期間保持有效；mutable 路徑也仍遵守其他借用不能重疊的規則。本節顯式使用 as_slice／as_mut_slice，讓取得的視圖與其方法可辨認。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 117,
+          "text": "下面分成三段：先借來讀，再借來追加 ending 保存的驚嘆號片段，最後接手每個 String，追加 saved 並保存在新清單。這裡 `for mut item` 讓第三段取得的 owned String binding 可以修改；第二段則透過 mutable reference 修改原元素："
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 135,
+          "text": "沒有呼叫 clone。前兩段的 String owner 都在原清單中；第三段把元素交回、再 move 進 saved。最後的結果擁有這些文字，原 texts 已不能使用。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 139,
+          "text": "標準函式庫也為 `&Vec<T>` 和 `&mut Vec<T>` 提供 IntoIterator，Item 分別是 `&T` 與 `&mut T`。因此可以直接將 reference 交給 for，不先寫 iter；這是 reference 型別自己的 IntoIterator 實作。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 145,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example iterator_borrowed_forms --locked`，先讀到 1、2，再將原值改成 11、12。for 接手的是借用資訊，原 Vec 沒有被移走；第二段用第 3.4 節的 `*item` 修改 reference 指向的數字。"
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 149,
+          "text": "以下 iterator 還要繼續交出 mutable reference，卻先讓 Vec 再作一次 mutable 操作。兩份 mutable borrow 重疊，得到 `E0499`："
+        },
+        {
+          "path": "docs/chapters/09-04-lesson.md",
+          "line": 155,
+          "text": "owned into_iter 則是另一項限制：整個 Vec 已被接手，不能再用原值。即使元素是 Copy 整數，Vec 本身也沒有 Copy；以下 fixture 得到 `E0382`："
+        }
+      ],
+      "q1": "iter &String、mut &mutString、owned String；reference自己的IntoIterator。",
+      "q2_mechanism": {
+        "answer": "前兩借原Vec，第三接手；for mutitem使ownedbinding可改而非改mutref規則。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "換Vec<String>為看清複製/借用/交出；只讀、改原項、接手另存各有需要。",
+        "verdict": "已足夠"
+      },
+      "q3": "shared讀Rust/Python，mut追加!，owned追加saved後push；&Vec/&mutVec i32以*讀改。",
+      "q4": "無clone、E0499/E0382，元素Copy非VecCopy；手機表C9-01可選。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "map adaptor/lazy callback",
+      "first_needed": "9.5 map20前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 3,
+          "text": "第 5.5 節的整理器保留非負數；現在多一項需要：保留大於或等於門檻的數字，再乘上指定倍率，保存結果供後面的工作使用。材料 `[-2, 0, 3, 3]`、門檻 0、倍率 10，應得到 `[0, 30, 30]`，保留原順序與重複值。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 5,
+          "text": "既有迴圈仍能完成這件事。這次把逐筆工作拆成可組合的 iterator 步驟，讓每一步的資料型別與操作可辨認。本節的算術都用不溢位的小整數。每個 example 仍是 no-lib package 的獨立完整檔，完整設定如下："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 13,
+          "text": "**iterator adaptor**（迭代器轉接器）是取得原 iterator、建立另一份逐筆工作的 method。新工作按值接收原 iterator，保存它與需要的 callback，不主動呼叫 clone；交接仍依來源型別的 Copy／move 規則。它也不是先把全部元素整理成另一份清單。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 15,
+          "text": "**`map`** 接收原 iterator 與一份 `FnMut` callback。每次需要下一筆時，它取得原 Item，交給 callback，再交出 callback 的回傳值。callback 因而可以改變 Item 型別；map 本身回傳的是另一個 Iterator，還沒有收集全部結果。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 17,
+          "text": "先只將數字乘二。slice 的 iter 交出 `&i32`，所以 map callback 接收 `&i32`，以 `*item` 讀出 Copy 數字，再交回 i32；新工作的 Item 就是 i32。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 36,
+          "text": "建立 map 後先出現「尚未走訪」，callback 的訊息則和 for 收到的資料交錯：每次推進才處理當筆。visits 被 callback mutable 借用，最後一次使用工作之後才讀它，沿用第 9.1 節的 capture 規則。"
+        }
+      ],
+      "q1": "adaptor按值收iterator/callback建新iterator，非先全收；map FnMut收Item回新Item。",
+      "q2_mechanism": {
+        "answer": "slice&i32→map&i32 derefCopy→i32，推進才執行callback。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "原需門檻篩選倍率保存；先隔離乘二觀察延後工作，拆可組步驟非舊迴圈不能做。",
+        "verdict": "已足夠"
+      },
+      "q3": "visits/處理訊息在map，for收20/40，末使用後讀visits。",
+      "q4": "尚未走訪先印、callback與for交錯2次，足見lazy不只最後值。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "filter Item與參數層次",
+      "first_needed": "9.5 filter47/fixture55前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 40,
+          "text": "**`filter`** 也建立新 iterator，但 callback 只判斷是否保留。它收到 **`&Item`**，回傳 bool；true 讓原 Item 繼續交出去，false 略過它，再尋找後續符合條件的資料。它不因判斷而將 Item 改成 bool。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 42,
+          "text": "本例的原 Item 已是 `&i32`，所以 callback 參數會是 **`&&i32`**：外層 reference 借用這次取得的 Item，裡面的 reference 指向原數字。`**item` 連續取出兩層借用指向的 Copy 數字，才拿來比較。filter 之後的 Item 仍是 `&i32`，下一個 map 只需要一個 `*`。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 44,
+          "text": "第二組改用 owned String：into_iter 的 Item 是 String，filter callback 才是 `&String`；判斷後保留的 Item 仍是 owned String。文字以第 8.5 節的 `to_owned` 建立，沒有新增字元走訪方法："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 50,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example adapter_filter --locked`，數字依序保留 0、3、3，文字保留 Rust。`hi` 的 byte 長度不足 4，所以略過；不是把全部文字轉成長度數字。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 52,
+          "text": "若對 shared slice 的 filter callback 只寫 `&i32`，和要求的 `&&i32` 就不同。以下 fixture 得到 `E0631`，指出 callback 的參數契約不符："
+        }
+      ],
+      "q1": "predicate收&Item→bool，輸出仍原Item非bool。",
+      "q2_mechanism": {
+        "answer": "&i32來源→&&i32 predicate，以雙dereference讀數；ownedString→&String判斷、String交下步。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "保門檻、順序、重複是來源3獨立需求；保0/3/3，文字不是全改長度。",
+        "verdict": "已足夠"
+      },
+      "q3": "true放行false找後續；String bytes>=4保Rust略hi，map後只單*。",
+      "q4": "兩種ownership與E0631；正文code雙星是兩次dereference，非raw粗體bug。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "collect/FromIterator",
+      "first_needed": "9.5 organize67/圖79/fixture86/impl96/full102前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 60,
+          "text": "篩選與轉換都只產生工作。要保存全部結果，使用 **`collect`**：接手 iterator，反覆取得 Item，依指定的目標型別建立產物。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 62,
+          "text": "建立產物的能力由 **`FromIterator<A>`** 描述，A 是輸入元素型別。這個 trait 的 `from_iter` 接收能提供 A 的 IntoIterator，交回目的型別自身；和上一節的 IntoIterator 建立走訪方向相反。標準 `Vec<T>` 能從 T 元素依取得順序建立，例如 `Vec<i32>` 接收 i32 元素。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 64,
+          "text": "collect 沒有一個固定回傳型別。`let result: Vec<i32> = ...collect();` 指定結果是 Vec；在下面的 helper，回傳型別 `Vec<i32>` 也提供相同線索。map 已把 `&i32` 變成 owned i32，這份目標才能接住："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 70,
+          "text": "| 步驟 | 這一步的 callback | 交給下一步的 Item |"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 77,
+          "text": "下圖從 keep_and_scale 收到的 values 開始；這裡已是 `&[i32]`，所以直接呼叫 values.iter()。箭頭是逐筆資料與型別的流向；collect 的推進會帶動前面的工作，不是先建立圖中每一站的完整中間清單。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 81,
+          "text": "標準 `Vec<T>` 當元素有 Debug 時也能 Debug，顯示元素清單；元素有 PartialEq 時，同長度且各位置相等才相等，因此本節能用 `{:?}` 顯示結果、用 assert_eq 比較 `Vec<i32>`。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 83,
+          "text": "如果直接把 `&i32` 收進 `Vec<i32>`，collect 不會自動把 reference 變成數字。這個 fixture 以 `E0277` 指出目標沒有從這種 Item 建立的契約；先 map 取出 Copy 數字，才是前面正常版的安排："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 91,
+          "text": "上一節的 NumberList 已能交出 i32。現在讓它也能**從 i32 元素建立**：實作 `FromIterator<i32>`，其中泛型 S 只要求 `IntoIterator<Item = i32>`，用原來的 for 與 push 保存資料，最後交回 Self。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 93,
+          "text": "下面以 `use std::iter::FromIterator;` 明寫標準 trait 的來源；NumberList 與上一節的 IntoIterator 實作也直接保存在這份 example 同檔，完整檔會一併列出。這次增加的是從元素建立自己的能力："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 99,
+          "text": "下面先執行整理，再用不同的目標表示法收集 range。`collect::<Vec<i32>>()` 在 method 指定結果型別，回用第 5.1 節的 turbofish；**`Vec::<i32>::from_iter`** 則先在型別路徑指定 Vec 的元素型別，再透過 `::` 呼叫這個型別提供的 from_iter。自訂 NumberList 以變數型別註記指定目標，選同樣的 i32 Item，但建立的結果型別不同："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 105,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example adapter_collect --locked`，整理結果是 `[0, 30, 30]`，自訂目的型別的 values 是 `[1, 2, 3]`。FromIterator 不替本例做額外驗證；它依我們寫的建立方式保存資料。"
+        }
+      ],
+      "q1": "collect推進iterator，目標FromIterator<A>決產物；Vec按序存T。",
+      "q2_mechanism": {
+        "answer": "let/return/turbofish選目標，不自動&i32→i32；自訂NumberList for/push。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "整理結果需保存供後用，map/filter只工作；同i32可建不同目標。",
+        "verdict": "已足夠"
+      },
+      "q3": "filter&&→map&讀數→collectVec；Vec::<i32>::from_iter路徑先說；NumberList另型目標。",
+      "q4": "pipeline圖true門/Item型別、[0,30,30]順序重複、原值/空；Vec比較條件全碼前81，不暗驗證。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "fold accumulator",
+      "first_needed": "9.5 fold116前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 109,
+          "text": "如果只需要總和，不需要保存所有轉換結果，可以用 **`fold`**。它接手 iterator、初始值與 `FnMut` callback，按序把「目前累計狀態、這次 Item」交給 callback。callback 交回下一份累計狀態，最後整個 fold 回傳它；空 iterator 則直接回傳初始值。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 111,
+          "text": "這份狀態叫 **accumulator**（累計狀態）。本例選 i32、初始值 0；map 之後的 Item 也是 i32。callback 的兩個參數以逗號分隔，寫成 `|total: i32, value: i32| total + value`。狀態與 Item 是兩個角色，不必在所有 fold 中選相同型別。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 113,
+          "text": "Clippy 的 `unnecessary_fold` lint 會建議把這種純加總改成更短的寫法。本節要逐次觀察初值與累計狀態，因此只在 scaled_sum 前使用 `#[allow(clippy::unnecessary_fold)]` 保留 fold，沿用第 2.7 節的局部具名允許方式："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 119,
+          "text": "這是它與 main 組成的完整程式，空輸入與沒有符合值的材料也會檢查初值："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 125,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example adapter_fold --locked` 得到合計 60。累計依序是 0 + 0、0 + 30、30 + 30；沒有建立 `[0, 30, 30]` 的中間 Vec。這也能用 for 累計，fold 的用途是將初值和每筆更新放在同一份介面，沒有承諾比原迴圈更快。"
+        }
+      ],
+      "q1": "初state和FnMut(state,Item)→nextstate，empty回初值；中文累計狀態。",
+      "q2_mechanism": {
+        "answer": "i32初0、Itemi32，逗號雙參數；一般state可不同Item。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "只需合計不需全結果，初值與更新共介面，非更快宣稱。",
+        "verdict": "已足夠"
+      },
+      "q3": "0+0、0+30、30+30；局部allow沿2.7且現在觀察fold有理由。",
+      "q4": "空/無符合值0、total60，未建中間Vec由程式直接可見非性能測量。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Result collect短路",
+      "first_needed": "9.5 parse_all142/full150前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 129,
+          "text": "接著把材料換成整數文字。第 8.5 節的 `as_str().parse::<i32>()` 回傳 `Result<i32, ParseIntError>`，現在希望把整批解析結果收成一份成功清單；遇到第一個失敗，就保留那個原因交回。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 131,
+          "text": "標準 Result 提供相應的 FromIterator 實作，目標是 **`Result<Vec<i32>, ParseIntError>`**："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 133,
+          "text": "- 每筆 Ok 的 i32 進入 Vec；全都成功，交回 Ok 包住的 Vec。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 134,
+          "text": "- 第一次遇到 Err，就停止取得後面的 Item，交回那個 ParseIntError。之前的成功清單不作為部分結果回傳。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 135,
+          "text": "- 空來源沒有失敗，結果是 Ok 包住空 Vec。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 137,
+          "text": "這份收集保留同一個錯誤型別，**不會像第 8.6 節的 ? 一樣替你套用 From 改成另一個錯誤型別**。它選擇的是這次整批工作遇錯就回傳的政策，不是把所有失敗一次收集起來。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 139,
+          "text": "對 `&[String]`，iter 的 Item 是 `&String`；map 收到 `&String`、回傳 `Result<i32, ParseIntError>`；collect 才取得這些 Result，交出整批結果。本節錯誤型別以 `use std::num::ParseIntError;` 引入，沿用第 8.5 節的標準型別："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 145,
+          "text": "下面額外計數，觀察第三筆 `30` 是否真的沒有解析。callback 每次先把 visits 加一，再 parse；把整數文字變成 owned String 的 to_owned 同樣來自第 8.5 節。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 147,
+          "text": "完整檔同時保留 parse_all，並檢查全成功與空來源。標準 Result 在成功型別與錯誤型別都有 Debug／PartialEq 時，也能顯示與比較整份結果：同為 Ok 時比較成功內容，同為 Err 時比較錯誤；Ok 與 Err 不相等。這裡的 `Vec<i32>` 已符合本頁的條件，ParseIntError 則已由第 8.5 節介紹："
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 153,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example adapter_results --locked`，會顯示 ParseIntError 的失敗訊息，以及 `實際解析次數=2，原清單筆數=3`。第一筆 10 成功，第二筆 bad 失敗，第三筆沒有執行 callback。借用原清單不會把第三筆或原 String 消耗掉，但這次 collect 沒有交回第一筆成功值。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 155,
+          "text": "如果需要逐筆報告並繼續，仍用第 8.1 節的 for／match 政策；不能在使用這項 Result collect 的同時，假定後面的每筆工作都已執行。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 159,
+          "text": "寫 parse_total，接收 `&[String]`，回傳 `Result<i32, ParseIntError>`。重用本節 parse_all，成功取得 Vec 後再用 owned into_iter 與 fold 合計；失敗用第 8.6 節的 ? 交回。這裡兩層錯誤型別相同，保留原 ParseIntError，不需要新增轉換規則。"
+        },
+        {
+          "path": "docs/chapters/09-05-lesson.md",
+          "line": 173,
+          "text": "0、3、−2 的解析全部成功，所以 ? 取得 Vec，fold 依序把 0、3、−2 加入初值 0，得到 Ok(1)。空 Vec 的 fold 保留初值，得到 Ok(0)。bad 使 parse_all 交回 Err，? 便從 parse_total 早退，不執行後面的 fold。兩邊錯誤都已是 ParseIntError，這裡用第 8.6 節相同型別到自身的 From 契約，不另包裝原因。"
+        }
+      ],
+      "q1": "Result<Veci32,ParseIntError>首Err回原因；與?的From轉換不同。",
+      "q2_mechanism": {
+        "answer": "首Err不取後續、不回部分Vec；emptyOkempty，同錯誤型別。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "希望整批成功清單、第一原因；逐筆全報需求仍8.1for/match，不混政策。",
+        "verdict": "已足夠"
+      },
+      "q3": "iter&String→mapResult→collect；visits驗2/3；parse_total ?得Vec再fold。",
+      "q4": "10/bad/30第三沒callback、成功/空/invalid；bad非零值。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "chars/lines與空行filter",
+      "first_needed": "9.6 text_units24/lines45前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 3,
+          "text": "第 6.6 節已能按名稱計數，第 9.5 節又能把逐筆操作接成流程。現在輸入換成一段多行文字：每行是一個名稱，空行略過，相同名稱合併計數，結果自己擁有名稱。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 5,
+          "text": "材料依序是 Rust、Python、Rust、空行、教學；要得到 Rust 兩次、Python 與教學各一次。名稱原樣保留，大小寫與前後空白都參與身分判斷。本頁先完成正確計數；固定報表順序由下一節接續。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 15,
+          "text": "**`str::chars()`** 借用文字，回傳 `Item = char` 的 iterator，依序取得 Unicode scalar。它沿用第 5.3 節的 char 意義，不是每次取一個 byte，也不保證每筆就是一個畫面上的完整字形。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 17,
+          "text": "下面的文字 `é` 是字母 e 加上結合重音符號，通常顯示成一個字形，但有兩個 scalar、三個 UTF-8 bytes。char 已有標準 Debug，可以檢查它；Debug 把這個結合符號顯示為 **`'\\u{301}'`**。這是 Unicode escape，用 scalar 編號表示一個 char，不是一串反斜線、字母與數字；U+0301 是該重音符號的常用編號。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 19,
+          "text": "報表需要整行名稱，因此接著選 **`str::lines()`**。它借用文字，回傳 `Item = &str` 的 iterator，每筆是原文字中的一行，不會為每行建立 owned String。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 21,
+          "text": "字串 literal 中的 **`\\n`** 表示 LF（Line Feed，換行），**`\\r`** 表示 CR（Carriage Return，回車）。lines 以 LF 或 CRLF（`\\r\\n`）分行，結果不含行尾；最後一個行尾不會額外產生一行，空文字產生零行。單獨 CR 沒有跟著 LF 時仍留在內容中，連續行尾之間的空行則是一份空 `&str`。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 36,
+          "text": "第一份 collect 保存 char 值；第二份保存借自原文字的 reference。這是兩種不同的 Item 與 ownership 關係，不能只看都使用 collect 就認為結果都擁有原文字。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 40,
+          "text": "**`str::is_empty()`** shared 借用文字、回傳 bool，byte 長度為零就是 true，否則 false；它不修剪空白。lines 的 Item 是 `&str`，filter 參數因此是 `&&str`；`*line` 取得裡面的文字 reference，再以 is_empty 判斷，保留的仍是原 `&str`。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 42,
+          "text": "`nonempty_names` 回傳 `impl Iterator<Item = &str>`，使用第 9.3 節的 opaque 介面；輸出 Item 的 reference 依第 7.1 節單一來源規則連到輸入，回傳工作也依 edition 2024 capture 依賴來源。原文字仍必須在走訪時有效。這個 helper 和稍後的 count_names 都保存在本頁 text_counts example 的同一檔："
+        }
+      ],
+      "q1": "chars char scalar沿5.3；lines &str借來源，is_empty byte0。",
+      "q2_mechanism": {
+        "answer": "e加重音一字形2scalar3bytes；Unicodeescape、LF/CRLF/空/尾/單CR在碼前。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "原需整行名稱且身分原樣，不應拆scalar；先對照scalar/byte/字形避免單位混淆。",
+        "verdict": "已足夠"
+      },
+      "q3": "Vecchar/Vec&str；lines filter&&str解一層後is_empty；opaqueItem&str依7.1/9.3。",
+      "q4": "é3/2、空行、CRLF、單CR、尾LF/空 assertions；不把collect ref誤own文字。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Entry條件更新與預設建立",
+      "first_needed": "9.6 callback65/counts75前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 50,
+          "text": "第 6.6 節用 get_mut／match 區分已有鍵與缺鍵。現在用 **`HashMap::entry(key)`** 取得一份描述這個鍵位置的工作：它 mutable 借用 map、接手候選鍵，回傳 **`Entry`**，代表「已有對應值」或「目前缺鍵」。Entry 不會讓借用規則消失；它保存操作這份 map 的借用關係。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 52,
+          "text": "對 `HashMap<String, usize>`，以下 method 接手這份 Entry："
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 56,
+          "text": "| `and_modify(callback)` | 執行 callback，交給它 `&mut usize` | 不執行 callback | 同一個鍵的 Entry，供下一步使用 |"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 57,
+          "text": "| `or_insert(value)` | 保留既有值 | 插入傳入值 | map 中值的 `&mut usize` |"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 58,
+          "text": "| `or_insert_with(callback)` | 不執行 callback，保留既有值 | 執行 callback，插入它交回的 usize | map 中值的 `&mut usize` |"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 60,
+          "text": "**and_modify 的 callback 要求 `FnOnce(&mut usize) -> ()`**：一份 Entry 至多執行它一次，修改參數指向的值後不另交回數字。**or_insert_with 要求 `FnOnce() -> usize`**，只有需要新值時才呼叫。即使提供的 closure 也有重複呼叫能力，這些 method 只需要最低的一次呼叫契約，沿用第 9.2 節的能力包含關係。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 62,
+          "text": "先用計數觀察延後建立：新名稱建立值 1，舊名稱加一，另記 callback 真的建立幾個新群組。不是每一筆名稱都執行預設值的 callback："
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 68,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example entry_callbacks --locked`，建立新群組的 callback 次數是 2，Rust 次數是 2、Python 是 1。第三筆 Rust 走 and_modify，不再執行 or_insert_with 的建立工作。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 70,
+          "text": "候選鍵的 `name.to_owned()` 已在呼叫 entry 前執行，因此重複名稱也先建立候選 String；延後的是值的 callback，不能把這份介面說成會自動省去所有鍵複製。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 72,
+          "text": "完整計數函式需要的初值只是 1，不需要額外建立工作，直接用 or_insert(1)。name 是 borrowed `&str`，to_owned 建立獨立鍵，使回傳 map 不借用原文字："
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 80,
+          "text": "下面把原 String 放在內層 block，count_names 交出的 map 留在外層。每個鍵都有自己的 String，因此原文字結束後，仍能用 get 查到結果。全部 helper 與 main 如下："
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 96,
+          "text": "前兩筆輸入 Rust、Python 先各新增1；第三個 Rust 修改已有值成2，空行沒有進入計數，教學再新增1。顯示的是 get 回傳的 Option，所以保留 Some 外框；缺少的 JavaScript 仍是 None。空文字的 lines 沒有下一筆，因此額外 assertion 取得空 map。"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 98,
+          "text": "如果保留 or_insert 的 mutable reference，再借用 map 更新另一鍵，兩份借用仍會重疊。以下 fixture 得到 `E0499`；要先完成 reference 的最後使用，再操作 map："
+        }
+      ],
+      "q1": "Entry借map、接候選key；三method以值接Entry，描述已有/缺鍵。",
+      "q2_mechanism": {
+        "answer": "and_modify FnOnce &mutusize→unit；or_insert_with FnOnce()->usize只缺執行；最後&mut值。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "6.6 get_mut/match同鍵兩工作接起；數new_groups觀察延後建立；常數1不需另callback。",
+        "verdict": "已足夠"
+      },
+      "q3": "entry to_owned→and_modify加1→or_insert1；ownedkey使innerString結束後get仍可。",
+      "q4": "Rust/Python/Rust groups2 counts2/1；70明說候選鍵先建非省所有copy；E0499 retainedref；C9-02表可選。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "HashMap三種走訪",
+      "first_needed": "9.6 map_iteration117前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 106,
+          "text": "對本節的 map，Item 是 tuple，鍵與值各有自己的 ownership："
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 108,
+          "text": "| 建立方式 | Item | 對原 map 的作用 |"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 110,
+          "text": "| `counts.iter()` | `(&String, &usize)` | shared borrow，保留 map |"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 111,
+          "text": "| `counts.iter_mut()` | `(&String, &mut usize)` | mutable borrow，可修改值，鍵仍只借來讀 |"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 112,
+          "text": "| `counts.into_iter()` | `(String, usize)` | 接手 map，逐筆交出 owned 鍵值 |"
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 114,
+          "text": "這些 iterator 都以任意順序走訪。mutable 路徑不交出可修改鍵的 reference，避免鍵改變後破壞第 6.5 節的鍵身分／Hash 一致性。下面先借來累計，再將各值加 10，用名稱查詢後，最後接手 map 取出 owned 名稱與數字："
+        },
+        {
+          "path": "docs/chapters/09-06-lesson.md",
+          "line": 120,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example map_iteration --locked`，各段的名稱輸出順序不保證。原本 Rust 2、Python 1，借改後分別是 12、11；最後 owned 走訪交出這兩份鍵值，合計為 23。前兩段仍由原 map 持有鍵，第三段將鍵 move 給每次迴圈，原 counts 不再可用。順序沒有影響這次逐值加10與加總；固定報表則留到下一節。"
+        }
+      ],
+      "q1": "tuple鍵值各有ownership，shared、值mut、owned各清楚。",
+      "q2_mechanism": {
+        "answer": "mutable鍵仍shared防Eq/Hash不一致沿6.5；最後接手map失效。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "先累計/加10/接手資料三工作；目前不需順序，固定報表接9.7。",
+        "verdict": "已足夠"
+      },
+      "q3": "4.3tuplepattern、*讀改；owned合計。",
+      "q4": "3→12/11→23，順序任意不當保證，無因加總相等偷推定序。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Ordering/PartialOrd/Ord",
+      "first_needed": "9.7 partial_order26前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 3,
+          "text": "上一節已得到正確的名稱次數，但 HashMap 的走訪順序沒有保證。現在要每次都顯示同一份報表：次數由多到少，同次數再按名稱由小到大。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 15,
+          "text": "排序需要知道兩項資料的比較結果是較小、相等，還是較大。標準 enum **`std::cmp::Ordering`** 有三個 variant：**Less、Equal、Greater**。它們表示第一個比較對象相對第二個的順序；這個型別有 Debug／PartialEq，可顯示與核對結果。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 17,
+          "text": "**`PartialOrd`** 提供部分順序的比較，`partial_cmp` shared 借用兩個值，回傳 `Option<Ordering>`。能比較就是 Some 包住相應順序，不能比較就是 None；None 不等於 Equal。先前的 `<`、`<=` 等操作也由這項能力支持，判斷必須和 PartialEq 的相等規則一致。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 19,
+          "text": "**`Ord`** 進一步承諾所有同型別值都能依一致的完整順序比較，也要符合 Eq。它的 `cmp` shared 借用兩個值，直接交回 Ordering。反轉左右，Less 應變 Greater；相等對應 Equal，連續的小於關係也要一致。排序時不能依 callback 第幾次執行任意改變答案。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 21,
+          "text": "i32／usize 的 Ord 採數值順序，str／String 採內容 bytes 的字典順序：從第一個不同的位置判斷，前綴相同則短的先。這保留大小寫與內容差異，不是依台灣語言習慣作字典排序。Ord／PartialOrd 已在 prelude，Ordering 則以 `use std::cmp::Ordering;` 引入。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 23,
+          "text": "浮點數則有 **NaN**（Not a Number，非數值），不能和一般值取得這種順序。**`f64::NAN`** 是標準 f64 提供的 associated constant，即型別提供的固定值，直接用 `::` 讀取，不加呼叫括號；本例用它觀察 None。一般 f64 因這種情況沒有 Ord，不能只因能用 `<` 就假定它滿足完整排序契約："
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 29,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example partial_order --locked`，一般浮點比較是 Some(Less)，NaN 比較是 None。若要為浮點資料排序，必須另外決定 NaN 的位置與比較規則；本節報表的名稱與 usize 次數已具備 Ord，沒有這項未定政策。"
+        }
+      ],
+      "q1": "Ordering第一對第二三種；partial OptionNone非Equal；Ord完整一致且Eq。",
+      "q2_mechanism": {
+        "answer": "數值/bytes字典序與反向/等值/傳遞；NaN使f64無一般Ord，associatedconstant讀法先說。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "固定報表需完整比較非bool；1.4已有f64/有限表示，現在反例區分能<與完整序。",
+        "verdict": "已足夠"
+      },
+      "q3": "partial_cmp借兩值→SomeLess/None；cmp→Ordering；標準來源明確。",
+      "q4": "3/4與NaN、i32對照；不替浮點決NaN順序，當前String/usize已Ord。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "stable sort/by_key/by",
+      "first_needed": "9.7 keys46/boolfixture68前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 33,
+          "text": "slice 的 sort、sort_by_key、sort_by 都需要 mutable borrow，修改原排列，回傳 `()`；空或一項資料也能處理。它們保留比較相等項目的原相對順序，這叫 **stable sort**（穩定排序）。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 35,
+          "text": "| method | 如何決定順序 | callback 契約 |"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 37,
+          "text": "| `sort()` | 元素自己的 Ord | 沒有 callback |"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 38,
+          "text": "| `sort_by_key(callback)` | callback 取得排序鍵，鍵要有 Ord | `FnMut(&T) -> K` |"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 39,
+          "text": "| `sort_by(callback)` | callback 直接比較兩項 | `FnMut(&T, &T) -> Ordering` |"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 41,
+          "text": "callback 可能被多次呼叫，不保證每個元素只呼叫一次。本節將 Vec 明確借成 as_mut_slice，再使用這些 slice API。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 43,
+          "text": "下面的 tuple 第一欄當排序鍵，第二欄只用來觀察同鍵資料是否維持輸入順序。標準 tuple 各欄位有 Debug／PartialEq 時，也提供相應的整份顯示／逐欄比較能力，因而 Vec 的 Debug 能列出這些 tuple："
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 49,
+          "text": "執行 `cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example sorting_keys --locked`，numbers 是 `[1, 1, 2, 3]`；rows 是 `[(1, 30), (1, 10), (2, 20)]`。第一欄相同的兩筆保留 30 在 10 前，沒有偷偷把第二欄也當排序鍵。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 65,
+          "text": "sort_by 要回傳 Ordering，不能只交回 bool。這個失敗範例以 `E0308` 指出輸出不符；完整順序還要區分兩項相等："
+        }
+      ],
+      "q1": "slice mutable改排列回unit；stable保等鍵原序；各依Ord、keyOrd、Ordercallback。",
+      "q2_mechanism": {
+        "answer": "FnMut可多次不保每項一次；tupleDebug/PartialEq條件全碼前。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "rows第二欄為觀察等key原序，沒有默加第二key；報表後須完整比較策略。",
+        "verdict": "已足夠"
+      },
+      "q3": "as_mut_slice；by_key row.0，sort_by兩ref→Ordering非bool；empty/1可。",
+      "q4": "1,1,2,3與(1,30)先(1,10)、E0308，未需排序演算法。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "sort_unstable界線",
+      "first_needed": "9.7 unstable56前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 53,
+          "text": "對只有數字的清單，這項工作只要升序結果，不再按原位置識別相等的數字，可以選 **sort_unstable**。它仍需要 mutable 借用 slice，按元素的 Ord 升序修改原排列，回傳 unit；排序工作本身不另配置 heap 暫存區，但不承諾相等項目的原相對順序。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 63,
+          "text": "結果仍是 `[1, 1, 2, 3]`。這裡兩個1沒有附帶不同身分，沒有需要觀察誰先誰後；若像前面 rows 一樣要保留同鍵項目的原順序，就選 stable 版本。不承諾保序也不表示每次執行一定會重新排列相等項目。"
+        }
+      ],
+      "q1": "同mutable Ord升序/unit，不保等項原序，排序無heap暫存。",
+      "q2_mechanism": {
+        "answer": "不保序不表示必定重排。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "本段純數字升序不按原位置識別兩1，可以選少保證版本，未歪稱stable不能做。",
+        "verdict": "已足夠"
+      },
+      "q3": "sort_unstable改numbers。",
+      "q4": "仍1,1,2,3，文字承認兩1沒身分可觀察；如rows需原序選stable，無速度推論。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "雙重比較與owned固定報表",
+      "first_needed": "9.7 sort-counts83/report91/full95前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 73,
+          "text": "回到開頭的規則：次數降序，同次數才比名稱升序。先用 owned into_iter，把 map 的 `(String, usize)` 收成 `Vec<(String, usize)>`；排序 callback 借來的是兩筆 tuple，不會接手它們的 String。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 75,
+          "text": "tuple 的 `.0` 是名稱、`.1` 是次數。要讓次數大的左資料先出現，先比較 **`right.1.cmp(&left.1)`**。若左是 Rust 的 2、右是 Python 的 1，1 比 2 得到 Less，排序就把**左筆 Rust**放在右筆之前。次數 Equal，才用名稱正常的左右方向比較："
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 79,
+          "text": "| Rust 2／Python 1 | 先比右次數 1 對左次數 2，Less | Rust 在 Python 前 |"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 80,
+          "text": "| 教學 1／Python 1 | 次數 Equal，再比名稱，Greater | Python 在教學前 |"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 86,
+          "text": "只按次數排序，Equal 的名稱會保留來源順序；但 HashMap 的來源順序是任意的。因此**stable 不足以保證這份報表每次順序相同**。補上名稱比較後，不同的 map 鍵都有明確位置，這才滿足固定輸出的需要。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 88,
+          "text": "把分行／計數／排序接成小函式，回傳 owned 的報表資料。完整檔同時列出上一節的 nonempty_names、count_names；後面的 assertion 另以不同插入順序核對相同報表，並確認來源結束後結果仍可用。名稱已由 to_owned 保存在 map，現在移入結果 Vec，所以原文字結束後，報表仍然有效："
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 110,
+          "text": "重用 count_names，把報表改為**次數由少到多，同次數仍依名稱升序**。先說清楚哪個比較方向要改，不修改分行、空行或名稱身分規則，也不要為排序 clone 整份名稱。"
+        },
+        {
+          "path": "docs/chapters/09-07-lesson.md",
+          "line": 130,
+          "text": "次數改成 `left.1.cmp(&right.1)`，因此1在2之前；同為1時仍正常比較名稱，Python 在教學之前。各名稱由 map move 進結果 Vec，沒有為了排序 clone 文字；空輸入則交回空報表。"
+        }
+      ],
+      "q1": "mapownedtuple收Vec，callbackborrowtuple不接String；次數反向再名稱正常。",
+      "q2_mechanism": {
+        "answer": "Rust2/Python1右1cmp左2→Less→左Rust先；同次數教學/Python→Greater→Python先。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "來源3固定輸出；stable保任意map來源仍任意，第二名稱鍵給各不同key明確位置。",
+        "verdict": "已足夠"
+      },
+      "q3": "sort_by matchOrdering，order命名pattern保留非Equal；report接count_names無clone。",
+      "q4": "不同插入順序同報表、逐欄/innerString結束後/空，rare_first只改count比較左右，規則沒換。",
+      "verdict": "已足夠"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C9-01",
+      "classification": "選讀改善／可選",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 107,
+      "verbatim_quote": "| 建立工作 | 借用或接手什麼 | Item | 結束後原 Vec |",
+      "first_needed": "9.4同列比較方法與後果/回傳",
+      "actual_previous": "9.4此前已教Iterator/IntoIterator/ownership；9.6表前已教Entry借map接key及兩狀態。表後正文與完整程式均另解讀，必要語義無缺。",
+      "observation": "390x844 table402px、scrollwrap client375/scroll434/max59；scroll0裁右側，scroll59失左方法標籤；1280正常。",
+      "reason": "橫捲增加同列比較負擔，但內容可捲讀，前後文字與程式足供主線理解，故非必要缺口。",
+      "benefit": "手機同時核對建立API、Item與原Vec可用/改動/移出後果",
+      "minimal_suggestion": "把借用/接手與結束後原Vec合欄，保留三條路徑及所有方法/Item/後果"
+    },
+    {
+      "id": "C9-02",
+      "classification": "選讀改善／可選",
+      "path": "docs/chapters/09-06-lesson.md",
+      "line": 54,
+      "verbatim_quote": "| method | 有值時 | 缺鍵時 | 回傳 |",
+      "first_needed": "9.6同列比較方法與後果/回傳",
+      "actual_previous": "9.4此前已教Iterator/IntoIterator/ownership；9.6表前已教Entry借map接key及兩狀態。表後正文與完整程式均另解讀，必要語義無缺。",
+      "observation": "390x844 table402px、scrollwrap client375/scroll434/max59；scroll0裁右側，scroll59失左方法標籤；1280正常。",
+      "reason": "橫捲增加同列比較負擔，但內容可捲讀，前後文字與程式足供主線理解，故非必要缺口。",
+      "benefit": "手機同時辨識Entry→Entry或&mut值，以及callback何時執行",
+      "minimal_suggestion": "將有值/缺鍵合為有明標記的兩段，保留三method/兩狀態全部動作/回傳"
+    }
+  ],
+  "necessary_count": 0,
+  "optional_count": 2,
+  "closure": "no-lib intro-iterators；每選中example/answer獨立單檔全讀，14 compilefail.rs及相鄰expected全讀，main assertions也查。無lib/build.rs/deps/.cargo後章前提。",
+  "inline": {
+    "complete_includes_per_viewport": 61,
+    "all_match": true,
+    "folds_all_pages": 0,
+    "method": "article pre code去空白/marker逐個與完整source相等；named regions另人工核全檔/首次必要"
+  },
+  "visual": {
+    "viewports": [
+      "1280x800",
+      "390x844"
+    ],
+    "metadata": "round09-ch09-visual/metadata.json",
+    "screenshots_actually_viewed": [
+      "desktop-callback-capabilities.png",
+      "desktop-comparator-direction.png",
+      "desktop-complete-collect-tail.png",
+      "desktop-complete-counts-real-tail.png",
+      "desktop-complete-counts-tail.png",
+      "desktop-complete-iterator-answer-tail.png",
+      "desktop-complete-precise-tail.png",
+      "desktop-complete-report-tests-tail.png",
+      "desktop-complete-results-answer-tail.png",
+      "desktop-entry-methods.png",
+      "desktop-figure-1-0.png",
+      "desktop-figure-4-0.png",
+      "desktop-figure-5-0.png",
+      "desktop-figure-5-tail.png",
+      "desktop-impl-direction.png",
+      "desktop-map-ownership-paths.png",
+      "desktop-mutable-capture.png",
+      "desktop-precise-capture-rationale.png",
+      "desktop-sort-callbacks.png",
+      "desktop-three-ownership-paths.png",
+      "mobile-callback-capabilities.png",
+      "mobile-comparator-direction.png",
+      "mobile-complete-collect-tail.png",
+      "mobile-complete-counts-real-tail.png",
+      "mobile-complete-counts-tail.png",
+      "mobile-complete-iterator-answer-tail.png",
+      "mobile-complete-precise-tail.png",
+      "mobile-complete-report-tests-tail.png",
+      "mobile-complete-results-answer-tail.png",
+      "mobile-entry-methods.png",
+      "mobile-figure-1-0.png",
+      "mobile-figure-4-0.png",
+      "mobile-figure-5-0.png",
+      "mobile-figure-5-tail.png",
+      "mobile-impl-direction.png",
+      "mobile-map-ownership-paths.png",
+      "mobile-mutable-capture.png",
+      "mobile-precise-capture-rationale.png",
+      "mobile-sort-callbacks.png",
+      "mobile-table-4-pan-right.png",
+      "mobile-table-6-pan-right.png",
+      "mobile-three-ownership-paths.png"
+    ],
+    "method": "19 pair內38原圖均親看，另兩pan與兩real-tail單圖親看，共42。complete-counts-tail檔名實為partial count region；real-tail才含main全檔尾，不以名字誤稱。",
+    "images_actually_viewed": [
+      {
+        "page": "09-01-lesson",
+        "viewport": "desktop",
+        "url": "http://127.0.0.1:8097/assets/iterators-v3/closure-transfer.svg",
+        "sha256": "4f54b08bae8312a004d862850983245108f10df1a6077a5e1420ebf8f85039e4",
+        "alt": "先建立 take 保存 text 的 String，再呼叫 take，將 owned String 交給 saved",
+        "dimensions": {
+          "width": 400,
+          "height": 610,
+          "naturalWidth": 400,
+          "naturalHeight": 610
+        }
+      },
+      {
+        "page": "09-04-lesson",
+        "viewport": "desktop",
+        "url": "http://127.0.0.1:8097/assets/iterators-v3/iterator-next.svg",
+        "sha256": "f2512c81d7e13a13c933e05b228aeb7a4291b4fd76895000c7e0e0821df69749",
+        "alt": "同一份 Countdown 的 remaining 由 3 到 2、1、0，next 分別交出 Some 3、2、1，最後交出 None",
+        "dimensions": {
+          "width": 400,
+          "height": 680,
+          "naturalWidth": 400,
+          "naturalHeight": 680
+        }
+      },
+      {
+        "page": "09-05-lesson",
+        "viewport": "desktop",
+        "url": "http://127.0.0.1:8097/assets/iterators-v3/adaptor-pipeline.svg",
+        "sha256": "9f76ea92d5a61b0c93cf91d4ee6f4db71714631afd93497fffd23b99eecbca4a",
+        "alt": "slice iterator 的 Item 是 shared 數字，filter 借用 Item 判斷，map 取 Copy 數字轉換，collect 保存 owned i32 清單",
+        "dimensions": {
+          "width": 400,
+          "height": 760,
+          "naturalWidth": 400,
+          "naturalHeight": 760
+        }
+      },
+      {
+        "page": "09-01-lesson",
+        "viewport": "mobile",
+        "url": "http://127.0.0.1:8097/assets/iterators-v3/closure-transfer.svg",
+        "sha256": "4f54b08bae8312a004d862850983245108f10df1a6077a5e1420ebf8f85039e4",
+        "alt": "先建立 take 保存 text 的 String，再呼叫 take，將 owned String 交給 saved",
+        "dimensions": {
+          "width": 342.984375,
+          "height": 523.0625,
+          "naturalWidth": 400,
+          "naturalHeight": 610
+        }
+      },
+      {
+        "page": "09-04-lesson",
+        "viewport": "mobile",
+        "url": "http://127.0.0.1:8097/assets/iterators-v3/iterator-next.svg",
+        "sha256": "f2512c81d7e13a13c933e05b228aeb7a4291b4fd76895000c7e0e0821df69749",
+        "alt": "同一份 Countdown 的 remaining 由 3 到 2、1、0，next 分別交出 Some 3、2、1，最後交出 None",
+        "dimensions": {
+          "width": 342.984375,
+          "height": 583.09375,
+          "naturalWidth": 400,
+          "naturalHeight": 680
+        }
+      },
+      {
+        "page": "09-05-lesson",
+        "viewport": "mobile",
+        "url": "http://127.0.0.1:8097/assets/iterators-v3/adaptor-pipeline.svg",
+        "sha256": "9f76ea92d5a61b0c93cf91d4ee6f4db71714631afd93497fffd23b99eecbca4a",
+        "alt": "slice iterator 的 Item 是 shared 數字，filter 借用 Item 判斷，map 取 Copy 數字轉換，collect 保存 owned i32 清單",
+        "dimensions": {
+          "width": 342.984375,
+          "height": 651.6875,
+          "naturalWidth": 400,
+          "naturalHeight": 760
+        }
+      }
+    ],
+    "raw_bold": "無raw粗體標記；9.5 code **item是合法雙dereference，不是格式錯誤。"
+  },
+  "limits": [
+    "未執行Cargo/build/tests/fixture，非技術實跑驗收",
+    "未驗final strict site/nav或全書",
+    "非真人basicPython/盲首次閱讀",
+    "手機長碼可橫捲；DOM完整，不因一屏不下稱source缺漏"
+  ],
+  "end_changes": []
+}

@@ -1,0 +1,231 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "15.6"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round15-and18b-root-crossref-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round15-c-and-ffi-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round15-gat-variance-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round15-raw-pointer-safe-abstraction-middle.md",
+    "planning/restructure-v3/reviews/continuity-late/15-06-root-crossref-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/15-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/15-06-lesson.md": "9d61d616276c916246f3d83967d34ead056dc35a282e61dfadc8da5c78b2e9ba",
+    "examples/ch12-ffi/stages/scalar/c/tutorial.h": "0602c74a5a83ac110ebf8570fed1cb79905e4986db2b07e67bffc4173a873dc3",
+    "examples/ch12-ffi/stages/scalar/c/tutorial.c": "be311a6c84a4210da0dc3e3c5f557c129dcfdd336d2814af6318527798578316",
+    "examples/ch12-ffi/stages/scalar/src/sys.rs": "3059fe42f3f34b49a86d9e861665a1bcc90b75818b16eaf298412bb0cdd161a3",
+    "examples/ch12-ffi/stages/scalar/src/lib.rs": "c2a3aea0ef3d6055025273125e93a19c1199741cf54d32910330357ae03f4e0f",
+    "examples/ch12-ffi/stages/scalar/examples/scalar_call.rs": "f4deb48291c28a74174a8fa2f45cddafdbcd59b6f817c13f31e1003adcbdf497",
+    "examples/ch12-ffi/stages/scalar/Cargo.toml": "15912b97f4ba8fd25089414cd2469e0bc100e880efb7c4988ed922f893d46998",
+    "examples/ch12-ffi/stages/scalar/build.rs": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5",
+    "examples/ch12-ffi/stages/buffer/c/tutorial.h": "51e614e570131c844c0206ba0236ec2718d9eb19c4246b057cab41dd80ad2748",
+    "examples/ch12-ffi/stages/buffer/c/tutorial.c": "e02c3ef0cdeb483fe40bd9539647ae212ef9ac2c85c3da3b505392df0153b086",
+    "examples/ch12-ffi/stages/buffer/src/lib.rs": "1fa443c23b6bb4e775e2c137d53086c64ba85121523c69368e5977b3b7bb2967",
+    "examples/ch12-ffi/stages/buffer/src/sys.rs": "c2ef56d88e7755a3365a1cb514e068f00592dbaa622c2327c69f61c5bd03579e",
+    "examples/ch12-ffi/stages/buffer/examples/buffer_count.rs": "9ed4532cf2676cb4e85ffc5393b3219b34c8c305a6813bdce63abb93ab6588f9",
+    "examples/ch12-ffi/stages/buffer/Cargo.toml": "ee48a3e0112959f48e322cef931996694101cb2fc7c0ad118028cf6edd8090e6",
+    "examples/ch12-ffi/stages/buffer/build.rs": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5",
+    "examples/ch12-ffi/stages/label/c/tutorial.c": "3bfb2a4ec2dd99b47f09d73641fd9597aafa21abe9a26049ee902a416e841e91",
+    "examples/ch12-ffi/stages/label/src/sys.rs": "fcd6c960c5b60ffc098f25773897562c7bc79e1b55f79530da86cb6f3dde3a9a",
+    "examples/ch12-ffi/stages/label/src/lib.rs": "8af3b0ffc968d219eb50451c1175072457776eaa0de59f1061e218ad8a58d338",
+    "examples/ch12-ffi/stages/label/examples/borrowed_label.rs": "c38155ed41ed163c3823ca68b5f343a447c04c51383a3ed054415316a7e808ed",
+    "examples/ch12-ffi/stages/label/Cargo.toml": "390990913a5fa9399e3911ce5c1e270957d3849a749bda6aecfc2db2f5bf48cf",
+    "examples/ch12-ffi/stages/label/build.rs": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5",
+    "examples/ch12-ffi/stages/label/c/tutorial.h": "74ff187b54ca1c44aded37e982a6e451d960b946b23aa4f05b067d1c2244c656",
+    "examples/ch12-ffi/c/tutorial.h": "9ecb778f1c0237eae7c97fef9a023eae4b119ec3db994b6f7e6bf3f0e10ecf65",
+    "examples/ch12-ffi/c/tutorial.c": "a812216a2ea7eb6d0f5713680ce045767cbb350e08b352c4a436a80597290309",
+    "examples/ch12-ffi/src/sys.rs": "30edb686f9a4fe09e3a818c33a3b0657e3f03af64c71bc12a57582dc6b220a91",
+    "examples/ch12-ffi/src/lib.rs": "0739016349249bf5ffe4e008a99a7d8606b572a66e19a12b4faba301c3a5ff2a",
+    "examples/ch12-ffi/examples/owned_greeting.rs": "44b4c7b801890ce886d1a613530b7bc0928741d2956732477d49d8a8431046ed",
+    "examples/ch12-ffi/Cargo.toml": "c63efb8533165dfd83f7f4d5584634ae0da22a94acb3a707927295626cbd870f",
+    "examples/ch12-ffi/build.rs": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5",
+    "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.rs": "7c763eba4ddd0febc0422f32dd30c29435284644948b7d877106697be063ff0c",
+    "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.expected": "9d5bdfd30fd746cb62c0f251e6e257050dcc38aa8d43d29b91952611a583717e",
+    "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.rs": "1af081f04d4dc58a98899cb5be98073d321ba7b43f28faff8596c36f47fd3f78",
+    "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.expected": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+    "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.rs": "2dd71b93380d1c8bfba0b7f0792a28f040a5a28462752c7e54a6ffed7671ae45",
+    "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.expected": "d723d4594aee7fcb25e097de1c1ce1f477abd7a95853766dbc50758f588763a9",
+    "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.rs": "b600232b35c179592054fd07f6593b453d519de4019605008671067a0be0c1fd",
+    "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/ch12-ffi/examples/ffi_solution.rs": "36475b2170016b6225bc33026d9cb8c9fef20d187786974d6c0c48c03f2c1830",
+    "examples/ch12-ffi/examples/scalar_call.rs": "d257807977f0da4a1eef47c270ba39c1f2ced1988c6c03c1f178eb45f16537dc",
+    "examples/ch12-ffi/examples/buffer_count.rs": "c33e9257456d3dba2ed73fcd6b65b6de736c3d18381e7d6abc11bac1e166b50e",
+    "examples/ch12-ffi/examples/borrowed_label.rs": "5cf760bbf402b4b30a3a8577b88f6745bd18669759ed2b156e57d549048bf978",
+    "docs/assets/ch12/ffi-owner.svg": "e493ca38f3061d00e643a0a216fa79e116288eb5e64f17169c985a184523d300"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 3,
+      "quote": "第15.5節 已知道 C 函式如何收 pointer、如何決定處理範圍，以及 malloc 配置必須交回對應的 free。現在要讓 Rust 使用這些能力，同時讓普通 caller 不必自行處理 raw pointer。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 11,
+      "quote": "從repo根目錄執行。本節保留三份獨立階段package：`ch15-ffi-scalar`、`ch15-ffi-buffer`、`ch15-ffi-label`，分別在`examples/ch12-ffi/stages/`下的scalar、buffer、label。最後才使用永久完整的`ch12-ffi`。每份stage有自己的C/header/build/library，早期版本不載後段介面。先讓C提供版本號1。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 13,
+      "quote": "第15.5節 已用過 uint8_t／int32_t。這次的 **`uint32_t`** 是 `<stdint.h>` 提供的恰好32 bits無號整數，對應 Rust u32；範圍是0到u32::MAX。這個 C 型別與前節 exact-width 型別一樣，需要 C 實作有提供；本節 target 有提供。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 27,
+      "quote": "接下來要告訴 Rust：這份 body 在 C object 裡，如何呼叫它？**ABI（application binary interface，應用程式二進位介面）** 是已編譯程式彼此配合的約定，例如參數如何傳遞、回傳值如何交接；跨語言的資料佈局也必須一致。名稱一樣、兩邊程式各自能編譯，仍不足以保證型別或呼叫約定相合。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 29,
+      "quote": "**`extern \"C\"`** 選擇目前 Rust target 的 C ABI。它不是把 C source 直接貼進 Rust，也不表示所有平臺都使用完全相同的 ABI。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 31,
+      "quote": "**`unsafe extern \"C\" { ... }`** 宣告外部函式的名稱與 Rust 簽名，沒有提供 body。edition2024 要求 block 前的 unsafe，因為作者要負責宣告確實符合另一邊。Rust 不會替我們讀 C header 並核對 uint32_t；這裡由作者逐項確認。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 39,
+      "quote": "block 中沒有另外標safe的函式**預設是unsafe呼叫**。block前的unsafe承擔宣告正確性；呼叫時的unsafe block則承擔當次操作契約。版本函式沒有額外輸入、同步回固定u32，wrapper可以接手這項責任，交回普通數值："
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 53,
+      "quote": "第15.5節 已分開 C 的個別編譯與連結；第12.2節 已教 build.rs 在host執行，並透過輸出指令與Cargo合作。現在把這兩件事接起來。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 55,
+      "quote": "各份manifest的共同欄位沿第12.1節，`build = \"build.rs\"`明寫第12.2節已教的script入口。本節加入 **cc crate**，它是供build script使用的Rust函式庫，幫忙呼叫適合target的C compiler與建立archive；不是另一個C compiler，也不是執行example的工具。依第12.2節把它放在 `[build-dependencies]`，版本固定為本節驗證的1.8.0："
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 61,
+      "quote": "**static library（靜態函式庫）** 把編好的object files裝成archive，連結時取所需的C機器碼放進最終程式。這裡要得到名為tutorial_c的archive，供Rust library呼叫上述C symbol。**symbol（符號）** 是object／linker辨識的函式名稱等入口；tutorial_version的body必須真的出現在被連結的C程式碼裡。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 80,
+      "quote": "兩個rerun-if-changed沿第12.2節：C body或header變動後重做。cc把object／archive放在Cargo提供的OUT_DIR；在本節GCC環境，archive檔名會是libtutorial_c.a。它也提供 **rustc-link-search** 讓linker知道搜尋目錄，以及 **rustc-link-lib=static=tutorial_c** 表示需要連結哪個archive。這些是build script給Cargo／rustc的資訊，不是宣告C函式簽名。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 82,
+      "quote": "因此這份專案由cc的metadata安排連結，不需另外手寫`#[link]`；extern宣告、C實作與連結設定各自有工作。**build.rs跑在host，C object卻必須符合Rust target**；同host編譯時兩者相同，cross compilation時還要準備target C toolchain，不能只拿host的object硬配。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 144,
+      "quote": "沿第15.5節的byte buffer `[10, 0, 20]`，這次想同時得到「零值1項、非零2項」。輸入零仍是資料，長度由caller明示，不當字串掃描。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 146,
+      "quote": "先教C的新 **`struct`**：用具名欄位組合一份值。`struct Counts { uint32_t zeros; uint32_t nonzero; };` 定義兩個欄位；型別位置要寫struct Counts，定義末尾也有分號。`struct Counts result = {0, 0};` 依宣告順序初始化兩項；`result.zeros` 用點取欄位。C 的 `else` 接在if後面，在條件不成立時執行。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 160,
+      "quote": "Rust需要同樣兩個欄位的結果。**`#[repr(C)]`** 選擇C相容的struct表示：欄位按宣告順序排列，各自符合alignment；需要時會加 **padding（填補空間）**，讓下一欄位或整份struct的大小符合對齊。本節同target的兩個u32對應兩個uint32_t，次序zeros／nonzero也相同。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 164,
+      "quote": "這份結果是按值交回的兩個計數，不帶輸入borrow，也沒有任何heap釋放責任。CountError則是**只在Rust端使用**的enum，這次只有TooLong，用於無法把完整長度交進C的情況；它不跨ABI："
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 250,
+      "quote": "第15.5節的C string需要末尾零，但Rust str保存長度且保證UTF-8，沒有承諾末尾零。這回讓C判定輸入是否完全等於Rust四個字元；不能直接把普通str pointer當成C string。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 261,
+      "quote": "C function使用新的 `<string.h>` API **`strcmp(left, right)`**，借兩個有效NUL結尾的char序列，比較byte內容；相同回0，不同回負或正int。本次只使用「是否等於0」這項判定，不修改、保存或釋放任一輸入："
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 347,
+      "quote": "前一段C借Rust的字串，現在反過來：C配置五個char，內容為Rust加末尾零，交給Rust使用，最後仍須呼叫這個C函式庫的釋放函式。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 355,
+      "quote": "C先用第15.5節相同的char array初始化，再malloc五bytes、檢查NULL；迴圈連末尾零一起複製，**完成全部初始化後**才return配置pointer。這裡交回的是data指向的malloc儲存，不是局部word的pointer；word離開scope不會使已複製的新配置結束。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 369,
+      "quote": "這時不能只用Box接手pointer，因為「看起來都指向heap」沒有證明Rust allocator與這個C釋放契約相符。本節也不把C malloc當作CString自己的配置。選一個專用 **Greeting owner**，私有欄位只保存這份原始pointer，由第11.3節的Drop呼叫指定C函式。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 380,
+      "quote": "getter的新操作 **`CStr::from_ptr(pointer)`** 接收`*const c_char`，是unsafe：pointer必須non-null，直到包含終止零的整段資料都已初始化、可讀、位於單一allocation，總長小於isize::MAX；回傳borrow期間不可修改或釋放。Rust允許在需要`*const T`的位置，把`*mut T`隱式轉成只讀pointer型別，來源仍是同一份資料，不增加存取資格或延長有效期間。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 390,
+      "quote": "**CStr格式正確仍不等於UTF-8。** 顯示成Rust文字前，用 **`CStr::to_str(&self)`** 檢查，回 `Result<&str, std::str::Utf8Error>`；成功view仍借原資料，不複製。Utf8Error有Debug供expect使用；本地C固定提供ASCII Rust，例子才有理由expect成功。另一個C API若只承諾任意byte字串，必須處理Err。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 402,
+      "quote": "本節library另外有六項正常測試：已連結版本、byte計數與子slice／空段、長度不能截斷、字串內零拒絕、move後複製文字再Drop、兩份獨立C配置先清一份。長度helper不用先配置巨大buffer；測試用 **`usize::BITS`** 取得這個整數型別的bit寬度、**`usize::MAX`** 取得最大值，在寬度大於32時確認helper回TooLong。這兩個是型別的標準associated constants，不是測量資料或改平臺。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 457,
+      "quote": "下列fixture只確認指定編譯規則，不執行ABI錯配、失效pointer或double-free作示範。"
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 485,
+      "quote": "缺少repr(C)的預設struct會有 **improper_ctypes lint**，這是對外部宣告型別的品質診斷。為了讓該fixture一定以錯誤結束，檔案開頭用 **`#![deny(improper_ctypes)]`** 把這項警告升成錯誤；它不是在執行時試出layout有沒有剛好相同："
+    },
+    {
+      "section_id": "15.6",
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 519,
+      "quote": "先補一個標準CStr API：**`to_bytes(&self)`** 借出不含終止零的 `&[u8]`，仍借原owner；`to_bytes_with_nul(&self)` 則把終止零保留在byte slice裡。兩者沒有取得ownership。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

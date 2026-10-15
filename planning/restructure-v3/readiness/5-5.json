@@ -1,0 +1,87 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "5.5"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round05-cross-reference-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round05-data-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round05-data-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round05-prefix-markup-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05-version-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/05-05-lesson.md": "20882bf65c17e9bdca514bf41ed27f8a80314d615bc894e06e06d7a3595f888c",
+    "examples/intro-workspace/data-steps/Cargo.toml": "37c9cbefb5ff5e6412887e4932d12a2063bda8f52b547e417064133c1fcb9a33",
+    "examples/intro-workspace/data-steps/examples/vector_ownership.rs": "4ea0a387a754f80d5cdb360089d80f1ad7594625093115921da491ec3a8dea1b",
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.rs": "a31d54b4fab5523e18ce8b971dedf6f68f8660994123e07560022ad8e6993c17",
+    "examples/intro-workspace/data/src/list.rs": "e43f53e87faa6fb916b7fc0a9948f6e2fcf3b0d2bbd8f5b6629aeeac8dedc29d",
+    "examples/intro-workspace/data/examples/list_demo.rs": "d6716a2ca72845c514caa4f27065dcc903b13941c84ddc3ed612137139cfbf10",
+    "examples/intro-workspace/data/Cargo.toml": "89e56810ae50094574be68877298c8a70896cc6d768678921ad9b2750b063d3b",
+    "examples/intro-workspace/data/src/lib.rs": "200ca1c1f944ed3a18eef48f0806c59a79d5c1816ca7b33ef54fe2a7256f6c49",
+    "examples/intro-workspace/data/src/main.rs": "338920c2560142afad43627ba111612d2dc96ebd8a4cac034d677843e8501eab",
+    "examples/intro-workspace/data/src/text.rs": "73efe1c88f1d5b5e12eb3b95ad89e2af0d0a6fe87e9c09e828fa3f56c09eb213",
+    "examples/intro-workspace/data/examples/list_answer.rs": "23e9115c65cf9fca7331a0a909155984d9df6d655057dee6014380f975dcbebd"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "5.5",
+      "path": "docs/chapters/05-05-lesson.md",
+      "line": 3,
+      "quote": "上一節操作的是 i32，所以取出數字時容易看不見 ownership 的差別。這次先把 String 交進清單再取回，接著完成一個小工具：從借來的數列保留非負數，建立新的 Vec，維持原順序、重複次數及原資料。"
+    },
+    {
+      "section_id": "5.5",
+      "path": "docs/chapters/05-05-lesson.md",
+      "line": 7,
+      "quote": "`Vec<String>` 持有的是 owned String。push 以值接收元素，所以 `messages.push(message)` 會把 message 的文字交進清單，原 message 不能再用。pop 回傳 `Option<String>`；Some 中交回的是 owned 文字，清單不再持有被取出的那一項。"
+    },
+    {
+      "section_id": "5.5",
+      "path": "docs/chapters/05-05-lesson.md",
+      "line": 34,
+      "quote": "Vec 的 push 在空間不足時，可能取得較大的存放區，把元素交到新位置。若原本借出的元素 reference 還要繼續使用，就不能讓這份衝突的修改借用同時發生。"
+    },
+    {
+      "section_id": "5.5",
+      "path": "docs/chapters/05-05-lesson.md",
+      "line": 42,
+      "quote": "這份完整失敗例會得到 **E0502**。Some 中包著 reference，仍受第 3.5 節的借用規則限制。不能依賴某次 push 恰好沒有換存放區；應先完成元素借讀的最後使用，再修改清單。"
+    },
+    {
+      "section_id": "5.5",
+      "path": "docs/chapters/05-05-lesson.md",
+      "line": 46,
+      "quote": "輸入是借來的 &[i32]，輸出是新的 `Vec<i32>`。規則是值至少為零就保留；負數略過，不將它改成零；原先重複的值仍保留原次數。"
+    },
+    {
+      "section_id": "5.5",
+      "path": "docs/chapters/05-05-lesson.md",
+      "line": 69,
+      "quote": "完整版本放在另一個 member：`data/`，package 名為 **intro-data**。它的 library 公開 text 與 list，text 保留第 5.3 節已教的文字取得函式，list 提供本節整理。範例透過 `intro_data::list::keep_nonnegative` 使用它，沿用第 2.6 節的 library 路徑規則。"
+    },
+    {
+      "section_id": "5.5",
+      "path": "docs/chapters/05-05-lesson.md",
+      "line": 87,
+      "quote": "目前這個版本的text、list都已教完。下列列出member設定、兩個root、兩份module；前面已列出完整list_demo。沒有依賴或其他隱藏helper。"
+    },
+    {
+      "section_id": "5.5",
+      "path": "docs/chapters/05-05-lesson.md",
+      "line": 139,
+      "quote": "寫 `capped_nonnegative(values: &[i32], ceiling: i32) -> Vec<i32>`。本題約定ceiling非負：負數略過，其餘值若大於ceiling，就在結果中改成ceiling。保留原順序、重複次數與輸入資料。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,74 @@
+[
+  {
+    "path": "examples/ch13-futures/stages/Cargo.toml",
+    "sha256": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "lines": 6,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/Cargo.toml"
+  },
+  {
+    "path": "examples/ch13-futures/stages/src/main.rs",
+    "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "lines": 3,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/src/main.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_event/readiness/mod.rs",
+    "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "lines": 101,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs",
+    "sha256": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df",
+    "lines": 74,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_event/main.rs",
+    "sha256": "173327762bdba78ed56c3d8db71c4e6c0b40945f2dd2fae133e376c3b4185b7a",
+    "lines": 22,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_early_notice/runner/mod.rs",
+    "sha256": "4d2a7e133bc4b9d2d971c4adccf2008c0611d8a9703953fc56256953aaba7279",
+    "lines": 69,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_early_notice/main.rs",
+    "sha256": "c70fd4fb60272af991ea9b6a4b480054c86cb7ee93c8edad323c684f3342408a",
+    "lines": 10,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_pinned/runner/mod.rs",
+    "sha256": "849f283a3a2506d66ab4c8d6b2ca64d29ef20ba6772aa4b33aef66d050457521",
+    "lines": 64,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_pinned/main.rs",
+    "sha256": "3b102e0a8ff80f5c6abe7c4789ce89dd52a49023ab15be334e86ff73fbb00942",
+    "lines": 10,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_solution/readiness/mod.rs",
+    "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "lines": 101,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_solution/runner/mod.rs",
+    "sha256": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df",
+    "lines": 74,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/executor_solution/main.rs",
+    "sha256": "d93c4eb719c80d0ffe85effc1780777157abb7629d26e132d56a712fd70ed8ae",
+    "lines": 22,
+    "method": "full physical source printed/read"
+  }
+]

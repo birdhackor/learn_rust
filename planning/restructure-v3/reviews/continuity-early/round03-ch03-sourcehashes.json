@@ -1,0 +1,321 @@
+{
+  "captured_at_utc": "2026-10-15T06:51:56.223284+00:00",
+  "root": "/workspace/learn_rust",
+  "role": "independent continuity/page reviewer",
+  "files": [
+    {
+      "path": "docs/assets/ch02/borrow-scope.svg",
+      "sha256": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e",
+      "bytes": 1763
+    },
+    {
+      "path": "docs/assets/ch02/move-copy.svg",
+      "sha256": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e",
+      "bytes": 2030
+    },
+    {
+      "path": "docs/assets/ch02/reference-owner.svg",
+      "sha256": "24c26bb66f067b0d964a05b4e54cbd34359f35036192b3b9ba5a526b2c1f56dc",
+      "bytes": 1429
+    },
+    {
+      "path": "docs/assets/ch02/slice-part.svg",
+      "sha256": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4",
+      "bytes": 1496
+    },
+    {
+      "path": "docs/assets/ch03/string-view.svg",
+      "sha256": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27",
+      "bytes": 2039
+    },
+    {
+      "path": "docs/chapters/03-01-lesson.md",
+      "sha256": "fac86a536cb55ae8c2231dfe6509d3eefdcd9ea0d9e06f6f7cbe95e1e38b0f80",
+      "bytes": 4872
+    },
+    {
+      "path": "docs/chapters/03-02-lesson.md",
+      "sha256": "4abe646b523a2831e8374d80fa1f006b203feba9e4e3bec9b00aeca8fd9bc388",
+      "bytes": 4979
+    },
+    {
+      "path": "docs/chapters/03-03-lesson.md",
+      "sha256": "db0288a22aeb87e01751792ee3d1dbb50ea61006c6098c6c51a8e7ecdcfed1b7",
+      "bytes": 4059
+    },
+    {
+      "path": "docs/chapters/03-04-lesson.md",
+      "sha256": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+      "bytes": 3736
+    },
+    {
+      "path": "docs/chapters/03-05-lesson.md",
+      "sha256": "eae13ff2e23669eb9acaa579cf6f97126babc30770bd333807b8ce8bdb7b4ccb",
+      "bytes": 6178
+    },
+    {
+      "path": "docs/chapters/03-06-lesson.md",
+      "sha256": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+      "bytes": 4253
+    },
+    {
+      "path": "docs/chapters/03-07-lesson.md",
+      "sha256": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+      "bytes": 4975
+    },
+    {
+      "path": "docs/chapters/03-08-lesson.md",
+      "sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+      "bytes": 6444
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "814f49ab55f61166079a9a123eb144402c7fe7940480f502498a7538cc66d761",
+      "bytes": 547
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "b85720032a875d06ca88e96607c0fbdf16cfb1b90507788c5ffeb76e6913e6b7",
+      "bytes": 173
+    },
+    {
+      "path": "examples/intro-workspace/control/Cargo.toml",
+      "sha256": "18abe91283c11f1a1f1109a64b28d1de3cf39d17dc8223e48cec3bd65df6b7bf",
+      "bytes": 68
+    },
+    {
+      "path": "examples/intro-workspace/control-steps/Cargo.toml",
+      "sha256": "52011d81554362fc0008e34c86caab53d1da8f6e599cb7b335e0b3b2dd5d8c6e",
+      "bytes": 74
+    },
+    {
+      "path": "examples/intro-workspace/greeting/Cargo.toml",
+      "sha256": "83300e56501d71d423e9a1aebbfd2cd1c6c4599238ed4884fcad8e93847615c5",
+      "bytes": 69
+    },
+    {
+      "path": "examples/intro-workspace/hello/Cargo.toml",
+      "sha256": "946345ebb5bcb3465019d4d501ec888da32b198c9a87d4b2d91edb2fec085e9d",
+      "bytes": 66
+    },
+    {
+      "path": "examples/intro-workspace/modules-basic/Cargo.toml",
+      "sha256": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+      "bytes": 74
+    },
+    {
+      "path": "examples/intro-workspace/ownership/Cargo.toml",
+      "sha256": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+      "bytes": 70
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/borrow_answer.rs",
+      "sha256": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+      "bytes": 506
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/last_use.rs",
+      "sha256": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+      "bytes": 469
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/lifetime_answer.rs",
+      "sha256": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+      "bytes": 331
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/methods.rs",
+      "sha256": "8cd7fb3cdcf50009299b7c38a5b62ebcdfdb8195f4a6a013909fa8a28fcb3ec1",
+      "bytes": 1044
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/methods_answer.rs",
+      "sha256": "d155f99fe1943045602084dcf912f85b29209b2553a55712d973234c27741af4",
+      "bytes": 637
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/moves.rs",
+      "sha256": "7356f9fe53c5744cfbb6497b1132cad48f1298c98b22aadd747aeb51976ae184",
+      "bytes": 679
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/mutable_references.rs",
+      "sha256": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+      "bytes": 607
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/ownership_answer.rs",
+      "sha256": "1e1be4d6be32a084b12fa01c151e097768a8ee6b114d094bbaad987bdc9bd367",
+      "bytes": 406
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/public_model/main.rs",
+      "sha256": "b317b4901378db03b96a5d1e2cb811ee88cc8ab1a5bb5cf45d94e78607b7bdc3",
+      "bytes": 279
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/public_model/model/mod.rs",
+      "sha256": "3eafd390446d1b457521ab144bf5e8495fc5cb77678d7c468958736ba2cee720",
+      "bytes": 66
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/reborrow.rs",
+      "sha256": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+      "bytes": 498
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/reference_binding.rs",
+      "sha256": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+      "bytes": 282
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/shared_answer.rs",
+      "sha256": "2788556bba6d288b06dbee1190321da44936e29c6ed699c28528c0f7d09bd288",
+      "bytes": 428
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/shared_references.rs",
+      "sha256": "ef65a9a1ef397ee82c6b244a63413e42c7f98edf7a90b0a03dfd3c6862298823",
+      "bytes": 737
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/slices.rs",
+      "sha256": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+      "bytes": 909
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/slices_answer.rs",
+      "sha256": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+      "bytes": 879
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/strings.rs",
+      "sha256": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+      "bytes": 559
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/strings_answer.rs",
+      "sha256": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+      "bytes": 251
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/structs.rs",
+      "sha256": "1d7cc967e11ba88250d9cb5b5aa1c14155081e49921fd7c9a003eb4b981ce648",
+      "bytes": 489
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/structs_answer.rs",
+      "sha256": "f9c26ea5301d08571922b1b3c788e3e3f6e38153ca909696ac9c96b63468c1e1",
+      "bytes": 381
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/text_order.rs",
+      "sha256": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+      "bytes": 1162
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs",
+      "sha256": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+      "bytes": 128
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs",
+      "sha256": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+      "bytes": 130
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs",
+      "sha256": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+      "bytes": 134
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.rs",
+      "sha256": "25d22714815e23ef66b3c53e6c22ba61fbc528e40997bb5773946a4cfe2ca262",
+      "bytes": 314
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs",
+      "sha256": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+      "bytes": 128
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs",
+      "sha256": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+      "bytes": 87
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs",
+      "sha256": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+      "bytes": 174
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs",
+      "sha256": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+      "bytes": 153
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.rs",
+      "sha256": "dbc4227dfe470236aa29e846360ad749be19060390d708343a39ebea03d931be",
+      "bytes": 289
+    },
+    {
+      "path": "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs",
+      "sha256": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+      "bytes": 242
+    },
+    {
+      "path": "examples/intro-workspace/ownership/src/main.rs",
+      "sha256": "5d01b2ee14dd9b2dbcba67a83a7a47c1d960a0ee685f0b49af8d7d0d0ead13c6",
+      "bytes": 48
+    },
+    {
+      "path": "examples/intro-workspace/patterns/Cargo.toml",
+      "sha256": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+      "bytes": 69
+    },
+    {
+      "path": "examples/intro-workspace/steps/Cargo.toml",
+      "sha256": "ba433fca9aa7ac14673d3b3727bf391f285a6013ec75ffa2a6ba60942e245dfb",
+      "bytes": 66
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    }
+  ],
+  "pre_visual_recheck_at_utc": "2026-10-15T06:56:08.286231+00:00",
+  "changes_before_visual": [
+    {
+      "path": "docs/assets/ch02/reference-owner.svg",
+      "initial_sha256": "24c26bb66f067b0d964a05b4e54cbd34359f35036192b3b9ba5a526b2c1f56dc",
+      "current_sha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb"
+    },
+    {
+      "path": "docs/chapters/03-03-lesson.md",
+      "initial_sha256": "db0288a22aeb87e01751792ee3d1dbb50ea61006c6098c6c51a8e7ecdcfed1b7",
+      "current_sha256": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e"
+    }
+  ],
+  "end_recheck_at_utc": "2026-10-15T06:59:32.947666+00:00",
+  "changes_at_end": [
+    {
+      "path": "docs/assets/ch02/reference-owner.svg",
+      "initial_sha256": "24c26bb66f067b0d964a05b4e54cbd34359f35036192b3b9ba5a526b2c1f56dc",
+      "end_sha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb",
+      "frozen_initial_hash_verified": true
+    },
+    {
+      "path": "docs/chapters/03-02-lesson.md",
+      "initial_sha256": "4abe646b523a2831e8374d80fa1f006b203feba9e4e3bec9b00aeca8fd9bc388",
+      "end_sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+      "frozen_initial_hash_verified": true
+    },
+    {
+      "path": "docs/chapters/03-03-lesson.md",
+      "initial_sha256": "db0288a22aeb87e01751792ee3d1dbb50ea61006c6098c6c51a8e7ecdcfed1b7",
+      "end_sha256": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e",
+      "frozen_initial_hash_verified": true
+    }
+  ]
+}

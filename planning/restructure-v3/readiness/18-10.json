@@ -1,0 +1,175 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.10"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18b-complete-tool.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-report-cli.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-root-final-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-sequential-bounded-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-single-url-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop-reviewer-erratum.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-10-lesson.md": "80c9c6fc9cb984b8964b1cd9efe9042d1be109a126224ff51bc8a207f686757b",
+    "examples/ch15-projects/b4-starter/src/lib.rs": "4f53dcf35cbf0b7526fc92b1805337eaf01195b3ffb80da85ef856a7a776bb1d",
+    "examples/ch15-projects/b4-starter/Cargo.toml": "33375bcde6288f93359d66908ef30703f6e1da6704de7e67d3beab417ef425df",
+    "examples/ch15-projects/b4-starter/src/input.rs": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e",
+    "examples/ch15-projects/b4-starter/src/single.rs": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+    "examples/ch11-async/local-service/Cargo.toml": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee",
+    "examples/ch11-async/local-service/src/lib.rs": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119",
+    "examples/ch11-async/http-single/Cargo.toml": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f",
+    "examples/ch11-async/http-single/src/lib.rs": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a",
+    "examples/ch11-async/http-single/src/config.rs": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7",
+    "examples/ch11-async/http-single/src/error.rs": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+    "examples/ch11-async/http-single/src/reply.rs": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0",
+    "examples/ch15-projects/b4-starter/checks/stop-tests.rs": "6335e4aa19a6a8dcbdf9e7a1df30c56ebf606c5c6dcb562f10c440e2cde2f64c",
+    "examples/ch15-projects/b4-complete/Cargo.toml": "e21e318f76291c7aa621821f006003945d66c5df06d7ace94e888693d0b4b75e",
+    "examples/ch15-projects/b4-complete/src/input.rs": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e",
+    "examples/ch15-projects/b4-complete/src/single.rs": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+    "examples/ch15-projects/b4-complete/src/lib.rs": "3e7915eb978856e0b0410dbd1ec7b66894d8197404444a04c9a5c574e1ad846c",
+    "examples/ch15-projects/b4-complete/examples/b4_signal_demo.rs": "5ea8a19548526e0b7f39070b54bce05899bdde510f5525b74d31bb130f6c40ad",
+    "docs/assets/ch15/stop-url-work.svg": "95ab1e126e46778b36a3f53ec4462e957af55547f4ffe5c7e070a5899ed290dc"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 3,
+      "quote": "B3 已能在有限名額內檢查清單。現在使用者按 Ctrl+C，不再需要剩餘工作；我們仍要回答**每份原輸入留下什麼：已完成、已取消，或根本沒有提交？** 直接退出會丟掉這份對應，也無法確認 client 與測試服務的收尾。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 9,
+      "quote": "沿本機 Fixture，先用以下五份輸入、jobs2。空白行略過後保有的原索引是1、3、4、5、6；`U` 指這次本機 `/ok` 的同一份 URL，表格是手工材料對應，測試會使用真動態 port："
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 19,
+      "quote": "**Fixture 的 gate 編號0／1，分別控制原輸入1／4。** 它們是兩種不同編號：handler通知的0／1指出哪個gate已進入，工具報告的1／4指出哪個原行。第二份held進入，便證明3已收取、名額已補入4；沒有用sleep猜HTTP進度。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 27,
+      "quote": "`Completion` 沿B3的Checked／TaskFailure，新增 **Cancelled** 與 **Unstarted**，兩者各保存original。Cancelled來自JoinError的is_cancelled；Unstarted直接來自pending Input，沒有Tokio Id。兩者沒有Check，因此不捏造HTTP狀態或elapsed_ms。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 31,
+      "quote": "停止來源沿14.6：容量1 channel送 **StopEvent**，Requested表示明確要求停止，SignalFailed保留監聽錯誤。**EndReason** 另加Finished與StopSourceClosed；channel關閉沒有事件，不能解讀成使用者按了Ctrl+C。**Batch** 把整批理由與所有Entry放在一起；Finished只表示清單做完，不保證每筆通過。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 39,
+      "quote": "藍框追蹤已提交與已保存的工作；橘框是**已觀察**的停止事件；灰框是只有Input的pending；綠框是最後Batch。向下箭頭表示處理步驟。圖中的HTTP200是`Checked`內的HTTP結果；停止沒有把它覆寫為Cancelled。最後的EndReason是整批理由，與每個Entry的分類不同。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 43,
+      "quote": "第14.6節曾把JoinSet標成S1、其中一份工作標T0，借集合的join等待標W1。這些是對象標記，不是固定的input編號或Tokio Id。本頁同樣由Scheduler擁有S1；當前原input1／4各有一份已登記Id的task。select丟棄W1只結束借用的等待，S1仍持有它們，必須明確abort並逐份收回。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 49,
+      "quote": "B3的new會立刻fill，next收取後也立刻fill。現在沿14.6改成：**new只準備資料；收取只record；每輪先查停止，再決定fill。** 這讓提前排入的事件能阻止第一批，也讓收取後不會先補工作、才看到已排入的停止。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 67,
+      "quote": "Tokio 的 **Id 具備 Copy**。完成版先用 `match &result` 借讀結果；成功分支中的 id 是 `&Id`，`*id` 複製出 Id。這次借讀結束後，仍能接手整份 result，分類並取出 Check；沒有從 shared reference 搬走非 Copy 值。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 69,
+      "quote": "要自行完成的`record(&mut self, Result<(Id, Check), JoinError>)`不等待：從成功Id或error.id找到Input、移除登記；成功保Check，is_cancelled保存Cancelled，其他JoinError仍保存TaskFailure。把Entry推進entries，**這裡不fill**。登記的expect沿B3檢查作者自己的不變條件，不把漏登記當正常HTTP問題。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 73,
+      "quote": "這裡局部新增 **`Iterator::by_ref()`**：mutable借原iterator，交回同一iterator的mutable reference。`for input in self.pending.by_ref()`可以走訪並取得owned Input，同時保留Scheduler對pending欄位的ownership；不是建立一份獨立iterator副本。走到末尾後，原pending也已耗盡。這是此處需要的借用介面，不必先看標準library內部泛型實作。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 77,
+      "quote": "runner的等待沿14.6：每輪try_recv先取已排入事件，Empty繼續、Disconnected保存來源失去；再fill。集合空便Finished；否則biased select把停止放在join之前。join分支只record，回圈頂端再查停止。**不再提交從觀察到停止起算**，不是對OS訊號抵達的某個瞬間提供原子性的禁止。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 87,
+      "quote": "從`b4-starter`保存Cargo.toml、整個src與checks/stop-tests.rs到自己的url-b4-work。完整Input／single與fill沿B3；record／stop_and_finish／run三份body尚未完成。全部起始source、checks與完成版都在同頁，片段只用於定位。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 89,
+      "quote": "普通library現在使用停止channel與ctrl_c，將14.6已教的 **sync／signal**放在普通Tokio dependency；其餘features沿前文。version要求與lock沿10.1。repo外**先把Fixture path換成你電腦上教材examples/ch11-async/local-service的實際絕對路徑**，才跑Cargo："
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 119,
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 176,
+      "quote": "checks沿B3由test直接持有Scheduler與Fixture。`drain`是測試的後備清理：對原JoinSet abort_all、逐份join；不使用會補工的方法。`finish`先保存集合／登記數，再後備drain與shutdown，全部收尾後才檢查原快照與理由。如此**測試自己的清理不會把產品忘記等待的錯碼補成通過**。它接收的是`Result<EndReason, Elapsed>`，Err代表觀察期限，不是整批理由。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 184,
+      "quote": "`controlled_stop`在**同一份test task**用select推進兩份借用工作：一份是Scheduler.run，另一份是Fixture的有限控制。控制支路保存觀察、送Requested，然後等待已教、永不完成的pending；讓run交回EndReason，才結束這次select。它沒有另外spawn持有Fixture的controller。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 208,
+      "quote": "現在把完整`checks/stop-tests.rs`追加到src/lib.rs。它自帶cfg與tests module，不再包一層。起始版應**一項通過、六項失敗**：設定檢查已提供；停止、分類與工作圈仍欠缺。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 212,
+      "quote": "先完成record與stop_and_finish。Id表一次移除、保存真正Output、等待全部已提交tasks，再以by_ref走訪pending。合成完成待收的檢查應成立，於是**兩項通過、五項失敗**；run仍固定Finished，沒有觀察停止或實際提交。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 276,
+      "quote": "沿14.6，`signal_controller(stop, entered)`擁有兩份送端；biased select先實際執行ctrl_c，註冊listener後才送entered，另一支路pending不會結束等待。收到通知送Requested；監聽失敗送SignalFailed。Output bool只表示事件是否送入channel，不能替代整批理由。"
+    },
+    {
+      "section_id": "18.10",
+      "path": "docs/chapters/18-10-lesson.md",
+      "line": 294,
+      "quote": "教材repo根目錄執行，**看到READY後立即按Ctrl+C**："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

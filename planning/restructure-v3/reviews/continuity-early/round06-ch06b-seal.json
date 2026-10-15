@@ -1,0 +1,13 @@
+{
+  "sealed_utc": "2026-10-15T08:05:18.432452+00:00",
+  "scope": "independentactual6.3–6.6initial",
+  "necessary_findings": 0,
+  "optional_findings": 1,
+  "files": {
+    "round06-ch06b.md": "076bae024e181dc94028d05ecc6c94edf2cbbe982d1eb4309c122955ddbb9d4a",
+    "round06-ch06b.json": "a4c75bef45b82b6939c5f531ca45e360b558f18c9d9d28c1771d334a90bd4e4f",
+    "round06-ch06b-sourcehashes.json": "7428dd6db941e790b2597a55bd443032e6e6445684f9ad578361e09f099a0cd7"
+  },
+  "source_changes": [],
+  "stop_after_this_seal": true
+}

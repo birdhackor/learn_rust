@@ -1,0 +1,130 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.7"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-07-lesson.md": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/error_leaf/errors/mod.rs": "6f2ad95d4c6d3737961866772a52545747c9d921fb8fc5471ef4b237909228df",
+    "examples/intro-workspace/type-stages/examples/error_leaf/main.rs": "5d6e0b0e0a2360cc6e3df6168748119d26591dd6069c43f51d2e22a66bb0659b",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_without_debug.rs": "95efdc55daf7c254df751ffdfd0048e9dea939294a82807fba4959ba049a5bdb",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_without_debug.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs": "c5cff6e3d87a023c4ea2a92a0952b21bd891267af8f655837f87214d50b240ea",
+    "examples/intro-workspace/type-stages/examples/error_chain/main.rs": "cc4df4de2cf5ecee6279b62f7cd7d629dfcef343793511eef92f1bc7125a42b5",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_source_escape.rs": "634b330521d9ee2972daa2bd2e6adeb2a0dccb8a6976e63129bd97210eefcf49",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_source_escape.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/type-stages/examples/error_borrowed/errors/mod.rs": "b35cf058ab76b8951391809067ebe31e85cd93fcac030db86e55195760bb79fc",
+    "examples/intro-workspace/type-stages/examples/error_borrowed/main.rs": "50bdc5534c4a5ccf20e694fc7fcfa45bd692ad7621a64ee4742524a48806c582",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_non_static_source.rs": "df9b87b31ae5d1116f7eb9e119abf52697fe7a90309b6d0560dbacac79207159",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_non_static_source.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/intro-workspace/type-stages/examples/error_boxed/errors/mod.rs": "fc94d896621c300394c4297bd89c7b6a42aebb9673f8fcf23bddf8fa7ef308d5",
+    "examples/intro-workspace/type-stages/examples/error_boxed/main.rs": "ca78b6c3c67b4595b438892aa5bff7fc3311a8e8912f67d3b853b4e2cfd66980",
+    "examples/intro-workspace/type-stages/examples/error_complete/errors/mod.rs": "f1c417317eb8c9cbab6c18708312379f769d3bda6db52e141dda416d072d3779",
+    "examples/intro-workspace/type-stages/examples/error_complete/main.rs": "d10a2879a70dcd84ad24257a836e7bbca86eb695b340802f0fe14f492f2c7423",
+    "docs/assets/types-v3/error-chain.svg": "1a77580f6cc6f481b9689d20ce8b157acb23f005dcddc17dc1cc4038759ef146"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 3,
+      "quote": "第 8 章已把整數解析與件數驗證的失敗保存在 enum，caller 可以 match 分類。現在希望報告器不用知道每個 module 的 variant，仍能顯示「哪項工作失敗」，再沿保存的下層原因繼續說明。"
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 5,
+      "quote": "Result 本來就沒有要求 E 實作某個 trait。這裡新增 **`std::error::Error`**，是為了共同的顯示與原因借用介面，而不是讓 Result 開始能保存錯誤。"
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 9,
+      "quote": "Error 要求 **`Debug + Display`**；這是第 11.6 節的 supertrait 關係，兩項要求一起成立，因此借用 Error 介面也能顯示錯誤。"
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 11,
+      "quote": "它提供 **`source(&self) -> Option<&(dyn Error + 'static)>`**，借出下一層原因：Some 有原因 reference，None 表示沒有下一層。回傳 reference 依第 7.4 節連到 self；裡面的 static 限制原因型別所含借用，兩者要分開。"
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 13,
+      "quote": "trait 也可以替 method 提供 body，稱為**預設實作**。Error 的 source 預設回傳 None，所以沒有下層原因時，可以寫空的 `impl Error for CountError {}`；不是缺少必要實作。"
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 41,
+      "quote": "None 沒有憑空增加原因。若只有 Display、沒有 Debug，Error 的要求就不成立；下面完整負例與 `.expected` 在獨立專案執行 `cargo check` 得到 **E0277**："
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 53,
+      "quote": "ParseCountError 延續第 8.5 節的 Integer／Range，分別擁有 ParseIntError 或 CountError。標準 ParseIntError 也有 Error；因此 **source method** 可以對 `&self` 作 match，將兩種欄位 reference unsize 成共同的 `&dyn Error`。"
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 73,
+      "quote": "report 收到 `&dyn Error`，先 format 外層文字，再用 loop／match 追蹤 source。Some 時加入這層 Display，再取下一層；None 時交回 owned String。這些例子的原因鏈都向下前進、最後結束，沒有循環回自己。"
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 79,
+      "quote": "以下是這一步的**完整** helper，包含 leaf、解析、輸入 context、report；沒有 borrowed context 或 boxed boundary："
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 109,
+      "quote": "`Option<&(dyn Error + 'static)>` 的外層 reference 借自這次 self；內層 bound 則要求**原因的具體型別**不依賴短命借用。只含 owned 數字的 CountError 與 ParseIntError 符合後者，reference 仍不能超過 error 的實際有效範圍。"
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 111,
+      "quote": "下面 Cause 符合 static，卻由內層 Outer 擁有；Outer 結束後還使用 source 借回的 reference，仍得到 **E0597**："
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 150,
+      "quote": "report 借讀外層錯誤，沒有要求它整體符合 static。若**cause 自己**也借短命文字，就不符合標準 source 的內層 bound；以下完整負例得到 `lifetime may not live long enough`："
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 164,
+      "quote": "需要以 match 穩定分類時，具體 enum 仍直接。若某個邊界只需接收不同來源並報告，可以回傳共同的 **`Box<dyn Error>`**；本頁簽名採預設 static object bound。"
+    },
+    {
+      "section_id": "11.7",
+      "path": "docs/chapters/11-07-lesson.md",
+      "line": 196,
+      "quote": "定義 OrderError，保存 id7 與 `CountError::TooLarge(101)`。derive Debug，Display 只寫 `訂單7的件數檢查失敗`，source 借出 cause。交給相同 report，確認外層訂單與原件數各出現一次。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

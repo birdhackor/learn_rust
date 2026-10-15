@@ -1,0 +1,37 @@
+[
+  {
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-complement/report.md",
+    "bytes": 2199,
+    "sha256": "802fb2f0aeea2e9a90bd3158cb5ce9065b3528e26100cea2f3a7933bc1425c59"
+  },
+  {
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-complement/coverage-final.json",
+    "bytes": 19138,
+    "sha256": "ca677d7758a00c3fcebcb92ce46a22b1c554dbeb51831b813163b66562e0e296"
+  },
+  {
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-complement/references.json",
+    "bytes": 387974,
+    "sha256": "c3f004e9cee6d4728c936b6febe7778964518f29596d023323010114b4aa754b"
+  },
+  {
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-complement/references.md",
+    "bytes": 140044,
+    "sha256": "50ac2c13243f633a2d68fd748536ac80382e6f71e80a3fea3c78fa8c08f92d7e"
+  },
+  {
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-complement/findings.json",
+    "bytes": 5350,
+    "sha256": "6dcf9a8fbf38079d5bb3bc1237ba1b73b2932eaece63187842fd389f70fdd235"
+  },
+  {
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-complement/actual-target-evidence.json",
+    "bytes": 798515,
+    "sha256": "5d6e69d70702610ba45ddbb415e26ec948c7da811d2d4c0e0e805761ad95213e"
+  },
+  {
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-complement/excluded-candidates.json",
+    "bytes": 9122,
+    "sha256": "957743bbf3a9af124f16e273a41c0576f31fa6d73f8b6aa93102de65c8645bf0"
+  }
+]

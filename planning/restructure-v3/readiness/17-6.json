@@ -1,0 +1,190 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "17.6"
+  ],
+  "author": "root",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round17-api-cross-references-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-criterion-benchmark.md",
+    "planning/restructure-v3/reviews/technical-early/round17-declarative-macro-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round17-dhat-allocation-profile.md",
+    "planning/restructure-v3/reviews/technical-early/round17-library-and-string-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-loom-miri.md",
+    "planning/restructure-v3/reviews/technical-early/round17-macro-hygiene-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round17-procedural-derive-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round17-property-testing.md",
+    "planning/restructure-v3/reviews/technical-early/round17-public-api-contracts.md",
+    "planning/restructure-v3/reviews/technical-early/round17-root-cross-references-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/17-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/17-06-lesson.md": "40b995a63f8ae50f07264ccb014d8e5f090796c8f2658c6279fc6b5aeb12dca5",
+    "examples/ch14-model-checking/Cargo.toml": "98be5f8261d9e858ec0ddfb0ca88e1fa4310c0a4a87de28128ce32588d7905b6",
+    "examples/ch12-unsafe/Cargo.toml": "d3c9301856f032cacafd7fc18a43eb8f38615ae75752c85b8cf84eb266beb20c",
+    "examples/ch12-unsafe/src/lib.rs": "6ed58edfdf2f63adb063cb601bee812a20e133fa51acce9ad7c46a356523c7cf",
+    "examples/ch12-unsafe/src/gat.rs": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+    "examples/ch12-unsafe/src/variance.rs": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+    "examples/ch12-unsafe/src/contracts.rs": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.rs": "d1570003c5760554c52b269d3096eb9cd9da4b6d089100b27db58875014e0a39",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.toml": "5e0fff1a345770f001a7196b887d245d62be39a1a9c9d933a71be7269ee514bf",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.expected": "16dfb2737f4458cf72f984557d8a1af0a2f93bf1a447e5657bf1f9b876e85af0",
+    "examples/ch14-model-checking/tests/loom_counter.rs": "1b70332deb52da698ed5f2cceba688e7788f672bfb2daf74efe6352ea2ca5bb6",
+    "examples/ch14-model-checking/tests/miri_contracts.rs": "9521909a47173dfc8d7c9bbf9a84bb3eaf3438a3a49406f5895bf73a0e0c865f",
+    "examples/ch14-model-checking/fixtures/miri-fail/src/main.rs": "5fd3740a82c8f7ad96852aa7928c24cb31a661d85b2bd8daa7fe0424e6e08a48",
+    "examples/ch14-model-checking/fixtures/miri-fail/Cargo.toml": "7522e3051d8385b1924239489039a3a9cecdf303a0ee253ef78496253fcd5433",
+    "examples/ch14-model-checking/fixtures/miri-fail/src/main.expected": "88e052e8bfe774128d71f477bcaae4ad8e0a592e852f3d8dc2a034884c1e731c",
+    "examples/ch14-model-checking/tests/loom_counter_solution.rs": "8636a358adce52b7c8b589eda95c9b4bf184681bb25f83a519fe10e167866719",
+    "examples/ch14-model-checking/tests/miri_owner_solution.rs": "8e2ce20bdff59c1d7e7e8c2999ca6235dbb51794ac6518af81b982fe350239b8",
+    "docs/assets/ch14/loom-paths.svg": "95b87282af7e5fb55d7fdcc42761c821021d2666f2e6b928dea7b30b544b20b4",
+    "docs/assets/ch14/miri-storage.svg": "009b71a12c190640044ee3daad10abd924fc2489425305db7e735711197db367"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 3,
+      "quote": "13.8 的兩份 worker 各增加一次，初值0應得到2；15.4 的 safe 切分介面則讓 caller 修改原數列的兩個區段。兩種工作都能用普通測試檢查結果，仍留下不同的問題：**這次沒有遺失更新，其他允許交錯呢？safe 呼叫正常完成，內部的 unsafe 存取是否也守住契約？**"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 9,
+      "quote": "先沿13.8的 lost update：A、B 都先 load，再把自己的舊值加1存回。一次 atomic load 或 store 不被拆開，不代表兩次呼叫合成一次不可分開的增加。A讀0、B讀0、A存1、B存1是合法的交錯，最後只剩1。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 11,
+      "quote": "普通 thread 測試的一次執行，只看到作業系統與硬體這次讓我們觀察到的路徑。反覆重跑可能找到更多結果，沒有遇到1仍不足以排除它。下面畫的是**兩份可能路徑的手工示意**，不是本機觀察到的頻率，也不是工具的完整 trace："
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 15,
+      "quote": "兩欄各自從0開始；欄內箭頭只表示那次操作先後。甲讓A做完再輪B，乙讓兩份讀取都發生在寫入前。乙沒有使用 non-atomic 存取，這是**邏輯上的更新遺失，不是 data race 的 UB**。要排除這種錯誤，需要檢查工作可能交錯的關係。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 19,
+      "quote": "**Loom** 是 Rust 並行測試工具。它用自己的同步型別與 thread API 記錄操作，由模型安排不同的允許執行，再重跑同一份測試。這不是靠加長 sleep 等待某個少見時間點；Loom 能主動探索操作的交錯與模型提供的 atomic 觀察。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 21,
+      "quote": "選用 **`loom::model`**：它接收沒有引數、回傳 unit 的 closure，重複執行這份 body、每次換一條模型路徑。這份 closure 要有 `Fn() + Send + Sync + 'static` 能力，本例不捕捉外部狀態，在 body 裡重新建立資料。**count 必須每次從0新建**，不能把上一次探索的結果帶進下一次。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 35,
+      "quote": "本例保持有限：**兩個 worker、一個共享 atomic、各增加一次，沒有等待迴圈、隨機來源或外部 I/O**。加上執行 model body 的協調路徑，共三條模型 thread。這樣能集中觀察遺失更新；更多 thread、操作或迴圈會讓可能狀態大幅增加，不能直接把真實服務整個塞入小模型。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 81,
+      "quote": "下面的 model 使用兩份 Arc clone，指向同一個 count。兩份 worker 分別 load、相加、store，已讓它們各自的兩步進入 Loom；model body 的最後 assertion 要求2。正常回傳的 worker 結果是 `Ok(())`，用已教的 `Ok(_)` pattern 檢查；若工作未正常完成，這份模型也應失敗，不能當成完整兩次更新。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 87,
+      "quote": "這份測試**預期失敗**，另放 `fixtures/cargo-test-fail`。它自成空 `[workspace]`、有自己的 Cargo.lock，不加入正常 workspace 的測試；空workspace與--manifest-path的定位沿17.2，`--test`選integration目標沿10.2："
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 119,
+      "quote": "13.8已說明修法：fetch_add讓讀舊值、加1、寫回成為同一個RMW。另一份fetch_add在同一 atomic 的修改順序中接著增加，不會也根據先前獨立讀出的0覆蓋成果。兩份join都完成後再load，才有最後2的完整成果。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 131,
+      "quote": "這項modeltest通過，表示**這份有限模型在此次探索範圍沒有找到違反最終2的路徑**。理由仍包括RMW及兩份join；不是PASS替Relaxed增加了發布其他資料的能力，也不是把load/store改成SeqCst就能代替這次修法。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 137,
+      "quote": "回到15.4。`split_i32_at_mut`是safe介面，caller不寫unsafe；body仍使用raw pointer、add與from_raw_parts_mut。正常assertion看到了元素修改，不能單靠這個結果確認內部的來源、alignment、有效範圍與aliasing要求都成立。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 139,
+      "quote": "**Miri** 是Rust的執行解譯與UB偵測工具。它使用 **MIR（Mid-level Intermediate Representation，中階中間表示）**：編譯器把Rust程式整理成的執行步驟。Miri解譯這些步驟，追蹤記憶體配置與存取，遇到所支援的違約便報告，例如use-after-free、越界、未初始化或不符合alignment的存取。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 145,
+      "quote": "Miri緊貼編譯器內部介面，需要 **nightly工具鏈**及對應component。nightly是按日發布的Rust版本；本頁固定已驗證可安裝的 **nightly-2026-10-01**，不以會隨日期改變的`nightly`代稱。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 147,
+      "quote": "以下指令中，`+nightly-2026-10-01`只為該次命令選工具鏈；主專案的rust-toolchain.toml繼續使用stable 1.99。`--profile minimal`選最小工具組，`--component miri`加入解譯工具；**rust-src**是同版本標準庫的原始碼，供Miri準備解譯用的標準庫："
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 156,
+      "quote": "**`miri setup`**準備這份nightly解譯所需的標準庫環境，第一次可能下載與建置；完成setup並不代表教材測試已通過。這組工具的實際版本是rustc1.101.0-nightly、Miri0.1.0，commit `21b707e3f`，日期2026-09-30；工具鏈發布日期則是2026-10-01。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 158,
+      "quote": "Miri提供 **`cargo miri test`**、**`cargo miri run`**，分別解譯測試或binary，使用Cargo原本的package與target選擇。以下只選pureRust的miri_contracts target，不要求它解譯Loom的模擬排程測試。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 162,
+      "quote": "下面的三項測試呼叫15.4同一個公開helper，沒有複製另一份unsafe實作。第一項借兩段修改原元素；第二項檢查0、len與空Vec；第三項檢查超長mid回None且原資料未變。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 181,
+      "quote": "15.3已說明raw pointer不保活來源。現在由 `Box::new(80)`建立heap中的i32，用`&raw const *owner`取得指向**同一個i32**的pointer，再以11.3的drop接手並清理Box。到drop返回，原allocation已釋放，舊pointer資訊仍能保存，卻不能dereference。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 187,
+      "quote": "接下來是**故意違約、僅供Miri解譯的fixture**，不放普通test或normalexample。Miri會為被解譯的crate設定條件`cfg(miri)`；`#[cfg(not(miri))]`中的not表示條件反過來，在一般建置時保留compile_error，拒絕產生可執行的普通成品。這沿12.1的條件編譯及17.2的compile_error角色："
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 217,
+      "quote": "診斷指向`*pointer`，另外標出Box::new的配置點與drop的釋放點。allocation編號依工具執行而變；要追的是**同一份資料已釋放後仍被讀取**。這次Miri抓到的是storage有效性被破壞，不需先推導完整的實驗性aliasing模型。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 221,
+      "quote": "Miri的 **`Undefined Behavior`** 表示所選路徑觸發了被檢查的違約；**`unsupported operation`** 則表示工具不支援那項操作，不能直接當作程式有UB。沒有報告也只代表這次解譯未找到；多數平臺API及外部C實作不在其一般解譯能力內，FFI的型別、ownership與釋放契約仍須另外核對。"
+    },
+    {
+      "section_id": "17.6",
+      "path": "docs/chapters/17-06-lesson.md",
+      "line": 238,
+      "quote": "兩題只改已教的數值或順序，不需要新的工具flag。完整參考程式與驗證命令如下："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

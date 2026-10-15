@@ -1,0 +1,9 @@
+[package]
+name = "lesson-file-sizes"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+
+[dependencies]
+ch09-files.workspace = true

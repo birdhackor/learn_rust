@@ -1,0 +1,1537 @@
+{
+  "role": "獨立continuity與actual-page reviewer，非author/technical/firstreader",
+  "scope": "18.7→18.12全部canonical/fullactualsource/helpers/checks/answers/fixtures/manifests/locks/必要圖；actual已讀1–14及定點18.1/17.4先備，不讀peer18B/authorvalidation/rootdispositions/knownaudit，不用未讀15/16/17其他頁或18A2–6補能力。",
+  "captured_utc": "2026-10-15T10:36:09.838198+00:00",
+  "sealed_utc": "2026-10-15T10:52:14.879504+00:00",
+  "verdict": {
+    "necessary": 2,
+    "optional": 0
+  },
+  "source_files": 86,
+  "source_stable": true,
+  "concept_checks": [
+    {
+      "concept": "單筆政策與三種網址身分",
+      "first_needed": "18.7 models與check stub之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 9,
+          "text": "沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。"
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 26,
+          "text": "原始文字也要保留。解析後的 `Url` 是送請求用的位置，這個型別短名由 `use url::Url;` 引入；redirect 後的 URL 是最後回應的位置。這兩者不能取代呼叫者交來的原文字。此時只有一筆，下一節再加入輸入編號與重複網址的對應。"
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 24,
+          "text": "我們只需要最後的 URL 與狀態，收到 final headers 就完成；不呼叫 `text()` 或 `bytes()` 主動讀完 body。伺服器可能已經送來一些 body bytes，這不影響工作界線；我們沒有承諾網路完全沒收到 body。"
+        }
+      ],
+      "q1": "原文字/解析Url/finalURL各自保存用途。",
+      "q2_mechanism": {
+        "answer": "Urlparse+scheme驗輸入；GETredirect最多5，final2xxHttp，headers即完/不主動讀body。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "維護清單先需每筆可信結果及失敗階段，後續才有可排程材料。",
+        "verdict": "已足夠"
+      },
+      "q3": "200只符合本題，不驗業務；可能收到bodybytes但不主動讀完。",
+      "q4": "/notes InputUrl、fileScheme、200/404/500皆Http、redirect留original和final、loopRequest、heldTimeout。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "owned結果與elapsedNone/Some0",
+      "first_needed": "18.7 models片段之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 30,
+          "text": "把答案表示成 `Check`：`original` 擁有原文字，`outcome` 保存本次分類。`Outcome::Http` 擁有最後 URL，另存 `u16` 狀態碼與 `bool` 通過判定；其他情況各有自己的 variant。"
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 34,
+          "text": "`elapsed_ms` 使用 `Option<u128>`，單位是毫秒，來源仍是 `std::time::Instant` 的 `elapsed().as_millis()`。輸入在解析處拒絕時是 `None`，表示尚未開始請求。已開始嘗試後是 `Some(...)`：HTTP 結果量到最後 headers；請求失敗或逾時量到該失敗結束。這不表示失敗也有 headers。client 準備、URL 解析及最後報告都在量測外，`Some(0)` 則仍是已嘗試，只是整毫秒顯示為零。"
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 36,
+          "text": "下列型別只 derive 已教的 `Debug`，方便測試印出分類。內含的錯誤型別不需要可用 `==` 比較；測試以 `match` 取出要驗的欄位。對 `Option<u128>` 比較 `None` 則可使用標準型別已提供的 `PartialEq`：`u128` 可比較，因此這份 `Option` 也可比較。"
+        }
+      ],
+      "q1": "Check擁有original/classification與可選毫秒。",
+      "q2_mechanism": {
+        "answer": "輸入拒絕None，開始GET後Some真毫秒；Debugonly/variantmatch與Optionu128PartialEq。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "即使失敗仍可保存每筆原文與嘗試情況。",
+        "verdict": "已足夠"
+      },
+      "q3": "錯誤不因deriveDebug便能Eq，Some0已嘗試不等None，不宣稱失敗有headers。",
+      "q4": "HttpownedFinalUrl/status/passed；Request保具體Error，不先壓文字。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "最小manifest、path與loaded closure",
+      "first_needed": "18.7 starter manifest及首次Cargo前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 50,
+          "text": "manifest 沿 10.1 的版本要求寫法，`0.13.5` 等仍是相容版本要求；repo 的 `Cargo.lock` 記錄本教材實際使用的版本。這份快照核對 reqwest 0.13.5、Tokio 1.53.3、url 2.5.8。直接使用的 reqwest `rustls`、Tokio `rt`／`macros`／`net`／`time` 都在 14.8 教過；測試另開 14.5 的 `test-util`。"
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 52,
+          "text": "`[dev-dependencies]` 可供測試與 example targets 使用，普通 library 不依賴 `Fixture`。測試重用 14.9 的 `ch11-local-service`，以已教的 path dependency 指向它的 package。起始檔的相對路徑適用於原 repo 位置；**複製到 repo 外後，先把那一行 `path` 換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑，再執行 Cargo**。例如教材在 `/work/learn_rust`，就填 `/work/learn_rust/examples/ch11-async/local-service`。這只是選定既有測試材料，不必再寫一份 server。"
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 90,
+          "text": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。"
+        }
+      ],
+      "q1": "registry相容要求/lock實際版本；Fixture只是測試dependency。",
+      "q2_mechanism": {
+        "answer": "外移project先用教材絕對path；normal依賴localFixture→httpSingle→config/error/reply全source同頁fold。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "讀者能自己建工作副本並跑checks，無隱藏服務helper。",
+        "verdict": "已足夠"
+      },
+      "q3": "不選dependency的bin/examples/integration/devdeps；零tests不代表功能正確。",
+      "q4": "starter無testcfg，checks自帶tests只追加一次；完整快照再含同六tests。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "caller工作期限與有限觀察",
+      "first_needed": "18.7 held/timeoutchecks前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 66,
+          "text": "這份 client 保留 14.8 的建立與重用方式，但**不設定 reqwest 的請求期限**。本題把預算放在 14.5 的 `tokio::time::timeout`：之後整份單筆工作由 caller 提供同一個 `Duration`，現在先包住 GET 到 final headers。不是另外再設定一個互相競爭的十秒預算。"
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 161,
+          "text": "於是三個期限各負責不同工作："
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 159,
+          "text": "逾時測試另有一個需要先說清的等待形式：具體的 `&mut JoinHandle<Check>` 也可作為等待 task 的 Future，Output 和直接 `request.await` 一樣是 `Result<Check, JoinError>`。借用等待保留 handle 的 owner，適合把等待放進測試的 timeout。若這個 timeout 到期，丟掉的是借用的等待，**task 還在跑**；仍需用原 handle abort，再 await 收尾。若已取得成功等待的 Output，就使用那份結果，不從同一把 handle 再取一次。"
+        }
+      ],
+      "q1": "callerDuration包headers工作，tests另觀察entered與結果。",
+      "q2_mechanism": {
+        "answer": "borrowedJoinHandleFuture保owner；5秒真entered→pause→20秒等借用handle，失敗resume+abortawait+shutdown。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "起始版沒送HTTP/漏deadline時也能有限失敗並保資源責任。",
+        "verdict": "已足夠"
+      },
+      "q3": "borrowwaitdrop不取消task、成功不再取得第二次Output；stdInstant非Tokio虛擬鐘。",
+      "q4": "產品10秒先Timeout，測試20秒只辨漏期限，原文/耗時仍保存。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "三小步與兩層Result",
+      "first_needed": "18.7完整答案前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 193,
+          "text": "第一步只處理輸入。用 `parse_http_url(original.as_str())`，失敗立即組合 `Check`：保留 `original`、`None` 耗時、真正的 `Outcome::Input(issue)`。成功先保留 `Url`，其餘仍可用尚未完成的標記。重跑測試，應先讓輸入那一項通過。"
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 195,
+          "text": "第二步讓合法 URL 得到 HTTP 或請求問題。記錄 `Instant::now()` 後開始 GET，等待 `send()`，保存 `elapsed().as_millis()`。成功回應先讀 `status()` 與 `url()`：把 URL 轉成 owned `String`，再 `drop(response)`，用狀態的 `as_u16()`、`is_success()` 建立 `Outcome::Http`。這樣收到 headers 便完成，沒有下一次讀 body 的 await。請求失敗保存 `Outcome::Request(error)`；沿 14.8 的 `error.is_timeout()` 若辨認到 timeout，就歸入 `Outcome::Timeout`。本 client 沒設定 reqwest 請求預算，但分類仍不假設依賴永遠不會回報自己的 timeout。"
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 199,
+          "text": "第三步把整份 GET 等待放進 `work = async { ... }`，再 `timeout(limit, work).await`。沿 14.8，`send()` 是普通方法呼叫形成 Future；放在 async block 內，GET 建立與 send 呼叫也在 wrapper 的工作內。本步 `work` 的 Output 是 `Result<Response, reqwest::Error>`，wrapper 因而形成兩層 `Result`："
+        },
+        {
+          "path": "docs/chapters/18-07-lesson.md",
+          "line": 149,
+          "text": "驗收重用 `Fixture::start` 的 ready 確認與動態 port、`url` 的固定路徑、`next_started` 的 handler 通知、`release` 的一次使用 gate，最後用 `shutdown` 收尾。這些介面與 server／client 各自等待的規則都來自 14.9。本節不靠公共網站的固定輸出，也不用 sleep 猜測請求已進入。"
+        }
+      ],
+      "q1": "輸入先分類、再HTTP、最後包整份工作。",
+      "q2_mechanism": {
+        "answer": "workasync內才clientget/send；matchOkOkResponse/OkErrRequest/ErrTimeout；讀欄位dropResponse後組Check。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "每步checks有對應局部改善，最終每筆總有一份Check。",
+        "verdict": "已足夠"
+      },
+      "q3": "不以?丟掉正常item問題；timeout合作式不撤server副作用。",
+      "q4": "真redirectdemo先shutdown確認兩GET，再印原文/final/200/可變毫秒。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "原行身分與trim視圖",
+      "first_needed": "18.8 prepareInputs之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 18,
+          "text": "`input_index` 選原始行的 **0-based 索引**：一般說的第一行是index0，第二行是index1。它不等於略過空白後在新清單中的位置。"
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 27,
+          "text": "不能用網址作為唯一key：index1和index3是不同輸入，必須各保留與檢查。也不能先略行再重新編號，否則回報index0會讓人找錯原行。`/notes` 非空白，應留給B1分類，不能在讀行時消失。"
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 35,
+          "text": "新增 **`str::trim()`**：它 shared 借用文字，交回去除兩端空白的 `&str` 視圖，不修改原文字。空白依Unicode的 `White_Space` 字元集合判定，包括一般空格與全形空白。若整行只有這些字元，trim後的視圖就為空；用9.6的 `str::is_empty()` 判斷即可。"
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 37,
+          "text": "本題**只用trim視圖判空**。保留下來與送進B1的仍是原 `line.to_owned()`；例如 `\" first \"` 的兩端空格仍在original中。讀行不先判URL是否有效，也沒有新增註解行或拆字詞規則。"
+        }
+      ],
+      "q1": "原index取略行前，duplicates各是輸入。",
+      "q2_mechanism": {
+        "answer": "lines分LFCRLF不含delimiter，enumerate先編；UnicodeWhitespace trimview只判空，保存原lineowned。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "報告須指回原行，不能invalid/duplicate或空洞被抹掉。",
+        "verdict": "已足夠"
+      },
+      "q3": "loneCR仍內容，尾LF不多一行；只判空不trim原文、不新增註解規則。",
+      "q4": "空0/U1/notes2/U3→1/2/3，各有Http/Input/Http。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "ownedInput/Entry與Empty",
+      "first_needed": "18.8 runner與完整checks前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 45,
+          "text": "`InputError::Empty` 表示清單沒有任何非空白行，是整份工作不能開始的設定問題。兩行無效URL仍是非空清單，應有兩份 `Outcome::Input`；不能把「沒有成功URL」混成Empty。型別只derive已教的Debug，方便checks診斷。"
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 51,
+          "text": "選 **`Vec::is_empty()`** 作零項檢查：它 shared 借用Vec，沒有元素時回true。`prepare_inputs(&str)` 交回 `Result<Vec<Input>, InputError>`，保留後零項就回Empty。`run_sequential` 取得 `Vec<Input>` ownership，也拒絕caller直接交來的零項清單；成功Output是 `Vec<Entry>`，依輸入Vec順序保存每份結果。"
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 53,
+          "text": "runner借用同一份Client，取得每筆期限Duration。Duration 是 14.5 已教的時間跨度；這個標準型別具備 Copy，可以把相同跨度交給每次B1 `check`；**每筆開始時各建立自己的期限**，不是整批只共用一個十秒倒數。client建立失敗仍在開始批次前處理。"
+        }
+      ],
+      "q1": "Inputownsindex/String，Entry包Check，Empty是整批無非空行。",
+      "q2_mechanism": {
+        "answer": "來源結束後Input仍存；forownedinput逐份await後push；每筆同Duration跨度但新deadline。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "先建立對應與繼續處理規格，再換排程。",
+        "verdict": "已足夠"
+      },
+      "q3": "invalidonly非Empty，runner直接空Vec也拒絕；current18.8自教DurationCopy非誤回指。",
+      "q4": "混合索引1/3/4/5/6，loop6+ok2+missing1九GET。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "批次借用handle觀察與cleanup",
+      "first_needed": "18.8 checks gatehelpers前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 148,
+          "text": "held材料用兩份gate，沿B1的有限觀察期限。`BatchTask` 是8.2的type alias，指 `JoinHandle<Result<Vec<Entry>, InputError>>`；task擁有Client和Input Vec，Output也為owned。Input／Entry的具體欄位沿已教Send能力，標準Vec在元素可Send時也可交給task，不借用來源文字。"
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 150,
+          "text": "`observe_started` 等指定held通知，成功交回Fixture與原task handle，還沒有放行；五秒觀察不符就abort／await task、shutdown server，再使test失敗。`finish_batch` 在放行後以五秒觀察期限等待借用handle，取得Output後另shutdown，再交回rows與hits。借用handle的Future／到期不自動取消task／成功不再取得第二次Output，都沿B1已教契約。這些觀察期限是測試觀察範圍，沒有加整批正式期限。"
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 150,
+          "text": "`observe_started` 等指定held通知，成功交回Fixture與原task handle，還沒有放行；五秒觀察不符就abort／await task、shutdown server，再使test失敗。`finish_batch` 在放行後以五秒觀察期限等待借用handle，取得Output後另shutdown，再交回rows與hits。借用handle的Future／到期不自動取消task／成功不再取得第二次Output，都沿B1已教契約。這些觀察期限是測試觀察範圍，沒有加整批正式期限。"
+        }
+      ],
+      "q1": "BatchTask是已教alias，保存完整owned Output。",
+      "q2_mechanism": {
+        "answer": "entered→release0→entered1→release1；觀察failabortawait原handle/shutdown；取得Output不二取。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "能診斷stub不送請求或漏回結果而不遺失資源owner。",
+        "verdict": "已足夠"
+      },
+      "q3": "觀察5秒非正式整批deadline；順序依程式每圈await結構建立。",
+      "q4": "六checks含ownedline/空/runner空/invalidonly/混合/兩held；demo先收服務再四結果。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "jobs tracked與完整Input登記",
+      "first_needed": "18.9 models/Scheduler前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 13,
+          "text": "沿14.4，`JoinSet::len()` 算**已提交、尚未收取**的task，包含已完成但結果還在集合裡的task。因此「1完成」還沒有空位；是 `join_next_with_id()` 取走1，才讓len少一份。用這個數字判名額，可以把正在等待與完成待收的工作一起控制在jobs內。"
+        },
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 23,
+          "text": "B2的 `Input`／`prepare_inputs` 移到 `src/input.rs`，以已教的 `pub mod input;` 公開，型別與讀行規則不改。空白行略過，invalid行與duplicates都保留，索引仍是略行前的0-based原行位置。公開runner與Scheduler的caller契約是：交入 `prepare_inputs` 產生的清單，或同樣具有**唯一、遞增原行索引**的Input；不自行用相同index指兩份輸入。"
+        },
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 41,
+          "text": "沿14.4，把待辦放進 `std::vec::IntoIter<Input>`，只在有名額時取下一份資料。`JoinSet<single::Check>` 保存tasks；`HashMap<Id, Input>` 登記每份task對應的完整Input。立即登記的目的，是panic／abort沒有Check時也找得到原行與原文；Id只是回收時的查找key，不是報告順序。"
+        }
+      ],
+      "q1": "jobs正上限，default8，Id對完整原Input。",
+      "q2_mechanism": {
+        "answer": "pending只資料，taskslen含完成未收；回收1→記Entry→fill2，最後才按原indexsort。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "同時等多份headers又不全清單spawn，panic沒有Check仍可報原文。",
+        "verdict": "已足夠"
+      },
+      "q3": "不限制Input/results整體memory，不宣稱任何網路都快；callerindex唯一遞增。",
+      "q4": "held0/1初始2pending，1完成未收仍len2；收1補2→2→0，報0/1/2。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Clientclone與原文成本",
+      "first_needed": "18.9 state/constructor/fullstarter之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 43,
+          "text": "每份task需要owned Client。這裡選reqwest0.13.5的 **`Client::clone()`**：Client具備Clone，複本共享原Client的連線池。把複本move進task，便不再借用排程外的Client，也不需要每筆重新builder。沿ownership規則，clone不是所有型別一律深層複製；此處依Client自己的契約解讀。"
+        },
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 45,
+          "text": "原Input留在Id表，task另取得 `input.original.as_str().to_owned()`。這份String複本的空間，是為了task失敗仍有原文可報；jobs不會消除整份輸入、登記資料與報告的成本。每次也複製可Copy的Duration跨度。"
+        },
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 47,
+          "text": "起始版的欄位尚未全部使用，會遇到編譯器 `dead_code` lint：提醒有未使用的程式項目。`#[allow(dead_code)]` 是attribute，只允許其下方Scheduler內的這項提醒，讓未完成快照能專注在功能checks。完整快照刪掉它；它不會讓stub變正確，也不以公開mutable欄位繞過設計。"
+        }
+      ],
+      "q1": "Client複本共享pool，task有ownedclient/original。",
+      "q2_mechanism": {
+        "answer": "Id表保Input，task另Stringowned；DurationCopy；未用欄位allow限定lint範圍。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "使spawnSendstatic不借排程外資料，錯誤路仍有原文。",
+        "verdict": "已足夠"
+      },
+      "q3": "clone非一律deepcopy，allow不補stub；constructor會fill須runtime。",
+      "q4": "starternew有設定檢查但runnerstub未接，1green6red不等完成。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "next取消安全與測試owner",
+      "first_needed": "18.9 drain/guards/tasklab checks前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 152,
+          "text": "test owner直接保有Scheduler。沿Rust的module可見性，內部 `tests` 子module能存取父module的private欄位；這讓測試看Id表並控制合成tasks，外部caller仍只用公開介面。"
+        },
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 164,
+          "text": "這裡timeout等待 `scheduler.next()` 的Future，借用owner而沒有拿走Scheduler。Tokio1.53.3的 `join_next_with_id` 有cancel-safe契約：尚未取到結果就取消這次等待，不會移除集合內task。next在取得結果後只做同步的分類／移除登記／fill／return，中間不再await；因此觀察到期時，owner仍能對集合abort並逐份收取。這是本段具體方法的契約，不推廣成任意Future都可如此收尾。"
+        },
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 63,
+          "text": "直接依賴與runtime features沿B2。checks另用14.3的mpsc控制合成task，因此dev-dependency開Tokio的 `sync`，不用test-util。Fixture仍是已教的path dependency；repo外先換成你電腦上 `examples/ch11-async/local-service` 的實際絕對路徑，才執行Cargo。"
+        },
+        {
+          "path": "docs/chapters/18-09-lesson.md",
+          "line": 53,
+          "text": "`Scheduler::new(&Client, Vec<Input>, jobs, limit)` 先檢查設定，再把Input移進pending、建立空JoinSet／Id表、保存Client複本。之後呼叫 `fill` 補初始名額。它可能spawn，因此和14.4相同，必須在正在執行的Tokio runtime內呼叫；本節demo與async tests都用已教的current-thread runtime。"
+        }
+      ],
+      "q1": "測試持Scheduler，借用next等待可被期限丟棄。",
+      "q2_mechanism": {
+        "answer": "joinNext未取結果不移task；取後同步分類/fill/return無await；後備abortAll+join到None。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "test條件錯誤也清children+server，驗completed未收不是只驗等待task。",
+        "verdict": "已足夠"
+      },
+      "q3": "不類推任意Future安全；同步panic/不讓出圈不在期限保證。",
+      "q4": "tasklabpanic/abort original4/9；send通知後return的currentthread實驗fill仍不得補。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "停止分類與gate/index/Id區別",
+      "first_needed": "18.10 models/圖之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 19,
+          "text": "**Fixture 的 gate 編號0／1，分別控制原輸入1／4。** 它們是兩種不同編號：handler通知的0／1指出哪個gate已進入，工具報告的1／4指出哪個原行。第二份held進入，便證明3已收取、名額已補入4；沒有用sleep猜HTTP進度。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 27,
+          "text": "`Completion` 沿B3的Checked／TaskFailure，新增 **Cancelled** 與 **Unstarted**，兩者各保存original。Cancelled來自JoinError的is_cancelled；Unstarted直接來自pending Input，沒有Tokio Id。兩者沒有Check，因此不捏造HTTP狀態或elapsed_ms。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 27,
+          "text": "`Completion` 沿B3的Checked／TaskFailure，新增 **Cancelled** 與 **Unstarted**，兩者各保存original。Cancelled來自JoinError的is_cancelled；Unstarted直接來自pending Input，沒有Tokio Id。兩者沒有Check，因此不捏造HTTP狀態或elapsed_ms。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 31,
+          "text": "停止來源沿14.6：容量1 channel送 **StopEvent**，Requested表示明確要求停止，SignalFailed保留監聽錯誤。**EndReason** 另加Finished與StopSourceClosed；channel關閉沒有事件，不能解讀成使用者按了Ctrl+C。**Batch** 把整批理由與所有Entry放在一起；Finished只表示清單做完，不保證每筆通過。"
+        }
+      ],
+      "q1": "Requested整批理由與每列Checked/TaskFailure/Cancelled/Unstarted分開。",
+      "q2_mechanism": {
+        "answer": "已登記taskjoin真結果，pending無Id直接Unstarted；不捏造status/elapsed。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "CtrlC仍每原行有去向且保既有成功。",
+        "verdict": "已足夠"
+      },
+      "q3": "serverhits/GET不回滾，client/server各owner分開收；訊號閉源非Requested。",
+      "q4": "gate0/1對原1/4；保原3Http200，1/4cancel，5/6unstarted；真signal另材料變化已說。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "new/record不fill與by_ref",
+      "first_needed": "18.10 runner/fullsource之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 49,
+          "text": "B3的new會立刻fill，next收取後也立刻fill。現在沿14.6改成：**new只準備資料；收取只record；每輪先查停止，再決定fill。** 這讓提前排入的事件能阻止第一批，也讓收取後不會先補工作、才看到已排入的停止。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 71,
+          "text": "這裡局部新增 **`Iterator::by_ref()`**：mutable借原iterator，交回同一iterator的mutable reference。`for input in self.pending.by_ref()`可以走訪並取得owned Input，同時保留Scheduler對pending欄位的ownership；不是建立一份獨立iterator副本。走到末尾後，原pending也已耗盡。這是此處需要的借用介面，不必先看標準library內部泛型實作。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 75,
+          "text": "runner的等待沿14.6：每輪try_recv先取已排入事件，Empty繼續、Disconnected保存來源失去；再fill。集合空便Finished；否則biased select把停止放在join之前。join分支只record，回圈頂端再查停止。**不再提交從觀察到停止起算**，不是對OS訊號抵達的某個瞬間提供原子性的禁止。"
+        }
+      ],
+      "q1": "補工前先查已排事件，收取只保存。",
+      "q2_mechanism": {
+        "answer": "runtryrecv→fill→biased select；stopabortAll/drainrecord/pendingbyref；byref借iterator仍移出ownedItem。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "prequeuedstop能阻第一批，收取後不先補再看到停止。",
+        "verdict": "已足夠"
+      },
+      "q3": "起算已觀察停止非OS訊號原子時點；普通caller別dropowningrunBatch代收尾。",
+      "q4": "prequeued零GET全部Unstarted；已完成未收可保Check/taskpanic。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "record借讀Id所需Copy",
+      "first_needed": "18.10完成快照b4/src/lib.rs record中*id之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 67,
+          "text": "要自行完成的`record(&mut self, Result<(Id, Check), JoinError>)`不等待：從成功Id或error.id找到Input、移除登記；成功保Check，is_cancelled保存Cancelled，其他JoinError仍保存TaskFailure。把Entry推進entries，**這裡不fill**。登記的expect沿B3檢查作者自己的不變條件，不把漏登記當正常HTTP問題。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 210,
+          "text": "先完成record與stop_and_finish。Id表一次移除、保存真正Output、等待全部已提交tasks，再以by_ref走訪pending。合成完成待收的檢查應成立，於是**兩項通過、五項失敗**；run仍固定Finished，沒有觀察停止或實際提交。"
+        }
+      ],
+      "q1": "先借result取Id，再依result分類。",
+      "q2_mechanism": {
+        "answer": "IdCopy契約尚未明示，&Id解參照取值需要Copy；C18B-01。",
+        "verdict": "需補最小Copy契約"
+      },
+      "q2_need": {
+        "answer": "保整份result至後段match，同時找回Input。",
+        "verdict": "已足夠"
+      },
+      "q3": "不要求Idlayout或數字含義，只需具體Copy能力。",
+      "q4": "b4complete:letid=match&result Ok((id,_))=>*id，後matchresult。",
+      "verdict": "需補最小Copy契約"
+    },
+    {
+      "concept": "觀察失敗不靠後備清理補綠燈",
+      "first_needed": "18.10 cleanup/control/checks前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 174,
+          "text": "checks沿B3由test直接持有Scheduler與Fixture。`drain`是測試的後備清理：對原JoinSet abort_all、逐份join；不使用會補工的方法。`finish`先保存集合／登記數，再後備drain與shutdown，全部收尾後才檢查原快照與理由。如此**測試自己的清理不會把產品忘記等待的錯碼補成通過**。它接收的是`Result<EndReason, Elapsed>`，Err代表觀察期限，不是整批理由。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 182,
+          "text": "`controlled_stop`在**同一份test task**用select推進兩份借用工作：一份是Scheduler.run，另一份是Fixture的有限控制。控制支路保存觀察、送Requested，然後等待已教、永不完成的pending；讓run交回EndReason，才結束這次select。它沒有另外spawn持有Fixture的controller。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 184,
+          "text": "整份select有十五秒觀察期限。它取消的是這些借用等待；Scheduler／Fixture的owner仍在helper中，能逐份收回children與server。已記成果放在Scheduler欄位，不靠被丟棄future的區域Vec保留。這是具體helper的安排，不宣稱任意Future可如此清理；同步panic或不讓出runtime的無限圈仍不在這些觀察期限的保證內。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 192,
+          "text": "另有合成task材料沿B3：兩份task送完容量2的完成通知後立即回Check或panic，中間沒有其他await。在本份current-thread安排中，owner取得通知時body已返回，但還沒有join。第三份task仍等channel，另有一份pending；停止應保留Check、TaskFailure、Cancelled、Unstarted四種，並確認放行收端已清理。合成Check不是HTTP證據，panic hook文字也不是test失敗。"
+        }
+      ],
+      "q1": "test同task持Scheduler與Fixture，select借用run與控制。",
+      "q2_mechanism": {
+        "answer": "觀察entered保存、送Requested後pending；run返回才結束；先snaptracked/register再fallbackdrain/shutdown才assert。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "漏產品drain不能被test後備cleanup偽裝成通過。",
+        "verdict": "已足夠"
+      },
+      "q3": "有限觀察非正式批deadline；syncpanic不保證；signal/closed和設定先驗有別。",
+      "q4": "七checks0→1green階段→recordstop後2green→full7；合成四分類同原文。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "真CtrlC listener與有限demo",
+      "first_needed": "18.10 signalDemo前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 274,
+          "text": "沿14.6，`signal_controller(stop, entered)`擁有兩份送端；biased select先實際執行ctrl_c，註冊listener後才送entered，另一支路pending不會結束等待。收到通知送Requested；監聽失敗送SignalFailed。Output bool只表示事件是否送入channel，不能替代整批理由。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 282,
+          "text": "這份`b4_signal_demo`改用四筆：原index1為`/held/0`、3為`/held/1`，4再放相同`/held/0`，5為`/notes`。因此這份demo的gate0／1對應原index1／3。省去前面已完成的`/ok`，是為了在READY時保有兩份等待中的task，讓真Ctrl+C操作有固定的取消材料；保留成果的那條路已由前面的受控測試驗收，原索引、duplicates與未提交invalid仍保留。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 284,
+          "text": "`ready`借Fixture觀察兩個gate，先核對0／1，再寫READY並flush；這時listener已進入，而且真HTTP已開始。`close`先await Scheduler的停止收尾，再保存listener與server的收尾結果，兩者皆等完才使用`?`。`print_batch`在資源完成後寫結果，最後flush確認輸出，沿10.9。entered收端保留到controller收尾，符合這份helper的caller契約。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 286,
+          "text": "demo對listener入口等五秒，對run／ready的借用工作等十五秒；觀察失敗也先close才回String診斷。早期事件讓entered回None時，run從同一channel取得真正Requested或來源失敗，不把None當ready成功。`observed`則保存ready的Result：若有Err，收尾後保留其診斷；若仍None，表示run先結束，並不宣稱已印READY。這些是有限demo觀察，正式工具只保每項工作期限。"
+        }
+      ],
+      "q1": "listener進入與兩held進入才READY，兩份controller/服務收尾。",
+      "q2_mechanism": {
+        "answer": "biasctrlc註冊→entered，run借Scheduler；close等stop、listener、server才?，printflush後狀態。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "讓真操作有固定取消材料，普通完成亦有限結束。",
+        "verdict": "已足夠"
+      },
+      "q3": "UnixSIGINTdrop不恢復；早eventNone不假稱READY；不及按CtrlC十秒自行完/notes退出1。",
+      "q4": "原1/3cancel、4/5unstarted，2GET，正常cancel130；writer/foundationfatal2。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Row與Serde完整資料模型",
+      "first_needed": "18.11 reportmodel與render前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 30,
+          "text": "10.7／10.9已教Serde的String、bool、usize與Vec。這裡補本模型需要的能力：**u16／u128**編解碼成JSON整數；**`Option<T>`**在T有相應能力時也可編解碼，Some保存其值，None成為 **null**。本模型不略過None欄位；null不是數字0，也不是一個空字串。`Vec<Row>`的順序沿原清單，沒有引入HashMap的任意順序。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 30,
+          "text": "10.7／10.9已教Serde的String、bool、usize與Vec。這裡補本模型需要的能力：**u16／u128**編解碼成JSON整數；**`Option<T>`**在T有相應能力時也可編解碼，Some保存其值，None成為 **null**。本模型不略過None欄位；null不是數字0，也不是一個空字串。`Vec<Row>`的順序沿原清單，沒有引入HashMap的任意順序。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 28,
+          "text": "一筆 **Row** 保存原index、original與固定kind。HTTP仍用status／passed分辨通過與未通過；其餘kind是input、request、timeout、task_failure、cancelled、unstarted。final_url只有HTTP取得；elapsed_ms沿單筆Check，未開始量測、task未交Check或尚未提交時保None。detail供人讀原因，不是用來解析分類的固定錯誤格式。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 32,
+          "text": "derive與deny_unknown_fields沿10.7；Deserialize用於讀回驗收，不會令網路錯誤型別自動可以序列化。我們先把typed結果轉成這份只含資料的owned模型，報告不再借用Batch或原錯誤："
+        }
+      ],
+      "q1": "Reportcancelled/items，Rowtypedfields/knownkind。",
+      "q2_mechanism": {
+        "answer": "none null/somevalue；owned映射不序列化Error本身；renderPrettyJson或strJSON引用text欄位。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "可交換完整結果而非解析易變錯誤字串。",
+        "verdict": "已足夠"
+      },
+      "q3": "null非0/空str，Vec有序；人工12/1000ms資料不假稱HTTP。",
+      "q4": "手工1http200/3ftp/4同URL404/6timeout/8cancel/9unstarted，索引不變。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "外部error契約與pubuse",
+      "first_needed": "18.11 error/root全部source之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 65,
+          "text": "`#[non_exhaustive]`沿第17.4節：這個Error enum將來可增加variant，外部caller的match保留其餘分支；本crate內的Display／source仍能列完目前variants。`impl Error`與借讀source沿第11.7節，與Display產生人讀文字分開。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 63,
+          "text": "**RunError**用ZeroJobs／ZeroTimeout／Empty保存設定問題，Read／Client保存準備工作，Signal／StopSourceClosed／Controller分開來源與收尾；Encode／Output保存報告失敗。它沿11.7／17.4，Display只說這一層，source借出標準io、reqwest client準備或JSON錯誤；String型signal診斷沒有另一層Error，不捏造source。From對io只放Output，讀檔在發生處明確放Read；不把兩種來源混掉。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 99,
+          "text": "batch與single是B4完整core的本地快照，改從 `crate::input` 找輸入型別；沒有借最終另一package的library。root的private mod與pub use沿17.4，對外型別與函式仍是這些同一份定義。`explain(&dyn Error)`先顯示外層，再用source逐層借讀原因；`fatal`嘗試stderr寫出與flush，連診斷自身失敗也回2，不遞迴panic。以下完整main只連接這些已教契約。"
+        }
+      ],
+      "q1": "RunErrortypedcontext+source，root公有reexport保持私有模組。",
+      "q2_mechanism": {
+        "answer": "17.4實際body/source補讀nonexhaustive外crate留其餘branch，pubuse同型別非wrapper；Fromio只Output，Read顯式。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "library使用者可分類與借讀原因，內部搬檔不改公有入口。",
+        "verdict": "已足夠"
+      },
+      "q3": "Stringsignal無Errorcause，不捏造source；不讀17peerfinding當前提。",
+      "q4": "errorDisplay只這層/explain循source；mainfatal自己writeflush失敗仍2。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "CLItyped defaults與設定優先",
+      "first_needed": "18.11 Settings/app/configtests前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 75,
+          "text": "新增 **`#[arg(default_value_t = 值)]`**，設定省略這一項時使用的typed值；這些數字有ToString能力，clap能將其交回同一個欄位解析規則。它不是對Settings derive Default，也不替我們驗正數。filename仍必要，json仍是不跟值的bool開關。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 73,
+          "text": "沿10.6的try_parse_from、原生PathBuf與long bool。本次兩個整數long參數要跟一個值：<code style=\"white-space: nowrap\">--jobs 2</code>與<code style=\"white-space: nowrap\">--timeout-secs 5</code>。u64是64-bit的非負整數型別，本節交給 `Duration::from_secs`表示秒數；jobs的usize則用於名額與長度。clap按usize／u64解析，無法成為整數或超出型別範圍是用法錯誤；**解析成0仍是整數，正數規則由我們先驗，再讀檔**。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 97,
+          "text": "已提供的 `validate_limits(jobs, timeout_secs)`先拒絕零jobs，再拒絕零秒；`validate`將Settings交給它。`load_inputs`先validate，再以原生Path讀完整UTF-8，讀失敗明確包Read，最後prepare_inputs；因此零設定配上不存在檔名仍先回設定錯誤。`write_output(&str, &mut W)`依序write_all與flush，交回io::Result；`write_report`的三步任務才決定怎樣用它交資料狀態。"
+        }
+      ],
+      "q1": "整數long後要值，booljson不用值，filenamePathBuf。",
+      "q2_mechanism": {
+        "answer": "clapusize/u64解析型別範圍/defaulttyped，零合法整數再由validate先jobs再timeout再read/Empty。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "把使用者設定、讀檔和每筆資料失敗分開。",
+        "verdict": "已足夠"
+      },
+      "q3": "不是deriveDefault、不自驗正數；nonexistentfile配0仍先設定錯。",
+      "q4": "default8/10/false，explicit2/5/true與中文空格檔名。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "內置Fixture與target載入界線",
+      "first_needed": "18.11起點全檔與首次命令前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 9,
+          "text": "每個非空白原行仍是一份輸入，索引從0開始，空行留下空洞；相同網址不合併。只接受http／https、GET、最多五次redirect，最終2xx通過；每筆預設十秒，最多八份已提交工作。工作只等最終headers，沒有主動讀完整body；失敗的elapsed_ms量到該失敗結束，並不聲稱已取得headers。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 121,
+          "text": "`src/test_fixture.rs`雖隨起點保存，這份root**沒有**`mod test_fixture`宣告，因此本節library與bin都不載它，追加報告checks也不會自動載它。它是下一節完整排程測試會用的198行材料，下面同樣給全檔；不像前四步再透過path依賴另一個教材package。`tests/config.rs`只有兩項Parser檢查，不發HTTP；本節先選library，下一節再選integration target。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 85,
+          "text": "內置Fixture保留動態port、ready、held通知與shutdown。本次私有 **`ready_response(&Client, Url)`** 只替測試確認ready的status與body，回`Result<(u16, String), reqwest::Error>`；選用`response.text().await`接手Response，等完整body並回`Result<String, reqwest::Error>`；先保存status，再交出Response。此處只核對固定小字串ready。外面的十秒timeout涵蓋send與讀body，任何ready失敗先shutdown server才交錯誤。**產品single仍只等headers，這個body讀取只屬測試服務就緒確認。** 沒有增加另一套未知的server API。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 83,
+          "text": "為了讓整個目錄能獨立建置，測試內置前文14.9的Fixture，沒有依賴教材repo外的path。axum只在dev-dependencies，features仍是已教的http1／tokio；產品依賴沿前文clap／Serde／reqwest／Tokio，Tokio的sync／signal仍供普通程式使用。固定版本與lock分工沿10.1。"
+        }
+      ],
+      "q1": "本地fixture代pathdependency，可獨立保存。",
+      "q2_mechanism": {
+        "answer": "startready外timeout含send+body；root尚未modFixture所以lib/bin和9checks不載；正式18.12才cfg(test)。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "保存完整工作副本且新三步不被額外排程tests偷加負擔。",
+        "verdict": "已足夠"
+      },
+      "q3": "普通dependency全registry；產品single仍headers-only；lock由Cargo不手填。",
+      "q4": "完整起點有fixture全檔但0libtests，9checks追加不包第二層；答案report/app全檔已含同checks。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "三步映射/資料狀態/出口完成",
+      "first_needed": "18.11 checks和答案前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 214,
+          "text": "## 第一步：只把已有結果交成Row"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 254,
+          "text": "## 第二步：資料狀態不等於出口已成功"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 264,
+          "text": "## 第三步：write與flush都成功，才交資料狀態"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 230,
+          "text": "ControlledWriter用兩個bool分開控制拒寫／拒flush，bytes保存實收內容、flushed記是否真到這一步；故障由PermissionDenied固定建立，沒有靠系統檔案權限猜測。先看這份helper，再看已收bytes但flush失敗的判準："
+        }
+      ],
+      "q1": "buildReport→Reportstatus→writeReport各一責任。",
+      "q2_mechanism": {
+        "answer": "move原文、保None欄位→cancel130先於item1→render/writeAll/flush全成功才交候選狀態。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "完整可用CLI的成功必須包括真正出口，不只String格式化。",
+        "verdict": "已足夠"
+      },
+      "q3": "fatal2優先輸出可有部分bytes；手工codec換行非一次網路回覆。",
+      "q4": "九checks3/6→5/4→6/3→9green，拒寫與已接受bytes拒flush都Output，成功才130。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "完整答案與normal/testharness分工",
+      "first_needed": "18.12全答案及target命令之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 11,
+          "text": "`src/batch.rs`另外含七項本地HTTP／停止測試；`src/report.rs`有五項，`src/app.rs`有四項，共16項lib tests。`src/lib.rs`以 **`#[cfg(test)] mod test_fixture;`** 載入本地服務，因此只有lib test harness載入它；normal binary、integration test借用的normal library不會編譯這份fixture module。名字filter只決定執行哪些測試，不能把同一library其餘module藏掉。"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 21,
+          "text": "以下是全部檔案，包含library root、main、helpers、同檔tests、本機fixture、integration tests、manifest、lock、README與固定輸入。Rust片段直接引用實際可編譯來源；沒有省略imports或只顯示solution region。Cargo.lock由Cargo維護，隨整個目錄保存，不要求手抄解析項目。"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 11,
+          "text": "`src/batch.rs`另外含七項本地HTTP／停止測試；`src/report.rs`有五項，`src/app.rs`有四項，共16項lib tests。`src/lib.rs`以 **`#[cfg(test)] mod test_fixture;`** 載入本地服務，因此只有lib test harness載入它；normal binary、integration test借用的normal library不會編譯這份fixture module。名字filter只決定執行哪些測試，不能把同一library其餘module藏掉。"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 11,
+          "text": "`src/batch.rs`另外含七項本地HTTP／停止測試；`src/report.rs`有五項，`src/app.rs`有四項，共16項lib tests。`src/lib.rs`以 **`#[cfg(test)] mod test_fixture;`** 載入本地服務，因此只有lib test harness載入它；normal binary、integration test借用的normal library不會編譯這份fixture module。名字filter只決定執行哪些測試，不能把同一library其餘module藏掉。"
+        }
+      ],
+      "q1": "825core+898tests+198fixture正式同一工具。",
+      "q2_mechanism": {
+        "answer": "normalprivate modules+pubuse；cfgtest載fixture16lib，config獨立2tests不發HTTP；全部source/helpers/lock/README/fixture同頁fold。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "讀者保存整份可獨立建置/用/查限制，不再實作新題。",
+        "verdict": "已足夠"
+      },
+      "q3": "filter不隱藏未執行module；真正binary驗收與libtests分開不拿人工數字充網路。",
+      "q4": "known批次7+report5+app4與Parser2，core重複內容逐bytes/diff核而非信作者count。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "本機使用/安裝與真實範圍",
+      "first_needed": "18.12命令與README前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 117,
+          "text": "在教材repo根目錄先進入`examples/ch15-projects/url-checker`，或把**整個目錄**保存到repo外。以下命令的相對檔名以該目錄為起點，`--manifest-path`不會替程式換工作目錄。"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 148,
+          "text": "若要安裝成平常可呼叫的命令，新增Cargo操作 **`cargo install --path . --locked`**：`--path .`選目前本機package，建置其binary並安裝到Cargo的binary目錄，不上傳registry；--locked仍依本次lock。toolchain選擇沿前面寫在cargo後："
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 134,
+          "text": "run的退出狀態不是只看終端機有沒有報告。沿10.5在上一條命令後緊接 `echo $?`（PowerShell使用 `echo $LASTEXITCODE`），應觀察1；不要因非零就把這份正確保存Input問題的報告改成成功0。"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 3,
+          "text": "上一節完成報告映射、資料狀態與write／flush。這一節提供正式 `url-checker` 的整份可用答案：一份UTF-8網址清單，受jobs限制的HTTP工作，最後依原行排列文字或JSON。可以直接保存完整目錄建置，也可以與自己的最後工作副本逐檔比較。"
+        }
+      ],
+      "q1": "完整package工作目錄及Cargo安裝。",
+      "q2_mechanism": {
+        "answer": "cd工具目錄再相對fixture，cargo+toolchain明選；installpath本地建binary到Cargo目錄非上傳。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "把最終答案真正用於清單，能讀懂1/130/2而不把非零都當程式壞。",
+        "verdict": "已足夠"
+      },
+      "q3": "jobs只tracked不限制輸入/報告memory；GET不可回滾；2xx不驗內容；stdioflush後狀態。",
+      "q4": "invalidfixture原0/2略、1/3/4Input，null/timeNone，退出1無HTTP；真清單可選2jobs5秒。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "固定輸入逐行完整呈現",
+      "first_needed": "18.11保存fixture、18.12首個run之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 119,
+          "text": "隨附fixtures/invalid-urls.txt是有空行、兩份相同ftp網址與一份`/notes`的真材料。下表明示原檔每行的內容；執行時使用隨完整目錄提供的檔案，最後LF不增加一份輸入。"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 136,
+          "text": "這份材料不送HTTP；報告原index為1／3／4，三筆kind=input，各自保留original，時間與HTTP欄位null，退出1。換成自己的http／https清單才是真網路檢查，結果依環境與當時服務而定；可用`--jobs 2 --timeout-secs 5`選兩個正數設定，或省略--json取得同份資料的文字表示。一般取消操作是按Ctrl+C，等報告與130；不要用強制終止代替這份收尾。"
+        }
+      ],
+      "q1": "材料真檔第一行空、第三行單空白，保留原index1/3/4。",
+      "q2_mechanism": {
+        "answer": "原文與table精確，但actualcodeblock去檔首LF、單空白變空；C18B-02。",
+        "verdict": "需修copyable來源呈現"
+      },
+      "q2_need": {
+        "answer": "複製全檔時也要得到同樣原行身分，而非另造0/2/3。",
+        "verdict": "已足夠"
+      },
+      "q3": "table已可重建，不能說材料未交代；問題是宣稱完整來源區塊本身複製不同。",
+      "q4": "8110 desktop/mobile的18.11與18.12 fixture全文rawDOM和source逐line差異存proof。",
+      "verdict": "需修copyable來源呈現"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C18B-01",
+      "classification": "必要",
+      "category": "增加理解負擔",
+      "title": "第一次由borrowed result取出opaque Id前，補Id具備Copy",
+      "position": "docs/chapters/18-10-lesson.md:67 record導讀至:263完成lib前",
+      "evidence": [
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 67,
+          "text": "要自行完成的`record(&mut self, Result<(Id, Check), JoinError>)`不等待：從成功Id或error.id找到Input、移除登記；成功保Check，is_cancelled保存Cancelled，其他JoinError仍保存TaskFailure。把Entry推進entries，**這裡不fill**。登記的expect沿B3檢查作者自己的不變條件，不把漏登記當正常HTTP問題。"
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 259,
+          "text": ""
+        },
+        {
+          "path": "docs/chapters/18-10-lesson.md",
+          "line": 263,
+          "text": "    --8<-- \"examples/ch15-projects/b4-complete/src/lib.rs\""
+        },
+        {
+          "path": "examples/ch15-projects/b4-complete/src/lib.rs",
+          "line": 129,
+          "text": "    fn record(&mut self, result: Result<(Id, single::Check), JoinError>) {"
+        },
+        {
+          "path": "examples/ch15-projects/b4-complete/src/lib.rs",
+          "line": 130,
+          "text": "        let id = match &result {"
+        },
+        {
+          "path": "examples/ch15-projects/b4-complete/src/lib.rs",
+          "line": 131,
+          "text": "            Ok((id, _)) => *id,"
+        },
+        {
+          "path": "examples/ch15-projects/b4-complete/src/lib.rs",
+          "line": 132,
+          "text": "            Err(error) => error.id(),"
+        },
+        {
+          "path": "examples/ch15-projects/b4-complete/src/lib.rs",
+          "line": 134,
+          "text": "        let input = self.inputs.remove(&id).expect(\"每份task已登記完整Input\");"
+        },
+        {
+          "path": "examples/ch15-projects/b4-complete/src/lib.rs",
+          "line": 136,
+          "text": "        let completion = match result {"
+        }
+      ],
+      "previous": [
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 50,
+          "text": "**`handle.id()`** 取得 task 的 **Id**，可用於辨識與顯示；它不是我們的輸入索引，也不應假定某次固定印出幾號。Id 也支援相等比較與 Hash，稍後可用作 HashMap 的鍵。**`handle.is_finished()`** 查詢 task 此刻是否已結束，沒有等待它；false 只描述當下。"
+        },
+        {
+          "path": "docs/chapters/06-03-lesson.md",
+          "line": 39,
+          "text": "再回到只有兩個 i32 欄位的摘要。第 3.2 節說過：整數已有 Copy，自訂 struct 不會因欄位都是整數就自動 Copy。"
+        },
+        {
+          "path": "docs/chapters/06-03-lesson.md",
+          "line": 41,
+          "text": "**`Copy`** 允許在原本會 move 的動作中，隱含複製值本身的資訊。對這個數值摘要，`let second = first;` 之後兩份摘要都能使用，不必另外呼叫 clone。這項複製不能由實作者插入另一段任意工作。"
+        },
+        {
+          "path": "docs/chapters/06-03-lesson.md",
+          "line": 57,
+          "text": "second 的數量加一，不會修改 first 的數量。這次保留的是兩份可獨立修改的數字欄位；Copy 的判準是型別的複製契約，不能從實際資料放在 stack 還是 heap 推出。"
+        }
+      ],
+      "first_use": "18.10完成快照b4-complete/src/lib.rs:130–131 match &result後，id是&Id，用*id按值取出；:136仍接手整份result。18.9的next先接手match result取得ownedId，沒有這一步。",
+      "reason": "以前14.3明說的是Id辨識/顯示/相等/Hash，沒有Copy；*reference讀i32的例子不能替opaque Id建立Copy契約。按既教ownership規則，不能從shared reference搬出一般非Copy值。答案這一步當下真需要型別能力，不能由編譯成功倒猜。",
+      "minimal_change": "在18.10 record導讀補一句Tokio Id具Copy；這裡先借讀result，以*id複製Id後借用結束，仍可接手result作分類。不需Id內部表示、poll/Pin或新增Rust。",
+      "benefit": "讀者可以把答案的先借後move兩個match連成已教規則，理解為何沒有從借用中偷搬值。",
+      "independence": "10:39:01自己的progress已記候選，未讀peer18B/authorvalidation/rootfindings。"
+    },
+    {
+      "id": "C18B-02",
+      "classification": "必要",
+      "category": "完整材料可複製性／來源與實頁不一致",
+      "title": "固定輸入的全檔區塊丟掉檔首空行，複製後原索引會偏一",
+      "position": "18.11:123/199–202與18.12:103–106固定fixture全文區塊；首次實際run於18.12:131",
+      "evidence": [
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 81,
+          "text": "先保存完整`b-final-starter`為自己的工作目錄，包含Cargo.toml、Cargo.lock、src、checks與fixtures。起點的舊排程、單筆工作與signal流程都已提供；新題目只有build_report、Report.status、write_report三份未完body。下方列出全部起始檔、checks與材料，片段只協助定位。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 123,
+          "text": "`fixtures/invalid-urls.txt`第0行空、第1行ftp、第2行只有一個一般空白、第3行/notes、第4行另一份ftp，最後有LF；完整內容在折疊中，空白與重複原樣保留。lock保存本目錄在repo外的解析版本，並非要求手填1774行設定。"
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 199,
+          "text": "    `examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt`："
+        },
+        {
+          "path": "docs/chapters/18-11-lesson.md",
+          "line": 202,
+          "text": "    --8<-- \"examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt\""
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 23,
+          "text": "??? example \"展開完整設定、全部 Rust 來源與測試材料\""
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 103,
+          "text": "    `examples/ch15-projects/url-checker/fixtures/invalid-urls.txt`："
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 106,
+          "text": "    --8<-- \"examples/ch15-projects/url-checker/fixtures/invalid-urls.txt\""
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 119,
+          "text": "隨附fixtures/invalid-urls.txt是有空行、兩份相同ftp網址與一份`/notes`的真材料。下表明示原檔每行的內容；執行時使用隨完整目錄提供的檔案，最後LF不增加一份輸入。"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 122,
+          "text": "| --- | --- | --- |"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 123,
+          "text": "| 0 | 空行 | 略過，仍占原行索引 |"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 124,
+          "text": "| 1 | `ftp://host/item` | 保留為輸入 |"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 125,
+          "text": "| 2 | 一個空白字元 | 略過，仍占原行索引 |"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 126,
+          "text": "| 3 | `/notes` | 保留為輸入 |"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 127,
+          "text": "| 4 | `ftp://host/item` | 保留為另一份輸入 |"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 131,
+          "text": "cargo +1.99.0 run --quiet --locked -- fixtures/invalid-urls.txt --json"
+        },
+        {
+          "path": "docs/chapters/18-12-lesson.md",
+          "line": 136,
+          "text": "這份材料不送HTTP；報告原index為1／3／4，三筆kind=input，各自保留original，時間與HTTP欄位null，退出1。換成自己的http／https清單才是真網路檢查，結果依環境與當時服務而定；可用`--jobs 2 --timeout-secs 5`選兩個正數設定，或省略--json取得同份資料的文字表示。一般取消操作是按Ctrl+C，等報告與130；不要用強制終止代替這份收尾。"
+        }
+      ],
+      "previous": [
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 17,
+          "text": ""
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 25,
+          "text": "| 3 | 第二份相同 `/ok` URL | index3，另一份HTTP200結果 |"
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 29,
+          "text": "## 先編號，只用空白視圖決定略行"
+        },
+        {
+          "path": "docs/chapters/18-08-lesson.md",
+          "line": 31,
+          "text": "沿9.6，`text.lines()` 借用文字、逐行交回 `&str`。LF與CRLF分隔符不在行內容中；尾端換行不多產生一行，單獨CR沒有跟LF時仍是內容。這裡保存的「原行」指這份內容，不含已由lines取走的分隔符。"
+        }
+      ],
+      "first_use": "18.11請保存完整起點fixtures；18.12依展示全檔保存完整目錄後首次run預期index1/3/4。兩個actual8110 code blocks首字已是ftp，DOM沒有原檔開頭LF。",
+      "source_literal": "\nftp://host/item\n \n/notes\nftp://host/item\n",
+      "rendered_code_literal": "ftp://host/item\n\n/notes\nftp://host/item\n",
+      "reason": "兩原檔均有五行，第0空、第2是一個空白；actual DOM在桌面/手機均只保四行，第0已是ftp、第1空、第2/notes、第3ftp。按已教lines/enumerate/trim，從顯示全檔複製會得到0/2/3，與教材要求1/3/4不同。忽略空白的normalized include比對會漏掉這項。",
+      "positive_compensation": "18.11 prose與18.12五列表格確實已精確交代所有行，可以依它手動重建；不報成材料未交代。本項是宣稱完整全檔的code block本身不可如樣複製，需讀者額外察覺矛盾再補LF。",
+      "minimal_change": "讓這兩份固定fixture的可複製表示保留檔首LF和單空白行；或在區塊旁給精確escaped全文（含\\n與\\x20/明指單空白）及重建方式，明指不要把被trim區塊當原檔複製。驗actualDOM或copy文字後索引仍1/3/4即可，不需改Rust/fixture真檔或全站設定。",
+      "benefit": "直接由同頁完整答案保存出的材料與原行索引/預期報告一致，不把呈現失真當成讀者寫錯prepare_inputs。",
+      "actual_render_proof": "round18b-fixture-render-proof.json含四個viewport/page組合raw DOM、原文與逐行索引；18.11/12 fold0-open-tail雙viewport已親看。"
+    }
+  ],
+  "positive": [
+    "18.7 original separate parsedUrl/finalUrl; headers-only body policy; elapsed None vs Some0/noheaders error; 2layer Result; startup noReqwestdeadline vs callerwrapperdeadline; controls 5/10/20 horizons/borrowedJoinHandle Future explainedbeforetests; alldeps normal closure shown inline folds; sixchecks/allhelpers identicalcomplete tests confirmed.",
+    "18.8 lines LF/CRLF/loneCR, trimUnicode viewonly, enumeratebeforefilter, invalid+duplicate retained, ownedline/source ends, Empty separate invalidonly; DurationCopy introducedcurrent18.8 beforeloop, nofalseclaim14.5alreadytaught; helperboundedwait/cleanup before assertions; completecore/checks bytecomparisons identical excepttrailingblank.",
+    "18.9 trackedincludescompleteduncollected; calleruniquemonoindex; Clientclonepool andduplicateStringcost explicit; unuseddeadCodeallow beforestub; fullinput/single/basicdeps inline; cancel-safe next ownership rationale/complete-before-uncollected experiment; sevenchecksallfullsource andtasklab independentlyread; sourcecompletionorder1/2/0 andsort0/1/2 aligned.",
+    "18.10 gate0/1 vs original1/4 distinct andfixedmaterialchangefortrueCtrldemo explained; newnoFill/recordnoFill/tryrecvbeforeFill; Iteratorbyref beforependingfor; actualvsUnstartednofakeelapsed/status; testcleanup snapshotsbeforebackupdrain; currentthread completionnotifications limits; sevenchecks controlledstop borrowedownercleanup fullsource, signalDemo finiteobservations/closebothbefore? allread.",
+    "18.11先固定fatal2>cancel130>item1>success0、None null與typed資料owned映射；u16/u128/Option Serde能力新明說；to_string借str形成JSON引用、避免text行被LF破壞；17.4pubuse/nonexhaustive實際補讀後再看來源；clap default_value_t/正數先驗再read、validate/map/status/writeflush三stub責任明確；cfg不載Fixture、9checks同完整答案確實byte-identical，完成副本不偷載7batchtests。",
+    "18.12完整rootcfg載內置Fixture只libtest；batch正常core與18.10一致，七batchtests實際diff檢查新版helper/pubpath/真HTTP後mappedreport新增斷言；其餘完整sources除crate名/標記相同，core825/tests898/fixture198實際計數可獨立核；README全文actual讀但沒有跟往作者ledger。full Cargo lock183entries解析全部metadata，兩份只package自身name差別，保存hash，不把transitive package名稱當教學API。"
+  ],
+  "closure": {
+    "actual_unique_included_files": 72,
+    "full_file_occurrences_each_viewport": 96,
+    "named_regions": 40,
+    "normal_whitespace_normalized_matches_all": true,
+    "whitespace_sensitive_exception": "兩個invalid-urls.txt需逐byte/line核；actualrender不保leadingLF及單空白行，C18B-02。因此不宣稱96項raw完全吻合。",
+    "all_source_complete_in_markdown": true,
+    "inventory_exclusions": "stage自有README未include/未載入，不作API/validation先備；14.8/9依賴的bin/examples/integration和devdeps並非本頁選的normal source，正文逐頁明指；它們在14已讀但未把它們當18B命令隱藏載入。所有本輪selected自有Rust/fixture/manifests皆正文完整inline或fold。",
+    "known_duplicates": "B1 completechecks與starterchecks全文相同，B2/B3/B4 completechecks亦逐bytes相同；single/input保留核心只標記/空行差；final重導出/私有module/內置Fixture改動與batch新增原文helper及實際HTTP後報告斷言已逐diff實讀。",
+    "locks": "兩final獨立Cargo.lock各183package，解析全份metadata及directgraph，僅package自身名字不同；保存rawSHA，不要求讀者手填、不把transitive package名字當先備API。",
+    "line_counts": {
+      "core": 825,
+      "samefile_tests": 842,
+      "integration_tests": 56,
+      "tests_total": 898,
+      "test_fixture": 198,
+      "rust_total": 1921
+    }
+  },
+  "visual": {
+    "base": "http://127.0.0.1:8110",
+    "captured_from": "2026-10-15T10:43:01.529Z",
+    "captured_to": "2026-10-15T10:43:56.539Z",
+    "sizes": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "source_versions_equal_snapshot": true,
+    "images_personally_viewed": [
+      "desktop-10-fold-0-closed.png",
+      "desktop-10-fold-0-open-tail.png",
+      "desktop-10-fold-1-closed.png",
+      "desktop-10-fold-1-open-tail.png",
+      "desktop-10-fold-2-closed.png",
+      "desktop-10-fold-2-open-tail.png",
+      "desktop-10-fold-6-closed.png",
+      "desktop-10-fold-6-open-tail.png",
+      "desktop-11-fold-0-closed.png",
+      "desktop-11-fold-0-open-tail.png",
+      "desktop-11-fold-1-closed.png",
+      "desktop-11-fold-1-open-tail.png",
+      "desktop-11-fold-5-closed.png",
+      "desktop-11-fold-5-open-tail.png",
+      "desktop-12-fold-0-closed.png",
+      "desktop-12-fold-0-open-tail.png",
+      "desktop-12-readme-open-tail.png",
+      "desktop-7-fold-0-closed.png",
+      "desktop-7-fold-0-open-tail.png",
+      "desktop-7-fold-1-closed.png",
+      "desktop-7-fold-1-open-tail.png",
+      "desktop-7-fold-2-closed.png",
+      "desktop-7-fold-2-open-tail.png",
+      "desktop-7-fold-6-closed.png",
+      "desktop-7-fold-6-open-tail.png",
+      "desktop-8-fold-0-closed.png",
+      "desktop-8-fold-0-open-tail.png",
+      "desktop-8-fold-1-closed.png",
+      "desktop-8-fold-1-open-tail.png",
+      "desktop-8-fold-2-closed.png",
+      "desktop-8-fold-2-open-tail.png",
+      "desktop-8-fold-6-closed.png",
+      "desktop-8-fold-6-open-tail.png",
+      "desktop-9-fold-0-closed.png",
+      "desktop-9-fold-0-open-tail.png",
+      "desktop-9-fold-1-closed.png",
+      "desktop-9-fold-1-open-tail.png",
+      "desktop-9-fold-2-closed.png",
+      "desktop-9-fold-2-open-tail.png",
+      "desktop-9-fold-6-closed.png",
+      "desktop-9-fold-6-open-tail.png",
+      "desktop-figure-10-0-bottom.png",
+      "desktop-figure-10-0.png",
+      "desktop-figure-11-0-bottom.png",
+      "desktop-figure-11-0.png",
+      "desktop-figure-7-0.png",
+      "desktop-figure-8-0.png",
+      "desktop-figure-9-0-bottom.png",
+      "desktop-figure-9-0.png",
+      "desktop-table-10-0.png",
+      "desktop-table-11-0.png",
+      "desktop-table-11-1.png",
+      "desktop-table-12-0.png",
+      "desktop-table-7-0.png",
+      "desktop-table-7-1.png",
+      "desktop-table-7-2.png",
+      "desktop-table-7-3.png",
+      "desktop-table-8-0.png",
+      "mobile-10-fold-0-closed.png",
+      "mobile-10-fold-0-open-tail.png",
+      "mobile-10-fold-1-closed.png",
+      "mobile-10-fold-1-open-tail.png",
+      "mobile-10-fold-2-closed.png",
+      "mobile-10-fold-2-open-tail.png",
+      "mobile-10-fold-6-closed.png",
+      "mobile-10-fold-6-open-tail.png",
+      "mobile-11-fold-0-closed.png",
+      "mobile-11-fold-0-open-tail.png",
+      "mobile-11-fold-1-closed.png",
+      "mobile-11-fold-1-open-tail.png",
+      "mobile-11-fold-5-closed.png",
+      "mobile-11-fold-5-open-tail.png",
+      "mobile-12-fold-0-closed.png",
+      "mobile-12-fold-0-open-tail.png",
+      "mobile-12-readme-open-tail.png",
+      "mobile-7-fold-0-closed.png",
+      "mobile-7-fold-0-open-tail.png",
+      "mobile-7-fold-1-closed.png",
+      "mobile-7-fold-1-open-tail.png",
+      "mobile-7-fold-2-closed.png",
+      "mobile-7-fold-2-open-tail.png",
+      "mobile-7-fold-6-closed.png",
+      "mobile-7-fold-6-open-tail.png",
+      "mobile-8-fold-0-closed.png",
+      "mobile-8-fold-0-open-tail.png",
+      "mobile-8-fold-1-closed.png",
+      "mobile-8-fold-1-open-tail.png",
+      "mobile-8-fold-2-closed.png",
+      "mobile-8-fold-2-open-tail.png",
+      "mobile-8-fold-6-closed.png",
+      "mobile-8-fold-6-open-tail.png",
+      "mobile-9-fold-0-closed.png",
+      "mobile-9-fold-0-open-tail.png",
+      "mobile-9-fold-1-closed.png",
+      "mobile-9-fold-1-open-tail.png",
+      "mobile-9-fold-2-closed.png",
+      "mobile-9-fold-2-open-tail.png",
+      "mobile-9-fold-6-closed.png",
+      "mobile-9-fold-6-open-tail.png",
+      "mobile-figure-10-0-bottom.png",
+      "mobile-figure-10-0.png",
+      "mobile-figure-11-0-bottom.png",
+      "mobile-figure-11-0.png",
+      "mobile-figure-7-0.png",
+      "mobile-figure-8-0.png",
+      "mobile-figure-9-0-bottom.png",
+      "mobile-figure-9-0.png",
+      "mobile-table-10-0.png",
+      "mobile-table-11-0.png",
+      "mobile-table-11-1.png",
+      "mobile-table-12-0.png",
+      "mobile-table-7-0.png",
+      "mobile-table-7-1.png",
+      "mobile-table-7-2.png",
+      "mobile-table-7-3.png",
+      "mobile-table-8-0.png"
+    ],
+    "count_personally_viewed": 116,
+    "method": "58個1670×844 pair全部view_image親看，代表116原圖；必要五SVG逐圖核文字/分支/位置/箭頭，不只存在。",
+    "figure_metadata": [
+      {
+        "url": "http://127.0.0.1:8110/assets/ch15/one-url-result.svg",
+        "sha256": "bcfe5079689e15848e3d027cd1be2c6651dbe83ac4532df787a3771102a2d44f",
+        "alt": "一份原文字經過解析與受限的 headers 工作，形成一份 owned 結果",
+        "dimensions": {
+          "width": 340,
+          "height": 680,
+          "naturalWidth": 340,
+          "naturalHeight": 680
+        }
+      },
+      {
+        "url": "http://127.0.0.1:8110/assets/ch15/line-index-to-results.svg",
+        "sha256": "80022f8f09795349f1778cf5634c36ca8b129383fa6232c062989e1a429e891c",
+        "alt": "原行先取得索引，再略過空白；三份owned輸入依序形成三份結果，重複網址索引不同",
+        "dimensions": {
+          "width": 340,
+          "height": 664,
+          "naturalWidth": 340,
+          "naturalHeight": 664
+        }
+      },
+      {
+        "url": "http://127.0.0.1:8110/assets/ch15/bounded-url-slots.svg",
+        "sha256": "8053366aa07ef231914ff9023d41530e49e1a63a9175a3389024ea516c734fcf",
+        "alt": "jobs二的三筆手工示意：完成尚未收取仍占名額，收取一後才提交二，最後按原索引整理",
+        "dimensions": {
+          "width": 360,
+          "height": 800,
+          "naturalWidth": 360,
+          "naturalHeight": 800
+        }
+      },
+      {
+        "url": "http://127.0.0.1:8110/assets/ch15/stop-url-work.svg",
+        "sha256": "95ab1e126e46778b36a3f53ec4462e957af55547f4ffe5c7e070a5899ed290dc",
+        "alt": "原index三已完成，停止後一與四取消，五與六尚未提交；全收尾後按原index排列Batch",
+        "dimensions": {
+          "width": 360,
+          "height": 760,
+          "naturalWidth": 360,
+          "naturalHeight": 760
+        }
+      },
+      {
+        "url": "http://127.0.0.1:8110/assets/ch15/url-report-boundary.svg",
+        "sha256": "f60e2e1d1e8bcf996fcf094c4aa14befa560bda768d2ef425113dac12f5afa8b",
+        "alt": "Batch先成為owned Report，再選文字或JSON；成功完成write及flush才交資料狀態，失敗改回fatal2",
+        "dimensions": {
+          "width": 360,
+          "height": 780,
+          "naturalWidth": 360,
+          "naturalHeight": 780
+        }
+      }
+    ],
+    "figure_meaning": [
+      "18.7藍original直達Check，橘Input早退不過timer，綠deadline含GETredirect，Response只HTTP有；18pxnative且340px在兩尺寸皆原大清楚。",
+      "18.8 U1/U3同URL不同原index，0略後仍1/2/3，Input問題仍繼續；340×664原大兩尺寸全關係可見。",
+      "18.9同S1 tasks0/1，1完未收仍len2，取1才fill2，最後完成1/2/0→報0/1/2；360×800desktop/343×762mobile，top/bottom均看。",
+      "18.10已保存3Http200，觀察stop→drain→pending5/6無Id→Batch1/3/4/5/6與EndReason；360×760/343×724，top/bottom均看，gate/index區別正文對齊。",
+      "18.11Batch→ownedReport→借同一Report兩format→writeAll/flush→資料0/1/130，來源/encode/output三橘支線→fatal2；360×780/343×743，top/bottom均看。"
+    ],
+    "tables": "9表手機皆343px、wrapper375client=scroll375，全部親看；無表格橫向切換新建議。",
+    "folds": "36個details每尺寸初始closed；提示3層不用先看答案。所有必要fullstarter、normal dependencyclosure、全checks、fullsolution folds均逐個closed/open-tail親看；18.12README另開tail，長檔pre可獨立橫移。",
+    "raw_fixture_proof": [
+      {
+        "viewport": "desktop",
+        "page": "http://127.0.0.1:8110/chapters/18-11-lesson/",
+        "at": "2026-10-15T10:43:22.756Z",
+        "path": "examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt",
+        "source": "\nftp://host/item\n \n/notes\nftp://host/item\n",
+        "rendered_code_text": "ftp://host/item\n\n/notes\nftp://host/item\n",
+        "source_lines": [
+          {
+            "index": 0,
+            "text": ""
+          },
+          {
+            "index": 1,
+            "text": "ftp://host/item"
+          },
+          {
+            "index": 2,
+            "text": " "
+          },
+          {
+            "index": 3,
+            "text": "/notes"
+          },
+          {
+            "index": 4,
+            "text": "ftp://host/item"
+          }
+        ],
+        "rendered_lines": [
+          {
+            "index": 0,
+            "text": "ftp://host/item"
+          },
+          {
+            "index": 1,
+            "text": ""
+          },
+          {
+            "index": 2,
+            "text": "/notes"
+          },
+          {
+            "index": 3,
+            "text": "ftp://host/item"
+          }
+        ],
+        "source_retained_indexes": [
+          1,
+          3,
+          4
+        ],
+        "rendered_retained_indexes": [
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        "viewport": "desktop",
+        "page": "http://127.0.0.1:8110/chapters/18-12-lesson/",
+        "at": "2026-10-15T10:43:28.053Z",
+        "path": "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt",
+        "source": "\nftp://host/item\n \n/notes\nftp://host/item\n",
+        "rendered_code_text": "ftp://host/item\n\n/notes\nftp://host/item\n",
+        "source_lines": [
+          {
+            "index": 0,
+            "text": ""
+          },
+          {
+            "index": 1,
+            "text": "ftp://host/item"
+          },
+          {
+            "index": 2,
+            "text": " "
+          },
+          {
+            "index": 3,
+            "text": "/notes"
+          },
+          {
+            "index": 4,
+            "text": "ftp://host/item"
+          }
+        ],
+        "rendered_lines": [
+          {
+            "index": 0,
+            "text": "ftp://host/item"
+          },
+          {
+            "index": 1,
+            "text": ""
+          },
+          {
+            "index": 2,
+            "text": "/notes"
+          },
+          {
+            "index": 3,
+            "text": "ftp://host/item"
+          }
+        ],
+        "source_retained_indexes": [
+          1,
+          3,
+          4
+        ],
+        "rendered_retained_indexes": [
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        "viewport": "mobile",
+        "page": "http://127.0.0.1:8110/chapters/18-11-lesson/",
+        "at": "2026-10-15T10:43:51.691Z",
+        "path": "examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt",
+        "source": "\nftp://host/item\n \n/notes\nftp://host/item\n",
+        "rendered_code_text": "ftp://host/item\n\n/notes\nftp://host/item\n",
+        "source_lines": [
+          {
+            "index": 0,
+            "text": ""
+          },
+          {
+            "index": 1,
+            "text": "ftp://host/item"
+          },
+          {
+            "index": 2,
+            "text": " "
+          },
+          {
+            "index": 3,
+            "text": "/notes"
+          },
+          {
+            "index": 4,
+            "text": "ftp://host/item"
+          }
+        ],
+        "rendered_lines": [
+          {
+            "index": 0,
+            "text": "ftp://host/item"
+          },
+          {
+            "index": 1,
+            "text": ""
+          },
+          {
+            "index": 2,
+            "text": "/notes"
+          },
+          {
+            "index": 3,
+            "text": "ftp://host/item"
+          }
+        ],
+        "source_retained_indexes": [
+          1,
+          3,
+          4
+        ],
+        "rendered_retained_indexes": [
+          0,
+          2,
+          3
+        ]
+      },
+      {
+        "viewport": "mobile",
+        "page": "http://127.0.0.1:8110/chapters/18-12-lesson/",
+        "at": "2026-10-15T10:43:56.539Z",
+        "path": "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt",
+        "source": "\nftp://host/item\n \n/notes\nftp://host/item\n",
+        "rendered_code_text": "ftp://host/item\n\n/notes\nftp://host/item\n",
+        "source_lines": [
+          {
+            "index": 0,
+            "text": ""
+          },
+          {
+            "index": 1,
+            "text": "ftp://host/item"
+          },
+          {
+            "index": 2,
+            "text": " "
+          },
+          {
+            "index": 3,
+            "text": "/notes"
+          },
+          {
+            "index": 4,
+            "text": "ftp://host/item"
+          }
+        ],
+        "rendered_lines": [
+          {
+            "index": 0,
+            "text": "ftp://host/item"
+          },
+          {
+            "index": 1,
+            "text": ""
+          },
+          {
+            "index": 2,
+            "text": "/notes"
+          },
+          {
+            "index": 3,
+            "text": "ftp://host/item"
+          }
+        ],
+        "source_retained_indexes": [
+          1,
+          3,
+          4
+        ],
+        "rendered_retained_indexes": [
+          0,
+          2,
+          3
+        ]
+      }
+    ]
+  },
+  "prior": {
+    "established": "actual1–14已讀，18.1全文+單一literalfixture；17.4全文及25actualinclude僅為18.11前提實讀，未作17視覺review/pass。",
+    "targeted_only": "因18.11實際回指publicreexport/nonexhaustive/Error，先讀17.4；未需16poll/Pin內部規則，沿14已明說currentthread/noawait的完成通知界線足夠。",
+    "limits": [
+      "metadata查找曾rg既讀章+17多頁尋use_stderr/u64，意外看到17.5 RngSeed u64與17.8 allocationmetricsu64三行；不當作既教、不讀該頁其餘正文/peerfinding。use_stderr實際在已讀10.6:62，fold實際在9.5:109，故未發假缺口。",
+      "本輪18.7body首次讀後立即snapshot，18.8–12正文在snapshot後順讀；root18.8current回指提示為先曝光版本限制，不算獨立舊版finding。"
+    ]
+  },
+  "version": {
+    "note": "18.7首次body已實讀後立即snapshot，同次current並保存hash；18.8–12正文僅自動複製bytes，尚未讀。root已告知18.8回指currentf71c74及18.9/10doc/link窄修，以current初判不倒稱舊版重現。",
+    "all_86_files_stable": true,
+    "known14followup": "14三doc採納通知在本輪中到達，未把修後14新文字倒算為18B原始先備；本輪既有14原判/自己scope已足夠，B目前DurationCopy在18.8自己教，foreignErrorformatting仍沿已有能力。",
+    "no_peer_findings_read": true
+  },
+  "limits": [
+    "非blindfirstread/fullbookpass；是以實際讀過前綴追依賴。",
+    "沒有執行Cargo/教材命令/test/build/strictbuild，parent提供已建8110供actualrender檢查。",
+    "HTMLnav可見18A標題，未讀18.2–6正文/source或借其能力；未讀authorledger/validation，即使README提及ledger亦未跟往。",
+    "所有引文從frozen原文逐行擷取；Q2機制與獨立需要分開，正向結論不由標題或作者PASS推定。",
+    "必要與可選均交root裁定；原initial不可被後續修稿回寫。"
+  ]
+}

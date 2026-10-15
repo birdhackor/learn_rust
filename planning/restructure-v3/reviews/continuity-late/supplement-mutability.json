@@ -1,0 +1,212 @@
+{
+  "role": "獨立非作者銜接／實頁審閱，非盲測",
+  "scope": {
+    "doc": "docs/supplements/python-javascript-mutability.md",
+    "doc_sha256": "b937467f71faa2d06a10eea2b6d2774d4e72d82188ee9e6e646bd2e504e46c88",
+    "full_doc_read_lines": [
+      1,
+      87
+    ],
+    "canonical_section": false,
+    "original_33_coverage_unchanged": true
+  },
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "CL-SUP-MUT-LOG",
+      "classification": "可選／名稱與最低操作補充",
+      "location": {
+        "doc": "docs/supplements/python-javascript-mutability.md",
+        "section": "JavaScript const：binding固定，物件屬性仍可變",
+        "source": "examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js",
+        "source_line": 4
+      },
+      "quote": "console.log(order.count);",
+      "already_taught": "正文已解釋const、object/count、alias共同指向、屬性+=，並明示執行結果3；因此三個比較問題仍可理解。",
+      "missing_detail": "頁面也接受只熟Python的讀者，但沒有明說console.log是這份JS程式顯示結果的操作。",
+      "concrete_benefit": "補一句可讓Python讀者逐行對上「經alias修改同一object」與「從order讀count並顯示3」，不用猜console.log的角色。",
+      "minimum_change": "在JS程式前加：console.log(...)將括號內的值顯示到終端。",
+      "cost": "一個短句，沒有新先備、程式或依賴。",
+      "why_optional": "下方「結果是3」已提供觀察角色，主線不是被此名稱阻斷；不將名稱補充升為核心機制缺口。",
+      "independence": "本審閱者讀actual source時自行提出，未看作者/root/其他review對此頁的結論。"
+    }
+  ],
+  "prefix_actual_read": [
+    {
+      "doc": "docs/chapters/03-04-lesson.md",
+      "doc_sha256": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+      "actual_doc_read_lines": [
+        1,
+        88
+      ],
+      "complete_sourcehashes": {
+        "examples/intro-workspace/ownership/examples/mutable_references.rs": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+        "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+        "examples/intro-workspace/ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+        "examples/intro-workspace/ownership/examples/borrow_answer.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727"
+      }
+    },
+    {
+      "doc": "docs/chapters/03-05-lesson.md",
+      "doc_sha256": "78535d28170efdde36e18a62911cb9c4779e14bbc3559dccfe876761fe47e776",
+      "actual_doc_read_lines": [
+        1,
+        144
+      ],
+      "complete_sourcehashes": {
+        "examples/intro-workspace/ownership/examples/last_use.rs": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+        "examples/intro-workspace/ownership/examples/reborrow.rs": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+        "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+        "examples/intro-workspace/ownership/examples/lifetime_answer.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.expected": "c8af886bbe93c20a7838be9a35690203ff0283d2f62d496811599d8d4890d2be",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea"
+      }
+    },
+    {
+      "doc": "docs/chapters/03-07-lesson.md",
+      "doc_sha256": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+      "actual_doc_read_lines": [
+        1,
+        109
+      ],
+      "complete_sourcehashes": {
+        "examples/intro-workspace/ownership/examples/slices.rs": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+        "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+        "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+        "examples/intro-workspace/ownership/examples/slices_answer.rs": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+        "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.expected": "9bc98e93f7bbaa33ec6e4a45dde7a4f391fb4fa34bf8231cb7c05d099692527b"
+      }
+    },
+    {
+      "doc": "docs/chapters/03-08-lesson.md",
+      "doc_sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+      "actual_doc_read_lines": [
+        1,
+        130
+      ],
+      "complete_sourcehashes": {
+        "examples/intro-workspace/ownership/examples/strings.rs": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+        "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+        "examples/intro-workspace/ownership/examples/text_order.rs": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+        "examples/intro-workspace/ownership/examples/strings_answer.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af"
+      }
+    }
+  ],
+  "all_actual_read_sourcehashes": {
+    "examples/intro-workspace/ownership/examples/mutable_references.rs": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+    "examples/intro-workspace/ownership/examples/borrow_answer.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727",
+    "examples/intro-workspace/ownership/examples/last_use.rs": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+    "examples/intro-workspace/ownership/examples/reborrow.rs": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+    "examples/intro-workspace/ownership/examples/lifetime_answer.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.expected": "c8af886bbe93c20a7838be9a35690203ff0283d2f62d496811599d8d4890d2be",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/ownership/examples/slices.rs": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+    "examples/intro-workspace/ownership/examples/slices_answer.rs": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.expected": "9bc98e93f7bbaa33ec6e4a45dde7a4f391fb4fa34bf8231cb7c05d099692527b",
+    "examples/intro-workspace/ownership/examples/strings.rs": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+    "examples/intro-workspace/ownership/examples/text_order.rs": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+    "examples/intro-workspace/ownership/examples/strings_answer.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py": "aa453c1322033fdb4c5b4d18af275455822d51b5b5f426178dbf01607172c622",
+    "examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js": "fe4dce7f84e63fcbafb5c06ea5ce00ef59a93675372fe6948185ce6e38269a8a",
+    "examples/intro-workspace/ownership/examples/mutability_comparison.rs": "47abde143fd22a9b3ca6ab2d0b6770b3aba481767b42b909274d35a61ac29c1e",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/ownership/src/main.rs": "5d01b2ee14dd9b2dbcba67a83a7a47c1d960a0ee685f0b49af8d7d0d0ead13c6"
+  },
+  "direct_full_sourcehashes": {
+    "examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py": "aa453c1322033fdb4c5b4d18af275455822d51b5b5f426178dbf01607172c622",
+    "examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js": "fe4dce7f84e63fcbafb5c06ea5ce00ef59a93675372fe6948185ce6e38269a8a",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/mutability_comparison.rs": "47abde143fd22a9b3ca6ab2d0b6770b3aba481767b42b909274d35a61ac29c1e"
+  },
+  "actual_loaded_code": "Rust只載同檔append/main，package無library/build.rs/dependency；workspace共同設定已讀。Python14行與JS4行均完整、無imports；沒有隱藏helper、測試或答案。",
+  "rendered_full_source_missing": [],
+  "four_questions": {
+    "Q1_identity": {
+      "binding": "名稱現在指向/保存哪個值，能否重新指派。",
+      "content": "物件或值的既有內容能否經該操作改變。",
+      "borrow_permission": "Rust本次reference提供shared讀或exclusive修改能力，及其使用區間。",
+      "evidence": "引言三問；Python段首、JavaScript段首；Rust段首與三列表格。"
+    },
+    "Q2a_mechanism": {
+      "python": "alias=items不move；append改同list；alias=[9]重綁；str +=取得新內容並重綁name，old_name保留原字串。",
+      "javascript": "const固定binding；alias/order指同object，alias.count+=1不重新指派任何const binding。",
+      "rust": "text mut可提供&mut String；reference binding無mut也能借改所指String。typed append參數自動reborrow，3.5已教，故呼叫後原reference仍可用；view最後使用後才push_str。",
+      "sources": "03.4 &mut與binding mut分開；03.5 reborrow及最後使用；03.8 String/push_str/as_str及borrow_overlap負例；本頁三份全source。"
+    },
+    "Q2b_need": {
+      "fixed_learning_need": "讀到immutable/const時，需要判斷究竟限制名稱、內容或當次Rust存取，避免把不同語言同名詞直接等同。",
+      "design_connection": "Python在同段分開alias修改與重綁；JS保留const但修改property；Rust保留無mut的reference binding卻經&mut修改，再改用&str借讀。三者刻意保留另一個維度，讓限制對象可辨。",
+      "evidence": "「不能把 += 一律解釋成修改原物件」、「reference用語不是Rust shared reference &T」、結尾「先確定它指的是哪一個對象」。"
+    },
+    "Q3_operation_and_results": {
+      "python": [
+        "[1, 2, 3]",
+        "[1, 2, 3]",
+        "[9]",
+        "Rust",
+        "Rust 教學"
+      ],
+      "javascript": "同一object的count由2到3，console.log顯示3；此API角色列為可選明說。",
+      "rust": [
+        "同一份文字=Rust 教學",
+        "借讀視圖=Rust 教學",
+        "借讀完成後=Rust 教學，完成"
+      ],
+      "scope": "完整程式、manifest、repo根命令及預期輸出同頁；沒有以外部GitHub連結替代。"
+    },
+    "Q4_small_changes": {
+      "python": "將alias=[9]改成items=[9]後，第二次print(items)為[9]，print(alias)仍是[1,2,3]；改的是選中名稱的binding。",
+      "javascript": "將alias.count+=1改成order.count+=1仍合法且輸出3；兩名稱找到同object，操作仍是property修改。",
+      "rust": "把最後一次println(view)移到text.push_str後，shared借用需跨過修改，依03.8相同負例遭拒；只加binding mut不會改變reference型別權限。",
+      "source_vs_reviewer": "小變化由審閱者提出，理由只使用已讀正文及prefix，不冒稱原例已執行過這些變化。"
+    }
+  },
+  "prefix_dependency_resolution": {
+    "automatic_reborrow": {
+      "actual_source": "mutability_comparison.rs:9–10",
+      "actual_prefix": "03.5 reborrow節及reborrow.rs:18–20",
+      "quote": "第二個呼叫的參數型別已明定是 &mut i32；在這種呼叫位置，Rust 可以自動 reborrow",
+      "judgment": "已足夠，不以&mut可Copy或課外知識補說。"
+    },
+    "last_shared_use": {
+      "actual_source": "mutability_comparison.rs:12–15",
+      "actual_prefix": "03.8「兩份完整失敗例」與string_borrow_overlap.rs；03.5最後使用區間",
+      "judgment": "已足夠，先讀view再追加與prefix失敗對照一致。"
+    }
+  },
+  "visual_metadata": "supplement-mutability-visualmetadata.json",
+  "prior_author_root_or_other_review_conclusions_seen": false,
+  "execution": "未跑Rust、Python或JS；只建讀書與實頁證據，不代替技術執行驗證。",
+  "limitations": [
+    "必要前文定點銜接，不是未提示首讀盲測。",
+    "只驗此選讀；不把它納入131 canonical或原33節coverage。",
+    "未修改repo，原33封存檔保持。"
+  ]
+}

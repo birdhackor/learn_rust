@@ -1,0 +1,25 @@
+{
+  "sealed_at_utc": "2026-10-15T06:49:33.151343+00:00",
+  "files": [
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round02-ch02.md",
+      "sha256": "789d0643abae72f6dbce384d5ca5f1cec4c000074dcad5a00401cc39721caa47"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round02-ch02.json",
+      "sha256": "fcec32fb311fcf35c845d8281e82f48f1d44dfb38a9fe73bac9f87aa2f0a78a3"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round02-ch02-sourcehashes.json",
+      "sha256": "3bdcda79519de8ae6aabcb26ce2477ae858697ef63e0ef7df2dc51fdbee659b5"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round02-ch02-frozen/02-07-lesson.md",
+      "sha256": "0fdb1af3846531b6dfc9f27bca568e78164256472f45e1ac83607521a6233339"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round02-ch02-frozen/02-08-lesson.md",
+      "sha256": "b69bbd89d449943fd3665683069201b7f8bc829fb6d0d6b665f476c41b3b88ce"
+    }
+  ]
+}

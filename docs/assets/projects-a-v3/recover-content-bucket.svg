@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="680" viewBox="0 0 340 680" role="img" aria-labelledby="title desc">
+  <title id="title">移除確切失敗者，再重建剩餘內容群</title>
+  <desc id="desc">手工設定相同摘要的三個3-byte候選a AAA、b2 BBB、b1 BBB。a在比較時由受控左來源產生讀取失敗，這次不交暫時群組。保存原生path=a的問題，移除a後重建b2與b1，得到有效重複群b1 b2。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#39536a"/></marker></defs>
+  <rect width="340" height="680" rx="12" fill="#ffffff"/>
+  <g font-family="Noto Sans CJK TC, sans-serif" text-anchor="middle" fill="#16354b">
+    <rect x="15" y="10" width="310" height="112" rx="12" fill="#e7f1fa" stroke="#39536a"/>
+    <text x="170" y="43" font-size="21">手工設定同一 digest 桶</text>
+    <text x="170" y="78" font-size="19">a: AAA　b2: BBB　b1: BBB</text>
+    <text x="170" y="107" font-size="19">三份都是 3 bytes</text>
+    <path d="M170 128 V175" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="15" y="182" width="310" height="115" rx="12" fill="#fbe8e6" stroke="#a84b43"/>
+    <text x="170" y="213" font-size="21">a 作第一組代表</text>
+    <text x="170" y="246" font-size="19">比較 a／b2：a 讀取失敗</text>
+    <text x="170" y="279" font-size="19">這次不交付暫時群組</text>
+    <path d="M170 303 V357" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="40" y="313" width="260" height="26" fill="#ffffff"/>
+    <text x="170" y="333" font-size="19" fill="#a84b43">保存 FileIssue.path = a</text>
+    <rect x="15" y="364" width="310" height="95" rx="12" fill="#fff3cf" stroke="#39536a"/>
+    <text x="170" y="398" font-size="21">移除原生 path = a</text>
+    <text x="170" y="434" font-size="20">剩 b2: BBB、b1: BBB</text>
+    <path d="M170 465 V519" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="70" y="476" width="200" height="26" fill="#ffffff"/>
+    <text x="170" y="496" font-size="19">從剩餘資料重建</text>
+    <rect x="15" y="526" width="310" height="95" rx="12" fill="#edf5e4" stroke="#39536a"/>
+    <text x="170" y="560" font-size="20">確認 b2 與 b1 內容相同</text>
+    <text x="170" y="597" font-size="21">成功重複群：b1、b2</text>
+    <text x="170" y="657" font-size="19">問題保留 a；成功資料保留 B／B</text>
+  </g>
+</svg>

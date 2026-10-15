@@ -1,0 +1,30 @@
+[
+  {
+    "width": 1280,
+    "key": "methods",
+    "file": "15-06-1280-methods-current.png",
+    "actual_text": "前五項組態操作可以依序串接；先前已學過的mutable設定與method呼叫在這裡連續使用。build.rs如下：",
+    "body_overflow": false
+  },
+  {
+    "width": 1280,
+    "key": "owned",
+    "file": "15-06-1280-owned-current.png",
+    "actual_text": "第一行仍借C配置；to_owned沿第8.5節建立獨立Rust String。drop(greeting)沿第11.3節接手owner、執行對應cleanup，之後只讀saved。輸出核對內容關係，配對釋放與borrow安全則由上面C body／Rust介面契約支持。",
+    "body_overflow": false
+  },
+  {
+    "width": 390,
+    "key": "methods",
+    "file": "15-06-390-methods-current.png",
+    "actual_text": "前五項組態操作可以依序串接；先前已學過的mutable設定與method呼叫在這裡連續使用。build.rs如下：",
+    "body_overflow": false
+  },
+  {
+    "width": 390,
+    "key": "owned",
+    "file": "15-06-390-owned-current.png",
+    "actual_text": "第一行仍借C配置；to_owned沿第8.5節建立獨立Rust String。drop(greeting)沿第11.3節接手owner、執行對應cleanup，之後只讀saved。輸出核對內容關係，配對釋放與borrow安全則由上面C body／Rust介面契約支持。",
+    "body_overflow": false
+  }
+]

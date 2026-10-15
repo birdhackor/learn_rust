@@ -1,0 +1,33 @@
+{
+  "captured_utc": "2026-10-15T07:29:58.910606+00:00",
+  "changes": [
+    {
+      "path": "docs/chapters/04-06-lesson.md",
+      "initial": "29a7e763a4b5ae1452a3422a1041d8ae934d2799f15212ee37d5e89fee0671d6",
+      "current": "1131e9b5ea0981c4e8149ae0975b0f4d33269ae91ea17974615437eb2799aeeb"
+    }
+  ],
+  "diff": [
+    "--- independent initial4b",
+    "+++ current4.6",
+    "@@ -50,12 +50,12 @@",
+    " --8<-- \"examples/intro-workspace/patterns/examples/while_let.rs:loop\"",
+    " ```",
+    " ",
+    "-| 呼叫前剩餘量 | next_batch 回傳 | 呼叫後剩餘量 | body 是否執行 |",
+    "-| --- | --- | --- | --- |",
+    "-| 7 | More(3) | 4 | 是 |",
+    "-| 4 | More(3) | 1 | 是 |",
+    "-| 1 | More(1) | 0 | 是 |",
+    "-| 0 | Done | 0 | 否，結束 |",
+    "+| 呼叫前剩餘量 | 回傳與後續動作 | 呼叫後剩餘量 |",
+    "+| --- | --- | --- |",
+    "+| 7 | More(3)，執行 body | 4 |",
+    "+| 4 | More(3)，執行 body | 1 |",
+    "+| 1 | More(1)，執行 body | 0 |",
+    "+| 0 | Done，不進 body，結束 | 0 |",
+    " ",
+    " `processed` 只在本次 body 中使用；remaining、batches 則由外層保存，跨次更新。迴圈能停止，是因為 next_batch 讓正的剩餘量持續減少，最後交出 Done；while let 本身不會替一個永遠回傳 More 的函式製造停止條件。",
+    " "
+  ]
+}

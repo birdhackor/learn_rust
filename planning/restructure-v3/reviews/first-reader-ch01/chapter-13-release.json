@@ -1,0 +1,164 @@
+{
+  "chapter": 13,
+  "first_unit": 224,
+  "last_unit": 231,
+  "entries": [
+    {
+      "source": "docs/chapters/13-01-lesson.md",
+      "file": "units/224.md",
+      "sha256": "8bbe86f2fb8d0d3531e8c0c365d3726ae9f6b5a80194412673a173acbb24c2a0",
+      "source_sha256": "c5b392ba306e20d36ba848860b03f669a09fabc7f76d28e5eefa168815aab654",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch10/send-sync.svg",
+          "source_sha256": "936141fc68e09cc82db071da91d796481aefa8d3f7108be1c26ec1a68aa8ce72",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch13-send-sync.png",
+          "png_sha256": "c3199bb901b729f68344a785986a3a7c03da4f2ac5969483d29ae702b7016b3e",
+          "alt": "上方Send移交String給另一個thread；下方Sync讓另一個thread持有原String的shared reference，原owner仍保留文字"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/13-02-lesson.md",
+      "file": "units/225.md",
+      "sha256": "0eb928656eaa313017cd36173b0da87f63a30c27399b4188c2efb9b2c573ea3d",
+      "source_sha256": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch10/thread-join.svg",
+          "source_sha256": "c35ff54e7d368c6c59e4778c8096a4ecb6ee5a90d445f610a20a9f0812da437e",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch13-thread-join.png",
+          "png_sha256": "0ce8d29ad94867d3d7f2d5ae86030e5e790ef15f430039a1cc8b5135af410726",
+          "alt": "主thread與worker各自計算小計，join等待worker完成後取得200，再合併成206"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/13-03-lesson.md",
+      "file": "units/226.md",
+      "sha256": "5a69d6d59ce8b36b894de91aee40bff9c9bc99c20ad6cf0578f22554d0d7845f",
+      "source_sha256": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch10/hrtb-local.svg",
+          "source_sha256": "2a79b19cf773ad6245c6045b2966931f4f0dec24f58e82d430929ba91915aa08",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch13-hrtb-local.png",
+          "png_sha256": "015d27a05b91e8a8dba7e36eadd4b57d0ba6b21ef9939fbd3fa6f0d7746c95a6",
+          "alt": "callback提供對任一借用lifetime的能力，with_local建立80並借給callback，交出200而局部來源在函式結束"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/13-04-lesson.md",
+      "file": "units/227.md",
+      "sha256": "7594b7a5c60f93a30e27bcd4ba33841318b59d9a6efb7bf35c6bc855c530d9c0",
+      "source_sha256": "452f05337ef7610197fe9908167c9ffd5dcb447b3fda33fe6e189e345a678da9",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch10/scoped-wait.svg",
+          "source_sha256": "3e247305a06d6f9891909a700cbd4841644cd8b42442800c382ad35a1ef3899d",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch13-scoped-wait.png",
+          "png_sha256": "99fb6130f090d77df8ad96dd157277e1b80e3166bedec541a84a91a39b6e6ca2",
+          "alt": "外部values與total保持有效，callback建立工作後返回，scope自動等待worker寫入200並結束body，返回後主thread讀取total"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/13-05-lesson.md",
+      "file": "units/228.md",
+      "sha256": "7c98b783de3b163422bbe54ecc2eb8a738fa2911a05e904b5a290dbe5e31475b",
+      "source_sha256": "c845832a2d68530200fb59fc705bbc9f128df007922888a0f5c388cdb9728481",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch10/channel-drain.svg",
+          "source_sha256": "56077fabd2076b4ac956067f1bf149b5b679cad42e0b806db1f22f89f0ee7f39",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch13-channel-drain.png",
+          "png_sha256": "af4e24636340f15b12005faa3e4d1596efb555d1a7432f0f83a4f88a3af23a13",
+          "alt": "main丟棄原始Sender，兩個worker各持有clone傳送訊息後丟棄；main收完所有待收訊息後得到RecvError，再join兩個worker確認完成"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/13-06-lesson.md",
+      "file": "units/229.md",
+      "sha256": "1d7b33a269b21f985dd7aa57e6f8f621641b3feddbd88538853e136b6eb2749d",
+      "source_sha256": "6f3d25a1cbab3fc40b75594280cd0c957878a70665d2f49b542349c747d26e24",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch10/arc-mutex-guard.svg",
+          "source_sha256": "ecc01c4c5ea60f0dacbbd2df7b89dbf70d050d7beba54da4f436622a4e1c6af8",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch13-arc-mutex-guard.png",
+          "png_sha256": "33b5543c76f39bf7ef43fb26e9ea40fffac4a827f4ab6f44f59883c2eb461716",
+          "alt": "兩個Arc共同保活同一Mutex，示意main先加120並drop guard，worker再取得guard加80至200，最後main join後讀結果"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/13-07-lesson.md",
+      "file": "units/230.md",
+      "sha256": "0f709513d847ebe246d4e81581af0d827db5c3e9b03dd82b4224492a7571d01d",
+      "source_sha256": "c96f26ad8707450d399d650accd91132140788e5e5153b2373bbbcaae4892dd5",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch10/rwlock-readers.svg",
+          "source_sha256": "c8c0b5a7dfdf3afa5d22325c84ad795d20039467191e71d7423aa68f21c11413",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch13-rwlock-readers.png",
+          "png_sha256": "cf3eb0072d7a90ff694345f36cfcc4b0c91ff0af206cf7982e49de3520e29e4d",
+          "alt": "同一RwLock有read1與read2兩份guard，try_write失敗；drop read1後read2仍阻止writer，兩份都drop後才可取得write guard追加30"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/13-08-lesson.md",
+      "file": "units/231.md",
+      "sha256": "c64b2053b633e3e269d6b901a661167c1a0ae0b7c28ab986833946d19b7dcf31",
+      "source_sha256": "b111cb10d4c1dfddb8986cc1ee89902eafa89e78fca5b6329bc09b8df3f64a79",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch10/atomic-publication.svg",
+          "source_sha256": "fa5e529c2a9e969650f7df4f7347ca40249628ac9eb59877c8081676403b52c7",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch13-atomic-publication.png",
+          "png_sha256": "dd64e9a4973bfde93966e598b8f877e7a887cc91cce5f7e676a66fa8c290b81e",
+          "alt": "producer依序Relaxed寫DATA230與Release寫READYtrue；consumer的Acquire讀自這次true，再Relaxed讀DATA230，構成P1到R2的happens-before關係"
+        },
+        {
+          "source": "docs/assets/ch10/seqcst-cycle.svg",
+          "source_sha256": "5589976736e8605735685f080741218d8eb4d5cc90a57fbf2a86ce7e2b7eb25b",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch13-seqcst-cycle.png",
+          "png_sha256": "a5b68c9eea9cd31a8eb69c16f78212913a0e744b7f6969205b02defe9fb46513",
+          "alt": "假設A與B都讀初值0，SeqCst共同順序必須同時滿足A1先A2先B1先B2又先A1，形成不可能循環"
+        }
+      ]
+    }
+  ],
+  "route": "whole prerequisite pages;  actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed",
+  "before_first_reader_release_prose_update": [
+    {
+      "index": 225,
+      "old_sha256": "6e2a2957282895f64fb469f46d5e5c4285a38920c6eb26133d1d1f8952bb4646",
+      "current_sha256": "5c4464cee9b73c0dd30e9b4388ea599cbabbf8eceb60c206218130cdfffb2a83",
+      "reason": "Root prose-only nearby cue correction before reader was resumed/released this batch; records absent, not changing a previously read unit."
+    },
+    {
+      "index": 226,
+      "old_sha256": "5d5c7e75aa4d39afb332c925c64a6497758059b25ced921f96e888cb447e2ec9",
+      "current_sha256": "5a69d6d59ce8b36b894de91aee40bff9c9bc99c20ad6cf0578f22554d0d7845f",
+      "reason": "Root prose-only nearby cue correction before reader was resumed/released this batch; records absent, not changing a previously read unit."
+    }
+  ],
+  "unread_source_narrow_update": {
+    "unit": 225,
+    "old_sha256": "5c4464cee9b73c0dd30e9b4388ea599cbabbf8eceb60c206218130cdfffb2a83",
+    "new_sha256": "0eb928656eaa313017cd36173b0da87f63a30c27399b4188c2efb9b2c573ea3d",
+    "status": "Before first fetch/read; root explicitly paused reader at224; no prior record changed.",
+    "scope": "One target source uses already-taught explicit slice; not a change to the ordinary reader own answer."
+  }
+}

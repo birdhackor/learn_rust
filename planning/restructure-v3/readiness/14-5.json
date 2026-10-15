@@ -1,0 +1,138 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "14.5"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round14-async-foundations-cancellation-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round14-http-local-service-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round14-root-contract-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14-followup.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/14-05-lesson.md": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f",
+    "examples/ch11-async/stages/timing-steps/Cargo.toml": "53e1d73c7961f13c204daeb38c6ede28e5fc4d269e5b954e7a6b8bcfea7fba51",
+    "examples/ch11-async/stages/timing-steps/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch11-async/stages/timing-steps/examples/timing_measured.rs": "e84caf6bad3e9026c2e0755261bc0315db61b2a23e719a8ba69738eecfb80f28",
+    "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs": "8775dae480f55dcfb121ebaffb5123b2acd6f03b17cdbbf12d32e2138a7054f3",
+    "examples/ch11-async/stages/timing-steps/examples/timing_nested.rs": "86daa7a2c5b72c3c6b03de823de1bb5b913a7561e698da72ec4b44cf3264a516",
+    "examples/ch11-async/stages/timing-steps/examples/timing_cancelled.rs": "ae1413a62e0f70d617f1bafc3a66026c0aa8774b56dc2a9e5aa533cb7d8524c1",
+    "examples/ch11-async/stages/timing-steps/examples/timing_blocking.rs": "8534c0757039f6fd23501be3c9f3bebf057caf228cac9862ab5d219a06cfcd40",
+    "examples/ch11-async/stages/timing-clock/Cargo.toml": "0579e9d06735a5887e04bb0fccfd02e2947c9bc7ea8cf4a4a140f8e1ef77d416",
+    "examples/ch11-async/stages/timing-clock/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch11-async/stages/timing-clock/tests/clock_and_results.rs": "cd5f7e3fe49f932a7efcfd18d7e31b175e950ce6580a202b163f4cbc4568a4bf",
+    "examples/ch11-async/timing/src/lib.rs": "4a0926784e4e9d05ed5dba778880ba76f83656f8f3e08d496f62eb18f4e0a8ae",
+    "examples/ch11-async/timing/Cargo.toml": "c0c01472347761ea98bae03345bc4e32e47868c1b1ce744b5876296c1ce025e9",
+    "examples/ch11-async/timing/tests/timing_contracts.rs": "203fa6b8d12f403e7b5c4db3df546c9efe5c13541e93d41b909efe045b0fa0e0",
+    "examples/ch11-async/timing/examples/timing_measured.rs": "e84caf6bad3e9026c2e0755261bc0315db61b2a23e719a8ba69738eecfb80f28",
+    "examples/ch11-async/timing/examples/timing_outcomes.rs": "8775dae480f55dcfb121ebaffb5123b2acd6f03b17cdbbf12d32e2138a7054f3",
+    "examples/ch11-async/timing/examples/timing_nested.rs": "86daa7a2c5b72c3c6b03de823de1bb5b913a7561e698da72ec4b44cf3264a516",
+    "examples/ch11-async/timing/examples/timing_cancelled.rs": "ae1413a62e0f70d617f1bafc3a66026c0aa8774b56dc2a9e5aa533cb7d8524c1",
+    "examples/ch11-async/timing/examples/timing_blocking.rs": "8534c0757039f6fd23501be3c9f3bebf057caf228cac9862ab5d219a06cfcd40",
+    "examples/ch11-async/timing/tests/timing_solution.rs": "8bf9bbad7f0d077a81c5e1bf5894668b46e7815c52ed8b8d46afe8c9308cc5b0"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 3,
+      "quote": "上一節限制在途 task 數。現在單看一份工作：若它一直沒有結果，呼叫者要等到什麼時候？我們要替一段明確的工作設定等待期限，並分清「工作完成但回報資料錯誤」與「期限到時仍沒完成」。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 9,
+      "quote": "標準庫 **`std::time::Duration`** 表示時間長度；`Duration::from_secs(1)` 建立1秒，`Duration::from_millis(20)` 建立20毫秒，1秒等於1000毫秒。`duration.as_millis()` 回傳總毫秒數，供本例顯示，會捨去不足1毫秒的部分。Duration 具備 **Copy**；把同一份時間跨度按值交給 sleep 或 timeout 後，原 binding 仍可再用。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 11,
+      "quote": "**`std::time::Instant::now()`** 取得適合量經過時間的單調時間點；之後 `start.elapsed()` 得到 Duration。它不是年月日鐘面，也不把別台機器的時間點拿來相減。本例從呼叫 sleep 前開始量，包含等待與這次排程的時間。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 13,
+      "quote": "**`tokio::time::sleep(delay)`** 建立到期後可完成的 timer future，Output 是 unit。呼叫 sleep 時就以當時時間安排期限；await 推進並等待它，等待期間 thread 可以執行其他可前進的 async 工作。它不要求這條 thread 用同步阻塞一直留在原處，也不保證到期後立刻獲得執行機會。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 15,
+      "quote": "早期 package `ch11-timing-steps` 沒有 library；完整設定增加 **`time` feature**，由前面的 Tokio 入口啟用 timer 支援。建立 timer 要在有這項支援的 runtime 內，否則可能 panic。path dependency 只指向14.2已完成的 foundations："
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 39,
+      "quote": "前兩行固定顯示1000與20毫秒；最後一行是**這次量測值**。這裡 sleep 的目的是等待 timer 到期，不拿它猜其他 task 是否已開始。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 43,
+      "quote": "**`tokio::time::timeout(limit, work)`** 接手本例的一份 future，建立帶期限的等待；呼叫時就記下 deadline，緊接著 await 取得 **`Result<T, Elapsed>`**。T 是原工作 Output，Elapsed 是 Tokio 的逾時錯誤，具備 Debug 與 Display，可供 expect 的診斷與文字顯示。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 47,
+      "quote": "先準備兩份容易辨認的材料：`async { 100 }` 立即交出100；標準庫的 **`std::future::pending::<i32>()`** 建立一份永遠不交出 i32 的工作。`::<i32>` 指定它假想的 Output 型別，不是傳入金額。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 63,
+      "quote": "14.2的 checked_total 可能交回 `Result<i32, String>`。加上 timeout，結果成為 **`Result<Result<i32, String>, Elapsed>`**：外層回答是否在期限內完成；內層才回答資料是否符合小計規格。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 85,
+      "quote": "沿用14.2的 visits，這次先加1，再 await 永不完成的 pending，之後才有一行加100。timeout 到期時丟棄工作，結束它保存的 mutable 借用；已完成的加1仍留在 visits，後面的加100沒執行。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 101,
+      "quote": "標準庫另外提供 **`std::thread::sleep(duration)`**，接收 Duration，阻塞目前 thread 等待後回傳 unit，不回傳 future。若把它寫進 async 本體，呼叫那一段時仍會阻塞，沒有因為外面是 async 就變成 Tokio sleep。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 117,
+      "quote": "若測試只為檢查 timer 與 Result 路徑，讓它真的睡很久沒有幫助。Tokio 的 **`test-util` feature** 提供測試時鐘能力。`#[tokio::test(flavor = \"current_thread\", start_paused = true)]` 從測試開始暫停 Tokio 時鐘；沒有其他可前進工作、只剩 timer 等待時，runtime 能自動把這份時鐘推進到下一個 timer。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 119,
+      "quote": "這時用 **`tokio::time::Instant`** 讀同一份 Tokio 時鐘，now／elapsed 的用法與 std Instant 相近；std Instant 仍量真實經過時間，不能拿它斷言虛擬100毫秒。本節不測真實網路延遲。"
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 147,
+      "quote": "回到兩個必要步驟：每步等30毫秒，完成後把 completed 加1。**two_steps** 借用 caller 的 completed，讓整段被丟棄後仍能檢查已完成幾步："
+    },
+    {
+      "section_id": "14.5",
+      "path": "docs/chapters/14-05-lesson.md",
+      "line": 199,
+      "quote": "整段 two_steps 各使用下列 `(每步毫秒, 整段期限毫秒)`，預測 completed 與外層 Result：`(20, 50)`、`(30, 50)`、`(30, 10)`。每組都從 completed=0 重新開始，使用暫停的測試時鐘。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

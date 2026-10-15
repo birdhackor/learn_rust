@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="360" viewBox="0 0 340 360" role="img" aria-labelledby="title desc">
+  <title id="title">TextView 的欄位借用外部 String 所持有的文字</title>
+  <desc id="desc">上框是 view 模型，text 欄位保存 str 的 reference。藍色箭頭表示借用，連到下框 source String 所管理的 Rust tutorial 文字。view 沒有取得原 String 的 ownership。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#1d4ed8"/></marker></defs>
+  <rect width="340" height="360" rx="12" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="19" fill="#172033">
+    <text x="18" y="31" font-size="21" font-weight="bold">模型借用外部文字</text>
+    <rect x="18" y="51" width="304" height="88" rx="8" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="32" y="84">view：TextView&lt;'a&gt;</text>
+    <text x="32" y="116">欄位 view.text：&amp;'a str</text>
+    <path d="M61 145V213" fill="none" stroke="#1d4ed8" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="85" y="176">箭頭 = 借用原文字</text>
+    <text x="85" y="203">沒有另建一份內容</text>
+    <rect x="18" y="227" width="304" height="101" rx="8" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
+    <text x="32" y="258">source：String，仍是 owner</text>
+    <text x="32" y="291">管理文字：Rust tutorial</text>
+    <text x="32" y="316" font-size="16">借用使用時，這份來源必須仍有效</text>
+  </g>
+</svg>

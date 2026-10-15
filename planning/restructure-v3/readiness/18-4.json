@@ -1,0 +1,132 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.4"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18a-cli-complete-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-collection-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-content-report-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-option-order-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-04-lesson.md": "a58875058db18e69dd510130ff1a0c399ec50516e9b8d71bfde660c988c19195",
+    "examples/ch15-projects/a3-starter/Cargo.toml": "bbd5f17df26dde37503fa2b149ad35cf9062b3c579ed37ed39895da7de7a6e30",
+    "examples/ch15-projects/a3-starter/src/report.rs": "ff0440b01e80081ec79e452cff9387af68eb23b81d58e60bb8e972b6a9bd362e",
+    "examples/ch15-projects/a3-starter/src/lib.rs": "0a9dfdc9c20b30e02b80265ce0fda41a2079e41923696f277cc639e7f71f21dc",
+    "examples/ch15-projects/a3-starter/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "examples/ch15-projects/a3-starter/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "examples/ch15-projects/a3-starter/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "examples/ch15-projects/a3-starter/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "examples/ch15-projects/a3-starter/src/metrics.rs": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+    "examples/ch15-projects/a3-starter/checks/report-tests.rs": "b010cf009fa618003124e58f020c1df7ada61c8b48dfe2f21b4002ec2c01b97e",
+    "examples/ch15-projects/a3-complete/Cargo.toml": "9d2963525d2add003ef0ba19784d85e9fcda9a175220c251213d1dc41d985daa",
+    "examples/ch15-projects/a3-complete/src/lib.rs": "0a9dfdc9c20b30e02b80265ce0fda41a2079e41923696f277cc639e7f71f21dc",
+    "examples/ch15-projects/a3-complete/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "examples/ch15-projects/a3-complete/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "examples/ch15-projects/a3-complete/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "examples/ch15-projects/a3-complete/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "examples/ch15-projects/a3-complete/src/metrics.rs": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+    "examples/ch15-projects/a3-complete/src/report.rs": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705",
+    "examples/ch15-projects/a3-complete/examples/a3_text.rs": "3ba907c1f92cf45dfff91e30a869db8e3b342c705baaf4b7cb9dc6e6a1e40359",
+    "examples/ch15-projects/a3-complete/examples/a3_json.rs": "4413d137822826deb5b91a806417d0e4b6c03bbc3cf3d9a6b9ca6ad900b827a0",
+    "docs/assets/projects-a-v3/native-report-order.svg": "39fb0ea0c084aa225ac0a0e1726312b6769aa2b561d7489235304673167af7a3"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 3,
+      "quote": "A2 已取得真正重複群，也保留收集與內容判定的問題。現在要讓使用者看懂同一份結果：哪些群組相同、按路徑算有多少重複 bytes、工作是否完整，以及哪些項目沒有完成。文字和 JSON 都從同一份 Report 產生，避免兩套輸出各自算出不同答案。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 9,
+      "quote": "這一步交出的答案包含五份資料：complete、duplicate_bytes、groups、scan_issues、file_issues。每群保存每份檔案的 len、所有不同路徑，以及本群的 duplicate_bytes。兩種 issues 都保存動作、原因與可辨認的位置。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 11,
+      "quote": "12.4 已解釋 **hard link**：同一個實際檔案也能有兩個不同名字。本題的數字依路徑算，兩個 hard-link 路徑仍各占一項。因此 10 bytes 是重複內容指標，沒有承諾刪掉路徑能回收同量磁碟空間；工具只交報告。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 13,
+      "quote": "計算沿用 12.4 的 duplicate_bytes／add_duplicate_bytes：usize 路徑數以 u64::try_from 轉換，乘法與累加都用 checked methods，超出範圍交回 MetricError。**建不出正確數字時，整份報告回 Err；不能略過那群、把不完整數字當成正常或部分成功。** A4 再把這種致命錯誤接到狀態 2。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 17,
+      "quote": "我們要保存 12.3 的原生 Path 排列，而不是依檔案到達順序或顯示文字排列。考慮兩個相對位置 `a/b` 與 `a.txt`：前者是 a 目錄裡的 b，後者是一個檔名。Path 依組成部分比較，第一部分 a 在 a.txt 前，因此 a/b 在前。若先變成 String，文字比較遇到句點與斜線，則 a.txt 在前；兩種排序回答的是不同規則。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 27,
+      "quote": "問題位置可能是 None，因為走訪失敗不保證提供路徑。本節選用標準 **`Option<T>: Ord`**：T 有 Ord 時，Option 也可用 cmp；None 在 Some 前，兩份 Some 再比較內部 T。Option 的相等則按相同 variant 與內容判斷。這些是型別提供的比較能力，不是把缺位置當成空字串。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 31,
+      "quote": "為了做到這件事，IssueRow 暫時保存 `(Option<PathBuf>, Diagnostic)`：第一欄保留原生排序 key，第二欄是報告資料。排好後才移除第一欄，留下診斷。path_debug 是 Debug 文字，**只供辨認與顯示，不拿來去重、開檔或作原生排序 key**。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 35,
+      "quote": "先保留自己的 A2 進度；本頁直接提供 A3 全部起始檔。collection／content／files／stream 是 A2 成果；新 metrics 回收 12.4 的已教計算，report 才是本階段的工作位置。完整起始檔包含 imports、模型與支援函式，下面先定位待做處，再列出完整檔案。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 43,
+      "quote": "這次的模型欄位比 Notebook 多，但仍使用 owned 值。先補足當下要用的 Serde 對應：u64 編成 JSON 整數、bool 編成 boolean、String 編成文字；`Vec<T>` 在 T 能編解碼時逐項形成 array，衍生的 struct 形成欄位 object。`Option<String>` 的 Some 編成內部文字，None 編成 **null**，這是 JSON 表達無值的固定形式；讀回對應的值時取得相同 variant。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 67,
+      "quote": "起始版固定 Overflow、空診斷與空文字只是待做位置，沒有真正結果："
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 144,
+      "quote": "將工作版 `checks/report-tests.rs` 中整個含條件屬性的 tests module 加到自己的 report.rs 末尾，保留舊測試。checks 本身仍不是自動 test target。"
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 146,
+      "quote": "這次 helper 直接建立 **A2 結果模型的受控材料**，不建立或讀取真檔案：group 接收長度與名字，建立原生路徑；content 建立沒有問題的 ContentReport。這只測報告接線與數字，不聲稱任意名字的磁碟檔案有這些內容："
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 188,
+      "quote": "完成後，Unix 應有原 20 項加新 9 項，共 29 項；其他平台不編入五項 Unix fixtures。新增驗收會檢查這些不同需求："
+    },
+    {
+      "section_id": "18.4",
+      "path": "docs/chapters/18-04-lesson.md",
+      "line": 207,
+      "quote": "[A3 完成快照](https://github.com/birdhackor/learn_rust/tree/main/examples/ch15-projects/a3-complete) 保存本階段 source 與同一份驗收。它仍沒有完整參數或 0／1／2；A4 再把資料模型與輸出失敗接到真正 CLI。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

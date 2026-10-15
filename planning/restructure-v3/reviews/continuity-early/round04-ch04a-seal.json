@@ -1,0 +1,17 @@
+{
+  "sealed_at_utc": "2026-10-15T07:18:28.726916+00:00",
+  "files": [
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round04-ch04a.md",
+      "sha256": "2ba53e2739278362a5a18df07a087297f8ced2f3ec5e32c836cc515add55c751"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round04-ch04a.json",
+      "sha256": "c3fb93efec39722451f3a73fedee8404d5dcdc8eafc0e23f75877dd8337eab06"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round04-ch04a-sourcehashes.json",
+      "sha256": "ffda6e277e6822ec4d2ca650889517773597e5c07eb3b4ebd10e642901b40a91"
+    }
+  ]
+}

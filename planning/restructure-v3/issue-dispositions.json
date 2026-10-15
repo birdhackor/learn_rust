@@ -1,0 +1,763 @@
+[
+  {
+    "id": "A0105-001",
+    "original_path": "docs/chapters/01-03-workspace.md",
+    "original_line": 37,
+    "original_quote": "這是一份**節錄模型**，只列出現在要跑的 `hello-world` 成員；實際 repo 的 `members` 還會列出其他章節的 package。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "以最小且完整的教學 workspace 設定取代節錄模型；讀者能直接執行，不再辨認多餘標籤。",
+    "new_locations": [
+      "1.3"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "examples/intro-workspace/Cargo.toml",
+        "line": 2,
+        "quote": "members = ["
+      }
+    ],
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/1-3.json"
+    ],
+    "final_source_sha256": {
+      "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0105-002",
+    "original_path": "docs/chapters/01-03-workspace.md",
+    "original_line": 37,
+    "original_quote": "根 manifest 的結構如下。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "引句貼近設定，先保留必要語法介紹；不用遙遠的如下。",
+    "new_locations": [
+      "1.3"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/01-03-lesson.md",
+        "line": 42,
+        "quote": "--8<-- \"examples/intro-workspace/Cargo.toml\""
+      }
+    ],
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/1-3.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/01-03-lesson.md": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0105-003",
+    "original_path": "docs/chapters/01-05-functions.md",
+    "original_line": 60,
+    "original_quote": "這裡的兩種括號用途一致：都圈出一段工作；差別是內部 block 把最後的數字交回外層，而 `main` 完成顯示後回傳 unit。",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "改兩個 block，避免誤以為括號種類不同。",
+    "new_locations": [
+      "1.6"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/01-06-lesson.md",
+        "line": 17,
+        "quote": "函式的 `{ ... }` 是一個 **block**，也就是大括號圈起的一段工作。block 最後的不帶分號 expression 會成為它的值；函式本體的這個值就交回呼叫者。因此上面兩個參數決定這次乘法的材料，尾端決定交出的答案。"
+      }
+    ],
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/1-6.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/01-06-lesson.md": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0105-004",
+    "original_path": "docs/chapters/02-02-ownership.md",
+    "original_line": 13,
+    "original_quote": "stack／heap 是理解資料關係的模型，編譯器也可能將數值放在處理器內部的暫存空間，而非照圖逐項存放。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "與1.7新增圖合併；3.2只回收已教記憶體概念，不空指未存在的圖。",
+    "new_locations": [
+      "1.7"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/01-07-lesson.md",
+        "line": 56,
+        "quote": "![A 時 main 保存 price 和 count；B 時 main 等待而 subtotal 保存自己的參數與 result；C 時 subtotal 呼叫已結束，main 的 first 保存回傳的 360](../assets/foundations-v3/subtotal-frames.svg)"
+      }
+    ],
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/1-7.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/01-07-lesson.md": "e81574e0e1ba75b2702ad6c25a144c8441d532563dc362cf6d52dc9aedb010be"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0105-005",
+    "original_path": "docs/chapters/02-06-slices.md",
+    "original_line": 57,
+    "original_quote": "最後一次使用之後，才可以接著修改原 array；借用區間與名稱 scope 的區別仍和上一節相同。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "明指3.5 borrowing與scope，取代錯誤上一節。",
+    "new_locations": [
+      "3.7"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/03-07-lesson.md",
+        "line": 80,
+        "quote": "slice reference 同樣受第 3.5 節的借用規則約束。若 selected 稍後還要讀取，就不能在那之前衝突地修改它借讀的資料。"
+      }
+    ],
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/3-7.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/03-07-lesson.md": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0105-006",
+    "original_path": "docs/chapters/03-02-option-result.md",
+    "original_line": 5,
+    "original_quote": "## Option：有數字，不代表一定有數字",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "改有值與缺值，讓Option狀態與內部數字分清。",
+    "new_locations": [
+      "5.2"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/05-02-lesson.md",
+        "line": 5,
+        "quote": "## Option：有值與缺值"
+      }
+    ],
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/5-2.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/05-02-lesson.md": "40d749408aba8ccf2004dc6b410d5bbe8e1e086983070cf1e13df554bab3ab18"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0105-007",
+    "original_path": "docs/chapters/03-03-generics.md",
+    "original_line": 40,
+    "original_quote": "下面的 Pair 定義兩個 T，建立時卻一邊放數字、一邊放 bool，因此不能編譯：",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "改一個T用於兩個欄位，區分型別參數數量與欄位數量。",
+    "new_locations": [
+      "5.1"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/05-01-lesson.md",
+        "line": 9,
+        "quote": "`Holder<T>` 在型別名稱後的角括號內宣告一個型別參數 T，value 欄位採用 T。T 是常用名稱，不是 Rust 特別提供的一個具體型別："
+      }
+    ],
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/5-1.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/05-01-lesson.md": "25f1b41ae6846b38b0c012775e0e44992eb493b1e957d5453debd4f4baf3378a"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-C01",
+    "original_path": "docs/chapters/07-01-dependencies.md",
+    "original_line": 25,
+    "original_quote": "以下設定使用 TOML 的**行內表格**：`{ 欄位 = 值, 欄位 = 值 }` 把同一個 dependency 的數個設定放在一起。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "說明行內表格時不遠指以下設定；實際設定前再近接引入。",
+    "new_locations": [
+      "10.1"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/10-01-lesson.md",
+        "line": 36,
+        "quote": "以下是本節**完整** `cargo-setup/Cargo.toml`。前三個欄位仍是第一章已教的 package 名稱、版本與 edition。依賴有不只一項設定時，用 TOML 的**行內表格** `{ 欄位 = 值, 欄位 = 值 }` 放在同一組；下面的本機依賴與 `clap` 設定就是這種形式："
+      }
+    ],
+    "implementation_sha256": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/10-1.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/10-01-lesson.md": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-C02",
+    "original_path": "docs/chapters/08-01-box.md",
+    "original_line": 22,
+    "original_quote": "`std::mem` 是標準函式庫中與記憶體操作有關的 module；本例只使用安全的大小查詢，不讀取 raw address。下面把它們放進 library 的 `sizes` module，供數值範例呼叫。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "先說本例使用sizes module，不以遠處下面指認。",
+    "new_locations": [
+      "11.1",
+      "11.2"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/11-01-lesson.md",
+        "line": 57,
+        "quote": "完整根檔案 `examples/sizes.rs` 用 `mod size_support;` 載入它。part 借 array 後兩項；word 與 longer_word 都是 `&str`，內容長度不同："
+      }
+    ],
+    "implementation_sha256": "01206a2c8b69a641f4b04083178c43cb5a528bd097ef2c5edd490256231c3776",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/11-1.json",
+      "planning/restructure-v3/readiness/11-2.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/11-01-lesson.md": "01206a2c8b69a641f4b04083178c43cb5a528bd097ef2c5edd490256231c3776"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-C03",
+    "original_path": "docs/chapters/08-06-error.md",
+    "original_line": 47,
+    "original_quote": "標準ParseIntError也提供Error，因而能和已實作Error的CountError一起借成dyn Error視圖。下列source對 `&self` 作match，得到兩種不同的欄位reference，再依8.5的unsizing轉成同一份介面。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "直接指名source method，讓讀者辨識實作位置。",
+    "new_locations": [
+      "11.7"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/11-07-lesson.md",
+        "line": 53,
+        "quote": "ParseCountError 延續第 8.5 節的 Integer／Range，分別擁有 ParseIntError 或 CountError。標準 ParseIntError 也有 Error；因此 **source method** 可以對 `&self` 作 match，將兩種欄位 reference unsize 成共同的 `&dyn Error`。"
+      }
+    ],
+    "implementation_sha256": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/11-7.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/11-07-lesson.md": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-C04",
+    "original_path": "docs/chapters/10-03-hrtb-callbacks.md",
+    "original_line": 132,
+    "original_quote": "這份 bound 說明輸出的有效性；具體選哪個 reference，仍由選擇器的 body 決定。下面的完整例子才把它指定成第二個欄位。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "明確區分共用helper與實際選第二欄的呼叫例子。",
+    "new_locations": [
+      "13.3"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/13-03-lesson.md",
+        "line": 168,
+        "quote": "這份 bound 說明輸出的有效性；具體選哪個 reference，仍由選擇器的 body 決定。先看共用的 `sum_selected` helper；後面的 `callback_projection/main.rs` 傳入 second，才固定選擇第二個欄位。"
+      }
+    ],
+    "implementation_sha256": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/13-3.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/13-03-lesson.md": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-O01",
+    "original_path": "docs/chapters/07-06-clap.md",
+    "original_line": 106,
+    "original_quote": "為本節模型加入 `line_numbers: bool`，讓 `--line-numbers` 啟用它。只解析與核對設定，先不輸出行號：省略時為 false；加入時為 true；原 query、filename 與未啟用的 ignore_case 不變。",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "改Settings設定資料，沿用實際型別名而非本節模型。",
+    "new_locations": [
+      "10.6"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/10-06-lesson.md",
+        "line": 116,
+        "quote": "為本節的 Settings 設定資料加入 `line_numbers: bool`，讓 `--line-numbers` 啟用它。只解析與核對設定，先不輸出行號：省略時為 false；加入時為 true；原 query、filename 與未啟用的 ignore_case 不變。"
+      }
+    ],
+    "implementation_sha256": "1a66bbad509d726af4d6c6b8697c854ce1878fba9dd23b3311f22d471130a99c",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/10-6.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/10-06-lesson.md": "1a66bbad509d726af4d6c6b8697c854ce1878fba9dd23b3311f22d471130a99c"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-O02",
+    "original_path": "docs/chapters/07-09-complete-cli.md",
+    "original_line": 63,
+    "original_quote": "檔案分工如下；lib.rs 的公開 module 宣告形式沿用 1.9，稍後只展示完成所需前置後的 run 片段：",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "改將公開module與run分開說明，移除作者編寫流程。",
+    "new_locations": [
+      "10.9"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/10-09-lesson.md",
+        "line": 63,
+        "quote": "檔案分工如下。lib.rs以第2.6節的公開module宣告納入各部分；它另外提供read_report、write_report與run，將各層連接起來。下面會先逐項說明工作，再列出完整library root："
+      }
+    ],
+    "implementation_sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/10-9.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/10-09-lesson.md": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-O03",
+    "original_path": "docs/chapters/07-09-complete-cli.md",
+    "original_line": 101,
+    "original_quote": "先核對純工作，不讀檔也不寫 stdout。下面測試保存預設與 ASCII 選擇的差別、非 ASCII 的邊界、空行／CRLF 行號、原輸入結束後資料仍有效，以及空 query 的失敗：",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "測試介紹不懸冒號；必要escape介紹保留在測試之前。",
+    "new_locations": [
+      "10.9"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/10-09-lesson.md",
+        "line": 101,
+        "quote": "先核對純工作，不讀檔也不寫stdout。下面測試保存預設與ASCII選擇的差別、非ASCII邊界、空行／CRLF行號、原輸入結束後資料仍有效，以及空query的失敗。"
+      }
+    ],
+    "implementation_sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/10-9.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/10-09-lesson.md": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-O04",
+    "original_path": "docs/chapters/08-08-interior-mutability.md",
+    "original_line": 102,
+    "original_quote": "兩個shared guard都借同一Vec，因此讀到相同80。它們都結束後，mutable guard才取得修改權限。push把120加到原Vec，writer清理後再借shared guard讀回兩項；不是clone另一個Vec再修改它。",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "正文統一writable，與真實guard變數相符。",
+    "new_locations": [
+      "11.9"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/11-09-lesson.md",
+        "line": 83,
+        "quote": "衝突時，borrow／borrow_mut 會 panic。檢查發生在呼叫時，不能因程式通過編譯就假設一定成功。以下完整程式先建立兩份 shared guard，兩份都 drop 後才取得 mutable guard；修改完成再 drop writable，讓讀取恢復："
+      }
+    ],
+    "implementation_sha256": "8f935f8c0f04181dd4321c8505c8ac8aac8c27813e4a1a1d7a8dec865d795925",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/11-9.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/11-09-lesson.md": "8f935f8c0f04181dd4321c8505c8ac8aac8c27813e4a1a1d7a8dec865d795925"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-O05",
+    "original_path": "docs/chapters/09-03-file-traversal.md",
+    "original_line": 47,
+    "original_quote": "library 的 `scan` module 定義下列資料。`Snapshot` 保存這次觀察的 `len`／`modified`，名字不承諾一致的檔案快照。`FileRecord` 再持有原生 `PathBuf`。7.5 的 owner／reference 關係仍然成立：這份記錄擁有路徑文字，沒有接管或固定磁碟上的檔案。",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "改scan module保存下列資訊等不懸指稱，保留Snapshot與路徑契約。",
+    "new_locations": [
+      "12.3"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/12-03-lesson.md",
+        "line": 71,
+        "quote": "library 的 `scan` module 用幾個型別分開保存結果。`Snapshot` 保存這次觀察的 `len`／`modified`，名字不承諾一致的檔案快照。`FileRecord` 再持有原生 `PathBuf`。第10.5節的 owner／reference 關係仍然成立：這份記錄擁有路徑文字，沒有接管或固定磁碟上的檔案。"
+      }
+    ],
+    "implementation_sha256": "35e30859aa3cfac9752493c2e76843cfcd36c65d674bfa37c79bd8dc0c7ea8b2",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/12-3.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/12-03-lesson.md": "35e30859aa3cfac9752493c2e76843cfcd36c65d674bfa37c79bd8dc0c7ea8b2"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "A0610-O06",
+    "original_path": "docs/chapters/10-02-thread-join.md",
+    "original_line": 164,
+    "original_quote": "為了不讓一次 panic 的實際型別替兩種文字契約代答，完整測試直接建立 String、static 文字與 u32 的 payload，分別核對文字與未知型別的報告：",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "測試意圖用完整句，保留suffix介紹於程式之前。",
+    "new_locations": [
+      "13.2"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/13-02-lesson.md",
+        "line": 188,
+        "quote": "為了不讓一次 panic 的實際型別替兩種文字契約代答，完整測試直接建立 String、static 文字與 u32 的 payload，分別核對文字與未知型別的報告。"
+      }
+    ],
+    "implementation_sha256": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/13-2.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/13-02-lesson.md": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-001",
+    "original_path": "docs/chapters/11-08-local-service-and-tests.md",
+    "original_line": 31,
+    "original_quote": "這兩段是 interface片段，完整的 imports／runtime／client／server收尾會在下一段一起給出。路由只是設定，還需要接收連線的資源。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "以小節名指向完整範例，imports/runtime/server所需能力仍先教。",
+    "new_locations": [
+      "14.9"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/14-09-lesson.md",
+        "line": 41,
+        "quote": "## 最小完整程式：真正回200，再停止服務"
+      },
+      {
+        "path": "docs/chapters/14-09-lesson.md",
+        "line": 49,
+        "quote": "完整 **`src/main.rs`** 用channel提供停止工作，spawn服務後由client真正GET /ok。無論檢查結果成功與否，都先送stop、await server，再expect或assert："
+      },
+      {
+        "path": "docs/chapters/14-09-lesson.md",
+        "line": 52,
+        "quote": "--8<-- \"examples/ch11-async/stages/local-basic/src/main.rs\""
+      }
+    ],
+    "implementation_sha256": "cb3206ccfd5d9d6034cd0dc94001a496378b518fe61fa507acea64217425b7c2",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/14-9.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/14-09-lesson.md": "cb3206ccfd5d9d6034cd0dc94001a496378b518fe61fa507acea64217425b7c2"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-002",
+    "original_path": "docs/chapters/11-02-task-lifecycle.md",
+    "original_line": 35,
+    "original_quote": "先教本節要用的完整最低契約：",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "直接說本節使用的channel操作，不堆完整最低契約。",
+    "new_locations": [
+      "14.3"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/14-03-lesson.md",
+        "line": 23,
+        "quote": "**`mpsc::channel::<T>(capacity)`** 建立有界緩衝區，交回 `Sender<T>` 與 `Receiver<T>`；capacity 必須大於0。Sender 可以 clone，共用同一條 channel；Receiver 由一個接收者持有。`sender.send(value).await` 等待空位，成功交回 Ok(())，收端已關閉則交回帶原值的 SendError；它具備 Debug，可供 expect 在失敗時產生診斷。`receiver.recv().await` mutable 借用收端：有訊息得到 Some(value)，暫時沒有訊息但仍有送端時繼續等，所有送端結束且緩衝區已空才得到 None。"
+      }
+    ],
+    "implementation_sha256": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/14-3.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/14-03-lesson.md": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-003",
+    "original_path": "docs/chapters/11-07-single-async-http.md",
+    "original_line": 47,
+    "original_quote": "後面的 run 選 10 秒；helper 接 Duration，供之後已教用途需要其他期限時使用。每一次請求取得自己的預算，不是 client 建立後所有請求共享一個剩餘倒數。URL 解析、client 建立與報告輸出，都不在這份請求期限內。",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "改呼叫者可以選擇其他期限，保留每次請求預算的必要範圍說明。",
+    "new_locations": [
+      "14.8"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "line": 25,
+        "quote": "這份 async Client 的 **`.timeout(limit)` 是同一請求的總期限**：涵蓋連線到完整 body，redirect 或拿到 headers 不會重新給一次預算。若收到 headers 前逾時是 Request；已得到 status、讀 body 才失敗則是 Body。這與上一節 blocking send／text 各自等待的介面契約不同。"
+      }
+    ],
+    "implementation_sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/14-8.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/14-08-lesson.md": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-004",
+    "original_path": "docs/chapters/11-07-single-async-http.md",
+    "original_line": 170,
+    "original_quote": "`tests/cli.rs` 另沿 7.8／11.6 真正啟動 binary，檢查 help／version、無參數、未知 flag、解析與 scheme 拒絕。helper 仍以 `&[&str]` 接參數、Command::arg 接迴圈的 `&&str`；沒有學生程式未教的 server 或 socket helper：",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "移除作者自我驗收句，保留真實CLI測試與HTTP行為的界線。",
+    "new_locations": [
+      "14.8"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "line": 70,
+        "quote": "完整 `tests/cli.rs` 保存 execute helper，實際啟動這個 package 的 binary，驗 help／version及無效參數／URL："
+      }
+    ],
+    "implementation_sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/14-8.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/14-08-lesson.md": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-005",
+    "original_path": "docs/chapters/14-08-profiling-and-improvement.md",
+    "original_line": 13,
+    "original_quote": "我們用repeat_counts安排有限重複工作。cloned為true呼叫原模型count_cloned，false呼叫改善模型count_borrowed。兩者收到相同slice與query；black_box沿14.7減少對固定輸入的假設。每次Result完成後才累加行數，沒有只執行一次卻把答案乘100冒充做了100次工作。",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "稱count_cloned/count_borrowed兩個實作，讓量測對象明確。",
+    "new_locations": [
+      "17.8"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/17-08-lesson.md",
+        "line": 13,
+        "quote": "我們用repeat_counts安排有限重複工作。cloned為true呼叫count_cloned實作，false呼叫count_borrowed實作。兩者收到相同slice與query；black_box沿17.7減少對固定輸入的假設。每次Result完成後才累加行數，沒有只執行一次卻把答案乘100冒充做了100次工作。"
+      }
+    ],
+    "implementation_sha256": "8ff6edb77f3d98afd663717b4b2e9fe10b93dd6b20890f69cfe5613c02c19898",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/17-8.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/17-08-lesson.md": "8ff6edb77f3d98afd663717b4b2e9fe10b93dd6b20890f69cfe5613c02c19898"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-006",
+    "original_path": "docs/chapters/15-04-build-report.md",
+    "original_line": 163,
+    "original_quote": "兩個 example 分別顯示同一份六檔結果，名稱是獨立的 a3_text／a3_json。它們的 root 是 `../materials/duplicate-demo`，所以先固定操作入口；示範也沿用修後 7.5，write_all 後明確 flush。expect 只依固定教材材料，沒有用它取代完整 CLI 的錯誤政策：",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "刪修後、以新10.5正式版指稱；操作與flush規則保留。",
+    "new_locations": [
+      "18.4"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/18-04-lesson.md",
+        "line": 279,
+        "quote": "兩個 example 分別顯示同一份六檔結果，名稱是獨立的 a3_text／a3_json。它們的 root 是 `../materials/duplicate-demo`，所以先固定操作入口；示範也沿用第 10.5 節，write_all 後明確 flush。expect 只依固定教材材料，沒有用它取代完整 CLI 的錯誤政策："
+      }
+    ],
+    "implementation_sha256": "a58875058db18e69dd510130ff1a0c399ec50516e9b8d71bfde660c988c19195",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/18-4.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/18-04-lesson.md": "a58875058db18e69dd510130ff1a0c399ec50516e9b8d71bfde660c988c19195"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-007",
+    "original_path": "docs/chapters/15-07-check-one-url.md",
+    "original_line": 95,
+    "original_quote": "held 測試還需要 `held_request(limit)`。它建立一份 gate、把 client 與網址 move 進 request task，再等待 handler 回報已進入第零份 gate。沿 11.2／11.8 的 `spawn` 要求，task 擁有 client 與文字；`Check` 的欄位使用可 `Send` 的 `String`、數值、`Option` 與這些具體錯誤型別，因此 Output 可交回 task 的等待者，沒有借用 fixture 的資料。成功交回 `(Fixture, JoinHandle<Check>)`，交回時尚未放行。起始版根本不送網路，因此通知也不會出現；加一個五秒的**觀察 guard** 才能指出這種錯碼，然後 abort／await request task，再 shutdown server。測試用 `expect` 或 `panic!` 報材料、契約不符；這不是正式網址檢查器對一般輸入的處理方式。",
+    "original_classification": "confirmed",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "稱觀察期限/測試timeout，與RefCell/Mutex guard區別；不是缺少Guard API。",
+    "new_locations": [
+      "18.7"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/18-07-lesson.md",
+        "line": 153,
+        "quote": "held 測試還需要 `held_request(limit)`。它建立一份 gate、把 client 與網址 move 進 request task，再等待 handler 回報已進入第零份 gate。沿 14.3／14.9 的 `spawn` 要求，task 擁有 client 與文字；`Check` 的欄位使用可 `Send` 的 `String`、數值、`Option` 與這些具體錯誤型別，因此 Output 可交回 task 的等待者，沒有借用 fixture 的資料。成功交回 `(Fixture, JoinHandle<Check>)`，交回時尚未放行。起始版根本不送網路，因此通知也不會出現；加一個五秒的**觀察期限** 才能指出這種錯碼，然後 abort／await request task，再 shutdown server。測試用 `expect` 或 `panic!` 報材料、契約不符；這不是正式網址檢查器對一般輸入的處理方式。"
+      }
+    ],
+    "implementation_sha256": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/18-7.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/18-07-lesson.md": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-008",
+    "original_path": "docs/chapters/15-07-check-one-url.md",
+    "original_line": 48,
+    "original_quote": "起始 artifact 在 [`examples/ch15-projects/b1-starter`](https://github.com/birdhackor/learn_rust/tree/main/examples/ch15-projects/b1-starter)。請把其中完整的 `Cargo.toml` 與 `src/lib.rs` 保存到自己的 `url-b1-work` 目錄，另保存 `checks/single-tests.rs`，稍後才加入測試。以下 source 節錄用於定位與說明，不是完整檔案的替代品。",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "普通敘述採起始檔/工作版/片段/核心程式；程式實際名稱不翻譯。",
+    "new_locations": [
+      "18.7"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/18-07-lesson.md",
+        "line": 48,
+        "quote": "起始檔 在 `examples/ch15-projects/b1-starter`。請把其中完整的 `Cargo.toml` 與 `src/lib.rs` 保存到自己的 `url-b1-work` 目錄，另保存 `checks/single-tests.rs`，稍後才加入測試。下方先解釋要修改的位置，再提供全部起始檔與 checks；不需要到外部網站補齊程式。"
+      }
+    ],
+    "implementation_sha256": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/18-7.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/18-07-lesson.md": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-009",
+    "original_path": "docs/chapters/15-06-duplicate-finder-answer.md",
+    "original_line": 63,
+    "original_quote": "A2 的重建要求 callback 報出本次候選的真正 offender，移除後才有有限進展。違約時的 panic 是程式作者把 callback 接錯的防守；完整公有入口不讓使用者替換這份 callback。一般檔案失敗依舊保存 ScanIssue／FileIssue，繼續其他項目，最後交 partial1。",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "普通敘述改問題檔案/原生路徑問題項目/診斷排序規則；合同統一契約。",
+    "new_locations": [
+      "18.6"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/18-06-lesson.md",
+        "line": 63,
+        "quote": "A2 的重建要求 callback 報出本次候選中確切失敗的檔案，移除後才有有限進展。違約時的 panic 是程式作者把 callback 接錯的防守；完整公有入口不讓使用者替換這份 callback。一般檔案失敗依舊保存 ScanIssue／FileIssue，繼續其他項目，最後交 partial1。"
+      }
+    ],
+    "implementation_sha256": "0d3112fc092f4d730391bb884b2c9f55c06126e459cc8a84397f7fba54ed4e60",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/18-6.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/18-06-lesson.md": "0d3112fc092f4d730391bb884b2c9f55c06126e459cc8a84397f7fba54ed4e60"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  },
+  {
+    "id": "W11-15-010",
+    "original_path": "docs/chapters/13-03-poll-and-waker.md",
+    "original_line": 206,
+    "original_quote": "延伸閱讀：[英文 Async Book：Task Wakeups](https://rust-lang.github.io/async-book/02_execution/03_wakeups.html)、[中文 Async Book：用 Waker 喚醒任務](https://huangjj27.github.io/async-book/02_execution/03_wakeups.html)、[Future](https://doc.rust-lang.org/std/future/trait.Future.html)、[Context](https://doc.rust-lang.org/std/task/struct.Context.html)、[Waker](https://doc.rust-lang.org/std/task/struct.Waker.html)、[Wake](https://doc.rust-lang.org/std/task/trait.Wake.html)。本節的狀態、ownership 與通知責任都在正文，不需靠外部的 timer／executor helper 才能讀懂。",
+    "original_classification": "optional",
+    "decision": "採用；隨章節重寫整合",
+    "benefit_and_minimal_change": "刪除本節已自足等作者驗收句，實際必要邊界與延伸閱讀保留。",
+    "new_locations": [
+      "16.3"
+    ],
+    "implementation_status": "accepted",
+    "verification": [
+      {
+        "path": "docs/chapters/16-03-lesson.md",
+        "line": 207,
+        "quote": "延伸閱讀：[Async Book：Task Wakeups](https://rust-lang.github.io/async-book/02_execution/03_wakeups.html)、[中文對應章](https://huangjj27.github.io/async-book/02_execution/03_wakeups.html)、[Future](https://doc.rust-lang.org/std/future/trait.Future.html)、[Waker](https://doc.rust-lang.org/std/task/struct.Waker.html)。外書 timer 的時序不取代本頁的明確控制步驟。"
+      }
+    ],
+    "implementation_sha256": "a95a5c1a963f7dce7c6be06c75e077f696a4dd6ffc01cc5d26f77155452e81d1",
+    "accepted_readiness": [
+      "planning/restructure-v3/readiness/16-3.json"
+    ],
+    "final_source_sha256": {
+      "docs/chapters/16-03-lesson.md": "a95a5c1a963f7dce7c6be06c75e077f696a4dd6ffc01cc5d26f77155452e81d1"
+    },
+    "root_final_judgment": "Current implementation quoted at exact locations, mapped sections independently reviewed and accepted; original quote/classification preserved. Structural quote/hash checks are separate from teaching and execution evidence."
+  }
+]

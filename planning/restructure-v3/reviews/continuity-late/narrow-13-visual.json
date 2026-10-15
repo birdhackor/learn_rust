@@ -1,0 +1,26 @@
+[
+  {
+    "id": "13-02",
+    "width": 1280,
+    "file": "current-13-02-1280.png",
+    "text": "pub mod workers;\n\nuse crate::workers::sum;\nuse std::thread;\n\nfn main() {\n    let values = vec![80, 120];\n    let handle = thread::spawn(move || sum(values.as_slice()));\n\n    let local_values = [1, 2, 3];\n    let local_total = sum(&local_values[..]);\n    println!(\"主thread小計={local_total}\");\n\n    match handle.join() {\n        Ok(worker_total) => {\n            let total = local_total + worker_total;\n            assert_eq!(worker_total, 200);\n            assert_eq!(total, 206);\n            println!(\"工作小計={worker_total}，總和={total}\");\n        }\n        Err(_) => println!(\"工作panic，沒有完整總和\"),\n    }\n}\n"
+  },
+  {
+    "id": "13-03",
+    "width": 1280,
+    "file": "current-13-03-1280.png",
+    "text": "這份 bound 說明輸出的有效性；具體選哪個 reference，仍由選擇器的 body 決定。先看共用的 sum_selected helper；後面的 callback_projection/main.rs 傳入 second，才固定選擇第二個欄位。"
+  },
+  {
+    "id": "13-02",
+    "width": 390,
+    "file": "current-13-02-390.png",
+    "text": "pub mod workers;\n\nuse crate::workers::sum;\nuse std::thread;\n\nfn main() {\n    let values = vec![80, 120];\n    let handle = thread::spawn(move || sum(values.as_slice()));\n\n    let local_values = [1, 2, 3];\n    let local_total = sum(&local_values[..]);\n    println!(\"主thread小計={local_total}\");\n\n    match handle.join() {\n        Ok(worker_total) => {\n            let total = local_total + worker_total;\n            assert_eq!(worker_total, 200);\n            assert_eq!(total, 206);\n            println!(\"工作小計={worker_total}，總和={total}\");\n        }\n        Err(_) => println!(\"工作panic，沒有完整總和\"),\n    }\n}\n"
+  },
+  {
+    "id": "13-03",
+    "width": 390,
+    "file": "current-13-03-390.png",
+    "text": "這份 bound 說明輸出的有效性；具體選哪個 reference，仍由選擇器的 body 決定。先看共用的 sum_selected helper；後面的 callback_projection/main.rs 傳入 second，才固定選擇第二個欄位。"
+  }
+]

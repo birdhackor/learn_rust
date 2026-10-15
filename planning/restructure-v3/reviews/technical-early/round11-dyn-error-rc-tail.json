@@ -1,0 +1,911 @@
+{
+  "review_id": "round11-dyn-error-rc-tail",
+  "scope": [
+    "11.6",
+    "11.7",
+    "11.8"
+  ],
+  "role": "獨立技術／先教後用／實際 source closure 審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 實際已讀1–10.4、11.1–11.5；未用11.9以後補先備。",
+  "independence": "首次實讀前未讀作者validation/ledger、peer、reader、歷史問題。父任務告知11.6有待完成的doc-only窄修但未告具體finding；其後通知完成hash。先保存本波自身判斷，不讀其他review。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "封存所對新稿沒有必要或可選待修項目；首次讀取的一項字詞觀察已由作者窄修，未另計自己的新獨立finding。",
+  "method": [
+    "三節全文與全部15個selectedrun及3個selectedtest target closure逐檔靜態核對。",
+    "65snippet實際anchor／fullsource；42Rust（28成功來源+14負例）、14expected、4SVG source/XML。",
+    "22個helper複製片段byte comparison；無reader或browser實驗。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "note": "本波沒有新增Cargo/Rust執行；成功輸出、tests與診斷碼均為source靜態核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:37:35.803432+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "docs/assets/types-v3/dyn-dispatch.svg": "87b6e9c27fa1626382a12875d04d56bab0c3436b4e5d15fbd75644d42eb5ccca",
+    "docs/assets/types-v3/error-chain.svg": "1a77580f6cc6f481b9689d20ce8b157acb23f005dcddc17dc1cc4038759ef146",
+    "docs/assets/types-v3/shared-tail.svg": "eccb2e83c9873c06ca513418653cb3dcf1546151066dc618611065ad575f5663",
+    "docs/assets/types-v3/strong-cycle.svg": "1d5a085fb785ab0636284d6031d1cf280e9b491398a3d643f15561afb46994d0",
+    "docs/chapters/11-06-lesson.md": "ec492344b90ad5c776fd17550cde8540c2241161b42d13a70ce72632d6dbb76f",
+    "docs/chapters/11-07-lesson.md": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+    "docs/chapters/11-08-lesson.md": "c871b4acacc1f6b522277756de0604796bb44e81468506af3ae33b0ce6dd8114",
+    "examples/intro-workspace/Cargo.lock": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/dyn_borrowed/dyn_charges/mod.rs": "39ec518ce3bd607f77d80eebe2fb81426694ba912a03669ccd41cd3c6e217f7a",
+    "examples/intro-workspace/type-stages/examples/dyn_borrowed/main.rs": "7ded0bee50297ffbac882a00d0b6b705c05574bc599227ee777b96e626c2fcfa",
+    "examples/intro-workspace/type-stages/examples/dyn_compatibility/dyn_charges/mod.rs": "71b263dd4aef4e55167c1b7e04d9726d84db6e354016454e7f04e5ecc325ce26",
+    "examples/intro-workspace/type-stages/examples/dyn_compatibility/main.rs": "f22801ba356b4758cbc55117766cec561ef07404a523e608f54b059c54c2676b",
+    "examples/intro-workspace/type-stages/examples/dyn_complete/dyn_charges/mod.rs": "46033413ab93dcdc528c777b1e3f8b53a8b6cea98e8422ac63644b0940608ffb",
+    "examples/intro-workspace/type-stages/examples/dyn_complete/main.rs": "64e323fd37fbae233e6b89249c8acc859cf9e525979ae3dc4fb06ea67c42ff74",
+    "examples/intro-workspace/type-stages/examples/dyn_factories/dyn_charges/mod.rs": "888918ea581218be66db484519c61cef859120ed9f659747fde85ed0f1370d81",
+    "examples/intro-workspace/type-stages/examples/dyn_factories/main.rs": "a20172fbd9785109370dc3330bfea925de35440d614e84a0b18e16610c25b51d",
+    "examples/intro-workspace/type-stages/examples/dyn_lifetime/dyn_charges/mod.rs": "c9511f5e205655f973ad202c511378357f4a12c83914e9ff4c5b3ec5867813d5",
+    "examples/intro-workspace/type-stages/examples/dyn_lifetime/main.rs": "e563baaa13513b48868587438e5abc2ce864f62231c32c29c497a6c8a924b16f",
+    "examples/intro-workspace/type-stages/examples/dyn_list/dyn_charges/mod.rs": "1b9c81223bf413d0a09fdc932367b65a8c12ebccb76acf5451471bbca404c302",
+    "examples/intro-workspace/type-stages/examples/dyn_list/main.rs": "2af8db92002722b864618eaba1d7621b11295bd1d4e1b830d5dde3495c43592b",
+    "examples/intro-workspace/type-stages/examples/error_borrowed/errors/mod.rs": "b35cf058ab76b8951391809067ebe31e85cd93fcac030db86e55195760bb79fc",
+    "examples/intro-workspace/type-stages/examples/error_borrowed/main.rs": "50bdc5534c4a5ccf20e694fc7fcfa45bd692ad7621a64ee4742524a48806c582",
+    "examples/intro-workspace/type-stages/examples/error_boxed/errors/mod.rs": "fc94d896621c300394c4297bd89c7b6a42aebb9673f8fcf23bddf8fa7ef308d5",
+    "examples/intro-workspace/type-stages/examples/error_boxed/main.rs": "ca78b6c3c67b4595b438892aa5bff7fc3311a8e8912f67d3b853b4e2cfd66980",
+    "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs": "c5cff6e3d87a023c4ea2a92a0952b21bd891267af8f655837f87214d50b240ea",
+    "examples/intro-workspace/type-stages/examples/error_chain/main.rs": "cc4df4de2cf5ecee6279b62f7cd7d629dfcef343793511eef92f1bc7125a42b5",
+    "examples/intro-workspace/type-stages/examples/error_complete/errors/mod.rs": "f1c417317eb8c9cbab6c18708312379f769d3bda6db52e141dda416d072d3779",
+    "examples/intro-workspace/type-stages/examples/error_complete/main.rs": "d10a2879a70dcd84ad24257a836e7bbca86eb695b340802f0fe14f492f2c7423",
+    "examples/intro-workspace/type-stages/examples/error_leaf/errors/mod.rs": "6f2ad95d4c6d3737961866772a52545747c9d921fb8fc5471ef4b237909228df",
+    "examples/intro-workspace/type-stages/examples/error_leaf/main.rs": "5d6e0b0e0a2360cc6e3df6168748119d26591dd6069c43f51d2e22a66bb0659b",
+    "examples/intro-workspace/type-stages/examples/rc_complete/main.rs": "184ed72a21443c85ff6f88ac0f88228e7dc5c76f41f9018eecbcdcb334df2146",
+    "examples/intro-workspace/type-stages/examples/rc_complete/shared_chain/mod.rs": "49f00d0e0679351f0dd1da1138acb41fd271f51eade531cc8d54bd4a3e255fc0",
+    "examples/intro-workspace/type-stages/examples/rc_handles.rs": "4951bf7fdc83e188d6f8640f980df115e50b263ad5b84b7b78d0ae1dbe453eee",
+    "examples/intro-workspace/type-stages/examples/shared_tail/main.rs": "9063fa5ab33ecd2d432b76bb04cc580a778b26a6cee9a446214f75390b2b1290",
+    "examples/intro-workspace/type-stages/examples/shared_tail/shared_chain/mod.rs": "0f215f4c1c1a647af82df7865480f6aeb5d57a62c700e8a60eec5dc8f2237b5f",
+    "examples/intro-workspace/type-stages/examples/weak_observer.rs": "1ded459b027e71fa83e6daa58db013492db03bf09fed86fa11528d1f811dd5ba",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_borrow_default_static.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_borrow_default_static.rs": "ca3089b581a307e569d29d481d8879e109978ee4cbf668e2cfc6df35c8061d5c",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_generic_method.expected": "2860ab5d26e103fe5f9700de6bb4374cb6bb70095bcb4a3000bca4bc2395f73e",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_generic_method.rs": "a45769c1c2091d2a2878e944c75d991422033470ffa6d6cbb5b20bc34cbc18f9",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_output.expected": "a5853d0aa692043d763762aca5e3a17ff34d316649deb8a44c8a0945d0bf5d6b",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_output.rs": "6a304a4e4ac889e69415993433a3fc3ef14395f970af33f56f1fe7b1d0aaccd5",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_trait.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_trait.rs": "102d3eee6fff65db7de062d00adebd45193e20be9df5a2df2fe74991bcdd7d0c",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_rebuild_call.expected": "32af723ef1b547f88ff9b709c8c031f18b268346f189ecb0629da7a4f061e15e",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_rebuild_call.rs": "986e1a340e91c820a91f2aa9dcb896f13dc01460b4178aa7b935a1297733d473",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_requires_sized.expected": "2860ab5d26e103fe5f9700de6bb4374cb6bb70095bcb4a3000bca4bc2395f73e",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_requires_sized.rs": "6603dc6784aa1608afc44f18efe7966c5a9bda314d18db3b03621629751cc891",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_returns_self.expected": "2860ab5d26e103fe5f9700de6bb4374cb6bb70095bcb4a3000bca4bc2395f73e",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_returns_self.rs": "7554324cd0187a2f4273cd328a11b53bad00af669115037f845c4066c7412bf0",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_non_static_source.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_non_static_source.rs": "df9b87b31ae5d1116f7eb9e119abf52697fe7a90309b6d0560dbacac79207159",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_source_escape.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_source_escape.rs": "634b330521d9ee2972daa2bd2e6adeb2a0dccb8a6976e63129bd97210eefcf49",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_without_debug.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/error_without_debug.rs": "95efdc55daf7c254df751ffdfd0048e9dea939294a82807fba4959ba049a5bdb",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/mixed_charge_vec.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/mixed_charge_vec.rs": "e43e2712e855a08d5f3105a979078dcdb00133a9f21d7236cf1d05118207b196",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/opaque_charge_branches.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/opaque_charge_branches.rs": "539622b93d03377d352810506e9e5706215d29a655bdcabd2137d1037a83a617",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_move_out.expected": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_move_out.rs": "efb4b01548c878a3f57f69414a6ee9a0c72c77fcec2426b47e3d6dcad30ade30",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_mutate.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_mutate.rs": "0e51ae571710a23c068740442e77a069afe84ff35fc0319c108ea6409bb1458b",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 10,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_borrowed/dyn_charges/mod.rs",
+      "tag": "models",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 16,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/mixed_charge_vec.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 20,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/mixed_charge_vec.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 36,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_borrowed/dyn_charges/mod.rs",
+      "tag": "amount-interfaces",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 42,
+      "source": "examples/intro-workspace/type-stages/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 48,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_borrowed/dyn_charges/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 54,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_borrowed/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 80,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_list/dyn_charges/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 86,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_list/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 104,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_trait.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 108,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_trait.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 116,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/opaque_charge_branches.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 120,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/opaque_charge_branches.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 130,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_factories/dyn_charges/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 136,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_factories/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 162,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_lifetime/dyn_charges/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 166,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_lifetime/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 178,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_borrow_default_static.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 182,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_borrow_default_static.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 201,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_requires_sized.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 205,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_requires_sized.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 211,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_generic_method.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 215,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_generic_method.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 221,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_returns_self.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 225,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_returns_self.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 233,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_rebuild_call.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 237,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_rebuild_call.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 243,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_output.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 247,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_output.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 253,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_compatibility/dyn_charges/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 257,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_compatibility/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 273,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_complete/dyn_charges/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-06-lesson.md",
+      "line": 279,
+      "source": "examples/intro-workspace/type-stages/examples/dyn_complete/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 18,
+      "source": "examples/intro-workspace/type-stages/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 22,
+      "source": "examples/intro-workspace/type-stages/examples/error_leaf/errors/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 28,
+      "source": "examples/intro-workspace/type-stages/examples/error_leaf/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 44,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_without_debug.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 48,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_without_debug.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 60,
+      "source": "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs",
+      "tag": "parse-error",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 64,
+      "source": "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs",
+      "tag": "read-error",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 76,
+      "source": "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs",
+      "tag": "report",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 82,
+      "source": "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 88,
+      "source": "examples/intro-workspace/type-stages/examples/error_chain/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 114,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_source_escape.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 118,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_source_escape.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 130,
+      "source": "examples/intro-workspace/type-stages/examples/error_borrowed/errors/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 136,
+      "source": "examples/intro-workspace/type-stages/examples/error_borrowed/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 153,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_non_static_source.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 157,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_non_static_source.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 169,
+      "source": "examples/intro-workspace/type-stages/examples/error_boxed/errors/mod.rs",
+      "tag": "boxed-count",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 175,
+      "source": "examples/intro-workspace/type-stages/examples/error_boxed/errors/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 179,
+      "source": "examples/intro-workspace/type-stages/examples/error_boxed/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 201,
+      "source": "examples/intro-workspace/type-stages/examples/error_complete/errors/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-07-lesson.md",
+      "line": 207,
+      "source": "examples/intro-workspace/type-stages/examples/error_complete/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 25,
+      "source": "examples/intro-workspace/type-stages/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 31,
+      "source": "examples/intro-workspace/type-stages/examples/rc_handles.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 59,
+      "source": "examples/intro-workspace/type-stages/examples/shared_tail/shared_chain/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 69,
+      "source": "examples/intro-workspace/type-stages/examples/shared_tail/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 91,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_mutate.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 95,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_mutate.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 101,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_move_out.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 105,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_move_out.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 127,
+      "source": "examples/intro-workspace/type-stages/examples/weak_observer.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 164,
+      "source": "examples/intro-workspace/type-stages/examples/rc_complete/shared_chain/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-08-lesson.md",
+      "line": 170,
+      "source": "examples/intro-workspace/type-stages/examples/rc_complete/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-type-stages",
+    "no_lib": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "targets": {
+      "dyn_borrowed": [
+        "examples/dyn_borrowed/main.rs",
+        "examples/dyn_borrowed/dyn_charges/mod.rs"
+      ],
+      "dyn_list": [
+        "examples/dyn_list/main.rs",
+        "examples/dyn_list/dyn_charges/mod.rs"
+      ],
+      "dyn_factories": [
+        "examples/dyn_factories/main.rs",
+        "examples/dyn_factories/dyn_charges/mod.rs"
+      ],
+      "dyn_lifetime": [
+        "examples/dyn_lifetime/main.rs",
+        "examples/dyn_lifetime/dyn_charges/mod.rs"
+      ],
+      "dyn_compatibility": [
+        "examples/dyn_compatibility/main.rs",
+        "examples/dyn_compatibility/dyn_charges/mod.rs"
+      ],
+      "dyn_complete": [
+        "examples/dyn_complete/main.rs",
+        "examples/dyn_complete/dyn_charges/mod.rs（test模式4tests）"
+      ],
+      "error_leaf": [
+        "examples/error_leaf/main.rs",
+        "examples/error_leaf/errors/mod.rs"
+      ],
+      "error_chain": [
+        "examples/error_chain/main.rs",
+        "examples/error_chain/errors/mod.rs"
+      ],
+      "error_borrowed": [
+        "examples/error_borrowed/main.rs",
+        "examples/error_borrowed/errors/mod.rs"
+      ],
+      "error_boxed": [
+        "examples/error_boxed/main.rs",
+        "examples/error_boxed/errors/mod.rs"
+      ],
+      "error_complete": [
+        "examples/error_complete/main.rs",
+        "examples/error_complete/errors/mod.rs（test模式4tests）"
+      ],
+      "rc_handles": [
+        "examples/rc_handles.rs"
+      ],
+      "shared_tail": [
+        "examples/shared_tail/main.rs",
+        "examples/shared_tail/shared_chain/mod.rs"
+      ],
+      "weak_observer": [
+        "examples/weak_observer.rs"
+      ],
+      "rc_complete": [
+        "examples/rc_complete/main.rs",
+        "examples/rc_complete/shared_chain/mod.rs（test模式2tests）"
+      ]
+    },
+    "commands": "15run+3selectedexampletest（4+4+2=10tests）；都指定workspace manifest/package/example/--locked。每個stage僅載明示target-local mod，complete才載完整功能/tests。"
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/11-06-lesson.md:27",
+      "judgment": "dyn trait object、DST、&dyn借用與unsizing coercion在首用前；Vec元素仍只有一種Box<dyn Charge>。沒有把共同trait當成相同具體型別，也沒有說enum不能完成相同工作。"
+    },
+    {
+      "source": "docs/chapters/11-06-lesson.md:67",
+      "judgment": "Charge沒有自身lifetime bound，簽名/欄位Box<dyn Charge>預設static與值壽命分清；&'a dyn Charge/reference object bound及expression推導例外在後段明確補足。"
+    },
+    {
+      "source": "docs/chapters/11-06-lesson.md:69",
+      "judgment": "static/dynamic dispatch、monomorphization、vtable在圖前；handle資訊/資料分離不冒稱精確ABI。效能沒有由三個輸出推排名，承認可去虛擬化。"
+    },
+    {
+      "source": "docs/chapters/11-06-lesson.md:113",
+      "judgment": "RPIT固定一具體結果、兩closure型別不同、Box dyn Fn共同呼叫及Copy base/static、borrowed object + '_依來源，均對source成立。"
+    },
+    {
+      "source": "docs/chapters/11-06-lesson.md:196",
+      "judgment": "dyn compatibility：整體Sized、method泛型、回傳Self、where Self:Sized局部排除、supertrait繼承amount、associated Output equality均先教；完整target未載未教closure/compatibility到早期命令。"
+    },
+    {
+      "source": "docs/chapters/11-07-lesson.md:9",
+      "judgment": "Error:Debug+Display、source預設None、Option<&(dyn Error+'static)>的外層reference lifetime與內部bound分清，允許外層borrowed context，source只借owned static原因。"
+    },
+    {
+      "source": "docs/chapters/11-07-lesson.md:73",
+      "judgment": "report只追有限無環原因鏈，輸出owned String不延長reference；各層Display只表本層避免重複，資料仍由各error owner持有。"
+    },
+    {
+      "source": "docs/chapters/11-07-lesson.md:166",
+      "judgment": "具體Error+'static到Box<dyn Error>的標準From使?可boxing，不錯稱Result本來強制Error；boxed邊界與enum穩定分類各有用途。"
+    },
+    {
+      "source": "docs/chapters/11-08-lesson.md:7",
+      "judgment": "Rc計數strong owner而非普通reference；clone只新增同配置handle不Clone T；Deref無DerefMut、movehandle不增count、最後strong清理T準確。"
+    },
+    {
+      "source": "docs/chapters/11-08-lesson.md:54",
+      "judgment": "borrowed match value:&i32/next:&Rc、chain=next的Deref coercion在首用前，SharedChain 3→2→1共同尾段與200/160對source。"
+    },
+    {
+      "source": "docs/chapters/11-08-lesson.md:112",
+      "judgment": "Weak不保活T、upgrade成功回owned Rc並增strong、空Weak/末strong後None、T與allocation不同清理時點均準確；temporary match使1→2→1可觀測。"
+    },
+    {
+      "source": "docs/chapters/11-08-lesson.md:149",
+      "judgment": "strong cycle明稱假設資料圖而非已建立source；雙向strong各1無法啟動drop及memory leak判斷正確，不靠未教RefCell程式補缺口。"
+    }
+  ],
+  "fixtures": [
+    {
+      "name": "mixed_charge_vec",
+      "expected": "E0308",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "dyn_missing_trait",
+      "expected": "E0277",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "opaque_charge_branches",
+      "expected": "E0308",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "dyn_borrow_default_static",
+      "expected": "lifetime may not live long enough",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "dyn_requires_sized",
+      "expected": "E0038",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "dyn_generic_method",
+      "expected": "E0038",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "dyn_returns_self",
+      "expected": "E0038",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "dyn_rebuild_call",
+      "expected": "the `rebuild` method cannot be invoked on a trait object",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "dyn_missing_output",
+      "expected": "E0191",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "error_without_debug",
+      "expected": "E0277",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "error_source_escape",
+      "expected": "E0597",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "error_non_static_source",
+      "expected": "lifetime may not live long enough",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "rc_mutate",
+      "expected": "E0594",
+      "checked": "完整source/.expected靜態，未重跑"
+    },
+    {
+      "name": "rc_move_out",
+      "expected": "E0507",
+      "checked": "完整source/.expected靜態，未重跑"
+    }
+  ],
+  "static_outputs": {
+    "dyn_borrowed": "80/80/120，原order count1",
+    "dyn_list": "200,200,220",
+    "dyn_factories": "120,120,80,120；closure20/40",
+    "dyn_lifetime": "200,200，原prices len2",
+    "dyn_compatibility": "rebuild120,amount120,Output80",
+    "dyn_complete": "240",
+    "error_leaf": "Negative(-1)；件數 -1 不能為負數；source None",
+    "error_chain": "3成功；abc和-1各報context→parse層→leaf，不重複",
+    "error_borrowed": "borrowed資料欄位A；cause invalid digit found in string，label仍可用",
+    "error_boxed": "3成功；abc標準leaf；101range leaf",
+    "error_complete": "訂單7context一次；TooLarge101原因一次",
+    "rc_handles": "1→2，ptr_eq true；第一個drop仍id1/count1，最後drop才清理",
+    "shared_tail": "strong3，200/160；drop first count2，drop tail second仍160",
+    "weak_observer": "empty None；1→2→1；owner末drop清理T，再upgrade None",
+    "rc_complete": "三owner→一owner120；temporary離branch；最後Weak None"
+  },
+  "copy_checks": [
+    {
+      "source": "dyn_borrowed",
+      "target": "dyn_complete",
+      "tag": "models",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_list",
+      "target": "dyn_complete",
+      "tag": "models",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_factories",
+      "target": "dyn_complete",
+      "tag": "models",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_borrowed",
+      "target": "dyn_complete",
+      "tag": "amount-interfaces",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_list",
+      "target": "dyn_complete",
+      "tag": "known-charges",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_list",
+      "target": "dyn_complete",
+      "tag": "dyn-total",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_factories",
+      "target": "dyn_complete",
+      "tag": "charge-factories",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_factories",
+      "target": "dyn_complete",
+      "tag": "closure-factory",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_lifetime",
+      "target": "dyn_complete",
+      "tag": "borrowed-charge",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_compatibility",
+      "target": "dyn_complete",
+      "tag": "rebuild",
+      "byte_identical": true
+    },
+    {
+      "source": "dyn_compatibility",
+      "target": "dyn_complete",
+      "tag": "measure",
+      "byte_identical": true
+    },
+    {
+      "source": "error_leaf",
+      "target": "error_complete",
+      "tag": "leaf-error",
+      "byte_identical": true
+    },
+    {
+      "source": "error_chain",
+      "target": "error_complete",
+      "tag": "leaf-error",
+      "byte_identical": true
+    },
+    {
+      "source": "error_boxed",
+      "target": "error_complete",
+      "tag": "leaf-error",
+      "byte_identical": true
+    },
+    {
+      "source": "error_chain",
+      "target": "error_complete",
+      "tag": "parse-error",
+      "byte_identical": true
+    },
+    {
+      "source": "error_chain",
+      "target": "error_complete",
+      "tag": "read-error",
+      "byte_identical": true
+    },
+    {
+      "source": "error_chain",
+      "target": "error_complete",
+      "tag": "report",
+      "byte_identical": true
+    },
+    {
+      "source": "error_borrowed",
+      "target": "error_complete",
+      "tag": "report",
+      "byte_identical": true
+    },
+    {
+      "source": "error_boxed",
+      "target": "error_complete",
+      "tag": "report",
+      "byte_identical": true
+    },
+    {
+      "source": "error_boxed",
+      "target": "error_complete",
+      "tag": "boxed-count",
+      "byte_identical": true
+    },
+    {
+      "source": "error_borrowed",
+      "target": "error_complete",
+      "tag": "borrowed-error",
+      "byte_identical": true
+    },
+    {
+      "source": "shared_tail",
+      "target": "rc_complete",
+      "tag": "shared-chain",
+      "byte_identical": true
+    }
+  ],
+  "version_note": {
+    "first_page_read": "首次全文讀取輸出11.6:7仍為「沿用非負小數與不溢位的乘法」；當時已收到作者稍後doc-only窄改的一般範圍通知，未收到具體字詞內容。",
+    "first_old_page_hash": "未量到；不替首讀舊句捏造hash。",
+    "captured_version": "08:37:35 UTC快照已是ec492344…dbb76f，11.6:7為「非負小整數」。其後父任務通知相同新hash；22片段核對時確認快照已含修正。",
+    "attribution": "原未封存字詞觀察可選，技術source一直是i32；目前修正歸作者/root，不算自己的新增未受提示獨立finding。未讀author revision ledger，不推測其餘窄改前文。"
+  },
+  "limits": [
+    "全頁技術重讀，非盲首讀。",
+    "未新增Rust/Cargo執行；無成功／失敗重跑證據。",
+    "4SVG僅source/XML，不稱rendered視覺驗證。",
+    "未讀11.9以後正文或source當先備，workspace其他member只是metadata。"
+  ],
+  "sealed_at_utc": "2026-10-15T08:40:27.029Z"
+}

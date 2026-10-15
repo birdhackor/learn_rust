@@ -1,0 +1,507 @@
+{
+  "wave": "17",
+  "findings": [],
+  "notes": {
+    "17-01": [
+      "macro_rules依token模式產生已懂struct/impl，不是runtime建立型別。",
+      "ident/metavariable/單規則/repetition + * ?分別先教，匹配與展開後型別檢查分開。",
+      "多單位要保留不同型別但少維護重複宣告；普通函式本來可共用取值。",
+      "手寫→single→many→錯名字/空輸入/錯單位→空清單答案，library無未知後段。",
+      "名字改Millimeters仍生成自己的型別；兩處+改*才讓空展開成立。"
+    ],
+    "17-02": [
+      "textual/path scope、$crate定義來源、mixed-site hygiene與expr求值次數分開。",
+      "裸Reading caller解析；$crate不解除private；輸入上下文與模板local value不同。",
+      "library跨crate使用時要固定trait來源，並保留左/右兩份來源而非同名覆蓋。",
+      "所有library macro/普通helper、cross-crate manifest、四負例、callers/tests/答案都完整。",
+      "模板重複expr會重複副作用，hygiene不保證once；反向結果仍先保存左再右方可保求值序。"
+    ],
+    "17-03": [
+      "derive保留原struct並增加impl；compiler TokenStream→syn AST→quote tokens→compiler→runtime各有角色。",
+      "DeriveInput欄位與Punctuated最低操作先教；parse失敗早退tokens、Error/span、quote ToTokens與into均先教。",
+      "已有宣告供使用者決定名稱/可見性/其他derive，工具只補Reading實作。",
+      "三package、工具全檔、trait dependency、consumer/tests、五形狀/型別負例及alias私欄答案全讀。",
+      "alias i32不需parser字面辨識；Flag形狀可過但Rust回傳bool不符i32；同source判準清楚。"
+    ],
+    "17-04": [
+      "API含名稱型別與ownership/成功失敗約定；Default、non_exhaustive、re-export與相容性各有責任。",
+      "private newtype守有效域，Default手選100；mut self接手修改後返Self；feature與公有能力成契約。",
+      "搜尋供其他程式用且維護舊caller；用同一實體consumer分開可編譯與行為保留。",
+      "六source、三跨crate負例、1.0/1.1快照、fixture輸入、七integration tests、同頁答案全讀。",
+      "改default true可編譯但assert失敗；增加private欄位且保舊API/default可使同caller仍成立。"
+    ],
+    "17-05": [
+      "property先立合法域與oracle，strategy描述生成/縮減；64 cases非64獨特資料或2test數。",
+      "守恆/positive groups與逐鍵直接計數分工；Just重複鍵、fixed seed、None persistence先教。",
+      "固定case未涵蓋更多長度重複組合，需生成材料但不能自用被測答案當oracle。",
+      "正常兩property、三regressions、隔離broken生成/config、expected、composition答案全讀。",
+      "全回0可能滿足可加性但不守恆；[0]通過不可當反例，[0,0]仍失敗，所以縮減保留它。"
+    ],
+    "17-06": [
+      "Loom探索有限模型交錯；Miri解譯所選MIR執行找UB，兩工具不代答彼此。",
+      "Loom model內每次新建counter且同步操作全用loom；fetch_add+join修lost update。Miri進入safe wrapper內部unsafe，cfg guard隔離故意UB。",
+      "普通PASS不排其他交錯也不證記憶體契約，分別選工具查兩個問題。",
+      "依賴ch12-unsafe全檔已讀（與15快照按hash完全相同）；Loom正常/失敗/答案與Miri三正常/失敗/答案全讀。",
+      "copy在drop前可留普通i32；drop後raw pointer仍存不保活，dereference違storage有效性。"
+    ],
+    "17-07": [
+      "benchmark固定工作重複量經過時間，microbenchmark純計數不涵整CLI；Criterion callback與iter範圍分開。",
+      "black_box盡力減少常數化；輸入準備/答案檢查在iter外，candidate clone與Drop在內；warmup/sample/CI各角色有解釋。",
+      "只需借讀計數時owned判斷副本多做哪些工作、時間差有多大。",
+      "library/manifest/tests/bench/答案與三份完整文字報告全讀；四表數值與原報告四捨五入一致。",
+      "把make_workload移iter內回答不同完整工作，不能用兩邊差值當純建置成本精確分解。"
+    ],
+    "17-08": [
+      "allocation profiling查heap配置位置/量，與CPU耗時分配不同；allocator/static/Profiler/HeapStats先教。",
+      "build開始drop停止、範圍外已建清單仍存在；total/max/current分開，source鏈同一PP不能重複加總。",
+      "驗clone每行是否產新配置，改借讀去掉它仍做相同256行100次答案6400。",
+      "profile三example/依賴/重複helper/tests/原stdout stderr全讀，圖中main18/repeat12/count_cloned21與實source吻合。",
+      "64行使總量6400blocks/81600bytes，最長candidate仍15所以峰值不必縮；原owned報告需求不能偷改借用。"
+    ]
+  },
+  "loaded_sources": "所有直接snippet完整實源、跨crate本地依賴、unsafe/performance依賴均讀。額外兩空lib與derived_default.expected見17-extra-owned-sources.json。未讀作者ledger/其他17finding。",
+  "prefix_newly_read": {
+    "06-02": [
+      45,
+      94
+    ],
+    "11-07": [
+      1,
+      88
+    ],
+    "10-09": [
+      1,
+      112
+    ]
+  },
+  "visual": {
+    "viewports": [
+      [
+        1280,
+        800
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "judgment": "九張圖桌面/手機均親看：macro展開/同名來源/derive轉換、shrinking、Loom兩交錯/Miri失效、benchmark邊界、profile邊界/來源鏈可逐項對應相鄰原文；手機文字可讀。另實開17.4與17.6手機多檔長折疊。",
+    "capture_metadata": "visual-17-01_17-02_17-03_17-04_17-05_17-06_17-07_17-08.json"
+  },
+  "limitations": [
+    "未重跑Loom/Miri/benchmark/dhat，也未驗原始JSON viewer；不宣稱新效能量測或完整技術驗證。",
+    "必要前文定點銜接審閱，非全書首讀盲測。",
+    "未重跑Rust；不以此報告代替執行驗證。"
+  ],
+  "coverage": [
+    {
+      "section": "17-01",
+      "doc_hash": "a8ee5f3868a82137595915740897ee2968cdf0955a7f8054921ac3718c307a62",
+      "read_doc_lines": [
+        1,
+        211
+      ],
+      "all_snippet_files_read": [
+        "examples/macro-basics/Cargo.toml",
+        "examples/macro-basics/src/lib.rs",
+        "examples/macro-basics/examples/manual_readings.rs",
+        "examples/macro-basics/examples/reading_single.rs",
+        "examples/macro-basics/examples/reading_many.rs",
+        "examples/macro-basics/fixtures/compile-fail/reading_bad_name.rs",
+        "examples/macro-basics/fixtures/compile-fail/reading_bad_name.expected",
+        "examples/macro-basics/fixtures/compile-fail/reading_empty.rs",
+        "examples/macro-basics/fixtures/compile-fail/reading_empty.expected",
+        "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.rs",
+        "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.expected",
+        "examples/macro-basics/examples/reading_empty_solution.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/macro-basics/Cargo.toml": "2d866eb00390ab44cb32f2a4986ac2594328f36c535dc048a3de36aa550b2557",
+        "examples/macro-basics/src/lib.rs": "83d1a0a5826934ec1700f133e00161ff7a8faa25d81b8be5465f45f4fc64a3a3",
+        "examples/macro-basics/examples/manual_readings.rs": "d718b3ad662c84d28a8d196e29a7bc8dc051245fc123c303ebc27f2a5531add8",
+        "examples/macro-basics/examples/reading_single.rs": "2f6a3d35a63bbbd6199563f5ad63f21e5f6c6b66f94a3c58c431378c9f1f5d4e",
+        "examples/macro-basics/examples/reading_many.rs": "db8814073a41d01ac69511f86a53e9de6aa1d52d51c8bf8981ad42ced2bcba9e",
+        "examples/macro-basics/fixtures/compile-fail/reading_bad_name.rs": "4250d30b91007402553c9eaa2db65e886275f1ffba6f0c2fcebb3d793e215df9",
+        "examples/macro-basics/fixtures/compile-fail/reading_bad_name.expected": "02a9daf180dcd83cc967c1f1146644f81718c9e13e61e48cbe41574fa4987cbd",
+        "examples/macro-basics/fixtures/compile-fail/reading_empty.rs": "c514efaf1258d1223e791eeea8a9b67b9b7d0ea4c506636238123fba55ad208a",
+        "examples/macro-basics/fixtures/compile-fail/reading_empty.expected": "19876660b8561b0ec56b0f6781f94f573c994a653c9fbf84f60f5bd9d0a95062",
+        "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.rs": "1823c8a07225843ae16edf92e6fda8f9b0a5f4b974f6389339ea754629316bad",
+        "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+        "examples/macro-basics/examples/reading_empty_solution.rs": "c97c2c573d79332799594c8e85da46f41f8626430a5548dc83bce1ab4ec8b25f"
+      },
+      "four_question_evidence": {
+        "identity": "macro_rules依token模式產生已懂struct/impl，不是runtime建立型別。",
+        "mechanism": "ident/metavariable/單規則/repetition + * ?分別先教，匹配與展開後型別檢查分開。",
+        "need": "多單位要保留不同型別但少維護重複宣告；普通函式本來可共用取值。",
+        "operation_and_example": "手寫→single→many→錯名字/空輸入/錯單位→空清單答案，library無未知後段。",
+        "small_change": "名字改Millimeters仍生成自己的型別；兩處+改*才讓空展開成立。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "17-02",
+      "doc_hash": "4aa35385366a486d4e354ed7975a11209684e73c903d97f71605b42592d8b863",
+      "read_doc_lines": [
+        1,
+        255
+      ],
+      "all_snippet_files_read": [
+        "examples/ch14-macros/src/hygiene.rs",
+        "examples/ch14-macros/fixtures/compile-fail/macro_before_definition.rs",
+        "examples/ch14-macros/fixtures/compile-fail/macro_before_definition.expected",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_unqualified_trait.rs",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_unqualified_trait.expected",
+        "examples/ch14-macros/examples/macro_export_consumer.rs",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_private_helper.rs",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_private_helper.expected",
+        "examples/ch14-macros/examples/macro_hygiene.rs",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_custom_error.rs",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_custom_error.expected",
+        "examples/ch14-macros/fixtures/cross-crate-fail/Cargo.toml",
+        "examples/ch14-macros/Cargo.toml",
+        "examples/ch14-macros/src/lib.rs",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_first_rule_duplicate.rs",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_first_rule_duplicate.expected",
+        "examples/ch14-macros/examples/macro_hygiene_solution.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch14-macros/src/hygiene.rs": "e7ed6bad0d8b2e2332be207ec7a80d117cbd045f81100646e78f9fcc0c540335",
+        "examples/ch14-macros/fixtures/compile-fail/macro_before_definition.rs": "14af9e20c0fa771e4de0fdbb1acd47691047619493b755a33d863e3b975200bb",
+        "examples/ch14-macros/fixtures/compile-fail/macro_before_definition.expected": "e89182c1e2fd4ee8e7ba6c26c24dcc13d990717e2b0090be0ada4883864afd39",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_unqualified_trait.rs": "22d5bd53e020d478cf59f5bd2bbcfa4fe149a08d50c6523ac2b35e4c87775737",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_unqualified_trait.expected": "bf5e5b2af1484040c34be1b1295aca99ac4c3e20ea4c91faf88cb0d4f6fd0061",
+        "examples/ch14-macros/examples/macro_export_consumer.rs": "b17a22da6b68f33218799c7984ca27808a2db262baa1766821b45b15ce43e0b4",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_private_helper.rs": "94b0c1c9943d38bdc14ac296b47e65f6e02e0afeb563a176980d5d8be5e63bdf",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_private_helper.expected": "fa3b46bb839e843f9da990ecc9151edb533235701c1c55d831b1fe783f6b8a48",
+        "examples/ch14-macros/examples/macro_hygiene.rs": "8ddfe84b6ae415711e638e0e61f3b17ed3340408df1e79407ac8e4b313a7f19b",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_custom_error.rs": "bd18b9c318fddf62bb08d055842968463fe35730c3222894ff845d0bc772fb28",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_custom_error.expected": "14c04c565125c250e0d6797cb972f60f7f548fb5e4f481e26e397c25f4a375af",
+        "examples/ch14-macros/fixtures/cross-crate-fail/Cargo.toml": "f75340cbea99c668b50ca419bf160b8a5092b16c369f109a116b8ac542237092",
+        "examples/ch14-macros/Cargo.toml": "29c1cb5909d8d8cd0d10a950209eb518d5db41452b400aeabdb37d064c391475",
+        "examples/ch14-macros/src/lib.rs": "61a35c3450fc7cab01dbe6b78fdcf1e59263208386e97b2efb0cb55cbe715358",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_first_rule_duplicate.rs": "9c93d91abae65ed09c9912b53f6799437f6b949b0a45bcb94ee1cd5f0471b85f",
+        "examples/ch14-macros/fixtures/cross-crate-fail/examples/macro_first_rule_duplicate.expected": "684038c0edf197913e6fa28d4d3d9b0a570d4fd87f39fd131de9330ad76de4b8",
+        "examples/ch14-macros/examples/macro_hygiene_solution.rs": "2a359e008a51e9f1298b43eab164b1a2f11d192937c852bdcca1a1a3805ab8c7"
+      },
+      "four_question_evidence": {
+        "identity": "textual/path scope、$crate定義來源、mixed-site hygiene與expr求值次數分開。",
+        "mechanism": "裸Reading caller解析；$crate不解除private；輸入上下文與模板local value不同。",
+        "need": "library跨crate使用時要固定trait來源，並保留左/右兩份來源而非同名覆蓋。",
+        "operation_and_example": "所有library macro/普通helper、cross-crate manifest、四負例、callers/tests/答案都完整。",
+        "small_change": "模板重複expr會重複副作用，hygiene不保證once；反向結果仍先保存左再右方可保求值序。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "17-03",
+      "doc_hash": "aff60066fc4adbf85439864d9aa32d8f7d9054ef218d3bd02bf450b81c26212c",
+      "read_doc_lines": [
+        1,
+        311
+      ],
+      "all_snippet_files_read": [
+        "examples/ch14-macros/derive/Cargo.toml",
+        "examples/ch14-macros/derive-consumer/Cargo.toml",
+        "examples/ch14-macros/derive/src/lib.rs",
+        "examples/ch14-macros/derive-consumer/src/lib.rs",
+        "examples/ch14-macros/derive-consumer/examples/macro_derive_demo.rs",
+        "examples/ch14-macros/Cargo.toml",
+        "examples/ch14-macros/src/lib.rs",
+        "examples/ch14-macros/src/hygiene.rs",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.rs",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.expected",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.rs",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.expected",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.rs",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.expected",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.rs",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.expected",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.rs",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.expected",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/Cargo.toml",
+        "examples/ch14-macros/derive-consumer/examples/macro_derive_solution.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch14-macros/derive/Cargo.toml": "fcb45a22f215f019c40d9f43059322d09730b01e950b5a23d2dccd9add512437",
+        "examples/ch14-macros/derive-consumer/Cargo.toml": "ae731223a1f61462388be1df2faa68ffcbe8266ab5530abbef7655448be79b88",
+        "examples/ch14-macros/derive/src/lib.rs": "eae33bebe4429252d2e4b3e4ca213b620ec5ed21d1c2915f868f4cbbc45f2408",
+        "examples/ch14-macros/derive-consumer/src/lib.rs": "8e17e0fe726b4afedc8168c79c867b112807729494a133516c9f0b976862452f",
+        "examples/ch14-macros/derive-consumer/examples/macro_derive_demo.rs": "3e5db8124396fde2492963aa9d5703b0e3e550c0f40e8516838f908d02fafbb1",
+        "examples/ch14-macros/Cargo.toml": "29c1cb5909d8d8cd0d10a950209eb518d5db41452b400aeabdb37d064c391475",
+        "examples/ch14-macros/src/lib.rs": "61a35c3450fc7cab01dbe6b78fdcf1e59263208386e97b2efb0cb55cbe715358",
+        "examples/ch14-macros/src/hygiene.rs": "e7ed6bad0d8b2e2332be207ec7a80d117cbd045f81100646e78f9fcc0c540335",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.rs": "6431cbc222069e44921c6153b16ccd0f2b38eb8ff78de9762954592a4547cbbd",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.expected": "8d28a7a96b29a1e96cc26949a88c47c768228d1becd9e45f1cf88ab77f7c611b",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.rs": "a71dce847ec0d51bdf57f051fa6a972a5426614fa9e4de032987385e63d74bde",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.expected": "992c872b563a87b3c10638c4f5005b79ec83e9b9c51389e41ee29752c0e72ce8",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.rs": "e2c4adc1e6a5a0f81d3a5ec61bcf0653a23f22a60313dea05726cfe47c604ee1",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.expected": "da039a627eeb82d0e54ef1eafdd1374886f08cfc6de4a55efd096e27284f73c6",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.rs": "b5f9d5858bf1ba6e50d1f3898d2576af6f6a946f0d82c69d954ddf570fe4b0cf",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.expected": "028dee00b08fcd09fca0d1ed8e5bb1308cf8cc8c86b33ccd0309da95ee6b694f",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.rs": "8b6d91a9607a990ab545611b703f254ee2f3b209ab417dea53cbbe2fa621109f",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+        "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/Cargo.toml": "42d7b4f149050487077bd227573a45f8217ca7738cbfd8ee5cf4a8f870d3e01c",
+        "examples/ch14-macros/derive-consumer/examples/macro_derive_solution.rs": "e18434909bb9dc17c2a0937caaacd0c023991571fcee3d6774116b2c19b5e310"
+      },
+      "four_question_evidence": {
+        "identity": "derive保留原struct並增加impl；compiler TokenStream→syn AST→quote tokens→compiler→runtime各有角色。",
+        "mechanism": "DeriveInput欄位與Punctuated最低操作先教；parse失敗早退tokens、Error/span、quote ToTokens與into均先教。",
+        "need": "已有宣告供使用者決定名稱/可見性/其他derive，工具只補Reading實作。",
+        "operation_and_example": "三package、工具全檔、trait dependency、consumer/tests、五形狀/型別負例及alias私欄答案全讀。",
+        "small_change": "alias i32不需parser字面辨識；Flag形狀可過但Rust回傳bool不符i32；同source判準清楚。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "17-04",
+      "doc_hash": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa",
+      "read_doc_lines": [
+        1,
+        375
+      ],
+      "all_snippet_files_read": [
+        "examples/ch14-api/src/limits.rs",
+        "examples/ch14-api/fixtures/runtime-fail/derived_default.rs",
+        "examples/ch14-api/src/options.rs",
+        "examples/ch14-api/src/errors.rs",
+        "examples/ch14-api/src/search.rs",
+        "examples/ch14-api/src/lib.rs",
+        "examples/ch14-api/src/text.rs",
+        "examples/ch14-api/Cargo.toml",
+        "examples/ch14-api/examples/consumer.rs",
+        "examples/ch14-api/examples/typed_errors.rs",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.rs",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.rs",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.rs",
+        "examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.expected",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.expected",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.expected",
+        "examples/ch14-api/compatibility/v1/src/lib.rs",
+        "examples/ch14-api/compatibility/v1_1/src/lib.rs",
+        "examples/ch14-api/compatibility/consumer.rs",
+        "examples/ch14-api/compatibility/v1/Cargo.toml",
+        "examples/ch14-api/compatibility/v1_1/Cargo.toml",
+        "examples/ch14-api/examples/limit_solution.rs",
+        "examples/ch14-api/fixtures/note.txt",
+        "examples/ch14-api/tests/public_contract.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch14-api/src/limits.rs": "67188064c69cc27ab2eb4168521c0f465c91d0d25991ed1c527bf8df1b2cceb5",
+        "examples/ch14-api/fixtures/runtime-fail/derived_default.rs": "4f5c18e43b17b2e1c065c153fb96277d470b629cf2d023a7a01bbee10219c3d7",
+        "examples/ch14-api/src/options.rs": "baf8b9f75ecac2f6f5d71aacf3e265aa0e8d7c0b5b7f69e0e3db1941d28a83c1",
+        "examples/ch14-api/src/errors.rs": "8e0472a9b201b0bcaa4f93452b2312bf4c2cb3f085286f574ef2a4cc3a7a8e00",
+        "examples/ch14-api/src/search.rs": "c96cd01dae2befb6895c41a45b27036121f635a00eaa7fdb08c4b4727be46f71",
+        "examples/ch14-api/src/lib.rs": "b33bc13b239c98169218858b6812469c022d2c728926c99cdb806b55fa5a5679",
+        "examples/ch14-api/src/text.rs": "5b4075ad54d8b6c962aa0dfbfb2fe8b0b07496757e0d60b7c9fa02fcd793714b",
+        "examples/ch14-api/Cargo.toml": "c62849529e7c0eff512385ca3b3ce9fea7e61e15a94bd30449fbb58d6fa7854a",
+        "examples/ch14-api/examples/consumer.rs": "324cb8012d050df7abb7ae7c44e1f37a63c1c748b1552981d3f82d4d76748483",
+        "examples/ch14-api/examples/typed_errors.rs": "9f517443e825a2e22b76563297352d1e6867849a23f98cd55b925cb819359f32",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.rs": "1e326081c34ceb9423af94b65f8d5513f063947dd1605ea385493b781774ee50",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.rs": "9049d98096e1bf666f7e010342801ed28984e5f17f3b181b625da3c510aa3d2d",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.rs": "74ff54714dd7ff5caccf8323d65412b2d9fac4410bcb838b3ed08de7b787129c",
+        "examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml": "6d2f47403d2e208b67863290fe2b980f513a9c760654c0e6a8ef88c8e742ac66",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.expected": "c376b4ed1e702a45cb10b54ea688073d63511a4ac43a8eb61471f604c7e71c1c",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.expected": "388bdc7a4e6e8182c29781d55fae41a770e567dd5d0d81056e6b136176a86712",
+        "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.expected": "fa3b46bb839e843f9da990ecc9151edb533235701c1c55d831b1fe783f6b8a48",
+        "examples/ch14-api/compatibility/v1/src/lib.rs": "ed7981b9708216c5a106493f062dba6eff912012b83387dfd7ab00cb7b232ba4",
+        "examples/ch14-api/compatibility/v1_1/src/lib.rs": "a96f498eec48419b170d52a3a6f4caab1ec2de953891a1c4820309b4d79f2571",
+        "examples/ch14-api/compatibility/consumer.rs": "5a0f921550b9d7f7ece716d65f2788df87b5efa4045f397aeac1e326f90b3899",
+        "examples/ch14-api/compatibility/v1/Cargo.toml": "3fb9df4ddf3920ebecf1bce6347cd3a1ed80e0ed3bf90d66d38c83222efdce2a",
+        "examples/ch14-api/compatibility/v1_1/Cargo.toml": "ca00cdffa141c7212435e9b27c4273f070b20bcc03f8a4ed1c919b27f751f717",
+        "examples/ch14-api/examples/limit_solution.rs": "844521e4a96339cb816e54fdc9e85f0ca23bbd4c18eeef4d5d02784c98892037",
+        "examples/ch14-api/fixtures/note.txt": "1ca933853c174efc7edd3134eeae8fa7fa2e779f411391ea076843dfd8df57fc",
+        "examples/ch14-api/tests/public_contract.rs": "5a26a8894fe80ec68850b683bd34dc5c8a06dd2b06e0eaaff190f263451fcc47"
+      },
+      "four_question_evidence": {
+        "identity": "API含名稱型別與ownership/成功失敗約定；Default、non_exhaustive、re-export與相容性各有責任。",
+        "mechanism": "private newtype守有效域，Default手選100；mut self接手修改後返Self；feature與公有能力成契約。",
+        "need": "搜尋供其他程式用且維護舊caller；用同一實體consumer分開可編譯與行為保留。",
+        "operation_and_example": "六source、三跨crate負例、1.0/1.1快照、fixture輸入、七integration tests、同頁答案全讀。",
+        "small_change": "改default true可編譯但assert失敗；增加private欄位且保舊API/default可使同caller仍成立。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "17-05",
+      "doc_hash": "06e860e87aa7895cbeb270a7cb6abf336fc3d3e800cba58d5ace29086cc9b9b6",
+      "read_doc_lines": [
+        1,
+        238
+      ],
+      "all_snippet_files_read": [
+        "examples/ch14-property/Cargo.toml",
+        "examples/ch14-property/src/lib.rs",
+        "examples/ch14-property/examples/counts.rs",
+        "examples/ch14-property/tests/properties.rs",
+        "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.rs",
+        "examples/ch14-property/fixtures/cargo-test-fail/Cargo.toml",
+        "examples/ch14-property/fixtures/cargo-test-fail/src/lib.rs",
+        "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.expected",
+        "examples/ch14-property/tests/regressions.rs",
+        "examples/ch14-property/tests/composition_solution.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch14-property/Cargo.toml": "7b51966b7dabc2b309b5c0a375ef962857054e7c3b666870984c7c8abe084946",
+        "examples/ch14-property/src/lib.rs": "91ed50b6c98017ea586579736e4b7678f05a08f1bfc0741e23fed66df4635b2f",
+        "examples/ch14-property/examples/counts.rs": "2ee2859c2baf1deba16dfcd7e9a2287215a0fde711725b7ce4a9d886971b9c75",
+        "examples/ch14-property/tests/properties.rs": "8bd00a96c9f5ecfd3d3177b7c454a05fec61fcb1d4919adf4d9ae0e6d7134a15",
+        "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.rs": "7913e0baa3056fc27c5df700ca374027c78332d64220494284c94adb2fd80ca9",
+        "examples/ch14-property/fixtures/cargo-test-fail/Cargo.toml": "ebc3d9aa27a31132637b473af0852b8d9e051e47d29653db1a81276160eb835a",
+        "examples/ch14-property/fixtures/cargo-test-fail/src/lib.rs": "97fa818396d46acd36e32715e76a8012796b341f072ffcbcb37d10e02f6f0169",
+        "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.expected": "a0eb82bf3c0513a66d91ccd921064567b1cce9db1d3f7595b94574af8bdb0778",
+        "examples/ch14-property/tests/regressions.rs": "bfb77238c68476fefd5908b8ad7939ab95d7ce98b2882294e74c0a9401981cc2",
+        "examples/ch14-property/tests/composition_solution.rs": "1a3cf96451b767e6a4ef3d915a24174bbdd343f877bf0555dec274e9a7f2e90f"
+      },
+      "four_question_evidence": {
+        "identity": "property先立合法域與oracle，strategy描述生成/縮減；64 cases非64獨特資料或2test數。",
+        "mechanism": "守恆/positive groups與逐鍵直接計數分工；Just重複鍵、fixed seed、None persistence先教。",
+        "need": "固定case未涵蓋更多長度重複組合，需生成材料但不能自用被測答案當oracle。",
+        "operation_and_example": "正常兩property、三regressions、隔離broken生成/config、expected、composition答案全讀。",
+        "small_change": "全回0可能滿足可加性但不守恆；[0]通過不可當反例，[0,0]仍失敗，所以縮減保留它。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "17-06",
+      "doc_hash": "40b995a63f8ae50f07264ccb014d8e5f090796c8f2658c6279fc6b5aeb12dca5",
+      "read_doc_lines": [
+        1,
+        264
+      ],
+      "all_snippet_files_read": [
+        "examples/ch14-model-checking/Cargo.toml",
+        "examples/ch12-unsafe/Cargo.toml",
+        "examples/ch12-unsafe/src/lib.rs",
+        "examples/ch12-unsafe/src/gat.rs",
+        "examples/ch12-unsafe/src/variance.rs",
+        "examples/ch12-unsafe/src/contracts.rs",
+        "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.rs",
+        "examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.toml",
+        "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.expected",
+        "examples/ch14-model-checking/tests/loom_counter.rs",
+        "examples/ch14-model-checking/tests/miri_contracts.rs",
+        "examples/ch14-model-checking/fixtures/miri-fail/src/main.rs",
+        "examples/ch14-model-checking/fixtures/miri-fail/Cargo.toml",
+        "examples/ch14-model-checking/fixtures/miri-fail/src/main.expected",
+        "examples/ch14-model-checking/tests/loom_counter_solution.rs",
+        "examples/ch14-model-checking/tests/miri_owner_solution.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch14-model-checking/Cargo.toml": "98be5f8261d9e858ec0ddfb0ca88e1fa4310c0a4a87de28128ce32588d7905b6",
+        "examples/ch12-unsafe/Cargo.toml": "d3c9301856f032cacafd7fc18a43eb8f38615ae75752c85b8cf84eb266beb20c",
+        "examples/ch12-unsafe/src/lib.rs": "6ed58edfdf2f63adb063cb601bee812a20e133fa51acce9ad7c46a356523c7cf",
+        "examples/ch12-unsafe/src/gat.rs": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+        "examples/ch12-unsafe/src/variance.rs": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+        "examples/ch12-unsafe/src/contracts.rs": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+        "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.rs": "d1570003c5760554c52b269d3096eb9cd9da4b6d089100b27db58875014e0a39",
+        "examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.toml": "5e0fff1a345770f001a7196b887d245d62be39a1a9c9d933a71be7269ee514bf",
+        "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.expected": "16dfb2737f4458cf72f984557d8a1af0a2f93bf1a447e5657bf1f9b876e85af0",
+        "examples/ch14-model-checking/tests/loom_counter.rs": "1b70332deb52da698ed5f2cceba688e7788f672bfb2daf74efe6352ea2ca5bb6",
+        "examples/ch14-model-checking/tests/miri_contracts.rs": "9521909a47173dfc8d7c9bbf9a84bb3eaf3438a3a49406f5895bf73a0e0c865f",
+        "examples/ch14-model-checking/fixtures/miri-fail/src/main.rs": "5fd3740a82c8f7ad96852aa7928c24cb31a661d85b2bd8daa7fe0424e6e08a48",
+        "examples/ch14-model-checking/fixtures/miri-fail/Cargo.toml": "7522e3051d8385b1924239489039a3a9cecdf303a0ee253ef78496253fcd5433",
+        "examples/ch14-model-checking/fixtures/miri-fail/src/main.expected": "88e052e8bfe774128d71f477bcaae4ad8e0a592e852f3d8dc2a034884c1e731c",
+        "examples/ch14-model-checking/tests/loom_counter_solution.rs": "8636a358adce52b7c8b589eda95c9b4bf184681bb25f83a519fe10e167866719",
+        "examples/ch14-model-checking/tests/miri_owner_solution.rs": "8e2ce20bdff59c1d7e7e8c2999ca6235dbb51794ac6518af81b982fe350239b8"
+      },
+      "four_question_evidence": {
+        "identity": "Loom探索有限模型交錯；Miri解譯所選MIR執行找UB，兩工具不代答彼此。",
+        "mechanism": "Loom model內每次新建counter且同步操作全用loom；fetch_add+join修lost update。Miri進入safe wrapper內部unsafe，cfg guard隔離故意UB。",
+        "need": "普通PASS不排其他交錯也不證記憶體契約，分別選工具查兩個問題。",
+        "operation_and_example": "依賴ch12-unsafe全檔已讀（與15快照按hash完全相同）；Loom正常/失敗/答案與Miri三正常/失敗/答案全讀。",
+        "small_change": "copy在drop前可留普通i32；drop後raw pointer仍存不保活，dereference違storage有效性。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "17-07",
+      "doc_hash": "82260e42f6632bbed298ad38bfda5d0e762a8c963348bfcf0ce5de45f7030eb0",
+      "read_doc_lines": [
+        1,
+        235
+      ],
+      "all_snippet_files_read": [
+        "examples/ch14-performance/src/lib.rs",
+        "examples/ch14-performance/examples/benchmark_inputs.rs",
+        "examples/ch14-performance/Cargo.toml",
+        "examples/ch14-performance/tests/count_contracts.rs",
+        "examples/ch14-performance/benches/line_counts.rs",
+        "examples/ch14-performance/measurements/run-1.txt",
+        "examples/ch14-performance/measurements/run-2.txt",
+        "examples/ch14-performance/benches/line_setup_solution.rs",
+        "examples/ch14-performance/measurements/exercise.txt"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch14-performance/src/lib.rs": "bd0b9932612439aca85ff21ce952749dbf93f89b3c4861bb0bfadc3092c54ee1",
+        "examples/ch14-performance/examples/benchmark_inputs.rs": "52861204c3f12e35789da05ba6f7cd61afb9725fcfb73e1c03062908ab92d042",
+        "examples/ch14-performance/Cargo.toml": "94ca37c793af418c5dec68b48d8d4d162b844d844d663bec9f2c5bd87768b221",
+        "examples/ch14-performance/tests/count_contracts.rs": "afeed4e348a2216faa9c4c451557a1056f566147c0a4466a68e0b3ba4349fc12",
+        "examples/ch14-performance/benches/line_counts.rs": "717586a7b8334b70df5f0b6c8c7056359499142e51a708c42a04e6f023ce1433",
+        "examples/ch14-performance/measurements/run-1.txt": "5be41ff2822d7cd4b52f8fd3b6f9d8d2f464df5bb87805eff4689e4e088f7ba7",
+        "examples/ch14-performance/measurements/run-2.txt": "8604c400edac5ee7e6fa96f3753f2c33c4fc479fc3595a24fb5687865f289141",
+        "examples/ch14-performance/benches/line_setup_solution.rs": "b9fc284363f11187f097dcc06a9f72c5807a049406c0783f1c838061b5024115",
+        "examples/ch14-performance/measurements/exercise.txt": "9a8a46ac63307d7ea49e8b41f1c69d38068c859cd292cdb3f4f0128e1698d86a"
+      },
+      "four_question_evidence": {
+        "identity": "benchmark固定工作重複量經過時間，microbenchmark純計數不涵整CLI；Criterion callback與iter範圍分開。",
+        "mechanism": "black_box盡力減少常數化；輸入準備/答案檢查在iter外，candidate clone與Drop在內；warmup/sample/CI各角色有解釋。",
+        "need": "只需借讀計數時owned判斷副本多做哪些工作、時間差有多大。",
+        "operation_and_example": "library/manifest/tests/bench/答案與三份完整文字報告全讀；四表數值與原報告四捨五入一致。",
+        "small_change": "把make_workload移iter內回答不同完整工作，不能用兩邊差值當純建置成本精確分解。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "17-08",
+      "doc_hash": "8ff6edb77f3d98afd663717b4b2e9fe10b93dd6b20890f69cfe5613c02c19898",
+      "read_doc_lines": [
+        1,
+        246
+      ],
+      "all_snippet_files_read": [
+        "examples/ch14-profiling/src/lib.rs",
+        "examples/ch14-profiling/tests/repeated_results.rs",
+        "examples/ch14-profiling/Cargo.toml",
+        "examples/ch14-performance/Cargo.toml",
+        "examples/ch14-performance/src/lib.rs",
+        "examples/ch14-profiling/examples/allocation_cloned.rs",
+        "examples/ch14-profiling/examples/allocation_borrowed.rs",
+        "examples/ch14-profiling/examples/allocation_solution.rs",
+        "examples/ch14-profiling/profiles/cloned.stdout.txt",
+        "examples/ch14-profiling/profiles/cloned.stderr.txt",
+        "examples/ch14-profiling/profiles/borrowed.stdout.txt",
+        "examples/ch14-profiling/profiles/borrowed.stderr.txt",
+        "examples/ch14-profiling/profiles/solution.stdout.txt",
+        "examples/ch14-profiling/profiles/solution.stderr.txt"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch14-profiling/src/lib.rs": "a57e6ac616bd68cfef0d17d1a80e94fb04237006a06344086ae4cc88b162575c",
+        "examples/ch14-profiling/tests/repeated_results.rs": "fbc98bee75f8b1ce2d7ac15d04d190bd779dda143016ae9b77713d2e500f8d2b",
+        "examples/ch14-profiling/Cargo.toml": "89f66e3c2ee8143e56c45d9f0347b7abb27acc5268d6cbbcae80fecb4bac16ca",
+        "examples/ch14-performance/Cargo.toml": "94ca37c793af418c5dec68b48d8d4d162b844d844d663bec9f2c5bd87768b221",
+        "examples/ch14-performance/src/lib.rs": "bd0b9932612439aca85ff21ce952749dbf93f89b3c4861bb0bfadc3092c54ee1",
+        "examples/ch14-profiling/examples/allocation_cloned.rs": "afe7199c0b7fc1d7de8462a0b55e37e812ad7bdf12759bda5c4d589ff60e23af",
+        "examples/ch14-profiling/examples/allocation_borrowed.rs": "e0ccb93fe67e3fc02fd6783645012782f286b8138a74c209b0fc61d861a656e6",
+        "examples/ch14-profiling/examples/allocation_solution.rs": "86dcd0d789ec1ac556fa7794f7fcab4774a762a144e796018fb9bde07fa2bfae",
+        "examples/ch14-profiling/profiles/cloned.stdout.txt": "a494f76ab7a829a22d9583d7f0453c732c5e3b2fdfd3ab9896b577f15ca3ecb5",
+        "examples/ch14-profiling/profiles/cloned.stderr.txt": "955d7a88fb13999ead3bdecc16e271c47949cd3593e5bf55f3b10783f962646d",
+        "examples/ch14-profiling/profiles/borrowed.stdout.txt": "c7e15c9c3872a1d4a3abf6e4fad4763a5a1873625d1d73a4af5d8543394ae1a6",
+        "examples/ch14-profiling/profiles/borrowed.stderr.txt": "1dfb40c43dd8b86f51e74abfb80bc0cb3ee5af70b20957f204f0b16407a6e1fd",
+        "examples/ch14-profiling/profiles/solution.stdout.txt": "19d313943f7e833ee388c4ef38e78eb2c839a27da06b3e10138ed3def12969d9",
+        "examples/ch14-profiling/profiles/solution.stderr.txt": "28254398fcdfd63e542e8212d0f5318040e011519e55683a2dd7c8a71fc49c54"
+      },
+      "four_question_evidence": {
+        "identity": "allocation profiling查heap配置位置/量，與CPU耗時分配不同；allocator/static/Profiler/HeapStats先教。",
+        "mechanism": "build開始drop停止、範圍外已建清單仍存在；total/max/current分開，source鏈同一PP不能重複加總。",
+        "need": "驗clone每行是否產新配置，改借讀去掉它仍做相同256行100次答案6400。",
+        "operation_and_example": "profile三example/依賴/重複helper/tests/原stdout stderr全讀，圖中main18/repeat12/count_cloned21與實source吻合。",
+        "small_change": "64行使總量6400blocks/81600bytes，最長candidate仍15所以峰值不必縮；原owned報告需求不能偷改借用。"
+      },
+      "rendered_full_source_missing": []
+    }
+  ],
+  "role": "independent non-author continuity reviewer",
+  "prior_author_ledgers_or_peer_findings_seen": false,
+  "sealed_utc": "2026-10-15"
+}

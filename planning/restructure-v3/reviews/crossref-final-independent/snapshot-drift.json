@@ -1,0 +1,38 @@
+[
+  {
+    "path": "docs/chapters/07-04-lesson.md",
+    "initial_sha256": "532b1238409b30864e44957d90cd3416b3e520518faff6cd0c1879aef7c8acc6",
+    "final_sha256": "21a01d6a373aa5db5df05479d23e7b40c0119fcc98116e6f8af3f210b32acc64",
+    "handling": "本次重新讀到目前引用句；保留初始盤點，不覆蓋原觀察。"
+  },
+  {
+    "path": "docs/chapters/14-07-lesson.md",
+    "initial_sha256": "de90e990ee41a14145e03871084b12e949f8f10a8a1ff398c592afea17a282c8",
+    "final_sha256": "eeecfa90ed6c35cc1c811954629015ffc63e1495319b0d5e12ac4d82b68f014e",
+    "handling": "本次重新讀到目前引用句；保留初始盤點，不覆蓋原觀察。"
+  },
+  {
+    "path": "docs/chapters/14-08-lesson.md",
+    "initial_sha256": "3a066862ac5216cecc773bdd60867ccc7454580b40873a70ca68290af301c8e2",
+    "final_sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+    "handling": "本次重新讀到目前引用句；保留初始盤點，不覆蓋原觀察。"
+  },
+  {
+    "path": "docs/chapters/18-01-lesson.md",
+    "initial_sha256": "a22da7d2db2d4e3d159739c36ff8939038666aa014970bf1487a2a7835a6d982",
+    "final_sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+    "handling": "本次重新讀到目前引用句；保留初始盤點，不覆蓋原觀察。"
+  },
+  {
+    "path": "docs/chapters/18-05-lesson.md",
+    "initial_sha256": "e86d9c47ee390dcf08f0c127a2b9b655efecbe7fdef702e0b64ab8eb138df3c4",
+    "final_sha256": "759c1dd6cd374e7a9863e9482f6e662df1313b0dc0a4fe6a23c7dd227e6bc27d",
+    "handling": "本次重新讀到目前引用句；保留初始盤點，不覆蓋原觀察。"
+  },
+  {
+    "path": "docs/chapters/18-06-lesson.md",
+    "initial_sha256": "1bb7597d02979ce2902149853bc5c4c93687fa5ff10cf49ebd338009fa8469aa",
+    "final_sha256": "0d3112fc092f4d730391bb884b2c9f55c06126e459cc8a84397f7fba54ed4e60",
+    "handling": "本次重新讀到目前引用句；保留初始盤點，不覆蓋原觀察。"
+  }
+]

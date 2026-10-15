@@ -1,0 +1,77 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "2.8"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round02-control-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch02.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/02-08-lesson.md": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880",
+    "examples/intro-workspace/control/src/pricing.rs": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+    "examples/intro-workspace/control/src/main.rs": "5d78165a15d701ea5c666890114c085df879766bf7e6c1eaf0102d92ede8f87e",
+    "examples/intro-workspace/control/Cargo.toml": "18abe91283c11f1a1f1109a64b28d1de3cf39d17dc8223e48cec3bd65df6b7bf",
+    "examples/intro-workspace/control/src/lib.rs": "aa8fc8a3b9f8f9804cbf13ebeb3a2ce5d6093f1fa8ab292fa373239fdec8d2ac",
+    "examples/intro-workspace/control/examples/integration_answer.rs": "3ef2a593ee398e521593908f6a0679253b0ae0c01b9152b643c0865026436db9",
+    "examples/intro-workspace/control/examples/assertions_answer.rs": "a5d624eed1ec93683354d1d0deb23f1557a3f4e5c5e60ce98c1f353c6e273066",
+    "examples/intro-workspace/control/examples/lint_return.rs": "e0f68b7ca14eb3ff532ae81717b81821738584db30f0a768d6816663043d1f80"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "2.8",
+      "path": "docs/chapters/02-08-lesson.md",
+      "line": 3,
+      "quote": "這一節把本章已做過的工作接成一個完整小程式：library 保存規則，binary 顯示結果，測試保存預期答案。先從規格和檔案分工重建一次，再對照同頁的全部來源；本節不增加新的 Rust 語法。"
+    },
+    {
+      "section_id": "2.8",
+      "path": "docs/chapters/02-08-lesson.md",
+      "line": 7,
+      "quote": "訂單使用非負的小整數，乘法與加法不超出 `i32` 範圍。library 提供三個公開函式："
+    },
+    {
+      "section_id": "2.8",
+      "path": "docs/chapters/02-08-lesson.md",
+      "line": 19,
+      "quote": "計價函式先處理空訂單，再呼叫商品小計與私有運費函式。每一步都沿用已教的條件、return 與函式呼叫："
+    },
+    {
+      "section_id": "2.8",
+      "path": "docs/chapters/02-08-lesson.md",
+      "line": 41,
+      "quote": "下列四份檔案就是這個版本的設定、library root、計算 module 與 binary root，全部位於 `examples/intro-workspace/control/`。入門 workspace 的組織與選 target 方式沿用第 1.3 節；本頁指令只選 `intro-control`，不需要打開其他成員的程式。"
+    },
+    {
+      "section_id": "2.8",
+      "path": "docs/chapters/02-08-lesson.md",
+      "line": 80,
+      "quote": "在自己的練習副本中，先不看答案，新增 `control/examples/my_report.rs`。它有自己的 main，透過 use 使用 library 的三個公開函式，不複製計價規則。請完成："
+    },
+    {
+      "section_id": "2.8",
+      "path": "docs/chapters/02-08-lesson.md",
+      "line": 97,
+      "quote": "答案保存為 `control/examples/integration_answer.rs`，不會覆蓋你自己的檔案。它使用的完整 manifest、lib 與 pricing 都已在本頁內嵌；下面是答案 target 的全部來源："
+    },
+    {
+      "section_id": "2.8",
+      "path": "docs/chapters/02-08-lesson.md",
+      "line": 117,
+      "quote": "現在已讀過這個 package 的 library、主要 binary、本頁答案，以及第 2.7 節的 assertion 與 return 比較範例。此時可以把工具範圍擴大到完整 package。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

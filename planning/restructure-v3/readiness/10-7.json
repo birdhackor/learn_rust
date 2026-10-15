@@ -1,0 +1,157 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "10.7"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round10-cargo-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round10-cli-fixtures.md",
+    "planning/restructure-v3/reviews/technical-early/round10-complete-note-search.md",
+    "planning/restructure-v3/reviews/technical-early/round10-native-path-clap-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round10-serde-json.md",
+    "planning/restructure-v3/reviews/technical-early/round10-text-bytes-io-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/10-07-lesson.md": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+    "examples/intro-workspace/json-stage/fixtures/notebook.json": "f38fbd09edfc230e497af6d0742d74faa79b7c3ed27a692f4e8bfc0c6dc63102",
+    "examples/intro-workspace/json-stage/Cargo.toml": "1dfc5ec041f44a96cbb4c1b3c30e7e1aad0a47d01e71dcaeaaeb1f85bc425ef7",
+    "examples/intro-workspace/json-stage/examples/json_core/model.rs": "40889f6c69e2fdf08e705fd37040805bdcc0df2c75c2e4552ec13462085b61ed",
+    "examples/intro-workspace/json-stage/examples/json_core/mod.rs": "847451479d9dbc3ce77d9fe4841859d9f571fc0819c4201ce8ef1da59b9e3954",
+    "examples/intro-workspace/json-stage/examples/json_core/codec.rs": "b61262ca3f716f4689448d6c873ac33dbcac7ec9395ccf7d69e4ed3e25653901",
+    "examples/intro-workspace/json-stage/examples/basic_json.rs": "1d25f1c0b73bee4cfbc0b56db65de1b6b585e869c475826581229794758ab0f7",
+    "examples/intro-workspace/json-stage/fixtures/broken-syntax.json": "15c0680da9ba7e7ce1481594612e8e2ddb08ef61be67826645f931c7ebce3e13",
+    "examples/intro-workspace/json-stage/fixtures/missing-title.json": "a853f5b8f4f9553f7e97069dfb3b3afaf85ca7cde590270aaa4487a5eadb2dc2",
+    "examples/intro-workspace/json-stage/fixtures/unknown-field.json": "7219d52232d4554e25f2ae3352de50f497b84e5ffef401f2c1eec19da74ec16d",
+    "examples/intro-workspace/json-stage/fixtures/wrong-value-type.json": "a58060bbc21ad21d9a09d1313f93216501a69be5ed656e36300f936e55f10ce1",
+    "examples/intro-workspace/json-stage/fixtures/number-out-of-range.json": "897ef1d15b3217a9a6feb32fd26374e1b2990587d7732f40124899b6fc383689",
+    "examples/intro-workspace/json-stage/fixtures/quoted-title.json": "c6d189fb9fef04f0b8c079ef628d2fb5812f1ce257bb392f3e6e8ba9844bdba4",
+    "examples/intro-workspace/json-stage/examples/json_files/mod.rs": "a1d523c239b9d276ad14bc14fe7a09ffeeb20e3621bdd525ad18543e1baba256",
+    "examples/intro-workspace/json-stage/examples/file_errors.rs": "fc1d186795c80ae9f71fd7bb6470ea899c62092633abb2d61c0167266923d7e2",
+    "examples/intro-workspace/json-stage/src/main.rs": "977fa333c3713c33e8f83b1a1580b37fcc15d2e192092875685079bb3279948a",
+    "examples/intro-workspace/json-stage/examples/json_solution.rs": "ed95bbc81ed4028acede3a4ef0b0c8a71475fda543989ae3183d9bc78a315e65",
+    "docs/assets/ch07/json-model.svg": "d614744ae58f91f324a1be6dc4eb47debe1149b4116b8f70d2ea8a82ec445448"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 3,
+      "quote": "第 10.3 節已能讀到完整 UTF-8 文字。現在筆記不只是一段內容，還要保存標題、數值清單與是否封存，讓下一次程式啟動能讀回這些角色。"
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 5,
+      "quote": "我們使用 **JSON（JavaScript Object Notation，JavaScript 物件表示法）**：一種讓不同程式交換資料的文字格式，不需要執行 JavaScript。先決定檔案的資料形狀，再把它轉成已教的 Rust 型別。"
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 11,
+      "quote": "`fixtures/notebook.json` 是真正的輸入檔："
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 17,
+      "quote": "JSON 的 **object** 以大括號保存名稱與值，名稱要以雙引號包住，冒號後是值，逗號分隔各項。**array** 以方括號保存依順序排列的值。下面的對應就是我們希望讀回的資料："
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 27,
+      "quote": "這些大括號是檔案格式，不是 Rust 的 struct 建立語法。JSON 不接受註解或最後一項之後的逗號。文字值中的換行要寫成 `\\n`，雙引號要寫成 `\\\"`，這些 **escape（跳脫）** 形式讓格式能分辨資料內容與文字的邊界。"
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 31,
+      "quote": "**serialization（序列化）** 把資料轉成可以保存或交換的格式；**deserialization（反序列化）** 從格式讀出資料。**Serde** 是 Rust 的相關能力框架，名稱由 serialize／deserialize 組成："
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 36,
+      "quote": "**`serde_json`** 則是選定 JSON 格式的實作，使用模型提供的上述能力，將文字與模型接起來。Serde 的能力並不限於 JSON；在本節使用它們，是為了讓相同欄位規則有明確的 JSON 編碼與讀回方式。"
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 38,
+      "quote": "沿用第 10.1 節的 dependencies／版本要求／features，serde 的 **derive feature** 提供生成這兩項 trait 實作的能力。下面是本節完整manifest；版本仍是範圍要求，實際選定版本由入門 workspace 共用的 Cargo.lock 保存："
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 46,
+      "quote": "我們另選 **`#[serde(deny_unknown_fields)]`**，要求反序列化時拒絕模型沒有的欄位。預設 JSON 的未知欄位會被忽略；這個筆記檔希望拼錯或多出的名稱得到回饋，因此明確選擇拒絕。它是給 Serde derive 的 attribute 設定，不是執行時呼叫的函式。"
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 54,
+      "quote": "這是 **owned model**：欄位中沒有 reference。標題與清單屬於 Notebook，不需要像第 7.3 節的 TextView 一樣，繼續依賴原輸入 String 的存活。"
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 58,
+      "quote": "這次只選用兩項 API："
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 67,
+      "quote": "from_str 對結果型別 T 的要求是 `Deserialize<'a>`，其中 `'a` 代表借入的 JSON 文字來源。這是 trait 使用 lifetime 參數的形式，延續第 7.3 節在型別契約中表達來源的規則。**它不要求每個結果都保存輸入 reference**；我們生成的是欄位全為 owned 的 Notebook，所以成功後可以讓原文字結束。"
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 108,
+      "quote": "圖中的三個方框是**不同資料表示**。from_str 借入上方文字，建立中間 owned 模型；to_string_pretty 再借用中間模型，建立下方新 String。沒有把模型變成一份仍借原文字的 reference："
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 116,
+      "quote": "所有教材JSON內容都在本頁，包含開頭的notebook.json，以及以下用來驗證格式、欄位與跳脫的完整材料。missing.json刻意不存在；not-utf8.bin的完整原始byte序列只有255（十六進位FF），沒有換行。"
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 158,
+      "quote": "先前兩個步驟各自用 match。現在把「讀到 Notebook」整理成 helper：可能遇到 io::Error，也可能遇到 serde_json::Error。這是第 8.5 節的封裝場景，使用具體 **NotebookError**，兩個 variants 保存原錯誤。"
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 182,
+      "quote": "以下第一項測試把輸入 String 放在內層，原文字結束後仍使用 Notebook，再編碼與讀回，核對全部欄位。第二項使用真實的 UTF-8 教材檔，分別確認語法、缺欄位、未知名稱、錯型別與數字超出範圍都會被拒絕。第三項確認換行與雙引號的資料可以往返，沒有手寫一套跳脫規則："
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 198,
+      "quote": "這個package的預設main只提示選擇example，本頁命令都明選target。完整 `src/main.rs`："
+    },
+    {
+      "section_id": "10.7",
+      "path": "docs/chapters/10-07-lesson.md",
+      "line": 224,
+      "quote": "寫 `archive(filename: &str) -> Result<String, NotebookError>`。先使用本節 read_notebook，將 archived 設為 true，再使用 encode 交回 JSON String；兩項失敗都由既有的 From 與 `?` 傳回。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

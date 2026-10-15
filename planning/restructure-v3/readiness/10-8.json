@@ -1,0 +1,151 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "10.8"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round10-cargo-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round10-cli-fixtures.md",
+    "planning/restructure-v3/reviews/technical-early/round10-complete-note-search.md",
+    "planning/restructure-v3/reviews/technical-early/round10-native-path-clap-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round10-serde-json.md",
+    "planning/restructure-v3/reviews/technical-early/round10-text-bytes-io-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/10-08-lesson.md": "301e423c4f1e2cd6541442c1bb47c0bf839b335031c6a9dec281ca57c1a4c2e7",
+    "examples/intro-workspace/cli-fixtures/Cargo.toml": "ae0a41d096cc4b7a71167a7a713c806550a9a91b2710903b1670a1c004a9684d",
+    "examples/intro-workspace/cli-fixtures/src/main.rs": "c060b7a3f5338bc68f26f1ed46120f4e4864ecd60e55f386d64a1d3789f45f09",
+    "examples/intro-workspace/cli-fixtures/tests/directory.rs": "9b4e6b9fcd4122fcbf46b510ce68ded1ab66d4e4232d35cf378e4c76a9af1a38",
+    "examples/intro-workspace/cli-fixtures/tests/cli.rs": "a4cbb5f45e393b72237c70b02bfdb24b3c6f59f63b9b3c5bda539971536d29f3",
+    "docs/assets/ch07/fixture-sequence.svg": "d300657daac7ba35c30454a180509d275ace4856455141c694d7e8475e61f539"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 3,
+      "quote": "前面先測 library，再以命令列觀察輸出。現在要把「指定一份筆記，得到原內容；失敗有診斷與狀態」保存為可重複執行的測試，讓日後調整 main 也能發現出口或狀態被改壞。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 5,
+      "quote": "**test fixture（測試材料）** 是為特定檢查準備、內容與用途已知的資料。本節的 fixture 是測試自己建立的目錄與檔案；每項測試使用自己的目錄，既不依賴別人的筆記，也不共用會被同時覆寫的固定檔名。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 11,
+      "quote": "先沿用第 10.5 節的單檔筆記工具，這樣新增工作集中在測試工具。本package保存第10.5節已完成的ArgumentError、parse_filename與main完整快照，使用同樣的讀取與分流行為；不需要另外載入library。測試啟動的是**本 package 的 binary**，不是拿另一個 package 的執行檔路徑猜測。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 34,
+      "quote": "先選用 **`tempfile::tempdir()`**。它在系統的臨時位置建立新目錄，名字由 library 產生，回傳 `io::Result<TempDir>`；建立失敗就是 io::Error。**TempDir** 是管理這份目錄的 owner，**`directory.path()`** 只借出 `&Path`，供 join、讀寫與後面的子行程使用。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 36,
+      "quote": "TempDir 正常離開 scope 時會嘗試刪除目錄及其中的內容，但自動清理遇到的錯誤會被忽略。如果需要知道清理是否成功，使用 **`directory.close()`**：它接手 TempDir，移除目錄，回傳 `io::Result<()>`。close 之後原 owner 已 move，不能再借它的 path；這是此型別的使用契約，這裡已可依上述行為操作；第11.3節再說明實作資源收尾的Drop trait。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 38,
+      "quote": "不要只留下 PathBuf 就讓 TempDir 先結束。PathBuf 擁有的是路徑資料，**沒有接管目錄資源**；依第 10.5 節的區分，保存路徑不會讓檔案持續存在。測試將 owner 留到讀寫／子行程結束，才清理。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 66,
+      "quote": "**`std::process::Command`** 是新行程的設定物件。測試程式是 parent（啟動者），被啟動的筆記工具是 child（子行程）；兩者各有工作目錄與結束狀態。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 79,
+      "quote": "**`Output`** 保存已結束 child 的三個公開欄位："
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 84,
+      "quote": "**`output.status.success()`** 回 bool，正常成功的零狀態才是 true。**`output.status.code()`** 回 `Option<i32>`：有正常數字狀態時是 Some；在 Unix 被 signal（作業系統送出的行程控制訊號）終止可能是 None，因此不能一律當成數字。本節期待受測工具正常返回的 Some(0)／Some(1)／Some(2)。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 86,
+      "quote": "output 的 **Ok 不等於工具工作成功**。如果子行程啟動並完成，自己回傳 1，仍得到 Ok(Output)，失敗在 status；沒能啟動、無法收集輸出或等待失敗，才是外層 io::Error。不要把使用者缺檔和測試沒能啟動工具混為一談。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 92,
+      "quote": "**environment variable（環境變數）** 是建置／執行環境提供的具名資料。這次選用 **`env!(\"名稱\")`** macro：在編譯時取指定環境變數，產生 `&str`；沒有該值會使編譯失敗，不是執行中查詢 Option／Result 的函式。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 94,
+      "quote": "Cargo 建置 integration test 時，提供 **`CARGO_BIN_EXE_<name>`**，值是該 package 對應 binary 的絕對執行檔路徑，並建好該 binary。name 是 binary target 名稱，連字號保留；本 package 的預設 binary 叫 intro-cli-fixtures，因此寫 `env!(\"CARGO_BIN_EXE_intro-cli-fixtures\")`。它供此測試使用，不是每份 main／unit test 都有的通用變數，也不會替我們定位 dependency 的 binary。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 96,
+      "quote": "捕捉到的bytes要先檢查UTF-8；這次選用**`std::str::from_utf8(bytes)`** 接收 `&[u8]`，檢查 UTF-8 後回傳 `Result<&str, Utf8Error>`，錯誤有 Debug／Display。這次只是借出 Output bytes 的文字 view，和第 10.4 節接手 Vec 的 String::from_utf8 不同；Output 仍保存兩份原 bytes，讓我們分項檢查。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 106,
+      "quote": "第一個 child test 用含中文與空白的相對檔名，核對完整 stdout、空 stderr、正常成功與數字 0。同一個 TempDir owner 一直留到 output 返回與 assertions 完成："
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 112,
+      "quote": "圖中箭頭是**操作先後**；外框是 TempDir 仍由測試持有的範圍。先讓 child 用完資料，才 close；下面留下的 PathBuf 只是位置表示，不能延長資源的存在："
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 116,
+      "quote": "失敗情況還要保持相同的介面判準。為了驗收我們的診斷前綴，選用 **`text.starts_with(\"無法讀取 \")`**：shared 借用 str，檢查是否以這段文字開頭，回 bool；OS 後面的詳細錯誤文字可能不同，不把它整份寫死。"
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 118,
+      "quote": "下面分別檢查不存在的檔案、非法 UTF-8、缺少 argument，還有**不存在的執行檔**。最後一項在自有目錄指定刻意沒建立的程式位置，應得到外層 NotFound；沒有 Output 或 child status 可供檢查。Output 也提供 Debug，若意外得到 Ok，測試可以在 panic! 中列出它。不依權限、特權帳號或外部服務碰巧失敗："
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 134,
+      "quote": "前面已完整列出manifest、受測src/main.rs與tests/directory.rs。以下是完整tests/cli.rs，包含helper、四項主文測試與下一題空檔測試的完整答案："
+    },
+    {
+      "section_id": "10.8",
+      "path": "docs/chapters/10-08-lesson.md",
+      "line": 144,
+      "quote": "加入一項 integration test：建立 empty.txt，寫入空文字，啟動工具。預期兩個出口都是零 bytes，但狀態是成功的 Some(0)。它和讀取失敗都沒有 stdout 資料，差別在 status 與 stderr，所以三項一起檢查。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

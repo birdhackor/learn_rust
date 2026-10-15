@@ -1,0 +1,1 @@
+18.4 的 TC18M-O1 是 root 提供的可選修訂，非此審閱者獨立發現。封存初判後窄讀 diff 與 current 15–45 行，判定可保留：action／reason 是 String；path_debug 是 Option<String>，現在明指上段已教的 None／Some 規則與 Some 內文比較，與 order_issues 實源一致。所有本節 source hash 未變，沒有新增先備或命令，不需重跑 Rust。原 18A 初判保持；新舊 hash 與畫面證據另存 JSON。

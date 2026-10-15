@@ -1,0 +1,61 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "2.4"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round02-control-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch02.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/02-04-lesson.md": "f47300de5e81aa895bb09a2335a4ed97737c0797e6168e061a1e52049a51e56b",
+    "examples/intro-workspace/control-steps/examples/while_work.rs": "a238562954b21df44248e50b045377c4c5e2b91f4fdebb12e1107ec14ed0f1c8",
+    "examples/intro-workspace/control-steps/Cargo.toml": "52011d81554362fc0008e34c86caab53d1da8f6e599cb7b335e0b3b2dd5d8c6e",
+    "examples/intro-workspace/control-steps/examples/while_work_answer.rs": "d4d6ccdaf2cae8973bb7917bdd3884e41954dc853b36ab9253148d07eaaebd56"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "2.4",
+      "path": "docs/chapters/02-04-lesson.md",
+      "line": 3,
+      "quote": "現在有 7 項工作，每一批最多處理 3 項，最後一批只處理剩下的部分。我們想每批完成後重新查看剩餘量；只要還有工作，就再做一批，直到剩餘量為零。"
+    },
+    {
+      "section_id": "2.4",
+      "path": "docs/chapters/02-04-lesson.md",
+      "line": 7,
+      "quote": "`while 條件 { 工作 }` 在每次執行 body **之前**檢查條件。為 true 就做一次，body 結束後回到條件重新檢查；為 false 則離開 while，接著執行後面的程式。如果一開始已是 false，body 一次也不做。"
+    },
+    {
+      "section_id": "2.4",
+      "path": "docs/chapters/02-04-lesson.md",
+      "line": 30,
+      "quote": "`batch_count(0)` 先讓 `remaining` 得到 0，第一次條件檢查就為 false。因此不會顯示任何「完成第幾批」，函式直接交回原本的 `batches`，也就是 0。"
+    },
+    {
+      "section_id": "2.4",
+      "path": "docs/chapters/02-04-lesson.md",
+      "line": 56,
+      "quote": "上一節的 for 直接沿已有材料逐項處理；這次 while 直接表達「重新檢查剩餘量，還有工作就繼續」。這不表示 for 無法完成同樣計算，而是兩種寫法各讓不同的工作安排更直接可見。"
+    },
+    {
+      "section_id": "2.4",
+      "path": "docs/chapters/02-04-lesson.md",
+      "line": 60,
+      "quote": "把每批上限改成參數，定義 `batch_count(work: i32, capacity: i32) -> i32`。本題約定 `work >= 0`、`capacity > 0`，且都是不會讓計數溢位的小整數。分別計算 `(7, 3)`、`(6, 3)`、`(0, 3)`，預期為 3、2、0 批。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

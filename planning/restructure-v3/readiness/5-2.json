@@ -1,0 +1,80 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "5.2"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round05-cross-reference-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round05-data-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round05-data-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round05-prefix-markup-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05-version-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/05-02-lesson.md": "40d749408aba8ccf2004dc6b410d5bbe8e1e086983070cf1e13df554bab3ab18",
+    "examples/intro-workspace/data-steps/examples/option_result.rs": "ff1e56dd326e94541adfc78512a00ab182c74c097650c90fa80208199f4a4342",
+    "examples/intro-workspace/data-steps/Cargo.toml": "37c9cbefb5ff5e6412887e4932d12a2063bda8f52b547e417064133c1fcb9a33",
+    "examples/intro-workspace/data-steps/examples/result_answer.rs": "0fc3a3416d1d9071bdf4d1472e5281b79f327c5dccbba92d71ead59fb9d10789"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "5.2",
+      "path": "docs/chapters/05-02-lesson.md",
+      "line": 3,
+      "quote": "第 4 章用自訂 Quote 區分缺少報價與已有金額。許多工作只需要「有一個值，或沒有值」這種共同形狀；另一類工作還需要保存失敗原因。標準函式庫分別提供 Option 與 Result，現在用上一節的型別參數讀懂它們。"
+    },
+    {
+      "section_id": "5.2",
+      "path": "docs/chapters/05-02-lesson.md",
+      "line": 7,
+      "quote": "**`Option<T>`** 是標準的 enum，只有一個型別參數 T：**Some(T)** 保存一份 T 型別的值，**None** 沒有附帶值，表示缺值。因此 `Option<i32>` 是「可能有一個 i32」，本身不是 i32；`Option<bool>` 則可能有一個 bool。"
+    },
+    {
+      "section_id": "5.2",
+      "path": "docs/chapters/05-02-lesson.md",
+      "line": 11,
+      "quote": "這些標準名稱不需下載或自行定義。Rust 的 **prelude**（預先匯入的常用名稱）會自動把一組名稱帶進一般 module；本頁的 Option、Result 與它們的 variant 都在其中。因此可直接寫 Some、None，稍後也能直接寫 Ok、Err，不必像自訂 enum 一樣每次加型別前綴。它們仍然是 variant，不是數字或控制流程關鍵字。"
+    },
+    {
+      "section_id": "5.2",
+      "path": "docs/chapters/05-02-lesson.md",
+      "line": 23,
+      "quote": "接受 `Option<i32>` 的函式可以用第 4 章的 match：Some(amount) 取得裡面的 i32，None 分支處理缺值。這裡只顯示，不把缺值擅自改成價格零。"
+    },
+    {
+      "section_id": "5.2",
+      "path": "docs/chapters/05-02-lesson.md",
+      "line": 41,
+      "quote": "現在要計算 `12 / 2`，也要面對除數零。**`Result<T, E>`** 是另一個標準 enum，使用**兩個型別參數**："
+    },
+    {
+      "section_id": "5.2",
+      "path": "docs/chapters/05-02-lesson.md",
+      "line": 66,
+      "quote": "本頁使用沒有 library 的 `intro-data-steps`，完整設定與全部 helper、main 如下："
+    },
+    {
+      "section_id": "5.2",
+      "path": "docs/chapters/05-02-lesson.md",
+      "line": 99,
+      "quote": "None 不會告訴你為什麼缺值；Err 則能保存我們選定的錯誤型別。兩者都要求接收者先分辨情況，不會自動替工作選出假數字。"
+    },
+    {
+      "section_id": "5.2",
+      "path": "docs/chapters/05-02-lesson.md",
+      "line": 103,
+      "quote": "定義 AmountError::Negative，寫 `checked_amount(amount: i32) -> Result<i32, AmountError>`：金額非負時交出 Ok 中的原金額，負數時交出 Err。讓 main 依序處理 0、−5，預期顯示接受零元，再拒絕負數。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

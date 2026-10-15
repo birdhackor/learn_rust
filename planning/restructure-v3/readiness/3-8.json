@@ -1,0 +1,93 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "3.8"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round03-copy-before-diagram-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round03-ownership.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/03-08-lesson.md": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+    "examples/intro-workspace/ownership/examples/strings.rs": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+    "examples/intro-workspace/ownership/examples/text_order.rs": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+    "examples/intro-workspace/ownership/examples/strings_answer.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+    "docs/assets/ch03/string-view.svg": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 3,
+      "quote": "訂單現在只有數字。若還要逐步組成「訂單A：已備妥」這種文字，就需要一份由程式持有、能追加內容的值；而顯示文字的函式通常只需要借讀。這裡分別使用 String 與 &str，沿用本章的 owned 值和 reference 契約。"
+    },
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 7,
+      "quote": "Rust 的 **str** 是 UTF-8 編碼的文字 slice。UTF-8 是把 Unicode 文字編成 bytes 的方式，接回第 1.7 節的編碼與儲存單位。本節先整段顯示、追加，不切中文字；第 5.3 節再把 char、bytes 與切字界線連起來。"
+    },
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 9,
+      "quote": "我們在這裡透過 **&str** 使用 str。它是一份 shared reference，帶著文字區段的位置與 byte 長度，讓函式借讀一段有效的 UTF-8 文字。`\"Rust\"` 這種一般字串字面值的型別就是 &str；文字保存在程式的靜態資料中，不是每次都建立 owned 的 String。"
+    },
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 21,
+      "quote": "**String** 是標準函式庫提供的 owned 文字型別。它持有文字的儲存資源，內容需要空間時使用 heap；值在最後的 owner 結束時負責清理資源。空的 String 可以尚未配置 heap 空間，不必把每次建立空值都想成已配置一大塊記憶體。"
+    },
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 45,
+      "quote": "String 沒有 Copy。把 greeting 指派給 moved，ownership 便交給新 binding："
+    },
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 73,
+      "quote": "每次 show 的借用都在呼叫完成後不再使用，所以之後可以追加，最後也可以把 String move 給 moved。"
+    },
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 77,
+      "quote": "第一份在 move 後又使用 first，會得到 **E0382**："
+    },
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 89,
+      "quote": "view 在最後的 println 還要使用，所以那份 shared 借用涵蓋中間的 push_str。push_str 需要修改借用，兩者衝突，編譯器回報 **E0502**。把這份程式放進獨立練習專案執行 `cargo check` 即可觀察；若先顯示 view，後面不再用它，才追加，就符合第 3.5 節的順序。"
+    },
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 93,
+      "quote": "要讓訂單帶著自己的標籤，struct 的 label 欄位用 String。建立函式接受 owned 的 String，將它 move 到欄位，訂單便負責持有它。其餘單價、數量與原本相同。"
+    },
+    {
+      "section_id": "3.8",
+      "path": "docs/chapters/03-08-lesson.md",
+      "line": 116,
+      "quote": "寫 `append_label(output: &mut String, label: &str)`，向呼叫者的 String 追加文字。從空值開始，依序追加 `\"Rust\"` 與 `\" 教學\"`，最後顯示 `Rust 教學`。output 需要修改借用；label 只需借讀來源。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,24 @@
+<svg width="390" height="570" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 390 570" role="img" aria-labelledby="title description">
+ <title id="title">Box讓每個Chain管理下一份獨立存放的Chain</title>
+ <desc id="description">第一份chain是Link，值80，其next是Box。Box管理heap上的第二份Link，值120，其next的Box管理heap上的End。箭頭表示owned管理關係，圖不是精確記憶體布局。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="570" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="34" text-anchor="middle" font-weight="bold">有限鏈：80 → 120 → End</text>
+  <rect x="20" y="58" width="350" height="125" rx="12" stroke="#2563eb" stroke-width="2" fill="#dbeafe"/>
+  <text x="40" y="91" font-weight="bold">chain：Link</text>
+  <text x="40" y="127">value：80</text>
+  <text x="40" y="162">next：Box&lt;Chain&gt;</text>
+  <path d="M115 184V237" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="137" y="217">管理下一份資料</text>
+  <rect x="20" y="249" width="350" height="144" rx="12" stroke="#059669" stroke-width="2" fill="#ecfdf5"/>
+  <text x="40" y="283" font-weight="bold">heap：下一份Chain</text>
+  <text x="40" y="319">Link，value：120</text>
+  <text x="40" y="358">next：Box&lt;Chain&gt;</text>
+  <path d="M115 394V447" fill="none" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="137" y="427">管理下一份資料</text>
+  <rect x="20" y="459" width="350" height="91" rx="12" stroke="#059669" stroke-width="2" fill="#ecfdf5"/>
+  <text x="40" y="494" font-weight="bold">heap：下一份Chain</text>
+  <text x="40" y="532">End：沒有下一份</text>
+ </g>
+</svg>

@@ -1,0 +1,4 @@
+Rust 很清楚
+Python
+rust 也有資料
+中有 Rust

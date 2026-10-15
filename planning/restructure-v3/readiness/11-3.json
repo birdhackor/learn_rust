@@ -1,0 +1,107 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.3"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-03-lesson.md": "376a205191cf19ed9b01de2b838586ad84f1341abe6c928d9136f504016c66d1",
+    "examples/intro-workspace/type-stages/examples/drop_scope.rs": "bbb61c12466c19419b326a1df506c3c433db36013de9e47dd446b52a337b6671",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/drop_early.rs": "a752675ecd7b2d17cadd5d3b3a3a39ff3be7450aaeca510a3a8045999927da60",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/direct_drop.rs": "14d4593eaa1b20c34e577977ed0a1d59d6d868a86dd2e97e5e480a6d94e5892d",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/direct_drop.expected": "1eacf06660838f15ada32e2874a7157b21bcd3912a0014b834e88a8efd3b9395",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/drop_while_borrowed.rs": "4e047c8874cf8cf5e17cb1572ec40bc24cda66fe6b89b4fbbb7db9b2e4582e55",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/drop_while_borrowed.expected": "1dbcf53ebd61b3a5ea14aa86501fc971fcaf8cf5a82a43cbdddd6f81bfdea7c5",
+    "examples/intro-workspace/type-stages/examples/drop_fields.rs": "15b7b0f51371f8cf4656949a45eb6ca8d45b309c9e0fb04619e66d3f7bfcccbb",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/copy_with_drop.rs": "2b2a724b70df5d0716e4cc45ae978593262998d0d9b18efb63814487e797dd13",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/copy_with_drop.expected": "a2cd6ba8a9974cccba723336c0e4d9d3d309b4670f26b1dc19997bf41bce94b1",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/move_field_with_drop.rs": "35c4f096a8d53a6358bc05e232fe0d247969f548f183c8aa9eeed9b53ce75754",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/move_field_with_drop.expected": "40272bedbe78adeb42df434073042f84fa3459b4bf44c5979bebe0fc2e7713e5",
+    "examples/intro-workspace/type-stages/examples/drop_solution.rs": "bb73af0d0965cb1fda231924c0f109a94ebf4f2f13320e9a17cfcf81f4b78320"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 3,
+      "quote": "第 3.2 節已知道，仍由局部變數持有的值會在離開 scope 時結束；第 11.2 節的 Box 也負責自己管理的內容。現在讓自訂資料在清理時印出 id，追蹤先後順序。這只是讓收尾工作可見，沒有自行實作記憶體釋放。"
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 7,
+      "quote": "**destructor** 指值結束時的清理動作。Rust 會處理值已經擁有的欄位；若還需要額外工作，可以實作標準的 **`Drop` trait**。它由 prelude 提供，必要方法是 `drop(&mut self)`：借改即將清理的值，完成自訂工作，回傳 unit。"
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 43,
+      "quote": "view 最後讀取之後，還印出了「main準備結束」，才清理 first。**reference 的最後使用與 owner 的清理位置不同**：借用完成，讓後續能做其他合法存取，不表示原值立刻被清理。"
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 47,
+      "quote": "標準函式 **`std::mem::drop(value)`** 接收值、回傳 unit。非 Copy 的值 move 進去，在函式返回前完成正常清理，呼叫者不能再使用原值。用 `use std::mem::drop;` 引入後可直接寫 drop；它是普通函式，沒有 `!`。"
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 74,
+      "quote": "以下完整負例得到 **E0040**，保存的 `.expected` 也完整列出："
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 84,
+      "quote": "本節負例都可放進第 1.2 節的獨立專案，執行 `cargo check`。下面另一份得到 **E0505**：view 在 drop 後還要使用，因此原 value 不能先被交走。把最後一次借讀移到 drop 前，才符合原本的 borrowing 規則。"
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 96,
+      "quote": "再把兩份 Tracked 交進 Pair 的 first、second 欄位。Pair 的 Drop 先讀欄位、顯示自己的收尾工作；這項方法結束後，Rust 繼續清理 owned 欄位。"
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 98,
+      "quote": "**struct 欄位按型別定義中的欄位順序清理**，與局部變數的反序不同。下面的 first、second 是 Pair 欄位名，不是前面例子的局部變數："
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 119,
+      "quote": "第 6.3 節的 Copy 允許隱含複製；Rust 不允許同一型別同時實作 Copy 與 Drop。即使欄位只有 i32，下面完整負例也得到 **E0184**："
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 129,
+      "quote": "有 Drop 的值仍可以**整體 move**，如 first 交給 second。但不能直接 move 出它的非 Copy 欄位，留下不完整的值等待自訂收尾。以下 Labelled 的 Drop 要讀 label；即使 main 擁有整份值，也不能先取走 String 欄位，會得到 **E0509**："
+    },
+    {
+      "section_id": "11.3",
+      "path": "docs/chapters/11-03-lesson.md",
+      "line": 143,
+      "quote": "建立 id1、id2 兩份 Tracked，先 drop 第一份，再讀第二份 id，最後印出「main準備結束」。預測 id1 在顯式 drop 時清理，id2 在 main 結束時清理。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

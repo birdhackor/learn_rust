@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="674" viewBox="0 0 390 674" role="img" aria-labelledby="title desc">
+<title id="title">集合、task與借用等待是三個值</title>
+<desc id="desc">S1集合擁有已提交T0。W1只是mutable借用S1的等待future。停止分支勝出丟棄W1，S1和T0仍在，放行後新等待取回Value80。</desc>
+<rect width="390" height="674" rx="14" fill="#f7fafc"/>
+<g font-family="sans-serif" font-size="22" fill="#172033">
+<text x="24" y="36" font-weight="700">三個不同的值</text>
+<rect x="18" y="57" width="354" height="142" rx="12" fill="#eef5ff" stroke="#2563eb" stroke-width="2"/>
+<text x="34" y="91" font-weight="700">S1：JoinSet 集合</text>
+<text x="34" y="128">持有 T0：input 0 的 task</text>
+<text x="34" y="166">T0 已開始，仍等 release</text>
+<rect x="18" y="223" width="354" height="108" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+<text x="34" y="257" font-weight="700">W1：等一份結果的 future</text>
+<text x="34" y="295">mutable 借用 S1；不接手 T0</text>
+<text x="34" y="372">↓ select 停止分支勝出</text>
+<rect x="18" y="393" width="354" height="108" rx="12" fill="#fef2f2" stroke="#b91c1c" stroke-width="2"/>
+<text x="34" y="427" font-weight="700">W1 被丟棄，借用結束</text>
+<text x="34" y="465">S1 仍持有 T0；T0 沒取消</text>
+<text x="34" y="542">↓ 送 release，再建立新等待</text>
+<rect x="18" y="563" width="354" height="87" rx="12" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+<text x="34" y="598" font-weight="700">取回 input 0：Value(80)</text>
+<text x="34" y="632">S1 與輸入對照都清空</text>
+</g></svg>

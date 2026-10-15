@@ -1,0 +1,33 @@
+{
+  "type": "post-seal visual evidence appendix; initial findings not rewritten",
+  "initial": "independent-18A-initial.json",
+  "browser": "Playwright global Node; /usr/bin/chromium --no-sandbox",
+  "viewports": [
+    [
+      1280,
+      800
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "captures": "visual-18-01_18-02_18-03_18-04_18-05_18-06.json",
+  "actually_viewed_with_view_image": {
+    "18-03-1280-image0.png": "cc7004bdd560d6a3bea823538782ab8cf4fdd8ce4284dea9fa251493b45ced15",
+    "18-03-390-image0.png": "79da578f5838127483b69416ada846486467b5c8ece64ebbc2b11b01d549095b",
+    "18-04-1280-image0.png": "afd269d4451ea239fac7c3df03bcac7c7c4948b2c2db22668840803ec7c44f55",
+    "18-04-390-image0.png": "abbe0958c4a6ecf1a117943322fbf15a9d1f8e7b8b7fee54949229b63d699d85",
+    "18-05-1280-image0.png": "189ffe0026222844abd8568fba42699465af9f217c4d990d1e6d60e5bf6ce7f9",
+    "18-05-390-image0.png": "eb6f1e992d6241b3b470bf6b47bd22c37b21f57be5bdc834053ba3ecd0b47479",
+    "18-01-390-table0.png": "ddba72e6bef317607dcb6d9112300a0fb7265821a0ab3cee14356c384b7789a0",
+    "18-01-1280-table1.png": "1119a470e2f0d3598143a915be66fd3adb01b91ee67108c6740d5ae925330c12",
+    "18-02-390-answer.png": "1bf365235f6e10caff47fb69da13f5ea4d4c63782538b0959987f871db6765ff",
+    "18-06-390-answer.png": "813c03616e9d338e19e58275e5ec81285abd385a71f536955488d9757aa2f071",
+    "18-06-390-table0.png": "4d9b5dc7be2d98346c8aa104e7f153aaa64ccffcb92f11b3dbc17cd7a5c81866",
+    "18-06-390-table1.png": "3f419e4a298acbf58c2139545942d491fcaf6f88b02e082b06cf8ee8592c6995",
+    "18-06-390-table2.png": "f06b78052f85a1377c7b47959cb03724d14d91c45ce65ee1b759261a28896b62"
+  },
+  "judgment": "三機制圖必要文字與方向清楚；兩種viewport無body橫向溢出。fixture/階段表可讀；長source折疊打開正常，code只在區塊內橫捲。",
+  "findings": []
+}

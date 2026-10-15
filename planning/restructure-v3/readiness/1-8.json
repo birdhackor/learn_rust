@@ -1,0 +1,80 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "1.8"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round01-ch01-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round01-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round01-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-source.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-visual.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-report.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/01-08-lesson.md": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+    "examples/intro-workspace/steps/examples/tuple_array.rs": "394066df88ff1a0a49da45db0bfb34fb27528eef4a19f17b120b8bfaac61d96c",
+    "examples/intro-workspace/steps/fixtures/runtime-fail/array_index.rs": "78efa165166ae79f032c42a45c459f54499d7735103aaed02d20bb8d52cb0b62",
+    "examples/intro-workspace/steps/examples/tuple_array_answer.rs": "254acbc9c4d6b8c1e6d324e75b127b3a8e3045baf6258f875f2c3b77bc1e3a6d"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "1.8",
+      "path": "docs/chapters/01-08-lesson.md",
+      "line": 3,
+      "quote": "一筆訂單同時有單價、數量、是否備妥；一張價目表則有三個同型別的價格。我們需要把相關資料放在一起，但這兩種材料的安排不同：訂單的每個位置各有意義，價目表的每個位置則保存同一類資料。"
+    },
+    {
+      "section_id": "1.8",
+      "path": "docs/chapters/01-08-lesson.md",
+      "line": 7,
+      "quote": "**tuple**（元組）把固定數量的值合成一個值。以 `(120, 3, true)` 表示這次選定的訂單順序：第一格單價、第二格數量、第三格是否備妥。逗號分隔各格，外面用小括號。"
+    },
+    {
+      "section_id": "1.8",
+      "path": "docs/chapters/01-08-lesson.md",
+      "line": 9,
+      "quote": "型別 `(i32, i32, bool)` 同樣逐格對應：前兩格為整數，第三格為布林值。取出個別位置時，`order.0` 代表第一格；位置從 0 開始，接著是 `.1`、`.2`。也可以用 `let (名稱一, 名稱二, 名稱三) = order;` 按順序替各格命名，這叫作**解構**。"
+    },
+    {
+      "section_id": "1.8",
+      "path": "docs/chapters/01-08-lesson.md",
+      "line": 25,
+      "quote": "價目表的三項都是 `i32`。**array**（陣列）保存相同型別、固定項數的元素；元素就是容器裡各自的一個值。用中括號寫出元素：`[120, 80, 200]`。"
+    },
+    {
+      "section_id": "1.8",
+      "path": "docs/chapters/01-08-lesson.md",
+      "line": 35,
+      "quote": "`prices.len()` 是**方法呼叫**：在一個值後面用點接操作名稱，再加括號。這個方法回傳元素項數，本例是 3；空括號表示這次不必再提供其他輸入。現在先會使用 array 的 `len` 即可，後面才學如何為自己的資料定義方法。"
+    },
+    {
+      "section_id": "1.8",
+      "path": "docs/chapters/01-08-lesson.md",
+      "line": 51,
+      "quote": "項數不變與元素值不變是兩個問題。若三筆訂單數量起初都是 0，可以寫 `[0; 3]`，表示重複三次相同的數值；它等同 `[0, 0, 0]`。這是建立值的寫法，而 `[i32; 3]` 是描述型別的寫法，請先看中括號左半部是值還是型別。"
+    },
+    {
+      "section_id": "1.8",
+      "path": "docs/chapters/01-08-lesson.md",
+      "line": 79,
+      "quote": "長度為 3，代表有三項；索引 3 卻是在要求**第四項**。Rust 會檢查索引是否小於長度。若不符合，這次索引操作會 **panic**：停止正常執行並報告錯誤。在本節這種單一主程式中，程式會以失敗狀態結束，後面的顯示工作不會繼續。"
+    },
+    {
+      "section_id": "1.8",
+      "path": "docs/chapters/01-08-lesson.md",
+      "line": 99,
+      "quote": "建立 `(80, 2, true)` 的訂單 tuple，解構後計算商品總額。再建立三項價目表 `[120, 80, 200]`，用 `usize` 變數選索引 2，顯示選到的價格與項數。預期總額是 160，價格是 200，項數是 3。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

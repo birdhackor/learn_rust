@@ -1,0 +1,121 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.10"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-10-lesson.md": "fd6e3084792dfc1368451e3340f03bf8d33ff4c4283d527dd1100a8a4c716536",
+    "examples/intro-workspace/type-stages/examples/unit_aliases/newtypes/mod.rs": "13bf0ed9ae3aad602d9aceef1166b85c8170ab9151bcb1ef20eeb74ce08846a2",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/unit_aliases/main.rs": "64c7e73c61c2b99126cbfdeddd774c85992c27eb873f2562cbbba49ccf9053d8",
+    "examples/intro-workspace/type-stages/examples/unit_identity/newtypes/mod.rs": "5680d8f1c4b79f80c2d971fdd092d30ab6590538525182134a9974f2b1a41e4e",
+    "examples/intro-workspace/type-stages/examples/unit_identity/main.rs": "e7f17fa6abbf87391ec66594e1a3ac02b99afadf1d24d1dffa33540f0a70f924",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_wrong_unit.rs": "c76d015be4225302598b418d87fb90199c3e1e89a03fdd1106f44a840b94baf5",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_wrong_unit.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/type-stages/examples/unit_add/newtypes/mod.rs": "db058c6bf4cf36331a1022123f3f66d7711ea9a704ca7d0437a84780afde26f4",
+    "examples/intro-workspace/type-stages/examples/unit_add/main.rs": "f9e525a5e800c99d33d68fe31f40c39ac1e639c168485a74563fc02c1a8978a2",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_add_moved.rs": "53b47193f9eeec3d5696fb7779b35e908d7da5f1b9e1bfb9cb3a680d4d1b988e",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_add_moved.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_reverse_add.rs": "ca497c0685d22a296c09ba45bebe5d10e9e476f67692db42f7d95d528379fd15",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_reverse_add.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_foreign_alias.rs": "6e065b45a58e032a28597cc0b121991465df43ef1fa204c5bf0a376e34238083",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_foreign_alias.expected": "816f6b6adebc4f4821a10bec559d7063ff04270e433920a642c5cf63f88a8555",
+    "examples/intro-workspace/type-stages/examples/unit_interface/newtypes/mod.rs": "6195e2d6f369b05b67117980f87447ab3cc14810745494848bef341e61815ddf",
+    "examples/intro-workspace/type-stages/examples/unit_interface/main.rs": "b48f30554e5dd5cbaf418894e7917b47f074edb212b0fa91351efc341aa50fe1",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_no_push.rs": "3914862c29ce76863fc73e7c88ee8f6f1b988b1e0e0e797603a50a627a1531b4",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_no_push.expected": "e03b27f19f221f0ea2a3809e0da4983870354d9db49f275f5692df404d9c0312",
+    "examples/intro-workspace/type-stages/examples/unit_from/newtypes/mod.rs": "86fd1773996e208a31d7919e15f17909cb2c80be1e3a5f9221e5a86204715b98",
+    "examples/intro-workspace/type-stages/examples/unit_from/main.rs": "098f5a222f6d5abd21754dd88b134809bd06d6bcb2194a5054db5cc015d7738d",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_uncovered_from.rs": "4e2d69bd9e7d77d6ddb33d7f690b4d9fbb32d72f30e37b57dd0ba9b169593c89",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_uncovered_from.expected": "397755b8633f109cbadd044be258f6f559bb3fa577c49e9e10c0e401d97cd261",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_overlapping_impls.rs": "34afdb7356712596f51cb233d8701d766fc268361fe195f05ab6f0c264e2b97d",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_overlapping_impls.expected": "440d550202230dac277bfbefd2f7f4dccc9a0135b16931cf13b534c4866b9b16",
+    "examples/intro-workspace/type-stages/examples/units_complete/newtypes/mod.rs": "dac378e9d44fd32b44568e1a48305215398d55c6be3d2a28ec30d300e164cfac",
+    "examples/intro-workspace/type-stages/examples/units_complete/main.rs": "3f805a8b84c7ff092b8193335c0178a68fdd20d1e8b1c524568b3562b537b6f0"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 3,
+      "quote": "路程80公尺與等待80秒，都能用 i32 保存。現在希望「顯示路程」的函式只接受路程，誤傳等待時間時就由編譯器指出。type alias 能改善名字，但不會建立兩種型別身分；這次需要用 struct 建立邊界。"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 7,
+      "quote": "`type MeterAlias = i32` 與 `type SecondAlias = i32` 都替同一個 i32 取名字。因此需要 MeterAlias 的函式仍接受 SecondAlias。"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 40,
+      "quote": "**newtype pattern** 是用新型別包住原資料的設計方式，不是 Rust 關鍵字。本例使用 **tuple struct**：欄位有順序、沒有名稱。`pub struct Meters(pub i32);` 宣告公有型別，內層 pub 則公開第一個 i32 欄位。`Meters(80)` 建立值，`.0` 取第一個欄位，沿用 tuple 的編號方式。"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 80,
+      "quote": "兩段路程相接，希望結果仍帶著公尺單位。**`std::ops::Add`** 是 `+` 的 trait 介面；實作它就能定義這種加法。"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 140,
+      "quote": "路程清單用 `Vec<Meters>` 保存，報告時想顯示「2段路程，共200公尺」。能否直接為標準 Vec 實作標準 Display？"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 142,
+      "quote": "**orphan rules（孤兒規則）** 限制 trait 實作能放在哪個 crate。**local（本地）** 指型別或 trait 定義在目前寫 impl 的 crate。import 標準 Vec 或替它取 alias，不會改變定義來源。"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 160,
+      "quote": "另一個合法方向是**本地 trait，外部型別**。本例宣告 BatchSize，再為 `Vec<i32>` 實作 batch_size；它只是借讀 len。"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 198,
+      "quote": "外部 trait 的泛型實作還要檢查次序：先看實作的 self 型別，再依序看 trait 的型別 arguments。在第一個本地型別以前，不能出現 **uncovered type parameter**，也就是尚未被一般型別包住的 impl 型別參數。例如單獨的 T 就是 uncovered；`Wrapped<T>` 則是本地 wrapper。"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 235,
+      "quote": "規則對 **fundamental types** 有特殊處理：在本地性判斷上，`Box<LocalType>` 視為本地；但 `Box<T>` 不會把 T 視為 covered。相對地，一般 Vec 外層可以 cover T，卻不因內部型別本地就讓 Vec 本身變本地。這是判讀泛型 orphan 診斷的區別，本例沒有另外依這項特殊規則增加 impl。"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 239,
+      "quote": "**coherence（一致性）** 要求實作既通過 orphan 檢查，也沒有互相重疊。**blanket implementation** 是涵蓋一整類型別的泛型實作；例如 `impl<T> Label for T` 已涵蓋每個 T，包括 Meters。"
+    },
+    {
+      "section_id": "11.10",
+      "path": "docs/chapters/11-10-lesson.md",
+      "line": 255,
+      "quote": "建立私有 `Vec<Seconds>` 欄位的 TimeBatch。from_values 接手集合，total 借讀後交回 Seconds；Display 顯示 `2 段等待，共 90 秒`，輸入為30與60。報告後再確認 total，表示它沒有消耗集合。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

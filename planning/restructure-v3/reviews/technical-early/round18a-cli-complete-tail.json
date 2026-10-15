@@ -1,0 +1,1264 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "18.5",
+    "18.6"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "method": "Full current18.5→18.6 prose and all loaded owned source/helper/fixture/answer; compare exact prior-stage copies only against personally read originals.",
+    "version_notes": "Root notified doc-only current18.5/18.6 hashes before first read; first whole-page read and initial judgment use those current versions. No root diff/verdict read. Root/continuity7.4 and14.7/14.8 prompts remain separate post18A followups."
+  },
+  "evidence": {
+    "scope": [
+      "18.5",
+      "18.6"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/docs/assets/projects-a-v3/report-delivery.svg",
+        "sha256": "b01fa04ed53134446d661ac9e426c80fb59a9f6672e8febdcae40ec71e4c18a3"
+      },
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-05-lesson.md",
+        "sha256": "759c1dd6cd374e7a9863e9482f6e662df1313b0dc0a4fe6a23c7dd227e6bc27d"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-06-lesson.md",
+        "sha256": "0d3112fc092f4d730391bb884b2c9f55c06126e459cc8a84397f7fba54ed4e60"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/Cargo.toml",
+        "sha256": "92879593c8aa0a44d4a10b0d8a050a0896bb23f0809a8ad2d80641f975cabe47"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/README.md",
+        "sha256": "8017ca870235313f4d5ff6e227cf3ac31a8ed1863ea7dfe14da102858ef839a1"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/src/app.rs",
+        "sha256": "a75b1312788a3249c5005881fa4d50dcf1dbc7e0358832fdeb16a15835ecdaf7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/src/collection.rs",
+        "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/src/content.rs",
+        "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/src/files.rs",
+        "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/src/lib.rs",
+        "sha256": "2a6ce946703416068c2f9e0e10adbb440d6d548d69088af66de7985fe5b3f5b5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/src/main.rs",
+        "sha256": "e16dc9535529296ed9db24de5a3b8013847be6b1b6357090c7e1ea377c019983"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/src/metrics.rs",
+        "sha256": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/src/report.rs",
+        "sha256": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/src/stream.rs",
+        "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-complete/tests/cli.rs",
+        "sha256": "2aa98c160c35c1b3bc0f0de32b98005ac7615c5c174bff5256defadc3f0da604"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/Cargo.toml",
+        "sha256": "458eb9ac1d079f53addd605fbd011614b958600c00ca44cce9922dc05ac2ab73"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/README.md",
+        "sha256": "15593a8cd2e7600138ced22eaf374d083044c6441b331c236ce26bdb58a0adea"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/checks/app-tests.rs",
+        "sha256": "04214db9cc611921e18e258b5981c02d86a9c4866e850e429649981258d13030"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/checks/cli-tests.rs",
+        "sha256": "81b43bc488634e3bd3a7d8f5adedbcdb0cbca6c215d237c271ed249d05a10ca2"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/src/app.rs",
+        "sha256": "7660a84167a7ad6a91aaae9bf886283be9446c180e5728ca15b09754eaeb604e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/src/collection.rs",
+        "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/src/content.rs",
+        "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/src/files.rs",
+        "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/src/lib.rs",
+        "sha256": "2a6ce946703416068c2f9e0e10adbb440d6d548d69088af66de7985fe5b3f5b5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/src/main.rs",
+        "sha256": "f45b816daa9e5bd9399e2e7c980e2859e1a76ff584c72cd3ed69cf9fcb909286"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/src/metrics.rs",
+        "sha256": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/src/report.rs",
+        "sha256": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a4-starter/src/stream.rs",
+        "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/Cargo.toml",
+        "sha256": "28b420b2a4400b057ede8ea5b99b98fa598aaa69a15bbf9d6a03bd8968bbb9d6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/README.md",
+        "sha256": "1a02a694fd507f141ee722e900fdc1f39aa61424d8e53b5c82f83be2dfeab72f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/.saved/notes-c.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/different.txt",
+        "sha256": "87ee07307593493b96730dcbb36fd51e9fa4ba189696dad60758e89e6e7750bf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/empty-a.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/empty-b.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/notes-a.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/sub/notes-b.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/app.rs",
+        "sha256": "c6138d69c5bd24d91e50882fc077b50aa8b934ecd7ce9517f1854b7481688c51"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/collection.rs",
+        "sha256": "efc48b93c3ad6c60f7bbdf584571bbff163b524c3a4299093e9746b8657902fd"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/content.rs",
+        "sha256": "2a03f1ca369c22c70df34c7c23384d0b13c1cdffcbdd39f147adec94bd4f0191"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/files.rs",
+        "sha256": "fbced494226c33ba73ec4851c148d5e62ca68106614ff8e7bd3398d52e444034"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/lib.rs",
+        "sha256": "a18cfdacb40ef716fe0bf1ff09c9be23a062c7acb038ba87ce50e2fe07b356ce"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/main.rs",
+        "sha256": "3fcd498bf13c80829d6b876eebcc03e18a33b44fd4c98d6c7f4ba7bf59735e64"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/metrics.rs",
+        "sha256": "1909aed4a5728a18fd5b0b3a997204ed41112a34dd15d55a4e55308e6ab622f0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/report.rs",
+        "sha256": "5591d35878e2755d003785983556035911dab0d1d41eeb17467988e386bdeba3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/stream.rs",
+        "sha256": "136512514845c458595f88ee83739612c1b7748f29b305803bfe851297d08241"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/src/tests.rs",
+        "sha256": "7787b6fb4f6c4106e5353236e730d79bb542f380a71cb32d397c2290faf9dbdf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/tests/cli.rs",
+        "sha256": "861589beb3fe4c2c1cc07bc021814a93c4ecd5ca4fed1b10b25e0adb7b05a3a9"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/duplicate-finder/tests/public_api.rs",
+        "sha256": "6cf58a811534bdf13bf48c7c8841c839ec06fc1a6db144a9b1267e9b7684dd7f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/.saved/notes-c.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/different.txt",
+        "sha256": "87ee07307593493b96730dcbb36fd51e9fa4ba189696dad60758e89e6e7750bf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/empty-a.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/empty-b.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/notes-a.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/sub/notes-b.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch15-projects/a4-complete/Cargo.toml",
+      "examples/ch15-projects/a4-complete/README.md",
+      "examples/ch15-projects/a4-complete/src/app.rs",
+      "examples/ch15-projects/a4-complete/src/collection.rs",
+      "examples/ch15-projects/a4-complete/src/content.rs",
+      "examples/ch15-projects/a4-complete/src/files.rs",
+      "examples/ch15-projects/a4-complete/src/lib.rs",
+      "examples/ch15-projects/a4-complete/src/main.rs",
+      "examples/ch15-projects/a4-complete/src/metrics.rs",
+      "examples/ch15-projects/a4-complete/src/report.rs",
+      "examples/ch15-projects/a4-complete/src/stream.rs",
+      "examples/ch15-projects/a4-complete/tests/cli.rs",
+      "examples/ch15-projects/a4-starter/Cargo.toml",
+      "examples/ch15-projects/a4-starter/README.md",
+      "examples/ch15-projects/a4-starter/checks/app-tests.rs",
+      "examples/ch15-projects/a4-starter/checks/cli-tests.rs",
+      "examples/ch15-projects/a4-starter/src/app.rs",
+      "examples/ch15-projects/a4-starter/src/collection.rs",
+      "examples/ch15-projects/a4-starter/src/content.rs",
+      "examples/ch15-projects/a4-starter/src/files.rs",
+      "examples/ch15-projects/a4-starter/src/lib.rs",
+      "examples/ch15-projects/a4-starter/src/main.rs",
+      "examples/ch15-projects/a4-starter/src/metrics.rs",
+      "examples/ch15-projects/a4-starter/src/report.rs",
+      "examples/ch15-projects/a4-starter/src/stream.rs",
+      "examples/ch15-projects/duplicate-finder/Cargo.toml",
+      "examples/ch15-projects/duplicate-finder/README.md",
+      "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/.saved/notes-c.txt",
+      "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/different.txt",
+      "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/empty-a.bin",
+      "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/empty-b.bin",
+      "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/notes-a.txt",
+      "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/sub/notes-b.txt",
+      "examples/ch15-projects/duplicate-finder/src/app.rs",
+      "examples/ch15-projects/duplicate-finder/src/collection.rs",
+      "examples/ch15-projects/duplicate-finder/src/content.rs",
+      "examples/ch15-projects/duplicate-finder/src/files.rs",
+      "examples/ch15-projects/duplicate-finder/src/lib.rs",
+      "examples/ch15-projects/duplicate-finder/src/main.rs",
+      "examples/ch15-projects/duplicate-finder/src/metrics.rs",
+      "examples/ch15-projects/duplicate-finder/src/report.rs",
+      "examples/ch15-projects/duplicate-finder/src/stream.rs",
+      "examples/ch15-projects/duplicate-finder/src/tests.rs",
+      "examples/ch15-projects/duplicate-finder/tests/cli.rs",
+      "examples/ch15-projects/duplicate-finder/tests/public_api.rs"
+    ],
+    "source_or_config_files": [
+      "examples/ch15-projects/a4-complete/Cargo.toml",
+      "examples/ch15-projects/a4-complete/src/app.rs",
+      "examples/ch15-projects/a4-complete/src/collection.rs",
+      "examples/ch15-projects/a4-complete/src/content.rs",
+      "examples/ch15-projects/a4-complete/src/files.rs",
+      "examples/ch15-projects/a4-complete/src/lib.rs",
+      "examples/ch15-projects/a4-complete/src/main.rs",
+      "examples/ch15-projects/a4-complete/src/metrics.rs",
+      "examples/ch15-projects/a4-complete/src/report.rs",
+      "examples/ch15-projects/a4-complete/src/stream.rs",
+      "examples/ch15-projects/a4-complete/tests/cli.rs",
+      "examples/ch15-projects/a4-starter/Cargo.toml",
+      "examples/ch15-projects/a4-starter/checks/app-tests.rs",
+      "examples/ch15-projects/a4-starter/checks/cli-tests.rs",
+      "examples/ch15-projects/a4-starter/src/app.rs",
+      "examples/ch15-projects/a4-starter/src/collection.rs",
+      "examples/ch15-projects/a4-starter/src/content.rs",
+      "examples/ch15-projects/a4-starter/src/files.rs",
+      "examples/ch15-projects/a4-starter/src/lib.rs",
+      "examples/ch15-projects/a4-starter/src/main.rs",
+      "examples/ch15-projects/a4-starter/src/metrics.rs",
+      "examples/ch15-projects/a4-starter/src/report.rs",
+      "examples/ch15-projects/a4-starter/src/stream.rs",
+      "examples/ch15-projects/duplicate-finder/Cargo.toml",
+      "examples/ch15-projects/duplicate-finder/src/app.rs",
+      "examples/ch15-projects/duplicate-finder/src/collection.rs",
+      "examples/ch15-projects/duplicate-finder/src/content.rs",
+      "examples/ch15-projects/duplicate-finder/src/files.rs",
+      "examples/ch15-projects/duplicate-finder/src/lib.rs",
+      "examples/ch15-projects/duplicate-finder/src/main.rs",
+      "examples/ch15-projects/duplicate-finder/src/metrics.rs",
+      "examples/ch15-projects/duplicate-finder/src/report.rs",
+      "examples/ch15-projects/duplicate-finder/src/stream.rs",
+      "examples/ch15-projects/duplicate-finder/src/tests.rs",
+      "examples/ch15-projects/duplicate-finder/tests/cli.rs",
+      "examples/ch15-projects/duplicate-finder/tests/public_api.rs"
+    ],
+    "snippet_references": [
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 39,
+        "source": "examples/ch15-projects/a4-starter/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 45,
+        "source": "examples/ch15-projects/a4-starter/src/app.rs",
+        "anchor": "settings"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 55,
+        "source": "examples/ch15-projects/a4-starter/src/app.rs",
+        "anchor": "errors"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 61,
+        "source": "examples/ch15-projects/a4-starter/src/app.rs",
+        "anchor": "output"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 72,
+        "source": "examples/ch15-projects/a4-starter/src/app.rs",
+        "anchor": "write-report"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 76,
+        "source": "examples/ch15-projects/a4-starter/src/app.rs",
+        "anchor": "run"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 86,
+        "source": "examples/ch15-projects/a4-starter/src/main.rs",
+        "anchor": "main"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 94,
+        "source": "examples/ch15-projects/a4-starter/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 100,
+        "source": "examples/ch15-projects/a4-starter/src/collection.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 106,
+        "source": "examples/ch15-projects/a4-starter/src/content.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 112,
+        "source": "examples/ch15-projects/a4-starter/src/stream.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 118,
+        "source": "examples/ch15-projects/a4-starter/src/files.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 124,
+        "source": "examples/ch15-projects/a4-starter/src/metrics.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 130,
+        "source": "examples/ch15-projects/a4-starter/src/report.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 136,
+        "source": "examples/ch15-projects/a4-starter/src/app.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 142,
+        "source": "examples/ch15-projects/a4-starter/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 161,
+        "source": "examples/ch15-projects/a4-starter/checks/app-tests.rs",
+        "anchor": "writer-fixture"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 167,
+        "source": "examples/ch15-projects/a4-starter/checks/app-tests.rs",
+        "anchor": "flush-test"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 173,
+        "source": "examples/ch15-projects/a4-starter/checks/cli-tests.rs",
+        "anchor": "child-fixture"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 183,
+        "source": "examples/ch15-projects/a4-starter/checks/app-tests.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 189,
+        "source": "examples/ch15-projects/a4-starter/checks/cli-tests.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 239,
+        "source": "examples/ch15-projects/a4-complete/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 245,
+        "source": "examples/ch15-projects/a4-complete/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 251,
+        "source": "examples/ch15-projects/a4-complete/src/collection.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 257,
+        "source": "examples/ch15-projects/a4-complete/src/content.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 263,
+        "source": "examples/ch15-projects/a4-complete/src/stream.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 269,
+        "source": "examples/ch15-projects/a4-complete/src/files.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 275,
+        "source": "examples/ch15-projects/a4-complete/src/metrics.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 281,
+        "source": "examples/ch15-projects/a4-complete/src/report.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 287,
+        "source": "examples/ch15-projects/a4-complete/src/app.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 293,
+        "source": "examples/ch15-projects/a4-complete/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 299,
+        "source": "examples/ch15-projects/a4-complete/tests/cli.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 317,
+        "source": "examples/ch15-projects/a4-complete/src/app.rs",
+        "anchor": "write-report"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 321,
+        "source": "examples/ch15-projects/a4-complete/src/app.rs",
+        "anchor": "run"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 24,
+        "source": "examples/ch15-projects/duplicate-finder/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 36,
+        "source": "examples/ch15-projects/duplicate-finder/src/app.rs",
+        "anchor": "scan-api"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 50,
+        "source": "examples/ch15-projects/duplicate-finder/src/app.rs",
+        "anchor": "error-boundary"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 56,
+        "source": "examples/ch15-projects/duplicate-finder/src/main.rs",
+        "anchor": "explain"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 103,
+        "source": "examples/ch15-projects/duplicate-finder/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 109,
+        "source": "examples/ch15-projects/duplicate-finder/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 115,
+        "source": "examples/ch15-projects/duplicate-finder/src/collection.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 121,
+        "source": "examples/ch15-projects/duplicate-finder/src/stream.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 127,
+        "source": "examples/ch15-projects/duplicate-finder/src/files.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 133,
+        "source": "examples/ch15-projects/duplicate-finder/src/content.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 139,
+        "source": "examples/ch15-projects/duplicate-finder/src/metrics.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 145,
+        "source": "examples/ch15-projects/duplicate-finder/src/report.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 151,
+        "source": "examples/ch15-projects/duplicate-finder/src/app.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 157,
+        "source": "examples/ch15-projects/duplicate-finder/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 165,
+        "source": "examples/ch15-projects/duplicate-finder/src/tests.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 171,
+        "source": "examples/ch15-projects/duplicate-finder/tests/cli.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 177,
+        "source": "examples/ch15-projects/duplicate-finder/tests/public_api.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 194,
+        "source": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/different.txt",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 249,
+        "source": "examples/ch15-projects/duplicate-finder/README.md",
+        "anchor": null
+      }
+    ],
+    "commands": [
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 148,
+        "command": "cargo +1.99.0 check"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 149,
+        "command": "cargo +1.99.0 test --locked"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 195,
+        "command": "cargo +1.99.0 test --locked"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 196,
+        "command": "cargo +1.99.0 test --test cli --locked"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 305,
+        "command": "cargo test -p duplicate-a4 --locked"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 306,
+        "command": "cargo run --quiet -p duplicate-a4 --locked -- examples/ch15-projects/materials/duplicate-demo"
+      },
+      {
+        "document": "docs/chapters/18-05-lesson.md",
+        "line": 307,
+        "command": "cargo run --quiet -p duplicate-a4 --locked -- examples/ch15-projects/materials/duplicate-demo --json"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 204,
+        "command": "cargo build -p duplicate-finder --release --locked"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 205,
+        "command": "cargo test -p duplicate-finder --locked"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 206,
+        "command": "cargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materials/duplicate-demo"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 207,
+        "command": "cargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materials/duplicate-demo --json"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 217,
+        "command": "cargo doc -p duplicate-finder --no-deps --locked"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 227,
+        "command": "cargo +1.99.0 check"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 228,
+        "command": "cargo +1.99.0 test --locked"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 229,
+        "command": "cargo +1.99.0 build --release --locked"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 230,
+        "command": "cargo +1.99.0 run --quiet --locked -- fixtures/duplicate-demo --json"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 238,
+        "command": "cargo +1.99.0 install --path . --root ../duplicate-finder-installed --locked"
+      },
+      {
+        "document": "docs/chapters/18-06-lesson.md",
+        "line": 239,
+        "command": "../duplicate-finder-installed/bin/duplicate-finder fixtures/duplicate-demo --json"
+      },
+      {
+        "document": "examples/ch15-projects/duplicate-finder/README.md",
+        "line": 10,
+        "command": "cargo build -p duplicate-finder --release --locked",
+        "expanded_from": "docs/chapters/18-06-lesson.md README full-file snippet"
+      },
+      {
+        "document": "examples/ch15-projects/duplicate-finder/README.md",
+        "line": 11,
+        "command": "cargo test -p duplicate-finder --locked",
+        "expanded_from": "docs/chapters/18-06-lesson.md README full-file snippet"
+      },
+      {
+        "document": "examples/ch15-projects/duplicate-finder/README.md",
+        "line": 12,
+        "command": "cargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materials/duplicate-demo",
+        "expanded_from": "docs/chapters/18-06-lesson.md README full-file snippet"
+      },
+      {
+        "document": "examples/ch15-projects/duplicate-finder/README.md",
+        "line": 13,
+        "command": "cargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materials/duplicate-demo --json",
+        "expanded_from": "docs/chapters/18-06-lesson.md README full-file snippet"
+      },
+      {
+        "document": "examples/ch15-projects/duplicate-finder/README.md",
+        "line": 25,
+        "command": "cargo +1.99.0 check",
+        "expanded_from": "docs/chapters/18-06-lesson.md README full-file snippet"
+      },
+      {
+        "document": "examples/ch15-projects/duplicate-finder/README.md",
+        "line": 26,
+        "command": "cargo +1.99.0 test --locked",
+        "expanded_from": "docs/chapters/18-06-lesson.md README full-file snippet"
+      },
+      {
+        "document": "examples/ch15-projects/duplicate-finder/README.md",
+        "line": 27,
+        "command": "cargo +1.99.0 build --release --locked",
+        "expanded_from": "docs/chapters/18-06-lesson.md README full-file snippet"
+      },
+      {
+        "document": "examples/ch15-projects/duplicate-finder/README.md",
+        "line": 28,
+        "command": "cargo +1.99.0 run --locked -- fixtures/duplicate-demo --json",
+        "expanded_from": "docs/chapters/18-06-lesson.md README full-file snippet"
+      },
+      {
+        "document": "examples/ch15-projects/duplicate-finder/README.md",
+        "line": 53,
+        "command": "cargo doc -p duplicate-finder --no-deps --locked",
+        "expanded_from": "docs/chapters/18-06-lesson.md README full-file snippet"
+      }
+    ],
+    "package_manifests": {
+      "examples/ch15-projects/a4-complete/Cargo.toml": {
+        "package": {
+          "name": "duplicate-a4",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "derive"
+            ]
+          },
+          "walkdir": "2.5",
+          "blake3": "1.8",
+          "serde": {
+            "version": "1.0.229",
+            "features": [
+              "derive"
+            ]
+          },
+          "serde_json": "1.0.154"
+        },
+        "dev-dependencies": {
+          "tempfile": "3.27"
+        }
+      },
+      "examples/ch15-projects/a4-starter/Cargo.toml": {
+        "package": {
+          "name": "duplicate-a4-starter",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "derive"
+            ]
+          },
+          "walkdir": "2.5",
+          "blake3": "1.8",
+          "serde": {
+            "version": "1.0.229",
+            "features": [
+              "derive"
+            ]
+          },
+          "serde_json": "1.0.154"
+        },
+        "dev-dependencies": {
+          "tempfile": "3.27"
+        }
+      },
+      "examples/ch15-projects/duplicate-finder/Cargo.toml": {
+        "package": {
+          "name": "duplicate-finder",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "derive"
+            ]
+          },
+          "walkdir": "2.5",
+          "blake3": "1.8",
+          "serde": {
+            "version": "1.0.229",
+            "features": [
+              "derive"
+            ]
+          },
+          "serde_json": "1.0.154"
+        },
+        "dev-dependencies": {
+          "tempfile": "3.27"
+        }
+      }
+    },
+    "selected_lock_entries": [
+      {
+        "name": "blake3",
+        "version": "1.8.7",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "6d9e454fc11f76977dc803893aff6304ed33d6a26efae8696573bea74baa27ae",
+        "dependencies": [
+          "arrayvec",
+          "cc",
+          "cfg-if",
+          "constant_time_eq",
+          "cpufeatures"
+        ]
+      },
+      {
+        "name": "clap",
+        "version": "4.6.7",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+        "dependencies": [
+          "clap_builder",
+          "clap_derive"
+        ]
+      },
+      {
+        "name": "duplicate-a4",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3",
+          "clap",
+          "serde",
+          "serde_json",
+          "tempfile",
+          "walkdir"
+        ]
+      },
+      {
+        "name": "duplicate-a4-starter",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3",
+          "clap",
+          "serde",
+          "serde_json",
+          "tempfile",
+          "walkdir"
+        ]
+      },
+      {
+        "name": "duplicate-finder",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3",
+          "clap",
+          "serde",
+          "serde_json",
+          "tempfile",
+          "walkdir"
+        ]
+      },
+      {
+        "name": "serde",
+        "version": "1.0.229",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba",
+        "dependencies": [
+          "serde_core",
+          "serde_derive"
+        ]
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0.154",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+        "dependencies": [
+          "itoa",
+          "memchr",
+          "serde",
+          "serde_core",
+          "zmij"
+        ]
+      },
+      {
+        "name": "tempfile",
+        "version": "3.27.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd",
+        "dependencies": [
+          "fastrand",
+          "getrandom 0.4.3",
+          "once_cell",
+          "rustix",
+          "windows-sys 0.61.2"
+        ]
+      },
+      {
+        "name": "walkdir",
+        "version": "2.5.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b",
+        "dependencies": [
+          "same-file",
+          "winapi-util"
+        ]
+      }
+    ],
+    "copy_checks": [
+      {
+        "path": "examples/ch15-projects/a4-starter/src/collection.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/collection.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-starter/src/content.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/content.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-starter/src/stream.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/stream.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-starter/src/files.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/files.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-starter/src/metrics.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/metrics.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-starter/src/report.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/report.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-complete/src/collection.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/collection.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-complete/src/content.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/content.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-complete/src/stream.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/stream.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-complete/src/files.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/files.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-complete/src/metrics.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/metrics.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-complete/src/report.rs",
+        "same_as": "examples/ch15-projects/a3-complete/src/report.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-starter/checks/app-tests.rs",
+        "same_as_suffix": "examples/ch15-projects/a4-complete/src/app.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch15-projects/a4-complete/tests/cli.rs",
+        "same_as": "examples/ch15-projects/a4-starter/checks/cli-tests.rs",
+        "kind": "only crate/binary names substituted"
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/src/collection.rs",
+        "same_as": "examples/ch15-projects/a4-complete/src/collection.rs",
+        "kind": "identical implementation after excluding snippet tags/blank lines/old cfg test suffix"
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/src/content.rs",
+        "same_as": "examples/ch15-projects/a4-complete/src/content.rs",
+        "kind": "identical implementation after excluding snippet tags/blank lines/old cfg test suffix"
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/src/files.rs",
+        "same_as": "examples/ch15-projects/a4-complete/src/files.rs",
+        "kind": "identical implementation after excluding snippet tags/blank lines/old cfg test suffix"
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/src/metrics.rs",
+        "same_as": "examples/ch15-projects/a4-complete/src/metrics.rs",
+        "kind": "identical implementation after excluding snippet tags/blank lines/old cfg test suffix"
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/src/report.rs",
+        "same_as": "examples/ch15-projects/a4-complete/src/report.rs",
+        "kind": "identical implementation after excluding snippet tags/blank lines/old cfg test suffix"
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/src/stream.rs",
+        "same_as": "examples/ch15-projects/a4-complete/src/stream.rs",
+        "kind": "identical implementation after excluding snippet tags/blank lines/old cfg test suffix"
+      }
+    ],
+    "line_counts": {
+      "core": 995,
+      "tests_and_helpers": 662
+    },
+    "fixture_bytes": [
+      {
+        "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/.saved/notes-c.txt",
+        "bytes": [
+          82,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/different.txt",
+        "bytes": [
+          114,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/empty-a.bin",
+        "bytes": []
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/empty-b.bin",
+        "bytes": []
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/notes-a.txt",
+        "bytes": [
+          82,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/sub/notes-b.txt",
+        "bytes": [
+          82,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/.saved/notes-c.txt",
+        "bytes": [
+          82,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/different.txt",
+        "bytes": [
+          114,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/empty-a.bin",
+        "bytes": []
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/empty-b.bin",
+        "bytes": []
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/notes-a.txt",
+        "bytes": [
+          82,
+          117,
+          115,
+          116,
+          10
+        ]
+      },
+      {
+        "path": "examples/ch15-projects/materials/duplicate-demo/sub/notes-b.txt",
+        "bytes": [
+          82,
+          117,
+          115,
+          116,
+          10
+        ]
+      }
+    ],
+    "counts": {
+      "owned_files": 45,
+      "source_or_config_files": 36,
+      "hashes": 59,
+      "snippets": 53,
+      "commands": 27,
+      "copy_checks": 20,
+      "A4_app_tests": 6,
+      "A4_cli_tests_unix": 6,
+      "A4_tests_unix": 41,
+      "A4_tests_other": 34,
+      "final_core_tests": 8,
+      "final_cli_tests_unix": 7,
+      "final_cli_tests_other": 4,
+      "final_public_api_tests": 1,
+      "final_doctests": 1,
+      "top_level_commands": 18,
+      "expanded_readme_commands": 9
+    }
+  },
+  "assessments": [
+    {
+      "section": "18.5 A4",
+      "judgment": "Starter six inherited modules really equal A3 complete; app/main limited stubs/connection are honestly identified. Complete write_report renders once, write_all then flush, only then complete→0/1; errors map typed Root/Report/Json/Output and main fatal2. Partial issues stay in full-format stdout, not stderr. clap args_os/PathBuf/use_stderr/exit_code are actual10.6 prerequisites; parameter Display flows through same checked writer. let _ intentionally ignores only failed fatal diagnostic while status remains2; no process::exit. Starter unit module must append and CLI checks must move to tests/cli.rs; original29 tests remain before app6/CLI6. Complete app check suffix exactly matches starter; CLI differs only correct crate/bin names. Unix41/nonUnix34 counts match; source covers write/flush rejection, success/partial, roots, exact report channels and finite child behavior."
+    },
+    {
+      "section": "18.6 final public API",
+      "judgment": "Private modules reexport every public error payload and owned report type at root; types remain same rather than wrappers, no claim of removing A4 module paths compatibly. scan_report borrowed Path returns owned Report without stdout; partial stays Ok. Non-exhaustive RunError Error::source borrows actual standard io/TryFromInt/serde errors, skips non-Error wrappers and leaf classifications. Outer source reference remains self-bound; underlying object static bound is accurate. Display avoids duplicated standard reason text where a source exists; finite explain follows actual acyclic owned causes. Private callback misuse differs from normal file error/partial policy."
+    },
+    {
+      "section": "18.6 source/tests",
+      "judgment": "Six final core implementations match A4 after excluding snippet tags/blank lines/old tests. Eight final core tests include all visible borrowed Source/Output/material helpers; seven CLI tests (threeUnix), one external root-API test and one TempDir doctest align with stated17Unix/14other. New Source lifetime returns are linked to input, failing literal is static; widths positive in all usages. Controls validate Interrupted/partial reads/left-right failures/recovery/metadata changes/native sort/checked metrics/output. Final public test correctly includes wildcard for nonexhaustive enum. All13 source/config files and whole README appear before build/test/doc/install examples."
+    },
+    {
+      "section": "18.6 reproduction/claims",
+      "judgment": "Actual physical line totals equal995core+662tests/helpers=1657, including comments/doctest once. Both six-file material sets contain exact20bytes total, with two real empty files and hidden/subdir files. Root-CWD commands choose right material; standalone literal manifest has no path dependency/workspace inheritance. First cargo +1.99.0 check resolves independent lock before locked commands. cargo install --path . --root sibling places binary under sibling/bin; final root still relative to package CWD, Windows exe distinction correct. Tool never deletes files. README warns report redirection outside scanned root."
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Read both current full pages, all unique source/config/check/test/README and exact six fixture byte sequences; verify20 copies/normalized implementation comparisons to earlier personally read source.",
+      "Validate53snippets/exact anchors,18top-level commands plus9expanded README commands,3manifests/rootlock,one SVG XML.",
+      "Count actual physical Rust source995+662 and stated platform test totals; statically trace stdout/stderr/status, doctest/devdependency and standalone package closure."
+    ],
+    "not_performed": [
+      "No Cargo/rustc/Clippy/tests/docs/build/install or binary run.",
+      "No own file scan, writer experiment, platform test, SVG visual or browser review."
+    ]
+  },
+  "conclusion": "No additional necessary or optional technical correction found in18.5–18.6. Earlier TC18M-O1 belongs only to separately sealed18.3–18.4."
+}

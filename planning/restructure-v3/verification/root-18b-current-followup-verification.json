@@ -1,0 +1,34 @@
+{
+  "recorded_utc": "2026-10-15T10:59:45.607948+00:00",
+  "scope": "94 original author-final frozen files; historical root first verification was prior to later independently reviewed prose fixes",
+  "all_source_manifest_lock_fixture_and_assets_unchanged": true,
+  "all_90_other_frozen_files_unchanged": true,
+  "four_expected_prose_only_changes": [
+    {
+      "path": "docs/chapters/18-08-lesson.md",
+      "author_freeze_sha256": "88f5224655b0d0b037c4e51795f0bd71d81be264a33f5583d9d0a12c57a92d7c",
+      "current_sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34"
+    },
+    {
+      "path": "docs/chapters/18-10-lesson.md",
+      "author_freeze_sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e",
+      "current_sha256": "80c9c6fc9cb984b8964b1cd9efe9042d1be109a126224ff51bc8a207f686757b"
+    },
+    {
+      "path": "docs/chapters/18-11-lesson.md",
+      "author_freeze_sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+      "current_sha256": "2c5ddcff7574478104eeed31ec1e79998b2f5696d9168c29c4611eb00841bc00"
+    },
+    {
+      "path": "docs/chapters/18-12-lesson.md",
+      "author_freeze_sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+      "current_sha256": "0dd7448bc31cf09d1d64409c31a4b102fb6ed50a6fc041118c0fab04132b0ba1"
+    }
+  ],
+  "evidence": [
+    "review-dispositions.json: XCF-18B-Duration-reference / C18B-01-and-C18B-02",
+    "reviews/technical-early/round18b-root-final-followup.md",
+    "reviews/continuity-early/round18b-ch18b-followup-final.md (followup sealing pending at record time)"
+  ],
+  "followup_closure_note": "Subsequent continuity final source/actual-DOM followup CLOSED; see current readiness18-10/11/12 and named final reports. Original recorded-time note kept."
+}

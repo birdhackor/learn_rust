@@ -1,0 +1,43 @@
+{
+  "review_id": "technical-early-round05-cross-reference-followup",
+  "checked_at_utc": "2026-10-15T07:44:34.339488+00:00",
+  "finding": "TC05T-O1",
+  "original_initial_judgment_preserved": true,
+  "discovery": "Own independent initial5.3–5.5 optional finding; root adoption prompted this narrow recheck.",
+  "status": "resolved",
+  "scope": "Only5.5 two previous-section references and prior selected data/data-steps source hashes; not whole chapter rereview.",
+  "before_sha256": "412a3eeb91594615ee24961d5bff56b0189dfba194cc3976344f16b64e74afd5",
+  "after_sha256": "20882bf65c17e9bdca514bf41ed27f8a80314d615bc894e06e06d7a3595f888c",
+  "evidence": [
+    "5.5:69 now explicitly says 第5.3節 for the already-taught text function.",
+    "5.5:109 now explicitly says 第5.3節的text-only版本; same line also adds ordinary spacing around English words and a 的.",
+    "Actual entire-file difference is confined to these two lines; no technical meaning or source changed."
+  ],
+  "unchanged_rust_fixtures_and_package_configs": {
+    "examples/intro-workspace/data-steps/Cargo.toml": true,
+    "examples/intro-workspace/data-steps/examples/utf8.rs": true,
+    "examples/intro-workspace/data-steps/examples/utf8_answer/main.rs": true,
+    "examples/intro-workspace/data-steps/examples/utf8_answer/text/mod.rs": true,
+    "examples/intro-workspace/data-steps/examples/vector_answer.rs": true,
+    "examples/intro-workspace/data-steps/examples/vector_operations.rs": true,
+    "examples/intro-workspace/data-steps/examples/vector_ownership.rs": true,
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.expected": true,
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.rs": true,
+    "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.expected": true,
+    "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.rs": true,
+    "examples/intro-workspace/data-steps/fixtures/runtime-fail/vector_remove_bounds.expected": true,
+    "examples/intro-workspace/data-steps/fixtures/runtime-fail/vector_remove_bounds.rs": true,
+    "examples/intro-workspace/data-steps/src/main.rs": true,
+    "examples/intro-workspace/data/Cargo.toml": true,
+    "examples/intro-workspace/data/examples/list_answer.rs": true,
+    "examples/intro-workspace/data/examples/list_demo.rs": true,
+    "examples/intro-workspace/data/src/lib.rs": true,
+    "examples/intro-workspace/data/src/list.rs": true,
+    "examples/intro-workspace/data/src/main.rs": true,
+    "examples/intro-workspace/data/src/text.rs": true
+  },
+  "execution": {
+    "cargo_rustc_tests": [],
+    "browser_visual": false
+  }
+}

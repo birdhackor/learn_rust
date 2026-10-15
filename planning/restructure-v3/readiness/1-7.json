@@ -1,0 +1,126 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "1.7"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round01-ch01-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round01-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round01-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-source.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-visual.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-report.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/01-07-lesson.md": "e81574e0e1ba75b2702ad6c25a144c8441d532563dc362cf6d52dc9aedb010be",
+    "examples/intro-workspace/steps/examples/memory.rs": "54dc40c93a46f7a0e3af6a4e8ebd78da172e037035bb9373c1f026e97b5e3661",
+    "examples/intro-workspace/steps/examples/memory_answer.rs": "11d2fde89c13aa7aceb49d6a8e114d5f6ac3cbef5eede68bcf27be6f27775c7b",
+    "docs/assets/foundations-v3/program-process.svg": "03367eb5f7d3bef3aaa637ba242b0e90a2a96d8cd0ef2536ca94132fb64db561",
+    "docs/assets/foundations-v3/i32-value-size-location.svg": "00c15a22127e47bef1c326c613aeb9ed9e521830f16aae6723041e576a48e891",
+    "docs/assets/foundations-v3/subtotal-frames.svg": "4d20deebd597037398e621e19d50132de691b599646e6d4f65bbbf7ef54ce37c",
+    "docs/assets/foundations-v3/heap-location-content.svg": "cbf0c1a2d8e130303093a37246f15096a1e08b70ed4d15175e5e1b3315b074ab",
+    "docs/assets/foundations-v3/heap-lifecycle.svg": "e53c8727d4f10625fe015d1836372806985c432ebd1271dc29711916e419cd9a"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 3,
+      "quote": "上一節已經算出 `subtotal(120, 3)` 的結果是 360。現在追問：原始碼中的數字和執行中的數字在哪裡？`subtotal` 已經結束，為什麼 `main` 還能使用結果？這些問題會把型別、函式與電腦保存資料的方式連起來。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 7,
+      "quote": "你保存的 `.rs` 原始碼是一份檔案，編譯後產生的執行檔也是檔案。它們放在 SSD、硬碟等**儲存裝置**；關閉程式後，檔案仍能保留。上一節的 `cargo run` 則會建置需要更新的部分，再啟動執行檔。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 9,
+      "quote": "**process**（行程）是這次正在執行的程式。它需要工作空間保存輸入、中間結果與目前做到哪裡。**RAM**（Random Access Memory，隨機存取記憶體）提供執行時使用的記憶體；本節談的資料位置，主要就在這個工作空間中。**CPU**（Central Processing Unit，中央處理器）依程式指令執行運算，例如讀取 120、3，再算出 360。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 19,
+      "quote": "第 1.4 節說過，`i32` 名稱中的 32 是表示空間的 bit 數。**bit**（位元）是一個可表示 0 或 1 的單位；**byte**（位元組）由 8 個 bits 組成。因此，一個 `i32` 的表示大小是 32 bits，也就是 **4 bytes**。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 23,
+      "quote": "再把三個問題分開：**值**是保存什麼，例如 120；**大小**是這個型別的表示需要多少空間，例如 4 bytes；**位置**是這份資料放在哪裡。下面用 P、Q 標記兩個示意位置。它們不是程式印出的實際地址，變數名稱則寫在資料框外，方便對回程式。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 27,
+      "quote": "同樣的 120 可以出現在兩個位置，不能因數字相等就把它們當成同一份存放。把一個 `i32` 的值換成 80，也不會讓型別需要的表示空間變成 2 bytes；**數值大小和占用多少 bytes 是不同問題**。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 31,
+      "quote": "先看同頁的完整程式。它只使用前面已學過的數值、變數、函式、乘法與顯示；`subtotal` 多保存一個 `result`，讓我們能在回傳前觀察它，再用尾端 expression 交出同一個值。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 52,
+      "quote": "程式中的 A、B、C 註解是第一筆訂單的三個觀察點。**frame** 是用來追蹤一次函式呼叫的工作區：這次收到的參數、建立的區域變數，都能畫在同一個框中。尚未結束的函式呼叫形成 **stack**；新呼叫開始後，會先完成它，再回到等待它的呼叫者。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 68,
+      "quote": "上面的數字程式沒有為這些數值額外配置 heap。接下來用訂單明細說明另一種安排：這次收到 2 項，下次收到 5 項，保存整份明細所需的空間會不同。這裡畫資料關係，後面再用可保存文字與多項資料的 Rust 型別操作它。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 70,
+      "quote": "**heap** 提供可以獨立請求的記憶體區塊。程式需要一塊空間時，**記憶體配置器（memory allocator）**安排可用區塊，記錄它正在被使用；這個動作叫**配置**。使用這份資料時，還要能找到它，因此另外保存位置資訊。表示資料位置的值稱為 **pointer（指標）**：它回答「到哪裡找」，內容則回答「找到什麼」。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 78,
+      "quote": "這是 heap 的一種用途。**固定大小的值也可以放在 heap**；剛才 `i32` 的 4 bytes 只說明它的表示大小，不能單憑這個數字決定它一定放在哪裡。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 82,
+      "quote": "再沿用兩項明細的 H1：假設內層工作負責建立明細，外層之後還要顯示它。這時內層可以交出找到 H1 的位置資訊；內層工作結束後，外層仍使用 H1，等後續工作完成才歸還空間。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 84,
+      "quote": "下圖四個觀察點追蹤**同一個 H1**。虛線向下表示下一時刻，實線仍只表示找到內容的關係。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 90,
+      "quote": "**釋放**是把這塊空間歸還給配置器，讓它能供後續配置使用；不是把原內容改成零。歸還後，不能繼續靠舊位置資訊使用原來的資料。過早歸還會妨礙後續使用；一直保留不再需要的區塊，則會占住可用空間。程式因此需要清楚的使用、交接與清理責任，第 3 章會用 ownership 正式處理。"
+    },
+    {
+      "section_id": "1.7",
+      "path": "docs/chapters/01-07-lesson.md",
+      "line": 96,
+      "quote": "把第一筆的 `price` 改成 80、`count` 改成 2，只保留這一筆呼叫。執行前，先沿 A、B、C 回答：B 的 `result` 是多少？C 的 `first` 是多少？`price` 的型別仍是 `i32`，需要幾個 bytes？"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

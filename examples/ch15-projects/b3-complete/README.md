@@ -7,7 +7,7 @@
 ```bash
 cargo check -p url-b3 --all-targets --locked
 cargo test -p url-b3 --lib --locked
-cargo run -p url-b3 --example b3_bounded_demo --locked
+cargo run --quiet -p url-b3 --example b3_bounded_demo --locked
 ```
 
 七項 test 驗零上限／空清單拒絕、全 invalid、混合與重複、收取後才補工／完成與輸入順序、task panic／abort 對應、完成未收取仍占名額。合成 task panic 是受控材料，不是正常 HTTP 失敗；其 panic hook 文字不是 test 失敗。
@@ -18,4 +18,4 @@ Demo 建真本機服務，動態 port；原 index0 空行，index1／3 重複 /o
 
 Id 立即登記完整 Input；task 拿 original 的複本，panic／abort 沒有 Check 時仍保存原文。run_bounded 最後按原索引排序，task 完成順序可不同。測試故障收尾 abort_all 後還要 join 至 None；Drop JoinSet 不代表 children 已等完。
 
-此快照 repo 外複製時，dev-dependency Fixture path 先換實際教材絕對路徑，再依 15.1 選 Rust 1.99.0。直接依賴版本要求與 Cargo.lock 的關係沿 7.1；不要把 version 字串誤當精確鎖版。
+此快照 repo 外複製時，dev-dependency Fixture path 先換實際教材絕對路徑，再依 18.1 選 Rust 1.99.0。直接依賴版本要求與 Cargo.lock 的關係沿 10.1；不要把 version 字串誤當精確鎖版。

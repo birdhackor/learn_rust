@@ -1,0 +1,86 @@
+[
+  {
+    "path": "examples/ch13-futures/stages/Cargo.toml",
+    "sha256": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "lines": 6,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/Cargo.toml"
+  },
+  {
+    "path": "examples/ch13-futures/stages/src/main.rs",
+    "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "lines": 3,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/src/main.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/unpin_access.rs",
+    "sha256": "0de2e89d4777b51204c65d440ff38b88ec41dd3669ba018f9832d19016392de0",
+    "lines": 13,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.rs",
+    "sha256": "d45e8d0513919c543d76adf58985ab796f074ba066178171639bdfa73fc80ffa",
+    "lines": 7,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "lines": 1,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/pinned_owner_swap/pinning/mod.rs",
+    "sha256": "def51b90a93c3d2ba3beae8d236a82d9155fa3f5424bbad45cbc3df05a53cd3d",
+    "lines": 56,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/pinned_owner_swap/main.rs",
+    "sha256": "0160d59235dfb83ec1123c29ca2a507405035b1f53015637424688f59af4fcda",
+    "lines": 38,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/local_pin.rs",
+    "sha256": "46d5c4efaad029128963556b2072840af2e4cdacae53e4b6161295c03cf810a5",
+    "lines": 24,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.rs",
+    "sha256": "bd65619ed471574ff29e9e8c0febc87f554860cf469ad7a2e920a71d9cd435fc",
+    "lines": 67,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "lines": 1,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/pinning_solution/pinning/mod.rs",
+    "sha256": "def51b90a93c3d2ba3beae8d236a82d9155fa3f5424bbad45cbc3df05a53cd3d",
+    "lines": 56,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/pinned_owner_swap/pinning/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/pinning_solution/main.rs",
+    "sha256": "b051496f6a8c048af6ffaf99403ce199d2f84426a9e590491d95a415b997eaa6",
+    "lines": 15,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/pinning_complete/pinning/mod.rs",
+    "sha256": "e52fbf2e64735c17bf2153f8d22e85c8dd1916cea2e637a05153da45b8c2a42e",
+    "lines": 102,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/pinning_complete/main.rs",
+    "sha256": "197fa4836d423b5e4b0f4b08eb59c4137d47b29da891744b6aa63fb2121d1b16",
+    "lines": 5,
+    "method": "full physical source printed/read"
+  }
+]

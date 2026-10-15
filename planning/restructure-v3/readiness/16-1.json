@@ -1,0 +1,135 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "16.1"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round16-poll-event-executor-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round16-self-reference-pin-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/16/16-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/16-01-lesson.md": "a02196df700ac59c39a0d5d0a73a457d54661a69110d145086deac890aca84a3",
+    "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.rs": "acd705401e4f16dee4345ed8aad999c96b9182cb4c2bf7a315d3f35afd20be8f",
+    "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939",
+    "examples/ch13-futures/stages/examples/inline_swap/main.rs": "af99115c19f4f070dbe9a134b3a6c3161a64c92fed868532a665c1af8b244b33",
+    "examples/ch13-futures/stages/examples/box_handles/addresses/mod.rs": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939",
+    "examples/ch13-futures/stages/examples/box_handles/main.rs": "8159d50e707b656dbdd601cd34e75dc1eb17b867a60d59e6cbdfc937348f9574",
+    "examples/ch13-futures/stages/examples/field_swap_solution/addresses/mod.rs": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939",
+    "examples/ch13-futures/stages/examples/field_swap_solution/main.rs": "8e4201a68817157223060a17fd44cdbad929019c6ec5618503e62c963b8a28e6",
+    "examples/ch13-futures/stages/examples/addresses_complete/addresses/mod.rs": "ecc28b64aebb05adbeb3ab5a8a53f25f7e93816844cdb5ffb5fc58ed94f871d3",
+    "examples/ch13-futures/stages/examples/addresses_complete/main.rs": "90cdc6b5c6b5c89b1c5c0bb8df58e486e736a283d98e9fe2e71757afd75eebe0",
+    "docs/assets/futures-v3/future-internal-borrow.svg": "47fb3855a6b90869207326feb71b33c6070a5aeec75a6986d9e3e9f1cd8ad884",
+    "docs/assets/ch13/self-reference-addresses.svg": "a8c02b27132c3e5e74bb0267bd04eff1927970f3cdff82df05558dc22a09b646"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 3,
+      "quote": "第14.3節的 `controlled_work` 接手 owned `release` 收端，之後停在 `release.recv().await` 等放行。外層工作必須保存收端；這份 recv 等待又 mutable 借用它。等待尚未結束時，光說「收端還活著」並不夠：**裡面保存的借用，稍後還要找到同一份資料。**"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 9,
+      "quote": "**self-reference（自我參照）** 指一個值保存的位置資訊，指向同一個值內的另一部分。例如外層 future 保存 release 收端，等待中的 recv 借用那份收端。"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 13,
+      "quote": "下圖接回14.3的工作。兩個框都在同一份外層 future 中，向上的箭頭表示借用收端；這是資料關係，**不是編譯器承諾的 struct 欄位布局**："
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 21,
+      "quote": "第7章的 lifetime 描述借用來源與可用範圍，不會延長原值存活；第3.2節的 move 轉交 ownership，第11.3節也看過 move 不等於當場 Drop。這些規則仍成立，卻不會替我們重寫值裡的 raw pointer。"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 23,
+      "quote": "這裡的**地址穩定性**，是某份資料在需要它的期間保留原位置。move 是 ownership 語意；是否真的搬動我們在意的資料，要看交接的是哪一層。稍後交換 Box owner，就會與交換 Box 裡的資料有不同結果。"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 27,
+      "quote": "先認識 **`std::mem::swap(left, right)`**：它接收兩個指向同型別 T 的 mutable reference，交換兩個位置中的完整 T，回傳 `()`。交換後兩邊仍各有完整的值；swap 不會為我們呼叫「修正內部地址」的方法，也不在交換時 Drop 兩份 T。"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 45,
+      "quote": "本章早期例子位於沒有 library 的 **`ch16-future-stages`**。完整 member 設定沿第12.1節繼承根 workspace 已教的共同欄位；不需要第三方依賴："
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 57,
+      "quote": "**AddressNote** 保存 `value: i32` 和 `saved: *const i32`。i32 直接放在 struct 裡，避免把 String 自己管理的 heap 空間也混進第一個實驗。型別沒有 Copy，整份交換時，數字與 saved 記錄一起交接。"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 61,
+      "quote": "新增的 **`ptr::eq(first, second)`** 接收兩個 pointer、回傳 bool，這次比較兩個 `*const i32` 的地址是否相同。它沒有讀取兩個 i32，也沒有檢查來源資格、存活或存取權限。true 不能單獨證明可 dereference；false 足以看出記錄與目前欄位位置不一致。"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 69,
+      "quote": "把兩份資料先放進 left／right，再 remember，然後交換**整份 AddressNote**。完整 `main.rs`："
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 87,
+      "quote": "圖中 A／B 是原 left.value／right.value 的欄位位置標號，交換前後保留它們。灰色向下箭頭表示交換步驟，藍箭頭只表示 saved 記錄的地址，**不保證可透過它存取資料**："
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 95,
+      "quote": "第11.2節的 Box 把 owned T 放在 heap 配置中；轉交 Box owner，不需要連那份配置一起搬走。現在先用 `Box::new` 放好 AddressNote，再記 heap 中 value 欄位的位置。"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 97,
+      "quote": "這次 swap 的 T 是 **`Box<AddressNote>`**，交換的是兩個 Box owner。`(*left).remember()` 先找到 Box 的內容再呼叫方法；`&*left` 借出內容，都是11.2已用的操作。這份 target 的完整本地 module 與入口為："
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 116,
+      "quote": "兩份 heap 中的 AddressNote 留在原位置，只換了哪個 owner 找到它們。這次數字也互換，地址關係卻保留了。要問的是**哪份資料的位置**，不能只看外層 owner 有沒有 move。"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 122,
+      "quote": "回到 inline 的80／120，先各自 remember。只對 `&mut left.value`／`&mut right.value` 呼叫 swap，保留外層 saved。"
+    },
+    {
+      "section_id": "16.1",
+      "path": "docs/chapters/16-01-lesson.md",
+      "line": 150,
+      "quote": "本節完整測試快照含四項 tests：整值交換與明確重記、相同數字仍有不同位置、交換 Box owner，以及只換欄位數字。下面列全 module 與 root；它們沒有透過 saved 讀取資料："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

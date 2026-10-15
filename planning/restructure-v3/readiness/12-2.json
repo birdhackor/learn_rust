@@ -1,0 +1,116 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "12.2"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round12-build-script.md",
+    "planning/restructure-v3/reviews/technical-early/round12-cargo-engineering-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round12-cargo-order-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round12-content-confirmation-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round12-content-direction-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round12-file-walking.md",
+    "planning/restructure-v3/reviews/continuity-early/round12-ch12.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/12-02-lesson.md": "846d2893b7c8c692a00efa7792cf4256cde6732e35f118d104585ed72bdfba7a",
+    "examples/ch09-build-script/Cargo.toml": "08729d8f5e96d5f6cff7d2e1e590140e2bb653f135f0f23116765bba2e7bebf9",
+    "examples/ch09-build-script/build.rs": "5455cbca7f20f25b814391d6c1d6fb69b4e688b873d7461db27efc9fdd6d69da",
+    "examples/ch09-build-script/src/lib.rs": "a36ae85a666aacc2fc6fd85d07abe53b7c6838e6e81df5e039fb32752cd8eab4",
+    "examples/ch09-build-script/src/main.rs": "4b01daa93b0e485eaf5176aea6aa9681400f68a0fd90a6b45ef36934ff178bbf",
+    "examples/ch09-build-script/fixtures/compile-fail/missing_env.rs": "02f1a6ac65299be704f8ea4d65a4584a114952ea44f0ade5144542edc85a593a",
+    "examples/ch09-build-script/examples/optional_build_tag.rs": "cd25f33ab9c3315783adbb397a503cd2d6ce75ed56a940f6235646a4d3aa6256",
+    "examples/ch09-build-script/tests/embedded.rs": "74e7cd2be08fdbda72e15c9c7e5eba307faecdf9b348cacc69723131769331b9",
+    "examples/ch09-build-script/examples/build_identity_solution.rs": "26ceb212c87ec0a61272262499764cb1116244ac65b8229f4a1ca4880a500381",
+    "docs/assets/engineering-v3/build-phases.svg": "4c4b51220e531dee0ef870e584f560c646620713cddb6604a760b7b5b11bf1a6"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 3,
+      "quote": "想讓練習版成品記住自己是demo還是practice，每次啟動都回報同一份建置模式。若主要程式每次啟動都讀環境，模式會隨執行環境改變；這次需要的是**在建置時決定，再把文字固定進成品**。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 5,
+      "quote": "第12.1節已能選profile、feature與target。現在再加一個步驟：Cargo先執行一支Rust程式，讓它把設定交給主要crate的編譯。這支程式叫**build script**，通常放在package根目錄的`build.rs`；它與成品的`src/main.rs`有各自的執行時點。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 11,
+      "quote": "build script自己也要先編譯成能在host執行的程式。Cargo執行它，成功後才編譯主要crate，最後才有讀者啟動的成品。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 13,
+      "quote": "manifest的`build = \"build.rs\"`明寫script入口，路徑相對於**這個package根目錄**。Cargo也能自動發現這個慣用檔名，本例明寫是為了看清工作入口。其餘共同欄位採用第12.1節已核對的教材repo根設定："
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 21,
+      "quote": "**`std::env::var(\"名稱\")`**讀取目前正在執行的行程所收到的環境值，回傳`Result<String, VarError>`。這裡正在執行的是build script。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 25,
+      "quote": "本例替`LESSON_MODE`訂出政策：沒有設定就採demo；有值只接受demo或practice；其他文字或非Unicode值都讓建置失敗。`CARGO_CFG_TARGET_OS`則由Cargo啟動script時提供，內容描述**主要crate的目標作業系統**，例如linux或windows。這份script只由Cargo啟動，因此能以這項保證為依據使用expect。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 31,
+      "quote": "第10.5節的stdout是行程的標準輸出。build script在這個出口印出特定格式，Cargo依每行的**建置協定**處理，而非接收main的回傳值作設定。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 50,
+      "quote": "LESSON_MODE改變時，script會重新交付TEACHING_MODE；TEACHING_TARGET_OS與TEACHING_HOST_WINDOWS則分別保存target名稱與host條件。後者保存的是true／false的**文字**，沒有在主要程式中暗中解析成bool。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 54,
+      "quote": "**`env!(\"名稱\")`**是編譯時讀取指定環境值的macro，交出`&'static str`。第11.5節已說明這種文字reference可在程式剩餘的執行期間使用；這裡的內容來自編譯時嵌入的文字。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 113,
+      "quote": "若額外標記可以省略，就用**`option_env!(\"名稱\")`**：它在編譯時交出`Option<&'static str>`，有Unicode值時是Some，缺值則是None；有值但不是Unicode仍是編譯錯誤。這與runtime的env::var不同，也沒有把主要模式的驗證規則改成可有可無。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 132,
+      "quote": "Cargo執行script時還提供`OUT_DIR`，指向這次建置使用的輸出目錄。生成供編譯使用的檔案應寫到這裡，保持原始碼目錄作為輸入。OUT_DIR可能留有前次檔案，script須自行管理需要重建的內容。本節只交付文字設定，因此沒有生成檔案或加入讀生成檔案的macro。"
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 136,
+      "quote": "後面與原生library合作時，還會用到**linker（連結器）**：它將編譯結果與所需library組成最後成品。build script要先找到或建好target需要的library，再交付搜尋位置及名稱："
+    },
+    {
+      "section_id": "12.2",
+      "path": "docs/chapters/12-02-lesson.md",
+      "line": 147,
+      "quote": "完整`tests/embedded.rs`用公開library確認模式屬於允許集合，並在Linux／Windows測試對應target文字。條件編譯與integration test沿用上一節："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

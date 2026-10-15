@@ -1,0 +1,42 @@
+[
+  {
+    "path": "docs/chapters/13-02-lesson.md",
+    "old_sha256": "10afab4057f565308b0333aaaeadf12fb4c2204255e5524f23baa4820b4d247f",
+    "new_sha256": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e",
+    "actual_diff": [
+      "--- ",
+      "+++ ",
+      "@@ -185,7 +185,7 @@",
+      " ",
+      " 執行時還會看到標準 panic 診斷，包含發生位置。標準函式庫預設在 panic 發生時就把診斷寫到 **stderr（標準錯誤輸出）**；上面 main 的 println 則寫到 **stdout（標準輸出）**。join 收到 Err 不會回頭消除先前的診斷。這份程式處理了 worker panic，main 正常結束；不能光看到診斷就斷言 main 也發生未處理 panic。",
+      " ",
+      "-為了不讓一次 panic 的實際型別替兩種文字契約代答，完整測試直接建立 String、static 文字與 u32 的 payload，分別核對文字與未知型別的報告：",
+      "+為了不讓一次 panic 的實際型別替兩種文字契約代答，完整測試直接建立 String、static 文字與 u32 的 payload，分別核對文字與未知型別的報告。",
+      " ",
+      " 這裡需要明選數字的型別。數字 literal 後可接型別名稱，例如 `7_u32` 是型別為 u32 的數字7；中間的底線可省略，`7u32` 同樣有效。這是 literal 的型別後綴，與1.4在變數名稱後寫 `: u32` 的註記位置不同。",
+      " "
+    ],
+    "scope": "root初判後提供位置的窄複查；非獨立發現",
+    "judgment": "可保留。句號使測試目的先完成，再先教後用literal後綴；sum_selected與後面caller的second指向更明確。沒有改概念、source或命令，13prefix原初判保持。"
+  },
+  {
+    "path": "docs/chapters/13-03-lesson.md",
+    "old_sha256": "e022f3558b51fafc736371bb623fade801802c28cdfc1fcb2736570d57b3e051",
+    "new_sha256": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d",
+    "actual_diff": [
+      "--- ",
+      "+++ ",
+      "@@ -165,7 +165,7 @@",
+      " ",
+      " 再把7.1的回傳 reference 契約放到 callback：如果希望它從 tuple 借出一個欄位，可以寫 `F: for<'a> Fn(&'a (i32, i32)) -> &'a i32`。輸入與輸出都使用同一次選定的 `'a`，表示 **每次回傳的 reference 都受當次輸入借用約束**。",
+      " ",
+      "-這份 bound 說明輸出的有效性；具體選哪個 reference，仍由選擇器的 body 決定。下面的完整例子才把它指定成第二個欄位。",
+      "+這份 bound 說明輸出的有效性；具體選哪個 reference，仍由選擇器的 body 決定。先看共用的 `sum_selected` helper；後面的 `callback_projection/main.rs` 傳入 second，才固定選擇第二個欄位。",
+      " ",
+      " 這與前面的固定 T 不同：這份 bound 把輸出也明確連到 for 裡的 `'a`。下面 helper 沿9.2的 apply_shared，只借用選擇器，收到 `&F`；只有 shared access，所以用 Fn 呼叫它。每次把借出的 i32 讀出為數值，才合併它們。第二份 tuple 位於內層 block，在第二個選值用完之後結束：",
+      " "
+    ],
+    "scope": "root初判後提供位置的窄複查；非獨立發現",
+    "judgment": "可保留。句號使測試目的先完成，再先教後用literal後綴；sum_selected與後面caller的second指向更明確。沒有改概念、source或命令，13prefix原初判保持。"
+  }
+]

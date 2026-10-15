@@ -1,0 +1,358 @@
+{
+  "review_id": "round10-serde-json",
+  "scope": [
+    "10.7"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python+真正已讀1–9、10.1–10.6；不用另讀11章填補先備。",
+  "independence": "先實際全文/source初判封存，未讀作者validation/ledger、peer、reader或historical findings。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "全文、20snippets的anchor/fullsource、所有owned helper/tests/manifests、7JSON+1binary輸入與完整答案逐檔靜態核對。",
+    "檢查selected target no-lib closure、Cargo.cwd、From/?錯誤分層、借用/owned契約、真實資料與輸出。",
+    "json-model.svg僅source/XML；cached serde_json API只查精確借用及trait bound，無browser/reader實驗。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "program_execution": false,
+    "note": "沒有新增Cargo/Rust執行；輸出、4tests和錯誤路徑為靜態核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:45:34.285513+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "docs/assets/ch07/json-model.svg": "d614744ae58f91f324a1be6dc4eb47debe1149b4116b8f70d2ea8a82ec445448",
+    "docs/chapters/10-07-lesson.md": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+    "examples/intro-workspace/Cargo.lock": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/json-stage/Cargo.toml": "1dfc5ec041f44a96cbb4c1b3c30e7e1aad0a47d01e71dcaeaaeb1f85bc425ef7",
+    "examples/intro-workspace/json-stage/examples/basic_json.rs": "1d25f1c0b73bee4cfbc0b56db65de1b6b585e869c475826581229794758ab0f7",
+    "examples/intro-workspace/json-stage/examples/file_errors.rs": "fc1d186795c80ae9f71fd7bb6470ea899c62092633abb2d61c0167266923d7e2",
+    "examples/intro-workspace/json-stage/examples/json_core/codec.rs": "b61262ca3f716f4689448d6c873ac33dbcac7ec9395ccf7d69e4ed3e25653901",
+    "examples/intro-workspace/json-stage/examples/json_core/mod.rs": "847451479d9dbc3ce77d9fe4841859d9f571fc0819c4201ce8ef1da59b9e3954",
+    "examples/intro-workspace/json-stage/examples/json_core/model.rs": "40889f6c69e2fdf08e705fd37040805bdcc0df2c75c2e4552ec13462085b61ed",
+    "examples/intro-workspace/json-stage/examples/json_files/mod.rs": "a1d523c239b9d276ad14bc14fe7a09ffeeb20e3621bdd525ad18543e1baba256",
+    "examples/intro-workspace/json-stage/examples/json_solution.rs": "ed95bbc81ed4028acede3a4ef0b0c8a71475fda543989ae3183d9bc78a315e65",
+    "examples/intro-workspace/json-stage/fixtures/broken-syntax.json": "15c0680da9ba7e7ce1481594612e8e2ddb08ef61be67826645f931c7ebce3e13",
+    "examples/intro-workspace/json-stage/fixtures/missing-title.json": "a853f5b8f4f9553f7e97069dfb3b3afaf85ca7cde590270aaa4487a5eadb2dc2",
+    "examples/intro-workspace/json-stage/fixtures/not-utf8.bin": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+    "examples/intro-workspace/json-stage/fixtures/notebook.json": "f38fbd09edfc230e497af6d0742d74faa79b7c3ed27a692f4e8bfc0c6dc63102",
+    "examples/intro-workspace/json-stage/fixtures/number-out-of-range.json": "897ef1d15b3217a9a6feb32fd26374e1b2990587d7732f40124899b6fc383689",
+    "examples/intro-workspace/json-stage/fixtures/quoted-title.json": "c6d189fb9fef04f0b8c079ef628d2fb5812f1ce257bb392f3e6e8ba9844bdba4",
+    "examples/intro-workspace/json-stage/fixtures/unknown-field.json": "7219d52232d4554e25f2ae3352de50f497b84e5ffef401f2c1eec19da74ec16d",
+    "examples/intro-workspace/json-stage/fixtures/wrong-value-type.json": "a58060bbc21ad21d9a09d1313f93216501a69be5ed656e36300f936e55f10ce1",
+    "examples/intro-workspace/json-stage/src/main.rs": "977fa333c3713c33e8f83b1a1580b37fcc15d2e192092875685079bb3279948a",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "external_registry_source_hashes": {
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_json-1.0.154/src/de.rs": "cb55666913c47d86130e7bd48a9c35081ea9a4bb0e2c45ab6429912d905629c5",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/serde_json-1.0.154/src/ser.rs": "f2b8cc0b97e30c49dbc58698fa22c14a7d56ea616cdb57b067835a59af49a75f"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "intro-json-stage",
+      "version": "0.1.0",
+      "dependencies": [
+        "serde",
+        "serde_json"
+      ]
+    },
+    {
+      "name": "serde",
+      "version": "1.0.229",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba",
+      "dependencies": [
+        "serde_core",
+        "serde_derive"
+      ]
+    },
+    {
+      "name": "serde_derive",
+      "version": "1.0.229",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "e7a5d71263a5a7d47b41f6b3f06ba276f10cc18b0931f1799f710578e2309348",
+      "dependencies": [
+        "proc-macro2",
+        "quote",
+        "syn"
+      ]
+    },
+    {
+      "name": "serde_json",
+      "version": "1.0.154",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+      "dependencies": [
+        "itoa",
+        "memchr",
+        "serde",
+        "serde_core",
+        "zmij"
+      ]
+    }
+  ],
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 14,
+      "source": "examples/intro-workspace/json-stage/fixtures/notebook.json",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 41,
+      "source": "examples/intro-workspace/json-stage/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 51,
+      "source": "examples/intro-workspace/json-stage/examples/json_core/model.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 74,
+      "source": "examples/intro-workspace/json-stage/examples/json_core/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 80,
+      "source": "examples/intro-workspace/json-stage/examples/json_core/codec.rs",
+      "tag": "codec",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 86,
+      "source": "examples/intro-workspace/json-stage/examples/basic_json.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 123,
+      "source": "examples/intro-workspace/json-stage/fixtures/broken-syntax.json",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 129,
+      "source": "examples/intro-workspace/json-stage/fixtures/missing-title.json",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 135,
+      "source": "examples/intro-workspace/json-stage/fixtures/unknown-field.json",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 141,
+      "source": "examples/intro-workspace/json-stage/fixtures/wrong-value-type.json",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 147,
+      "source": "examples/intro-workspace/json-stage/fixtures/number-out-of-range.json",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 153,
+      "source": "examples/intro-workspace/json-stage/fixtures/quoted-title.json",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 163,
+      "source": "examples/intro-workspace/json-stage/examples/json_files/mod.rs",
+      "tag": "file-error",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 169,
+      "source": "examples/intro-workspace/json-stage/examples/json_files/mod.rs",
+      "tag": "read-notebook",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 175,
+      "source": "examples/intro-workspace/json-stage/examples/file_errors.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 185,
+      "source": "examples/intro-workspace/json-stage/examples/json_core/codec.rs",
+      "tag": "codec-tests",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 201,
+      "source": "examples/intro-workspace/json-stage/src/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 211,
+      "source": "examples/intro-workspace/json-stage/examples/json_core/codec.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 217,
+      "source": "examples/intro-workspace/json-stage/examples/json_files/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-07-lesson.md",
+      "line": 231,
+      "source": "examples/intro-workspace/json-stage/examples/json_solution.rs",
+      "tag": null,
+      "source_anchor_found": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-json-stage",
+    "no_lib": true,
+    "no_build_script": true,
+    "dependencies": [
+      "serde 1.0.229 + derive/default",
+      "serde_json 1.0.154"
+    ],
+    "targets": {
+      "basic_json": [
+        "examples/basic_json.rs",
+        "examples/json_core/mod.rs",
+        "examples/json_core/model.rs",
+        "examples/json_core/codec.rs（normal模式不載cfg test body）"
+      ],
+      "file_errors": [
+        "examples/file_errors.rs",
+        "examples/json_core/mod.rs",
+        "examples/json_core/model.rs",
+        "examples/json_core/codec.rs（test模式3tests）",
+        "examples/json_files/mod.rs（test模式1test）"
+      ],
+      "json_solution": [
+        "examples/json_solution.rs",
+        "examples/json_core/mod.rs",
+        "examples/json_core/model.rs",
+        "examples/json_core/codec.rs",
+        "examples/json_files/mod.rs"
+      ]
+    },
+    "commands": "3 selectedrun + 1 selectedexampletest（4tests）；manifest-path Cargo.toml/package/example/--locked。",
+    "cwd": "repo根cd到examples/intro-workspace/json-stage；fixtures/...相對此package；Cargo test同package cwd。",
+    "default_binary": "src/main.rs完整顯示但不是本頁命令target，不被selectedexamples編譯。",
+    "helper_directories": "json_core/json_files資料夾沒有main.rs，不自行成為example target。"
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/10-07-lesson.md:17",
+      "judgment": "JSON object/array/string/bool與Rust欄位對應先教；數字文字不同、i32範圍、無註解/尾逗號與escape敘述準確。"
+    },
+    {
+      "source": "docs/chapters/10-07-lesson.md:31",
+      "judgment": "Serialize/Deserialize<'a>與serde_json格式職責、serde derive feature、deny_unknown_fields的明確拒絕政策在首model source前；String/Vec/bool必要traits及Debug/PartialEq條件完整。"
+    },
+    {
+      "source": "docs/chapters/10-07-lesson.md:62",
+      "judgment": "from_str::<Notebook>借&str依Deserialize<'a>，不要求FromStr；to_string_pretty借模型依Serialize回owned String；與cached serde_json1.0.154精確簽名一致。"
+    },
+    {
+      "source": "docs/chapters/10-07-lesson.md:67",
+      "judgment": "trait lifetime參數連來源不強制結果保存reference；Notebook無reference，原輸入String結束後仍可用。圖對文字→owned模型→新owned文字的表示分清，不宣稱恢復原排版。"
+    },
+    {
+      "source": "docs/chapters/10-07-lesson.md:158",
+      "judgment": "NotebookError只有Debug/Display與兩份From，完整io::Error沒有硬加PartialEq；兩個?分別封裝Io/Json。InvalidUTF8在read_to_string先成Io/InvalidData，不會進JSON。沒有需要未教std::error::Error。"
+    },
+    {
+      "source": "docs/chapters/10-07-lesson.md:188",
+      "judgment": "file_errors test載3codec+1json_files；完整codec和json_files tests均在頁中提供，source只用已教API和資料；basic_json run正常不載cfg test body及json_files。"
+    },
+    {
+      "source": "docs/chapters/10-07-lesson.md:224",
+      "judgment": "archive答案只改archived，encode失敗透過已有From轉NotebookError；重新decode逐欄/位置驗證title、80/120與true，而非只搜尋輸出字串。"
+    }
+  ],
+  "external_api_evidence": [
+    {
+      "file": "serde_json-1.0.154/src/de.rs",
+      "lines": "2709–2712",
+      "fact": "pub fn from_str<'a,T>(s:&'a str)->Result<T>, T:Deserialize<'a>"
+    },
+    {
+      "file": "serde_json-1.0.154/src/ser.rs",
+      "lines": "2264–2267",
+      "fact": "pub fn to_string_pretty<T>(value:&T)->Result<String>, T:?Sized+Serialize；本頁只用已知具體Notebook，不需?Sized作教材先備。"
+    }
+  ],
+  "fixture_materials": {
+    "notebook": "title筆記/values[80,120]/archivedfalse",
+    "broken_syntax": "values[80,120,]尾逗號",
+    "missing_title": "缺title",
+    "unknown_field": "已有archived又多archvied；deny_unknown_fields拒絕",
+    "wrong_value_type": "values第二項為字串120",
+    "number_out_of_range": "2147483648 > i32::MAX",
+    "quoted_title": "JSON escape還原第一行\\n\"筆記\"",
+    "not_utf8": {
+      "bytes": [
+        255
+      ],
+      "checked_actual_bytes": true
+    },
+    "missing_json": {
+      "exists": false,
+      "checked": true
+    },
+    "note": "七份JSON全檔與bin完整內容均有正文，沒有新增Rust compile-fail/runtime-fail fixtures。"
+  },
+  "static_outputs": {
+    "basic_json": "標題筆記/資料項數2，再印重新編成JSON提示與pretty JSON（struct順序title/values/archivedfalse）",
+    "file_errors": "合法標題；missing Io/NotFound；broken Json；FF Io/InvalidData",
+    "json_solution": "title筆記/values80,120不變，archivedtrue；回傳JSON String"
+  },
+  "tests": {
+    "codec": 3,
+    "json_files": 1,
+    "total": 4
+  },
+  "limits": [
+    "技術整頁重讀，非盲首讀。",
+    "沒有新增Cargo/Rust或JSONexample執行，不以作者結果冒稱自己的run證據。",
+    "SVG僅XML/source，未browser視覺驗證；未讀10.8以後當先備。"
+  ],
+  "sealed_at_utc": "2026-10-15T08:46:23.444Z"
+}

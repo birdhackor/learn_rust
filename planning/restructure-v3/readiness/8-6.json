@@ -1,0 +1,124 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "8.6"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round08-errors-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08-quote-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-crossref-followup-final.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/08-06-lesson.md": "b6e62b122ad05f778802179ebaabc88c8263a2f51a644ca9469e490344f9a129",
+    "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs": "39342314705963bb06e0063679ef6b82192e8c62f01f80ba3cd9acd03057ab87",
+    "examples/intro-workspace/error-stages/examples/propagation/main.rs": "45a79a2094abb4b6532085313f83463f936a590b7ef9737af49e39d9e9f90eda",
+    "examples/intro-workspace/error-stages/fixtures/compile-fail/question_in_unit.rs": "e160305097ebcf7fa46eb0ae3ca2e0e41bde1b47887986c589f937e5670098c8",
+    "examples/intro-workspace/error-stages/fixtures/compile-fail/question_without_conversion.rs": "153fd77d955377abfc37a909a8d64f0e5e8f4bd1ee197f0dbadf75972ca6293a",
+    "examples/intro-workspace/error-stages/examples/option_question.rs": "b808b015b65c4171258db7f26557e0bdb3de40e69f9a8c284c442f37a07112bd",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/propagation/aliases/mod.rs": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+    "examples/intro-workspace/error-stages/examples/propagation/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/propagation/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/propagation/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/propagation/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/main.rs": "6c07510338d9803f4eb13efd7181bd80546fff0e49a288abb345d69783dba928",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/propagation/mod.rs": "39342314705963bb06e0063679ef6b82192e8c62f01f80ba3cd9acd03057ab87",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/aliases/mod.rs": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 3,
+      "quote": "第 8.5 節把文字解析分成「取得整數」與「驗證件數」。任何一步失敗，都把具體原因交給呼叫者。現在縮短這項重複的錯誤傳回工作，同時保留兩件事：第一個失敗發生後不做後面的步驟，呼叫者仍可選擇報告後繼續下一筆。"
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 7,
+      "quote": "`parse_count_manual(text: &str) -> Result<Count, ParseCountError>` 借讀文字，成功交回 Count，失敗交回前節定義的兩種原因。第一個 match 只在整數成功時取得 value；第二個只在件數成功時取得 count。Err 分支都以 `return Err(...)` **提早離開這個函式**，不是停止呼叫者或整個程式："
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 13,
+      "quote": "成功走完兩個步驟，才執行最後的 Ok(count)。在此函式不選報告政策，而是把資訊傳回呼叫者，稱為**錯誤傳遞**。"
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 17,
+      "quote": "**`?`** 是放在結果後面的運算子。對這裡的 Result，它做兩種工作："
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 24,
+      "quote": "因此使用前要先讀**目前函式的回傳型別**，並確認來源錯誤能轉成它需要的型別。上一節已實作兩份 From：ParseIntError 放進 Integer，CountError 放進 Range；所以這裡能回傳同一種 ParseCountError。"
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 42,
+      "quote": "這個完整呼叫者同時執行手動版與?版，先比較兩份Result，再決定如何報告。它的target根載入本章已教完的六個完整module；全部來源都列於本頁後面。"
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 66,
+      "quote": "下面是完整的預期編譯失敗程式。這份main沒有宣告結果回傳型別，原本交回unit `()`，卻想用?把解析失敗傳出去："
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 72,
+      "quote": "放進第 1.2 節的獨立練習專案執行`cargo check`，得到 **E0277**。本章把可能失敗的步驟放在回傳相容Result的helper，main再用match選政策，不把?直接放進這種unit回傳的main。"
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 80,
+      "quote": "同樣得到 **E0277**。要依實際工作設計錯誤型別與轉換，例如前節ParseCountError的Integer／Range，而不是只看見函式寫Result就認為所有錯誤都能傳入。"
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 84,
+      "quote": "`?`也可用於這種回傳Option的函式：Some時取出內容，None時從目前函式提早回傳None。這裡沒有Err或錯誤轉換；函式簽名必須允許這項缺值回傳。"
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 112,
+      "quote": "全章仍使用no-lib的intro-error-stages。完整member設定："
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 166,
+      "quote": "寫`count_pair(first: &str, second: &str) -> Result<(Count, Count), ParseCountError>`，依序呼叫parse_count解析兩筆，兩筆都成功才交回tuple。若第一筆失敗，不解析第二筆；若第二筆失敗，不交回只有第一筆的半份結果。"
+    },
+    {
+      "section_id": "8.6",
+      "path": "docs/chapters/08-06-lesson.md",
+      "line": 168,
+      "quote": "這裡呼叫parse_count取得的錯誤已是ParseCountError。標準函式庫提供**相同型別到自己的From轉換**，原樣交回值；因此?不需你再寫一份`From<ParseCountError> for ParseCountError`。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

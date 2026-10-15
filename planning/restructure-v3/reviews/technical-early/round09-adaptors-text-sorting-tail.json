@@ -1,0 +1,454 @@
+{
+  "review_id": "round09-adaptors-text-sorting-tail",
+  "scope": [
+    "9.5",
+    "9.6",
+    "9.7"
+  ],
+  "role": "獨立技術／先教後用／實際 source closure 審查",
+  "independent_initial": true,
+  "reader_background": "基本 Python + 實際已讀1–8和9.1–9.4；未使用10/11內容填補本波先備。",
+  "independence": "首次實讀與封存前未讀本波作者驗證／ledger、peer／reader／歷史問題。父任務只交接範圍和hash前綴，沒有給本波具體疑點。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "逐頁全文、全部16個 selected example完整source、4組fixture/expected與完整答案靜態核對。",
+    "31個snippet查實際anchor與fullsource；9份複製helper片段bytes核對。",
+    "adaptor-pipeline.svg僅讀source/XML；沒有rendered視覺或首讀實驗。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "note": "本波未重跑Cargo或rustc。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:34:17.730341+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "docs/assets/iterators-v3/adaptor-pipeline.svg": "9f76ea92d5a61b0c93cf91d4ee6f4db71714631afd93497fffd23b99eecbca4a",
+    "docs/chapters/09-05-lesson.md": "256e3a7a8380bee5e863db21b94d89e11578304f1ba8194147b6b12515eea71e",
+    "docs/chapters/09-06-lesson.md": "d8be1e5ed7a5ac9c930e1b2b412fbe3b8efd80ea513be061913cff919f59d68d",
+    "docs/chapters/09-07-lesson.md": "fce1c2a012b97dcf775ba970e78f9cc500c2ab39fcc8cf59fef7189536ad91ba",
+    "examples/intro-workspace/Cargo.lock": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/iterators/Cargo.toml": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+    "examples/intro-workspace/iterators/examples/adapter_answer.rs": "f21d2dc58ea88dc9d90a7837d3ca7a7e5a385715995321b13b85029ba17739d8",
+    "examples/intro-workspace/iterators/examples/adapter_collect.rs": "5a7fce5307e53b6cc3081d376353b03d034b0fb11c8931e3db4ac741212f040d",
+    "examples/intro-workspace/iterators/examples/adapter_filter.rs": "7483c71ceec5565a216fc7b28104adbf0ae72ace843fce43b7a957e21b2c8cca",
+    "examples/intro-workspace/iterators/examples/adapter_fold.rs": "39472221df45190c61172164c21d2005f2254f86bfa775a68502c2b0047c0ac8",
+    "examples/intro-workspace/iterators/examples/adapter_map.rs": "4f072ab8cc955327f4ccfe19c9cbca92ad8a2f1e20448cc05d5a5d9479d61826",
+    "examples/intro-workspace/iterators/examples/adapter_results.rs": "d26429a5193797b540818748fd5be2a0069685044168376d39244cf7db657b40",
+    "examples/intro-workspace/iterators/examples/entry_callbacks.rs": "7938af42552d9a4e90e65c8e474296679f8097a4b88b96e20b4cda212a6a8fcc",
+    "examples/intro-workspace/iterators/examples/map_iteration.rs": "6f0fac204fc85df26fd554a18e64befe6734e01195b115f00d9c42f82ba16af6",
+    "examples/intro-workspace/iterators/examples/partial_order.rs": "690032a51caaa2d5d77b903f259c4f4b3eed6a9f8be0702bf99b2529621ff0aa",
+    "examples/intro-workspace/iterators/examples/sorting_keys.rs": "d0e20f86f8c10261ba0842a388c66c9eca6a0b9b4653b5dd3a5f1c6c2984500d",
+    "examples/intro-workspace/iterators/examples/sorting_unstable.rs": "49edbf8bba2a4814e1b688da04f99cfd8dcc7931a1bd4868799b94faa869a4cc",
+    "examples/intro-workspace/iterators/examples/text_counts.rs": "8c1aff6c857d0f4cd5743f887e8ff81e1867479e00db3f124ee710ea70b68a73",
+    "examples/intro-workspace/iterators/examples/text_counts_answer.rs": "dad2ced3f016007c44f2df69c21d6c59db16a4d2614bee1e48b996a9317e0693",
+    "examples/intro-workspace/iterators/examples/text_report.rs": "260f609a249f2f1aba8dd54c6b89de1796321ccebd4d74ddb7cf75bbabfa4533",
+    "examples/intro-workspace/iterators/examples/text_report_answer.rs": "da6b66bfdb62c2531e3c8fed272d4e3dd035d7d7ad5bec5bdfe55f5804f65b18",
+    "examples/intro-workspace/iterators/examples/text_units.rs": "9e0db4b945036d79475663f56e26224d3583f8dc4259b1f0031a96ac0f1611ed",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/collect_reference_items.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/collect_reference_items.rs": "e1a87d9d567c90c0033b57f3b86d812a3b108570488f7178cdf4c3b02f611560",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/entry_borrow_overlap.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/entry_borrow_overlap.rs": "e445a378b743d197559773bc4714e025bfae3cd3e62650cfc5db7598fbbe07c1",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/filter_reference_level.expected": "38dd7d928ef05b326fa1d023d67d36193b8e9c600d0ee4b0f1ab86cba195e567",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/filter_reference_level.rs": "6920a40908253c7a7c1319aef48804ba76bf8b41d62e0d4c4c488a3c01c4a9e7",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/sort_boolean.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/sort_boolean.rs": "34947f88c563ae3a60c2ca1df62ea5d657dd20004d6df1d3e723e6eddaac760b",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 8,
+      "source": "examples/intro-workspace/iterators/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 20,
+      "source": "examples/intro-workspace/iterators/examples/adapter_map.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 47,
+      "source": "examples/intro-workspace/iterators/examples/adapter_filter.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 55,
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/filter_reference_level.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 67,
+      "source": "examples/intro-workspace/iterators/examples/adapter_collect.rs",
+      "tag": "organize",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 86,
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/collect_reference_items.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 96,
+      "source": "examples/intro-workspace/iterators/examples/adapter_collect.rs",
+      "tag": "from-iterator",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 102,
+      "source": "examples/intro-workspace/iterators/examples/adapter_collect.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 116,
+      "source": "examples/intro-workspace/iterators/examples/adapter_fold.rs",
+      "tag": "fold",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 122,
+      "source": "examples/intro-workspace/iterators/examples/adapter_fold.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 142,
+      "source": "examples/intro-workspace/iterators/examples/adapter_results.rs",
+      "tag": "parse-all",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 150,
+      "source": "examples/intro-workspace/iterators/examples/adapter_results.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-05-lesson.md",
+      "line": 166,
+      "source": "examples/intro-workspace/iterators/examples/adapter_answer.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-06-lesson.md",
+      "line": 10,
+      "source": "examples/intro-workspace/iterators/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-06-lesson.md",
+      "line": 24,
+      "source": "examples/intro-workspace/iterators/examples/text_units.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-06-lesson.md",
+      "line": 45,
+      "source": "examples/intro-workspace/iterators/examples/text_counts.rs",
+      "tag": "lines",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-06-lesson.md",
+      "line": 65,
+      "source": "examples/intro-workspace/iterators/examples/entry_callbacks.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-06-lesson.md",
+      "line": 75,
+      "source": "examples/intro-workspace/iterators/examples/text_counts.rs",
+      "tag": "counts",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-06-lesson.md",
+      "line": 83,
+      "source": "examples/intro-workspace/iterators/examples/text_counts.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-06-lesson.md",
+      "line": 101,
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/entry_borrow_overlap.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-06-lesson.md",
+      "line": 117,
+      "source": "examples/intro-workspace/iterators/examples/map_iteration.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-06-lesson.md",
+      "line": 131,
+      "source": "examples/intro-workspace/iterators/examples/text_counts_answer.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-07-lesson.md",
+      "line": 10,
+      "source": "examples/intro-workspace/iterators/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-07-lesson.md",
+      "line": 26,
+      "source": "examples/intro-workspace/iterators/examples/partial_order.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-07-lesson.md",
+      "line": 46,
+      "source": "examples/intro-workspace/iterators/examples/sorting_keys.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-07-lesson.md",
+      "line": 56,
+      "source": "examples/intro-workspace/iterators/examples/sorting_unstable.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-07-lesson.md",
+      "line": 68,
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/sort_boolean.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-07-lesson.md",
+      "line": 83,
+      "source": "examples/intro-workspace/iterators/examples/text_report.rs",
+      "tag": "sort-counts",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-07-lesson.md",
+      "line": 91,
+      "source": "examples/intro-workspace/iterators/examples/text_report.rs",
+      "tag": "report",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-07-lesson.md",
+      "line": 95,
+      "source": "examples/intro-workspace/iterators/examples/text_report.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/09-07-lesson.md",
+      "line": 117,
+      "source": "examples/intro-workspace/iterators/examples/text_report_answer.rs",
+      "tag": null,
+      "source_anchor_found": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-iterators",
+    "no_lib": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "run_targets": [
+      "adapter_map",
+      "adapter_filter",
+      "adapter_collect",
+      "adapter_fold",
+      "adapter_results",
+      "adapter_answer",
+      "text_units",
+      "entry_callbacks",
+      "text_counts",
+      "map_iteration",
+      "text_counts_answer",
+      "partial_order",
+      "sorting_keys",
+      "sorting_unstable",
+      "text_report",
+      "text_report_answer"
+    ],
+    "loaded_sources": "每個target只有自己的完整examples/<name>.rs；無mod helper、normal library或其他章載入。",
+    "test_targets": []
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/09-05-lesson.md:13",
+      "judgment": "adaptor接手iterator/callback不主動clone、lazy map的FnMut契約和visits借用時點正確。"
+    },
+    {
+      "source": "docs/chapters/09-05-lesson.md:40",
+      "judgment": "filter借&Item而交回原Item，slice路徑&&i32→&i32與ownedString路徑&String→String清楚；map下一步只需單層*。"
+    },
+    {
+      "source": "docs/chapters/09-05-lesson.md:62",
+      "judgment": "FromIterator<A>與IntoIterator輸入、collect由目標指定、Vec沒有自動&i32→i32正確；Vec Debug/PartialEq與method turbofish/型別路徑在首次完整使用前說明。"
+    },
+    {
+      "source": "docs/chapters/09-05-lesson.md:109",
+      "judgment": "fold的初值/Item/accumulator/空來源、FnMut雙參數先教；necessary local clippy::unnecessary_fold allow在首snippet前:113先說明，答案:163回用。"
+    },
+    {
+      "source": "docs/chapters/09-05-lesson.md:131",
+      "judgment": "Result collect遇第一Err停止pull、不交回部分Vec、空來源Ok(empty)、不套用From換錯誤型別；實際visits=2和原來源借用均一致。"
+    },
+    {
+      "source": "docs/chapters/09-06-lesson.md:15",
+      "judgment": "chars是Unicode scalar，e+U+0301為2scalars/3bytes；char Debug與Unicode escape先解釋。lines處理LF/CRLF、尾行、連續空行、空字串與單獨CR準確，沒有偷用trim。"
+    },
+    {
+      "source": "docs/chapters/09-06-lesson.md:40",
+      "judgment": "is_empty byte長度判斷、filter&&str、RPIT/elision與2024capture回指到已讀9.3/7.1，工作仍依來源。"
+    },
+    {
+      "source": "docs/chapters/09-06-lesson.md:50",
+      "judgment": "Entry接手候選key並借map；and_modify/or_insert/or_insert_with接收/回傳及FnOnce契約在使用前。明說重複鍵仍先to_owned，沒有不實零複製承諾。"
+    },
+    {
+      "source": "docs/chapters/09-06-lesson.md:108",
+      "judgment": "HashMap iter/iter_mut/into_iter的tuple各欄位ownership正確；mutable iterator不允許改key，且順序任意。"
+    },
+    {
+      "source": "docs/chapters/09-07-lesson.md:15",
+      "judgment": "Ordering/PartialOrd/Ord、Option<Ordering>、NaN與f64::NAN associated constant先教。str/String字典bytes順序與報表材料一致。"
+    },
+    {
+      "source": "docs/chapters/09-07-lesson.md:33",
+      "judgment": "sort/sort_by_key/sort_by mutable unit與stable契約、FnMut和key:Ord準確；sort_unstable不配置heap暫存及不保等值原序的界線準確。as_mut_slice已由5.4/9.4教。"
+    },
+    {
+      "source": "docs/chapters/09-07-lesson.md:75",
+      "judgment": "right.count cmp left.count使多次數左筆回Less而先出現；平手名稱升序。僅stable不能修任意HashMap來源順序，完整tie-break才固定結果。String由map移入Vec而非clone，答案反轉次數方向正確。"
+    }
+  ],
+  "fixtures": [
+    {
+      "name": "filter_reference_level",
+      "error_code": "E0631",
+      "checked": "完整source/expected靜態，未重跑"
+    },
+    {
+      "name": "collect_reference_items",
+      "error_code": "E0277",
+      "checked": "完整source/expected靜態，未重跑"
+    },
+    {
+      "name": "entry_borrow_overlap",
+      "error_code": "E0499",
+      "checked": "完整source/expected靜態，未重跑"
+    },
+    {
+      "name": "sort_boolean",
+      "error_code": "E0308",
+      "checked": "完整source/expected靜態，未重跑"
+    }
+  ],
+  "static_outputs": {
+    "adapter_map": "建立完成先於callback；map10→for20、map20→for40；visits2",
+    "adapter_filter": "0,3,3；owned Rust",
+    "adapter_collect": "[0,30,30]；NumberList[1,2,3]",
+    "adapter_fold": "60；empty/no-matches0",
+    "adapter_results": "bad失敗；visits2、原來源len3",
+    "adapter_answer": "valid Ok(1)、empty Ok(0)、bad Err",
+    "text_units": "3bytes/2scalars ['e','\\\\u{301}']；lines [Rust,empty,Python]",
+    "entry_callbacks": "new_groups2",
+    "text_counts": "Rust2,Python1,教學1",
+    "map_iteration": "iter total3；Rust12,Python11；owned total23，遍歷順序任意",
+    "text_counts_answer": "Rust2/rust1/Rust-space1；loneCR保留",
+    "partial_order": "Some(Less),None",
+    "sorting_keys": "[1,1,2,3]；[(1,30),(1,10),(2,20)]",
+    "sorting_unstable": "[1,1,2,3]",
+    "text_report": "Rust2,Python1,教學1",
+    "text_report_answer": "Python1,教學1,Rust2"
+  },
+  "copy_checks": [
+    {
+      "tag": "lines",
+      "target": "map_iteration",
+      "byte_identical": true
+    },
+    {
+      "tag": "lines",
+      "target": "text_counts_answer",
+      "byte_identical": true
+    },
+    {
+      "tag": "lines",
+      "target": "text_report",
+      "byte_identical": true
+    },
+    {
+      "tag": "lines",
+      "target": "text_report_answer",
+      "byte_identical": true
+    },
+    {
+      "tag": "counts",
+      "target": "map_iteration",
+      "byte_identical": true
+    },
+    {
+      "tag": "counts",
+      "target": "text_counts_answer",
+      "byte_identical": true
+    },
+    {
+      "tag": "counts",
+      "target": "text_report",
+      "byte_identical": true
+    },
+    {
+      "tag": "counts",
+      "target": "text_report_answer",
+      "byte_identical": true
+    },
+    {
+      "tag": "parse-all",
+      "target": "adapter_answer",
+      "byte_identical": true
+    }
+  ],
+  "limits": [
+    "整頁技術重讀，不是盲首讀；無實際Cargo成功／失敗執行聲稱。",
+    "SVG只source/XML；無browser視覺檢查。",
+    "共享workspace新增未讀member只metadata，未當先備。"
+  ],
+  "sealed_at_utc": "2026-10-15T08:35:16.264Z"
+}

@@ -1,0 +1,214 @@
+[
+  {
+    "id": "13-05",
+    "width": 1280,
+    "title": "13.5 channel：交接訊息，也安排工作收尾¶",
+    "images": [
+      {
+        "name": "13-05-1280-image0.png",
+        "alt": "main丟棄原始Sender，兩個worker各持有clone傳送訊息後丟棄；main收完所有待收訊息後得到RecvError，再join兩個worker確認完成",
+        "box": {
+          "x": 288.5,
+          "y": 0.28125,
+          "width": 400,
+          "height": 800
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-05-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "13-06",
+    "width": 1280,
+    "title": "13.6 Arc 與 Mutex：共同持有，輪流修改¶",
+    "images": [
+      {
+        "name": "13-06-1280-image0.png",
+        "alt": "兩個Arc共同保活同一Mutex，示意main先加120並drop guard，worker再取得guard加80至200，最後main join後讀結果",
+        "box": {
+          "x": 288.5,
+          "y": 0.34375,
+          "width": 400,
+          "height": 800
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-06-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "13-07",
+    "width": 1280,
+    "title": "13.7 RwLock 與同步設計：共享讀取，獨佔修改¶",
+    "images": [
+      {
+        "name": "13-07-1280-image0.png",
+        "alt": "同一RwLock有read1與read2兩份guard，try_write失敗；drop read1後read2仍阻止writer，兩份都drop後才可取得write guard追加30",
+        "box": {
+          "x": 288.5,
+          "y": -0.03125,
+          "width": 400,
+          "height": 800
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-07-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "13-08",
+    "width": 1280,
+    "title": "13.8 atomic 與 memory ordering：單次更新與跨操作同步¶",
+    "images": [
+      {
+        "name": "13-08-1280-image0.png",
+        "alt": "producer依序Relaxed寫DATA230與Release寫READYtrue；consumer的Acquire讀自這次true，再Relaxed讀DATA230，構成P1到R2的happens-before關係",
+        "box": {
+          "x": 288.5,
+          "y": -35.375,
+          "width": 400,
+          "height": 870
+        }
+      },
+      {
+        "name": "13-08-1280-image1.png",
+        "alt": "假設A與B都讀初值0，SeqCst共同順序必須同時滿足A1先A2先B1先B2又先A1，形成不可能循環",
+        "box": {
+          "x": 288.5,
+          "y": 69.6875,
+          "width": 400,
+          "height": 660
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-08-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "13-05",
+    "width": 390,
+    "title": "13.5 channel：交接訊息，也安排工作收尾¶",
+    "images": [
+      {
+        "name": "13-05-390-image0.png",
+        "alt": "main丟棄原始Sender，兩個worker各持有clone傳送訊息後丟棄；main收完所有待收訊息後得到RecvError，再join兩個worker確認完成",
+        "box": {
+          "x": 16,
+          "y": 79.34375,
+          "width": 343,
+          "height": 686
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-05-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "13-06",
+    "width": 390,
+    "title": "13.6 Arc 與 Mutex：共同持有，輪流修改¶",
+    "images": [
+      {
+        "name": "13-06-390-image0.png",
+        "alt": "兩個Arc共同保活同一Mutex，示意main先加120並drop guard，worker再取得guard加80至200，最後main join後讀結果",
+        "box": {
+          "x": 16,
+          "y": 78.65625,
+          "width": 343,
+          "height": 686
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-06-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "13-07",
+    "width": 390,
+    "title": "13.7 RwLock 與同步設計：共享讀取，獨佔修改¶",
+    "images": [
+      {
+        "name": "13-07-390-image0.png",
+        "alt": "同一RwLock有read1與read2兩份guard，try_write失敗；drop read1後read2仍阻止writer，兩份都drop後才可取得write guard追加30",
+        "box": {
+          "x": 16,
+          "y": 79.15625,
+          "width": 343,
+          "height": 686
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-07-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "13-08",
+    "width": 390,
+    "title": "13.8 atomic 與 memory ordering：單次更新與跨操作同步¶",
+    "images": [
+      {
+        "name": "13-08-390-image0.png",
+        "alt": "producer依序Relaxed寫DATA230與Release寫READYtrue；consumer的Acquire讀自這次true，再Relaxed讀DATA230，構成P1到R2的happens-before關係",
+        "box": {
+          "x": 16,
+          "y": 48.84375,
+          "width": 342.984375,
+          "height": 746.015625
+        }
+      },
+      {
+        "name": "13-08-390-image1.png",
+        "alt": "假設A與B都讀初值0，SeqCst共同順序必須同時滿足A1先A2先B1先B2又先A1，形成不可能循環",
+        "box": {
+          "x": 16,
+          "y": 139.453125,
+          "width": 342.984375,
+          "height": 565.9375
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-08-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  }
+]

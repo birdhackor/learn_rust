@@ -1,0 +1,448 @@
+{
+  "captured_utc": "2026-10-15T08:59:27.927160+00:00",
+  "scope": "actual9.1–9.7 independently from actual1–8, no10+asprior; initial9.1first14lines read just before snapshot while verifying8quote precision, no otherrole hints",
+  "regions": [
+    "examples/intro-workspace/iterators/examples/impl_trait_owned.rs:parameter",
+    "examples/intro-workspace/iterators/examples/impl_trait_owned.rs:owned",
+    "examples/intro-workspace/iterators/examples/impl_trait_owned.rs:branches",
+    "examples/intro-workspace/iterators/examples/impl_trait_borrowed.rs:borrowed",
+    "examples/intro-workspace/iterators/examples/impl_trait_precise.rs:precise",
+    "examples/intro-workspace/iterators/examples/iterator_next.rs:countdown",
+    "examples/intro-workspace/iterators/examples/iterator_sources.rs:into",
+    "examples/intro-workspace/iterators/examples/iterator_sources.rs:sum",
+    "examples/intro-workspace/iterators/examples/adapter_collect.rs:organize",
+    "examples/intro-workspace/iterators/examples/adapter_collect.rs:from-iterator",
+    "examples/intro-workspace/iterators/examples/adapter_fold.rs:fold",
+    "examples/intro-workspace/iterators/examples/adapter_results.rs:parse-all",
+    "examples/intro-workspace/iterators/examples/text_counts.rs:lines",
+    "examples/intro-workspace/iterators/examples/text_counts.rs:counts",
+    "examples/intro-workspace/iterators/examples/text_report.rs:sort-counts",
+    "examples/intro-workspace/iterators/examples/text_report.rs:report"
+  ],
+  "files": [
+    {
+      "path": "docs/chapters/09-01-lesson.md",
+      "sha256": "ff8a0d0ca07cbc731287f88935e7c8a6f7bb32b9e321dd6dbefff1124a1267e9",
+      "bytes": 10222
+    },
+    {
+      "path": "examples/intro-workspace/iterators/Cargo.toml",
+      "sha256": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+      "bytes": 70
+    },
+    {
+      "path": "examples/intro-workspace/iterators/src/main.rs",
+      "sha256": "b4f68ff34a46f6cb43d328f17711f075301815022140e8730d2ac96290b7c6b6",
+      "bytes": 91
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/closure_fee.rs",
+      "sha256": "c9e7755221f7e65e26ce794a9f770fde3fc53c74d5083e5960708ea4e348f5af",
+      "bytes": 288
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/closure_inference.rs",
+      "sha256": "00feab0ced244c9c839fb090a3c72ccb81a4c9187f6f1db9272ad88810c57293",
+      "bytes": 167
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_inference.rs",
+      "sha256": "858b3f324dfc388242f8c9b850c347576cf7dd1ce716c7c5e2d98679ecda3a23",
+      "bytes": 155
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/closure_shared.rs",
+      "sha256": "ef47484ca01ac4a023e37dd7fe716966ddb9be2a0b60dc7e4329dcab9f903042",
+      "bytes": 329
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/closure_mutable.rs",
+      "sha256": "f5788a6c9be4f3c023c311c576182957917d82ad79dfdf81c5f1f65879d183fe",
+      "bytes": 282
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_borrow_overlap.rs",
+      "sha256": "51657dcc5bc73786e4f11b3977b479f216f7db55633af6840aa0da4191f3b428",
+      "bytes": 193
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/closure_owned_read.rs",
+      "sha256": "5835ab01fb74e2fabe2ce9f4f92202484c8eec9c43055a4b9a515fe70a34a2ec",
+      "bytes": 352
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/closure_move_copy.rs",
+      "sha256": "2cf0efe5c1bb105479d451eabf2bd903abb8e503f6b71ffcc5b8d666bf8cbe86",
+      "bytes": 400
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/closure_take.rs",
+      "sha256": "2c1b56441e29b933afc532ad7e23eb8b7af9b91628efd1837c0be55c9310c104",
+      "bytes": 273
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_take_twice.rs",
+      "sha256": "6e9dad7578576e6f611e25e128bbfaeec684a6b2087db77146c238a14f0e8477",
+      "bytes": 211
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/closure_answer.rs",
+      "sha256": "cb434f128c8c61923ffca02e05051fab4884aa9e1cd6e84c890c0ab8c6842a4b",
+      "bytes": 339
+    },
+    {
+      "path": "docs/chapters/../assets/iterators-v3/closure-transfer.svg",
+      "sha256": "4f54b08bae8312a004d862850983245108f10df1a6077a5e1420ebf8f85039e4",
+      "bytes": 1829
+    },
+    {
+      "path": "docs/chapters/09-02-lesson.md",
+      "sha256": "1f94efb9e804d4ff18de071441b7d0b19368326c497bd284ede0d47a5456ffd0",
+      "bytes": 9270
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/callback_once.rs",
+      "sha256": "2cd642ea021607acb3cf062f54fee8d6039a6aa49c9de9bd43d89cc7ee5a687f",
+      "bytes": 295
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/callback_mutable.rs",
+      "sha256": "b990f9eede2e3192ff69dff9ddca72967766f48b4ad5591dc0c1329ac3333f70",
+      "bytes": 456
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/callback_needs_repeat.rs",
+      "sha256": "2c63fc8e47704f98076c155234b0eed6e604a87eacaba4a73611d3aacc3c0816",
+      "bytes": 291
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/callback_shared.rs",
+      "sha256": "c4f53c552898df9683cee46d1f72c49006a30811b7c63432f63ab775fa74232c",
+      "bytes": 313
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/function_pointer.rs",
+      "sha256": "cd993d1931f29993ea106361a22abe88a8d56f85c994ba23f62e1d65ef345f7c",
+      "bytes": 459
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/function_pointer_capture.rs",
+      "sha256": "0f322522c3ff057eb765225e6c0136d76141f8173a0b50d3615936f6755469e9",
+      "bytes": 125
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/callback_answer.rs",
+      "sha256": "ba1f83358a873d5a87af5965a13dba853a1f5c7aa9d7744d3b5ba929acfb936c",
+      "bytes": 598
+    },
+    {
+      "path": "docs/chapters/09-03-lesson.md",
+      "sha256": "af37b908bf94c477a21a412fdeb780ec55b75fdb3d4dd91916e57ee22370e458",
+      "bytes": 9902
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/impl_trait_owned.rs",
+      "sha256": "79e1aefdd4d5db8acb64b4b7cfc062f66510a52a7630bb40b412bc2e4f56b365",
+      "bytes": 894
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_two_closures.rs",
+      "sha256": "186099a11d75f63f955fcff895acf4ef71c81663a3d2c7510574bce28e5ababa",
+      "bytes": 265
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/impl_trait_borrowed.rs",
+      "sha256": "f8c2b37206830253917fe2d4b0abcca319ee72bb9613c380c5ab8e701b93e9ef",
+      "bytes": 371
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_source_too_short.rs",
+      "sha256": "7559d4068b0c7709d5786d9aa5483678a0028f11d536d8ba3f54f979803c0c52",
+      "bytes": 269
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_implicit_capture.rs",
+      "sha256": "c929d60dcd3b5da98bc2d7c8a7fa8ec8d1ec2d29f27c3e2b9ca49de0d3fec2f8",
+      "bytes": 254
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/impl_trait_precise.rs",
+      "sha256": "fb9c5052d2bcdbf92be196f54bcad2dce9795aea10a62a9eee61f7bd3bec4ef4",
+      "bytes": 665
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/impl_trait_answer.rs",
+      "sha256": "9544397ae40869aea2b4150331e783a0cfab345bcb78bfa60c7900b9adfab6cd",
+      "bytes": 433
+    },
+    {
+      "path": "docs/chapters/09-04-lesson.md",
+      "sha256": "af1cd2280166c7e5b70cbe1b67dea4f09efb7001d5a81b948b7070833751e1b1",
+      "bytes": 11864
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/iterator_next.rs",
+      "sha256": "289bcf204a35cbfbdb58cb41b2c0a6a34c28e4f97152e023d502dcd99c3eca86",
+      "bytes": 918
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/iterator_for.rs",
+      "sha256": "eda6da4a938d0fb1e939f3327adb3859ac8c0504683563fcf890b70e2323481f",
+      "bytes": 689
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/iterator_sources.rs",
+      "sha256": "a9b72f9f5d7e1de77cb610b8c2fa14007021bc3a641bf681222e19ef825bd3cf",
+      "bytes": 1252
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/iterator_ownership.rs",
+      "sha256": "e8d38ab63cbfafa295c9e4b6f230990b31d96fe028f3c55b107c0b8adde1700c",
+      "bytes": 847
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/iterator_borrowed_forms.rs",
+      "sha256": "22a3afbd391b09ed0cae959cda9631b09fda19749d2fc88092775aaa853c7fe2",
+      "bytes": 343
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_mut_overlap.rs",
+      "sha256": "80ea9c51f3ab69c0d1d47a1d37c53ee1591175a1036379de10b09508c7557bed",
+      "bytes": 199
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_after_move.rs",
+      "sha256": "97221cdfd909b865970e0f53f4eaba6d1c01afac5b72d84469fce411dda03b1e",
+      "bytes": 190
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/iterator_answer.rs",
+      "sha256": "fd3d8da4c91b493884b0d190f14c1a0ae8b88da432f84be2bcaa6e391d73295b",
+      "bytes": 676
+    },
+    {
+      "path": "docs/chapters/../assets/iterators-v3/iterator-next.svg",
+      "sha256": "f2512c81d7e13a13c933e05b228aeb7a4291b4fd76895000c7e0e0821df69749",
+      "bytes": 2092
+    },
+    {
+      "path": "docs/chapters/09-05-lesson.md",
+      "sha256": "256e3a7a8380bee5e863db21b94d89e11578304f1ba8194147b6b12515eea71e",
+      "bytes": 13037
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/adapter_map.rs",
+      "sha256": "4f072ab8cc955327f4ccfe19c9cbca92ad8a2f1e20448cc05d5a5d9479d61826",
+      "bytes": 445
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/adapter_filter.rs",
+      "sha256": "7483c71ceec5565a216fc7b28104adbf0ae72ace843fce43b7a957e21b2c8cca",
+      "bytes": 463
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/filter_reference_level.rs",
+      "sha256": "6920a40908253c7a7c1319aef48804ba76bf8b41d62e0d4c4c488a3c01c4a9e7",
+      "bytes": 183
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/adapter_collect.rs",
+      "sha256": "5a7fce5307e53b6cc3081d376353b03d034b0fb11c8931e3db4ac741212f040d",
+      "bytes": 1376
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/collect_reference_items.rs",
+      "sha256": "e1a87d9d567c90c0033b57f3b86d812a3b108570488f7178cdf4c3b02f611560",
+      "bytes": 132
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/adapter_fold.rs",
+      "sha256": "39472221df45190c61172164c21d2005f2254f86bfa775a68502c2b0047c0ac8",
+      "bytes": 607
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/adapter_results.rs",
+      "sha256": "d26429a5193797b540818748fd5be2a0069685044168376d39244cf7db657b40",
+      "bytes": 1080
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/adapter_answer.rs",
+      "sha256": "f21d2dc58ea88dc9d90a7837d3ca7a7e5a385715995321b13b85029ba17739d8",
+      "bytes": 952
+    },
+    {
+      "path": "docs/chapters/../assets/iterators-v3/adaptor-pipeline.svg",
+      "sha256": "9f76ea92d5a61b0c93cf91d4ee6f4db71714631afd93497fffd23b99eecbca4a",
+      "bytes": 2266
+    },
+    {
+      "path": "docs/chapters/09-06-lesson.md",
+      "sha256": "d8be1e5ed7a5ac9c930e1b2b412fbe3b8efd80ea513be061913cff919f59d68d",
+      "bytes": 9639
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/text_units.rs",
+      "sha256": "9e0db4b945036d79475663f56e26224d3583f8dc4259b1f0031a96ac0f1611ed",
+      "bytes": 706
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/text_counts.rs",
+      "sha256": "8c1aff6c857d0f4cd5743f887e8ff81e1867479e00db3f124ee710ea70b68a73",
+      "bytes": 1035
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/entry_callbacks.rs",
+      "sha256": "7938af42552d9a4e90e65c8e474296679f8097a4b88b96e20b4cda212a6a8fcc",
+      "bytes": 584
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/entry_borrow_overlap.rs",
+      "sha256": "e445a378b743d197559773bc4714e025bfae3cd3e62650cfc5db7598fbbe07c1",
+      "bytes": 272
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/map_iteration.rs",
+      "sha256": "6f0fac204fc85df26fd554a18e64befe6734e01195b115f00d9c42f82ba16af6",
+      "bytes": 1394
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/text_counts_answer.rs",
+      "sha256": "dad2ced3f016007c44f2df69c21d6c59db16a4d2614bee1e48b996a9317e0693",
+      "bytes": 1240
+    },
+    {
+      "path": "docs/chapters/09-07-lesson.md",
+      "sha256": "fce1c2a012b97dcf775ba970e78f9cc500c2ab39fcc8cf59fef7189536ad91ba",
+      "bytes": 8667
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/partial_order.rs",
+      "sha256": "690032a51caaa2d5d77b903f259c4f4b3eed6a9f8be0702bf99b2529621ff0aa",
+      "bytes": 436
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/sorting_keys.rs",
+      "sha256": "d0e20f86f8c10261ba0842a388c66c9eca6a0b9b4653b5dd3a5f1c6c2984500d",
+      "bytes": 385
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/sorting_unstable.rs",
+      "sha256": "49edbf8bba2a4814e1b688da04f99cfd8dcc7931a1bd4868799b94faa869a4cc",
+      "bytes": 207
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/sort_boolean.rs",
+      "sha256": "34947f88c563ae3a60c2ca1df62ea5d657dd20004d6df1d3e723e6eddaac760b",
+      "bytes": 158
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/text_report.rs",
+      "sha256": "260f609a249f2f1aba8dd54c6b89de1796321ccebd4d74ddb7cf75bbabfa4533",
+      "bytes": 2346
+    },
+    {
+      "path": "examples/intro-workspace/iterators/examples/text_report_answer.rs",
+      "sha256": "da6b66bfdb62c2531e3c8fed272d4e3dd035d7d7ad5bec5bdfe55f5804f65b18",
+      "bytes": 1403
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+      "bytes": 506
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+      "bytes": 10561
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_inference.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.439108+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_borrow_overlap.expected",
+      "sha256": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.439316+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_take_twice.expected",
+      "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.439450+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/callback_needs_repeat.expected",
+      "sha256": "3abb7293f27dc5f61d18a839bad7074649aba4e167c25fdd1d2d0e2b49269ae7",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.439690+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/function_pointer_capture.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.439902+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_two_closures.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.440102+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_source_too_short.expected",
+      "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.440197+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_implicit_capture.expected",
+      "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.440289+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_mut_overlap.expected",
+      "sha256": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.440430+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_after_move.expected",
+      "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.440550+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/filter_reference_level.expected",
+      "sha256": "38dd7d928ef05b326fa1d023d67d36193b8e9c600d0ee4b0f1ab86cba195e567",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.440721+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/collect_reference_items.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.440882+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/entry_borrow_overlap.expected",
+      "sha256": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.441095+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/iterators/fixtures/compile-fail/sort_boolean.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6,
+      "added_utc": "2026-10-15T09:01:46.441216+00:00"
+    }
+  ]
+}

@@ -1,0 +1,311 @@
+{
+  "review_id": "technical-early-round01-prefix",
+  "sealed_at_utc": "2026-10-15T06:18:35.096190+00:00",
+  "role": "independent technical reviewer, not author",
+  "reader_background": "Basic Python variables, functions, conditions, loops; no Rust/C/C++ prerequisite",
+  "scope": [
+    "docs/chapters/01-01-lesson.md",
+    "docs/chapters/01-02-lesson.md",
+    "docs/chapters/01-03-lesson.md",
+    "docs/chapters/01-04-lesson.md",
+    "docs/chapters/01-05-lesson.md",
+    "docs/chapters/01-06-lesson.md"
+  ],
+  "scope_excluded": [
+    "01-07 and later lesson prose",
+    "01-07/01-08 future example bodies",
+    "historical issues/reviews",
+    "new author ledgers",
+    "root dispositions",
+    "first-reader records"
+  ],
+  "initial_judgment_sealed_before_peer_or_historical_material": true,
+  "method": "Whole-page sequential technical reread with selected source/manifests; not blind first-read and not a target-reader experiment",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary technical or actual-selected-target completeness defect found in 1.1–1.6.",
+  "executed": {
+    "cwd": "/workspace/learn_rust",
+    "setup": "source scripts/env.sh",
+    "environment": {
+      "CARGO_INCREMENTAL": "0",
+      "CARGO_PROFILE_DEV_DEBUG": "0",
+      "CARGO_PROFILE_TEST_DEBUG": "0",
+      "CARGO_BUILD_JOBS": "2"
+    },
+    "coordination": "Parent confirmed root/author not running Cargo and held chapter-2 membership updates until this run completed.",
+    "runs": [
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/hello/Cargo.toml"
+        ],
+        "stdout": "Hello, Rust!\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-greeting"
+        ],
+        "stdout": "你好，Rust！\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-hello",
+          "--example",
+          "two_lines"
+        ],
+        "stdout": "Hello, Rust!\n這是第二行。\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-hello",
+          "--example",
+          "two_lines",
+          "--locked"
+        ],
+        "stdout": "Hello, Rust!\n這是第二行。\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-greeting",
+          "--example",
+          "two_lines",
+          "--locked"
+        ],
+        "stdout": "你好，Rust！\n開始今天的練習。\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-steps",
+          "--example",
+          "types",
+          "--locked"
+        ],
+        "stdout": "總額=360\n整數商=3，餘數=1\n浮點數商=3.5\n小整數=255，距離=1000\n已備妥=true，等級=甲\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-steps",
+          "--example",
+          "types_answer",
+          "--locked"
+        ],
+        "stdout": "含運總額=180\n整數商=4，餘數=1\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-steps",
+          "--example",
+          "mutability",
+          "--locked"
+        ],
+        "stdout": "加運費前=360\n加運費後=380\n下一階段數量=4\n新型別的數量=4\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-steps",
+          "--example",
+          "mutability_answer",
+          "--locked"
+        ],
+        "stdout": "加入運費=180\n折扣後=170\n新階段總額=340\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-steps",
+          "--example",
+          "functions",
+          "--locked"
+        ],
+        "stdout": "總額=360\n總額=160\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-steps",
+          "--example",
+          "blocks",
+          "--locked"
+        ],
+        "stdout": "含運總額=380\n內層數量=4\n外層數量=3\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      },
+      {
+        "command": [
+          "cargo",
+          "run",
+          "--manifest-path",
+          "examples/intro-workspace/Cargo.toml",
+          "-p",
+          "intro-steps",
+          "--example",
+          "functions_answer",
+          "--locked"
+        ],
+        "stdout": "第一筆=380\n第二筆=180\n",
+        "exit_code": 0,
+        "stdout_matches_manuscript": true,
+        "stderr_contains_only_cargo_progress": true
+      }
+    ],
+    "all_targets_or_future_targets_executed": false,
+    "compile_fail_fixtures_executed": false
+  },
+  "compile_closure": {
+    "hello": {
+      "src_lib_rs_exists": false,
+      "build_rs_exists": false,
+      "package_manifest": "examples/intro-workspace/hello/Cargo.toml",
+      "external_dependencies": false,
+      "root_source_for_selected_target": "selected target single .rs file",
+      "owned_mod_or_include_dependencies": []
+    },
+    "greeting": {
+      "src_lib_rs_exists": false,
+      "build_rs_exists": false,
+      "package_manifest": "examples/intro-workspace/greeting/Cargo.toml",
+      "external_dependencies": false,
+      "root_source_for_selected_target": "selected target single .rs file",
+      "owned_mod_or_include_dependencies": []
+    },
+    "steps": {
+      "src_lib_rs_exists": false,
+      "build_rs_exists": false,
+      "package_manifest": "examples/intro-workspace/steps/Cargo.toml",
+      "external_dependencies": false,
+      "root_source_for_selected_target": "selected target single .rs file",
+      "owned_mod_or_include_dependencies": []
+    }
+  },
+  "verification_limits": [
+    "No clean-room OS installation or fresh cargo new outside-repo exercise was performed.",
+    "No independent cargo check/build, Clippy, fmt, tests, or expected-failure diagnostic execution was performed.",
+    "No browser, responsive layout, or rendered-snippet expansion was checked.",
+    "Existing site navigation was only inspected to identify the snippet extension; integration of the new lesson filenames was not accepted in this prefix review.",
+    "Execution used existing build cache; it corroborates selected command/output behavior, while closure judgment also rests on source/manifests."
+  ],
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    "AGENTS.md": "04687339ba4b38681e0c7e33e19851a3b0272ec9dfe283ead91454ce939b956b",
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    "docs/chapters/01-01-lesson.md": "f67a72cfbbbd2557c856aa9efc5284a42b8eb8feb899ec2994949c12d03c6275",
+    "docs/chapters/01-02-lesson.md": "d9e129971cb9ec8234de1046a936c6f2be99b09396059c2c1a2ff81a38651c22",
+    "docs/chapters/01-03-lesson.md": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+    "docs/chapters/01-04-lesson.md": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc",
+    "docs/chapters/01-05-lesson.md": "88627f3d2734717abff22fc4929ec6c8a24cfe33c7975a7d5b4a1cd60ec671c1",
+    "docs/chapters/01-06-lesson.md": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "zensical.toml": "cfb4a21fcf6464233cd896842e4ca48192f5492519c93096d9a1dc5a7d427526",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5",
+    "scripts/check.sh": "31a4760c1b7933cbca1583750e4009b6c37bd3a846c454b48ec8f067c491afcb",
+    "examples/intro-workspace/Cargo.toml": "46da4b3b01c5ecf499262e9b4effd21501fc18d879037a1511e6d1ff3c8753af",
+    "examples/intro-workspace/Cargo.lock": "8ac8f9953ef778c7aeaac60a2028ca05d8b2ce63ad9f1a516bab2899df96c6f6",
+    "examples/intro-workspace/hello/Cargo.toml": "946345ebb5bcb3465019d4d501ec888da32b198c9a87d4b2d91edb2fec085e9d",
+    "examples/intro-workspace/greeting/Cargo.toml": "83300e56501d71d423e9a1aebbfd2cd1c6c4599238ed4884fcad8e93847615c5",
+    "examples/intro-workspace/steps/Cargo.toml": "ba433fca9aa7ac14673d3b3727bf391f285a6013ec75ffa2a6ba60942e245dfb",
+    "examples/intro-workspace/hello/src/main.rs": "0417da49d6287cfc46a7fbd206ce9b7d5a57496222247ed67e43e11f8e720deb",
+    "examples/intro-workspace/greeting/src/main.rs": "9a39e5130d1b88c38da1405f8b8822858bf6aae678883377761ee1bd7ccc446b",
+    "examples/intro-workspace/steps/src/main.rs": "9d77c241170f05328e057efed81ad48b15cb9ce56ca87821ccf28a1c05365fc0",
+    "examples/intro-workspace/hello/examples/two_lines.rs": "d5bdb012bc0065481377bb52583546bd0db2bc780f29be1e8f8287e8dc99797d",
+    "examples/intro-workspace/greeting/examples/two_lines.rs": "164651a1bd3bdc96ce4bd04e44910830a1b009a7b9f61f91812169a2d1291cb8",
+    "examples/intro-workspace/steps/examples/types.rs": "de551dd2760674626aff0595c332cf23093e0dd05293ae94bec6568477906526",
+    "examples/intro-workspace/steps/examples/types_answer.rs": "1f2e106fa8d9d896a552f978af6ae8d0ce7a6a0f8620573c7eb1e79c2c5fb891",
+    "examples/intro-workspace/steps/examples/mutability.rs": "c48d64a718af19cc58192b8194f5e92b827d2a65226bc4d843fb49f2cab536ac",
+    "examples/intro-workspace/steps/examples/mutability_answer.rs": "fad62a34e971695ac415b7fba96d6f19d4eff729e433b776ffdca286d473f1fc",
+    "examples/intro-workspace/steps/examples/functions.rs": "8f0caa2a677c7c3725b22537796e8b0f99060bff2ac3a309b58509e19ad20f47",
+    "examples/intro-workspace/steps/examples/functions_answer.rs": "c1c964d47748ac981f02569af3f29db82bb4d4b71b2f5b1ea5b3baf69b911be1",
+    "examples/intro-workspace/steps/examples/blocks.rs": "553033a4b67ceebba84ed19b98fe39300a9c86d147c09ce20303ca55c438bb6e",
+    "examples/intro-workspace/steps/fixtures/compile-fail/immutable.rs": "3480d3cbc086adf259cbd928d4db42f5e14706c9f58dfc02e034ad7019fbfdf9",
+    "examples/intro-workspace/steps/fixtures/compile-fail/type_change.rs": "a702ccfb7e36043df1520bef92a4b3b385e23cce8076fdeefedeb9860e4b8811",
+    "examples/intro-workspace/steps/fixtures/compile-fail/return_semicolon.rs": "048b719e16026c84a919edda1a7a1ebca77daf02ee229cfd174555e39888fb05",
+    "examples/intro-workspace/steps/fixtures/compile-fail/scope.rs": "c24c09f780beed9232e15db57bfa50fda770a523422f7d6afc1fe541dcb03d81"
+  },
+  "repo_cargo_config_exists": false
+}

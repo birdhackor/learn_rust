@@ -1,0 +1,95 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "9.2"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round09-adaptors-text-sorting-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round09-closures-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round09-impl-iterator-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/09-02-lesson.md": "1f94efb9e804d4ff18de071441b7d0b19368326c497bd284ede0d47a5456ffd0",
+    "examples/intro-workspace/iterators/Cargo.toml": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+    "examples/intro-workspace/iterators/examples/callback_once.rs": "2cd642ea021607acb3cf062f54fee8d6039a6aa49c9de9bd43d89cc7ee5a687f",
+    "examples/intro-workspace/iterators/examples/callback_mutable.rs": "b990f9eede2e3192ff69dff9ddca72967766f48b4ad5591dc0c1329ac3333f70",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/callback_needs_repeat.rs": "2c63fc8e47704f98076c155234b0eed6e604a87eacaba4a73611d3aacc3c0816",
+    "examples/intro-workspace/iterators/examples/callback_shared.rs": "c4f53c552898df9683cee46d1f72c49006a30811b7c63432f63ab775fa74232c",
+    "examples/intro-workspace/iterators/examples/function_pointer.rs": "cd993d1931f29993ea106361a22abe88a8d56f85c994ba23f62e1d65ef345f7c",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/function_pointer_capture.rs": "0f322522c3ff057eb765225e6c0136d76141f8173a0b50d3615936f6755469e9",
+    "examples/intro-workspace/iterators/examples/callback_answer.rs": "ba1f83358a873d5a87af5965a13dba853a1f5c7aa9d7744d3b5ba929acfb936c"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 3,
+      "quote": "上一節已能保存並呼叫 closure。接著希望把「收到一份工作，再按約定執行」整理成共用函式：有的只執行一次，有的重複執行，有的只借用原工作。"
+    },
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 9,
+      "quote": "把其他程式提供、由共用函式負責呼叫的工作稱為 **callback**（回呼）。例如提供一份「交出 owned 文字」的工作，共用函式接手後執行它，取回文字交給呼叫者。"
+    },
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 11,
+      "quote": "**`FnOnce`** 是 Rust 的可呼叫 trait，提供按值接手這份工作的呼叫能力。closure 的 body 可以在呼叫中移出保存的 non-Copy 內容，像上一節的 take。只知道 `F: FnOnce` 時，共用函式不能假定同一份 F 還能再用。"
+    },
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 15,
+      "quote": "這裡的 bound 採專用語法 **`FnOnce() -> T`**：空括號表示不接收參數，箭頭表示回傳 T。回傳型別對應這組 trait 的 associated type `Output`，和第 6.4 節一樣是該實作的輸出選擇；不用手寫標準函式庫內部的呼叫 method。"
+    },
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 35,
+      "quote": "`FnOnce` 是最低呼叫能力，**不是每個符合它的 closure 都必定只能呼叫一次**。上面的 `|| 7` 沒有移出需管理的資源，也符合契約；共用函式選擇只依承諾使用一次。"
+    },
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 39,
+      "quote": "如果要讓計數工作連做兩次，只知道 FnOnce 就不夠。**`FnMut`** 提供透過 mutable reference 呼叫自身的能力，可以重複呼叫，並讓 body 修改保存的環境。"
+    },
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 65,
+      "quote": "如果共用函式只收到對工作本身的 shared reference，它不能用 mutable receiver 呼叫。**`Fn`** 提供透過 shared reference 呼叫自身的能力，也能重複呼叫。"
+    },
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 67,
+      "quote": "本例的加法工作只讀取保存的 base，適合這項要求。**`Fn(i32) -> i32`** 表示呼叫時收到一個 i32，回傳一個 i32；不是宣告名為 i32 的環境欄位。"
+    },
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 91,
+      "quote": "有時工作已經是一個普通函式，不需要重新寫一個會捕捉環境的 closure。**function pointer**（函式指標）是保存可呼叫函式位置的值；型別以小寫 **`fn(i32) -> i32`** 表示，指定輸入與輸出。"
+    },
+    {
+      "section_id": "9.2",
+      "path": "docs/chapters/09-02-lesson.md",
+      "line": 111,
+      "quote": "寫 `sum_with`，收到 numeric slice 與 callback，逐個取得元素交給 callback，把回傳的 i32 相加。callback 可以修改保存的狀態，所以選用這節相應的 bound 與參數 mut；迴圈仍用已教的索引與 while。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

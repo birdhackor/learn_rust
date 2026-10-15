@@ -1,0 +1,60 @@
+[
+  {
+    "section": "14-01",
+    "doc_read_lines": [
+      1,
+      74
+    ],
+    "doc_sha256": "7772154a19fd100713e33d25ce94fc985fcb8f39f087792270f8b710370e4966",
+    "read_sourcehashes": {},
+    "scope": "本次實讀完整正文與全部direct source/normal/stage manifests/helpers/tests/answers；所有pub mod/本地dependency由這些已讀library及module提供。"
+  },
+  {
+    "section": "14-02",
+    "doc_read_lines": [
+      1,
+      198
+    ],
+    "doc_sha256": "5f7917e7a6b2b87e455cc34bb2a340f814f659cd580fb0f0b5939b828917e01b",
+    "read_sourcehashes": {
+      "examples/ch11-async/foundations/src/lib.rs": "5e236a71c02c98f6fdc0861eac207fa9e812e35caed4201ed56fbfdd442c30aa",
+      "examples/ch11-async/stages/foundations-steps/Cargo.toml": "4365dc38d0fd841f6b8727b9850209623242f07d76a4859900313265b39b141e",
+      "examples/ch11-async/stages/foundations-steps/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+      "examples/ch11-async/stages/foundations-steps/examples/lazy.rs": "780e6f1630cc94dfc090c939bd3eb12d2fc48a58091d8af427506d89b017bdd9",
+      "examples/ch11-async/stages/foundations-steps/examples/block_capture.rs": "bf0039a4905ca236c5e766612c1fd586c442b374f3ce8a0250a04d706689d290",
+      "examples/ch11-async/stages/foundations-steps/examples/explicit_future.rs": "ab0e008ee483e72988f416470211061a1c2e4c31d6a284bedbf3f40607a928ea",
+      "examples/ch11-async/stages/foundations-steps/examples/fallible_output.rs": "b6090ba9016c46d0e6a760da5791378c6923fb147dd0f9475fb75c9c59392161",
+      "examples/ch11-async/foundations/Cargo.toml": "e9a2670d353d632cc0baade7840dd9d43f827314865c3602f6e5417a79471ca3",
+      "examples/ch11-async/foundations/src/main.rs": "f65655c2f167a545d31ab79e306eb588b4bdd915a370b93786fe46c1fbcf7348",
+      "examples/ch11-async/foundations/tests/cli.rs": "0726f33417b63e067d0b3072b97d3468eb33766fff8c51f5f9a2222ae000a238",
+      "examples/ch11-async/foundations/examples/block_capture.rs": "bf0039a4905ca236c5e766612c1fd586c442b374f3ce8a0250a04d706689d290",
+      "examples/ch11-async/foundations/examples/explicit_future.rs": "49e302bb16e1039e94ece93c080bdb148d7ade151f19cb6130fbe917fe8303e5",
+      "examples/ch11-async/foundations/examples/fallible_output.rs": "4d6f5d35860a6001d6724e74e40cb44b11a4bf8fd03659c271ebeab41ab2eb9b",
+      "examples/ch11-async/foundations/examples/receipt_solution.rs": "001f732d191a0941fdd77ed3e6e1863109ba6b852f9f19a0615d8c0f0631ce73"
+    },
+    "scope": "本次實讀完整正文與全部direct source/normal/stage manifests/helpers/tests/answers；所有pub mod/本地dependency由這些已讀library及module提供。"
+  },
+  {
+    "section": "14-03",
+    "doc_read_lines": [
+      1,
+      204
+    ],
+    "doc_sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+    "read_sourcehashes": {
+      "examples/ch11-async/stages/tasks-basic/Cargo.toml": "d1fbe4871742612192b34bd5dc2e2c8c496507c39f7c668c170926c5b9930aa0",
+      "examples/ch11-async/stages/tasks-basic/src/lib.rs": "5f5a7b8dff5034364e62ce6a46bc63734430954952cee209090bb3ba45557c84",
+      "examples/ch11-async/stages/tasks-basic/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+      "examples/ch11-async/stages/tasks-basic/examples/join_handle.rs": "ed350922c99be5a11c147a03669e6c3df6e93ac74a3567828913f499f153a2bd",
+      "examples/ch11-async/stages/tasks-basic/examples/abort_and_wait.rs": "cb33146ae636f8e3cf298eef185466514ff371d40b871a90d2c8a620796f55ec",
+      "examples/ch11-async/tasks/src/lib.rs": "874f3cd1f11e5317f4972c7843bf36ec52151daee62937d367b4917d23d3cdbd",
+      "examples/ch11-async/tasks/Cargo.toml": "8de4f5895912d08f8aed0a638c3205faac13a696504bfc4aa8b09394c9010bf6",
+      "examples/ch11-async/tasks/src/main.rs": "d390d6cf34a4db9830cdcd0a7cd30f864a3adedbd4cfb51917d47af056be9c25",
+      "examples/ch11-async/tasks/examples/join_handle.rs": "67399f908fd380b69917413c406684cd8b638a1e0ea4fd2ef64ba854924a6b6a",
+      "examples/ch11-async/tasks/examples/abort_and_wait.rs": "e0b5fb7236b80debb688c9d53c74fa4fba420c3453c7280d398110a7c410efa3",
+      "examples/ch11-async/tasks/tests/cli.rs": "1d0a3f4e8ecb37950a30289c72665d8088164cee580432e14eb8ea4c021a4b32",
+      "examples/ch11-async/tasks/examples/control_closed_solution.rs": "fc71e68d0db3f903ca1919376dea9f88141fc99029c35f50b43c44ebefea3af2"
+    },
+    "scope": "本次實讀完整正文與全部direct source/normal/stage manifests/helpers/tests/answers；所有pub mod/本地dependency由這些已讀library及module提供。"
+  }
+]

@@ -1,0 +1,106 @@
+[
+  {
+    "chapter": 2,
+    "files": 8,
+    "hits": 57,
+    "reference_lines": 54,
+    "supplementary_lines": 3,
+    "judgment": "1章算式／block／array到bool、if、for、while、loop；2.6module→2.7測試→2.8整合的相鄰引用成立。"
+  },
+  {
+    "chapter": 3,
+    "files": 8,
+    "hits": 61,
+    "reference_lines": 60,
+    "supplementary_lines": 0,
+    "judgment": "struct→move→shared/mut→衝突→method→slice→String的相鄰來源成立；3.6確有E0507、3.7確有shared slice Copy。"
+  },
+  {
+    "chapter": 4,
+    "files": 7,
+    "hits": 76,
+    "reference_lines": 67,
+    "supplementary_lines": 2,
+    "judgment": "Quote variants、match、解構、組合pattern、borrow/partial move、iflet/whilelet/letelse各自對應新版節序。"
+  },
+  {
+    "chapter": 5,
+    "files": 5,
+    "hits": 55,
+    "reference_lines": 49,
+    "supplementary_lines": 1,
+    "judgment": "泛型→Option/Result→str/bytes/get→Vec→ownership/完整library順序成立；manual_map與folder example回用的目標確實有教。"
+  },
+  {
+    "chapter": 7,
+    "files": 4,
+    "hits": 62,
+    "reference_lines": 55,
+    "supplementary_lines": 1,
+    "judgment": "來源/owned/placeholder/outlives/struct/method均核對；僅7.4來源函式範圍原句錯指，root已修。"
+  },
+  {
+    "chapter": 8,
+    "files": 6,
+    "hits": 104,
+    "reference_lines": 88,
+    "supplementary_lines": 5,
+    "judgment": "panic/unwrap→alias→Display→From/TryFrom→parse/AsRef/ToOwned→?的回指及下一節承接成立。"
+  },
+  {
+    "chapter": 9,
+    "files": 7,
+    "hits": 113,
+    "reference_lines": 100,
+    "supplementary_lines": 2,
+    "judgment": "capture→Fn系列/functionpointer→implTrait→Iterator→adapter→text/Entry→Ord/sort對應實稿；9.6沒有暗指自己已教sort。"
+  },
+  {
+    "chapter": 11,
+    "files": 11,
+    "hits": 135,
+    "reference_lines": 125,
+    "supplementary_lines": 3,
+    "judgment": "Box/Drop/Deref/Sized/dyn/Error/Rc/Cell/newtype/Any的回指逐項分辨；Error來源static與reference有效期、owned downcast與moveout均有真正目標。"
+  },
+  {
+    "chapter": 12,
+    "files": 4,
+    "hits": 97,
+    "reference_lines": 82,
+    "supplementary_lines": 3,
+    "judgment": "12.1共同設定/cfg/profile、12.2build/host、12.3scan原生路徑、12.4streams/觀察/群組/metrics之間能力分工精確；未依old數字換號。"
+  },
+  {
+    "chapter": 13,
+    "files": 8,
+    "hits": 196,
+    "reference_lines": 150,
+    "supplementary_lines": 8,
+    "judgment": "SendSync/普通thread/HRTB/scoped/channel/ArcMutex/RwLock/atomic與外部能力回指成立；沒有把13.3誤當原先scoped節。"
+  },
+  {
+    "chapter": 14,
+    "files": 9,
+    "hits": 108,
+    "reference_lines": 100,
+    "supplementary_lines": 4,
+    "judgment": "hand trace→Future→spawn→bounded→timer→cancel→blockingHTTP→asyncHTTP→localfixture順序核對；各層完成/等待責任有實際目標。"
+  },
+  {
+    "chapter": 17,
+    "files": 8,
+    "hits": 191,
+    "reference_lines": 157,
+    "supplementary_lines": 10,
+    "judgment": "macro宣告/名稱來源/derive→API→property→LoomMiri→bench→profile逐段核對；tool/namespace/先前來源與量測證據沒有確定語意錯指。"
+  },
+  {
+    "chapter": 18,
+    "files": 6,
+    "hits": 135,
+    "reference_lines": 104,
+    "supplementary_lines": 4,
+    "judgment": "只含18.1–18.6（A）；A1–A4與完整版互指、12.3/12.4、10.8/10.9、17.4及11.7的能力可在實稿找到。18.11/18.12依授權不核未寫B目標。"
+  }
+]

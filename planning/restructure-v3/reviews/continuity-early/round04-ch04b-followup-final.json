@@ -1,0 +1,142 @@
+{
+  "checked_utc": "2026-10-15T07:30:49.681587+00:00",
+  "id": "C4b-01",
+  "classification": "optional",
+  "status": "closed",
+  "kind": "narrow post-adoption source and actual-page followup; initial report retained",
+  "source_diff_scope": "Only4.6 table among43 initial files changed; all Rust/config/fixtures unchanged. Did not consult root before/after ledger: compared own frozen source directly.",
+  "retained_state_rows": [
+    {
+      "before": 7,
+      "returned": "More(3)",
+      "body": true,
+      "after": 4
+    },
+    {
+      "before": 4,
+      "returned": "More(3)",
+      "body": true,
+      "after": 1
+    },
+    {
+      "before": 1,
+      "returned": "More(1)",
+      "body": true,
+      "after": 0
+    },
+    {
+      "before": 0,
+      "returned": "Done",
+      "body": false,
+      "after": 0,
+      "then": "end"
+    }
+  ],
+  "visual_improvement": "Actual390×844 mobile at default horizontal position: table343px within375px wrapper, scrollWidth equals clientWidth375. All3 headers, four state rows, More/Done and body/end words fully readable without horizontal movement; desktop also complete.",
+  "source_evidence": "round04-ch04b-followup-source.json",
+  "visual_evidence": "round04-ch04b-visual/followup-metadata.json",
+  "screenshots_actually_viewed": [
+    "round04-ch04b-visual/desktop-followup-three-column-table.png",
+    "round04-ch04b-visual/mobile-followup-three-column-table.png"
+  ],
+  "metadata": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "url": "http://127.0.0.1:8097/chapters/04-06-lesson/",
+      "at": "2026-10-15T07:30:15.988Z",
+      "htmlSha256": "d45d4cc517e43200dae1782f45d541cf4a177a99bed69924014072cd709402f0",
+      "wrapper": {
+        "left": 0,
+        "client": 970,
+        "scroll": 970
+      },
+      "table": {
+        "x": 288.5,
+        "width": 386.21875,
+        "rows": [
+          [
+            "呼叫前剩餘量",
+            "回傳與後續動作",
+            "呼叫後剩餘量"
+          ],
+          [
+            "7",
+            "More(3)，執行 body",
+            "4"
+          ],
+          [
+            "4",
+            "More(3)，執行 body",
+            "1"
+          ],
+          [
+            "1",
+            "More(1)，執行 body",
+            "0"
+          ],
+          [
+            "0",
+            "Done，不進 body，結束",
+            "0"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "url": "http://127.0.0.1:8097/chapters/04-06-lesson/",
+      "at": "2026-10-15T07:30:17.691Z",
+      "htmlSha256": "d45d4cc517e43200dae1782f45d541cf4a177a99bed69924014072cd709402f0",
+      "wrapper": {
+        "left": 0,
+        "client": 375,
+        "scroll": 375
+      },
+      "table": {
+        "x": 16,
+        "width": 343,
+        "rows": [
+          [
+            "呼叫前剩餘量",
+            "回傳與後續動作",
+            "呼叫後剩餘量"
+          ],
+          [
+            "7",
+            "More(3)，執行 body",
+            "4"
+          ],
+          [
+            "4",
+            "More(3)，執行 body",
+            "1"
+          ],
+          [
+            "1",
+            "More(1)，執行 body",
+            "0"
+          ],
+          [
+            "0",
+            "Done，不進 body，結束",
+            "0"
+          ]
+        ]
+      }
+    }
+  ],
+  "not_done": [
+    "NoCargo/build",
+    "Nochapter-wide rereview",
+    "Norepository/source edits",
+    "Nooverwrite of initial judgment"
+  ]
+}

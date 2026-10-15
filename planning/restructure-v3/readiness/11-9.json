@@ -1,0 +1,114 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.9"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-09-lesson.md": "8f935f8c0f04181dd4321c8505c8ac8aac8c27813e4a1a1d7a8dec865d795925",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/shared_record_vec.rs": "f5a07fe42e93ec05ca1f499b0d18ad12ad54d3ff2f9d94fc77da00ccb120e4b4",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/shared_record_vec.expected": "018106396268d6a7b58a9dfe8e469b87a44509ceb5bcdd5757200ba813f9aab8",
+    "examples/intro-workspace/type-stages/examples/cell_values/cells/mod.rs": "a4af681704fc471e3adfff5d42ff444f79d701a15c7fcc7629a75c14971d2794",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/cell_string_get.rs": "905af86d3c5f8ed1b11ac1ac8a54416829f226cbf5994fe93707933963573185",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/cell_string_get.expected": "e03b27f19f221f0ea2a3809e0da4983870354d9db49f275f5692df404d9c0312",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/cell_values/main.rs": "2013785ae68aea82f969ca37de905a23623ccc1916e7e95984c9cdc725a6ca7f",
+    "examples/intro-workspace/type-stages/examples/refcell_guards.rs": "9e2a8da327f72e245074c4dd36bd7c79638c8f73be3eb3a10878f70601a26800",
+    "examples/intro-workspace/type-stages/fixtures/runtime-fail/guard_used_then_conflict.rs": "ce0f3e5fd7b220e498d1d07f9c79cdbe0e381a0114d513266b339547c60ac54e",
+    "examples/intro-workspace/type-stages/fixtures/runtime-fail/guard_used_then_conflict.expected": "741b80ad1a8468667f12af1f6080cae9577247a68ceafcfde2c4e582588cc74e",
+    "examples/intro-workspace/type-stages/examples/try_borrows.rs": "c63fa094ac4c3c8e337588d796091072a4a96a9deeeee8da9a4ccef3aa6168ca",
+    "examples/intro-workspace/type-stages/examples/recorder/cells/mod.rs": "db8feb7034acd85f6e2c6ea7d94678d49c60871be96fd17bbef0c378168249d3",
+    "examples/intro-workspace/type-stages/examples/recorder/main.rs": "5251b2d6d6fa3522352318bb60e4653dc819ac10dba5ffd19730a97d501e738f",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/refcell_guard_escape.rs": "75043d65014d302a766a5432129a4cb12f39d45eab08b263ba9e8f1b7ee08dbb",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/refcell_guard_escape.expected": "1deedf20ef4f126469fe5dbd9778a4796e5216b353d5054bd45ca611b51c831f",
+    "examples/intro-workspace/type-stages/examples/shared_cells.rs": "a37560e83ff253c829fa4a1fa4171deec08ddafaac31235f37b963748de384d8",
+    "examples/intro-workspace/type-stages/examples/weak_parent.rs": "d879e1e741ce20f3cefe2dabdb3861a17a2bfe60a0e6879d3dac880b36a286aa",
+    "examples/intro-workspace/type-stages/examples/cells_complete/cells/mod.rs": "1ffafbd083077fef94a5fbb278096202488d5f6be6e390e8444f7053b0aaaad5",
+    "examples/intro-workspace/type-stages/examples/cells_complete/main.rs": "7016c7ca4b3eb39689012e1753874efd5881e7e02e662f3b73b326c9d1de1a09",
+    "docs/assets/types-v3/guard-lifetime.svg": "1b5fbebf9a2a4b41704ab4816739135318890361fb26a2b11ad71ae60c9e79b6"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 3,
+      "quote": "記錄器的 trait 若規定 `record(&self, amount: i32)`，呼叫端只有 shared receiver，實作卻想把金額加入清單。普通 Vec 欄位的 push 需要獨占借用，不能直接從 `&self` 取得："
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 15,
+      "quote": "若介面由自己決定，可以改用 `&mut self`；但要實作既定的 shared 介面，就需要在型別內安排受控的修改方式。**interior mutability** 指能經 shared reference 修改內部狀態的設計。Cell 和 RefCell 是標準庫提供的兩種介面，仍需遵守各自的安全條件；普通 `&T` 不會因此都能修改 T。"
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 19,
+      "quote": "**`Cell<T>`** 位於 std::cell。它不以這裡的操作交出指向內部 T 的 reference，而是讓我們交入、複製或取回值："
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 74,
+      "quote": "清單 push 需要借用 Vec；每次都把整個 Vec 換出來不一定是合適的介面。**`RefCell<T>`** 也位於 std::cell，保存 T 和目前的借用狀態。`RefCell::new(value)` 接手 T；以下兩個方法都接受 `&self`，但會先檢查執行期狀態："
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 81,
+      "quote": "Ref、RefMut 是 **borrow guard**：持有它，就維持這次執行期借用；guard 結束並執行 Drop，才釋放借用狀態。它們也借自 RefCell，不能活得比來源久。Ref 提供 `Deref<Target = T>`，RefMut 另外提供 DerefMut，讓我們以星號或 method 操作 T。它們不是取走內部 T 的 owned 值。"
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 106,
+      "quote": "此程式**能編譯，執行才失敗**；預期診斷為："
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 114,
+      "quote": "若衝突是呼叫端要處理的可能情況，可以使用不因借用衝突而 panic 的版本："
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 145,
+      "quote": "現在回到 shared 介面的 Record。Recorder 將欄位改為 `RefCell<Vec<i32>>`；record 取得短暫 mutable guard、push、在函式結束時釋放。view 則回傳 `Ref<'_, Vec<i32>>`：`'_` 依 receiver 省略規則，表示這份 guard 借自 self。"
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 182,
+      "quote": "把兩者組成 `Rc<RefCell<Vec<i32>>>`，Rc 讓多個 owner 保活同一個 RefCell；RefCell 則管理內部 Vec 的借用。clone Rc 增加 owner，不增加 RefCell 的 shared guard。borrow／borrow_mut 增加執行期借用，也不增加 Rc owner。"
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 202,
+      "quote": "第 11.8 節的假設 strong 循環，現在可以換成實際的樹：父節點的 children 以 Rc 保活子節點；子節點的 parent 只用 Weak 觀察父節點。parent 包在 RefCell 中，是因為 leaf 建立時還沒有父節點，建立 branch 後才經 shared leaf 更新這個連結。"
+    },
+    {
+      "section_id": "11.9",
+      "path": "docs/chapters/11-09-lesson.md",
+      "line": 233,
+      "quote": "用兩個 Rc owner 共用一個 Recorder。分別記錄80、120，確認 view 有兩項、總額200；釋放 view 後再記錄40，重新讀取三項、總額240。解釋為什麼只需 `Rc<Recorder>`，不必額外包一層 `RefCell<Recorder>`。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

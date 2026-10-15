@@ -1,0 +1,21 @@
+{
+  "utc": "2026-10-15T10:55:55.478599+00:00",
+  "scope": "knownadoptedC18B01/02narrowsourceandrender; not independentnewfinding",
+  "changes": [
+    {
+      "path": "docs/chapters/18-10-lesson.md",
+      "before_sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e",
+      "after_sha256": "80c9c6fc9cb984b8964b1cd9efe9042d1be109a126224ff51bc8a207f686757b"
+    },
+    {
+      "path": "docs/chapters/18-11-lesson.md",
+      "before_sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+      "after_sha256": "2c5ddcff7574478104eeed31ec1e79998b2f5696d9168c29c4611eb00841bc00"
+    },
+    {
+      "path": "docs/chapters/18-12-lesson.md",
+      "before_sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+      "after_sha256": "0dd7448bc31cf09d1d64409c31a4b102fb6ed50a6fc041118c0fab04132b0ba1"
+    }
+  ]
+}

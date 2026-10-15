@@ -1,0 +1,154 @@
+{
+  "sealed_utc": "2026-10-15T08:05:18.432452+00:00",
+  "role": "independentcontinuityandrenderedpagereviewer",
+  "scope": "actual6.3→6.6 insequence; actual1–6.2 prior includingverifiedC6aDebugborrowclarification; stopafterthisseal, no7body/source read",
+  "contamination_control": {
+    "not_read": [
+      "6authorledger",
+      "technical/firstreaderconclusions",
+      "historicalissues/audits",
+      "rootdispositions",
+      "chapter7+prose/Rust"
+    ],
+    "pre_notified_changes": "Parent disclosed6.5 SVGintrinsic420x680cap andprecisePartialEq6.2pointer beforethisinitialreview. Evaluateactualfrozenchangedversion only; neverclaimindependentreproductionofoldviewBox-onlySVG oroldpointer. Nootherknown6tailfinding supplied.",
+    "later_scope_steering": "Parentrequestedstopafter6tailseal tofreeauthorslot; no reductioninreviewscope, chapter7notstarted."
+  },
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "C6b-01",
+      "classification": "optional",
+      "severity": "low",
+      "confidence": "high",
+      "path": "docs/chapters/06-06-lesson.md",
+      "lines": [
+        21,
+        25
+      ],
+      "quote": [
+        "| 讀到的標籤 | 查詢結果 | 本次工作 | 處理後保存的次數 |",
+        "| Python | None | 複製名稱，加入1 | Rust→1、Python→1 |",
+        "| Rust | Some | 修改已有次數 | Rust→2、Python→1 |"
+      ],
+      "reason": "390×844mobile viewport has375px scrollwrap with434px content and402px four-column table. Defaultpositionclips rightmost cumulative key/count text, includingPython counts; full59px rightpan loses leftlabel column. Allrows remain horizontally accessible, rule/source beforetable and27/47–54 explain repeatRust increments, so this is optional simultaneous-comparison improvement, not missingteaching or unavailableinformation.",
+      "actual_first_use": "6.6:7–11 teaches borrowedinput, get_mut cases andclone onlymissing;13–14 completecount_labels rule beforetrace21–25;27 explains thirdRust notreset1.",
+      "previous_position": "6.5 insertreplace/get/get_mut contracts,3.5lastuse,5.2Some/None,6.3 StringClone. No new earlier prerequisite missing.",
+      "recommendation": "Keep allthree inputrows, queryNone/Some, clone/insert/update and cumulative Rust/Python counts, but combine queryresult+currentaction intoonecolumn or useequallycompact3-columnlayout.",
+      "benefit": "Reader can compare incomingRust/Python, action and full cumulative result in one normalmobileview, especially see thirdRust changes2 whilePythonstays1.",
+      "evidence": [
+        "round06-ch06b-visual/mobile-grouping-table-left.png",
+        "round06-ch06b-visual/mobile-grouping-table-right.png",
+        "round06-ch06b-visual/metadata.json"
+      ]
+    }
+  ],
+  "positive_evidence": [
+    {
+      "section": "6.3",
+      "positions": "3/7/9/11;15/17/19;39/41/43;57/61/63;79/81",
+      "evidence": "Concrete need is keeporiginal ownedsummary andmodifyanother. Clone borrows original/new same-type value before original.clone; String gets independenttext, derivedClone callsfields andrequiresfieldClone; prelude explains no customtraitimport. SharedreferenceClone onlycopiesborrowmetadata; Vec clonescontainerandelements beforeVec<&str>fullsource, so no mistaken ownedString conversion. Copy effect declaredbeforeassignment; allfieldsCopy andClone dependency beforederiveCloneCopy. Typecontract ratherthan stack/heap determinesCopy; Stringdoubleownershipresource reason precedes E0204.",
+      "actual_examples": "StringlabelRust versusRust副本 gives independentchange; clonedVec<&str>bothstillborroworiginal validwhileused. NumericCopychangessecondcount3→4 leavesfirst3. Answerclonesownedlabelsummary, changesonlyamount280→300, preserveslabel/first. ExistingDebugborrowing/equalityrules from6.2 now sufficient; no latertraitsneeded."
+    },
+    {
+      "section": "6.4",
+      "positions": "3/7/13;17/19/21/27;31/33/35/41;45/51/55/61;71/73/79/85;89/95/101/107;124/126",
+      "evidence": "Needdifferentreturntypes underoneextractoperation, not genericdisplay. Associatedtypenamevsvaluefield, Self::Output vs self.value andownedself permissionbeforetrait. Genericimpl declaresT, choosesOutput=T beforeimplementation; fixedOutputperspecificimpl beforecalls. S::Output preservesinput-outputrelation beforegenericfn. EqualityboundExtract<Output=i32> and typeequalityratherthanvalueassignment explainedbeforenumericbody. Outputboolfail getsnamedE0271.",
+      "actual_examples": "Direct/genericHolderi32 andSwitchStatebool calls usealreadyintroducedtraitscope. Completehelperincludes3tests: concretei32/bool, doubling, Stringmoveoutthenpush_str andknownUTF8len11. FirstPair<T,U>answerusesownedfirstreturn andsourceconsumption; secondendswithsource asstated, no implicitCopyassumption."
+    },
+    {
+      "section": "6.5",
+      "positions": "3/5/9/11/13;17/19/21/27;35/41;45/47/49/51/55;65/71;75/77/83;87/89;108/114;133",
+      "evidence": "NeednameidentityratherthanVecposition. Eqreflexivity/Hashrole/collision/finalEq andconsistencycontract definedbeforemapoperation; currentstandardString needs nohasherinternals. stdcollectionsuse/new/typeparameters beforeconstruction, insertownedhandoff andNonebeforefirstinsert, samekeyreplacesoldvalueandkeepsoriginalkeybeforesecond. owned_texthelpercompleteandknown. getOption<&usize> andBorrow<str> role/consistentEqHash beforelookup; currentstandardimplementationonly, no manualBorroworHasherneeded. Queryviewandresultdifferentowners, arrowlegend andtemporaryqueryborrowending beforequerychangeexample. lenusize/Optioncomparison explicit6.2links alreadyread; get_mutOption<&mutusize> beforeupdate.",
+      "actual_examples": "Rust1→replace2/Python1, queryRustthenpushquery課程stillfoundmap2; missingJavaScriptnotinsert; borrowconflictfixtureinsertwhilefoundlaterusedsamepriorlastuse rule. update2→3, missingstillnoinsert,len1. AnswerRust5→7old5,Python3→5,missingNone,len2. Onlymap_supporthelperloaded, fullsources/manifestinline. Parentcap/exactPartialEqbackreference changes are knownpre-reviewnewversion, not originalfindings."
+    },
+    {
+      "section": "6.6",
+      "positions": "3/7/9/11/17;19–27;31/37/54;58/60/62/72;76/78/80/82/98;116/118/120",
+      "evidence": "Needaccumulationratherthanreplacement. Borrowed[String]for→&String andget_mut cases definedbeforefn; explicit(*label).clone borrowsStringcreatesownedkey onlymissing. Nonehasno retainedpayload underalreadyknownSome/None+lastuse;17 makesexistingbranchlogicexplicit, not newborrowexception. Fixedreport0missing is statedlocaldisplaypolicy, no newkey. Ownedresulttest explainsblocktail andsourcecleanupbeforefulltests. Customtwofieldidentity, derivedEq/Hashfieldrequirements andconsistentEqHash beforecode, same-type&keyqueryexplainedbeforeuse.",
+      "actual_examples": "Rust/Python/Rust gives2/1, clonedStringkeys independentfrominput;3tests checkrepeat/empty/sourceblockended. Customkeyvariescategoryandregionseparately, only(1,2)→3, missingHashfixtureE0599. StockItemanswerchangesincrementfrom1toquantity2/3/6→Rust8/Python3, originalinputstill3. Allhelpers/root/answers inline; noentryAPI/iterator/closure/lifetimeannotationorotherfuture capability."
+    }
+  ],
+  "sources": {
+    "frozen_files": 32,
+    "hashes": "round06-ch06b-sourcehashes.json",
+    "frozen": "round06-ch06b-frozen",
+    "end_changes": [],
+    "frozen_copy_mismatches": [],
+    "complete_scope": "All4bodies, fullchosenexamples/answers/helpers/tests,4compilefailfixtures+expected, minimalmanifest/defaultmain andglobalconfigurationactuallyread. Everyfullinclude matchesnormalizedactualDOM; partialregions alsohavefullprogramsamepage.",
+    "selectedpackage": "trait-stagespackage/name/version/edition only, no lib/build.rs/dependencies. Successfultargets loadonlysamepageassociated/map/groupinghelpers orselfcontainedcloning/copying/customkeys. No laterlibraryloaded.",
+    "not_run": [
+      "Cargo",
+      "build",
+      "Rusttests",
+      "repositorysource/doc/configedits"
+    ]
+  },
+  "render": {
+    "base_url": "http://127.0.0.1:8097/chapters/",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "screenshots_actually_viewed": [
+      "round06-ch06b-visual/desktop-clone-reference-elements.png",
+      "round06-ch06b-visual/desktop-copy-contract.png",
+      "round06-ch06b-visual/desktop-associated-type-role.png",
+      "round06-ch06b-visual/desktop-associated-equality-bound.png",
+      "round06-ch06b-visual/desktop-borrow-query-contract.png",
+      "round06-ch06b-visual/desktop-map-query-figure.png",
+      "round06-ch06b-visual/desktop-get-mut-existing-value.png",
+      "round06-ch06b-visual/desktop-grouping-rule.png",
+      "round06-ch06b-visual/desktop-grouping-table-left.png",
+      "round06-ch06b-visual/desktop-owned-result-test-contract.png",
+      "round06-ch06b-visual/desktop-custom-key-identity.png",
+      "round06-ch06b-visual/mobile-clone-reference-elements.png",
+      "round06-ch06b-visual/mobile-copy-contract.png",
+      "round06-ch06b-visual/mobile-associated-type-role.png",
+      "round06-ch06b-visual/mobile-associated-equality-bound.png",
+      "round06-ch06b-visual/mobile-borrow-query-contract.png",
+      "round06-ch06b-visual/mobile-map-query-figure.png",
+      "round06-ch06b-visual/mobile-get-mut-existing-value.png",
+      "round06-ch06b-visual/mobile-grouping-rule.png",
+      "round06-ch06b-visual/mobile-grouping-table-left.png",
+      "round06-ch06b-visual/mobile-owned-result-test-contract.png",
+      "round06-ch06b-visual/mobile-custom-key-identity.png",
+      "round06-ch06b-visual/mobile-grouping-table-right.png"
+    ],
+    "screenshot_count": 23,
+    "actual_images": [
+      {
+        "path": "docs/assets/traits-v3/map-query.svg",
+        "page": "06-05-lesson",
+        "sha256": "634c559c2141a9e2bda9e4616a1e0b5eaebc29e64428ab06250ab9b7900aba20",
+        "desktop_size": [
+          420,
+          680
+        ],
+        "mobile_size": [
+          342.984375,
+          555.328125
+        ],
+        "viewed": [
+          "desktop1280x800",
+          "mobile390x844"
+        ],
+        "meaning": "Topblueuparrowfromquery&strviewpointstoqueryStringRust; greendashedlookupdownarrowpointstocountscontainer; lowerblueuparrowfromfoundSomepointstoitsusizevalue2cell, not queryorkeyString. Body51defineslegendbeforeimage and55explainsquerytemporaryborrowvsmapresult. Grouping/labels/text/arrowpositionsallreadableinactualscreens; sourceandservedhashmatch.",
+        "font_sizes": "22pxmain/20pxsmall atdesktop; approximately17.97px/16.33pxmobile. Entire relationshipfitsonescreenatfocus.",
+        "version_limit": "Onlyroot-capped420x680versionactuallyviewed; oldSVGnotviewed."
+      }
+    ],
+    "other_pages_img_count": 0,
+    "necessary_image_judgment": "CurrentmapquerySVGestablishesdistinctborroworigins; no missingnecessaryfigure elsewhere, where prose/typecontracts/inlineprogramsestablishrequiredmapping.",
+    "raw_asterisk_paragraphs": [],
+    "full_inline_all": true,
+    "metadata": "round06-ch06b-visual/metadata.json",
+    "limitations": "Focusedactualrelationships pluscompleteinlineDOMpresence, not everypixel oflongpages; partialnavpreviewnotfinalstrictsite. Coremobilegroupingtable issue optionalC6b-01."
+  },
+  "next_action": "STOPaftersealedinitialperparent; do notstart7untilnewfollowup."
+}

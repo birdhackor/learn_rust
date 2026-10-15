@@ -1,0 +1,746 @@
+{
+  "review_id": "technical-early-round06-traits-tail",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/06-03-lesson.md",
+    "docs/chapters/06-04-lesson.md",
+    "docs/chapters/06-05-lesson.md",
+    "docs/chapters/06-06-lesson.md"
+  ],
+  "reader_background": "Basic Python plus actual required chapters1–5 and independently reviewed6.1/6.2. Read6.3→6.6 in order. No chapter7/8 or future library/API prerequisite.",
+  "independent_initial": true,
+  "independence": "Initial tail technical judgment and optional6.5 observation were prepared in tool payload before parent's later revision/known-prefix-finding notice. No author/peer/continuity/reader reports read. Formal file seal was delayed by detected metadata/SVG version drift; parent notice arrived before successful formal seal. Preserve this timing rather than claiming a pre-notice file seal.",
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "TC06T-O1",
+      "classification": "optional precise teaching-location reference",
+      "severity": "選讀改善",
+      "necessity": "optional; no missing trait prerequisite",
+      "location": "docs/chapters/06-05-lesson.md:9",
+      "quote": "上一節已用 PartialEq 比較內容",
+      "evidence": "The named PartialEq contract and standard content-comparison explanation are in6.2:35–41,62–86. Immediate6.4 primarily teaches associated types; its actual numeric assert_eq! calls do indirectly use PartialEq, so this is not a false Rust claim or evidence that preceding section never used it.",
+      "reader_impact": "If reader wants to revisit the capability being extended by Eq, an explicit6.2 reference points to the rule explanation rather than6.4's associated-type lesson.6.5:71,89 and6.6:58 already identify6.2, so current sequence remains sufficient.",
+      "minimal_change": "Initial optional suggestion: replace上一節 with第6.2節. Current snapshot/actual source already does so; no remaining action.",
+      "rust_semantic_error": false,
+      "independent_discovery": true,
+      "status": "resolved_in_current_source_at_seal",
+      "version_evidence": {
+        "first_actual_nl_read_quote": "上一節已用 PartialEq 比較內容",
+        "hash_snapshot_line9": "第 6.2 節已用 PartialEq 比較內容。**`Eq`** 在相等比較上另外承諾每個值都與自己相等；它沒有新增方法。HashMap 用這種規則認出同一個鍵。String、str、i32、usize 的標準實作都符合本節所需的 Eq。",
+        "hash_snapshot_already_contains_fix": true,
+        "current_sha256": "2b15a18fcedcfe1d602caaddbb570b6e921f776a67ea932f49f965a7d3a947f5",
+        "provenance": "Reviewer noticed the old actual first-read wording and prepared the optional observation before parent announced the same fix. By time the later hash/text snapshot was captured, actual6.5 had already changed; this was recognized explicitly during final reread. No measured old6.5 hash is claimed."
+      }
+    }
+  ],
+  "result": "No necessary technical/closure/first-use/output/fixture mismatch. One optional independently observed first-read cross-reference precision item, already resolved in actual source by formal seal.",
+  "method": "Sequential whole-page technical reread with actual full selected Rust/helpers/test modules/manifests/fixtures/expected and map-query SVGsource/XML. Static ownership,borrow,method,type and state/output reasoning. Not blind first-read,reader experiment or visual verification.",
+  "execution": {
+    "cargo_rustc_clippy_test_or_fixture_commands": [],
+    "browser_visual": false,
+    "python_source_checks": [
+      "SHA-256 and all snippet marker paths",
+      "TOML exact package shape/absence of library,build script and repoCargo config",
+      "SVG XML parse and source/alt/legend/arrow correspondence"
+    ],
+    "author_validation_used_as_own_evidence": false
+  },
+  "source_snapshot_at_utc": "2026-10-15T07:49:07.385138+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/assets/traits-v3/map-query.svg": "a8322647d83cb8b527cae782ebdd9b9e8202e5c59a44856bbf42083a4745d14d",
+    "docs/chapters/06-03-lesson.md": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807",
+    "docs/chapters/06-04-lesson.md": "aa304cf004199a6d7fe5925854539614d1781f80072f40f77e3fff4dfea53cba",
+    "docs/chapters/06-05-lesson.md": "2b15a18fcedcfe1d602caaddbb570b6e921f776a67ea932f49f965a7d3a947f5",
+    "docs/chapters/06-06-lesson.md": "7e30cb746015e9d5a76fa7e57d866869893717fae34cd09b895cd60bab2a2850",
+    "examples/intro-workspace/Cargo.lock": "0fd21ee9dd84095ae33cb16cf65568aa57ef77dcac9afb191c9c5e74050bea20",
+    "examples/intro-workspace/Cargo.toml": "14d88774f7cb27bce818fc915d8d30c64800fb044cf77013645a470d8016eccf",
+    "examples/intro-workspace/trait-stages/Cargo.toml": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+    "examples/intro-workspace/trait-stages/examples/associated.rs": "1105dacc52be55109dbd9f2b797778b3e6597ef04a0df54e6efeb7cf18bec0f5",
+    "examples/intro-workspace/trait-stages/examples/associated_answer.rs": "999cfa843c2ab28b26f123525cd33597787594dff951a6453998b5a1862a0304",
+    "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs": "8116faa4739db768fdabd25015c468879d42e9621743633def82579ee9449ba1",
+    "examples/intro-workspace/trait-stages/examples/cloning.rs": "f88172a04c70f704fb0aefefabf7f670219ba9badba2e2415a1b31d05c068f53",
+    "examples/intro-workspace/trait-stages/examples/cloning_answer.rs": "89a4e6e0b47fffd0524d41a0df3b9d1f3d49d9a64a9ad6b9814255306f64423c",
+    "examples/intro-workspace/trait-stages/examples/copying.rs": "8467e40d475365deb3af8633e39314fa3a3e1e49e8ec5c20cb06c6653274734c",
+    "examples/intro-workspace/trait-stages/examples/custom_keys.rs": "3b8ff510cbeee0f954659ea3bb98b8b33c3eb907a905d99c95fc1880008dd416",
+    "examples/intro-workspace/trait-stages/examples/grouping.rs": "25a3f006640450d57e61272513c52fe9fa32bfafa77157aea83db1f2236df152",
+    "examples/intro-workspace/trait-stages/examples/grouping_answer.rs": "0785f255f09a505c58da74c1f76b88aba22b5fdb711d54afdaaaa1e9eda49499",
+    "examples/intro-workspace/trait-stages/examples/grouping_support/mod.rs": "ea8a57e573e122aacf57972ecd74f0774495d31b63d56b150a6a1e3a409fbffc",
+    "examples/intro-workspace/trait-stages/examples/map_lookup.rs": "71cfb0ba0659f76c15e3346522ef8e9b98b066bc436e6df416ddc1c03e547271",
+    "examples/intro-workspace/trait-stages/examples/map_lookup_answer.rs": "23319161dd7f4830085b89a4f226b91e3ffc620a042f132e5d1758c091f48489",
+    "examples/intro-workspace/trait-stages/examples/map_support/mod.rs": "c8b46307d1e61c6c9211cc252bb5acd277c5db5b42a2e839384ca6109e3d2ee6",
+    "examples/intro-workspace/trait-stages/examples/map_update.rs": "13cd0c65e377dbb880a087bc741ee69e59ac374097b8a14dd90082e88d46bff9",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.expected": "e03b27f19f221f0ea2a3809e0da4983870354d9db49f275f5692df404d9c0312",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.rs": "3c3591bc011548ec70846763eb92085e2a35c69e89c02ca8ed4446552ebb0d99",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.rs": "751545c6c6e80065bf407cdafa3152a2327260b34bc781752c7cda159f9cd225",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.expected": "43322ecdbfcad1364df631b6713d4c750abbf95dd7dbe533851c6a229a195efa",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.rs": "9e7be66747981927a947cd4f0efb797572e8aba9f7435950e74c72fda7103536",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.expected": "cb4611f64327a3a3e8c8733ec7967c163ae478479c01703e2816e6466fc68341",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.rs": "c193600f7afbeb09298fc1ad2100d6af6c8e6638ee5e96d650440a82b16c1467",
+    "examples/intro-workspace/trait-stages/src/main.rs": "018c7d106ed7e348d943c40674e26c48ee5965208ace26ca9127a294908b0b30",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/06-03-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/cloning.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-03-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/copying.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-03-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-03-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-03-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/cloning_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:models",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:extract-trait",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:extract-impls",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated.rs:direct",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:extract-generic",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated.rs:generic",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs:numeric-only",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-04-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/associated_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/map_support/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/map_lookup.rs:new-insert",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/map_lookup.rs:replace",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/map_lookup.rs:query",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/map_lookup.rs:missing",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/map_update.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/map_lookup.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-05-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/map_lookup_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-06-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/grouping_support/mod.rs:count-labels",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/06-06-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/map_support/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-06-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/grouping.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-06-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/grouping_support/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-06-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/custom_keys.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-06-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-06-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/06-06-lesson.md",
+      "reference": "examples/intro-workspace/trait-stages/examples/grouping_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-trait-stages",
+    "manifest": "examples/intro-workspace/trait-stages/Cargo.toml",
+    "manifest_exactly": {
+      "package": {
+        "name": "intro-trait-stages",
+        "version": "0.1.0",
+        "edition": "2024"
+      }
+    },
+    "no_library": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "repo_cargo_config_absent": true,
+    "targets": [
+      {
+        "target": "cloning",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/cloning.rs"
+        ],
+        "external_modules": []
+      },
+      {
+        "target": "copying",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/copying.rs"
+        ],
+        "external_modules": []
+      },
+      {
+        "target": "cloning_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/cloning_answer.rs"
+        ],
+        "external_modules": []
+      },
+      {
+        "target": "custom_keys",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/custom_keys.rs"
+        ],
+        "external_modules": []
+      },
+      {
+        "target": "associated",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/associated.rs",
+          "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs"
+        ],
+        "external_modules": [
+          "associated_support"
+        ],
+        "test_functions_if_selected_test": 3
+      },
+      {
+        "target": "associated_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/associated_answer.rs",
+          "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs"
+        ],
+        "external_modules": [
+          "associated_support"
+        ],
+        "test_functions_if_selected_test": "not requested"
+      },
+      {
+        "target": "map_lookup",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/map_lookup.rs",
+          "examples/intro-workspace/trait-stages/examples/map_support/mod.rs"
+        ],
+        "external_modules": [
+          "map_support"
+        ]
+      },
+      {
+        "target": "map_update",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/map_update.rs",
+          "examples/intro-workspace/trait-stages/examples/map_support/mod.rs"
+        ],
+        "external_modules": [
+          "map_support"
+        ]
+      },
+      {
+        "target": "map_lookup_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/map_lookup_answer.rs",
+          "examples/intro-workspace/trait-stages/examples/map_support/mod.rs"
+        ],
+        "external_modules": [
+          "map_support"
+        ]
+      },
+      {
+        "target": "grouping_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/grouping_answer.rs",
+          "examples/intro-workspace/trait-stages/examples/map_support/mod.rs"
+        ],
+        "external_modules": [
+          "map_support"
+        ]
+      },
+      {
+        "target": "grouping",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/trait-stages/examples/grouping.rs",
+          "examples/intro-workspace/trait-stages/examples/grouping_support/mod.rs",
+          "examples/intro-workspace/trait-stages/examples/map_support/mod.rs"
+        ],
+        "external_modules": [
+          "grouping_support",
+          "map_support"
+        ],
+        "test_functions_if_selected_test": 3
+      }
+    ],
+    "scope": "Selected examples do not compile sibling examples or any chapter7/8 library. grouping_answer does not load grouping_support; associated does not load Iterator or map helpers. cfg(test) modules are included only for actual selected example test commands.",
+    "inline_completeness": [
+      "6.3 full single-file examples22,46,84 and fullmanifest74.",
+      "6.4 associated fullmain98/helper104 andmanifest92 before run/test110–111; answer131 loads same already-shown fullhelper.",
+      "6.5 map_support full24; map_update full92; map_lookup full115; answer138; samepage known manifest111. No grouping source loaded.",
+      "6.6 count_labels normal body14 plus grouping main40 and fullmap_support34; fullgrouping helper incltests65 before targetedtest69. Customkeys full85; grouping_answer123 loads only fullmap_support. Manifest111 repeats knownthreefields."
+    ],
+    "workspace_metadata": "Intro workspace now lists trait-stages, lifetimes, lifetimes/complete and error-stages alongside existing members. Metadata was inspected only to establish selected package/lock closure; no later member body or manuscript read. Root workspace excludes intro workspace."
+  },
+  "command_review": [
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example cloning --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example copying --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example cloning_answer --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example associated --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example associated_answer --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example map_update --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example map_lookup --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example map_lookup_answer --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example grouping --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example custom_keys --locked"
+    },
+    {
+      "kind": "run",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example grouping_answer --locked"
+    },
+    {
+      "kind": "3 unit tests",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example associated --locked"
+    },
+    {
+      "kind": "3 unit tests",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-trait-stages --example grouping --locked"
+    }
+  ],
+  "concept_evidence": [
+    {
+      "concept": "Clone and owned versus borrowed contents",
+      "identity": "6.3:7 defines.clone shared-borrows original and returns same-type newvalue;String clones independenttext.9 explainsderivedfieldClone requirements;11 saysCloneprelude.",
+      "need": "6.3:3 wants a retained original and separately changeable textsummary after6.2 manually created twoStringvalues.",
+      "operation": "11 previewsclone+modify;15 explicitly saysClone behavior depends on type and sharedreferenceClone retains sameborrow;17 definesVec<T>Clone elementwise andVec<&str> remainingborrowed before firstfullsource22.",
+      "example_and_limits": "OriginalRust vsduplicateRust副本,amountsame;secondVec<&str> borrows originaltext and preserveslifetime. No universal deep-copy promise; actualsource has two vectorcontainers andreferencesto samevalidString.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Copy, Clone relationship and String resource ownership",
+      "identity": "6.3:39 recalls actual3.2 integerCopy/customstructnotautomatic;41 definesimplicitvaluecopy withoutcustomwork;43 givesallfieldsCopy plusClone requirement before copying46.",
+      "need": "A numeric summary can retainfirst afterordinaryassignment andmodifysecond without explicitclone,unlikeString-containing summary.",
+      "operation": "first{360,3},second=first,second.count+=1 yields3/4.61 explainsString cannot duplicate managerinfo into independentowners withoutresourceconflict;fixturebeforeerror69.",
+      "example_and_limits": "Stack/heap placement is expressly notCopy criterion57/69. StringClone distinctstorage vsreferenceClone remainsborrowed, andCopy markers do not letuser inject arbitrarysideeffects.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Associated type declaration and per-implementation selection",
+      "identity": "6.4:17–21 definesassociatedtype as traittypeposition,notfield;typeOutput declaration,Self::Output andconsumingself explained beforetrait24.",
+      "need": "6.4:3 numberbox andswitch must shareextraction while preservingi32/bool resulttypes instead of Charge'sfixedi32.",
+      "operation": "31–35 typeOutput=bool/T;impl<T>ExtractforHolder<T> declaration/use based5.1;55 givesS::Output on S:Extract beforegenericfunction58.",
+      "example_and_limits": "Directandgenerici32/bool calls preserve120/true;Stringownedextraction test movesoutandcanappend Rust教學11UTF8bytes. No assumption TCopy orarithmetic on unknownOutput; associatedOutput notchosen anew percall41.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Associated-type equality bound and FirstPair answer",
+      "identity": "6.4:71–73 definesExtract<Output=i32> as traitplusfixedassociatedtypeequality,notvalueparameter ormodifyingimpl.",
+      "need": "Numeric-only doubleoperation must justify outputbeingi32 whilegenericextract_value remainsgeneral.",
+      "operation": "double_number boundbeforebody76 permits*2;fixtureboolsource79–85 correctlyE0271. Smallnonoverflowingmaterials explicitlyscoped73.",
+      "example_and_limits": "240fromHolder120. FirstPair<T,U> picksT,consumesself/returnsfirst andleavessecondtoend;answerinputs120true and80false give120/160 without changinggenericfunctions.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "HashMap, Eq, Hash and collision",
+      "identity": "6.5:3–5 definesK/Vsamepermap,ownedString/usize;9 definesEq extrareflexivity/noaddedmethod;11 definesHash role,equalkeysamehash,collisionandfinaleq.",
+      "need": "Map names rather thanVecpositions give identity forRust/Pythoncounts;6.5:13 fixesqueries rather thanrequiringunstatedmapiterationorder.",
+      "operation": "17 introducesstd::collections::HashMap use andnew;19insert mutable/keyvalueownership/Optionoldvalue beforefirstsnippet.35 statesreplaceoldvalue andretainsstoredkey.",
+      "example_and_limits": "Rustfirst1→replace2 returnsold1;Python1 separate. Doesnotclaiminsertautoaccumulates,uniquenessbyhashalone,stableiterationorder orcustomhasheralgorithm knowledge.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Borrow<str>, get and query/result origins",
+      "identity": "6.5:45 givesget sharedmap/Option<&usize>;47 explainsstandardBorrow<str> typeparameter+borrowedview andEq/Hashconsistencybeforeuse;49 contrastsarbitraryreference vsvalidkeyidentity.",
+      "need": "OwnedStringkeys shouldbequeryable usingborrowed&str withoutcreatingnewkey orcouplingfoundvaluetoqueryString lifetime.",
+      "operation": "51 definesmapdiagram snapshotandarrowroles beforefigure53;55 saysquerytemporaryborrowends whereasfoundborrowremainsmap;querypush_strbeforefounduse in58 matchesgetself-basedresultcontract.",
+      "example_and_limits": "foundreads2,queryRust課程. Borrowcaseexample correctlyshowscase-insensitivekeyvsrawcase-sensitivestr contractmismatch. No directborrow call,manualBorrowimpl oruntaughtlifetimeannotation needed.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "HashMap mutability, missing key and method returns",
+      "identity": "6.5:65 len()->usize;75getreferencecannotremainactive acrossinsert;87get_mut mutable/Option<&mutusize>/missingNone beforefullupdate92.",
+      "need": "Readcounts,modifyexistingRustwithoutimplicitlyaddingJavaScript,andpreservevalidborrowedresults.",
+      "operation": "map_update2→3 via*count+=1;Some(&3) comparisonbacked6.2. ConflictfixtureinsertbetweengetandlaterfoundreadE0502;83 fixeslastusesequence.",
+      "example_and_limits": "Maplenstays1update and2lookup;missingneverinserts. Ownershipofargumentkeys differsfromborrowedquery/result;counts.insert ofothername stillconflicts whilefoundactive.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Grouping, owned output keys and tests",
+      "identity": "6.6:7 explicitlyforon&[String] gives&String;9get_mutreturns&mutusize;11 (*label).clone borrowsStringandcreatesownedkeyonlyonmissing,allbeforefunction14.",
+      "need": "6.6:3 repeatedRustrequiresaccumulation,notreplacement;desiredRust2/Python1preservesinput andindependentresultnames.",
+      "operation": "Someincrements;Nonereleasesunusedqueryborrowtheninsert17. State table19–27tracesfirstnewRust,newPython,repeatedRust. Reporterfixed&strarraybyvalueexplained37.",
+      "example_and_limits": "Mapownedkeys meansinputscopeendstillqueryable;testblocktailanddrop explained60 beforefulltests65. Three tests check repeatedcounts,emptyinput,andownedresultafterinputends;NonecomparisonandSomeborrowedusizealready6.2.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Custom Eq/Hash keys and stock-quantity answer",
+      "identity": "6.6:76 defines2fieldidentity;78–80 derivedEq/Hash fieldrequirements andconsistentfields beforecustom_keys85;82 suppliesquery&samefullkey.",
+      "need": "Regionandcategorybothidentifyinventorygroup;separatelyvaryeachtoexposeeachfieldrole.",
+      "operation": "Only(1,2)→3;queries(1,3),(2,2)None. Hashmissingfixture101/E0599 correctlyleavesinserttraitboundsunsatisfied.",
+      "example_and_limits": "6.6:116 defines&StockItemiteration,Copyquantity,borrowednamequery,cloneonlymissing beforeanswer123;Rust2+Rust6=8,Python3,input3,map2. No entry/or_insert/iteratorclosure/hiddenlibraryAPIs required.",
+      "status": "sufficient"
+    }
+  ],
+  "figure_check": {
+    "path": "docs/assets/traits-v3/map-query.svg",
+    "source_and_xml_only": true,
+    "xml_well_formed": true,
+    "evidence": "title/desc andprose identifylookup-time snapshot;blue solid .borrow paths fromqueryviewtowardqueryownedtext andfromfoundtowardmapvalueusize2;green dashed .lookup pathfromqueryviewtomap. QueryStringRust andmapkeyStringRust areseparateboxes;Somefoundborrowsvalue,notquery. alt/prose51–61matchactualmap_lookup sequencequery.get thenquery.append beforefoundread.",
+    "browser_visual": false
+  },
+  "fixtures": [
+    {
+      "source": "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.rs",
+      "expected": "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.expected",
+      "stable_code": "E0204",
+      "reason": "derivedCopystructcontainsString.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.rs",
+      "expected": "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.expected",
+      "stable_code": "E0271",
+      "reason": "SwitchState::Output=boolfailsExtract<Output=i32>.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.rs",
+      "expected": "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.expected",
+      "stable_code": "E0502",
+      "reason": "foundsharedmapborrowusedafterinsertmutableborrow.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.rs",
+      "expected": "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.expected",
+      "stable_code": "E0599",
+      "reason": "HashMap<GroupKey,usize> insert unavailable because GroupKey lacksHash despitePartialEq/Eq.",
+      "executed": false
+    }
+  ],
+  "static_outputs": [
+    {
+      "target": "cloning",
+      "expected": [
+        "原標籤=Rust",
+        "副本標籤=Rust 副本",
+        "兩份清單借到=Rust、Rust"
+      ]
+    },
+    {
+      "target": "copying",
+      "expected": [
+        "原數量=3，另一份數量=4"
+      ]
+    },
+    {
+      "target": "cloning_answer",
+      "expected": [
+        "原資料=LabelledSummary { label: \"訂單A\", amount: 280 }",
+        "更新資料=LabelledSummary { label: \"訂單A\", amount: 300 }"
+      ]
+    },
+    {
+      "target": "associated",
+      "expected": [
+        "直接取出數字=120、布林值=true",
+        "共用函式取得數字=120、布林值=true",
+        "數字結果乘二=240"
+      ]
+    },
+    {
+      "target": "associated_answer",
+      "expected": [
+        "取出前的第二欄=true",
+        "取出第一欄=120",
+        "另一份來源的數字乘二=160"
+      ]
+    },
+    {
+      "target": "map_update",
+      "expected": [
+        "更新後=Some(3)",
+        "JavaScript 尚未收錄，沒有新增"
+      ]
+    },
+    {
+      "target": "map_lookup",
+      "expected": [
+        "第一次加入，沒有舊次數",
+        "取代舊次數=1",
+        "查到 Rust 次數=2",
+        "查詢文字改成=Rust 課程",
+        "JavaScript 尚未收錄",
+        "不同名稱數=2"
+      ]
+    },
+    {
+      "target": "map_lookup_answer",
+      "expected": [
+        "Rust=Some(7)，Python=Some(5)"
+      ]
+    },
+    {
+      "target": "grouping",
+      "expected": [
+        "Rust=2",
+        "Python=1",
+        "JavaScript=0（未收錄）",
+        "原清單仍有3個標籤"
+      ]
+    },
+    {
+      "target": "custom_keys",
+      "expected": [
+        "地區1、類別2=3",
+        "地區1、類別3未收錄",
+        "地區2、類別2未收錄"
+      ]
+    },
+    {
+      "target": "grouping_answer",
+      "expected": [
+        "Rust 總量=Some(8)",
+        "Python 總量=Some(3)",
+        "原清單仍有3筆資料"
+      ]
+    }
+  ],
+  "test_counts": {
+    "associated": 3,
+    "grouping": 3,
+    "total": 6,
+    "static_only": true
+  },
+  "limits": "Alloutputs,fixturecodes andtestcounts arestaticchecksagainstactualsource/expected,notnewcompilerexecutions. SVGsource/XMLdoesnotprovevisuallegibility. No readerexperiment,fullsite/buildvalidation orchapter7/8review.",
+  "workspace_metadata_drift_at_seal": {
+    "before": {
+      "examples/intro-workspace/Cargo.toml": "14d88774f7cb27bce818fc915d8d30c64800fb044cf77013645a470d8016eccf",
+      "examples/intro-workspace/Cargo.lock": "0fd21ee9dd84095ae33cb16cf65568aa57ef77dcac9afb191c9c5e74050bea20"
+    },
+    "after": {
+      "examples/intro-workspace/Cargo.toml": "0fe0c68b5753558a7b9d650faa209317c7268d0ad40ec1284952bb66117aa7bf",
+      "examples/intro-workspace/Cargo.lock": "ce0b4e0a6f7a6475a272ba794f8e8686e2de531eb1e372b5c5af7be4be54fc51"
+    },
+    "actual_change_checked": "Intro workspace adds iterators member and matching dependency-free intro-iterators lock entry. Resolver and actual trait-stages manifest/selected source unchanged. Only metadata read; no iterators source or manuscript prerequisite."
+  },
+  "initial_judgment_prepared_before_parent_revision_notice": true,
+  "formal_file_seal_after_parent_revision_notice": true,
+  "late_svg_update": {
+    "path": "docs/assets/traits-v3/map-query.svg",
+    "before_sha256": "a8322647d83cb8b527cae782ebdd9b9e8202e5c59a44856bbf42083a4745d14d",
+    "after_sha256": "634c559c2141a9e2bda9e4616a1e0b5eaebc29e64428ab06250ab9b7900aba20",
+    "exact_change": "Add width=\"420\" height=\"680\" to svg root. Removing only these two attributes reproduces original SHA-256 exactly.",
+    "checked_at_utc": "2026-10-15T07:53:12.287628+00:00",
+    "source_meaning_unchanged": true,
+    "current_xml_well_formed": true,
+    "browser_visual": false,
+    "provenance": "Hash drift detected and actual new SVG read before parent explained desktop oversize motivation. That visual observation belongs to parent; no own visual finding claimed."
+  },
+  "sealed_source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/assets/traits-v3/map-query.svg": "634c559c2141a9e2bda9e4616a1e0b5eaebc29e64428ab06250ab9b7900aba20",
+    "docs/chapters/06-03-lesson.md": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807",
+    "docs/chapters/06-04-lesson.md": "aa304cf004199a6d7fe5925854539614d1781f80072f40f77e3fff4dfea53cba",
+    "docs/chapters/06-05-lesson.md": "2b15a18fcedcfe1d602caaddbb570b6e921f776a67ea932f49f965a7d3a947f5",
+    "docs/chapters/06-06-lesson.md": "7e30cb746015e9d5a76fa7e57d866869893717fae34cd09b895cd60bab2a2850",
+    "examples/intro-workspace/Cargo.lock": "ce0b4e0a6f7a6475a272ba794f8e8686e2de531eb1e372b5c5af7be4be54fc51",
+    "examples/intro-workspace/Cargo.toml": "0fe0c68b5753558a7b9d650faa209317c7268d0ad40ec1284952bb66117aa7bf",
+    "examples/intro-workspace/trait-stages/Cargo.toml": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+    "examples/intro-workspace/trait-stages/examples/associated.rs": "1105dacc52be55109dbd9f2b797778b3e6597ef04a0df54e6efeb7cf18bec0f5",
+    "examples/intro-workspace/trait-stages/examples/associated_answer.rs": "999cfa843c2ab28b26f123525cd33597787594dff951a6453998b5a1862a0304",
+    "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs": "8116faa4739db768fdabd25015c468879d42e9621743633def82579ee9449ba1",
+    "examples/intro-workspace/trait-stages/examples/cloning.rs": "f88172a04c70f704fb0aefefabf7f670219ba9badba2e2415a1b31d05c068f53",
+    "examples/intro-workspace/trait-stages/examples/cloning_answer.rs": "89a4e6e0b47fffd0524d41a0df3b9d1f3d49d9a64a9ad6b9814255306f64423c",
+    "examples/intro-workspace/trait-stages/examples/copying.rs": "8467e40d475365deb3af8633e39314fa3a3e1e49e8ec5c20cb06c6653274734c",
+    "examples/intro-workspace/trait-stages/examples/custom_keys.rs": "3b8ff510cbeee0f954659ea3bb98b8b33c3eb907a905d99c95fc1880008dd416",
+    "examples/intro-workspace/trait-stages/examples/grouping.rs": "25a3f006640450d57e61272513c52fe9fa32bfafa77157aea83db1f2236df152",
+    "examples/intro-workspace/trait-stages/examples/grouping_answer.rs": "0785f255f09a505c58da74c1f76b88aba22b5fdb711d54afdaaaa1e9eda49499",
+    "examples/intro-workspace/trait-stages/examples/grouping_support/mod.rs": "ea8a57e573e122aacf57972ecd74f0774495d31b63d56b150a6a1e3a409fbffc",
+    "examples/intro-workspace/trait-stages/examples/map_lookup.rs": "71cfb0ba0659f76c15e3346522ef8e9b98b066bc436e6df416ddc1c03e547271",
+    "examples/intro-workspace/trait-stages/examples/map_lookup_answer.rs": "23319161dd7f4830085b89a4f226b91e3ffc620a042f132e5d1758c091f48489",
+    "examples/intro-workspace/trait-stages/examples/map_support/mod.rs": "c8b46307d1e61c6c9211cc252bb5acd277c5db5b42a2e839384ca6109e3d2ee6",
+    "examples/intro-workspace/trait-stages/examples/map_update.rs": "13cd0c65e377dbb880a087bc741ee69e59ac374097b8a14dd90082e88d46bff9",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.expected": "e03b27f19f221f0ea2a3809e0da4983870354d9db49f275f5692df404d9c0312",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.rs": "3c3591bc011548ec70846763eb92085e2a35c69e89c02ca8ed4446552ebb0d99",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.rs": "751545c6c6e80065bf407cdafa3152a2327260b34bc781752c7cda159f9cd225",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.expected": "43322ecdbfcad1364df631b6713d4c750abbf95dd7dbe533851c6a229a195efa",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.rs": "9e7be66747981927a947cd4f0efb797572e8aba9f7435950e74c72fda7103536",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.expected": "cb4611f64327a3a3e8c8733ec7967c163ae478479c01703e2816e6466fc68341",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.rs": "c193600f7afbeb09298fc1ad2100d6af6c8e6638ee5e96d650440a82b16c1467",
+    "examples/intro-workspace/trait-stages/src/main.rs": "018c7d106ed7e348d943c40674e26c48ee5965208ace26ca9127a294908b0b30",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "version_notes": "6.5 old wording was in own first actual full-page read, but later source-hash snapshot already contains root's corrected teaching-location reference. Whole-file hashes at snapshot and seal recorded separately; no pre-notice formal seal or old measured6.5 hash claimed.6.2 prompted Debug-borrow insertion is outside tail scope and deferred to a separate source followup after seal.",
+  "sealed_at_utc": "2026-10-15T07:54:45.994403+00:00"
+}

@@ -1,0 +1,133 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.3"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18a-cli-complete-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-collection-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-content-report-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-option-order-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-03-lesson.md": "e5c04133e7ed5866dfe72ccff82bb94a572d6d487c3fa4026e5530b1c799fed3",
+    "examples/ch15-projects/a2-starter/Cargo.toml": "ba0edbf847d15091d4a533aed5bc88050c1290ae831ed27ec2accd6f7ec9e64a",
+    "examples/ch15-projects/a2-starter/src/lib.rs": "1d565ff089c0d764067cd3c5e68b2fcb15e81256f3f6298d24e463b64761ac84",
+    "examples/ch15-projects/a2-starter/src/content.rs": "5d6d2fddf975be0e7efb342df1a80d6c87af44d9a5d596d02296a1ed93663dbe",
+    "examples/ch15-projects/a2-starter/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "examples/ch15-projects/a2-starter/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "examples/ch15-projects/a2-starter/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "examples/ch15-projects/a2-starter/checks/content-tests.rs": "79c0c0ee318a32f8e6cf4a83f64f4ac615559a1ce24c08f55eb764007fa74377",
+    "examples/ch15-projects/a2-complete/Cargo.toml": "2091ca16e1b592f879e2e1975494a769b621e7ca89fb380ca27c0a06faf274a7",
+    "examples/ch15-projects/a2-complete/src/lib.rs": "1d565ff089c0d764067cd3c5e68b2fcb15e81256f3f6298d24e463b64761ac84",
+    "examples/ch15-projects/a2-complete/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "examples/ch15-projects/a2-complete/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "examples/ch15-projects/a2-complete/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "examples/ch15-projects/a2-complete/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "examples/ch15-projects/a2-complete/examples/a2_groups.rs": "da1ab0e6e7e4077a966507d629246e56fb93b620298324cfe9477d3fef3e6f92",
+    "docs/assets/projects-a-v3/recover-content-bucket.svg": "f60389d8639fa3fce19f5804b4292256321686c6738584ddabdf6dc3532520d7"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 3,
+      "quote": "A1 已交出一般檔案與收集問題。現在要把 18.1 的六份材料分成真正重複群：三份 Rust LF 同組，兩份空檔同組，different 的 rust LF 不加入前一組。這一步仍保留所有問題，讓下一階段有足夠資料製作報告。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 5,
+      "quote": "這次回收 12.4 的大小、BLAKE3 摘要與 bytes 比較。新的組合工作是**一份候選失敗後，仍能確認剩餘檔案**。你會自行完成三個函式；短讀取與前後觀察的低層工作沿用已教版本，完整 CLI 留到 A4。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 9,
+      "quote": "對六份材料，先寫下這三步的預期，不先寫演算法："
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 17,
+      "quote": "12.4 已示範同一摘要桶中的 A／B／B：第一份 AAA 與兩份 BBB。真正分組要檢查 **各組代表**，得到一份 A 與兩份 B；最後的重複群才只保留 B。測試會刻意給三份同一 digest，這是固定候選的安排，不是找到 BLAKE3 真實碰撞。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 21,
+      "quote": "12.4 的單次分組遇到第一個 FileIssue 就回 Err，沒有交出完整群組。若把這個 Err 當成「不同內容」，會錯把不能確認當成正常差異；若整桶放棄，就可能漏掉裡面的 B／B。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 25,
+      "quote": "看一份可控制的材料：手工把 a 的 AAA、b2 的 BBB、b1 的 BBB 放入同桶。第一次比較 a／b2 時，把**左來源 a** 換成 12.4 的 failing_reader：先 Interrupted，再交一個 R，最後 PermissionDenied。這次必須指出 a 失敗，才能讓 b2 留在候選中。圖用 fixture 目錄內的檔名標示 a／b1／b2；實際移除仍比較完整原生 PathBuf。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 29,
+      "quote": "箭頭表示工作順序。上方是刻意設定的候選；紅框的單次分組沒有完整結果。中間只移除問題中的原生 a，b2／b1 留下；綠框才是重建成功的群組。**問題清單保留 a，成功清單保留 B／B，兩份資訊都需要。**"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 35,
+      "quote": "先保存 A1 進度，本頁先定位介面與待做處，再列出 A2 的完整起始 source。保留自己的 collection.rs；目錄也提供已完成 A1 的副本，方便核對模型與八項驗收。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 54,
+      "quote": "這些檔案都使用本 package 的 `crate::collection::FileRecord`。**同名的 struct 若由另一個 crate 定義，仍不是同一個型別。** 因此沒有同時引入 ch09_files 的另一份 FileRecord，再為它增加轉換。你只是把已教能力接到自己已有的模型。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 72,
+      "quote": "為了使用可控制的驗收來源，前兩種工作接收 **callback**，沿用 9.2 的 FnMut：hash 每次收到一份 `&FileRecord`，回 `Result<Hash, FileIssue>`；compare 每次收到兩份記錄，回 `Result<bool, FileIssue>`。它們可以重複呼叫。正式接線交入 hash_file／equal_files；測試則能改用固定 digest 或會讀取失敗的來源。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 129,
+      "quote": "從工作版取得 `checks/content-tests.rs`，沿用 A1 的手動加入方式：把整個含條件屬性的 tests module 加到自己的 content.rs 末尾。checks 本身不是自動 test target，既有 collection.rs 的驗收保留。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 131,
+      "quote": "驗收材料裡的 record／fixture 是可見的建立工作。record 保存 owned 路徑與這次觀察；fixture 只建一層裡的指定檔案，交回 **TempDir owner 與記錄清單**。caller 保留 owner 到確認結束；`_directory` 這類有名稱的底線前綴 binding 仍持有它，不能換成直接丟掉回傳 owner："
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 163,
+      "quote": "先完成 digest_candidates，重跑同一組驗收；再完成 refine_bucket，最後完成 confirm_bucket。每次看失敗是否移到下一個尚未完成的責任，不改需求去迎合 stub。"
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 191,
+      "quote": "完整新增驗收分別測以下關係："
+    },
+    {
+      "section_id": "18.3",
+      "path": "docs/chapters/18-03-lesson.md",
+      "line": 215,
+      "quote": "[A2 完成快照](https://github.com/birdhackor/learn_rust/tree/main/examples/ch15-projects/a2-complete) 保存上述成果與同一份驗收。它仍只有截至這一步的 library 與示範，沒有最終報告或完整 CLI。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

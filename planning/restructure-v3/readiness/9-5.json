@@ -1,0 +1,127 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "9.5"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round09-adaptors-text-sorting-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round09-closures-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round09-impl-iterator-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/09-05-lesson.md": "256e3a7a8380bee5e863db21b94d89e11578304f1ba8194147b6b12515eea71e",
+    "examples/intro-workspace/iterators/Cargo.toml": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+    "examples/intro-workspace/iterators/examples/adapter_map.rs": "4f072ab8cc955327f4ccfe19c9cbca92ad8a2f1e20448cc05d5a5d9479d61826",
+    "examples/intro-workspace/iterators/examples/adapter_filter.rs": "7483c71ceec5565a216fc7b28104adbf0ae72ace843fce43b7a957e21b2c8cca",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/filter_reference_level.rs": "6920a40908253c7a7c1319aef48804ba76bf8b41d62e0d4c4c488a3c01c4a9e7",
+    "examples/intro-workspace/iterators/examples/adapter_collect.rs": "5a7fce5307e53b6cc3081d376353b03d034b0fb11c8931e3db4ac741212f040d",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/collect_reference_items.rs": "e1a87d9d567c90c0033b57f3b86d812a3b108570488f7178cdf4c3b02f611560",
+    "examples/intro-workspace/iterators/examples/adapter_fold.rs": "39472221df45190c61172164c21d2005f2254f86bfa775a68502c2b0047c0ac8",
+    "examples/intro-workspace/iterators/examples/adapter_results.rs": "d26429a5193797b540818748fd5be2a0069685044168376d39244cf7db657b40",
+    "examples/intro-workspace/iterators/examples/adapter_answer.rs": "f21d2dc58ea88dc9d90a7837d3ca7a7e5a385715995321b13b85029ba17739d8",
+    "docs/assets/iterators-v3/adaptor-pipeline.svg": "9f76ea92d5a61b0c93cf91d4ee6f4db71714631afd93497fffd23b99eecbca4a"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 3,
+      "quote": "第 5.5 節的整理器保留非負數；現在多一項需要：保留大於或等於門檻的數字，再乘上指定倍率，保存結果供後面的工作使用。材料 `[-2, 0, 3, 3]`、門檻 0、倍率 10，應得到 `[0, 30, 30]`，保留原順序與重複值。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 13,
+      "quote": "**iterator adaptor**（迭代器轉接器）是取得原 iterator、建立另一份逐筆工作的 method。新工作按值接收原 iterator，保存它與需要的 callback，不主動呼叫 clone；交接仍依來源型別的 Copy／move 規則。它也不是先把全部元素整理成另一份清單。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 15,
+      "quote": "**`map`** 接收原 iterator 與一份 `FnMut` callback。每次需要下一筆時，它取得原 Item，交給 callback，再交出 callback 的回傳值。callback 因而可以改變 Item 型別；map 本身回傳的是另一個 Iterator，還沒有收集全部結果。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 40,
+      "quote": "**`filter`** 也建立新 iterator，但 callback 只判斷是否保留。它收到 **`&Item`**，回傳 bool；true 讓原 Item 繼續交出去，false 略過它，再尋找後續符合條件的資料。它不因判斷而將 Item 改成 bool。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 42,
+      "quote": "本例的原 Item 已是 `&i32`，所以 callback 參數會是 **`&&i32`**：外層 reference 借用這次取得的 Item，裡面的 reference 指向原數字。`**item` 連續取出兩層借用指向的 Copy 數字，才拿來比較。filter 之後的 Item 仍是 `&i32`，下一個 map 只需要一個 `*`。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 60,
+      "quote": "篩選與轉換都只產生工作。要保存全部結果，使用 **`collect`**：接手 iterator，反覆取得 Item，依指定的目標型別建立產物。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 62,
+      "quote": "建立產物的能力由 **`FromIterator<A>`** 描述，A 是輸入元素型別。這個 trait 的 `from_iter` 接收能提供 A 的 IntoIterator，交回目的型別自身；和上一節的 IntoIterator 建立走訪方向相反。標準 `Vec<T>` 能從 T 元素依取得順序建立，例如 `Vec<i32>` 接收 i32 元素。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 91,
+      "quote": "上一節的 NumberList 已能交出 i32。現在讓它也能**從 i32 元素建立**：實作 `FromIterator<i32>`，其中泛型 S 只要求 `IntoIterator<Item = i32>`，用原來的 for 與 push 保存資料，最後交回 Self。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 99,
+      "quote": "下面先執行整理，再用不同的目標表示法收集 range。`collect::<Vec<i32>>()` 在 method 指定結果型別，回用第 5.1 節的 turbofish；**`Vec::<i32>::from_iter`** 則先在型別路徑指定 Vec 的元素型別，再透過 `::` 呼叫這個型別提供的 from_iter。自訂 NumberList 以變數型別註記指定目標，選同樣的 i32 Item，但建立的結果型別不同："
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 109,
+      "quote": "如果只需要總和，不需要保存所有轉換結果，可以用 **`fold`**。它接手 iterator、初始值與 `FnMut` callback，按序把「目前累計狀態、這次 Item」交給 callback。callback 交回下一份累計狀態，最後整個 fold 回傳它；空 iterator 則直接回傳初始值。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 111,
+      "quote": "這份狀態叫 **accumulator**（累計狀態）。本例選 i32、初始值 0；map 之後的 Item 也是 i32。callback 的兩個參數以逗號分隔，寫成 `|total: i32, value: i32| total + value`。狀態與 Item 是兩個角色，不必在所有 fold 中選相同型別。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 129,
+      "quote": "接著把材料換成整數文字。第 8.5 節的 `as_str().parse::<i32>()` 回傳 `Result<i32, ParseIntError>`，現在希望把整批解析結果收成一份成功清單；遇到第一個失敗，就保留那個原因交回。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 131,
+      "quote": "標準 Result 提供相應的 FromIterator 實作，目標是 **`Result<Vec<i32>, ParseIntError>`**："
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 137,
+      "quote": "這份收集保留同一個錯誤型別，**不會像第 8.6 節的 ? 一樣替你套用 From 改成另一個錯誤型別**。它選擇的是這次整批工作遇錯就回傳的政策，不是把所有失敗一次收集起來。"
+    },
+    {
+      "section_id": "9.5",
+      "path": "docs/chapters/09-05-lesson.md",
+      "line": 159,
+      "quote": "寫 parse_total，接收 `&[String]`，回傳 `Result<i32, ParseIntError>`。重用本節 parse_all，成功取得 Vec 後再用 owned into_iter 與 fold 合計；失敗用第 8.6 節的 ? 交回。這裡兩層錯誤型別相同，保留原 ParseIntError，不需要新增轉換規則。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

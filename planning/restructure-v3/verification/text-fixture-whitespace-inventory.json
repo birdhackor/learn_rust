@@ -1,0 +1,252 @@
+[
+  {
+    "doc": "10-04-lesson.md",
+    "line": 183,
+    "source": "examples/intro-workspace/io-text/fixtures/note.txt",
+    "bytes": 9,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust\\n\\xe4\\xb8\\xad\\n'"
+  },
+  {
+    "doc": "17-08-lesson.md",
+    "line": 209,
+    "source": "examples/ch14-profiling/profiles/cloned.stdout.txt",
+    "bytes": 129,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'\\xe7\\xb4\\xaf\\xe8\\xa8\\x88\\xe7\\xac\\xa6\\xe5\\x90\\x88\\xe8\\xa1\\x8c\\xe6\\x95\\xb8=6400\\n\\xe7\\xb4\\xaf\\xe8\\xa8\\x88\\xe9\\x85\\x8d\\xe7\\xbd\\xae=25600 blocks\\xef\\xbc\\x8c326400 bytes\\n\\xe5\\x8f\\x97\\xe8\\xbf\\xbd\\xe8\\xb9\\xa4bytes\\xe5\\xb3\\xb0\\xe5\\x80\\xbc=15\\nsnapshot\\xe6\\x99\\x82\\xe4\\xbb\\x8d\\xe6\\xb4\\xbb\\xe8\\x91\\x97\\xe7\\x9a\\x84\\xe5\\x8f\\x97\\xe8\\xbf\\xbd\\xe8\\xb9\\xa4bytes=0\\n'"
+  },
+  {
+    "doc": "17-08-lesson.md",
+    "line": 215,
+    "source": "examples/ch14-profiling/profiles/cloned.stderr.txt",
+    "bytes": 1423,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "<long>"
+  },
+  {
+    "doc": "17-08-lesson.md",
+    "line": 221,
+    "source": "examples/ch14-profiling/profiles/borrowed.stdout.txt",
+    "bytes": 119,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'\\xe7\\xb4\\xaf\\xe8\\xa8\\x88\\xe7\\xac\\xa6\\xe5\\x90\\x88\\xe8\\xa1\\x8c\\xe6\\x95\\xb8=6400\\n\\xe7\\xb4\\xaf\\xe8\\xa8\\x88\\xe9\\x85\\x8d\\xe7\\xbd\\xae=0 blocks\\xef\\xbc\\x8c0 bytes\\n\\xe5\\x8f\\x97\\xe8\\xbf\\xbd\\xe8\\xb9\\xa4bytes\\xe5\\xb3\\xb0\\xe5\\x80\\xbc=0\\nsnapshot\\xe6\\x99\\x82\\xe4\\xbb\\x8d\\xe6\\xb4\\xbb\\xe8\\x91\\x97\\xe7\\x9a\\x84\\xe5\\x8f\\x97\\xe8\\xbf\\xbd\\xe8\\xb9\\xa4bytes=0\\n'"
+  },
+  {
+    "doc": "17-08-lesson.md",
+    "line": 227,
+    "source": "examples/ch14-profiling/profiles/borrowed.stderr.txt",
+    "bytes": 426,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "<long>"
+  },
+  {
+    "doc": "17-08-lesson.md",
+    "line": 233,
+    "source": "examples/ch14-profiling/profiles/solution.stdout.txt",
+    "bytes": 127,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'\\xe7\\xb4\\xaf\\xe8\\xa8\\x88\\xe7\\xac\\xa6\\xe5\\x90\\x88\\xe8\\xa1\\x8c\\xe6\\x95\\xb8=1600\\n\\xe7\\xb4\\xaf\\xe8\\xa8\\x88\\xe9\\x85\\x8d\\xe7\\xbd\\xae=6400 blocks\\xef\\xbc\\x8c81600 bytes\\n\\xe5\\x8f\\x97\\xe8\\xbf\\xbd\\xe8\\xb9\\xa4bytes\\xe5\\xb3\\xb0\\xe5\\x80\\xbc=15\\nsnapshot\\xe6\\x99\\x82\\xe4\\xbb\\x8d\\xe6\\xb4\\xbb\\xe8\\x91\\x97\\xe7\\x9a\\x84\\xe5\\x8f\\x97\\xe8\\xbf\\xbd\\xe8\\xb9\\xa4bytes=0\\n'"
+  },
+  {
+    "doc": "17-08-lesson.md",
+    "line": 239,
+    "source": "examples/ch14-profiling/profiles/solution.stderr.txt",
+    "bytes": 436,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "<long>"
+  },
+  {
+    "doc": "10-03-lesson.md",
+    "line": 27,
+    "source": "examples/intro-workspace/io-text/fixtures/note.txt",
+    "bytes": 9,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust\\n\\xe4\\xb8\\xad\\n'"
+  },
+  {
+    "doc": "18-12-lesson.md",
+    "line": 112,
+    "source": "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt",
+    "bytes": 42,
+    "leading_lf": true,
+    "CRLF": false,
+    "whitespace_only_lines": [
+      [
+        2,
+        "b' '"
+      ]
+    ],
+    "repr": "b'\\nftp://host/item\\n \\n/notes\\nftp://host/item\\n'"
+  },
+  {
+    "doc": "10-05-lesson.md",
+    "line": 189,
+    "source": "examples/intro-workspace/io-text/fixtures/note.txt",
+    "bytes": 9,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust\\n\\xe4\\xb8\\xad\\n'"
+  },
+  {
+    "doc": "10-09-lesson.md",
+    "line": 14,
+    "source": "examples/intro-workspace/note-search/fixtures/note.txt",
+    "bytes": 52,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust \\xe5\\xbe\\x88\\xe6\\xb8\\x85\\xe6\\xa5\\x9a\\nPython\\nrust \\xe4\\xb9\\x9f\\xe6\\x9c\\x89\\xe8\\xb3\\x87\\xe6\\x96\\x99\\n\\xe4\\xb8\\xad\\xe6\\x9c\\x89 Rust\\n'"
+  },
+  {
+    "doc": "12-03-lesson.md",
+    "line": 16,
+    "source": "examples/ch09-files/fixtures/tree/first.txt",
+    "bytes": 5,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust\\n'"
+  },
+  {
+    "doc": "12-03-lesson.md",
+    "line": 22,
+    "source": "examples/ch09-files/fixtures/tree/nested/second.txt",
+    "bytes": 5,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust\\n'"
+  },
+  {
+    "doc": "12-03-lesson.md",
+    "line": 28,
+    "source": "examples/ch09-files/fixtures/tree/.hidden/third.txt",
+    "bytes": 6,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'ABCDE\\n'"
+  },
+  {
+    "doc": "18-11-lesson.md",
+    "line": 208,
+    "source": "examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt",
+    "bytes": 42,
+    "leading_lf": true,
+    "CRLF": false,
+    "whitespace_only_lines": [
+      [
+        2,
+        "b' '"
+      ]
+    ],
+    "repr": "b'\\nftp://host/item\\n \\n/notes\\nftp://host/item\\n'"
+  },
+  {
+    "doc": "18-01-lesson.md",
+    "line": 35,
+    "source": "examples/ch15-projects/materials/duplicate-demo/notes-a.txt",
+    "bytes": 5,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust\\n'"
+  },
+  {
+    "doc": "12-04-lesson.md",
+    "line": 57,
+    "source": "examples/ch09-files/fixtures/tree/first.txt",
+    "bytes": 5,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust\\n'"
+  },
+  {
+    "doc": "12-04-lesson.md",
+    "line": 63,
+    "source": "examples/ch09-files/fixtures/tree/nested/second.txt",
+    "bytes": 5,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust\\n'"
+  },
+  {
+    "doc": "12-04-lesson.md",
+    "line": 69,
+    "source": "examples/ch09-files/fixtures/tree/.hidden/third.txt",
+    "bytes": 6,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'ABCDE\\n'"
+  },
+  {
+    "doc": "17-04-lesson.md",
+    "line": 339,
+    "source": "examples/ch14-api/fixtures/note.txt",
+    "bytes": 35,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'Rust\\xe7\\xac\\xac\\xe4\\xb8\\x80\\xe8\\xa1\\x8c\\nPython\\nRust\\xe7\\xac\\xac\\xe4\\xb8\\x89\\xe8\\xa1\\x8c\\n'"
+  },
+  {
+    "doc": "17-07-lesson.md",
+    "line": 188,
+    "source": "examples/ch14-performance/measurements/run-1.txt",
+    "bytes": 554,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "<long>"
+  },
+  {
+    "doc": "17-07-lesson.md",
+    "line": 194,
+    "source": "examples/ch14-performance/measurements/run-2.txt",
+    "bytes": 1179,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "<long>"
+  },
+  {
+    "doc": "17-07-lesson.md",
+    "line": 228,
+    "source": "examples/ch14-performance/measurements/exercise.txt",
+    "bytes": 209,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'setup_and_borrowed/64   time:   [2.3148 \\xc2\\xb5s 2.4005 \\xc2\\xb5s 2.5066 \\xc2\\xb5s]\\nFound 3 outliers among 30 measurements (10.00%)\\n  3 (10.00%) high severe\\n\\nsetup_and_borrowed/256  time:   [8.8326 \\xc2\\xb5s 8.9113 \\xc2\\xb5s 8.9930 \\xc2\\xb5s]\\n\\n'"
+  },
+  {
+    "doc": "18-06-lesson.md",
+    "line": 194,
+    "source": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/different.txt",
+    "bytes": 5,
+    "leading_lf": false,
+    "CRLF": false,
+    "whitespace_only_lines": [],
+    "repr": "b'rust\\n'"
+  }
+]

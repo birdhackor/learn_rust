@@ -1,0 +1,526 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "18.10"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "version_notice": "First full read is currentfc8ae4... after version-only root link/prose notice; earlier root changes are not own findings.",
+    "preceding_knowledge": "Actual1–17 and18.1–18.9;18.11 prose has been read during this wave but is not used to complete18.10 contract/source/API requirements."
+  },
+  "evidence": {
+    "scope": [
+      "18.10"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch15/stop-url-work.svg",
+        "sha256": "95ab1e126e46778b36a3f53ec4462e957af55547f4ffe5c7e070a5899ed290dc"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-10-lesson.md",
+        "sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/Cargo.toml",
+        "sha256": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/config.rs",
+        "sha256": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/error.rs",
+        "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/lib.rs",
+        "sha256": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/reply.rs",
+        "sha256": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/Cargo.toml",
+        "sha256": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/src/lib.rs",
+        "sha256": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-complete/Cargo.toml",
+        "sha256": "e21e318f76291c7aa621821f006003945d66c5df06d7ace94e888693d0b4b75e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-complete/README.md",
+        "sha256": "a5ebac005e1427c993975556d3977f69a73f7dcaba326ae69f696f699852671e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-complete/examples/b4_signal_demo.rs",
+        "sha256": "5ea8a19548526e0b7f39070b54bce05899bdde510f5525b74d31bb130f6c40ad"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-complete/src/input.rs",
+        "sha256": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-complete/src/lib.rs",
+        "sha256": "3e7915eb978856e0b0410dbd1ec7b66894d8197404444a04c9a5c574e1ad846c"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-complete/src/single.rs",
+        "sha256": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-starter/Cargo.toml",
+        "sha256": "33375bcde6288f93359d66908ef30703f6e1da6704de7e67d3beab417ef425df"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-starter/README.md",
+        "sha256": "d67543c076fb1bf9100463d2287237da330207fa9b915337fc2c28aeecc17618"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-starter/checks/stop-tests.rs",
+        "sha256": "6335e4aa19a6a8dcbdf9e7a1df30c56ebf606c5c6dcb562f10c440e2cde2f64c"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-starter/src/input.rs",
+        "sha256": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-starter/src/lib.rs",
+        "sha256": "4f53dcf35cbf0b7526fc92b1805337eaf01195b3ffb80da85ef856a7a776bb1d"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b4-starter/src/single.rs",
+        "sha256": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch11-async/http-single/Cargo.toml",
+      "examples/ch11-async/http-single/src/config.rs",
+      "examples/ch11-async/http-single/src/error.rs",
+      "examples/ch11-async/http-single/src/lib.rs",
+      "examples/ch11-async/http-single/src/reply.rs",
+      "examples/ch11-async/local-service/Cargo.toml",
+      "examples/ch11-async/local-service/src/lib.rs",
+      "examples/ch15-projects/b4-complete/Cargo.toml",
+      "examples/ch15-projects/b4-complete/README.md",
+      "examples/ch15-projects/b4-complete/examples/b4_signal_demo.rs",
+      "examples/ch15-projects/b4-complete/src/input.rs",
+      "examples/ch15-projects/b4-complete/src/lib.rs",
+      "examples/ch15-projects/b4-complete/src/single.rs",
+      "examples/ch15-projects/b4-starter/Cargo.toml",
+      "examples/ch15-projects/b4-starter/README.md",
+      "examples/ch15-projects/b4-starter/checks/stop-tests.rs",
+      "examples/ch15-projects/b4-starter/src/input.rs",
+      "examples/ch15-projects/b4-starter/src/lib.rs",
+      "examples/ch15-projects/b4-starter/src/single.rs"
+    ],
+    "loaded_source_or_config_files": [
+      "examples/ch11-async/http-single/Cargo.toml",
+      "examples/ch11-async/http-single/src/config.rs",
+      "examples/ch11-async/http-single/src/error.rs",
+      "examples/ch11-async/http-single/src/lib.rs",
+      "examples/ch11-async/http-single/src/reply.rs",
+      "examples/ch11-async/local-service/Cargo.toml",
+      "examples/ch11-async/local-service/src/lib.rs",
+      "examples/ch15-projects/b4-complete/Cargo.toml",
+      "examples/ch15-projects/b4-complete/examples/b4_signal_demo.rs",
+      "examples/ch15-projects/b4-complete/src/input.rs",
+      "examples/ch15-projects/b4-complete/src/lib.rs",
+      "examples/ch15-projects/b4-complete/src/single.rs",
+      "examples/ch15-projects/b4-starter/Cargo.toml",
+      "examples/ch15-projects/b4-starter/checks/stop-tests.rs",
+      "examples/ch15-projects/b4-starter/src/input.rs",
+      "examples/ch15-projects/b4-starter/src/lib.rs",
+      "examples/ch15-projects/b4-starter/src/single.rs"
+    ],
+    "snippets": [
+      {
+        "line": 34,
+        "reference": "examples/ch15-projects/b4-starter/src/lib.rs:models"
+      },
+      {
+        "line": 56,
+        "reference": "examples/ch15-projects/b4-starter/src/lib.rs:state"
+      },
+      {
+        "line": 60,
+        "reference": "examples/ch15-projects/b4-starter/src/lib.rs:constructor"
+      },
+      {
+        "line": 80,
+        "reference": "examples/ch15-projects/b4-starter/src/lib.rs:runner"
+      },
+      {
+        "line": 90,
+        "reference": "examples/ch15-projects/b4-starter/Cargo.toml"
+      },
+      {
+        "line": 100,
+        "reference": "examples/ch15-projects/b4-starter/src/lib.rs"
+      },
+      {
+        "line": 106,
+        "reference": "examples/ch15-projects/b4-starter/src/input.rs"
+      },
+      {
+        "line": 112,
+        "reference": "examples/ch15-projects/b4-starter/src/single.rs"
+      },
+      {
+        "line": 126,
+        "reference": "examples/ch11-async/local-service/Cargo.toml"
+      },
+      {
+        "line": 132,
+        "reference": "examples/ch11-async/local-service/src/lib.rs"
+      },
+      {
+        "line": 138,
+        "reference": "examples/ch11-async/http-single/Cargo.toml"
+      },
+      {
+        "line": 144,
+        "reference": "examples/ch11-async/http-single/src/lib.rs"
+      },
+      {
+        "line": 150,
+        "reference": "examples/ch11-async/http-single/src/config.rs"
+      },
+      {
+        "line": 156,
+        "reference": "examples/ch11-async/http-single/src/error.rs"
+      },
+      {
+        "line": 162,
+        "reference": "examples/ch11-async/http-single/src/reply.rs"
+      },
+      {
+        "line": 177,
+        "reference": "examples/ch15-projects/b4-starter/checks/stop-tests.rs:cleanup"
+      },
+      {
+        "line": 187,
+        "reference": "examples/ch15-projects/b4-starter/checks/stop-tests.rs:control"
+      },
+      {
+        "line": 195,
+        "reference": "examples/ch15-projects/b4-starter/checks/stop-tests.rs:completed-test"
+      },
+      {
+        "line": 203,
+        "reference": "examples/ch15-projects/b4-starter/checks/stop-tests.rs"
+      },
+      {
+        "line": 217,
+        "reference": "examples/ch15-projects/b4-starter/checks/stop-tests.rs:prequeued-test"
+      },
+      {
+        "line": 223,
+        "reference": "examples/ch15-projects/b4-starter/checks/stop-tests.rs:refill-test"
+      },
+      {
+        "line": 245,
+        "reference": "examples/ch15-projects/b4-complete/Cargo.toml"
+      },
+      {
+        "line": 251,
+        "reference": "examples/ch15-projects/b4-complete/src/input.rs"
+      },
+      {
+        "line": 257,
+        "reference": "examples/ch15-projects/b4-complete/src/single.rs"
+      },
+      {
+        "line": 263,
+        "reference": "examples/ch15-projects/b4-complete/src/lib.rs"
+      },
+      {
+        "line": 279,
+        "reference": "examples/ch15-projects/b4-complete/src/lib.rs:signal"
+      },
+      {
+        "line": 289,
+        "reference": "examples/ch15-projects/b4-complete/examples/b4_signal_demo.rs"
+      }
+    ],
+    "commands": [
+      {
+        "line": 166,
+        "command": "cargo +1.99.0 check --lib"
+      },
+      {
+        "line": 167,
+        "command": "cargo +1.99.0 test --lib"
+      },
+      {
+        "line": 269,
+        "command": "cargo test -p url-b4 --lib --locked"
+      },
+      {
+        "line": 295,
+        "command": "cargo run --quiet -p url-b4 --example b4_signal_demo --locked"
+      }
+    ],
+    "copy_proofs": [
+      "examples/ch15-projects/b4-starter/src/input.rs == sealed B3 input.rs",
+      "examples/ch15-projects/b4-starter/src/single.rs == sealed B3 single.rs",
+      "examples/ch15-projects/b4-complete/src/input.rs == sealed B3 input.rs",
+      "examples/ch15-projects/b4-complete/src/single.rs == sealed B3 single.rs",
+      "B4 complete cfg(test) suffix == starter checks"
+    ],
+    "normal_dependencies_unchanged_from_own_prior_seal": [
+      "examples/ch11-async/local-service/Cargo.toml",
+      "examples/ch11-async/local-service/src/lib.rs",
+      "examples/ch11-async/http-single/Cargo.toml",
+      "examples/ch11-async/http-single/src/lib.rs",
+      "examples/ch11-async/http-single/src/config.rs",
+      "examples/ch11-async/http-single/src/error.rs",
+      "examples/ch11-async/http-single/src/reply.rs"
+    ],
+    "manifests": {
+      "examples/ch11-async/http-single/Cargo.toml": {
+        "package": {
+          "name": "ch11-http-single",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "derive"
+            ]
+          },
+          "reqwest": {
+            "version": "0.13.5",
+            "default-features": false,
+            "features": [
+              "rustls"
+            ]
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time"
+            ]
+          },
+          "url": "2.5.8",
+          "serde": {
+            "version": "1.0.229",
+            "features": [
+              "derive"
+            ]
+          },
+          "serde_json": "1.0.154"
+        }
+      },
+      "examples/ch11-async/local-service/Cargo.toml": {
+        "package": {
+          "name": "ch11-local-service",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "axum": {
+            "version": "0.8.9",
+            "default-features": false,
+            "features": [
+              "http1",
+              "tokio"
+            ]
+          },
+          "ch11-http-single": {
+            "path": "../http-single"
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time",
+              "sync"
+            ]
+          }
+        },
+        "dev-dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "test-util"
+            ]
+          }
+        }
+      },
+      "examples/ch15-projects/b4-complete/Cargo.toml": {
+        "package": {
+          "name": "url-b4",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "reqwest": {
+            "version": "0.13.5",
+            "default-features": false,
+            "features": [
+              "rustls"
+            ]
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time",
+              "sync",
+              "signal"
+            ]
+          },
+          "url": "2.5.8"
+        },
+        "dev-dependencies": {
+          "ch11-local-service": {
+            "path": "../../ch11-async/local-service"
+          }
+        }
+      },
+      "examples/ch15-projects/b4-starter/Cargo.toml": {
+        "package": {
+          "name": "url-b4-starter",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "reqwest": {
+            "version": "0.13.5",
+            "default-features": false,
+            "features": [
+              "rustls"
+            ]
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time",
+              "sync",
+              "signal"
+            ]
+          },
+          "url": "2.5.8"
+        },
+        "dev-dependencies": {
+          "ch11-local-service": {
+            "path": "../../ch11-async/local-service"
+          }
+        }
+      }
+    },
+    "counts": {
+      "owned_files": 19,
+      "loaded_source_or_config_files": 17,
+      "hashes": 26,
+      "snippets": 27,
+      "commands": 4,
+      "tests_per_complete_copy": 7,
+      "svg_xml": 1
+    }
+  },
+  "assessments": [
+    {
+      "item": "stop semantics and ownership",
+      "judgment": "new does not fill; record does not fill; loop try_recv precedes fill, then biased stop before join and loop-top recheck. Stop boundary is observation rather than OS arrival instant. StopSourceClosed and SignalFailed separate from Requested. abort_all followed by full join preserves true already-completed Check/JoinError and only actual is_cancelled yields Cancelled. by_ref consumes pending Input ownership into Unstarted without fake task identity/time. Id registry removed exactly once and into_batch asserts empty tasks/registry before original-index sorting."
+    },
+    {
+      "item": "seven checks and complete source",
+      "judgment": "All private helpers/readiness paths supplied, starter limited dead_code allowances explained before use. Seven checks cover zerojobs/empty priority, prequeued noGET, twoheld cancellation with duplicated pending URL, refill keeping HTTP200 at original3 and held1/4 cancelled, synthetic completed Check+panic+cancelled+pending, SignalFailed/closed, and ordinary mixed9hits. finish snapshots task/registry before fallback drain so tests cannot repair missing product wait and pass. Controlled select borrows both owners, stores observed state on owner-side scope, finite15seconds, then abort/drain and shutdown before assertions. Current-thread synthetic capacity2 completion notifications immediately precede return/panic, so true finished-not-joined state is established. Starter one pass/six fail and partial record+drain two pass/five fail align with source."
+    },
+    {
+      "item": "signal demo",
+      "judgment": "Signal select polls ctrl_c first before sending entered, early event closes entered but carries real reason through same stop channel. finish_controller aborts+awaits and distinguishes task panic. Demo owns Scheduler, Fixture, handle across finite entered/run/ready observations; close awaits scheduler, then saves both listener and server completion before propagating. Request at READY gives input1/3 Cancelled and4/5 Unstarted,2hits,130 after print+flush. Without signal both first requests time out at10seconds; repeated held0 has no remaining gate and returns503, invalid input stays a problem, so ordinary finish1 precedes15second observation. Error and output failure2. OS SIGINT listener permanence/caller drop warning accurate."
+    },
+    {
+      "item": "closure and SVG",
+      "judgment": "Four input/single copies equal own sealed B3 sources; all seven Fixture/http-single normal dependencies unchanged from own previous seal; tests equal complete cfg(test) suffix. No dependency examples/binary/integration/cfgtest loaded by selected B4 commands. Complete manifests/core/tests/demo all inline. 27 snippet anchors resolve. SVG source uses gate0/1 separately from original1/4 and depicts final original1/3/4/5/6 classification faithfully."
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Read complete current18.10,17 compiled source/config/check/example files directly or exact prior-source equality, one SVG XML; resolve27 snippet references and four commands; capture26 hashes.",
+      "Statically trace seven checks, partial-stub pass counts, requests/exit codes and all returned cleanup paths."
+    ],
+    "not_performed": [
+      "No Cargo/rustc/Clippy/test/example/HTTP/signal program run or external browser.",
+      "No visual SVG or reader experiment; two uncompiled README files only hashed."
+    ]
+  },
+  "conclusion": "No necessary or optional technical correction found in measured18.10."
+}

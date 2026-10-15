@@ -1,0 +1,477 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "16.1",
+    "16.2"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "method": "Read16.1→16.2 whole pages and exact selected targets; not blind first-read. Actual1–15 prefix supplies all prerequisites; later17/18 are not used to repair16.",
+    "scope_boundary": "Although all five chapter16 pages are released,16.3–16.5 have not been read before this prefix initial judgment. No later package/example source is treated as loaded."
+  },
+  "evidence": {
+    "scope": [
+      "16.1",
+      "16.2"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch13/pin-owner-transfer.svg",
+        "sha256": "00db7097c5c53ef19f38c35c3ef874c8cf898e0efe810f01648c1e218eb546b3"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch13/self-reference-addresses.svg",
+        "sha256": "a8c02b27132c3e5e74bb0267bd04eff1927970f3cdff82df05558dc22a09b646"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/futures-v3/future-internal-borrow.svg",
+        "sha256": "47fb3855a6b90869207326feb71b33c6070a5aeec75a6986d9e3e9f1cd8ad884"
+      },
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/16-01-lesson.md",
+        "sha256": "a02196df700ac59c39a0d5d0a73a457d54661a69110d145086deac890aca84a3"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/16-02-lesson.md",
+        "sha256": "e23aa436d2fae0c6d9a0d80d17f053ae3bed168bc40a1cd42ea00fdce2a54aca"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/Cargo.toml",
+        "sha256": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/addresses_complete/addresses/mod.rs",
+        "sha256": "ecc28b64aebb05adbeb3ab5a8a53f25f7e93816844cdb5ffb5fc58ed94f871d3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/addresses_complete/main.rs",
+        "sha256": "90cdc6b5c6b5c89b1c5c0bb8df58e486e736a283d98e9fe2e71757afd75eebe0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/box_handles/addresses/mod.rs",
+        "sha256": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/box_handles/main.rs",
+        "sha256": "8159d50e707b656dbdd601cd34e75dc1eb17b867a60d59e6cbdfc937348f9574"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/field_swap_solution/addresses/mod.rs",
+        "sha256": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/field_swap_solution/main.rs",
+        "sha256": "8e4201a68817157223060a17fd44cdbad929019c6ec5618503e62c963b8a28e6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs",
+        "sha256": "72b0b303111c30b050b36c3b7d54ab080b9702e7cdef0d38509d1056cf3ac939"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/inline_swap/main.rs",
+        "sha256": "af99115c19f4f070dbe9a134b3a6c3161a64c92fed868532a665c1af8b244b33"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/local_pin.rs",
+        "sha256": "46d5c4efaad029128963556b2072840af2e4cdacae53e4b6161295c03cf810a5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/pinned_owner_swap/main.rs",
+        "sha256": "0160d59235dfb83ec1123c29ca2a507405035b1f53015637424688f59af4fcda"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/pinned_owner_swap/pinning/mod.rs",
+        "sha256": "def51b90a93c3d2ba3beae8d236a82d9155fa3f5424bbad45cbc3df05a53cd3d"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/pinning_complete/main.rs",
+        "sha256": "197fa4836d423b5e4b0f4b08eb59c4137d47b29da891744b6aa63fb2121d1b16"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/pinning_complete/pinning/mod.rs",
+        "sha256": "e52fbf2e64735c17bf2153f8d22e85c8dd1916cea2e637a05153da45b8c2a42e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/pinning_solution/main.rs",
+        "sha256": "b051496f6a8c048af6ffaf99403ce199d2f84426a9e590491d95a415b997eaa6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/pinning_solution/pinning/mod.rs",
+        "sha256": "def51b90a93c3d2ba3beae8d236a82d9155fa3f5424bbad45cbc3df05a53cd3d"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/examples/unpin_access.rs",
+        "sha256": "0de2e89d4777b51204c65d440ff38b88ec41dd3669ba018f9832d19016392de0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected",
+        "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.rs",
+        "sha256": "d45e8d0513919c543d76adf58985ab796f074ba066178171639bdfa73fc80ffa"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.expected",
+        "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.rs",
+        "sha256": "bd65619ed471574ff29e9e8c0febc87f554860cf469ad7a2e920a71d9cd435fc"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.expected",
+        "sha256": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.rs",
+        "sha256": "acd705401e4f16dee4345ed8aad999c96b9182cb4c2bf7a315d3f35afd20be8f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch13-futures/stages/src/main.rs",
+        "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch13-futures/stages/Cargo.toml",
+      "examples/ch13-futures/stages/examples/addresses_complete/addresses/mod.rs",
+      "examples/ch13-futures/stages/examples/addresses_complete/main.rs",
+      "examples/ch13-futures/stages/examples/box_handles/addresses/mod.rs",
+      "examples/ch13-futures/stages/examples/box_handles/main.rs",
+      "examples/ch13-futures/stages/examples/field_swap_solution/addresses/mod.rs",
+      "examples/ch13-futures/stages/examples/field_swap_solution/main.rs",
+      "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs",
+      "examples/ch13-futures/stages/examples/inline_swap/main.rs",
+      "examples/ch13-futures/stages/examples/local_pin.rs",
+      "examples/ch13-futures/stages/examples/pinned_owner_swap/main.rs",
+      "examples/ch13-futures/stages/examples/pinned_owner_swap/pinning/mod.rs",
+      "examples/ch13-futures/stages/examples/pinning_complete/main.rs",
+      "examples/ch13-futures/stages/examples/pinning_complete/pinning/mod.rs",
+      "examples/ch13-futures/stages/examples/pinning_solution/main.rs",
+      "examples/ch13-futures/stages/examples/pinning_solution/pinning/mod.rs",
+      "examples/ch13-futures/stages/examples/unpin_access.rs",
+      "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected",
+      "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.rs",
+      "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.expected",
+      "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.rs",
+      "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.expected",
+      "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.rs",
+      "examples/ch13-futures/stages/src/main.rs"
+    ],
+    "snippet_references": [
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 32,
+        "source": "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 38,
+        "source": "examples/ch13-futures/stages/fixtures/compile-fail/reference_blocks_swap.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 48,
+        "source": "examples/ch13-futures/stages/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 54,
+        "source": "examples/ch13-futures/stages/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 66,
+        "source": "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 72,
+        "source": "examples/ch13-futures/stages/examples/inline_swap/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 100,
+        "source": "examples/ch13-futures/stages/examples/box_handles/addresses/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 104,
+        "source": "examples/ch13-futures/stages/examples/box_handles/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 133,
+        "source": "examples/ch13-futures/stages/examples/field_swap_solution/addresses/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 139,
+        "source": "examples/ch13-futures/stages/examples/field_swap_solution/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 153,
+        "source": "examples/ch13-futures/stages/examples/addresses_complete/addresses/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 157,
+        "source": "examples/ch13-futures/stages/examples/addresses_complete/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 32,
+        "source": "examples/ch13-futures/stages/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 36,
+        "source": "examples/ch13-futures/stages/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 42,
+        "source": "examples/ch13-futures/stages/examples/unpin_access.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 62,
+        "source": "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 68,
+        "source": "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 103,
+        "source": "examples/ch13-futures/stages/examples/pinned_owner_swap/pinning/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 111,
+        "source": "examples/ch13-futures/stages/examples/pinned_owner_swap/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 141,
+        "source": "examples/ch13-futures/stages/examples/local_pin.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 157,
+        "source": "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 161,
+        "source": "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 175,
+        "source": "examples/ch13-futures/stages/examples/pinning_solution/pinning/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 181,
+        "source": "examples/ch13-futures/stages/examples/pinning_solution/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 197,
+        "source": "examples/ch13-futures/stages/examples/pinning_complete/pinning/mod.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 201,
+        "source": "examples/ch13-futures/stages/examples/pinning_complete/main.rs",
+        "anchor": null
+      }
+    ],
+    "commands": [
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 76,
+        "command": "cargo run -p ch16-future-stages --example inline_swap --locked"
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 108,
+        "command": "cargo run -p ch16-future-stages --example box_handles --locked"
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 143,
+        "command": "cargo run -p ch16-future-stages --example field_swap_solution --locked"
+      },
+      {
+        "document": "docs/chapters/16-01-lesson.md",
+        "line": 161,
+        "command": "cargo test -p ch16-future-stages --example addresses_complete --locked"
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 46,
+        "command": "cargo run -p ch16-future-stages --example unpin_access --locked"
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 115,
+        "command": "cargo run -p ch16-future-stages --example pinned_owner_swap --locked"
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 145,
+        "command": "cargo run -p ch16-future-stages --example local_pin --locked"
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 185,
+        "command": "cargo run -p ch16-future-stages --example pinning_solution --locked"
+      },
+      {
+        "document": "docs/chapters/16-02-lesson.md",
+        "line": 205,
+        "command": "cargo test -p ch16-future-stages --example pinning_complete --locked"
+      }
+    ],
+    "selected_manifest": {
+      "package": {
+        "name": "ch16-future-stages",
+        "version": {
+          "workspace": true
+        },
+        "edition": {
+          "workspace": true
+        },
+        "rust-version": {
+          "workspace": true
+        },
+        "publish": {
+          "workspace": true
+        }
+      }
+    },
+    "selected_lock_entries": [
+      {
+        "name": "ch16-future-stages",
+        "version": "0.1.0"
+      }
+    ],
+    "copy_checks": [
+      {
+        "path": "examples/ch13-futures/stages/examples/box_handles/addresses/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/field_swap_solution/addresses/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/inline_swap/addresses/mod.rs",
+        "kind": "byte-identical"
+      },
+      {
+        "path": "examples/ch13-futures/stages/examples/pinning_solution/pinning/mod.rs",
+        "same_as": "examples/ch13-futures/stages/examples/pinned_owner_swap/pinning/mod.rs",
+        "kind": "byte-identical"
+      }
+    ],
+    "counts": {
+      "owned_files": 24,
+      "hashes": 34,
+      "snippets": 26,
+      "commands": 9,
+      "test_functions": 7,
+      "compile_fail_fixtures": 3
+    }
+  },
+  "assessments": [
+    {
+      "section": "16.1 motivation",
+      "judgment": "14.3 owned release receiver and pending recv borrow give a concrete internal-reference motivation, expressly not guaranteed compiler struct layout. Not every future is claimed self-referential. Lifetime, ownership transfer and physical location are distinguished; self pointers are not automatically repaired."
+    },
+    {
+      "section": "16.1 source/outputs",
+      "judgment": "Reference version keeps field borrows live through swap, supporting E0502. AddressNote stores i32/raw pointer and only ptr::eq, never dereferences invalid saved; construction occurs before remember. Whole-value swap moves saved with values and produces false/false, including equal values; Box-owner swap leaves allocations and true/true; field-only swap preserves field addresses/records. Four tests, answers and exact output agree; shared module copies match."
+    },
+    {
+      "section": "16.2 Pin contract",
+      "judgment": "Pin wrapper versus pointee, mutable borrowed versus owned forms, library/unsafe contract, Unpin opt-out and PhantomPinned are accurate. Pin::new/get_mut Unpin conditions and rejection E0277 are correct; Box::pin does not require Unpin. Pin as_ref/as_mut/get_ref/get_unchecked_mut receiver ownership/bounds are introduced before use. BoxPin owner movement does not move pointee, ordinaryBox lacks protection, and !Unpin is not permanent no-move from construction."
+    },
+    {
+      "section": "16.2 model and Drop",
+      "judgment": "PinnedNote fields private; constructor first Box::pin then records location. Both unsafe mutable getters modify only intended i32/raw field, do not replace/move Self, leak mutable reference or offer structural pin projection. Drop only reads i32/compares raw address; Drop receiver stays&mut and Drop guarantee includes storage reclamation/reuse, not guaranteed eventual cleanup. Seven-line owner-swap/drop sequence and solution100 are accurate. Local pin! creates local borrowed Pin without T heap allocation; async storage caveat avoids equatinglocal withstack. Reborrow tests preserve same pointee and correctly use as_mut repeatedly."
+    },
+    {
+      "section": "closure/figures",
+      "judgment": "Stages package truly has no library or dependencies; nine selected run/test commands load only listed target-local modules. Complete target includes all seven stated tests and taught helpers, no future poll/runtime source. Three standalone failure files fully inline with sidecars; no subsequent lib needed. Three SVG XML labels/arrows match the address model and explicitly distinguish sequence/address/ownership, not measured layout or dereference permission."
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Read24owned files,26snippets,9commands(7run/2example-test) and all seven test functions.",
+      "Validate exact anchors, local module closure, selected manifest/rootlock and three module-copy equalities.",
+      "Parse/read three SVG XML sources; statically trace outputs, bounds and safety preconditions."
+    ],
+    "not_performed": [
+      "No Cargo/rustc/Clippy/tests or examples run.",
+      "No pointer dereference experiment, browser, SVG visual or first-reader test."
+    ]
+  },
+  "conclusion": "No necessary or optional technical correction found in measured16.1–16.2."
+}

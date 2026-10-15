@@ -1,0 +1,87 @@
+{
+  "checked_utc": "2026-10-15T07:29:03.438206+00:00",
+  "kind": "post-adoption narrow followup; does not replace initial round04-ch04a judgment",
+  "findings": [
+    {
+      "id": "C4a-01",
+      "status": "closed",
+      "source_position": "docs/chapters/04-02-lesson.md:9 before first function include15–16",
+      "evidence": "Existing exact match-result rule moved before first function; concrete i32/tail-expression analysis retained21. All selected Rust unchanged. Desktop/mobile actual page shows rule before shipping code; DOM confirms order."
+    },
+    {
+      "id": "C4a-02",
+      "status": "closed",
+      "source_position": "docs/chapters/04-02-lesson.md:7",
+      "evidence": "Only English pattern is strong, following （模式） remains readable. Both actual viewports have <strong>pattern</strong>, no raw ** in article paragraphs."
+    }
+  ],
+  "source_changes": [
+    {
+      "path": "docs/chapters/04-02-lesson.md",
+      "initial": "262f9c33eb424515abb9be65146314d24d08650610a54674ce7977f43cfcf1da",
+      "current": "5bbb8a9a5406962e325218feb6f35ab4adbaeccea828d6f512bc7ba07562e066"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial": "814f49ab55f61166079a9a123eb144402c7fe7940480f502498a7538cc66d761",
+      "current": "95fc150a6f4c104bbd7c775cc52c79c180e5a5bfe584110800e07047e99f5dcb"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial": "b85720032a875d06ca88e96607c0fbdf16cfb1b90507788c5ffeb76e6913e6b7",
+      "current": "7161d333dd2b49cb74eee31661e7762ec3e6b234a7b550202dc5079b109608f1"
+    }
+  ],
+  "source_change_scope": "Only 4.2 body changed for requested fixes. Workspace/lock differences to initial4a are previously documented addition of data-steps/data packages during initial review, not this repair. No chapter5 source read. All initial4a referenced Rust/manifests/default main unchanged.",
+  "source_evidence": "round04-ch04a-followup-source.json",
+  "actual_visual_evidence": "round04-ch04a-visual/followup-metadata.json",
+  "screenshots_actually_viewed": [
+    "round04-ch04a-visual/desktop-followup-match-result-and-pattern.png",
+    "round04-ch04a-visual/mobile-followup-match-result-and-pattern.png"
+  ],
+  "render_metadata": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "url": "http://127.0.0.1:8097/chapters/04-02-lesson/",
+      "at": "2026-10-15T07:28:17.592Z",
+      "htmlSha256": "260124e20d06ceb8e395a6d7a729116b84f1cbd8bbbe8100d3e0c050b9fd496b",
+      "resultText": "match 本身是 expression，結果來自被選中 arm 的 expression。",
+      "resultBeforeFirstCode": true,
+      "patternStrong": [
+        "<strong>pattern</strong>"
+      ],
+      "rawAsteriskParagraphs": [],
+      "images": 0,
+      "firstCode": "fn shipping(tier: i32) -> i32 {\n\n    match tier {\n\n        0 => 20,\n\n        1 => 10,\n\n        _ => 0,\n\n    }\n\n}\n"
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "url": "http://127.0.0.1:8097/chapters/04-02-lesson/",
+      "at": "2026-10-15T07:28:19.889Z",
+      "htmlSha256": "260124e20d06ceb8e395a6d7a729116b84f1cbd8bbbe8100d3e0c050b9fd496b",
+      "resultText": "match 本身是 expression，結果來自被選中 arm 的 expression。",
+      "resultBeforeFirstCode": true,
+      "patternStrong": [
+        "<strong>pattern</strong>"
+      ],
+      "rawAsteriskParagraphs": [],
+      "images": 0,
+      "firstCode": "fn shipping(tier: i32) -> i32 {\n\n    match tier {\n\n        0 => 20,\n\n        1 => 10,\n\n        _ => 0,\n\n    }\n\n}\n"
+    }
+  ],
+  "source_hash": "5bbb8a9a5406962e325218feb6f35ab4adbaeccea828d6f512bc7ba07562e066",
+  "not_done": [
+    "No Cargo/build/tests",
+    "No repository source edits",
+    "No original report rewrite",
+    "No claim of blind firstread or final strict site acceptance"
+  ]
+}

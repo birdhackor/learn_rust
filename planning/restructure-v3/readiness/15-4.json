@@ -1,0 +1,145 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "15.4"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round15-and18b-root-crossref-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round15-c-and-ffi-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round15-gat-variance-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round15-raw-pointer-safe-abstraction-middle.md",
+    "planning/restructure-v3/reviews/continuity-late/15-06-root-crossref-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/15-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/15-04-lesson.md": "3f60eb8974d39620c01dd5719914f728739bfbca6fe7507ce091d712b78ecd4f",
+    "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+    "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+    "examples/ch12-unsafe/stages/examples/unsafe_read/contracts/mod.rs": "58df1d4937fc07ab63215454e20f359be2af157f0b8bbb909460058911e0e54f",
+    "examples/ch12-unsafe/stages/examples/unsafe_read/main.rs": "9a9068291c1961b1d286051fa136abe704ef2994b47d6a8bbb9169c90ba904bb",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.rs": "05265ce1ffe9aba7e192becf533dc5e5f5d5c8bcfbfa75c9dbd4cc0927327c38",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.expected": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.rs": "0b1139176ba851764b2faeba52717c26c66974efabd8a76a3701872dd0d54e5d",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs": "dda61e9cbf87331c319d11c781ed4b5a7d2db8a050658c141f853d9246c316ef",
+    "examples/ch12-unsafe/stages/examples/safe_split/main.rs": "aca13d411d9fc8fddad12ba5ef716908109fa4f0cc0d8601375a5c771181e9ae",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.rs": "be5ddfa3e352ab719d67067460709c86c38b5eb1c2da9f728a53e9779ee8b586",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs": "0a098b656e7b7912093b4f80e2d6993ddd2233bfed8130d9d9048f2c9484542d",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.rs": "d94289238708c8a9aada39e14498d59e13a8d339c2a43401afccab0d2440a07d",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/ch12-unsafe/stages/examples/readonly_threads/main.rs": "57ad881be656415f365c7acde81deb2d65096ec853dde5d9185161e164ae3668",
+    "examples/ch12-unsafe/stages/examples/unsafe_solution/contracts/mod.rs": "dda61e9cbf87331c319d11c781ed4b5a7d2db8a050658c141f853d9246c316ef",
+    "examples/ch12-unsafe/stages/examples/unsafe_solution/main.rs": "140272fd7190952dd46ca86ca8a3704fc0fbd746e951639e48046a88e6fb5407",
+    "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+    "examples/ch12-unsafe/stages/examples/contracts_complete/main.rs": "57ad881be656415f365c7acde81deb2d65096ec853dde5d9185161e164ae3668",
+    "docs/assets/ch12/safe-split.svg": "7b6aeb6e536ea758c2a32429c30698a60a1a9c4cdbc12b26eb1ae0865f1af6c3"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 3,
+      "quote": "第15.3節在每一次raw存取前確認來源與權限。現在希望把操作整理成可重用的介面：哪些條件仍要由caller確認，哪些可以由函式的輸入型別與檢查接手？最後再讓一份只讀借用跨thread，分開核對有效性與Send／Sync。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 19,
+      "quote": "**`unsafe fn`** 是有額外安全前置條件的函式；型別與編譯器不能單獨確認caller已滿足它們。caller在unsafe block中呼叫，表示自己已核對契約。函式作者則負責：在這些前置條件成立時，body的操作也必須合法。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 21,
+      "quote": "先把第15.3節的i32讀取整理成read_i32。它收到 `*const i32`，回傳普通i32副本，不接手原資料或配置，也不交回reference。**呼叫前**必須確認："
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 60,
+      "quote": "若省掉**呼叫處**的unsafe block，即使這次pointer來自有效局部值，下面完整fixture也得到 `E0133`："
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 76,
+      "quote": "**safe abstraction（安全抽象）** 是由實作管理unsafe條件、讓caller可以透過safe介面完成工作的安排。safe caller仍要遵守型別與borrow規則，但不必另外證明隱藏在body裡的raw操作。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 78,
+      "quote": "**soundness（健全性）** 要求：合法的safe client使用這份介面，不能因此觸發UB。若safe client能把合法輸入交進去、導致實作違反記憶體契約，這份介面就是**unsound**。第15.3節已說明，UB不是普通的Err或固定會crash；測試剛好正常不能把它變合法。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 84,
+      "quote": "對 `[80, 120, 40, 60]`，希望在mid2切出前兩項與後兩項，兩段可各自修改，最後原數列保留修改。兩段都借原資料，不建立另一份Vec，也不把ownership移走。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 102,
+      "quote": "標準slice已有 **`split_at_mut_checked(&mut self, mid)`**：mid不超過長度時回 `Some((左段, 右段))`，否則None；兩段借原slice。實際程式可使用這項safe方法。本節手寫同樣的有限工作，用來練習其背後的pointer與安全理由。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 106,
+      "quote": "**`std::slice::from_raw_parts_mut(data, len)`** 是unsafe函式，收到 `*mut T` 與usize元素數量，回傳 `&mut [T]`。它不配置、clone或驗證這份資料；**建立reference時**就要滿足以下條件："
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 116,
+      "quote": "**長度零仍需要non-null與alignment**，但不要求有一個可dereference的i32。空Vec能提供合法的空slice，其data pointer可能不對應已配置的元素；我們只用add(0)、形成零長度reference，不讀寫元素。非空slice切在len時，right則使用one-past pointer與長度0；也不dereference那個端點。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 128,
+      "quote": "**只有mid檢查並不足以證明全部安全。** 它解決範圍與len−mid的減法；alignment、初始化與有效storage來自原輸入reference，來源資格來自as_mut_ptr，獨佔責任來自輸入borrow與兩段不重疊。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 158,
+      "quote": "第13.1節已教Send與Sync。現在補上它們的一項責任：它們是 **unsafe traits**，手寫實作時，作者必須維持編譯器不能完整核對的額外安全契約。**`unsafe impl`** 表示實作者承擔這份責任；它不替型別加入鎖、atomic更新或新的storage生命週期。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 178,
+      "quote": "要示範一份含raw pointer、但只允許讀取的借用wrapper，先列出它的**private不變條件**："
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 208,
+      "quote": "對**這一份i32型別與已列出的全部介面**，可以承擔以下兩項實作："
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 249,
+      "quote": "先寫出切分的理由，再用 `[80, 120, 40, 60]` 在mid3切分。確認left有三項、right一項；把left[2]與right[0]各加20，結束borrow後原數列應是 `[80, 120, 60, 80]`。"
+    },
+    {
+      "section_id": "15.4",
+      "path": "docs/chapters/15-04-lesson.md",
+      "line": 281,
+      "quote": "審查時要追到**unsafe操作的全部前提**：哪些由輸入型別保證，哪些由檢查建立，哪些靠private介面的不變條件維持。也要看safe程式；如果constructor讓pointer與source不再指向同一資料，read裡的unsafe block即使一字未改，原理由也已失效。SAFETY註解記錄理由，不能代替真正成立的關係。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

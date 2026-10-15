@@ -1,0 +1,60 @@
+{
+  "wave": "18A",
+  "findings": [],
+  "version_basis": "18.1/18.5/18.6於首次閱讀前按root版本通知重新freeze current全文；未讀作者diff/finding。18A-current-freeze.json保留這次初讀版本。",
+  "notes": {
+    "18-01": [
+      "A專案是一個只產生報告的重複內容工具；原生root、六檔固定bytes、邏輯重複量與A1→A4交付分開。",
+      "先size、再BLAKE3、最後完整bytes；相同摘要不是相同內容證明。完整性、輸出完成與0/1/2仍是不同判準。",
+      "基本Python讀者可把已教的檔案、集合、錯誤、CLI組合成可操作工具；新增工作按四個stage切開，不一次重寫整份答案。",
+      "六份fixture完整bytes已逐檔開讀；fixed toolchain語法在命令前教，獨立check建lock後才--locked，四階段待做與示範命令作用清楚。",
+      "把root換成其他目錄不改大小/摘要/bytes政策；hard-link路徑數是邏輯量，不能解讀成可釋放實體容量。"
+    ],
+    "18-02": [
+      "A1只收一般檔案與項目問題；RootError是致命邊界，ScanIssue保留單一項目的失敗。",
+      "validate_root先拒絕link/非目錄；WalkDir不跟內部links，逐筆失敗保存並繼續，Unicode輸出界線與原生Path排序分開。",
+      "先固定可觀察且可測的檔案清單，後面內容比較才能保存正確原生路徑與metadata。",
+      "起始manifest/lib/collection、完整八項驗收、完成collection與inventory全讀；checks需手動加入、零測試非完成與三個stub無觀察意義均在操作前說明。",
+      "缺root回RootError；內部缺項目回ScanIssue且保留其他文件；空目錄/空檔/hidden檔的角色可由來源與tests直接判斷。"
+    ],
+    "18-03": [
+      "A2將同大小同摘要候選分成真正bytes相同的群組；讀失敗保留確切FileIssue，不當成不同內容。",
+      "大小單例跳hash；每個candidate比各代表，碰撞可留多真群；失敗移除確切原生path並從剩餘桶重建，候選嚴格減少才保證有限。",
+      "只丟一次失敗比較會漏掉B/B配對，重建讓其他檔案仍能交付成果；私有callback違約panic與一般檔案問題政策有明確區分。",
+      "starter三個stub、stream/files所有helper、12項新增tests、complete全實作與示範全讀；a2 complete tests尾段與已讀checks逐bytes相同。",
+      "強制相同摘要的A/B/B仍只留B/B；左A讀錯後移A重建；不在候選內的錯誤path觸發內部契約檢查，不能無限retry。"
+    ],
+    "18-04": [
+      "A3以owned Report同時服務穩定文字與JSON；native Path排序、Debug診斷與可反向開檔的路徑不可混用。",
+      "先保留PathBuf排序再轉String；IssueRow在排序結束前保留Option<PathBuf>，逐欄tie-break；checked乘加不能產錯誤正常總量。",
+      "相同資料須有穩定順序且問題不能消失；兩種輸出共用模型，完整性由兩種issues計算。",
+      "metrics/report起始檔、九項新tests、完整report與text/json examples全讀；Option::as_ref、None/Some排序與Serde新增欄位映射都在code前教。",
+      "a/b和a.txt依原生Path排序而非顯示String；控制字元用Debug與JSON escape保留單列；u64乘法或合計溢位回ReportError。"
+    ],
+    "18-05": [
+      "A4把原生root/--json接到同一份Report與真實stdout/stderr/ExitCode；0完整、1部分、2致命。",
+      "write_all成功後還要flush成功才回0/1；write/flush任一失敗沿RunError回2，help/version同樣檢查輸出完成。",
+      "library成功並未驗收CLI出口；ControlledWriter測完成條件，Command child測真實資料/出口/狀態。",
+      "starter app/main/lib/manifest、六app與六child tests、complete app與所有共用modules全讀；checks app module與tests/cli檔案的安裝方式分開且清楚。",
+      "部分報告成功完整寫出才回1；已接收bytes但flush失敗仍回2；空root可回0，缺root回2且stdout沒有報告。"
+    ],
+    "18-06": [
+      "最終版以private modules＋root re-export交付公有API；scan_report借Path取得owned Report，與CLI Settings/輸出分離。",
+      "typed RunError供caller分類，Error::source借出可用標準原因；有限原因鏈由main逐層走訪，私有非Error包裝不偽稱已實作Error。",
+      "完整答案需能保存到repo外、由外部caller使用並重做fixture；整理邊界與驗收不增加一次重寫1657行作業。",
+      "final所有995行core、662行tests/fixtures Rust逐段全讀，六個實體fixture逐bytes確認，manifest/README/public_api/doctest全部讀；完整答案同頁嵌入。",
+      "外部caller match非exhaustive RunError保留其他分支；缺root仍有typed io::Error與source；Source width/Interrupted/fail_at控制解釋後才出完整tests。"
+    ]
+  },
+  "source_coverage_evidence": ["18A-all-owned-sourcehash.json", "18A-fixture-bytes.json", "18A-read-index.json"],
+  "prefix_actual_read_additions": [
+    {"path":"docs/chapters/10-06-lesson.md","lines":[1,104],"purpose":"clap derive/attributes/try_parse_from/error channels"},
+    {"path":"docs/chapters/10-07-lesson.md","lines":[1,114],"purpose":"Serde owned model/deny_unknown_fields/codec APIs"},
+    {"path":"docs/chapters/10-08-lesson.md","lines":[1,132],"purpose":"TempDir ownership/Command/Output/CARGO_BIN_EXE/from_utf8"}
+  ],
+  "limitations": [
+    "13/15/17已審後再進18A，不宣稱全書首讀盲測；前文按實際需要定點讀，未整本通讀01–12。",
+    "18A initial direct-ref freeze未包含八個stage README及12個材料的全部檔案；實際補讀並freeze完整readme/fixture後才封存本初判。",
+    "本波不評18B，不評未由A專案命令載入的其他workspace member內容。"
+  ]
+}

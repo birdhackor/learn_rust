@@ -1,0 +1,13 @@
+{
+  "chapter-coverage.json": "1c94d1727c16b3804cf3bb6fd05ff38e70309c5f3a4dc3175b33101bb7aeffa8",
+  "coverage.json": "57978e449187e94021e5a8c695eeac7e49d6b71b197d897bd8e498c26e9a786e",
+  "final-inventory.json": "3d00d95ea38bb764a4f2377b1fe063a5bbcc1d3868c33d798efb3a333a7c39fe",
+  "findings.json": "4cd4a7f31a6c1d1e839fa5f61ca3010c81e45d601da700c1507589b93f391278",
+  "finish.py": "a8e5b33386b60ab1e24b32a8b19166de163626cc41b0b67e22d5804ee012637a",
+  "inventory.json": "788450706d49dbdad9dd5dfa84cba97b86e9744442e8f3f86c61059117a544c2",
+  "inventory.py": "a95ac6c1aae6c7e229ff0b29df44e9a62e6526f5b064dc895cd7e92a1b11f31f",
+  "report.md": "e1a5e98bb0f8fffa79f95935c9fab45472234f9ed5bc30923d1f8381d19fc7c5",
+  "reused-personal-read-evidence.json": "de3bb5eb7761a373c6a4eaffefc85fa47ac472288ebbf5a0b15095c006d63188",
+  "snapshot-drift.json": "15743408dfe80c8d735d1523c2ca4f23cce3aeac311d809e67a91e7afbe8af4a",
+  "target-evidence.json": "061294af88c826e1420adb0386e3cc9f3daf54d2d75dd6132287d8999cfdeeb4"
+}

@@ -1,0 +1,98 @@
+[
+  {
+    "path": "examples/ch13-futures/stages/Cargo.toml",
+    "sha256": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "lines": 6,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/Cargo.toml"
+  },
+  {
+    "path": "examples/ch13-futures/stages/src/main.rs",
+    "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "lines": 3,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/src/main.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs",
+    "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "lines": 101,
+    "method": "full physical source printed/read in two batches"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs",
+    "sha256": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+    "lines": 33,
+    "method": "full physical source printed/read in two batches"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/event_after_poll/main.rs",
+    "sha256": "7b5e77417bf51d138827e26e798dfa8d654e1ca95ee8d709ba88eff5d940e17f",
+    "lines": 53,
+    "method": "full physical source printed/read in two batches"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/event_before_poll/polling/mod.rs",
+    "sha256": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+    "lines": 33,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/event_before_poll/readiness/mod.rs",
+    "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "lines": 101,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/event_before_poll/main.rs",
+    "sha256": "c7831481bf74a2ac54307d43c70e0708130bbef3bde86f0e4d039cbe03763bcf",
+    "lines": 34,
+    "method": "full physical source printed/read in two batches"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/event_solution/polling/mod.rs",
+    "sha256": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+    "lines": 33,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/event_solution/readiness/mod.rs",
+    "sha256": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "lines": 101,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/event_solution/main.rs",
+    "sha256": "6af8f93dcb3d2f3366c5701e5f90fc9f2dec9bbe9deff745295bbde1527f9e08",
+    "lines": 57,
+    "method": "full physical source printed/read in two batches"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/readiness_complete/polling/mod.rs",
+    "sha256": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+    "lines": 33,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs",
+    "sha256": "2b5d14ae4112f5d8e03dfea6b98a967fe42249fdfdb8a278f0e85d611621c212",
+    "lines": 234,
+    "method": "full physical source printed/read in two batches"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/readiness_complete/main.rs",
+    "sha256": "0754827c78129cd61f46040184dcda8b858a2b915061c27e7e776a7a87130cd2",
+    "lines": 6,
+    "method": "full physical source printed/read in two batches"
+  },
+  {
+    "path": "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.rs",
+    "sha256": "41f51ef1533c9ea72498ef8399ec7f91de83e4b9ebefbbd36fbbf75eb40eb26d",
+    "lines": 111,
+    "method": "full physical source printed/read in two batches"
+  },
+  {
+    "path": "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.expected",
+    "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "lines": 1,
+    "method": "full physical source printed/read in two batches"
+  }
+]

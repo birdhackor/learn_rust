@@ -1,0 +1,228 @@
+{
+  "review_id": "round10-cli-fixtures",
+  "scope": [
+    "10.8"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 實際已讀1–9、10.1–10.7；不以另讀11章填補前提。",
+  "independence": "首次全文/source實讀與封存前未讀作者validation/ledger、peer、reader或historical findings。Parent後續通知11/12修正僅供其後獨立followup，不影響本波判斷。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "全文、8snippets與全部main/directory/cli source、manifest/devdependency和完整動態fixture建立流程靜態核對。",
+    "核對integration target自動建置binary、env!來源、child.cwd/native argument、Output status與兩出口、TempDir ownership/close時序。",
+    "cached tempfile API source核對契約；SVG僅source/XML，沒有browser/reader實驗。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "child_process": false,
+    "fixtures_created": false,
+    "note": "沒有新增Cargo/Rust/CLI執行或實際建立臨時fixtures。六tests與CLI結果為source靜態核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:57:10.822419+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "docs/assets/ch07/fixture-sequence.svg": "d300657daac7ba35c30454a180509d275ace4856455141c694d7e8475e61f539",
+    "docs/chapters/10-08-lesson.md": "301e423c4f1e2cd6541442c1bb47c0bf839b335031c6a9dec281ca57c1a4c2e7",
+    "examples/intro-workspace/Cargo.lock": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/cli-fixtures/Cargo.toml": "ae0a41d096cc4b7a71167a7a713c806550a9a91b2710903b1670a1c004a9684d",
+    "examples/intro-workspace/cli-fixtures/src/main.rs": "c060b7a3f5338bc68f26f1ed46120f4e4864ecd60e55f386d64a1d3789f45f09",
+    "examples/intro-workspace/cli-fixtures/tests/cli.rs": "a4cbb5f45e393b72237c70b02bfdb24b3c6f59f63b9b3c5bda539971536d29f3",
+    "examples/intro-workspace/cli-fixtures/tests/directory.rs": "9b4e6b9fcd4122fcbf46b510ce68ded1ab66d4e4232d35cf378e4c76a9af1a38",
+    "examples/intro-workspace/path-cli/src/main.rs": "5b502a5cd6c42ac0dcbb0f70b772cb0287c0a2296766c094e35ed35bde91d41c",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "external_registry_source_hashes": {
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tempfile-3.27.0/src/dir/mod.rs": "d144325a6528a9a6e7c78a42e0eec42ee401c3b834ef5851376323725756f219"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "intro-cli-fixtures",
+      "version": "0.1.0",
+      "dependencies": [
+        "tempfile"
+      ]
+    },
+    {
+      "name": "tempfile",
+      "version": "3.27.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd",
+      "dependencies": [
+        "fastrand",
+        "getrandom",
+        "once_cell",
+        "rustix",
+        "windows-sys"
+      ]
+    }
+  ],
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/10-08-lesson.md",
+      "line": 23,
+      "source": "examples/intro-workspace/cli-fixtures/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-08-lesson.md",
+      "line": 29,
+      "source": "examples/intro-workspace/cli-fixtures/src/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-08-lesson.md",
+      "line": 53,
+      "source": "examples/intro-workspace/cli-fixtures/tests/directory.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-08-lesson.md",
+      "line": 101,
+      "source": "examples/intro-workspace/cli-fixtures/tests/cli.rs",
+      "tag": "cli-helper",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-08-lesson.md",
+      "line": 109,
+      "source": "examples/intro-workspace/cli-fixtures/tests/cli.rs",
+      "tag": "success-test",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-08-lesson.md",
+      "line": 121,
+      "source": "examples/intro-workspace/cli-fixtures/tests/cli.rs",
+      "tag": "failure-tests",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-08-lesson.md",
+      "line": 137,
+      "source": "examples/intro-workspace/cli-fixtures/tests/cli.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-08-lesson.md",
+      "line": 149,
+      "source": "examples/intro-workspace/cli-fixtures/tests/cli.rs",
+      "tag": "empty-solution",
+      "source_anchor_found": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-cli-fixtures",
+    "no_lib": true,
+    "no_build_script": true,
+    "normal_dependencies": [],
+    "dev_dependencies": [
+      "tempfile 3.27.0（lock）"
+    ],
+    "targets": {
+      "--test directory": [
+        "tests/directory.rs（1test）",
+        "src/main.rs（Cargo為integration targets建置的本package binary）"
+      ],
+      "--test cli": [
+        "tests/cli.rs（5tests，全檔先編譯）",
+        "src/main.rs（CARGO_BIN_EXE_intro-cli-fixtures定位本binary）"
+      ],
+      "--test cli <empty-test-name>": [
+        "同一tests/cli.rs與src/main.rs全target先編譯；只執行空檔1test，其餘4個filtered"
+      ]
+    },
+    "commands": "3個選定Cargo test命令；明選manifest/package/test/--locked。",
+    "cwd": "parent Cargo從repo根cd到examples/intro-workspace/cli-fixtures；child current_dir=各test自己的TempDir；absent executable使用TempDir絕對位置。",
+    "main_copy_check": "src/main.rs有效程式與10.5 path-cli/src/main.rs在原cfg(test)區之前bytes一致；本節主程式不保留原同檔tests，正文:130已說明。"
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/10-08-lesson.md:34",
+      "judgment": "tempdir io::Result<TempDir>/path借&Path/自動嘗試清理但忽略錯誤/close消耗owner並回io::Result在首用前；PathBuf只保存位置而非資源契約足夠，不需要提前學11.3 Drop實作。"
+    },
+    {
+      "source": "docs/chapters/10-08-lesson.md:44",
+      "judgment": "fs::write建立或完整取代、不自動建父目錄、文字/byte slice與AsRef<[u8]>、to_path_buf/try_exists的借用與失敗角色先教；try_exists不保證未來仍存在。"
+    },
+    {
+      "source": "docs/chapters/10-08-lesson.md:66",
+      "judgment": "Command只設定，new/arg/current_dir到output才啟動；arg是一筆原生資料不經shell；output等待完成且回io::Result<Output>，status與啟動I/O失敗分清。"
+    },
+    {
+      "source": "docs/chapters/10-08-lesson.md:79",
+      "judgment": "Output三公開欄位、Vec<u8>非必然文字、ExitStatus success及Option<i32>含Unix signal None、有限小輸出適用界線均在使用前。"
+    },
+    {
+      "source": "docs/chapters/10-08-lesson.md:92",
+      "judgment": "env!編譯期&str/缺值編譯失敗、CARGO_BIN_EXE_<name>由Cargo integration建置提供絕對本binary路徑且保留連字號，精確來源先教，不誤用dependency binary或unit test環境。"
+    },
+    {
+      "source": "docs/chapters/10-08-lesson.md:96",
+      "judgment": "str::from_utf8借byte slice回Result<&str,Utf8Error>，與String::from_utf8 consuming Vec分清；只是借Output byte view。"
+    },
+    {
+      "source": "docs/chapters/10-08-lesson.md:116",
+      "judgment": "starts_with新API在失敗test前介紹；OS詳細錯誤不寫死，缺檔/FF檢查自己的前綴，缺argument檢查自己的完整訊息；absent program確是在自有TempDir沒建立的位置。"
+    },
+    {
+      "source": "docs/chapters/10-08-lesson.md:152",
+      "judgment": "test-name filter只過濾執行，整份target仍編譯有明說；empty-solution只重用已教fixture/child/status API，stdout空不等於失敗需同核stderr/status。"
+    }
+  ],
+  "external_api_evidence": [
+    {
+      "file": "tempfile-3.27.0/src/dir/mod.rs",
+      "lines": "64–66,379–381",
+      "fact": "tempdir()->io::Result<TempDir>；path(&self)->&Path。"
+    },
+    {
+      "file": "tempfile-3.27.0/src/dir/mod.rs",
+      "lines": "470–480,498–503",
+      "fact": "close consumes self，remove_dir_all結果回傳；自動cleanup忽略remove錯誤。外部實作內部API不算學員需要先學的owned source。"
+    }
+  ],
+  "fixture_materials": {
+    "success": "每test自己的TempDir；filename中文 筆記.txt，完整文字Rust\\n中\\n，UTF8共9bytes。",
+    "invalid": "同test建立invalid.bin，完整[u8;1]=[255]，無其他bytes。",
+    "empty": "empty.txt完整文字空字串，0bytes。",
+    "absent_file": "missing.txt刻意不建立。",
+    "absent_program": "TempDir/no-such-program刻意不建立，路徑不含PATH搜尋歧義。",
+    "ownership": "owner一直留到child output返回/assertions完；逐test.close確認清理，PathBuf持有不被誤當resource owner。",
+    "actual_created_by_reviewer": false
+  },
+  "static_results": {
+    "directory": "讀回已知文字、存在true；close後saved PathBuf仍有效，try_exists false",
+    "success_child": "stdout Rust\\n中\\n、stderr empty、success true、codeSome0",
+    "missing_or_ff_child": "Ok(Output)，success false、codeSome1、stdout empty、stderr startsWith無法讀取",
+    "usage_child": "codeSome2、stdout empty、stderr需要一個檔名\\n",
+    "absent_program": "外層io::ErrorKind::NotFound，沒有Output/status",
+    "empty_child": "success true/codeSome0，兩出口0bytes"
+  },
+  "tests": {
+    "directory": 1,
+    "cli": 5,
+    "total": 6,
+    "empty_filtered_command_runs": 1
+  },
+  "limits": [
+    "整頁技術重讀，不是盲首讀。",
+    "六項CLI測試真正會啟動binary是source事實，本reviewer未執行它們。",
+    "SVG僅source/XML，不稱rendered視覺檢查。",
+    "未讀10.9以後作先備；workspace新增其他member只metadata。"
+  ],
+  "sealed_at_utc": "2026-10-15T08:58:06.208Z"
+}

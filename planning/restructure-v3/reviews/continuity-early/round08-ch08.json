@@ -1,0 +1,335 @@
+{
+  "role": "獨立銜接與實頁；非作者、技術審或首次閱讀者",
+  "scope": "actual8.1→8.6；實際已讀1–7為前綴；未用9+作先備；封存前未讀其他角色/作者validation/舊audit",
+  "captured_utc": "2026-10-15T08:46:05.331044+00:00",
+  "sealed_utc": "2026-10-15T08:58:10.768898+00:00",
+  "source_files": 77,
+  "source_method": "全讀每個新內容實檔與所有tests/answers/fixtures；重複helper逐份讀bytes與已全文閱讀代表比對相等，非只看module名。77含6 adjacent .expected與unused default main。",
+  "concept_checks": [
+    {
+      "concept": "Result資料與panic政策",
+      "first_needed_and_explanation": "8.1:3–16 before policy/main at26; panic48–55",
+      "source_quote": "「呼叫者回報所有輸入，即使第一筆已不合法」；「內部保證若被打破，就停止正常流程」",
+      "q1_identity_prior": "4章Result/enum/match上增加保存原輸入的CountError；panic!是刻意停止正常流程的macro。",
+      "q2_mechanism": {
+        "answer": "checked_count只建立Ok/Err資料；main的match決定報告後繼續。take_positive(0)刻意觸發panic。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "原需求固定0..100、逐筆報告；內部契約改正數並明說非原批次0合法規則。兩種工作需要不同政策，非把驗證失敗一律panic。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "先範圍檢查，再match結果；runtime失敗程式印start不印after。",
+      "q4_material_limits": "−1/0/3/100/101呈現雙邊界與相鄰失敗；contract另立且解釋0被拒。未聲稱教panic unwind細節。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "unwrap與expect",
+      "first_needed_and_explanation": "8.1:62–81 before regions78/84/full90; Debug73 before failure125",
+      "source_quote": "「以 self 接收整份結果」；「即使這次預期只會取得Ok，也要符合這項型別契約」",
+      "q1_identity_prior": "Result/Option取出內容的方法，失敗選panic；expect另收&str理由。",
+      "q2_mechanism": {
+        "answer": "非Copy整份結果move；Result需T,E皆Copy才Copy。Result方法需E.Debug，即使Ok。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "固定3/0規則提供成功保證來源；slice兩筆→索引1存在。外部輸入不能只照抄unwrap。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "固定資料取值、&i32 dereference；失敗fixture先借match再消耗result。",
+      "q4_material_limits": "四種表格+成功/Err/None/缺Debug完整程式，說明保證與錯誤回報；不假裝expect建立保證。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Result比較與測試",
+      "first_needed_and_explanation": "8.1:132–139 before first whole Result tests",
+      "source_quote": "「成功的型別與錯誤型別都提供PartialEq」；「assert_eq!會借讀兩邊」",
+      "q1_identity_prior": "套用6.2 derive/assert到泛型Result；Debug亦兩方需具備。",
+      "q2_mechanism": {
+        "answer": "同variant比較內部值，條件涵蓋T與E；borrow保留值可後用。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "逐筆輸出不足以防邊界退化，需要確認0/100接受、−1/101保留精確原因。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "兩個測試比Ok/Err完整結果；後續Count及ParseCountError各自具備必要trait。",
+      "q4_material_limits": "測試確核四個邊界，不聲稱窮舉所有i32；所有tests源碼同頁完整。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "type alias",
+      "first_needed_and_explanation": "8.2:3–12 before aliases helper; 21 before moved binding",
+      "source_quote": "「重複寫完整名稱會把每個函式的工作擠到後面」；「保留原有成功、失敗與ownership規則」",
+      "q1_identity_prior": "module type宣告已知型別別名，與6.4 impl選associated type分開。",
+      "q2_mechanism": {
+        "answer": "CountResult=Result<i32,CountError>同一型別；沒有包裝/額外值/驗證。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "多簽名同結果名稱太長→短名突出各函式工作；原同結果/ownership需要維持。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "別名與完整型別直接指定move；pub允許別module使用；PriceAndCount tuple答案用已教.0/.1。",
+      "q4_material_limits": "i32 alias仍可−1的反例限制驗證誤解；沒有暗示新type保證。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Display/Formatter/fmt::Result",
+      "first_needed_and_explanation": "8.3:7–36 before Display region39",
+      "source_quote": "「多個呼叫端需要相同的使用者訊息」；「顯示Negative本來就應成功產生…句子」",
+      "q1_identity_prior": "Display是{}的標準trait，對照已教Debug；Formatter一次格式化出口狀態，外層&mut與內部placeholder不同角色。",
+      "q2_mechanism": {
+        "answer": "fmt::Result=Result<(),fmt::Error>，Okunit表示寫完；CountError業務失敗不等於格式寫入失敗。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "相同使用者訊息散在呼叫者重複→把句子規則定在型別，兩種原錯誤payload需保留。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "fmt借self；borrow pattern payload&i32以*讀；write!回fmtResult作arm tail。兩層borrow表在碼前，不要求Formatter內部實作。",
+      "q4_material_limits": "Negative−3與TooLarge101測試/雙變量LimitError答案支持保留數字及原因；未測出口失敗，正文明說。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "write!、format!與借用顯示",
+      "first_needed_and_explanation": "8.3:34–51 before first respective uses",
+      "source_quote": "「write!…接收寫入對象、格式字串、插入值」；「format!…產生owned String」",
+      "q1_identity_prior": "write!將文字送指定出口；format!回可保存String；若T有Display，&T亦可借讀顯示。",
+      "q2_mechanism": {
+        "answer": "Formatter write無自動newline，返回fmtResult；format/println不取得插入值ownership。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "當場顯示與稍後保存兩種工作需要不同產物；共用Display規則免重寫句子。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "同一error先Debug再Display再format，保存String後assert；後續parse error顯示shared payload有已教依據。",
+      "q4_material_limits": "三次使用同一非Copyerror實際驗證借用；不將Display文字當保證可解析格式。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "From/Into與i64",
+      "first_needed_and_explanation": "8.4:9–21 before from_into.rs",
+      "source_quote": "「一定成功、保留有意義的原資訊，而且轉換意義明確」；「.into()的方法名本身沒有指明目標」",
+      "q1_identity_prior": "來源型別trait參數與目的Self位置清楚；i64可表示全部i32；From按標準契約，Into自來源側表達。",
+      "q2_mechanism": {
+        "answer": "From自動提供對應Into，但反向推論不保證；兩者byvalue，i32Copy仍可讀。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "開頭指定普通整數→有效件數→取回整數；先分成功保證與驗證，避免把可能失敗驗證藏panic。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "i64::from(count)與let by_into:i64=count.into()；prelude/trait來源延續5.2。",
+      "q4_material_limits": "同一3兩種方式與原數字可讀支持往返表示/Copy，不聲稱所有數字轉換無失敗。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "私有Count、TryFrom與取回值",
+      "first_needed_and_explanation": "8.4:3,37–67 before each region42/54/64 and caller72",
+      "source_quote": "「另一個函式只看見i32，無法從型別辨認它是否已通過檢查」；「公開方法不提供破壞規則的修改」",
+      "q1_identity_prior": "Count struct公開、欄位私有，借讀value無修改；TryFrom的Error是associated type，不是module alias。",
+      "q2_mechanism": {
+        "answer": "只有checked_count Ok才建立Self；反向From<Count> for i32直接取合法值，Count非Copy消耗。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "將已驗證狀態放入型別，接收Count的工作才知道符合規則；private入口與不變規則連成保證。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "Count::try_from返回Result<Count,CountError>；value借讀保留，i32::from/into接手。",
+      "q4_material_limits": "0/3/100與−1/101、三測試及四界答案保留原原因；同module仍可碰欄位的限定回應保證邊界，不添加未教能力。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "FromStr與parse",
+      "first_needed_and_explanation": "8.5:9–20,63–74 before integer and Count callers",
+      "source_quote": "「先把文字解析成整數，再檢查…件數規則。兩個步驟的失敗要保留不同原因」",
+      "q1_identity_prior": "FromStr借&str回Result<Self,Self::Err>；parse目的泛型沿5.1；ParseIntError給當下Debug/Display/PartialEq角色。",
+      "q2_mechanism": {
+        "answer": "標準i32格式條件與範圍在第一碼前；Count owned i32不借來源文字。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "外部輸入變文字，既要拒abc/溢位，又要分辨101整數成功但件數失敗；不是只另換呼叫形式。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "from_str需import trait；str.parse::<Count>依目標FromStr；按步驟match/earlyreturn。",
+      "q4_material_limits": "+3/空/abc/3空白/溢位與合法邊界測試、內層String消失後Count可用，支持格式及ownership界線。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "ParseCountError與From封裝",
+      "first_needed_and_explanation": "8.5:38–63 before enum50/conversion56/parser67",
+      "source_quote": "「兩者都保存原錯誤值，讓呼叫者能用pattern分類，不是事後猜測訊息文字」",
+      "q1_identity_prior": "Integer(ParseIntError)/Range(CountError)對應兩個步驟；Self::variant在impl代表此enum。",
+      "q2_mechanism": {
+        "answer": "From byvalue收原錯誤進相應variant；Display borrowedpayload依8.3。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "保留能分類的原原因，呼叫者毋須從句子猜步驟；只收當前工作的兩種來源，非無界錯誤合併。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "先解析，整數錯誤封裝earlyreturn；成功再TryFrom，範圍錯誤另包。",
+      "q4_material_limits": "abc對Integer、−1/101對Range，4tests+完整caller呈現分類；Display不保證FromStr往返的限定具體對應CountError句子非數字。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "AsRef與Borrow差別",
+      "first_needed_and_explanation": "8.5:95–104 before complete generic/Label example",
+      "source_quote": "「若只想知道文字的byte長度，就不需要先解析成數字」；「完整身分由id、text兩欄決定」",
+      "q1_identity_prior": "AsRef<T>便宜成功借用式view；String/&str皆AsRef<str>；bound沿6.1，&&str與receiver elision先交代。",
+      "q2_mechanism": {
+        "answer": "只投影text不複製，不保Eq/Hash身分；Borrow查鍵身分承諾沿6.5。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "共同byte長度工作不需要解析也不接手兩種來源；Label示範只要文字view時完整身分可不同。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "text_bytes<T:AsRef<str>>(&T)，&owned、&borrowed；Label impl回欄位.as_str。",
+      "q4_material_limits": "兩Label id1/2不同、文字都Rust→整值不等/投影相等；具體材料支持不用Borrow的因果，無需HashMap新細節。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "ToString/ToOwned",
+      "first_needed_and_explanation": "8.5:121–135 before owned_text fullprogram",
+      "source_quote": "「只借出現有文字，與建立可獨立保存的owned產物」；「原資料保持原內容」",
+      "q1_identity_prior": "ToString借Display值回String；ToOwned associated Owned，本次str→String、slicei32→Veci32。",
+      "q2_mechanism": {
+        "answer": "兩種明定產物不借原資料；Clone&T→T和複製reference不等於新owned文字。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "需要保存顯示訊息及各自修改資料，而保留原資料；新owned產物回應獨立保存需要。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "error.to_string；原str.to_owned後push_str；slice.to_owned後push；標準路徑與prelude明說。",
+      "q4_material_limits": "文字Rust/Rust教學，array2/Vec3不同，error仍可顯示；不將任意ToOwned泛化為移除所有內借用。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Result的?及From",
+      "first_needed_and_explanation": "8.6:7–29 before manual/question regions; 168 before answer",
+      "source_quote": "「第一個失敗發生後不做後面的步驟，呼叫者仍可…繼續下一筆」；「目前函式的回傳型別」",
+      "q1_identity_prior": "?運算子，Ok取值、Err經From轉成當前錯誤型別後earlyreturn；不是替main選全批停止政策。",
+      "q2_mechanism": {
+        "answer": "完整手動match對照保留兩條錯誤轉換；同型From標準原樣轉換在答案前交代。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "原完整兩步工作不變，縮短重複match/return，仍保留精確分類與呼叫者政策。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "成功兩個?依序取得i32/Count，最後Ok仍需寫；unit main與缺From各E0277完整fixture。",
+      "q4_material_limits": "六輸入手動vs?完整Result比對，main錯後繼續；pair答案第一錯不處理第二、第二錯不交半tuple，未聲稱?自己print/panic。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Option的?",
+      "first_needed_and_explanation": "8.6:84–95 before snippet89/full95",
+      "source_quote": "「Some時取出內容，None時從目前函式提早回傳None」",
+      "q1_identity_prior": "Option回傳helper可用?處理缺值，沒有Err或錯誤轉換。",
+      "q2_mechanism": {
+        "answer": "get(1)給Option<&i32>，Some借reference後*Copyownednumber；None略過後續。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "同樣的取第二筆工作，需要在不存在時交回缺值；延用5.4 get而減match。",
+        "verdict": "已足夠"
+      },
+      "q3_operation": "let value=values.get(1)?;Some(*value)，empty[ i32;0 ]沿5.5。",
+      "q4_material_limits": "0/1/2筆→None/None/Some20，test exact；沒有承諾Option自動變任意Err。",
+      "verdict": "已足夠"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C8-01",
+      "classification": "選讀改善／可選",
+      "position": "docs/chapters/08-06-lesson.md:32–36",
+      "quote": "| 輸入 | 第一個 `?` | 第二個 `?` | 整個 helper 的結果 |",
+      "first_needed": "閱讀三條路徑的同列輸入、早退點與結果對應",
+      "actual_previous_position": "8.6:17–26已完整說明規則，7–13手動版、38及62再解讀；沒有缺少必要語義",
+      "observation": "390×844 table實寬402、scrollwrap client375/scroll434/max59。明確scrollLeft0時右結果句尾被裁；scrollLeft59能讀結果卻看不見輸入。1280正常。",
+      "reason": "同時看輸入與完整結果需橫向切換，增加比較負擔；但前後主文已完整解讀，故非必要缺口。",
+      "benefit": "將兩個?步驟合一欄或改三筆分段，可在手機同時辨識輸入、執行/未執行與Integer/Range/Ok結果。",
+      "minimal_suggestion": "合併步驟欄，保留3筆、第一與第二個?、不執行、Integer/Range與整體結果全部資訊。"
+    }
+  ],
+  "necessary_count": 0,
+  "optional_count": 1,
+  "inline": {
+    "full_include_occurrences_per_viewport": 66,
+    "all_match": true,
+    "method": "HTML article pre code去空白及snippet marker後與完整source逐一相等；named regions另依完整檔與正文先後查核",
+    "folds": "8.1兩、8.4三、8.5三、8.6兩；均重複此前已教helper，必要新概念、完整新主程式及新測試在正文。代表fold closed/open與最後helper測試尾兩尺寸親看。"
+  },
+  "page": {
+    "viewports": [
+      "1280x800",
+      "390x844"
+    ],
+    "actual_pages": [
+      "http://127.0.0.1:8097/chapters/08-01-lesson/",
+      "http://127.0.0.1:8097/chapters/08-02-lesson/",
+      "http://127.0.0.1:8097/chapters/08-03-lesson/",
+      "http://127.0.0.1:8097/chapters/08-04-lesson/",
+      "http://127.0.0.1:8097/chapters/08-05-lesson/",
+      "http://127.0.0.1:8097/chapters/08-06-lesson/"
+    ],
+    "images_actual_viewed": [],
+    "images_reason": "六頁article均0 img；文字/表格/完整碼足以呈現三條分支、借用/owned和步驟前後，不需補空間圖。沒有聲稱看不存在的SVG。",
+    "screenshots_actually_viewed": [
+      "desktop-alias-contract.png",
+      "desktop-answer-fold-closed.png",
+      "desktop-answer-fold-open.png",
+      "desktop-complete-conversion-tests.png",
+      "desktop-complete-display-test.png",
+      "desktop-complete-parsing-test.png",
+      "desktop-complete-propagation-tests.png",
+      "desktop-first-snapshot-closed.png",
+      "desktop-first-snapshot-open.png",
+      "desktop-formatter-borrow-layers.png",
+      "desktop-owned-products.png",
+      "desktop-question-path-trace.png",
+      "desktop-six-helper-answer-closed.png",
+      "desktop-six-helper-answer-open-tail.png",
+      "desktop-six-helper-answer-real-tail.png",
+      "desktop-two-stage-errors.png",
+      "desktop-unwrap-consumption.png",
+      "desktop-validated-count-boundary.png",
+      "mobile-alias-contract.png",
+      "mobile-answer-fold-closed.png",
+      "mobile-answer-fold-open.png",
+      "mobile-complete-conversion-tests.png",
+      "mobile-complete-display-test.png",
+      "mobile-complete-parsing-test.png",
+      "mobile-complete-propagation-tests.png",
+      "mobile-first-snapshot-closed.png",
+      "mobile-first-snapshot-open.png",
+      "mobile-formatter-borrow-layers.png",
+      "mobile-owned-products.png",
+      "mobile-question-path-trace-explicit-left.png",
+      "mobile-question-path-trace-pan-right.png",
+      "mobile-question-path-trace.png",
+      "mobile-six-helper-answer-closed.png",
+      "mobile-six-helper-answer-open-tail.png",
+      "mobile-six-helper-answer-real-tail.png",
+      "mobile-two-stage-errors.png",
+      "mobile-unwrap-consumption.png",
+      "mobile-validated-count-boundary.png"
+    ],
+    "view_method": "17 desktop/mobile並排圖親看含各個原始截圖；另4窄截圖分別親看。共38個原始screenshots。",
+    "raw_markdown_bold_artifacts": []
+  },
+  "limits": [
+    "沒有執行Cargo、測試、fixture或build，非技術執行驗收",
+    "沒有最終strict site/nav全書驗收",
+    "長行碼在手機保有橫向捲動；DOM完整存在，未把單張畫面容不下整段誤判為source省略",
+    "全來源閉包檢查不等於實際基本Python使用者測試；這是銜接角色獨立判斷"
+  ],
+  "end_changes": []
+}

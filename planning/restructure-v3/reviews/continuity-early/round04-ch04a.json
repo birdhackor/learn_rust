@@ -1,0 +1,234 @@
+{
+  "kind": "sealed independent PARTIALChapter4continuity/page judgment",
+  "sealed_at_utc": "2026-10-15T07:18:28.726916+00:00",
+  "scope": [
+    "docs/chapters/04-01-lesson.md",
+    "docs/chapters/04-02-lesson.md",
+    "docs/chapters/04-03-lesson.md"
+  ],
+  "excluded_scope": "4.4+bodyandRustersourcesnotread; draftsnotassumedasprior",
+  "role": "independentcontinuity/page, notauthor/technical/firstreader",
+  "independence": {
+    "chapter4_author_ledger_read": false,
+    "chapter4_technical_firstreader_reports_read": false,
+    "old_audit_read": false,
+    "root_chapter4_issue_list_read": false,
+    "blind_firstread_claim": false
+  },
+  "initial_counts": {
+    "necessary": 1,
+    "optional": 1
+  },
+  "findings": [
+    {
+      "id": "C4a-01",
+      "necessity": "necessary",
+      "severity": "增加理解負擔",
+      "confidence": "medium",
+      "type": [
+        "時序",
+        "值流向",
+        "先備依賴"
+      ],
+      "page": "docs/chapters/04-02-lesson.md:7-19",
+      "first_dependency": {
+        "position": "04-02-lesson.md:13-15",
+        "source": "examples/intro-workspace/patterns/examples/match_numbers.rs:2-8",
+        "quote": "fn shipping(tier: i32) -> i32 { match tier { 0 => 20, 1 => 10, _ => 0, } }",
+        "required_relation": "Selectedarmexpressionvaluebecomesthevalueofthewholematch, thenthefunctiontailresult."
+      },
+      "already_taught_before": "Matchselectsfirstmatchingarm, pattern=>expressionshape, literal/wildcardroles, andthisshippingpolicy7-11. Notamissingidentityormotivationgap.",
+      "previous_positions": [
+        "01-06blocktailvalues",
+        "02-02ifexplicitlyidentifiedasexpression",
+        "02-05loopvalueviabreak; otherloopconstructsnotautomaticallynumeric"
+      ],
+      "explanation_after": {
+        "position": "04-02-lesson.md:19",
+        "quote": "match 本身是 expression，結果來自被選中 arm 的 expression。這裡各 arm 都交出 i32，整個 match 又是函式尾端 expression，所以成為運費的回傳值。"
+      },
+      "impact": "Firstfunctionreliesonaggregatevaluepropagationbeforeitistextexplained. Fullunitisotherwisecomplete; narrowexplain-before-useburdenonly.",
+      "smallest_fix": "Movefirstsentenceof19beforefirstfunction; keepconcretei32/tailanalysisafterifdesired.",
+      "evidence": [
+        "desktop-match-first-expression.png",
+        "mobile-match-first-expression.png"
+      ],
+      "independent_of_other_chapter4_reports": true,
+      "status": "unfixed"
+    },
+    {
+      "id": "C4a-02",
+      "necessity": "optional",
+      "severity": "選讀改善",
+      "confidence": "high",
+      "type": [
+        "排版",
+        "掃讀線索"
+      ],
+      "page": "docs/chapters/04-02-lesson.md:7",
+      "quote": "**pattern（模式）**描述要符合的值或資料形狀。",
+      "observation": "Literal**renderatboth1280x800and390x844infirstdefinition.",
+      "impact": "Definition/meaningstillreadable; no prerequisitegap. Cleaneremphasisspanswouldremovevisualsyntaxnoise.",
+      "smallest_fix": "Use **pattern**（模式）描述… orotherparser-recognizedstrongboundarywithoutaddingconceptualmaterial.",
+      "discovery_context": "Observedactualpagewhilecheckingfirstmatchexample; ownpriorC1-02parserexperienceknown, nootherChapter4reportprompt.",
+      "evidence": [
+        "desktop-match-first-expression.png",
+        "mobile-match-first-expression.png",
+        "metadata.json rawAsteriskParagraphs"
+      ],
+      "status": "unfixed"
+    }
+  ],
+  "positive_evidence": [
+    {
+      "unit": "4.1",
+      "identity_operation": "Enum/variantoneform7, threepayloadshapes9-15, nameddead_codeallow17, construction29, underscoreprefixstillbinding31, exactformversusvalue37.",
+      "q2_mechanism": "Typedvariantpreserveswhichcaseandappropriateassociateddatawithoutfakesentinel.",
+      "q2_need": "Missingquotewouldbeconfusedwithvalidzeroifonlynumeric0stored3.",
+      "q4_example": "Amount0distinctfromMissing; fixedprintlnhonestlyonlyannouncesconstruction61; Shipmentanswercomplete.",
+      "judgment": "sufficient; actualcase-discriminationreasoningscheduledandcompletedin4.2"
+    },
+    {
+      "unit": "4.2",
+      "identity_operation": "Pattern/arm/literal/wildcard/order7-11, payloadbindingandarmscope45-47, unit53, exhaustive78 beforefailure, resulttypeconstraint86-92.",
+      "q2_mechanism": "Choosecase, bindpayloadonlyforthatcase, executeonearm; completenessandresulttypeareindependentrequirements.",
+      "q2_need": "ReadunknownQuotebeforeusingasamount3; distinctMissingandAmount0close4.1goal74.",
+      "q4_example": "FourQuotecasesincludingAmount0/120andRejected37; typedfailuresE0004/E0308separate; Waiting→0explicitlythestatisticresultnotthestoredrepresentation96.",
+      "judgment": "sufficientexceptC4a-01aggregatevalueruletiming"
+    },
+    {
+      "unit": "4.3",
+      "identity_operation": "Letpattern/rightvalue7, tupleunderscore11, arrayrestandrange/slicedistinction13, structfieldversusbinding25, fieldrest31, parameterpattern64, singletuplearity70 beforecall, tuplearrayfor72, nesting94, refutability108-110 beforefailure.",
+      "q2_mechanism": "Samepatternshapeconsistentlynamesthespecifiedpartsacrosslet/function/for/match; ordinaryletcannotselectafailurebranch.",
+      "q2_need": "UnifyknownAmountandtupledestructuringwhilekeepingonlyneededparts3.",
+      "q4_example": "Numericmaterialsonly; same360/160andarrayfirst/lastmapping; outerRequestcasechosenbeforeOrderfields, CancelnotlookforabsentOrder; completeanswersfullyinline.",
+      "judgment": "sufficient; Stringpartialmove/borrowpatternslegitimatelydeferredto4.5andnotusednow"
+    }
+  ],
+  "source_version": {
+    "manifest": "round04-ch04a-sourcehashes.json",
+    "initial_files": 19,
+    "frozen_initial_copies": "round04-ch04a-frozen/",
+    "chapter_pages_and_rust_unchanged": true,
+    "config_drift": "Workspace/lockaddeddata-steps/dataafterinitialsnapshot;allcurrentmembermanifestshaveonlytaughtpackage/name/version/edition. No laterchaptersourceread. Initialworkspace/lockrestoredandexacthashverified.",
+    "selected_package": "intro-patterns; nolib.rs/build.rs; defaultmainonlyprintln"
+  },
+  "visual": {
+    "preview": "127.0.0.1:8097canonical04-01/02/03; realstyle/source,partialnavnotfinalstrictsite",
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "img_or_svg_assets": [],
+    "missing_necessary_image": "Noneidentified:varianttable,sourceconstructor/patternmappingandexplicitnestingproseprovidecurrentrelationships.",
+    "actually_viewed_screenshots": [
+      "desktop-enum-forms-table.png",
+      "desktop-match-first-expression.png",
+      "desktop-pattern-parameter-and-for.png",
+      "desktop-nested-pattern.png",
+      "mobile-enum-forms-table.png",
+      "mobile-match-first-expression.png",
+      "mobile-pattern-parameter-and-for.png",
+      "mobile-nested-pattern.png"
+    ],
+    "page_metadata": [
+      {
+        "name": "desktop",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "slug": "04-01-lesson",
+        "url": "http://127.0.0.1:8097/chapters/04-01-lesson/",
+        "at": "2026-10-15T07:11:31.039Z",
+        "title": "4.1 用 enum 保存一筆資料的不同形態 - Rust 教學",
+        "images": 0,
+        "rawAsteriskParagraphs": []
+      },
+      {
+        "name": "desktop",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "slug": "04-02-lesson",
+        "url": "http://127.0.0.1:8097/chapters/04-02-lesson/",
+        "at": "2026-10-15T07:11:32.142Z",
+        "title": "4.2 用 match 選分支，涵蓋每種情況 - Rust 教學",
+        "images": 0,
+        "rawAsteriskParagraphs": [
+          "**pattern（模式）**描述要符合的值或資料形狀。match 將一個值依序與各個 pattern 配對，只執行第一個符合的分支；每個 pattern => expression 稱為一個 arm（分支）。=> 左側是要符合的 pattern，右側是選中後執行的工作。"
+        ]
+      },
+      {
+        "name": "desktop",
+        "viewport": {
+          "width": 1280,
+          "height": 800
+        },
+        "slug": "04-03-lesson",
+        "url": "http://127.0.0.1:8097/chapters/04-03-lesson/",
+        "at": "2026-10-15T07:11:33.266Z",
+        "title": "4.3 用 pattern 解構資料，命名需要的部分 - Rust 教學",
+        "images": 0,
+        "rawAsteriskParagraphs": []
+      },
+      {
+        "name": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "slug": "04-01-lesson",
+        "url": "http://127.0.0.1:8097/chapters/04-01-lesson/",
+        "at": "2026-10-15T07:11:38.330Z",
+        "title": "4.1 用 enum 保存一筆資料的不同形態 - Rust 教學",
+        "images": 0,
+        "rawAsteriskParagraphs": []
+      },
+      {
+        "name": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "slug": "04-02-lesson",
+        "url": "http://127.0.0.1:8097/chapters/04-02-lesson/",
+        "at": "2026-10-15T07:11:39.279Z",
+        "title": "4.2 用 match 選分支，涵蓋每種情況 - Rust 教學",
+        "images": 0,
+        "rawAsteriskParagraphs": [
+          "**pattern（模式）**描述要符合的值或資料形狀。match 將一個值依序與各個 pattern 配對，只執行第一個符合的分支；每個 pattern => expression 稱為一個 arm（分支）。=> 左側是要符合的 pattern，右側是選中後執行的工作。"
+        ]
+      },
+      {
+        "name": "mobile",
+        "viewport": {
+          "width": 390,
+          "height": 844
+        },
+        "slug": "04-03-lesson",
+        "url": "http://127.0.0.1:8097/chapters/04-03-lesson/",
+        "at": "2026-10-15T07:11:40.277Z",
+        "title": "4.3 用 pattern 解構資料，命名需要的部分 - Rust 教學",
+        "images": 0,
+        "rawAsteriskParagraphs": []
+      }
+    ],
+    "all_full_page_layouts_visually_reviewed": false,
+    "long_code_lines": "Horizontalcodescrollingretained; sourceandadjacentprosefullyname thenestedouter/innerpattern; nobreathingroomorclippingclaimagainstunviewedareas."
+  },
+  "execution_or_edits": "NoCargo/build/testorprojectsource/configedits. Ownscratch/capture/reportfilesonly.",
+  "limitations": [
+    "Only4.1-4.3partialchapter, notfullChapter4",
+    "Noreallearner/blindfirstreadclaim",
+    "Noexecutioncorrectnessorstrictsiteacceptance",
+    "Previouslycapturedtopimagesnotvisuallyinspectednotcountedaspassed"
+  ]
+}

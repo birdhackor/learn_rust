@@ -1,0 +1,109 @@
+{
+  "chapter": 3,
+  "first_unit": 98,
+  "last_unit": 105,
+  "entries": [
+    {
+      "source": "docs/chapters/03-01-lesson.md",
+      "file": "units/098.md",
+      "sha256": "0959d75cc7f52036dbee170658e045c87fdd940f419c9f1fa939ca4e486fbfed",
+      "source_sha256": "fac86a536cb55ae8c2231dfe6509d3eefdcd9ea0d9e06f6f7cbe95e1e38b0f80",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/03-02-lesson.md",
+      "file": "units/099.md",
+      "sha256": "9fa1f6ec4f4f01231372d7b16b1b0c12c36716cfba7e9dec6eeb1878c187d3fc",
+      "source_sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch02/move-copy.svg",
+          "source_sha256": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch03-move-copy.png",
+          "png_sha256": "7086dafb42a742760d2db443c1e85274c9b689d2381834f43fbf6a0b48157728",
+          "alt": "Order 從 first 交到 second，原 first 不可再用；i32 則在兩個變數中保有獨立數字"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/03-03-lesson.md",
+      "file": "units/100.md",
+      "sha256": "d8a11b528afd8333f4dd7ee583159956252cde129631def720fbbdc97b83e5cb",
+      "source_sha256": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch02/reference-owner.svg",
+          "source_sha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch03-reference-owner.png",
+          "png_sha256": "5e73f7f31aee13dcde9fecec1976eae5d8a10953c7bb1fdbc22533e4fea57f2a",
+          "alt": "order 仍持有 Order，reference 借用同一筆資料"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/03-04-lesson.md",
+      "file": "units/101.md",
+      "sha256": "e6623e1281bdd1488ea34ba8824d3a385ccdd4a4f52ac783b548f49c728f9d5b",
+      "source_sha256": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/03-05-lesson.md",
+      "file": "units/102.md",
+      "sha256": "16bd73f4f2eb2cf66ed3bc74068488cba3640c83ee1b12050b315869e46278f4",
+      "source_sha256": "78535d28170efdde36e18a62911cb9c4779e14bbc3559dccfe876761fe47e776",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch02/borrow-scope.svg",
+          "source_sha256": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch03-borrow-scope.png",
+          "png_sha256": "df9140c109285500d275d9d4ff02e1f0103f2f07a44a78c095767d601f9d549f",
+          "alt": "owner 保留在 main 裡，shared reference 在最後一次讀取後完成借用，後面才修改原資料"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/03-06-lesson.md",
+      "file": "units/103.md",
+      "sha256": "666c64033456fd4a622267d3b2e0ac3a373c0e83e65f3e8c42998c37317cef0e",
+      "source_sha256": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/03-07-lesson.md",
+      "file": "units/104.md",
+      "sha256": "4a661b57a0324c07f9120c5cf39995faaa09a4c0a8661363aac89d000cb12d05",
+      "source_sha256": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch02/slice-part.svg",
+          "source_sha256": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch03-slice-part.png",
+          "png_sha256": "cd443690773ff4ae452be7f4896d75fd3aa6b20456dac04464cea3608bc0a089",
+          "alt": "五項價格中借出原索引 1 到 3，slice 自己的索引由 0 開始"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/03-08-lesson.md",
+      "file": "units/105.md",
+      "sha256": "e0c40fbee11eaa206dbf1a8f94ff6272effbdfebdc2dd85852ae64eccd3a560e",
+      "source_sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch03/string-view.svg",
+          "source_sha256": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch03-string-view.png",
+          "png_sha256": "728460a00e19a43ac20e353d0869131ca7330f9ddd05561c5abf72db559e3a9a",
+          "alt": "greeting 持有 Hello, Rust 的文字資源，as_str 提供借讀同一段文字的 &str 視圖"
+        }
+      ]
+    }
+  ],
+  "route": "whole prerequisite pages;  actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed"
+}

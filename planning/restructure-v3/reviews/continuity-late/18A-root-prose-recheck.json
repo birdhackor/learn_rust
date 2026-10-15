@@ -1,0 +1,38 @@
+{
+  "type": "root提供TC18M-O1 prose修訂後窄複查，非此審閱者獨立finding",
+  "external_finding": "TC18M-O1 (optional, root採納)",
+  "original_initial_preserved": "independent-18A-initial.json",
+  "path": "docs/chapters/18-04-lesson.md",
+  "old_sha256": "e4d3cc6aa7a95081ebbea26e108bf3eb1c3fb0a0f0069c353a64fc01efde37d6",
+  "new_sha256": "a58875058db18e69dd510130ff1a0c399ec50516e9b8d71bfde660c988c19195",
+  "scope": "初判封存後讀root diff及current15–45行；所有本節snippet原檔hash未變。",
+  "judgment": "可保留。action/reason明確是String；path_debug明確是Option<String>，先依前段已教None/Some，再比較Some文字，與order_issues的實際cmp相符。沒有新增API或先備。",
+  "sources_unchanged": {
+    "examples/ch15-projects/a3-starter/Cargo.toml": true,
+    "examples/ch15-projects/a3-starter/src/report.rs": true,
+    "examples/ch15-projects/a3-starter/src/lib.rs": true,
+    "examples/ch15-projects/a3-starter/src/collection.rs": true,
+    "examples/ch15-projects/a3-starter/src/content.rs": true,
+    "examples/ch15-projects/a3-starter/src/stream.rs": true,
+    "examples/ch15-projects/a3-starter/src/files.rs": true,
+    "examples/ch15-projects/a3-starter/src/metrics.rs": true,
+    "examples/ch15-projects/a3-starter/checks/report-tests.rs": true,
+    "examples/ch15-projects/a3-complete/Cargo.toml": true,
+    "examples/ch15-projects/a3-complete/src/lib.rs": true,
+    "examples/ch15-projects/a3-complete/src/collection.rs": true,
+    "examples/ch15-projects/a3-complete/src/content.rs": true,
+    "examples/ch15-projects/a3-complete/src/stream.rs": true,
+    "examples/ch15-projects/a3-complete/src/files.rs": true,
+    "examples/ch15-projects/a3-complete/src/metrics.rs": true,
+    "examples/ch15-projects/a3-complete/src/report.rs": true,
+    "examples/ch15-projects/a3-complete/examples/a3_text.rs": true,
+    "examples/ch15-projects/a3-complete/examples/a3_json.rs": true
+  },
+  "current_render_and_visual_evidence": "narrow-18-04-visual.json",
+  "actual_visual_status": "已用view_image實看1280×800與390×844新段落；Option<String>、None/Some與String文字比較指向清楚，無新問題。",
+  "no_rust_rerun": true,
+  "actually_viewed_screenshots": {
+    "current-18-04-1280.png": "b79e44d55b8e879fa3aaace258bde8e4afb415231f7dece8c2c7b091e7580d01",
+    "current-18-04-390.png": "722ae3f8c9bc739e180d93e84e74a3338f61dfccd5fae9492f593d79e94ed4a7"
+  }
+}

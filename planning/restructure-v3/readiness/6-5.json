@@ -1,0 +1,120 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "6.5"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round06-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/06-05-lesson.md": "2b15a18fcedcfe1d602caaddbb570b6e921f776a67ea932f49f965a7d3a947f5",
+    "examples/intro-workspace/trait-stages/examples/map_support/mod.rs": "c8b46307d1e61c6c9211cc252bb5acd277c5db5b42a2e839384ca6109e3d2ee6",
+    "examples/intro-workspace/trait-stages/examples/map_lookup.rs": "71cfb0ba0659f76c15e3346522ef8e9b98b066bc436e6df416ddc1c03e547271",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/map_borrow_conflict.rs": "751545c6c6e80065bf407cdafa3152a2327260b34bc781752c7cda159f9cd225",
+    "examples/intro-workspace/trait-stages/examples/map_update.rs": "13cd0c65e377dbb880a087bc741ee69e59ac374097b8a14dd90082e88d46bff9",
+    "examples/intro-workspace/trait-stages/Cargo.toml": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+    "examples/intro-workspace/trait-stages/examples/map_lookup_answer.rs": "23319161dd7f4830085b89a4f226b91e3ffc620a042f132e5d1758c091f48489",
+    "docs/assets/traits-v3/map-query.svg": "634c559c2141a9e2bda9e4616a1e0b5eaebc29e64428ab06250ab9b7900aba20"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 3,
+      "quote": "Vec 適合按位置讀資料。現在要保存「Rust 有幾件、Python 有幾件」，再用名稱查詢，不想把清單索引當成名稱的身分。**`HashMap<K, V>`** 保存鍵（key）對應到值（value）；同一個 map 的鍵採用同一型別，值也採用同一型別。"
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 9,
+      "quote": "第 6.2 節已用 PartialEq 比較內容。**`Eq`** 在相等比較上另外承諾每個值都與自己相等；它沒有新增方法。HashMap 用這種規則認出同一個鍵。String、str、i32、usize 的標準實作都符合本節所需的 Eq。"
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 11,
+      "quote": "**`Hash`** 讓鍵提供資訊給 hash 計算，用計算結果縮小尋找位置，最後再以相等比較確認鍵。這兩項能力必須配合：在同一套計算條件下，相等鍵要有相同 hash；不同鍵也可能得到相同 hash，稱為 **collision**（碰撞），所以仍需最後的相等比較。"
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 17,
+      "quote": "HashMap 位於標準函式庫的 `std::collections`，要以 `use std::collections::HashMap;` 引入名稱，不需增加第三方依賴。`HashMap::new()` 建立空 map，接收變數的 `HashMap<String, usize>` 註記決定鍵與值型別。"
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 35,
+      "quote": "再放入內容相等的 Rust 鍵，這次值為2。insert 取代對應值，回傳 Some 中的舊值1；原先保存的鍵保留，不會多出另一筆相等鍵。接著加入不同的 Python："
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 45,
+      "quote": "`counts.get(name)` 只需 shared 借用 map；對這個 map，可以提供查詢文字 `&str`。結果型別是 **`Option<&usize>`**：找到時 Some 保存 map 內值的 shared reference，缺鍵時 None，不移除資料或建立新鍵。"
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 47,
+      "quote": "這裡鍵是 String，查詢卻用 &str，依靠標準的 **`Borrow<str>`** 契約。Borrow 用型別參數表示要借成哪種型別，並透過 borrow 方法提供該型別的 shared reference。String 已有這份實作，能提供 &str；借出表示的 Eq 與 Hash 行為必須與 owned 鍵一致，查找才能回到同一個鍵。"
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 51,
+      "quote": "查詢文字與查到的值來自不同對象。圖畫的是**查找當下**：藍色實線表示借讀，綠色虛線表示依文字查找。上面的視圖借 query，下面結果中的 reference 借 counts 內的2："
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 65,
+      "quote": "JavaScript 沒加入，所以 get 回傳 None。`len()` 只借讀 map，回傳鍵值對數量 usize；本例也是不同名稱數2："
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 75,
+      "quote": "get 的結果借 map，後面仍要讀取它時，中間不能呼叫需要 mutable 借用的 insert。即使新插入的名稱不同，這個回傳契約仍然借用 map。"
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 77,
+      "quote": "下面完整的預期編譯失敗例，先取 found，中間插入 Python，最後才讀 found，會得到 **E0502**："
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 87,
+      "quote": "**`get_mut`** 使用相同的查詢方式，但需要 mutable 借用 map，結果為 **`Option<&mut usize>`**。找到時經由 `*count` 修改 map 內的數字；缺鍵仍是 None，不會自動插入。"
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 108,
+      "quote": "這些 targets 只載入同頁的 map_support，其完整內容只有 owned_text。沒有載入下一節的分組函式。完整 member manifest 與查詢根檔案："
+    },
+    {
+      "section_id": "6.5",
+      "path": "docs/chapters/06-05-lesson.md",
+      "line": 133,
+      "quote": "加入 Rust→5、Python→3，再以 insert 把 Rust 改成7，確認回傳舊值5。用 get_mut 將 Python 加2，最後確認 Rust7、Python5、缺少JavaScript，map仍有兩個名稱。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

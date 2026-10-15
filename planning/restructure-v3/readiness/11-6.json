@@ -1,0 +1,186 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.6"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-06-lesson.md": "ec492344b90ad5c776fd17550cde8540c2241161b42d13a70ce72632d6dbb76f",
+    "examples/intro-workspace/type-stages/examples/dyn_borrowed/dyn_charges/mod.rs": "39ec518ce3bd607f77d80eebe2fb81426694ba912a03669ccd41cd3c6e217f7a",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/mixed_charge_vec.rs": "e43e2712e855a08d5f3105a979078dcdb00133a9f21d7236cf1d05118207b196",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/mixed_charge_vec.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/dyn_borrowed/main.rs": "7ded0bee50297ffbac882a00d0b6b705c05574bc599227ee777b96e626c2fcfa",
+    "examples/intro-workspace/type-stages/examples/dyn_list/dyn_charges/mod.rs": "1b9c81223bf413d0a09fdc932367b65a8c12ebccb76acf5451471bbca404c302",
+    "examples/intro-workspace/type-stages/examples/dyn_list/main.rs": "2af8db92002722b864618eaba1d7621b11295bd1d4e1b830d5dde3495c43592b",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_trait.rs": "102d3eee6fff65db7de062d00adebd45193e20be9df5a2df2fe74991bcdd7d0c",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_trait.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/opaque_charge_branches.rs": "539622b93d03377d352810506e9e5706215d29a655bdcabd2137d1037a83a617",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/opaque_charge_branches.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/type-stages/examples/dyn_factories/dyn_charges/mod.rs": "888918ea581218be66db484519c61cef859120ed9f659747fde85ed0f1370d81",
+    "examples/intro-workspace/type-stages/examples/dyn_factories/main.rs": "a20172fbd9785109370dc3330bfea925de35440d614e84a0b18e16610c25b51d",
+    "examples/intro-workspace/type-stages/examples/dyn_lifetime/dyn_charges/mod.rs": "c9511f5e205655f973ad202c511378357f4a12c83914e9ff4c5b3ec5867813d5",
+    "examples/intro-workspace/type-stages/examples/dyn_lifetime/main.rs": "e563baaa13513b48868587438e5abc2ce864f62231c32c29c497a6c8a924b16f",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_borrow_default_static.rs": "ca3089b581a307e569d29d481d8879e109978ee4cbf668e2cfc6df35c8061d5c",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_borrow_default_static.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_requires_sized.rs": "6603dc6784aa1608afc44f18efe7966c5a9bda314d18db3b03621629751cc891",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_requires_sized.expected": "2860ab5d26e103fe5f9700de6bb4374cb6bb70095bcb4a3000bca4bc2395f73e",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_generic_method.rs": "a45769c1c2091d2a2878e944c75d991422033470ffa6d6cbb5b20bc34cbc18f9",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_generic_method.expected": "2860ab5d26e103fe5f9700de6bb4374cb6bb70095bcb4a3000bca4bc2395f73e",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_returns_self.rs": "7554324cd0187a2f4273cd328a11b53bad00af669115037f845c4066c7412bf0",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_returns_self.expected": "2860ab5d26e103fe5f9700de6bb4374cb6bb70095bcb4a3000bca4bc2395f73e",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_rebuild_call.rs": "986e1a340e91c820a91f2aa9dcb896f13dc01460b4178aa7b935a1297733d473",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_rebuild_call.expected": "32af723ef1b547f88ff9b709c8c031f18b268346f189ecb0629da7a4f061e15e",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_output.rs": "6a304a4e4ac889e69415993433a3fc3ef14395f970af33f56f1fe7b1d0aaccd5",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_output.expected": "a5853d0aa692043d763762aca5e3a17ff34d316649deb8a44c8a0945d0bf5d6b",
+    "examples/intro-workspace/type-stages/examples/dyn_compatibility/dyn_charges/mod.rs": "71b263dd4aef4e55167c1b7e04d9726d84db6e354016454e7f04e5ecc325ce26",
+    "examples/intro-workspace/type-stages/examples/dyn_compatibility/main.rs": "f22801ba356b4758cbc55117766cec561ef07404a523e608f54b059c54c2676b",
+    "examples/intro-workspace/type-stages/examples/dyn_complete/dyn_charges/mod.rs": "46033413ab93dcdc528c777b1e3f8b53a8b6cea98e8422ac63644b0940608ffb",
+    "examples/intro-workspace/type-stages/examples/dyn_complete/main.rs": "64e323fd37fbae233e6b89249c8acc859cf9e525979ae3dc4fb06ea67c42ff74",
+    "docs/assets/types-v3/dyn-dispatch.svg": "87b6e9c27fa1626382a12875d04d56bab0c3436b4e5d15fbd75644d42eb5ccca"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 3,
+      "quote": "第 6.1 節的 Order 與 Bundle 都能提供 amount，但資料形狀不同。現在要把80元訂單與120元組合放進同一份費用清單，取得200；呼叫端再加入20元運費，既有加總函式也應得到220，不必為運費多寫一個分支。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 7,
+      "quote": "沿用非負小整數與不溢位的乘法，重新定義同款模型，讓本章例子獨立可跑："
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 13,
+      "quote": "實作相同 trait，不會把兩個型別變成一個。以下完整負例讓兩者都有 Charge，仍不能直接混進同一份 Vec，會得到 **E0308**："
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 27,
+      "quote": "**trait object** 讓使用處保留 trait 的操作介面，而不在該位置寫出內部具體型別。型別寫成 **`dyn Charge`**；dyn 並沒有取消 Rust 的型別檢查。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 29,
+      "quote": "dyn Charge 是第 11.1 節的 DST：只看介面，不知道原資料是多大的 Order 或 Bundle。因此透過 reference 或 owned pointer 使用。**`&dyn Charge`** 借讀原資料，不接手，也不需要先配置 Box。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 31,
+      "quote": "需要 `&dyn Charge` 的地方，可以把符合 Charge 的 `&Order` 或 `&Bundle` 轉成這份視圖。這稱為 **unsizing coercion**：由具體型別的 pointer 轉成 DST 介面。它與第 11.4 節藉 Deref 逐層借出欄位不同，也沒有 clone 原資料；轉換時仍會檢查具體型別的 trait 實作。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 65,
+      "quote": "清單要接手資料，就使用 `Vec<Box<dyn Charge>>`。Box::new 仍先接手具體值；在需要共同型別的位置，`Box<Order>`、`Box<Bundle>` 可 unsize 成 `Box<dyn Charge>`，每份配置仍保存原具體資料。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 67,
+      "quote": "本頁 Charge 沒有自身 lifetime bound。在函式簽名或 struct 欄位寫 **`Box<dyn Charge>`**，省略的 object lifetime 預設為 `'static`，相當於 `Box<dyn Charge + 'static>`。依第 11.5 節，這要求內容不依賴短命借用，不是要求 Box 永遠存在；本例只有 owned 數字，符合條件。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 69,
+      "quote": "**dispatch** 是選擇對應 method 實作的過程。泛型在具體 T 已確定的版本中可以用 **static dispatch**，編譯時便知道實作；把泛型帶入具體型別、形成相應程式的過程稱 **monomorphization**。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 71,
+      "quote": "trait object 提供 **dynamic dispatch**：handle 保存找到原資料與相應方法的資訊，方法入口由 **virtual method table（vtable）** 提供。Order 與 Bundle 的 handle 型別相同，但連到不同的資料及 amount 實作："
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 101,
+      "quote": "沒有 Charge 的型別仍不能加入。下面把 i32 放進 Box 會得到 **E0277**："
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 113,
+      "quote": "第 9.3 節的 RPIT 仍選定一種具體結果。以下完整負例雖然兩分支都有 Charge，Order 與 Bundle 仍不是同一個 opaque 型別，因此得到 **E0308**："
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 125,
+      "quote": "同樣地，兩個 closure 表達式有不同型別。**`Box<dyn Fn(i32) -> i32>`** 保存共同的 Fn 呼叫介面，Box 中的工作可用 `work(value)` 呼叫。本例 closure 只按值保存 Copy 的 base，符合回傳 Box 預設的 static 要求。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 155,
+      "quote": "現在 BorrowedCharge 只借 prices slice，逐項加總，不複製清單。**`dyn Charge + 'a`** 要求被保存的具體型別內借用至少符合 `'a`；**`Box<dyn Charge + '_>`** 則用第 7.2 節的 placeholder，依唯一輸入來源推導回傳 bound。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 196,
+      "quote": "**dyn compatibility** 表示 trait 符合建立 trait object 的規則；舊名是 **object safety**。Charge 的 shared receiver 提供原資料，回傳 i32 已確定，不需 caller 再知道具體 Self。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 198,
+      "quote": "在 trait 名稱後寫 `: Sized` 是 **supertrait 要求**：實作者也必須符合 Sized。dyn 本身是 DST，因此整份 trait 若要求 Self:Sized，就不能成為 dyn。以下完整負例得到 **E0038**："
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 208,
+      "quote": "可動態呼叫的 method 也不能另有泛型型別參數：一份方法表不提供 caller 任選 T 的所有版本。下面同樣得到 **E0038**："
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 218,
+      "quote": "若 method 按值回傳未知 Self，dyn caller 也不知道具體結果表示，不能使用這份介面。以下完整負例得到 **E0038**："
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 228,
+      "quote": "需要保留這種 method 時，可以個別限定 **`where Self: Sized`**。**where clause** 把 bound 寫在簽名尾端、body 或分號前；這個 method 只供已知 Sized 的 Self 呼叫，不放進可動態呼叫介面。"
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 240,
+      "quote": "普通 associated type 則可以使用，但 object 型別要選定結果，例如 **`dyn Measure<Output = i32>`**。這沿用第 6.4 節的 equality bound，讓 measure 的結果型別明確。只寫 dyn Measure 的完整負例得到 **E0191**："
+    },
+    {
+      "section_id": "11.6",
+      "path": "docs/chapters/11-06-lesson.md",
+      "line": 268,
+      "quote": "在 caller 定義 ExtraFee，amount 為40。把80的 Order、120的 Bundle 與它放進相同 Box trait object 清單，確認240；不改 KnownCharge 或 total。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

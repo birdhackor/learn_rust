@@ -1,0 +1,52 @@
+{
+  "recorded_utc": "2026-10-15T07:44:16.625547+00:00",
+  "applies_to": "round05-ch05 initial report/seal at2026-10-15T07:42:23.228646+00:00",
+  "correction": "The initial report narrative and sourcehash end_change_note overstate stability of all chapter5 prose. The actual end_changes list correctly recorded5.5 changed, but narrative was written from07:39 recheck before a concurrent narrow edit. Correct record: chapter5 sources were stable except5.5 two reference sentences changed during final report generation. Do not read that stability sentence as same-version evidence. Initial originals are retained, not rewritten.",
+  "initial_judgment_basis": "All first-read body/source judgments and captured5.5 actual pages use frozen initial412a3eeb91594615ee24961d5bff56b0189dfba194cc3976344f16b64e74afd5, with 上一節 at69/109. C5-01 independently judged before any other-role conclusion. All37 frozen file copies match recorded initial hashes.",
+  "timing": {
+    "last_preseal_observed_state": "At07:39 table/initial-source recheck, only workspace/lock differed;5.5 still initial.",
+    "initial_seal_utc": "2026-10-15T07:42:23.228646+00:00",
+    "first_detected_diff": "Final seal script found5.5 hash20882bf65c17e9bdca514bf41ed27f8a80314d615bc894e06e06d7a3595f888c and saved actual changed source in end-config.",
+    "parent_notice_after_seal": "After independent initial seal and our source-diff notification, parent said technical-selected reading also suggested exact5.5 correction, adoptedbothoptionalfindings, and would narrow-fix5.2 after complete seal. No technical report read."
+  },
+  "source_diff": [
+    "--- frozen first-read5.5",
+    "+++ end-of-initial5.5",
+    "@@ -66,7 +66,7 @@",
+    " ",
+    " ## 呼叫者與測試各自使用同一份規則",
+    " ",
+    "-完整版本放在另一個 member：`data/`，package 名為 **intro-data**。它的 library 公開 text 與 list，text 保留上一節已教的文字取得函式，list 提供本節整理。範例透過 `intro_data::list::keep_nonnegative` 使用它，沿用第 2.6 節的 library 路徑規則。",
+    "+完整版本放在另一個 member：`data/`，package 名為 **intro-data**。它的 library 公開 text 與 list，text 保留第 5.3 節已教的文字取得函式，list 提供本節整理。範例透過 `intro_data::list::keep_nonnegative` 使用它，沿用第 2.6 節的 library 路徑規則。",
+    " ",
+    " list_demo 借讀原 array，接收新的 Vec；顯示時先 as_slice，再按0..len()走訪有效索引。因為每個索引都小於長度，這裡不需要把已知有效的位置再包成查詢結果：",
+    " ",
+    "@@ -106,7 +106,7 @@",
+    " ",
+    " ??? example \"展開完整 text 與 list，包含全部六項測試\"",
+    " ",
+    "-    `data/src/text.rs`與上一節text-only版本相同，包含四項文字測試及已說明的局部manual_map allow：",
+    "+    `data/src/text.rs`與第 5.3 節的 text-only 版本相同，包含四項文字測試及已說明的局部 manual_map allow：",
+    " ",
+    "     ```rust",
+    "     --8<-- \"examples/intro-workspace/data/src/text.rs\""
+  ],
+  "finding_status_at_version_note": [
+    {
+      "id": "C5-01",
+      "independent_initial_classification": "optional",
+      "initial_version": "reproduced in source and actual desktop/mobile pages",
+      "end_source": "Two wrong previous-lesson pointers now explicitly5.3; correct narrowing, full program unchanged",
+      "actual_fixed_render": "pending rebuilt preview and separate narrow followup; do not count initial screenshots as fixed render"
+    },
+    {
+      "id": "C5-02",
+      "independent_initial_classification": "optional",
+      "initial_version": "raw ** around prelude reproduced actual desktop/mobile",
+      "end_source": "parent says fix will occur after complete seal",
+      "actual_fixed_render": "pending separate narrow followup"
+    }
+  ],
+  "remaining_source_scope": "No selected Rust, package manifest, SVG, fixture expectation,5.1–5.4 body changed in initial scope. Global workspace/lock separately added futuretrait-stages/lifetimes/lifetimescomplete; their package-only manifests read only as configuration metadata. No6/7prose/source read.",
+  "next_step": "Preserve initial source/report/seal unchanged; repair verification in distinct round05 followup files."
+}

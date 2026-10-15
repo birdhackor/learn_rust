@@ -1,0 +1,14 @@
+[
+  {
+    "index": 225,
+    "old_sha256": "6e2a2957282895f64fb469f46d5e5c4285a38920c6eb26133d1d1f8952bb4646",
+    "current_sha256": "5c4464cee9b73c0dd30e9b4388ea599cbabbf8eceb60c206218130cdfffb2a83",
+    "reason": "Root prose-only nearby cue correction before reader was resumed/released this batch; records absent, not changing a previously read unit."
+  },
+  {
+    "index": 226,
+    "old_sha256": "5d5c7e75aa4d39afb332c925c64a6497758059b25ced921f96e888cb447e2ec9",
+    "current_sha256": "5a69d6d59ce8b36b894de91aee40bff9c9bc99c20ad6cf0578f22554d0d7845f",
+    "reason": "Root prose-only nearby cue correction before reader was resumed/released this batch; records absent, not changing a previously read unit."
+  }
+]

@@ -1,0 +1,94 @@
+{
+  "review_id": "round17-library-and-string-followup",
+  "scope": [
+    "17.6 helper→normal library身份",
+    "17.7 TC17B-O1"
+  ],
+  "independent_initial": false,
+  "attribution": "17.6是root在本人seal後提示的精確化，17.7是root採納本人既有可選finding；本次窄核，非新獨立發現，原兩初判不改。",
+  "status": "resolved",
+  "evidence": [
+    "17.6:37明說把15.1–15.4已教helper整理成完整library，並指向同頁全source，符合15章先前no-lib snapshots與17.6新normal dependency實際身份；三module fullbytes比較已在原初判確認一致。",
+    "17.7首counts snippet前新增String::from(&str)按From建立owned String並保留原文字，契約準確且位置早於actual首次使用，TC17B-O1已滿足。"
+  ],
+  "source_snapshot_at_utc": "2026-10-15T09:46:42.330390+00:00",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f",
+    "Cargo.toml": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f",
+    "docs/assets/ch14/loom-paths.svg": "95b87282af7e5fb55d7fdcc42761c821021d2666f2e6b928dea7b30b544b20b4",
+    "docs/assets/ch14/miri-storage.svg": "009b71a12c190640044ee3daad10abd924fc2489425305db7e735711197db367",
+    "docs/chapters/17-06-lesson.md": "40b995a63f8ae50f07264ccb014d8e5f090796c8f2658c6279fc6b5aeb12dca5",
+    "examples/ch12-unsafe/Cargo.toml": "d3c9301856f032cacafd7fc18a43eb8f38615ae75752c85b8cf84eb266beb20c",
+    "examples/ch12-unsafe/src/contracts.rs": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+    "examples/ch12-unsafe/src/gat.rs": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+    "examples/ch12-unsafe/src/lib.rs": "6ed58edfdf2f63adb063cb601bee812a20e133fa51acce9ad7c46a356523c7cf",
+    "examples/ch12-unsafe/src/variance.rs": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+    "examples/ch14-model-checking/Cargo.toml": "98be5f8261d9e858ec0ddfb0ca88e1fa4310c0a4a87de28128ce32588d7905b6",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.lock": "511cffa78a86b6d9375eae888102c5324a423709712bc4fd79bfe21b108c7515",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.toml": "5e0fff1a345770f001a7196b887d245d62be39a1a9c9d933a71be7269ee514bf",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/src/lib.rs": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.expected": "16dfb2737f4458cf72f984557d8a1af0a2f93bf1a447e5657bf1f9b876e85af0",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.rs": "d1570003c5760554c52b269d3096eb9cd9da4b6d089100b27db58875014e0a39",
+    "examples/ch14-model-checking/fixtures/miri-fail/Cargo.lock": "5842ee9b0e5e4a86c1a1a5c05eff0d410a2fb2c33ac223b491b74dc7b624e578",
+    "examples/ch14-model-checking/fixtures/miri-fail/Cargo.toml": "7522e3051d8385b1924239489039a3a9cecdf303a0ee253ef78496253fcd5433",
+    "examples/ch14-model-checking/fixtures/miri-fail/src/main.expected": "88e052e8bfe774128d71f477bcaae4ad8e0a592e852f3d8dc2a034884c1e731c",
+    "examples/ch14-model-checking/fixtures/miri-fail/src/main.rs": "5fd3740a82c8f7ad96852aa7928c24cb31a661d85b2bd8daa7fe0424e6e08a48",
+    "examples/ch14-model-checking/src/lib.rs": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "examples/ch14-model-checking/tests/loom_counter.rs": "1b70332deb52da698ed5f2cceba688e7788f672bfb2daf74efe6352ea2ca5bb6",
+    "examples/ch14-model-checking/tests/loom_counter_solution.rs": "8636a358adce52b7c8b589eda95c9b4bf184681bb25f83a519fe10e167866719",
+    "examples/ch14-model-checking/tests/miri_contracts.rs": "9521909a47173dfc8d7c9bbf9a84bb3eaf3438a3a49406f5895bf73a0e0c865f",
+    "examples/ch14-model-checking/tests/miri_owner_solution.rs": "8e2ce20bdff59c1d7e7e8c2999ca6235dbb51794ac6518af81b982fe350239b8",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5",
+    "docs/assets/ch14/benchmark-boundary.svg": "868acfb53dffef6f3e5bb43754d0067bbbcad17a9ae8827420cb3a6d4b0f1bea",
+    "docs/chapters/08-04-lesson.md": "10b3fbb207966ec067ca57a26e4d55d47d906a8e715b1fcb86a44999f5a30d8e",
+    "docs/chapters/08-05-lesson.md": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+    "docs/chapters/10-05-lesson.md": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+    "docs/chapters/17-07-lesson.md": "82260e42f6632bbed298ad38bfda5d0e762a8c963348bfcf0ce5de45f7030eb0",
+    "examples/ch14-performance/Cargo.toml": "94ca37c793af418c5dec68b48d8d4d162b844d844d663bec9f2c5bd87768b221",
+    "examples/ch14-performance/benches/line_counts.rs": "717586a7b8334b70df5f0b6c8c7056359499142e51a708c42a04e6f023ce1433",
+    "examples/ch14-performance/benches/line_setup_solution.rs": "b9fc284363f11187f097dcc06a9f72c5807a049406c0783f1c838061b5024115",
+    "examples/ch14-performance/examples/benchmark_inputs.rs": "52861204c3f12e35789da05ba6f7cd61afb9725fcfb73e1c03062908ab92d042",
+    "examples/ch14-performance/measurements/exercise.txt": "9a8a46ac63307d7ea49e8b41f1c69d38068c859cd292cdb3f4f0128e1698d86a",
+    "examples/ch14-performance/measurements/reproduction.json": "b60e5e3df454f4476be3bc05765a191f2c69cb427a7e86dded5f1be8a727555e",
+    "examples/ch14-performance/measurements/run-1.txt": "5be41ff2822d7cd4b52f8fd3b6f9d8d2f464df5bb87805eff4689e4e088f7ba7",
+    "examples/ch14-performance/measurements/run-2.txt": "8604c400edac5ee7e6fa96f3753f2c33c4fc479fc3595a24fb5687865f289141",
+    "examples/ch14-performance/src/lib.rs": "bd0b9932612439aca85ff21ce952749dbf93f89b3c4861bb0bfadc3092c54ee1",
+    "examples/ch14-performance/tests/count_contracts.rs": "afeed4e348a2216faa9c4c451557a1056f566147c0a4466a68e0b3ba4349fc12"
+  },
+  "changed_files": {
+    "docs/chapters/17-06-lesson.md": {
+      "before": "e38d0dd8516cddc7b49f1535aa00c40f860437ed8d68a1c073db1cc1b7172586",
+      "after": "40b995a63f8ae50f07264ccb014d8e5f090796c8f2658c6279fc6b5aeb12dca5"
+    },
+    "docs/chapters/17-07-lesson.md": {
+      "before": "873e2786a7e977ebd7fbd5f86440b90f1394b44623ce45618a696a2d47c5b6e9",
+      "after": "82260e42f6632bbed298ad38bfda5d0e762a8c963348bfcf0ce5de45f7030eb0"
+    }
+  },
+  "page_diffs": [
+    {
+      "page": "docs/chapters/17-06-lesson.md",
+      "before": "e38d0dd8516cddc7b49f1535aa00c40f860437ed8d68a1c073db1cc1b7172586",
+      "after": "40b995a63f8ae50f07264ccb014d8e5f090796c8f2658c6279fc6b5aeb12dca5",
+      "diff": "--- \n+++ \n@@ -34,7 +34,7 @@\n \n 本例保持有限：**兩個 worker、一個共享 atomic、各增加一次，沒有等待迴圈、隨機來源或外部 I/O**。加上執行 model body 的協調路徑，共三條模型 thread。這樣能集中觀察遺失更新；更多 thread、操作或迴圈會讓可能狀態大幅增加，不能直接把真實服務整個塞入小模型。\n \n-Loom 的型別與模型用於測試。本節另建 `ch14-model-checking`，Loom 固定0.7.2、放10.1已教的 dev-dependencies；預設features為空，本例不需要額外功能。一般dependency是15.4已教的 library，供後面的Miri測試使用：\n+Loom 的型別與模型用於測試。本節另建 `ch14-model-checking`，Loom 固定0.7.2、放10.1已教的 dev-dependencies；預設features為空，本例不需要額外功能。一般dependency把第15.1–15.4節已教的helper整理成完整library，來源在下方同頁列出，供後面的Miri測試使用：\n \n ```toml\n --8<-- \"examples/ch14-model-checking/Cargo.toml\"\n"
+    },
+    {
+      "page": "docs/chapters/17-07-lesson.md",
+      "before": "873e2786a7e977ebd7fbd5f86440b90f1394b44623ce45618a696a2d47c5b6e9",
+      "after": "82260e42f6632bbed298ad38bfda5d0e762a8c963348bfcf0ce5de45f7030eb0",
+      "diff": "--- \n+++ \n@@ -29,6 +29,8 @@\n | count_borrowed | `as_str()`借讀，再contains | 保留 |\n | count_cloned | 先clone成獨立owned String，再contains | 保留 |\n \n+這裡的 `String::from(&str)` 沿用8.4的From轉換：從借讀的文字建立owned String，原文字仍保留。\n+\n 對String，clone會建立自己的owned文字內容。candidate在該次迴圈結束時收尾，這份複本不需要保存到下一行。借讀方法則沒有這份新String；這是原始碼顯示的額外工作，**時間差仍須量測**，不能只從clone名稱給一個固定倍率。\n \n ```rust\n"
+    }
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "benchmark_or_miri_run": false,
+    "note": "兩份before hash對本人原sealed版本完全一致；只兩頁prose變，其他source/config/commands/原始量測/依賴全hash未變，未重跑。"
+  },
+  "sealed_at_utc": "2026-10-15T09:46:59.292Z"
+}

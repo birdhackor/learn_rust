@@ -1,0 +1,234 @@
+[
+  {
+    "viewport": "desktop",
+    "page": "http://127.0.0.1:8110/chapters/18-11-lesson/",
+    "at": "2026-10-15T10:43:22.756Z",
+    "path": "examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt",
+    "source": "\nftp://host/item\n \n/notes\nftp://host/item\n",
+    "rendered_code_text": "ftp://host/item\n\n/notes\nftp://host/item\n",
+    "source_lines": [
+      {
+        "index": 0,
+        "text": ""
+      },
+      {
+        "index": 1,
+        "text": "ftp://host/item"
+      },
+      {
+        "index": 2,
+        "text": " "
+      },
+      {
+        "index": 3,
+        "text": "/notes"
+      },
+      {
+        "index": 4,
+        "text": "ftp://host/item"
+      }
+    ],
+    "rendered_lines": [
+      {
+        "index": 0,
+        "text": "ftp://host/item"
+      },
+      {
+        "index": 1,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "text": "/notes"
+      },
+      {
+        "index": 3,
+        "text": "ftp://host/item"
+      }
+    ],
+    "source_retained_indexes": [
+      1,
+      3,
+      4
+    ],
+    "rendered_retained_indexes": [
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "viewport": "desktop",
+    "page": "http://127.0.0.1:8110/chapters/18-12-lesson/",
+    "at": "2026-10-15T10:43:28.053Z",
+    "path": "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt",
+    "source": "\nftp://host/item\n \n/notes\nftp://host/item\n",
+    "rendered_code_text": "ftp://host/item\n\n/notes\nftp://host/item\n",
+    "source_lines": [
+      {
+        "index": 0,
+        "text": ""
+      },
+      {
+        "index": 1,
+        "text": "ftp://host/item"
+      },
+      {
+        "index": 2,
+        "text": " "
+      },
+      {
+        "index": 3,
+        "text": "/notes"
+      },
+      {
+        "index": 4,
+        "text": "ftp://host/item"
+      }
+    ],
+    "rendered_lines": [
+      {
+        "index": 0,
+        "text": "ftp://host/item"
+      },
+      {
+        "index": 1,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "text": "/notes"
+      },
+      {
+        "index": 3,
+        "text": "ftp://host/item"
+      }
+    ],
+    "source_retained_indexes": [
+      1,
+      3,
+      4
+    ],
+    "rendered_retained_indexes": [
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "viewport": "mobile",
+    "page": "http://127.0.0.1:8110/chapters/18-11-lesson/",
+    "at": "2026-10-15T10:43:51.691Z",
+    "path": "examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt",
+    "source": "\nftp://host/item\n \n/notes\nftp://host/item\n",
+    "rendered_code_text": "ftp://host/item\n\n/notes\nftp://host/item\n",
+    "source_lines": [
+      {
+        "index": 0,
+        "text": ""
+      },
+      {
+        "index": 1,
+        "text": "ftp://host/item"
+      },
+      {
+        "index": 2,
+        "text": " "
+      },
+      {
+        "index": 3,
+        "text": "/notes"
+      },
+      {
+        "index": 4,
+        "text": "ftp://host/item"
+      }
+    ],
+    "rendered_lines": [
+      {
+        "index": 0,
+        "text": "ftp://host/item"
+      },
+      {
+        "index": 1,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "text": "/notes"
+      },
+      {
+        "index": 3,
+        "text": "ftp://host/item"
+      }
+    ],
+    "source_retained_indexes": [
+      1,
+      3,
+      4
+    ],
+    "rendered_retained_indexes": [
+      0,
+      2,
+      3
+    ]
+  },
+  {
+    "viewport": "mobile",
+    "page": "http://127.0.0.1:8110/chapters/18-12-lesson/",
+    "at": "2026-10-15T10:43:56.539Z",
+    "path": "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt",
+    "source": "\nftp://host/item\n \n/notes\nftp://host/item\n",
+    "rendered_code_text": "ftp://host/item\n\n/notes\nftp://host/item\n",
+    "source_lines": [
+      {
+        "index": 0,
+        "text": ""
+      },
+      {
+        "index": 1,
+        "text": "ftp://host/item"
+      },
+      {
+        "index": 2,
+        "text": " "
+      },
+      {
+        "index": 3,
+        "text": "/notes"
+      },
+      {
+        "index": 4,
+        "text": "ftp://host/item"
+      }
+    ],
+    "rendered_lines": [
+      {
+        "index": 0,
+        "text": "ftp://host/item"
+      },
+      {
+        "index": 1,
+        "text": ""
+      },
+      {
+        "index": 2,
+        "text": "/notes"
+      },
+      {
+        "index": 3,
+        "text": "ftp://host/item"
+      }
+    ],
+    "source_retained_indexes": [
+      1,
+      3,
+      4
+    ],
+    "rendered_retained_indexes": [
+      0,
+      2,
+      3
+    ]
+  }
+]

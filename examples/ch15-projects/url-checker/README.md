@@ -6,13 +6,13 @@
 
 ```bash
 cargo +1.99.0 build --release --locked
-cargo +1.99.0 run --locked -- fixtures/invalid-urls.txt --json
+cargo +1.99.0 run --quiet --locked -- fixtures/invalid-urls.txt --json
 ```
 
 隨附材料不送HTTP，應得到原index1／3／4的三筆input結果、相同ftp原文保留兩筆，退出1。換成自己的清單即可檢查真網址：
 
 ```bash
-cargo +1.99.0 run --locked -- 自己的清單.txt --jobs 2 --timeout-secs 5 --json
+cargo +1.99.0 run --quiet --locked -- 自己的清單.txt --jobs 2 --timeout-secs 5 --json
 ```
 
 省略設定時jobs8、每筆期限10秒；數值必須大於零。整數long參數要跟值，--json是不用值的bool開關。省略--json得到同一owned Report的逐行文字；文字內原文與detail用JSON引用保留引號與換行。普通client保留環境proxy設定，測試的本機client直接連loopback。網路結果及毫秒依實際環境而定。
@@ -40,4 +40,4 @@ shell能找到Cargo binary目錄後，使用`url-checker 清單.txt --json`。re
 
 公開library入口在src/lib.rs；實作module保持private。check_text借caller的client，要求正數jobs／timeout秒數、caller保持停止送端有效；以Requested要求中止並await到結果。丟棄整份future不能替代等待children。Report／Row是可交換的被動資料，Error提供typed原因與source。CLI完整錯誤政策由run與write_report共同完成。
 
-這份工具讀完整小清單並保存所有結果；jobs只限制已提交tasks，不限制整份輸入／報告的記憶體。沒有重試、認證、爬蟲、HEAD fallback或背景服務。引導練習見教材15.11；stage副本不累計成反覆作業，實際core／tests／helper行數另記於該節作者ledger。
+這份工具讀完整小清單並保存所有結果；jobs只限制已提交tasks，不限制整份輸入／報告的記憶體。沒有重試、認證、爬蟲、HEAD fallback或背景服務。引導練習見教材18.11；stage副本不累計成反覆作業，實際core／tests／helper行數另記於該節作者ledger。

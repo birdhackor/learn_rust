@@ -1,0 +1,64 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "4.6"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch04.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/04-06-lesson.md": "1131e9b5ea0981c4e8149ae0975b0f4d33269ae91ea17974615437eb2799aeeb",
+    "examples/intro-workspace/patterns/Cargo.toml": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+    "examples/intro-workspace/patterns/examples/if_let.rs": "752fde827ef0ef84bc401cd7a9d5a3d6b2fd79ad217d160d2f922015dd2f8d18",
+    "examples/intro-workspace/patterns/examples/while_let.rs": "e066480791bac40ed349bf1b5d8b74ccf00f535e1d83f5f605cc40e291b1f895",
+    "examples/intro-workspace/patterns/examples/while_let_answer.rs": "ce029af358d70529b5caa38f7060b7d008242b95a62b6776cfcc9a3d3b6aa19a"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "4.6",
+      "path": "docs/chapters/04-06-lesson.md",
+      "line": 3,
+      "quote": "有些工作要分別處理所有形態，match 會要求我們完整列出答案。有些工作則只是「有金額就顯示，沒有就略過」，或「只要還取得下一批工作，就繼續處理」。這一節讓單一 pattern 直接表達這兩種需要。"
+    },
+    {
+      "section_id": "4.6",
+      "path": "docs/chapters/04-06-lesson.md",
+      "line": 7,
+      "quote": "這裡先把 Quote 保留為 Amount(i32) 與 Missing，只觀察有沒有金額。**`if let pattern = expression { ... }`** 先算右側，再以左側 pattern 配對；成功才進入 body，pattern 建立的名稱也只在成功的 body 中使用。不成功時跳過 body，接著做 if let 後面的工作。"
+    },
+    {
+      "section_id": "4.6",
+      "path": "docs/chapters/04-06-lesson.md",
+      "line": 33,
+      "quote": "第 2.4 節曾把 7 項工作分成每批最多 3 項。現在定義 enum Batch，讓每次取得的結果也是資料：More(i32) 表示這次有一批，附帶處理量；Done 表示已經沒有工作。"
+    },
+    {
+      "section_id": "4.6",
+      "path": "docs/chapters/04-06-lesson.md",
+      "line": 45,
+      "quote": "**`while let pattern = expression { ... }`** 在每次進 body 前重新計算右側。若 pattern 符合，就建立本次 binding 並做一次 body；body 結束後再算右側、再配對。不符合時，直接結束 while let。"
+    },
+    {
+      "section_id": "4.6",
+      "path": "docs/chapters/04-06-lesson.md",
+      "line": 85,
+      "quote": "把每批上限改成參數 capacity，仍讓下一批函式回傳 Batch。要求 work 非負、capacity 為正；若上限為零，剩餘量就可能一直不變。用 `(7, 3)`、`(6, 3)`、`(0, 3)` 確認分別得到 3、2、0 批。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

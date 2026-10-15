@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="420" height="680" viewBox="0 0 420 680" role="img" aria-labelledby="title desc">
+<title id="title">查找當下：查詢文字與結果的借用來源不同</title>
+<desc id="desc">上方query持有Rust文字，查詢視圖借讀query。綠色虛線表示get用文字查找counts。下方found的Some內reference借讀counts中的usize值2。藍色實線只表示借讀，綠色虛線只表示查找。</desc>
+<defs><marker id="borrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#2458a6"/></marker><marker id="lookup" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto"><path d="M0 0L10 5L0 10" fill="#18704e"/></marker></defs>
+<style>text{font-family:system-ui,sans-serif;font-size:22px;fill:#182839}.small{font-size:20px}.box{fill:#f6f9ff;stroke:#425b78;stroke-width:2}.borrow{fill:none;stroke:#2458a6;stroke-width:3;marker-end:url(#borrow)}.lookup{fill:none;stroke:#18704e;stroke-width:3;stroke-dasharray:7 5;marker-end:url(#lookup)}</style>
+<rect width="420" height="680" fill="white"/>
+<text x="20" y="32">查找當下</text>
+<rect class="box" x="20" y="52" width="380" height="112" rx="8"/>
+<text x="36" y="85">query：String</text><text x="36" y="126">文字內容：Rust</text>
+<rect class="box" x="20" y="209" width="380" height="52" rx="8"/>
+<text x="36" y="243">查詢視圖：&amp;str</text>
+<path class="borrow" d="M100 209V168"/><text class="small" x="126" y="193">借讀 query 的文字</text>
+<path class="lookup" d="M100 264V327"/><text class="small" x="126" y="301">get：依內容查找</text>
+<rect class="box" x="20" y="332" width="380" height="175" rx="8"/>
+<text x="36" y="367">counts：HashMap</text>
+<rect class="box" x="36" y="389" width="164" height="90" rx="5"/><text class="small" x="48" y="419">鍵 String</text><text x="48" y="456">Rust</text>
+<rect class="box" x="218" y="389" width="164" height="90" rx="5"/><text class="small" x="230" y="419">值 usize</text><text x="230" y="456">2</text>
+<rect class="box" x="20" y="585" width="380" height="64" rx="8"/>
+<text x="36" y="625">found：Some（借到的值）</text>
+<path class="borrow" d="M302 582V483"/><text class="small" x="28" y="550">借讀 map 內的值</text>
+</svg>

@@ -1,0 +1,61 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "3.4"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round03-copy-before-diagram-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round03-ownership.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/03-04-lesson.md": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+    "examples/intro-workspace/ownership/examples/mutable_references.rs": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+    "examples/intro-workspace/ownership/examples/borrow_answer.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "3.4",
+      "path": "docs/chapters/03-04-lesson.md",
+      "line": 3,
+      "quote": "shared reference 能讀訂單，不能經由它把數量加一。現在希望函式完成修改後，呼叫者直接看見同一筆訂單的新數量，仍不必交出整筆值。這需要 mutable reference。"
+    },
+    {
+      "section_id": "3.4",
+      "path": "docs/chapters/03-04-lesson.md",
+      "line": 7,
+      "quote": "**mutable reference** 提供對所借資料的獨占存取。`&mut order` 建立這種借用，型別是 `&mut Order`；原變數必須先宣告為 mutable。當這份借用仍在使用時，不能從其他衝突途徑存取同一資料，第 3.5 節再逐行判斷區間。"
+    },
+    {
+      "section_id": "3.4",
+      "path": "docs/chapters/03-04-lesson.md",
+      "line": 46,
+      "quote": "反過來，`let mut reference: &i32` 允許重新指派這個變數，讓它保存另一份 shared reference；`&i32` 仍然只允許借讀。下面的完整程式先借 first，再把 reference 改成借 second："
+    },
+    {
+      "section_id": "3.4",
+      "path": "docs/chapters/03-04-lesson.md",
+      "line": 70,
+      "quote": "放入獨立練習專案後執行 `cargo check`，會得到 **E0594**：不能透過 `&` reference 指派。只在 reference 名稱前加 mut，不會把它的 &i32 型別變成 &mut i32。"
+    },
+    {
+      "section_id": "3.4",
+      "path": "docs/chapters/03-04-lesson.md",
+      "line": 74,
+      "quote": "寫 `set_count`，接受 `&mut Order` 與新的 i32 數量，修改原訂單；再寫接受 `&Order` 的 subtotal，只讀欄位算小計。以單價 80、數量 2，先算 160，將數量設成 3，再算 240。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

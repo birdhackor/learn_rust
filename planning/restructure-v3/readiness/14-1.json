@@ -1,0 +1,96 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "14.1"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round14-async-foundations-cancellation-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round14-http-local-service-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round14-root-contract-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14-followup.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/14-01-lesson.md": "7772154a19fd100713e33d25ce94fc985fcb8f39f087792270f8b710370e4966",
+    "docs/assets/async-v3/waiting-arrangements.svg": "6c2cd8c637690416650a7264d6a786cb7ef46aa07babc1915d9dbb6a06fbdd5a"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 3,
+      "quote": "現在要產生一份訂單報告：它需要倉庫回覆庫存，也需要算出已知商品的合計。倉庫尚未回覆時，加總資料其實已經齊了。我們希望先把能做的部分做完，再取得外部結果；最後仍要確認兩份資料都到齊。"
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 5,
+      "quote": "第 13 章已用 thread、channel 與 join 安排工作。本章將學另一種表達等待的方式：**async** 是 **asynchronous（非同步）** 的簡稱。這種程式可以保存尚未完成的工作，在等待條件未滿足時，讓執行機會用於其他能前進的工作。先用固定情境看清楚需要，再進入 Rust 語法。"
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 9,
+      "quote": "本節一直使用同一筆訂單、同一份查詢與同一組數字："
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 19,
+      "quote": "一種安排是：發出 A，留在原處等待；收到回覆才取出3，再做 B 得到200，最後組報告。答案正確，但 B 在等待期間尚未開始。"
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 25,
+      "quote": "現在保持相同材料，只調整工作安排："
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 32,
+      "quote": "第 13.1 節的 **concurrency（並行）** 可以用這段進度辨認：A 的進行期間包含等待，B 在這段期間取得進展。程式不必同一時刻執行兩段計算；同一條 thread 也能按條件交錯推進。"
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 38,
+      "quote": "**parallelism（平行）** 則要求同一時刻真的有多份工作在執行。例如仍是 A、B，另假設 A 的回覆已到、B 尚未完成，而且有兩份可用的執行資源：一份處理 A 的回覆，另一份同時完成 B 的計算。"
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 42,
+      "quote": "下圖固定同一項 A、同一項 B。①、②的箭頭只表示操作先後；③**另外假設**兩份資源真的同時執行兩段程式。框高和留白不表示耗時，也不是效能測量："
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 50,
+      "quote": "要在程式中做到②，不只是把「正在等待」印出來。還需要保存 A 的進度、知道它何時能再前進，並在適當時候繼續處理；等待期間，也要有辦法安排 B 這類已能前進的工作。"
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 52,
+      "quote": "接下來會學到的 Future 與執行工具，就是用來表達、推進這些尚未完成的工作。這裡先掌握用途：**等待某項條件時，不必因此停止同一條 thread 上所有其他可做的工作**。它不會讓倉庫更早回覆，也不會替80加120省掉加法；是否改善實際耗時，還取決於等待、工作量與工具成本。"
+    },
+    {
+      "section_id": "14.1",
+      "path": "docs/chapters/14-01-lesson.md",
+      "line": 58,
+      "quote": "沿用 A 回覆庫存3、B 計算80加120的規格，逐一判斷："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

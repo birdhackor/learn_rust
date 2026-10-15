@@ -1,0 +1,100 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "9.7"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round09-adaptors-text-sorting-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round09-closures-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round09-impl-iterator-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/09-07-lesson.md": "fce1c2a012b97dcf775ba970e78f9cc500c2ab39fcc8cf59fef7189536ad91ba",
+    "examples/intro-workspace/iterators/Cargo.toml": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+    "examples/intro-workspace/iterators/examples/partial_order.rs": "690032a51caaa2d5d77b903f259c4f4b3eed6a9f8be0702bf99b2529621ff0aa",
+    "examples/intro-workspace/iterators/examples/sorting_keys.rs": "d0e20f86f8c10261ba0842a388c66c9eca6a0b9b4653b5dd3a5f1c6c2984500d",
+    "examples/intro-workspace/iterators/examples/sorting_unstable.rs": "49edbf8bba2a4814e1b688da04f99cfd8dcc7931a1bd4868799b94faa869a4cc",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/sort_boolean.rs": "34947f88c563ae3a60c2ca1df62ea5d657dd20004d6df1d3e723e6eddaac760b",
+    "examples/intro-workspace/iterators/examples/text_report.rs": "260f609a249f2f1aba8dd54c6b89de1796321ccebd4d74ddb7cf75bbabfa4533",
+    "examples/intro-workspace/iterators/examples/text_report_answer.rs": "da6b66bfdb62c2531e3c8fed272d4e3dd035d7d7ad5bec5bdfe55f5804f65b18"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 3,
+      "quote": "上一節已得到正確的名稱次數，但 HashMap 的走訪順序沒有保證。現在要每次都顯示同一份報表：次數由多到少，同次數再按名稱由小到大。"
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 15,
+      "quote": "排序需要知道兩項資料的比較結果是較小、相等，還是較大。標準 enum **`std::cmp::Ordering`** 有三個 variant：**Less、Equal、Greater**。它們表示第一個比較對象相對第二個的順序；這個型別有 Debug／PartialEq，可顯示與核對結果。"
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 17,
+      "quote": "**`PartialOrd`** 提供部分順序的比較，`partial_cmp` shared 借用兩個值，回傳 `Option<Ordering>`。能比較就是 Some 包住相應順序，不能比較就是 None；None 不等於 Equal。先前的 `<`、`<=` 等操作也由這項能力支持，判斷必須和 PartialEq 的相等規則一致。"
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 19,
+      "quote": "**`Ord`** 進一步承諾所有同型別值都能依一致的完整順序比較，也要符合 Eq。它的 `cmp` shared 借用兩個值，直接交回 Ordering。反轉左右，Less 應變 Greater；相等對應 Equal，連續的小於關係也要一致。排序時不能依 callback 第幾次執行任意改變答案。"
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 23,
+      "quote": "浮點數則有 **NaN**（Not a Number，非數值），不能和一般值取得這種順序。**`f64::NAN`** 是標準 f64 提供的 associated constant，即型別提供的固定值，直接用 `::` 讀取，不加呼叫括號；本例用它觀察 None。一般 f64 因這種情況沒有 Ord，不能只因能用 `<` 就假定它滿足完整排序契約："
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 33,
+      "quote": "slice 的 sort、sort_by_key、sort_by 都需要 mutable borrow，修改原排列，回傳 `()`；空或一項資料也能處理。它們保留比較相等項目的原相對順序，這叫 **stable sort**（穩定排序）。"
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 53,
+      "quote": "對只有數字的清單，這項工作只要升序結果，不再按原位置識別相等的數字，可以選 **sort_unstable**。它仍需要 mutable 借用 slice，按元素的 Ord 升序修改原排列，回傳 unit；排序工作本身不另配置 heap 暫存區，但不承諾相等項目的原相對順序。"
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 73,
+      "quote": "回到開頭的規則：次數降序，同次數才比名稱升序。先用 owned into_iter，把 map 的 `(String, usize)` 收成 `Vec<(String, usize)>`；排序 callback 借來的是兩筆 tuple，不會接手它們的 String。"
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 75,
+      "quote": "tuple 的 `.0` 是名稱、`.1` 是次數。要讓次數大的左資料先出現，先比較 **`right.1.cmp(&left.1)`**。若左是 Rust 的 2、右是 Python 的 1，1 比 2 得到 Less，排序就把**左筆 Rust**放在右筆之前。次數 Equal，才用名稱正常的左右方向比較："
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 86,
+      "quote": "只按次數排序，Equal 的名稱會保留來源順序；但 HashMap 的來源順序是任意的。因此**stable 不足以保證這份報表每次順序相同**。補上名稱比較後，不同的 map 鍵都有明確位置，這才滿足固定輸出的需要。"
+    },
+    {
+      "section_id": "9.7",
+      "path": "docs/chapters/09-07-lesson.md",
+      "line": 110,
+      "quote": "重用 count_names，把報表改為**次數由少到多，同次數仍依名稱升序**。先說清楚哪個比較方向要改，不修改分行、空行或名稱身分規則，也不要為排序 clone 整份名稱。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

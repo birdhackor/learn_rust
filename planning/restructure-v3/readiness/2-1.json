@@ -1,0 +1,67 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "2.1"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round02-control-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch02.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/02-01-lesson.md": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3",
+    "examples/intro-workspace/control-steps/examples/comparisons.rs": "1aafbf0c821aa4ab21f390fcfd341e00749f343c34aa4e913a0cc195cdc01f38",
+    "examples/intro-workspace/control-steps/Cargo.toml": "52011d81554362fc0008e34c86caab53d1da8f6e599cb7b335e0b3b2dd5d8c6e",
+    "examples/intro-workspace/control-steps/examples/comparisons_answer.rs": "b22865080da18b649f071aa1bbfd3b8bad34f130bc4799a7d4e65cad39de2f2e"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "2.1",
+      "path": "docs/chapters/02-01-lesson.md",
+      "line": 3,
+      "quote": "第一章已能算出商品小計。現在想回答另一種問題：「小計達到 300 元了嗎？」答案不是另一個金額，而是 `true` 或 `false`。先學會算出這個答案，下一節才讓程式依答案選擇不同工作。"
+    },
+    {
+      "section_id": "2.1",
+      "path": "docs/chapters/02-01-lesson.md",
+      "line": 7,
+      "quote": "**比較運算**檢查兩個值的關係，得到 `bool`。本節比較已知的 `i32`："
+    },
+    {
+      "section_id": "2.1",
+      "path": "docs/chapters/02-01-lesson.md",
+      "line": 28,
+      "quote": "單價與數量都非負，才算這次材料通過基本檢查。`&&` 表示「兩邊都要為 true」；`||` 表示「至少一邊為 true」；`!` 放在一個布林值前面，將 true 與 false 對調。"
+    },
+    {
+      "section_id": "2.1",
+      "path": "docs/chapters/02-01-lesson.md",
+      "line": 40,
+      "quote": "組合條件時，Rust 先算左側。對 `&&` 而言，左側已經是 false，整體就不可能為 true，因此跳過右側；對 `||` 而言，左側已是 true，整體已成立，也跳過右側。這稱為**短路判斷**。"
+    },
+    {
+      "section_id": "2.1",
+      "path": "docs/chapters/02-01-lesson.md",
+      "line": 69,
+      "quote": "本章前五節的程式放在 `control-steps/`，package 名稱是 `intro-control-steps`。它與第一章的 `steps/` 一樣，沒有 library；每份範例有自己的 `main`。完整 member manifest 如下："
+    },
+    {
+      "section_id": "2.1",
+      "path": "docs/chapters/02-01-lesson.md",
+      "line": 106,
+      "quote": "定義 `can_ship(price: i32, count: i32, ready: bool) -> bool`：單價非負、數量為正、已備妥，三項都成立才能出貨。再定義 `needs_preparation(ready: bool) -> bool`，將是否備妥反轉為是否尚需備貨。使用下列完整答案前，先預測 `(80, 2, true)`、`(80, 0, true)`、`(-1, 2, true)` 三次出貨檢查。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

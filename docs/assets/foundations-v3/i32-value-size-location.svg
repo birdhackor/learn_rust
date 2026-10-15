@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="336" height="740" viewBox="0 0 336 740" role="img" aria-labelledby="title desc">
+<title id="title">i32 的值、大小與位置</title>
+<desc id="desc">位置 P 與位置 Q 都可保存值 120，每份 i32 表示都是四個 bytes。改為值 80 仍是 i32 的四個 bytes。P 與 Q 是示意位置，格子沒有畫出真實二進位編碼。</desc>
+<defs>
+ <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/></marker>
+ <marker id="time" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker>
+</defs>
+<style>
+ text { font-family: "Noto Sans CJK TC", "Noto Sans", sans-serif; font-size:18px; fill:#172033; }
+ .heading { font-size:21px; font-weight:700; }
+ .strong { font-weight:700; }
+ .muted { fill:#475569; }
+</style>
+<rect width="336" height="740" rx="12" fill="#f8fafc"/>
+<text x="20" y="36" class="heading">
+<tspan x="20" dy="0">值、大小、位置分開看</tspan>
+</text>
+<text x="20" y="75" class="strong">
+<tspan x="20" dy="0">位置 P（示意）</tspan>
+</text>
+<text x="20" y="104" class="">
+<tspan x="20" dy="0">main 的 price</tspan>
+</text>
+<rect x="16" y="119" width="304" height="150" rx="9" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+<text x="32" y="150" class="strong">
+<tspan x="32" dy="0">值 120　型別 i32</tspan>
+</text>
+<rect x="28" y="167" width="67" height="42" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="61.5" y="194" class="" text-anchor="middle">
+<tspan x="61.5" dy="0">1 byte</tspan>
+</text>
+<rect x="99" y="167" width="67" height="42" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="132.5" y="194" class="" text-anchor="middle">
+<tspan x="132.5" dy="0">1 byte</tspan>
+</text>
+<rect x="170" y="167" width="67" height="42" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="203.5" y="194" class="" text-anchor="middle">
+<tspan x="203.5" dy="0">1 byte</tspan>
+</text>
+<rect x="241" y="167" width="67" height="42" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="274.5" y="194" class="" text-anchor="middle">
+<tspan x="274.5" dy="0">1 byte</tspan>
+</text>
+<text x="168" y="247" class="" text-anchor="middle">
+<tspan x="168" dy="0">共 4 bytes = 32 bits</tspan>
+</text>
+<text x="20" y="312" class="strong">
+<tspan x="20" dy="0">位置 Q（示意）</tspan>
+</text>
+<text x="20" y="341" class="">
+<tspan x="20" dy="0">subtotal 的 price</tspan>
+</text>
+<rect x="16" y="356" width="304" height="150" rx="9" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+<text x="32" y="387" class="strong">
+<tspan x="32" dy="0">值 120　型別 i32</tspan>
+</text>
+<rect x="28" y="404" width="67" height="42" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="61.5" y="431" class="" text-anchor="middle">
+<tspan x="61.5" dy="0">1 byte</tspan>
+</text>
+<rect x="99" y="404" width="67" height="42" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="132.5" y="431" class="" text-anchor="middle">
+<tspan x="132.5" dy="0">1 byte</tspan>
+</text>
+<rect x="170" y="404" width="67" height="42" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="203.5" y="431" class="" text-anchor="middle">
+<tspan x="203.5" dy="0">1 byte</tspan>
+</text>
+<rect x="241" y="404" width="67" height="42" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="274.5" y="431" class="" text-anchor="middle">
+<tspan x="274.5" dy="0">1 byte</tspan>
+</text>
+<text x="168" y="484" class="" text-anchor="middle">
+<tspan x="168" dy="0">共 4 bytes = 32 bits</tspan>
+</text>
+<rect x="16" y="550" width="304" height="153" rx="9" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+<text x="32" y="582" class="strong">
+<tspan x="32" dy="0">比較：值換成 80</tspan>
+</text>
+<text x="32" y="617" class="">
+<tspan x="32" dy="0">仍是 i32，仍需 4 bytes。</tspan>
+<tspan x="32" dy="27">值相同不代表位置相同；</tspan>
+<tspan x="32" dy="27">值變小不代表 bytes 減少。</tspan>
+</text>
+</svg>

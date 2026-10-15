@@ -1,0 +1,41 @@
+{
+  "captured_utc": "2026-10-15T08:30:26.698156+00:00",
+  "changes": [
+    {
+      "path": "docs/chapters/06-06-lesson.md",
+      "initial": "7e30cb746015e9d5a76fa7e57d866869893717fae34cd09b895cd60bab2a2850",
+      "current": "c22dc2544ddca5f26d854f450028df0fc315ecd114d8db8b9a9ced81efbce549"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial": "e9e3773e89e2d210c65b8c5972cc1dc7d36a2e1cda6cb202c07747fb8b83b058",
+      "current": "8858a9a16546805c4b0024a3d90b2e961adfd52e9f04efb9e9f25d860b5575aa"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial": "549d3112349bbc321ffa7c0c5ebdf985532bac5953f3c6a6539ef899f28adfbb",
+      "current": "bc4d31239fe58a3e6a897c265cde1bd9a26562a62fb37406347e134c673fc38c"
+    }
+  ],
+  "table_diff": [
+    "--- independentinitial",
+    "+++ currentfollowup",
+    "@@ -18,11 +18,11 @@",
+    " ",
+    " 對這次材料，狀態依序是：",
+    " ",
+    "-| 讀到的標籤 | 查詢結果 | 本次工作 | 處理後保存的次數 |",
+    "-| --- | --- | --- | --- |",
+    "-| Rust | None | 複製名稱，加入1 | Rust→1 |",
+    "-| Python | None | 複製名稱，加入1 | Rust→1、Python→1 |",
+    "-| Rust | Some | 修改已有次數 | Rust→2、Python→1 |",
+    "+| 讀到的標籤 | 查詢與本次工作 | 處理後保存的次數 |",
+    "+| --- | --- | --- |",
+    "+| Rust | None；複製名稱，加入1 | Rust→1 |",
+    "+| Python | None；複製名稱，加入1 | Rust→1、Python→1 |",
+    "+| Rust | Some；修改已有次數 | Rust→2、Python→1 |",
+    " ",
+    " 第三次沒有把 Rust 改回1，也沒有新增另一筆相等鍵。重複名稱正是用得到「先查詢，再依情況工作」的材料。",
+    " "
+  ]
+}

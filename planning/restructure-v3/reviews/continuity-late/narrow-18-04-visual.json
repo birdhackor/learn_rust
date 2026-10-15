@@ -1,0 +1,14 @@
+[
+  {
+    "id": "18-04",
+    "width": 1280,
+    "file": "current-18-04-1280.png",
+    "text": "問題排序依序比較原生位置、action、reason、path_debug；action 與 reason 使用 9.7 的 String 文字 Ord；path_debug 是 Option<String>，先依上段的 None／Some 規則，再比較 Some 裡的文字。前一欄 Equal 才看下一欄。所有顯示欄位都相等時，兩份診斷的輸出也相同，因此不用從原到達順序猜固定結果。只排位置並用 stable sort，不能保證同位置的不同動作每次一致。"
+  },
+  {
+    "id": "18-04",
+    "width": 390,
+    "file": "current-18-04-390.png",
+    "text": "問題排序依序比較原生位置、action、reason、path_debug；action 與 reason 使用 9.7 的 String 文字 Ord；path_debug 是 Option<String>，先依上段的 None／Some 規則，再比較 Some 裡的文字。前一欄 Equal 才看下一欄。所有顯示欄位都相等時，兩份診斷的輸出也相同，因此不用從原到達順序猜固定結果。只排位置並用 stable sort，不能保證同位置的不同動作每次一致。"
+  }
+]

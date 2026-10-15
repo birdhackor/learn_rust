@@ -1,6 +1,6 @@
 # A2 工作版
 
-本階段承接已完成的 A1。`collection.rs` 保留八項 A1 驗收；`stream.rs`／`files.rs` 使用第9.4節已教的摘要、bytes 比較與前後觀察。它們都依賴本 package 的 `crate::collection` 型別。
+本階段承接已完成的 A1。`collection.rs` 保留八項 A1 驗收；`stream.rs`／`files.rs` 使用第12.4節已教的摘要、bytes 比較與前後觀察。它們都依賴本 package 的 `crate::collection` 型別。
 
 要自己完成的三個函式在 `src/content.rs`：digest_candidates、refine_bucket、confirm_bucket。固定的空桶／空群組／Changed 只標示未完成，沒有觀察結果的意義。analyze 已接好這三份工作，還沒有最終報告或 CLI。
 

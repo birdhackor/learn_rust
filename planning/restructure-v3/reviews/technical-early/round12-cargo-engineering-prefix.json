@@ -1,0 +1,257 @@
+{
+  "review_id": "round12-cargo-engineering-prefix",
+  "scope": [
+    "12.1"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 真正已讀1–9、10.1–10.7、11.1–11.8；未讀10.8+、11.9+、12.2+，不以其內容當先備。本頁actual必要前提為已讀1.3、2.6/2.7、10.1及一般Rust陣列/呼叫/測試。",
+  "independence": "首次實讀與初判封存前未讀作者validation/ledger、peer、reader或historical findings。",
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "TC12P-O1",
+      "severity": "optional",
+      "category": "命令範圍／來源時序的文字精確度，不是Rust語義錯誤",
+      "location": "docs/chapters/12-01-lesson.md:150",
+      "quote": "「--all-targets指所選package的library、binary、examples、tests等建置成果……本頁每份程式都已完整列出。」",
+      "source_evidence": [
+        "同頁:156 clippy --all-targets --all-features會編譯app/examples/feature_answer.rs。",
+        "該ownedsource第一次完整snippet在:188，晚於上述「已完整列出」及command；檔案在開頭tree:23已有列名。",
+        "feature_answer.rs:1–17只用本頁已先教的order_subtotal、two_orders、cfg!/#[cfg]、arrays和assert_eq；完整source確在同頁答案中，沒有新Clippy allow或未教API。"
+      ],
+      "reader_impact": "讀者到這組驗證命令時，『已完整列出』會讓人以為前面已能逐檔對完全部all-targets來源，但仍需往後讀答案才能看到一份被編譯的檔案。概念/結果已有充分前提，因此只列可選精確度改善。",
+      "suggestion": "將這句改成明說『本頁後面的完整答案example也會參與all-targets檢查』，或把整包檢查放到答案source後；不需增加API或Rust程式。",
+      "necessary": false
+    }
+  ],
+  "result": "必要問題0；可選文字/命令範圍精確度1。",
+  "method": [
+    "全文、10個完整snippets、兩個member與path dependency的所有actualsource/manifest/lock、integrationtest、fixture/expected及答案靜態核對。",
+    "核對workspace根片段對actual repo根三組TOML tables一致、nested workspace獨立範圍、所有命令feature組合/closure及target目錄。",
+    "無source/config/repo修改，無Cargo廣跑或Rust執行。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "note": "11個Cargo命令與1個故意失敗rustc命令皆為靜態核對，未冒稱實際執行。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:48:49.195654+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.toml": "0f88800bd024f321b1ffe67042e7d3f8c7813bb4c740e3d24cb184d9cf9acada",
+    "docs/chapters/12-01-lesson.md": "ec0a88e410fbee7c7ce4ca3278be446758483d5dbdf7121bd2f91f1a7fed6770",
+    "examples/ch09-engineering/lesson-workspace/Cargo.lock": "f40481263d1d0d27746ef13632a7296b46a8678f6be1efb9c4f7b339d0e6eae7",
+    "examples/ch09-engineering/lesson-workspace/Cargo.toml": "6e97ad43a088d7dd8efc40b78dd98ba1670eceada51900c929d973cb10318813",
+    "examples/ch09-engineering/lesson-workspace/app/Cargo.toml": "e32735dd8ab2b1fea9ff5a7e58effeac45e627240e42893d6f0f2f52be28cb2c",
+    "examples/ch09-engineering/lesson-workspace/app/examples/feature_answer.rs": "104e4f86d72f3e476a0b16fe3a4a03ab4e7edce788f5547d2491a62d72b8f5ca",
+    "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.expected": "199eb18cb5837b9b01d8aaea0b5c2eef0d395288e0b7a1dedd6b511b2fa2efe1",
+    "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.rs": "88bd82b20931f6f033ad9aa461ea46aba1daabeb161dc8d462a3579309c07cbf",
+    "examples/ch09-engineering/lesson-workspace/app/src/lib.rs": "4b42fa928164e6c1e05c2ab8b3fac00f527f4da6fb9917558432b5605ea04cc3",
+    "examples/ch09-engineering/lesson-workspace/app/src/main.rs": "0efa551d7ac17f0a0c4abe9fdc99bacb18468f40ca73b7295cb1d9ec461b7493",
+    "examples/ch09-engineering/lesson-workspace/app/tests/features.rs": "bc4ae772e56760ed07cc5f382e2ad32ae30170db88389a7e811b7ff2b57f9cd6",
+    "examples/ch09-engineering/lesson-workspace/fixtures/repo-root-settings.toml": "b70cab18c3c40b108a4499473bfd0e3396721aff906d243cdfa2ed45a57e511f",
+    "examples/ch09-engineering/lesson-workspace/subtotal/Cargo.toml": "bd5bccc09e00f41cc0f97e0ae7ce635d5b487c7a8465106b7fbd470e9fb2d089",
+    "examples/ch09-engineering/lesson-workspace/subtotal/src/lib.rs": "8c8556cd2f690bb98d9a7fe580a2e5dfff690b33d212bd8d86606ec0d15c25b0",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "lesson-engineering",
+      "version": "0.1.0",
+      "dependencies": [
+        "lesson-subtotal"
+      ]
+    },
+    {
+      "name": "lesson-subtotal",
+      "version": "0.1.0"
+    }
+  ],
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 55,
+      "source": "examples/ch09-engineering/lesson-workspace/Cargo.toml",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 63,
+      "source": "examples/ch09-engineering/lesson-workspace/subtotal/Cargo.toml",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 69,
+      "source": "examples/ch09-engineering/lesson-workspace/subtotal/src/lib.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 81,
+      "source": "examples/ch09-engineering/lesson-workspace/app/Cargo.toml",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 97,
+      "source": "examples/ch09-engineering/lesson-workspace/app/src/lib.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 111,
+      "source": "examples/ch09-engineering/lesson-workspace/app/src/main.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 129,
+      "source": "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 147,
+      "source": "examples/ch09-engineering/lesson-workspace/app/tests/features.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 170,
+      "source": "examples/ch09-engineering/lesson-workspace/fixtures/repo-root-settings.toml",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-01-lesson.md",
+      "line": 188,
+      "source": "examples/ch09-engineering/lesson-workspace/app/examples/feature_answer.rs",
+      "tag": null,
+      "complete_source": true
+    }
+  ],
+  "selected_target_closure": {
+    "workspace": "examples/ch09-engineering/lesson-workspace",
+    "members": [
+      "subtotal（lesson-subtotal）",
+      "app（lesson-engineering）"
+    ],
+    "own_lock": true,
+    "dependencies": "app明選lesson-subtotal.workspace=true；根workspace.dependencies path=subtotal，載入的dep僅subtotal/src/lib.rs。沒有第三方或外層舊ch09-engineering程式。",
+    "normal_binary": [
+      "app/src/main.rs",
+      "app/src/lib.rs",
+      "subtotal/src/lib.rs"
+    ],
+    "example_feature_answer": [
+      "app/examples/feature_answer.rs",
+      "app/src/lib.rs",
+      "subtotal/src/lib.rs"
+    ],
+    "cargo_test_default": "所選package lib/bin/integration/doc-test及example compile檢查；app/tests/features.rs依batch有2或1test；feature_answer也可能建置，完整source在同頁後段。",
+    "clippy_all_targets": "app lib/bin/examples/feature_answer/tests/features及其subtotal正常library，全部actualsource已全文核對；feature_answer完整snippet在命令後，另列可選TC12P-O1。",
+    "build_release": "所選app binary及normal libraries；不載fixture程式。",
+    "compile_fail_fixture": "獨立rustc只載cfg_bool_is_not_removal.rs，沒有library；batch未設時移除two_orders，普通if body仍name-check。",
+    "build_scripts": false,
+    "root_excerpt": "repo-root-settings.toml只是三組精確節錄；不選repo根manifest，沒有載ch01-basics。"
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/12-01-lesson.md:31",
+      "judgment": "workspace.package、rust-version最低宣告非工具鏈選擇、publish=false與version.workspace=true等採用語義準確，點號true不被寫成edition布林值。"
+    },
+    {
+      "source": "docs/chapters/12-01-lesson.md:40",
+      "judgment": "workspace.dependencies不是自動建立成員dependency，成員須明選；根path從根manifest出發，對比app直寫../subtotal正確。"
+    },
+    {
+      "source": "docs/chapters/12-01-lesson.md:46",
+      "judgment": "dev/release、opt-level常見0–3、成本和效果界線、overflow-checks true執行時panic不擴大i32範圍、profile只根生效都在首manifest前解釋。"
+    },
+    {
+      "source": "docs/chapters/12-01-lesson.md:74",
+      "judgment": "自己的features batch[]/default列表、--no-default-features與--features/--all-features、dependency default-features分工和通常加總啟用的敘述準確；同時操作此兩member沒有意外再啟用batch。"
+    },
+    {
+      "source": "docs/chapters/12-01-lesson.md:90",
+      "judgment": "cfg attribute移除項目、cfg!產bool而不移除if body，constfalse仍type/namecheck差異在首main/fixture前；Unix/Windows compile target vs host與Cargo exampletarget也先分清。"
+    },
+    {
+      "source": "docs/chapters/12-01-lesson.md:134",
+      "judgment": "rustc/--edition/-o目的與未指定batch的失敗預期先教，fixture source/expected E0425相符；不依賴library。"
+    },
+    {
+      "source": "docs/chapters/12-01-lesson.md:142",
+      "judgment": "tests/每檔獨立crate、公開library入口在首integrationtest前解釋。featureguard涵蓋test與所需use；2/1/2 integrationcounts正確。"
+    },
+    {
+      "source": "docs/chapters/12-01-lesson.md:167",
+      "judgment": "根manifest精確三表節錄不冒稱可直接覆蓋；actualTOML tables逐一比對相同。repo-root path、exclude與各workspace lock/target範圍分清。"
+    },
+    {
+      "source": "docs/chapters/12-01-lesson.md:179",
+      "judgment": "答案80×0+120×1=120，cfg block連同use移除；single160一直存在，release同材料/無溢位答案不變，沒有作效能證明。"
+    }
+  ],
+  "configuration_absence_checks": {
+    "paths": [
+      "/workspace/learn_rust/.cargo/config",
+      "/workspace/learn_rust/.cargo/config.toml",
+      "/workspace/.cargo/config",
+      "/workspace/.cargo/config.toml",
+      "/.cargo/config",
+      "/.cargo/config.toml",
+      "/workspace/.learn-rust-tools/cargo/config",
+      "/workspace/.learn-rust-tools/cargo/config.toml"
+    ],
+    "all_absent": true,
+    "note": "本頁commands從repo根跑；scripts/env.sh未設CARGO_TARGET_DIR，預設輸出在小workspace target/release的說法相符。"
+  },
+  "root_table_check": {
+    "workspace_package": true,
+    "workspace_dependencies": true,
+    "profile_release": true,
+    "method": "tomllib對actual根Cargo.toml三表與展示fixture三表作值比較"
+  },
+  "fixture": {
+    "path": "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.rs",
+    "expected_file_value": "E0425",
+    "predicted_diagnostic": "cannot find function `two_orders`",
+    "executed": false
+  },
+  "static_outputs": {
+    "default": "single160/batchtrue，two280，Linux預期unixtrue/windowsfalse",
+    "no_default": "single160/batchfalse，沒有two line",
+    "explicit_batch": "同default",
+    "release_all_features": "160/280，profile release；未量測效能",
+    "answer_no_default": "保留單筆160/batchfalse",
+    "answer_default": "單筆160/batchtrue；zero-first two120"
+  },
+  "tests": {
+    "integration_defaults": 2,
+    "integration_no_default": 1,
+    "integration_all_features": 2,
+    "other_owned_test_functions": 0
+  },
+  "limits": [
+    "技術整頁重讀，非盲首讀；沒有browser/reader實驗。",
+    "不聲稱本波Rust/Cargo成功/失敗實跑；無需為可選措辭廣跑Cargo。",
+    "沒有讀外層舊package Rust或未授權後續章作先備；根members僅metadata。"
+  ],
+  "sealed_at_utc": "2026-10-15T08:50:00.372Z"
+}

@@ -1,0 +1,963 @@
+{
+  "captured_utc": "2026-10-15T09:33:09.221663+00:00",
+  "scope": "actual11.1–11.11 fromactual1–10, no12+asprior, nootherroleconclusions; preexposure rootACREF02 narrow11.11footer source last22lines/renderpreceding Any answer fragment, recordedround08-crossref-followup-final; notblindfirstread",
+  "regions": [
+    "examples/intro-workspace/type-stages/examples/size_support/mod.rs:fixed-bytes",
+    "examples/intro-workspace/type-stages/examples/size_support/mod.rs:borrowed-bytes",
+    "examples/intro-workspace/type-stages/examples/array_support/mod.rs:fixed-len",
+    "examples/intro-workspace/type-stages/examples/boxes.rs:number-box",
+    "examples/intro-workspace/type-stages/examples/boxes.rs:take-owned",
+    "examples/intro-workspace/type-stages/examples/chain_support/mod.rs:chain-type",
+    "examples/intro-workspace/type-stages/examples/chain_support/mod.rs:into-total",
+    "examples/intro-workspace/type-stages/examples/drop_scope.rs:tracked",
+    "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs:wrapper",
+    "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs:deref",
+    "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs:deref-mut",
+    "examples/intro-workspace/type-stages/examples/deref_complete/views/mod.rs:into-inner",
+    "examples/intro-workspace/type-stages/examples/static_complete/lifetime_bounds/mod.rs:borrowed",
+    "examples/intro-workspace/type-stages/examples/dyn_borrowed/dyn_charges/mod.rs:models",
+    "examples/intro-workspace/type-stages/examples/dyn_borrowed/dyn_charges/mod.rs:amount-interfaces",
+    "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs:parse-error",
+    "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs:read-error",
+    "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs:report",
+    "examples/intro-workspace/type-stages/examples/error_boxed/errors/mod.rs:boxed-count"
+  ],
+  "files": [
+    {
+      "path": "docs/chapters/11-01-lesson.md",
+      "sha256": "01206a2c8b69a641f4b04083178c43cb5a528bd097ef2c5edd490256231c3776",
+      "bytes": 9054
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/size_support/mod.rs",
+      "sha256": "191f7931ce3f6e6bb72ed7623dfc34a75358f720411c5437c718671bb9d1161f",
+      "bytes": 802
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/Cargo.toml",
+      "sha256": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+      "bytes": 72
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/sizes.rs",
+      "sha256": "af185ba59384187407558d1305da202bf365d02a2b7ccdf05055173b8e5b9773",
+      "bytes": 936
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/sized_default.rs",
+      "sha256": "e86bd3dfa2067613c5ce883b6cf8f531e867918a2c62515370935747d7126b23",
+      "bytes": 165
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/sized_default.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/array_support/mod.rs",
+      "sha256": "61b65958349e919194c2a457570951fe755372a9a1291a281ec71029e3ecf340",
+      "bytes": 121
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/const_generics.rs",
+      "sha256": "a82aec6518d096d7d89ea8efec88f9a77d122048e23bc5cfd7f947556cd549dd",
+      "bytes": 516
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/const_generic_length.rs",
+      "sha256": "ffb466fc8d0632c2b61909b02de7fb5638b93756a5f747d48aaff83ab94fda50",
+      "bytes": 165
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/const_generic_length.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/array_bytes_answer.rs",
+      "sha256": "041c5caab9c68c51d44654fab8710a27095c2155957ad4185e2a79387bd3c748",
+      "bytes": 658
+    },
+    {
+      "path": "docs/chapters/11-02-lesson.md",
+      "sha256": "b36a80e90643d0be470e9708dd7b118c994d9c44118ccd5c0ed16b38df53991a",
+      "bytes": 8400
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/recursive_inline.rs",
+      "sha256": "e4fe64b6bbb6cfabad0e003d2b1c77a26b69dbcde4e3bc968f72f2940acc3428",
+      "bytes": 76
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/recursive_inline.expected",
+      "sha256": "8d784e50f03be2e7c902f27dd60089ac6265357ec751459bb48295257675b07d",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/boxes.rs",
+      "sha256": "f511debff2129a798c8433205ead208119b21f12fd2ed52a867a1a8d58c366c8",
+      "bytes": 642
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/box_after_move.rs",
+      "sha256": "25bead8c39e517c1099e09252cee62444161185a0e6883e25411e0c99a894840",
+      "bytes": 126
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/box_after_move.expected",
+      "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/chain_support/mod.rs",
+      "sha256": "46f1c213c77266e43021692daa376147ffa4e795f17e922cb7e1d06ed6274f72",
+      "bytes": 1543
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/chain.rs",
+      "sha256": "f47f191e153cfe590426e4a01c975177aa8eef2e9e930bf4d3ed4d64319d19f4",
+      "bytes": 501
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/chain_answer.rs",
+      "sha256": "2c997c53ff7247d2cf30fd98d014d80aa82d3997d5adc583f33e86e767d07823",
+      "bytes": 473
+    },
+    {
+      "path": "docs/chapters/../assets/types-v3/boxed-chain.svg",
+      "sha256": "dc4a7ca6b5116da4b4479d99c277404b45d5fa52078afd5cca036a4b426a3679",
+      "bytes": 1892
+    },
+    {
+      "path": "docs/chapters/11-03-lesson.md",
+      "sha256": "376a205191cf19ed9b01de2b838586ad84f1341abe6c928d9136f504016c66d1",
+      "bytes": 6656
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/drop_scope.rs",
+      "sha256": "bbb61c12466c19419b326a1df506c3c433db36013de9e47dd446b52a337b6671",
+      "bytes": 547
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/drop_early.rs",
+      "sha256": "a752675ecd7b2d17cadd5d3b3a3a39ff3be7450aaeca510a3a8045999927da60",
+      "bytes": 381
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/direct_drop.rs",
+      "sha256": "14d4593eaa1b20c34e577977ed0a1d59d6d868a86dd2e97e5e480a6d94e5892d",
+      "bytes": 205
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/direct_drop.expected",
+      "sha256": "1eacf06660838f15ada32e2874a7157b21bcd3912a0014b834e88a8efd3b9395",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/drop_while_borrowed.rs",
+      "sha256": "4e047c8874cf8cf5e17cb1572ec40bc24cda66fe6b89b4fbbb7db9b2e4582e55",
+      "bytes": 289
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/drop_while_borrowed.expected",
+      "sha256": "1dbcf53ebd61b3a5ea14aa86501fc971fcaf8cf5a82a43cbdddd6f81bfdea7c5",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/drop_fields.rs",
+      "sha256": "15b7b0f51371f8cf4656949a45eb6ca8d45b309c9e0fb04619e66d3f7bfcccbb",
+      "bytes": 522
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/copy_with_drop.rs",
+      "sha256": "2b2a724b70df5d0716e4cc45ae978593262998d0d9b18efb63814487e797dd13",
+      "bytes": 170
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/copy_with_drop.expected",
+      "sha256": "a2cd6ba8a9974cccba723336c0e4d9d3d309b4670f26b1dc19997bf41bce94b1",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/move_field_with_drop.rs",
+      "sha256": "35c4f096a8d53a6358bc05e232fe0d247969f548f183c8aa9eeed9b53ce75754",
+      "bytes": 351
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/move_field_with_drop.expected",
+      "sha256": "40272bedbe78adeb42df434073042f84fa3459b4bf44c5979bebe0fc2e7713e5",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/drop_solution.rs",
+      "sha256": "bb73af0d0965cb1fda231924c0f109a94ebf4f2f13320e9a17cfcf81f4b78320",
+      "bytes": 418
+    },
+    {
+      "path": "docs/chapters/11-04-lesson.md",
+      "sha256": "05c14435f34625a260be02454fecb4daad4e6d8fc6d150aca0910e64808f4fab",
+      "bytes": 7507
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs",
+      "sha256": "96001e4b87c530002195500995dbc97d2c2391da9dd66884d2e8cc50feb6764d",
+      "bytes": 479
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/deref_basic/main.rs",
+      "sha256": "82b4db94349f2805c494a34aa08d283939dd0bd1d54005e973392ef00c0e10b5",
+      "bytes": 418
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/coercions/views/mod.rs",
+      "sha256": "96001e4b87c530002195500995dbc97d2c2391da9dd66884d2e8cc50feb6764d",
+      "bytes": 479
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/coercions/main.rs",
+      "sha256": "095511a13a0a705eec9b6a3b9119e43ae38748a94e9bcfe42cfad0ee56055ae3",
+      "bytes": 806
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_move_out.rs",
+      "sha256": "7349c6a4c639bb0e116168d93b28897a69b9718cc95fc28ca7bf599fda442e63",
+      "bytes": 360
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_move_out.expected",
+      "sha256": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/deref_complete/views/mod.rs",
+      "sha256": "7e0f0ac8861224da873d55bf8671f97190af0d65bbfe4ad57aeb29248098404c",
+      "bytes": 1409
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_copy_bound.rs",
+      "sha256": "ecd58aab66ecd8de73ef0c63046c63cdaa6e769008d7ef0e128a97bb0214eeb0",
+      "bytes": 360
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_copy_bound.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/deref_complete/main.rs",
+      "sha256": "5ec308ea6fca418c497f43790aa81c24c08b12e1bfc1f34cb038b373c4094b52",
+      "bytes": 336
+    },
+    {
+      "path": "docs/chapters/../assets/types-v3/deref-coercion.svg",
+      "sha256": "d74fb8a3d77009bc84ecaa486cfa4bf83a002e172ac595ab72ee781c2cdb6599",
+      "bytes": 1982
+    },
+    {
+      "path": "docs/chapters/11-05-lesson.md",
+      "sha256": "936a3788cf246573cc9f93075af806f8e1b7cef938a10573de4f1508a0ddeeb6",
+      "bytes": 6929
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/static_complete/lifetime_bounds/mod.rs",
+      "sha256": "74ebe48ef260d5c2b749a0afb5e3d1162c162337352919eb945a99c4bb9390ff",
+      "bytes": 1469
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/type_bounds.rs",
+      "sha256": "dd15ef09a85a1846018e70cc89c4bcb6478031a0ccd0c0f116e09c05f9032612",
+      "bytes": 672
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/static_reference.rs",
+      "sha256": "26c81ab7a36e5362422a4ca691b3b7d229e4667fbab265f5561349dfef482789",
+      "bytes": 485
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/static_from_local.rs",
+      "sha256": "c8aecc2f3b32cc91a269f86f3c7b519b4e00ee75e0186c218e43e3597b2c2c8d",
+      "bytes": 182
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/static_from_local.expected",
+      "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/static_bound.rs",
+      "sha256": "856b7b4074f84877435efc101c0a5dd68ac620d2cfce7932255d63751c30f014",
+      "bytes": 595
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/boxed_borrow_not_static.rs",
+      "sha256": "7c59543c836985c23b32794577139a6496916ed139582450c6f3dc4cd6faba98",
+      "bytes": 250
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/boxed_borrow_not_static.expected",
+      "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/static_complete/views/mod.rs",
+      "sha256": "7e0f0ac8861224da873d55bf8671f97190af0d65bbfe4ad57aeb29248098404c",
+      "bytes": 1409
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/static_complete/main.rs",
+      "sha256": "03a7d875e05c3beef26321463f02749112b14fe651d6ef95892c00e1cc04a688",
+      "bytes": 677
+    },
+    {
+      "path": "docs/chapters/11-06-lesson.md",
+      "sha256": "ec492344b90ad5c776fd17550cde8540c2241161b42d13a70ce72632d6dbb76f",
+      "bytes": 14000
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_borrowed/dyn_charges/mod.rs",
+      "sha256": "39ec518ce3bd607f77d80eebe2fb81426694ba912a03669ccd41cd3c6e217f7a",
+      "bytes": 604
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/mixed_charge_vec.rs",
+      "sha256": "e43e2712e855a08d5f3105a979078dcdb00133a9f21d7236cf1d05118207b196",
+      "bytes": 516
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/mixed_charge_vec.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_borrowed/main.rs",
+      "sha256": "7ded0bee50297ffbac882a00d0b6b705c05574bc599227ee777b96e626c2fcfa",
+      "bytes": 516
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_list/dyn_charges/mod.rs",
+      "sha256": "1b9c81223bf413d0a09fdc932367b65a8c12ebccb76acf5451471bbca404c302",
+      "bytes": 989
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_list/main.rs",
+      "sha256": "2af8db92002722b864618eaba1d7621b11295bd1d4e1b830d5dde3495c43592b",
+      "bytes": 1148
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_trait.rs",
+      "sha256": "102d3eee6fff65db7de062d00adebd45193e20be9df5a2df2fe74991bcdd7d0c",
+      "bytes": 151
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_trait.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/opaque_charge_branches.rs",
+      "sha256": "539622b93d03377d352810506e9e5706215d29a655bdcabd2137d1037a83a617",
+      "bytes": 583
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/opaque_charge_branches.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_factories/dyn_charges/mod.rs",
+      "sha256": "888918ea581218be66db484519c61cef859120ed9f659747fde85ed0f1370d81",
+      "bytes": 1096
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_factories/main.rs",
+      "sha256": "a20172fbd9785109370dc3330bfea925de35440d614e84a0b18e16610c25b51d",
+      "bytes": 733
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_lifetime/dyn_charges/mod.rs",
+      "sha256": "c9511f5e205655f973ad202c511378357f4a12c83914e9ff4c5b3ec5867813d5",
+      "bytes": 608
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_lifetime/main.rs",
+      "sha256": "e563baaa13513b48868587438e5abc2ce864f62231c32c29c497a6c8a924b16f",
+      "bytes": 398
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_borrow_default_static.rs",
+      "sha256": "ca3089b581a307e569d29d481d8879e109978ee4cbf668e2cfc6df35c8061d5c",
+      "bytes": 559
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_borrow_default_static.expected",
+      "sha256": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+      "bytes": 34
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_requires_sized.rs",
+      "sha256": "6603dc6784aa1608afc44f18efe7966c5a9bda314d18db3b03621629751cc891",
+      "bytes": 136
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_requires_sized.expected",
+      "sha256": "2860ab5d26e103fe5f9700de6bb4374cb6bb70095bcb4a3000bca4bc2395f73e",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_generic_method.rs",
+      "sha256": "a45769c1c2091d2a2878e944c75d991422033470ffa6d6cbb5b20bc34cbc18f9",
+      "bytes": 120
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_generic_method.expected",
+      "sha256": "2860ab5d26e103fe5f9700de6bb4374cb6bb70095bcb4a3000bca4bc2395f73e",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_returns_self.rs",
+      "sha256": "7554324cd0187a2f4273cd328a11b53bad00af669115037f845c4066c7412bf0",
+      "bytes": 92
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_returns_self.expected",
+      "sha256": "2860ab5d26e103fe5f9700de6bb4374cb6bb70095bcb4a3000bca4bc2395f73e",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_rebuild_call.rs",
+      "sha256": "986e1a340e91c820a91f2aa9dcb896f13dc01460b4178aa7b935a1297733d473",
+      "bytes": 464
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_rebuild_call.expected",
+      "sha256": "32af723ef1b547f88ff9b709c8c031f18b268346f189ecb0629da7a4f061e15e",
+      "bytes": 57
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_output.rs",
+      "sha256": "6a304a4e4ac889e69415993433a3fc3ef14395f970af33f56f1fe7b1d0aaccd5",
+      "bytes": 118
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/dyn_missing_output.expected",
+      "sha256": "a5853d0aa692043d763762aca5e3a17ff34d316649deb8a44c8a0945d0bf5d6b",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_compatibility/dyn_charges/mod.rs",
+      "sha256": "71b263dd4aef4e55167c1b7e04d9726d84db6e354016454e7f04e5ecc325ce26",
+      "bytes": 681
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_compatibility/main.rs",
+      "sha256": "f22801ba356b4758cbc55117766cec561ef07404a523e608f54b059c54c2676b",
+      "bytes": 544
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_complete/dyn_charges/mod.rs",
+      "sha256": "46033413ab93dcdc528c777b1e3f8b53a8b6cea98e8422ac63644b0940608ffb",
+      "bytes": 4605
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/dyn_complete/main.rs",
+      "sha256": "64e323fd37fbae233e6b89249c8acc859cf9e525979ae3dc4fb06ea67c42ff74",
+      "bytes": 634
+    },
+    {
+      "path": "docs/chapters/../assets/types-v3/dyn-dispatch.svg",
+      "sha256": "87b6e9c27fa1626382a12875d04d56bab0c3436b4e5d15fbd75644d42eb5ccca",
+      "bytes": 2871
+    },
+    {
+      "path": "docs/chapters/11-07-lesson.md",
+      "sha256": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+      "bytes": 9825
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_leaf/errors/mod.rs",
+      "sha256": "6f2ad95d4c6d3737961866772a52545747c9d921fb8fc5471ef4b237909228df",
+      "bytes": 758
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_leaf/main.rs",
+      "sha256": "5d6e0b0e0a2360cc6e3df6168748119d26591dd6069c43f51d2e22a66bb0659b",
+      "bytes": 356
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_without_debug.rs",
+      "sha256": "95efdc55daf7c254df751ffdfd0048e9dea939294a82807fba4959ba049a5bdb",
+      "bytes": 266
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_without_debug.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_chain/errors/mod.rs",
+      "sha256": "c5cff6e3d87a023c4ea2a92a0952b21bd891267af8f655837f87214d50b240ea",
+      "bytes": 3128
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_chain/main.rs",
+      "sha256": "cc4df4de2cf5ecee6279b62f7cd7d629dfcef343793511eef92f1bc7125a42b5",
+      "bytes": 302
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_source_escape.rs",
+      "sha256": "634b330521d9ee2972daa2bd2e6adeb2a0dccb8a6976e63129bd97210eefcf49",
+      "bytes": 810
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_source_escape.expected",
+      "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_borrowed/errors/mod.rs",
+      "sha256": "b35cf058ab76b8951391809067ebe31e85cd93fcac030db86e55195760bb79fc",
+      "bytes": 1284
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_borrowed/main.rs",
+      "sha256": "50bdc5534c4a5ccf20e694fc7fcfa45bd692ad7621a64ee4742524a48806c582",
+      "bytes": 610
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_non_static_source.rs",
+      "sha256": "df9b87b31ae5d1116f7eb9e119abf52697fe7a90309b6d0560dbacac79207159",
+      "bytes": 633
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/error_non_static_source.expected",
+      "sha256": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+      "bytes": 34
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_boxed/errors/mod.rs",
+      "sha256": "fc94d896621c300394c4297bd89c7b6a42aebb9673f8fcf23bddf8fa7ef308d5",
+      "bytes": 1485
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_boxed/main.rs",
+      "sha256": "ca78b6c3c67b4595b438892aa5bff7fc3311a8e8912f67d3b853b4e2cfd66980",
+      "bytes": 316
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_complete/errors/mod.rs",
+      "sha256": "f1c417317eb8c9cbab6c18708312379f769d3bda6db52e141dda416d072d3779",
+      "bytes": 6606
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/error_complete/main.rs",
+      "sha256": "d10a2879a70dcd84ad24257a836e7bbca86eb695b340802f0fe14f492f2c7423",
+      "bytes": 792
+    },
+    {
+      "path": "docs/chapters/../assets/types-v3/error-chain.svg",
+      "sha256": "1a77580f6cc6f481b9689d20ce8b157acb23f005dcddc17dc1cc4038759ef146",
+      "bytes": 2249
+    },
+    {
+      "path": "docs/chapters/11-08-lesson.md",
+      "sha256": "c871b4acacc1f6b522277756de0604796bb44e81468506af3ae33b0ce6dd8114",
+      "bytes": 8481
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/rc_handles.rs",
+      "sha256": "4951bf7fdc83e188d6f8640f980df115e50b263ad5b84b7b78d0ae1dbe453eee",
+      "bytes": 681
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/shared_tail/shared_chain/mod.rs",
+      "sha256": "0f215f4c1c1a647af82df7865480f6aeb5d57a62c700e8a60eec5dc8f2237b5f",
+      "bytes": 450
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/shared_tail/main.rs",
+      "sha256": "9063fa5ab33ecd2d432b76bb04cc580a778b26a6cee9a446214f75390b2b1290",
+      "bytes": 790
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_mutate.rs",
+      "sha256": "0e51ae571710a23c068740442e77a069afe84ff35fc0319c108ea6409bb1458b",
+      "bytes": 118
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_mutate.expected",
+      "sha256": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_move_out.rs",
+      "sha256": "efb4b01548c878a3f57f69414a6ee9a0c72c77fcec2426b47e3d6dcad30ade30",
+      "bytes": 191
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/rc_move_out.expected",
+      "sha256": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/weak_observer.rs",
+      "sha256": "1ded459b027e71fa83e6daa58db013492db03bf09fed86fa11528d1f811dd5ba",
+      "bytes": 1152
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/rc_complete/shared_chain/mod.rs",
+      "sha256": "49f00d0e0679351f0dd1da1138acb41fd271f51eade531cc8d54bd4a3e255fc0",
+      "bytes": 2044
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/rc_complete/main.rs",
+      "sha256": "184ed72a21443c85ff6f88ac0f88228e7dc5c76f41f9018eecbcdcb334df2146",
+      "bytes": 842
+    },
+    {
+      "path": "docs/chapters/../assets/types-v3/shared-tail.svg",
+      "sha256": "eccb2e83c9873c06ca513418653cb3dcf1546151066dc618611065ad575f5663",
+      "bytes": 2430
+    },
+    {
+      "path": "docs/chapters/../assets/types-v3/strong-cycle.svg",
+      "sha256": "1d5a085fb785ab0636284d6031d1cf280e9b491398a3d643f15561afb46994d0",
+      "bytes": 1905
+    },
+    {
+      "path": "docs/chapters/11-09-lesson.md",
+      "sha256": "8f935f8c0f04181dd4321c8505c8ac8aac8c27813e4a1a1d7a8dec865d795925",
+      "bytes": 11183
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/shared_record_vec.rs",
+      "sha256": "f5a07fe42e93ec05ca1f499b0d18ad12ad54d3ff2f9d94fc77da00ccb120e4b4",
+      "bytes": 293
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/shared_record_vec.expected",
+      "sha256": "018106396268d6a7b58a9dfe8e469b87a44509ceb5bcdd5757200ba813f9aab8",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/cell_values/cells/mod.rs",
+      "sha256": "a4af681704fc471e3adfff5d42ff444f79d701a15c7fcc7629a75c14971d2794",
+      "bytes": 313
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/cell_string_get.rs",
+      "sha256": "905af86d3c5f8ed1b11ac1ac8a54416829f226cbf5994fe93707933963573185",
+      "bytes": 204
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/cell_string_get.expected",
+      "sha256": "e03b27f19f221f0ea2a3809e0da4983870354d9db49f275f5692df404d9c0312",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/cell_values/main.rs",
+      "sha256": "2013785ae68aea82f969ca37de905a23623ccc1916e7e95984c9cdc725a6ca7f",
+      "bytes": 621
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/refcell_guards.rs",
+      "sha256": "9e2a8da327f72e245074c4dd36bd7c79638c8f73be3eb3a10878f70601a26800",
+      "bytes": 607
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/runtime-fail/guard_used_then_conflict.rs",
+      "sha256": "ce0f3e5fd7b220e498d1d07f9c79cdbe0e381a0114d513266b339547c60ac54e",
+      "bytes": 220
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/runtime-fail/guard_used_then_conflict.expected",
+      "sha256": "741b80ad1a8468667f12af1f6080cae9577247a68ceafcfde2c4e582588cc74e",
+      "bytes": 17
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/try_borrows.rs",
+      "sha256": "c63fa094ac4c3c8e337588d796091072a4a96a9deeeee8da9a4ccef3aa6168ca",
+      "bytes": 1022
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/recorder/cells/mod.rs",
+      "sha256": "db8feb7034acd85f6e2c6ea7d94678d49c60871be96fd17bbef0c378168249d3",
+      "bytes": 516
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/recorder/main.rs",
+      "sha256": "5251b2d6d6fa3522352318bb60e4653dc819ac10dba5ffd19730a97d501e738f",
+      "bytes": 487
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/refcell_guard_escape.rs",
+      "sha256": "75043d65014d302a766a5432129a4cb12f39d45eab08b263ba9e8f1b7ee08dbb",
+      "bytes": 221
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/refcell_guard_escape.expected",
+      "sha256": "1deedf20ef4f126469fe5dbd9778a4796e5216b353d5054bd45ca611b51c831f",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/shared_cells.rs",
+      "sha256": "a37560e83ff253c829fa4a1fa4171deec08ddafaac31235f37b963748de384d8",
+      "bytes": 585
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/weak_parent.rs",
+      "sha256": "d879e1e741ce20f3cefe2dabdb3861a17a2bfe60a0e6879d3dac880b36a286aa",
+      "bytes": 1429
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/cells_complete/cells/mod.rs",
+      "sha256": "1ffafbd083077fef94a5fbb278096202488d5f6be6e390e8444f7053b0aaaad5",
+      "bytes": 2625
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/cells_complete/main.rs",
+      "sha256": "7016c7ca4b3eb39689012e1753874efd5881e7e02e662f3b73b326c9d1de1a09",
+      "bytes": 590
+    },
+    {
+      "path": "docs/chapters/../assets/types-v3/guard-lifetime.svg",
+      "sha256": "1b5fbebf9a2a4b41704ab4816739135318890361fb26a2b11ad71ae60c9e79b6",
+      "bytes": 1883
+    },
+    {
+      "path": "docs/chapters/11-10-lesson.md",
+      "sha256": "fd6e3084792dfc1368451e3340f03bf8d33ff4c4283d527dd1100a8a4c716536",
+      "bytes": 12483
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_aliases/newtypes/mod.rs",
+      "sha256": "13bf0ed9ae3aad602d9aceef1166b85c8170ab9151bcb1ef20eeb74ce08846a2",
+      "bytes": 329
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_aliases/main.rs",
+      "sha256": "64c7e73c61c2b99126cbfdeddd774c85992c27eb873f2562cbbba49ccf9053d8",
+      "bytes": 464
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_identity/newtypes/mod.rs",
+      "sha256": "5680d8f1c4b79f80c2d971fdd092d30ab6590538525182134a9974f2b1a41e4e",
+      "bytes": 182
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_identity/main.rs",
+      "sha256": "e7f17fa6abbf87391ec66594e1a3ac02b99afadf1d24d1dffa33540f0a70f924",
+      "bytes": 375
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_wrong_unit.rs",
+      "sha256": "c76d015be4225302598b418d87fb90199c3e1e89a03fdd1106f44a840b94baf5",
+      "bytes": 204
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_wrong_unit.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_add/newtypes/mod.rs",
+      "sha256": "db058c6bf4cf36331a1022123f3f66d7711ea9a704ca7d0437a84780afde26f4",
+      "bytes": 630
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_add/main.rs",
+      "sha256": "f9e525a5e800c99d33d68fe31f40c39ac1e639c168485a74563fc02c1a8978a2",
+      "bytes": 445
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_add_moved.rs",
+      "sha256": "53b47193f9eeec3d5696fb7779b35e908d7da5f1b9e1bfb9cb3a680d4d1b988e",
+      "bytes": 310
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_add_moved.expected",
+      "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_reverse_add.rs",
+      "sha256": "ca497c0685d22a296c09ba45bebe5d10e9e476f67692db42f7d95d528379fd15",
+      "bytes": 448
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_reverse_add.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_foreign_alias.rs",
+      "sha256": "6e065b45a58e032a28597cc0b121991465df43ef1fa204c5bf0a376e34238083",
+      "bytes": 201
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_foreign_alias.expected",
+      "sha256": "816f6b6adebc4f4821a10bec559d7063ff04270e433920a642c5cf63f88a8555",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_interface/newtypes/mod.rs",
+      "sha256": "6195e2d6f369b05b67117980f87447ab3cc14810745494848bef341e61815ddf",
+      "bytes": 1008
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_interface/main.rs",
+      "sha256": "b48f30554e5dd5cbaf418894e7917b47f074edb212b0fa91351efc341aa50fe1",
+      "bytes": 441
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_no_push.rs",
+      "sha256": "3914862c29ce76863fc73e7c88ee8f6f1b988b1e0e0e797603a50a627a1531b4",
+      "bytes": 146
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_no_push.expected",
+      "sha256": "e03b27f19f221f0ea2a3809e0da4983870354d9db49f275f5692df404d9c0312",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_from/newtypes/mod.rs",
+      "sha256": "86fd1773996e208a31d7919e15f17909cb2c80be1e3a5f9221e5a86204715b98",
+      "bytes": 204
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/unit_from/main.rs",
+      "sha256": "098f5a222f6d5abd21754dd88b134809bd06d6bcb2194a5054db5cc015d7738d",
+      "bytes": 396
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_uncovered_from.rs",
+      "sha256": "4e2d69bd9e7d77d6ddb33d7f690b4d9fbb32d72f30e37b57dd0ba9b169593c89",
+      "bytes": 135
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_uncovered_from.expected",
+      "sha256": "397755b8633f109cbadd044be258f6f559bb3fa577c49e9e10c0e401d97cd261",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_overlapping_impls.rs",
+      "sha256": "34afdb7356712596f51cb233d8701d766fc268361fe195f05ab6f0c264e2b97d",
+      "bytes": 244
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/newtype_overlapping_impls.expected",
+      "sha256": "440d550202230dac277bfbefd2f7f4dccc9a0135b16931cf13b534c4866b9b16",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/units_complete/newtypes/mod.rs",
+      "sha256": "dac378e9d44fd32b44568e1a48305215398d55c6be3d2a28ec30d300e164cfac",
+      "bytes": 3789
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/units_complete/main.rs",
+      "sha256": "3f805a8b84c7ff092b8193335c0178a68fdd20d1e8b1c524568b3562b537b6f0",
+      "bytes": 798
+    },
+    {
+      "path": "docs/chapters/11-11-lesson.md",
+      "sha256": "5e87899ccd41749a6a6eb79f6923f101e0d9a6629c6a3a03e73e759456adbca2",
+      "bytes": 9933
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/any_borrowed.rs",
+      "sha256": "02296d1d77a836d468a3677f0d155c6775eb24de2b34e5ee0849954fec5163f3",
+      "bytes": 714
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/any_events/payloads/mod.rs",
+      "sha256": "c981c6d3ec47f54dcf1ec560c735aa3cc78215e55a47371b4dd97d1b4caf96cb",
+      "bytes": 607
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/any_events/main.rs",
+      "sha256": "304a011d6b86972ade4952eba003dad1889e75a8dded5fcdcb9c6ab5d480c7d2",
+      "bytes": 845
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/any_non_static_borrow.rs",
+      "sha256": "aa470db16f6dfaff5b8e1ddd1f29b8e7d8ebdaea870d448fc26c47c2ed4789a1",
+      "bytes": 213
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/any_non_static_borrow.expected",
+      "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/any_owned.rs",
+      "sha256": "88e5cbb746eb1328067a4e5c92bc653dbd45be85eb64e61352d771081b7f7656",
+      "bytes": 695
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/any_after_downcast_move.rs",
+      "sha256": "84e55c0cd6b9231f92636d39a5e55f8a2935bb2153c7dc418b899fa4ec654325",
+      "bytes": 337
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/compile-fail/any_after_downcast_move.expected",
+      "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+      "bytes": 6
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/any_type_id/payloads/mod.rs",
+      "sha256": "9f67551ee84d7d324e75b8a02544253871b4c481edbb1ba265bf0ab977e165be",
+      "bytes": 114
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/any_type_id/main.rs",
+      "sha256": "e8b4dc6db79e7a3f199d39c09aa1f03a118ce68d927606d6749312174ed7b167",
+      "bytes": 452
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/runtime-fail/any_box_type_id.rs",
+      "sha256": "94fd4a6e3d2b2c9c04377a7c36511b187540b665987648ec785bab930460235d",
+      "bytes": 184
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/fixtures/runtime-fail/any_box_type_id.expected",
+      "sha256": "03d54da099839eaf1434f963167317069eb205601d574f846c0e5281e49210da",
+      "bytes": 33
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/any_complete/payloads/mod.rs",
+      "sha256": "d7b424ff9cfd427e6fdabf1d6da0e24b532be56d5a5d7d3b551c053e40cd3d62",
+      "bytes": 2555
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/examples/any_complete/main.rs",
+      "sha256": "5075c99f178473f6f13df9ed45c128795c28b2e13249d7864f257f1a19d6e0c9",
+      "bytes": 526
+    },
+    {
+      "path": "docs/chapters/../assets/types-v3/owned-downcast.svg",
+      "sha256": "c726615dd61789b855dd3f28ee1d4617ef784110bb724bb4cd5dd3f548087be8",
+      "bytes": 2032
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+      "bytes": 506
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+      "bytes": 10561
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    },
+    {
+      "path": "examples/intro-workspace/type-stages/src/main.rs",
+      "sha256": "42745c933dcebac3c52879e434cafc5f6e60516b5f1f8a15a059bc7b51791a11",
+      "bytes": 84,
+      "role": "unused default package main, inspected nohidden API"
+    }
+  ]
+}

@@ -1,0 +1,237 @@
+{
+  "captured_utc": "2026-10-15T07:33:12.309960+00:00",
+  "scope": "independent actual5.1–5.5 initial; actual1–4 prior",
+  "regions": [
+    "examples/intro-workspace/data-steps/examples/generic_holder.rs:holder",
+    "examples/intro-workspace/data-steps/examples/generic_holder.rs:hold",
+    "examples/intro-workspace/data-steps/examples/generic_holder.rs:calls",
+    "examples/intro-workspace/data-steps/examples/generic_holder.rs:explicit",
+    "examples/intro-workspace/data-steps/examples/generic_impl.rs:implementation",
+    "examples/intro-workspace/data-steps/examples/generic_impl.rs:number",
+    "examples/intro-workspace/data-steps/examples/option_result.rs:options",
+    "examples/intro-workspace/data-steps/examples/option_result.rs:show-option",
+    "examples/intro-workspace/data-steps/examples/option_result.rs:choose-option",
+    "examples/intro-workspace/data-steps/examples/option_result.rs:divide",
+    "examples/intro-workspace/data-steps/examples/option_result.rs:handle-result",
+    "examples/intro-workspace/data-steps/examples/utf8.rs:show-range",
+    "examples/intro-workspace/data-steps/examples/vector_operations.rs:build",
+    "examples/intro-workspace/data-steps/examples/vector_operations.rs:get",
+    "examples/intro-workspace/data-steps/examples/vector_operations.rs:remove",
+    "examples/intro-workspace/data-steps/examples/vector_operations.rs:pop",
+    "examples/intro-workspace/data-steps/examples/vector_operations.rs:modify",
+    "examples/intro-workspace/data-steps/examples/vector_operations.rs:macro",
+    "examples/intro-workspace/data/src/list.rs:list-rule",
+    "examples/intro-workspace/data/src/list.rs:list-tests"
+  ],
+  "files": [
+    {
+      "path": "docs/chapters/05-01-lesson.md",
+      "sha256": "25f1b41ae6846b38b0c012775e0e44992eb493b1e957d5453debd4f4baf3378a",
+      "bytes": 6443
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/generic_holder.rs",
+      "sha256": "6b165e050e27bf0c98630159ed0a014982238c34aa7827efc91eabfcddcc84ed",
+      "bytes": 665
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/Cargo.toml",
+      "sha256": "37c9cbefb5ff5e6412887e4932d12a2063bda8f52b547e417064133c1fcb9a33",
+      "bytes": 71
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/generic_impl.rs",
+      "sha256": "7a9d3b933e31405746cd393f88f1ba399de4441b90c30c0cf5558560e1e85458",
+      "bytes": 675
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.rs",
+      "sha256": "b6473382a600431ef5f50f97fdcd4e25974b7ea4b61ac59a728701e431d97645",
+      "bytes": 166
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/generic_answer.rs",
+      "sha256": "c16130aa77f8f273f961600897384c764f5383d81071f4dc17a260d548a1852a",
+      "bytes": 335
+    },
+    {
+      "path": "docs/chapters/05-02-lesson.md",
+      "sha256": "95c65c1f820872f041c5c67e765d179549bfd0e98712bfb1ce5650bad961051e",
+      "bytes": 6193
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/option_result.rs",
+      "sha256": "ff1e56dd326e94541adfc78512a00ab182c74c097650c90fa80208199f4a4342",
+      "bytes": 1349
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/result_answer.rs",
+      "sha256": "0fc3a3416d1d9071bdf4d1472e5281b79f327c5dccbba92d71ead59fb9d10789",
+      "bytes": 562
+    },
+    {
+      "path": "docs/chapters/05-03-lesson.md",
+      "sha256": "27780e39eca8f727f1778633a360f083729e42062cd4fcf47e89be4375aeb9d2",
+      "bytes": 6734
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/utf8.rs",
+      "sha256": "c71aa5ebc36777b1508664c0d796b572ece9f6e270d7fd843d1ce639ecf0ee6e",
+      "bytes": 727
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.rs",
+      "sha256": "d5f242c03f3224b79710370b43627183dbfed717ff2f9f72e77789410f5ca7de",
+      "bytes": 188
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/utf8_answer/text/mod.rs",
+      "sha256": "73efe1c88f1d5b5e12eb3b95ad89e2af0d0a6fe87e9c09e828fa3f56c09eb213",
+      "bytes": 1574
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/utf8_answer/main.rs",
+      "sha256": "5d874fe4204e912901ac0f46f0c2c3034cba7a9a4f8694f8f5470e3e6ae2505e",
+      "bytes": 414
+    },
+    {
+      "path": "docs/assets/ch03/utf8-boundaries.svg",
+      "sha256": "bf40798d5647ee4d3082b0efbfb769540c90751792d1796593e022c5129806fb",
+      "bytes": 2370
+    },
+    {
+      "path": "docs/chapters/05-04-lesson.md",
+      "sha256": "4cb07186300bda41c45650b300549d883789665aa2bcd17ddc83cf520e94df1d",
+      "bytes": 6293
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/vector_operations.rs",
+      "sha256": "44fc79c43b1dc7cd187541fe329564b2249bcbebc9dcec73c16b9d890c067b20",
+      "bytes": 1331
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/fixtures/runtime-fail/vector_remove_bounds.rs",
+      "sha256": "cd28adcc54f2ce3cd6968d9c92a0bf06d2979e3f900292be8f3ec11687b23bbc",
+      "bytes": 128
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/vector_answer.rs",
+      "sha256": "1f5060aaac921a08836a1b8ba0159101308eaf000f02fc2e433706fb3239c7a5",
+      "bytes": 604
+    },
+    {
+      "path": "docs/chapters/05-05-lesson.md",
+      "sha256": "412a3eeb91594615ee24961d5bff56b0189dfba194cc3976344f16b64e74afd5",
+      "bytes": 7178
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/examples/vector_ownership.rs",
+      "sha256": "4ea0a387a754f80d5cdb360089d80f1ad7594625093115921da491ec3a8dea1b",
+      "bytes": 335
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.rs",
+      "sha256": "a31d54b4fab5523e18ce8b971dedf6f68f8660994123e07560022ad8e6993c17",
+      "bytes": 185
+    },
+    {
+      "path": "examples/intro-workspace/data/src/list.rs",
+      "sha256": "e43f53e87faa6fb916b7fc0a9948f6e2fcf3b0d2bbd8f5b6629aeeac8dedc29d",
+      "bytes": 1174
+    },
+    {
+      "path": "examples/intro-workspace/data/examples/list_demo.rs",
+      "sha256": "d6716a2ca72845c514caa4f27065dcc903b13941c84ddc3ed612137139cfbf10",
+      "bytes": 472
+    },
+    {
+      "path": "examples/intro-workspace/data/Cargo.toml",
+      "sha256": "89e56810ae50094574be68877298c8a70896cc6d768678921ad9b2750b063d3b",
+      "bytes": 65
+    },
+    {
+      "path": "examples/intro-workspace/data/src/lib.rs",
+      "sha256": "200ca1c1f944ed3a18eef48f0806c59a79d5c1816ca7b33ef54fe2a7256f6c49",
+      "bytes": 28
+    },
+    {
+      "path": "examples/intro-workspace/data/src/main.rs",
+      "sha256": "338920c2560142afad43627ba111612d2dc96ebd8a4cac034d677843e8501eab",
+      "bytes": 50
+    },
+    {
+      "path": "examples/intro-workspace/data/src/text.rs",
+      "sha256": "73efe1c88f1d5b5e12eb3b95ad89e2af0d0a6fe87e9c09e828fa3f56c09eb213",
+      "bytes": 1574
+    },
+    {
+      "path": "examples/intro-workspace/data/examples/list_answer.rs",
+      "sha256": "23e9115c65cf9fca7331a0a909155984d9df6d655057dee6014380f975dcbebd",
+      "bytes": 815
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "7161d333dd2b49cb74eee31661e7762ec3e6b234a7b550202dc5079b109608f1",
+      "bytes": 203
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "95fc150a6f4c104bbd7c775cc52c79c180e5a5bfe584110800e07047e99f5dcb",
+      "bytes": 655
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/src/main.rs",
+      "sha256": "f6f48effd040804b3bb4be2efe3b3fa4fbd4db0a8ccf7782dd72925e3d8d8668",
+      "bytes": 59,
+      "added_utc": "2026-10-15T07:34:55.190079+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.expected",
+      "sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "bytes": 6,
+      "added_utc": "2026-10-15T07:34:55.190241+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/fixtures/compile-fail/vector_borrow_overlap.expected",
+      "sha256": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+      "bytes": 6,
+      "added_utc": "2026-10-15T07:34:55.190387+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.expected",
+      "sha256": "d2f211c074a9491ae61c68371ce1f9c3d2e1922a27095a81196fcc5a5a6a4ae2",
+      "bytes": 20,
+      "added_utc": "2026-10-15T07:34:55.190488+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/data-steps/fixtures/runtime-fail/vector_remove_bounds.expected",
+      "sha256": "2f8028eb9e12cc60cca8d6b0284df4c9ae179584d49830ce4fe6287160837eef",
+      "bytes": 14,
+      "added_utc": "2026-10-15T07:34:55.190556+00:00"
+    }
+  ],
+  "end_recheck_utc": "2026-10-15T07:42:23.228646+00:00",
+  "end_changes": [
+    {
+      "path": "docs/chapters/05-05-lesson.md",
+      "initial": "412a3eeb91594615ee24961d5bff56b0189dfba194cc3976344f16b64e74afd5",
+      "current": "20882bf65c17e9bdca514bf41ed27f8a80314d615bc894e06e06d7a3595f888c"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial": "7161d333dd2b49cb74eee31661e7762ec3e6b234a7b550202dc5079b109608f1",
+      "current": "ab2450344449650f23553c189af2af1032be26ac133de130245ef47fc612da66"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial": "95fc150a6f4c104bbd7c775cc52c79c180e5a5bfe584110800e07047e99f5dcb",
+      "current": "bdcccb63479540b1f3f2c275d50e3b6cc8c4047fdb768eea0e7014a85bda1084"
+    }
+  ],
+  "end_change_note": "Only workspace/lock added future trait-stages/lifetimes members. Their package-only manifests were read as configuration metadata; no chapter6/7 prose/source read or counted as prior. All chapter5 docs, selected Rust, fixture expectations, SVG, package manifests and toolchain unchanged."
+}

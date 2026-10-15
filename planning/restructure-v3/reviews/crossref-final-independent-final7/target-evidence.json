@@ -1,0 +1,866 @@
+[
+  {
+    "role": "1.7前節subtotal/尾端值/block與scope",
+    "path": "docs/chapters/01-06-lesson.md",
+    "sha256": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+    "lines": 120,
+    "evidence": [
+      {
+        "path": "docs/chapters/01-06-lesson.md",
+        "sha256": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+        "lines": 120,
+        "line": 7,
+        "quote": "`fn subtotal(price: i32, count: i32) -> i32` 定義一個叫 `subtotal` 的函式。括號中的 `price`、`count` 是**參數**：這次呼叫收到資料後，在函式內使用的名稱。每個參數都要寫型別，逗號分開兩個參數。箭頭 `-> i32` 表示函式會交回一個 `i32`，叫作**回傳值**。"
+      },
+      {
+        "path": "docs/chapters/01-06-lesson.md",
+        "sha256": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+        "lines": 120,
+        "line": 15,
+        "quote": "`price * count` 是 **expression**（表達式）：能算出一個值。相對地，`let total = ...;` 是 **statement**（陳述式）：完成宣告，不能把整個 `let` 當成乘法那樣的數值使用。"
+      },
+      {
+        "path": "docs/chapters/01-06-lesson.md",
+        "sha256": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+        "lines": 120,
+        "line": 17,
+        "quote": "函式的 `{ ... }` 是一個 **block**，也就是大括號圈起的一段工作。block 最後的不帶分號 expression 會成為它的值；函式本體的這個值就交回呼叫者。因此上面兩個參數決定這次乘法的材料，尾端決定交出的答案。"
+      },
+      {
+        "path": "docs/chapters/01-06-lesson.md",
+        "sha256": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+        "lines": 120,
+        "line": 21,
+        "quote": "呼叫寫成 `subtotal(120, 3)`，括號中的實際輸入按位置對應：`price` 得到 120，`count` 得到 3。呼叫算出 360 後，這個值可以成為另一個變數的初始值。"
+      }
+    ]
+  },
+  {
+    "role": "1.7 bit數回指",
+    "path": "docs/chapters/01-04-lesson.md",
+    "sha256": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc",
+    "lines": 83,
+    "evidence": [
+      {
+        "path": "docs/chapters/01-04-lesson.md",
+        "sha256": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc",
+        "lines": 83,
+        "line": 9,
+        "quote": "冒號後的 `i32` 是**型別**，決定這個值可表示什麼、可以做哪些運算。`i32` 能保存有正負號的整數，範圍是 −2,147,483,648 到 2,147,483,647；本例的價錢與數量都在範圍內。`120`、`3` 則是直接寫出的整數 literal。"
+      },
+      {
+        "path": "docs/chapters/01-04-lesson.md",
+        "sha256": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc",
+        "lines": 83,
+        "line": 11,
+        "quote": "乘法用 `*`。顯示結果時，`println!` 中的 `{total}` 是格式字串的佔位，會顯示這個名稱目前的值；雙引號內的其他文字照原樣顯示。先看完整程式中的這一段："
+      },
+      {
+        "path": "docs/chapters/01-04-lesson.md",
+        "sha256": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc",
+        "lines": 83,
+        "line": 33,
+        "quote": "## 其他單一值的型別"
+      }
+    ]
+  },
+  {
+    "role": "1.7 command/package設定",
+    "path": "docs/chapters/01-03-lesson.md",
+    "sha256": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+    "lines": 123,
+    "evidence": [
+      {
+        "path": "docs/chapters/01-03-lesson.md",
+        "sha256": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+        "lines": 123,
+        "line": 81,
+        "quote": "之後本章的數字練習放在成員 `steps/`，其名稱與完整設定是："
+      },
+      {
+        "path": "docs/chapters/01-03-lesson.md",
+        "sha256": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+        "lines": 123,
+        "line": 95,
+        "quote": "## Cargo.lock 與 --locked"
+      },
+      {
+        "path": "docs/chapters/01-03-lesson.md",
+        "sha256": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+        "lines": 123,
+        "line": 99,
+        "quote": "教材已保存它，因此後續指令加上 `--locked`：要求沿用鎖定結果，若必須更新鎖定檔才能繼續，指令就失敗，提醒你設定與保存的狀態不一致。這個選項**不會**阻止你修改 `.rs`；修改程式後仍可重新建置。"
+      }
+    ]
+  },
+  {
+    "role": "1.7 ownership為未來預告",
+    "path": "docs/chapters/03-02-lesson.md",
+    "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+    "lines": 95,
+    "evidence": [
+      {
+        "path": "docs/chapters/03-02-lesson.md",
+        "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+        "lines": 95,
+        "line": 5,
+        "quote": "## ownership 管理使用與清理責任"
+      },
+      {
+        "path": "docs/chapters/03-02-lesson.md",
+        "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+        "lines": 95,
+        "line": 7,
+        "quote": "第 1.7 節分開了資料的位置與管理責任。**ownership** 是 Rust 管理值的規則：值由誰持有、可以從哪裡交出去，以及最終由誰負責結束。在這裡的局部變數安排中，建立 `let first = Order { ... };` 後，`first` 就持有這個值，稱為它的 **owner**。"
+      },
+      {
+        "path": "docs/chapters/03-02-lesson.md",
+        "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+        "lines": 95,
+        "line": 9,
+        "quote": "若一個值仍由局部變數持有，該變數離開 scope 時，Rust 會結束這個值；有需要清理的資源時，依該型別的規則處理。本節的 Order 只有兩個數字，沒有額外配置的 heap 資料；第 3.8 節再把責任連到實際文字空間。"
+      },
+      {
+        "path": "docs/chapters/03-02-lesson.md",
+        "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+        "lines": 95,
+        "line": 11,
+        "quote": "**move** 是把值的 ownership 交出去。我們的 Order 不會自動複製整筆值，因此 `let second = first;` 把它交給 `second`，之後不能再經由 `first` 使用這筆訂單。這是值的使用規則，不表示必須在機器上搬動幾個 bytes，也不是只有 heap 資料才會 move。"
+      }
+    ]
+  },
+  {
+    "role": "1.7 heap文字資源的未來承接",
+    "path": "docs/chapters/03-08-lesson.md",
+    "sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+    "lines": 130,
+    "evidence": [
+      {
+        "path": "docs/chapters/03-08-lesson.md",
+        "sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+        "lines": 130,
+        "line": 19,
+        "quote": "## String 持有可以追加的文字"
+      },
+      {
+        "path": "docs/chapters/03-08-lesson.md",
+        "sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+        "lines": 130,
+        "line": 21,
+        "quote": "**String** 是標準函式庫提供的 owned 文字型別。它持有文字的儲存資源，內容需要空間時使用 heap；值在最後的 owner 結束時負責清理資源。空的 String 可以尚未配置 heap 空間，不必把每次建立空值都想成已配置一大塊記憶體。"
+      }
+    ]
+  },
+  {
+    "role": "1.7下一節label",
+    "path": "docs/chapters/01-08-lesson.md",
+    "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+    "lines": 111,
+    "evidence": [
+      {
+        "path": "docs/chapters/01-08-lesson.md",
+        "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+        "lines": 111,
+        "line": 1,
+        "quote": "# 1.8 用 tuple 與 array 保存多個值"
+      },
+      {
+        "path": "docs/chapters/01-08-lesson.md",
+        "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+        "lines": 111,
+        "line": 5,
+        "quote": "## tuple：每個位置各有型別"
+      },
+      {
+        "path": "docs/chapters/01-08-lesson.md",
+        "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+        "lines": 111,
+        "line": 21,
+        "quote": "這裡的格子名稱由我們約定；`order.0` 本身不會告訴讀者「這是單價」，所以先解構成有意義的名稱會更容易讀。第 3 章會再學替資料欄位正式命名的做法。"
+      },
+      {
+        "path": "docs/chapters/01-08-lesson.md",
+        "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+        "lines": 111,
+        "line": 23,
+        "quote": "## array：同型別、固定項數"
+      }
+    ]
+  },
+  {
+    "role": "18.7 time/timeout/test-util",
+    "path": "docs/chapters/14-05-lesson.md",
+    "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+    "lines": 222,
+    "evidence": [
+      {
+        "path": "docs/chapters/14-05-lesson.md",
+        "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+        "lines": 222,
+        "line": 9,
+        "quote": "標準庫 **`std::time::Duration`** 表示時間長度；`Duration::from_secs(1)` 建立1秒，`Duration::from_millis(20)` 建立20毫秒，1秒等於1000毫秒。`duration.as_millis()` 回傳總毫秒數，供本例顯示，會捨去不足1毫秒的部分。"
+      },
+      {
+        "path": "docs/chapters/14-05-lesson.md",
+        "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+        "lines": 222,
+        "line": 11,
+        "quote": "**`std::time::Instant::now()`** 取得適合量經過時間的單調時間點；之後 `start.elapsed()` 得到 Duration。它不是年月日鐘面，也不把別台機器的時間點拿來相減。本例從呼叫 sleep 前開始量，包含等待與這次排程的時間。"
+      },
+      {
+        "path": "docs/chapters/14-05-lesson.md",
+        "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+        "lines": 222,
+        "line": 43,
+        "quote": "**`tokio::time::timeout(limit, work)`** 接手本例的一份 future，建立帶期限的等待；呼叫時就記下 deadline，緊接著 await 取得 **`Result<T, Elapsed>`**。T 是原工作 Output，Elapsed 是 Tokio 的逾時錯誤，也能用 Display 顯示。"
+      },
+      {
+        "path": "docs/chapters/14-05-lesson.md",
+        "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+        "lines": 222,
+        "line": 59,
+        "quote": "第一份得到 Ok(100)，第二份逾時。固定版本先讓內層工作取得執行機會，立即完成的工作可直接成功；timeout 不是靠外部強制中斷任意一行同步程式。"
+      },
+      {
+        "path": "docs/chapters/14-05-lesson.md",
+        "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+        "lines": 222,
+        "line": 113,
+        "quote": "本固定版本先推進內層；它沒有交還執行機會就一次完成，結果仍是 Ok(100)，實際等待可超過設定的1毫秒。這展示的是 timeout 的合作式邊界，不是建議用小期限處理阻塞工作。"
+      },
+      {
+        "path": "docs/chapters/14-05-lesson.md",
+        "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+        "lines": 222,
+        "line": 117,
+        "quote": "若測試只為檢查 timer 與 Result 路徑，讓它真的睡很久沒有幫助。Tokio 的 **`test-util` feature** 提供測試時鐘能力。`#[tokio::test(flavor = \"current_thread\", start_paused = true)]` 從測試開始暫停 Tokio 時鐘；沒有其他可前進工作、只剩 timer 等待時，runtime 能自動把這份時鐘推進到下一個 timer。"
+      },
+      {
+        "path": "docs/chapters/14-05-lesson.md",
+        "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+        "lines": 222,
+        "line": 119,
+        "quote": "這時用 **`tokio::time::Instant`** 讀同一份 Tokio 時鐘，now／elapsed 的用法與 std Instant 相近；std Instant 仍量真實經過時間，不能拿它斷言虛擬100毫秒。本節不測真實網路延遲。"
+      }
+    ]
+  },
+  {
+    "role": "18.7 HTTP/pool/future工廠",
+    "path": "docs/chapters/14-08-lesson.md",
+    "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+    "lines": 175,
+    "evidence": [
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+        "lines": 175,
+        "line": 7,
+        "quote": "這次使用 **`reqwest::Client`**，不是 blocking module 的 Client。它保存連線設定與可重用的 **connection pool（連線池）**：同一 client 的多次請求有機會重用已建立的連線，不必每筆都重新建 client。這是資源重用的能力，不保證每次都能重用，也不是本節量出的效能結果。"
+      },
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+        "lines": 175,
+        "line": 9,
+        "quote": "把 builder 工作獨立成普通 **build_client(direct, limit)**；caller 擁有 Client，再用 shared reference 借給 async inspect。inspect 接手這次的 Url，read_body 是 bool，完成後交回 owned Inspection。這項分工讓後面的本地測試能重用同一 client 與明確的期限。"
+      },
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+        "lines": 175,
+        "line": 11,
+        "quote": "早期 `ch11-http-single-basic` 的完整 manifest：Tokio 仍用 rt／macros，增加本例連線所需 **`net`** 與已教的 time；尚未加入 JSON model："
+      },
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+        "lines": 175,
+        "line": 19,
+        "quote": "普通 `client.get(url)` 建立 RequestBuilder。**`.send()`** 交回一份 Output 為 `Result<Response, reqwest::Error>` 的 future；`.send().await` 才取得這份結果。**`response.text()`** 接手 Response，交回一份 Output 為 `Result<String, reqwest::Error>` 的 future，再 await 取得完整文字。"
+      },
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+        "lines": 175,
+        "line": 21,
+        "quote": "固定 reqwest 0.13.5 的 send 是**普通 future 工廠**，呼叫時便做請求與期限的準備，隨即 await。沿用14.2的區分，不能因為它交回 future，就把呼叫時點說成完全不做事。"
+      },
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+        "lines": 175,
+        "line": 25,
+        "quote": "這份 async Client 的 **`.timeout(limit)` 是同一請求的總期限**：涵蓋連線到完整 body，redirect 或拿到 headers 不會重新給一次預算。若收到 headers 前逾時是 Request；已得到 status、讀 body 才失敗則是 Body。這與上一節 blocking send／text 各自等待的介面契約不同。"
+      }
+    ]
+  },
+  {
+    "role": "18.7/18.10 Fixture與cleanup",
+    "path": "docs/chapters/14-09-lesson.md",
+    "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+    "lines": 289,
+    "evidence": [
+      {
+        "path": "docs/chapters/14-09-lesson.md",
+        "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+        "lines": 289,
+        "line": 65,
+        "quote": "接著把服務包成 **Fixture（測試專用環境）**。這份自訂struct擁有：address、shared state、每個gate的放行送端、entered收端、stop送端，以及server JoinHandle。caller取得Fixture，就也取得最後shutdown的責任。"
+      },
+      {
+        "path": "docs/chapters/14-09-lesson.md",
+        "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+        "lines": 289,
+        "line": 67,
+        "quote": "**FixtureState** 由第13.6節的 `Arc<FixtureState>` 共同持有。AtomicUsize hits用第13.8節已教的fetch_add／load與SeqCst；它只計工作handler進入次數，不能代替join完成證據。gates是Mutex保護的 `HashMap<usize, mpsc::Receiver<()>>`，entered送端則回報哪個held請求已進入。"
+      },
+      {
+        "path": "docs/chapters/14-09-lesson.md",
+        "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+        "lines": 289,
+        "line": 109,
+        "quote": "**Fixture::start(held_count)** 準備指定數量的一次性gate及entered channel，再用同一份listener啟動服務。最後真的HTTP GET /ready，確認200與body=ready才交回Fixture；若ready檢查失敗，先shutdown已擁有的server，再回錯誤。held_count=0時仍使用容量1的通知channel，不建立非法零容量。"
+      },
+      {
+        "path": "docs/chapters/14-09-lesson.md",
+        "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+        "lines": 289,
+        "line": 111,
+        "quote": "這只證明那次ready HTTP完成，不能保證下一個held請求一定會來。因此main與測試用 **`next_started_within(limit)`**：回傳 `Result<Option<usize>, Elapsed>`，Some帶input，None是來源結束，Err是觀察期限到。內部next_started直接recv，由外層timeout限制；等待被丟棄不會因此取消server handler。"
+      },
+      {
+        "path": "docs/chapters/14-09-lesson.md",
+        "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+        "lines": 289,
+        "line": 113,
+        "quote": "**`release(input)`** mutable借用Fixture，只允許每個送端使用一次。這裡新增 **`Option::take()`**：mutable操作Option，用None取代原值，再把原本的Some或None交回。從Vec位置取出的因此是owned Sender，可在await前結束對該位置的借用；不保留另一份送端使gate無法關閉。越界、重用或收端已結束，都回false。"
+      },
+      {
+        "path": "docs/chapters/14-09-lesson.md",
+        "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+        "lines": 289,
+        "line": 121,
+        "quote": "**`fixture.shutdown()`** 接手整份Fixture，依序drop尚持有的放行送端、送停止訊息、await server，最後回傳hits或錯誤。已進入held的handler因此可收到None、回503，graceful shutdown才有辦法收妥它；只通知server、卻留下永不放行的gate，不能保證能結束。"
+      }
+    ]
+  },
+  {
+    "role": "18.7/18.9 spawn/Id與結果",
+    "path": "docs/chapters/14-03-lesson.md",
+    "sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+    "lines": 204,
+    "evidence": [
+      {
+        "path": "docs/chapters/14-03-lesson.md",
+        "sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+        "lines": 204,
+        "line": 7,
+        "quote": "**task** 是交給 runtime 排程的工作。**`tokio::spawn(work)`** 接手一份 future，把它提交為 task，交回 **`JoinHandle<T>`**；T 是工作完成的 Output。runtime 能在我們尚未 await handle 前推進 task。spawn 本身不會同步進入該工作的本體，也不保證工作最後一定完成；runtime 結束時，尚未完成的 task 會被丟棄。"
+      },
+      {
+        "path": "docs/chapters/14-03-lesson.md",
+        "sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+        "lines": 204,
+        "line": 11,
+        "quote": "spawn 要在 Tokio runtime 內呼叫。本章仍用 current_thread，所以這些 task 共用該 thread，不能以建立多份 task 就宣稱 parallelism。這個 spawn API 仍要求 future 與 Output 符合 **Send + `'static`**：第13.1節的 Send 允許跨 thread 交付；`'static` bound 表示不攜帶只在短範圍有效的借用，不要求值必須活到程式結束。owned String 可以符合。即使這次選單一 thread，使用的 API 契約也沒有因此免除這兩項限制。"
+      }
+    ]
+  },
+  {
+    "role": "18.8 lines/borrowed原行",
+    "path": "docs/chapters/09-06-lesson.md",
+    "sha256": "c9afa16ffac66f6df5a1173b48e3bac422c17d17322e1b2cffabd65a2689f197",
+    "lines": 150,
+    "evidence": [
+      {
+        "path": "docs/chapters/09-06-lesson.md",
+        "sha256": "c9afa16ffac66f6df5a1173b48e3bac422c17d17322e1b2cffabd65a2689f197",
+        "lines": 150,
+        "line": 21,
+        "quote": "字串 literal 中的 **`\\n`** 表示 LF（Line Feed，換行），**`\\r`** 表示 CR（Carriage Return，回車）。lines 以 LF 或 CRLF（`\\r\\n`）分行，結果不含行尾；最後一個行尾不會額外產生一行，空文字產生零行。單獨 CR 沒有跟著 LF 時仍留在內容中，連續行尾之間的空行則是一份空 `&str`。"
+      }
+    ]
+  },
+  {
+    "role": "18.8 enumerate",
+    "path": "docs/chapters/10-09-lesson.md",
+    "sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+    "lines": 249,
+    "evidence": [
+      {
+        "path": "docs/chapters/10-09-lesson.md",
+        "sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+        "lines": 249,
+        "line": 87,
+        "quote": "| `iterator.enumerate()` | 接手原 iterator，建立另一份 iterator；每筆 Item 是 `(usize, 原 Item)`，數字從 0 依序增加。對 lines 得到 `(usize, &str)`，仍只借原文字。 |"
+      },
+      {
+        "path": "docs/chapters/10-09-lesson.md",
+        "sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+        "lines": 249,
+        "line": 95,
+        "quote": "每次 enumerate 交出 index 與一行，index + 1 就是從 1 開始的原行號；只有符合時 push Match。index 對全部原行增加，沒有只數已保留的行。這個來源本來有行序，結果沿該順序保存，不用把 第9.6節的HashMap 任意順序問題帶進來："
+      }
+    ]
+  },
+  {
+    "role": "18.8 module",
+    "path": "docs/chapters/02-06-lesson.md",
+    "sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+    "lines": 143,
+    "evidence": [
+      {
+        "path": "docs/chapters/02-06-lesson.md",
+        "sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+        "lines": 143,
+        "line": 97,
+        "quote": "先認識本題採用的檔名規則。Cargo 不只辨認 `examples/名稱.rs`，也會將 `examples/名稱/main.rs` 視為名為「名稱」的範例 target；資料夾裡就能保存只屬於這個範例的 helper。"
+      },
+      {
+        "path": "docs/chapters/02-06-lesson.md",
+        "sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+        "lines": 143,
+        "line": 113,
+        "quote": "在這個範例的 `main.rs` 寫 `mod display;`，可以從同一層的 `display.rs` **或** `display/mod.rs` 載入內容；這兩種是替代路徑，同一個 module 只能選一種。`mod.rs` 是 Rust 仍支援的 module 檔名形式，本題選它，因此建立 `display/mod.rs`，不再建立 `display.rs`。"
+      },
+      {
+        "path": "docs/chapters/02-06-lesson.md",
+        "sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+        "lines": 143,
+        "line": 115,
+        "quote": "這項規則也適用於前面的 `src/lib.rs`：`mod pricing;` 可以對應 `src/pricing.rs` 或 `src/pricing/mod.rs`。若在一個 module 內再宣告子 module，檔案則放在以父 module 命名的資料夾下，例如 `pricing.rs` 中的 `mod fees;` 對應 `pricing/fees.rs` 或 `pricing/fees/mod.rs`。module 樹由宣告決定，不是看到檔案就自動加入。"
+      }
+    ]
+  },
+  {
+    "role": "18.9受限JoinSet名額與fill",
+    "path": "docs/chapters/14-04-lesson.md",
+    "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+    "lines": 154,
+    "evidence": [
+      {
+        "path": "docs/chapters/14-04-lesson.md",
+        "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+        "lines": 154,
+        "line": 41,
+        "quote": "## new 先填滿；next 回收後才補入"
+      },
+      {
+        "path": "docs/chapters/14-04-lesson.md",
+        "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+        "lines": 154,
+        "line": 43,
+        "quote": "**new** 驗證正上限，建立空集合，再呼叫 **fill**。fill 的 while 條件只看 tasks.len 是否小於 limit：有空位才從 pending 取一筆、spawn、登記 Id、增加 submitted，並更新峰值；pending 已空就 break。"
+      },
+      {
+        "path": "docs/chapters/14-04-lesson.md",
+        "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+        "lines": 154,
+        "line": 49,
+        "quote": "**next** 先用上一節的 collect_one 等回並取出一份報告，釋放追蹤空位，之後才 fill 補工作。若集合已空，直接 None，不等待一個不存在的完成通知。三個查詢 method 只讀數量："
+      },
+      {
+        "path": "docs/chapters/14-04-lesson.md",
+        "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+        "lines": 154,
+        "line": 55,
+        "quote": "這個順序使每次 fill 結束時都不會超過上限。即使取回的是工作錯誤或 panic，task 也已回收，可以補下一筆；報告分類不會阻止排程繼續。"
+      }
+    ]
+  },
+  {
+    "role": "18.9/18.10原行排序",
+    "path": "docs/chapters/09-07-lesson.md",
+    "sha256": "fce1c2a012b97dcf775ba970e78f9cc500c2ab39fcc8cf59fef7189536ad91ba",
+    "lines": 134,
+    "evidence": [
+      {
+        "path": "docs/chapters/09-07-lesson.md",
+        "sha256": "fce1c2a012b97dcf775ba970e78f9cc500c2ab39fcc8cf59fef7189536ad91ba",
+        "lines": 134,
+        "line": 33,
+        "quote": "slice 的 sort、sort_by_key、sort_by 都需要 mutable borrow，修改原排列，回傳 `()`；空或一項資料也能處理。它們保留比較相等項目的原相對順序，這叫 **stable sort**（穩定排序）。"
+      },
+      {
+        "path": "docs/chapters/09-07-lesson.md",
+        "sha256": "fce1c2a012b97dcf775ba970e78f9cc500c2ab39fcc8cf59fef7189536ad91ba",
+        "lines": 134,
+        "line": 38,
+        "quote": "| `sort_by_key(callback)` | callback 取得排序鍵，鍵要有 Ord | `FnMut(&T) -> K` |"
+      }
+    ]
+  },
+  {
+    "role": "18.10 S1/T0/W1及停止政策",
+    "path": "docs/chapters/14-06-lesson.md",
+    "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+    "lines": 256,
+    "evidence": [
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 15,
+        "quote": "沿用14.3已完成的 controlled_work，金額80，只有一份 input0。以下程式的 tasks、已提交工作，以及 select 內的等待，分別命名成圖中的三個對象；S1／T0／W1 是追蹤標記，不是額外 Rust binding："
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 17,
+        "quote": "- **S1**：tasks 這份 JoinSet，持有已提交的工作。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 18,
+        "quote": "- **T0**：input0 的 task，已送 started，但 release 尚未放行。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 19,
+        "quote": "- **W1**：呼叫 tasks.join_next_with_id() 產生的等待 future，mutable 借用 S1，等一份結果，沒有接手整個集合或 T0。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 21,
+        "quote": "停止分支勝出，丟棄的是 W1。這個 JoinSet method 有 **cancellation safety（取消安全性）** 契約：若等待分支沒選中，不會因此從集合移走一份 task。借用結束後可以再借用 S1，建立新等待。Tokio mpsc 的 recv 也有對應保證：未選中的等待不會偷取一筆訊息。不能據此假定每個 API 被丟棄後都保留相同進度，14.5已看過修改不會回復。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 99,
+        "quote": "現在保留14.4的五筆材料與上限2，增加完整停止政策。**Outcome::Unstarted** 表示輸入尚未提交；它不是被取消的 task。**StopEvent** 是停止來源交付的訊息：Requested 或 SignalFailed(String)。**EndReason** 是批次最後的原因，另外分 Finished 與 StopSourceClosed；來源意外關閉，不能當作使用者已要求停止。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 107,
+        "quote": "**Runner::new** 只驗上限與保存材料，先不 fill。每輪在提交前檢查停止來源，才不會把已排入的停止訊息錯過："
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 118,
+        "quote": "**`tasks.abort_all()`** 請求取消集合中尚未完成的 task，沒有把它們移出集合，也沒有等待完成。**drain（逐筆取完）** 在這裡就是持續 join_next_with_id，將每份實際結束結果交給 record，直到 None。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 120,
+        "quote": "stop_and_finish 依序做：不再 fill → abort_all → drain 所有已提交工作 → 逐筆 drop pending Job，記 Unstarted → 確認集合與 Id 對照為空，組成 Batch。Job 的 release 收端不論是否曾提交，最後都應清理，controller 再 send 會失敗。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 185,
+        "quote": "**`tokio::signal::ctrl_c().await`** 嘗試建立 Ctrl+C listener，等待訊號，交回 `io::Result<()>`。Ok(()) 才轉成 Requested；監聽失敗轉成 SignalFailed，不當作成功停止。建立 async 函式的 future 不等於 listener 已註冊，它要先取得執行機會。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 187,
+        "quote": "signal_controller 的 select 把 ctrl_c 放第一個分支；它先有機會進入註冊，若還在等待，第二支才送 **entered**。第二支送完後等待 pending，永不勝出。main 收到 entered，才知道 listener 已進入；**工作的 started 不代替 listener 的 entered**。若訊號或註冊失敗先到，controller 可直接送事件並結束，entered 收端則可能得到 None；main 仍要跑批次的停止收尾。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 193,
+        "quote": "finish_signal_controller 在整批結束後 abort 並 await controller；已完成的 Ok 或等待取消的 JoinError 都能收妥，其他 task 失敗則報錯。這也避免「工作都結束了，listener task 卻還掛著」。"
+      },
+      {
+        "path": "docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+        "lines": 256,
+        "line": 195,
+        "quote": "Unix 上首次註冊會改變行程的 SIGINT 處理，**丟棄 listener 不會恢復原本的預設 SIGINT 行為**。本程式明確接手停止政策與退出狀態；不能指望 drop listener 就等於復原行程設定。"
+      }
+    ]
+  },
+  {
+    "role": "18.11 Serde資料能力",
+    "path": "docs/chapters/10-07-lesson.md",
+    "sha256": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+    "lines": 240,
+    "evidence": [
+      {
+        "path": "docs/chapters/10-07-lesson.md",
+        "sha256": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+        "lines": 240,
+        "line": 44,
+        "quote": "`#[derive(Serialize, Deserialize)]` 的安排和第 6.2 節相同：讓編譯時的生成工作依欄位建立實作。Serde 已替 String、`Vec<i32>`、bool 提供必要能力，所以這個模型的全部欄位都能參與。"
+      },
+      {
+        "path": "docs/chapters/10-07-lesson.md",
+        "sha256": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+        "lines": 240,
+        "line": 46,
+        "quote": "我們另選 **`#[serde(deny_unknown_fields)]`**，要求反序列化時拒絕模型沒有的欄位。預設 JSON 的未知欄位會被忽略；這個筆記檔希望拼錯或多出的名稱得到回饋，因此明確選擇拒絕。它是給 Serde derive 的 attribute 設定，不是執行時呼叫的函式。"
+      },
+      {
+        "path": "docs/chapters/10-07-lesson.md",
+        "sha256": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+        "lines": 240,
+        "line": 63,
+        "quote": "| `serde_json::to_string_pretty(&notebook)` | shared 借用 Notebook；模型有 Serialize | `Result<String, serde_json::Error>`，含方便閱讀的換行與縮排 |"
+      }
+    ]
+  },
+  {
+    "role": "18.11 usize/Vec Serde",
+    "path": "docs/chapters/10-09-lesson.md",
+    "sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+    "lines": 249,
+    "evidence": [
+      {
+        "path": "docs/chapters/10-09-lesson.md",
+        "sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+        "lines": 249,
+        "line": 49,
+        "quote": "Serde 已替 usize 提供編解碼能力，在 JSON 中表示整數；能讀回的數字仍受目前平台 usize 範圍限制。Serde 的 `Vec<T>` 在元素 T 有相應能力時也能編解碼，因此 Match 的 derive 先建立能力，Report 的清單才能使用它。Debug／PartialEq 同樣逐欄作用，Vec 比較內容的規則已由第9.5節教過："
+      }
+    ]
+  },
+  {
+    "role": "18.11 Error/source",
+    "path": "docs/chapters/11-07-lesson.md",
+    "sha256": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+    "lines": 222,
+    "evidence": [
+      {
+        "path": "docs/chapters/11-07-lesson.md",
+        "sha256": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+        "lines": 222,
+        "line": 9,
+        "quote": "Error 要求 **`Debug + Display`**；這是第 11.6 節的 supertrait 關係，兩項要求一起成立，因此借用 Error 介面也能顯示錯誤。"
+      },
+      {
+        "path": "docs/chapters/11-07-lesson.md",
+        "sha256": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+        "lines": 222,
+        "line": 11,
+        "quote": "它提供 **`source(&self) -> Option<&(dyn Error + 'static)>`**，借出下一層原因：Some 有原因 reference，None 表示沒有下一層。回傳 reference 依第 7.4 節連到 self；裡面的 static 限制原因型別所含借用，兩者要分開。"
+      },
+      {
+        "path": "docs/chapters/11-07-lesson.md",
+        "sha256": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+        "lines": 222,
+        "line": 109,
+        "quote": "`Option<&(dyn Error + 'static)>` 的外層 reference 借自這次 self；內層 bound 則要求**原因的具體型別**不依賴短命借用。只含 owned 數字的 CountError 與 ParseIntError 符合後者，reference 仍不能超過 error 的實際有效範圍。"
+      }
+    ]
+  },
+  {
+    "role": "18.11 pubuse/NonExhaustive",
+    "path": "docs/chapters/17-04-lesson.md",
+    "sha256": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa",
+    "lines": 375,
+    "evidence": [
+      {
+        "path": "docs/chapters/17-04-lesson.md",
+        "sha256": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa",
+        "lines": 375,
+        "line": 27,
+        "quote": "失敗先用LimitError保存Zero或TooLarge原值，Display與Error沿第11.7節。這裡在**enum整體**加新attribute **`#[non_exhaustive]`**，表示將來可能增加variant。定義它的crate內仍可窮舉目前variant；外部crate分類時必須另留一個接住其餘值的分支。已知variant仍可在外部建構，這項enum標記不會把它們變成私有。"
+      },
+      {
+        "path": "docs/chapters/17-04-lesson.md",
+        "sha256": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa",
+        "lines": 375,
+        "line": 79,
+        "quote": "SearchError也在enum整體標non_exhaustive。EmptyQuery表示caller提供空搜尋文字；Read擁有原io::Error。Display只說這一層context，source沿第11.7節借出下層原因，保留外層reference仍借self的契約："
+      },
+      {
+        "path": "docs/chapters/17-04-lesson.md",
+        "sha256": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa",
+        "lines": 375,
+        "line": 107,
+        "quote": "**re-export（重導出）** 用 `pub use` 讓已有的公有item也能從另一條公有路徑使用。`mod options;` 保留私有module，`pub use options::Options;` 則讓外部能用 `ch14_api::Options`。Options仍是同一個型別，沒有複製定義或建立alias wrapper；外部也沒有因此取得 `ch14_api::options` 這條私有路徑。"
+      }
+    ]
+  },
+  {
+    "role": "18.12退出狀態",
+    "path": "docs/chapters/10-05-lesson.md",
+    "sha256": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+    "lines": 218,
+    "evidence": [
+      {
+        "path": "docs/chapters/10-05-lesson.md",
+        "sha256": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+        "lines": 218,
+        "line": 157,
+        "quote": "以下是 Bash 中的觀察方式：**`>`** 把 stdout 存到指定檔案，**`2>`** 把 stderr 存到另一個檔案，既有輸出檔會被清空；本次只使用兩個專用 captured 檔案。`echo $?` 顯示上一個指令的結束狀態，要立即放在 run 後面。"
+      },
+      {
+        "path": "docs/chapters/10-05-lesson.md",
+        "sha256": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+        "lines": 218,
+        "line": 164,
+        "quote": "本教材的 Linux 環境中，成功顯示 0；captured-note.txt 是原筆記，captured-errors.txt 是空檔。改為不存在的檔名，正常失敗顯示 1，資料檔空白而診斷檔有原因；未提供檔名則是 2。若以 PowerShell 操作，保存兩個出口後用 `echo $LASTEXITCODE` 觀察上一個原生程式的狀態。"
+      }
+    ]
+  },
+  {
+    "role": "18.7–18.12練功及toolchain",
+    "path": "docs/chapters/18-01-lesson.md",
+    "sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+    "lines": 109,
+    "evidence": [
+      {
+        "path": "docs/chapters/18-01-lesson.md",
+        "sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+        "lines": 109,
+        "line": 60,
+        "quote": "- **完整參考版：** 保存相同需求下的全部功能、限制、建置與使用方法，A 的全部檔案在 18.6 同頁，B 在 18.11 完成最後整合，18.12 提供全部檔案的完整答案。你可以按需要查看；它也是可以實際使用的答案。"
+      },
+      {
+        "path": "docs/chapters/18-01-lesson.md",
+        "sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+        "lines": 109,
+        "line": 68,
+        "quote": "教材 repo 的 rust-toolchain.toml 選定 Rust 1.99.0，這份選擇不會自動套到 repo 外的新資料夾。這裡使用 **`cargo +1.99.0`**：由 rustup 為這次命令選取已安裝的 1.99.0 toolchain；`+1.99.0` 放在 Cargo 子命令前，不是 dependency 的版本要求，也不修改全機預設。後面的練習命令同樣保留這份選擇："
+      },
+      {
+        "path": "docs/chapters/18-01-lesson.md",
+        "sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+        "lines": 109,
+        "line": 79,
+        "quote": "之後先在自己的程式中使用 `cargo +1.99.0 check`、`cargo +1.99.0 test --locked`，再用 2.7 已教的 fmt／Clippy 檢查，也在子命令前選同一份 toolchain。新增依賴時按 10.1 先更新設定與解析版本，接著以 lock 保存；不要在 lock 尚未更新時把 --locked 的拒絕當成程式行為失敗。完成的 repo 快照命令則會明示 package 與目錄，沿用 12.1 的 workspace 選擇。"
+      }
+    ]
+  },
+  {
+    "role": "18.11三步與18.12前指",
+    "path": "docs/chapters/18-11-lesson.md",
+    "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+    "lines": 324,
+    "evidence": [
+      {
+        "path": "docs/chapters/18-11-lesson.md",
+        "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+        "lines": 324,
+        "line": 5,
+        "quote": "本節沿[18.10 的停止流程](18-10-lesson.md)，只新增報告映射、CLI邊界與輸出完成責任。本節先做下方三個小步；第18.12節另提供整份可用工具的全部檔案與使用方式。各階段是同一工具的快照，不是把B1–4重寫一次。"
+      },
+      {
+        "path": "docs/chapters/18-11-lesson.md",
+        "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+        "lines": 324,
+        "line": 264,
+        "quote": "## 第三步：write與flush都成功，才交資料狀態"
+      },
+      {
+        "path": "docs/chapters/18-11-lesson.md",
+        "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+        "lines": 324,
+        "line": 295,
+        "quote": "## 本步完整答案：兩份全檔，連同相同九項 checks"
+      },
+      {
+        "path": "docs/chapters/18-11-lesson.md",
+        "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+        "lines": 324,
+        "line": 297,
+        "quote": "先完成自己的三個body，再對照下面真實參考檔。完整report.rs包含empty_row／row／build_report／status／render與五項報告測試；完整app.rs包含同樣入口、write_output、完成的write_report與四項測試。它們使用 `crate::` 路徑，能直接放回本頁工作副本；其他manifest、root、input、batch、single、config、error、main維持上面的完整起點。"
+      },
+      {
+        "path": "docs/chapters/18-11-lesson.md",
+        "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+        "lines": 324,
+        "line": 299,
+        "quote": "若以全檔替換來核對，**不要再把checks追加第二次**：兩份答案已含完全相同的九項checks。這個本步完成副本仍叫url-checker-starter，並未偷偷載入完整工具另外七項batch tests或其test_fixture module。第18.12節才一起提供正式工具的所有檔案、完整16+2測試及使用方式。"
+      },
+      {
+        "path": "docs/chapters/18-11-lesson.md",
+        "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+        "lines": 324,
+        "line": 322,
+        "quote": "現在資料保留原input_index／original，未知欄位用null，型別錯誤仍有原因；出口完成後才交0／1／130，編碼、write或flush失敗則fatal2。這三個小步已把Batch接到工具邊界。下一節直接保存正式完整工具，再驗真正binary與使用限制。"
+      }
+    ]
+  },
+  {
+    "role": "18.12接續完整答案與target範圍",
+    "path": "docs/chapters/18-12-lesson.md",
+    "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+    "lines": 164,
+    "evidence": [
+      {
+        "path": "docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+        "lines": 164,
+        "line": 3,
+        "quote": "上一節完成報告映射、資料狀態與write／flush。這一節提供正式 `url-checker` 的整份可用答案：一份UTF-8網址清單，受jobs限制的HTTP工作，最後依原行排列文字或JSON。可以直接保存完整目錄建置，也可以與自己的最後工作副本逐檔比較。"
+      },
+      {
+        "path": "docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+        "lines": 164,
+        "line": 5,
+        "quote": "本頁沒有新的實作題。先核對入口與每份來源的角色，再取得全檔、執行限定targets；同一份工具的早期快照不累加成額外作業。"
+      },
+      {
+        "path": "docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+        "lines": 164,
+        "line": 9,
+        "quote": "normal library仍是18.11的app／batch／config／error／input／report／single，root以pub use提供公開入口，main連接args_os、stdout／stderr與ExitCode。正式root不再保留起點的兩項dead_code allow。"
+      },
+      {
+        "path": "docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+        "lines": 164,
+        "line": 11,
+        "quote": "`src/batch.rs`另外含七項本地HTTP／停止測試；`src/report.rs`有五項，`src/app.rs`有四項，共16項lib tests。`src/lib.rs`以 **`#[cfg(test)] mod test_fixture;`** 載入本地服務，因此只有lib test harness載入它；normal binary、integration test借用的normal library不會編譯這份fixture module。名字filter只決定執行哪些測試，不能把同一library其餘module藏掉。"
+      },
+      {
+        "path": "docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+        "lines": 164,
+        "line": 15,
+        "quote": "七項batch tests沿18.10的bounded owner安排：每份觀察都有期限，先保存原tracked／Id登記數，再fallback drain與shutdown，最後才assert。保留提前Requested不提交、來源失敗不是取消、完成未收取保原Check／TaskFailure、真HTTP混合與Id→完整Input的驗收。合成task的panic hook可能顯示診斷，不等於整份test未處理失敗。"
+      },
+      {
+        "path": "docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+        "lines": 164,
+        "line": 17,
+        "quote": "`tests/config.rs`是獨立integration target，只有兩項Parser測試：預設jobs8／timeout10秒／json=false，以及指定jobs2／timeout5秒／json=true、help與用法錯誤。它不啟動HTTP，也不能代替真binary的出口驗收。"
+      },
+      {
+        "path": "docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+        "lines": 164,
+        "line": 21,
+        "quote": "以下是全部檔案，包含library root、main、helpers、同檔tests、本機fixture、integration tests、manifest、lock、README與固定輸入。Rust片段直接引用實際可編譯來源；沒有省略imports或只顯示solution region。Cargo.lock由Cargo維護，隨整個目錄保存，不要求手抄解析項目。"
+      },
+      {
+        "path": "docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+        "lines": 164,
+        "line": 146,
+        "quote": "完整答案有16項library tests及2項config integration tests；保留B4的有限本機HTTP／停止驗收，加本節報告與writer checks；各觀察期限只守測試，不變成產品整批期限。真正binary另以本機受控服務與明確請求進入通知驗CLI及SIGINT；這些與lib tests分開記錄。手動使用時，Ctrl+C須讓程式自己收尾並交出130；強制終止不提供這份完成證據。"
+      },
+      {
+        "path": "docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+        "lines": 164,
+        "line": 154,
+        "quote": "shell能找到Cargo binary目錄後，便可用`url-checker 自己的清單.txt --json`。README也列建置、執行、測試、輸出政策與限制。本參考版按實際檔案行數計核心825、測試898、本機Fixture198，共1921行Rust（含空白與snippet標記，不含lock）；新練習只補前述三個動作，不要求一次手寫全部參考tests，也不累加階段副本。這份工具仍讀完整小清單、保存所有結果；jobs限制已提交tasks，不限制整張輸入與報告的記憶體。"
+      }
+    ]
+  }
+]

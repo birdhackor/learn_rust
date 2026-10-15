@@ -1,0 +1,95 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.1"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18a-cli-complete-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-collection-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-content-report-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-option-order-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-01-lesson.md": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+    "examples/ch15-projects/materials/duplicate-demo/notes-a.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 3,
+      "quote": "第 10 章已把純工作、檔案、參數、JSON 與行程測試接成完整工具。最後一章把工作交回給你：先讀懂需求與材料，自己寫下一小段、驗收它，再接上下一階段。每題都會提供完整可用的參考版，卡住時能比較原因，完成後也能拿來使用。"
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 9,
+      "quote": "**A：重複檔案搜尋器。** 備份與整理資料夾時，想知道哪些不同路徑保存完全相同的內容。給它一個根目錄，工具走訪其中的檔案，列出內容相同的群組；能輸出文字或 JSON，也說明哪些項目未能完成判定。"
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 11,
+      "quote": "**B：網址檢查器。** 維護一份連結清單時，想分辨哪些可取得預期回應，哪些未通過、連不上、等待超時或被使用者中止。給它每行一個網址的文字檔，工具限制同時進行的工作數，最後依輸入順序交回結果。詳細的網路與中止政策在 B1 固定，再逐步實作。"
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 19,
+      "quote": "教材準備了一份小型資料夾，位於 `examples/ch15-projects/materials/duplicate-demo`。以下路徑以它為根目錄；它只包含這六個一般檔案與所需子目錄："
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 38,
+      "quote": "預期有兩組：notes-a、sub/notes-b、.saved/notes-c 三個路徑同內容；empty-a 與 empty-b 也是同內容。different 與前三份同樣是 5 bytes，第一個字母的 byte 卻不同，所以不能加入那一組。**大小相同只是值得進一步檢查，尚未回答內容相同。**"
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 46,
+      "quote": "A 的根目錄可以包含一般檔案與子目錄，包括上述點開頭的名字。**symbolic link（符號連結）** 是檔案系統中指向另一個位置的入口；本工具不跟隨它，也不接受根路徑本身是這種入口，具體判定在 A1 教學中實作。"
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 56,
+      "quote": "每階段會提供三種不同用途的入口："
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 68,
+      "quote": "教材 repo 的 rust-toolchain.toml 選定 Rust 1.99.0，這份選擇不會自動套到 repo 外的新資料夾。這裡使用 **`cargo +1.99.0`**：由 rustup 為這次命令選取已安裝的 1.99.0 toolchain；`+1.99.0` 放在 Cargo 子命令前，不是 dependency 的版本要求，也不修改全機預設。後面的練習命令同樣保留這份選擇："
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 77,
+      "quote": "這時還是 Cargo 產生的起點。check 確認它能編譯；test 可能顯示零項，因為你還沒加入行為測試。 **零項通過沒有證明它已會掃描或判定重複。** 下一節會給 A1 所需的 manifest 設定、起始檔與資料介面，再從這裡加入功能。"
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 91,
+      "quote": "B 也從一筆網址開始，再依序批次，接著加入有上限的同時工作，最後處理中止、排序與報告。這讓每次改動仍有固定的輸入與答案，不靠一口氣完成整個工具猜錯誤在哪裡。"
+    },
+    {
+      "section_id": "18.1",
+      "path": "docs/chapters/18-01-lesson.md",
+      "line": 101,
+      "quote": "先不寫 A 的核心程式，回答這三項：為什麼 different 不能和 notes-a 同組？兩個空檔能否同組？如果某項目判定失敗，仍交出其他群組時，結果可以說完整嗎？"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

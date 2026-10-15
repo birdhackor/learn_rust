@@ -1,0 +1,98 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.2"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-02-lesson.md": "b36a80e90643d0be470e9708dd7b118c994d9c44118ccd5c0ed16b38df53991a",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/recursive_inline.rs": "e4fe64b6bbb6cfabad0e003d2b1c77a26b69dbcde4e3bc968f72f2940acc3428",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/recursive_inline.expected": "8d784e50f03be2e7c902f27dd60089ac6265357ec751459bb48295257675b07d",
+    "examples/intro-workspace/type-stages/examples/boxes.rs": "f511debff2129a798c8433205ead208119b21f12fd2ed52a867a1a8d58c366c8",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/box_after_move.rs": "25bead8c39e517c1099e09252cee62444161185a0e6883e25411e0c99a894840",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/box_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/type-stages/examples/chain_support/mod.rs": "46f1c213c77266e43021692daa376147ffa4e795f17e922cb7e1d06ed6274f72",
+    "examples/intro-workspace/type-stages/examples/chain.rs": "f47f191e153cfe590426e4a01c975177aa8eef2e9e930bf4d3ed4d64319d19f4",
+    "examples/intro-workspace/type-stages/examples/chain_answer.rs": "2c997c53ff7247d2cf30fd98d014d80aa82d3997d5adc583f33e86e767d07823",
+    "docs/assets/types-v3/boxed-chain.svg": "dc4a7ca6b5116da4b4479d99c277404b45d5fa52078afd5cca036a4b426a3679"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 3,
+      "quote": "第 11.1 節分開了型別的固定大小與所借資料的大小。現在要表示一條數字鏈：每個連結保存一個數字，以及下一段鏈；最後用 End 收尾。實際資料只有 80、120 兩項，但同一型別也希望能表示空鏈或更多項。"
+    },
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 9,
+      "quote": "**遞迴型別（recursive type）** 指型別沿著自己的欄位關係，又回到自身。這裡的 Chain 有 End 與 Link；若 Link 的 next 直接保存另一份完整 Chain，就得到以下失敗例："
+    },
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 15,
+      "quote": "放進獨立練習專案執行 `cargo check`，得到 **E0072**。要決定一份 Chain 多大，編譯器得考慮 Link；Link 包含 i32 與完整 Chain，而那份 Chain 又要能容納同樣的 Link，於是問題不斷回到自身。"
+    },
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 17,
+      "quote": "End 可以讓某筆**資料**結束，卻沒有替 Chain 的**型別表示**取得固定大小。即使只打算建立兩項，Rust 仍須先決定這個型別的表示。完整 `.expected` 如下："
+    },
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 27,
+      "quote": "**`Box<T>`** 是標準函式庫提供的 owned pointer 型別，負責它管理的 T 與配置。Box 由 prelude 提供，不用另加 use。對本節這些非零大小的值，**`Box::new(value)`** 取得 value，為它安排 heap 空間，交回 Box。"
+    },
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 81,
+      "quote": "執行 `cargo check` 得到 **E0382**，延續第 3.2 節的 move 規則。完整 `.expected` 是："
+    },
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 89,
+      "quote": "回到開頭的連結。把 next 改成 `Box<Chain>`："
+    },
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 105,
+      "quote": "into_total 接受 owned Chain。沿用第 4 章的 match 解構，Link 分支接手數字 value 與 Box next；累加後用 `*next` 取得下一份 owned Chain，重新指派給 chain。End 分支直接回傳總和："
+    },
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 117,
+      "quote": "這裡每輪接手、拆開目前連結，再交接下一份，原鏈因此被消耗。遞迴的是**型別關係**；處理函式使用已教的 loop，沒有另外加入遞迴呼叫。空鏈第一次就遇到 End，直接交回初始總和 0。"
+    },
+    {
+      "section_id": "11.2",
+      "path": "docs/chapters/11-02-lesson.md",
+      "line": 149,
+      "quote": "建立 40、80、120 三項鏈，以 End 收尾，交給同一份 into_total，確認總和 240。先從最內層的 End 往外組，說出每個 next Box 分別管理哪份 Chain。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

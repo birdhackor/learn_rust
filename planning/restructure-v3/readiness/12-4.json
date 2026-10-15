@@ -1,0 +1,210 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "12.4"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round12-build-script.md",
+    "planning/restructure-v3/reviews/technical-early/round12-cargo-engineering-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round12-cargo-order-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round12-content-confirmation-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round12-content-direction-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round12-file-walking.md",
+    "planning/restructure-v3/reviews/continuity-early/round12-ch12.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/12-04-lesson.md": "55f1886f0d40f920a3dff640c0b2a3b3f0d0647951e739e805b717a750e68754",
+    "examples/ch09-content/lesson-workspace/Cargo.toml": "e21b8b6f8b79f1951045e3e4e1758af9a41c5c5cabc483eb63a0246cfbe205a5",
+    "examples/ch09-files/Cargo.toml": "f11d8eabef03672f39cd9051f1f2cfd990ffa8abab0545ad24aedde9c27ba640",
+    "examples/ch09-files/src/lib.rs": "4e2a6babc78a01f9e8f41dbe0492df1ffec6fffabe36ebe4f7d219ccee2acebf",
+    "examples/ch09-files/src/scan.rs": "e9635e1b8beb72d33a812bbaae8e669a1f4191fed612cc8a4669387f11bc48ae",
+    "examples/ch09-files/fixtures/tree/first.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/fixtures/tree/nested/second.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/fixtures/tree/.hidden/third.txt": "8cdc25affa8f5596abad0771e21fb098e26a1d786de961d96b6510915a386899",
+    "examples/ch09-content/lesson-workspace/size/Cargo.toml": "e1345ee9e8b65656417ffdcfc9abbab08f0a3a4bb5b5d6ad9bc06cce69f0df87",
+    "examples/ch09-content/lesson-workspace/size/src/main.rs": "72b77f2af72e32ac21ef6aa7f3b65f7f96aa1f76272a02f82d13e93c15268ce6",
+    "examples/ch09-content/lesson-workspace/streams/Cargo.toml": "8d2a5fbcbb4a21508dbdd9e057ed030f9fac14abaecc5d8645bb8812842cc003",
+    "examples/ch09-content/lesson-workspace/streams/src/lib.rs": "202292bca873e510489885658f096460b5ddb14480f1c5367f02d30249cab97f",
+    "examples/ch09-content/lesson-workspace/streams/src/readers.rs": "acbe127b2d079a46f6a92497621d78d0d404b6c6ed8bd9013ea0b16ab8c9434c",
+    "examples/ch09-content/lesson-workspace/streams/src/main.rs": "55b76610e3a7456a5571c2ccc792968639c8b539e5e96e9c6e5c2965d1cd0e87",
+    "examples/ch09-content/lesson-workspace/checked-files/Cargo.toml": "49404433875c77a9605eea803380a2381477affc1fce472c84755bd534ce4264",
+    "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs": "064dbe5c907ef32753da2c054579f6f6b9636eb34e9a679442d8cd13a7007187",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/file_confirmation.rs": "a5c254204049564c400dd9f8861b034373ce1ad1b1f702721acc9912758f8dc1",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/candidates.rs": "50aed7433859a79b2185a54aec11867ca501a59c1a2741126dab10717bf197d4",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/main.rs": "0add04aa9e8eb8fd2674576598e0c3d2b410630c5ff2221cc3a7d78298928571",
+    "examples/ch09-content/lesson-workspace/groups/Cargo.toml": "cb027d81c94ccfd8ac48ad6de098e6d442d4935e261f2d3da30298ed58b8be8b",
+    "examples/ch09-content/lesson-workspace/groups/src/lib.rs": "c5b7d75d460d3fd35c85cb863bb5a1f007651edd2b38e214092342cb5351e712",
+    "examples/ch09-content/lesson-workspace/groups/src/main.rs": "6e5ba2cf244a0f271c55a37dc5052d2ebd5d67cabe5c53916420db2a23df006b",
+    "examples/ch09-content/lesson-workspace/streams/tests/streams.rs": "4743135e855741a6ed6d1367db169811792cbef7c39012f1f781ae9561ac413d",
+    "examples/ch09-content/lesson-workspace/groups/tests/files_groups.rs": "4ddf97dbd5d334fb301c027b98b07656cb635c65b7262c138dabcc7d891b0533",
+    "docs/assets/engineering-v3/short-read-comparison.svg": "8910b09b852c9ef5b56078e3b9287e4165303a3262232c80141dcbdebd06da45",
+    "docs/assets/engineering-v3/candidate-content-groups.svg": "0711cc1bca61f99a9103ebebd84f4977bea58dbd192f932d032f5e8086d4bc3c"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 3,
+      "quote": "第12.3節已保存一般檔案的原生路徑與觀察資料。現在要回答：**哪些不同路徑的檔案，讀出的 bytes 完全相同？** 檔名相同、長度相同、修改時間相同都不足以回答這個問題。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 15,
+      "quote": "本節使用`examples/ch09-content/lesson-workspace/`的獨立workspace，以下命令都從**教材repo根目錄**執行。依工作選四個階段，避免只看大小時就載入後面的內容分群："
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 36,
+      "quote": "四個階段的本地library依賴都已教過。以下重列第12.3節的完整scan manifest、library根及scan.rs；該package的main與它自己的測試沒有被本頁依賴者選中："
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 75,
+      "quote": "沿用第6.5／6.6節的HashMap與第9.7節的排序。`HashMap<u64, Vec<&FileRecord>>` 以 byte 長度為鍵，值保存借自掃描結果的檔案 reference；它不複製檔案內容，也不接管原 `FileRecord`。`u64` 有數值的 Eq／Hash／Ord，能作這份 map 的鍵與排序鍵。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 97,
+      "quote": "**hash** 在這裡指把任意長度 bytes 算成一份固定長度摘要的工作，摘要叫 **digest**。相同 bytes 必須得到相同摘要；不同 bytes 也可能得到相同摘要，這種情況叫 **collision**（碰撞）。因此摘要是縮小候選的工具，不能替代本次「真正相同內容」的判準。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 99,
+      "quote": "我們選用 **BLAKE3** 演算法，由 `blake3` crate 提供。只使用它的普通、依序更新 API，不另開平行讀取或記憶體映射功能。依第10.1節的依賴設定，先在streams階段宣告："
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 112,
+      "quote": "最後一列的 `blake3::Hash` 是**保存摘要的型別**；第6.5節的 `std::hash::Hash` 則是「能提供 map 鍵雜湊」的 **trait**。它們同名但角色不同。摘要型別實作這個 trait，所以能當 HashMap key；map 的鍵契約不因此替我們證明兩個原檔案內容相同。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 126,
+      "quote": "同一串 `ABCDE`，左來源可以先交 `ABC` 再交 `DE`，右來源可以每次只交一個 byte。若只呼叫一次 read，看到左長 3、右長 1 就回報不同，判斷會是錯的：切分是讀取行為，完整序列才是內容。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 130,
+      "quote": "圖中直線分隔**原始 read 的批次**，不是內容裡的 byte。向下箭頭把批次重新接成相同位置的比較段。圖為了看清楚用四格，實作使用 4096 格；容量改變不改判準。在這張四格圖中，左邊第一次收 ABC 後只剩一格，下一次 read 只能交 D；填滿第一段後，下一段才收 E。因此左邊實際批次是 ABC、D、E，仍和右邊逐 byte 的內容一致。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 138,
+      "quote": "接著比較兩份有效 slice。`[u8]` 的 PartialEq 要求**長度相同且每個位置 byte 相同**；不同長度也會比較為不同。這時兩邊都已填到相同容量或結尾，才能把段長不同當成完整內容長度的差異，而不是不同短讀取的差異。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 154,
+      "quote": "回用第2.7節的 **`assert!(condition)`** 核對 bool：true 時繼續，false 時 panic；`assert!(!condition)` 則要求原條件為 false。它和第2.7節的 `assert_eq!` 一樣用於檢查已知答案，不是處理使用者配置錯誤的介面。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 192,
+      "quote": "Read 的流程正確，仍不足以把檔案當成固定內容。其他程式，或本程式另一項 `fs::write`，都能在 File 打開期間修改磁碟資料；shared reference 限制的是這份 Rust 借用，沒有替檔案系統所有操作上鎖。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 194,
+      "quote": "沿用第12.3節的 `Snapshot`，本節作**盡力而為的觀察**：開啟前、開啟後的讀取前、hash／內容比較後，都觀察類別、len、modified。除了按原生路徑呼叫 `observe`，再用新 method **`File::metadata() -> io::Result<Metadata>`** 查已打開的 File handle 所指檔案。兩者指向資料的方式不同；每次成功觀察都和掃描記錄比較。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 226,
+      "quote": "這些檢查能揭露**可觀察到的差異或讀取失敗**。沒有看見差異，不代表取得一致快照：例如內容可能改過又恢復成相同長度／修改時間，時間記錄也有其精度。前後觀察不是原子操作，路徑替換也可能發生在兩次查詢之間。本節適用於穩定目錄的一般整理，不承諾抵抗惡意同時替換或保證檔案往後不變。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 250,
+      "quote": "這次以 `(u64, blake3::Hash)` 作 key：第一欄是長度，第二欄是摘要。標準 tuple 在兩欄都有 Eq／Hash 時也提供相應能力，只有**兩欄都相等**才是同一鍵。因此不同長度不會進同桶，同長度同摘要則仍等待內容確認。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 274,
+      "quote": "最後的groups階段使用這份完整manifest。它的main就是受控實驗答案，會用TempDir建立三份檔案，因此tempfile放在一般dependencies；依賴的streams只供讀取後觀察測試使用，放在dev-dependencies："
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 280,
+      "quote": "假設故意把三份 3-byte 記錄放進同一 digest 桶，依序為 a 的 `AAA`、b2 的 `BBB`、b1 的 `BBB`。這是**受控同摘要的測試安排**，不是找到 BLAKE3 真實碰撞的實驗。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 286,
+      "quote": "圖中的a、b2、b1對應練習的a.txt、b2.txt、b1.txt。上框是**候選桶**，下框才是真正內容群組。中框的第二次比較是關鍵：同一桶可以已經有兩種內容，不能把「和第一組不同」直接當成「沒有其他相同者」。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 302,
+      "quote": "遇到第一次 FileIssue，元件交回 Err，不交出尚未完成的群組。caller 要保存那筆問題，以原生路徑移除**確切失敗者**，才可對剩餘候選重試；一次報出的錯誤不能證明其他項目都沒問題。每次確實移除一份已在候選中的失敗路徑，才有有限次進展。完整工具的繼續／報告政策留到練功專案；這裡不把 Err 當不同內容，也不默默丟棄有效候選。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 306,
+      "quote": "一組相同內容若有 `path_count` 個不同路徑，每份長 `len` bytes，留下其中一路徑的內容後，其餘路徑的重複內容量是 `(path_count - 1) × len`。三份各 3 bytes，就是 6 bytes；兩份各 3 bytes，就是 3 bytes。空內容的重複量是零，零／一路徑也回報零。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 308,
+      "quote": "這是**按路徑**的指標。**hard link**（硬連結） 是同一個實際檔案的另一個名字；兩個 hard-link 路徑仍在這個指標中各算一路徑。因此數字不是實體磁碟可回收量，也不是刪除建議。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 310,
+      "quote": "長度是 u64、清單數量是 usize。沿用第8.4節的TryFrom契約，這裡選 `u64::try_from` 轉換額外路徑數。這份標準整數轉換的錯誤型別是 **`std::num::TryFromIntError`**，表示來源數字無法由目的整數型別表示；用 `use std::num::TryFromIntError;` 引入。它已有 Debug，所以 `MetricError` 保存它之後也能 derive Debug。這是本節首次選用的標準錯誤型別，不是第8.4節的自訂Count轉換錯誤。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 312,
+      "quote": "再選本節新 API **`u64::checked_mul`**／**`checked_add`**。兩者按值接收數字，成功回傳 `Some(result)`，超出 u64 範圍回傳 None，不繞回較小數字。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 328,
+      "quote": "先自己實作本節的候選分組或重建元件呼叫，材料用第10.8節的TempDir：a.txt 為 AAA，b2.txt 與 b1.txt 為 BBB，沒有額外換行。三份都是 3 bytes，故意以同一 `blake3::Hash` 作 map key。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 353,
+      "quote": "讀取後觀察測試先讀完，再以 `fs::write` 改成不同長度，最後呼叫與 wrapper 相同的 `verify_unchanged`；它驗證這項觀察能揭露變動，不佯稱在測試中同步修改每次 File read。溢位材料用 **`u64::MAX`**，這個 associated constant 是 u64 最大可表示值，無需建立巨大檔案。"
+    },
+    {
+      "section_id": "12.4",
+      "path": "docs/chapters/12-04-lesson.md",
+      "line": 355,
+      "quote": "Unix 的 hard-link 測試另用 **`fs::hard_link(original, new_path) -> io::Result<()>`** 建立指向同一實際檔案的另一名字，驗收兩個路徑仍算 3 bytes；這項 fixture 不編入其他平台，沒有把平台未跑的結果算已驗證。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

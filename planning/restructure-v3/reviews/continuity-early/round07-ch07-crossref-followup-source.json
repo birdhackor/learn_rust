@@ -1,0 +1,14 @@
+{
+  "id": "ACREF03-known-7.4",
+  "utc": "2026-10-15T10:09:17.095680+00:00",
+  "scope": "after12selfseal; rootreportedcrossref notindependentnewfinding; sourceonly/renderpending",
+  "before_sha256": "532b1238409b30864e44957d90cd3416b3e520518faff6cd0c1879aef7c8acc6",
+  "after_sha256": "21a01d6a373aa5db5df05479d23e7b40c0119fcc98116e6f8af3f210b32acc64",
+  "line": [
+    [
+      114,
+      "完整 `src/source.rs` 收入第 7.1–7.2 節的函式。測試現在用第 6.2 節的 `&str` 內容比較，包含等長時選第一段，避免只比長度而漏掉來源選擇錯誤："
+    ]
+  ],
+  "diff": "--- initial7.4\n+++ current7.4\n@@ -111,7 +111,7 @@\n --8<-- \"examples/intro-workspace/lifetimes/complete/src/lib.rs\"\n ```\n \n-完整 `src/source.rs` 收入前兩節的函式。測試現在用第 6.2 節的 `&str` 內容比較，包含等長時選第一段，避免只比長度而漏掉來源選擇錯誤：\n+完整 `src/source.rs` 收入第 7.1–7.2 節的函式。測試現在用第 6.2 節的 `&str` 內容比較，包含等長時選第一段，避免只比長度而漏掉來源選擇錯誤：\n \n ```rust\n --8<-- \"examples/intro-workspace/lifetimes/complete/src/source.rs\"\n"
+}

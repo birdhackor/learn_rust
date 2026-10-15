@@ -1,0 +1,69 @@
+{
+  "checked_utc": "2026-10-15T07:52:21.284269+00:00",
+  "changed": [
+    {
+      "path": "docs/chapters/05-02-lesson.md",
+      "initial": "95c65c1f820872f041c5c67e765d179549bfd0e98712bfb1ce5650bad961051e",
+      "current": "40d749408aba8ccf2004dc6b410d5bbe8e1e086983070cf1e13df554bab3ab18"
+    },
+    {
+      "path": "docs/chapters/05-05-lesson.md",
+      "initial": "412a3eeb91594615ee24961d5bff56b0189dfba194cc3976344f16b64e74afd5",
+      "current": "20882bf65c17e9bdca514bf41ed27f8a80314d615bc894e06e06d7a3595f888c"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial": "7161d333dd2b49cb74eee31661e7762ec3e6b234a7b550202dc5079b109608f1",
+      "current": "0fe0c68b5753558a7b9d650faa209317c7268d0ad40ec1284952bb66117aa7bf"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial": "95fc150a6f4c104bbd7c775cc52c79c180e5a5bfe584110800e07047e99f5dcb",
+      "current": "ce0b4e0a6f7a6475a272ba794f8e8686e2de531eb1e372b5c5af7be4be54fc51"
+    }
+  ],
+  "prose_diffs": [
+    {
+      "path": "docs/chapters/05-02-lesson.md",
+      "diff": [
+        "--- independentinitial",
+        "+++ currentfollowup",
+        "@@ -8,7 +8,7 @@",
+        " ",
+        " `Some(120)` 是有報價 120，`Some(0)` 是有報價零，None 才是沒有報價。不能直接把整份 `Option<i32>` 當金額乘數量，必須先處理它屬於哪一種情況。",
+        " ",
+        "-這些標準名稱不需下載或自行定義。Rust 的 **prelude（預先匯入的常用名稱）**會自動把一組名稱帶進一般 module；本頁的 Option、Result 與它們的 variant 都在其中。因此可直接寫 Some、None，稍後也能直接寫 Ok、Err，不必像自訂 enum 一樣每次加型別前綴。它們仍然是 variant，不是數字或控制流程關鍵字。",
+        "+這些標準名稱不需下載或自行定義。Rust 的 **prelude**（預先匯入的常用名稱）會自動把一組名稱帶進一般 module；本頁的 Option、Result 與它們的 variant 都在其中。因此可直接寫 Some、None，稍後也能直接寫 Ok、Err，不必像自訂 enum 一樣每次加型別前綴。它們仍然是 variant，不是數字或控制流程關鍵字。",
+        " ",
+        " 建立時把具體型別填入角括號：",
+        " "
+      ]
+    },
+    {
+      "path": "docs/chapters/05-05-lesson.md",
+      "diff": [
+        "--- independentinitial",
+        "+++ currentfollowup",
+        "@@ -66,7 +66,7 @@",
+        " ",
+        " ## 呼叫者與測試各自使用同一份規則",
+        " ",
+        "-完整版本放在另一個 member：`data/`，package 名為 **intro-data**。它的 library 公開 text 與 list，text 保留上一節已教的文字取得函式，list 提供本節整理。範例透過 `intro_data::list::keep_nonnegative` 使用它，沿用第 2.6 節的 library 路徑規則。",
+        "+完整版本放在另一個 member：`data/`，package 名為 **intro-data**。它的 library 公開 text 與 list，text 保留第 5.3 節已教的文字取得函式，list 提供本節整理。範例透過 `intro_data::list::keep_nonnegative` 使用它，沿用第 2.6 節的 library 路徑規則。",
+        " ",
+        " list_demo 借讀原 array，接收新的 Vec；顯示時先 as_slice，再按0..len()走訪有效索引。因為每個索引都小於長度，這裡不需要把已知有效的位置再包成查詢結果：",
+        " ",
+        "@@ -106,7 +106,7 @@",
+        " ",
+        " ??? example \"展開完整 text 與 list，包含全部六項測試\"",
+        " ",
+        "-    `data/src/text.rs`與上一節text-only版本相同，包含四項文字測試及已說明的局部manual_map allow：",
+        "+    `data/src/text.rs`與第 5.3 節的 text-only 版本相同，包含四項文字測試及已說明的局部 manual_map allow：",
+        " ",
+        "     ```rust",
+        "     --8<-- \"examples/intro-workspace/data/src/text.rs\""
+      ]
+    }
+  ],
+  "scope": "only chapter5 C5-01/02 repaired prose and globalfutureworkspace metadata; all initial selectedRust/SVG/package/fixture/toolchain unchanged"
+}

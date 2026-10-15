@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="560" viewBox="0 0 390 560" role="img" aria-labelledby="title desc">
+ <title id="title">owned downcast型別不符時仍交回原Box</title>
+ <desc id="desc">Box dyn Any保存String Rust。第一次請求i32，因型別不符得到Err，其中仍是保存原String的Box dyn Any。再請求String，得到Ok Box String，接收者取得已知型別的owned Box。向下箭頭代表消耗handle並透過Result交接，不表示把文字改造成數字。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="560" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="34" text-anchor="middle" font-weight="bold">型別不符，交回原資料</text>
+  <rect x="20" y="60" width="350" height="100" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="40" y="97" font-weight="bold">Box&lt;dyn Any&gt;</text><text x="40" y="138">內部是String：Rust</text>
+  <path d="M60 162V230" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="88" y="190">downcast::&lt;i32&gt;()</text><text x="88" y="222">不是原來的型別</text>
+  <rect x="20" y="242" width="350" height="100" rx="10" fill="#fff7ed" stroke="#ea580c" stroke-width="2"/>
+  <text x="40" y="279" font-weight="bold">Err(original)</text><text x="40" y="320">仍擁有原String：Rust</text>
+  <path d="M60 344V412" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="88" y="373">再試String</text><text x="88" y="406">downcast::&lt;String&gt;()</text>
+  <rect x="20" y="424" width="350" height="89" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="40" y="458" font-weight="bold">Ok(Box&lt;String&gt;)</text><text x="40" y="494">取得確切型別的owned值</text>
+  <text x="195" y="546" text-anchor="middle">箭頭：交接handle與結果</text>
+ </g>
+</svg>

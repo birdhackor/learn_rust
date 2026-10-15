@@ -1,0 +1,138 @@
+[
+  {
+    "url": "https://tokio.rs/tokio/topics/shutdown",
+    "actual_fetch_url": "https://tokio.rs/tokio/topics/shutdown",
+    "label": "Tokio Graceful Shutdown",
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-independent-final7/external/081a5be62977.txt",
+    "sha256": "6e23c8fe42b81f95b3437f69ad98023f2ec70df8b94078796ae74f2a82b4e3eb",
+    "text_sha256": "d09581e946357d3e7946f458b0561932f1037ff21aff7e5cf0cdf0f549e5fb3c",
+    "lines": 145,
+    "status": "ok",
+    "read_ranges": [
+      [
+        1,
+        66
+      ]
+    ],
+    "judgment": "親讀標題與相應主題段落；label對應實際target，未引入外書API作本書隱藏先備"
+  },
+  {
+    "url": "https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md",
+    "actual_fetch_url": "https://raw.githubusercontent.com/sunface/rust-course/main/src/advance-practice/graceful-shutdown.md",
+    "label": "RustCourse優雅關閉",
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-independent-final7/external/c2478a428d3a.txt",
+    "sha256": "1cf3361fd5c28453ab2d9d60ac19308ef50dbe292a3cb7f2cd23cb381d66dbfe",
+    "text_sha256": "510fd2e3ac97530c043460b384a87b302680cbcb8745080bc18276638d8898fd",
+    "lines": 69,
+    "status": "ok",
+    "read_ranges": [
+      [
+        1,
+        69
+      ]
+    ],
+    "judgment": "親讀標題與相應主題段落；label對應實際target，未引入外書API作本書隱藏先備"
+  },
+  {
+    "url": "https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html",
+    "actual_fetch_url": "https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html",
+    "label": "Tokio1.53.3 ctrl_c",
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-independent-final7/external/8bd61022b10b.txt",
+    "sha256": "8142603554d4dbbad1f1eee05d8d4b301f5f3fa03d311ebb423569f37cbced3d",
+    "text_sha256": "2d6704ee24d30eb17716f7a713b804dc52bc17f6f109542351138234ed9a2c48",
+    "lines": 39,
+    "status": "ok",
+    "read_ranges": [
+      [
+        1,
+        39
+      ]
+    ],
+    "judgment": "親讀標題與相應主題段落；label對應實際target，未引入外書API作本書隱藏先備"
+  },
+  {
+    "url": "https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref",
+    "actual_fetch_url": "https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref",
+    "label": "Iterator::by_ref",
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-independent-final7/external/f4f73b0f8400.txt",
+    "sha256": "2261960b32a5851593dfdfd85ba5b8ce546e39e0112988865e2d35cd764723a4",
+    "text_sha256": "6c8ee83f2649130f3c48c10c44c3f908eb304a3b57fab63aeb1f5290723406fb",
+    "lines": 2882,
+    "status": "ok",
+    "read_ranges": [
+      [
+        1263,
+        1284
+      ]
+    ],
+    "judgment": "親讀標題與相應主題段落；label對應實際target，未引入外書API作本書隱藏先備"
+  },
+  {
+    "url": "https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html",
+    "actual_fetch_url": "https://doc.rust-lang.org/book/ch12-04-testing-the-librarys-functionality.html",
+    "label": "English Book：TDD",
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-independent-final7/external/2af7df3104d5.txt",
+    "sha256": "520f5f183eb7b047e0010da8c31bc221fac82b397529773ab1fbf4cba62ca4e9",
+    "text_sha256": "c4e5afb54a20e6595ad4932f6bcaad1fb01065c9a32f6c84dce34b528a56be75",
+    "lines": 261,
+    "status": "ok",
+    "read_ranges": [
+      [
+        1,
+        55
+      ]
+    ],
+    "judgment": "親讀標題與相應主題段落；label對應實際target，未引入外書API作本書隱藏先備"
+  },
+  {
+    "url": "https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html",
+    "actual_fetch_url": "https://rust-lang.tw/book-tw/ch12-04-testing-the-librarys-functionality.html",
+    "label": "繁中對應",
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-independent-final7/external/2b2d26f2e875.txt",
+    "sha256": "811c36713f60fffec72a747abc9590c1f403f94c6c8f96fd135ed8a8fe508b09",
+    "text_sha256": "f75671867e0728868892cff9f978dcf2a0dcd7637e3109091a81c4f14e479f0e",
+    "lines": 352,
+    "status": "ok",
+    "read_ranges": [
+      [
+        1,
+        65
+      ]
+    ],
+    "judgment": "親讀標題與相應主題段落；label對應實際target，未引入外書API作本書隱藏先備"
+  },
+  {
+    "url": "https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html",
+    "actual_fetch_url": "https://doc.rust-lang.org/book/ch12-06-writing-to-stderr-instead-of-stdout.html",
+    "label": "English Book：stdout／stderr",
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-independent-final7/external/8eebccbe96ca.txt",
+    "sha256": "3a0bf6743ba4327b073ab9a9c48c2fca92bc26c900d00b2e183a522c5b11deb9",
+    "text_sha256": "f8d5afd080aae2f275487f4d93390f70a091d866798b7a1c65062661f9477985",
+    "lines": 116,
+    "status": "ok",
+    "read_ranges": [
+      [
+        1,
+        56
+      ]
+    ],
+    "judgment": "親讀標題與相應主題段落；label對應實際target，未引入外書API作本書隱藏先備"
+  },
+  {
+    "url": "https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html",
+    "actual_fetch_url": "https://rust-lang.tw/book-tw/ch12-06-writing-to-stderr-instead-of-stdout.html",
+    "label": "繁中對應",
+    "path": "/workspace/work/tutorial-implementation-20261015/crossref-final-independent-final7/external/67fc954d13ec.txt",
+    "sha256": "54f158c4d80f63fc9e002e85d30db5c63ca8b5eeccdcaae18f8f46de166b0dcd",
+    "text_sha256": "ecb9b00da43d7b35476456ef84167574783cdcca52587d454a7db1dff94621e9",
+    "lines": 43,
+    "status": "ok",
+    "read_ranges": [
+      [
+        1,
+        43
+      ]
+    ],
+    "judgment": "親讀標題與相應主題段落；label對應實際target，未引入外書API作本書隱藏先備"
+  }
+]

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="336" height="940" viewBox="0 0 336 940" role="img" aria-labelledby="title desc">
+<title id="title">位置資訊與 heap 內容分開</title>
+<desc id="desc">第一個案例的位置資訊指向 heap 區塊 H1，內容是單價 120、80 的兩項明細。另一個案例指向 H2，內容是五項明細。實線箭頭只表示沿位置找到內容。</desc>
+<defs>
+ <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/></marker>
+ <marker id="time" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker>
+</defs>
+<style>
+ text { font-family: "Noto Sans CJK TC", "Noto Sans", sans-serif; font-size:18px; fill:#172033; }
+ .heading { font-size:21px; font-weight:700; }
+ .strong { font-weight:700; }
+ .muted { fill:#475569; }
+</style>
+<rect width="336" height="940" rx="12" fill="#f8fafc"/>
+<text x="20" y="36" class="heading">
+<tspan x="20" dy="0">同樣定位，不同內容量</tspan>
+</text>
+<text x="20" y="77" class="strong">
+<tspan x="20" dy="0">案例一：收到 2 項明細</tspan>
+</text>
+<rect x="32" y="96" width="272" height="65" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="48" y="124" class="">
+<tspan x="48" dy="0">位置資訊</tspan>
+<tspan x="48" dy="27">指向 H1</tspan>
+</text>
+<line x1="62" y1="166" x2="62" y2="237" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="82" y="198" class="">
+<tspan x="82" dy="0">沿位置</tspan>
+<tspan x="82" dy="27">找到內容</tspan>
+</text>
+<rect x="32" y="248" width="272" height="127" rx="9" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+<text x="48" y="278" class="strong">
+<tspan x="48" dy="0">heap 區塊 H1：內容</tspan>
+</text>
+<text x="48" y="313" class="">
+<tspan x="48" dy="0">單價 120</tspan>
+<tspan x="48" dy="27">單價 80</tspan>
+</text>
+<text x="20" y="426" class="strong">
+<tspan x="20" dy="0">案例二：另一次收到 5 項</tspan>
+</text>
+<rect x="32" y="446" width="272" height="65" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="48" y="474" class="">
+<tspan x="48" dy="0">位置資訊</tspan>
+<tspan x="48" dy="27">指向 H2</tspan>
+</text>
+<line x1="62" y1="516" x2="62" y2="587" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="82" y="548" class="">
+<tspan x="82" dy="0">沿位置</tspan>
+<tspan x="82" dy="27">找到內容</tspan>
+</text>
+<rect x="32" y="598" width="272" height="209" rx="9" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+<text x="48" y="630" class="strong">
+<tspan x="48" dy="0">heap 區塊 H2：內容</tspan>
+</text>
+<text x="48" y="666" class="">
+<tspan x="48" dy="0">單價 120</tspan>
+<tspan x="48" dy="27">單價 80</tspan>
+<tspan x="48" dy="27">單價 200</tspan>
+<tspan x="48" dy="27">單價 60</tspan>
+<tspan x="48" dy="27">單價 100</tspan>
+</text>
+<text x="20" y="856" class="">
+<tspan x="20" dy="0">H1、H2 是不同案例的區塊。</tspan>
+<tspan x="20" dy="27">位置資訊不是整份內容；</tspan>
+<tspan x="20" dy="27">箭頭不表示複製所有單價。</tspan>
+</text>
+</svg>

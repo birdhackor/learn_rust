@@ -1,0 +1,108 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "10.6"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round10-cargo-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round10-cli-fixtures.md",
+    "planning/restructure-v3/reviews/technical-early/round10-complete-note-search.md",
+    "planning/restructure-v3/reviews/technical-early/round10-native-path-clap-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round10-serde-json.md",
+    "planning/restructure-v3/reviews/technical-early/round10-text-bytes-io-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/10-06-lesson.md": "1a66bbad509d726af4d6c6b8697c854ce1878fba9dd23b3311f22d471130a99c",
+    "examples/intro-workspace/clap-stage/Cargo.toml": "55a8f5afea9eb11af78a25bd6c7b1a82b8692a916ea90b3e67ad71d70b6f7f9e",
+    "examples/intro-workspace/clap-stage/src/lib.rs": "edca0e0379f2fb8a5cb9d146901a6d3f7152e2dc5b04bd911a776f273c8e34a4",
+    "examples/intro-workspace/clap-stage/src/main.rs": "d979c7dc71da233061c44000cbe4ab5130890fb8e4817810754b86ddfdc369fc",
+    "examples/intro-workspace/clap-stage/examples/flag_solution.rs": "ca1f376a0080652341a6394d704d661125b2ea0fb04290194203ae321f1b3ab2"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 3,
+      "quote": "第 10.5 節的工具只接受一個檔名，手寫 next 已足以完成它。接下來要為文字搜尋準備兩個必要資料：要找的文字、要讀的檔名；呼叫者還可以要求忽略大小寫，並查詢用法與版本。"
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 5,
+      "quote": "這些規則可以繼續手寫，但需要自己維護位置、開關與說明之間的對應。**clap** 是 command-line argument parser（命令列參數解析 library），這次讓它依 struct 欄位建立規則、產生說明，再交回 owned 設定。搜尋行為留到 第 10.9 節；本節只驗收參數如何成為設定，以及顯示請求如何交給呼叫者。"
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 11,
+      "quote": "先讀呼叫方式。下面是預期交給程式的三筆參數，程式名稱之外還有兩項必要資料與一個開關："
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 29,
+      "quote": "沿用 第 10.1 節的依賴與 feature 契約，選用 clap 的 derive feature。版本要求仍是範圍，實際解析版本由 Cargo.lock 保存。以下是本節完整manifest，name/version/edition仍明寫，不繼承後續的工程設定："
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 35,
+      "quote": "**`clap::Parser`** 是將命令列資料解析成設定型別的 trait。**`#[derive(Parser)]`** 依欄位和 attributes 生成相關實作；第 6.2 節已教的 derive 仍是編譯時工作，並不是啟動程式時先執行某個 Parser 函式。"
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 52,
+      "quote": "這次選用 **`Settings::try_parse_from(input)`**，回傳 `Result<Settings, clap::Error>`。先引入 `use clap::Parser;`，才在型別上呼叫這個 trait 提供的方法。"
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 54,
+      "quote": "input 必須是 `IntoIterator<Item = T>`，元素 T 要有 `Into<OsString> + Clone`：每筆能交成原生字串，並能依 Clone 的契約建立副本。第 10.5 節已教 OsString 的 Clone；它也能以 Into 交回相同型別，因此 owned OsString array 與 args_os 都符合。這裡的第一筆仍是程式名稱，**把完整序列交給 clap，不自行先 next 略過**。"
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 56,
+      "quote": "**`clap::Error`** 保存沒有產生 Settings 的結果，提供 Debug／Display。但 **Err 不全是使用者輸入錯誤**：`--help`、`--version` 需要顯示資訊並正常完成，同樣透過這個型別交回。"
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 77,
+      "quote": "現在將 args_os 的完整序列交給相同方法，成功就以 第 10.5 節的 Stdout／Write 顯示三個設定。這份程式是設定檢查工具，所以輸出欄位標示；不是已完成的文字搜尋結果。show_settings寫完三行後，再交回flush的結果，沿用上一節「寫入與推送都成功才回報完成」的政策。"
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 79,
+      "quote": "Err 分支選用 **`error.print()`**：shared 借用 Error，依其訊息角色寫到 stdout 或 stderr，回傳 `io::Result<()>`。它只負責顯示，不會自行終止行程；顯示自身也可能遇到 I/O 失敗。caller 保留前一步的 exit_code，印成功才交回對應的 0 或 2；印失敗則交回標準 FAILURE。"
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 106,
+      "quote": "本節library只包含已教的Settings與四項解析測試，完整 `src/lib.rs` 如下："
+    },
+    {
+      "section_id": "10.6",
+      "path": "docs/chapters/10-06-lesson.md",
+      "line": 116,
+      "quote": "為本節的 Settings 設定資料加入 `line_numbers: bool`，讓 `--line-numbers` 啟用它。只解析與核對設定，先不輸出行號：省略時為 false；加入時為 true；原 query、filename 與未啟用的 ignore_case 不變。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,184 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "13.8"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round13-root-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round13-scoped-channel-lock-atomic-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round13-send-thread-hrtb-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-addendum-array.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-array-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-summary.md",
+    "planning/restructure-v3/reviews/continuity-late/13tail-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/13-08-lesson.md": "b111cb10d4c1dfddb8986cc1ee89902eafa89e78fca5b6329bc09b8df3f64a79",
+    "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+    "examples/concurrency-stages/examples/atomic_values/main.rs": "8c5bedd1c31f178e8924bf4a326e2c8ed8d013c833ffe429ce0e2ecf11c27d42",
+    "examples/concurrency-stages/fixtures/compile-fail/atomic_move.rs": "294756f9ab17098b7d947087ae2108f382802264f3571ae4c0a91ecf53526cea",
+    "examples/concurrency-stages/fixtures/compile-fail/atomic_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/concurrency-stages/examples/atomic_lost_update/main.rs": "1b604726f4aca3e94695e583074e0920a9197785f4fe09beda4db93393f6b61b",
+    "examples/concurrency-stages/examples/atomic_counter/main.rs": "73719d4f51200802f956ceab8ed4fec9decd17078df91dc5c2271bd4b6f3a737",
+    "examples/concurrency-stages/examples/atomic_publish/main.rs": "b79b91f12165c69071feebcda39842a5c4bfab90c748542a2775ff46ddc9849b",
+    "examples/concurrency-stages/fixtures/runtime-fail/atomic_load_release.rs": "283e49a193b158d5ec869c2e1c27a4fcb826a4c5f093430b6bfaa6bea012b236",
+    "examples/concurrency-stages/fixtures/runtime-fail/atomic_load_release.expected": "57a63984d8750b3b51bd4aa249bcaeded88cdc6f6f988ad2e99a44f82842a958",
+    "examples/concurrency-stages/fixtures/runtime-fail/atomic_store_acqrel.rs": "3f7e70b6795bffe02102df89e13c0a866c1b50019827441a1d29cb0df477328d",
+    "examples/concurrency-stages/fixtures/runtime-fail/atomic_store_acqrel.expected": "3c1a2f773eed1e968e6845115d54d00ee67da273b27d04f721a33749718039aa",
+    "examples/concurrency-stages/examples/atomic_seqcst/main.rs": "e74524b41670c71bffa68845ab25b3458da8d2b6a5cc7a4bd727f8b27090bba9",
+    "examples/concurrency-stages/examples/atomic_seqcst_split/main.rs": "57a34dfba09ecbfe260fc9e5cfc275a46f670c8eeb855d4cad53d1b008d137d6",
+    "examples/concurrency-stages/examples/atomic_answer/main.rs": "3c3ac78faca945756294f1acc4dec3c78a24bc7923be277a30c1634db099dfc1",
+    "docs/assets/ch10/atomic-publication.svg": "fa5e529c2a9e969650f7df4f7347ca40249628ac9eb59877c8081676403b52c7",
+    "docs/assets/ch10/seqcst-cycle.svg": "5589976736e8605735685f080741218d8eb4d5cc90a57fbf2a86ce7e2b7eb25b"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 3,
+      "quote": "現在有兩份 worker，分別完成三件與兩件小工作，**每完成一件就把同一個計數加1；全部正常完成後應得到5**。13.6的 Mutex 能把「讀舊值、加1、寫回」放在同一份 guard 下。這裡先學標準庫直接提供的單次數值更新，再問另一個問題：若 worker 已算出總和230，**讀者看到「可讀」旗標時，是否也能讀到這份230？**"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 15,
+      "quote": "**atomic（原子操作）** 延續13.6／13.7的「不可拆開」意義：相對於同一位置的其他 atomic 操作，一次操作整體完成。**`std::sync::atomic::AtomicUsize`** 保存一個 usize，讓不同 thread 透過 atomic 方法讀取或更新；**`AtomicBool`** 則保存 bool，稍後用作旗標。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 26,
+      "quote": "這裡的 order 是 **`std::sync::atomic::Ordering`** enum，用來指定 **memory ordering（記憶體順序）**：這次 atomic 操作提供哪些同步／順序保證。第 9.7 節的 `std::cmp::Ordering` 是大小比較結果，這裡則從 atomic module 引入同步用的 Ordering。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 28,
+      "quote": "先選 **`Ordering::Relaxed`**，前述 load、store、fetch_add 都接受它。Relaxed 仍保證各單步 atomic，且 **同一個 atomic 的所有修改有一份各 thread 一致的修改順序**；沒有因此把不同 atomic 的操作一起同步。它也不保證每次 load 都讀到最新修改，或立即通知另一份工作。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 60,
+      "quote": "原需求是兩份工作各增加一次，初值0應成為2。若兩條路徑都先讀到0，再各自寫入「舊值加1」，可能是："
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 77,
+      "quote": "這是 **lost update（更新遺失）** 的邏輯問題。13.1的 data race 涉及未同步的衝突存取，且至少一方使用 non-atomic 的操作；這裡對共享位置的每次存取都是 atomic，並沒有靠普通讀寫產生 data race，但仍沒有完成「各加1」。fetch_add 將這個讀改寫合成一體，另一份 fetch_add 無法插在其中，能接著更新前一份的成果。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 81,
+      "quote": "現在才讓兩份 worker 使用同一個 `Arc<AtomicUsize>`。每次 fetch_add 都在同一 atomic 的修改順序中讀到緊接它之前的值並加1；只有五次加1、沒有其他寫入與 overflow，所以全部完成後是5。誰先做哪次，不影響這個結果。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 83,
+      "quote": "還要等待全部工作。13.2的 **join 除了等候，也建立同步邊界**：worker 完成之前的操作，在記憶體模型中先於 join 返回之後的操作。main 把兩份 handle 都 join，才讀 final count；這時沒有尚未完成或後續的寫入，Relaxed load 也必須讀到最後的5。這裡 fetch_add 解決「一次更新」，join 解決「何時已全部完成」，各負責一項保證。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 95,
+      "quote": "第二個原問題是：producer 算出總和230，先保存到 DATA，再將 READY 設為 true；consumer 看到 READY 為 true，才讀 DATA。**希望「已可讀」包含這次總和已發布的保證**，不是只看見一個獨立旗標。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 97,
+      "quote": "程式碼把兩句列在前後，不足以讓另一個 thread 必然依這個順序觀察不同 atomic。Rust 的 **memory model（記憶體模型）** 定義可以依靠的關係；編譯器與硬體的執行細節必須守這些契約，不靠本機剛好常見的結果推規則。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 99,
+      "quote": "其中 **happens-before** 是模型中可串接的先後保證：同一個 thread 內，前後的操作有這種關係；不同 thread 之間則要由 join、鎖等同步，或適合的 atomic ordering 建立。它不表示我們用時間量到了兩步相隔多少，也不替所有未同步操作排成一條共同時間軸。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 107,
+      "quote": "先限定本節發布協定：DATA 用 AtomicUsize，初值0；READY 用 AtomicBool，初值false；**只有一個 producer，一次寫入230、一次發布true，不重設旗標，也不再更新 DATA**。因此 consumer 如果讀到true，只能來自那次唯一發布；讀到false時尚不能讀 DATA 作為本次成果。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 114,
+      "quote": "4. **R2：** consumer 在R1之後 `DATA.load(Relaxed)`。串成P1 → P2 → R1 → R2，因此P1 happens-before R2。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 118,
+      "quote": "圖中兩欄是兩個 thread，**灰箭頭是各自內部先後；藍箭頭只在R1讀自P2時成立**。它只畫輪詢中那次讀到true的R1，沒有替更早的false讀取畫同步。左欄的DATA／READY與右欄是同兩個共享位置，不是各欄自己的一份資料："
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 126,
+      "quote": "本例讓 main 擔任 consumer，重複檢查 READY。**`thread::yield_now()`** 不接參數、回傳 unit，向作業系統表示目前 thread 願意交出剩餘的執行時段，讓它有機會安排其他工作；不保證哪份 thread 接著執行，也不保證公平順序。沒有其他可執行工作時，反覆 yield 仍可能是 **busy-wait（忙等）**，持續耗用 CPU。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 128,
+      "quote": "這個有限例子只有 producer 的兩次合法 store，完成發布後不再寫 payload。輪詢的「讀到true就可用230」是值的保證，**不承諾 producer 必在某個時間內被安排、輪詢必在固定時間內停止**。若把 producer 換成可能失敗而未發布的工作，這個旗標沒有關閉／失敗協定，consumer 可能一直等；一般事件等待優先用13.5的 channel 或既有 join／鎖安排。本例用輪詢隔離 Release／Acquire 關係。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 138,
+      "quote": "注意 main 是 **讀到230以後才 join producer**；所以不能把更晚的 join 拿來替先前讀取解釋。R1與R2的關係由旗標配對建立；join 另外收尾，並確認 producer 正常回傳。這次輸出驗證程式用法；跨操作保證由前面的契約與四步理由支持。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 142,
+      "quote": "現在補齊另外兩種名稱："
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 155,
+      "quote": "load 沒有寫入側，所以不能用 Release／AcqRel；store 沒有讀取側，所以不能用 Acquire／AcqRel。這些不合法組合會 panic。以下兩份完整 **runtime-fail** 先讓函式接手 Ordering，再故意傳不合法組合；預期能編譯、執行時非正常結束。第一份缺寫入卻選 Release load，第二份只有寫入卻選 AcqRel store："
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 181,
+      "quote": "現在要判另一個有限問題：X與Y初值0，A先把X寫1再讀Y，B先把Y寫1再讀X；只有這兩份寫入。**如果四步全用SeqCst，能否讓A、B都讀到0？**"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 185,
+      "quote": "於是要求 **A1 → A2 → B1 → B2 → A1**。一份共同順序不可能滿足這個循環，所以不能都讀0；允許的 `(A讀Y, B讀X)` 是 `(0, 1)`、`(1, 0)`、`(1, 1)`。"
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 187,
+      "quote": "圖中的藍框是A的兩步、綠框是B的兩步；灰箭頭是各thread內先後，紅箭頭來自「兩個都讀0」這個假設在共同順序提出的要求。左側回頭的紅箭頭是矛盾所在，**不是實際程式的執行軌跡**："
+    },
+    {
+      "section_id": "13.8",
+      "path": "docs/chapters/13-08-lesson.md",
+      "line": 213,
+      "quote": "producer處理同一批 `[80, 120, 30]`，consumer要得到 **長度3與總和230這份已完成的成果**。沿本節的有限協定，只發布一次、不重設旗標、不在發布後修改payload。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,92 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "1.3"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round01-ch01-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round01-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round01-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-source.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-visual.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-report.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/01-03-lesson.md": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+    "examples/intro-workspace/hello/Cargo.toml": "946345ebb5bcb3465019d4d501ec888da32b198c9a87d4b2d91edb2fec085e9d",
+    "examples/intro-workspace/hello/src/main.rs": "0417da49d6287cfc46a7fbd206ce9b7d5a57496222247ed67e43e11f8e720deb",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/greeting/Cargo.toml": "83300e56501d71d423e9a1aebbfd2cd1c6c4599238ed4884fcad8e93847615c5",
+    "examples/intro-workspace/greeting/src/main.rs": "9a39e5130d1b88c38da1405f8b8822858bf6aae678883377761ee1bd7ccc446b",
+    "examples/intro-workspace/hello/examples/two_lines.rs": "d5bdb012bc0065481377bb52583546bd0db2bc780f29be1e8f8287e8dc99797d",
+    "examples/intro-workspace/steps/Cargo.toml": "ba433fca9aa7ac14673d3b3727bf391f285a6013ec75ffa2a6ba60942e245dfb",
+    "examples/intro-workspace/steps/src/main.rs": "9d77c241170f05328e057efed81ad48b15cb9ce56ca87821ccf28a1c05365fc0",
+    "examples/intro-workspace/greeting/examples/two_lines.rs": "164651a1bd3bdc96ce4bd04e44910830a1b009a7b9f61f91812169a2d1291cb8"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "1.3",
+      "path": "docs/chapters/01-03-lesson.md",
+      "line": 3,
+      "quote": "教材會保存許多不同階段的程式。我們需要能指定「今天只跑這一個」，而且回頭看第一個程式時，它仍保持只有已學過的內容。這一節改用教材保存的檔案。若你還沒有取得教材，在瀏覽器打開 [learn_rust 的 GitHub 頁面](https://github.com/birdhackor/learn_rust)，按 **Code → Download ZIP**，再解壓縮。不需要先會使用 Git。"
+    },
+    {
+      "section_id": "1.3",
+      "path": "docs/chapters/01-03-lesson.md",
+      "line": 11,
+      "quote": "確認這裡同時有 `Cargo.toml`、`docs` 與 `examples`，這就是**教材 repo 的根目錄**。repo 是 repository 的簡稱，這裡指整份教材的檔案集合；若解壓時改了資料夾名稱，`cd` 後面也用你實際的名稱。以下路徑都從這裡開始。"
+    },
+    {
+      "section_id": "1.3",
+      "path": "docs/chapters/01-03-lesson.md",
+      "line": 15,
+      "quote": "上一節建立的 `intro-hello` 是一個 **package**：Cargo 以一份 `Cargo.toml` 管理它的名稱、版本與程式。**crate** 則是 Rust 編譯器一次處理的一個編譯單位。現在的 `src/main.rs` 是一個 binary crate 的起點，編譯後能執行；一個 package 也能包含供其他程式使用的 library crate，但本章先不建立它。"
+    },
+    {
+      "section_id": "1.3",
+      "path": "docs/chapters/01-03-lesson.md",
+      "line": 37,
+      "quote": "現在加入第二個只印文字的 package。**workspace** 是共同管理的一組 package；成員共用一份 `Cargo.lock` 與建置輸出的 `target` 資料夾。它不會把所有程式接成一個可執行檔。"
+    },
+    {
+      "section_id": "1.3",
+      "path": "docs/chapters/01-03-lesson.md",
+      "line": 39,
+      "quote": "下面是教材入門 workspace 的**完整設定**，檔案在 `examples/intro-workspace/Cargo.toml`："
+    },
+    {
+      "section_id": "1.3",
+      "path": "docs/chapters/01-03-lesson.md",
+      "line": 67,
+      "quote": "`hello/examples/two_lines.rs` 保存上一節的第二個階段。Cargo 把 `examples/` 內的這種程式視為可選的**範例 target**；target 是你要求 Cargo 建置的特定成果。每個範例都有自己的 `main`，是獨立的 binary crate。"
+    },
+    {
+      "section_id": "1.3",
+      "path": "docs/chapters/01-03-lesson.md",
+      "line": 97,
+      "quote": "`Cargo.toml` 表達你要求的設定；`Cargo.lock` 記錄 Cargo 已選定的確切 package 版本。這個 workspace 也保存了一份 `Cargo.lock`，由 Cargo 產生並管理，不必手動修改其中的格式。新增或調整 package 時，Cargo 會按設定重新記錄選擇結果。"
+    },
+    {
+      "section_id": "1.3",
+      "path": "docs/chapters/01-03-lesson.md",
+      "line": 99,
+      "quote": "教材已保存它，因此後續指令加上 `--locked`：要求沿用鎖定結果，若必須更新鎖定檔才能繼續，指令就失敗，提醒你設定與保存的狀態不一致。這個選項**不會**阻止你修改 `.rs`；修改程式後仍可重新建置。"
+    },
+    {
+      "section_id": "1.3",
+      "path": "docs/chapters/01-03-lesson.md",
+      "line": 109,
+      "quote": "請選 `intro-greeting` 的 `two_lines` 範例，預期依序印出「你好，Rust！」與「開始今天的練習。」。這份完整程式如下，設定沿用同頁的 `greeting/Cargo.toml`："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "sealed_utc": "2026-10-15T07:44:16.625547+00:00",
+  "kind": "complete independent chapter5 initial plus explicit concurrent-source/version correction; initial originals retained",
+  "necessary_findings": 0,
+  "optional_findings": 2,
+  "files": {
+    "round05-ch05.md": "fdac251bde8c4d2e4c42256a96fe9d2da01cafe35b1921e940c6e10da5543d80",
+    "round05-ch05.json": "dc5cab5f89648d9d25916d3456cf0932ee49181200a1ad7a1286c87a50279bb8",
+    "round05-ch05-sourcehashes.json": "7898fc263b5c64d1122b03eef2a39136b9da00605249febd650be7e4740cd602",
+    "round05-ch05-seal.json": "948bb66e83a618182ae5a37710fe8e542d9605ce9b69a95d8b08403ebf224d51",
+    "round05-ch05-version-note.md": "f428ddff731eea958c5dd7293a2f72a7eb5862229a642c94f6c61df412f728ee",
+    "round05-ch05-version-note.json": "42137ef46546b13af688997c423edd55332048f16fba7b4fdb2eef00c2a1d4fa"
+  }
+}

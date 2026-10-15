@@ -1,0 +1,62 @@
+{
+  "review_id": "technical-early-round06-prefix-followup",
+  "checked_at_utc": "2026-10-15T07:55:09.936736+00:00",
+  "saved_at_utc": "2026-10-15T07:55:55.116634+00:00",
+  "original_sealed_prefix_and_tail_judgments_preserved": true,
+  "scope": "Only6.1 material word and6.2 initial Debug-format borrow explanation, plus unchanged own prefix selected trait-stages Rust/manifests/fixtures hashes.",
+  "no_other_reports_read": true,
+  "items": [
+    {
+      "id": "TC06P-O1",
+      "discovery": "Own independent sealed6.1–6.2 optional finding;root adoption prompted this repair check.",
+      "independent_discovery": true,
+      "status": "resolved",
+      "evidence": "6.1:119 now nonnegative small integers 非負小整數. Entire body diff is one added 整, aligning declaredi32 and6.1:5.",
+      "severity": "optional word precision; no source or concept added"
+    },
+    {
+      "id": "C6a01",
+      "discovery": "Root notice of continuity-prefix finding after own initial prefix seal;source-only narrow confirmation after tail seal. Not independently reported by this reviewer.",
+      "independent_discovery": false,
+      "own_initial_status": "Own whole-page technical initial prefix review did not report the first Debug-format ownership explanation gap.",
+      "status": "resolved",
+      "cross_judgment": "Agree with necessary local explanation of ownership at first formatting of a non-Copy custom struct. Earlier primitive fields and as_str displays do not by themselves establish that this exact whole-value Debug formatting borrows rather than consumes.",
+      "evidence": [
+        "6.2:7 now states this formatting only borrows summary,does not take its ownership,and fields remain readable after display.",
+        "The sentence precedes derive explanation and first full debug source14.",
+        "Actual debug.rs println captured summary at12 is followed by reading summary.amount/count at13–14;it has Debug but notClone/Copy."
+      ],
+      "technical_scope": "The statement says 這次格式化 for this simple capturedplace,correctly preserving ownership without claiming arbitrary argument expressions cannot move data. No fmt method signature,later API or extra test needed."
+    }
+  ],
+  "source_checks": {
+    "docs/chapters/06-01-lesson.md": {
+      "before_sha256": "2ae67ddfedea1c5feafc589171a8277879502eb56bcab4b5b9773bd9d94624b5",
+      "after_sha256": "5df389994db35de562be09374b10686ef2b11774eb70893f2200d4d159141d0a"
+    },
+    "docs/chapters/06-02-lesson.md": {
+      "before_sha256": "a4c6d3934cae52521b282cd9fb52132a62d2f43a9a8ee669f79f74452ffa40c9",
+      "after_sha256": "f10544e1c8c5bba31e648e597ffa8fe05c8c48305bfaba692cdea1d8033be3f7"
+    }
+  },
+  "unchanged_trait_stages_rust_fixtures_and_package_config": {
+    "examples/intro-workspace/trait-stages/Cargo.toml": true,
+    "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs": true,
+    "examples/intro-workspace/trait-stages/examples/charges.rs": true,
+    "examples/intro-workspace/trait-stages/examples/charges_answer.rs": true,
+    "examples/intro-workspace/trait-stages/examples/debug.rs": true,
+    "examples/intro-workspace/trait-stages/examples/equality.rs": true,
+    "examples/intro-workspace/trait-stages/examples/equality_answer.rs": true,
+    "examples/intro-workspace/trait-stages/examples/standard_equality.rs": true,
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.expected": true,
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.rs": true,
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.expected": true,
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.rs": true,
+    "examples/intro-workspace/trait-stages/src/main.rs": true
+  },
+  "execution": {
+    "cargo_rustc_clippy_tests": [],
+    "browser_visual": false
+  },
+  "limit": "Root supplied existence/disposition of C6a01;only actual source independently rechecked. No peer report or actual target-reader evidence claimed."
+}

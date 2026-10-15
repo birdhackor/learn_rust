@@ -1,0 +1,74 @@
+[
+  {
+    "path": "examples/ch13-futures/stages/Cargo.toml",
+    "sha256": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "lines": 6,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/Cargo.toml"
+  },
+  {
+    "path": "examples/ch13-futures/stages/src/main.rs",
+    "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "lines": 3,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/src/main.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs",
+    "sha256": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7",
+    "lines": 102,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/manual_poll/main.rs",
+    "sha256": "3a98225b4cf93386783c961ca6099ac3785e122fcd205ef6364ce75de4238a38",
+    "lines": 52,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/already_ready/polling/mod.rs",
+    "sha256": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7",
+    "lines": 102,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/already_ready/main.rs",
+    "sha256": "7caac0f53381ef35b2fe291faa0f402d773240c663467fdf11d63f88f1458448",
+    "lines": 33,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/polling_solution/polling/mod.rs",
+    "sha256": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7",
+    "lines": 102,
+    "exact_whole_file_reuse": "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/polling_solution/main.rs",
+    "sha256": "b6b001be4854f1089c01cccf07618ec281f13b233b2a505a4f1152c940035143",
+    "lines": 47,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs",
+    "sha256": "86aaaa646c3b17d44dfad9767c027b6c180024f5b005a47f670e942c7adaf551",
+    "lines": 209,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/examples/polling_complete/main.rs",
+    "sha256": "873ae1f09fadc840bc161e7d9e7136bdc5299ced1ca600257c2cd4d9e75a4b08",
+    "lines": 5,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.rs",
+    "sha256": "64bdbabc8be1f73aac2f9cc623c04c6b8a6401035fde20195c8a6f27bcd8fc3b",
+    "lines": 115,
+    "method": "full physical source printed/read"
+  },
+  {
+    "path": "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.expected",
+    "sha256": "19bb7307840ec56041dfec745a61f88160ea6130b01e6cfce9f3f52dbede1ad8",
+    "lines": 1,
+    "method": "full physical source printed/read"
+  }
+]

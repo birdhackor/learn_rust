@@ -1,0 +1,113 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "3.5"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round03-copy-before-diagram-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round03-ownership.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/03-05-lesson.md": "78535d28170efdde36e18a62911cb9c4779e14bbc3559dccfe876761fe47e776",
+    "examples/intro-workspace/ownership/examples/last_use.rs": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+    "examples/intro-workspace/ownership/examples/reborrow.rs": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/lifetime_answer.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+    "docs/assets/ch02/borrow-scope.svg": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 3,
+      "quote": "前兩節已能借讀與借改。現在把兩種操作放回同一個 main：先用兩份 reference 讀數量，再修改原數量。能否通過，取決於這些存取是否在使用上重疊。"
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 7,
+      "quote": "**scope** 是程式中一個名稱可見的範圍，例如 main 的 `{ ... }`。在本節的一般區域變數中，還由它持有的值會在離開自己的 scope 時結束。"
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 9,
+      "quote": "**lifetime** 在這裡指 reference 必須保持有效的程式區間，不是幾秒鐘。被借的資料必須在所有使用 reference 的地方仍然有效。編譯器也會檢查這段區間中有沒有衝突存取。"
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 31,
+      "quote": "下面這份完整失敗例把 println 移到修改之後："
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 37,
+      "quote": "reference 稍後還要讀，shared 借用便必須涵蓋 `count += 1` 所在位置。直接修改與這份借讀衝突，編譯器回報 **E0506**。放進第一章的獨立練習專案後執行 `cargo check`，即可看到診斷。"
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 45,
+      "quote": "first 在建立 second 後還要使用，因此建立 second 時，第一份獨占借用還沒完成。這份失敗例會得到 **E0499**。判斷的是借用同一資料時的使用衝突；分別借用兩個獨立數字，不會只因 reference 有兩份就失敗。"
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 49,
+      "quote": "有時呼叫者已持有 `&mut i32`，卻要讓另一段程式暫時修改同一數字，再收回使用權。先備好這個函式："
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 55,
+      "quote": "**reborrow** 是從現有 reference 建立一份較短的借用。`*parent` 指到原數字，再寫 `&mut *parent`，便從那個數字借出 child："
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 69,
+      "quote": "這不表示 mutable reference 能像 i32 一樣 Copy。一般的 `let next = parent;` 會 move 這份 mutable reference，以下完整失敗例會得到 **E0382**："
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 77,
+      "quote": "最後看另一種無效借用。下面的 inside 屬於內層區塊；區塊結束時，它的值就結束了，但外層還想借讀它："
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 83,
+      "quote": "編譯器以 **E0597** 拒絕這份程式，避免外層 reference 指向已失效的區域變數。把 reference 存在外面，不會讓 inside 延長存在。若需要在外層留下數字，便應讓區塊交出 owned 的 i32 值；這個值可 Copy 到外層，內層名稱結束後仍能使用。"
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 87,
+      "quote": "兩份成功例使用同一份 package 設定："
+    },
+    {
+      "section_id": "3.5",
+      "path": "docs/chapters/03-05-lesson.md",
+      "line": 126,
+      "quote": "修正兩個工作：先借讀 count 的 3，再把原數字加成 4；另外從內層區塊把數字 8 保存到外層。第一項可調整最後使用的順序；第二項需要交出值，不能留下指向內層變數的 reference。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

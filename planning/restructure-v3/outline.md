@@ -1,0 +1,200 @@
+# Rust 教學章節與閱讀順序
+
+讀者起點：基本 Python。依序閱讀；進階篇也是完整課程的一部分。每節完整範例、設定與答案在同頁列出。
+
+這份目錄對應實際 canonical 正文；原範例目錄的 chNN 名稱保留為穩定識別，不代表新版章號。
+
+## 第 1 章：Rust 起步、基本語法與計算機基礎
+
+- [1.1 從 Python 出發，準備 Rust 環境](../../docs/chapters/01-01-lesson.md)
+- [1.2 第一個可執行程式](../../docs/chapters/01-02-lesson.md)
+- [1.3 選對 Cargo 的 package、crate 與 workspace](../../docs/chapters/01-03-lesson.md)
+- [1.4 保存數值，決定型別與運算](../../docs/chapters/01-04-lesson.md)
+- [1.5 immutable、mutable 與 shadowing](../../docs/chapters/01-05-lesson.md)
+- [1.6 函式、expression、block 與 scope](../../docs/chapters/01-06-lesson.md)
+- [1.7 計算機基礎：程式、記憶體、stack 與 heap](../../docs/chapters/01-07-lesson.md)
+- [1.8 用 tuple 與 array 保存多個值](../../docs/chapters/01-08-lesson.md)
+
+## 第 2 章：流程控制：條件、迴圈與可測試程式
+
+- [2.1 比較、bool 與短路邏輯](../../docs/chapters/02-01-lesson.md)
+- [2.2 用 if、else 與 return 選擇工作](../../docs/chapters/02-02-lesson.md)
+- [2.3 用 for 與 range 重複處理材料](../../docs/chapters/02-03-lesson.md)
+- [2.4 用 while 依條件繼續工作](../../docs/chapters/02-04-lesson.md)
+- [2.5 用 loop、break 與 continue 控制中途去向](../../docs/chapters/02-05-lesson.md)
+- [2.6 用 module、use 與 pub 組成 library](../../docs/chapters/02-06-lesson.md)
+- [2.7 用測試、診斷、fmt 與 Clippy 確認程式](../../docs/chapters/02-07-lesson.md)
+- [2.8 完整組合計價與加總 library](../../docs/chapters/02-08-lesson.md)
+
+## 第 3 章：ownership、reference與borrowing
+
+- [3.1 struct：為訂單欄位命名](../../docs/chapters/03-01-lesson.md)
+- [3.2 ownership 與 move：交出整筆值，或複製一個數字](../../docs/chapters/03-02-lesson.md)
+- [3.3 shared reference 與 dereference：借讀原資料](../../docs/chapters/03-03-lesson.md)
+- [3.4 mutable reference：修改借來的資料](../../docs/chapters/03-04-lesson.md)
+- [3.5 borrowing、lifetime 與 scope：判斷何時能再修改](../../docs/chapters/03-05-lesson.md)
+- [3.6 impl 與 method：把訂單操作放回型別](../../docs/chapters/03-06-lesson.md)
+- [3.7 slice：借用連續的一段資料](../../docs/chapters/03-07-lesson.md)
+- [3.8 String、str 與 &str：建立及借讀訂單文字](../../docs/chapters/03-08-lesson.md)
+
+## 第 4 章：enum與pattern matching
+
+- [4.1 用 enum 保存一筆資料的不同形態](../../docs/chapters/04-01-lesson.md)
+- [4.2 用 match 選分支，涵蓋每種情況](../../docs/chapters/04-02-lesson.md)
+- [4.3 用 pattern 解構資料，命名需要的部分](../../docs/chapters/04-03-lesson.md)
+- [4.4 組合 pattern，加入範圍、guard 與 @](../../docs/chapters/04-04-lesson.md)
+- [4.5 pattern 取得的是值，還是借用？](../../docs/chapters/04-05-lesson.md)
+- [4.6 用 if let 與 while let 處理一種形態](../../docs/chapters/04-06-lesson.md)
+- [4.7 用 let else 先排除不能繼續的情況](../../docs/chapters/04-07-lesson.md)
+
+## 第 5 章：泛型、Option／Result與可變長度資料
+
+- [5.1 泛型（generics）：共用資料形狀，替換其中型別](../../docs/chapters/05-01-lesson.md)
+- [5.2 Option 與 Result：分清有值、缺值、成功與失敗](../../docs/chapters/05-02-lesson.md)
+- [5.3 char 與 UTF-8：安全取得一段文字](../../docs/chapters/05-03-lesson.md)
+- [5.4 Vec：新增、查詢及移除清單元素](../../docs/chapters/05-04-lesson.md)
+- [5.5 Vec 的 ownership：保留原資料，建立整理結果](../../docs/chapters/05-05-lesson.md)
+
+## 第 6 章：trait、標準能力與HashMap
+
+- [6.1 用 trait、impl 與 bound 要求共同能力](../../docs/chapters/06-01-lesson.md)
+- [6.2 Debug、PartialEq 與 derive：顯示及比較整筆資料](../../docs/chapters/06-02-lesson.md)
+- [6.3 Clone 與 Copy：建立另一份值，保留原資料](../../docs/chapters/06-03-lesson.md)
+- [6.4 associated type：保留來源與輸出型別的關係](../../docs/chapters/06-04-lesson.md)
+- [6.5 HashMap：用名稱查值與修改既有值](../../docs/chapters/06-05-lesson.md)
+- [6.6 用 HashMap 分組，讓結果擁有自己的鍵](../../docs/chapters/06-06-lesson.md)
+
+## 第 7 章：lifetime annotation：回傳借用與資料模型
+
+- [7.1 回傳 reference：用 lifetime parameter 說明來源](../../docs/chapters/07-01-lesson.md)
+- [7.2 調整借用來源：單一來源、owned 結果與 outlives](../../docs/chapters/07-02-lesson.md)
+- [7.3 struct 保存 reference：讓模型借讀原資料](../../docs/chapters/07-03-lesson.md)
+- [7.4 method 回傳 reference：分開 receiver 與欄位來源](../../docs/chapters/07-04-lesson.md)
+
+## 第 8 章：錯誤、格式化與轉換
+
+- [8.1 Result 與 panic：回報失敗，或停止正常流程](../../docs/chapters/08-01-lesson.md)
+- [8.2 type alias：為既有型別取另一個名字](../../docs/chapters/08-02-lesson.md)
+- [8.3 Display 與格式化：替錯誤資料定義顯示契約](../../docs/chapters/08-03-lesson.md)
+- [8.4 From、Into 與 TryFrom：轉換與驗證件數](../../docs/chapters/08-04-lesson.md)
+- [8.5 FromStr、AsRef 與 ToOwned：解析文字，或取得另一種表示](../../docs/chapters/08-05-lesson.md)
+- [8.6 ? 與錯誤傳遞：提早回傳，讓呼叫者決定後續](../../docs/chapters/08-06-lesson.md)
+
+## 第 9 章：closure與Iterator
+
+- [9.1 把小段工作和它需要的環境保存在 closure](../../docs/chapters/09-01-lesson.md)
+- [9.2 用 Fn 系列描述共用函式需要的呼叫能力](../../docs/chapters/09-02-lesson.md)
+- [9.3 讓函式交回可用的工作：impl Trait 與 lifetime capture](../../docs/chapters/09-03-lesson.md)
+- [9.4 逐筆取得資料：Iterator、IntoIterator 與 ownership](../../docs/chapters/09-04-lesson.md)
+- [9.5 逐筆篩選、轉換，再依目標收集](../../docs/chapters/09-05-lesson.md)
+- [9.6 整理文字與 HashMap：分行、Entry 與三種走訪方式](../../docs/chapters/09-06-lesson.md)
+- [9.7 比較與排序：產生順序明確的報表](../../docs/chapters/09-07-lesson.md)
+
+## 第 10 章：Cargo生態系、I/O與第一個CLI
+
+- [10.1 用 Cargo 宣告依賴、版本與 features](../../docs/chapters/10-01-lesson.md)
+- [10.2 閱讀 API 文件與測試公開介面](../../docs/chapters/10-02-lesson.md)
+- [10.3 讀取文字檔，把失敗交給呼叫者](../../docs/chapters/10-03-lesson.md)
+- [10.4 bytes 與 buffer：只處理這次有效的前段](../../docs/chapters/10-04-lesson.md)
+- [10.5 原生路徑與 CLI：檔名、資料、診斷各有自己的表示](../../docs/chapters/10-05-lesson.md)
+- [10.6 clap：讓參數規則產生 owned 設定](../../docs/chapters/10-06-lesson.md)
+- [10.7 JSON 與 Serde：文字和 owned 資料模型](../../docs/chapters/10-07-lesson.md)
+- [10.8 fixture：用專用檔案驗收真正的 CLI](../../docs/chapters/10-08-lesson.md)
+- [10.9 第一個完整 CLI：搜尋筆記，再交出文字或 JSON](../../docs/chapters/10-09-lesson.md)
+
+## 第 11 章：smart pointer、資源與進階型別
+
+- [11.1 型別需要多大空間：Sized、DST 與常數泛型](../../docs/chapters/11-01-lesson.md)
+- [11.2 Box 與遞迴資料：用 owned 間接存放收束大小](../../docs/chapters/11-02-lesson.md)
+- [11.3 用 Drop 觀察 ownership 的收尾](../../docs/chapters/11-03-lesson.md)
+- [11.4 用 Deref 借用包在裡面的值](../../docs/chapters/11-04-lesson.md)
+- [11.5 型別內的借用與 'static](../../docs/chapters/11-05-lesson.md)
+- [11.6 用 dyn 保存不同型別的共同能力](../../docs/chapters/11-06-lesson.md)
+- [11.7 以 Error 介面借讀原因，形成完整報告](../../docs/chapters/11-07-lesson.md)
+- [11.8 用 Rc 共享 ownership，用 Weak 觀察](../../docs/chapters/11-08-lesson.md)
+- [11.9 用 Cell 與 RefCell 管理內部修改](../../docs/chapters/11-09-lesson.md)
+- [11.10 用 newtype 保護單位與選擇運算介面](../../docs/chapters/11-10-lesson.md)
+- [11.11 用 Any 辨識並取回確切資料型別](../../docs/chapters/11-11-lesson.md)
+
+## 第 12 章：Cargo工程設定與檔案處理
+
+- [12.1 Cargo工程設定：共同設定與不同建置](../../docs/chapters/12-01-lesson.md)
+- [12.2 在編譯程式之前執行Rust工作](../../docs/chapters/12-02-lesson.md)
+- [12.3 走訪檔案，保留路徑與失敗](../../docs/chapters/12-03-lesson.md)
+- [12.4 從檔案候選到真正相同的內容](../../docs/chapters/12-04-lesson.md)
+
+## 第 13 章：thread、同步與atomic
+
+- [13.1 Send 與 Sync：檢查跨 thread 的移交與共用](../../docs/chapters/13-01-lesson.md)
+- [13.2 thread、join 與 panic payload](../../docs/chapters/13-02-lesson.md)
+- [13.3 HRTB：讓 callback 接受當次的借用](../../docs/chapters/13-03-lesson.md)
+- [13.4 scoped thread：借用外部資料，安排區段收尾](../../docs/chapters/13-04-lesson.md)
+- [13.5 channel：交接訊息，也安排工作收尾](../../docs/chapters/13-05-lesson.md)
+- [13.6 Arc 與 Mutex：共同持有，輪流修改](../../docs/chapters/13-06-lesson.md)
+- [13.7 RwLock 與同步設計：共享讀取，獨佔修改](../../docs/chapters/13-07-lesson.md)
+- [13.8 atomic 與 memory ordering：單次更新與跨操作同步](../../docs/chapters/13-08-lesson.md)
+
+## 第 14 章：async、HTTP與受控測試
+
+- [14.1 等待時還能做什麼：concurrency 與 parallelism](../../docs/chapters/14-01-lesson.md)
+- [14.2 Future 與 async／await：先保存工作，再取得結果](../../docs/chapters/14-02-lesson.md)
+- [14.3 spawn、JoinHandle 與 JoinSet：執行工作並收回結果](../../docs/chapters/14-03-lesson.md)
+- [14.4 有上限的工作排程：完成一份，才補一份](../../docs/chapters/14-04-lesson.md)
+- [14.5 timer 與 timeout：設定等待範圍，再分辨完成和逾時](../../docs/chapters/14-05-lesson.md)
+- [14.6 select!、取消與收尾：停止提交，也等到清理完成](../../docs/chapters/14-06-lesson.md)
+- [14.7 HTTP 基礎：有收到回應，和檢查通過，是兩件事](../../docs/chapters/14-07-lesson.md)
+- [14.8 單一 async HTTP：等待回應，再取得 owned JSON 資料](../../docs/chapters/14-08-lesson.md)
+- [14.9 受控本機服務：讓 HTTP 測試自己安排條件](../../docs/chapters/14-09-lesson.md)
+
+## 第 15 章：進階lifetime、unsafe與FFI
+
+- [15.1 讓借用結果的型別跟著這次借用：GAT](../../docs/chapters/15-01-lesson.md)
+- [15.2 借用有效性放進型別後，哪些替換仍合法？](../../docs/chapters/15-02-lesson.md)
+- [15.3 raw pointer：找到位置，還不等於可以存取](../../docs/chapters/15-03-lesson.md)
+- [15.4 unsafe的責任：從呼叫契約到安全抽象](../../docs/chapters/15-04-lesson.md)
+- [15.5 FFI 所需的 C 基礎](../../docs/chapters/15-05-lesson.md)
+- [15.6 FFI：把 C 契約接成安全的 Rust 介面](../../docs/chapters/15-06-lesson.md)
+
+## 第 16 章：Pin、Future與executor內部
+
+- [16.1 self-reference：資料還活著，地址也可能對不上](../../docs/chapters/16-01-lesson.md)
+- [16.2 Pin 與 Unpin：把地址穩定放進介面約定](../../docs/chapters/16-02-lesson.md)
+- [16.3 Poll、Context 與 Waker：通知之後，誰再次檢查？](../../docs/chapters/16-03-lesson.md)
+- [16.4 外部事件 Future：檢查與登記之間，不能漏掉通知](../../docs/chapters/16-04-lesson.md)
+- [16.5 小型 executor：收到通知，再安排下一次 poll](../../docs/chapters/16-05-lesson.md)
+
+## 第 17 章：macro、API設計、驗證與效能
+
+- [17.1 用 macro_rules! 產生已看懂的 Rust 宣告](../../docs/chapters/17-01-lesson.md)
+- [17.2 macro 的名字從哪裡來，錯誤又發生在哪裡？](../../docs/chapters/17-02-lesson.md)
+- [17.3 讓自訂 derive 讀宣告、增加 trait 實作](../../docs/chapters/17-03-lesson.md)
+- [17.4 讓library的公開契約能驗證，也能持續維護](../../docs/chapters/17-04-lesson.md)
+- [17.5 從明確性質產生材料，再把失敗縮成可理解的反例](../../docs/chapters/17-05-lesson.md)
+- [17.6 用 Loom 與 Miri 檢查普通 PASS 尚未涵蓋的責任](../../docs/chapters/17-06-lesson.md)
+- [17.7 固定同一項工作，再判斷量測數字](../../docs/chapters/17-07-lesson.md)
+- [17.8 找到配置來源，再核對改善仍完成相同工作](../../docs/chapters/17-08-lesson.md)
+
+## 第 18 章：兩個引導式完整工具
+
+- [18.1 最終練功：自己完成一個可以使用的工具](../../docs/chapters/18-01-lesson.md)
+- [18.2 A1：自己收集檔案與項目問題](../../docs/chapters/18-02-lesson.md)
+- [18.3 A2：自己確認真正相同的內容](../../docs/chapters/18-03-lesson.md)
+- [18.4 A3：自己做出穩定文字與 JSON 報告](../../docs/chapters/18-04-lesson.md)
+- [18.5 A4：自己接上參數、輸出與退出狀態](../../docs/chapters/18-05-lesson.md)
+- [18.6 A 完整參考版：把練習收成可用工具](../../docs/chapters/18-06-lesson.md)
+- [18.7 單筆 URL 檢查：保留原文、HTTP 分類與期限](../../docs/chapters/18-07-lesson.md)
+- [18.8 原行身分與依序批次：每份輸入都有結果](../../docs/chapters/18-08-lesson.md)
+- [18.9 有上限的 URL 排程：先回收，再補工作](../../docs/chapters/18-09-lesson.md)
+- [18.10 停止與收尾：停止補工，保留每份原輸入](../../docs/chapters/18-10-lesson.md)
+- [18.11 報告與 CLI 整合：完成映射、狀態與輸出三步](../../docs/chapters/18-11-lesson.md)
+- [18.12 完整 URL checker：保存全部來源，驗收真正工具](../../docs/chapters/18-12-lesson.md)
+
+## 寫作與整合的依賴
+
+作者只有在實際前置正文與來源完成、交接後才開始依賴它的寫作。來源研究與盤點可以先並行，正文依實際能力放行。
+
+1 → 2 → 3 → 4 → 5；6 與 7 的非 trait 部分可並行，7 的比較範例等 6.2；8 與 9 基礎可並行，Result 收集等 8；10 與 11 各按內部依賴推進；12、13、15 基礎與17 macro在必要前文完成後並行；14 等13，16 等 async、unsafe 與同步契約；18A 等檔案／CLI／API，18B 等實際 HTTP／受控測試內容。
+
+所有被命令載入的 library、module、helper、測試、fixture、設定與答案都算範例範圍。指定一個 test 名稱不能隔離同一個 library 其餘尚未教的程式。
+
+實作及驗收證據見 [本輪狀態](status.md)、[小節與來源清單](sections.json)、[舊頁對照](migration-map.json)、[27 項掃描處置](issue-dispositions.json)。

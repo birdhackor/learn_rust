@@ -1,0 +1,372 @@
+{
+  "wave": "18A",
+  "findings": [],
+  "version_basis": "18.1/18.5/18.6於首次閱讀前按root版本通知重新freeze current全文；未讀作者diff/finding。18A-current-freeze.json保留這次初讀版本。",
+  "notes": {
+    "18-01": [
+      "A專案是一個只產生報告的重複內容工具；原生root、六檔固定bytes、邏輯重複量與A1→A4交付分開。",
+      "先size、再BLAKE3、最後完整bytes；相同摘要不是相同內容證明。完整性、輸出完成與0/1/2仍是不同判準。",
+      "基本Python讀者可把已教的檔案、集合、錯誤、CLI組合成可操作工具；新增工作按四個stage切開，不一次重寫整份答案。",
+      "六份fixture完整bytes已逐檔開讀；fixed toolchain語法在命令前教，獨立check建lock後才--locked，四階段待做與示範命令作用清楚。",
+      "把root換成其他目錄不改大小/摘要/bytes政策；hard-link路徑數是邏輯量，不能解讀成可釋放實體容量。"
+    ],
+    "18-02": [
+      "A1只收一般檔案與項目問題；RootError是致命邊界，ScanIssue保留單一項目的失敗。",
+      "validate_root先拒絕link/非目錄；WalkDir不跟內部links，逐筆失敗保存並繼續，Unicode輸出界線與原生Path排序分開。",
+      "先固定可觀察且可測的檔案清單，後面內容比較才能保存正確原生路徑與metadata。",
+      "起始manifest/lib/collection、完整八項驗收、完成collection與inventory全讀；checks需手動加入、零測試非完成與三個stub無觀察意義均在操作前說明。",
+      "缺root回RootError；內部缺項目回ScanIssue且保留其他文件；空目錄/空檔/hidden檔的角色可由來源與tests直接判斷。"
+    ],
+    "18-03": [
+      "A2將同大小同摘要候選分成真正bytes相同的群組；讀失敗保留確切FileIssue，不當成不同內容。",
+      "大小單例跳hash；每個candidate比各代表，碰撞可留多真群；失敗移除確切原生path並從剩餘桶重建，候選嚴格減少才保證有限。",
+      "只丟一次失敗比較會漏掉B/B配對，重建讓其他檔案仍能交付成果；私有callback違約panic與一般檔案問題政策有明確區分。",
+      "starter三個stub、stream/files所有helper、12項新增tests、complete全實作與示範全讀；a2 complete tests尾段與已讀checks逐bytes相同。",
+      "強制相同摘要的A/B/B仍只留B/B；左A讀錯後移A重建；不在候選內的錯誤path觸發內部契約檢查，不能無限retry。"
+    ],
+    "18-04": [
+      "A3以owned Report同時服務穩定文字與JSON；native Path排序、Debug診斷與可反向開檔的路徑不可混用。",
+      "先保留PathBuf排序再轉String；IssueRow在排序結束前保留Option<PathBuf>，逐欄tie-break；checked乘加不能產錯誤正常總量。",
+      "相同資料須有穩定順序且問題不能消失；兩種輸出共用模型，完整性由兩種issues計算。",
+      "metrics/report起始檔、九項新tests、完整report與text/json examples全讀；Option::as_ref、None/Some排序與Serde新增欄位映射都在code前教。",
+      "a/b和a.txt依原生Path排序而非顯示String；控制字元用Debug與JSON escape保留單列；u64乘法或合計溢位回ReportError。"
+    ],
+    "18-05": [
+      "A4把原生root/--json接到同一份Report與真實stdout/stderr/ExitCode；0完整、1部分、2致命。",
+      "write_all成功後還要flush成功才回0/1；write/flush任一失敗沿RunError回2，help/version同樣檢查輸出完成。",
+      "library成功並未驗收CLI出口；ControlledWriter測完成條件，Command child測真實資料/出口/狀態。",
+      "starter app/main/lib/manifest、六app與六child tests、complete app與所有共用modules全讀；checks app module與tests/cli檔案的安裝方式分開且清楚。",
+      "部分報告成功完整寫出才回1；已接收bytes但flush失敗仍回2；空root可回0，缺root回2且stdout沒有報告。"
+    ],
+    "18-06": [
+      "最終版以private modules＋root re-export交付公有API；scan_report借Path取得owned Report，與CLI Settings/輸出分離。",
+      "typed RunError供caller分類，Error::source借出可用標準原因；有限原因鏈由main逐層走訪，私有非Error包裝不偽稱已實作Error。",
+      "完整答案需能保存到repo外、由外部caller使用並重做fixture；整理邊界與驗收不增加一次重寫1657行作業。",
+      "final所有995行core、662行tests/fixtures Rust逐段全讀，六個實體fixture逐bytes確認，manifest/README/public_api/doctest全部讀；完整答案同頁嵌入。",
+      "外部caller match非exhaustive RunError保留其他分支；缺root仍有typed io::Error與source；Source width/Interrupted/fail_at控制解釋後才出完整tests。"
+    ]
+  },
+  "source_coverage_evidence": [
+    "18A-all-owned-sourcehash.json",
+    "18A-fixture-bytes.json",
+    "18A-read-index.json"
+  ],
+  "prefix_actual_read_additions": [
+    {
+      "path": "docs/chapters/10-06-lesson.md",
+      "lines": [
+        1,
+        104
+      ],
+      "purpose": "clap derive/attributes/try_parse_from/error channels"
+    },
+    {
+      "path": "docs/chapters/10-07-lesson.md",
+      "lines": [
+        1,
+        114
+      ],
+      "purpose": "Serde owned model/deny_unknown_fields/codec APIs"
+    },
+    {
+      "path": "docs/chapters/10-08-lesson.md",
+      "lines": [
+        1,
+        132
+      ],
+      "purpose": "TempDir ownership/Command/Output/CARGO_BIN_EXE/from_utf8"
+    }
+  ],
+  "limitations": [
+    "13/15/17已審後再進18A，不宣稱全書首讀盲測；前文按實際需要定點讀，未整本通讀01–12。",
+    "18A initial direct-ref freeze未包含八個stage README及12個材料的全部檔案；實際補讀並freeze完整readme/fixture後才封存本初判。",
+    "本波不評18B，不評未由A專案命令載入的其他workspace member內容。",
+    "必要前文定點銜接審閱，非全書首讀盲測。",
+    "未重跑Rust；不以此報告代替執行驗證。"
+  ],
+  "coverage": [
+    {
+      "section": "18-01",
+      "doc_hash": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+      "read_doc_lines": [
+        1,
+        109
+      ],
+      "all_snippet_files_read": [
+        "examples/ch15-projects/materials/duplicate-demo/notes-a.txt"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch15-projects/materials/duplicate-demo/notes-a.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      "four_question_evidence": {
+        "identity": "A專案是一個只產生報告的重複內容工具；原生root、六檔固定bytes、邏輯重複量與A1→A4交付分開。",
+        "mechanism": "先size、再BLAKE3、最後完整bytes；相同摘要不是相同內容證明。完整性、輸出完成與0/1/2仍是不同判準。",
+        "need": "基本Python讀者可把已教的檔案、集合、錯誤、CLI組合成可操作工具；新增工作按四個stage切開，不一次重寫整份答案。",
+        "operation_and_example": "六份fixture完整bytes已逐檔開讀；fixed toolchain語法在命令前教，獨立check建lock後才--locked，四階段待做與示範命令作用清楚。",
+        "small_change": "把root換成其他目錄不改大小/摘要/bytes政策；hard-link路徑數是邏輯量，不能解讀成可釋放實體容量。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "18-02",
+      "doc_hash": "cd7c87d654ab92944d6d0e9b186fe7b791ee2577ba05161be80478a68ff0b7a8",
+      "read_doc_lines": [
+        1,
+        233
+      ],
+      "all_snippet_files_read": [
+        "examples/ch15-projects/a1-starter/Cargo.toml",
+        "examples/ch15-projects/a1-starter/src/lib.rs",
+        "examples/ch15-projects/a1-starter/src/collection.rs",
+        "examples/ch15-projects/a1-starter/checks/collection-tests.rs",
+        "examples/ch15-projects/a1-complete/Cargo.toml",
+        "examples/ch15-projects/a1-complete/src/lib.rs",
+        "examples/ch15-projects/a1-complete/src/collection.rs",
+        "examples/ch15-projects/a1-complete/examples/inventory.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch15-projects/a1-starter/Cargo.toml": "c0f63eb3de54abe64e3fc25114c2ec159a4d010b5085103e901d06ea47741805",
+        "examples/ch15-projects/a1-starter/src/lib.rs": "8ea07aa7463342f930d2aa012852a74e6d4d77f9fcb91adba8dba7bd9a05b6bc",
+        "examples/ch15-projects/a1-starter/src/collection.rs": "7938fef9321c56f1a8cfb539786416eaa11816aea47f0511a8c913b26790df20",
+        "examples/ch15-projects/a1-starter/checks/collection-tests.rs": "c23652a6fbcf9b97c717f796e447ad6b76bd2394a5b3411fc983e435b2dfc8ab",
+        "examples/ch15-projects/a1-complete/Cargo.toml": "f60323c1fec090a7b4de0a05119edf73b03ad3b335a82dcf206a789954390d5f",
+        "examples/ch15-projects/a1-complete/src/lib.rs": "8ea07aa7463342f930d2aa012852a74e6d4d77f9fcb91adba8dba7bd9a05b6bc",
+        "examples/ch15-projects/a1-complete/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+        "examples/ch15-projects/a1-complete/examples/inventory.rs": "522cea8fb144ac9d47a2b4c7ca04f938cf5de3f46b7601e8d944865873665d62"
+      },
+      "four_question_evidence": {
+        "identity": "A1只收一般檔案與項目問題；RootError是致命邊界，ScanIssue保留單一項目的失敗。",
+        "mechanism": "validate_root先拒絕link/非目錄；WalkDir不跟內部links，逐筆失敗保存並繼續，Unicode輸出界線與原生Path排序分開。",
+        "need": "先固定可觀察且可測的檔案清單，後面內容比較才能保存正確原生路徑與metadata。",
+        "operation_and_example": "起始manifest/lib/collection、完整八項驗收、完成collection與inventory全讀；checks需手動加入、零測試非完成與三個stub無觀察意義均在操作前說明。",
+        "small_change": "缺root回RootError；內部缺項目回ScanIssue且保留其他文件；空目錄/空檔/hidden檔的角色可由來源與tests直接判斷。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "18-03",
+      "doc_hash": "e5c04133e7ed5866dfe72ccff82bb94a572d6d487c3fa4026e5530b1c799fed3",
+      "read_doc_lines": [
+        1,
+        292
+      ],
+      "all_snippet_files_read": [
+        "examples/ch15-projects/a2-starter/Cargo.toml",
+        "examples/ch15-projects/a2-starter/src/lib.rs",
+        "examples/ch15-projects/a2-starter/src/content.rs",
+        "examples/ch15-projects/a2-starter/src/collection.rs",
+        "examples/ch15-projects/a2-starter/src/stream.rs",
+        "examples/ch15-projects/a2-starter/src/files.rs",
+        "examples/ch15-projects/a2-starter/checks/content-tests.rs",
+        "examples/ch15-projects/a2-complete/Cargo.toml",
+        "examples/ch15-projects/a2-complete/src/lib.rs",
+        "examples/ch15-projects/a2-complete/src/collection.rs",
+        "examples/ch15-projects/a2-complete/src/stream.rs",
+        "examples/ch15-projects/a2-complete/src/files.rs",
+        "examples/ch15-projects/a2-complete/src/content.rs",
+        "examples/ch15-projects/a2-complete/examples/a2_groups.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch15-projects/a2-starter/Cargo.toml": "ba0edbf847d15091d4a533aed5bc88050c1290ae831ed27ec2accd6f7ec9e64a",
+        "examples/ch15-projects/a2-starter/src/lib.rs": "1d565ff089c0d764067cd3c5e68b2fcb15e81256f3f6298d24e463b64761ac84",
+        "examples/ch15-projects/a2-starter/src/content.rs": "5d6d2fddf975be0e7efb342df1a80d6c87af44d9a5d596d02296a1ed93663dbe",
+        "examples/ch15-projects/a2-starter/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+        "examples/ch15-projects/a2-starter/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+        "examples/ch15-projects/a2-starter/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+        "examples/ch15-projects/a2-starter/checks/content-tests.rs": "79c0c0ee318a32f8e6cf4a83f64f4ac615559a1ce24c08f55eb764007fa74377",
+        "examples/ch15-projects/a2-complete/Cargo.toml": "2091ca16e1b592f879e2e1975494a769b621e7ca89fb380ca27c0a06faf274a7",
+        "examples/ch15-projects/a2-complete/src/lib.rs": "1d565ff089c0d764067cd3c5e68b2fcb15e81256f3f6298d24e463b64761ac84",
+        "examples/ch15-projects/a2-complete/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+        "examples/ch15-projects/a2-complete/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+        "examples/ch15-projects/a2-complete/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+        "examples/ch15-projects/a2-complete/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+        "examples/ch15-projects/a2-complete/examples/a2_groups.rs": "da1ab0e6e7e4077a966507d629246e56fb93b620298324cfe9477d3fef3e6f92"
+      },
+      "four_question_evidence": {
+        "identity": "A2將同大小同摘要候選分成真正bytes相同的群組；讀失敗保留確切FileIssue，不當成不同內容。",
+        "mechanism": "大小單例跳hash；每個candidate比各代表，碰撞可留多真群；失敗移除確切原生path並從剩餘桶重建，候選嚴格減少才保證有限。",
+        "need": "只丟一次失敗比較會漏掉B/B配對，重建讓其他檔案仍能交付成果；私有callback違約panic與一般檔案問題政策有明確區分。",
+        "operation_and_example": "starter三個stub、stream/files所有helper、12項新增tests、complete全實作與示範全讀；a2 complete tests尾段與已讀checks逐bytes相同。",
+        "small_change": "強制相同摘要的A/B/B仍只留B/B；左A讀錯後移A重建；不在候選內的錯誤path觸發內部契約檢查，不能無限retry。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "18-04",
+      "doc_hash": "e4d3cc6aa7a95081ebbea26e108bf3eb1c3fb0a0f0069c353a64fc01efde37d6",
+      "read_doc_lines": [
+        1,
+        307
+      ],
+      "all_snippet_files_read": [
+        "examples/ch15-projects/a3-starter/Cargo.toml",
+        "examples/ch15-projects/a3-starter/src/report.rs",
+        "examples/ch15-projects/a3-starter/src/lib.rs",
+        "examples/ch15-projects/a3-starter/src/collection.rs",
+        "examples/ch15-projects/a3-starter/src/content.rs",
+        "examples/ch15-projects/a3-starter/src/stream.rs",
+        "examples/ch15-projects/a3-starter/src/files.rs",
+        "examples/ch15-projects/a3-starter/src/metrics.rs",
+        "examples/ch15-projects/a3-starter/checks/report-tests.rs",
+        "examples/ch15-projects/a3-complete/Cargo.toml",
+        "examples/ch15-projects/a3-complete/src/lib.rs",
+        "examples/ch15-projects/a3-complete/src/collection.rs",
+        "examples/ch15-projects/a3-complete/src/content.rs",
+        "examples/ch15-projects/a3-complete/src/stream.rs",
+        "examples/ch15-projects/a3-complete/src/files.rs",
+        "examples/ch15-projects/a3-complete/src/metrics.rs",
+        "examples/ch15-projects/a3-complete/src/report.rs",
+        "examples/ch15-projects/a3-complete/examples/a3_text.rs",
+        "examples/ch15-projects/a3-complete/examples/a3_json.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch15-projects/a3-starter/Cargo.toml": "bbd5f17df26dde37503fa2b149ad35cf9062b3c579ed37ed39895da7de7a6e30",
+        "examples/ch15-projects/a3-starter/src/report.rs": "ff0440b01e80081ec79e452cff9387af68eb23b81d58e60bb8e972b6a9bd362e",
+        "examples/ch15-projects/a3-starter/src/lib.rs": "0a9dfdc9c20b30e02b80265ce0fda41a2079e41923696f277cc639e7f71f21dc",
+        "examples/ch15-projects/a3-starter/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+        "examples/ch15-projects/a3-starter/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+        "examples/ch15-projects/a3-starter/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+        "examples/ch15-projects/a3-starter/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+        "examples/ch15-projects/a3-starter/src/metrics.rs": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+        "examples/ch15-projects/a3-starter/checks/report-tests.rs": "b010cf009fa618003124e58f020c1df7ada61c8b48dfe2f21b4002ec2c01b97e",
+        "examples/ch15-projects/a3-complete/Cargo.toml": "9d2963525d2add003ef0ba19784d85e9fcda9a175220c251213d1dc41d985daa",
+        "examples/ch15-projects/a3-complete/src/lib.rs": "0a9dfdc9c20b30e02b80265ce0fda41a2079e41923696f277cc639e7f71f21dc",
+        "examples/ch15-projects/a3-complete/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+        "examples/ch15-projects/a3-complete/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+        "examples/ch15-projects/a3-complete/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+        "examples/ch15-projects/a3-complete/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+        "examples/ch15-projects/a3-complete/src/metrics.rs": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+        "examples/ch15-projects/a3-complete/src/report.rs": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705",
+        "examples/ch15-projects/a3-complete/examples/a3_text.rs": "3ba907c1f92cf45dfff91e30a869db8e3b342c705baaf4b7cb9dc6e6a1e40359",
+        "examples/ch15-projects/a3-complete/examples/a3_json.rs": "4413d137822826deb5b91a806417d0e4b6c03bbc3cf3d9a6b9ca6ad900b827a0"
+      },
+      "four_question_evidence": {
+        "identity": "A3以owned Report同時服務穩定文字與JSON；native Path排序、Debug診斷與可反向開檔的路徑不可混用。",
+        "mechanism": "先保留PathBuf排序再轉String；IssueRow在排序結束前保留Option<PathBuf>，逐欄tie-break；checked乘加不能產錯誤正常總量。",
+        "need": "相同資料須有穩定順序且問題不能消失；兩種輸出共用模型，完整性由兩種issues計算。",
+        "operation_and_example": "metrics/report起始檔、九項新tests、完整report與text/json examples全讀；Option::as_ref、None/Some排序與Serde新增欄位映射都在code前教。",
+        "small_change": "a/b和a.txt依原生Path排序而非顯示String；控制字元用Debug與JSON escape保留單列；u64乘法或合計溢位回ReportError。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "18-05",
+      "doc_hash": "759c1dd6cd374e7a9863e9482f6e662df1313b0dc0a4fe6a23c7dd227e6bc27d",
+      "read_doc_lines": [
+        1,
+        326
+      ],
+      "all_snippet_files_read": [
+        "examples/ch15-projects/a4-starter/Cargo.toml",
+        "examples/ch15-projects/a4-starter/src/app.rs",
+        "examples/ch15-projects/a4-starter/src/main.rs",
+        "examples/ch15-projects/a4-starter/src/lib.rs",
+        "examples/ch15-projects/a4-starter/src/collection.rs",
+        "examples/ch15-projects/a4-starter/src/content.rs",
+        "examples/ch15-projects/a4-starter/src/stream.rs",
+        "examples/ch15-projects/a4-starter/src/files.rs",
+        "examples/ch15-projects/a4-starter/src/metrics.rs",
+        "examples/ch15-projects/a4-starter/src/report.rs",
+        "examples/ch15-projects/a4-starter/checks/app-tests.rs",
+        "examples/ch15-projects/a4-starter/checks/cli-tests.rs",
+        "examples/ch15-projects/a4-complete/Cargo.toml",
+        "examples/ch15-projects/a4-complete/src/lib.rs",
+        "examples/ch15-projects/a4-complete/src/collection.rs",
+        "examples/ch15-projects/a4-complete/src/content.rs",
+        "examples/ch15-projects/a4-complete/src/stream.rs",
+        "examples/ch15-projects/a4-complete/src/files.rs",
+        "examples/ch15-projects/a4-complete/src/metrics.rs",
+        "examples/ch15-projects/a4-complete/src/report.rs",
+        "examples/ch15-projects/a4-complete/src/app.rs",
+        "examples/ch15-projects/a4-complete/src/main.rs",
+        "examples/ch15-projects/a4-complete/tests/cli.rs"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch15-projects/a4-starter/Cargo.toml": "458eb9ac1d079f53addd605fbd011614b958600c00ca44cce9922dc05ac2ab73",
+        "examples/ch15-projects/a4-starter/src/app.rs": "7660a84167a7ad6a91aaae9bf886283be9446c180e5728ca15b09754eaeb604e",
+        "examples/ch15-projects/a4-starter/src/main.rs": "f45b816daa9e5bd9399e2e7c980e2859e1a76ff584c72cd3ed69cf9fcb909286",
+        "examples/ch15-projects/a4-starter/src/lib.rs": "2a6ce946703416068c2f9e0e10adbb440d6d548d69088af66de7985fe5b3f5b5",
+        "examples/ch15-projects/a4-starter/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+        "examples/ch15-projects/a4-starter/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+        "examples/ch15-projects/a4-starter/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+        "examples/ch15-projects/a4-starter/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+        "examples/ch15-projects/a4-starter/src/metrics.rs": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+        "examples/ch15-projects/a4-starter/src/report.rs": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705",
+        "examples/ch15-projects/a4-starter/checks/app-tests.rs": "04214db9cc611921e18e258b5981c02d86a9c4866e850e429649981258d13030",
+        "examples/ch15-projects/a4-starter/checks/cli-tests.rs": "81b43bc488634e3bd3a7d8f5adedbcdb0cbca6c215d237c271ed249d05a10ca2",
+        "examples/ch15-projects/a4-complete/Cargo.toml": "92879593c8aa0a44d4a10b0d8a050a0896bb23f0809a8ad2d80641f975cabe47",
+        "examples/ch15-projects/a4-complete/src/lib.rs": "2a6ce946703416068c2f9e0e10adbb440d6d548d69088af66de7985fe5b3f5b5",
+        "examples/ch15-projects/a4-complete/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+        "examples/ch15-projects/a4-complete/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+        "examples/ch15-projects/a4-complete/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+        "examples/ch15-projects/a4-complete/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+        "examples/ch15-projects/a4-complete/src/metrics.rs": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+        "examples/ch15-projects/a4-complete/src/report.rs": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705",
+        "examples/ch15-projects/a4-complete/src/app.rs": "a75b1312788a3249c5005881fa4d50dcf1dbc7e0358832fdeb16a15835ecdaf7",
+        "examples/ch15-projects/a4-complete/src/main.rs": "e16dc9535529296ed9db24de5a3b8013847be6b1b6357090c7e1ea377c019983",
+        "examples/ch15-projects/a4-complete/tests/cli.rs": "2aa98c160c35c1b3bc0f0de32b98005ac7615c5c174bff5256defadc3f0da604"
+      },
+      "four_question_evidence": {
+        "identity": "A4把原生root/--json接到同一份Report與真實stdout/stderr/ExitCode；0完整、1部分、2致命。",
+        "mechanism": "write_all成功後還要flush成功才回0/1；write/flush任一失敗沿RunError回2，help/version同樣檢查輸出完成。",
+        "need": "library成功並未驗收CLI出口；ControlledWriter測完成條件，Command child測真實資料/出口/狀態。",
+        "operation_and_example": "starter app/main/lib/manifest、六app與六child tests、complete app與所有共用modules全讀；checks app module與tests/cli檔案的安裝方式分開且清楚。",
+        "small_change": "部分報告成功完整寫出才回1；已接收bytes但flush失敗仍回2；空root可回0，缺root回2且stdout沒有報告。"
+      },
+      "rendered_full_source_missing": []
+    },
+    {
+      "section": "18-06",
+      "doc_hash": "0d3112fc092f4d730391bb884b2c9f55c06126e459cc8a84397f7fba54ed4e60",
+      "read_doc_lines": [
+        1,
+        254
+      ],
+      "all_snippet_files_read": [
+        "examples/ch15-projects/duplicate-finder/src/lib.rs",
+        "examples/ch15-projects/duplicate-finder/src/app.rs",
+        "examples/ch15-projects/duplicate-finder/src/main.rs",
+        "examples/ch15-projects/duplicate-finder/Cargo.toml",
+        "examples/ch15-projects/duplicate-finder/src/collection.rs",
+        "examples/ch15-projects/duplicate-finder/src/stream.rs",
+        "examples/ch15-projects/duplicate-finder/src/files.rs",
+        "examples/ch15-projects/duplicate-finder/src/content.rs",
+        "examples/ch15-projects/duplicate-finder/src/metrics.rs",
+        "examples/ch15-projects/duplicate-finder/src/report.rs",
+        "examples/ch15-projects/duplicate-finder/src/tests.rs",
+        "examples/ch15-projects/duplicate-finder/tests/cli.rs",
+        "examples/ch15-projects/duplicate-finder/tests/public_api.rs",
+        "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/different.txt",
+        "examples/ch15-projects/duplicate-finder/README.md"
+      ],
+      "actual_sourcehashes": {
+        "examples/ch15-projects/duplicate-finder/src/lib.rs": "a18cfdacb40ef716fe0bf1ff09c9be23a062c7acb038ba87ce50e2fe07b356ce",
+        "examples/ch15-projects/duplicate-finder/src/app.rs": "c6138d69c5bd24d91e50882fc077b50aa8b934ecd7ce9517f1854b7481688c51",
+        "examples/ch15-projects/duplicate-finder/src/main.rs": "3fcd498bf13c80829d6b876eebcc03e18a33b44fd4c98d6c7f4ba7bf59735e64",
+        "examples/ch15-projects/duplicate-finder/Cargo.toml": "28b420b2a4400b057ede8ea5b99b98fa598aaa69a15bbf9d6a03bd8968bbb9d6",
+        "examples/ch15-projects/duplicate-finder/src/collection.rs": "efc48b93c3ad6c60f7bbdf584571bbff163b524c3a4299093e9746b8657902fd",
+        "examples/ch15-projects/duplicate-finder/src/stream.rs": "136512514845c458595f88ee83739612c1b7748f29b305803bfe851297d08241",
+        "examples/ch15-projects/duplicate-finder/src/files.rs": "fbced494226c33ba73ec4851c148d5e62ca68106614ff8e7bd3398d52e444034",
+        "examples/ch15-projects/duplicate-finder/src/content.rs": "2a03f1ca369c22c70df34c7c23384d0b13c1cdffcbdd39f147adec94bd4f0191",
+        "examples/ch15-projects/duplicate-finder/src/metrics.rs": "1909aed4a5728a18fd5b0b3a997204ed41112a34dd15d55a4e55308e6ab622f0",
+        "examples/ch15-projects/duplicate-finder/src/report.rs": "5591d35878e2755d003785983556035911dab0d1d41eeb17467988e386bdeba3",
+        "examples/ch15-projects/duplicate-finder/src/tests.rs": "7787b6fb4f6c4106e5353236e730d79bb542f380a71cb32d397c2290faf9dbdf",
+        "examples/ch15-projects/duplicate-finder/tests/cli.rs": "861589beb3fe4c2c1cc07bc021814a93c4ecd5ca4fed1b10b25e0adb7b05a3a9",
+        "examples/ch15-projects/duplicate-finder/tests/public_api.rs": "6cf58a811534bdf13bf48c7c8841c839ec06fc1a6db144a9b1267e9b7684dd7f",
+        "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/different.txt": "87ee07307593493b96730dcbb36fd51e9fa4ba189696dad60758e89e6e7750bf",
+        "examples/ch15-projects/duplicate-finder/README.md": "1a02a694fd507f141ee722e900fdc1f39aa61424d8e53b5c82f83be2dfeab72f"
+      },
+      "four_question_evidence": {
+        "identity": "最終版以private modules＋root re-export交付公有API；scan_report借Path取得owned Report，與CLI Settings/輸出分離。",
+        "mechanism": "typed RunError供caller分類，Error::source借出可用標準原因；有限原因鏈由main逐層走訪，私有非Error包裝不偽稱已實作Error。",
+        "need": "完整答案需能保存到repo外、由外部caller使用並重做fixture；整理邊界與驗收不增加一次重寫1657行作業。",
+        "operation_and_example": "final所有995行core、662行tests/fixtures Rust逐段全讀，六個實體fixture逐bytes確認，manifest/README/public_api/doctest全部讀；完整答案同頁嵌入。",
+        "small_change": "外部caller match非exhaustive RunError保留其他分支；缺root仍有typed io::Error與source；Source width/Interrupted/fail_at控制解釋後才出完整tests。"
+      },
+      "rendered_full_source_missing": []
+    }
+  ],
+  "role": "independent non-author continuity reviewer",
+  "prior_author_ledgers_or_peer_findings_seen": false,
+  "sealed_utc": "2026-10-15"
+}

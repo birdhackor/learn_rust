@@ -1,0 +1,616 @@
+{
+  "review_id": "round17-loom-miri",
+  "scope": [
+    "17.6"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python+實際已讀13.8、15.1–15.4（已各自seal）及17.1–17.5；不是僅按作者『前文已教』宣稱。15.5+、14async與17.7+未作本節先備。",
+  "independence": "未讀root作者validation/ledger、peer、reader或historical findings。正文17.6先讀後，因缺實讀15前綴而先完成15.1–15.4技術封存，再完成本節source初判。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "全文、16snippets、15owned package/fixture檔、ch12-unsafe完整normal library5檔、兩組完整故意失敗fixture/expected與兩SVG source靜態核對。",
+    "3個full-library bytes比較對應已sealed15.1–15.4快照；查Loom0.7.2 model/thread實際API及環境限制，讀安裝nightly channel manifest核工具版本元資料。",
+    "11條normal/setup/Miri/expected-fail命令建閉包，未執行或據自己實測聲稱PASS。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "loom_exploration": false,
+    "miri_interpretation": false,
+    "tool_installation": false,
+    "note": "本波未執行Cargo、rustc、Loom、Miri或安裝工具。正文既有驗證主張不當成自己run evidence；本波讀到installed metadata與actualsource，非作者validation。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:37:30.495025+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f",
+    "Cargo.toml": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f",
+    "docs/assets/ch14/loom-paths.svg": "95b87282af7e5fb55d7fdcc42761c821021d2666f2e6b928dea7b30b544b20b4",
+    "docs/assets/ch14/miri-storage.svg": "009b71a12c190640044ee3daad10abd924fc2489425305db7e735711197db367",
+    "docs/chapters/17-06-lesson.md": "e38d0dd8516cddc7b49f1535aa00c40f860437ed8d68a1c073db1cc1b7172586",
+    "examples/ch12-unsafe/Cargo.toml": "d3c9301856f032cacafd7fc18a43eb8f38615ae75752c85b8cf84eb266beb20c",
+    "examples/ch12-unsafe/src/contracts.rs": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+    "examples/ch12-unsafe/src/gat.rs": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+    "examples/ch12-unsafe/src/lib.rs": "6ed58edfdf2f63adb063cb601bee812a20e133fa51acce9ad7c46a356523c7cf",
+    "examples/ch12-unsafe/src/variance.rs": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+    "examples/ch14-model-checking/Cargo.toml": "98be5f8261d9e858ec0ddfb0ca88e1fa4310c0a4a87de28128ce32588d7905b6",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.lock": "511cffa78a86b6d9375eae888102c5324a423709712bc4fd79bfe21b108c7515",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.toml": "5e0fff1a345770f001a7196b887d245d62be39a1a9c9d933a71be7269ee514bf",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/src/lib.rs": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.expected": "16dfb2737f4458cf72f984557d8a1af0a2f93bf1a447e5657bf1f9b876e85af0",
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.rs": "d1570003c5760554c52b269d3096eb9cd9da4b6d089100b27db58875014e0a39",
+    "examples/ch14-model-checking/fixtures/miri-fail/Cargo.lock": "5842ee9b0e5e4a86c1a1a5c05eff0d410a2fb2c33ac223b491b74dc7b624e578",
+    "examples/ch14-model-checking/fixtures/miri-fail/Cargo.toml": "7522e3051d8385b1924239489039a3a9cecdf303a0ee253ef78496253fcd5433",
+    "examples/ch14-model-checking/fixtures/miri-fail/src/main.expected": "88e052e8bfe774128d71f477bcaae4ad8e0a592e852f3d8dc2a034884c1e731c",
+    "examples/ch14-model-checking/fixtures/miri-fail/src/main.rs": "5fd3740a82c8f7ad96852aa7928c24cb31a661d85b2bd8daa7fe0424e6e08a48",
+    "examples/ch14-model-checking/src/lib.rs": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "examples/ch14-model-checking/tests/loom_counter.rs": "1b70332deb52da698ed5f2cceba688e7788f672bfb2daf74efe6352ea2ca5bb6",
+    "examples/ch14-model-checking/tests/loom_counter_solution.rs": "8636a358adce52b7c8b589eda95c9b4bf184681bb25f83a519fe10e167866719",
+    "examples/ch14-model-checking/tests/miri_contracts.rs": "9521909a47173dfc8d7c9bbf9a84bb3eaf3438a3a49406f5895bf73a0e0c865f",
+    "examples/ch14-model-checking/tests/miri_owner_solution.rs": "8e2ce20bdff59c1d7e7e8c2999ca6235dbb51794ac6518af81b982fe350239b8",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "external_source_hashes": {
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/loom-0.7.2/src/model.rs": "035840da0ada949d4457032a8437eb1e1d21616e88e81ceee0b36d47e6961593",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/loom-0.7.2/src/thread.rs": "fc136aba1fdc7e7c713c0781d828631d3450eabd9aefafd12bfb14fa777f7a85",
+    "/workspace/.learn-rust-tools/rustup/toolchains/nightly-2026-10-01-x86_64-unknown-linux-gnu/lib/rustlib/multirust-channel-manifest.toml": "9ed5ba95b353943fc595f68218b73957e92862619c3b4ed91f3bd14e3d490331"
+  },
+  "installed_manifest_metadata": {
+    "rustc": "1.101.0-nightly (21b707e3f 2026-09-30)",
+    "miri-preview": "0.1.0-nightly",
+    "rust-src": "1.101.0-nightly (21b707e3f 2026-09-30)"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "ch12-unsafe",
+      "version": "0.1.0"
+    },
+    {
+      "name": "ch14-model-checking",
+      "version": "0.1.0",
+      "dependencies": [
+        "ch12-unsafe",
+        "loom"
+      ]
+    },
+    {
+      "name": "loom",
+      "version": "0.7.2",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "419e0dc8046cb947daa77eb95ae174acfbddb7673b4151f56d1eed8e93fbfaca",
+      "dependencies": [
+        "cfg-if",
+        "generator",
+        "scoped-tls",
+        "tracing",
+        "tracing-subscriber"
+      ]
+    }
+  ],
+  "nested_locks": {
+    "examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.lock": {
+      "version": 4,
+      "package": [
+        {
+          "name": "aho-corasick",
+          "version": "1.1.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "c982642fa9e8606056828ee9a8505737230110bb1099153c79efe865c59d12ba",
+          "dependencies": [
+            "memchr"
+          ]
+        },
+        {
+          "name": "cc",
+          "version": "1.8.0",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "6651c9ed80effdc7db0ff72512157f901af5e3549e341e24b1dd4887d836d838",
+          "dependencies": [
+            "find-msvc-tools",
+            "shlex"
+          ]
+        },
+        {
+          "name": "cfg-if",
+          "version": "1.0.5",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600"
+        },
+        {
+          "name": "ch14-loom-negative",
+          "version": "0.1.0",
+          "dependencies": [
+            "loom"
+          ]
+        },
+        {
+          "name": "find-msvc-tools",
+          "version": "0.1.14",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "aedcfb3409746eddb02b9e19ebda1c3394f759a152e48ee875a0844d1b955484"
+        },
+        {
+          "name": "generator",
+          "version": "0.8.11",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "1be81b31c9ce4caf7f3178eeb90662bb1864d3ad363ec6bdada3201adff19c37",
+          "dependencies": [
+            "cc",
+            "cfg-if",
+            "libc",
+            "log",
+            "rustversion",
+            "windows-link",
+            "windows-result"
+          ]
+        },
+        {
+          "name": "lazy_static",
+          "version": "1.5.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "20870f649af7073d53e38067b2a84312175d56ea15217e1b15bc83506ec50afb"
+        },
+        {
+          "name": "libc",
+          "version": "0.2.190",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78"
+        },
+        {
+          "name": "log",
+          "version": "0.4.34",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "f9f8bd3e56ce4dfc153cf470fffbfa98c7620958b312ca5c3a4b8d5181fd13c6"
+        },
+        {
+          "name": "loom",
+          "version": "0.7.2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "419e0dc8046cb947daa77eb95ae174acfbddb7673b4151f56d1eed8e93fbfaca",
+          "dependencies": [
+            "cfg-if",
+            "generator",
+            "scoped-tls",
+            "tracing",
+            "tracing-subscriber"
+          ]
+        },
+        {
+          "name": "matchers",
+          "version": "0.2.0",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "d1525a2a28c7f4fa0fc98bb91ae755d1e2d1505079e05539e35bc876b5d65ae9",
+          "dependencies": [
+            "regex-automata"
+          ]
+        },
+        {
+          "name": "memchr",
+          "version": "2.8.3",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "cf8baf1c55e62ffcace7a9f06f4bd9cd3f0c4beb022d3b367256b91b87513d98"
+        },
+        {
+          "name": "nu-ansi-term",
+          "version": "0.50.3",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "7957b9740744892f114936ab4a57b3f487491bbeafaf8083688b16841a4240e5",
+          "dependencies": [
+            "windows-sys"
+          ]
+        },
+        {
+          "name": "once_cell",
+          "version": "1.21.4",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
+        },
+        {
+          "name": "pin-project-lite",
+          "version": "0.2.17",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "a89322df9ebe1c1578d689c92318e070967d1042b512afbe49518723f4e6d5cd"
+        },
+        {
+          "name": "regex-automata",
+          "version": "0.4.18",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "ad8553b9b26413251cbf30e620595c7a41b3887f03da04579c0e6b0d6a06b4b2",
+          "dependencies": [
+            "aho-corasick",
+            "memchr",
+            "regex-syntax"
+          ]
+        },
+        {
+          "name": "regex-syntax",
+          "version": "0.8.11",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "d6f6ff9a378485b298a5286656da665ba74413d36db0979633275d2e708145d4"
+        },
+        {
+          "name": "rustversion",
+          "version": "1.0.23",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "cf54715a573b99ac80df0bc206da022bcd442c974952c7b9720069370852e21f"
+        },
+        {
+          "name": "scoped-tls",
+          "version": "1.0.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "e1cf6437eb19a8f4a6cc0f7dca544973b0b78843adbfeb3683d1a94a0024a294"
+        },
+        {
+          "name": "sharded-slab",
+          "version": "0.1.7",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "f40ca3c46823713e0d4209592e8d6e826aa57e928f09752619fc696c499637f6",
+          "dependencies": [
+            "lazy_static"
+          ]
+        },
+        {
+          "name": "shlex",
+          "version": "2.0.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
+        },
+        {
+          "name": "smallvec",
+          "version": "1.16.3",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "5b3dc8af474f516a851ff4bd12db780f948b9250ad37211e4eec0bccea54e01b"
+        },
+        {
+          "name": "thread_local",
+          "version": "1.1.10",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "1ad99c4c6d32803332c548b1af0540b357b3f5fc0be8f6c6bfe8b2e6ae784070",
+          "dependencies": [
+            "cfg-if"
+          ]
+        },
+        {
+          "name": "tracing",
+          "version": "0.1.44",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "63e71662fa4b2a2c3a26f570f037eb95bb1f85397f3cd8076caed2f026a6d100",
+          "dependencies": [
+            "pin-project-lite",
+            "tracing-core"
+          ]
+        },
+        {
+          "name": "tracing-core",
+          "version": "0.1.36",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "db97caf9d906fbde555dd62fa95ddba9eecfd14cb388e4f491a66d74cd5fb79a",
+          "dependencies": [
+            "once_cell",
+            "valuable"
+          ]
+        },
+        {
+          "name": "tracing-log",
+          "version": "0.2.0",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "ee855f1f400bd0e5c02d150ae5de3840039a3f54b025156404e34c23c03f47c3",
+          "dependencies": [
+            "log",
+            "once_cell",
+            "tracing-core"
+          ]
+        },
+        {
+          "name": "tracing-subscriber",
+          "version": "0.3.23",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "cb7f578e5945fb242538965c2d0b04418d38ec25c79d160cd279bf0731c8d319",
+          "dependencies": [
+            "matchers",
+            "nu-ansi-term",
+            "once_cell",
+            "regex-automata",
+            "sharded-slab",
+            "smallvec",
+            "thread_local",
+            "tracing",
+            "tracing-core",
+            "tracing-log"
+          ]
+        },
+        {
+          "name": "valuable",
+          "version": "0.1.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "ba73ea9cf16a25df0c8caa16c51acb937d5712a8429db78a3ee29d5dcacd3a65"
+        },
+        {
+          "name": "windows-link",
+          "version": "0.2.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5"
+        },
+        {
+          "name": "windows-result",
+          "version": "0.4.1",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "7781fa89eaf60850ac3d2da7af8e5242a5ea78d1a11c49bf2910bb5a73853eb5",
+          "dependencies": [
+            "windows-link"
+          ]
+        },
+        {
+          "name": "windows-sys",
+          "version": "0.61.2",
+          "source": "registry+https://github.com/rust-lang/crates.io-index",
+          "checksum": "ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc",
+          "dependencies": [
+            "windows-link"
+          ]
+        }
+      ]
+    },
+    "examples/ch14-model-checking/fixtures/miri-fail/Cargo.lock": {
+      "version": 4,
+      "package": [
+        {
+          "name": "ch14-miri-fail",
+          "version": "0.1.0"
+        }
+      ]
+    }
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 40,
+      "source": "examples/ch14-model-checking/Cargo.toml",
+      "tag": null,
+      "included_sha256": "98be5f8261d9e858ec0ddfb0ca88e1fa4310c0a4a87de28128ce32588d7905b6",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 52,
+      "source": "examples/ch12-unsafe/Cargo.toml",
+      "tag": null,
+      "included_sha256": "d3c9301856f032cacafd7fc18a43eb8f38615ae75752c85b8cf84eb266beb20c",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 58,
+      "source": "examples/ch12-unsafe/src/lib.rs",
+      "tag": null,
+      "included_sha256": "6ed58edfdf2f63adb063cb601bee812a20e133fa51acce9ad7c46a356523c7cf",
+      "included_lines": 3
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 64,
+      "source": "examples/ch12-unsafe/src/gat.rs",
+      "tag": null,
+      "included_sha256": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+      "included_lines": 101
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 70,
+      "source": "examples/ch12-unsafe/src/variance.rs",
+      "tag": null,
+      "included_sha256": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+      "included_lines": 21
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 76,
+      "source": "examples/ch12-unsafe/src/contracts.rs",
+      "tag": null,
+      "included_sha256": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+      "included_lines": 167
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 84,
+      "source": "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.rs",
+      "tag": null,
+      "included_sha256": "d1570003c5760554c52b269d3096eb9cd9da4b6d089100b27db58875014e0a39",
+      "included_lines": 27
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 90,
+      "source": "examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.toml",
+      "tag": null,
+      "included_sha256": "5e0fff1a345770f001a7196b887d245d62be39a1a9c9d933a71be7269ee514bf",
+      "included_lines": 11
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 96,
+      "source": "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.expected",
+      "tag": null,
+      "included_sha256": "16dfb2737f4458cf72f984557d8a1af0a2f93bf1a447e5657bf1f9b876e85af0",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 124,
+      "source": "examples/ch14-model-checking/tests/loom_counter.rs",
+      "tag": null,
+      "included_sha256": "1b70332deb52da698ed5f2cceba688e7788f672bfb2daf74efe6352ea2ca5bb6",
+      "included_lines": 25
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 167,
+      "source": "examples/ch14-model-checking/tests/miri_contracts.rs",
+      "tag": null,
+      "included_sha256": "9521909a47173dfc8d7c9bbf9a84bb3eaf3438a3a49406f5895bf73a0e0c865f",
+      "included_lines": 45
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 190,
+      "source": "examples/ch14-model-checking/fixtures/miri-fail/src/main.rs",
+      "tag": null,
+      "included_sha256": "5fd3740a82c8f7ad96852aa7928c24cb31a661d85b2bd8daa7fe0424e6e08a48",
+      "included_lines": 16
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 198,
+      "source": "examples/ch14-model-checking/fixtures/miri-fail/Cargo.toml",
+      "tag": null,
+      "included_sha256": "7522e3051d8385b1924239489039a3a9cecdf303a0ee253ef78496253fcd5433",
+      "included_lines": 8
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 204,
+      "source": "examples/ch14-model-checking/fixtures/miri-fail/src/main.expected",
+      "tag": null,
+      "included_sha256": "88e052e8bfe774128d71f477bcaae4ad8e0a592e852f3d8dc2a034884c1e731c",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 243,
+      "source": "examples/ch14-model-checking/tests/loom_counter_solution.rs",
+      "tag": null,
+      "included_sha256": "8636a358adce52b7c8b589eda95c9b4bf184681bb25f83a519fe10e167866719",
+      "included_lines": 25
+    },
+    {
+      "chapter": "docs/chapters/17-06-lesson.md",
+      "line": 253,
+      "source": "examples/ch14-model-checking/tests/miri_owner_solution.rs",
+      "tag": null,
+      "included_sha256": "8e2ce20bdff59c1d7e7e8c2999ca6235dbb51794ac6518af81b982fe350239b8",
+      "included_lines": 13
+    }
+  ],
+  "commands": [
+    "cargo test --manifest-path examples/ch14-model-checking/fixtures/cargo-test-fail/Cargo.toml --test loom_lost_update --locked",
+    "cargo test -p ch14-model-checking --test loom_counter --locked",
+    "rustup toolchain install nightly-2026-10-01 --profile minimal --component miri",
+    "rustup component add rust-src --toolchain nightly-2026-10-01",
+    "cargo +nightly-2026-10-01 miri setup",
+    "cargo +nightly-2026-10-01 miri --version",
+    "cargo test -p ch14-model-checking --test miri_contracts --locked",
+    "cargo +nightly-2026-10-01 miri test -p ch14-model-checking --test miri_contracts --locked",
+    "cargo +nightly-2026-10-01 miri run --manifest-path examples/ch14-model-checking/fixtures/miri-fail/Cargo.toml --locked",
+    "cargo test -p ch14-model-checking --test loom_counter_solution --locked",
+    "cargo +nightly-2026-10-01 miri test -p ch14-model-checking --test miri_owner_solution --locked"
+  ],
+  "copy_checks": [
+    {
+      "source": "examples/ch12-unsafe/src/gat.rs",
+      "baseline": "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs",
+      "equal": true,
+      "baseline_sha256": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac"
+    },
+    {
+      "source": "examples/ch12-unsafe/src/variance.rs",
+      "baseline": "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs",
+      "equal": true,
+      "baseline_sha256": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898"
+    },
+    {
+      "source": "examples/ch12-unsafe/src/contracts.rs",
+      "baseline": "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs",
+      "equal": true,
+      "baseline_sha256": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d"
+    }
+  ],
+  "loaded_closures": [
+    {
+      "targets": [
+        "loom_counter",
+        "loom_counter_solution",
+        "miri_contracts",
+        "miri_owner_solution"
+      ],
+      "kind": "normal integration targets",
+      "owned": [
+        "各自tests/target.rs",
+        "ch14-model-checking/src/lib.rs（空）",
+        "ch12-unsafe/src/lib.rs",
+        "ch12-unsafe/src/gat.rs",
+        "ch12-unsafe/src/variance.rs",
+        "ch12-unsafe/src/contracts.rs"
+      ],
+      "third_party": [
+        "loom 0.7.2（dev）"
+      ],
+      "notes": "Cargo正常path library全部自動載入、cfg(test)不啟用其dep內單元測試。全dependency source已inline且與已讀15快照相同，無C/FFI。Loom2項各1test，miri_contracts3test，miri_owner_solution1test。"
+    },
+    {
+      "targets": [
+        "loom_lost_update"
+      ],
+      "kind": "isolated cargo-test-fail",
+      "owned": [
+        "fixtures/cargo-test-fail/src/lib.rs（空）",
+        "fixtures/cargo-test-fail/tests/loom_lost_update.rs"
+      ],
+      "third_party": [
+        "loom 0.7.2"
+      ],
+      "expected": [
+        "left: 1"
+      ],
+      "notes": "獨立workspace，只Loom devdependency，不載normal model package的unsafe dependency。"
+    },
+    {
+      "targets": [
+        "miri-fail"
+      ],
+      "kind": "isolated Miri-only binary",
+      "owned": [
+        "fixtures/miri-fail/src/main.rs"
+      ],
+      "dependencies": [],
+      "expected": [
+        "has been freed, so this pointer is dangling"
+      ],
+      "notes": "cfg(not(miri))compile_error拒絕normal executable；Miri編譯時cfg miri去除它。只在Miri解譯故意UAF，不放普通target。"
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "docs/chapters/17-06-lesson.md:21",
+      "finding": "model Fn+Send+Sync+static契約對Loom0.7.2；每輪內新建counter，使用Loom Arc/atomic/thread/join，模型三threads，無外部I/O/polling。spawn實際只要求FnOnce/static（無std式Send敘述被錯加），表格符合來源。"
+    },
+    {
+      "source": "examples/ch14-model-checking/fixtures/cargo-test-fail/tests/loom_lost_update.rs:7",
+      "finding": "兩load可都0後兩store1，兩join後assert2得到反例1；修正僅用fetch_add而保留同model，105答案亦正確。PASS界線限此次探索且指出env限制與弱記憶體未全涵蓋。"
+    },
+    {
+      "source": "docs/chapters/17-06-lesson.md:151",
+      "finding": "Miri解譯safe API內unsafe body、指定路徑未報不等完整soundness；nightly/rust-src/setup/version與main stable區分清楚，安裝metadata版本與所寫commit/date一致。"
+    },
+    {
+      "source": "examples/ch14-model-checking/tests/miri_contracts.rs:1",
+      "finding": "實際呼叫同一ch12_unsafe split helper，兩不重疊區域/0/len/空Vec/超mid共3tests，完整helper與前文sealed source一致。"
+    },
+    {
+      "source": "examples/ch14-model-checking/fixtures/miri-fail/src/main.rs:9",
+      "finding": "pointer指Box內同一i32，drop先dealloc再dereference是明確storage UAF；cfg隔離、expected對原因，不把一般crash或unsupported當UB；修正版先Copy再drop只用普通數值。"
+    },
+    {
+      "source": "docs/assets/ch14/loom-paths.svg",
+      "finding": "兩SVG source/XML與body來源一致，Loom兩欄各自從0、手工路徑不冒充trace；Miri前後同allocation，虛線不當可讀。未做visual。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:38:24.373Z"
+}

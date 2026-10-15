@@ -1,0 +1,526 @@
+{
+  "review_id": "technical-early-round09-impl-iterator-middle",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/09-03-lesson.md",
+    "docs/chapters/09-04-lesson.md"
+  ],
+  "independent_initial": true,
+  "reader_background": "Basic Python and actual1–7,8.1–8.5,9.1/9.2 main prose. No8.6,9.5+,10/11draft/source prerequisite.",
+  "independence": "Own8.3–8.5initialsealedbefore9.3→9.4. No authorverification,continuity,reader,peer orknownfindings record read before this seal.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary or optional APIT/RPIT/edition2024precisecapture,Iterator/IntoIterator/ownership/receiver,first-use,sourceclosure,output/answer or fixture-code issue found.",
+  "method": "Sequential whole-page technical reread and allactualselectedfullsource/manifests/fixtures/expected plusiterator-nextSVGsource/XML. Staticreasoning;notblindfirstread,readerexperiment orbrowservalidation.",
+  "execution": {
+    "cargo_rustc_clippy_tests": [],
+    "browser_visual": false,
+    "author_execution_used_as_own": false,
+    "python_checks": [
+      "hash/snippet paths/markers",
+      "exactpackage3fieldshape/no library/buildscript",
+      "SVG XML parse"
+    ]
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:15:08.136080+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/assets/iterators-v3/iterator-next.svg": "f2512c81d7e13a13c933e05b228aeb7a4291b4fd76895000c7e0e0821df69749",
+    "docs/chapters/09-03-lesson.md": "af37b908bf94c477a21a412fdeb780ec55b75fdb3d4dd91916e57ee22370e458",
+    "docs/chapters/09-04-lesson.md": "af1cd2280166c7e5b70cbe1b67dea4f09efb7001d5a81b948b7070833751e1b1",
+    "examples/intro-workspace/Cargo.lock": "81627cf6fc4300b9cfe4d03d453555138381cbea6f148e75696e8d826f096dbd",
+    "examples/intro-workspace/Cargo.toml": "8175b3dd7d3e481c83cbd3fac60b8e8bd3bd001ae11d4393a0f0e8ae1d2c1c05",
+    "examples/intro-workspace/iterators/Cargo.toml": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+    "examples/intro-workspace/iterators/examples/impl_trait_answer.rs": "9544397ae40869aea2b4150331e783a0cfab345bcb78bfa60c7900b9adfab6cd",
+    "examples/intro-workspace/iterators/examples/impl_trait_borrowed.rs": "f8c2b37206830253917fe2d4b0abcca319ee72bb9613c380c5ab8e701b93e9ef",
+    "examples/intro-workspace/iterators/examples/impl_trait_owned.rs": "79e1aefdd4d5db8acb64b4b7cfc062f66510a52a7630bb40b412bc2e4f56b365",
+    "examples/intro-workspace/iterators/examples/impl_trait_precise.rs": "fb9c5052d2bcdbf92be196f54bcad2dce9795aea10a62a9eee61f7bd3bec4ef4",
+    "examples/intro-workspace/iterators/examples/iterator_answer.rs": "fd3d8da4c91b493884b0d190f14c1a0ae8b88da432f84be2bcaa6e391d73295b",
+    "examples/intro-workspace/iterators/examples/iterator_borrowed_forms.rs": "22a3afbd391b09ed0cae959cda9631b09fda19749d2fc88092775aaa853c7fe2",
+    "examples/intro-workspace/iterators/examples/iterator_for.rs": "eda6da4a938d0fb1e939f3327adb3859ac8c0504683563fcf890b70e2323481f",
+    "examples/intro-workspace/iterators/examples/iterator_next.rs": "289bcf204a35cbfbdb58cb41b2c0a6a34c28e4f97152e023d502dcd99c3eca86",
+    "examples/intro-workspace/iterators/examples/iterator_ownership.rs": "e8d38ab63cbfafa295c9e4b6f230990b31d96fe028f3c55b107c0b8adde1700c",
+    "examples/intro-workspace/iterators/examples/iterator_sources.rs": "a9b72f9f5d7e1de77cb610b8c2fa14007021bc3a641bf681222e19ef825bd3cf",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_implicit_capture.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_implicit_capture.rs": "c929d60dcd3b5da98bc2d7c8a7fa8ec8d1ec2d29f27c3e2b9ca49de0d3fec2f8",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_source_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_source_too_short.rs": "7559d4068b0c7709d5786d9aa5483678a0028f11d536d8ba3f54f979803c0c52",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_two_closures.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_two_closures.rs": "186099a11d75f63f955fcff895acf4ef71c81663a3d2c7510574bce28e5ababa",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_after_move.rs": "97221cdfd909b865970e0f53f4eaba6d1c01afac5b72d84469fce411dda03b1e",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_mut_overlap.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_mut_overlap.rs": "80ea9c51f3ab69c0d1d47a1d37c53ee1591175a1036379de10b09508c7557bed",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/impl_trait_owned.rs:parameter",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/impl_trait_owned.rs:owned",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_two_closures.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/impl_trait_owned.rs:branches",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/impl_trait_owned.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/impl_trait_borrowed.rs:borrowed",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/impl_trait_borrowed.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_source_too_short.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_implicit_capture.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/impl_trait_precise.rs:precise",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/impl_trait_precise.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/impl_trait_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/iterator_next.rs:countdown",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/iterator_next.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/iterator_for.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/iterator_sources.rs:into",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/iterator_sources.rs:sum",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/iterator_sources.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/iterator_ownership.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/iterator_borrowed_forms.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_mut_overlap.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_after_move.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/iterator_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "command_review": [
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example impl_trait_owned --locked"
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example impl_trait_borrowed --locked"
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example impl_trait_precise --locked"
+    },
+    {
+      "document": "docs/chapters/09-03-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example impl_trait_answer --locked"
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example iterator_next --locked"
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example iterator_for --locked"
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example iterator_sources --locked"
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example iterator_ownership --locked"
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example iterator_borrowed_forms --locked"
+    },
+    {
+      "document": "docs/chapters/09-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example iterator_answer --locked"
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-iterators",
+    "manifest": "examples/intro-workspace/iterators/Cargo.toml",
+    "no_library": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "targets": [
+      {
+        "target": "impl_trait_owned",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/impl_trait_owned.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "impl_trait_borrowed",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/impl_trait_borrowed.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "impl_trait_precise",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/impl_trait_precise.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "impl_trait_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/impl_trait_answer.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "iterator_next",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/iterator_next.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "iterator_for",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/iterator_for.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "iterator_sources",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/iterator_sources.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "iterator_ownership",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/iterator_ownership.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "iterator_borrowed_forms",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/iterator_borrowed_forms.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "iterator_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/iterator_answer.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      }
+    ],
+    "test_commands": [],
+    "scope": "All10examplescontainalltypes/impls/helpers/main;nohiddenlibrary,module,adapter or9.5+source. Noall-targets/test-all/Clippy/fmtcommand. Bothpagesrepeatcompleteknownmanifest.",
+    "workspace": "Selected intro-iterators package/lockentrydependency-free;latermembers/registrydependenciesareunselectedmetadata,noprecondition/sourcebodytaught."
+  },
+  "concept_evidence": [
+    {
+      "concept": "Argument-position versus return-position impl Trait",
+      "identity": "9.3:9–11 APITanonymousparameter/caller-selectedconcretetype andcannotexplicitlyturbofishthatparameter;27–31 RPITcallee-selectedopaqueconcretetype,notruntimearbitrarytype.",
+      "need": "9.3:3–5 factorymustreturnreusablebase-capturingworkwhoseconcretetypenameisnormallyunwritableandnotrepresentableasfnpointer.",
+      "operation": "evaluateFninputcontractcomparedwithmake_adderFnoutputcontract;21explicitlystatesFnstrongerthanonce-needischosenforcontrolledinterfacecomparison.31moveCopybaseavoidlocalborrow;44oneconcretehiddenreturntype.",
+      "evidence_and_limits": "DifferentcapturingclosurebranchesE0308;singleclosurebodywithsubtractconditioncorrect20/40. Copieswithdifferentbasevaluesstilloneexpressiontype;callersobserve13/14. No dynamicdispatch/type-erasureorauto-traitoperationassumed.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "2024 RPIT lifetime capture versus closure capture",
+      "identity": "9.3:79–87 definesborrowedfactory,RPITexpandedreturn-positionimplTrait,2024implicitcaptureincludingelidedinputlifetimes,andseparatestypealloweddependenciesfromvalueenvironmentcapture.",
+      "need": "ReturnreaderofexistingStringwithoutownedtextcopywhilekeepingcallerawareofsourceuseconstraint.",
+      "operation": "byte_reader(text:&str)->implFn()->usize returnsmove||text.len(),legalbecause2024captureselidedinputlifetime. SourceouterStringexistsforcall;innerStringescapingreaderE0597.",
+      "evidence_and_limits": "Capturepermissiondoesnotallocate/copytextorremoveborrowrules. Programedition2024explicitinmanifestandpinnedtoolchain;no2021oldruleused.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Precise use capture and deliberate overcapture comparison",
+      "identity": "9.3:103–116 unused&strinputcomparisonpurpose,default2024overcaptureevenwithoutbodyreference;use<'a>/use<>andbound+syntaxintroducedbeforefirstprecisesource119.",
+      "need": "Exposewhattypecontractallowsratherthanmistakingbodyinspectionforcallers'publicdependencyrule.",
+      "operation": "precise_reader<'a>saveborrowandallow'a;fixed_reader use<>savestaticconstantclosureandexcludeinput,soindependentvalueoutlivesinside. ImplicitcounterpartsameunusedinputfailsE0597.",
+      "evidence_and_limits": "128saysuse<>cannoteliminateactualcapturedreferenceandcurrentnamedtypeparametersmustallbelisted. Actualexamplehasonlylifetimes,noconst/APITcapture-listedgeused. No+'a lifetimeboundconfusedwithcapturepermission.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "FnMut factory answer",
+      "identity": "9.3:132–134 requiresownedcapturedcounterandFnMutcallcapability,mutcallerbindingbeforefullanswer139.",
+      "need": "Retainstateafterfactorylocalsendandupdateindependentlyperreturnedwork.",
+      "operation": "make_counter1→2/3;separate10→11. moveownsCopyi32field,bodychangesitviaFnMutreceiver.",
+      "evidence_and_limits": "No borrowedfactorylocalescapes;notFnclaimnorresetcountereachcall. Smallnonoverflowingmaterials scoped.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Iterator Item,next,stateandlaziness",
+      "identity": "9.4:9–15 definesiteratorvalue/Iterator,Itemownedorref,next(&mutself)->Option<Self::Item>,firstNoneforforbutnotuniversalpermanentexhaustion.",
+      "need": "9.4:3–5 movesadvance/index/endresponsibilitytosourcewithoutclaimingindexloopscannotwork.",
+      "operation": "Countdownremainingpositivesavecurrent,decrement,Some;nonpositiveNone;namedconstructorandpreludebeforefirstcode32.35lazymeansnextproducesitemsnotprebuiltlist,notzeroinitcost.",
+      "evidence_and_limits": "3→2/Some3,2→1/Some2,1→0/Some1,0→0/None;fifthNoneandzero/negativeassertsmatch. Stage'sfusedbehaviornotovergeneralizedtoeveryIterator.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "IntoIterator and generic/custom sources",
+      "identity": "9.4:65–71 IntoIteratormakeswork,Item+IntoIterboundIterator<Item=Self::Item>,byvalueselfincludingreferencecase;IteratorblanketIntoIteratorreturnsitself.",
+      "need": "Oneconsumerhandlesrange,customNumberListandstatefulCountdownwithoutsourceindices/fields.",
+      "operation": "81concrete std::vec::IntoIter<i32>meaningbeforeNumberListimpl86;89boundS:IntoIterator<Item=i32>beforegenericloop92;Vecownedfieldmovestointoiter.",
+      "evidence_and_limits": "Threeorders1,2,3or3,2,1alltotal6;emptyownedlist0. forowns/progressesstreamwithoutoriginalbindingmut;StepDownonepriornext5thenfor3,1sum4showssameprogressnotrebuild.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Borrowed/mutable/owned iterator items and directreference for",
+      "identity": "9.4:105–117 threepathstablegivesborrowortake,Item&String/&mutString/String,sourceuseavailability,iter/iter_mutmutabilityandfor mutownedbindingbeforefullcode120.",
+      "need": "Choose read,modify original,ortransfertextownershipwithobservableownerandnoclone.",
+      "operation": "as_slice.iterreadRust/Python;as_mut_slice.iter_mutappend!;ownedinto_itertransfersString,for mutitemappends savedthenmovesintosavedVec.139referenceIntoIteratorrulesbeforeborrowedformscode142.",
+      "evidence_and_limits": "OriginalVecnotmovedby&Vec/&mutVec for;values1,2become11,12. MutableiteratorlaterusedblockssecondVecmutableborrowE0499;ownedVecmoveevenCopyi32blocksoriginaluseE0382. No futureadapter/collectAPI required.",
+      "status": "sufficient"
+    }
+  ],
+  "fixtures": [
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_two_closures.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_two_closures.expected",
+      "stable_expected": "E0308",
+      "reason": "Differentbase-capturingclosureexpressionscannotbeonehiddenRPITconcretetype.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_source_too_short.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_source_too_short.expected",
+      "stable_expected": "E0597",
+      "reason": "Borrow-capturingreturnedreaderusedafterinsideStringends.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_implicit_capture.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_implicit_capture.expected",
+      "stable_expected": "E0597",
+      "reason": "Edition2024RPITimplicitlycaptureselidedinputlifetimeevenconstantclosurebody.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_mut_overlap.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_mut_overlap.expected",
+      "stable_expected": "E0499",
+      "reason": "iter_mutborrowsVecwhilelaterstream.nextrequiresit;values.pushsecondmutableborrow.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_after_move.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_after_move.expected",
+      "stable_expected": "E0382",
+      "reason": "Vecownedinto_iterconsumesoriginalcontainerdespiteCopyelements.",
+      "executed": false
+    }
+  ],
+  "figure_check": {
+    "path": "docs/assets/iterators-v3/iterator-next.svg",
+    "source_xml_only": true,
+    "xml_well_formed": true,
+    "mapping": "FourtimeframesoneCountdown:remaining3→2,2→1,1→0,0→0 andSome3,Some2,Some1,None. Arrowtextsameworkagainnext,prose37/alt/title/descagree. FooterforfirstNonematchestraitgeneralexception15.",
+    "browser_visual": false
+  },
+  "static_outputs": [
+    {
+      "target": "impl_trait_owned",
+      "expected": [
+        "參數位置接受工作=6",
+        "工廠交回工作=13",
+        "保留工作再呼叫=14",
+        "同一個 closure body 選分支=20、40"
+      ]
+    },
+    {
+      "target": "impl_trait_borrowed",
+      "expected": [
+        "回傳工作借原文字，bytes=4",
+        "來源仍存在，原文字=Rust"
+      ]
+    },
+    {
+      "target": "impl_trait_precise",
+      "expected": [
+        "明確保留來源 lifetime，bytes=4",
+        "明確排除來源 lifetime，內層結束後=4"
+      ]
+    },
+    {
+      "target": "impl_trait_answer",
+      "expected": [
+        "工廠交回的計數工作=2、3"
+      ]
+    },
+    {
+      "target": "iterator_next",
+      "expected": [
+        "第一次 next=Some(3)",
+        "第二次 next=Some(2)",
+        "第三次 next=Some(1)",
+        "第四次 next=None",
+        "第五次仍是=None"
+      ]
+    },
+    {
+      "target": "iterator_for",
+      "expected": [
+        "for 取得=3",
+        "for 取得=2",
+        "for 取得=1",
+        "倒數合計=6"
+      ]
+    },
+    {
+      "target": "iterator_sources",
+      "expected": [
+        "自訂清單合計=6",
+        "range 合計=6",
+        "倒數工作合計=6"
+      ]
+    },
+    {
+      "target": "iterator_ownership",
+      "expected": [
+        "shared item=Rust",
+        "shared item=Python",
+        "mutable 走訪後，原第一項=Rust!",
+        "owned 第一項=Rust! saved",
+        "owned 第二項=Python! saved"
+      ]
+    },
+    {
+      "target": "iterator_borrowed_forms",
+      "expected": [
+        "for &Vec 取得 shared item=1",
+        "for &Vec 取得 shared item=2",
+        "原第一項修改後=11"
+      ]
+    },
+    {
+      "target": "iterator_answer",
+      "expected": [
+        "先取一筆後，for 繼續取得=3",
+        "先取一筆後，for 繼續取得=1"
+      ]
+    }
+  ],
+  "limits": "10runoutputs/assertionsand5fixturecodesstaticallycheckedagainstactualsource/expected. No fresh2024compilerexercise,tests,browserorreaderexperiment;no9.5+or8.6contentused.",
+  "sealed_at_utc": "2026-10-15T08:17:18.165165+00:00"
+}

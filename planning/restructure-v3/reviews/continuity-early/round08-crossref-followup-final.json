@@ -1,0 +1,155 @@
+{
+  "utc": "2026-10-15T09:14:56.218282+00:00",
+  "items": [
+    {
+      "id": "C8-01",
+      "path": "docs/chapters/08-06-lesson.md",
+      "before_sha256": "15b4c6f9ad3fa382090f532d2094f81f5e8779464a8c31e00cdafe5d4c8895ac",
+      "after_sha256": "b6e62b122ad05f778802179ebaabc88c8263a2f51a644ca9469e490344f9a129",
+      "status": "CLOSED",
+      "scope": "指定窄修source+actual1280x800/390x844，非獨立原缺口重現"
+    },
+    {
+      "id": "ACREF01",
+      "path": "docs/chapters/01-08-lesson.md",
+      "before_sha256": "d64133800925f9ded95a43efe017914a502de000096bafda6c4b7637789571c6",
+      "after_sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+      "status": "CLOSED",
+      "scope": "指定窄修source+actual1280x800/390x844，非獨立原缺口重現"
+    },
+    {
+      "id": "ACREF02",
+      "path": "docs/chapters/11-11-lesson.md",
+      "before_sha256": "05671751b4f39bd66f7e05ade583afcaa2d861b4ef1e9d9a046f28245b362665",
+      "after_sha256": "5e87899ccd41749a6a6eb79f6923f101e0d9a6629c6a3a03e73e759456adbca2",
+      "status": "CLOSED",
+      "scope": "指定窄修source+actual1280x800/390x844，非獨立原缺口重現"
+    }
+  ],
+  "source8_changes": [
+    "docs/chapters/08-06-lesson.md"
+  ],
+  "visual_metadata": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "slug": "08-06-lesson",
+      "url": "http://127.0.0.1:8097/chapters/08-06-lesson/",
+      "at": "2026-10-15T09:13:42.865Z",
+      "status": 200,
+      "htmlSha256": "e7a2a0dccf75369c88d771e295ec34bf37e9abcd7d9e8ef7d293365274d1aefd",
+      "focusText": "輸入\t兩個 ? 依序做什麼\t整個 helper 的結果\n\"3\"\t第一個取得3；第二個取得Count\tOk中的有效件數3\n\"abc\"\t第一個整數失敗，轉成Integer並早退；第二個不執行\tErr中的Integer原因\n\"101\"\t第一個取得101；第二個件數失敗，轉成Range並早退\tErr中的Range原因",
+      "table": {
+        "width": 571.71875,
+        "wrapperClient": 970,
+        "wrapperScroll": 970,
+        "left": 0
+      },
+      "link": null
+    },
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "slug": "01-08-lesson",
+      "url": "http://127.0.0.1:8097/chapters/01-08-lesson/",
+      "at": "2026-10-15T09:13:44.079Z",
+      "status": 200,
+      "htmlSha256": "68a61664a640f83330d2273232f3fc99334f6785c6c51213c98ee0a120863a39",
+      "focusText": "程式不會印出 價格=...。與第 1.6 節的名稱找不到、回傳型別不符相比，這份程式的型別與名稱都合法，卻在執行時因這次索引失敗。編譯器若能直接判斷某次索引必定超界，也可能提早拒絕它；不能以「能編譯」推定每次索引都有效。",
+      "table": null,
+      "link": null
+    },
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "slug": "11-11-lesson",
+      "url": "http://127.0.0.1:8097/chapters/11-11-lesson/",
+      "at": "2026-10-15T09:13:45.299Z",
+      "status": 200,
+      "htmlSha256": "6f84ea9d8bafd2ae2c3786a5ee9e424f13cb469ddc3ae75bf23c3714b9291e18",
+      "focusText": "本章依需要選擇不同責任：Box 接手單一值，Rc 管理共同存活，Cell／RefCell 管理內部修改；newtype 建立型別邊界，dyn 與 Any 分別提供共同操作與確切型別辨識。下一章先處理 Cargo 的共用工程設定，再將路徑與錯誤介面用於檔案工作。",
+      "table": null,
+      "link": {
+        "text": "下一章：Cargo 工程設定與檔案處理",
+        "href": "../12-01-lesson/"
+      }
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slug": "08-06-lesson",
+      "url": "http://127.0.0.1:8097/chapters/08-06-lesson/",
+      "at": "2026-10-15T09:13:47.191Z",
+      "status": 200,
+      "htmlSha256": "e7a2a0dccf75369c88d771e295ec34bf37e9abcd7d9e8ef7d293365274d1aefd",
+      "focusText": "輸入\t兩個 ? 依序做什麼\t整個 helper 的結果\n\"3\"\t第一個取得3；第二個取得Count\tOk中的有效件數3\n\"abc\"\t第一個整數失敗，轉成Integer並早退；第二個不執行\tErr中的Integer原因\n\"101\"\t第一個取得101；第二個件數失敗，轉成Range並早退\tErr中的Range原因",
+      "table": {
+        "width": 343,
+        "wrapperClient": 375,
+        "wrapperScroll": 375,
+        "left": 0
+      },
+      "link": null
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slug": "01-08-lesson",
+      "url": "http://127.0.0.1:8097/chapters/01-08-lesson/",
+      "at": "2026-10-15T09:13:48.290Z",
+      "status": 200,
+      "htmlSha256": "68a61664a640f83330d2273232f3fc99334f6785c6c51213c98ee0a120863a39",
+      "focusText": "程式不會印出 價格=...。與第 1.6 節的名稱找不到、回傳型別不符相比，這份程式的型別與名稱都合法，卻在執行時因這次索引失敗。編譯器若能直接判斷某次索引必定超界，也可能提早拒絕它；不能以「能編譯」推定每次索引都有效。",
+      "table": null,
+      "link": null
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "slug": "11-11-lesson",
+      "url": "http://127.0.0.1:8097/chapters/11-11-lesson/",
+      "at": "2026-10-15T09:13:49.421Z",
+      "status": 200,
+      "htmlSha256": "6f84ea9d8bafd2ae2c3786a5ee9e424f13cb469ddc3ae75bf23c3714b9291e18",
+      "focusText": "本章依需要選擇不同責任：Box 接手單一值，Rc 管理共同存活，Cell／RefCell 管理內部修改；newtype 建立型別邊界，dyn 與 Any 分別提供共同操作與確切型別辨識。下一章先處理 Cargo 的共用工程設定，再將路徑與錯誤介面用於檔案工作。",
+      "table": null,
+      "link": {
+        "text": "下一章：Cargo 工程設定與檔案處理",
+        "href": "../12-01-lesson/"
+      }
+    }
+  ],
+  "screenshots_actually_viewed": [
+    "desktop-08-06-lesson.png",
+    "desktop-01-08-lesson.png",
+    "desktop-11-11-lesson.png",
+    "mobile-08-06-lesson.png",
+    "mobile-01-08-lesson.png",
+    "mobile-11-11-lesson.png"
+  ],
+  "decisions": {
+    "C8-01": "三欄保留3/abc/101，第一/第二?、Integer/Range、早退、不執行、Count/i32及整體結果。mobile table343 wrapper375/scroll375，scroll0所有必要欄可見。",
+    "ACREF01": "1.8:93現在明指1.6；實際1.6:61–69簽名i32/bodyunit、99–104 scope名稱不見，對應正確。兩尺寸可讀。",
+    "ACREF02": "11.11尾預告與link明指Cargo共用工程設定+路徑/錯誤介面用檔案，link../12-01-lesson/，目前nextnav亦Cargo工程設定。只核尾預告與標籤，未將12作先備/驗收12全文。"
+  },
+  "exposure": "依root已知項授權窄複查；原初判不改。11全章初判前，source tail -22意外多看到尾部完整來源引入/指令/Any答案根路徑與結語；render footer截圖也顯示preceding answer root，已實際看見Box/Any downcast等片段及目錄名。不能聲稱11盲首讀；後續仍按實際1–10→11.1順序讀，不把此片段當已教先備/獨立發現。另先看到10.4小節標題（非正文），不由標題推coverage。",
+  "limits": "未跑Cargo/build/tests，無repo寫入，未重審全章/全書；只讀root指定三個diff，沒有讀他角9結論。"
+}

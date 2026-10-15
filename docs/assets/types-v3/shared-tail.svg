@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="640" viewBox="0 0 390 640" role="img" aria-labelledby="title desc">
+ <title id="title">兩條清單與tail變數共用同一份尾段</title>
+ <desc id="desc">tail持有一份Rc；第一條清單的next與第二條清單的next各持有一份Rc。三條實線都連向同一份值為120的SharedChain Link配置，因此這份配置有三個strong handle。尾段內的next再擁有指向End的Rc。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="640" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="32" text-anchor="middle" font-weight="bold">三個handle，同一尾段</text>
+  <rect x="110" y="55" width="170" height="65" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="195" y="82" text-anchor="middle">tail</text><text x="195" y="109" text-anchor="middle">Rc handle</text>
+  <rect x="15" y="152" width="165" height="120" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="35" y="185" font-weight="bold">first</text><text x="35" y="220">value: 80</text><text x="35" y="255">next: Rc</text>
+  <rect x="210" y="152" width="165" height="120" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="230" y="185" font-weight="bold">second</text><text x="230" y="220">value: 40</text><text x="230" y="255">next: Rc</text>
+  <path d="M195 122V358" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M97 274V316H110V358" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <path d="M292 274V316H280V358" stroke="#334155" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
+  <rect x="20" y="370" width="350" height="112" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="40" y="405" font-weight="bold">同一份Link配置</text><text x="40" y="440">value: 120，strong: 3</text><text x="40" y="472">next: Rc</text>
+  <path d="M195 484V526" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <rect x="110" y="539" width="170" height="52" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="195" y="574" text-anchor="middle">End</text>
+  <text x="195" y="624" text-anchor="middle">實線：strong，共同保活</text>
+ </g>
+</svg>

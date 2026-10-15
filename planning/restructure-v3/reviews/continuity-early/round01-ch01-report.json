@@ -1,0 +1,341 @@
+{
+  "kind": "sealed independent initial continuity/page judgment",
+  "sealed_at_utc": "2026-10-15T06:31:05.431651+00:00",
+  "scope": [
+    "docs/chapters/01-01-lesson.md",
+    "docs/chapters/01-02-lesson.md",
+    "docs/chapters/01-03-lesson.md",
+    "docs/chapters/01-04-lesson.md",
+    "docs/chapters/01-05-lesson.md",
+    "docs/chapters/01-06-lesson.md",
+    "docs/chapters/01-07-lesson.md",
+    "docs/chapters/01-08-lesson.md"
+  ],
+  "role": "independent continuity/page reviewer; not author, technical reviewer, or firstreader",
+  "reader_background": "basic Python variables/functions/conditions/loops",
+  "prior_material_read": [
+    "AGENTS.md",
+    ".agents/skills/clear-tutorial/SKILL.md",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md",
+    ".agents/skills/clear-tutorial/references/review-protocol.md",
+    ".agents/skills/clear-tutorial/references/calibration.md"
+  ],
+  "independence": {
+    "historical_issues_read": false,
+    "author_ledgers_read": false,
+    "other_review_reports_read": false,
+    "root_dispositions_read": false,
+    "claims_blind_first_read": false
+  },
+  "findings": [
+    {
+      "id": "C1-01",
+      "independent_initial": true,
+      "prompted_by_other_review": false,
+      "role": "continuity/page",
+      "necessity": "necessary",
+      "severity": "增加理解負擔",
+      "confidence": "medium",
+      "type": [
+        "先備依賴",
+        "時序"
+      ],
+      "page": "docs/chapters/01-08-lesson.md",
+      "lines": [
+        49,
+        57
+      ],
+      "first_use": {
+        "source": "examples/intro-workspace/steps/examples/tuple_array.rs",
+        "lines": [
+          25,
+          26
+        ],
+        "via": "01-08-lesson.md:53-55 repeat snippet",
+        "quote": "let mut counts: [i32; 3] = [0; 3];\ncounts[1] = 2;"
+      },
+      "quote_before": "項數不變與元素值不變是兩個問題。若三筆訂單數量起初都是 0，可以寫 [0; 3]，表示重複三次相同的數值；它等同 [0, 0, 0]。",
+      "quote_after": "因為 counts 有 mut，counts[1] = 2; 可以把第二個元素改成 2；長度仍是 3。少了 mut，就不能經由這個 binding 修改元素。",
+      "actual_prior_teaching": [
+        {
+          "source": "docs/chapters/01-05-lesson.md:17",
+          "role": "mutable binding permits reassignment",
+          "quote": "重新指派時不再寫 let，而是以 名稱 = 新值; 更新。"
+        },
+        {
+          "source": "docs/chapters/01-08-lesson.md:27,33",
+          "role": "array indexing reads selected element",
+          "quote": "prices[0] 這次得到 120，prices[2] 是 200。"
+        }
+      ],
+      "missing_minimum_relation": "The first array-element write occurs before prose connects mut and indexed assignment to permission to change one element while preserving length.",
+      "impact": "Under this round’s explain-before-program-use requirement, the learner must first infer a new form and scope of mut from the snippet. Same-section prose then fully explains it; not a blocking concept omission.",
+      "clarified_later": "docs/chapters/01-08-lesson.md:57",
+      "smallest_fix": "Move the existing explanation at line 57 before the repeat snippet, adjusting the referring phrase only.",
+      "visual_evidence": [
+        "desktop-array-mutation-section.png",
+        "mobile-array-mutation-section.png"
+      ],
+      "status": "unfixed; no post-fix review"
+    },
+    {
+      "id": "C1-02",
+      "independent_initial": true,
+      "prompted_by_other_review": false,
+      "role": "continuity/page",
+      "necessity": "optional",
+      "severity": "選讀改善",
+      "confidence": "high",
+      "type": [
+        "閱讀路徑",
+        "排版"
+      ],
+      "page": "docs/chapters/01-07-lesson.md",
+      "lines": [
+        9,
+        19
+      ],
+      "first_use": {
+        "source": "docs/chapters/01-07-lesson.md",
+        "lines": [
+          9,
+          19
+        ],
+        "quote": "**process（行程）**是…；**RAM（Random Access Memory，隨機存取記憶體）**提供…；**CPU（Central Processing Unit，中央處理器）**依…；**bit（位元）**是一個…；**byte（位元組）**由…"
+      },
+      "actual_prior_teaching": "These are the concepts’ first main-text definitions; i32/32 bits was a proportionate preview at 1.4:35, not a prior definition of bit/byte.",
+      "observation": "At both desktop and mobile viewports, the five intended strong spans render literal double asterisks.",
+      "impact": "Definitions, English expansions, Chinese meanings, and roles remain readable, so no prerequisite gap. Cleaner strong markup would make first appearances easier to scan.",
+      "smallest_fix": "Use parser-recognized emphasis boundaries, for example bolding only the term and leaving the Chinese parentheses outside. No conceptual expansion needed.",
+      "visual_evidence": [
+        "desktop-01-07-lesson-top.png",
+        "mobile-01-07-lesson-top.png",
+        "desktop-program-process-context-1.png",
+        "mobile-program-process-context-1.png",
+        "rendered-emphasis-observation.json"
+      ],
+      "status": "unfixed; no post-fix review"
+    }
+  ],
+  "counts": {
+    "necessary": 1,
+    "optional": 1
+  },
+  "positive_dependency_evidence": [
+    {
+      "unit": "1.1–1.2",
+      "focus": "Tool/compile/build/run roles and first complete program",
+      "identity_operation": "Compiler and source/executable distinction at 1.1:5,15–19; fn/main/braces/literal/println/semicolon before complete source at 1.2:16–24.",
+      "q2_mechanism": "check does not execute; build creates executable; run updates and executes, 1.2:34,40,46–52.",
+      "q2_need": "Print Hello and distinguish checking from execution, 1.2:3.",
+      "q4_example": "One output and changed-text rerun distinguish states without claiming compilation proves logic.",
+      "judgment": "sufficient; macro internals reasonably deferred"
+    },
+    {
+      "unit": "1.3",
+      "focus": "Cargo selection and preserved stages",
+      "identity_operation": "package/crate/workspace and manifest/-p/--example/--locked each receive role and operation before command or at immediate explanatory point, 1.3:15,27,37,45,57,67,73,97–105.",
+      "q2_mechanism": "Separate targets retain older source and select one package/example.",
+      "q2_need": "Explicit need to run one preserved stage, 1.3:3.",
+      "q4_example": "hello/greeting and identically named two_lines examples exercise both selectors; complete manifests show only already taught package fields.",
+      "judgment": "sufficient; no extra code compiled through a lib.rs or build helper in the three selected packages"
+    },
+    {
+      "unit": "1.4",
+      "focus": "Typed values, calculations and output",
+      "identity_operation": "let/initialization/type/format placeholder before price snippet; numeric division and scalar role explained, 1.4:7–47.",
+      "q2_mechanism": "i32 versus f64 changes division result; type inference preserves compile-time type.",
+      "q2_need": "Order total and choice of integer or fractional answer, 1.4:3,19–21.",
+      "q4_example": "360, quotient/remainder3/1, decimal3.5 and changed-order answer use the stated rules.",
+      "judgment": "sufficient; bit at 1.4:35 is a preview; size calculation occurs only after 1.7:19 defines units"
+    },
+    {
+      "unit": "1.5",
+      "focus": "Reassignment versus shadowing",
+      "identity_operation": "Immutable/mutable and new binding distinction at 1.5:7,17,25,33,39–41.",
+      "q2_mechanism": "mut writes same typed binding; let introduces a new binding which can use another type.",
+      "q2_need": "Same accumulated state versus next-stage material, 1.5:3,43.",
+      "q4_example": "Freight update and successive counts show the differences; failure fixtures support restrictions; f64 display4 is explained at1.5:62.",
+      "judgment": "sufficient"
+    },
+    {
+      "unit": "1.6",
+      "focus": "Functions, expression/block values, unit and scope",
+      "identity_operation": "Parameter/return shape and tail without semicolon before function snippet; positional mapping/unit/block/scope at1.6:7–29,70–86.",
+      "q2_mechanism": "One shared rule accepts call-specific inputs; block tail yields a value; scope limits name availability.",
+      "q2_need": "Avoid maintaining duplicated calculation rules,1.6:3; local subtotal for freight computation,1.6:70.",
+      "q4_example": "Two distinct order inputs use the same subtotal; tail-semicolon and scope failures have specific interpretation; answer includes every helper inline.",
+      "judgment": "sufficient; no need for return keyword or memory layout before shown programs"
+    },
+    {
+      "unit": "1.7",
+      "focus": "Runtime state, size/location, frames and heap preview",
+      "identity_operation": "Process/RAM/CPU roles1.7:7–11; bit/byte and value-size-location1.7:19–23; frame/stack1.7:52–64; allocation/pointer1.7:68–76; handoff/release1.7:82–92.",
+      "q2_mechanism": "Return passes value to caller without retaining completed frame; pointer separates location from content; heap block can continue after creator call when still needed.",
+      "q2_need": "Where are executing values, why can main use returned result, varying detail size, and caller needs detail after inner work,1.7:3,68,82.",
+      "q4_example": "Five actual-page diagrams support their specific relationships; second subtotal call gives160; same H1 is tracked through T1–T4 with distinct time/location arrows.",
+      "judgment": "sufficient; physical layout is explicitly schematic; binary encoding, allocator internals and ownership mechanics reasonably deferred"
+    },
+    {
+      "unit": "1.8",
+      "focus": "Tuple/array organization, indexing, len, usize and panic",
+      "identity_operation": "Position/type/order/destructuring before tuple snippet; homogeneous fixed length/0-based indexing before array snippet; method/usize before selection snippet; panic and failure-function role before failure program,1.8:7–37,79–95.",
+      "q2_mechanism": "Tuple gives types per position; array fixes homogeneous item count; bounds check rejects missing element.",
+      "q2_need": "Related order fields versus same-kind price list and selecting a price,1.8:3,25,27.",
+      "q4_example": "Index2 maps to200 separately from len3; answer uses only taught forms and is complete.",
+      "judgment": "sufficient except local explain-before-use order C1-01"
+    }
+  ],
+  "actual_page_images": [
+    {
+      "source": "docs/assets/foundations-v3/program-process.svg",
+      "actual_page": "http://127.0.0.1:8097/chapters/01-07-lesson/",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 800
+        },
+        {
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "rendered_width_px": 336,
+      "actually_viewed": true,
+      "meaningful_correspondence_checked": "storage/source/executable/startup/process/RAM/CPU with separate material and result arrows",
+      "context_screenshots": [
+        "desktop-program-process-context-0.png",
+        "desktop-program-process-context-1.png",
+        "mobile-program-process-context-0.png",
+        "mobile-program-process-context-1.png"
+      ]
+    },
+    {
+      "source": "docs/assets/foundations-v3/i32-value-size-location.svg",
+      "actual_page": "http://127.0.0.1:8097/chapters/01-07-lesson/",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 800
+        },
+        {
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "rendered_width_px": 336,
+      "actually_viewed": true,
+      "meaningful_correspondence_checked": "P/main.price versus Q/subtotal.price, each i32 value120 and4bytes; value80 does not reduce size",
+      "context_screenshots": [
+        "desktop-i32-value-size-location-context-0.png",
+        "desktop-i32-value-size-location-context-1.png",
+        "mobile-i32-value-size-location-context-0.png",
+        "mobile-i32-value-size-location-context-1.png"
+      ]
+    },
+    {
+      "source": "docs/assets/foundations-v3/subtotal-frames.svg",
+      "actual_page": "http://127.0.0.1:8097/chapters/01-07-lesson/",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 800
+        },
+        {
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "rendered_width_px": 336,
+      "actually_viewed": true,
+      "meaningful_correspondence_checked": "A/B/C temporal snapshots, caller and callee frames atB, result360 returned to first360 atC",
+      "context_screenshots": [
+        "desktop-subtotal-frames-context-0.png",
+        "desktop-subtotal-frames-context-1.png",
+        "mobile-subtotal-frames-context-0.png",
+        "mobile-subtotal-frames-context-1.png"
+      ]
+    },
+    {
+      "source": "docs/assets/foundations-v3/heap-location-content.svg",
+      "actual_page": "http://127.0.0.1:8097/chapters/01-07-lesson/",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 800
+        },
+        {
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "rendered_width_px": 336,
+      "actually_viewed": true,
+      "meaningful_correspondence_checked": "independent two-item H1 and five-item H2 cases; location boxes point to content, not copied prices or total",
+      "context_screenshots": [
+        "desktop-heap-location-content-context-0.png",
+        "desktop-heap-location-content-context-1.png",
+        "mobile-heap-location-content-context-0.png",
+        "mobile-heap-location-content-context-1.png"
+      ]
+    },
+    {
+      "source": "docs/assets/foundations-v3/heap-lifecycle.svg",
+      "actual_page": "http://127.0.0.1:8097/chapters/01-07-lesson/",
+      "viewports": [
+        {
+          "width": 1280,
+          "height": 800
+        },
+        {
+          "width": 390,
+          "height": 844
+        }
+      ],
+      "rendered_width_px": 336,
+      "actually_viewed": true,
+      "meaningful_correspondence_checked": "same H1 through T1–T4; handoff, inner completion, continued outer use, release with no usage arrow",
+      "context_screenshots": [
+        "desktop-heap-lifecycle-context-0.png",
+        "desktop-heap-lifecycle-context-1.png",
+        "desktop-heap-lifecycle-context-2.png",
+        "mobile-heap-lifecycle-context-0.png",
+        "mobile-heap-lifecycle-context-1.png",
+        "mobile-heap-lifecycle-context-2.png"
+      ]
+    }
+  ],
+  "page_verification": {
+    "browser": "Playwright Chromium /usr/bin/chromium --no-sandbox",
+    "device_scale_factor": 1,
+    "preview": "real Markdown/source/style/current figures; partial navigation, not final strict site",
+    "all_eight_pages_loaded_at_both_viewports": true,
+    "all_page_full_lengths_visually_reviewed": false,
+    "other_top_screenshots_actually_viewed": {
+      "desktop": [
+        "01-01",
+        "01-02",
+        "01-03",
+        "01-06",
+        "01-07"
+      ],
+      "mobile": [
+        "01-04",
+        "01-05",
+        "01-07",
+        "01-08"
+      ]
+    },
+    "raw_snippet_markers_in_rendered_code": false,
+    "no_missing_necessary_image_observed": true
+  },
+  "source_version_note": "48 hashes saved. Only docs/chapters/01-07-lesson.md title changed before seal; restoring initial first line produces initial full-file hash. Screenshots retain old title. Body, code and images unchanged.",
+  "limitations": [
+    "No cargo/test/build execution",
+    "No blind sequential firstreader claim",
+    "No historical-issue or other-role crosscheck before seal",
+    "No full-book or final strict-site acceptance",
+    "Only actual viewed screenshots count as visual evidence"
+  ],
+  "expected_followup": "Other-role crosschecks or revised-source verification must be saved separately without rewriting initial observations."
+}

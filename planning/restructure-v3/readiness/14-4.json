@@ -1,0 +1,114 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "14.4"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round14-async-foundations-cancellation-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round14-http-local-service-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round14-root-contract-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14-followup.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/14-04-lesson.md": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+    "examples/ch11-async/bounded/src/lib.rs": "345d8e4f2527d3dae4d3efebc1656564bb0c6fac3ee46843639a7c71ae4a4728",
+    "examples/ch11-async/bounded/Cargo.toml": "cafbd7e9df2004d0ff0aefc31876253858dce7fb921a4b230847d8d0d779963b",
+    "examples/ch11-async/bounded/src/outcomes.rs": "addfd028b352783d2a544a2b30c563bf18a8e219e7af8cc43ec2609574140f38",
+    "examples/ch11-async/bounded/src/main.rs": "430670ee8dbc8356015860c5b9d914940043841835e23c7466c6f704fc4647b9",
+    "examples/ch11-async/bounded/tests/cli.rs": "b3ac98d7529c30b4a6a9b10475210170682c201ac8ad1f804396ae82961034ce",
+    "examples/ch11-async/bounded/examples/one_slot_solution.rs": "9e6cbc3cecef08d6ea4ecb7972d06254742331c092d2e7767f272003745141b2",
+    "docs/assets/async-v3/bounded-refill.svg": "d680fda0f7d8558d800be21e411011752a4f6e1caf156437b9ee15f48504905d"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 3,
+      "quote": "上一節一次提交四份工作。若輸入是一大批，我們希望最多追蹤兩份已提交、尚未回收的 task；一份結果取回後，再提交下一筆。最後仍要知道每筆輸入成功、工作錯誤或 panic，不能因為某筆失敗就漏掉後面的材料。"
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 9,
+      "quote": "**Job** 包住一筆工作材料和它獨有的 release 接收端。**prepare_jobs** 為每筆建立容量1的放行 channel，回傳兩份 owned Vec：jobs 留給排程器，releases 留給 controller。它只準備材料，沒有 spawn，也沒有執行工作。"
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 15,
+      "quote": "**controlled_job** 延續上一節 controlled_work 的規則，改成 started 傳入**輸入索引**，讓 controller 確認究竟哪份工作已開始。Job 由工作接手；mutable binding 允許借用它的 release 收端："
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 23,
+      "quote": "**Scheduler（排程器）** 是本例自訂的 struct，決定何時提交下一筆。它仍把每份已提交工作交給 Tokio runtime 實際執行，不自己建立另一套 executor。"
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 33,
+      "quote": "第9.4節已教 Vec 的 owned into_iter：Vec 的元素移交 iterator 保管，逐筆 next 取得 ownership。因此尚未提交的 Job 不必 clone 接收端。**ConfigError::ZeroLimit** 則把無法前進的上限0在提交任何工作前拒絕。"
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 39,
+      "quote": "這裡 **tracked** 計算「已提交、尚未從集合回收」的 task；已完成但未取回的結果仍占一格。它不等於此刻正在執行本體的數量，不保證全部資料只占兩筆記憶體：pending、放行 channel 與累積 reports 仍由程式保存。"
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 43,
+      "quote": "**new** 驗證正上限，建立空集合，再呼叫 **fill**。fill 的 while 條件只看 tasks.len 是否小於 limit：有空位才從 pending 取一筆、spawn、登記 Id、增加 submitted，並更新峰值；pending 已空就 break。"
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 49,
+      "quote": "**next** 先用上一節的 collect_one 等回並取出一份報告，釋放追蹤空位，之後才 fill 補工作。若集合已空，直接 None，不等待一個不存在的完成通知。三個查詢 method 只讀數量："
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 59,
+      "quote": "controller 先收到0、1兩份 started，順序不指定。接著只放行1並 next，讓2補入；再放行2、3，最後才處理0與4："
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 74,
+      "quote": "例如第二列的0始終沒有放行；空位來自**回收1**，不是0暫停就能額外提交。峰值為2，共提交5，最後得到5份報告。"
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 78,
+      "quote": "**Batch** 把報告、累計提交與峰值交回 main；它不借用已結束的 Scheduler："
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 86,
+      "quote": "本節使用 `examples/ch11-async/bounded/` 的 `ch11-bounded`；所有命令從 repo 根目錄執行。完整設定仍只要求 rt／macros／sync："
+    },
+    {
+      "section_id": "14.4",
+      "path": "docs/chapters/14-04-lesson.md",
+      "line": 131,
+      "quote": "改用上限1、材料80／−1／120，全部不指定 panic。依序確認 started，放行該筆，再 next；預測 submitted 與 tracked 的差別，並確認負數的工作錯誤也不會擋住下一筆。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

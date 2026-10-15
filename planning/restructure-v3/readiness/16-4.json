@@ -1,0 +1,145 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "16.4"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round16-poll-event-executor-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round16-self-reference-pin-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/16/16-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/16-04-lesson.md": "812dd287942e8bdfe9835c8dafe5f0039b76bd2058c0c7c2a12937b411faa1d1",
+    "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch13-futures/stages/examples/event_after_poll/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "examples/ch13-futures/stages/examples/event_after_poll/polling/mod.rs": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+    "examples/ch13-futures/stages/examples/event_after_poll/main.rs": "7b5e77417bf51d138827e26e798dfa8d654e1ca95ee8d709ba88eff5d940e17f",
+    "examples/ch13-futures/stages/examples/event_before_poll/polling/mod.rs": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+    "examples/ch13-futures/stages/examples/event_before_poll/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "examples/ch13-futures/stages/examples/event_before_poll/main.rs": "c7831481bf74a2ac54307d43c70e0708130bbef3bde86f0e4d039cbe03763bcf",
+    "examples/ch13-futures/stages/examples/event_solution/polling/mod.rs": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+    "examples/ch13-futures/stages/examples/event_solution/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "examples/ch13-futures/stages/examples/event_solution/main.rs": "6af8f93dcb3d2f3366c5701e5f90fc9f2dec9bbe9deff745295bbde1527f9e08",
+    "examples/ch13-futures/stages/examples/readiness_complete/polling/mod.rs": "5564a8e2a1960c500d5e22a97d60064fe46fbb684372a6488f7833ae6b408eea",
+    "examples/ch13-futures/stages/examples/readiness_complete/readiness/mod.rs": "2b5d14ae4112f5d8e03dfea6b98a967fe42249fdfdb8a278f0e85d611621c212",
+    "examples/ch13-futures/stages/examples/readiness_complete/main.rs": "0754827c78129cd61f46040184dcda8b858a2b915061c27e7e776a7a87130cd2",
+    "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.rs": "41f51ef1533c9ea72498ef8399ec7f91de83e4b9ebefbbd36fbbf75eb40eb26d",
+    "examples/ch13-futures/stages/fixtures/compile-fail/event_send_once.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "docs/assets/ch13/event-owners.svg": "0c94c9de37a1fb8b345563f4b0b9802bc95c86d706744667d58599d4a92ca8f8",
+    "docs/assets/ch13/event-order.svg": "e7495c3fc6e6e321128a2da6ae50effcf067ef837d684e8712946ff850308cfc"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 3,
+      "quote": "上一節 main 直接 release，再自行 poll。現在仍取得80，數值卻由另一個 worker 供應。main 保有 future，worker 保有一次供值 handle；不論誰先執行，main 都應拿到結果。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 5,
+      "quote": "新問題是：**main 已看到「還沒結果」，事件卻在登記通知前到達，之後還有人叫它再檢查嗎？** 本節用 channel 與 join 控制兩種先後，不用 sleep 猜排程；通知怎樣接到 executor，下一節才處理。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 9,
+      "quote": "worker 不持有 future，也不取得它的 mutable reference。沿13.6，兩者以 **`Arc<Mutex<State>>`** 共同保活同一份 State，再用 guard 操作。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 11,
+      "quote": "**EventAmount** 由 main 持有，保存一份 Arc，以及 completed、polls；後兩項只屬於這份 future。**AmountEvent** 交給 worker，保存另一份 Arc 及一次供值權限。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 15,
+      "quote": "下圖藍箭頭表示兩份 Arc 共同保活**同一個 Mutex**，沒有複製兩份 State；polls／completed 留在 main，不是共享欄位："
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 38,
+      "quote": "普通函式 **`amount_pair()`** 建一個 State，交回 owned tuple **`(EventAmount, AmountEvent)`**。`let (mut work, event) = amount_pair();` 各接手一份；這個函式沒有開 thread，也沒有 poll。Arc::clone 只增保活權限，不 clone State。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 46,
+      "quote": "自訂 **`event.send(value)`** 接收 i32、交回 unit，**取得整份 AmountEvent ownership**，所以同一 handle 只能供一次。它與 std channel 的 Sender::send 不同：前者把答案存進 State，後者稍後只用來把控制數值交給 worker。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 48,
+      "quote": "AmountEvent 沒有 Clone，也不公開 State 供 caller 任改。send 返回時，該 Arc 正常清理，future 的 Arc 繼續保活 State。**若直接丟棄事件 handle，不供值，不會自動產生 Ready、Err 或通知**。正常例會確定供值並 join；需要辨認供應端提前停止的應用，還要另設結束狀態與結果政策。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 52,
+      "quote": "假設錯誤做法把「檢查結果」與「登記 Waker」拆成兩段持鎖："
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 59,
+      "quote": "每次讀寫都互斥，工作仍可能永遠等待。**漏通知** 是狀態變化和登記沒有接成可繼續的關係；不執行這個永久等待版本。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 61,
+      "quote": "正確 poll 在**同一份 guard** 內完成「取到答案，或在沒有答案時登記這次 Waker」。事件端也在同鎖內「存答案、取通知」。其他 thread 無法插進各段中間，因此只有兩種關鍵先後："
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 72,
+      "quote": "沿上一節的 Option::take，事件端從 waiting 取出 owned handle，原槽成 None。內層 block 以這份 Option 作末尾值，交給外面的 waiting；guard 自己留在 block 裡，結尾 Drop 解鎖，之後才 wake："
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 82,
+      "quote": "EventAmount 的欄位只有 Arc handle、bool、usize，都有 Unpin。**Arc handle 的 Unpin 不要求 State 有 Unpin**，要和它指向的資料分開；這個 future 可用 get_mut。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 84,
+      "quote": "這裡的 **`option.is_none()`** shared 借用 Option，回 bool：None 為 true，Some 為 false，不取走或修改值。本例檢查的是已從 State 取出的 answer，不是解鎖後再偷讀 State。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 98,
+      "quote": "main 建立 std **控制 channel**：`mpsc::channel::<i32>()`，自己保留 Sender，worker 接手 Receiver 及 AmountEvent。worker recv 到80才 event.send(80)。buffer 保存已送控制值，不用猜它是不是先跑到 recv。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 158,
+      "quote": "建立兩份 WakeCounter、各自 Context，以及同一份80工作與控制 channel。送控制值之前，依序用兩份 Context poll，都是 Pending；再供80、join。預測兩份通知數與 work 狀態，最後用第二份 Context poll 取得80。"
+    },
+    {
+      "section_id": "16.4",
+      "path": "docs/chapters/16-04-lesson.md",
+      "line": 182,
+      "quote": "四項 tests 核對先 poll／先事件、最新 Waker，以及離鎖回呼。前三項只用已教公開介面；第四項的 **ReadinessObserver** 連到同一 State，另用 Mutex 保存觀察的 `Option<i32>`。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,800 @@
+{
+  "review_id": "round13-send-thread-hrtb-prefix",
+  "scope": [
+    "13.1",
+    "13.2",
+    "13.3"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 實際已讀1–11全章、12.1–12.2；本波未讀12.3+、13.4+當先備。",
+  "independence": "首次全文/source實讀與封存前未讀作者validation/ledger、peer、reader或historical findings；不開author freeze結論作提示。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "三節全文、61snippet anchors/fullsource、15selectedrun+1selectedtest、12組完整compile-fail/expected及三SVG source/XML靜態核對。",
+    "核對no-lib targetlocal完整helper/同檔tests、Send/Sync/static條件、spawn/join/panic/cleanup、higher-ranked lifetime和capture/output契約。",
+    "8份重複helper片段/全檔bytes比較；相稱回讀1.4數字型別與9.1closure回傳註記，未拿後文補洞。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "thread_program_run": false,
+    "note": "沒有本波Rust/Cargo執行；15run的輸出、1payload unit test與12compilefail診斷均靜態核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:07:40.771714+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "fe9230b7de123d16fdf56cd25be3d455f888603f4a1f2cd339a79ddc5efc7114",
+    "Cargo.toml": "b06c310372915e24d07768b4d0ec133d322dc4402f7dc5e9845d6bb72d00cbca",
+    "docs/assets/ch10/hrtb-local.svg": "2a79b19cf773ad6245c6045b2966931f4f0dec24f58e82d430929ba91915aa08",
+    "docs/assets/ch10/send-sync.svg": "936141fc68e09cc82db071da91d796481aefa8d3f7108be1c26ec1a68aa8ce72",
+    "docs/assets/ch10/thread-join.svg": "c35ff54e7d368c6c59e4778c8096a4ecb6ee5a90d445f610a20a9f0812da437e",
+    "docs/chapters/13-01-lesson.md": "c5b392ba306e20d36ba848860b03f669a09fabc7f76d28e5eefa168815aab654",
+    "docs/chapters/13-02-lesson.md": "10afab4057f565308b0333aaaeadf12fb4c2204255e5524f23baa4820b4d247f",
+    "docs/chapters/13-03-lesson.md": "e022f3558b51fafc736371bb623fade801802c28cdfc1fcb2736570d57b3e051",
+    "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+    "examples/concurrency-stages/examples/borrow_bounds/contracts/mod.rs": "59c86469ab6b0901005645663655defe7d3de8612c48998a2ef584760ff99e18",
+    "examples/concurrency-stages/examples/borrow_bounds/main.rs": "91329108bbdfc1bb1576ec3bc4bf93bbd6201b76b9af95746d395acfa9fd46bf",
+    "examples/concurrency-stages/examples/callback_borrow/higher_ranked/mod.rs": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+    "examples/concurrency-stages/examples/callback_borrow/main.rs": "fcc06e0a5e2eecb843f95bb864d6dee21ef453c44cd5ecbbe5277381ef2575cb",
+    "examples/concurrency-stages/examples/callback_once_hrtb/higher_ranked/mod.rs": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+    "examples/concurrency-stages/examples/callback_once_hrtb/main.rs": "f69da17d1e3200df2439f95f6c751d8921fd3805ca63aefc49c9e0bbf981a60c",
+    "examples/concurrency-stages/examples/callback_projection/higher_ranked/mod.rs": "4a90f10ee8931a9d15e6fc7b1c657c040f094911fa3f269faa9c370c9306a9f8",
+    "examples/concurrency-stages/examples/callback_projection/main.rs": "652209acbd956950ddc8bf0e24df85b9efc25254d7a94f2da48fb05b1f77243b",
+    "examples/concurrency-stages/examples/caller_input/higher_ranked/mod.rs": "e96c4a0a6113321a6ee102feeece6e672f4f93e3c6e8e4620f40aea76466a92c",
+    "examples/concurrency-stages/examples/caller_input/main.rs": "844741aff60d398250ea31651ab1224ff4d40083019b2fdadee3d54a07eb5937",
+    "examples/concurrency-stages/examples/capture_send/contracts/mod.rs": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+    "examples/concurrency-stages/examples/capture_send/main.rs": "dc0c647e639212ba573a6f029c9d0962d8866e1786a6fd5585f4fc7075da2dc0",
+    "examples/concurrency-stages/examples/cells_send/contracts/mod.rs": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+    "examples/concurrency-stages/examples/cells_send/main.rs": "ee7b3a3612c2b66efa80bc6e6e4f4df0f64865f875bd982c33cf4e5fffa0486b",
+    "examples/concurrency-stages/examples/hrtb_answer/main.rs": "ce9bf7a850f8d5d7ff0ce2aefafe52ec2babe17aba4200158e3549effdabbd62",
+    "examples/concurrency-stages/examples/local_callback/higher_ranked/mod.rs": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+    "examples/concurrency-stages/examples/local_callback/main.rs": "0cf90ec78f259d63c57a476d0f4585537228d9aea4fe9ac1da85f64ec309522a",
+    "examples/concurrency-stages/examples/panic_worker/main.rs": "02ad2e4ea8a577e6ffdea82d07a41691697853b8e947969b326940a81afe7fda",
+    "examples/concurrency-stages/examples/panic_worker/workers/mod.rs": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+    "examples/concurrency-stages/examples/send_sync/contracts/mod.rs": "1229d68ce99f4a191c995572211e341254d7cfeddfd9e13b07e6c1801b363398",
+    "examples/concurrency-stages/examples/send_sync/main.rs": "51957b840e96795b6260b8371a286d3736df03fc143909f42c73f9d1b8fea60f",
+    "examples/concurrency-stages/examples/send_sync_answer/contracts/mod.rs": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+    "examples/concurrency-stages/examples/send_sync_answer/main.rs": "a6f6f10d10d8372a57cccc4aafd65ddee8e3c4916f3fab759faad12437e86b22",
+    "examples/concurrency-stages/examples/thread_join/main.rs": "dbaa98bfc32bdd2ea759c55e0d135d57ab2874069192bdf90438e3ed98764764",
+    "examples/concurrency-stages/examples/thread_join/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/thread_join_answer/main.rs": "40ded1b92481231e3099453d56f5d60ffe9dd1596cc114ea0fc0098bd8ee7eae",
+    "examples/concurrency-stages/examples/thread_join_answer/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/thread_result/main.rs": "a9f2cdf2dd29c3aab77bc0ca3606803ab646a3f031c64139f61f70b8fd6d4811",
+    "examples/concurrency-stages/examples/thread_result/workers/mod.rs": "8dae063c27b797debba09f94cb09d2ed6cb21ec57f7d436f04461c0845f18421",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.rs": "3f267d03116a413f2f3fcebae2ebc1492d7d263f4b6b2e9a268f9fdf128744b4",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.rs": "2171ebfebde5af1589c18469d4b1ed288008da374458d192a177d63c9376c520",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.expected": "98156c76a4149a9ba9ac1b02aaed46c3ff518335e15c280d9efffbb29c2c0dfd",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.rs": "135e0f39bc495b7c1a576ab2fed7a47fe11c7e555108b105dd626214a0ec3390",
+    "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.rs": "e055963f805c582de1a180171e0d187dad21a99c8b66757caea2dbbe754e9507",
+    "examples/concurrency-stages/fixtures/compile-fail/join_twice.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/concurrency-stages/fixtures/compile-fail/join_twice.rs": "13ea4c6d246f86c77464d1d5bca015441e0e5ef4acc9b1a5ac5296cc925fcfc4",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.rs": "becc92eb86816854f5a06772f6f6de9d0225c03f6531359084433b426a0efa70",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.rs": "00e923024cef8e6ff9d1ac24d7026156bdf2a20174bd107107c0caf47be3449c",
+    "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.rs": "c69903c795745616bbb9c380c1e6527ee6d5acc99ca9b33f3369e03e06abe8c0",
+    "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.rs": "a300e2c213c0c2c6d2ed6a38463de568f4c47b50f7b7d834aa86b3e9b968c0a9",
+    "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.expected": "88cc33d2d6a2d0766b29618c0b0dc8577cbd335f4117adf98cfc33068ea0f7d1",
+    "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.rs": "d9db1b180bc91f0598b3fd9d0f3eb88e9c84f54c7f22f89f76cb6a20aa3082a3",
+    "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.rs": "73b7b3449ca5c22881ce71762da1b108b0b0a6807319c02d8b87e3efe8c08284",
+    "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.rs": "19d99ed8850c6151e11601410f0890052c760dfad220324453b6cecaa0ee945f",
+    "examples/concurrency-stages/src/main.rs": "05f138089b8ea0b57cc37ad7a055b1c39d35bb416a84e3b8d44aee02a33c7f48",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "concurrency-stages",
+      "version": "0.1.0"
+    }
+  ],
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 18,
+      "source": "examples/concurrency-stages/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 24,
+      "source": "examples/concurrency-stages/src/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 36,
+      "source": "examples/concurrency-stages/examples/send_sync/contracts/mod.rs",
+      "tag": "send-check",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 56,
+      "source": "examples/concurrency-stages/examples/send_sync/contracts/mod.rs",
+      "tag": "sync-check",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 70,
+      "source": "examples/concurrency-stages/examples/send_sync/contracts/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 74,
+      "source": "examples/concurrency-stages/examples/send_sync/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 112,
+      "source": "examples/concurrency-stages/examples/cells_send/contracts/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 116,
+      "source": "examples/concurrency-stages/examples/cells_send/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 135,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 141,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 149,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 155,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 167,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 173,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 183,
+      "source": "examples/concurrency-stages/examples/capture_send/contracts/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 187,
+      "source": "examples/concurrency-stages/examples/capture_send/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 195,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 201,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 213,
+      "source": "examples/concurrency-stages/examples/borrow_bounds/contracts/mod.rs",
+      "tag": "send-static-check",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 221,
+      "source": "examples/concurrency-stages/examples/borrow_bounds/contracts/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 225,
+      "source": "examples/concurrency-stages/examples/borrow_bounds/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 243,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 249,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 267,
+      "source": "examples/concurrency-stages/examples/send_sync_answer/contracts/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-01-lesson.md",
+      "line": 271,
+      "source": "examples/concurrency-stages/examples/send_sync_answer/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 8,
+      "source": "examples/concurrency-stages/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 58,
+      "source": "examples/concurrency-stages/examples/thread_join/workers/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 64,
+      "source": "examples/concurrency-stages/examples/thread_join/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 93,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 99,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 105,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 111,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 119,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 125,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 135,
+      "source": "examples/concurrency-stages/examples/thread_result/workers/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 141,
+      "source": "examples/concurrency-stages/examples/thread_result/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 166,
+      "source": "examples/concurrency-stages/examples/panic_worker/workers/mod.rs",
+      "tag": "panic-message",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 172,
+      "source": "examples/concurrency-stages/examples/panic_worker/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 193,
+      "source": "examples/concurrency-stages/examples/panic_worker/workers/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 205,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/join_twice.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 211,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/join_twice.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 235,
+      "source": "examples/concurrency-stages/examples/thread_join_answer/workers/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-02-lesson.md",
+      "line": 239,
+      "source": "examples/concurrency-stages/examples/thread_join_answer/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 10,
+      "source": "examples/concurrency-stages/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 20,
+      "source": "examples/concurrency-stages/examples/caller_input/higher_ranked/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 26,
+      "source": "examples/concurrency-stages/examples/caller_input/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 42,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 48,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 68,
+      "source": "examples/concurrency-stages/examples/local_callback/higher_ranked/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 74,
+      "source": "examples/concurrency-stages/examples/local_callback/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 94,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 100,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 114,
+      "source": "examples/concurrency-stages/examples/callback_borrow/higher_ranked/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 118,
+      "source": "examples/concurrency-stages/examples/callback_borrow/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 137,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 143,
+      "source": "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 155,
+      "source": "examples/concurrency-stages/examples/callback_once_hrtb/higher_ranked/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 159,
+      "source": "examples/concurrency-stages/examples/callback_once_hrtb/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 173,
+      "source": "examples/concurrency-stages/examples/callback_projection/higher_ranked/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 179,
+      "source": "examples/concurrency-stages/examples/callback_projection/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/13-03-lesson.md",
+      "line": 211,
+      "source": "examples/concurrency-stages/examples/hrtb_answer/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "concurrency-stages",
+    "workspace": "repo根Cargo.toml/Cargo.lock",
+    "inherited_fields": "version0.1.0/edition2024/rust-version1.99/publishfalse，已由12.1教根共同設定；本package無dependencies/build.rs/src/lib.rs。",
+    "targets": {
+      "send_sync": [
+        "examples/send_sync/main.rs",
+        "examples/send_sync/contracts/mod.rs（require_send/require_sync）"
+      ],
+      "cells_send": [
+        "examples/cells_send/main.rs",
+        "examples/cells_send/contracts/mod.rs（require_send）"
+      ],
+      "capture_send": [
+        "examples/capture_send/main.rs",
+        "examples/capture_send/contracts/mod.rs（require_send）"
+      ],
+      "borrow_bounds": [
+        "examples/borrow_bounds/main.rs",
+        "examples/borrow_bounds/contracts/mod.rs（send/static/sync checks）"
+      ],
+      "send_sync_answer": [
+        "examples/send_sync_answer/main.rs",
+        "examples/send_sync_answer/contracts/mod.rs（require_send）"
+      ],
+      "thread_join": [
+        "examples/thread_join/main.rs",
+        "examples/thread_join/workers/mod.rs（sum）"
+      ],
+      "thread_result": [
+        "examples/thread_result/main.rs",
+        "examples/thread_result/workers/mod.rs（WorkError/check_amount）"
+      ],
+      "panic_worker": [
+        "examples/panic_worker/main.rs",
+        "examples/panic_worker/workers/mod.rs（panic_message；test模式1test含3payload cases）"
+      ],
+      "thread_join_answer": [
+        "examples/thread_join_answer/main.rs",
+        "examples/thread_join_answer/workers/mod.rs（sum）"
+      ],
+      "caller_input": [
+        "examples/caller_input/main.rs",
+        "examples/caller_input/higher_ranked/mod.rs（on_caller）"
+      ],
+      "local_callback": [
+        "examples/local_callback/main.rs",
+        "examples/local_callback/higher_ranked/mod.rs（with_local）"
+      ],
+      "callback_borrow": [
+        "examples/callback_borrow/main.rs",
+        "examples/callback_borrow/higher_ranked/mod.rs（with_local）"
+      ],
+      "callback_once_hrtb": [
+        "examples/callback_once_hrtb/main.rs",
+        "examples/callback_once_hrtb/higher_ranked/mod.rs（with_local）"
+      ],
+      "callback_projection": [
+        "examples/callback_projection/main.rs",
+        "examples/callback_projection/higher_ranked/mod.rs（sum_selected）"
+      ],
+      "hrtb_answer": [
+        "examples/hrtb_answer/main.rs（local_twice同檔完整）"
+      ]
+    },
+    "default_binary": "src/main.rs完整提供但不是這些明選example的載入來源。",
+    "commands": "15run+panic_worker 1selectedexampletest；repo根cwd，明選package/example/--locked；不載13.4+ sibling或根其他member Rust。"
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/13-01-lesson.md:29",
+      "judgment": "Send/marker/auto trait與prelude/std::marker來源在helper前；只是檢查bound、不建立thread有明說。"
+    },
+    {
+      "source": "docs/chapters/13-01-lesson.md:43",
+      "judgment": "T:Sync iff &T:Send準確；ownership/shared reference與借用權限不混。String/Vec/Box有heap仍可Send/Sync，Cell/RefCell Send取決T、非Sync及Rc非Send/Sync表均正確。"
+    },
+    {
+      "source": "docs/chapters/13-01-lesson.md:162",
+      "judgment": "Rc管理計數也需共享保護；move capture不修其Send。Fn系列呼叫能力與Send/Sync不同；reference可Send不代表static，require_sync(&str)的T=str及?Sized精確。"
+    },
+    {
+      "source": "docs/chapters/13-02-lesson.md:13",
+      "judgment": "spawn<F,T>FnOnce()+Send+static與結果T:Send+static兩組bound先教；create failure可能panic、handle不是已算成果。"
+    },
+    {
+      "source": "docs/chapters/13-02-lesson.md:36",
+      "judgment": "join consumes唯一handle且blocking，thread::Result alias與Box<dynAny+Send+static>先解；unwind才能join Err，abort無此保證。"
+    },
+    {
+      "source": "docs/chapters/13-02-lesson.md:138",
+      "judgment": "join外層Ok只是正常回傳，T內層Result仍可能業務Err；loop每次spawn後立即join使兩行順序有依據。"
+    },
+    {
+      "source": "docs/chapters/13-02-lesson.md:159",
+      "judgment": "panic文字可能String/staticstr、downcast Err保留Send、未知payload不假解讀；stdout報告與標準panic stderr並存有明說。literal type suffix7_u32在test首用前教，u32本身已由1.4:35/types.rs教。"
+    },
+    {
+      "source": "docs/chapters/13-02-lesson.md:216",
+      "judgment": "drop handle detach不等待/不取消，process結束可遺留未完成；答案兩次spawn後兩次join都先存再match，第一Err也不略過第二等待。"
+    },
+    {
+      "source": "docs/chapters/13-03-lesson.md:23",
+      "judgment": "on_caller外層'a只要求當次來源；函式內建立value卻要求外部'a時generic body不能假設足夠短，E0597對source。"
+    },
+    {
+      "source": "docs/chapters/13-03-lesson.md:59",
+      "judgment": "for<'a> bound內任一合法借用、T在binder外、不是runtime迴圈且FnOnce仍只呼叫一次。static-only callback不夠general，fixedT不能攜局部輸入borrow。"
+    },
+    {
+      "source": "docs/chapters/13-03-lesson.md:107",
+      "judgment": "HRTB輸入通用不要求capture static或輸出owned；外部String view回傳T合法，局部number view不合法；FnOnce/FnMut/Fn與borrowrank分清。"
+    },
+    {
+      "source": "docs/chapters/13-03-lesson.md:166",
+      "judgment": "projection輸出明連每次'a，fn pointer單輸入elision保留higher-rank契約；sum_selected在tuple結束前Copy出兩值，回126不帶borrow。省略FnOnce(&i32)->T與明寫for等價，外層明寫'a非同契約。"
+    }
+  ],
+  "fixtures": [
+    {
+      "name": "cell_not_sync",
+      "expected": "E0277",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "refcell_not_sync",
+      "expected": "E0277",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "rc_not_send",
+      "expected": "E0277",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "rc_capture_not_send",
+      "expected": "E0277",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "send_borrow_not_static",
+      "expected": "E0597",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "spawn_borrows_local",
+      "expected": "E0373",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "use_values_after_spawn",
+      "expected": "E0382",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "thread_returns_rc",
+      "expected": "E0277",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "join_twice",
+      "expected": "E0382",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "callback_fixed_lifetime",
+      "expected": "E0597",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "callback_only_static",
+      "expected": "implementation of `FnOnce` is not general enough",
+      "checked": "完整rs/expected靜態，未重跑"
+    },
+    {
+      "name": "callback_local_escape",
+      "expected": "lifetime may not live long enough",
+      "checked": "完整rs/expected靜態，未重跑"
+    }
+  ],
+  "static_outputs": {
+    "send_sync": "Rust有2項,total200；沒有thread執行主張",
+    "cells_send": "Cell4,RefCell200；guard結束再借",
+    "capture_send": "Stringclosure bytes4且可Fn重複呼叫",
+    "borrow_bounds": "borrowbytes4；ownedRust通Send/static；block結束",
+    "send_sync_answer": "Report Rust visits2，Cell使非Sync",
+    "thread_join": "main6，worker200合206；main兩行順序確定，無worker輸出排序假設",
+    "thread_result": "外Ok內Ok200；外Ok內Err-1",
+    "panic_worker": "收到工作故意panic；main收尾；另有標準stderr診斷，main正常返回",
+    "thread_join_answer": "200+6=206，兩份都等後才判結果",
+    "caller_input": "200",
+    "local_callback": "200",
+    "callback_borrow": "savedRust，外部owner len4",
+    "callback_once_hrtb": "200",
+    "callback_projection": "120+6=126",
+    "hrtb_answer": "100/140，visits2"
+  },
+  "copy_checks": [
+    {
+      "from": "send_sync",
+      "to": "cells_send",
+      "tag": "send-check",
+      "byte_identical": true
+    },
+    {
+      "from": "send_sync",
+      "to": "capture_send",
+      "tag": "send-check",
+      "byte_identical": true
+    },
+    {
+      "from": "send_sync",
+      "to": "borrow_bounds",
+      "tag": "send-check",
+      "byte_identical": true
+    },
+    {
+      "from": "send_sync",
+      "to": "send_sync_answer",
+      "tag": "send-check",
+      "byte_identical": true
+    },
+    {
+      "from": "send_sync",
+      "to": "borrow_bounds",
+      "tag": "sync-check",
+      "byte_identical": true
+    },
+    {
+      "from": "local_callback",
+      "to": "callback_borrow",
+      "tag": "local-input",
+      "byte_identical": true
+    },
+    {
+      "from": "local_callback",
+      "to": "callback_once_hrtb",
+      "tag": "local-input",
+      "byte_identical": true
+    },
+    {
+      "from": "thread_join",
+      "to": "thread_join_answer",
+      "whole_helper_byte_identical": true
+    }
+  ],
+  "prerequisite_rechecks": {
+    "u32": "1.4:35與steps/examples/types.rs已有u32及型別註記；兩份currenthash與round01-prefix原hash相同。",
+    "closure_return_annotation": "9.1:23已教|...|後->i32與block，panic_worker的||->i32不是新未教語法。",
+    "panic_strategy": "repo根profile沒有改panic策略，正常dev預設unwind；正文清楚限制，不把abort也說成可join Err。"
+  },
+  "tests": {
+    "panic_worker": 1,
+    "payload_cases": [
+      "String",
+      "&'static str",
+      "u32"
+    ],
+    "thread_created_by_unit_test": false
+  },
+  "limits": [
+    "整頁技術重讀，非盲首讀；無browser/reader實驗。",
+    "沒有新增Rust/Cargo成功或故意失敗執行，沒有實測thread排程或速度。",
+    "3SVG只source/XML，未rendered視覺驗證；未讀13.4+、12.3+當先備。"
+  ],
+  "sealed_at_utc": "2026-10-15T09:11:04.523Z"
+}

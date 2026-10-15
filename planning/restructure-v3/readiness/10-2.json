@@ -1,0 +1,94 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "10.2"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round10-cargo-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round10-cli-fixtures.md",
+    "planning/restructure-v3/reviews/technical-early/round10-complete-note-search.md",
+    "planning/restructure-v3/reviews/technical-early/round10-native-path-clap-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round10-serde-json.md",
+    "planning/restructure-v3/reviews/technical-early/round10-text-bytes-io-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/10-02-lesson.md": "394da63f7182a1c977beae9f11180ce370e1efe18851f4fbb0964a5dca4fb79a",
+    "examples/intro-workspace/cargo-docs/src/lib.rs": "cc99406eb027f27c2f5cd9a1fee0c488c27c49e552c526812dc290e0e48735b2",
+    "examples/intro-workspace/cargo-docs/tests/public_orders.rs": "c7421c74e587c8d05427af66fd09b3ee8148cf25bf835c191b93630c733ffa12",
+    "examples/intro-workspace/cargo-docs/Cargo.toml": "fcdc783f7055df7bc31514d9a270d1d7bfadb5cd49243af716f3e36d369b84ff",
+    "examples/intro-workspace/modules-basic/Cargo.toml": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+    "examples/intro-workspace/modules-basic/src/lib.rs": "a2730bc5b8092f7a450369a65582404dbb83895caf104941af12d8a39024e534",
+    "examples/intro-workspace/modules-basic/src/pricing.rs": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+    "examples/intro-workspace/cargo-docs-answer/Cargo.toml": "ae58275b66b484490ff17704274b49bf6c27097a232871a3b39b68a11f9d6c56",
+    "examples/intro-workspace/cargo-docs-answer/src/lib.rs": "fd2dbcffe2aa5b0a9ca1bcda0a4c3d372ffb9832e36dc83594ac8ae839cec98a"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "10.2",
+      "path": "docs/chapters/10-02-lesson.md",
+      "line": 3,
+      "quote": "第 2.7 節已把規則寫成測試。現在再問：**另一個 crate 能否依公開文件使用 library，文件中的例子是否真的正確？** 本節用 `intro-cargo-docs` 回答，資料夾是 `examples/intro-workspace/cargo-docs/`；上一節的依賴設定快照仍保留原樣。"
+    },
+    {
+      "section_id": "10.2",
+      "path": "docs/chapters/10-02-lesson.md",
+      "line": 9,
+      "quote": "**文件註解 `///`** 將文字附在下一個程式項目上。第 2.7 節的 `//` 是普通註解；多出的第三個 `/` 讓 Rust 的文件工具 **rustdoc** 能將這些文字整理為 API 文件。本例把它放在公開函式 `pair_total` 前面。"
+    },
+    {
+      "section_id": "10.2",
+      "path": "docs/chapters/10-02-lesson.md",
+      "line": 13,
+      "quote": "文件中的可執行 Rust 例子稱為 **doc test**。rustdoc 會取出一般 Rust fence 裡的程式，編譯並執行；這種簡單例子可以省略 `main`，工具會補上執行所需的外框。`assert_eq!` 也會真的執行，並非只供閱讀。"
+    },
+    {
+      "section_id": "10.2",
+      "path": "docs/chapters/10-02-lesson.md",
+      "line": 31,
+      "quote": "`cargo doc` 呼叫 rustdoc 產生文件。`--lib` 選 library，`--no-deps` 不連帶替所有依賴產生文件，`--open` 在產生後請求開啟瀏覽器。在 repo 根目錄執行："
+    },
+    {
+      "section_id": "10.2",
+      "path": "docs/chapters/10-02-lesson.md",
+      "line": 49,
+      "quote": "**integration test** 是放在 package 的 `tests/` 資料夾中的測試。Cargo 將這一層每份 `.rs` 檔當成獨立測試 crate，透過 library 的公開介面完成檢查。它不能直接使用 library 的私有項目。"
+    },
+    {
+      "section_id": "10.2",
+      "path": "docs/chapters/10-02-lesson.md",
+      "line": 62,
+      "quote": "第 2.7 節的 library 同檔測試用 `crate::...` 從 library 自己的根找項目。這裡若在 `public_orders.rs` 寫 `crate::...`，起點則是**這份測試 crate**。因此完整 `tests/public_orders.rs` 使用 library 名稱："
+    },
+    {
+      "section_id": "10.2",
+      "path": "docs/chapters/10-02-lesson.md",
+      "line": 82,
+      "quote": "library 內另外保留第 2.7 節已教的同檔測試形式："
+    },
+    {
+      "section_id": "10.2",
+      "path": "docs/chapters/10-02-lesson.md",
+      "line": 100,
+      "quote": "本節 package 只有 library，沒有另一份會先載入命令列功能的 binary。完整 `cargo-docs/Cargo.toml` 與 `src/lib.rs` 如下；`tests/public_orders.rs` 已在上面完整列出："
+    },
+    {
+      "section_id": "10.2",
+      "path": "docs/chapters/10-02-lesson.md",
+      "line": 134,
+      "quote": "替 `pair_total` 的文件增加第二個 Rust 例子：單價分別為 300 與 120，兩筆各買一件，檢查總額為 440。第一筆免運、第二筆仍加 20 元。先完成自己副本的文件，再用 `--doc` 檢查。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

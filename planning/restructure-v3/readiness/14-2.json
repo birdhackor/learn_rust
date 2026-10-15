@@ -1,0 +1,133 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "14.2"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round14-async-foundations-cancellation-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round14-http-local-service-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round14-root-contract-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14-followup.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/14-02-lesson.md": "5f7917e7a6b2b87e455cc34bb2a340f814f659cd580fb0f0b5939b828917e01b",
+    "examples/ch11-async/foundations/src/lib.rs": "5e236a71c02c98f6fdc0861eac207fa9e812e35caed4201ed56fbfdd442c30aa",
+    "examples/ch11-async/stages/foundations-steps/Cargo.toml": "4365dc38d0fd841f6b8727b9850209623242f07d76a4859900313265b39b141e",
+    "examples/ch11-async/stages/foundations-steps/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch11-async/stages/foundations-steps/examples/lazy.rs": "780e6f1630cc94dfc090c939bd3eb12d2fc48a58091d8af427506d89b017bdd9",
+    "examples/ch11-async/stages/foundations-steps/examples/block_capture.rs": "bf0039a4905ca236c5e766612c1fd586c442b374f3ce8a0250a04d706689d290",
+    "examples/ch11-async/stages/foundations-steps/examples/explicit_future.rs": "ab0e008ee483e72988f416470211061a1c2e4c31d6a284bedbf3f40607a928ea",
+    "examples/ch11-async/stages/foundations-steps/examples/fallible_output.rs": "b6090ba9016c46d0e6a760da5791378c6923fb147dd0f9475fb75c9c59392161",
+    "examples/ch11-async/foundations/Cargo.toml": "e9a2670d353d632cc0baade7840dd9d43f827314865c3602f6e5417a79471ca3",
+    "examples/ch11-async/foundations/src/main.rs": "f65655c2f167a545d31ab79e306eb588b4bdd915a370b93786fe46c1fbcf7348",
+    "examples/ch11-async/foundations/tests/cli.rs": "0726f33417b63e067d0b3072b97d3468eb33766fff8c51f5f9a2222ae000a238",
+    "examples/ch11-async/foundations/examples/block_capture.rs": "bf0039a4905ca236c5e766612c1fd586c442b374f3ce8a0250a04d706689d290",
+    "examples/ch11-async/foundations/examples/explicit_future.rs": "49e302bb16e1039e94ece93c080bdb148d7ade151f19cb6130fbe917fe8303e5",
+    "examples/ch11-async/foundations/examples/fallible_output.rs": "4d6f5d35860a6001d6724e74e40cb44b11a4bf8fd03659c271ebeab41ab2eb9b",
+    "examples/ch11-async/foundations/examples/receipt_solution.rs": "001f732d191a0941fdd77ed3e6e1863109ba6b852f9f19a0615d8c0f0631ce73"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 3,
+      "quote": "上一節把「工作尚未完成」與「最後拿到答案」分開。現在先移除外部等待，只算一筆小計80加固定運費20，得到100。這個立即能完成的例子，用來看清 Rust 怎樣表示工作；它還不展示多項工作交錯。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 7,
+      "quote": "**future** 是代表一份可能稍後完成工作的值。它保存需要的資料與進度，完成時交出結果；工作也可能一直沒有完成。標準函式庫的 **`std::future::Future` trait** 描述這項能力，associated type **`Output`** 指定完成後交出的型別。這裡沿用第6.4節的 associated type：同一個實作把來源型別與結果型別連起來。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 9,
+      "quote": "普通的 `fn total_now(...) -> i32` 呼叫時執行本體，交回 i32。在宣告前加 **`async`**，`async fn total_later(...) -> i32` 的呼叫則交回 future；箭頭的 i32 是那份工作的 **Output**，不是呼叫當下交回的型別。async 函式本體留到工作被執行時才進入，這是本例所說的 **lazy（延後執行）**。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 11,
+      "quote": "在 async 函式內寫 **`work.await`**，會推進並等待 work，取得它的 Output。`.await` 是語法，不是 method，不加括號。若結果尚未就緒，周圍的 async 工作能保存進度並暫停；若已就緒就繼續，**每次 await 不一定真的暫停**。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 23,
+      "quote": "future 需要被驅動才能執行。**runtime** 是執行 async 工作的基礎設施；其中的 **executor（執行器）** 推進可執行的工作，工作等待的條件有機會滿足時，再安排它繼續。Rust 提供語法與 Future trait，本章選用 **Tokio** 作 runtime。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 25,
+      "quote": "先選 **current-thread runtime**：在呼叫者目前的 thread 上執行 async 工作，不增加 async worker threads。thread 是執行程式的地方，future 是被保存及推進的工作；建立 future 沒有因此建立 thread。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 39,
+      "quote": "普通 Rust 入口仍是同步 `fn main`。**`#[tokio::main(flavor = \"current_thread\")]`** 是放在函式前的 attribute macro：它把下面寫成 async 的 main 轉成普通入口，建立所選 runtime，推進 main 的 future 到完成。`flavor` 選執行方式；不指定時的預設是 multi-thread，需要另一項 feature，所以這裡明寫 current_thread。方便入口若無法初始化 runtime 會 panic，這與工作自己交回的 Result 是不同層次。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 43,
+      "quote": "完整 `examples/lazy.rs` 把剛才的函式與 main 放在同一檔。普通函式先算完；`work` 建立後才 await；另一份小計120的工作則直接交給第11.3節已教的 `drop` 結束："
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 69,
+      "quote": "不必每次替工作命名函式。**`async { ... }`** 建立一份 future，block 的末尾值成為它的 Output；本體同樣延後執行。它會依使用方式捕捉外部資料，和第9.1節 closure 的捕捉問題相連。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 71,
+      "quote": "第一份工作只讀 heading，保存借用，Output 是文字的 byte 數4。建立後，main 仍可用 shared reference 讀 heading。第二份用 **`async move`**，把 note 這個 String 的 ownership 交給工作；本體末尾再把 String 交作 Output，所以 await 取得的 saved 擁有文字。move 捕捉若原本拿到的是 reference，移入的仍是 reference，不會把它指向的值自動變成 owned 資料。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 87,
+      "quote": "第9.3節的 return-position `impl Trait` 讓函式交出一個實作指定 trait 的具體型別。現在用 **`impl Future<Output = i32>`** 表示「交回一份完成後產生 i32 的工作」。尖括號裡的等號指定 associated type，不是替 Output 傳入一個值。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 89,
+      "quote": "下面的 prepared_total 是**普通函式**。呼叫立即印出準備標記，再建立並交回 async move block；只有 block 內的加總延後。這是為什麼不能把「凡是回傳 future 的函式」都說成呼叫時完全不做事。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 105,
+      "quote": "把工作規格改成「小計不能負數」，沿用第8章的 Result。**`async fn ... -> Result<i32, String>`** 的 Output 整個就是 Result。await 只取得 Output，沒有代為解開 Ok，也沒有替我們選錯誤政策。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 121,
+      "quote": "以下完成版 `ch11-foundations` 將計算集中成 library，方便下一節引用。先介紹新增的測試入口：**`#[tokio::test(flavor = \"current_thread\")]`** 把 async 測試接到每個測試各自的 current-thread runtime，測試本體可以 await；普通 `#[test]` 本身不會建立這種 async 執行環境。"
+    },
+    {
+      "section_id": "14.2",
+      "path": "docs/chapters/14-02-lesson.md",
+      "line": 174,
+      "quote": "寫 async receipt，接收小計80與 owned label「訂單 A」，await 本頁的 total_later，再用第8.3節的 format! 交回 owned String「訂單 A：總額 100」。main 先保存 future，再 await，確認結果。預測：建立 future 時，是否已印出 total_later 本體標記？"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

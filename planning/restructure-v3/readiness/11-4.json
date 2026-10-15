@@ -1,0 +1,106 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.4"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-04-lesson.md": "05c14435f34625a260be02454fecb4daad4e6d8fc6d150aca0910e64808f4fab",
+    "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs": "96001e4b87c530002195500995dbc97d2c2391da9dd66884d2e8cc50feb6764d",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/deref_basic/main.rs": "82b4db94349f2805c494a34aa08d283939dd0bd1d54005e973392ef00c0e10b5",
+    "examples/intro-workspace/type-stages/examples/coercions/views/mod.rs": "96001e4b87c530002195500995dbc97d2c2391da9dd66884d2e8cc50feb6764d",
+    "examples/intro-workspace/type-stages/examples/coercions/main.rs": "095511a13a0a705eec9b6a3b9119e43ae38748a94e9bcfe42cfad0ee56055ae3",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_move_out.rs": "7349c6a4c639bb0e116168d93b28897a69b9718cc95fc28ca7bf599fda442e63",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_move_out.expected": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+    "examples/intro-workspace/type-stages/examples/deref_complete/views/mod.rs": "7e0f0ac8861224da873d55bf8671f97190af0d65bbfe4ad57aeb29248098404c",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_copy_bound.rs": "ecd58aab66ecd8de73ef0c63046c63cdaa6e769008d7ef0e128a97bb0214eeb0",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_copy_bound.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/type-stages/examples/deref_complete/main.rs": "5ec308ea6fca418c497f43790aa81c24c08b12e1bfc1f34cb038b373c4094b52",
+    "docs/assets/types-v3/deref-coercion.svg": "d74fb8a3d77009bc84ecaa486cfa4bf83a002e172ac595ab72ee781c2cdb6599"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 3,
+      "quote": "第 11.2 節用 `&*boxed` 借出 Box 內的值。現在自己建立 Wrapper，保存 String，卻要呼叫既有的 `text_bytes(text: &str)`。直接讀欄位再用 as_str 已能完成；這節讓外層提供共同的借用介面，省去每個呼叫者重寫欄位路徑。"
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 7,
+      "quote": "Wrapper 只是一般 struct；value 欄位擁有 T，不會自行把 T 另外配置到 heap："
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 13,
+      "quote": "**`Deref`** 是 `std::ops` 的標準 trait，提供 shared 借用內容的契約。associated type **`Target`** 選定借出什麼型別；`deref(&self) -> &Self::Target` 借讀外層，交回指向目標的 reference。這沿用第 6.4 節的 associated type，以及第 7.4 節輸出連到 receiver 的省略規則。"
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 25,
+      "quote": "對 Wrapper 使用 `*wrapped`，Rust 可經由 Deref 取得 `&T`，再存取它指向的 T。理解 shared 讀取時，可以連到 `*wrapped.deref()`。若 T 是 i32，可以 Copy 數字；若是 String，得到存取位置不等於能移出 ownership。"
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 27,
+      "quote": "要透過外層修改內容，再實作 **`DerefMut`**。它同樣位於 std::ops，要求型別已有 Deref，沿用相同 Target；`deref_mut(&mut self) -> &mut Self::Target` 把 mutable 借用連到原欄位："
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 63,
+      "quote": "**deref coercion** 指 Rust 在需要某種 reference 型別的位置，透過 Deref 把 reference 轉成借用內容的形式。coercion 在這裡是依型別要求的轉換，沒有複製內容或交出 owned 值。"
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 97,
+      "quote": "**method 查找也會沿 Deref 尋找內容的方法，再依 receiver 要求借用。** 因此對 mutable 的 `Wrapper<String>` 可呼叫既有 push_str，借改原 String；as_str 則借讀它。這適合外層確實要提供「像內容一樣借用」的介面；若只希望開放少數業務操作，可以保留具名 method，而不讓所有內容方法都參與查找。"
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 101,
+      "quote": "Box 支援以星號取出 owned 非 Copy 值，是第 11.2 節的特定契約。自訂 Deref 只提供 reference，不能因此對 `Wrapper<String>` 寫 `let taken = *wrapped;`。以下完整負例得到 **E0507**："
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 113,
+      "quote": "需要交出內容時，另外提供 **`into_inner(self) -> T`**。它接手整份 Wrapper，再 move 出 value；這份 Wrapper 沒有自訂 Drop，因此可直接交出欄位："
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 119,
+      "quote": "Target 的其他 trait 也不會自動變成外層的能力。以下完整負例要求 owned 輸入有 Copy，傳入 Wrapper 而得到 **E0277**；雖然欄位是 i32，Wrapper 本身並未實作 Copy："
+    },
+    {
+      "section_id": "11.4",
+      "path": "docs/chapters/11-04-lesson.md",
+      "line": 133,
+      "quote": "將內容為 Rust 的 String 交給 Wrapper，不直接寫 `.value`。透過 push_str 追加「 教學」，以 as_str 確認 `Rust 教學`，最後以 into_inner 取得 owned String。前兩步借用，最後一步接手整份外層。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

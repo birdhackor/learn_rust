@@ -1,0 +1,75 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "2.5"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round02-control-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch02.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/02-05-lesson.md": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e",
+    "examples/intro-workspace/control-steps/examples/loop_control.rs": "7c1640b31c181ac50b6922533218f2ccf184e5e768579be1bd68003aad8dd03f",
+    "examples/intro-workspace/control-steps/Cargo.toml": "52011d81554362fc0008e34c86caab53d1da8f6e599cb7b335e0b3b2dd5d8c6e",
+    "examples/intro-workspace/control-steps/examples/loop_labels.rs": "dc9fd3e1da02ebbb9fdba212f5406060526405fb01dc1451322389080b3c0b85",
+    "examples/intro-workspace/control-steps/examples/loop_control_answer.rs": "21df03e8173ebbf8c3706184edfae6ec0ac88fe86a2d3d4772f1c7168b7d1208",
+    "examples/intro-workspace/control-steps/examples/loop_labels_answer.rs": "bc295b0b9b2fe6cb2b2cbb4fc8402943e783f8f8c45fd449d1ab8d8c1bca19a7"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "2.5",
+      "path": "docs/chapters/02-05-lesson.md",
+      "line": 3,
+      "quote": "for 在材料用完時結束，while 在條件不成立時結束。有時候我們想在 body 裡的某個位置說「到這裡就停止」，或者「這一項略過，接著處理下一項」。這一節把這兩種去向分清楚。"
+    },
+    {
+      "section_id": "2.5",
+      "path": "docs/chapters/02-05-lesson.md",
+      "line": 7,
+      "quote": "`loop { ... }` 反覆執行 body，不會自行檢查結束條件。`break;` 會立刻結束目前最近一層迴圈，接著執行迴圈後的程式："
+    },
+    {
+      "section_id": "2.5",
+      "path": "docs/chapters/02-05-lesson.md",
+      "line": 17,
+      "quote": "`loop` 也能作為 expression。`break 值;` 在停止的同時，讓整個 loop 交出該值："
+    },
+    {
+      "section_id": "2.5",
+      "path": "docs/chapters/02-05-lesson.md",
+      "line": 31,
+      "quote": "若整個走訪還要繼續，只想略過某一項，使用 `continue;`。它立刻跳過 body 剩餘部分，進入下一次："
+    },
+    {
+      "section_id": "2.5",
+      "path": "docs/chapters/02-05-lesson.md",
+      "line": 63,
+      "quote": "迴圈裡可以再有迴圈。現在用兩段整數 range 表示三列、每列三格：外層取得列號，內層取得格號，依序檢查 `(1, 1)`、`(1, 2)`、`(1, 3)`，再到 `(2, 1)`。這裡沒有引入新的表格資料型別，只使用兩個整數名稱描述位置。"
+    },
+    {
+      "section_id": "2.5",
+      "path": "docs/chapters/02-05-lesson.md",
+      "line": 65,
+      "quote": "沒寫標籤的 break、continue 作用於**所在位置最近的迴圈**。要從內層直接結束外層，可以在外層前寫 **loop label**（迴圈標籤），例如 `'search:`，再用 `break 'search;` 指向它。開頭有單引號，宣告後有冒號；它是迴圈的名稱。"
+    },
+    {
+      "section_id": "2.5",
+      "path": "docs/chapters/02-05-lesson.md",
+      "line": 105,
+      "quote": "先完成兩項基本控制：從 1 開始逐次增加，用 loop 找出第一個正偶數並交給變數；再加總 1 到 5，但用 continue 跳過 3。預期答案是 2 與 12。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

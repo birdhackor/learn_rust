@@ -1,0 +1,451 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "18.12"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "prior_knowledge": "Basic Python plus personally read actual1–17 and18.1–18.11, each preceding B wave sealed separately. Only release/version metadata, no author PASS used as correctness evidence."
+  },
+  "evidence": {
+    "scope": [
+      "18.12"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-12-lesson.md",
+        "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/Cargo.lock",
+        "sha256": "18c26cc7576f96c28a82660d52f77e50620369f19617a9459d3561d9f8b6d4f0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/Cargo.toml",
+        "sha256": "989f84de7fa556027fcc254f4fb7887f3ddf16fa1ac714651633ee81019e7727"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/README.md",
+        "sha256": "53e266824dbdc03aaf9af1eb970d32ad78167fe6dacc406a958710e2e974511a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/fixtures/invalid-urls.txt",
+        "sha256": "e89bcb35b58442ca0ff82705c99cc9c344dd8175f4bf78cdac888e54a58f94ee"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/app.rs",
+        "sha256": "7e07b31b22fed5bd4b1b2edac7093d2adaea0134ef03b859732a01cf793f1b77"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/batch.rs",
+        "sha256": "e90bc1543dc1f2ab946a59010e0f1bab59e32db869412e7927a809bd5e16642a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/config.rs",
+        "sha256": "0c23c7c6f983f73b8856e5ef248449c92936bc060f79062545a1a3a0ec1b2739"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/error.rs",
+        "sha256": "fb67e8e826bff7ab79df64c5227b39a6dc62253cd0858cea07cb58ab34127b3f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/input.rs",
+        "sha256": "2a7e50f13cc83851c23b804cdb98479867be958a41464ce765c78368438bbe1d"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/lib.rs",
+        "sha256": "f623dc1f88ff3c220c13eb7136b57ffd53f6a55d973cad171d21976e0d6238b1"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/main.rs",
+        "sha256": "0a6b62229a8e2e6c9297c73b3ad235f91271bc7dc1c7a04420e4da137a456af1"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/report.rs",
+        "sha256": "2cea7007b9bb1838022649908dcbe6fc445d2bd098af0795c28a3dc213783498"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/single.rs",
+        "sha256": "fea3a0b4e025e14b322ca61cc14da6590ee2360824268cc9b223a9e5c28c3ee4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/test_fixture.rs",
+        "sha256": "2c5d78c5000bb07e597d89f87e03183637c94fc2a3b35cddcc72f46d31d949a4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/tests/config.rs",
+        "sha256": "c99333408f134a82a1d15b7f4a2fc90b0014534c4da1f1bfa050df821064edf9"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch15-projects/url-checker/Cargo.lock",
+      "examples/ch15-projects/url-checker/Cargo.toml",
+      "examples/ch15-projects/url-checker/README.md",
+      "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt",
+      "examples/ch15-projects/url-checker/src/app.rs",
+      "examples/ch15-projects/url-checker/src/batch.rs",
+      "examples/ch15-projects/url-checker/src/config.rs",
+      "examples/ch15-projects/url-checker/src/error.rs",
+      "examples/ch15-projects/url-checker/src/input.rs",
+      "examples/ch15-projects/url-checker/src/lib.rs",
+      "examples/ch15-projects/url-checker/src/main.rs",
+      "examples/ch15-projects/url-checker/src/report.rs",
+      "examples/ch15-projects/url-checker/src/single.rs",
+      "examples/ch15-projects/url-checker/src/test_fixture.rs",
+      "examples/ch15-projects/url-checker/tests/config.rs"
+    ],
+    "normal_library_modules": [
+      "lib",
+      "app",
+      "batch",
+      "config",
+      "error",
+      "input",
+      "report",
+      "single"
+    ],
+    "lib_test_adds": [
+      "test_fixture",
+      "batch::tests(7)",
+      "report::tests(5)",
+      "app::tests(4)"
+    ],
+    "integration_target": "tests/config.rs(2) plus normal library only",
+    "snippets": [
+      {
+        "line": 28,
+        "reference": "examples/ch15-projects/url-checker/Cargo.toml"
+      },
+      {
+        "line": 34,
+        "reference": "examples/ch15-projects/url-checker/Cargo.lock"
+      },
+      {
+        "line": 40,
+        "reference": "examples/ch15-projects/url-checker/src/lib.rs"
+      },
+      {
+        "line": 46,
+        "reference": "examples/ch15-projects/url-checker/src/config.rs"
+      },
+      {
+        "line": 52,
+        "reference": "examples/ch15-projects/url-checker/src/error.rs"
+      },
+      {
+        "line": 58,
+        "reference": "examples/ch15-projects/url-checker/src/input.rs"
+      },
+      {
+        "line": 64,
+        "reference": "examples/ch15-projects/url-checker/src/single.rs"
+      },
+      {
+        "line": 70,
+        "reference": "examples/ch15-projects/url-checker/src/batch.rs"
+      },
+      {
+        "line": 76,
+        "reference": "examples/ch15-projects/url-checker/src/report.rs"
+      },
+      {
+        "line": 82,
+        "reference": "examples/ch15-projects/url-checker/src/app.rs"
+      },
+      {
+        "line": 88,
+        "reference": "examples/ch15-projects/url-checker/src/main.rs"
+      },
+      {
+        "line": 94,
+        "reference": "examples/ch15-projects/url-checker/src/test_fixture.rs"
+      },
+      {
+        "line": 100,
+        "reference": "examples/ch15-projects/url-checker/tests/config.rs"
+      },
+      {
+        "line": 106,
+        "reference": "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt"
+      },
+      {
+        "line": 112,
+        "reference": "examples/ch15-projects/url-checker/README.md"
+      }
+    ],
+    "commands": [
+      {
+        "source": "docs/chapters/18-12-lesson.md",
+        "line": 130,
+        "command": "cargo +1.99.0 build --release --locked"
+      },
+      {
+        "source": "docs/chapters/18-12-lesson.md",
+        "line": 131,
+        "command": "cargo +1.99.0 run --quiet --locked -- fixtures/invalid-urls.txt --json"
+      },
+      {
+        "source": "docs/chapters/18-12-lesson.md",
+        "line": 141,
+        "command": "cargo +1.99.0 test --lib --locked"
+      },
+      {
+        "source": "docs/chapters/18-12-lesson.md",
+        "line": 142,
+        "command": "cargo +1.99.0 test --test config --locked"
+      },
+      {
+        "source": "docs/chapters/18-12-lesson.md",
+        "line": 143,
+        "command": "cargo +1.99.0 clippy --lib --bin url-checker --test config --locked -- -D warnings"
+      },
+      {
+        "source": "docs/chapters/18-12-lesson.md",
+        "line": 148,
+        "command": "cargo install --path . --locked"
+      },
+      {
+        "source": "docs/chapters/18-12-lesson.md",
+        "line": 151,
+        "command": "cargo +1.99.0 install --path . --locked"
+      },
+      {
+        "source": "examples/ch15-projects/url-checker/README.md",
+        "line": 8,
+        "command": "cargo +1.99.0 build --release --locked"
+      },
+      {
+        "source": "examples/ch15-projects/url-checker/README.md",
+        "line": 9,
+        "command": "cargo +1.99.0 run --quiet --locked -- fixtures/invalid-urls.txt --json"
+      },
+      {
+        "source": "examples/ch15-projects/url-checker/README.md",
+        "line": 15,
+        "command": "cargo +1.99.0 run --quiet --locked -- 自己的清單.txt --jobs 2 --timeout-secs 5 --json"
+      },
+      {
+        "source": "examples/ch15-projects/url-checker/README.md",
+        "line": 27,
+        "command": "cargo +1.99.0 test --locked"
+      },
+      {
+        "source": "examples/ch15-projects/url-checker/README.md",
+        "line": 28,
+        "command": "cargo +1.99.0 clippy --all-targets --locked -- -D warnings"
+      },
+      {
+        "source": "examples/ch15-projects/url-checker/README.md",
+        "line": 36,
+        "command": "cargo +1.99.0 install --path . --locked"
+      }
+    ],
+    "copy_proofs": [
+      "app.rs/report.rs byte hashes unchanged from own18.11 sealed complete answer",
+      "config/error/input/single/test_fixture byte-identical to own read18.11 starter source",
+      "config integration equals previous read source after crate-name substitution;fixture bytes identical",
+      "batch implementation equals own18.11 starter complete batch;new final batch tests read in full",
+      "main read full and matches starter except crate name;root removes two dead_code attributes and adds cfg(test) fixture"
+    ],
+    "manifest": {
+      "package": {
+        "name": "url-checker",
+        "version": "0.1.0",
+        "edition": "2024",
+        "rust-version": "1.99",
+        "publish": false
+      },
+      "dependencies": {
+        "clap": {
+          "version": "4.6.7",
+          "features": [
+            "derive"
+          ]
+        },
+        "serde": {
+          "version": "1.0.229",
+          "features": [
+            "derive"
+          ]
+        },
+        "serde_json": "1.0.154",
+        "reqwest": {
+          "version": "0.13.5",
+          "default-features": false,
+          "features": [
+            "rustls"
+          ]
+        },
+        "tokio": {
+          "version": "1.53.3",
+          "default-features": false,
+          "features": [
+            "rt",
+            "macros",
+            "net",
+            "time",
+            "sync",
+            "signal"
+          ]
+        },
+        "url": "2.5.8"
+      },
+      "dev-dependencies": {
+        "axum": {
+          "version": "0.8.9",
+          "default-features": false,
+          "features": [
+            "http1",
+            "tokio"
+          ]
+        },
+        "tempfile": "3.27.0"
+      }
+    },
+    "standalone_lock": {
+      "lines": 1774,
+      "packages": 183,
+      "registry_only_dependencies": true,
+      "root": [
+        {
+          "name": "url-checker",
+          "version": "0.1.0",
+          "dependencies": [
+            "axum",
+            "clap",
+            "reqwest",
+            "serde",
+            "serde_json",
+            "tempfile",
+            "tokio",
+            "url"
+          ]
+        }
+      ]
+    },
+    "fixture_bytes": [
+      10,
+      102,
+      116,
+      112,
+      58,
+      47,
+      47,
+      104,
+      111,
+      115,
+      116,
+      47,
+      105,
+      116,
+      101,
+      109,
+      10,
+      32,
+      10,
+      47,
+      110,
+      111,
+      116,
+      101,
+      115,
+      10,
+      102,
+      116,
+      112,
+      58,
+      47,
+      47,
+      104,
+      111,
+      115,
+      116,
+      47,
+      105,
+      116,
+      101,
+      109,
+      10
+    ],
+    "physical_lines": {
+      "core": 825,
+      "tests": 898,
+      "fixture": 198,
+      "total": 1921,
+      "counting_boundary": "whole library root counted core; same-file tests start at cfg(test) in app,batch,report, plus tests/config.rs"
+    },
+    "counts": {
+      "owned_files": 15,
+      "rust_files": 11,
+      "hashes": 21,
+      "snippets": 15,
+      "cargo_commands": 13,
+      "lib_tests": 16,
+      "config_tests": 2
+    },
+    "per_module_lib_tests": {
+      "app.rs": 4,
+      "batch.rs": 7,
+      "report.rs": 5
+    }
+  },
+  "assessments": [
+    {
+      "item": "normal and test closure",
+      "judgment": "Final package is standalone all-registry dependencies, explicit minimal fields and own complete lock. Normal root private app/batch/config/error/input/report/single exposes same public types/functions; no local dependency package. Only cfg(test) adds test_fixture. Own lib harness loads all three unit-test modules plus fixture, even filtered; integration config compiles its two Parser checks against normal library, without cfgtest fixture. Bin imports normal library and main. README all-targets commands are now after all owned sources, fixture, tests and necessary APIs supplied. No hidden future scope."
+    },
+    {
+      "item": "full source and tests",
+      "judgment": "App/report answer hashes unchanged from own18.11. Five helper/model files byte-equal starter full source; input fixture bytes identical; normal batch implementation same, and complete seven local batch tests read in full. Original-entry helper replaces formerly public method locally, no new API. Completed/abort/sourceclosed/readiness/cancellation cleanup remains correct; true mixed HTTP Batch is also mapped into report and kinds(http,input,http,http,request)/status1 checked. Sixteen lib tests=7batch+5report+4app; config integration2. Source physical counts core825/tests898/Fixture198 total1921 accurate when whole root counted core."
+    },
+    {
+      "item": "commands and result",
+      "judgment": "Working directory explicitly package directory before relative fixture path and install --path.; --manifest-path alone does not chdir. Exact fixture lines preserve gaps1/3/4 and duplicate ftp, no requests attempted, three input results with None timing/status/final_url, ordinary item failure1 only after write+flush. Client/listener still prepared and cleaned as prior section. Status query must immediately follow run; POSIX/PowerShell syntax familiar from10.5. Build release and cargo run default debug are both valid independently. Own lock used when copied outside repo and root workspace lock within repo explained; pinned+1.99 toolchain install local package binaries and no publication."
+    },
+    {
+      "item": "scope and limits",
+      "judgment": "jobs counts submitted-uncollected tasks, not all input/results/render memory. GET cancellation cannot undo server effect; final2xx is policy not business correctness, no active body read not zero transport bytes. All returned normal/Requested paths await children/listener; fatal2 exceeds item/cancel status on encode/write/flush. Source chain/CLI details variable. Prose separates manually observed binary/SIGINT validation from16+2 unit/integration tests, and test-only observation deadlines are not product whole-batch timeout."
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Read entire current18.12, complete README, full final root/main/batch tests and all remaining source via direct reread or byte-identical own previously read source proof.",
+      "Resolve15 complete-file snippet references and13 Cargo command occurrences including expanded README/inline command.",
+      "Parse complete standalone manifest/lock, count16+2 tests, verify fixture bytes and825+898+198 physical Rust lines; capture21 hashes."
+    ],
+    "not_performed": [
+      "No Cargo/build/release/CLI/tests/Clippy/install, HTTP, SIGINT, timer or browser execution.",
+      "No reader experiment; no author validation records/peer reports read before own initial seal.",
+      "Actual historical binary/SIGINT validation claim not independently rerun or observed in this source-first initial review."
+    ]
+  },
+  "conclusion": "No necessary or optional technical correction found in measured18.12."
+}

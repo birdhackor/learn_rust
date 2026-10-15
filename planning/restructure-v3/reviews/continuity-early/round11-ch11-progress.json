@@ -1,0 +1,34 @@
+{
+  "utc": "2026-10-15T09:46:37.550074+00:00",
+  "scope": "Independent chapter11 in progress, NOT sealed final",
+  "read_body": [
+    "11.1",
+    "11.2",
+    "11.3",
+    "11.4",
+    "11.5",
+    "11.6",
+    "11.7",
+    "11.8",
+    "11.9",
+    "11.10",
+    "11.11"
+  ],
+  "read_actual_closure": "All canonical11.1–11.11 snippet/fullsource/helpers/answers/tests/expected sequentially read; noCargo/build; nootherrole conclusion or12 body",
+  "findings": [],
+  "positive": [
+    "11.1 Sized9 size_of11 implicitT13 beforefixed16; DST23/referenceposition+len25/table27; size_of_val/?Sized35 beforeborrowed38. 64bit output70/82 vsnotplatformuniversal, contentchange nottype; String/VecSized84. constgeneric independentneedfullarraylength104, N compiletimevalue106, inference114, ordinaryfnruntime116; mismatchedNfixture. bool3bytes exercise givenexpected161; no needrequirestorageinternals.",
+    "11.2 needownedfinite80/120/End chain3, Vecalsoadequate5; inlineSelfrecursion9→E007215/Enddoesnotfixtype17; fixedhandleownedneed23, Boxnewnonzero27 pointerT:Sized29, star/borrow31 beforebasic34; Boxwholemove37 vsinneri32copy39; ownedAmountstar43 beforetake46, differssharedrefs49. Boxcleanup71 basiccontract; chainBox89, fixedsize95/fig97-101, ownedloop105 matchconsumes/reassignnewchain, Endreturn/table111, no recursivecall117. Allhelpers/tests/answers complete; nofutureDerefmethod needed here.",
+    "11.3 Drop/destructor7 drop&mutself normalcleanup, localreverse41 vsownerDropnotlastborrow43; memdropbyvalue47, moveownerdoesnotcleanup66, Copyargdoesnotdroporiginal68; forbiddenmethod72/E0040 vsborrowE0505; ownDropthenfields96 declaredfieldorder98 notlocalreverse; nohanddropString115; CopyDrop119 E0184, nonCopyfieldmovewithDrop129 E0509, borrowedread139; completeprograms/solution all read.",
+    "11.4 Wrapperordinarystructnotheap7 before10, DerefTarget+receiver13/?Sized15 before18; starCopyvsmove25, DerefMutrequiresDeref27 before30; basicfull40/46 onlyexplicittraitmethods. coercion63/65 StringTargetstr andVecTargetslice69 before74/80; IMPORTANT checkedactual coercions/main uses wrapped.value.as_str, not wrapped.as_str, so methodlookup97 is BEFORE first actual directinner-method lookup onWrapper in finalanswer144. No orderingfinding. into_inner113 consumesownednonDropWrapper; boundCopy119/129 distinctfromborrowcoercion. Allfixtures/E0507/E0277/fullhelper/testread.",
+    "11.5 Box<&str>ownsrefnottext3; T:a7/table9/?Sized+a15 beforeBorrowed18; impliedbound21 explainedbefore30, notalltraits. staticreference48/literal50 before57, longerfitscandidate52, localstaticE059769. Tstatic81 noexternalshortborrow, valuecandrop83/ownedMessageDrop85→103, boxedborrow107 failsE0597; source TextView117. Finalhelper126 onlythreeknownfn/tests,Wrapper132 byte-identical11.4, main138 all prior. Puretypepropertywithfuturetraitobjuse146, no needinventthreadsusecase.",
+    "11.6 sharedtrait/heterogeneous need3/enumextensibility23; dynDST29/unsizing31 beforeborrowed36/48/54; listBox65/defaultstatic67/staticdynamic69–75 beforefig; Fn factories123–136; borrowed +a/placeholder155–162, fourobjectlifetimepositions185–192; dyncompat196 introducesSized/genericmethod/unknownSelf negatives beforefullcode, methodwhereSelfSized228 andknownassociatedOutput240 beforecompletecompat253. Finalhelper274 alltests complete.",
+    "11.7 Error supertraits9/source11/defaultbody13 beforeleaf22; causeenum53/outercontext57/displayonlycurrentlayer55 beforechain60–88, report73 loopterminatesdeclaredfinitechains; staticinner109 vsouterref/ownborrowederror125–150, borrowedcausefails150/160. BoxFrom166 before169/175; final201fullhelper4tests andOrderErroranswer allactualread.",
+    "11.8 strongnew/clone/count/ptr_eq13–20 beforehandles31, noCloneT; sharedborrowtotal52/54 beforehelper59, diagram3handles64 exactlycount3. Weak tables112–124 beforeobserver; upgradebranch1→2→1, Tcleanupvsallocationmetadata122. Strongcycle149 explicitlyhypotheticalbefore11.9mutation, independentneedlinkdirection155. Completehelper164 tests andthreeowneranswer read.",
+    "11.9 sharedRecordneed3/15 beforeCell19 API21–29 andCounter34; nonCopyStringreplace47 beforefullcaller58. RefCell74/table76/guardDrop+Deref81 BEFOREguards86; ordinaryreflastuse98 differsguardDrop before runtimefail103. tryResult116–121 beforefig123/128; Recorder145/147 before152/158; Rcowner vsRefCellguard182 before187; Weakparent202–206 before209 includes temporaryRc+sharedguardblocks. Completehelpers/tests238 andanswer244 allknown.",
+    "11.10 aliasidentity7/9 beforehelper14, tuple/newtype/pub.0/move40–42 beforeidentity47; Addindependentneed80/table84–92 before97 inclRhsdefault/Output/move/scaled direction; orphanlocal142/144 beforealiasnegative147, privatewrapper156/newinterface158/localtrait160 beforehelper165; genericorphanordering198–200 before205 andinverse223; fundamental235 previewonlynoactualnewimpl; coherence/blanket239 beforeoverlap244; final260 all3tests+completeTimeBatchanswer266 read.",
+    "11.11 payloadneed3/5 independentofcommonCharge; Anystatic9/11 anddowncast17/table21–24 beforeborrowed29; Event57–63 beforefullhelper68 andmain74; localborrowfails92/95. ownedResult106–117 beforefig115/program120, originalBoxmoved132 beforefixture135. TypeId144/146 beforehelper151, Boxreceiver154 beforecaller159; runtimefailure174 expectedexact. Completehelper192 bothtests andExtraInfoanswer198 allknown."
+  ],
+  "pending": "Actual11pages all11desktop/mobile with8SVG andrepresentativefullsources; fourQ rows/hashseal thenknownC10-01followup.",
+  "exposure_note": "Earlier recordedACREF02 tail-only exposure preserved. During currentsourceinventory command rg docs/chapters/11-*.md unintentionally also surfaced unrelated oldasync-page table rows; didnotreadtheirbody/useastaughtprior oruseforanychapter11judgment; canonicalscopeonly."
+}

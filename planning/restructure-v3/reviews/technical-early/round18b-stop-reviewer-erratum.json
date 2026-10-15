@@ -1,0 +1,17 @@
+{
+  "type": "reviewer own-report factual erratum; original initial unchanged",
+  "scope": "18.10",
+  "date": "2026-10-15",
+  "original_artifacts": [
+    "round18b-stop.md",
+    "round18b-stop.json"
+  ],
+  "correction": "The report incorrectly says repeated /held/0 with already-consumed gate immediately returns503. Actual source returns404 NOT_FOUND when gates.remove returnsNone;503 is only controller/gate closed. No manuscript error, no change to no-signal demo ordinary failure1 judgment.",
+  "source": {
+    "path": "/workspace/learn_rust/examples/ch11-async/local-service/src/lib.rs",
+    "sha256": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119",
+    "line": 90,
+    "text": "        None => return (StatusCode::NOT_FOUND, \"沒有未使用的 gate\").into_response(),"
+  },
+  "execution": "No code/Cargo/HTTP executed; own static source reread."
+}

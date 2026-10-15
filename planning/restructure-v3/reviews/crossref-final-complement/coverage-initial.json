@@ -1,0 +1,167 @@
+[
+  {
+    "path": "docs/chapters/01-01-lesson.md",
+    "lines": 90,
+    "sha256": "f67a72cfbbbd2557c856aa9efc5284a42b8eb8feb899ec2994949c12d03c6275"
+  },
+  {
+    "path": "docs/chapters/01-02-lesson.md",
+    "lines": 87,
+    "sha256": "d9e129971cb9ec8234de1046a936c6f2be99b09396059c2c1a2ff81a38651c22"
+  },
+  {
+    "path": "docs/chapters/01-03-lesson.md",
+    "lines": 123,
+    "sha256": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1"
+  },
+  {
+    "path": "docs/chapters/01-04-lesson.md",
+    "lines": 83,
+    "sha256": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc"
+  },
+  {
+    "path": "docs/chapters/01-05-lesson.md",
+    "lines": 78,
+    "sha256": "88627f3d2734717abff22fc4929ec6c8a24cfe33c7975a7d5b4a1cd60ec671c1"
+  },
+  {
+    "path": "docs/chapters/01-06-lesson.md",
+    "lines": 120,
+    "sha256": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b"
+  },
+  {
+    "path": "docs/chapters/01-08-lesson.md",
+    "lines": 111,
+    "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584"
+  },
+  {
+    "path": "docs/chapters/06-01-lesson.md",
+    "lines": 133,
+    "sha256": "5df389994db35de562be09374b10686ef2b11774eb70893f2200d4d159141d0a"
+  },
+  {
+    "path": "docs/chapters/06-02-lesson.md",
+    "lines": 141,
+    "sha256": "f10544e1c8c5bba31e648e597ffa8fe05c8c48305bfaba692cdea1d8033be3f7"
+  },
+  {
+    "path": "docs/chapters/06-03-lesson.md",
+    "lines": 98,
+    "sha256": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807"
+  },
+  {
+    "path": "docs/chapters/06-04-lesson.md",
+    "lines": 146,
+    "sha256": "aa304cf004199a6d7fe5925854539614d1781f80072f40f77e3fff4dfea53cba"
+  },
+  {
+    "path": "docs/chapters/06-05-lesson.md",
+    "lines": 147,
+    "sha256": "2b15a18fcedcfe1d602caaddbb570b6e921f776a67ea932f49f965a7d3a947f5"
+  },
+  {
+    "path": "docs/chapters/06-06-lesson.md",
+    "lines": 138,
+    "sha256": "c22dc2544ddca5f26d854f450028df0fc315ecd114d8db8b9a9ced81efbce549"
+  },
+  {
+    "path": "docs/chapters/10-01-lesson.md",
+    "lines": 150,
+    "sha256": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab"
+  },
+  {
+    "path": "docs/chapters/10-02-lesson.md",
+    "lines": 160,
+    "sha256": "394da63f7182a1c977beae9f11180ce370e1efe18851f4fbb0964a5dca4fb79a"
+  },
+  {
+    "path": "docs/chapters/10-03-lesson.md",
+    "lines": 180,
+    "sha256": "0ef86d599bc6a201968cededd1b0971904d3b0a957545558e6654170f626deca"
+  },
+  {
+    "path": "docs/chapters/10-04-lesson.md",
+    "lines": 206,
+    "sha256": "3fc73a9915ecedebe2589e981615aed0271a906fdfafe7bd8741367a20bf2171"
+  },
+  {
+    "path": "docs/chapters/10-05-lesson.md",
+    "lines": 218,
+    "sha256": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8"
+  },
+  {
+    "path": "docs/chapters/10-06-lesson.md",
+    "lines": 130,
+    "sha256": "1a66bbad509d726af4d6c6b8697c854ce1878fba9dd23b3311f22d471130a99c"
+  },
+  {
+    "path": "docs/chapters/10-07-lesson.md",
+    "lines": 240,
+    "sha256": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e"
+  },
+  {
+    "path": "docs/chapters/10-08-lesson.md",
+    "lines": 160,
+    "sha256": "301e423c4f1e2cd6541442c1bb47c0bf839b335031c6a9dec281ca57c1a4c2e7"
+  },
+  {
+    "path": "docs/chapters/10-09-lesson.md",
+    "lines": 249,
+    "sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55"
+  },
+  {
+    "path": "docs/chapters/15-01-lesson.md",
+    "lines": 169,
+    "sha256": "4d4b83c88f8ba6ccfcac7866d71b7a0730e55a2f5afed39f4e3d7f7ce8ef3b4b"
+  },
+  {
+    "path": "docs/chapters/15-02-lesson.md",
+    "lines": 178,
+    "sha256": "e87a0ee7d3577ac6d9d472acb519b57ac60eac6e23d52cb2e8caa17eddba1cc0"
+  },
+  {
+    "path": "docs/chapters/15-03-lesson.md",
+    "lines": 173,
+    "sha256": "8dab364a2465746176fc776a154b507efc35ba3c4e0b89b69d9b19a96512f18e"
+  },
+  {
+    "path": "docs/chapters/15-04-lesson.md",
+    "lines": 287,
+    "sha256": "3f60eb8974d39620c01dd5719914f728739bfbca6fe7507ce091d712b78ecd4f"
+  },
+  {
+    "path": "docs/chapters/15-05-lesson.md",
+    "lines": 302,
+    "sha256": "d7a229d638429477507f1ca2beb0d742c008be9380f724d527f8ec583d15f04a"
+  },
+  {
+    "path": "docs/chapters/15-06-lesson.md",
+    "lines": 579,
+    "sha256": "ed5a9511f205772cacba2f95e4c4b5b25744e59c039fdd4c656e78d090e713a7"
+  },
+  {
+    "path": "docs/chapters/16-01-lesson.md",
+    "lines": 168,
+    "sha256": "a02196df700ac59c39a0d5d0a73a457d54661a69110d145086deac890aca84a3"
+  },
+  {
+    "path": "docs/chapters/16-02-lesson.md",
+    "lines": 212,
+    "sha256": "e23aa436d2fae0c6d9a0d80d17f053ae3bed168bc40a1cd42ea00fdce2a54aca"
+  },
+  {
+    "path": "docs/chapters/16-03-lesson.md",
+    "lines": 209,
+    "sha256": "a95a5c1a963f7dce7c6be06c75e077f696a4dd6ffc01cc5d26f77155452e81d1"
+  },
+  {
+    "path": "docs/chapters/16-04-lesson.md",
+    "lines": 226,
+    "sha256": "812dd287942e8bdfe9835c8dafe5f0039b76bd2058c0c7c2a12937b411faa1d1"
+  },
+  {
+    "path": "docs/chapters/16-05-lesson.md",
+    "lines": 382,
+    "sha256": "682ee2b551cda73f3589643ce3f9827570e368d10377759af42a9182fd0755e7"
+  }
+]

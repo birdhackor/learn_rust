@@ -1,0 +1,82 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "2.6"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round02-control-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch02.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/02-06-lesson.md": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+    "examples/intro-workspace/modules-basic/src/lib.rs": "a2730bc5b8092f7a450369a65582404dbb83895caf104941af12d8a39024e534",
+    "examples/intro-workspace/modules-basic/src/pricing.rs": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+    "examples/intro-workspace/modules-basic/src/main.rs": "83572d3c55811d1579ef9ed372dafedc16502b8b731d926b2ab5db5868423ec2",
+    "examples/intro-workspace/modules-basic/Cargo.toml": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+    "examples/intro-workspace/modules-basic/examples/order_answer/main.rs": "35dc799103c50b34828d6b4b05aab0adce46a6ff86bfef5d163ef7ef3cfde641",
+    "examples/intro-workspace/modules-basic/examples/order_answer/display/mod.rs": "5994928cbb96e5c9e5f407b5ecd09df3b596918f48fbf804ed7295677c75cbf0"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "2.6",
+      "path": "docs/chapters/02-06-lesson.md",
+      "line": 3,
+      "quote": "目前已會計價與加總，也有負責顯示的 `main`。若另一個程式也想使用運費規則，我們希望兩個呼叫者都能找到同一份計算，而不用複製函式。這一節保持輸入與答案，將計算放進 library，再讓 binary 呼叫它。"
+    },
+    {
+      "section_id": "2.6",
+      "path": "docs/chapters/02-06-lesson.md",
+      "line": 7,
+      "quote": "第一章區分過 package 與 crate。現在建立的 package 叫 `intro-modules-basic`，資料夾是 `examples/intro-workspace/modules-basic/`。它同時有兩種 crate："
+    },
+    {
+      "section_id": "2.6",
+      "path": "docs/chapters/02-06-lesson.md",
+      "line": 26,
+      "quote": "**module** 將相關程式收在同一個名稱範圍裡。在 `lib.rs` 寫 `mod pricing;`，宣告名為 `pricing` 的 module，讓編譯器載入相鄰的 `pricing.rs`。只把一個 `.rs` 檔放在資料夾裡，不會使它自動成為這個 crate 的 module。"
+    },
+    {
+      "section_id": "2.6",
+      "path": "docs/chapters/02-06-lesson.md",
+      "line": 55,
+      "quote": "Rust 用 `::` 連起名稱層級。例如 `intro_modules_basic::pricing::subtotal` 依序是 library crate、module、函式；它不是檔案路徑，不使用 `/`。"
+    },
+    {
+      "section_id": "2.6",
+      "path": "docs/chapters/02-06-lesson.md",
+      "line": 57,
+      "quote": "若在這個 library crate **內部**從根開始找，寫 `crate::pricing::subtotal`。`crate` 這個關鍵字表示「目前這個 crate 的根」，不是將 package 名稱寫成英文單字。`src/main.rs` 是另一個 crate，所以它從 library 名稱 `intro_modules_basic` 開始找。"
+    },
+    {
+      "section_id": "2.6",
+      "path": "docs/chapters/02-06-lesson.md",
+      "line": 69,
+      "quote": "完整設定如下，仍是第一章已教的三個欄位："
+    },
+    {
+      "section_id": "2.6",
+      "path": "docs/chapters/02-06-lesson.md",
+      "line": 95,
+      "quote": "再寫一個範例，使用同一份 library 計算單價 140、數量 2 的商品小計與含運總額。預期為 280 與 300。讓範例自己的顯示函式 `show_order(goods: i32, total: i32)` 放進 `display` module，與 library 的計價工作分開。"
+    },
+    {
+      "section_id": "2.6",
+      "path": "docs/chapters/02-06-lesson.md",
+      "line": 113,
+      "quote": "在這個範例的 `main.rs` 寫 `mod display;`，可以從同一層的 `display.rs` **或** `display/mod.rs` 載入內容；這兩種是替代路徑，同一個 module 只能選一種。`mod.rs` 是 Rust 仍支援的 module 檔名形式，本題選它，因此建立 `display/mod.rs`，不再建立 `display.rs`。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

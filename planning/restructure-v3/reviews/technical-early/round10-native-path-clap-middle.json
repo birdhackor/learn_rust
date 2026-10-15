@@ -1,0 +1,448 @@
+{
+  "review_id": "round10-native-path-clap-middle",
+  "scope": [
+    "10.5",
+    "10.6"
+  ],
+  "role": "獨立技術／先教後用／實際 source closure 審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 真正已讀1–9、10.1–10.4；不使用已另讀11章填補10章先備。",
+  "independence": "首次全文/source實讀與封存前未看作者validation/ledger、peer、reader或historical findings。父任務只交接範圍、頁hash、package邊界，未給具體finding。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "兩節全文與9個owned Rust完整來源、2manifest、fixture bytes、selectedrun/test closure逐檔靜態核對。",
+    "19個snippet anchors/fullsource與3份argument helper複製片段bytes比較。",
+    "只讀本地cached clap 4.6.7/Builder實作核對Parser bound、Error出口/狀態/print與version/usage名稱；不讀作者驗證。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "program_execution": false,
+    "note": "沒有新增Cargo/Rust或CLI執行，沒有產生captured檔案。所有stdout/stderr/status為正文與source靜態契約核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:42:17.400038+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "docs/chapters/10-05-lesson.md": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+    "docs/chapters/10-06-lesson.md": "1a66bbad509d726af4d6c6b8697c854ce1878fba9dd23b3311f22d471130a99c",
+    "examples/intro-workspace/Cargo.lock": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/clap-stage/Cargo.toml": "55a8f5afea9eb11af78a25bd6c7b1a82b8692a916ea90b3e67ad71d70b6f7f9e",
+    "examples/intro-workspace/clap-stage/examples/flag_solution.rs": "ca1f376a0080652341a6394d704d661125b2ea0fb04290194203ae321f1b3ab2",
+    "examples/intro-workspace/clap-stage/src/lib.rs": "edca0e0379f2fb8a5cb9d146901a6d3f7152e2dc5b04bd911a776f273c8e34a4",
+    "examples/intro-workspace/clap-stage/src/main.rs": "d979c7dc71da233061c44000cbe4ab5130890fb8e4817810754b86ddfdc369fc",
+    "examples/intro-workspace/io-text/fixtures/empty.txt": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "examples/intro-workspace/io-text/fixtures/not-utf8.bin": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+    "examples/intro-workspace/io-text/fixtures/note.txt": "a581105a3e3bce0d0ae0ff57955745e4c5df376a9a751acec1f5f5e08a6be213",
+    "examples/intro-workspace/path-cli/Cargo.toml": "26532c670174fe88ec62f48afb2db631d7cad2b89aea973332e18967cb4cfbe2",
+    "examples/intro-workspace/path-cli/examples/argument_pair_solution.rs": "25a656c4bdee4191d4a142def05402412ef167a69d559821141fb4322afce20b",
+    "examples/intro-workspace/path-cli/examples/arguments.rs": "e8c966464f0702ed7499c3af8933c51a410051f32e288de587df44376169bd2a",
+    "examples/intro-workspace/path-cli/examples/os_strings.rs": "2f2b0d8ceb0aad5bc08b4299ece2b5118726545152babb4302a0d5e6926dabee",
+    "examples/intro-workspace/path-cli/examples/path_types.rs": "b4c72588edc038a837e803f28bee7a9ff726eab28ff5e3856985cc15601c0370",
+    "examples/intro-workspace/path-cli/examples/working_directory.rs": "8bcba0175b70732d280241b9eacecd9295599795cf079140bdab4119d04685f3",
+    "examples/intro-workspace/path-cli/src/main.rs": "5b502a5cd6c42ac0dcbb0f70b772cb0287c0a2296766c094e35ed35bde91d41c",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "external_registry_source_hashes": {
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap-4.6.7/Cargo.toml": "4c4829a1a916d2c47e3299ca4c3e607721fc62998d2d3628afc10a85f0a8169a",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.6.7/src/derive.rs": "9435f58f2ebcc16aba2bbc3a5374e0dfd4fe1d1bfc4cd6dc5ca8a08d4e9e9680",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.6.7/src/error/mod.rs": "e1884c15bf526ad1334c39494a0ba0cf9652c2fa5b0a554367bc3c6373e93fe8",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/clap_builder-4.6.7/src/builder/command.rs": "495d471f5b60b0c61e926ac729f0ba34f835cff1119f8b0f87aee642b70cea11"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "clap",
+      "version": "4.6.7",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+      "dependencies": [
+        "clap_builder",
+        "clap_derive"
+      ]
+    },
+    {
+      "name": "clap_builder",
+      "version": "4.6.7",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "ec0797fb7aeb1406c84efac526901f7ec3ead2124f946b494e72879d4b54704d",
+      "dependencies": [
+        "anstream",
+        "anstyle",
+        "clap_lex",
+        "strsim"
+      ]
+    },
+    {
+      "name": "clap_derive",
+      "version": "4.6.7",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "f9c751b79415d4e559e3d1fcf128e09e720eb673a06d26cf6f392d37d75b66e0",
+      "dependencies": [
+        "heck",
+        "proc-macro2",
+        "quote",
+        "syn"
+      ]
+    },
+    {
+      "name": "intro-clap-stage",
+      "version": "0.1.0",
+      "dependencies": [
+        "clap"
+      ]
+    },
+    {
+      "name": "intro-path-cli",
+      "version": "0.1.0"
+    }
+  ],
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 31,
+      "source": "examples/intro-workspace/path-cli/examples/path_types.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 60,
+      "source": "examples/intro-workspace/path-cli/examples/os_strings.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 72,
+      "source": "examples/intro-workspace/path-cli/examples/working_directory.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 88,
+      "source": "examples/intro-workspace/path-cli/examples/arguments.rs",
+      "tag": "argument-error",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 96,
+      "source": "examples/intro-workspace/path-cli/examples/arguments.rs",
+      "tag": "argument-parser",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 106,
+      "source": "examples/intro-workspace/path-cli/examples/arguments.rs",
+      "tag": "argument-tests",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 116,
+      "source": "examples/intro-workspace/path-cli/examples/arguments.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 138,
+      "source": "examples/intro-workspace/path-cli/src/main.rs",
+      "tag": "streams",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 144,
+      "source": "examples/intro-workspace/path-cli/src/main.rs",
+      "tag": "cli-main",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 175,
+      "source": "examples/intro-workspace/path-cli/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 183,
+      "source": "examples/intro-workspace/path-cli/src/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 189,
+      "source": "examples/intro-workspace/io-text/fixtures/note.txt",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-05-lesson.md",
+      "line": 209,
+      "source": "examples/intro-workspace/path-cli/examples/argument_pair_solution.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-06-lesson.md",
+      "line": 32,
+      "source": "examples/intro-workspace/clap-stage/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-06-lesson.md",
+      "line": 47,
+      "source": "examples/intro-workspace/clap-stage/src/lib.rs",
+      "tag": "settings",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-06-lesson.md",
+      "line": 70,
+      "source": "examples/intro-workspace/clap-stage/src/lib.rs",
+      "tag": "settings-tests",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-06-lesson.md",
+      "line": 84,
+      "source": "examples/intro-workspace/clap-stage/src/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-06-lesson.md",
+      "line": 109,
+      "source": "examples/intro-workspace/clap-stage/src/lib.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-06-lesson.md",
+      "line": 121,
+      "source": "examples/intro-workspace/clap-stage/examples/flag_solution.rs",
+      "tag": null,
+      "source_anchor_found": true
+    }
+  ],
+  "selected_target_closure": {
+    "intro_path_cli": {
+      "no_lib": true,
+      "no_build_script": true,
+      "dependencies": [],
+      "targets": {
+        "path_types": [
+          "examples/path_types.rs"
+        ],
+        "os_strings": [
+          "examples/os_strings.rs"
+        ],
+        "working_directory": [
+          "examples/working_directory.rs"
+        ],
+        "arguments": [
+          "examples/arguments.rs（test模式2tests；自己的固定main也編譯）"
+        ],
+        "bin intro-path-cli": [
+          "src/main.rs（test模式2tests）"
+        ],
+        "argument_pair_solution": [
+          "examples/argument_pair_solution.rs"
+        ]
+      },
+      "commands": "5個unique run target + 2 selected test；arguments只以test命令選擇。主要binary成功run另有一次stdout/stderr redirection的重複觀察命令。",
+      "cwd": "repo根cd到examples/intro-workspace/path-cli，manifest-path Cargo.toml；../io-text/fixtures相對此cwd。"
+    },
+    "intro_clap_stage": {
+      "no_build_script": true,
+      "dependencies": [
+        "clap（lock 4.6.7，derive且保留default features）"
+      ],
+      "normal_library": "src/lib.rs只有Settings+四項cfg(test)解析測試；主要binary和flag_solution例子都自動建置這份完整lib，沒有JSON/搜尋module。",
+      "targets": {
+        "lib": [
+          "src/lib.rs（4tests）"
+        ],
+        "bin intro-clap-stage": [
+          "src/main.rs",
+          "src/lib.rs"
+        ],
+        "flag_solution": [
+          "examples/flag_solution.rs（自己的新增line_numbers模型）",
+          "src/lib.rs（正常library自動建置，即使未直接use）"
+        ]
+      },
+      "commands": "1selectedlibtest，2個unique run target；主要binary依正文分別傳成功資料、--help、--version。",
+      "cwd": "repo根cd到examples/intro-workspace/clap-stage，manifest-path Cargo.toml；此節只解析設定，filename不需存在。"
+    }
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/10-05-lesson.md:9",
+      "judgment": "Path/PathBuf借用與owned分工、new/join/push/as_path、相對/絕對平台規則與非I/O角色先教；PartialEq只比路徑組成，不保真實同檔。"
+    },
+    {
+      "source": "docs/chapters/10-05-lesson.md:26",
+      "judgment": "path.display回可格式化借用物件而非String，可能失真僅供人看；to_str Option檢查Unicode不判路徑存在，與source一致。"
+    },
+    {
+      "source": "docs/chapters/10-05-lesson.md:42",
+      "judgment": "OsString/OsStr、ffi名義、nonCopy/Clone、into_string Err保留原owned資料、PathBuf::from原生資料皆在首用前清楚。"
+    },
+    {
+      "source": "docs/chapters/10-05-lesson.md:67",
+      "judgment": "current_dir io::Result<PathBuf>、read_to_string的AsRef<Path>、cwd/原始碼位置分清。"
+    },
+    {
+      "source": "docs/chapters/10-05-lesson.md:81",
+      "judgment": "args_os Item owned OsString、第一筆慣例非可靠執行檔路徑、args Unicode panic風險；IntoIterator/next完整序列parser只接受一個檔名，略過_program_name仍推進一次。"
+    },
+    {
+      "source": "docs/chapters/10-05-lesson.md:121",
+      "judgment": "stdout資料/stderr診斷、Write/flush、ExitCode constants/From<u8>/main正常返回、writeln結果與換行先教；每條branch都保留io失敗，參數錯誤2、讀檔/輸出失敗1、成功0契約對source。"
+    },
+    {
+      "source": "docs/chapters/10-05-lesson.md:149",
+      "judgment": "Cargo --與--quiet、Bash >和2>與立即echo $?均先說明，觀察0/1/2限Linux教材環境；成功內容沒有另加標題或換行。"
+    },
+    {
+      "source": "docs/chapters/10-06-lesson.md:29",
+      "judgment": "完整clap dependency/derive feature沿已讀10.1，不額外引入繼承設定。command/arg attributes、positional/long bool/help/version與name和argv0不同角色均在首Settings前教。"
+    },
+    {
+      "source": "docs/chapters/10-06-lesson.md:52",
+      "judgment": "try_parse_from輸入完整含argv0序列，IntoIterator/Into<OsString>+Clone條件正確；args_os和owned OsString array符合，沒有先略過programname。"
+    },
+    {
+      "source": "docs/chapters/10-06-lesson.md:56",
+      "judgment": "clap::Error含資訊顯示請求，不把Err全當失敗。use_stderr/exit_code實際4.6.7 source驗出help/version stdout0，其餘stderr2。print不自行exit且回io::Result，main印成功才回預期code，I/O失敗回FAILURE。"
+    },
+    {
+      "source": "docs/chapters/10-06-lesson.md:77",
+      "judgment": "show_settings依shared borrow輸出三行並flush，設定檢查工具不提前搜尋；filename用display僅作顯示，不改原生PathBuf。"
+    },
+    {
+      "source": "docs/chapters/10-06-lesson.md:112",
+      "judgment": "--lib只編譯library/tests，之後CLI編譯main；flag_solution正常lib closure在正文完整inline。未載後續JSON/搜尋來源。"
+    }
+  ],
+  "external_api_evidence": [
+    {
+      "file": "clap_builder-4.6.7/src/derive.rs",
+      "lines": "71–77",
+      "fact": "try_parse_from<I,T>, I:IntoIterator<Item=T>, T:Into<OsString>+Clone；沒有print或exit。"
+    },
+    {
+      "file": "clap_builder-4.6.7/src/error/mod.rs",
+      "lines": "218–239,268–279",
+      "fact": "DisplayHelp/DisplayVersion→Stdout；其他→Stderr；exit_code 0/2；print(&self)->io::Result<()>依stream呼叫Colorizer print。"
+    },
+    {
+      "file": "clap_builder-4.6.7/src/builder/command.rs",
+      "lines": "898–912,4895–4910",
+      "fact": "用argv0 filename設定未指定的bin_name；version使用display_name或command name，所以Cargo help usage可用intro-clap-stage，version仍query-settings 0.1.0。"
+    }
+  ],
+  "fixtures": {
+    "note": {
+      "path": "examples/intro-workspace/io-text/fixtures/note.txt",
+      "bytes": [
+        82,
+        117,
+        115,
+        116,
+        10,
+        228,
+        184,
+        173,
+        10
+      ],
+      "checked_actual_bytes": true
+    },
+    "empty": {
+      "path": "examples/intro-workspace/io-text/fixtures/empty.txt",
+      "bytes": [],
+      "checked_actual_bytes": true
+    },
+    "invalid": {
+      "path": "examples/intro-workspace/io-text/fixtures/not-utf8.bin",
+      "bytes": [
+        255
+      ],
+      "checked_actual_bytes": true
+    },
+    "missing": {
+      "path": "examples/intro-workspace/io-text/fixtures/missing.txt",
+      "exists": false,
+      "checked": true
+    },
+    "compile_fail": "本波沒有新compile-fail/runtime-fail fixture；CLI用法/讀取失敗是正常回傳狀態。"
+  },
+  "static_outputs": {
+    "path_types": "notes原值；三段路徑，文字來源to_str Some，平台分隔符依平台",
+    "os_strings": "中文原生字串可to_str；Rust可into_string；move成PathBuf不再用native",
+    "working_directory": "依實際cwd組相鄰note路徑，讀Rust\\n中\\n",
+    "arguments": "test2檢查合法/少/多；固定main取得中文檔名（正文未提供run命令，未聲稱執行）",
+    "path_cli_success": "stdout原note9bytes，stderr空，status0",
+    "path_cli_usage": "stdout空，stderr用法，status2（若stderr本身失敗則1）",
+    "path_cli_missing_or_invalid": "stdout空，stderr讀取原因，status1",
+    "argument_pair_solution": "剛好兩個ownedPathBuf；少第二個/多第三個分類分開；不讀檔",
+    "clap_settings": "query=Rust；filename=中文筆記.txt；ignore_case=true，省略flag false",
+    "clap_help_version": "stdout說明／query-settings 0.1.0，status0",
+    "clap_usage": "少positional/unknown→stderr，status2",
+    "flag_solution": "line_numbers false→true；query/filename保留、ignore_case false"
+  },
+  "tests": {
+    "arguments": 2,
+    "path_cli_bin": 2,
+    "clap_library": 4,
+    "total": 8
+  },
+  "copy_checks": [
+    {
+      "tag": "argument-error",
+      "from": "examples/intro-workspace/path-cli/examples/arguments.rs",
+      "to": "examples/intro-workspace/path-cli/src/main.rs",
+      "byte_identical": true
+    },
+    {
+      "tag": "argument-parser",
+      "from": "examples/intro-workspace/path-cli/examples/arguments.rs",
+      "to": "examples/intro-workspace/path-cli/src/main.rs",
+      "byte_identical": true
+    },
+    {
+      "tag": "argument-tests",
+      "from": "examples/intro-workspace/path-cli/examples/arguments.rs",
+      "to": "examples/intro-workspace/path-cli/src/main.rs",
+      "byte_identical": true
+    }
+  ],
+  "limits": [
+    "整頁技術重讀，非盲首讀；沒有browser或reader實驗。",
+    "沒有新增Rust/Cargo/CLI執行，不把source推導當實跑status。",
+    "未讀10.7以後正文或ownsource當先備，workspace新增其他member只metadata。",
+    "外部clap source只為精確API/輸出條件核對，不要求學員閱讀其實作或未教內部API。"
+  ],
+  "sealed_at_utc": "2026-10-15T08:44:06.308Z",
+  "version_note": {
+    "path": "AGENTS.md",
+    "captured_hash": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "sealed_hash": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "change": "審閱期間追加獨立lesson-workspace及nested失敗workspace的驗證路徑指引。已讀現行全文；不改變本波兩個intro-workspace package契約或獨立判斷。",
+    "all_other_captured_sources_unchanged": true
+  }
+}

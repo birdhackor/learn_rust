@@ -1,0 +1,116 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "8.5"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round08-errors-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08-quote-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-crossref-followup-final.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/08-05-lesson.md": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+    "examples/intro-workspace/error-stages/examples/integer_parsing.rs": "3fae898f10055629512fdd9ab7da45bf6249e612adbb6760262f8069d89e26d0",
+    "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "examples/intro-workspace/error-stages/examples/parsing/main.rs": "ab072061fe922054bff2adfed8d42657bc079390cf70b1893a1a3a44be2d75f8",
+    "examples/intro-workspace/error-stages/examples/as_ref.rs": "1933b8b6e325c5c570c6f19f4604e25d11ced9fd96df4bb960a868e3412f8af4",
+    "examples/intro-workspace/error-stages/examples/owned_text/main.rs": "4626ae246fd6116014787dd45396a2fe6e4a80a8a688fd9fdbb217e5f365b816",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/parsing/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/parsing/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/parsing/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/owned_text/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/owned_text/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/main.rs": "df24380e4cd1eb4df14e1866c65a0068a5b9853ffdbf553962139163aef394ee",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 3,
+      "quote": "第 8.4 節的來源已經是 i32。現在輸入換成 `\"3\"`、`\"abc\"`、`\"101\"`；要取得 Count，必須先把文字解析成整數，再檢查0到100的件數規則。兩個步驟的失敗要保留不同原因。"
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 9,
+      "quote": "**`FromStr`** 是標準的解析 trait，名稱中的 str 指文字。它要求 `from_str(text: &str) -> Result<Self, Self::Err>`：借讀文字，成功時交出目的型別的值，失敗時交出實作選定的錯誤。Err 是第 6.4 節的 associated type，與 TryFrom 的 Error 同樣由 impl 指定，只是名稱不同。"
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 13,
+      "quote": "它的錯誤型別是 **`std::num::ParseIntError`**，保存整數解析失敗原因，已提供 Debug、Display、PartialEq。所以下面能顯示錯誤，也能比較 `Result<i32, ParseIntError>`；現在不需要自己建構錯誤或讀取其內部欄位。"
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 15,
+      "quote": "直接使用 `i32::from_str(\"3\")` 時，以 `use std::str::FromStr;` 引入 trait。文字的 **`parse::<i32>()`** 則是 str 提供的方法，依指定的目的型別呼叫其 FromStr，同樣交回 `Result<i32, ParseIntError>`。`::<i32>` 是第 5.1 節的 turbofish，這次指定解析目標。只用 parse 時，不必為了這個方法另引入 FromStr 名稱。"
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 38,
+      "quote": "`\"abc\"` 還沒取得整數，屬於 ParseIntError；`\"101\"` 能取得整數，但件數驗證產生 CountError。**`ParseCountError`** 因而需要兩種 variant："
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 63,
+      "quote": "`type Err = ParseCountError;` 選定解析失敗的型別，所以這裡的回傳型別實際是 `Result<Count, ParseCountError>`。先解析 i32，失敗就以 ParseCountError::from 封裝並依第 2.2 節早退；成功後才呼叫 Count::try_from 驗證件數。"
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 95,
+      "quote": "若只想知道文字的 byte 長度，就不需要先解析成數字。**`AsRef<T>`** 描述便宜、一定成功的借用式轉換；`as_ref(&self)` 借讀接收者，交回 `&T`。`AsRef<str>` 因而交回 &str，不建立新 String。"
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 99,
+      "quote": "對 String 變數 owned，傳 `&owned`；對已是 &str 的 borrowed，仍傳 `&borrowed`。後者是 **`&&str`**，也就是再借讀那份 reference 值，沒有接手它指向的文字。兩種來源都保留在呼叫者。"
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 121,
+      "quote": "**`ToString`** 的 `to_string(&self)` 借讀值，交回owned String。標準函式庫替有Display的型別提供它，不必自己實作ToString。這與 `format!(\"{error}\")` 一樣保存其Display文字，單一值不必再寫格式字串。"
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 123,
+      "quote": "**`ToOwned`** 從借來的資料建立owned產物。associated type **`Owned`** 指定產物型別；本節只使用以下兩份標準契約："
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 153,
+      "quote": "本頁全部targets仍使用no-lib的intro-error-stages，完整member設定："
+    },
+    {
+      "section_id": "8.5",
+      "path": "docs/chapters/08-05-lesson.md",
+      "line": 209,
+      "quote": "寫 `parse_count<T: AsRef<str>>(input: &T) -> Result<Count, ParseCountError>`，只借讀不同來源，交回Count的解析結果。讓&str與String都保存`\"100\"`，確認結果相等、原String仍可用；再解析`\"101\"`，確認得到件數規則失敗。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

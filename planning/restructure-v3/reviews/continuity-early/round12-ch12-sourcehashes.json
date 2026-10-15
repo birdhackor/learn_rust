@@ -1,0 +1,329 @@
+{
+  "captured_utc": "2026-10-15T09:56:48.477423+00:00",
+  "scope": "actual1–11 prior→12.1–12.4 currentcanonical/full ownsource; rootpreexposed12.4 current55f1886 version and movedfullfile-beforefirstrun plus directionline knownfix, notindependentoldversionreproduction; nootherroleconclusions read; no13+prior",
+  "files": [
+    {
+      "path": "docs/chapters/12-01-lesson.md",
+      "sha256": "5f7ab3792ff83635cc74b2147311ae448cd914c74f18e86c96aa54c0e3cf61f0",
+      "bytes": 13737
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/Cargo.toml",
+      "sha256": "6e97ad43a088d7dd8efc40b78dd98ba1670eceada51900c929d973cb10318813",
+      "bytes": 273
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/subtotal/Cargo.toml",
+      "sha256": "bd5bccc09e00f41cc0f97e0ae7ce635d5b487c7a8465106b7fbd470e9fb2d089",
+      "bytes": 140
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/subtotal/src/lib.rs",
+      "sha256": "8c8556cd2f690bb98d9a7fe580a2e5dfff690b33d212bd8d86606ec0d15c25b0",
+      "bytes": 69
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/app/Cargo.toml",
+      "sha256": "e32735dd8ab2b1fea9ff5a7e58effeac45e627240e42893d6f0f2f52be28cb2c",
+      "bytes": 235
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/app/src/lib.rs",
+      "sha256": "4b42fa928164e6c1e05c2ab8b3fac00f527f4da6fb9917558432b5605ea04cc3",
+      "bytes": 270
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/app/src/main.rs",
+      "sha256": "0efa551d7ac17f0a0c4abe9fdc99bacb18468f40ca73b7295cb1d9ec461b7493",
+      "bytes": 570
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.rs",
+      "sha256": "88bd82b20931f6f033ad9aa461ea46aba1daabeb161dc8d462a3579309c07cbf",
+      "bytes": 287
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/app/tests/features.rs",
+      "sha256": "bc4ae772e56760ed07cc5f382e2ad32ae30170db88389a7e811b7ff2b57f9cd6",
+      "bytes": 372
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/fixtures/repo-root-settings.toml",
+      "sha256": "b70cab18c3c40b108a4499473bfd0e3396721aff906d243cdfa2ed45a57e511f",
+      "bytes": 223
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/app/examples/feature_answer.rs",
+      "sha256": "104e4f86d72f3e476a0b16fe3a4a03ab4e7edce788f5547d2491a62d72b8f5ca",
+      "bytes": 464
+    },
+    {
+      "path": "docs/chapters/12-02-lesson.md",
+      "sha256": "846d2893b7c8c692a00efa7792cf4256cde6732e35f118d104585ed72bdfba7a",
+      "bytes": 11555
+    },
+    {
+      "path": "examples/ch09-build-script/Cargo.toml",
+      "sha256": "08729d8f5e96d5f6cff7d2e1e590140e2bb653f135f0f23116765bba2e7bebf9",
+      "bytes": 161
+    },
+    {
+      "path": "examples/ch09-build-script/build.rs",
+      "sha256": "5455cbca7f20f25b814391d6c1d6fb69b4e688b873d7461db27efc9fdd6d69da",
+      "bytes": 1122
+    },
+    {
+      "path": "examples/ch09-build-script/src/lib.rs",
+      "sha256": "a36ae85a666aacc2fc6fd85d07abe53b7c6838e6e81df5e039fb32752cd8eab4",
+      "bytes": 219
+    },
+    {
+      "path": "examples/ch09-build-script/src/main.rs",
+      "sha256": "4b01daa93b0e485eaf5176aea6aa9681400f68a0fd90a6b45ef36934ff178bbf",
+      "bytes": 311
+    },
+    {
+      "path": "examples/ch09-build-script/fixtures/compile-fail/missing_env.rs",
+      "sha256": "02f1a6ac65299be704f8ea4d65a4584a114952ea44f0ade5144542edc85a593a",
+      "bytes": 109
+    },
+    {
+      "path": "examples/ch09-build-script/examples/optional_build_tag.rs",
+      "sha256": "cd25f33ab9c3315783adbb397a503cd2d6ce75ed56a940f6235646a4d3aa6256",
+      "bytes": 232
+    },
+    {
+      "path": "examples/ch09-build-script/tests/embedded.rs",
+      "sha256": "74e7cd2be08fdbda72e15c9c7e5eba307faecdf9b348cacc69723131769331b9",
+      "bytes": 504
+    },
+    {
+      "path": "examples/ch09-build-script/examples/build_identity_solution.rs",
+      "sha256": "26ceb212c87ec0a61272262499764cb1116244ac65b8229f4a1ca4880a500381",
+      "bytes": 280
+    },
+    {
+      "path": "docs/chapters/../assets/engineering-v3/build-phases.svg",
+      "sha256": "4c4b51220e531dee0ef870e584f560c646620713cddb6604a760b7b5b11bf1a6",
+      "bytes": 1732
+    },
+    {
+      "path": "docs/chapters/12-03-lesson.md",
+      "sha256": "35e30859aa3cfac9752493c2e76843cfcd36c65d674bfa37c79bd8dc0c7ea8b2",
+      "bytes": 14997
+    },
+    {
+      "path": "examples/ch09-files/fixtures/tree/first.txt",
+      "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+      "bytes": 5
+    },
+    {
+      "path": "examples/ch09-files/fixtures/tree/nested/second.txt",
+      "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+      "bytes": 5
+    },
+    {
+      "path": "examples/ch09-files/fixtures/tree/.hidden/third.txt",
+      "sha256": "8cdc25affa8f5596abad0771e21fb098e26a1d786de961d96b6510915a386899",
+      "bytes": 6
+    },
+    {
+      "path": "examples/ch09-files/src/scan.rs",
+      "sha256": "e9635e1b8beb72d33a812bbaae8e669a1f4191fed612cc8a4669387f11bc48ae",
+      "bytes": 4197
+    },
+    {
+      "path": "examples/ch09-files/src/lib.rs",
+      "sha256": "4e2a6babc78a01f9e8f41dbe0492df1ffec6fffabe36ebe4f7d219ccee2acebf",
+      "bytes": 14
+    },
+    {
+      "path": "examples/ch09-files/Cargo.toml",
+      "sha256": "f11d8eabef03672f39cd9051f1f2cfd990ffa8abab0545ad24aedde9c27ba640",
+      "bytes": 205
+    },
+    {
+      "path": "examples/ch09-files/src/main.rs",
+      "sha256": "a9f4575f8f7eb4176d6737f61aec648c61c798c71da5d2a508ffd79062f77cab",
+      "bytes": 773
+    },
+    {
+      "path": "examples/ch09-files/tests/scan.rs",
+      "sha256": "d9deabaf58c0898b4f5b45dcad079bdc8dbe3a7f3f73b52e090e3cac13b1618d",
+      "bytes": 6106
+    },
+    {
+      "path": "examples/ch09-files/examples/path_identity_solution.rs",
+      "sha256": "d7914019c49126f1b677be9cd24243ad086a02626dd41f4d222466b1ca346c8b",
+      "bytes": 655
+    },
+    {
+      "path": "docs/chapters/12-04-lesson.md",
+      "sha256": "55f1886f0d40f920a3dff640c0b2a3b3f0d0647951e739e805b717a750e68754",
+      "bytes": 24790
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/Cargo.toml",
+      "sha256": "e21b8b6f8b79f1951045e3e4e1758af9a41c5c5cabc483eb63a0246cfbe205a5",
+      "bytes": 432
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/size/Cargo.toml",
+      "sha256": "e1345ee9e8b65656417ffdcfc9abbab08f0a3a4bb5b5d6ad9bc06cce69f0df87",
+      "bytes": 186
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/size/src/main.rs",
+      "sha256": "72b77f2af72e32ac21ef6aa7f3b65f7f96aa1f76272a02f82d13e93c15268ce6",
+      "bytes": 950
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/streams/Cargo.toml",
+      "sha256": "8d2a5fbcbb4a21508dbdd9e057ed030f9fac14abaecc5d8645bb8812842cc003",
+      "bytes": 187
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/streams/src/lib.rs",
+      "sha256": "202292bca873e510489885658f096460b5ddb14480f1c5367f02d30249cab97f",
+      "bytes": 2126
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/streams/src/readers.rs",
+      "sha256": "acbe127b2d079a46f6a92497621d78d0d404b6c6ed8bd9013ea0b16ab8c9434c",
+      "bytes": 1544
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/streams/src/main.rs",
+      "sha256": "55b76610e3a7456a5571c2ccc792968639c8b539e5e96e9c6e5c2965d1cd0e87",
+      "bytes": 794
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/checked-files/Cargo.toml",
+      "sha256": "49404433875c77a9605eea803380a2381477affc1fce472c84755bd534ce4264",
+      "bytes": 299
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs",
+      "sha256": "064dbe5c907ef32753da2c054579f6f6b9636eb34e9a679442d8cd13a7007187",
+      "bytes": 4409
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/checked-files/examples/file_confirmation.rs",
+      "sha256": "a5c254204049564c400dd9f8861b034373ce1ad1b1f702721acc9912758f8dc1",
+      "bytes": 1197
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/candidates.rs",
+      "sha256": "50aed7433859a79b2185a54aec11867ca501a59c1a2741126dab10717bf197d4",
+      "bytes": 2880
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/main.rs",
+      "sha256": "0add04aa9e8eb8fd2674576598e0c3d2b410630c5ff2221cc3a7d78298928571",
+      "bytes": 815
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/groups/Cargo.toml",
+      "sha256": "cb027d81c94ccfd8ac48ad6de098e6d442d4935e261f2d3da30298ed58b8be8b",
+      "bytes": 338
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/groups/src/lib.rs",
+      "sha256": "c5b7d75d460d3fd35c85cb863bb5a1f007651edd2b38e214092342cb5351e712",
+      "bytes": 2843
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/groups/src/main.rs",
+      "sha256": "6e5ba2cf244a0f271c55a37dc5052d2ebd5d67cabe5c53916420db2a23df006b",
+      "bytes": 2019
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/streams/tests/streams.rs",
+      "sha256": "4743135e855741a6ed6d1367db169811792cbef7c39012f1f781ae9561ac413d",
+      "bytes": 3645
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/groups/tests/files_groups.rs",
+      "sha256": "4ddf97dbd5d334fb301c027b98b07656cb635c65b7262c138dabcc7d891b0533",
+      "bytes": 9504
+    },
+    {
+      "path": "docs/chapters/../assets/engineering-v3/short-read-comparison.svg",
+      "sha256": "8910b09b852c9ef5b56078e3b9287e4165303a3262232c80141dcbdebd06da45",
+      "bytes": 1629
+    },
+    {
+      "path": "docs/chapters/../assets/engineering-v3/candidate-content-groups.svg",
+      "sha256": "0711cc1bca61f99a9103ebebd84f4977bea58dbd192f932d032f5e8086d4bc3c",
+      "bytes": 1596
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+      "bytes": 506
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+      "bytes": 10561
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f",
+      "bytes": 3064,
+      "role": "actualselectedworkspace metadata/read and parsed, notfutureRustteaching"
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f",
+      "bytes": 66011,
+      "role": "actualselectedworkspace metadata/read and parsed, notfutureRustteaching"
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/Cargo.lock",
+      "sha256": "f40481263d1d0d27746ef13632a7296b46a8678f6be1efb9c4f7b339d0e6eae7",
+      "bytes": 257,
+      "role": "actualselectedworkspace metadata/read and parsed, notfutureRustteaching"
+    },
+    {
+      "path": "examples/ch09-content/lesson-workspace/Cargo.lock",
+      "sha256": "0061cea6ba37214a5effc07bf23694ba07f26b9c0bf8d31907655a5f56d74caf",
+      "bytes": 5708,
+      "role": "actualselectedworkspace metadata/read and parsed, notfutureRustteaching"
+    },
+    {
+      "path": "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.expected",
+      "sha256": "199eb18cb5837b9b01d8aaea0b5c2eef0d395288e0b7a1dedd6b511b2fa2efe1",
+      "bytes": 6,
+      "role": "adjacentdiagnosticfullfile inspected"
+    },
+    {
+      "path": "examples/ch09-build-script/fixtures/compile-fail/missing_env.expected",
+      "sha256": "41a8371db3dfb6efbb1c4a58ced7fdbdbd03d46989485280a91cc7b502e30c5d",
+      "bytes": 90,
+      "role": "adjacentdiagnosticfullfile inspected"
+    }
+  ],
+  "regions": [
+    "examples/ch09-files/src/scan.rs:records",
+    "examples/ch09-files/src/scan.rs:observe",
+    "examples/ch09-files/src/scan.rs:root",
+    "examples/ch09-files/src/scan.rs:scan",
+    "examples/ch09-content/lesson-workspace/streams/src/lib.rs:hash",
+    "examples/ch09-content/lesson-workspace/streams/src/lib.rs:fill",
+    "examples/ch09-content/lesson-workspace/streams/src/lib.rs:equal",
+    "examples/ch09-content/lesson-workspace/streams/src/readers.rs:short",
+    "examples/ch09-content/lesson-workspace/streams/src/readers.rs:failure",
+    "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs:issues",
+    "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs:observe",
+    "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs:hash",
+    "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs:equal",
+    "examples/ch09-content/lesson-workspace/groups/src/lib.rs:refine",
+    "examples/ch09-content/lesson-workspace/groups/src/lib.rs:metrics"
+  ]
+}

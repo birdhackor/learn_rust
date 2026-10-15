@@ -1,0 +1,167 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "10.4"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round10-cargo-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round10-cli-fixtures.md",
+    "planning/restructure-v3/reviews/technical-early/round10-complete-note-search.md",
+    "planning/restructure-v3/reviews/technical-early/round10-native-path-clap-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round10-serde-json.md",
+    "planning/restructure-v3/reviews/technical-early/round10-text-bytes-io-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/10-04-lesson.md": "3fc73a9915ecedebe2589e981615aed0271a906fdfafe7bd8741367a20bf2171",
+    "examples/intro-workspace/io-bytes/src/lib.rs": "b4c6beeca2694dfbdecd3a6dc7d33ca2580b9dc87a592455cb14ec375f349f81",
+    "examples/intro-workspace/io-bytes/src/main.rs": "8690d6a5ff5261182fe23b9ce1040acb94374d1d4cc61372763a65596ae26f13",
+    "examples/intro-workspace/io-bytes/examples/short_reader.rs": "d6ad84d1a9e13db789b322d810f2e3975afc720485bb1ed30a24f01dfa6625d3",
+    "examples/intro-workspace/io-bytes/examples/error_reader.rs": "bc69a8efde1c48e07df4b95c589fd039397803110077db6186940117635e7cd5",
+    "examples/intro-workspace/io-bytes/examples/short_writer.rs": "b421cc76c53abf6f454845ed0f549ff133dff16ef7a225dbaa71cca73c69090e",
+    "examples/intro-workspace/io-bytes/Cargo.toml": "d63de70287cc50c8860614cebe1a6a5fa3e3fba509e8f84b70400094ddfeddac",
+    "examples/intro-workspace/io-text/fixtures/note.txt": "a581105a3e3bce0d0ae0ff57955745e4c5df376a9a751acec1f5f5e08a6be213",
+    "examples/intro-workspace/io-bytes/examples/byte_count_solution.rs": "1a9bd1ffe6aa8a6512a76b8100132fefe764187e15b4bea71b54907231c781e2",
+    "docs/assets/ch07/buffer-prefix.svg": "3d08f577d1cee9743b01de0955a6d7ae301481560f3e51fd9ca6da3a637cd738"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 3,
+      "quote": "前節把完整 UTF-8 文字一次保存成 String。現在希望分批讀取檔案，或處理不一定是文字的資料。讀取來源每次交出多少資料，要由結果告訴我們；不能要求每次剛好填滿，也不能把 buffer 原本留下的內容混入新結果。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 9,
+      "quote": "**`u8`** 是 8-bit unsigned integer，也就是不保存負數、可表示 0 到 255 的整數型別。這份範圍剛好保存一個 byte 的值。它有 Copy、Debug 與數值比較能力，能沿用先前數字的讀取、顯示與檢查。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 13,
+      "quote": "**buffer（緩衝區）** 是這次讀取暫時放資料的區域。本節用四格 array，寫成 `let mut buffer: [u8; 4] = [0; 4];`。右側的 **`[值; 次數]`** 會用同一個 Copy 值初始化每一格，此處四格都先是零；它和型別位置的 `[u8; 4]` 分別指定初始值與資料形狀。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 17,
+      "quote": "第 10.3 節已引入 Read trait。現在選用其 **`read(&mut buffer[..])`** method：mutable 借用來源與一段可填入的 byte 空間，回傳 **`io::Result<usize>`**。成功的 `n` 表示本次讀入多少 bytes，這些新資料位於 **`buffer[0..n]`**；符合契約的來源不會回傳大於 buffer 長度的 n。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 25,
+      "quote": "**短讀取** 指成功的 n 小於 buffer 長度。它不是錯誤，也不代表來源結束：第一次的 3 小於 4，後面仍有 DE。只要 n 大於零，就處理有效前段，再要求下一次讀取。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 27,
+      "quote": "**EOF** 是 end of file（檔案結尾）。本節處理有結尾的有限來源，使用非空 buffer；`Ok(0)` 表示這次沒有更多資料，就結束此輪完整讀取。若給零長度 buffer，同樣可能得到 Ok(0)，卻不能藉此判斷來源已結束，所以我們固定使用四格。檔案之後若又被追加，也可能再次讀到資料；這裡沒有承諾它從此永遠不會改變。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 29,
+      "quote": "讀取可能回傳 **`ErrorKind::Interrupted`**，表示這次操作被中斷，應再重試。read 回傳 Err 時，這次沒有成功讀入可供處理的 bytes；其他錯誤則傳回 caller，不把先前已收集的部分資料當成完整成功。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 33,
+      "quote": "下面把流程放進 library 的 read_all。`R: Read` 沿用第 6.1 節的 trait bound；`reader: &mut R` 只借用來源來推進讀取，不接手它。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 45,
+      "quote": "**`String::from_utf8(bytes)`** 接手 `Vec<u8>`，檢查完整資料是否為合法 UTF-8，回傳 `Result<String, std::string::FromUtf8Error>`。成功取得 owned String；失敗原因是 UTF-8 格式，而非讀檔 I/O。FromUtf8Error 已有 Debug／Display，可以檢查或顯示；本節只用這項回饋。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 63,
+      "quote": "真實 File 不保證每次讀取的批次大小；若它剛好一次填滿 buffer，就不能由此確認我們有處理短讀取。現在自己實作 **ShortReader**：資料已在記憶體中，每次最多交出指定數量，供相同 read_all 使用。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 67,
+      "quote": "**`impl Read for ShortReader`** 提供 read 的具體做法，簽名遵循剛才的契約。每次從 copied=0 開始，直到 buffer 滿、達到本次上限，或原資料用完；每交一個 byte，就更新 copied 與 position。空 buffer 不進入 while，回傳零；原資料結束也回傳零。它不把任何舊 buffer 值算成新資料。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 73,
+      "quote": "為了建立原資料，再選用 **`str::as_bytes()`**：只借出該文字的 UTF-8 byte slice `&[u8]`，不複製或解析內容。沿用第 8.5 節的 ToOwned，這份 byte slice 的 `to_owned()` 建立 `Vec<u8>`，複製 byte 值供 ShortReader 擁有；只複製 reference 本身則沒有得到 owned 資料。ToOwned 也由 prelude 提供名稱，本例仍明寫 `use std::borrow::ToOwned;` 方便對照來源，後面可直接使用這個已教的 method。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 83,
+      "quote": "再設計一份可預測的來源：第一次 Interrupted，第二次交出一個 byte，第三次 PermissionDenied。**`PermissionDenied`** 是權限不允許這項操作的 ErrorKind；此例是在記憶體中指定錯誤來驗證流程，沒有改動真實檔案權限。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 85,
+      "quote": "標準庫提供 **`io::Error::from(kind)`**，以 From 把 ErrorKind 建成具體 io::Error；這個錯誤只保存類別，不需要額外文字。slice 的 **`is_empty()`** 回傳 len 是否為零的 bool；先處理空 buffer，可避免存取不存在的第一格。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 101,
+      "quote": "第 10.3 節的 write! 負責把格式化文字寫出。現在處理 byte slice，選用 Write 的兩項 methods："
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 108,
+      "quote": "對非空資料，write_all 遇到 write 回傳零，會以 **`ErrorKind::WriteZero`** 回報無法繼續完成。它不能永遠重試一個沒有進展的出口。寫入已部分完成後才遇到錯誤時，先前寫入不會自動撤回。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 110,
+      "quote": "Write 的另一項必要操作 **`flush()`** 回傳 `io::Result<()>`，要求把中間緩衝的資料推送到出口。它不等同保證資料已保存到永久儲存裝置；此處要依輸出型別的契約理解完成位置。"
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 118,
+      "quote": "先呼叫一次 write，再把**尚未寫入的後段**交給 write_all："
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 128,
+      "quote": "ShortReader 的第一項測試直接檢查 3、2、0 與舊 C，第二項換不同短讀取上限，確認 UTF-8 bytes 分批後仍能接成原文字，第三項確認空來源是成功："
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 152,
+      "quote": "完整 member `Cargo.toml` 只有已教的基本欄位，沒有額外 dependency："
+    },
+    {
+      "section_id": "10.4",
+      "path": "docs/chapters/10-04-lesson.md",
+      "line": 190,
+      "quote": "寫 `count_bytes<R: Read>(reader: &mut R) -> io::Result<usize>`，重用四格 buffer，只累加每次成功的 n，直到非空 buffer 得到 Ok(0)。維持 Interrupted 重試與其餘錯誤傳回的政策，不建立累積全部內容的 Vec。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,631 @@
+{
+  "review_id": "technical-early-round04-patterns-tail",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/04-04-lesson.md",
+    "docs/chapters/04-05-lesson.md",
+    "docs/chapters/04-06-lesson.md",
+    "docs/chapters/04-07-lesson.md"
+  ],
+  "reader_background": "Basic Python and actual main prose chapters1–3 plus4.1–4.3; tail read4.4→4.7 in sequence, without chapter5.",
+  "initial_judgment_sealed_before_peer_or_author_records": true,
+  "independence": "No chapter4 author ledger/validation/freeze conclusions, other reviews, first-reader, continuity/audit or historical issues read before sealing. Parent supplied only scope and generic review dimensions.",
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "TC04T-O1",
+      "classification": "先備指涉／局部文字精準度",
+      "severity": "選讀改善",
+      "necessity": "optional; current first-use meaning is sufficient",
+      "location": "docs/chapters/04-07-lesson.md:9",
+      "quote": "失敗時用已教的 return; 結束這個回傳 unit 的函式",
+      "evidence": "Required earlier main prose and referenced earlier sources contain return with an explicit value, and1.6 teaches unit; no earlier bare return; form was found in actual1–3 or4.1–4.6.",
+      "already_sufficient": "This very sentence states what bare return does and that the function returns unit, before the snippet. The earlier return concept and unit result also compose directly, so no necessary conceptual gap remains.",
+      "reader_impact": "The words 已教 can imply this exact no-value form appeared earlier and invite an unnecessary search; if they refer only to the return concept, the underlying prerequisite is already present.",
+      "minimal_change": "Remove 已教的; keep the existing sentence explaining return; ends this unit-returning function. No new subsection, API or return() expansion needed.",
+      "rust_semantic_error": false,
+      "discovery": "Independent source/preceding-text inspection before peer/author conclusions."
+    }
+  ],
+  "result": "No necessary technical, selected-source completeness, pattern/2024-rule, state-transition, output or failure-code defect found. One optional prior-teaching reference precision suggestion.",
+  "method": "Whole-page sequential technical reread with all actual selected sources/helpers/fixtures/manifests; not blind first-read or reader experiment.",
+  "execution": {
+    "cargo_success_target_clippy_or_test_commands": [],
+    "focused_failure_check": {
+      "command": [
+        "rustc",
+        "--edition=2024",
+        "--crate-name",
+        "edition2024_redundant_ref",
+        "--emit=metadata",
+        "-o",
+        "/dev/null",
+        "examples/intro-workspace/patterns/fixtures/compile-fail/edition2024_redundant_ref.rs"
+      ],
+      "cwd": "/workspace/learn_rust",
+      "setup": "source scripts/env.sh",
+      "environment": {
+        "CARGO_INCREMENTAL": "0",
+        "CARGO_PROFILE_DEV_DEBUG": "0",
+        "CARGO_PROFILE_TEST_DEBUG": "0",
+        "CARGO_BUILD_JOBS": "2"
+      },
+      "observed_exit_code": 1,
+      "stdout": "",
+      "observed_diagnostic_first_line": "error: cannot explicitly borrow within an implicitly-borrowing pattern",
+      "observed_location": "edition2024_redundant_ref.rs:9:26",
+      "observed_help": "remove the unnecessary binding modifier",
+      "purpose": "Verify exact diagnostic wording for the pinned2024 toolchain; no Cargo lock/build contention and no executable output."
+    },
+    "browser_or_visual": false,
+    "author_execution_used_as_own_evidence": false
+  },
+  "source_snapshot_at_utc": "2026-10-15T07:18:30.584290+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "a49b97ac151812354ff0e13a376ff515ff60c3b6e7609781c492f3b4bfc477e0",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/chapters/04-04-lesson.md": "a8de69a37fbb52203ed5e88d485cb107d60bb5931320220b4290d2325888a49c",
+    "docs/chapters/04-05-lesson.md": "8284e571e9214f593c57dbb24870b1915d59cd910aba3268d927e58334804765",
+    "docs/chapters/04-06-lesson.md": "29a7e763a4b5ae1452a3422a1041d8ae934d2799f15212ee37d5e89fee0671d6",
+    "docs/chapters/04-07-lesson.md": "4df391d5e3c031a53d2bbb596434e6ba86a6c7c7662fca07e60c474f8e5dcd20",
+    "examples/intro-workspace/Cargo.lock": "95fc150a6f4c104bbd7c775cc52c79c180e5a5bfe584110800e07047e99f5dcb",
+    "examples/intro-workspace/Cargo.toml": "7161d333dd2b49cb74eee31661e7762ec3e6b234a7b550202dc5079b109608f1",
+    "examples/intro-workspace/patterns/Cargo.toml": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+    "examples/intro-workspace/patterns/examples/at_bindings.rs": "74b918726682c047911b5be6900248b8fd8c1b690570d4a6c49e4a72dcfe2484",
+    "examples/intro-workspace/patterns/examples/borrow_patterns.rs": "508e83c6e6bf41a21d3f278c7f2ab14ddb70d88e0cda587faa724e5c116737a8",
+    "examples/intro-workspace/patterns/examples/borrow_patterns_answer.rs": "13cb1082c16e5fa24eb55152ca395d6a727ae3c7ef0e5da7fae730b0183e0485",
+    "examples/intro-workspace/patterns/examples/combinations_answer.rs": "8603479415ce902a8a526ed486bf72b7223c1cc35f027c1c46ebe4bf9a4ae60a",
+    "examples/intro-workspace/patterns/examples/explicit_bindings.rs": "9d758b64dc659ce4ab17d77b4f8b03ea23fb87b14925b820864f7f31d4b9ab66",
+    "examples/intro-workspace/patterns/examples/guards.rs": "c3e978bb42d5fbc7e848083467b9ea4cbe4937f2be96d3e979c93f52e169de68",
+    "examples/intro-workspace/patterns/examples/if_let.rs": "752fde827ef0ef84bc401cd7a9d5a3d6b2fd79ad217d160d2f922015dd2f8d18",
+    "examples/intro-workspace/patterns/examples/ignore_patterns.rs": "fc6d0b26c88e7e3b8a2becac6ef71b82327b2ef68feca631e93a9e7b7df60f38",
+    "examples/intro-workspace/patterns/examples/let_else.rs": "1a4226200772314e076790684ec94214d9d9dddd37054b6912c802a8172635a7",
+    "examples/intro-workspace/patterns/examples/let_else_answer.rs": "83f1aa7a40879c7b2b1aff621991418178c604bff25ede0eaebfe3b09848ed0f",
+    "examples/intro-workspace/patterns/examples/let_else_loops.rs": "033204c010124b35b7f4e533ed1e1642a9d997b55c6578f43cf83cfe70a5f259",
+    "examples/intro-workspace/patterns/examples/or_patterns.rs": "bae7ba22c3dcea35cb52309f3925d2ee0a6a8a592748b0cfaea937bb8c039a9d",
+    "examples/intro-workspace/patterns/examples/owned_patterns.rs": "5a02e058f5486cde7c3e6637c9714d5bbf998692502a599f7e495f1f631c3f1d",
+    "examples/intro-workspace/patterns/examples/partial_move.rs": "0a88adf17468943520ec84e2fe64c9750bccbf494dfd8463a5b4d6b397687830",
+    "examples/intro-workspace/patterns/examples/quote_report.rs": "e32c8774862cd457f96f7ecc1041bf75603b642144498588182038532a75a738",
+    "examples/intro-workspace/patterns/examples/range_patterns.rs": "5eaac3d45768a2084b070c8bbfd18f61824f387819bc1b4bac090f7d4a3aae0c",
+    "examples/intro-workspace/patterns/examples/reference_pattern.rs": "9a5114b61e1d934d5c0d6307e0850bae4e7db07774ab932f7db6ff08408b6a7e",
+    "examples/intro-workspace/patterns/examples/shadow_patterns.rs": "de83d41b02b07e44f01f8f63f673a196ea2f5d339b9028a9925bae36de26ffe6",
+    "examples/intro-workspace/patterns/examples/while_let.rs": "e066480791bac40ed349bf1b5d8b74ccf00f535e1d83f5f605cc40e291b1f895",
+    "examples/intro-workspace/patterns/examples/while_let_answer.rs": "ce029af358d70529b5caa38f7060b7d008242b95a62b6776cfcc9a3d3b6aa19a",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/edition2024_redundant_ref.rs": "8f27dccc4815f5a5a1ea67215c327dca05ebee85871fcbffe03cb5f85dad5690",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/guard_not_exhaustive.rs": "b3cbced54c4abb399eca1dfdd393b39d78807ccc9781a2838ebd87b4d82b86d8",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/let_else_must_leave.rs": "4ef75711035de7a26ba49cad222a0e468c66065f64ab33285abe4fc5ffee7fa8",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/move_from_pattern_borrow.rs": "51769d8c136068cf56564d4c9e924937cc4fca51bda107c394eeca7469bb15d2",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/or_missing_binding.rs": "b8057e0b9b081c84a9e84d2a6e598212100feef7944073c9323d8a258e717a3e",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/partial_move.rs": "272d0a70cf68a533b98a98aecdcf02c35ac358855c74174cd587671167eff89e",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/underscore_binding_move.rs": "1b3d8f6d4860d16f1ef0c4c4fbd6920656982ccce1c2f6e1f512b4e9bb3e6711",
+    "examples/intro-workspace/patterns/src/main.rs": "9d77c241170f05328e057efed81ad48b15cb9ce56ca87821ccf28a1c05365fc0",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/04-04-lesson.md",
+      "reference": "examples/intro-workspace/patterns/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-04-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/or_patterns.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-04-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/or_missing_binding.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-04-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/range_patterns.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-04-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/shadow_patterns.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-04-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/guards.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-04-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/guard_not_exhaustive.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-04-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/at_bindings.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-04-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/combinations_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/owned_patterns.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/partial_move.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/partial_move.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/borrow_patterns.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/move_from_pattern_borrow.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/explicit_bindings.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/reference_pattern.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/edition2024_redundant_ref.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/ignore_patterns.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/underscore_binding_move.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-05-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/borrow_patterns_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-06-lesson.md",
+      "reference": "examples/intro-workspace/patterns/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-06-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/if_let.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-06-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/while_let.rs:next",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-06-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/while_let.rs:loop",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-06-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/while_let.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-06-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/while_let_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-07-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/let_else.rs:let-else",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-07-lesson.md",
+      "reference": "examples/intro-workspace/patterns/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-07-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/let_else.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-07-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/let_else_must_leave.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-07-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/let_else_loops.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-07-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/quote_report.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-07-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/let_else_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "compile_closure": {
+    "package": "intro-patterns",
+    "selected_targets": [
+      "or_patterns",
+      "range_patterns",
+      "shadow_patterns",
+      "guards",
+      "at_bindings",
+      "combinations_answer",
+      "owned_patterns",
+      "partial_move",
+      "borrow_patterns",
+      "explicit_bindings",
+      "reference_pattern",
+      "ignore_patterns",
+      "borrow_patterns_answer",
+      "if_let",
+      "while_let",
+      "while_let_answer",
+      "let_else",
+      "let_else_loops",
+      "quote_report",
+      "let_else_answer"
+    ],
+    "one_owned_file_each": true,
+    "src_lib_rs_exists": false,
+    "build_rs_exists": false,
+    "repo_cargo_config_exists": false,
+    "external_dependencies": false,
+    "manifest_fields": [
+      "name",
+      "version",
+      "edition"
+    ],
+    "mod_include_or_external_helpers": false,
+    "extra_allow": {
+      "file": "reference_pattern.rs",
+      "scope": "show only",
+      "lints": [
+        "clippy::match_ref_pats",
+        "clippy::needless_borrowed_reference"
+      ],
+      "explained_before_full_use": "4.5:85–87 before source90"
+    },
+    "future_source_prerequisite": false
+  },
+  "documented_run_commands_static_checked": [
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "or_patterns",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "range_patterns",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "shadow_patterns",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "guards",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "at_bindings",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "combinations_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "owned_patterns",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "partial_move",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "borrow_patterns",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "explicit_bindings",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "reference_pattern",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "ignore_patterns",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "borrow_patterns_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "if_let",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "while_let",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "while_let_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "let_else",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "let_else_loops",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "quote_report",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "let_else_answer",
+      "--locked"
+    ]
+  ],
+  "static_outputs": {
+    "or_patterns": "120/80/0",
+    "range_patterns": "0→20,299→20,300→10,499→10,500→0 under nonnegative input contract",
+    "shadow_patterns": "Amount50 prints inner50/outer100; Missing branch keeps outer100",
+    "guards": "120≥100→120,80<100→0,Missing0; count1/readyfalse0,count2/readytrue2",
+    "at_bindings": "0→0,1→1,3→3,4→0",
+    "combinations_answer": "2,3,0,0",
+    "owned_patterns": "訂單A thenMissing message",
+    "partial_move": "extracted label訂單A,count3 remains readable",
+    "borrow_patterns": "showA twice; append thenA：已備妥; Missing message",
+    "explicit_bindings": "labelA,count3→4,original count4 afterward",
+    "reference_pattern": "A borrowed twice,Missing handled",
+    "ignore_patterns": "Label(_) leaves quote available toshow; Missing handled",
+    "borrow_patterns_answer": "B：完成 shown twice;Missinghandled",
+    "if_let": "match120,iflet120,elseMissing; firstMissing iflet emitsnothing",
+    "while_let": "More3/remaining4;More3/remaining1;More1/remaining0;Done0;3batches and0batches",
+    "while_let_answer": "(7,3)→3,(6,3)→2,(0,3)→0 with assertedwork≥0/capacity>0",
+    "let_else": "threeAmount120 variants each140;threeMissing skip messages",
+    "let_else_loops": "continue200 vsbreak120",
+    "quote_report": "OfferedlabelA,total180;Missing0;Rejected37,total0",
+    "let_else_answer": "Waiting0,small180,threshold300,empty0,smallborrowedagain180"
+  },
+  "fixture_checks": [
+    {
+      "name": "or_missing_binding",
+      "expected": "E0408",
+      "reason": "value notbound inMissing alternative; may also produce downstream use diagnostics",
+      "executed": false
+    },
+    {
+      "name": "guard_not_exhaustive",
+      "expected": "E0004",
+      "reason": "GuardedAmount arm does not exhaustAmount",
+      "executed": false
+    },
+    {
+      "name": "partial_move",
+      "expected": "E0382",
+      "reason": "String label moved out before borrowing fullOrder",
+      "executed": false
+    },
+    {
+      "name": "move_from_pattern_borrow",
+      "expected": "E0507",
+      "reason": "BorrowedString cannotmove through*text",
+      "executed": false
+    },
+    {
+      "name": "edition2024_redundant_ref",
+      "expected": "cannot explicitly borrow within an implicitly-borrowing pattern",
+      "reason": "Explicitref binding at an alreadyimplicit-reference binding mode",
+      "executed": true
+    },
+    {
+      "name": "underscore_binding_move",
+      "expected": "E0382",
+      "reason": "_text is a realString binding and partiallymovesQuote",
+      "executed": false
+    },
+    {
+      "name": "let_else_must_leave",
+      "expected": "E0308",
+      "reason": "Else println returnsunit andfalls through instead ofdiverging",
+      "executed": false
+    }
+  ],
+  "limits": [
+    "Only the edition2024 failing metadata compile was actually executed; other output/diagnostic judgments are static.",
+    "No new success target, Cargo, formatter, Clippy, test or browser run.",
+    "No chapter5 source/prose or author validation used as prerequisite/evidence."
+  ],
+  "sealed_at_utc": "2026-10-15T07:20:32.978472+00:00",
+  "metadata_hashes_at_seal": {
+    "examples/intro-workspace/Cargo.toml": "7161d333dd2b49cb74eee31661e7762ec3e6b234a7b550202dc5079b109608f1",
+    "examples/intro-workspace/Cargo.lock": "95fc150a6f4c104bbd7c775cc52c79c180e5a5bfe584110800e07047e99f5dcb"
+  }
+}

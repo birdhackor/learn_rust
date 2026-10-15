@@ -1,0 +1,7 @@
+{
+  "unit": 225,
+  "old_sha256": "5c4464cee9b73c0dd30e9b4388ea599cbabbf8eceb60c206218130cdfffb2a83",
+  "new_sha256": "0eb928656eaa313017cd36173b0da87f63a30c27399b4188c2efb9b2c573ea3d",
+  "status": "Before first fetch/read; root explicitly paused reader at224; no prior record changed.",
+  "scope": "One target source uses already-taught explicit slice; not a change to the ordinary reader own answer."
+}

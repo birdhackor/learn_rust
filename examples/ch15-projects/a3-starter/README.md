@@ -1,6 +1,6 @@
 # A3 工作版
 
-本階段承接 A2 的 collection／content／files／stream 完整成果，保留 Unix 20 項既有測試。metrics 回收 9.4 的 checked 計算；report 的 owned 模型、兩種 issue-row helper 與 JSON wrapper 已提供。
+本階段承接 A2 的 collection／content／files／stream 完整成果，保留 Unix 20 項既有測試。metrics 回收 12.4 的 checked 計算；report 的 owned 模型、兩種 issue-row helper 與 JSON wrapper 已提供。
 
 自己完成 src/report.rs 的 order_issues、build_report、render_text。固定 Overflow／空清單／空文字只標示待做，沒有計算結果的意義。原生 PathBuf 排好才轉成 Unicode 報告，diagnostic Debug 只供辨認。
 

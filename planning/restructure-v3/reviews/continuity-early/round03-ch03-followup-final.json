@@ -1,0 +1,121 @@
+{
+  "kind": "post-fixnarrow source+actualpagefollowup",
+  "at_utc": "2026-10-15T07:12:52.720195+00:00",
+  "initial_report_seal_unchanged": true,
+  "prompt_source": "Rootadoptionandpreviewmessagesafterinitialseal",
+  "sources": [
+    {
+      "path": "docs/chapters/03-02-lesson.md",
+      "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89"
+    },
+    {
+      "path": "docs/chapters/03-03-lesson.md",
+      "sha256": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e"
+    },
+    {
+      "path": "docs/chapters/03-05-lesson.md",
+      "sha256": "78535d28170efdde36e18a62911cb9c4779e14bbc3559dccfe876761fe47e776"
+    },
+    {
+      "path": "docs/assets/ch02/reference-owner.svg",
+      "sha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb"
+    },
+    {
+      "path": "examples/intro-workspace/ownership/examples/reborrow.rs",
+      "sha256": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7"
+    }
+  ],
+  "C3-01": {
+    "status": "fixedandsource/actualpagerechecked",
+    "evidence": "Manualandautomaticcall distinctionandparentreuseexplanationnowprecedesfirstcallssnippetat3.5:63-67, both1280x800and390x844. SameRustandnumbers."
+  },
+  "other_narrow_changes": [
+    {
+      "position": "3.2",
+      "status": "newversionverified; initialadequacyjudgmentretained",
+      "evidence": "BasicCopyprosebeforefigure; originaldiagramalreadyplainlystatedindependentnumberrole. Notcounted asmyindependentdefect."
+    },
+    {
+      "position": "3.3",
+      "status": "focusednewfigureverified; initialadequacyjudgmentretained",
+      "evidence": "Borrow/ownerroleandarrowretained; early*reference/dereferencelabelremoved; formaloperationstilltaughtbeforecode. ActualSVGservedhashmatchesnewsourceatbothsizes."
+    }
+  ],
+  "page_metadata": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "url": "http://127.0.0.1:8097/chapters/03-02-lesson/",
+      "at": "2026-10-15T07:11:28.195Z",
+      "focus": "Copyprosebeforefigure"
+    },
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "url": "http://127.0.0.1:8097/chapters/03-03-lesson/",
+      "at": "2026-10-15T07:11:29.255Z",
+      "focus": "referencefigure",
+      "imageUrl": "http://127.0.0.1:8097/assets/ch02/reference-owner.svg",
+      "imageSha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb",
+      "alt": "order 仍持有 Order，reference 借用同一筆資料"
+    },
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "url": "http://127.0.0.1:8097/chapters/03-05-lesson/",
+      "at": "2026-10-15T07:11:30.356Z",
+      "focus": "C3-01explanationbeforecalls"
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "url": "http://127.0.0.1:8097/chapters/03-02-lesson/",
+      "at": "2026-10-15T07:11:35.750Z",
+      "focus": "Copyprosebeforefigure"
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "url": "http://127.0.0.1:8097/chapters/03-03-lesson/",
+      "at": "2026-10-15T07:11:36.724Z",
+      "focus": "referencefigure",
+      "imageUrl": "http://127.0.0.1:8097/assets/ch02/reference-owner.svg",
+      "imageSha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb",
+      "alt": "order 仍持有 Order，reference 借用同一筆資料"
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "url": "http://127.0.0.1:8097/chapters/03-05-lesson/",
+      "at": "2026-10-15T07:11:37.681Z",
+      "focus": "C3-01explanationbeforecalls"
+    }
+  ],
+  "actually_viewed_screenshots": [
+    "desktop-followup-copy-before-figure.png",
+    "desktop-followup-reference-focused-figure.png",
+    "desktop-followup-auto-reborrow-before-calls.png",
+    "mobile-followup-copy-before-figure.png",
+    "mobile-followup-reference-focused-figure.png",
+    "mobile-followup-auto-reborrow-before-calls.png"
+  ],
+  "limits": "Affectedsourceandpageunitsonly;noCargo/build/testandnofullbookorstrictsiteclaim."
+}

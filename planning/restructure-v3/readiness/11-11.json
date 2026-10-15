@@ -1,0 +1,110 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.11"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-11-lesson.md": "5e87899ccd41749a6a6eb79f6923f101e0d9a6629c6a3a03e73e759456adbca2",
+    "examples/intro-workspace/type-stages/examples/any_borrowed.rs": "02296d1d77a836d468a3677f0d155c6775eb24de2b34e5ee0849954fec5163f3",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/any_events/payloads/mod.rs": "c981c6d3ec47f54dcf1ec560c735aa3cc78215e55a47371b4dd97d1b4caf96cb",
+    "examples/intro-workspace/type-stages/examples/any_events/main.rs": "304a011d6b86972ade4952eba003dad1889e75a8dded5fcdcb9c6ab5d480c7d2",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/any_non_static_borrow.rs": "aa470db16f6dfaff5b8e1ddd1f29b8e7d8ebdaea870d448fc26c47c2ed4789a1",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/any_non_static_borrow.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/type-stages/examples/any_owned.rs": "88e5cbb746eb1328067a4e5c92bc653dbd45be85eb64e61352d771081b7f7656",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/any_after_downcast_move.rs": "84e55c0cd6b9231f92636d39a5e55f8a2935bb2153c7dc418b899fa4ec654325",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/any_after_downcast_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/type-stages/examples/any_type_id/payloads/mod.rs": "9f67551ee84d7d324e75b8a02544253871b4c481edbb1ba265bf0ab977e165be",
+    "examples/intro-workspace/type-stages/examples/any_type_id/main.rs": "e8b4dc6db79e7a3f199d39c09aa1f03a118ce68d927606d6749312174ed7b167",
+    "examples/intro-workspace/type-stages/fixtures/runtime-fail/any_box_type_id.rs": "94fd4a6e3d2b2c9c04377a7c36511b187540b665987648ec785bab930460235d",
+    "examples/intro-workspace/type-stages/fixtures/runtime-fail/any_box_type_id.expected": "03d54da099839eaf1434f963167317069eb205601d574f846c0e5281e49210da",
+    "examples/intro-workspace/type-stages/examples/any_complete/payloads/mod.rs": "d7b424ff9cfd427e6fdabf1d6da0e24b532be56d5a5d7d3b551c053e40cd3d62",
+    "examples/intro-workspace/type-stages/examples/any_complete/main.rs": "5075c99f178473f6f13df9ed45c128795c28b2e13249d7864f257f1a19d6e0c9",
+    "docs/assets/types-v3/owned-downcast.svg": "c726615dd61789b855dd3f28ee1d4617ef784110bb724bb4cd5dd3f548087be8"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 3,
+      "quote": "第 11.6 節依共同 amount 能力處理不同型別。現在事件帶著 id 與呼叫端自訂的附加資料；傳遞層只保存它，處理者才取回 i32、String 或自訂 struct。這份附加資料稱為 **payload**，也就是隨事件一起交給後續處理的內容。"
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 5,
+      "quote": "已知種類可用 enum；有共同業務操作可用相應 trait。若種類由 caller 擴充，傳遞層不想每次增加 variant，也沒有共同業務操作，就可考慮辨識確切型別再取回。**`std::any::Any`** 提供這項型別辨識能力。"
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 9,
+      "quote": "Any 要求實作型別符合 `'static`；標準庫已為符合條件的型別提供實作，本節數字、String、沒有 borrow 欄位的自訂 struct 都能直接使用，不另手寫 Any impl。"
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 17,
+      "quote": "**downcast** 在這裡指從 dyn Any 的共同視圖，嘗試取回確切型別 T 的資料。caller 在編譯時指定 T，執行時檢查原型別是否相同；不把數字或文字轉成 T。"
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 57,
+      "quote": "Event 保存 id 與 `Box<dyn Any>`。event 的 `payload: impl Any` 沿第 9.3 節的參數形式，由 caller 選具體型別；函式接手它、交入 Box，再轉成共同的 owned handle，沒有 clone。"
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 61,
+      "quote": "修改則使用 **`downcast_mut::<T>()`**：需要 `&mut dyn Any`，回傳 `Option<&mut T>`。成功時借原 T 供修改，失敗時 None；沒有新建 T，也不是經 shared reference 任意修改。"
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 106,
+      "quote": "**`boxed.downcast::<T>()`** 接手整份 `Box<dyn Any>`，回傳 `Result<Box<T>, Box<dyn Any>>`："
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 144,
+      "quote": "**`std::any::TypeId`** 是用來比較型別身分的值。`TypeId::of::<T>()` 取得符合 `'static` 的 T 之身分，`==` 比較是否同型別。TypeId 提供 PartialEq 與 Debug，所以也能用 assert_eq!；不用解讀內部表示，它不是事件 id 或資料內容。"
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 146,
+      "quote": "Any 的 **`type_id(&self)`** 回傳 receiver 的 TypeId。透過 `&dyn Any` 呼叫，得到內部具體型別的身分。下面的 concrete_id 則由 `&T` 決定 T，再查 T 的 Any 身分。"
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 154,
+      "quote": "**Box 自己也是型別。** `Box<dyn Any>` 本身符合 Any，直接 `boxed.type_id()` 會使用 Box 自己的 Any 能力，得到 Box 的身分。要查內容，就先以 `&*boxed` 取得 `&dyn Any`，再呼叫 type_id。"
+    },
+    {
+      "section_id": "11.11",
+      "path": "docs/chapters/11-11-lesson.md",
+      "line": 187,
+      "quote": "自訂 ExtraInfo，保存 count2，交給 event 建立 id3 的事件。owned downcast 請求 ExtraInfo，成功後 count 加1，再從 Box 取出 owned struct，確認 count3；失敗分支接回原 payload。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,986 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "18.3",
+    "18.4"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": [
+      {
+        "id": "TC18M-O1",
+        "category": "optional type-wording precision",
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 29,
+        "quote": "後三份 String 使用 9.7 的文字 Ord",
+        "evidence": [
+          {
+            "path": "examples/ch15-projects/a3-complete/src/report.rs",
+            "line": 25,
+            "source": "pub path_debug: Option<String>,"
+          },
+          {
+            "path": "examples/ch15-projects/a3-complete/src/report.rs",
+            "line": 152,
+            "source": "Ordering::Equal => left.1.path_debug.cmp(&right.1.path_debug),"
+          }
+        ],
+        "reader_impact": "action/reason are String, but path_debug may be None and is compared as Option<String>, including the variant order. Calling all three String blurs the very distinction established just above. Existing Option Ord explanation and correct full source prevent a real prerequisite or implementation block.",
+        "suggestion": "State action/reason use text Ord, while path_debug uses the preceding Option<String> Ord rule. No Rust change needed."
+      }
+    ]
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "method": "Read18.3→18.4 complete bodies and all actually loaded owned code, using byte-identical comparisons only after fully reading each original source. Unloaded READMEs hashed for provenance, not used as proof.",
+    "prior_knowledge": "Actually read1–15/17 and18.1–18.2; no18.5–18.6 source read to supply prerequisites. String::from(&str) is available from personally verified17.7 followup."
+  },
+  "evidence": {
+    "scope": [
+      "18.3",
+      "18.4"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/docs/assets/projects-a-v3/native-report-order.svg",
+        "sha256": "39fb0ea0c084aa225ac0a0e1726312b6769aa2b561d7489235304673167af7a3"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/projects-a-v3/recover-content-bucket.svg",
+        "sha256": "f60389d8639fa3fce19f5804b4292256321686c6738584ddabdf6dc3532520d7"
+      },
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-03-lesson.md",
+        "sha256": "e5c04133e7ed5866dfe72ccff82bb94a572d6d487c3fa4026e5530b1c799fed3"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-04-lesson.md",
+        "sha256": "e4d3cc6aa7a95081ebbea26e108bf3eb1c3fb0a0f0069c353a64fc01efde37d6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-complete/Cargo.toml",
+        "sha256": "2091ca16e1b592f879e2e1975494a769b621e7ca89fb380ca27c0a06faf274a7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-complete/README.md",
+        "sha256": "f2a1b152e133b200121145aee1be6206fd4ff5db6e0dcf05b0f3610bc604b87c"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-complete/examples/a2_groups.rs",
+        "sha256": "da1ab0e6e7e4077a966507d629246e56fb93b620298324cfe9477d3fef3e6f92"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-complete/src/collection.rs",
+        "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-complete/src/content.rs",
+        "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-complete/src/files.rs",
+        "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-complete/src/lib.rs",
+        "sha256": "1d565ff089c0d764067cd3c5e68b2fcb15e81256f3f6298d24e463b64761ac84"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-complete/src/stream.rs",
+        "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-starter/Cargo.toml",
+        "sha256": "ba0edbf847d15091d4a533aed5bc88050c1290ae831ed27ec2accd6f7ec9e64a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-starter/README.md",
+        "sha256": "b1cc3460d7b3dff280f95bb60894eeece28fd08b7f3b462280c2969d441e7f53"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-starter/checks/content-tests.rs",
+        "sha256": "79c0c0ee318a32f8e6cf4a83f64f4ac615559a1ce24c08f55eb764007fa74377"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-starter/src/collection.rs",
+        "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-starter/src/content.rs",
+        "sha256": "5d6d2fddf975be0e7efb342df1a80d6c87af44d9a5d596d02296a1ed93663dbe"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-starter/src/files.rs",
+        "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-starter/src/lib.rs",
+        "sha256": "1d565ff089c0d764067cd3c5e68b2fcb15e81256f3f6298d24e463b64761ac84"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a2-starter/src/stream.rs",
+        "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/Cargo.toml",
+        "sha256": "9d2963525d2add003ef0ba19784d85e9fcda9a175220c251213d1dc41d985daa"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/README.md",
+        "sha256": "d201320c15e9cdc5d94f50efc9731387a9edf51323c4debcccfcfea4bba6873d"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/examples/a3_json.rs",
+        "sha256": "4413d137822826deb5b91a806417d0e4b6c03bbc3cf3d9a6b9ca6ad900b827a0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/examples/a3_text.rs",
+        "sha256": "3ba907c1f92cf45dfff91e30a869db8e3b342c705baaf4b7cb9dc6e6a1e40359"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/src/collection.rs",
+        "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/src/content.rs",
+        "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/src/files.rs",
+        "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/src/lib.rs",
+        "sha256": "0a9dfdc9c20b30e02b80265ce0fda41a2079e41923696f277cc639e7f71f21dc"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/src/metrics.rs",
+        "sha256": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/src/report.rs",
+        "sha256": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/src/stream.rs",
+        "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/Cargo.toml",
+        "sha256": "bbd5f17df26dde37503fa2b149ad35cf9062b3c579ed37ed39895da7de7a6e30"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/README.md",
+        "sha256": "bc578f7dd5cf541c8ccde03ab5664899d4d7c9f03ed88e84cc7bc89cd3a58a32"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/checks/report-tests.rs",
+        "sha256": "b010cf009fa618003124e58f020c1df7ada61c8b48dfe2f21b4002ec2c01b97e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/src/collection.rs",
+        "sha256": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/src/content.rs",
+        "sha256": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/src/files.rs",
+        "sha256": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/src/lib.rs",
+        "sha256": "0a9dfdc9c20b30e02b80265ce0fda41a2079e41923696f277cc639e7f71f21dc"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/src/metrics.rs",
+        "sha256": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/src/report.rs",
+        "sha256": "ff0440b01e80081ec79e452cff9387af68eb23b81d58e60bb8e972b6a9bd362e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-starter/src/stream.rs",
+        "sha256": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/.saved/notes-c.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/different.txt",
+        "sha256": "87ee07307593493b96730dcbb36fd51e9fa4ba189696dad60758e89e6e7750bf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/empty-a.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/empty-b.bin",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/notes-a.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/materials/duplicate-demo/sub/notes-b.txt",
+        "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch15-projects/a2-complete/Cargo.toml",
+      "examples/ch15-projects/a2-complete/README.md",
+      "examples/ch15-projects/a2-complete/examples/a2_groups.rs",
+      "examples/ch15-projects/a2-complete/src/collection.rs",
+      "examples/ch15-projects/a2-complete/src/content.rs",
+      "examples/ch15-projects/a2-complete/src/files.rs",
+      "examples/ch15-projects/a2-complete/src/lib.rs",
+      "examples/ch15-projects/a2-complete/src/stream.rs",
+      "examples/ch15-projects/a2-starter/Cargo.toml",
+      "examples/ch15-projects/a2-starter/README.md",
+      "examples/ch15-projects/a2-starter/checks/content-tests.rs",
+      "examples/ch15-projects/a2-starter/src/collection.rs",
+      "examples/ch15-projects/a2-starter/src/content.rs",
+      "examples/ch15-projects/a2-starter/src/files.rs",
+      "examples/ch15-projects/a2-starter/src/lib.rs",
+      "examples/ch15-projects/a2-starter/src/stream.rs",
+      "examples/ch15-projects/a3-complete/Cargo.toml",
+      "examples/ch15-projects/a3-complete/README.md",
+      "examples/ch15-projects/a3-complete/examples/a3_json.rs",
+      "examples/ch15-projects/a3-complete/examples/a3_text.rs",
+      "examples/ch15-projects/a3-complete/src/collection.rs",
+      "examples/ch15-projects/a3-complete/src/content.rs",
+      "examples/ch15-projects/a3-complete/src/files.rs",
+      "examples/ch15-projects/a3-complete/src/lib.rs",
+      "examples/ch15-projects/a3-complete/src/metrics.rs",
+      "examples/ch15-projects/a3-complete/src/report.rs",
+      "examples/ch15-projects/a3-complete/src/stream.rs",
+      "examples/ch15-projects/a3-starter/Cargo.toml",
+      "examples/ch15-projects/a3-starter/README.md",
+      "examples/ch15-projects/a3-starter/checks/report-tests.rs",
+      "examples/ch15-projects/a3-starter/src/collection.rs",
+      "examples/ch15-projects/a3-starter/src/content.rs",
+      "examples/ch15-projects/a3-starter/src/files.rs",
+      "examples/ch15-projects/a3-starter/src/lib.rs",
+      "examples/ch15-projects/a3-starter/src/metrics.rs",
+      "examples/ch15-projects/a3-starter/src/report.rs",
+      "examples/ch15-projects/a3-starter/src/stream.rs"
+    ],
+    "source_or_config_files": [
+      "examples/ch15-projects/a2-complete/Cargo.toml",
+      "examples/ch15-projects/a2-complete/examples/a2_groups.rs",
+      "examples/ch15-projects/a2-complete/src/collection.rs",
+      "examples/ch15-projects/a2-complete/src/content.rs",
+      "examples/ch15-projects/a2-complete/src/files.rs",
+      "examples/ch15-projects/a2-complete/src/lib.rs",
+      "examples/ch15-projects/a2-complete/src/stream.rs",
+      "examples/ch15-projects/a2-starter/Cargo.toml",
+      "examples/ch15-projects/a2-starter/checks/content-tests.rs",
+      "examples/ch15-projects/a2-starter/src/collection.rs",
+      "examples/ch15-projects/a2-starter/src/content.rs",
+      "examples/ch15-projects/a2-starter/src/files.rs",
+      "examples/ch15-projects/a2-starter/src/lib.rs",
+      "examples/ch15-projects/a2-starter/src/stream.rs",
+      "examples/ch15-projects/a3-complete/Cargo.toml",
+      "examples/ch15-projects/a3-complete/examples/a3_json.rs",
+      "examples/ch15-projects/a3-complete/examples/a3_text.rs",
+      "examples/ch15-projects/a3-complete/src/collection.rs",
+      "examples/ch15-projects/a3-complete/src/content.rs",
+      "examples/ch15-projects/a3-complete/src/files.rs",
+      "examples/ch15-projects/a3-complete/src/lib.rs",
+      "examples/ch15-projects/a3-complete/src/metrics.rs",
+      "examples/ch15-projects/a3-complete/src/report.rs",
+      "examples/ch15-projects/a3-complete/src/stream.rs",
+      "examples/ch15-projects/a3-starter/Cargo.toml",
+      "examples/ch15-projects/a3-starter/checks/report-tests.rs",
+      "examples/ch15-projects/a3-starter/src/collection.rs",
+      "examples/ch15-projects/a3-starter/src/content.rs",
+      "examples/ch15-projects/a3-starter/src/files.rs",
+      "examples/ch15-projects/a3-starter/src/lib.rs",
+      "examples/ch15-projects/a3-starter/src/metrics.rs",
+      "examples/ch15-projects/a3-starter/src/report.rs",
+      "examples/ch15-projects/a3-starter/src/stream.rs"
+    ],
+    "snippet_references": [
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 40,
+        "source": "examples/ch15-projects/a2-starter/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 46,
+        "source": "examples/ch15-projects/a2-starter/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 63,
+        "source": "examples/ch15-projects/a2-starter/src/content.rs",
+        "anchor": "models"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 79,
+        "source": "examples/ch15-projects/a2-starter/src/content.rs",
+        "anchor": "digest"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 83,
+        "source": "examples/ch15-projects/a2-starter/src/content.rs",
+        "anchor": "refine"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 87,
+        "source": "examples/ch15-projects/a2-starter/src/content.rs",
+        "anchor": "recover"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 97,
+        "source": "examples/ch15-projects/a2-starter/src/collection.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 103,
+        "source": "examples/ch15-projects/a2-starter/src/stream.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 109,
+        "source": "examples/ch15-projects/a2-starter/src/files.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 115,
+        "source": "examples/ch15-projects/a2-starter/src/content.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 134,
+        "source": "examples/ch15-projects/a2-starter/checks/content-tests.rs",
+        "anchor": "fixture"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 140,
+        "source": "examples/ch15-projects/a2-starter/checks/content-tests.rs",
+        "anchor": "material-test"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 150,
+        "source": "examples/ch15-projects/a2-starter/checks/content-tests.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 208,
+        "source": "examples/ch15-projects/a2-starter/checks/content-tests.rs",
+        "anchor": "recovery-test"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 222,
+        "source": "examples/ch15-projects/a2-complete/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 228,
+        "source": "examples/ch15-projects/a2-complete/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 234,
+        "source": "examples/ch15-projects/a2-complete/src/collection.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 240,
+        "source": "examples/ch15-projects/a2-complete/src/stream.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 246,
+        "source": "examples/ch15-projects/a2-complete/src/files.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 252,
+        "source": "examples/ch15-projects/a2-complete/src/content.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 258,
+        "source": "examples/ch15-projects/a2-complete/examples/a2_groups.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 287,
+        "source": "examples/ch15-projects/a2-complete/src/content.rs",
+        "anchor": "recover"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 40,
+        "source": "examples/ch15-projects/a3-starter/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 48,
+        "source": "examples/ch15-projects/a3-starter/src/report.rs",
+        "anchor": "models"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 58,
+        "source": "examples/ch15-projects/a3-starter/src/report.rs",
+        "anchor": "issue-rows"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 70,
+        "source": "examples/ch15-projects/a3-starter/src/report.rs",
+        "anchor": "build"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 74,
+        "source": "examples/ch15-projects/a3-starter/src/report.rs",
+        "anchor": "order"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 78,
+        "source": "examples/ch15-projects/a3-starter/src/report.rs",
+        "anchor": "text"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 86,
+        "source": "examples/ch15-projects/a3-starter/src/report.rs",
+        "anchor": "json"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 94,
+        "source": "examples/ch15-projects/a3-starter/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 100,
+        "source": "examples/ch15-projects/a3-starter/src/collection.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 106,
+        "source": "examples/ch15-projects/a3-starter/src/content.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 112,
+        "source": "examples/ch15-projects/a3-starter/src/stream.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 118,
+        "source": "examples/ch15-projects/a3-starter/src/files.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 124,
+        "source": "examples/ch15-projects/a3-starter/src/metrics.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 130,
+        "source": "examples/ch15-projects/a3-starter/src/report.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 149,
+        "source": "examples/ch15-projects/a3-starter/checks/report-tests.rs",
+        "anchor": "fixture"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 155,
+        "source": "examples/ch15-projects/a3-starter/checks/report-tests.rs",
+        "anchor": "metric-test"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 163,
+        "source": "examples/ch15-projects/a3-starter/checks/report-tests.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 216,
+        "source": "examples/ch15-projects/a3-complete/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 222,
+        "source": "examples/ch15-projects/a3-complete/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 228,
+        "source": "examples/ch15-projects/a3-complete/src/collection.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 234,
+        "source": "examples/ch15-projects/a3-complete/src/content.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 240,
+        "source": "examples/ch15-projects/a3-complete/src/stream.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 246,
+        "source": "examples/ch15-projects/a3-complete/src/files.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 252,
+        "source": "examples/ch15-projects/a3-complete/src/metrics.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 258,
+        "source": "examples/ch15-projects/a3-complete/src/report.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 264,
+        "source": "examples/ch15-projects/a3-complete/examples/a3_text.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 270,
+        "source": "examples/ch15-projects/a3-complete/examples/a3_json.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 302,
+        "source": "examples/ch15-projects/a3-complete/src/report.rs",
+        "anchor": "build"
+      }
+    ],
+    "commands": [
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 121,
+        "command": "cargo +1.99.0 check"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 122,
+        "command": "cargo +1.99.0 test --locked"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 156,
+        "command": "cargo +1.99.0 test --locked"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 264,
+        "command": "cargo test -p duplicate-a2 --locked"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 270,
+        "command": "cd examples/ch15-projects/a2-complete"
+      },
+      {
+        "document": "docs/chapters/18-03-lesson.md",
+        "line": 271,
+        "command": "cargo run --example a2_groups --locked"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 136,
+        "command": "cargo +1.99.0 check"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 137,
+        "command": "cargo +1.99.0 test --locked"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 276,
+        "command": "cargo test -p duplicate-a3 --locked"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 282,
+        "command": "cd examples/ch15-projects/a3-complete"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 283,
+        "command": "cargo run --example a3_text --locked"
+      },
+      {
+        "document": "docs/chapters/18-04-lesson.md",
+        "line": 284,
+        "command": "cargo run --example a3_json --locked"
+      }
+    ],
+    "package_manifests": {
+      "examples/ch15-projects/a2-complete/Cargo.toml": {
+        "package": {
+          "name": "duplicate-a2",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "walkdir": "2.5",
+          "blake3": "1.8"
+        },
+        "dev-dependencies": {
+          "tempfile": "3.27"
+        }
+      },
+      "examples/ch15-projects/a2-starter/Cargo.toml": {
+        "package": {
+          "name": "duplicate-a2-starter",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "walkdir": "2.5",
+          "blake3": "1.8"
+        },
+        "dev-dependencies": {
+          "tempfile": "3.27"
+        }
+      },
+      "examples/ch15-projects/a3-complete/Cargo.toml": {
+        "package": {
+          "name": "duplicate-a3",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "walkdir": "2.5",
+          "blake3": "1.8",
+          "serde": {
+            "version": "1.0.229",
+            "features": [
+              "derive"
+            ]
+          },
+          "serde_json": "1.0.154"
+        },
+        "dev-dependencies": {
+          "tempfile": "3.27"
+        }
+      },
+      "examples/ch15-projects/a3-starter/Cargo.toml": {
+        "package": {
+          "name": "duplicate-a3-starter",
+          "version": "0.1.0",
+          "edition": "2024",
+          "rust-version": "1.99",
+          "publish": false
+        },
+        "dependencies": {
+          "walkdir": "2.5",
+          "blake3": "1.8",
+          "serde": {
+            "version": "1.0.229",
+            "features": [
+              "derive"
+            ]
+          },
+          "serde_json": "1.0.154"
+        },
+        "dev-dependencies": {
+          "tempfile": "3.27"
+        }
+      }
+    },
+    "selected_lock_entries": [
+      {
+        "name": "blake3",
+        "version": "1.8.7",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "6d9e454fc11f76977dc803893aff6304ed33d6a26efae8696573bea74baa27ae",
+        "dependencies": [
+          "arrayvec",
+          "cc",
+          "cfg-if",
+          "constant_time_eq",
+          "cpufeatures"
+        ]
+      },
+      {
+        "name": "duplicate-a2",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3",
+          "tempfile",
+          "walkdir"
+        ]
+      },
+      {
+        "name": "duplicate-a2-starter",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3",
+          "tempfile",
+          "walkdir"
+        ]
+      },
+      {
+        "name": "duplicate-a3",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3",
+          "serde",
+          "serde_json",
+          "tempfile",
+          "walkdir"
+        ]
+      },
+      {
+        "name": "duplicate-a3-starter",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3",
+          "serde",
+          "serde_json",
+          "tempfile",
+          "walkdir"
+        ]
+      },
+      {
+        "name": "serde",
+        "version": "1.0.229",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba",
+        "dependencies": [
+          "serde_core",
+          "serde_derive"
+        ]
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0.154",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+        "dependencies": [
+          "itoa",
+          "memchr",
+          "serde",
+          "serde_core",
+          "zmij"
+        ]
+      },
+      {
+        "name": "tempfile",
+        "version": "3.27.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd",
+        "dependencies": [
+          "fastrand",
+          "getrandom 0.4.3",
+          "once_cell",
+          "rustix",
+          "windows-sys 0.61.2"
+        ]
+      },
+      {
+        "name": "walkdir",
+        "version": "2.5.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b",
+        "dependencies": [
+          "same-file",
+          "winapi-util"
+        ]
+      }
+    ],
+    "copy_checks": [
+      {
+        "path": "examples/ch15-projects/a2-starter/src/collection.rs",
+        "same_as": "examples/ch15-projects/a1-complete/src/collection.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a2-complete/src/collection.rs",
+        "same_as": "examples/ch15-projects/a1-complete/src/collection.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a3-starter/src/collection.rs",
+        "same_as": "examples/ch15-projects/a1-complete/src/collection.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a3-complete/src/collection.rs",
+        "same_as": "examples/ch15-projects/a1-complete/src/collection.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a2-starter/src/stream.rs",
+        "same_as": "examples/ch15-projects/a2-complete/src/stream.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a2-starter/src/files.rs",
+        "same_as": "examples/ch15-projects/a2-complete/src/files.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a3-starter/src/stream.rs",
+        "same_as": "examples/ch15-projects/a2-complete/src/stream.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a3-starter/src/files.rs",
+        "same_as": "examples/ch15-projects/a2-complete/src/files.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a3-complete/src/stream.rs",
+        "same_as": "examples/ch15-projects/a2-complete/src/stream.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a3-complete/src/files.rs",
+        "same_as": "examples/ch15-projects/a2-complete/src/files.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a3-starter/src/content.rs",
+        "same_as": "examples/ch15-projects/a2-complete/src/content.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a3-complete/src/content.rs",
+        "same_as": "examples/ch15-projects/a2-complete/src/content.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a2-starter/checks/content-tests.rs",
+        "same_as_suffix": "examples/ch15-projects/a2-complete/src/content.rs",
+        "identical": true
+      },
+      {
+        "path": "examples/ch15-projects/a3-starter/checks/report-tests.rs",
+        "same_as_suffix": "examples/ch15-projects/a3-complete/src/report.rs",
+        "identical": true
+      }
+    ],
+    "counts": {
+      "owned_files": 37,
+      "source_or_config_files": 33,
+      "hashes": 52,
+      "snippets": 50,
+      "commands": 12,
+      "checked_source_copies": 14,
+      "A2_tests": 12,
+      "A3_tests": 9,
+      "A2_complete_tests_unix": 20,
+      "A2_complete_tests_other": 17,
+      "A3_complete_tests_unix": 29,
+      "A3_complete_tests_other": 24
+    }
+  },
+  "assessments": [
+    {
+      "section": "18.3",
+      "judgment": "Starter names/model/body accurately mark three missing functions; inherited A1 tests remain automatic while new checks module needs explicit append. Complete size/digest filtering skips singleton sizes and preserves hash failure; bytes grouping checks every representative, de-duplicates native paths, validates new singleton readability and only exports >=2 members. Recovery saves exact failure path, strictly removes candidates and restarts; incorrect outside-bucket callback path panics rather than loops. Left-reader a failure retains b1/b2 and prior scan issues; all twelve finite content tests and helpers support stated cases. Short reads/Interrupted,9001bytes/tail difference/binary/empty, pre/post observations and unchanged-snapshot limitations match. Full modules/manifests/answers precede commands."
+    },
+    {
+      "section": "18.4",
+      "judgment": "Native Path ordering precedes String conversion, including a/b before a.txt; copied keys persist for group and diagnostic sorting. Option None/Some order is introduced. Complete report uses checked conversion/multiplication/addition, fatal overflow rather than partial metric; zero groups can be complete and any issue makes partial. Same owned model feeds text/JSON; Debug escapes line/control/quote data, JSON handles string/null/array. Option::as_ref differs from AsRef trait and preserves owned paths as described. Complete new nine tests include two Unix, giving29Unix/24other; A2 total20/17. Full source/helpers and exact check-module copies are provided before commands; fixed-cwd examples read material and flush Write. Only optional wording above."
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Read both full pages and all unique Rust/config/check source, plus14 exact copy comparisons to fully read originals.",
+      "Review twelve A2 and nine A3 test functions including controlled failures, checksum bucket, native sort and arithmetic overflows; retained inherited A1 source verified identical.",
+      "Validate50snippets/exact anchors,12literal shell commands,four manifests/rootlock,two SVG XML sources and six material byte hashes.",
+      "Statically trace target closure, stub failure expectations, test platform counts and demo2groups/10bytes."
+    ],
+    "not_performed": [
+      "No Cargo/rustc/Clippy/tests or examples run.",
+      "No filesystem mutation, hash benchmark, browser/SVG visual inspection or reader experiment."
+    ]
+  },
+  "conclusion": "Necessary findings0; one low-impact optional prose type correction. Source/outputs/closures otherwise align."
+}

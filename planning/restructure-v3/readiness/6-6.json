@@ -1,0 +1,96 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "6.6"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round06-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/06-06-lesson.md": "c22dc2544ddca5f26d854f450028df0fc315ecd114d8db8b9a9ced81efbce549",
+    "examples/intro-workspace/trait-stages/examples/grouping_support/mod.rs": "ea8a57e573e122aacf57972ecd74f0774495d31b63d56b150a6a1e3a409fbffc",
+    "examples/intro-workspace/trait-stages/examples/map_support/mod.rs": "c8b46307d1e61c6c9211cc252bb5acd277c5db5b42a2e839384ca6109e3d2ee6",
+    "examples/intro-workspace/trait-stages/examples/grouping.rs": "25a3f006640450d57e61272513c52fe9fa32bfafa77157aea83db1f2236df152",
+    "examples/intro-workspace/trait-stages/examples/custom_keys.rs": "3b8ff510cbeee0f954659ea3bb98b8b33c3eb907a905d99c95fc1880008dd416",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/key_without_hash.rs": "3c3591bc011548ec70846763eb92085e2a35c69e89c02ca8ed4446552ebb0d99",
+    "examples/intro-workspace/trait-stages/Cargo.toml": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+    "examples/intro-workspace/trait-stages/examples/grouping_answer.rs": "0785f255f09a505c58da74c1f76b88aba22b5fdb711d54afdaaaa1e9eda49499"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 3,
+      "quote": "這次輸入依序是 Rust、Python、Rust，要得到 Rust出現2次、Python出現1次。上一節的 insert 會取代值，不會自動累加。現在用 get_mut 分辨已有名稱與新名稱，讓同名標籤累積到同一筆結果。"
+    },
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 7,
+      "quote": "函式只借讀 `&[String]`，交回新的 `HashMap<String, usize>`。沿用第 3.7 節走訪 borrowed slice 的方式，這次元素換成 String：`for label in labels` 每次取得一份 **`&String`**，沒有把 owned 文字移出輸入。"
+    },
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 11,
+      "quote": "**`(*label).clone()`** 先沿 reference 找到原 String，再呼叫它的 Clone 借讀並建立獨立文字。這個方法呼叫沒有把原 String move 出 slice。它只出現在缺鍵分支，因為已有鍵時不需要再擁有另一份同名文字。"
+    },
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 31,
+      "quote": "本節沿用上一節的 owned_text helper 建立輸入；其完整內容仍只有建立 String 的工作："
+    },
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 58,
+      "quote": "測試直接比較 get 的 `Option<&usize>`，已由第 6.2 節教過其 Debug 與 PartialEq：None與Some不同，Some中的reference比較借到的數字。這裡不需要用長度或假數字代替完整查詢結果。"
+    },
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 62,
+      "quote": "下面是**完整** `grouping_support/mod.rs`，包括函式與全部三項測試："
+    },
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 76,
+      "quote": "庫存有時同時依地區與類別分組，不能只看其中一個數字。用 GroupKey 保存兩個 i32，讓全部欄位一起決定是否為同一組。"
+    },
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 78,
+      "quote": "第 6.2 節的 derived PartialEq 逐欄比較；**derived Eq** 要求各欄位都有 Eq，才能保證每個組合與自己相等。**derived Hash** 則使用各欄位的 Hash 資訊，欄位也必須有 Hash。"
+    },
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 104,
+      "quote": "編譯器以 **E0599** 指出insert的trait條件未滿足，其中缺少GroupKey的Hash。這和第6.1節缺少bound一樣，都是使用某項操作時沒有提供所需能力。"
+    },
+    {
+      "section_id": "6.6",
+      "path": "docs/chapters/06-06-lesson.md",
+      "line": 108,
+      "quote": "本節所有成功targets仍使用同一份完整member設定："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

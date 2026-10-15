@@ -1,0 +1,328 @@
+{
+  "review_id": "technical-early-round05-data-prefix",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/05-01-lesson.md",
+    "docs/chapters/05-02-lesson.md"
+  ],
+  "reader_background": "Basic Python plus actual required chapters1–4 main prose already read. Final4.2/4.7 narrow fixes read before5.1→5.2. No5.3–5.5 prose or future UTF-8/vector sources used as prerequisites.",
+  "independent_initial": true,
+  "independence": "No chapter5 author ledger/validation/freeze conclusions, peer reviews, continuity/audit or first-reader records read before sealing. Root supplied scope and no chapter5 specific finding. This follows an explicitly separate chapter4 peer-prompted cross/followup.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary technical, first-use prerequisite, exact selected-target closure, inline completeness, output, answer or expected-error-code mismatch found in5.1–5.2.",
+  "method": "Sequential whole-page technical reread and actual referenced complete Rust/manifests/fixture. Static type, ownership, branch and output reasoning. Not blind first-read, target-reader experiment or browser/visual validation.",
+  "execution": {
+    "cargo_rustc_clippy_test_or_fixture_commands": [],
+    "author_validation_results_used_as_own_evidence": false,
+    "browser_visual": false,
+    "reason": "No unresolved source uncertainty justified rerunning already-author-checked targets; no new execution evidence claimed."
+  },
+  "source_snapshot_at_utc": "2026-10-15T07:26:01.998124+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "a49b97ac151812354ff0e13a376ff515ff60c3b6e7609781c492f3b4bfc477e0",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/chapters/05-01-lesson.md": "5591d4b1bdc74705aa3e2569259a7f76c59e71a6ddf56290858061828f4199cf",
+    "docs/chapters/05-02-lesson.md": "3cb416c39b9653df37fac70e6041723b8bcb9ad00356c156fce9c1cc439d370f",
+    "examples/intro-workspace/Cargo.lock": "95fc150a6f4c104bbd7c775cc52c79c180e5a5bfe584110800e07047e99f5dcb",
+    "examples/intro-workspace/Cargo.toml": "7161d333dd2b49cb74eee31661e7762ec3e6b234a7b550202dc5079b109608f1",
+    "examples/intro-workspace/data-steps/Cargo.toml": "37c9cbefb5ff5e6412887e4932d12a2063bda8f52b547e417064133c1fcb9a33",
+    "examples/intro-workspace/data-steps/examples/generic_answer.rs": "c16130aa77f8f273f961600897384c764f5383d81071f4dc17a260d548a1852a",
+    "examples/intro-workspace/data-steps/examples/generic_holder.rs": "6b165e050e27bf0c98630159ed0a014982238c34aa7827efc91eabfcddcc84ed",
+    "examples/intro-workspace/data-steps/examples/generic_impl.rs": "7a9d3b933e31405746cd393f88f1ba399de4441b90c30c0cf5558560e1e85458",
+    "examples/intro-workspace/data-steps/examples/option_result.rs": "ff1e56dd326e94541adfc78512a00ab182c74c097650c90fa80208199f4a4342",
+    "examples/intro-workspace/data-steps/examples/result_answer.rs": "0fc3a3416d1d9071bdf4d1472e5281b79f327c5dccbba92d71ead59fb9d10789",
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.rs": "b6473382a600431ef5f50f97fdcd4e25974b7ea4b61ac59a728701e431d97645",
+    "examples/intro-workspace/data-steps/src/main.rs": "f6f48effd040804b3bb4be2efe3b3fa4fbd4db0a8ccf7782dd72925e3d8d8668",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/generic_holder.rs:holder",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/generic_holder.rs:hold",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/generic_holder.rs:calls",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/generic_holder.rs:explicit",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/generic_holder.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/generic_impl.rs:implementation",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/generic_impl.rs:number",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/generic_impl.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-01-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/generic_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-02-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/option_result.rs:options",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-02-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/option_result.rs:show-option",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-02-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/option_result.rs:choose-option",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-02-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/option_result.rs:divide",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-02-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/option_result.rs:handle-result",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/05-02-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-02-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/option_result.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/05-02-lesson.md",
+      "reference": "examples/intro-workspace/data-steps/examples/result_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "preceding_final_chapter4_source_hashes": {
+    "docs/chapters/04-02-lesson.md": "5bbb8a9a5406962e325218feb6f35ab4adbaeccea828d6f512bc7ba07562e066",
+    "docs/chapters/04-07-lesson.md": "dc975b8cdd2e0ee86d62d63d955e509430bad6f1019c34566cf9930d1a1fe761"
+  },
+  "selected_target_closure": {
+    "package": "intro-data-steps",
+    "manifest": "examples/intro-workspace/data-steps/Cargo.toml",
+    "no_library": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "no_repository_cargo_config_found": [
+      ".cargo/config",
+      ".cargo/config.toml",
+      "examples/.cargo/config",
+      "examples/.cargo/config.toml",
+      "examples/intro-workspace/.cargo/config",
+      "examples/intro-workspace/.cargo/config.toml",
+      "examples/intro-workspace/data-steps/.cargo/config",
+      "examples/intro-workspace/data-steps/.cargo/config.toml"
+    ],
+    "targets": [
+      {
+        "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example generic_holder --locked",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/data-steps/examples/generic_holder.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source_shown": true
+      },
+      {
+        "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example generic_impl --locked",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/data-steps/examples/generic_impl.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source_shown": true
+      },
+      {
+        "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example generic_answer --locked",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/data-steps/examples/generic_answer.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source_shown": true
+      },
+      {
+        "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example option_result --locked",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/data-steps/examples/option_result.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source_shown": true
+      },
+      {
+        "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-data-steps --example result_answer --locked",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/data-steps/examples/result_answer.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source_shown": true
+      }
+    ],
+    "unselected_main": "data-steps/src/main.rs inspected for manifest shape but not compiled by the selected --example commands; its content is not required prerequisite.",
+    "unselected_future_targets": "Other examples may be discovered as Cargo metadata; their source bodies are outside these no-lib selected-target compilation closures. No all-targets, tests, broad fmt or Clippy command is taught in these two pages.",
+    "workspace": "Member data-steps is present in intro workspace and lockfile. Root workspace excludes intro-workspace. Existing resolver/member settings add no new source dependency.",
+    "manifest_explanation": "5.1:54 identifies package name, no library and separate full example main;54–61 shows complete simple package manifest and source.5.2:66–73 repeats complete manifest and all helper/main.",
+    "fixture": {
+      "source": "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.rs",
+      "expected_file": "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.expected",
+      "expected_stable_string": "E0308",
+      "statically_expected": "Pair<T> has one T shared by both fields; first integer and second bool conflict.",
+      "executed_this_review": false
+    }
+  },
+  "concept_evidence": [
+    {
+      "concept": "Type parameter and concrete generic type",
+      "identity_and_role": "5.1:7 contrasts value inputs120/true with type inputs i32/bool;9 declares T in Holder<T> and uses it as field type.",
+      "need": "5.1:3 wants one common save/return shape for numeric and boolean values while retaining definite field types.",
+      "operation": "5.1:15–22 compares Holder<i32>/Holder<bool>;26–40 connects function T to input and stored output.",
+      "example_and_limits": "generic_holder uses both concrete types, outputs and primitive assertions. Same concrete field cannot switch to bool at runtime; inference does not remove types. No trait/operator/display support assumed for arbitrary T.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Explicit type arguments and generic impl ownership",
+      "identity_and_role": "5.1:44 explains hold::<i32>(80), type arguments versus value arguments, and turbofish before its first snippet.79 explains both declaring impl<T> and using Holder<T>.",
+      "need": "One reusable type-level construction and extraction operation replaces separate per-concrete-type save functions; existing3.6 constructor/method roles apply.",
+      "operation": "5.1:81 defines Self=Holder<T>,new and consuming into_value(self)->T before implementation snippet84;87 distinguishes declaration from use.",
+      "example_and_limits": "generic_impl shows i32 plus String from3.8. Ownership of Holder permits moving out T without a Copy bound. String::new/push_str/as_str and field shorthand were actually taught earlier; no derive, trait bounds or closure API needed.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "One shared type parameter versus two",
+      "identity_and_role": "5.1:112 states one T is shared by both Pair fields before failure source117.126 explains comma-separated T,U with separate field correspondence before full answer131.",
+      "need": "Retain same-type requirement when intended, or permit distinct field types when the task requires them.",
+      "operation": "One-T integer/bool construction is E0308; two-parameter pair<T,U> returns Pair<T,U> retaining input-to-field relations.",
+      "example_and_limits": "Answer constructs Pair<i32,bool>, checks primitive fields and prints120/true. No generic whole-struct comparison or formatting capability assumed.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Option and prelude",
+      "identity_and_role": "5.2:7 defines standard enum Option<T>, Some(T) and None;9 separates Some(0) from missing.11 defines prelude role and explains direct standard variant names before first code16.",
+      "need": "5.2:3 common optional-value shape generalizes earlier custom Quote without losing missing-versus-zero distinction.",
+      "operation": "19 explains inference and uninformative None;23 teaches existing match on Some/None before snippet26;29 connects existing if let;31 explains both if arms yield Option<i32>.",
+      "example_and_limits": "option_result handles missing,Some120,Some true,thenSome0/None. Outputs preserve zero versus absence. It does not display/assert equality of whole Option, require derive, or claim Option<i32> is an integer. By-value calls do not incorrectly claim these particular Option values cease being usable.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Result success/error type roles and handling",
+      "identity_and_role": "5.2:41–48 defines Result<T,E>,Ok(T),Err(E),i32 success and custom DivideError error before divide source53.",
+      "need": "Division must return either quotient or classified zero-denominator reason;5.2:94–99 contrasts this need with unclassified Option absence.",
+      "operation": "50 states function signature and zero check before division;56 explains Err itself is data and callers choose behavior, with nested pattern before59.",
+      "example_and_limits": "12/2 yieldsOk6;12/0 yieldsErr and continues.62 explicitly scopes small non-overflowing integers, so does not promise all i32 boundary arithmetic. result_answer rejects−5 and accepts0, asserts only already-taught primitive values, and uses full helper definitions.",
+      "status": "sufficient"
+    }
+  ],
+  "static_output_checks": [
+    {
+      "target": "generic_holder",
+      "expected": [
+        "數字盒=120，布林盒=true",
+        "指定型別的數字盒=80"
+      ],
+      "source_reason": "holds120,true,and explicit80; prints primitive fields in that order; all assertions true."
+    },
+    {
+      "target": "generic_impl",
+      "expected": [
+        "接回數字=120",
+        "接回文字=訂單A"
+      ],
+      "source_reason": "owned methods return stored number and String; original label/text are not reused."
+    },
+    {
+      "target": "generic_answer",
+      "expected": [
+        "金額=120，是否可用=true"
+      ],
+      "source_reason": "T=i32,U=bool preserve respective inputs."
+    },
+    {
+      "target": "option_result",
+      "expected": [
+        "缺少報價",
+        "取得報價=120",
+        "設定值=true",
+        "取得報價=0",
+        "缺少報價",
+        "整數商=6",
+        "除數必須非零"
+      ],
+      "source_reason": "main order: None,Some120,Some true;available true,false;denominator2,0. Both match sets exhaustive."
+    },
+    {
+      "target": "result_answer",
+      "expected": [
+        "接受金額=0",
+        "拒絕負數金額"
+      ],
+      "source_reason": "for[0,-5],nonnegative branch returnsOk0 thennegative returnsErr; primitive assertions hold for these selected materials."
+    }
+  ],
+  "limits": "No success commands/fixture/compiler/Clippy/test execution or browser rendering in this review. Conclusions about outputs/error codes are static reasoning, not an independent run. No review of5.3–5.5 or their source-body prerequisites.",
+  "sealed_at_utc": "2026-10-15T07:27:35.795984+00:00"
+}

@@ -1,0 +1,139 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "9.4"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round09-adaptors-text-sorting-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round09-closures-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round09-impl-iterator-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/09-04-lesson.md": "19526bf5c5f0dd57f1bf6ac6cb090116d9c69fdedbd7a6beb0bd74d1e63bee3a",
+    "examples/intro-workspace/iterators/Cargo.toml": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+    "examples/intro-workspace/iterators/examples/iterator_next.rs": "289bcf204a35cbfbdb58cb41b2c0a6a34c28e4f97152e023d502dcd99c3eca86",
+    "examples/intro-workspace/iterators/examples/iterator_for.rs": "eda6da4a938d0fb1e939f3327adb3859ac8c0504683563fcf890b70e2323481f",
+    "examples/intro-workspace/iterators/examples/iterator_sources.rs": "a9b72f9f5d7e1de77cb610b8c2fa14007021bc3a641bf681222e19ef825bd3cf",
+    "examples/intro-workspace/iterators/examples/iterator_ownership.rs": "e8d38ab63cbfafa295c9e4b6f230990b31d96fe028f3c55b107c0b8adde1700c",
+    "examples/intro-workspace/iterators/examples/iterator_borrowed_forms.rs": "22a3afbd391b09ed0cae959cda9631b09fda19749d2fc88092775aaa853c7fe2",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_mut_overlap.rs": "80ea9c51f3ab69c0d1d47a1d37c53ee1591175a1036379de10b09508c7557bed",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/iterator_after_move.rs": "97221cdfd909b865970e0f53f4eaba6d1c01afac5b72d84469fce411dda03b1e",
+    "examples/intro-workspace/iterators/examples/iterator_answer.rs": "fd3d8da4c91b493884b0d190f14c1a0ae8b88da432f84be2bcaa6e391d73295b",
+    "docs/assets/iterators-v3/iterator-next.svg": "f2512c81d7e13a13c933e05b228aeb7a4291b4fd76895000c7e0e0821df69749"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 3,
+      "quote": "第 5.5 節的清單整理器用索引迴圈，每次要處理下一項，同時維護索引與結束條件。現在希望把「怎麼取得下一筆」收在來源中，讓讀取端不必知道來源是否有索引、是否已先保存全部資料。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 9,
+      "quote": "**iterator**（迭代器）是可逐筆交出資料的值，在 Rust 中由標準 trait **`Iterator`** 描述。它保存推進所需的狀態，例如下一個數字或清單目前位置。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 11,
+      "quote": "這個 trait 的 associated type 叫 **`Item`**，表示每次交出資料的型別，沿用第 6.4 節的型別關係。Item 可以是 owned 值，也可以是 reference；不能只由「走訪」一詞判斷 ownership。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 13,
+      "quote": "核心 method 是 **`next(&mut self) -> Option<Self::Item>`**：透過 mutable receiver 更新 iterator 狀態；有下一筆就交回 Some 包住的 Item，這次走訪結束則交回 None。沒有額外的輸入參數，也不以數字零當成結束訊號。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 15,
+      "quote": "Iterator 的一般契約允許某些實作在 None 後再次交出 Some；後面的 for 會在**第一個 None** 結束。這節的有限倒數與 slice iterator 則在結束後持續回傳 None，不把這份實作的性質推成所有 iterator 的必要保證。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 19,
+      "quote": "倒數來源從 `start` 開始，每次先保存目前正整數，把 remaining 減一，再交回剛才保存的數字。start 小於或等於零，直接交回 None；沒有需要先建立一份倒數清單。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 35,
+      "quote": "建立工作只保存 start，尚未取得第一筆。**lazy**（惰性）在本例表示數字由 next 推進時才逐筆交出，不是在建立時就先算出並保存整份清單。建構值本身仍然有發生，不表示任何初始化都沒有成本。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 43,
+      "quote": "第 6.2 節已教 Debug 與 PartialEq。標準 `Option<i32>` 也提供這兩項能力：Debug 顯示 Some 與內容或 None；比較時同為 Some 且內容相等才相等，兩個 None 也相等。因此下面可以用 `{:?}` 直接看結果，本頁也可以用 assert_eq 檢查這些數值 Option。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 65,
+      "quote": "**`IntoIterator`** 描述「這種輸入如何轉成 iterator」。它與 Iterator 分工不同：前者建立走訪工作，後者負責逐筆交出 Item。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 67,
+      "quote": "它也有 Item，另外有 **`IntoIter`**，指定所建立的 iterator 型別。對 IntoIter 的要求是 **`Iterator<Item = Self::Item>`**：工作交出的元素，必須和這份 IntoIterator 宣告的一致。associated type 也可以有這種能力要求，不是只放一個沒有條件的名稱。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 69,
+      "quote": "**`into_iter(self) -> Self::IntoIter`** 按值接收輸入，交回工作。若輸入本身是 reference，接收的是那份 reference；若輸入是 owned collection，接收的才是該 collection。方法名稱中的 into 不會讓所有情況都自動取得原資料的 ownership。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 81,
+      "quote": "`Vec<i32>` 的 owned `into_iter()` 會接手 Vec，從頭到尾逐筆交出 i32。回傳工作有標準型別名稱 **`std::vec::IntoIter<i32>`**：std 是標準函式庫 crate，vec 是其中的 module，IntoIter 是 iterator 的型別名稱，不是 IntoIterator trait。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 89,
+      "quote": "共用的加總函式只要求 **`S: IntoIterator<Item = i32>`**，不需要知道欄位名稱，也不需要來源能依索引存取。它接手 source、逐筆相加，空來源交回零："
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 105,
+      "quote": "資料改成 `Vec<String>`，才能看清楚是否複製文字、借用文字或交出文字。依工作需要選以下建立方式，Item 型別也跟著不同："
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 113,
+      "quote": "**slice 的 `iter`** 從頭到尾交出各元素的 shared reference。**`iter_mut`** 從頭到尾交出各元素的 mutable reference，讓每個元素能個別修改。建立這些 iterator 本身不會走完所有元素；空 slice 的下一筆就是 None，不會因為空清單越界。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 163,
+      "quote": "建立 StepDown，保存 remaining，實作 `Iterator` 並把 Item 選成 i32。remaining 大於零才交出目前數字，再減二；否則回傳 None。先用小整數 5，避免算術超出範圍。"
+    },
+    {
+      "section_id": "9.4",
+      "path": "docs/chapters/09-04-lesson.md",
+      "line": 165,
+      "quote": "先直接 next 取得 Some(5)，再把**同一份**工作交給 for，應只剩 3、1，合計 4。這可檢查 for 使用目前進度，沒有從頭重跑。再確認從零開始的工作沒有資料。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

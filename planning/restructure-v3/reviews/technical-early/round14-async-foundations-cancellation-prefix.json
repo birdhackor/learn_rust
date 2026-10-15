@@ -1,0 +1,1759 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "14.1",
+    "14.2",
+    "14.3",
+    "14.4",
+    "14.5",
+    "14.6"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "method": "Full prose in 14.1→14.6 order plus actual complete selected-target source closure. Not a blind reader test or a visual inspection.",
+    "prior_knowledge": "Basic Python + personally read chapters 1–13. Although 15/17 have separately been reviewed, neither is used to supply chapter 14 prerequisites.",
+    "notifications": "Root later released 14.7–14.9; not read or used before sealing this prefix. Root's 13-prefix wording/array-slice findings are queued as attributed followups and are not independent discoveries here."
+  },
+  "evidence": {
+    "scope": [
+      "14.1",
+      "14.2",
+      "14.3",
+      "14.4",
+      "14.5",
+      "14.6"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/Cargo.toml",
+        "sha256": "6e6a777fce6800a5ed2a0efb672d7751445556ee40d258157938ba4506b78c35"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/signal/ctrl_c.rs",
+        "sha256": "9b2a47659fe106805036a664310040c07d98c061d7104270d9a641025cc875f0"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/sync/mpsc/bounded.rs",
+        "sha256": "f229ccaa6711bffb17d8021dade6405d17595d5f64dac2f03107c05a4cc381f2"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/task/join_set.rs",
+        "sha256": "421b2f5af3e877a85fdd8920688f10e05e62cd75d2149c7db997277ffbf3074e"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/task/spawn.rs",
+        "sha256": "9d5af1dc5c00baab64c4bc9d6e0a50ecb144e7100c618dde0d75270f615ffa3f"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/time/sleep.rs",
+        "sha256": "9c5b5af7bf954b86cad5a127b0edf2f677a1bf46b0c73b08afff9f48311521c9"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/time/timeout.rs",
+        "sha256": "5b1b20cb77de63fb5071b696ac644706a9749e0aeb6dbea57220834cba6dc953"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-macros-2.7.2/src/entry.rs",
+        "sha256": "ac69e6466141d17e31b69f4eb2e849406da8c0ea9bf83e8e5e9d120274b0b83d"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/async-v3/borrowed-wait.svg",
+        "sha256": "c41f3b548a274393fbb6648ee61add41a17a2ac77739102b9948af4eee34e0f1"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/async-v3/bounded-refill.svg",
+        "sha256": "d680fda0f7d8558d800be21e411011752a4f6e1caf156437b9ee15f48504905d"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/async-v3/waiting-arrangements.svg",
+        "sha256": "6c2cd8c637690416650a7264d6a786cb7ef46aa07babc1915d9dbb6a06fbdd5a"
+      },
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-01-lesson.md",
+        "sha256": "7772154a19fd100713e33d25ce94fc985fcb8f39f087792270f8b710370e4966"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-02-lesson.md",
+        "sha256": "5f7917e7a6b2b87e455cc34bb2a340f814f659cd580fb0f0b5939b828917e01b"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-03-lesson.md",
+        "sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-04-lesson.md",
+        "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-05-lesson.md",
+        "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-06-lesson.md",
+        "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/bounded/Cargo.toml",
+        "sha256": "cafbd7e9df2004d0ff0aefc31876253858dce7fb921a4b230847d8d0d779963b"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/bounded/examples/one_slot_solution.rs",
+        "sha256": "9e6cbc3cecef08d6ea4ecb7972d06254742331c092d2e7767f272003745141b2"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/bounded/src/lib.rs",
+        "sha256": "345d8e4f2527d3dae4d3efebc1656564bb0c6fac3ee46843639a7c71ae4a4728"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/bounded/src/main.rs",
+        "sha256": "430670ee8dbc8356015860c5b9d914940043841835e23c7466c6f704fc4647b9"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/bounded/src/outcomes.rs",
+        "sha256": "addfd028b352783d2a544a2b30c563bf18a8e219e7af8cc43ec2609574140f38"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/bounded/tests/cli.rs",
+        "sha256": "b3ac98d7529c30b4a6a9b10475210170682c201ac8ad1f804396ae82961034ce"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/Cargo.toml",
+        "sha256": "b5e152c4520af53dfec4d55e5b486107d1b87b31e50d9e48225d1b427ddea8fd"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/examples/borrowed_join.rs",
+        "sha256": "590851520f5d6bd35c7fb8c87a6df4adf0a9e8eae1293182e4b7473e0f4dca5b"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/examples/prequeued_stop_solution.rs",
+        "sha256": "870ca97b9a22b87bca983058271805d977952d2be3707b9d940bf3b6da7d4855"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/examples/short_guard.rs",
+        "sha256": "2adb07b48824e0c60bbef802d6e8d2719f8eca3ba54c5bcf35e43b3d0f0d4896"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.lock",
+        "sha256": "c2cbb529ebee012ba272de76e6ca326e85c78185dfdb1464af353a858b8e9a2f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.toml",
+        "sha256": "2c2c0700b87c6b2d193ab28b589002c849566006ecf35e8649d2132401e09bf0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.expected",
+        "sha256": "93374681e116242342822be425b1bab8e8e0217da2a2465dd241e57bb7cbb8de"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.rs",
+        "sha256": "147b4081aac0b2d07295d37118225a1c7a4d6410eabbcfb161d2d0eee6a9510a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/src/lib.rs",
+        "sha256": "98230a2fbf24820874205d2c169d9c4b11e9debcbe55dfb91b5abdac0f96382e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/src/main.rs",
+        "sha256": "8e3179ad880a5eaa56a99b2f90105d845b8044ca9e5b6b71de99d990f04bb0c3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/src/models.rs",
+        "sha256": "57241e18dfac21600bb0f1f22e0efe5939f3ade1fbfb471a4af572d3f33ebf99"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/cancellation/tests/cli.rs",
+        "sha256": "45a218d9c329650899c53df939cc3262fa91d02566168a36dd05ad5d1847ace5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/foundations/Cargo.toml",
+        "sha256": "e9a2670d353d632cc0baade7840dd9d43f827314865c3602f6e5417a79471ca3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/foundations/examples/block_capture.rs",
+        "sha256": "bf0039a4905ca236c5e766612c1fd586c442b374f3ce8a0250a04d706689d290"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/foundations/examples/explicit_future.rs",
+        "sha256": "49e302bb16e1039e94ece93c080bdb148d7ade151f19cb6130fbe917fe8303e5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/foundations/examples/fallible_output.rs",
+        "sha256": "4d6f5d35860a6001d6724e74e40cb44b11a4bf8fd03659c271ebeab41ab2eb9b"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/foundations/examples/receipt_solution.rs",
+        "sha256": "001f732d191a0941fdd77ed3e6e1863109ba6b852f9f19a0615d8c0f0631ce73"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/foundations/src/lib.rs",
+        "sha256": "5e236a71c02c98f6fdc0861eac207fa9e812e35caed4201ed56fbfdd442c30aa"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/foundations/src/main.rs",
+        "sha256": "f65655c2f167a545d31ab79e306eb588b4bdd915a370b93786fe46c1fbcf7348"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/foundations/tests/cli.rs",
+        "sha256": "0726f33417b63e067d0b3072b97d3468eb33766fff8c51f5f9a2222ae000a238"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/Cargo.toml",
+        "sha256": "3cc2dbf4e2d21ecea1d2bef91d1ccc3ea3b55155325dfd33556b8519238ca59e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/examples/borrowed_join.rs",
+        "sha256": "ae88162e6a694ce2f2b907202a7393394aee067bfc4e4af81a6f63691158cde4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/examples/prequeued_stop_solution.rs",
+        "sha256": "b06e0760f2a802e33975b06fcc5cca48bb9e9a37426bd78533aaab91490786d4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/src/lib.rs",
+        "sha256": "cc5ff1c299691703bb4bebe5b35e0f92fcd5374b4cb215c1d9bc565fb5039deb"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/src/main.rs",
+        "sha256": "3ae3bf51c9bc925072971178b685fc70debe8393b4224aa723c9cd6c0fb206e4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/src/models.rs",
+        "sha256": "57241e18dfac21600bb0f1f22e0efe5939f3ade1fbfb471a4af572d3f33ebf99"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-steps/Cargo.toml",
+        "sha256": "ce683d76419389278a5f7bcfca114fcc1e75b1c75eac43b01186e53fe5ce787c"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-steps/examples/borrowed_join.rs",
+        "sha256": "696d4cedef57c08d8ad9d974332f202ec0e98fe87997047313a3ea189f1630b6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-steps/examples/short_guard.rs",
+        "sha256": "2adb07b48824e0c60bbef802d6e8d2719f8eca3ba54c5bcf35e43b3d0f0d4896"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/cancellation-steps/src/main.rs",
+        "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/Cargo.toml",
+        "sha256": "4365dc38d0fd841f6b8727b9850209623242f07d76a4859900313265b39b141e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/examples/block_capture.rs",
+        "sha256": "bf0039a4905ca236c5e766612c1fd586c442b374f3ce8a0250a04d706689d290"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/examples/explicit_future.rs",
+        "sha256": "ab0e008ee483e72988f416470211061a1c2e4c31d6a284bedbf3f40607a928ea"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/examples/fallible_output.rs",
+        "sha256": "b6090ba9016c46d0e6a760da5791378c6923fb147dd0f9475fb75c9c59392161"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/examples/lazy.rs",
+        "sha256": "780e6f1630cc94dfc090c939bd3eb12d2fc48a58091d8af427506d89b017bdd9"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/src/main.rs",
+        "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/Cargo.toml",
+        "sha256": "d1fbe4871742612192b34bd5dc2e2c8c496507c39f7c668c170926c5b9930aa0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/examples/abort_and_wait.rs",
+        "sha256": "cb33146ae636f8e3cf298eef185466514ff371d40b871a90d2c8a620796f55ec"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/examples/join_handle.rs",
+        "sha256": "ed350922c99be5a11c147a03669e6c3df6e93ac74a3567828913f499f153a2bd"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/src/lib.rs",
+        "sha256": "5f5a7b8dff5034364e62ce6a46bc63734430954952cee209090bb3ba45557c84"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/src/main.rs",
+        "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-clock/Cargo.toml",
+        "sha256": "0579e9d06735a5887e04bb0fccfd02e2947c9bc7ea8cf4a4a140f8e1ef77d416"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-clock/src/main.rs",
+        "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-clock/tests/clock_and_results.rs",
+        "sha256": "cd5f7e3fe49f932a7efcfd18d7e31b175e950ce6580a202b163f4cbc4568a4bf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/Cargo.toml",
+        "sha256": "53e1d73c7961f13c204daeb38c6ede28e5fc4d269e5b954e7a6b8bcfea7fba51"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_blocking.rs",
+        "sha256": "8534c0757039f6fd23501be3c9f3bebf057caf228cac9862ab5d219a06cfcd40"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_cancelled.rs",
+        "sha256": "ae1413a62e0f70d617f1bafc3a66026c0aa8774b56dc2a9e5aa533cb7d8524c1"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_measured.rs",
+        "sha256": "e84caf6bad3e9026c2e0755261bc0315db61b2a23e719a8ba69738eecfb80f28"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_nested.rs",
+        "sha256": "86daa7a2c5b72c3c6b03de823de1bb5b913a7561e698da72ec4b44cf3264a516"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+        "sha256": "8775dae480f55dcfb121ebaffb5123b2acd6f03b17cdbbf12d32e2138a7054f3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/src/main.rs",
+        "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/tasks/Cargo.toml",
+        "sha256": "8de4f5895912d08f8aed0a638c3205faac13a696504bfc4aa8b09394c9010bf6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/tasks/examples/abort_and_wait.rs",
+        "sha256": "e0b5fb7236b80debb688c9d53c74fa4fba420c3453c7280d398110a7c410efa3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/tasks/examples/control_closed_solution.rs",
+        "sha256": "fc71e68d0db3f903ca1919376dea9f88141fc99029c35f50b43c44ebefea3af2"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/tasks/examples/join_handle.rs",
+        "sha256": "67399f908fd380b69917413c406684cd8b638a1e0ea4fd2ef64ba854924a6b6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/tasks/src/lib.rs",
+        "sha256": "874f3cd1f11e5317f4972c7843bf36ec52151daee62937d367b4917d23d3cdbd"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/tasks/src/main.rs",
+        "sha256": "d390d6cf34a4db9830cdcd0a7cd30f864a3adedbd4cfb51917d47af056be9c25"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/tasks/tests/cli.rs",
+        "sha256": "1d0a3f4e8ecb37950a30289c72665d8088164cee580432e14eb8ea4c021a4b32"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/timing/Cargo.toml",
+        "sha256": "c0c01472347761ea98bae03345bc4e32e47868c1b1ce744b5876296c1ce025e9"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_blocking.rs",
+        "sha256": "8534c0757039f6fd23501be3c9f3bebf057caf228cac9862ab5d219a06cfcd40"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_cancelled.rs",
+        "sha256": "ae1413a62e0f70d617f1bafc3a66026c0aa8774b56dc2a9e5aa533cb7d8524c1"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_measured.rs",
+        "sha256": "e84caf6bad3e9026c2e0755261bc0315db61b2a23e719a8ba69738eecfb80f28"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_nested.rs",
+        "sha256": "86daa7a2c5b72c3c6b03de823de1bb5b913a7561e698da72ec4b44cf3264a516"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_outcomes.rs",
+        "sha256": "8775dae480f55dcfb121ebaffb5123b2acd6f03b17cdbbf12d32e2138a7054f3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/timing/src/lib.rs",
+        "sha256": "4a0926784e4e9d05ed5dba778880ba76f83656f8f3e08d496f62eb18f4e0a8ae"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/timing/tests/timing_contracts.rs",
+        "sha256": "203fa6b8d12f403e7b5c4db3df546c9efe5c13541e93d41b909efe045b0fa0e0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/timing/tests/timing_solution.rs",
+        "sha256": "8bf9bbad7f0d077a81c5e1bf5894668b46e7815c52ed8b8d46afe8c9308cc5b0"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch11-async/bounded/Cargo.toml",
+      "examples/ch11-async/bounded/examples/one_slot_solution.rs",
+      "examples/ch11-async/bounded/src/lib.rs",
+      "examples/ch11-async/bounded/src/main.rs",
+      "examples/ch11-async/bounded/src/outcomes.rs",
+      "examples/ch11-async/bounded/tests/cli.rs",
+      "examples/ch11-async/cancellation/Cargo.toml",
+      "examples/ch11-async/cancellation/examples/borrowed_join.rs",
+      "examples/ch11-async/cancellation/examples/prequeued_stop_solution.rs",
+      "examples/ch11-async/cancellation/examples/short_guard.rs",
+      "examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.lock",
+      "examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.toml",
+      "examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.expected",
+      "examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.rs",
+      "examples/ch11-async/cancellation/src/lib.rs",
+      "examples/ch11-async/cancellation/src/main.rs",
+      "examples/ch11-async/cancellation/src/models.rs",
+      "examples/ch11-async/cancellation/tests/cli.rs",
+      "examples/ch11-async/foundations/Cargo.toml",
+      "examples/ch11-async/foundations/examples/block_capture.rs",
+      "examples/ch11-async/foundations/examples/explicit_future.rs",
+      "examples/ch11-async/foundations/examples/fallible_output.rs",
+      "examples/ch11-async/foundations/examples/receipt_solution.rs",
+      "examples/ch11-async/foundations/src/lib.rs",
+      "examples/ch11-async/foundations/src/main.rs",
+      "examples/ch11-async/foundations/tests/cli.rs",
+      "examples/ch11-async/stages/cancellation-basic/Cargo.toml",
+      "examples/ch11-async/stages/cancellation-basic/examples/borrowed_join.rs",
+      "examples/ch11-async/stages/cancellation-basic/examples/prequeued_stop_solution.rs",
+      "examples/ch11-async/stages/cancellation-basic/src/lib.rs",
+      "examples/ch11-async/stages/cancellation-basic/src/main.rs",
+      "examples/ch11-async/stages/cancellation-basic/src/models.rs",
+      "examples/ch11-async/stages/cancellation-steps/Cargo.toml",
+      "examples/ch11-async/stages/cancellation-steps/examples/borrowed_join.rs",
+      "examples/ch11-async/stages/cancellation-steps/examples/short_guard.rs",
+      "examples/ch11-async/stages/cancellation-steps/src/main.rs",
+      "examples/ch11-async/stages/foundations-steps/Cargo.toml",
+      "examples/ch11-async/stages/foundations-steps/examples/block_capture.rs",
+      "examples/ch11-async/stages/foundations-steps/examples/explicit_future.rs",
+      "examples/ch11-async/stages/foundations-steps/examples/fallible_output.rs",
+      "examples/ch11-async/stages/foundations-steps/examples/lazy.rs",
+      "examples/ch11-async/stages/foundations-steps/src/main.rs",
+      "examples/ch11-async/stages/tasks-basic/Cargo.toml",
+      "examples/ch11-async/stages/tasks-basic/examples/abort_and_wait.rs",
+      "examples/ch11-async/stages/tasks-basic/examples/join_handle.rs",
+      "examples/ch11-async/stages/tasks-basic/src/lib.rs",
+      "examples/ch11-async/stages/tasks-basic/src/main.rs",
+      "examples/ch11-async/stages/timing-clock/Cargo.toml",
+      "examples/ch11-async/stages/timing-clock/src/main.rs",
+      "examples/ch11-async/stages/timing-clock/tests/clock_and_results.rs",
+      "examples/ch11-async/stages/timing-steps/Cargo.toml",
+      "examples/ch11-async/stages/timing-steps/examples/timing_blocking.rs",
+      "examples/ch11-async/stages/timing-steps/examples/timing_cancelled.rs",
+      "examples/ch11-async/stages/timing-steps/examples/timing_measured.rs",
+      "examples/ch11-async/stages/timing-steps/examples/timing_nested.rs",
+      "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+      "examples/ch11-async/stages/timing-steps/src/main.rs",
+      "examples/ch11-async/tasks/Cargo.toml",
+      "examples/ch11-async/tasks/examples/abort_and_wait.rs",
+      "examples/ch11-async/tasks/examples/control_closed_solution.rs",
+      "examples/ch11-async/tasks/examples/join_handle.rs",
+      "examples/ch11-async/tasks/src/lib.rs",
+      "examples/ch11-async/tasks/src/main.rs",
+      "examples/ch11-async/tasks/tests/cli.rs",
+      "examples/ch11-async/timing/Cargo.toml",
+      "examples/ch11-async/timing/examples/timing_blocking.rs",
+      "examples/ch11-async/timing/examples/timing_cancelled.rs",
+      "examples/ch11-async/timing/examples/timing_measured.rs",
+      "examples/ch11-async/timing/examples/timing_nested.rs",
+      "examples/ch11-async/timing/examples/timing_outcomes.rs",
+      "examples/ch11-async/timing/src/lib.rs",
+      "examples/ch11-async/timing/tests/timing_contracts.rs",
+      "examples/ch11-async/timing/tests/timing_solution.rs"
+    ],
+    "snippet_references": [
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 16,
+        "source": "examples/ch11-async/foundations/src/lib.rs",
+        "anchor": "totals"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 30,
+        "source": "examples/ch11-async/stages/foundations-steps/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 36,
+        "source": "examples/ch11-async/stages/foundations-steps/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 46,
+        "source": "examples/ch11-async/stages/foundations-steps/examples/lazy.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 76,
+        "source": "examples/ch11-async/stages/foundations-steps/examples/block_capture.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 94,
+        "source": "examples/ch11-async/stages/foundations-steps/examples/explicit_future.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 110,
+        "source": "examples/ch11-async/stages/foundations-steps/examples/fallible_output.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 128,
+        "source": "examples/ch11-async/foundations/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 132,
+        "source": "examples/ch11-async/foundations/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 138,
+        "source": "examples/ch11-async/foundations/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 151,
+        "source": "examples/ch11-async/foundations/tests/cli.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 161,
+        "source": "examples/ch11-async/foundations/examples/block_capture.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 165,
+        "source": "examples/ch11-async/foundations/examples/explicit_future.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 169,
+        "source": "examples/ch11-async/foundations/examples/fallible_output.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 179,
+        "source": "examples/ch11-async/foundations/examples/receipt_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 18,
+        "source": "examples/ch11-async/stages/tasks-basic/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 39,
+        "source": "examples/ch11-async/stages/tasks-basic/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 45,
+        "source": "examples/ch11-async/stages/tasks-basic/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 63,
+        "source": "examples/ch11-async/stages/tasks-basic/examples/join_handle.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 79,
+        "source": "examples/ch11-async/stages/tasks-basic/examples/abort_and_wait.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 103,
+        "source": "examples/ch11-async/tasks/src/lib.rs",
+        "anchor": "outcome-model"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 109,
+        "source": "examples/ch11-async/tasks/src/lib.rs",
+        "anchor": "collect-one"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 128,
+        "source": "examples/ch11-async/tasks/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 132,
+        "source": "examples/ch11-async/tasks/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 138,
+        "source": "examples/ch11-async/tasks/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 161,
+        "source": "examples/ch11-async/tasks/examples/join_handle.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 165,
+        "source": "examples/ch11-async/tasks/examples/abort_and_wait.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 171,
+        "source": "examples/ch11-async/tasks/tests/cli.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 185,
+        "source": "examples/ch11-async/tasks/examples/control_closed_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 12,
+        "source": "examples/ch11-async/bounded/src/lib.rs",
+        "anchor": "jobs"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 18,
+        "source": "examples/ch11-async/bounded/src/lib.rs",
+        "anchor": "controlled-job"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 36,
+        "source": "examples/ch11-async/bounded/src/lib.rs",
+        "anchor": "scheduler-state"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 46,
+        "source": "examples/ch11-async/bounded/src/lib.rs",
+        "anchor": "new-and-fill"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 52,
+        "source": "examples/ch11-async/bounded/src/lib.rs",
+        "anchor": "next-and-counts"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 81,
+        "source": "examples/ch11-async/bounded/src/lib.rs",
+        "anchor": "batch"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 89,
+        "source": "examples/ch11-async/bounded/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 95,
+        "source": "examples/ch11-async/bounded/src/outcomes.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 101,
+        "source": "examples/ch11-async/bounded/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 109,
+        "source": "examples/ch11-async/bounded/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 122,
+        "source": "examples/ch11-async/bounded/tests/cli.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 136,
+        "source": "examples/ch11-async/bounded/examples/one_slot_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 18,
+        "source": "examples/ch11-async/stages/timing-steps/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 24,
+        "source": "examples/ch11-async/stages/timing-steps/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 30,
+        "source": "examples/ch11-async/stages/timing-steps/examples/timing_measured.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 52,
+        "source": "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 74,
+        "source": "examples/ch11-async/stages/timing-steps/examples/timing_nested.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 90,
+        "source": "examples/ch11-async/stages/timing-steps/examples/timing_cancelled.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 106,
+        "source": "examples/ch11-async/stages/timing-steps/examples/timing_blocking.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 124,
+        "source": "examples/ch11-async/stages/timing-clock/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 130,
+        "source": "examples/ch11-async/stages/timing-clock/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 136,
+        "source": "examples/ch11-async/stages/timing-clock/tests/clock_and_results.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 150,
+        "source": "examples/ch11-async/timing/src/lib.rs",
+        "anchor": "two-steps"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 158,
+        "source": "examples/ch11-async/timing/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 162,
+        "source": "examples/ch11-async/timing/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 168,
+        "source": "examples/ch11-async/timing/tests/timing_contracts.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 178,
+        "source": "examples/ch11-async/timing/examples/timing_measured.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 182,
+        "source": "examples/ch11-async/timing/examples/timing_outcomes.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 186,
+        "source": "examples/ch11-async/timing/examples/timing_nested.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 190,
+        "source": "examples/ch11-async/timing/examples/timing_cancelled.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 194,
+        "source": "examples/ch11-async/timing/examples/timing_blocking.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 204,
+        "source": "examples/ch11-async/timing/tests/timing_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 28,
+        "source": "examples/ch11-async/stages/cancellation-steps/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 34,
+        "source": "examples/ch11-async/stages/cancellation-steps/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 40,
+        "source": "examples/ch11-async/stages/cancellation-steps/examples/borrowed_join.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 60,
+        "source": "examples/ch11-async/stages/cancellation-steps/examples/short_guard.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 74,
+        "source": "examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 78,
+        "source": "examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.lock",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 84,
+        "source": "examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 88,
+        "source": "examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 102,
+        "source": "examples/ch11-async/cancellation/src/models.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 131,
+        "source": "examples/ch11-async/stages/cancellation-basic/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 135,
+        "source": "examples/ch11-async/stages/cancellation-basic/src/models.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 141,
+        "source": "examples/ch11-async/stages/cancellation-basic/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 147,
+        "source": "examples/ch11-async/stages/cancellation-basic/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 158,
+        "source": "examples/ch11-async/stages/cancellation-basic/examples/borrowed_join.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 168,
+        "source": "examples/ch11-async/stages/cancellation-basic/examples/prequeued_stop_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 182,
+        "source": "examples/ch11-async/cancellation/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 190,
+        "source": "examples/ch11-async/cancellation/src/lib.rs",
+        "anchor": "signal-controller"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 202,
+        "source": "examples/ch11-async/cancellation/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 212,
+        "source": "examples/ch11-async/cancellation/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 233,
+        "source": "examples/ch11-async/cancellation/examples/borrowed_join.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 237,
+        "source": "examples/ch11-async/cancellation/examples/short_guard.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 241,
+        "source": "examples/ch11-async/cancellation/examples/prequeued_stop_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 245,
+        "source": "examples/ch11-async/cancellation/tests/cli.rs",
+        "anchor": null
+      }
+    ],
+    "commands": [
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 52,
+        "command": "cargo run -p ch11-foundations-steps --example lazy --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 80,
+        "command": "cargo run -p ch11-foundations-steps --example block_capture --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 98,
+        "command": "cargo run -p ch11-foundations-steps --example explicit_future --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 114,
+        "command": "cargo run -p ch11-foundations-steps --example fallible_output --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 142,
+        "command": "cargo test -p ch11-foundations --lib --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 143,
+        "command": "cargo run -p ch11-foundations --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 155,
+        "command": "cargo test -p ch11-foundations --test cli --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 183,
+        "command": "cargo run -p ch11-foundations --example receipt_solution --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 191,
+        "command": "cargo test -p ch11-foundations-steps --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 192,
+        "command": "cargo test -p ch11-foundations --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-02-lesson.md",
+        "line": 193,
+        "command": "cargo clippy -p ch11-foundations-steps -p ch11-foundations --all-targets --locked -- -D warnings"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 67,
+        "command": "cargo run -p ch11-tasks-basic --example join_handle --locked"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 83,
+        "command": "cargo run -p ch11-tasks-basic --example abort_and_wait --locked"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 142,
+        "command": "cargo run -p ch11-tasks --locked"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 143,
+        "command": "cargo test -p ch11-tasks --lib --locked"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 175,
+        "command": "cargo test -p ch11-tasks --test cli --locked"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 189,
+        "command": "cargo run -p ch11-tasks --example control_closed_solution --locked"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 197,
+        "command": "cargo test -p ch11-tasks-basic --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 198,
+        "command": "cargo test -p ch11-tasks --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-03-lesson.md",
+        "line": 199,
+        "command": "cargo clippy -p ch11-tasks-basic -p ch11-tasks --all-targets --locked -- -D warnings"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 113,
+        "command": "cargo run -p ch11-bounded --locked"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 114,
+        "command": "cargo test -p ch11-bounded --lib --locked"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 126,
+        "command": "cargo test -p ch11-bounded --test cli --locked"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 140,
+        "command": "cargo run -p ch11-bounded --example one_slot_solution --locked"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 148,
+        "command": "cargo test -p ch11-bounded --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-04-lesson.md",
+        "line": 149,
+        "command": "cargo clippy -p ch11-bounded --all-targets --locked -- -D warnings"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 36,
+        "command": "cargo run -p ch11-timing-steps --example timing_measured --locked"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 56,
+        "command": "cargo run -p ch11-timing-steps --example timing_outcomes --locked"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 78,
+        "command": "cargo run -p ch11-timing-steps --example timing_nested --locked"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 94,
+        "command": "cargo run -p ch11-timing-steps --example timing_cancelled --locked"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 110,
+        "command": "cargo run -p ch11-timing-steps --example timing_blocking --locked"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 140,
+        "command": "cargo test -p ch11-timing-clock --test clock_and_results --locked"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 172,
+        "command": "cargo test -p ch11-timing --test timing_contracts --locked"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 208,
+        "command": "cargo test -p ch11-timing --test timing_solution --locked"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 216,
+        "command": "cargo test -p ch11-timing-steps -p ch11-timing-clock -p ch11-timing --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-05-lesson.md",
+        "line": 217,
+        "command": "cargo clippy -p ch11-timing-steps -p ch11-timing-clock -p ch11-timing --all-targets --locked -- -D warnings"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 46,
+        "command": "cargo run -p ch11-cancellation-steps --example borrowed_join --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 64,
+        "command": "cargo run -p ch11-cancellation-steps --example short_guard --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 92,
+        "command": "cargo check --manifest-path examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.toml --example held_guard --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 151,
+        "command": "cargo run -p ch11-cancellation-basic --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 152,
+        "command": "cargo test -p ch11-cancellation-basic --lib --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 172,
+        "command": "cargo run -p ch11-cancellation-basic --example prequeued_stop_solution --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 218,
+        "command": "cargo test -p ch11-cancellation --lib --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 219,
+        "command": "cargo run -p ch11-cancellation --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 225,
+        "command": "cargo run -p ch11-cancellation --locked -- --signal"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 249,
+        "command": "cargo test -p ch11-cancellation --test cli --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 250,
+        "command": "cargo test -p ch11-cancellation-steps -p ch11-cancellation-basic -p ch11-cancellation --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-06-lesson.md",
+        "line": 251,
+        "command": "cargo clippy -p ch11-cancellation-steps -p ch11-cancellation-basic -p ch11-cancellation --all-targets --locked -- -D warnings"
+      }
+    ],
+    "package_manifests": {
+      "examples/ch11-async/bounded/Cargo.toml": {
+        "package": {
+          "name": "ch11-bounded",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "sync"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/cancellation/Cargo.toml": {
+        "package": {
+          "name": "ch11-cancellation",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "sync",
+              "signal"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.toml": {
+        "package": {
+          "name": "ch11-cancellation-guard-fail",
+          "version": "0.1.0",
+          "edition": "2024",
+          "publish": false
+        },
+        "dependencies": {
+          "tokio": {
+            "version": "=1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "sync"
+            ]
+          }
+        },
+        "workspace": {}
+      },
+      "examples/ch11-async/foundations/Cargo.toml": {
+        "package": {
+          "name": "ch11-foundations",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/stages/cancellation-basic/Cargo.toml": {
+        "package": {
+          "name": "ch11-cancellation-basic",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "sync"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/stages/cancellation-steps/Cargo.toml": {
+        "package": {
+          "name": "ch11-cancellation-steps",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "ch11-tasks": {
+            "path": "../../tasks"
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "sync"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/stages/foundations-steps/Cargo.toml": {
+        "package": {
+          "name": "ch11-foundations-steps",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/stages/tasks-basic/Cargo.toml": {
+        "package": {
+          "name": "ch11-tasks-basic",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "sync"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/stages/timing-clock/Cargo.toml": {
+        "package": {
+          "name": "ch11-timing-clock",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "time"
+            ]
+          }
+        },
+        "dev-dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "test-util"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/stages/timing-steps/Cargo.toml": {
+        "package": {
+          "name": "ch11-timing-steps",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "ch11-foundations": {
+            "path": "../../foundations"
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "time"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/tasks/Cargo.toml": {
+        "package": {
+          "name": "ch11-tasks",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "sync"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/timing/Cargo.toml": {
+        "package": {
+          "name": "ch11-timing",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "ch11-foundations": {
+            "path": "../foundations"
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "time"
+            ]
+          }
+        },
+        "dev-dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "test-util"
+            ]
+          }
+        }
+      }
+    },
+    "selected_root_lock_entries": [
+      {
+        "name": "ch11-bounded",
+        "version": "0.1.0",
+        "dependencies": [
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-cancellation",
+        "version": "0.1.0",
+        "dependencies": [
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-cancellation-basic",
+        "version": "0.1.0",
+        "dependencies": [
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-cancellation-steps",
+        "version": "0.1.0",
+        "dependencies": [
+          "ch11-tasks",
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-foundations",
+        "version": "0.1.0",
+        "dependencies": [
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-foundations-steps",
+        "version": "0.1.0",
+        "dependencies": [
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-tasks",
+        "version": "0.1.0",
+        "dependencies": [
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-tasks-basic",
+        "version": "0.1.0",
+        "dependencies": [
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-timing",
+        "version": "0.1.0",
+        "dependencies": [
+          "ch11-foundations",
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-timing-clock",
+        "version": "0.1.0",
+        "dependencies": [
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-timing-steps",
+        "version": "0.1.0",
+        "dependencies": [
+          "ch11-foundations",
+          "tokio"
+        ]
+      },
+      {
+        "name": "tokio",
+        "version": "1.53.3",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "ce3335fa71841cda333a58d7615b03901380ecf09d59b3296d21f8bbac0dde4e",
+        "dependencies": [
+          "bytes",
+          "libc",
+          "mio",
+          "pin-project-lite",
+          "signal-hook-registry",
+          "socket2",
+          "tokio-macros",
+          "windows-sys 0.61.2"
+        ]
+      },
+      {
+        "name": "tokio-macros",
+        "version": "2.7.2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "78773a2a397f451582ce068015985c33193cf6dea8b74d2a639fe457b2f07b0e",
+        "dependencies": [
+          "proc-macro2",
+          "quote",
+          "syn 3.0.9"
+        ]
+      }
+    ],
+    "counts": {
+      "owned_files": 73,
+      "hashes": 95,
+      "external_hashes": 8,
+      "snippets": 84,
+      "cargo_commands": 48,
+      "test_functions": 35
+    }
+  },
+  "assessments": [
+    {
+      "section": "14.1",
+      "evidence": "docs/chapters/14-01-lesson.md and waiting-arrangements.svg XML",
+      "judgment": "A stock=3 and independent B80+120=200 remain fixed; concurrency and parallelism are distinguished from external warehouse work. Third arrangement expressly assumes two simultaneous execution resources. Arrows/box dimensions do not claim duration or measured speed. Five exercise answers preserve data dependency."
+    },
+    {
+      "section": "14.2",
+      "evidence": "foundations-steps six files and complete foundations eight files",
+      "judgment": "async fn/block body is deferred while arguments are evaluated/moved on construction; await produces entire Output and does not necessarily suspend. Async move reference caveat, ordinary future factory immediate work, Output associated equality and nested Result are introduced before snippets. No-lib early package has no hidden library. Complete foundations lib/test/main precede selected commands; all examples/receipt precede all-targets. One unit plus one CLI assertion matches lifecycle and exact five stdout lines."
+    },
+    {
+      "section": "14.3",
+      "evidence": "tasks-basic five files and complete tasks seven files",
+      "judgment": "spawn is asynchronous submission, not synchronous execution; current_thread does not relax Send+'static on future/Output. Started/release establish deterministic evidence. Handle abort then await and post-join failed release prove cleanup; dropping handle only detaches. JoinSet AbortHandle/id mapping, nested results and four classes agree. Releasing one gated input at a time yields 1 error,2 panic,3 cancelled,0 value; tests and stdout/stderr match. ControlClosed answer is normal task Ok(inner Err), not task cancellation."
+    },
+    {
+      "section": "14.4",
+      "evidence": "bounded all six files including normal outcomes module; bounded-refill.svg",
+      "judgment": "Pending is owned IntoIter, next first collects then fills. Tracked includes completed but uncollected tasks; does not bound all memory. Limit zero rejected before spawn; empty input finishes without awaiting nonexistent notification. Gate order yields 1,2,3,0,4 and peak2/submitted5; one-slot answer yields values80,error−1,value120,peak1/submitted3/tracked0. Copied outcomes helper is fully inline before commands."
+    },
+    {
+      "section": "14.5",
+      "evidence": "timing-steps seven files, timing-clock three files, timing nine files and already-taught foundations normal path dependency; cached Tokio timeout/sleep API",
+      "judgment": "Duration and monotonic std/Tokio clocks and truncating milliseconds are accurate. Pinned timeout constructs deadline immediately and actually polls inner first (src/time/timeout.rs:217), supporting immediate/blocking Ok claims. Timer does not preempt synchronous blocking. Direct timeout-owned future cancellation drops borrow but preserves visits=1. Dev test-util enables paused clock; four local-stage and six complete contracts plus one solution function cover stated paths. Per-batch50 over two30 steps leaves1 versus per-step50 leaves2; solution leaves2/1/0 as stated. All selected test source and path-library source is available before command."
+    },
+    {
+      "section": "14.6",
+      "evidence": "cancellation-steps four files, cancellation-basic six files, complete cancellation twelve files including isolated negative workspace; borrowed-wait.svg and cached Tokio signal/JoinSet/mpsc APIs",
+      "judgment": "select loses only borrowed join wait, and cancellation-safe JoinSet/recv preserve pending work/messages. Short std MutexGuard does not cross await; negative fixture forces non-Send guard across await and genuinely supports expected diagnostic. Runner checks queued stop before fill, separates Unstarted from Cancelled, aborts+drains and records every original input; already-returning current_thread evidence is correctly narrowed. Controlled output is submitted4/peak2, outcomes cancelled/error/panic/cancelled/unstarted. Basic six tests plus complete seventh controller test and two CLI tests match. Signal listener first poll precedes entered notification under biased select; early signal/error need not print READY. Runtime tasks/observer/controller are all awaited. Default requested exit130 and invalid-argument2 are explicit. Unix permanent SIGINT handler caveat agrees with Tokio docs; manual signal mode is not claimed automatically tested."
+    }
+  ],
+  "checks": {
+    "performed": [
+      "Read complete six pages and all 73 owned files; complete cancellation lib verified against fully read basic lib with every added line read.",
+      "Validate 84 snippet references and exact anchors; every owned file has a full-file snippet in these pages.",
+      "Parse 12 package manifests including deliberate-failure workspace, root Cargo.lock and three SVG XML.",
+      "Read relevant cached Tokio 1.53.3 and tokio-macros 2.7.2 API/source excerpts; hash eight API files.",
+      "Trace all 48 literal Cargo commands statically, including normal path dependency libs and cfg(test) boundaries; review 35 test functions."
+    ],
+    "not_performed": [
+      "No Cargo, rustc, Clippy, timer/async program or tests run.",
+      "No SIGINT sent, subprocess launched, browser viewed or SVG visually inspected."
+    ]
+  },
+  "conclusion": "No necessary or optional technical correction found for the measured 14.1–14.6 prefix."
+}

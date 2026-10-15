@@ -1,0 +1,112 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "6.4"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round06-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/06-04-lesson.md": "aa304cf004199a6d7fe5925854539614d1781f80072f40f77e3fff4dfea53cba",
+    "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs": "8116faa4739db768fdabd25015c468879d42e9621743633def82579ee9449ba1",
+    "examples/intro-workspace/trait-stages/examples/associated.rs": "1105dacc52be55109dbd9f2b797778b3e6597ef04a0df54e6efeb7cf18bec0f5",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/output_bound.rs": "9e7be66747981927a947cd4f0efb797572e8aba9f7435950e74c72fda7103536",
+    "examples/intro-workspace/trait-stages/Cargo.toml": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+    "examples/intro-workspace/trait-stages/examples/associated_answer.rs": "999cfa843c2ab28b26f123525cd33597787594dff951a6453998b5a1862a0304"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 3,
+      "quote": "Charge 要求所有實作者都交回 i32，所以共用函式可以直接比較金額。現在換一項需要：接手一份資料來源，取出它保存的內容。數字盒要交回 i32，開關要交回 bool；我們希望共用取出工作，又保留各種結果原來的型別。"
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 7,
+      "quote": "本節重新定義第 5.1 節形狀相同的泛型 Holder，value 欄位採用 T。SwitchState 則只保存 enabled 的 bool。型別與欄位公開，讓外面的呼叫者能建立它們："
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 17,
+      "quote": "**associated type（關聯型別）** 是 trait 契約中的型別名稱，由各份實作指定對應型別。它不是值欄位，而是讓方法簽名可以表達「依這份實作的選擇交回資料」。"
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 19,
+      "quote": "本例定義 Extract，方法叫 extract。**`type Output;`** 宣告名為 Output 的 associated type，現在還沒選具體型別；Output 是我們選的名稱，不是固定關鍵字。"
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 21,
+      "quote": "`Self` 代表實作此 trait 的型別；**`Self::Output`** 指這份實作選定的輸出型別。大寫 Self 的路徑找型別，與 `self.value` 存取某個值的欄位不同。方法以 `self` 接手來源，才能取出其中的 owned 內容："
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 31,
+      "quote": "SwitchState 的實作寫 `type Output = bool;`，所以 `Self::Output` 就是 bool，body 交回 enabled。"
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 33,
+      "quote": "Holder 的實作使用 **`impl<T> Extract for Holder<T>`**。前面的 `<T>` 宣告型別參數，接著用它表示要實作的 `Holder<T>`；這與第 5.1 節泛型 impl 先宣告 T 再使用相同，只是這次實作的是 trait。"
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 45,
+      "quote": "範例根以 `mod associated_support;` 載入上面模組；方法呼叫也把 Extract 引入 scope，沿用第 6.1 節的規則。下面是 main 的第一段："
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 55,
+      "quote": "`S: Extract` 要求來源 S 提供取出能力；**`S::Output`** 表示這個來源的實作選定的輸出型別。共用函式便能保留「輸入哪種來源，就取回它自己的結果」："
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 71,
+      "quote": "若某項工作確實只接受數字來源，**`Extract<Output = i32>`** 表示：實作 Extract，且該實作選定的 Output 必須是 i32。這叫 associated type 的 **equality bound**，也就是型別相等要求。"
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 85,
+      "quote": "編譯診斷 **E0271** 指出預期 i32、實際為 bool。修法依工作需要：通用取出使用 extract_value；真正要乘二就提供數字來源，不能移除 bound 後仍假定輸出能乘二。"
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 89,
+      "quote": "本節的 helper 只有 associated type 相關程式。沒有載入其他章的 Iterator library，也沒有其他隱藏模組。member manifest："
+    },
+    {
+      "section_id": "6.4",
+      "path": "docs/chapters/06-04-lesson.md",
+      "line": 124,
+      "quote": "建立 `FirstPair<T, U>`，保存 first 與 second。實作 Extract，Output 選 T，extract 接手整份來源，只交回 first；second 沒有交回，隨這次來源結束。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

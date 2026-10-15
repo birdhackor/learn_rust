@@ -1,0 +1,32 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "adopted finding narrow followup",
+  "finding": "TC18M-O1",
+  "result": "resolved",
+  "original_report": "round18a-content-report-middle.md/json",
+  "attribution": "Own optional initial finding; root revision notified after both18A initial and subsequent16 independent initial seals. Original report/hashes preserved.",
+  "evidence": {
+    "document_line": 29,
+    "initial_sha256": "e4d3cc6aa7a95081ebbea26e108bf3eb1c3fb0a0f0069c353a64fc01efde37d6",
+    "current_sha256": "a58875058db18e69dd510130ff1a0c399ec50516e9b8d71bfde660c988c19195",
+    "before": "後三份 String 使用 9.7 的文字 Ord。",
+    "after": "action 與 reason 使用 9.7 的 String 文字 Ord；path_debug 是 `Option<String>`，先依上段的 None／Some 規則，再比較 Some 裡的文字。",
+    "all_other_51_initial_hashes_unchanged": true,
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-04-lesson.md",
+        "sha256": "a58875058db18e69dd510130ff1a0c399ec50516e9b8d71bfde660c988c19195"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/a3-complete/src/report.rs",
+        "sha256": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705"
+      },
+      {
+        "path": "/workspace/work/tutorial-implementation-20261015/root-followups-0944/18-04-lesson.md.diff",
+        "sha256": "df0862c8f4cfcd0885c735954f986d10aa0b120657e604a76d6d0654d04af636"
+      }
+    ]
+  },
+  "assessment": "action/reason string Ord and path_debug Option<String> variant/inner-text order now match report.rs:25/152 and preceding Option Ord explanation. Only one prose fragment changed.",
+  "execution": "Static only; no Cargo/rustc/Clippy or tests."
+}

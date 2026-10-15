@@ -1,0 +1,265 @@
+{
+  "files": [
+    {
+      "path": "docs/chapters/01-07-lesson.md",
+      "sha256": "e81574e0e1ba75b2702ad6c25a144c8441d532563dc362cf6d52dc9aedb010be",
+      "lines": 115,
+      "section": "1.7",
+      "read_ranges": [
+        [
+          1,
+          115
+        ]
+      ],
+      "lexical_hits": 13,
+      "hit_lines": 12,
+      "links": 6,
+      "reviewed_reference_lines": [
+        1,
+        3,
+        7,
+        11,
+        19,
+        23,
+        31,
+        64,
+        68,
+        90,
+        98,
+        115
+      ],
+      "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。"
+    },
+    {
+      "path": "docs/chapters/18-07-lesson.md",
+      "sha256": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209",
+      "lines": 259,
+      "section": "18.7",
+      "read_ranges": [
+        [
+          1,
+          259
+        ]
+      ],
+      "lexical_hits": 32,
+      "hit_lines": 20,
+      "links": 6,
+      "reviewed_reference_lines": [
+        1,
+        3,
+        5,
+        9,
+        26,
+        36,
+        50,
+        52,
+        66,
+        90,
+        92,
+        138,
+        149,
+        153,
+        195,
+        199,
+        207,
+        209,
+        229,
+        259
+      ],
+      "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。"
+    },
+    {
+      "path": "docs/chapters/18-08-lesson.md",
+      "sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34",
+      "lines": 244,
+      "section": "18.8",
+      "read_ranges": [
+        [
+          1,
+          244
+        ]
+      ],
+      "lexical_hits": 25,
+      "hit_lines": 19,
+      "links": 4,
+      "reviewed_reference_lines": [
+        1,
+        3,
+        5,
+        9,
+        31,
+        33,
+        35,
+        43,
+        53,
+        61,
+        63,
+        85,
+        87,
+        133,
+        148,
+        172,
+        202,
+        242,
+        244
+      ],
+      "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。"
+    },
+    {
+      "path": "docs/chapters/18-09-lesson.md",
+      "sha256": "7c78f41be377d1b845d5274883b4f927370411e091b2f50761febee3965fed13",
+      "lines": 281,
+      "section": "18.9",
+      "read_ranges": [
+        [
+          1,
+          281
+        ]
+      ],
+      "lexical_hits": 24,
+      "hit_lines": 18,
+      "links": 4,
+      "reviewed_reference_lines": [
+        1,
+        5,
+        9,
+        13,
+        17,
+        25,
+        41,
+        53,
+        61,
+        63,
+        91,
+        93,
+        139,
+        156,
+        200,
+        210,
+        279,
+        281
+      ],
+      "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。"
+    },
+    {
+      "path": "docs/chapters/18-10-lesson.md",
+      "sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e",
+      "lines": 306,
+      "section": "18.10",
+      "read_ranges": [
+        [
+          1,
+          306
+        ]
+      ],
+      "lexical_hits": 28,
+      "hit_lines": 20,
+      "links": 8,
+      "reviewed_reference_lines": [
+        1,
+        5,
+        9,
+        23,
+        31,
+        43,
+        49,
+        69,
+        73,
+        75,
+        87,
+        93,
+        117,
+        119,
+        212,
+        274,
+        282,
+        284,
+        302,
+        306
+      ],
+      "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。"
+    },
+    {
+      "path": "docs/chapters/18-11-lesson.md",
+      "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+      "lines": 324,
+      "section": "18.11",
+      "read_ranges": [
+        [
+          1,
+          324
+        ]
+      ],
+      "lexical_hits": 36,
+      "hit_lines": 24,
+      "links": 3,
+      "reviewed_reference_lines": [
+        1,
+        5,
+        22,
+        30,
+        32,
+        38,
+        55,
+        63,
+        65,
+        73,
+        83,
+        91,
+        99,
+        103,
+        115,
+        121,
+        205,
+        246,
+        266,
+        270,
+        297,
+        299,
+        322,
+        324
+      ],
+      "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。"
+    },
+    {
+      "path": "docs/chapters/18-12-lesson.md",
+      "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+      "lines": 164,
+      "section": "18.12",
+      "read_ranges": [
+        [
+          1,
+          164
+        ]
+      ],
+      "lexical_hits": 10,
+      "hit_lines": 10,
+      "links": 4,
+      "reviewed_reference_lines": [
+        1,
+        3,
+        9,
+        13,
+        15,
+        21,
+        117,
+        134,
+        138,
+        154
+      ],
+      "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。"
+    }
+  ],
+  "file_count": 7,
+  "lines": 1693,
+  "lexical_hits": 168,
+  "hit_lines": 123,
+  "links": 35,
+  "categories": {
+    "self_heading": 7,
+    "relative_reference": 21,
+    "samepage_reference": 35,
+    "canonical_section": 103,
+    "canonical_chapter": 2
+  }
+}

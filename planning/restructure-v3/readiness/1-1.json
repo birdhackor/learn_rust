@@ -1,0 +1,71 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "1.1"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round01-ch01-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round01-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round01-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-source.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-visual.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-report.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/01-01-lesson.md": "f67a72cfbbbd2557c856aa9efc5284a42b8eb8feb899ec2994949c12d03c6275"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "1.1",
+      "path": "docs/chapters/01-01-lesson.md",
+      "line": 3,
+      "quote": "如果你已經能用 Python 寫變數、函式、條件與迴圈，就有足夠的背景開始這份教材。你不需要先學 C 或 C++。我們會先做一個小型數字運算程式，接著把重複的計算寫成函式，並認識執行時使用的記憶體。讀完第一章，你會知道一份 Rust 程式如何從文字變成能執行的工具。"
+    },
+    {
+      "section_id": "1.1",
+      "path": "docs/chapters/01-01-lesson.md",
+      "line": 5,
+      "quote": "Python 讓你很快把想法寫成程式；當程式開始管理較多資料、重複使用同一份資料，或同時執行幾項工作時，另一個問題會變得重要：哪些錯誤能在程式真正開始工作前被發現？Rust 把許多檢查放在**編譯**階段。編譯器閱讀原始碼、檢查它是否符合語言規則，再產生電腦能執行的程式。檢查通過不代表計算邏輯一定正確，因此還要比對實際輸出與預期答案；第 2 章再學如何把這些比對寫成測試。"
+    },
+    {
+      "section_id": "1.1",
+      "path": "docs/chapters/01-01-lesson.md",
+      "line": 11,
+      "quote": "安裝 Rust 時，你會得到幾個常一起出現的名稱。它們不是三種不同語言："
+    },
+    {
+      "section_id": "1.1",
+      "path": "docs/chapters/01-01-lesson.md",
+      "line": 23,
+      "quote": "本書指令寫在標示為 `bash` 或 `text` 的區塊中。它們應在**終端機**輸入，也就是接受指令的視窗；不要貼進 Rust 原始碼。區塊沒有開頭的 `$` 提示符，整行可以直接複製。`cd` 代表切換目前工作的資料夾；後續操作會以那個資料夾為起點。"
+    },
+    {
+      "section_id": "1.1",
+      "path": "docs/chapters/01-01-lesson.md",
+      "line": 68,
+      "quote": "本教材的程式採用 Rust **edition 2024**，並以 Rust **1.99.0** 驗證。edition 是一組語言規則的版本，與工具的發布版本不同；下一節會在專案設定中看到它。教材 repo 會固定工具版本，讓範例的檢查結果容易重現。自行建立練習專案時，安裝近期 stable 即可；若要完整重現 repo，請保留 repo 的 `rust-toolchain.toml`。"
+    },
+    {
+      "section_id": "1.1",
+      "path": "docs/chapters/01-01-lesson.md",
+      "line": 72,
+      "quote": "任何能保存純文字的編輯器都可以寫 `.rs` 檔案。若使用 Visual Studio Code，可安裝 `rust-analyzer` 擴充套件；它會在編輯時提供檢查與提示。終端機中的 Cargo 指令仍然是這份教材共同使用的操作方式，因此不論用哪個編輯器，你都能依同一個步驟驗證程式。"
+    },
+    {
+      "section_id": "1.1",
+      "path": "docs/chapters/01-01-lesson.md",
+      "line": 79,
+      "quote": "不用安裝任何新東西，先在終端機查出編譯器與 Cargo 的版本，再用一句話說出兩者的分工。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

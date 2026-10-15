@@ -1,0 +1,133 @@
+{
+  "verdict": "APPROVE",
+  "required_changes": [],
+  "summary": "完全同意以 implementation-plan-v1.md 作為本輪實作規範；沒有必要的計畫待修。此結論只放行實作，不表示新版教材、程式、圖或網站已驗收。",
+  "reviewed_plan": {
+    "path": "/workspace/work/tutorial-implementation-20261015/implementation-plan-v1.md",
+    "sha256": "86fd1787dcfe8f66efef395af6d9393cdfd45ceca5d4ca6ec88cde09ac8381ba",
+    "supplied_repository_baseline": "5827aa2c5966e49bd0d941a2d0f8b001ef5b0cf7",
+    "baseline_git_independently_verified": false
+  },
+  "optional_suggestions": [
+    {
+      "id": "O1",
+      "suggestion": "在既定 sections／ledger 加入當頁命令、manifest、實際載入的教材自有檔案及首次可用小節欄，以 ch01-basics、ch03-data、ch04-traits、ch06-iterators 作首批樣本。",
+      "rationale": "讓計畫第9、40、64、86、90行已要求的逐節閱讀前綴檢查容易稽核；不是新的必要要求，也不替代實際正文與source閱讀。",
+      "evidence": [
+        "examples/ch01-basics/src/lib.rs 載入含流程控制的pricing及tests",
+        "examples/ch03-data/src/lib.rs 載入Vec／Option／UTF-8相關模組",
+        "examples/ch04-traits/src/lib.rs:2 載入counts，counts.rs使用HashMap與clone",
+        "examples/ch06-iterators/src/lib.rs 同時載入associated及後續Iterator相關模組"
+      ]
+    }
+  ],
+  "coverage_checks": {
+    "current_nav_sections": 109,
+    "mapped_old_sections": 109,
+    "missing_old_sections": [],
+    "extra_mapped_sections": [],
+    "original_audit_findings": 27,
+    "disposition_ids": 27,
+    "missing_dispositions": [],
+    "extra_dispositions": [],
+    "audit_quotes_found": 27,
+    "audit_coverage_hashes_checked": 110,
+    "audit_coverage_hash_mismatches": [],
+    "legacy_anchor_pages": 109,
+    "legacy_heading_ids": 890,
+    "pages_with_duplicate_legacy_heading_ids": [],
+    "legacy_anchors_independently_rendered": false
+  },
+  "key_assessments": [
+    {
+      "area": "教學章序",
+      "result": "可執行",
+      "evidence": "String先於pattern ownership；泛型先於完整Option／Result；associated type先於TryFrom／FromStr；lifetime進階鏈完整。"
+    },
+    {
+      "area": "可執行先備",
+      "result": "計畫規則充分，實作仍須完成",
+      "evidence": "全書第9行規則及第86／90行逐節門檻涵蓋章內與章間依賴；第50行的B階段快照不是其他章的豁免。"
+    },
+    {
+      "area": "作者並行",
+      "result": "可執行",
+      "evidence": "各波等待真實正文／source契約，已明列lifetime與trait、Result collect、FFI、unsafe Send／Sync、Loom／Miri、executor及專案線依賴。"
+    },
+    {
+      "area": "27筆處置",
+      "result": "完整的待實作處置",
+      "evidence": "所有ID均有理由與最小改法；原分級保留；修後證據尚未填入，狀態誠實。"
+    },
+    {
+      "area": "圖與同頁答案",
+      "result": "交付規格充分",
+      "evidence": "1.7四組連續圖、async物件與等待／取消區別、3.8後選讀、唯一source與同頁分檔完整材料皆明確。"
+    },
+    {
+      "area": "審閱與發布",
+      "result": "門檻可信",
+      "evidence": "凍結獨立初判、指定章逐段首讀、全節覆核、瀏覽器尺寸證據及無法驗證不發布；CI check在deploy之前。"
+    },
+    {
+      "area": "Clippy與教學寫法",
+      "result": "既定先教後用規則可直接處理，不新增開工前待修",
+      "evidence": "ch03-data的manual_map allow不能默默進入初學manifest；5.3不能為過lint提早用closure。可先教精確allow再使用，或僅由維護命令指定該lint。associated-only不應繼承ch06的unnecessary_fold allow。"
+    }
+  ],
+  "inspected_scope": {
+    "full_planning_sources": [
+      "/workspace/work/tutorial-implementation-20261015/implementation-plan-v1.md",
+      "/workspace/work/tutorial-reassessment-20261015/astra-restructure/proposed-outline.json",
+      "/workspace/work/tutorial-reassessment-20261015/merged-audit.json:27 findings and coverage fingerprints",
+      "/workspace/work/tutorial-implementation-20261015/issue-dispositions-proposed.json"
+    ],
+    "supporting_sources": [
+      "/workspace/work/tutorial-reassessment-20261015/astra-restructure/report.md:章序、Cargo、先備、並行與保全論證",
+      "/workspace/work/tutorial-implementation-20261015/legacy-anchors.json:結構與數量",
+      "/workspace/learn_rust/AGENTS.md",
+      "/workspace/learn_rust/.agents/skills/clear-tutorial/SKILL.md",
+      "/workspace/learn_rust/.agents/skills/clear-tutorial/references/rust-terminology.md",
+      "/workspace/learn_rust/.agents/skills/clear-tutorial/references/review-protocol.md",
+      "/workspace/learn_rust/.agents/skills/clear-tutorial/references/writing-prompt.md",
+      "/workspace/work/tutorial-implementation-20261015/proposed-migration-manifest.json:結構與節點數量",
+      "/workspace/work/tutorial-implementation-20261015/inventory-early/sections.json:抽讀1.4、3.8、5.3、5.5、6.1、6.2、6.4",
+      "/workspace/work/tutorial-implementation-20261015/baseline-verification.json:已讀紀錄，未獨立重跑或逐行複核log"
+    ],
+    "repository_configuration": [
+      "Cargo.toml",
+      "zensical.toml",
+      "CONTRIBUTING.md",
+      "scripts/check.sh",
+      "scripts/check-fixtures.py",
+      "scripts/check-miri.sh",
+      ".github/workflows/check.yml"
+    ],
+    "representative_content_and_source": [
+      "docs/chapters/01-01-start.md、01-02-first-program.md、01-03-workspace.md、01-05-functions.md",
+      "examples/ch01-basics/src/lib.rs、src/pricing.rs；hello-world與ch04-traits manifests",
+      "docs/chapters/03-04-strings.md；examples/ch03-data/examples/strings.rs、src/lib.rs、src/list.rs、src/text.rs",
+      "docs/chapters/04-01-traits.md相關段落；examples/ch04-traits/src/lib.rs、src/counts.rs、examples/traits.rs",
+      "docs/chapters/04-04-lifetime-annotations.md及examples/ch04-lifetimes/src/source.rs相關段落",
+      "docs/chapters/06-02-associated-types.md；examples/ch06-iterators/src/associated.rs、src/lib.rs；closure／Iterator相關依賴搜尋",
+      "docs/chapters/08-01-box.md及smart-pointers的sizes／lib相關段落",
+      "docs/chapters/11-01-future-and-runtime.md、11-05-cancellation-and-finish.md相關正文；foundations manifest、cancellation source相關操作",
+      "GAT、variance、macro與procedural derive正文結構和必要引入位置",
+      "docs/chapters/15-06-duplicate-finder-answer.md、15-11-url-checker-answer.md的答案結構及兩工具library入口",
+      "docs/assets/ch02/move-copy.svg、ch03/string-view.svg、ch11/borrowed-join-wait.svg的文字與對應",
+      "examples/ch03-data/Cargo.toml及examples/ch06-iterators/Cargo.toml的Clippy allow設定"
+    ]
+  },
+  "limitations": [
+    "沒有逐字重新審閱全書109頁或全部程式。",
+    "沒有執行Git或Rust／Python工具鏈測試，沒有重建或以瀏覽器驗收網站。",
+    "沒有重做外部教材研究；圖只核對來源文字與教學對應，沒有視覺驗收。",
+    "baseline與Chromium結果來自主代理訊息及已讀baseline-verification.json，未獨立重跑或逐行複核log。",
+    "新版材料尚未實作，APPROVE不表示實作、讀者理解或發布已驗證。"
+  ],
+  "modifications": {
+    "repository": false,
+    "outputs_only_under": "/workspace/work/tutorial-implementation-20261015"
+  },
+  "report_path": "/workspace/work/tutorial-implementation-20261015/astra-review-01.md"
+}

@@ -1,0 +1,108 @@
+{
+  "sealed_utc": "2026-10-15T11:02:19.176000+00:00",
+  "role": "continuity and actual-page reviewer",
+  "scope": "Adopted C18B-01 and C18B-02 narrow source/actual DOM/render followup only; original initial preserved; no whole-chapter repeat",
+  "statuses": [
+    {
+      "id": "C18B-01",
+      "status": "CLOSED",
+      "reason": "18.10:67 teaches Tokio Id Copy and match &result -> &Id -> *id copying before record description, then explains borrowing ends before result ownership is consumed. Both viewport actual paragraphs match."
+    },
+    {
+      "id": "C18B-02",
+      "status": "CLOSED",
+      "reason": "18.11:199–205 and 18.12:103–109 give complete JSON string before the line preview, define LF and the single ordinary space, specify five original lines, final LF and no JSON quotes in TXT, and warn about whitespace loss when copying the preview. Actual DOM JSON decodes byte-for-byte to both unchanged fixtures on both viewports, retaining indexes 1,3,4."
+    }
+  ],
+  "source_diff": [
+    {
+      "path": "docs/chapters/18-10-lesson.md",
+      "initial_sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e",
+      "current_sha256": "80c9c6fc9cb984b8964b1cd9efe9042d1be109a126224ff51bc8a207f686757b"
+    },
+    {
+      "path": "docs/chapters/18-11-lesson.md",
+      "initial_sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+      "current_sha256": "2c5ddcff7574478104eeed31ec1e79998b2f5696d9168c29c4611eb00841bc00"
+    },
+    {
+      "path": "docs/chapters/18-12-lesson.md",
+      "initial_sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+      "current_sha256": "0dd7448bc31cf09d1d64409c31a4b102fb6ed50a6fc041118c0fab04132b0ba1"
+    }
+  ],
+  "unchanged_source_count": 83,
+  "initial_evidence_unchanged": [
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b.md",
+      "sha256": "ece8325ea2b447a785c86ed41197af3fe21f58eb22e40d5377948a1616a35a0c",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b.json",
+      "sha256": "3975c037d93815434461f5551abb2dbb8295f64f48d60f04252b9c133a55e3f3",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b-sourcehashes.json",
+      "sha256": "927111d917e8543326edd1a7a79680d31f15871a78ec0552cf582507c62ed7f1",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b-checks.json",
+      "sha256": "0cb17acfbbf701151713fd2a8d4464e4ffe0f7dff5cf827cd68382222d28c954",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b-progress.json",
+      "sha256": "82a275dfba7aec09e5c6cb07e5edec391a85ccd8b5215a5431acb345f2d149b5",
+      "unchanged": true
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-fixture-render-proof.json",
+      "sha256": "0bb810ba04e2be584dd3531b7af49d2f2e57cfabc9d8cc62dbbfe52a18f37ea8",
+      "unchanged": true
+    }
+  ],
+  "preview": "http://127.0.0.1:8110/",
+  "viewports": [
+    {
+      "width": 1280,
+      "height": 800
+    },
+    {
+      "width": 390,
+      "height": 844
+    }
+  ],
+  "actual_capture_start": "2026-10-15T11:00:48.075Z",
+  "actual_capture_end": "2026-10-15T11:00:57.189Z",
+  "visual_metadata": "round18b-ch18b-followup-visual/metadata.json",
+  "personally_viewed_original_screenshots": [
+    "desktop-10-adopted-left.png",
+    "desktop-11-adopted-left.png",
+    "desktop-11-adopted-right.png",
+    "desktop-12-adopted-left.png",
+    "desktop-12-adopted-right.png",
+    "mobile-10-adopted-left.png",
+    "mobile-11-adopted-left.png",
+    "mobile-11-adopted-right.png",
+    "mobile-12-adopted-left.png",
+    "mobile-12-adopted-right.png"
+  ],
+  "personally_viewed_composites": [
+    "pair-10-left.png",
+    "pair-11-left.png",
+    "pair-11-right.png",
+    "pair-12-left.png",
+    "pair-12-right.png"
+  ],
+  "json_fixture_sha256": "e89bcb35b58442ca0ff82705c99cc9c344dd8175f4bf78cdac888e54a58f94ee",
+  "visual_observations": [
+    "18.10 both sizes show Id Copy paragraph before the record discussion; inline &Id and *id remain readable.",
+    "18.11/18.12 desktop displays the complete escaped JSON string on one line; mobile independent horizontal code scrolling reaches the final LF and closing quote; both left/right views were personally inspected.",
+    "Both viewports show the complete reconstruction paragraph and the visibly labelled line preview beneath it. The old preview still trims whitespace, but is now explicitly a preview; the preceding exact representation reconstructs the unchanged fixture."
+  ],
+  "capture_limitation": "First capture attempt using a reused browser page failed to find details after navigation; no closure based on that attempt. Successful final capture used a fresh page per URL, HTTP 200 and actual current DOM. Final 10 screenshots above overwrite/displace incomplete attempt; only these are counted as viewed.",
+  "execution_scope": "Read-only source, browser/DOM and screenshot comparison; no repository edits, Cargo/tests/build or publication. No peer findings used as independent evidence. STOP after this followup."
+}

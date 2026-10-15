@@ -1,0 +1,110 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "root-prompted narrow source followup, not independent discovery",
+  "scope": [
+    "7.4 crossreference",
+    "14.7 offline-test wording",
+    "14.8 basic-test wording"
+  ],
+  "original_initial_reports": [
+    "round07-lifetimes.md/json",
+    "round14-http-local-service-tail.md/json"
+  ],
+  "attribution": "All changes were notified by root after my respective initial seals. 7.4 was found by a later crossreference review; it was not independently identified in my original7 review. No initial record is rewritten.",
+  "result": "All three edits verified and accepted in this narrow scope.",
+  "evidence": {
+    "records": [
+      {
+        "path": "docs/chapters/07-04-lesson.md",
+        "initial_sha256": "532b1238409b30864e44957d90cd3416b3e520518faff6cd0c1879aef7c8acc6",
+        "current_sha256": "21a01d6a373aa5db5df05479d23e7b40c0119fcc98116e6f8af3f210b32acc64",
+        "before": "完整 `src/source.rs` 收入前兩節的函式。",
+        "after": "完整 `src/source.rs` 收入第 7.1–7.2 節的函式。"
+      },
+      {
+        "path": "docs/chapters/14-07-lesson.md",
+        "initial_sha256": "de90e990ee41a14145e03871084b12e949f8f10a8a1ff398c592afea17a282c8",
+        "current_sha256": "eeecfa90ed6c35cc1c811954629015ffc63e1495319b0d5e12ac4d82b68f014e",
+        "before": "它們沒有送 HTTP，沒有靠隱藏的本地 server 取得成功。",
+        "after": "這些測試沒有發出 HTTP 請求。"
+      },
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "initial_sha256": "3a066862ac5216cecc773bdd60867ccc7454580b40873a70ca68290af301c8e2",
+        "current_sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+        "before": "這些結果沒有驗證真實網路；也沒有隱藏下一節的 server helper。",
+        "after": "這些結果沒有驗證真實網路。"
+      }
+    ],
+    "owned_rust_fixture_source_changes_since_initial": [],
+    "later_metadata_changes_outside_three_sentence_edits": [
+      "examples/intro-workspace/Cargo.lock",
+      "examples/intro-workspace/Cargo.toml"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/docs/chapters/07-04-lesson.md",
+        "sha256": "21a01d6a373aa5db5df05479d23e7b40c0119fcc98116e6f8af3f210b32acc64"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-07-lesson.md",
+        "sha256": "eeecfa90ed6c35cc1c811954629015ffc63e1495319b0d5e12ac4d82b68f014e"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-08-lesson.md",
+        "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/07-01-lesson.md",
+        "sha256": "e61b02fe9a59f512d953a679fbc6ea016f7631ffda0d859fa21abce9370d720b"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/07-02-lesson.md",
+        "sha256": "b8935241be3b9415cd7f6a0cf2c59aaf4e2441bc2153d121af6f331959db41fb"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/lifetimes/complete/src/source.rs",
+        "sha256": "33be33df8af539fbca3125c1d16ea1f78e435b003019d88cd01e832e3b2e154c"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-http/src/lib.rs",
+        "sha256": "43e0fab1e63247dae9e1c63c3e7a1bb629b3a282fd12c665b303e189b513bedd"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/src/lib.rs",
+        "sha256": "d3342bdd072f51a26fff6b64f4728c61777833c03230d11ca123420d08b47553"
+      },
+      {
+        "path": "/workspace/work/tutorial-implementation-20261015/root-followups-0944/07-04-lesson.md.diff",
+        "sha256": "a4ca4f92254b9ae23e2417738a8db775a628d907a8dd2fb2b9dff06b10438547"
+      },
+      {
+        "path": "/workspace/work/tutorial-implementation-20261015/root-followups-0944/14-07-lesson.md.diff",
+        "sha256": "889da56a693844d50e0b0e3ed35637ce6fd7a9c22b194d331a8039c2c87dc198"
+      },
+      {
+        "path": "/workspace/work/tutorial-implementation-20261015/root-followups-0944/14-08-lesson.md.diff",
+        "sha256": "e2e0f131c30bf7a4712d4ca53dab6e5f1e84b458321cbe62c8b23d49925e0664"
+      }
+    ]
+  },
+  "assessments": [
+    {
+      "item": "7.4",
+      "judgment": "Complete source.rs actually contains same/longer from7.1 and first_text/copy_text/placeholder/fallback/first_nonempty from7.2. Explicit7.1–7.2 accurately replaces ambiguous immediately-previous-two-sections wording. No reference/lifetime behavior or loaded source changed."
+    },
+    {
+      "item": "14.7",
+      "judgment": "Four unit tests only parse input, construct artificial Inspection, render to Vec and reject flush; none calls network inspect. New positive statement 'no HTTP requests' is accurate and sufficient. No actual closure change."
+    },
+    {
+      "item": "14.8",
+      "judgment": "Three core tests reject malformed/unsupported input before client build or render artificial report/writer output. They do not validate real network. Removing hidden-server aside preserves correct limits; normal basic package still has no later server dependency."
+    }
+  ],
+  "execution": {
+    "own_rust_runs": 0,
+    "method": "Read actual relevant source/preceding headings and specified root diffs; reverse each exact current sentence to prove initial SHA. Compare old scoped Rust/fixture hashes; none changed."
+  },
+  "limits": "Intro workspace Cargo.toml/lock have unrelated later-member metadata changes since chapter7 initial; these are recorded separately, not described as changed Rust or part of the three sentence edits. No whole-chapter re-review/visual experiment."
+}

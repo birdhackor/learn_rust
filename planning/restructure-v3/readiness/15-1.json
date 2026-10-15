@@ -1,0 +1,106 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "15.1"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round15-and18b-root-crossref-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round15-c-and-ffi-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round15-gat-variance-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round15-raw-pointer-safe-abstraction-middle.md",
+    "planning/restructure-v3/reviews/continuity-late/15-06-root-crossref-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/15-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/15-01-lesson.md": "4d4b83c88f8ba6ccfcac7866d71b7a0730e55a2f5afed39f4e3d7f7ce8ef3b4b",
+    "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+    "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+    "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs": "ef541e5bd9598efcbfab50be3c730585b74223554719984a277e72caea242677",
+    "examples/ch12-unsafe/stages/examples/gat_views/main.rs": "87a819749e77075f6918aec8353fac04afc4c785b8a4edb479426ad65364c4a1",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.rs": "3b62cb6b3de53f40f17ed6079b630769693b1678a967ef62d5416493c0e71a63",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.expected": "db9b0a861a4d072c963491b101255b726ab04d032aacffbb751e48aa927afffe",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.rs": "70433146de34a5f82f244102def92225e5705ef2de36bc08dd47ee8785841a26",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/ch12-unsafe/stages/examples/gat_solution.rs": "d60c0d4c64845ca684696de07ea2bd52beef6ec8de8dbd3d0294e62358142ebd",
+    "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+    "examples/ch12-unsafe/stages/examples/gat_complete/main.rs": "87a819749e77075f6918aec8353fac04afc4c785b8a4edb479426ad65364c4a1",
+    "docs/assets/ch12/gat-borrows.svg": "35f53e602a2287524f67ecc743309ddf81b4dcdb8bb1e28e759b9b560a3dc7b3"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 3,
+      "quote": "第6.4節的 Extract 接手來源，交出該實作指定的 Output。現在要保留來源，只借讀內容：普通 Vec 可以交出 slice，RefCell 則交出代表活躍借用的 guard。我們希望用同一項「借出視圖」操作取得兩者，但保留各自的結果型別與借用規則。"
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 5,
+      "quote": "只替普通 Vec 寫 `fn view(&self) -> &[i32]` 已經可以完成第一種需要。本節新增的問題是：**把不同視圖型別放進同一份 trait 契約，而且結果仍能連到每次呼叫借用 self 的有效範圍。** 不需要建立通用容器或重新實作 RefCell。"
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 9,
+      "quote": "Numbers 儲存普通 Vec；GuardedNumbers 儲存 第11.9節 已教的 `RefCell<Vec<i32>>`。後者仍用原本的 borrow guard 管理讀寫。本章從教材repo根目錄操作，使用no-lib package `ch15-unsafe-stages`。每份example只載自己明寫的module快照；本節不會載入後面的variance或unsafe契約。完整設定採用第12.1節已教的根workspace共同欄位："
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 36,
+      "quote": "**generic associated type（GAT，泛型關聯型別）** 是帶有泛型參數的 associated type。本節只使用 lifetime 參數：一份實作不再只選一個固定的 View 型別，而是指定「給定這次借用的 lifetime，要用哪個 View 型別」。"
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 44,
+      "quote": "第11.5節的 `T: 'a` 要求 T 內的借用符合 `'a`。現在把 T 換成實作型別 Self，**`where Self: 'a`** 表示這個 View 只在 Self 符合該有效性要求時使用。where 的位置與語意沿用第11.6節，只是這次放在 associated type 的宣告上。"
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 58,
+      "quote": "Numbers 選 `type View<'a> = &'a [i32]`，body 用既有 as_slice 借出 Vec 的內容。GuardedNumbers 選 `Ref<'a, Vec<i32>>`，body 用 RefCell::borrow 交回 guard。兩份定義也保留宣告的 `where Self: 'a` 條件。"
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 72,
+      "quote": "`S: BorrowView` 表示來源提供這份 trait。回傳 `S::View<'_>` 使用實作選定的視圖；`'_` 使用第7.2節的placeholder，依第7.1節的唯一reference輸入規則，接到 source 的借用。函式只轉交視圖，不取得 S，不把結果統一成新的清單："
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 107,
+      "quote": "第一份 fixture 只移除 View 上必要的 bound，其餘契約保持原樣："
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 137,
+      "quote": "建立 LendMut trait，GAT 名稱仍叫 `View<'a>`，method 改成借用 `&'a mut self`。Numbers 的 View 選 `&'a mut [i32]`，由 body 借出 values。"
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 139,
+      "quote": "這份練習需要 **`Vec::as_mut_slice(&mut self) -> &mut [T]`**：它從 mutable Vec 借出全部已有元素的 mutable slice，不改變長度，也不取得 Vec 的 ownership。它是 as_slice 的 mutable 版本；要用它，就先有 mutable receiver 的借用。"
+    },
+    {
+      "section_id": "15.1",
+      "path": "docs/chapters/15-01-lesson.md",
+      "line": 153,
+      "quote": "晚段完整快照的三項測試分別核對原 slice 資料、guard 清理前後的寫入權限，以及兩種空清單的視圖。測試使用 **`Result::is_err(&self) -> bool`**：結果是 Err 時回傳 true，Ok 時回傳 false；它只檢查 variant，不取得內部值。這讓 assertion 能直接確認「guard 仍在時，取得 writer 的嘗試被拒絕」。這時才把上述helper與三項測試合成gat_complete；完整module與根程式都在下面。它的main沿用已教的視圖觀察，測試模式不執行main："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

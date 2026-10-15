@@ -1,0 +1,1451 @@
+{
+  "role": "獨立continuity及actual-page reviewer，非author/technical/firstreader",
+  "scope": "actual1–12已審＋13.1–13.8正文/全部actualsource先備實讀→14.1–14.9順序正文/fullsource/helpers/tests/fixtures/manifests/answers；不讀13/14 peer finding、作者validation、knownaudit或rootdispositions，不以15/16/17/18補前提。",
+  "captured_utc": "2026-10-15T10:16:18.997863+00:00",
+  "sealed_utc": "2026-10-15T10:35:13.192740+00:00",
+  "verdict": {
+    "necessary": 1,
+    "optional": 2
+  },
+  "source_files": 123,
+  "regions": 24,
+  "concept_checks": [
+    {
+      "concept": "等待、交錯與真正同時",
+      "first_needed": "14.1三種安排與圖之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-01-lesson.md",
+          "line": 3,
+          "text": "現在要產生一份訂單報告：它需要倉庫回覆庫存，也需要算出已知商品的合計。倉庫尚未回覆時，加總資料其實已經齊了。我們希望先把能做的部分做完，再取得外部結果；最後仍要確認兩份資料都到齊。"
+        },
+        {
+          "path": "docs/chapters/14-01-lesson.md",
+          "line": 36,
+          "text": "## 真正同時執行，還需要可用的執行資源"
+        },
+        {
+          "path": "docs/chapters/14-01-lesson.md",
+          "line": 42,
+          "text": "下圖固定同一項 A、同一項 B。①、②的箭頭只表示操作先後；③**另外假設**兩份資源真的同時執行兩段程式。框高和留白不表示耗時，也不是效能測量："
+        }
+      ],
+      "q1": "A查庫存B獨立加總，同一路徑可交錯。",
+      "q2_mechanism": {
+        "answer": "等待A時先做可前進B；另有兩執行資源才假設實際同時。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "未知庫存仍需等，但獨立金額不必留到回覆之後才算。",
+        "verdict": "已足夠"
+      },
+      "q3": "B若依賴A則不能先算；B完成不等完整報告，非效能量測。",
+      "q4": "同A回3件、同B80+120=200，三種安排同材料。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Future與async fn惰性本體",
+      "first_needed": "14.2 totals具名片段前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 1,
+          "text": "# 14.2 Future 與 async／await：先保存工作，再取得結果"
+        },
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 9,
+          "text": "普通的 `fn total_now(...) -> i32` 呼叫時執行本體，交回 i32。在宣告前加 **`async`**，`async fn total_later(...) -> i32` 的呼叫則交回 future；箭頭的 i32 是那份工作的 **Output**，不是呼叫當下交回的型別。async 函式本體留到工作被執行時才進入，這是本例所說的 **lazy（延後執行）**。"
+        },
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 19,
+          "text": "「本體尚未執行」不代表呼叫時完全沒動作：引數先求值，owned 引數在呼叫時交進 future。等一下的 `drop` 會讓我們看見：保存過工作，也可以沒有執行本體就結束它。"
+        }
+      ],
+      "q1": "Future保存可被推進而交出Output的工作。",
+      "q2_mechanism": {
+        "answer": "async fn呼叫建立future，參數先求值與交付，本體由之後推進；await不是method。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "先保存工作、明確決定何時取得小計。",
+        "verdict": "已足夠"
+      },
+      "q3": "不是所有future工廠皆完全無事；不需要先學poll或狀態機布局。",
+      "q4": "lazy例子順序、owned label在呼叫時移入，函式普通版立即算。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "runtime與Tokio入口",
+      "first_needed": "14.2 no-lib manifest及lazy完整例前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 21,
+          "text": "## 讓 runtime 推進工作"
+        },
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 39,
+          "text": "普通 Rust 入口仍是同步 `fn main`。**`#[tokio::main(flavor = \"current_thread\")]`** 是放在函式前的 attribute macro：它把下面寫成 async 的 main 轉成普通入口，建立所選 runtime，推進 main 的 future 到完成。`flavor` 選執行方式；不指定時的預設是 multi-thread，需要另一項 feature，所以這裡明寫 current_thread。方便入口若無法初始化 runtime 會 panic，這與工作自己交回的 Result 是不同層次。"
+        },
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 39,
+          "text": "普通 Rust 入口仍是同步 `fn main`。**`#[tokio::main(flavor = \"current_thread\")]`** 是放在函式前的 attribute macro：它把下面寫成 async 的 main 轉成普通入口，建立所選 runtime，推進 main 的 future 到完成。`flavor` 選執行方式；不指定時的預設是 multi-thread，需要另一項 feature，所以這裡明寫 current_thread。方便入口若無法初始化 runtime 會 panic，這與工作自己交回的 Result 是不同層次。"
+        }
+      ],
+      "q1": "runtime/executor管理推進工作與等待資源。",
+      "q2_mechanism": {
+        "answer": "Tokio屬性產生普通入口建立runtime再等待；rt/macros最小設定。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "普通main不能直接await，需要有工作推進者。",
+        "verdict": "已足夠"
+      },
+      "q3": "current_thread非每future一thread，入口panic與工作Result不同。",
+      "q4": "早期no-lib隔離未教checked_total與tests，後完整package再alltargets。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "async block capture與RPIT",
+      "first_needed": "14.2 block_capture/explicit_future前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 67,
+          "text": "## async block 保存哪些資料？"
+        },
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 71,
+          "text": "第一份工作只讀 heading，保存借用，Output 是文字的 byte 數4。建立後，main 仍可用 shared reference 讀 heading。第二份用 **`async move`**，把 note 這個 String 的 ownership 交給工作；本體末尾再把 String 交作 Output，所以 await 取得的 saved 擁有文字。move 捕捉若原本拿到的是 reference，移入的仍是 reference，不會把它指向的值自動變成 owned 資料。"
+        },
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 87,
+          "text": "第9.3節的 return-position `impl Trait` 讓函式交出一個實作指定 trait 的具體型別。現在用 **`impl Future<Output = i32>`** 表示「交回一份完成後產生 i32 的工作」。尖括號裡的等號指定 associated type，不是替 Output 傳入一個值。"
+        }
+      ],
+      "q1": "block建立匿名工作；impl Future描述回傳能力。",
+      "q2_mechanism": {
+        "answer": "預設依使用借/取，move捕捉owned但reference仍reference；Output關聯型別。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "在普通工廠內先做準備，再回傳等待工作；保存不同所有權材料。",
+        "verdict": "已足夠"
+      },
+      "q3": "outer函式立即印，不把全部factory說成lazy；後續不讀16。",
+      "q4": "borrowed heading與owned receipt，顯式FutureOutputi32。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "工作Result與Tokio測試",
+      "first_needed": "14.2 fallible與完整lib/tests前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 105,
+          "text": "把工作規格改成「小計不能負數」，沿用第8章的 Result。**`async fn ... -> Result<i32, String>`** 的 Output 整個就是 Result。await 只取得 Output，沒有代為解開 Ok，也沒有替我們選錯誤政策。"
+        },
+        {
+          "path": "docs/chapters/14-02-lesson.md",
+          "line": 121,
+          "text": "以下完成版 `ch11-foundations` 將計算集中成 library，方便下一節引用。先介紹新增的測試入口：**`#[tokio::test(flavor = \"current_thread\")]`** 把 async 測試接到每個測試各自的 current-thread runtime，測試本體可以 await；普通 `#[test]` 本身不會建立這種 async 執行環境。"
+        }
+      ],
+      "q1": "Output可以是Result，完成不等規格成功。",
+      "q2_mechanism": {
+        "answer": "await先取得Result再match；Tokio測試入口建立各自runtime，sideeffectvisits由借用計數。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "保存負小計失敗原因，確認建立future還沒執行本體。",
+        "verdict": "已足夠"
+      },
+      "q3": "函式與測試全內容在全package編譯命令前。",
+      "q4": "negative/valid、receipt完整答案與CLI五行。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "task spawn與Send static",
+      "first_needed": "14.3基本工作與spawn例之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 7,
+          "text": "**task** 是交給 runtime 排程的工作。**`tokio::spawn(work)`** 接手一份 future，把它提交為 task，交回 **`JoinHandle<T>`**；T 是工作完成的 Output。runtime 能在我們尚未 await handle 前推進 task。spawn 本身不會同步進入該工作的本體，也不保證工作最後一定完成；runtime 結束時，尚未完成的 task 會被丟棄。"
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 11,
+          "text": "spawn 要在 Tokio runtime 內呼叫。本章仍用 current_thread，所以這些 task 共用該 thread，不能以建立多份 task 就宣稱 parallelism。這個 spawn API 仍要求 future 與 Output 符合 **Send + `'static`**：第13.1節的 Send 允許跨 thread 交付；`'static` bound 表示不攜帶只在短範圍有效的借用，不要求值必須活到程式結束。owned String 可以符合。即使這次選單一 thread，使用的 API 契約也沒有因此免除這兩項限制。"
+        }
+      ],
+      "q1": "task是runtime排程單位，JoinHandle是等待把手。",
+      "q2_mechanism": {
+        "answer": "spawn提交非同步進本體；future與Output各Sendstatic，runtime結束丟未完task。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "把工作交出後讓controller控制開始/放行。",
+        "verdict": "已足夠"
+      },
+      "q3": "currentthread不免API Sendstatic；不把多task當parallelism。",
+      "q4": "工作發started後尚未release，handle未await亦已進本體。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Tokio mpsc有界通知",
+      "first_needed": "14.3 basic lib前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 21,
+          "text": "本例用 **`tokio::sync::mpsc`**，名稱同樣是 multiple producer, single consumer（多個送端、單一收端）。它與第13.5節 std channel 的用途相近，這次 send／recv 是可 await 的 async 操作。"
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 23,
+          "text": "**`mpsc::channel::<T>(capacity)`** 建立有界緩衝區，交回 `Sender<T>` 與 `Receiver<T>`；capacity 必須大於0。Sender 可以 clone，共用同一條 channel；Receiver 由一個接收者持有。`sender.send(value).await` 等待空位，成功交回 Ok(())，收端已關閉則交回帶原值的 SendError。`receiver.recv().await` mutable 借用收端：有訊息得到 Some(value)，暫時沒有訊息但仍有送端時繼續等，所有送端結束且緩衝區已空才得到 None。"
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 25,
+          "text": "本節用 unit `()` 作不帶額外資料的通知，兩條 channel 的角色固定如下："
+        }
+      ],
+      "q1": "async sender/receiver，同channel多送一收。",
+      "q2_mechanism": {
+        "answer": "send等空位/閉收端回原值；recv mutable回Some/等候/最後None，容量正。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "把已開始與獲准繼續分開，免sleep猜進度。",
+        "verdict": "已足夠"
+      },
+      "q3": "不同於stdblocking方法；SendError Debug只可選補明，見C14-02。",
+      "q4": "unit兩channel，controller保留rx，所有txdrop後通知迴圈才None。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "JoinHandle兩層結果與取消收尾",
+      "first_needed": "14.3 join_handle/abort例之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 52,
+          "text": "**`handle.await`** 取得 `Result<T, JoinError>`。本例 T 已經是 `Result<i32, WorkError>`，所以有兩層："
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 74,
+          "text": "**`handle.abort()`** 請求取消這份 async task，沒有等清理完成；接著 await handle，才取得它的結束結果。JoinError 的 **`is_cancelled()`** 辨認取消，**`is_panic()`** 辨認 panic，**`id()`** 仍能對回原 task。已完成的工作不一定因後來 abort 改成取消；本例刻意保持 release 未送，使工作仍在等待。"
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 88,
+          "text": "若直接 drop JoinHandle，則是 **detach（放開這份等待把手）**：task 可繼續執行，並不等於 abort，也沒有收回結果。runtime 結束又是另一個邊界。需要結果或清理完成的證據時，應保留把手並等待。"
+        }
+      ],
+      "q1": "task失敗與工作Err是兩層。",
+      "q2_mechanism": {
+        "answer": "abort請求後await才知清理；drop把手detach不取消。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "分工作資料失敗、panic、取消並知道收端已清理。",
+        "verdict": "已足夠"
+      },
+      "q3": "已完工作可能保正常Output；JoinError格式能力補充為可選C14-02。",
+      "q4": "OkOk80/OkErrNegative/ErrJoin；取消後release.send為Err。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "JoinSet完成順序與Id對照",
+      "first_needed": "14.3 collect_one前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 94,
+          "text": "**`JoinSet<T>`** 持有一組 Output 同為 T 的 task。`JoinSet::new()` 建立空集合，**`tasks.spawn(work)`** 提交並納入一份工作，交回 **AbortHandle**，可查 id 或請求 abort；它不是用來 await 結果的 JoinHandle，結果改由集合收回。"
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 96,
+          "text": "**`tasks.join_next_with_id().await`** mutable 借用集合，等待並取出一份已完成的 task，得到 **`Option<Result<(Id, T), JoinError>>`**。空集合交回 None；非空但尚未有完成項目就等待。成功時帶 id 與完整 Output，JoinError 則透過 error.id 找 id。這不是輸入順序；多份都已完成時，也不要憑提交順序猜下一筆。"
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 98,
+          "text": "我們用第6.5、6.6節已教的 HashMap，保存成 `HashMap<Id, usize>` 保存「task Id → 原輸入位置」。加入工作時 insert；回收後用 **`inputs.remove(&id)`** mutable 借用 map，刪掉那組資料並取得 `Option<usize>`。Some 是已移出的輸入位置；None 代表沒有那個鍵。本例每次 spawn 都先登記，因此用 expect 檢查這項內部約定。完成後 map 應空，不會留下已回收的工作。"
+        }
+      ],
+      "q1": "集合持有同Output工作，Id辨識非輸入索引。",
+      "q2_mechanism": {
+        "answer": "spawn給AbortHandle；joinnext取完成task，None空，removeownedinput再分類。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "亂序回收仍交代每筆輸入。",
+        "verdict": "已足夠"
+      },
+      "q3": "多份同就緒不猜提交順序；Id Hash已先說。",
+      "q4": "1workErr→2panic→3cancel→0value，完整runDemo/tests/answer。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "有界scheduler與補位",
+      "first_needed": "14.4 state/new/fill/next前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-04-lesson.md",
+          "line": 21,
+          "text": "## Scheduler 保存哪一種進度？"
+        },
+        {
+          "path": "docs/chapters/14-04-lesson.md",
+          "line": 31,
+          "text": "| peak_tracked | 過程中 tasks.len() 的最大值 |"
+        },
+        {
+          "path": "docs/chapters/14-04-lesson.md",
+          "line": 27,
+          "text": "| pending | 尚未提交的 Job，保存為 owned iterator `std::vec::IntoIter<Job>`；next 每次移出一筆 |"
+        }
+      ],
+      "q1": "教學scheduler管pending、tasks、inputmap。",
+      "q2_mechanism": {
+        "answer": "填到taskslenlimit；回收一份後補一份；已完成未回收仍算tracked。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "限制同時未回收task數，材料仍保每筆結果。",
+        "verdict": "已足夠"
+      },
+      "q3": "不是CPU同跑數或全記憶體上限；零limit拒絕，empty不spawn。",
+      "q4": "0/1→回1補2→回2補3→回3補4→回0→回4，圖表同一材料。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "開始channel生命與單槽答案",
+      "first_needed": "14.4完整lib/runDemo及答案前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-04-lesson.md",
+          "line": 15,
+          "text": "**controlled_job** 延續上一節 controlled_work 的規則，改成 started 傳入**輸入索引**，讓 controller 確認究竟哪份工作已開始。Job 由工作接手；mutable binding 允許借用它的 release 收端："
+        },
+        {
+          "path": "docs/chapters/14-04-lesson.md",
+          "line": 84,
+          "text": "## 完整設定、全部 helper 與可執行程式"
+        },
+        {
+          "path": "docs/chapters/14-04-lesson.md",
+          "line": 129,
+          "text": "## 練習與完整答案：只留一個空位"
+        }
+      ],
+      "q1": "scheduler仍需原sender供後續補位。",
+      "q2_mechanism": {
+        "answer": "不能收第一批後等待None，因仍保存供未提交工作clone的送端。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "要在持續補位時證明各筆何時進入。",
+        "verdict": "已足夠"
+      },
+      "q3": "一槽仍工作Err後繼續補位，不以成功才釋slot。",
+      "q4": "runDemo五筆受控開始及oneSlot三筆逐筆收齊，tests全列。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Duration與兩種Instant",
+      "first_needed": "14.5 timing_outcomes首次重用limit前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 7,
+          "text": "## Duration 是一段長度，Instant 用來量經過時間"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 11,
+          "text": "**`std::time::Instant::now()`** 取得適合量經過時間的單調時間點；之後 `start.elapsed()` 得到 Duration。它不是年月日鐘面，也不把別台機器的時間點拿來相減。本例從呼叫 sleep 前開始量，包含等待與這次排程的時間。"
+        }
+      ],
+      "q1": "Duration時間長度，stdInstant單調時間點。",
+      "q2_mechanism": {
+        "answer": "fromsecs/millis/asMillis與elapsed已足夠；Duration Copy尚未明說，見C14-01。",
+        "verdict": "需補最小Copy契約"
+      },
+      "q2_need": {
+        "answer": "量這次經過而非把20ms當固定答案。",
+        "verdict": "已足夠"
+      },
+      "q3": "不跨機相減，後Tokio虛擬鐘與std真實鐘分開。",
+      "q4": "同一limit兩次byvalue timeout、twoSteps同delay兩次sleep。",
+      "verdict": "需補最小Copy契約"
+    },
+    {
+      "concept": "timer建立時點與timeout包裹",
+      "first_needed": "14.5 timer/outcomes前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 13,
+          "text": "**`tokio::time::sleep(delay)`** 建立到期後可完成的 timer future，Output 是 unit。呼叫 sleep 時就以當時時間安排期限；await 推進並等待它，等待期間 thread 可以執行其他可前進的 async 工作。它不要求這條 thread 用同步阻塞一直留在原處，也不保證到期後立刻獲得執行機會。"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 43,
+          "text": "**`tokio::time::timeout(limit, work)`** 接手本例的一份 future，建立帶期限的等待；呼叫時就記下 deadline，緊接著 await 取得 **`Result<T, Elapsed>`**。T 是原工作 Output，Elapsed 是 Tokio 的逾時錯誤，也能用 Display 顯示。"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 45,
+          "text": "原工作完成得到 Ok(output)；仍沒完成而期限已到得到 Err(Elapsed)。這份 wrapper 結束並 drop 它持有的工作，取消後續執行。本節都直接包住一份未 spawn 的 future；若持有的是另一份 task 的把手，還要分辨把手與 task，下一節再追那種責任。"
+        }
+      ],
+      "q1": "sleep有unitOutput；timeout帶期限回ResultTElapsed。",
+      "q2_mechanism": {
+        "answer": "call時設deadline，await推進；wrapper丟棄所持直接工作。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "不讓單份等待無期限，同時保留工作錯誤。",
+        "verdict": "已足夠"
+      },
+      "q3": "不是強制打斷同步一行，也不是取消外部task把手所指工作。",
+      "q4": "立即100與pending永不完成；nestedResult分三種結果。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "取消不回滾與同步阻塞",
+      "first_needed": "14.5 cancel/blocking例前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 85,
+          "text": "沿用14.2的 visits，這次先加1，再 await 永不完成的 pending，之後才有一行加100。timeout 到期時丟棄工作，結束它保存的 mutable 借用；已完成的加1仍留在 visits，後面的加100沒執行。"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 101,
+          "text": "標準庫另外提供 **`std::thread::sleep(duration)`**，接收 Duration，阻塞目前 thread 等待後回傳 unit，不回傳 future。若把它寫進 async 本體，呼叫那一段時仍會阻塞，沒有因為外面是 async 就變成 Tokio sleep。"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 59,
+          "text": "第一份得到 Ok(100)，第二份逾時。固定版本先讓內層工作取得執行機會，立即完成的工作可直接成功；timeout 不是靠外部強制中斷任意一行同步程式。"
+        }
+      ],
+      "q1": "取消終止後續，已作修改保留；threadsleep同步阻塞。",
+      "q2_mechanism": {
+        "answer": "mutable借用在wrapper結束後釋放，+1保留不做+100；不yield則timeout無法強停。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "正確解讀逾時後狀態與合作式等待範圍。",
+        "verdict": "已足夠"
+      },
+      "q3": "固定Tokio版inner先被推進，不將Ok100誤說期限失效。",
+      "q4": "1ms包30ms同步sleep仍可能Ok；副作用只完成首步。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "paused鐘與整體/逐步預算",
+      "first_needed": "14.5隔離clocktests與twoSteps前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 117,
+          "text": "若測試只為檢查 timer 與 Result 路徑，讓它真的睡很久沒有幫助。Tokio 的 **`test-util` feature** 提供測試時鐘能力。`#[tokio::test(flavor = \"current_thread\", start_paused = true)]` 從測試開始暫停 Tokio 時鐘；沒有其他可前進工作、只剩 timer 等待時，runtime 能自動把這份時鐘推進到下一個 timer。"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 147,
+          "text": "回到兩個必要步驟：每步等30毫秒，完成後把 completed 加1。**two_steps** 借用 caller 的 completed，讓整段被丟棄後仍能檢查已完成幾步："
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 145,
+          "text": "## 整段期限，和每步重新給期限"
+        }
+      ],
+      "q1": "Tokio測試可暫停timer鐘，整體期限與每步重設不同。",
+      "q2_mechanism": {
+        "answer": "startpaused/noOtherRunnable自動前進；兩次30ms，50ms整體只一步，每步50各成功。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "可重現等待政策且不花真實長時間。",
+        "verdict": "已足夠"
+      },
+      "q3": "stdelapsed不能當虛擬鐘證據；早期clockpackage不載未教twoSteps。",
+      "q4": "四isolatedtests後完整lib+六contracts+三budget答案。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "select biased與借用等待",
+      "first_needed": "14.6 borrowed_join圖與例之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 9,
+          "text": "**`tokio::select!`** 是在 async 函式或 block 內使用的 macro。分支寫成 `pattern = 工作 => 處理式`；它推進各分支的等待，選到一份完成且符合 pattern 的結果，就執行那條處理式，丟棄其餘分支的等待 future。"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 11,
+          "text": "它在目前 task 內交錯推進分支，沒有因此另建 task 或 thread；某一分支若同步阻塞這條 thread，其他分支也無法繼續。**`biased;`** 使檢查順序依程式由上而下；本例把停止放前面，兩者都就緒時優先處理停止。這是明確政策，不是讓下方分支永遠得不到機會的通用公平保證。"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 15,
+          "text": "沿用14.3已完成的 controlled_work，金額80，只有一份 input0。以下程式的 tasks、已提交工作，以及 select 內的等待，分別命名成圖中的三個對象；S1／T0／W1 是追蹤標記，不是額外 Rust binding："
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 21,
+          "text": "停止分支勝出，丟棄的是 W1。這個 JoinSet method 有 **cancellation safety（取消安全性）** 契約：若等待分支沒選中，不會因此從集合移走一份 task。借用結束後可以再借用 S1，建立新等待。Tokio mpsc 的 recv 也有對應保證：未選中的等待不會偷取一筆訊息。不能據此假定每個 API 被丟棄後都保留相同進度，14.5已看過修改不會回復。"
+        }
+      ],
+      "q1": "select同task推進分支選完成匹配者，其餘future丟棄。",
+      "q2_mechanism": {
+        "answer": "W1只mutable借S1、S1持T0；JoinSet/recv有取消安全，stop丟W1不拿走T0。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "同時等停止與回收而不意外丟已提交工作。",
+        "verdict": "已足夠"
+      },
+      "q3": "bias優先是政策非通用公平；同步阻塞仍阻thread，不類推任何API安全。",
+      "q4": "S1/T0仍1，release後Value80並清空map，圖具三值非binding。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "guard跨await與Send",
+      "first_needed": "14.6 short_guard/fixture前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 53,
+          "text": "第13.6節的 std MutexGuard 代表目前持有鎖；它本身沒有 Send。若 spawn 的 future 必須保存 guard 跨過 await，這份 future 就不符合14.3的 Send 契約。外面改成 current_thread 不會免除 spawn 的要求。"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 55,
+          "text": "先把需要鎖的修改放進短 block，取出 owned i32 快照；block 結束 guard 解鎖，等待時只保存快照。這不是宣稱 guard 解鎖會回復修改；total 已加80。"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 67,
+          "text": "### 完整負例：guard 跨過 await"
+        }
+      ],
+      "q1": "guard持鎖且不Send，跨await保留會使spawnFuture不Send。",
+      "q2_mechanism": {
+        "answer": "短block修改再ownedSnapshot，guarddrop解鎖後等release。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "保護短修改並讓等待工作符合spawn契約。",
+        "verdict": "已足夠"
+      },
+      "q3": "currentthread不免Send，解鎖不回滾80；負例獨立workspace全lock。",
+      "q4": "heldGuardawait後仍讀guard故須保存；診斷與修法完整對應。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "批次停止分類與先檢查再提交",
+      "first_needed": "14.6 completebasic前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 99,
+          "text": "現在保留14.4的五筆材料與上限2，增加完整停止政策。**Outcome::Unstarted** 表示輸入尚未提交；它不是被取消的 task。**StopEvent** 是停止來源交付的訊息：Requested 或 SignalFailed(String)。**EndReason** 是批次最後的原因，另外分 Finished 與 StopSourceClosed；來源意外關閉，不能當作使用者已要求停止。"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 105,
+          "text": "這次 Runner 的 outcomes 是 `Vec<Option<Outcome>>`，每個輸入先有一個 None 位置。classify 沿用 Id 對照分結果，record 把 Some(outcome) 放回**原輸入位置**；最後報表按輸入索引0到4輸出，與14.4的完成順序分開。組表時的 **`iterator.enumerate()`** 接手 iterator，逐筆交出 `(從0開始的usize索引, 原Item)`；這次便能同時取得原位置與 owned outcome。Vec 的 is_empty() 則回答長度是否為0。"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 109,
+          "text": "1. **`stop.try_recv()`** mutable 操作收端，立即回 Result，不等待：Ok(event) 是取得訊息；TryRecvError::Empty 是現在沒訊息但仍可再來；Disconnected 是已斷線且沒有剩餘訊息。"
+        }
+      ],
+      "q1": "尚未提交非取消，停止事件與來源斷線分開。",
+      "q2_mechanism": {
+        "answer": "tryrecv先查queued/closed，只有Emptyfill；selectstop先，record按input寫OptionVec。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "不錯過已排停止，仍每輸入都有交代。",
+        "verdict": "已足夠"
+      },
+      "q3": "empty直接Finished是明訂政策；Vecenumerate/takeItem已先解釋。",
+      "q4": "prequeued提交0峰0全部Unstarted，錯誤/panic早收不被抹掉。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "abort_all與drain完成證據",
+      "first_needed": "14.6 completebasic tests前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 118,
+          "text": "**`tasks.abort_all()`** 請求取消集合中尚未完成的 task，沒有把它們移出集合，也沒有等待完成。**drain（逐筆取完）** 在這裡就是持續 join_next_with_id，將每份實際結束結果交給 record，直到 None。"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 116,
+          "text": "## abort_all 之後，逐筆 drain 才能說已收尾"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 122,
+          "text": "已經完成、只是尚未回收的工作，不會被 abort_all 改寫成 Cancelled。測試用可選的 **returning** channel 建立這項證據：工作先算好 output，送 returning，之後沒有下一個 await，直接 return。**本例 current_thread** 保證 controller 取得執行機會、收到通知時，該工作已走完這段 return；這不是任意多 thread 程式只送訊息就能證明已結束的通則。"
+        }
+      ],
+      "q1": "請求取消集合不等已回收。",
+      "q2_mechanism": {
+        "answer": "停止補位→abortAll→join到None→dropPending記Unstarted→驗task/map空。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "將清理責任證明到每筆及每收端，不只說已要求。",
+        "verdict": "已足夠"
+      },
+      "q3": "currentthread returning後無await保證完成，非任意多thread通知定理。",
+      "q4": "completed0保Value80、等待1cancel、未提交2unstarted。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "CtrlC listener與兩層控制收尾",
+      "first_needed": "14.6 finalcontroller/main前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 25,
+          "text": "早期 no-lib package 的完整 manifest，只引用14.3已完成的 tasks，尚未加 signal："
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 187,
+          "text": "signal_controller 的 select 把 ctrl_c 放第一個分支；它先有機會進入註冊，若還在等待，第二支才送 **entered**。第二支送完後等待 pending，永不勝出。main 收到 entered，才知道 listener 已進入；**工作的 started 不代替 listener 的 entered**。若訊號或註冊失敗先到，controller 可直接送事件並結束，entered 收端則可能得到 None；main 仍要跑批次的停止收尾。"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 195,
+          "text": "Unix 上首次註冊會改變行程的 SIGINT 處理，**丟棄 listener 不會恢復原本的預設 SIGINT 行為**。本程式明確接手停止政策與退出狀態；不能指望 drop listener 就等於復原行程設定。"
+        },
+        {
+          "path": "docs/chapters/14-06-lesson.md",
+          "line": 205,
+          "text": "main 需要接受可選 `--signal`。本例選 **`std::env::args()`**，Item 是 String；與10.5的 args_os 相比，它要求 arguments 為 Unicode，遇非 Unicode 可能 panic。signal_mode 略過程式名稱，只接受零參數或這個精確選項；其他輸入回用法錯誤，不啟動 task。"
+        }
+      ],
+      "q1": "OSCtrlC進StopEvent，listenertask和batchtask各收尾。",
+      "q2_mechanism": {
+        "answer": "bias先pollctrlc再entered；finishcontrollerabortawait；observerstarted兩筆READYflush。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "真正signal到來也要可知已註冊且完整結束。",
+        "verdict": "已足夠"
+      },
+      "q3": "listenerdrop不恢復UnixSIGINT；正常130是主動政策；argvUnicode限制先說。",
+      "q4": "default受控130與--signal0/1cancel2/3unstarted，CLI固定前者不猜sleep。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "URL/HTTP/HTTPS與檢查通過",
+      "first_needed": "14.7 Settings/parse前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 3,
+          "text": "現在要檢查一個網址：收到最終回應後，交代 final URL、HTTP status，以及是否符合「2xx才通過」的規格。使用者還能選擇讀不讀 body。先用同步介面把資料與失敗階段看清楚，下一節保留相同政策，再換成 async 等待。"
+        },
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 1,
+          "text": "# 14.7 HTTP 基礎：有收到回應，和檢查通過，是兩件事"
+        },
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 3,
+          "text": "現在要檢查一個網址：收到最終回應後，交代 final URL、HTTP status，以及是否符合「2xx才通過」的規格。使用者還能選擇讀不讀 body。先用同步介面把資料與失敗階段看清楚，下一節保留相同政策，再換成 async 等待。"
+        },
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 13,
+          "text": "本工具訂出政策：200到299這個 **2xx** 範圍為 passed=true；其他 HTTP status 仍交出報告，passed=false。若回應要求 **redirect（重新導向）**，client 可依新位置再請求；所以輸入 URL 與最終 URL 可能不同。這次最多允許5次 redirect，超過則是取得最終回應失敗。"
+        }
+      ],
+      "q1": "位置分scheme/host/path/query/fragment；client交requestserver回response。",
+      "q2_mechanism": {
+        "answer": "GET取得資源，HTTPS透TLS；2xx通過政策，404仍response，redirect最多5。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "要給finalURL/status與可選body的可用報告。",
+        "verdict": "已足夠"
+      },
+      "q3": "fragment不上HTTP；無finalresponse與HTTP未通過不同。",
+      "q4": "normalizedHTTPS/file合法不支援/relative解析錯，人工404完整報告。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "blocking client與response ownership",
+      "first_needed": "14.7 inspect之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 17,
+          "text": "package 在 `examples/ch11-http/`，名稱為 `ch11-http`。它使用 **reqwest** 的 blocking（阻塞）client：呼叫 send／text 時，目前 thread 等它們完成或失敗。這份 binary 使用普通 main，不在本節的 async runtime 內呼叫 blocking client。"
+        },
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 55,
+          "text": "| `Client::builder()` | 建立 ClientBuilder，先保存 client 設定 |"
+        },
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 59,
+          "text": "| `.build()` | 接手 builder，交回 `Result<Client, reqwest::Error>` |"
+        },
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 65,
+          "text": "拿到 Response 後，**`response.status()`** 交回可 Copy 的 StatusCode；`is_success()` 判2xx，`as_u16()` 取得數字。**`response.url()`** 借出最終 Url。先把這兩份資料保存，再決定讀不讀 body，因為 **`response.text()`** 會接手 Response，讀完整內容並交回 `Result<String, reqwest::Error>`。"
+        },
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 69,
+          "text": "**固定 reqwest 0.13.5 的 blocking send 與 text 各自套用等待期限**，不是兩階段共用同一份10秒預算。因此不能把這份工具宣稱為整個檢查最多10秒。下一節 async client 的總期限契約另行說明。"
+        }
+      ],
+      "q1": "builder保存規則，send取得response，text讀完整body。",
+      "q2_mechanism": {
+        "answer": "getsharedclient接手Url；statusCopy/urlowned先保存，text接手Response。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "保留結果後才選要不要完整body，處理各失敗階段。",
+        "verdict": "已足夠"
+      },
+      "q3": "blockingthread等待不在asyncruntime；send/text各自10秒，UTF8替代且無大小上限。",
+      "q4": "None未讀vsSomeempty已讀；request/bodyerror保status與deadline階段。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "typed error與writer輸出",
+      "first_needed": "14.7 fullerror/render/lib/main前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 85,
+          "text": "render 沿用第10.4節的泛型 Write，輸出報告後也檢查 flush；run 在取得報告、完整輸出成功後才交回 passed。HTTP404的流程是 **Ok(false)**；連線、讀 body 或輸出失敗才是 AppError："
+        },
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 85,
+          "text": "render 沿用第10.4節的泛型 Write，輸出報告後也檢查 flush；run 在取得報告、完整輸出成功後才交回 passed。HTTP404的流程是 **Ok(false)**；連線、讀 body 或輸出失敗才是 AppError："
+        },
+        {
+          "path": "docs/chapters/14-07-lesson.md",
+          "line": 93,
+          "text": "完整 **`src/lib.rs`** 包含兩個 module 宣告、所有函式與四項 unit tests。RefuseFlush 是同檔完整測試 writer：write 先保存 bytes，flush 則交出 PermissionDenied。它用第10.4節的 Write 實作及 io::Error／ErrorKind，驗證「寫入已接受」仍不能掩蓋 flush 失敗。"
+        }
+      ],
+      "q1": "資料報告和操作失敗分型，成功輸出仍需flush。",
+      "q2_mechanism": {
+        "answer": "run只在完整render後交passed，write接受後flush仍可失敗。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "CLI未通過也有報告，操作錯誤stderr/exit有別。",
+        "verdict": "已足夠"
+      },
+      "q3": "statusmethod退出數字不同HTTPstatus；真正網站只選讀非固定測試。",
+      "q4": "四unit/兩CLI與statusLine答案人工資料不發網路。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "async Client共用pool與總期限",
+      "first_needed": "14.8 basicpackage之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-08-lesson.md",
+          "line": 7,
+          "text": "這次使用 **`reqwest::Client`**，不是 blocking module 的 Client。它保存連線設定與可重用的 **connection pool（連線池）**：同一 client 的多次請求有機會重用已建立的連線，不必每筆都重新建 client。這是資源重用的能力，不保證每次都能重用，也不是本節量出的效能結果。"
+        },
+        {
+          "path": "docs/chapters/14-08-lesson.md",
+          "line": 9,
+          "text": "把 builder 工作獨立成普通 **build_client(direct, limit)**；caller 擁有 Client，再用 shared reference 借給 async inspect。inspect 接手這次的 Url，read_body 是 bool，完成後交回 owned Inspection。這項分工讓後面的本地測試能重用同一 client 與明確的期限。"
+        },
+        {
+          "path": "docs/chapters/14-08-lesson.md",
+          "line": 19,
+          "text": "普通 `client.get(url)` 建立 RequestBuilder。**`.send()`** 交回一份 Output 為 `Result<Response, reqwest::Error>` 的 future；`.send().await` 才取得這份結果。**`response.text()`** 接手 Response，交回一份 Output 為 `Result<String, reqwest::Error>` 的 future，再 await 取得完整文字。"
+        },
+        {
+          "path": "docs/chapters/14-08-lesson.md",
+          "line": 25,
+          "text": "這份 async Client 的 **`.timeout(limit)` 是同一請求的總期限**：涵蓋連線到完整 body，redirect 或拿到 headers 不會重新給一次預算。若收到 headers 前逾時是 Request；已得到 status、讀 body 才失敗則是 Body。這與上一節 blocking send／text 各自等待的介面契約不同。"
+        }
+      ],
+      "q1": "client保存重用設定，singleinspect借用client接手Url。",
+      "q2_mechanism": {
+        "answer": "send普通factorycall準備後await；textFuture接手response；同請求10秒含redirectbody。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "保相同資料政策但允許等待時推進其他工作，後fixture可共client。",
+        "verdict": "已足夠"
+      },
+      "q3": "單一工作非批次併發；pool可重用非速度保證/每次必重用。",
+      "q4": "statusCopy/finalURLowned在text前保存，Request與Body兩層deadline。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "elapsed範圍與ownedJSON",
+      "first_needed": "14.8 basicmodel/reply之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-08-lesson.md",
+          "line": 27,
+          "text": "## elapsed_ms 從哪裡開始量？"
+        },
+        {
+          "path": "docs/chapters/14-08-lesson.md",
+          "line": 91,
+          "text": "接著增加不同的資料需求：body 應是 `{\"title\":\"筆記\",\"revision\":3}`，要取得能獨立保存的 PageRecord。第10.7節已教 Serde／Deserialize／from_str，現在把它們接到已取得的 HTTP 報告；不因 HTTP200就假定 revision 必定是 i32。"
+        },
+        {
+          "path": "docs/chapters/14-08-lesson.md",
+          "line": 95,
+          "text": "**ReplyError** 保留三個階段："
+        },
+        {
+          "path": "docs/chapters/14-08-lesson.md",
+          "line": 103,
+          "text": "**decode_page(&inspection)** 先按這個順序檢查。`serde_json::from_str::<PageRecord>(text.as_str())` 借用文字並回傳 `Result<PageRecord, serde_json::Error>`；錯誤有 Debug／Display。成功結果的欄位全 owned，沒有把 title 借在 Inspection 裡，原報告結束後 PageRecord 仍可使用。"
+        }
+      ],
+      "q1": "elapsedu128毫秒，JSONPageRecordownedtitle+revision。",
+      "q2_mechanism": {
+        "answer": "stdInstantGET前→報告前；HTTP先拒→Nonebody拒→Serde檢schema。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "報告之外還需可獨立保存的模型，HTTP成功不足證資料有效。",
+        "verdict": "已足夠"
+      },
+      "q3": "不含parse/build/render，人工12非網路量測；str3不自轉i32，denyunknown。",
+      "q4": "內scopeInspection結束後PageRecord可用；三失敗順序和solution全inline。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "axum handler與route",
+      "first_needed": "14.9 handler最小片段前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 5,
+          "text": "## handler 把資料變成 Response"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 9,
+          "text": "**`axum::response::IntoResponse`** 是把資料轉成 axum Response 的 trait，method **`into_response(self)`** 接手資料、交回 Response。這次 `(StatusCode::OK, \"Rust 本機服務\")` 是狀態與文字 body 的 tuple；這個 tuple 已提供 IntoResponse 實作，不用手組HTTP bytes。StatusCode::OK是200，字串成為文字內容。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 15,
+          "text": "**`Router`** 保存路徑對應。`Router::new()` 建空路由表，`.route(\"/ok\", get(welcome))` 接手並交回 router；`axum::routing::get` 把 GET 請求交給 welcome。此處傳函式本身，不寫 welcome() 先建立一次工作。這些設定尚未開始接收網路。"
+        }
+      ],
+      "q1": "handler回response，trait把tuple狀態文字轉成response。",
+      "q2_mechanism": {
+        "answer": "into_response接手tuple，route/get存函式不是先callwelcome。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "測試要真正HTTP而非只人工報告。",
+        "verdict": "已足夠"
+      },
+      "q3": "這時只是設定尚未接網路；OK=200/文字body明指。",
+      "q4": "minimal/ok實際發GET再stopjoin兩行有限結束。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "loopback live listener與IntoFuture",
+      "first_needed": "14.9 minimalprogram前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 19,
+          "text": "**loopback（回送）** 地址127.0.0.1讓這台機器連回自己，不向外部公開服務。**TCP** 是 Transmission Control Protocol（傳輸控制協定），提供傳輸 bytes 的連線；HTTP/1在本例使用它。**port（通訊埠）** 讓一台機器區分不同網路入口。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 21,
+          "text": "**`tokio::net::TcpListener::bind(\"127.0.0.1:0\").await`** 要求綁定本機入口，0代表由OS選可用port，回傳 `io::Result<TcpListener>`。**`listener.local_addr()`** shared 借用listener，回傳 `io::Result<std::net::SocketAddr>`，可用Display組出這次的URL。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 25,
+          "text": "## IntoFuture：可 await 的值，如何交給 spawn？"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 37,
+          "text": "`.await` 會先做這項轉換。一般Future也有IntoFuture能力，所以14.2的await用法照常成立。**tokio::spawn要求的則是Future**，不替serve設定做這層轉換，因此明寫 **`tokio::spawn(service.into_future())`**；`use std::future::IntoFuture;` 讓method可用。這裡只使用已提供的實作，不需要先學服務內部怎樣保存future。"
+        }
+      ],
+      "q1": "本機地址port0由OS分配，serve設定經IntoFuture轉工作。",
+      "q2_mechanism": {
+        "answer": "同listener持到serve避免空port競爭；await先轉，spawn須手動intoFuture。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "測試自管入口無外部網站不固定port，能擁有有限服務生命。",
+        "verdict": "已足夠"
+      },
+      "q3": "serve不是直接Future；associatedOutput/IntoFuture型別有別；join外task內io兩層。",
+      "q4": "兩livefixtures地址不同；正常與錯誤都先stop/awaitserver再assert。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "Fixture共享狀態與extractor/gate",
+      "first_needed": "14.9 handlers/fullfixture之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 67,
+          "text": "**FixtureState** 由第13.6節的 `Arc<FixtureState>` 共同持有。AtomicUsize hits用第13.8節已教的fetch_add／load與SeqCst；它只計工作handler進入次數，不能代替join完成證據。gates是Mutex保護的 `HashMap<usize, mpsc::Receiver<()>>`，entered送端則回報哪個held請求已進入。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 73,
+          "text": "axum的 **`State<T>`** 是取出route所提供shared state的 **extractor（資料擷取器）**；本例handler接收 `State<Arc<FixtureState>>`，`.0`取得裡面的Arc，沿用第11.10節tuple struct取欄位方式。Router的 **`.with_state(state)`** 提供這份state，後續handler取得的Arc共同指向同一資料，不複製整個FixtureState。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 75,
+          "text": "**`Path<usize>`** 則把路徑參數取成usize；`/held/{input}`的 `{input}` 對應 `path.0`。路徑無法解成要求的型別時，framework不會把一個無效usize交給handler。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 89,
+          "text": "**`Redirect::temporary(path)`** 建立暫時重新導向的回應資料，本版轉成307回應，交給client依位置繼續。固定handlers的完整片段："
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 95,
+          "text": "held先在短guard範圍內 **remove gate**，把owned接收端取出，離開block便解鎖。之後await entered.send與gate.recv時沒有持有MutexGuard，沿用14.6的Send邊界。gate不存在回404；controller收端已結束回503；release送Some(())回200；所有放行送端結束、recv為None則回503與「gate 已關閉」。"
+        }
+      ],
+      "q1": "Arcsharedhits/gates，State/Path取router資料與usize路徑。",
+      "q2_mechanism": {
+        "answer": "短guardremoveownedgate後await通知與release；原子hits只是進入計數。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "要指定哪請求進入和何時放行，保handler Send且不持鎖等網路。",
+        "verdict": "已足夠"
+      },
+      "q3": "ready不計hits，entered未等headers；gate缺404/closed503/正常200。",
+      "q4": "redirect兩hits/loop六，兩gate先回1而0仍等；不靠sleep。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "controls take與shutdown責任",
+      "first_needed": "14.9 controls/shutdown片段前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 111,
+          "text": "這只證明那次ready HTTP完成，不能保證下一個held請求一定會來。因此main與測試用 **`next_started_within(limit)`**：回傳 `Result<Option<usize>, Elapsed>`，Some帶input，None是來源結束，Err是觀察期限到。內部next_started直接recv，由外層timeout限制；等待被丟棄不會因此取消server handler。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 113,
+          "text": "**`release(input)`** mutable借用Fixture，只允許每個送端使用一次。這裡新增 **`Option::take()`**：mutable操作Option，用None取代原值，再把原本的Some或None交回。從Vec位置取出的因此是owned Sender，可在await前結束對該位置的借用；不保留另一份送端使gate無法關閉。越界、重用或收端已結束，都回false。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 121,
+          "text": "**`fixture.shutdown()`** 接手整份Fixture，依序drop尚持有的放行送端、送停止訊息、await server，最後回傳hits或錯誤。已進入held的handler因此可收到None、回503，graceful shutdown才有辦法收妥它；只通知server、卻留下永不放行的gate，不能保證能結束。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 123,
+          "text": "**finish_client(handle)** 則只處理client task：abort後await，交回實際結果。已完成的client仍可能保留正常Output；尚未完成才取消。它不持有Fixture，不能替caller關閉server或回復hits。"
+        }
+      ],
+      "q1": "Fixture持每gate送端與serverhandle，caller要負責shutdown。",
+      "q2_mechanism": {
+        "answer": "take以None換出ownedSender一次；drop未用tx→stop→awaitserver；clientabortawait另算。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "通知未來可能永不到需出口，且handlergate先能結束server才可graceful。",
+        "verdict": "已足夠"
+      },
+      "q3": "有限觀察Err不取消handler；client取消不回hits、不拿走server把手。",
+      "q4": "main各失敗路徑先收client/server；closedgate得HTTP503正常Inspection。",
+      "verdict": "已足夠"
+    },
+    {
+      "concept": "paused HTTP期限/缺entered與測試closure",
+      "first_needed": "14.9 timeout/absent/cancel/tests之前",
+      "verbatim_evidence": [
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 207,
+          "text": "**`tokio::time::pause()`** 在current_thread測試中暫停Tokio時鐘；**`resume()`** 恢復它跟隨真實時間。兩者不帶參數，回unit；pause要求當時尚未暫停，resume要求已暫停。先收到held entered，確定尚無headers，再pause、等待client自己的10秒總期限；得到結果後先resume，最後shutdown，再斷言。"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 221,
+          "text": "## 沒有entered，也要有觀察出口"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 41,
+          "text": "## 最小完整程式：真正回200，再停止服務"
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 280,
+          "text": "測試依用途分成不同檔案；每次明選一個test target。名字filter只篩執行，不能讓同一檔的其餘程式消失。現在全部source與答案都已提供，再檢查所有target："
+        }
+      ],
+      "q1": "真網路前置與虛擬timer分階段證明。",
+      "q2_mechanism": {
+        "answer": "先ready/entered再pause，requestdeadline出結果→resume→shutdown；缺entered先finished確認原錯。",
+        "verdict": "已足夠"
+      },
+      "q2_need": {
+        "answer": "重現Request timeout、無通知出口、取消與收尾，不吞原錯。",
+        "verdict": "已足夠"
+      },
+      "q3": "不宣稱Bodytimeout或elapsed虛擬10秒；filter不隱去同檔未教source。",
+      "q4": "七testtargets全inline，request/gates/absent/cancel/shutdown/CLI與解答各有限收尾。",
+      "verdict": "已足夠"
+    }
+  ],
+  "findings": [
+    {
+      "id": "C14-01",
+      "classification": "必要",
+      "category": "增加理解負擔",
+      "position": "docs/chapters/14-05-lesson.md:9；在:52完整timing_outcomes之前",
+      "title": "Duration首次by-value重用前，補明這個標準型別的Copy契約",
+      "evidence": [
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 9,
+          "text": "標準庫 **`std::time::Duration`** 表示時間長度；`Duration::from_secs(1)` 建立1秒，`Duration::from_millis(20)` 建立20毫秒，1秒等於1000毫秒。`duration.as_millis()` 回傳總毫秒數，供本例顯示，會捨去不足1毫秒的部分。"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 43,
+          "text": "**`tokio::time::timeout(limit, work)`** 接手本例的一份 future，建立帶期限的等待；呼叫時就記下 deadline，緊接著 await 取得 **`Result<T, Elapsed>`**。T 是原工作 Output，Elapsed 是 Tokio 的逾時錯誤，也能用 Display 顯示。"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 52,
+          "text": "--8<-- \"examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs\""
+        },
+        {
+          "path": "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+          "line": 7,
+          "text": "    let limit = Duration::from_millis(20);"
+        },
+        {
+          "path": "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+          "line": 9,
+          "text": "    match timeout(limit, ready).await {"
+        },
+        {
+          "path": "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+          "line": 14,
+          "text": "    let unavailable = pending::<i32>();"
+        },
+        {
+          "path": "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+          "line": 15,
+          "text": "    match timeout(limit, unavailable).await {"
+        }
+      ],
+      "previous": [
+        {
+          "path": "docs/chapters/06-03-lesson.md",
+          "line": 39,
+          "text": "再回到只有兩個 i32 欄位的摘要。第 3.2 節說過：整數已有 Copy，自訂 struct 不會因欄位都是整數就自動 Copy。"
+        },
+        {
+          "path": "docs/chapters/06-03-lesson.md",
+          "line": 41,
+          "text": "**`Copy`** 允許在原本會 move 的動作中，隱含複製值本身的資訊。對這個數值摘要，`let second = first;` 之後兩份摘要都能使用，不必另外呼叫 clone。這項複製不能由實作者插入另一段任意工作。"
+        },
+        {
+          "path": "docs/chapters/06-03-lesson.md",
+          "line": 57,
+          "text": "second 的數量加一，不會修改 first 的數量。這次保留的是兩份可獨立修改的數字欄位；Copy 的判準是型別的複製契約，不能從實際資料放在 stack 還是 heap 推出。"
+        }
+      ],
+      "first_use": "14.5:52載入的timing_outcomes.rs:9把limit按值交給timeout，:15再次交同一limit；同節two_steps的delay也交兩次sleep。",
+      "reason": "目前Duration段只教時間長度與建構/顯示；先前Copy規則明說應看型別契約，不能從數字欄位/stack推出。讀者若按普通非Copy值追ownership，第一次timeout後會判limit已移走，與下一次使用直接衝突。這是本章當下例子所需，18.8才教不能回填。",
+      "minimal_change": "在14.5 Duration首次段加一句它具備Copy，因此把同一Duration按值交給sleep/timeout後仍可再用原binding；不需任何內部表示/記憶體布局。",
+      "benefit": "讀者能用已教的ownership規則正確追兩次呼叫，不必由可編譯source倒猜型別能力。",
+      "exposure": "此候選在10:22:51.314128UTC自己的progress已記錄；final seal前收到root關於18.8改正回指的同題提示。本判斷的first-use/舊規則證據先已自讀，曝光限制保留。"
+    },
+    {
+      "id": "C14-02",
+      "classification": "可選",
+      "category": "API契約就地可查",
+      "position": "14.3:23/52首次介紹Tokio錯誤型別、14.5:43首次介紹Elapsed",
+      "title": "外部錯誤型別的Debug／Display能力可用短語補齊",
+      "evidence": [
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 23,
+          "text": "**`mpsc::channel::<T>(capacity)`** 建立有界緩衝區，交回 `Sender<T>` 與 `Receiver<T>`；capacity 必須大於0。Sender 可以 clone，共用同一條 channel；Receiver 由一個接收者持有。`sender.send(value).await` 等待空位，成功交回 Ok(())，收端已關閉則交回帶原值的 SendError。`receiver.recv().await` mutable 借用收端：有訊息得到 Some(value)，暫時沒有訊息但仍有送端時繼續等，所有送端結束且緩衝區已空才得到 None。"
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 39,
+          "text": "--8<-- \"examples/ch11-async/stages/tasks-basic/src/lib.rs\""
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 52,
+          "text": "**`handle.await`** 取得 `Result<T, JoinError>`。本例 T 已經是 `Result<i32, WorkError>`，所以有兩層："
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 63,
+          "text": "--8<-- \"examples/ch11-async/stages/tasks-basic/examples/join_handle.rs\""
+        },
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 109,
+          "text": "--8<-- \"examples/ch11-async/tasks/src/lib.rs:collect-one\""
+        },
+        {
+          "path": "examples/ch11-async/stages/tasks-basic/examples/join_handle.rs",
+          "line": 16,
+          "text": "        other => panic!(\"本例應正常回傳金額：{other:?}\"),"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 43,
+          "text": "**`tokio::time::timeout(limit, work)`** 接手本例的一份 future，建立帶期限的等待；呼叫時就記下 deadline，緊接著 await 取得 **`Result<T, Elapsed>`**。T 是原工作 Output，Elapsed 是 Tokio 的逾時錯誤，也能用 Display 顯示。"
+        },
+        {
+          "path": "docs/chapters/14-05-lesson.md",
+          "line": 136,
+          "text": "--8<-- \"examples/ch11-async/stages/timing-clock/tests/clock_and_results.rs\""
+        }
+      ],
+      "previous": [
+        {
+          "path": "docs/chapters/08-01-lesson.md",
+          "line": 69,
+          "text": "| Result 的 `expect(message)` | 交出 Ok 中的值 | panic，包含 message 與 Err 的 Debug 內容 |"
+        },
+        {
+          "path": "docs/chapters/08-05-lesson.md",
+          "line": 121,
+          "text": "**`ToString`** 的 `to_string(&self)` 借讀值，交回owned String。標準函式庫替有Display的型別提供它，不必自己實作ToString。這與 `format!(\"{error}\")` 一樣保存其Display文字，單一值不必再寫格式字串。"
+        },
+        {
+          "path": "docs/chapters/13-05-lesson.md",
+          "line": 85,
+          "text": "下面會用8.1的 expect 檢查已知條件。expect 要求錯誤 E 符合 Debug，以便失敗時產生診斷；標準函式庫的 `SendError<T>` 與 RecvError 都有 Debug，因此這裡可以使用它。"
+        }
+      ],
+      "first_use": "14.3:39的started.send().await.expect使用Tokio SendError Debug；:63的{other:?}使用JoinError Debug，:109 collect_one中的error.to_string使用JoinError Display；14.5:136 clocktests對Elapsed expect要Debug。",
+      "reason": "錯誤的角色/分類與expect的保證已說清，所有source完整；這些只是在已教format/expect上使用外部型別，沒有新的控制流，故不升必要。不過13.5已明說的是stdmpsc錯誤，不能當Tokio同名型別契約。14.7對url/reqwest錯誤已有同款Debug/Display短說，前面也補可省讀者查API或自行猜。",
+      "minimal_change": "Tokio SendError說明補Debug；JoinError首次說明補Debug/Display，Elapsed現有Display改Debug/Display；不用教trait實作內部。",
+      "benefit": "能就地核對expect／格式化／to_string為何可用，保持章內外部型別介紹一致。"
+    },
+    {
+      "id": "C14-03",
+      "classification": "可選",
+      "category": "既有說明提前到首次需要",
+      "position": "14.9:148完整main前；既有能力句目前在:189",
+      "title": "將Client的Send／Sync短說提早到第一次spawn它之前",
+      "evidence": [
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 144,
+          "text": ""
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 146,
+          "text": ""
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 148,
+          "text": "--8<-- \"examples/ch11-async/local-service/src/main.rs\""
+        },
+        {
+          "path": "docs/chapters/14-09-lesson.md",
+          "line": 189,
+          "text": "這次提交/held/0與/held/1。**`client.clone()`** 交出另一個Client值，共用內部連線池與設定，不是重新建另一份獨立pool；Client支援Send／Sync，owned client能移進spawn工作。"
+        },
+        {
+          "path": "examples/ch11-async/local-service/src/main.rs",
+          "line": 12,
+          "text": "    let address = fixture.url(\"/held/0\");"
+        },
+        {
+          "path": "examples/ch11-async/local-service/src/main.rs",
+          "line": 13,
+          "text": "    let request = tokio::spawn(async move {"
+        },
+        {
+          "path": "examples/ch11-async/local-service/src/main.rs",
+          "line": 14,
+          "text": "        let url = parse_http_url(address.as_str())?;"
+        },
+        {
+          "path": "examples/ch11-async/local-service/src/main.rs",
+          "line": 15,
+          "text": "        inspect(&client, url, true).await"
+        },
+        {
+          "path": "examples/ch11-async/local-service/src/main.rs",
+          "line": 16,
+          "text": "    });"
+        }
+      ],
+      "previous": [
+        {
+          "path": "docs/chapters/14-03-lesson.md",
+          "line": 11,
+          "text": "spawn 要在 Tokio runtime 內呼叫。本章仍用 current_thread，所以這些 task 共用該 thread，不能以建立多份 task 就宣稱 parallelism。這個 spawn API 仍要求 future 與 Output 符合 **Send + `'static`**：第13.1節的 Send 允許跨 thread 交付；`'static` bound 表示不攜帶只在短範圍有效的借用，不要求值必須活到程式結束。owned String 可以符合。即使這次選單一 thread，使用的 API 契約也沒有因此免除這兩項限制。"
+        }
+      ],
+      "first_use": "14.9:148 main的tokio::spawn(async move {...inspect(&client...).await})第一次把owned reqwestClient保存在spawn工作；既有ClientSendSync說明在後面的gates tests導讀:189。",
+      "reason": "14.3已說future/Output Sendstatic，main目前可從已完整介紹的API直接讀出控制流，不需探索reqwest/連線池內部，所以分可選。若要讓每項外部能力就地可核，現成短句提早可回答ownedClient如何符合跨等待spawn契約；clone共享pool的額外內容仍留gates處。",
+      "minimal_change": "把既有「Client支援Send／Sync，owned client能移進spawn工作」短句移到完整main前，不增加新功能/新抽象。",
+      "benefit": "讀第一次spawn client時即可對上14.3的契約，不必讀到後面才找到明示。"
+    }
+  ],
+  "positive": [
+    "14.1 independentneedreportAstockunknown3+Bknown80/120=200; sameA/Bthreearrangementsserialwaitvsonepathinterleavevsassumed2resourcesparallel; BdependsAchangeswhichsteppossible; futures/runtime52basicpreviewnotdeepinternals/noactualasyncpretence. Necessarydiagramwaiting-arrangementsnotyetviewed.",
+    "14.2 future7 FutureOutputtype before totals16,asyncfnlazy9/.awaitsyntax11maynot suspend,callargs evaluated/moveintofuture19. Runtime/executor23/currentthread25,Tokio rt+macros only earlypackage27–33 nolib;attribute39 transformsordinarymain/runtimepanicseparate;lazyfull46 beforefirstcommand showsdiscardnoexecution. Asyncblock69/capture71 before76,RPITFutureOutput87/factoryordinaryimmediate89 before94;ResultOutput105 before110. tokioTest121/lifecyclemutableborrowdropvsawait123 beforewholelib132;alllibraryfuncs introduced beforelatepackagefirstcommand142. actualfulltests/CLI/envfrom10.8/12.2 valid;allstage/fullsource/exampleanswersread,noextraAPI. blockcaptureearly/completed bytesidentical,expfuture/falliblecompletedimports knownlib;receiptOutputownedString withcalltimelabelmove. No14.3bodyyet; nootherrole14findings or15+source.",
+    "14.3 task/spawn7 schedulednot synchronouslybody/no completionpromise/currentthreadSendstatic11;Tokiosyncmpsc21–25 exactcapacity>0/asyncsend&recvOptionmutborrow/unitstartedreleasepolicy beforebasiclib39. Handleid/isfinished50 beforefirst63;abortrequestvsawait74 before79,detach88 distinct. JoinSet94/nextwithid96/Id→indexmapremove98 beforecollect109;4fixedcontrolledcompletion1workerr,2panic,3cancel,0value beforewholelib132. Fullrun_demo/tests allknownoperations, directfailurechannelclosed180 OutputnormalErrnotcancel andalltargetsaftercompleteanswer. Nofuturechapterprior.",
+    "14.4 Jobprepare9 noSpawn/fullownershipreleases,controlledJob15 inputindex before18;Scheduler23table IntoIter/jobownedknown9.4+zeroConfig33 beforestate36;tracked39 includescompleteuncollectedvsnotCPUcount,notmemorytotalbound;newfill43 before46,next49 recyclethenfill;fixedtable61 andfig72 maps0/1→recover1/pending2,0staysblocked;startedkeeporiginal76 avoidsNonewaitingdeadlock. Fulloutcomes95 onlyalready14.3 knownmodels/collect;302linelib with3tests,allrun_demo fullbeforecommands,zero/empty/sourcecleanup allknown.",
+    "14.5Durationlength9/stdInstantmonotonic11 beforemeasured30,Tokiosleep13deadlineatcall/notOSblocking/timefeature15nofuturesotherstages. timeout43TwholeOutput+ElapsedDisplay,ownedworkdrop45beforeoutcomes52;pending47nevergivesOutput;Resultnested63 before74,visitspartial85 before90;syncstdsleep101 beforeblocking106 andfixed1.53innerpollfirst=>30msworkcanstillOkunder1ms. pausedtestclock117 TokioInstant119 beforeisolatedclocksource136 only4tests;twoSteps147 before150/complete lib162;whole50vsperstep50 two×30 leaves1vs2；sixcontracttests+3budgetsolution allread/no16pollinternalsneeded.",
+    "14.6 select borrowed W1 vs owned S1/T0/cancellation safety before example; short guard before Send-failing independent fixture; batch model/enumerate/try_recv/abort_all/drain/current_thread-returning proof before complete basic lib/tests; signal feature/listener entered/Unix SIGINT policy before completed controller+main+CLI/answers. Shared basic/final lib individually read added lines and byte-diff verified remaining identical.",
+    "14.7 HTTP URL parts/2xx-vs-response/redirect/client settings/error stages/StatusCode Copy/text ownership/UTF8 policy/blocking per-phase timeout all before complete lib/unit/CLI/format solution. External websites explicitly optional no deterministic-network-test claim.",
+    "14.8 async send factory timing/shared reusable pool/total request deadline/elapsed boundary before basic complete sources; JSON HTTP/body/schema order/owned PageRecord before full reply/lib/tests/answer. Byte-diff checked completed core identical apart from new module/import/bin names.",
+    "14.9 handler IntoResponse/Router/loopback TCP port/live listener/IntoFuture vs Future/2layer server join before minimal program; Atomic/Arc/Mutex prior13 actual read; State/Path/temporary redirect/short gate guard before source; Option take before controls; shutdown gate-close→signal→join; all fixed/gate/timeout/absent-entered/cancel/closed-gate tests and all cleanup branches full inline sequentially read."
+  ],
+  "closure": {
+    "unique_actual_include_files": 108,
+    "full_include_occurrences_per_viewport": 108,
+    "named_regions": 24,
+    "all_full_inline": true,
+    "default_entrypoints": "所有17個package的實際main/lib/examples/tests/module/fixtures都由文內完整include覆蓋；no-lib早期套件沒有隱藏未教library；獨立guard負例manifest/lock/expected全inline。",
+    "excluded": "兩份package README未被正文include、未被編譯載入，不作先備/validation閱讀；未讀root author ledger/freeze結論。"
+  },
+  "visual": {
+    "base_url": "http://127.0.0.1:8102",
+    "first_capture": "2026-10-15T10:27:41.533Z",
+    "last_capture": "2026-10-15T10:28:23.905Z",
+    "extra": [
+      {
+        "name": "desktop",
+        "slug": "14-03-lesson",
+        "file": "examples/ch11-async/tasks/src/lib.rs",
+        "at": "2026-10-15T10:31:30.084Z",
+        "screenshot": "desktop-3-task-complete-real.png"
+      },
+      {
+        "name": "desktop",
+        "slug": "14-05-lesson",
+        "file": "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+        "at": "2026-10-15T10:31:32.571Z",
+        "screenshot": "desktop-5-duration-first-real.png"
+      },
+      {
+        "name": "desktop",
+        "slug": "14-05-lesson",
+        "file": "examples/ch11-async/stages/timing-clock/tests/clock_and_results.rs",
+        "at": "2026-10-15T10:31:32.896Z",
+        "screenshot": "desktop-5-clock-tests-real.png"
+      },
+      {
+        "name": "mobile",
+        "slug": "14-03-lesson",
+        "file": "examples/ch11-async/tasks/src/lib.rs",
+        "at": "2026-10-15T10:31:41.394Z",
+        "screenshot": "mobile-3-task-complete-real.png"
+      },
+      {
+        "name": "mobile",
+        "slug": "14-05-lesson",
+        "file": "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+        "at": "2026-10-15T10:31:43.704Z",
+        "screenshot": "mobile-5-duration-first-real.png"
+      },
+      {
+        "name": "mobile",
+        "slug": "14-05-lesson",
+        "file": "examples/ch11-async/stages/timing-clock/tests/clock_and_results.rs",
+        "at": "2026-10-15T10:31:43.991Z",
+        "screenshot": "mobile-5-clock-tests-real.png"
+      }
+    ],
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "canonical_copy_hashes_match": true,
+    "actual_screenshot_files_personally_viewed": [
+      "desktop-2-answer-fallback.png",
+      "desktop-2-lib-tail.png",
+      "desktop-3-answer.png",
+      "desktop-3-complete-task-tests-fallback.png",
+      "desktop-3-task-complete-real.png",
+      "desktop-4-answer-fallback.png",
+      "desktop-4-bounded-full-tests.png",
+      "desktop-5-budget-test-tail.png",
+      "desktop-5-clock-tests-real.png",
+      "desktop-5-clock-tests.png",
+      "desktop-5-duration-first-fallback.png",
+      "desktop-5-duration-first-real.png",
+      "desktop-6-answer.png",
+      "desktop-6-complete-batch-tests.png",
+      "desktop-6-guard-fixture.png",
+      "desktop-6-signal-main.png",
+      "desktop-7-answer.png",
+      "desktop-7-http-full-tests.png",
+      "desktop-8-answer.png",
+      "desktop-8-async-full-tests.png",
+      "desktop-8-reply-full.png",
+      "desktop-9-absent-entered-tail.png",
+      "desktop-9-answer.png",
+      "desktop-9-fixture-full-tail.png",
+      "desktop-9-gate-test-tail.png",
+      "desktop-9-main-cleanup.png",
+      "desktop-figure-1-0-bottom.png",
+      "desktop-figure-1-0.png",
+      "desktop-figure-4-0.png",
+      "desktop-figure-6-0.png",
+      "desktop-table-3-0.png",
+      "desktop-table-3-1.png",
+      "desktop-table-3-2.png",
+      "desktop-table-4-0.png",
+      "desktop-table-4-1.png",
+      "desktop-table-5-0.png",
+      "desktop-table-7-0.png",
+      "desktop-table-8-0.png",
+      "desktop-table-9-0.png",
+      "desktop-table-9-1.png",
+      "mobile-2-answer-fallback.png",
+      "mobile-2-lib-tail.png",
+      "mobile-3-answer.png",
+      "mobile-3-complete-task-tests-fallback.png",
+      "mobile-3-task-complete-real.png",
+      "mobile-4-answer-fallback.png",
+      "mobile-4-bounded-full-tests.png",
+      "mobile-5-budget-test-tail.png",
+      "mobile-5-clock-tests-real.png",
+      "mobile-5-clock-tests.png",
+      "mobile-5-duration-first-fallback.png",
+      "mobile-5-duration-first-real.png",
+      "mobile-6-answer.png",
+      "mobile-6-complete-batch-tests.png",
+      "mobile-6-guard-fixture.png",
+      "mobile-6-signal-main.png",
+      "mobile-7-answer.png",
+      "mobile-7-http-full-tests.png",
+      "mobile-8-answer.png",
+      "mobile-8-async-full-tests.png",
+      "mobile-8-reply-full.png",
+      "mobile-9-absent-entered-tail.png",
+      "mobile-9-answer.png",
+      "mobile-9-fixture-full-tail.png",
+      "mobile-9-gate-test-tail.png",
+      "mobile-9-main-cleanup.png",
+      "mobile-figure-1-0-bottom.png",
+      "mobile-figure-1-0.png",
+      "mobile-figure-4-0.png",
+      "mobile-figure-6-0.png",
+      "mobile-table-3-0.png",
+      "mobile-table-3-1.png",
+      "mobile-table-3-2.png",
+      "mobile-table-4-0.png",
+      "mobile-table-4-1.png",
+      "mobile-table-5-0.png",
+      "mobile-table-7-0.png",
+      "mobile-table-8-0.png",
+      "mobile-table-9-0.png",
+      "mobile-table-9-1.png"
+    ],
+    "number_personally_viewed": 80,
+    "how": "每張desktop/mobile原圖均組成1670×844 pair以view_image親自看；列出的80原圖全部看過。不是只檢查SVG存在。",
+    "figures": [
+      {
+        "path": "docs/assets/async-v3/waiting-arrangements.svg",
+        "pages": "14.1 desktop/mobile top+bottom",
+        "meaning": "同A庫存3同B200，三框順序/交錯/假設兩資源同時；B仍不替代A，兩資源的同時假設與箭頭非耗時註記皆清楚。",
+        "dimensions": "390×815 desktop /343×717mobile，22native字約19.35mobile；高圖desktop另看bottom，沒有文字裁失。"
+      },
+      {
+        "path": "docs/assets/async-v3/bounded-refill.svg",
+        "pages": "14.4 desktop/mobile",
+        "meaning": "0/1→回1只剩0→fill2成0/2，pending與報告每步對齊；0保留與兩支先後箭頭清楚。",
+        "dimensions": "390×566 /343×498；文字與框完整。"
+      },
+      {
+        "path": "docs/assets/async-v3/borrowed-wait.svg",
+        "pages": "14.6 desktop/mobile",
+        "meaning": "S1持T0／W1只mutable借S1，stop丟W1仍持T0，再release取Value80清空；兩支先後箭頭與四框都清楚。",
+        "dimensions": "390×674 /343×593，mobile可同屏看完整關係。"
+      }
+    ],
+    "tables": "10張表：mobile九張343px fit，14.3三欄分類368px、wrapper375/scroll400，只25px可橫移且各欄意義/多數內容同屏。已親看本表與其他九表，未升新增修改建議。",
+    "folds": "全部九頁details=0，必要完整source/答案都是普通inline；長code各pre橫向捲動，不造成正文/圖寬溢出。",
+    "limitations": "首次capture的五個近似function搜尋fallback到同頁尾或較後同名片段，檔名保留而不當作原標籤精確證據；另以full-file精確DOM定位補拍tasks lib tests、Duration first reuse、clock tests，均親看。TOML最初normalizer只去// marker而誤報8manifest不全；補去# marker後逐頁actualDOM重核108fullincludes全吻合，無內容修稿。"
+  },
+  "version": {
+    "all_123_snapshot_files_stable": true,
+    "metadata_drift": [],
+    "prior_disclosure": "root事前告知14.7/8作者自驗範圍句窄修，未給14已知finding；用10:16:18 current版本snapshot。",
+    "late_exposure": "Duration候選先在自己10:22:51progress形成；全章未seal時root來18.8回指版本提示提到14.5未教Copy，已立即回報曝光。本章必要first-use證據未由那句提示才發現。未讀18B正文。"
+  },
+  "limits": [
+    "不宣稱blind首讀或整書pass：是依已讀實際前綴作continuity審查。",
+    "13只為前提建立作正文/source實讀，未做13visual或替late reviewer宣稱其pass。",
+    "未跑Cargo/test/build/strictsite或執行教材命令；技術可行性由其他角色獨立確認。",
+    "partial preview nav/sidebar可能出現後章標題，未讀其正文或取其能力作前提；80shots內也可能有導覽字樣。",
+    "三個finding皆送root裁定；原initial封存不可被修後結果回寫。"
+  ]
+}

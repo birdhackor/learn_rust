@@ -1,0 +1,21 @@
+{
+  "id": "CL-13-ARRAY-SLICE",
+  "discovery": "獨立讀至15.3時，正文自稱第一次array→slice coercion；回查已封存13.2完整source後補查。非root或作者finding提示。",
+  "original_initial_preserved": "independent-13prefix-initial.json不回寫，這是後續自發查漏。",
+  "classification": "necessary / 增加理解負擔 / 先備依賴與時序",
+  "location": "examples/concurrency-stages/examples/thread_join/main.rs:10，嵌於docs/chapters/13-02-lesson.md:80",
+  "quote": "let local_total = sum(&[1, 2, 3]);",
+  "already_taught": "3.7正文教&i32 slice以&prices[..]／range借出，sum接受&[i32]；11.4教Deref coercion，11.6則只教具體pointer到dyn介面unsizing。",
+  "missing_link": "此處直接借array literal，建立的是array reference，傳入slice參數涉及array→slice coercion；這條轉換直到15.3才明教。13.2未說明，見過相同code不等於規則已教。",
+  "prefix_check": "實讀03-07全頁，rg定位01..13.1 canonical正文與intro-workspace source的array/slice/coercion相關處；未找到array reference→slice的解釋。",
+  "later_quote": "15.3：這裡第一次直接把array reference交給slice介面：當預期型別為&mut [i32]，Rust可將&mut values的array reference轉成借同一份元素的slice reference；shared的&values也可轉成&[i32]。",
+  "benefit": "讀者能以已教語法知道主thread傳給sum的是哪份slice，不必以array與slice相同或任意reference自動轉換自行補規則。",
+  "minimal_fix": "13.2改成先let local_values = [1, 2, 3];再sum(&local_values[..])，沿3.7既有整段slice語法；或在13.2先教array→slice coercion，再調整15.3「第一次」句。前者不引入新概念。",
+  "new_burden": "前者僅多一個局部binding與[..]，不增加先備；總和和thread教學不變。",
+  "hashes": {
+    "docs/chapters/13-02-lesson.md": "10afab4057f565308b0333aaaeadf12fb4c2204255e5524f23baa4820b4d247f",
+    "docs/chapters/15-03-lesson.md": "8dab364a2465746176fc776a154b507efc35ba3c4e0b89b69d9b19a96512f18e",
+    "docs/chapters/03-07-lesson.md": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+    "examples/concurrency-stages/examples/thread_join/main.rs": "dbaa98bfc32bdd2ea759c55e0d135d57ab2874069192bdf90438e3ed98764764"
+  }
+}

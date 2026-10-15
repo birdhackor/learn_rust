@@ -1,0 +1,630 @@
+[
+  {
+    "path": "docs/chapters/01-07-lesson.md",
+    "sha256": "e81574e0e1ba75b2702ad6c25a144c8441d532563dc362cf6d52dc9aedb010be",
+    "read_lines": [
+      {
+        "line": 19,
+        "quote": "第 1.4 節說過，`i32` 名稱中的 32 是表示空間的 bit 數。**bit**（位元）是一個可表示 0 或 1 的單位；**byte**（位元組）由 8 個 bits 組成。因此，一個 `i32` 的表示大小是 32 bits，也就是 **4 bytes**。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/02-06-lesson.md",
+    "sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 2.6 用 module、use 與 pub 組成 library"
+      },
+      {
+        "line": 7,
+        "quote": "第一章區分過 package 與 crate。現在建立的 package 叫 `intro-modules-basic`，資料夾是 `examples/intro-workspace/modules-basic/`。它同時有兩種 crate："
+      },
+      {
+        "line": 14,
+        "quote": "Cargo 會依這兩個檔名辨認它們，不必另外列 target 設定。Rust 程式內的 library 名稱是 `intro_modules_basic`：package 名稱的連字號換成底線，讓它成為 Rust 可使用的名稱。"
+      },
+      {
+        "line": 28,
+        "quote": "預設情況下，module 和裡面的函式不對外公開。`pub` 是公開的意思：`pub mod pricing;` 公開 module，`pub fn subtotal(...)` 則公開其中的函式。公開 module 不會自動公開全部內容，每個要給外面使用的函式仍要加 `pub`。"
+      },
+      {
+        "line": 55,
+        "quote": "Rust 用 `::` 連起名稱層級。例如 `intro_modules_basic::pricing::subtotal` 依序是 library crate、module、函式；它不是檔案路徑，不使用 `/`。"
+      },
+      {
+        "line": 110,
+        "quote": "            └── mod.rs"
+      },
+      {
+        "line": 113,
+        "quote": "在這個範例的 `main.rs` 寫 `mod display;`，可以從同一層的 `display.rs` **或** `display/mod.rs` 載入內容；這兩種是替代路徑，同一個 module 只能選一種。`mod.rs` 是 Rust 仍支援的 module 檔名形式，本題選它，因此建立 `display/mod.rs`，不再建立 `display.rs`。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/02-07-lesson.md",
+    "sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886",
+    "read_lines": [
+      {
+        "line": 9,
+        "quote": "`assert_eq!(左值, 右值)` 檢查兩個值是否相等，失敗時還會列出兩個值，方便找出差異。本章只比較已教的 `i32` 與 `bool`。這些與 `println!` 一樣是帶 `!` 的 macro，現在使用已說明的呼叫形式即可。"
+      },
+      {
+        "line": 27,
+        "quote": "在整個 module 前加 `#[cfg(test)]`，表示只在測試建置時納入它。`cfg` 來自 **configuration**，意指依建置條件選擇程式部分；這次的條件是 `test`，由 Rust 的測試建置啟用。本書透過 `cargo test` 建置它；一般 `cargo run` 不納入這個 module。"
+      },
+      {
+        "line": 85,
+        "quote": "下面是完整的語法比較程式。第一個函式刻意保留 return，因此只有它帶精確的 allow；第二個函式直接使用尾端值。程式中的 `//` 開始一行註解，供人閱讀、不參與執行，這裡用來留下保留寫法的理由："
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/03-02-lesson.md",
+    "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 3.2 ownership 與 move：交出整筆值，或複製一個數字"
+      },
+      {
+        "line": 11,
+        "quote": "**move** 是把值的 ownership 交出去。我們的 Order 不會自動複製整筆值，因此 `let second = first;` 把它交給 `second`，之後不能再經由 `first` 使用這筆訂單。這是值的使用規則，不表示必須在機器上搬動幾個 bytes，也不是只有 heap 資料才會 move。"
+      },
+      {
+        "line": 13,
+        "quote": "`i32` 已具備 **`Copy`** 能力：把它指派給另一個變數時，會複製出另一個獨立數字，原來的變數仍可用。"
+      },
+      {
+        "line": 37,
+        "quote": "## Copy：指定之後，原數字仍可用"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/03-03-lesson.md",
+    "sha256": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 3.3 shared reference 與 dereference：借讀原資料"
+      },
+      {
+        "line": 9,
+        "quote": "`&count` 建立對 count 的借用，結果型別為 `&i32`。**borrowing** 就是建立這種借用的動作。在 expression 裡的 `&` 建立 reference；型別中的 `&i32` 則說明它借用一個 i32，兩者位置與角色不同。"
+      },
+      {
+        "line": 11,
+        "quote": "這種 `&i32`、`&Order` 稱為 **shared reference**。它可與其他 shared borrow 一起讀取；對本章的普通數字欄位，不能透過它修改原資料。借用使用期間，原資料也必須仍有效；第 3.5 節會具體追蹤這個範圍。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/03-04-lesson.md",
+    "sha256": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 3.4 mutable reference：修改借來的資料"
+      },
+      {
+        "line": 3,
+        "quote": "shared reference 能讀訂單，不能經由它把數量加一。現在希望函式完成修改後，呼叫者直接看見同一筆訂單的新數量，仍不必交出整筆值。這需要 mutable reference。"
+      },
+      {
+        "line": 5,
+        "quote": "## &mut 借出修改權限"
+      },
+      {
+        "line": 7,
+        "quote": "**mutable reference** 提供對所借資料的獨占存取。`&mut order` 建立這種借用，型別是 `&mut Order`；原變數必須先宣告為 mutable。當這份借用仍在使用時，不能從其他衝突途徑存取同一資料，第 3.5 節再逐行判斷區間。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/03-05-lesson.md",
+    "sha256": "78535d28170efdde36e18a62911cb9c4779e14bbc3559dccfe876761fe47e776",
+    "read_lines": [
+      {
+        "line": 9,
+        "quote": "**lifetime** 在這裡指 reference 必須保持有效的程式區間，不是幾秒鐘。被借的資料必須在所有使用 reference 的地方仍然有效。編譯器也會檢查這段區間中有沒有衝突存取。"
+      },
+      {
+        "line": 11,
+        "quote": "名稱還看得見，不代表借用一定持續到大括號結束。在下面這類沒有分支的程式裡，可以從 reference 的最後一次使用判斷：後面不再用它，就不必為它繼續保留借用。先看兩份 shared reference："
+      },
+      {
+        "line": 17,
+        "quote": "first、second 都只讀同一個數字，所以可以同時使用。println 是兩者的最後一次使用。後面便能借改，再回到 owner 直接修改："
+      },
+      {
+        "line": 126,
+        "quote": "修正兩個工作：先借讀 count 的 3，再把原數字加成 4；另外從內層區塊把數字 8 保存到外層。第一項可調整最後使用的順序；第二項需要交出值，不能留下指向內層變數的 reference。"
+      },
+      {
+        "line": 142,
+        "quote": "借用規則現在能回答兩個問題：存取是否衝突、reference 使用時原資料是否仍有效。下一節把接手、借讀、借改這三種契約放進 Order 自己的方法。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/03-06-lesson.md",
+    "sha256": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+    "read_lines": [
+      {
+        "line": 3,
+        "quote": "目前 subtotal、set_count 都是獨立函式，第一個參數告訴我們它處理哪一筆訂單。如果希望從訂單寫出 `order.subtotal()`、`order.add_count(1)`，可以把這些操作放進 Order 的 **impl 區塊**。借讀、借改、接手的規則仍然相同。"
+      },
+      {
+        "line": 5,
+        "quote": "## &self 讓 method 借讀呼叫者"
+      },
+      {
+        "line": 7,
+        "quote": "`impl Order { ... }` 為 Order 定義操作。在其中，`Self` 代表這個 Order 型別。第一個參數若是 **self 參數**，這個函式就是 method，可以用 `值.方法名(...)` 呼叫。"
+      },
+      {
+        "line": 9,
+        "quote": "先只需要讀單價與數量：`&self` 是 `self: &Self` 的簡寫，代表借讀呼叫方法的那筆 Order。"
+      },
+      {
+        "line": 15,
+        "quote": "在 `order.subtotal()` 中，order 提供 self 那份借用，不需要再列進括號。方法內的 self 便是 reference；讀欄位時仍可直接用 `self.unit_price`。呼叫完成後，呼叫者保有原訂單。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/03-07-lesson.md",
+    "sha256": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+    "read_lines": [
+      {
+        "line": 17,
+        "quote": "函式只需逐項加總，不需知道呼叫者原本的 array 長度，因此參數改成 `&[i32]`。對這個具體型別使用 `for value in values`，每次取得一份 `&i32`，依 slice 順序借讀一個元素。`*value` 讀出 Copy 的 i32 再加入 total："
+      },
+      {
+        "line": 86,
+        "quote": "對 `&mut [i32]` 使用 for，每次取得的是 `&mut i32`，因此可以經由 `*value` 修改原元素："
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/03-08-lesson.md",
+    "sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+    "read_lines": [
+      {
+        "line": 23,
+        "quote": "用第 3.6 節學過的 associated function 呼叫形式，`String::new()` 建立空文字。`push_str` 是修改方法，接受一段 &str，將它的文字內容追加到末尾，因此接收者要能借改。`as_str` 則借讀 String，取得目前內容的 &str："
+      },
+      {
+        "line": 29,
+        "quote": "greeting 先是空的，追加 `\"Hello, \"` 後再追加 `\"Rust\"`，show 顯示 `Hello, Rust`。`as_str()` 沒有把文字複製成另一份 String；提供視圖的 String 在借用使用期間必須仍然有效。"
+      },
+      {
+        "line": 41,
+        "quote": "push_str 接收 shared reference，並把來源內容追加進 greeting；它不接手 ending 的文字。結果是 `Hello, Rust!`。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/04-01-lesson.md",
+    "sha256": "9487c85aed9cc3682591a88d62aaf046dd06abed9b6927624a606bfd3a3a697f",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 4.1 用 enum 保存一筆資料的不同形態"
+      },
+      {
+        "line": 7,
+        "quote": "**enum** 是列出幾種可能形態的自訂型別，每種形態稱為 **variant**。一個 enum 值在當下只屬於其中一個 variant。struct 描述一筆資料同時有哪些欄位；enum 描述這筆資料是幾種情況中的哪一種。"
+      },
+      {
+        "line": 11,
+        "quote": "| variant | 表示的情況 | 附帶資料 |"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/04-02-lesson.md",
+    "sha256": "5bbb8a9a5406962e325218feb6f35ab4adbaeccea828d6f512bc7ba07562e066",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 4.2 用 match 選分支，涵蓋每種情況"
+      },
+      {
+        "line": 7,
+        "quote": "**pattern**（模式）描述要符合的值或資料形狀。**match** 將一個值依序與各個 pattern 配對，只執行第一個符合的分支；每個 `pattern => expression` 稱為一個 **arm（分支）**。`=>` 左側是要符合的 pattern，右側是選中後執行的工作。"
+      },
+      {
+        "line": 9,
+        "quote": "match 本身是 expression，結果來自被選中 arm 的 expression。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/05-01-lesson.md",
+    "sha256": "25f1b41ae6846b38b0c012775e0e44992eb493b1e957d5453debd4f4baf3378a",
+    "read_lines": [
+      {
+        "line": 9,
+        "quote": "`Holder<T>` 在型別名稱後的角括號內宣告一個型別參數 T，value 欄位採用 T。T 是常用名稱，不是 Rust 特別提供的一個具體型別："
+      },
+      {
+        "line": 19,
+        "quote": "| `Holder<i32>` | i32 | 120 |"
+      },
+      {
+        "line": 22,
+        "quote": "這是兩個不同的具體型別。`Holder<i32>` 建立後，不能在執行時把同一欄位任意改成 bool；泛型保留型別檢查，只讓定義中的型別位置可以共用。"
+      },
+      {
+        "line": 44,
+        "quote": "如果要直接在函式呼叫指定 T，寫 `hold::<i32>(80)`。`::<...>` 俗稱 **turbofish**：這段角括號指定型別參數，後面的普通小括號才提供值參數。"
+      },
+      {
+        "line": 79,
+        "quote": "接著把操作放到型別旁，像第 3.6 節的 Order::new。**`impl<T> Holder<T>`** 中，前面的 `<T>` 宣告這個 impl 要用的型別參數，後面的 `Holder<T>` 才使用它；impl 內的方法也能使用同一個 T。"
+      },
+      {
+        "line": 87,
+        "quote": "`impl<T>` 的宣告不能省掉，只留下 `impl Holder<T>` 然後期待 T 自動存在。這與泛型函式先在名稱後宣告 T，再供參數與回傳型別使用，是同一項先宣告、再使用的安排。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/05-02-lesson.md",
+    "sha256": "40d749408aba8ccf2004dc6b410d5bbe8e1e086983070cf1e13df554bab3ab18",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 5.2 Option 與 Result：分清有值、缺值、成功與失敗"
+      },
+      {
+        "line": 3,
+        "quote": "第 4 章用自訂 Quote 區分缺少報價與已有金額。許多工作只需要「有一個值，或沒有值」這種共同形狀；另一類工作還需要保存失敗原因。標準函式庫分別提供 Option 與 Result，現在用上一節的型別參數讀懂它們。"
+      },
+      {
+        "line": 11,
+        "quote": "這些標準名稱不需下載或自行定義。Rust 的 **prelude**（預先匯入的常用名稱）會自動把一組名稱帶進一般 module；本頁的 Option、Result 與它們的 variant 都在其中。因此可直接寫 Some、None，稍後也能直接寫 Ok、Err，不必像自訂 enum 一樣每次加型別前綴。它們仍然是 variant，不是數字或控制流程關鍵字。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/05-03-lesson.md",
+    "sha256": "27780e39eca8f727f1778633a360f083729e42062cd4fcf47e89be4375aeb9d2",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 5.3 char 與 UTF-8：安全取得一段文字"
+      },
+      {
+        "line": 3,
+        "quote": "第 3.8 節已能建立 String，並透過 &str 借讀整段內容。現在想從 `A中🦀` 只取出「中」。數值 slice 的區間按元素編號；UTF-8 文字的區間則按 byte 位置，還必須保持有效的文字分界。"
+      },
+      {
+        "line": 5,
+        "quote": "## 先分清 byte、scalar 與字形"
+      },
+      {
+        "line": 9,
+        "quote": "**UTF-8** 將一個 scalar 編成 1 到 4 個 bytes。這是文字內容的編碼規則，不是說 Rust 的 char 型別本身占 1 到 4 bytes。**str 的 len() 回傳 UTF-8 的 byte 數量，型別為 usize**，不直接回答有幾個 scalar。"
+      },
+      {
+        "line": 39,
+        "quote": "對 owned String，先用已教的 as_str() 取得 &str，再使用文字方法。例如 `text.as_str().len()` 先借內容，再查 byte 長度；`text.as_str().get(1..4)` 則先借內容，再選區段。借來的文字仍受第 3.5 節規則約束，使用時原資料必須有效，不能同時衝突地修改。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/05-04-lesson.md",
+    "sha256": "4cb07186300bda41c45650b300549d883789665aa2bcd17ddc83cf520e94df1d",
+    "read_lines": [
+      {
+        "line": 9,
+        "quote": "對本節的 i32 元素，存放區在 heap 且連續，由 Vec 管理。**Vec::new()** 建立空 Vec，此刻不預先配置元素空間；可從接收變數的 `Vec<i32>` 註記，或後續加入的值，推導 T。Vec 已由 prelude 提供，不需另外下載或 use。"
+      },
+      {
+        "line": 11,
+        "quote": "**push(value)** 需要修改借用，在末尾加入一個元素，回傳 unit。它以值接收元素，i32 會 Copy；非 Copy 元素的交接留到下一節觀察。**len()** 只需 shared 借用，回傳目前的項數 usize，這裡數的是元素，不是文字 bytes。"
+      },
+      {
+        "line": 17,
+        "quote": "新增三次後，順序為80、120、200，長度是3。values宣告成mut，才能供push借改。"
+      },
+      {
+        "line": 19,
+        "quote": "## as_slice 與 get：借讀其中一項"
+      },
+      {
+        "line": 21,
+        "quote": "**as_slice()** shared 借用 Vec 的整段內容，回傳 &[i32]，讓第3.7節的slice操作可以繼續使用；它不交出Vec的ownership，也不複製元素。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/07-01-lesson.md",
+    "sha256": "e61b02fe9a59f512d953a679fbc6ea016f7631ffda0d859fa21abce9370d720b",
+    "read_lines": [
+      {
+        "line": 47,
+        "quote": "放進第 1.2 節的獨立練習專案 `src/main.rs`，執行 `cargo check`，會得到 **E0106**：輸出的借用要連到哪個輸入，簽名沒有說明。對一般函式，省略的各個 reference 輸入先分別具有自己的 lifetime；這裡有兩個可能來源，不能套用前面的唯一輸入規則。"
+      },
+      {
+        "line": 67,
+        "quote": "`'a` 不會要求兩份 String 同時建立、同時結束；也不會把哪個值延長到另一個值的 scope。編譯器依每次呼叫及後續使用檢查這個共同要求。函式 body 則必須遵守簽名，不能突然交回指向已結束區域資料的 reference。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/07-02-lesson.md",
+    "sha256": "b8935241be3b9415cd7f6a0cf2c59aaf4e2441bc2153d121af6f331959db41fb",
+    "read_lines": [
+      {
+        "line": 98,
+        "quote": "有時希望在型別位置明確標出 lifetime，但不需要替它命名。**placeholder lifetime** 寫成 `'_`，意思是讓 Rust 依省略規則推導這裡的 lifetime；它不是新的具名參數，也不會延長資料。"
+      },
+      {
+        "line": 115,
+        "quote": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example placeholder --locked"
+      },
+      {
+        "line": 126,
+        "quote": "這種關係稱為 **outlives bound**，寫成 `'b: 'a`。冒號左邊的 `'b` 至少與右邊 `'a` 一樣長，也可以更長；不要求嚴格更長。"
+      },
+      {
+        "line": 132,
+        "quote": "Some 分支直接交回 `'a` 的借用；None 分支原本有 `'b` 的借用，因為 `'b: 'a`，也足以支持輸出要求。這裡仍可用一個共同參數寫出類似第 7.1 節的契約；分成兩個名稱，是把「第二來源至少支持第一段所需區間」這項關係明寫出來，不是讓資料活得更久。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/07-03-lesson.md",
+    "sha256": "3e692d3103181c324465281d3533aef8bf46da191ac80218dc7ec89e62ba7d79",
+    "read_lines": [
+      {
+        "line": 7,
+        "quote": "`TextView` 的 text 欄位保存 reference。欄位的來源要求要跟著型別走，所以在型別名稱後宣告 `<'a>`，欄位寫成 `&'a str`："
+      },
+      {
+        "line": 13,
+        "quote": "這與第 5.1 節在 struct 後宣告型別參數的位置相同；這次的參數描述借用有效範圍。`pub struct` 與欄位的 `pub` 各自公開型別和欄位，沿用第 3.1 節的規則，讓 module 外的呼叫者可以建立模型。"
+      },
+      {
+        "line": 15,
+        "quote": "TextView 持有一個 reference 值，**沒有取得被借文字的 ownership**。當程式還要經由模型使用這個欄位時，來源必須有效。將 reference 放進 struct，不會讓原 String 多活一段時間。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/07-04-lesson.md",
+    "sha256": "21a01d6a373aa5db5df05479d23e7b40c0119fcc98116e6f8af3f210b32acc64",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 7.4 method 回傳 reference：分開 receiver 與欄位來源"
+      },
+      {
+        "line": 7,
+        "quote": "第 3.6 節的 **receiver** 就是 method 的 self 參數；`view.text()` 會為 `&self` 借讀 view。現在有三個對象："
+      },
+      {
+        "line": 17,
+        "quote": "若希望輸出直接連到欄位原來源，則明寫 `original(&self) -> &'a str`。這裡的 `'a` 是 TextView 欄位已經宣告的來源參數，不是把 `&self` 固定成 `'a`。"
+      },
+      {
+        "line": 25,
+        "quote": "`&self` 的借用不一定只到函式呼叫結束；若輸出連到它，後面的使用也需要維持這份借用。original 的輸出則連到欄位原來源，不需要為了後續結果繼續借用 view。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/08-01-lesson.md",
+    "sha256": "6b6e05083de08537dfecc183be29d55efea0867fe12f0706d09a926476098df4",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 8.1 Result 與 panic：回報失敗，或停止正常流程"
+      },
+      {
+        "line": 3,
+        "quote": "第 5.2 節已用 Result 保存除數零的失敗。現在要檢查批次件數：**0 到 100 都合法**，負數與超過上限各有不同原因。呼叫者收到幾筆資料，就要逐筆報告，不能因第一筆不合法而略過其餘資料。"
+      },
+      {
+        "line": 11,
+        "quote": "`#[derive(Debug, PartialEq)]` 沿用第 6.2 節：產生檢查用的文字，以及比較 variant 與內容的能力。兩個 variant 中的 i32 都具備這些能力。"
+      },
+      {
+        "line": 132,
+        "quote": "第 6.2 節已比較整份 Option。標準 **`Result<T, E>`** 在 T 與 E **兩者都有 PartialEq** 時，也能比較：Ok 與 Err 不相等；同為 Ok 比成功值，同為 Err 比錯誤值。T 與 E 兩者都有 Debug 時，整份 Result 也能 Debug 顯示。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/08-02-lesson.md",
+    "sha256": "a820550d86c7919bde3602543e4a085c81579815e092ca331c71a117b61d344f",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 8.2 type alias：為既有型別取另一個名字"
+      },
+      {
+        "line": 5,
+        "quote": "## type 宣告的是型別名稱"
+      },
+      {
+        "line": 7,
+        "quote": "**type alias**（型別別名）是既有型別的另一個名稱。`type CountResult = Result<i32, CountError>;` 讓 CountResult 表示右邊那個型別；`type` 宣告型別名稱，不是在執行時建立一份值。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/08-03-lesson.md",
+    "sha256": "3502f84b5de589e26c1c6d6ee64bfc1f7da197b8ca6de40f78924a1580d29a66",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 8.3 Display 與格式化：替錯誤資料定義顯示契約"
+      },
+      {
+        "line": 5,
+        "quote": "## Display 決定 {} 要顯示什麼"
+      },
+      {
+        "line": 11,
+        "quote": "T 有 Display 時，shared reference `&T` 也能用 `{}` 顯示被借值。這是標準函式庫的實作，不會取得被借資料的 ownership；所以稍後可以借讀錯誤原因來形成訊息。"
+      },
+      {
+        "line": 32,
+        "quote": "## write! 寫進給定出口，format! 保存成 String"
+      },
+      {
+        "line": 34,
+        "quote": "**`write!`** 接收「寫入對象、格式字串、插入值」，把文字交給指定對象。對這裡的 Formatter，它交回 fmt::Result；它不固定向終端機輸出，也不自動加換行。"
+      },
+      {
+        "line": 42,
+        "quote": "**`format!`** 使用相同的格式字串規則，產生一份 owned String。它不直接顯示到終端機，也不自動加換行。和 println 一樣，格式化會借讀插入的值；產生的新 String 則可獨立保存。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/08-04-lesson.md",
+    "sha256": "10b3fbb207966ec067ca57a26e4d55d47d906a8e715b1fcb86a44999f5a30d8e",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 8.4 From、Into 與 TryFrom：轉換與驗證件數"
+      },
+      {
+        "line": 19,
+        "quote": "From、Into 與稍後的 TryFrom 都在本專案 edition 2024 的 **prelude** 中，沿用第 5.2 節預先匯入名稱的角色。不需為這些標準 trait 加依賴；範例仍可明寫 `use std::convert::...;`，方便追蹤名稱來源。"
+      },
+      {
+        "line": 47,
+        "quote": "普通 i32 可能是 −1 或 101，轉成 Count 不能保證成功。**`TryFrom<i32>`** 因此要求 `try_from` 以值接收 i32，交回 `Result<Self, Self::Error>`：成功是目的型別，失敗則是這份實作選定的錯誤型別。"
+      },
+      {
+        "line": 126,
+        "quote": "寫 `count_value(value: i32) -> Result<i32, CountError>`：先以 Count::try_from 驗證，再用 i32::from 取回數字。不要重寫0到100的條件，失敗時保留原 CountError。確認0、100、−1、101四個輸入。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/08-05-lesson.md",
+    "sha256": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 8.5 FromStr、AsRef 與 ToOwned：解析文字，或取得另一種表示"
+      },
+      {
+        "line": 119,
+        "quote": "## ToString 與 ToOwned 建立可獨立保存的結果"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/08-06-lesson.md",
+    "sha256": "b6e62b122ad05f778802179ebaabc88c8263a2f51a644ca9469e490344f9a129",
+    "read_lines": [
+      {
+        "line": 22,
+        "quote": "| `Err(error)` | 以 From 轉成目前函式的錯誤型別，將 Err 提早回傳 | 不執行此函式餘下步驟，回到呼叫者 |"
+      },
+      {
+        "line": 24,
+        "quote": "因此使用前要先讀**目前函式的回傳型別**，並確認來源錯誤能轉成它需要的型別。上一節已實作兩份 From：ParseIntError 放進 Integer，CountError 放進 Range；所以這裡能回傳同一種 ParseCountError。"
+      },
+      {
+        "line": 168,
+        "quote": "這裡呼叫parse_count取得的錯誤已是ParseCountError。標準函式庫提供**相同型別到自己的From轉換**，原樣交回值；因此?不需你再寫一份`From<ParseCountError> for ParseCountError`。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/09-02-lesson.md",
+    "sha256": "1f94efb9e804d4ff18de071441b7d0b19368326c497bd284ede0d47a5456ffd0",
+    "read_lines": [
+      {
+        "line": 89,
+        "quote": "## 已有普通函式，可以用 function pointer"
+      },
+      {
+        "line": 91,
+        "quote": "有時工作已經是一個普通函式，不需要重新寫一個會捕捉環境的 closure。**function pointer**（函式指標）是保存可呼叫函式位置的值；型別以小寫 **`fn(i32) -> i32`** 表示，指定輸入與輸出。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/09-04-lesson.md",
+    "sha256": "19526bf5c5f0dd57f1bf6ac6cb090116d9c69fdedbd7a6beb0bd74d1e63bee3a",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 9.4 逐筆取得資料：Iterator、IntoIterator 與 ownership"
+      },
+      {
+        "line": 7,
+        "quote": "## Iterator 的 Item 與 next"
+      },
+      {
+        "line": 13,
+        "quote": "核心 method 是 **`next(&mut self) -> Option<Self::Item>`**：透過 mutable receiver 更新 iterator 狀態；有下一筆就交回 Some 包住的 Item，這次走訪結束則交回 None。沒有額外的輸入參數，也不以數字零當成結束訊號。"
+      },
+      {
+        "line": 21,
+        "quote": "Countdown 的 remaining 保存目前進度。本例讓 main 透過 `count_down` 建立工作，再用 next 推進，不直接修改欄位。`Iterator` 和稍後的 `IntoIterator` 都在 prelude，和第 6.3 節的 Clone 一樣不必另寫 use。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/09-05-lesson.md",
+    "sha256": "256e3a7a8380bee5e863db21b94d89e11578304f1ba8194147b6b12515eea71e",
+    "read_lines": [
+      {
+        "line": 77,
+        "quote": "下圖從 keep_and_scale 收到的 values 開始；這裡已是 `&[i32]`，所以直接呼叫 values.iter()。箭頭是逐筆資料與型別的流向；collect 的推進會帶動前面的工作，不是先建立圖中每一站的完整中間清單。"
+      },
+      {
+        "line": 81,
+        "quote": "標準 `Vec<T>` 當元素有 Debug 時也能 Debug，顯示元素清單；元素有 PartialEq 時，同長度且各位置相等才相等，因此本節能用 `{:?}` 顯示結果、用 assert_eq 比較 `Vec<i32>`。"
+      },
+      {
+        "line": 107,
+        "quote": "## fold 把每筆資料收進一份累計狀態"
+      },
+      {
+        "line": 109,
+        "quote": "如果只需要總和，不需要保存所有轉換結果，可以用 **`fold`**。它接手 iterator、初始值與 `FnMut` callback，按序把「目前累計狀態、這次 Item」交給 callback。callback 交回下一份累計狀態，最後整個 fold 回傳它；空 iterator 則直接回傳初始值。"
+      },
+      {
+        "line": 147,
+        "quote": "完整檔同時保留 parse_all，並檢查全成功與空來源。標準 Result 在成功型別與錯誤型別都有 Debug／PartialEq 時，也能顯示與比較整份結果：同為 Ok 時比較成功內容，同為 Err 時比較錯誤；Ok 與 Err 不相等。這裡的 `Vec<i32>` 已符合本頁的條件，ParseIntError 則已由第 8.5 節介紹："
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/09-06-lesson.md",
+    "sha256": "c9afa16ffac66f6df5a1173b48e3bac422c17d17322e1b2cffabd65a2689f197",
+    "read_lines": [
+      {
+        "line": 5,
+        "quote": "材料依序是 Rust、Python、Rust、空行、教學；要得到 Rust 兩次、Python 與教學各一次。名稱原樣保留，大小寫與前後空白都參與身分判斷。本頁先完成正確計數；固定報表順序由下一節接續。"
+      },
+      {
+        "line": 19,
+        "quote": "報表需要整行名稱，因此接著選 **`str::lines()`**。它借用文字，回傳 `Item = &str` 的 iterator，每筆是原文字中的一行，不會為每行建立 owned String。"
+      },
+      {
+        "line": 21,
+        "quote": "字串 literal 中的 **`\\n`** 表示 LF（Line Feed，換行），**`\\r`** 表示 CR（Carriage Return，回車）。lines 以 LF 或 CRLF（`\\r\\n`）分行，結果不含行尾；最後一個行尾不會額外產生一行，空文字產生零行。單獨 CR 沒有跟著 LF 時仍留在內容中，連續行尾之間的空行則是一份空 `&str`。"
+      },
+      {
+        "line": 104,
+        "quote": "## HashMap 也有三種走訪方式，順序仍沒有保證"
+      }
+    ]
+  }
+]

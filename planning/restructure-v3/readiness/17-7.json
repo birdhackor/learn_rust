@@ -1,0 +1,146 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "17.7"
+  ],
+  "author": "root",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round17-api-cross-references-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-criterion-benchmark.md",
+    "planning/restructure-v3/reviews/technical-early/round17-declarative-macro-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round17-dhat-allocation-profile.md",
+    "planning/restructure-v3/reviews/technical-early/round17-library-and-string-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-loom-miri.md",
+    "planning/restructure-v3/reviews/technical-early/round17-macro-hygiene-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round17-procedural-derive-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round17-property-testing.md",
+    "planning/restructure-v3/reviews/technical-early/round17-public-api-contracts.md",
+    "planning/restructure-v3/reviews/technical-early/round17-root-cross-references-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/17-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/17-07-lesson.md": "82260e42f6632bbed298ad38bfda5d0e762a8c963348bfcf0ce5de45f7030eb0",
+    "examples/ch14-performance/src/lib.rs": "bd0b9932612439aca85ff21ce952749dbf93f89b3c4861bb0bfadc3092c54ee1",
+    "examples/ch14-performance/examples/benchmark_inputs.rs": "52861204c3f12e35789da05ba6f7cd61afb9725fcfb73e1c03062908ab92d042",
+    "examples/ch14-performance/Cargo.toml": "94ca37c793af418c5dec68b48d8d4d162b844d844d663bec9f2c5bd87768b221",
+    "examples/ch14-performance/tests/count_contracts.rs": "afeed4e348a2216faa9c4c451557a1056f566147c0a4466a68e0b3ba4349fc12",
+    "examples/ch14-performance/benches/line_counts.rs": "717586a7b8334b70df5f0b6c8c7056359499142e51a708c42a04e6f023ce1433",
+    "examples/ch14-performance/measurements/run-1.txt": "5be41ff2822d7cd4b52f8fd3b6f9d8d2f464df5bb87805eff4689e4e088f7ba7",
+    "examples/ch14-performance/measurements/run-2.txt": "8604c400edac5ee7e6fa96f3753f2c33c4fc479fc3595a24fb5687865f289141",
+    "examples/ch14-performance/benches/line_setup_solution.rs": "b9fc284363f11187f097dcc06a9f72c5807a049406c0783f1c838061b5024115",
+    "examples/ch14-performance/measurements/exercise.txt": "9a8a46ac63307d7ea49e8b41f1c69d38068c859cd292cdb3f4f0128e1698d86a",
+    "docs/assets/ch14/benchmark-boundary.svg": "868acfb53dffef6f3e5bb43754d0067bbbcad17a9ae8827420cb3a6d4b0f1bea"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 3,
+      "quote": "10.9搜尋工具在區分大小寫的路徑也建立owned判斷複本，讓表示與保存的角色先清楚。現在有一項具體問題：**只需要借讀文字、計算符合行數時，每行先建立複本，會增加多少工作？**"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 5,
+      "quote": "我們要量的是一份工作開始到結束實際經過的時間。執行一次讀到較小數字，還可能受其他程式、排程與當次資料影響。這次用 **benchmark（基準量測）**：固定工作與材料，重複執行，記下量測範圍與結果，才判斷差異。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 11,
+      "quote": "沿用10.9的搜尋片段規則：區分大小寫，非空query，**一行符合就算1，不數出現幾次**。這裡已經有分好的owned行清單，工作只回符合行數；不讀檔、不保存Match、不產生JSON。這是 **microbenchmark（小範圍的基準量測）**，回答純計數成本，沒有涵蓋整份CLI。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 34,
+      "quote": "對String，clone會建立自己的owned文字內容。candidate在該次迴圈結束時收尾，這份複本不需要保存到下一行。借讀方法則沒有這份新String；這是原始碼顯示的額外工作，**時間差仍須量測**，不能只從clone名稱給一個固定倍率。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 42,
+      "quote": "真實筆記可能有不同長度與符合比例。這裡先採可追蹤的**合成材料**：每4行第一行是 `Rust Rust notes`，另3行都是 `Python notes`。index從0開始，`index % 4 == 0`選0、4、8等位置。原文字只含ASCII，query固定Rust。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 62,
+      "quote": "**Criterion** 是在stable Rust可用的benchmark程式庫。本節選版本要求0.8.2，實際解析版本由Cargo.lock固定。它重複呼叫我們提供的工作、收集耗時並分析，沒有替我們決定正確答案或代表輸入。預設量的是工作開始到結束的實際經過時間，排程暫停時仍會流逝；不是只把處理器執行指令的時間加總。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 64,
+      "quote": "依賴只用於測試／bench，放dev-dependencies。關default features，只選 **cargo_bench_support**，取得直接由Cargo執行與文字報告所需的支援；本次不選平行分析、async或圖表功能。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 66,
+      "quote": "Cargo的 **bench target** 是專供量測的可執行程式，預設來源在 `benches/名稱.rs`，和1.3的example target是不同角色。`[[bench]]`列出目標名稱；**`harness = false`**關掉Rust預設runner，讓下面Criterion的macro提供main。line_counts是本節比較，line_setup_solution是末尾練習的完整答案："
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 101,
+      "quote": "先教必要API與兩層callback："
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 112,
+      "quote": "make_workload與兩項正確性assert放在iter外。count_cloned函式**裡面**的candidate建立／contains／收尾都仍在iter內；count_borrowed的完整呼叫也在同一邊界內。iter還包含重複呼叫與少量迴圈成本，不是憑空得到沒有量測負擔的硬體指令時間。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 126,
+      "quote": "Criterion先 **warm-up（暖身）**，重複執行同一工作，讓執行環境先承受這種負載，例如已讀的資料可能留在處理器較近的 **cache（快取）**。cache保存近期使用的資料，讓重複取得相同資料時可能不用再從較遠的記憶體取回；因此本次重用同一清單的結果，不能直接當作每次都初次讀入新檔案的成本。再 **collect samples（收集樣本）**：每份樣本通常包含多次routine呼叫，以整批耗時估每次成本。30份樣本不是只呼叫30次。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 139,
+      "quote": "這幾個設定method接手管理者，再交回新設定，所以能串接。兩個macro也只使用選定的外部介面：**criterion_group!** 的name指定runner函式名，config是剛教的管理者設定，targets列出要收到 `&mut Criterion` 的函式。**criterion_main!** 提供main、處理Cargo交來的選擇，再執行runner；不是要自己補另一個main。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 151,
+      "quote": "新命令 **`cargo bench`**建置並執行bench target。預設bench profile繼承12.1的release，因此有最佳化；本repo仍保留overflow checks。`--bench line_counts`只選這個目標；`--no-run`只編譯，不算已量測："
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 160,
+      "quote": "`Warming up`是暖身；`Collecting 30 samples`是收集30份批次樣本；後面可能另列數十萬次iterations。一次iteration在本實驗是**巡訪完整64或256行並回傳Result**，不是只處理一行。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 162,
+      "quote": "`time: [左 中 右]`中，中心是每次工作的時間估計，左右是該估計的 **confidence interval（信賴區間）** 界線。它根據這批樣本與工具的估計方法表達不確定性，不是最快／中位數／最慢的三次執行。"
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 170,
+      "quote": "下面單位是 **µs（微秒）**，1ms等於1000µs。每格為「中心估計 [區間下界–上界]」，從實跑報告四捨五入到三位小數；一次工作仍是整份清單："
+    },
+    {
+      "section_id": "17.7",
+      "path": "docs/chapters/17-07-lesson.md",
+      "line": 205,
+      "quote": "新的問題是「建立行清單，再計數，最後讓這份臨時清單收尾，整段要多少時間？」這與前面已建立slice的純計數需求不同。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

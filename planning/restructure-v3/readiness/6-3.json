@@ -1,0 +1,82 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "6.3"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round06-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/06-03-lesson.md": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807",
+    "examples/intro-workspace/trait-stages/examples/cloning.rs": "f88172a04c70f704fb0aefefabf7f670219ba9badba2e2415a1b31d05c068f53",
+    "examples/intro-workspace/trait-stages/examples/copying.rs": "8467e40d475365deb3af8633e39314fa3a3e1e49e8ec5c20cb06c6653274734c",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/string_not_copy.rs": "c193600f7afbeb09298fc1ad2100d6af6c8e6638ee5e96d650440a82b16c1467",
+    "examples/intro-workspace/trait-stages/Cargo.toml": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+    "examples/intro-workspace/trait-stages/examples/cloning_answer.rs": "89a4e6e0b47fffd0524d41a0df3b9d1f3d49d9a64a9ad6b9814255306f64423c"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "6.3",
+      "path": "docs/chapters/06-03-lesson.md",
+      "line": 3,
+      "quote": "上一節已能比較兩份摘要，但兩份文字都是各自建立。現在想保留原摘要，再建立一份可修改的摘要。資料若含有 String，普通指定會 move；這次需要一項明確建立新值的操作。"
+    },
+    {
+      "section_id": "6.3",
+      "path": "docs/chapters/06-03-lesson.md",
+      "line": 7,
+      "quote": "**`Clone`** 提供 `.clone()` 方法：借讀原值，交回相同型別的新值，原值仍可使用。標準的 String 已有 Clone；它會複製文字內容，讓新的 String 擁有自己的文字空間。"
+    },
+    {
+      "section_id": "6.3",
+      "path": "docs/chapters/06-03-lesson.md",
+      "line": 15,
+      "quote": "Clone 的行為取決於型別，不能一律理解成「把指向的全部資料都另複製一份」。shared reference 的 Clone 只複製借用資訊，仍借同一份原資料。"
+    },
+    {
+      "section_id": "6.3",
+      "path": "docs/chapters/06-03-lesson.md",
+      "line": 39,
+      "quote": "再回到只有兩個 i32 欄位的摘要。第 3.2 節說過：整數已有 Copy，自訂 struct 不會因欄位都是整數就自動 Copy。"
+    },
+    {
+      "section_id": "6.3",
+      "path": "docs/chapters/06-03-lesson.md",
+      "line": 41,
+      "quote": "**`Copy`** 允許在原本會 move 的動作中，隱含複製值本身的資訊。對這個數值摘要，`let second = first;` 之後兩份摘要都能使用，不必另外呼叫 clone。這項複製不能由實作者插入另一段任意工作。"
+    },
+    {
+      "section_id": "6.3",
+      "path": "docs/chapters/06-03-lesson.md",
+      "line": 61,
+      "quote": "String 管理自己的文字配置；若只把這份管理資訊當作另一個獨立 String 複製，兩份值便會重複負責同一份資源。因此 String 提供能建立獨立文字的 Clone，沒有 Copy。"
+    },
+    {
+      "section_id": "6.3",
+      "path": "docs/chapters/06-03-lesson.md",
+      "line": 69,
+      "quote": "放入獨立練習專案執行 `cargo check`，得到 **E0204**，指出欄位 String 不符合 Copy。將資料的放置位置換掉，不會替它取得這項能力。"
+    },
+    {
+      "section_id": "6.3",
+      "path": "docs/chapters/06-03-lesson.md",
+      "line": 79,
+      "quote": "建立標籤為「訂單A」、金額280的 LabelledSummary。明確複製一份，將副本金額增加20；確認原金額280、副本金額300、標籤文字相同，但整筆摘要不相等，再用 Debug 顯示兩份。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

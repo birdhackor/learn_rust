@@ -1,0 +1,813 @@
+{
+  "review_id": "technical-early-round07-lifetimes",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/07-01-lesson.md",
+    "docs/chapters/07-02-lesson.md",
+    "docs/chapters/07-03-lesson.md",
+    "docs/chapters/07-04-lesson.md"
+  ],
+  "independent_initial": true,
+  "reader_background": "Basic Python plus actual1–6 main prose,including&strCopy from3.8,sharedreference/last-use rules,modules/tests,generics/traits/Clone/Copy. No8/9 or laterdraft prerequisite.",
+  "independence": "No chapter7 authorverification/ledger,continuity,reader,otherreviews or historicalknownissues read before initial seal. Parent supplied scope only.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary or optional technical, first-use, selected-source completeness, lifetime/receiver contract, cross-reference, output/test-count or fixture-code/string issue found.",
+  "method": "Whole-page sequential technical reread and actual complete selected source/helpers/tests/manifests/fixtures/expected plus SVGsource/XML. Static reasoning; not blind first-read or reader experiment.",
+  "execution": {
+    "cargo_rustc_clippy_tests": [],
+    "browser_visual": false,
+    "author_evidence_used_as_own": false,
+    "python_checks": [
+      "hash/snippet marker existence",
+      "exact simple package TOML shapes/no-lib stage/no build scripts",
+      "SVG XML parsing"
+    ]
+  },
+  "source_snapshot_at_utc": "2026-10-15T07:58:41.368596+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/assets/lifetimes-v3/borrowed-field.svg": "7a5685938b83980930f20859792f785f453a1cd865709800cc02f124c8479a37",
+    "docs/chapters/07-01-lesson.md": "e61b02fe9a59f512d953a679fbc6ea016f7631ffda0d859fa21abce9370d720b",
+    "docs/chapters/07-02-lesson.md": "b8935241be3b9415cd7f6a0cf2c59aaf4e2441bc2153d121af6f331959db41fb",
+    "docs/chapters/07-03-lesson.md": "3e692d3103181c324465281d3533aef8bf46da191ac80218dc7ec89e62ba7d79",
+    "docs/chapters/07-04-lesson.md": "532b1238409b30864e44957d90cd3416b3e520518faff6cd0c1879aef7c8acc6",
+    "examples/intro-workspace/Cargo.lock": "549d3112349bbc321ffa7c0c5ebdf985532bac5953f3c6a6539ef899f28adfbb",
+    "examples/intro-workspace/Cargo.toml": "e9e3773e89e2d210c65b8c5972cc1dc7d36a2e1cda6cb202c07747fb8b83b058",
+    "examples/intro-workspace/lifetimes/Cargo.toml": "5a6a50a4a6c478dd29dd81e26874b7e7661433be82ce20aea2075dc7ea2fee41",
+    "examples/intro-workspace/lifetimes/complete/Cargo.toml": "460850058139aec355bff8b34439f5ecfb69087c0c36e03579bc706399c6cd14",
+    "examples/intro-workspace/lifetimes/complete/examples/label_answer.rs": "6e1b70c9cbdde3f396e1fff7b2d712f78d4473e6aaf084c72ee1c3ab1dad6f9b",
+    "examples/intro-workspace/lifetimes/complete/examples/two_models.rs": "979396fed52e719043dc1ab3a9bac3d4d20b05a3b6c7c9bfe0948f7ceabc57bf",
+    "examples/intro-workspace/lifetimes/complete/src/lib.rs": "ccf3731415a2638f0a5f43e99cacceb2672cec6be9eb561370ff57189c7786a5",
+    "examples/intro-workspace/lifetimes/complete/src/main.rs": "e45ad3777a9e88ae8417c84cf1766fad0a0437f83e22f6ddf46609df51a38ee8",
+    "examples/intro-workspace/lifetimes/complete/src/source.rs": "33be33df8af539fbca3125c1d16ea1f78e435b003019d88cd01e832e3b2e154c",
+    "examples/intro-workspace/lifetimes/complete/src/views.rs": "696bd8c2ab83a054e5ebc6f7cabf250fa0b4a40ca192a7630220b9cacb76b8b1",
+    "examples/intro-workspace/lifetimes/examples/outlives.rs": "0760550aee771e733bcac9f7eabaceed3d19c0e9a48fefe4d5323d5cfceafef9",
+    "examples/intro-workspace/lifetimes/examples/owned_output.rs": "69357c0c58896c96ad6e60b6c72f5ddb81009e6db5cf144fadbab7cd475706bf",
+    "examples/intro-workspace/lifetimes/examples/placeholder.rs": "cdb0629f661538cab39205d0344f6ab8ded6c6c927b564fe8875055f0debc50f",
+    "examples/intro-workspace/lifetimes/examples/receiver_only/main.rs": "cbd9a8e84c186f77c45acdf82e3f26e395e412d08c2b15a52ff17c900a1ef425",
+    "examples/intro-workspace/lifetimes/examples/receiver_only/views/mod.rs": "70717aeb7d57ea69fed91a90fbaa1ef88d73e6f1a85730b68254b97325517f56",
+    "examples/intro-workspace/lifetimes/examples/shorter_answer.rs": "423ecd42673632c505cc2570df66106d9f0a76a802182aa0e10294df4e96108b",
+    "examples/intro-workspace/lifetimes/examples/single_source.rs": "47bc47e5fad9def368243ea7a9d7138314d00e0b26157fd880c6d35c7886473d",
+    "examples/intro-workspace/lifetimes/examples/source_basic/main.rs": "114cd0a438febb1fbbcc6a85531d5ee0e3b28955340ccd6b6a84670bb6bb4193",
+    "examples/intro-workspace/lifetimes/examples/source_basic/source/mod.rs": "080dd414cf1d1910d068fa2ef7aa2e411619d98ec6836e80c8973f83ed55020e",
+    "examples/intro-workspace/lifetimes/examples/source_complete/main.rs": "9d1e7dbb1b1da512938eb67a4cf6a8ca84a03b2e6ddbe0c94ae9834ac8b82faf",
+    "examples/intro-workspace/lifetimes/examples/source_complete/source/mod.rs": "6b2e37cc42b0d358c25613c092c588c83b7f3888b01709088bfada6f375584ad",
+    "examples/intro-workspace/lifetimes/examples/source_scope.rs": "6e98c465017b19c06de2150e44beae29e7f36b7558ceb3bb376e8ae904f536df",
+    "examples/intro-workspace/lifetimes/examples/view_answer.rs": "0795c049f12ccf05d148b7a8c31a667f6afd0338974f82de985edeb6249b285a",
+    "examples/intro-workspace/lifetimes/examples/view_basic/main.rs": "b16a93d9ce63c8c192faf280467ec663dfb11cd759bd5440316c2e859753a467",
+    "examples/intro-workspace/lifetimes/examples/view_basic/views/mod.rs": "eb7cbb7d702d0a0de3af23e4b7e1d49957df6e9ae0674fcfd4b22fef6512781b",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/ambiguous_output.expected": "62934d1cbb3455c6eb0b88cc241c3cfe346f3c34a05821382550391ab60d4c41",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/ambiguous_output.rs": "7e62a1dfdd999fce950e211fdc46d87a58728537812d18dcb93b0714178fc4a5",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/local_output.expected": "1deedf20ef4f126469fe5dbd9778a4796e5216b353d5054bd45ca611b51c831f",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/local_output.rs": "22287214629e749c4cbd4dd38f1cfd70e29f87f59f5edc2d457a4ac3d6949983",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/method_receiver_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/method_receiver_too_short.rs": "49bc371b79667979fdbae2e272d30e41fa00e7872d0af517b937a76432ea6767",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/missing_outlives.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/missing_outlives.rs": "9a9572fd9e2fa4fa95c99525bd206e46cdafbcf690f9461b0d3f5bf2a5956fed",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/model_source_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/model_source_too_short.rs": "531281e354d480e19d34acc0d84e479adeca0ff5a8bb7271e0199678c4656469",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/source_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/source_too_short.rs": "6511018dc9ab8f84c274305ca905bf81b8e98aa7fe4ba1c0b17fbbb64e002ced",
+    "examples/intro-workspace/lifetimes/src/main.rs": "fbde21ef4ab040075cc369b53ff890cb51abf97da0e27ead5b6e91183518fa08",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/single_source.rs:same",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/single_source.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/ambiguous_output.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/ambiguous_output.expected",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_basic/source/mod.rs:longer",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_basic/main.rs:inside",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_basic/source/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_basic/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/source_too_short.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/source_too_short.expected",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/shorter_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_scope.rs:first-text",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_scope.rs:save-first",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_scope.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/local_output.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/local_output.expected",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/owned_output.rs:copy-text",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/owned_output.rs:source-ends",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/owned_output.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/placeholder.rs:placeholder",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/placeholder.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/outlives.rs:fallback",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/outlives.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/missing_outlives.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/missing_outlives.expected",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_complete/source/mod.rs:first-nonempty",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_complete/source/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/source_complete/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/view_basic/views/mod.rs:text-view",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/view_basic/views/mod.rs:make-view",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/view_basic/views/mod.rs:byte-len",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/view_basic/views/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/view_basic/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/model_source_too_short.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/model_source_too_short.expected",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/view_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/receiver_only/views/mod.rs:reference-methods",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/receiver_only/main.rs:receiver-and-source",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/receiver_only/views/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/examples/receiver_only/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/method_receiver_too_short.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/fixtures/compile-fail/method_receiver_too_short.expected",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/complete/src/views.rs:text-pair",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/complete/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/complete/src/lib.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/complete/src/source.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/complete/src/views.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/complete/src/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/complete/examples/two_models.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "reference": "examples/intro-workspace/lifetimes/complete/examples/label_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "command_review": [
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example single_source --locked"
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example source_basic --locked"
+    },
+    {
+      "document": "docs/chapters/07-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example shorter_answer --locked"
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example source_scope --locked"
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example owned_output --locked"
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example placeholder --locked"
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example outlives --locked"
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example source_complete --locked"
+    },
+    {
+      "document": "docs/chapters/07-02-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example source_complete --locked"
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example view_basic --locked"
+    },
+    {
+      "document": "docs/chapters/07-03-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example view_answer --locked"
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes --example receiver_only --locked"
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes-complete --locked"
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes-complete --lib --locked"
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes-complete --example two_models --locked"
+    },
+    {
+      "document": "docs/chapters/07-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-lifetimes-complete --example label_answer --locked"
+    }
+  ],
+  "selected_target_closure": {
+    "staged_package": {
+      "manifest": "examples/intro-workspace/lifetimes/Cargo.toml",
+      "no_library": true,
+      "no_dependencies": true,
+      "targets": [
+        {
+          "target": "single_source",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/single_source.rs"
+          ]
+        },
+        {
+          "target": "source_basic",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/source_basic/main.rs",
+            "examples/intro-workspace/lifetimes/examples/source_basic/source/mod.rs"
+          ]
+        },
+        {
+          "target": "shorter_answer",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/shorter_answer.rs"
+          ]
+        },
+        {
+          "target": "source_scope",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/source_scope.rs"
+          ]
+        },
+        {
+          "target": "owned_output",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/owned_output.rs"
+          ]
+        },
+        {
+          "target": "placeholder",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/placeholder.rs"
+          ]
+        },
+        {
+          "target": "outlives",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/outlives.rs"
+          ]
+        },
+        {
+          "target": "source_complete",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/source_complete/main.rs",
+            "examples/intro-workspace/lifetimes/examples/source_complete/source/mod.rs"
+          ]
+        },
+        {
+          "target": "view_basic",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/view_basic/main.rs",
+            "examples/intro-workspace/lifetimes/examples/view_basic/views/mod.rs"
+          ]
+        },
+        {
+          "target": "view_answer",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/view_answer.rs"
+          ]
+        },
+        {
+          "target": "receiver_only",
+          "package": "intro-lifetimes",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/examples/receiver_only/main.rs",
+            "examples/intro-workspace/lifetimes/examples/receiver_only/views/mod.rs"
+          ]
+        }
+      ],
+      "test_command_target": "source_complete",
+      "test_functions": 4
+    },
+    "complete_package": {
+      "manifest": "examples/intro-workspace/lifetimes/complete/Cargo.toml",
+      "no_dependencies": true,
+      "normal_library_sources": [
+        "examples/intro-workspace/lifetimes/complete/src/lib.rs",
+        "examples/intro-workspace/lifetimes/complete/src/source.rs",
+        "examples/intro-workspace/lifetimes/complete/src/views.rs"
+      ],
+      "targets": [
+        {
+          "target": "default main",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/complete/src/main.rs",
+            "examples/intro-workspace/lifetimes/complete/src/lib.rs",
+            "examples/intro-workspace/lifetimes/complete/src/source.rs",
+            "examples/intro-workspace/lifetimes/complete/src/views.rs"
+          ]
+        },
+        {
+          "target": "two_models",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/complete/examples/two_models.rs",
+            "examples/intro-workspace/lifetimes/complete/src/lib.rs",
+            "examples/intro-workspace/lifetimes/complete/src/source.rs",
+            "examples/intro-workspace/lifetimes/complete/src/views.rs"
+          ]
+        },
+        {
+          "target": "label_answer",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/complete/examples/label_answer.rs",
+            "examples/intro-workspace/lifetimes/complete/src/lib.rs",
+            "examples/intro-workspace/lifetimes/complete/src/source.rs",
+            "examples/intro-workspace/lifetimes/complete/src/views.rs"
+          ],
+          "library_loaded_even_without_explicit_use": true
+        },
+        {
+          "target": "--lib tests",
+          "loaded_owned_sources": [
+            "examples/intro-workspace/lifetimes/complete/src/lib.rs",
+            "examples/intro-workspace/lifetimes/complete/src/source.rs",
+            "examples/intro-workspace/lifetimes/complete/src/views.rs"
+          ],
+          "test_functions": 6,
+          "breakdown": {
+            "source": 4,
+            "views": 2
+          },
+          "main_and_examples_not_loaded": true
+        }
+      ],
+      "all_library_code_shown_before_first_command": "7.4 manifest105,lib111,source117,views123,main129 before135/136. FullTextPair first introduced88–94 before fullviews."
+    },
+    "inline_and_scope": "Everyselectedhelper andmanifestcompleteinownpage. Earlysource_basic onlysame/longer;source_complete only7.1–7.2functions;view_basic onlyfield/makeview/bytelength;receiver_only hasnoTextPair. No hiddenlaterlib. Foldermain/module use based2.6;packagehyphens/crateunderscores explained7.4:126.",
+    "workspace": "Bothlifetimes andlifetimes/complete areexplicitintroworkspacemembers;rootworkspaceexcludesintro. Latermembers onlymetadata,noprerequisite/sourcebody read."
+  },
+  "concept_evidence": [
+    {
+      "concept": "Lifetime elision and shared-source parameter",
+      "identity": "7.1:7–15 first definesborrowreturnanduniqueinputelision;57–59defineslifetimeparameter,<'a>declaration,&'astr rolebeforeexplicitlonger62.",
+      "need": "7.1:3 wantsreturnoneoftwoborrowedtextswithoutStringcopyandidentifywhichoriginsmustremainvalid.",
+      "operation": "39givesbyte-longer/tiefirstpolicy;65–67jointsourceintervalrequirements,notequallifespansorextendingowners. Bothargumentorders exercisebothbranches.",
+      "evidence_and_limits": "13/2bytes returnoutside inbothorders;ab/CD equal-lengthdistinctcontents demonstratesfirst. Source-too-shortfailsalthoughactualselectedfirstbecausecontractpermitsboth. Actualidentitynotreducedtolengthalone.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Single source versus owned output and placeholder",
+      "identity": "7.2:7–15 first_text tiesonlyfirst/output,ignoressecondwithprior_ pattern;64–70copy_text explicitlycreates/movesnewString;98–106placeholder'_ meanselisionnotsharednamedlifetime.",
+      "need": "Letinnersecondendwhilefirst-backedresultcontinues,orownnewtextifsourcewillend.",
+      "operation": "firstsavedborrowdependsonoutside;ownedresultcontinuesafterinsideandoriginalmutation;local_outputcannotreturnlocalStringborrowevenwith'a.",
+      "evidence_and_limits": "Twosameprintedtextsarenotusedasproofsamecontract;costofnewownedstorageexplained. Two'_ notconflatedwithsame'a;twoinputsstillneedrelationship.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Outlives bound and Option absent versus empty",
+      "identity": "7.2:122Option<&str>/SomeemptyvsNone;124–126'b:'a meansbatleastcoversa,nonstrict andnotownertotallexicalscope.",
+      "need": "Fallbackcanreturnpreferred'a orbackup'b as'a.",
+      "operation": "Somepasses'a;Nonereturns'b becausebound. Beforefallback129 allsyntax/rolesdefined. missing_outlivesfixturepredictsstandardstablelifetimeerror.",
+      "evidence_and_limits": "PresentRust,missingbackup,Someemptylength0 brancheschecked.132sayscouldusecommonparameter;separatenamesonlyexpressrelation,notextenddata.150explicitlyseparatesborrowintervalfromentirebackupscope.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Borrowed struct and make_view",
+      "identity": "7.3:7–15struct<'a>field&'astr plusownershiprole beforefigure17;25TextView<'_>uses7.2placeholder/uniqueinput;35impl<'a>declaration/usebeforebyte_len40.",
+      "need": "AssociateborrowedtextviewwithquerymethodswithoutcreatingownedString.",
+      "operation": "Publictype/fieldvisibilitycorrectlyrefs3.1;fieldshorthand3.6. byte_lensharedborrowsmodel/returnsownedusize,whichmayescapeafterbothowners/modelsend.",
+      "evidence_and_limits": "direct/builtviewshareexternalsourceRusttutorial13. ModelsourceendsE0597. Answerkeeps4onlyafterinnerLabel/sourceend;doesnotescapeinvalidreference.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Receiver elision versus field origin",
+      "identity": "7.4:7–17definesreceiverandtwoindependentborrows;receiverelisiondefaulttext(&self)->&strtiesoutputtoselfborrow;explicitoriginal->&'astrtiesfieldorigin.",
+      "need": "Keeptextresultaftershort-livedmodelwhenexternalsourcepersists.",
+      "operation": "19–27samebodiesself.text,differentcontracts;shared&strCopyalready3.8andrestated27. Explicit'a not&'aself. Originalresultexitsmodel;elidedtextcannot.",
+      "evidence_and_limits": "SuccesssavedRusttutorialwhileviewends;E0597counterexampleblamesview,notsource. Scope is contractualdependency,notinspectionofsamebodyorautomaticextensionofmodel.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Independent field lifetimes and complete library",
+      "identity": "7.4:86–94TextPair<'a,'b>first/secondorigins,impldeclarations,ownedbytelengthandexplicitfirst/second_sourcebeforeselectedlibraryloads.",
+      "need": "Usebothtextsinsidebutkeeponlyfirstwhenmodel/secondsourceend.",
+      "operation": "Separateoutput'a doesnotrequire'b:'a. byte_len13+4=17,secondnote,outerfirstRusttutorial.",
+      "evidence_and_limits": "Library6tests:4sourcecontentrulesincludingdistinctequal-lengthtie,2source/modelescapechecks. Labelanswercontrasts7.3 ownednumbervs7.4borrowedresultrequirements. No closure/iterator/latererrorAPI needed.",
+      "status": "sufficient"
+    }
+  ],
+  "fixtures": [
+    {
+      "source": "examples/intro-workspace/lifetimes/fixtures/compile-fail/ambiguous_output.rs",
+      "expected": "examples/intro-workspace/lifetimes/fixtures/compile-fail/ambiguous_output.expected",
+      "stable_expected": "E0106",
+      "reason": "Two distinct elided inputs with unconstrainedoutput.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/lifetimes/fixtures/compile-fail/source_too_short.rs",
+      "expected": "examples/intro-workspace/lifetimes/fixtures/compile-fail/source_too_short.expected",
+      "stable_expected": "E0597",
+      "reason": "Selected output usedafterinsideStringends;shared'a contractrequiresbothorigins.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/lifetimes/fixtures/compile-fail/local_output.rs",
+      "expected": "examples/intro-workspace/lifetimes/fixtures/compile-fail/local_output.expected",
+      "stable_expected": "E0515",
+      "reason": "ReturnsborrowoflocalownedString.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/lifetimes/fixtures/compile-fail/missing_outlives.rs",
+      "expected": "examples/intro-workspace/lifetimes/fixtures/compile-fail/missing_outlives.expected",
+      "stable_expected": "lifetime may not live long enough",
+      "reason": "Unrelated'b cannotreturnas'a inNonebranch.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/lifetimes/fixtures/compile-fail/model_source_too_short.rs",
+      "expected": "examples/intro-workspace/lifetimes/fixtures/compile-fail/model_source_too_short.expected",
+      "stable_expected": "E0597",
+      "reason": "ModelreferencetoinnerStringusedoutside.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/lifetimes/fixtures/compile-fail/method_receiver_too_short.rs",
+      "expected": "examples/intro-workspace/lifetimes/fixtures/compile-fail/method_receiver_too_short.expected",
+      "stable_expected": "E0597",
+      "reason": "textelidedoutputtiesviewreceiver;viewendsbeforeoutputuse.",
+      "executed": false
+    }
+  ],
+  "figure_check": {
+    "path": "docs/assets/lifetimes-v3/borrowed-field.svg",
+    "source_xml_only": true,
+    "xml_well_formed": true,
+    "correspondence": "TopviewTextView<'a>/text&'astr;bluearrowlabelborrowstexttowardsbottomsourceStringownerRusttutorial. title/desc/alt/prose7.3:15–19allagree;noownedtextcopyorownerextension.",
+    "browser_visual": false
+  },
+  "static_outputs": [
+    {
+      "target": "single_source",
+      "expected": [
+        "借回原文字=Rust"
+      ]
+    },
+    {
+      "target": "source_basic",
+      "expected": [
+        "單一來源=Rust tutorial",
+        "第一段較長=Rust tutorial",
+        "第二段較長=Rust tutorial",
+        "等長選第一段=ab"
+      ]
+    },
+    {
+      "target": "shorter_answer",
+      "expected": [
+        "第一段較長時選到=hi",
+        "第二段較長時選到=hi",
+        "等長選第一段=ab"
+      ]
+    },
+    {
+      "target": "source_scope",
+      "expected": [
+        "兩來源契約，內層使用=Rust tutorial",
+        "只接第一來源，外層使用=Rust tutorial"
+      ]
+    },
+    {
+      "target": "owned_output",
+      "expected": [
+        "來源結束後，owned 結果=Rust",
+        "原資料追加後=Rust tutorial",
+        "獨立結果仍是=Rust"
+      ]
+    },
+    {
+      "target": "placeholder",
+      "expected": [
+        "推導後仍借原文字=Rust"
+      ]
+    },
+    {
+      "target": "outlives",
+      "expected": [
+        "有值選到=Rust",
+        "缺值選到=backup",
+        "有值但為空，長度=0"
+      ]
+    },
+    {
+      "target": "source_complete",
+      "expected": [
+        "same=Rust tutorial",
+        "placeholder=Rust tutorial",
+        "兩來源，內層使用=Rust tutorial",
+        "只接第一來源，外層使用=Rust tutorial",
+        "來源結束後的 owned 結果=Rust",
+        "缺值的替代結果=Rust tutorial",
+        "第一段空，選到=Rust",
+        "第一段非空，選到=Rust",
+        "兩段皆空，長度=0"
+      ]
+    },
+    {
+      "target": "view_basic",
+      "expected": [
+        "直接建立，欄位文字=Rust tutorial",
+        "函式建立，欄位文字=Rust tutorial",
+        "方法查到的 bytes=13",
+        "owner 仍持有文字=Rust tutorial"
+      ]
+    },
+    {
+      "target": "view_answer",
+      "expected": [
+        "內層借讀標籤=Rust",
+        "來源與模型結束後，留下 bytes=4"
+      ]
+    },
+    {
+      "target": "receiver_only",
+      "expected": [
+        "借讀模型時的文字=Rust tutorial",
+        "模型結束後，原來源仍有效=Rust tutorial"
+      ]
+    },
+    {
+      "target": "complete default main",
+      "expected": [
+        "借到較長文字=Python，bytes=6"
+      ]
+    },
+    {
+      "target": "two_models",
+      "expected": [
+        "兩段合計 bytes=17",
+        "第二來源=note",
+        "第二來源與模型結束後，第一來源=Rust tutorial"
+      ]
+    },
+    {
+      "target": "label_answer",
+      "expected": [
+        "Label 結束後，仍借讀原來源=Rust"
+      ]
+    }
+  ],
+  "limits": "14runoutputs,4+6testcounts and6fixturecodes/strings staticallyverifiedagainstactualsource/expected,notfreshRustexecution. SVGsourceisnotvisualvalidation. Scopeonlychapter7.",
+  "sealed_at_utc": "2026-10-15T08:00:24.092194+00:00"
+}

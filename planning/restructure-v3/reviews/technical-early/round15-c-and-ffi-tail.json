@@ -1,0 +1,950 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "15.5",
+    "15.6"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "prior_knowledge": "Basic Python plus actually read published chapters 1–13 and 15.1–15.4. No chapter 14/16 or later source is used to fill prerequisites.",
+    "method": "Whole-page technical reread and actual selected-target source closure; not a blind first-reader experiment."
+  },
+  "evidence": {
+    "scope": [
+      "15.5",
+      "15.6"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/cc-1.8.0/src/lib.rs",
+        "sha256": "f7a6eff54efe2d223b7a338262b9dbdf8ebeeb7acb75fd455b2928dd6c5d221a"
+      },
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch12/c-compile-link.svg",
+        "sha256": "c59f53b87498b661601d7b0a462ca22f387e54753ac178317a489199b2fe1212"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch12/c-string-buffer.svg",
+        "sha256": "da375b3c849136eff7ae922089b1251b1273ef0c47e11a3970367dca02030627"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch12/ffi-owner.svg",
+        "sha256": "e493ca38f3061d00e643a0a216fa79e116288eb5e64f17169c985a184523d300"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/15-05-lesson.md",
+        "sha256": "d7a229d638429477507f1ca2beb0d742c008be9380f724d527f8ec583d15f04a"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/15-06-lesson.md",
+        "sha256": "ed5a9511f205772cacba2f95e4c4b5b25744e59c039fdd4c656e78d090e713a7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-c-basics/checks.c",
+        "sha256": "73dc95771cb060bcc415ad207a496c69a4ab404f4d363510246d46ca9d418f31"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-c-basics/counts.c",
+        "sha256": "dfff9a207dfe0f8510785765e19097729e048475d2e1441fcfa397dff712dbf3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-c-basics/counts.h",
+        "sha256": "81e96a58f431dbc50655d77bff37b6da9e85fea54dc2c86c0c020467aff11807"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-c-basics/fixtures/compile-fail/missing_length.c",
+        "sha256": "b49c22686e6ac8a81c3341d56b4dc0f85869eadc790dd41046af7bb00c23d4a7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-c-basics/fixtures/compile-fail/missing_length.expected",
+        "sha256": "d91b2c63f23b2086de51cb8e8ab0f16200033bbc712a336cba8817e4f5117ef2"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-c-basics/main.c",
+        "sha256": "5ecc59e814841ad90957f3fc2506d02550786897873ed19c6032b70f2845b146"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-c-basics/solution.c",
+        "sha256": "a5e2d7c839c0e1d0b50cfb53073b76aa28e4dc23e4d64978c536fa9ebbbbe018"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/Cargo.toml",
+        "sha256": "c63efb8533165dfd83f7f4d5584634ae0da22a94acb3a707927295626cbd870f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/build.rs",
+        "sha256": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/c/tutorial.c",
+        "sha256": "a812216a2ea7eb6d0f5713680ce045767cbb350e08b352c4a436a80597290309"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/c/tutorial.h",
+        "sha256": "9ecb778f1c0237eae7c97fef9a023eae4b119ec3db994b6f7e6bf3f0e10ecf65"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/examples/borrowed_label.rs",
+        "sha256": "5cf760bbf402b4b30a3a8577b88f6745bd18669759ed2b156e57d549048bf978"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/examples/buffer_count.rs",
+        "sha256": "c33e9257456d3dba2ed73fcd6b65b6de736c3d18381e7d6abc11bac1e166b50e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/examples/ffi_solution.rs",
+        "sha256": "36475b2170016b6225bc33026d9cb8c9fef20d187786974d6c0c48c03f2c1830"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/examples/owned_greeting.rs",
+        "sha256": "44b4c7b801890ce886d1a613530b7bc0928741d2956732477d49d8a8431046ed"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/examples/scalar_call.rs",
+        "sha256": "d257807977f0da4a1eef47c270ba39c1f2ced1988c6c03c1f178eb45f16537dc"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.expected",
+        "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.rs",
+        "sha256": "b600232b35c179592054fd07f6593b453d519de4019605008671067a0be0c1fd"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.expected",
+        "sha256": "9d5bdfd30fd746cb62c0f251e6e257050dcc38aa8d43d29b91952611a583717e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.rs",
+        "sha256": "7c763eba4ddd0febc0422f32dd30c29435284644948b7d877106697be063ff0c"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.expected",
+        "sha256": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.rs",
+        "sha256": "1af081f04d4dc58a98899cb5be98073d321ba7b43f28faff8596c36f47fd3f78"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.expected",
+        "sha256": "d723d4594aee7fcb25e097de1c1ce1f477abd7a95853766dbc50758f588763a9"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.rs",
+        "sha256": "2dd71b93380d1c8bfba0b7f0792a28f040a5a28462752c7e54a6ffed7671ae45"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/src/lib.rs",
+        "sha256": "0739016349249bf5ffe4e008a99a7d8606b572a66e19a12b4faba301c3a5ff2a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/src/sys.rs",
+        "sha256": "30edb686f9a4fe09e3a818c33a3b0657e3f03af64c71bc12a57582dc6b220a91"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/Cargo.toml",
+        "sha256": "ee48a3e0112959f48e322cef931996694101cb2fc7c0ad118028cf6edd8090e6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/build.rs",
+        "sha256": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/c/tutorial.c",
+        "sha256": "e02c3ef0cdeb483fe40bd9539647ae212ef9ac2c85c3da3b505392df0153b086"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/c/tutorial.h",
+        "sha256": "51e614e570131c844c0206ba0236ec2718d9eb19c4246b057cab41dd80ad2748"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/examples/buffer_count.rs",
+        "sha256": "9ed4532cf2676cb4e85ffc5393b3219b34c8c305a6813bdce63abb93ab6588f9"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/src/lib.rs",
+        "sha256": "1fa443c23b6bb4e775e2c137d53086c64ba85121523c69368e5977b3b7bb2967"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/src/sys.rs",
+        "sha256": "c2ef56d88e7755a3365a1cb514e068f00592dbaa622c2327c69f61c5bd03579e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/label/Cargo.toml",
+        "sha256": "390990913a5fa9399e3911ce5c1e270957d3849a749bda6aecfc2db2f5bf48cf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/label/build.rs",
+        "sha256": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/label/c/tutorial.c",
+        "sha256": "3bfb2a4ec2dd99b47f09d73641fd9597aafa21abe9a26049ee902a416e841e91"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/label/c/tutorial.h",
+        "sha256": "74ff187b54ca1c44aded37e982a6e451d960b946b23aa4f05b067d1c2244c656"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/label/examples/borrowed_label.rs",
+        "sha256": "c38155ed41ed163c3823ca68b5f343a447c04c51383a3ed054415316a7e808ed"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/label/src/lib.rs",
+        "sha256": "8af3b0ffc968d219eb50451c1175072457776eaa0de59f1061e218ad8a58d338"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/label/src/sys.rs",
+        "sha256": "fcd6c960c5b60ffc098f25773897562c7bc79e1b55f79530da86cb6f3dde3a9a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/Cargo.toml",
+        "sha256": "15912b97f4ba8fd25089414cd2469e0bc100e880efb7c4988ed922f893d46998"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/build.rs",
+        "sha256": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/c/tutorial.c",
+        "sha256": "be311a6c84a4210da0dc3e3c5f557c129dcfdd336d2814af6318527798578316"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/c/tutorial.h",
+        "sha256": "0602c74a5a83ac110ebf8570fed1cb79905e4986db2b07e67bffc4173a873dc3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/examples/scalar_call.rs",
+        "sha256": "f4deb48291c28a74174a8fa2f45cddafdbcd59b6f817c13f31e1003adcbdf497"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/src/lib.rs",
+        "sha256": "c2a3aea0ef3d6055025273125e93a19c1199741cf54d32910330357ae03f4e0f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/src/sys.rs",
+        "sha256": "3059fe42f3f34b49a86d9e861665a1bcc90b75818b16eaf298412bb0cdd161a3"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch12-c-basics/checks.c",
+      "examples/ch12-c-basics/counts.c",
+      "examples/ch12-c-basics/counts.h",
+      "examples/ch12-c-basics/fixtures/compile-fail/missing_length.c",
+      "examples/ch12-c-basics/fixtures/compile-fail/missing_length.expected",
+      "examples/ch12-c-basics/main.c",
+      "examples/ch12-c-basics/solution.c",
+      "examples/ch12-ffi/Cargo.toml",
+      "examples/ch12-ffi/build.rs",
+      "examples/ch12-ffi/c/tutorial.c",
+      "examples/ch12-ffi/c/tutorial.h",
+      "examples/ch12-ffi/examples/borrowed_label.rs",
+      "examples/ch12-ffi/examples/buffer_count.rs",
+      "examples/ch12-ffi/examples/ffi_solution.rs",
+      "examples/ch12-ffi/examples/owned_greeting.rs",
+      "examples/ch12-ffi/examples/scalar_call.rs",
+      "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.expected",
+      "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.rs",
+      "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.expected",
+      "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.rs",
+      "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.expected",
+      "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.rs",
+      "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.expected",
+      "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.rs",
+      "examples/ch12-ffi/src/lib.rs",
+      "examples/ch12-ffi/src/sys.rs",
+      "examples/ch12-ffi/stages/buffer/Cargo.toml",
+      "examples/ch12-ffi/stages/buffer/build.rs",
+      "examples/ch12-ffi/stages/buffer/c/tutorial.c",
+      "examples/ch12-ffi/stages/buffer/c/tutorial.h",
+      "examples/ch12-ffi/stages/buffer/examples/buffer_count.rs",
+      "examples/ch12-ffi/stages/buffer/src/lib.rs",
+      "examples/ch12-ffi/stages/buffer/src/sys.rs",
+      "examples/ch12-ffi/stages/label/Cargo.toml",
+      "examples/ch12-ffi/stages/label/build.rs",
+      "examples/ch12-ffi/stages/label/c/tutorial.c",
+      "examples/ch12-ffi/stages/label/c/tutorial.h",
+      "examples/ch12-ffi/stages/label/examples/borrowed_label.rs",
+      "examples/ch12-ffi/stages/label/src/lib.rs",
+      "examples/ch12-ffi/stages/label/src/sys.rs",
+      "examples/ch12-ffi/stages/scalar/Cargo.toml",
+      "examples/ch12-ffi/stages/scalar/build.rs",
+      "examples/ch12-ffi/stages/scalar/c/tutorial.c",
+      "examples/ch12-ffi/stages/scalar/c/tutorial.h",
+      "examples/ch12-ffi/stages/scalar/examples/scalar_call.rs",
+      "examples/ch12-ffi/stages/scalar/src/lib.rs",
+      "examples/ch12-ffi/stages/scalar/src/sys.rs"
+    ],
+    "snippet_references": [
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 37,
+        "source": "examples/ch12-c-basics/main.c",
+        "anchor": "local-array"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 55,
+        "source": "examples/ch12-c-basics/counts.c",
+        "anchor": "set-value"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 61,
+        "source": "examples/ch12-c-basics/main.c",
+        "anchor": "pointer"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 84,
+        "source": "examples/ch12-c-basics/counts.c",
+        "anchor": "sum"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 102,
+        "source": "examples/ch12-c-basics/main.c",
+        "anchor": "string-buffer"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 116,
+        "source": "examples/ch12-c-basics/counts.c",
+        "anchor": "buffer"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 137,
+        "source": "examples/ch12-c-basics/main.c",
+        "anchor": "allocated-array"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 169,
+        "source": "examples/ch12-c-basics/counts.h",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 175,
+        "source": "examples/ch12-c-basics/counts.c",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 181,
+        "source": "examples/ch12-c-basics/main.c",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 236,
+        "source": "examples/ch12-c-basics/fixtures/compile-fail/missing_length.c",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 242,
+        "source": "examples/ch12-c-basics/fixtures/compile-fail/missing_length.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 258,
+        "source": "examples/ch12-c-basics/checks.c",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 284,
+        "source": "examples/ch12-c-basics/solution.c",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 18,
+        "source": "examples/ch12-ffi/stages/scalar/c/tutorial.h",
+        "anchor": "version"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 24,
+        "source": "examples/ch12-ffi/stages/scalar/c/tutorial.c",
+        "anchor": "version"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 36,
+        "source": "examples/ch12-ffi/stages/scalar/src/sys.rs",
+        "anchor": "version"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 42,
+        "source": "examples/ch12-ffi/stages/scalar/src/lib.rs",
+        "anchor": "version"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 48,
+        "source": "examples/ch12-ffi/stages/scalar/examples/scalar_call.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 58,
+        "source": "examples/ch12-ffi/stages/scalar/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 77,
+        "source": "examples/ch12-ffi/stages/scalar/build.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 93,
+        "source": "examples/ch12-ffi/stages/scalar/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 99,
+        "source": "examples/ch12-ffi/stages/scalar/build.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 105,
+        "source": "examples/ch12-ffi/stages/scalar/c/tutorial.h",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 111,
+        "source": "examples/ch12-ffi/stages/scalar/c/tutorial.c",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 117,
+        "source": "examples/ch12-ffi/stages/scalar/src/sys.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 123,
+        "source": "examples/ch12-ffi/stages/scalar/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 129,
+        "source": "examples/ch12-ffi/stages/scalar/examples/scalar_call.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 151,
+        "source": "examples/ch12-ffi/stages/buffer/c/tutorial.h",
+        "anchor": "counts"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 157,
+        "source": "examples/ch12-ffi/stages/buffer/c/tutorial.c",
+        "anchor": "counts"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 167,
+        "source": "examples/ch12-ffi/stages/buffer/src/lib.rs",
+        "anchor": "counts-model"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 173,
+        "source": "examples/ch12-ffi/stages/buffer/src/sys.rs",
+        "anchor": "counts"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 179,
+        "source": "examples/ch12-ffi/stages/buffer/src/lib.rs",
+        "anchor": "count-wrapper"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 187,
+        "source": "examples/ch12-ffi/stages/buffer/examples/buffer_count.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 197,
+        "source": "examples/ch12-ffi/stages/buffer/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 203,
+        "source": "examples/ch12-ffi/stages/buffer/build.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 209,
+        "source": "examples/ch12-ffi/stages/buffer/c/tutorial.h",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 215,
+        "source": "examples/ch12-ffi/stages/buffer/c/tutorial.c",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 221,
+        "source": "examples/ch12-ffi/stages/buffer/src/sys.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 227,
+        "source": "examples/ch12-ffi/stages/buffer/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 233,
+        "source": "examples/ch12-ffi/stages/buffer/examples/buffer_count.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 264,
+        "source": "examples/ch12-ffi/stages/label/c/tutorial.c",
+        "anchor": "label"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 270,
+        "source": "examples/ch12-ffi/stages/label/src/sys.rs",
+        "anchor": "label"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 276,
+        "source": "examples/ch12-ffi/stages/label/src/lib.rs",
+        "anchor": "label-wrapper"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 284,
+        "source": "examples/ch12-ffi/stages/label/examples/borrowed_label.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 294,
+        "source": "examples/ch12-ffi/stages/label/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 300,
+        "source": "examples/ch12-ffi/stages/label/build.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 306,
+        "source": "examples/ch12-ffi/stages/label/c/tutorial.h",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 312,
+        "source": "examples/ch12-ffi/stages/label/c/tutorial.c",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 318,
+        "source": "examples/ch12-ffi/stages/label/src/sys.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 324,
+        "source": "examples/ch12-ffi/stages/label/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 330,
+        "source": "examples/ch12-ffi/stages/label/examples/borrowed_label.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 352,
+        "source": "examples/ch12-ffi/c/tutorial.h",
+        "anchor": "greeting"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 358,
+        "source": "examples/ch12-ffi/c/tutorial.c",
+        "anchor": "greeting"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 366,
+        "source": "examples/ch12-ffi/src/sys.rs",
+        "anchor": "greeting"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 387,
+        "source": "examples/ch12-ffi/src/lib.rs",
+        "anchor": "greeting-wrapper"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 397,
+        "source": "examples/ch12-ffi/examples/owned_greeting.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 411,
+        "source": "examples/ch12-ffi/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 417,
+        "source": "examples/ch12-ffi/build.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 423,
+        "source": "examples/ch12-ffi/c/tutorial.h",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 429,
+        "source": "examples/ch12-ffi/c/tutorial.c",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 435,
+        "source": "examples/ch12-ffi/src/sys.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 441,
+        "source": "examples/ch12-ffi/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 462,
+        "source": "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 468,
+        "source": "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 474,
+        "source": "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 480,
+        "source": "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 488,
+        "source": "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 494,
+        "source": "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 500,
+        "source": "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 506,
+        "source": "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.expected",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 533,
+        "source": "examples/ch12-ffi/examples/ffi_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 556,
+        "source": "examples/ch12-ffi/examples/scalar_call.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 562,
+        "source": "examples/ch12-ffi/examples/buffer_count.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 568,
+        "source": "examples/ch12-ffi/examples/borrowed_label.rs",
+        "anchor": null
+      }
+    ],
+    "commands": [
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 211,
+        "command": "cc --version"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 212,
+        "command": "mkdir -p target/ch12-c-basics"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 213,
+        "command": "cc -std=c11 -Wall -Wextra -Werror -pedantic -c examples/ch12-c-basics/counts.c -o target/ch12-c-basics/counts.o"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 214,
+        "command": "cc -std=c11 -Wall -Wextra -Werror -pedantic -c examples/ch12-c-basics/main.c -o target/ch12-c-basics/main.o"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 215,
+        "command": "cc target/ch12-c-basics/main.o target/ch12-c-basics/counts.o -o target/ch12-c-basics/demo"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 216,
+        "command": "./target/ch12-c-basics/demo"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 248,
+        "command": "cc -std=c11 -Wall -Wextra -Werror -pedantic -c examples/ch12-c-basics/fixtures/compile-fail/missing_length.c -o target/ch12-c-basics/missing_length.o"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 264,
+        "command": "cc -std=c11 -Wall -Wextra -Werror -pedantic examples/ch12-c-basics/checks.c examples/ch12-c-basics/counts.c -o target/ch12-c-basics/checks"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 265,
+        "command": "./target/ch12-c-basics/checks"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 288,
+        "command": "cc -std=c11 -Wall -Wextra -Werror -pedantic examples/ch12-c-basics/solution.c examples/ch12-c-basics/counts.c -o target/ch12-c-basics/solution"
+      },
+      {
+        "document": "docs/chapters/15-05-lesson.md",
+        "line": 289,
+        "command": "./target/ch12-c-basics/solution"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 133,
+        "command": "cargo run -p ch15-ffi-scalar --example scalar_call --locked"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 237,
+        "command": "cargo run -p ch15-ffi-buffer --example buffer_count --locked"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 334,
+        "command": "cargo run -p ch15-ffi-label --example borrowed_label --locked"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 445,
+        "command": "cargo run -p ch12-ffi --example owned_greeting --locked"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 512,
+        "command": "cargo test -p ch12-ffi --lib --locked"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 537,
+        "command": "cargo run -p ch12-ffi --example ffi_solution --locked"
+      },
+      {
+        "document": "docs/chapters/15-06-lesson.md",
+        "line": 574,
+        "command": "cargo clippy -p ch12-ffi --all-targets --locked -- -D warnings"
+      }
+    ],
+    "selected_lock_entries": [
+      {
+        "name": "cc",
+        "version": "1.8.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "6651c9ed80effdc7db0ff72512157f901af5e3549e341e24b1dd4887d836d838",
+        "dependencies": [
+          "find-msvc-tools",
+          "jobserver",
+          "libc",
+          "shlex"
+        ]
+      },
+      {
+        "name": "ch12-ffi",
+        "version": "0.1.0",
+        "dependencies": [
+          "cc"
+        ]
+      },
+      {
+        "name": "ch15-ffi-buffer",
+        "version": "0.1.0",
+        "dependencies": [
+          "cc"
+        ]
+      },
+      {
+        "name": "ch15-ffi-label",
+        "version": "0.1.0",
+        "dependencies": [
+          "cc"
+        ]
+      },
+      {
+        "name": "ch15-ffi-scalar",
+        "version": "0.1.0",
+        "dependencies": [
+          "cc"
+        ]
+      }
+    ],
+    "counts": {
+      "owned_files": 47,
+      "hashed_files": 58,
+      "snippet_references": 75,
+      "commands": 18
+    }
+  },
+  "contracts": [
+    {
+      "section": "15.5",
+      "sources": "All seven owned files in examples/ch12-c-basics; two SVG sources.",
+      "assessment": "C11 types, header/prototype roles, copied pointer arguments, fixed-array sizeof versus decay, length contracts, nonempty validity and zero-length NULL policy, NUL versus data zero, malloc initialization and matching free, signed-overflow precondition and exact printf formats agree with source. Header is included only once per translation unit as stated. Main outputs 100 / 240 / 0 / 4 / 5 / 3 / 2 / 240; exercise 240→260; checks cover stated finite cases. Missing-length fixture really supplies one argument to a two-argument prototype."
+    },
+    {
+      "section": "15.6 scalar",
+      "sources": "stages/scalar seven complete files",
+      "assessment": "Normal selected example loads only scalar library, sys declaration, own build.rs and version-only C. ABI/unsafe extern/unsafe call and build dependency are introduced before use; complete source precedes first Cargo command."
+    },
+    {
+      "section": "15.6 buffer",
+      "sources": "stages/buffer seven complete files",
+      "assessment": "repr(C) and two u32 fields match C uint32_t fields; u32::try_from length check prevents truncation. Slices provide valid initialized bytes; C does not read or perform pointer arithmetic for zero length and retains nothing. Max counter and loop values do not overflow uint32_t. Complete source precedes selected command; 1/2, 0/0, owner len 3 match."
+    },
+    {
+      "section": "15.6 borrowed label",
+      "sources": "stages/label seven complete files",
+      "assessment": "CString owns NUL-terminated bytes and rejects input zero; named owner lives through synchronous read-only strcmp call. c_char/c_int and C return 0/1 are used accurately; true/false/internal-zero outputs match. C/Rust/library source is complete before command."
+    },
+    {
+      "section": "15.6 owned greeting",
+      "sources": "Permanent ch12-ffi manifest/build.rs/header/C/sys/lib, five examples, four standalone failure fixtures plus expected files",
+      "assessment": "Factory returns five initialized malloc chars or NULL, never a local array pointer. Greeting has private sole-owner pointer, no Clone/Copy or write/free escape; &self ties CStr borrow to owner. CStr::from_ptr full preconditions and fixed allocation establish a sound read view, and dedicated C free pairs with allocation. ToOwned creates independent Rust data before drop. Normal library tests are behind cfg(test); six tests and usize constants are explained before --lib test. All five example bodies and answer are shown before all-targets Clippy. No subsequent unsafe package API is needed."
+    },
+    {
+      "section": "15.6 build/fixtures",
+      "sources": "Four build scripts/manifests, workspace inheritance and selected Cargo.lock entries, cached cc 1.8.0 src/lib.rs",
+      "assessment": "cc Build API names, mutable chaining, warnings flags, compile failure behavior, archive basename and metadata roles agree with cached pinned API. Each chosen package links its own C once; stage siblings do not jointly link. Main package default build.rs discovery is valid. Four edition-2024 expected failures are supported statically: unsafe extern requirement, E0133, denied improper_ctypes, E0597."
+    }
+  ],
+  "checks": {
+    "performed": [
+      "Read both complete lesson bodies, all 47 owned files and three SVG XML sources.",
+      "Validated all 75 snippet file/anchor references with exact start/end tags.",
+      "Parsed four selected package manifests, root manifest/lock and three SVG XML documents.",
+      "Checked cc 1.8.0 API source and selected lock dependency entries.",
+      "Statically traced all 18 literal shell/Cargo command lines, selected-target closure, outputs, finite test assertions and failure causes."
+    ],
+    "not_performed": [
+      "No Cargo, rustc, C compiler, C executable, Clippy or tests were run.",
+      "No browser rendering, SVG visual inspection or first-reader experiment."
+    ]
+  },
+  "conclusion": "No necessary technical/prerequisite/loaded-source gap and no optional correction found in the measured versions.",
+  "version_notes": [
+    "Initial judgment sealed before reading any author/peer findings for this scope. Root workspace metadata can contain later members, but these are not treated as loaded sibling sources or reader prerequisites."
+  ]
+}

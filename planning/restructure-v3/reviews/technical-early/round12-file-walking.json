@@ -1,0 +1,296 @@
+{
+  "review_id": "round12-file-walking",
+  "scope": [
+    "12.3"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 已實讀1–11、12.1–12.2；另已讀13.1–13.3但不以它們填補12.3前置缺口。未讀12.4。",
+  "independence": "首次全文/source實讀與封存前未讀作者validation/ledger、peer、reader或historical findings；不開author freeze結論作提示。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "全文、13snippet anchors/fullsource、全部9份owned檔、3selected Cargo commands與8項Unix測試靜態核對。",
+    "對照walkdir 2.5.0 cached原始碼確認follow_links預設false、follow_root_links預設true，DirEntry借用／owned path及cached file_type，錯誤path可缺失。",
+    "檢查正常library閉包、三份原始fixture bytes、root與item失敗政策、原生路徑Hash/Borrow/排序、Option新API先教位置與完整答案。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "filesystem_test_run": false,
+    "note": "本波未執行Rust/Cargo或建立symlink／非法Unicode fixture；輸出、tests與跨平台cfg條件為靜態核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:15:54.774778+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "250840780324379bbcc885c72b8ec59eda796d5615beea28e085bcbc5bd9fbab",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/chapters/12-03-lesson.md": "35e30859aa3cfac9752493c2e76843cfcd36c65d674bfa37c79bd8dc0c7ea8b2",
+    "examples/ch09-files/Cargo.toml": "f11d8eabef03672f39cd9051f1f2cfd990ffa8abab0545ad24aedde9c27ba640",
+    "examples/ch09-files/examples/path_identity_solution.rs": "d7914019c49126f1b677be9cd24243ad086a02626dd41f4d222466b1ca346c8b",
+    "examples/ch09-files/fixtures/tree/.hidden/third.txt": "8cdc25affa8f5596abad0771e21fb098e26a1d786de961d96b6510915a386899",
+    "examples/ch09-files/fixtures/tree/first.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/fixtures/tree/nested/second.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/src/lib.rs": "4e2a6babc78a01f9e8f41dbe0492df1ffec6fffabe36ebe4f7d219ccee2acebf",
+    "examples/ch09-files/src/main.rs": "a9f4575f8f7eb4176d6737f61aec648c61c798c71da5d2a508ffd79062f77cab",
+    "examples/ch09-files/src/scan.rs": "e9635e1b8beb72d33a812bbaae8e669a1f4191fed612cc8a4669387f11bc48ae",
+    "examples/ch09-files/tests/scan.rs": "d9deabaf58c0898b4f5b45dcad079bdc8dbe3a7f3f73b52e090e3cac13b1618d",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "external_source_hashes": {
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/walkdir-2.5.0/src/lib.rs": "3f7d673f9e278a71de2cb5f90353a44ea7803a98d49c2f72a68cb26dce8c966a",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/walkdir-2.5.0/src/dent.rs": "ca573f4533370a09851579f5940f7cd9bd121b2f30ec51d29a40afdce984683b",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/walkdir-2.5.0/src/error.rs": "ba58bf6f59d196567435d4b66699a928cc237fc7c8df01dc37ab822509905b7c"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "ch09-files",
+      "version": "0.1.0",
+      "dependencies": [
+        "tempfile",
+        "walkdir"
+      ]
+    },
+    {
+      "name": "same-file",
+      "version": "1.0.6",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502",
+      "dependencies": [
+        "winapi-util"
+      ]
+    },
+    {
+      "name": "tempfile",
+      "version": "3.27.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd",
+      "dependencies": [
+        "fastrand",
+        "getrandom 0.4.3",
+        "once_cell",
+        "rustix",
+        "windows-sys 0.61.2"
+      ]
+    },
+    {
+      "name": "walkdir",
+      "version": "2.5.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b",
+      "dependencies": [
+        "same-file",
+        "winapi-util"
+      ]
+    },
+    {
+      "name": "winapi-util",
+      "version": "0.1.11",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22",
+      "dependencies": [
+        "windows-sys 0.61.2"
+      ]
+    }
+  ],
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 16,
+      "source": "examples/ch09-files/fixtures/tree/first.txt",
+      "tag": null,
+      "included_sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 22,
+      "source": "examples/ch09-files/fixtures/tree/nested/second.txt",
+      "tag": null,
+      "included_sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 28,
+      "source": "examples/ch09-files/fixtures/tree/.hidden/third.txt",
+      "tag": null,
+      "included_sha256": "8cdc25affa8f5596abad0771e21fb098e26a1d786de961d96b6510915a386899",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 78,
+      "source": "examples/ch09-files/src/scan.rs",
+      "tag": "records",
+      "included_sha256": "00ced60e9d76e729f88b7e721888db2ea2c3584741f848d2ba92d91898275cd8",
+      "included_lines": 49
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 84,
+      "source": "examples/ch09-files/src/lib.rs",
+      "tag": null,
+      "included_sha256": "4e2a6babc78a01f9e8f41dbe0492df1ffec6fffabe36ebe4f7d219ccee2acebf",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 90,
+      "source": "examples/ch09-files/src/scan.rs",
+      "tag": "observe",
+      "included_sha256": "5ce2ed78f4cb08a6620205f331143748c59d1c37140331db17002c68f170b21e",
+      "included_lines": 17
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 98,
+      "source": "examples/ch09-files/Cargo.toml",
+      "tag": null,
+      "included_sha256": "f11d8eabef03672f39cd9051f1f2cfd990ffa8abab0545ad24aedde9c27ba640",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 112,
+      "source": "examples/ch09-files/src/scan.rs",
+      "tag": "root",
+      "included_sha256": "4ae2d22087c1f4b11dd764ba0800f569a7139968c4e20e4cd92216e7809fc7ea",
+      "included_lines": 13
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 145,
+      "source": "examples/ch09-files/src/scan.rs",
+      "tag": "scan",
+      "included_sha256": "92c8b7f77f5119d1eb30b9f29c8094ec454eb21578e35e0acc81280545c87ce5",
+      "included_lines": 60
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 153,
+      "source": "examples/ch09-files/src/scan.rs",
+      "tag": null,
+      "included_sha256": "e9635e1b8beb72d33a812bbaae8e669a1f4191fed612cc8a4669387f11bc48ae",
+      "included_lines": 160
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 159,
+      "source": "examples/ch09-files/src/main.rs",
+      "tag": null,
+      "included_sha256": "a9f4575f8f7eb4176d6737f61aec648c61c798c71da5d2a508ffd79062f77cab",
+      "included_lines": 25
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 184,
+      "source": "examples/ch09-files/tests/scan.rs",
+      "tag": null,
+      "included_sha256": "d9deabaf58c0898b4f5b45dcad079bdc8dbe3a7f3f73b52e090e3cac13b1618d",
+      "included_lines": 154
+    },
+    {
+      "chapter": "docs/chapters/12-03-lesson.md",
+      "line": 200,
+      "source": "examples/ch09-files/examples/path_identity_solution.rs",
+      "tag": null,
+      "included_sha256": "d7914019c49126f1b677be9cd24243ad086a02626dd41f4d222466b1ca346c8b",
+      "included_lines": 17
+    }
+  ],
+  "owned_files": [
+    "examples/ch09-files/Cargo.toml",
+    "examples/ch09-files/examples/path_identity_solution.rs",
+    "examples/ch09-files/fixtures/tree/.hidden/third.txt",
+    "examples/ch09-files/fixtures/tree/first.txt",
+    "examples/ch09-files/fixtures/tree/nested/second.txt",
+    "examples/ch09-files/src/lib.rs",
+    "examples/ch09-files/src/main.rs",
+    "examples/ch09-files/src/scan.rs",
+    "examples/ch09-files/tests/scan.rs"
+  ],
+  "fixture_bytes_hex": {
+    "examples/ch09-files/fixtures/tree/.hidden/third.txt": "41424344450a",
+    "examples/ch09-files/fixtures/tree/first.txt": "527573740a",
+    "examples/ch09-files/fixtures/tree/nested/second.txt": "527573740a"
+  },
+  "commands": [
+    "cargo run -p ch09-files --locked",
+    "cargo test -p ch09-files --test scan --locked",
+    "cargo run -p ch09-files --example path_identity_solution --locked"
+  ],
+  "loaded_closures": [
+    {
+      "command": "cargo run -p ch09-files --locked",
+      "owned": [
+        "src/main.rs",
+        "src/lib.rs",
+        "src/scan.rs"
+      ],
+      "dependencies": [
+        "walkdir 2.5.0"
+      ],
+      "notes": "normal library自動載入；main實際讀取三份fixture的metadata，沒有讀contents。"
+    },
+    {
+      "command": "cargo test -p ch09-files --test scan --locked",
+      "owned": [
+        "tests/scan.rs",
+        "src/lib.rs",
+        "src/scan.rs",
+        "src/main.rs（Cargo可建置以供integration test；不執行main）"
+      ],
+      "dependencies": [
+        "walkdir 2.5.0",
+        "tempfile 3.27.0"
+      ],
+      "tests": {
+        "unix": 8,
+        "other_platforms": 5
+      },
+      "notes": "3項#[cfg(unix)]已先教；其餘5項跨平台。沒有future package或未列helper。"
+    },
+    {
+      "command": "cargo run -p ch09-files --example path_identity_solution --locked",
+      "owned": [
+        "examples/path_identity_solution.rs",
+        "src/lib.rs",
+        "src/scan.rs"
+      ],
+      "dependencies": [
+        "walkdir 2.5.0"
+      ],
+      "notes": "答案完整；HashMap owned PathBuf以&Path查詢，沒有以display文字當identity。"
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "docs/chapters/12-03-lesson.md:53",
+      "finding": "symlink_metadata只查最後項目本身；metadata不是lock／原子快照。root symbolic link拒絕，走訪兩開關為false，race與惡意替換界線:115已清楚限制。"
+    },
+    {
+      "source": "docs/chapters/12-03-lesson.md:121",
+      "finding": "DirEntry cached類別與borrowed/owned位置、error.path Option、Option::is_none/map先於scan第一次完整使用，FnOnce／ownership正確。"
+    },
+    {
+      "source": "examples/ch09-files/src/scan.rs:99",
+      "finding": "scan先驗root；collect_entries獨立接受Result iterator，Err保存後繼續，directory/link略過，nonUnicode與observe失敗保留原生PathBuf。排序用原生cmp不宣稱跨平台相同順序。"
+    },
+    {
+      "source": "examples/ch09-files/tests/scan.rs:15",
+      "finding": "中間walk錯誤由受控missing root item產生，後續成功仍處理；測試不依目前使用者讀權限。Unix inner/root symlink與非Unicode各有獨立assert。"
+    },
+    {
+      "source": "docs/chapters/12-03-lesson.md:166",
+      "finding": "fixture實際為Rust\\n兩份各5bytes、ABCDE\\n一份6bytes，hidden包含在走訪中；answer查Some(&5)、issues0對來源。metadata／display／Path equality未冒充內容或磁碟實體身分。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:16:31.901Z"
+}

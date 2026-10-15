@@ -1,6 +1,6 @@
 # A1 工作版
 
-這是第 15.2 節的獨立起始 library，尚未完成掃描。
+這是第 18.2 節的獨立起始 library，尚未完成掃描。
 
 - `src/lib.rs` 宣告 `collection` module。
 - `src/collection.rs` 的 `observe`、`validate_root`、`collect_entries` 是明示的待做位置；root 固定回傳 `NotDirectory`，沒有真的檢查 root。

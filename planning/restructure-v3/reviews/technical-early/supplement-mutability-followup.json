@@ -1,0 +1,43 @@
+{
+  "type": "root-requested one-sentence supplement source followup",
+  "scope": "First JavaScript paragraph adds console.log output role before complete program",
+  "date": "2026-10-15",
+  "attribution": "Optional wording supplied by root after own independent complete supplement initial seal; not own original finding. Initial supplementary judgment/hashes retained.",
+  "before_hash": "b937467f71faa2d06a10eea2b6d2774d4e72d82188ee9e6e646bd2e504e46c88",
+  "current_hash": "585548b715f824905c562c0a240ed5a2408fe8c707a52ca3aa4c22969e2d7b20",
+  "exact_diff": "--- \n+++ \n@@ -34,7 +34,7 @@\n \n JavaScript 的 const 宣告要求初始化，之後不能把該 binding 重新指派成另一個值。若值是 object，const 本身不會禁止修改 object 的屬性。\n \n-下面的 `{ count: 2 }` 建立有 count 屬性的 object。alias 與 order 指到同一個 object；`alias.count += 1` 改的是這個 object 的屬性。\n+下面的 `{ count: 2 }` 建立有 count 屬性的 object。alias 與 order 指到同一個 object；`alias.count += 1` 改的是這個 object 的屬性。 `console.log(...)` 將括號內的值顯示到終端。\n \n ```javascript\n --8<-- \"examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js\"\n",
+  "judgment": "resolved",
+  "source_evidence": "Actual unmodified const_binding.js ends console.log(order.count). In this Node example the value3 is written to ordinary console/stdout for terminal display. Added wording states this output role before first full JS snippet, uses no new helper or different behavior. Earlier independent review actually ran this same unchanged JS file and observed stdout3 newline; that is existing evidence, no rerun here.",
+  "position_before_first_full_js": true,
+  "source_commands_snippet_references_unchanged": true,
+  "unchanged_owned_source_config_files": [
+    "/workspace/learn_rust/examples/intro-workspace/Cargo.lock",
+    "/workspace/learn_rust/examples/intro-workspace/Cargo.toml",
+    "/workspace/learn_rust/examples/intro-workspace/ownership/Cargo.toml",
+    "/workspace/learn_rust/examples/intro-workspace/ownership/examples/mutability_comparison.rs",
+    "/workspace/learn_rust/examples/intro-workspace/ownership/examples/reborrow.rs",
+    "/workspace/learn_rust/examples/intro-workspace/ownership/examples/strings_answer.rs",
+    "/workspace/learn_rust/examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js",
+    "/workspace/learn_rust/examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py",
+    "/workspace/learn_rust/examples/intro-workspace/ownership/src/main.rs"
+  ],
+  "file_hashes": [
+    {
+      "path": "/workspace/learn_rust/docs/supplements/python-javascript-mutability.md",
+      "sha256": "585548b715f824905c562c0a240ed5a2408fe8c707a52ca3aa4c22969e2d7b20"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/supplement-mutability-before-console.md",
+      "sha256": "b937467f71faa2d06a10eea2b6d2774d4e72d82188ee9e6e646bd2e504e46c88"
+    },
+    {
+      "path": "/workspace/learn_rust/examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js",
+      "sha256": "fe4dce7f84e63fcbafb5c06ea5ce00ef59a93675372fe6948185ce6e38269a8a"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/technical-early/supplement-mutability.json",
+      "sha256": "021ddd31011bf463888b3a007822cf5fbf6f8b462a90259681dfa119e88f8517"
+    }
+  ],
+  "execution": "Only local source/diff/hash/position check. No tutorial program, Cargo or browser run; no repo edits. Stop after sealing."
+}

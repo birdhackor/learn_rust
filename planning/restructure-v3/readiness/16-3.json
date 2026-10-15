@@ -1,0 +1,140 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "16.3"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round16-poll-event-executor-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round16-self-reference-pin-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/16/16-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/16-03-lesson.md": "a95a5c1a963f7dce7c6be06c75e077f696a4dd6ffc01cc5d26f77155452e81d1",
+    "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch13-futures/stages/examples/manual_poll/polling/mod.rs": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7",
+    "examples/ch13-futures/stages/examples/manual_poll/main.rs": "3a98225b4cf93386783c961ca6099ac3785e122fcd205ef6364ce75de4238a38",
+    "examples/ch13-futures/stages/examples/already_ready/polling/mod.rs": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7",
+    "examples/ch13-futures/stages/examples/already_ready/main.rs": "7caac0f53381ef35b2fe291faa0f402d773240c663467fdf11d63f88f1458448",
+    "examples/ch13-futures/stages/examples/polling_solution/polling/mod.rs": "a12e72fd94c4d36a4f1c36778bef7f9ebafca0e3963be615733d500119b980d7",
+    "examples/ch13-futures/stages/examples/polling_solution/main.rs": "b6b001be4854f1089c01cccf07618ec281f13b233b2a505a4f1152c940035143",
+    "examples/ch13-futures/stages/examples/polling_complete/polling/mod.rs": "86aaaa646c3b17d44dfad9767c027b6c180024f5b005a47f670e942c7adaf551",
+    "examples/ch13-futures/stages/examples/polling_complete/main.rs": "873ae1f09fadc840bc161e7d9e7136bdc5299ced1ca600257c2cd4d9e75a4b08",
+    "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.rs": "64bdbabc8be1f73aac2f9cc623c04c6b8a6401035fde20195c8a6f27bcd8fc3b",
+    "examples/ch13-futures/stages/fixtures/runtime-fail/poll_after_ready.expected": "19bb7307840ec56041dfec745a61f88160ea6130b01e6cfce9f3f52dbede1ad8",
+    "docs/assets/ch13/poll-cycle.svg": "dd2eef4ada9c5eb4e1147b3e9fe6559a025b53d901c9a58e4df336b44e1ff417"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 3,
+      "quote": "第14.2節先取得 future，await 才取得它的 Output；上一節建立 `Pin<&mut T>` 的介面約定。現在把兩者接起來：一次檢查還不能交出答案時，怎樣留下通知位置？通知之後，又由誰真正再執行？"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 5,
+      "quote": "仍用數字80。這份工作先保存80，等我們明確授權才交出；程式分開觀察 **已授權、已通知、已 poll、已交出 Output**，不把四件事混成「完成」。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 9,
+      "quote": "**poll** 是 Future 的一次檢查：借用工作，觀察或推進目前狀態，交回這次結果。沒有答案時應先交還控制權，不能在裡面等到外部條件成立才返回。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 11,
+      "quote": "**`std::task::Poll<T>`** 是 enum，T 是工作完成時的結果型別。**`Poll::Pending`** 不帶 T，表示當下還不能交出 Output；**`Poll::Ready(value)`** 帶著完成的結果。沿4.1、4.2的 enum／match，使用端分別安排下一步。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 15,
+      "quote": "呼叫 poll、接住結果並安排何時再檢查的使用端，稱為 **driver**。一般 runtime／executor 負責安排，本節 main 明寫每次 poll。Pending 後，future 還要安排條件改變時的通知；driver 不能把它當成「立刻一直重試」。忙等占用執行機會，條件卻可能沒變。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 19,
+      "quote": "**`std::task::Waker`** 是通知 handle，一般用來通知 executor：對應 task 應再次取得執行機會。wake 不代替 poll，也不交出 Output。**`Context<'a>`** 則提供這次檢查使用的 Waker；`'a` 連到原 Waker 的借用來源，不是 future 的存活期或工作耗時。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 41,
+      "quote": "**WakeCounter** 只計通知次數，不排程、不呼叫 future、不開背景工作。先把「收到通知」做成看得見的資料，再接工作。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 43,
+      "quote": "**`std::task::Wake`** 是通知回呼 trait，required method 是 **`fn wake(self: Arc<Self>)`**。這次接手的是保活回呼物件的一份 Arc，回傳 unit；body 決定通知時做什麼。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 45,
+      "quote": "安全的 **`Waker::from(arc)`** 接手 `Arc<W>`，交回 owned Waker。這份 From 實作要求 **`W: Wake + Send + Sync + 'static`**：回呼能通知、可跨 thread 使用、沒有不夠有效的短借用。這是轉換的 bounds，不能當成 Wake trait 自己的全部宣告。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 69,
+      "quote": "**ManualAmount** 保存五項狀態：數字 value；是否獲准的 released；是否已交出結果的 completed；最近通知的 `Option<Waker>` waiting；已 poll 次數 polls。constructor 立即建立 owned 工作，沒有執行 poll。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 75,
+      "quote": "這裡新增 **`option.take()`**：mutable 借用 `Option<T>`，交回原來的 owned `Option<T>`，原槽改成 None。原本 Some(waker)，就能取走那份 Waker；原本 None，仍交回 None。它沒有 clone T，也沒有產生工作結果。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 77,
+      "quote": "**`waker.wake()`** 接手 owned Waker，執行通知回呼、回傳 unit。**`waker.wake_by_ref()`** 則 shared 借用 handle 通知，不消耗它；本章稍後會直接使用。兩者都沒有自己呼叫 Future::poll。Wake 的 default wake_by_ref 會 clone Arc，再呼叫 required wake，實作只提供 wake 也可以使用。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 79,
+      "quote": "本模型的 **`release()`** 先設 released=true，再 take waiting、呼叫 wake。這樣通知後再檢查，才看得到已授權狀態。`is_released()`、`is_completed()`、`poll_count()` 分別 shared 借用並回傳 bool／usize 快照；沒有等待或再 poll。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 83,
+      "quote": "poll 尚未授權時，保存 `Some(cx.waker().clone())` 再回 Pending。**每次 Pending 都保存本次 Context 的 Waker**，取代舊 handle：同一份工作可能改由另一個通知位置負責，不能永遠只記第一次。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 99,
+      "quote": "完整 main 建 Waker／Context，以 `Pin::new(&mut work)` 取得 mutable wrapper，交給 poll。每次借用結束，才用普通 method 觀察 work："
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 147,
+      "quote": "建立兩個從0開始的 WakeCounter 及各自 Waker／Context，保留同一份80工作。"
+    },
+    {
+      "section_id": "16.3",
+      "path": "docs/chapters/16-03-lesson.md",
+      "line": 175,
+      "quote": "四項 tests 核對通知不等於 poll、首次檢查前授權、最新 Waker，以及 owned clone 在原 Context 結束後仍能通知。完整 module 和 root 如下，沒有 executor helper："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

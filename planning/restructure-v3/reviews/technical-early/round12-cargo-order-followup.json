@@ -1,0 +1,47 @@
+{
+  "review_id": "round12-cargo-order-followup",
+  "scope": "TC12P-O1修後窄複查",
+  "initial_report_preserved": "round12-cargo-engineering-prefix.md/json",
+  "prompted": true,
+  "attribution": "root採納並通知新hash後的actualsource窄核，不是新獨立發現。",
+  "result": "resolved",
+  "source": "docs/chapters/12-01-lesson.md:150",
+  "old_hash": "ec0a88e410fbee7c7ce4ca3278be446758483d5dbdf7121bd2f91f1a7fed6770",
+  "new_hash": "5f7ab3792ff83635cc74b2147311ae448cd914c74f18e86c96aa54c0e3cf61f0",
+  "change": "『本頁每份程式都已完整列出』改成『本頁的完整來源包含下方練習答案，整包檢查也會編譯它；其中只用本節已教的介面』。",
+  "judgment": "答案維持後置，但先準確告知來源位置與all-targets載入；feature_answer確只用已教介面，原可選問題解決。",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.toml": "26e238dee27d8903e13d7984c0eabad38fe7b4c4d05a6da5666933883aad80c6",
+    "docs/chapters/12-01-lesson.md": "5f7ab3792ff83635cc74b2147311ae448cd914c74f18e86c96aa54c0e3cf61f0",
+    "examples/ch09-engineering/lesson-workspace/Cargo.lock": "f40481263d1d0d27746ef13632a7296b46a8678f6be1efb9c4f7b339d0e6eae7",
+    "examples/ch09-engineering/lesson-workspace/Cargo.toml": "6e97ad43a088d7dd8efc40b78dd98ba1670eceada51900c929d973cb10318813",
+    "examples/ch09-engineering/lesson-workspace/app/Cargo.toml": "e32735dd8ab2b1fea9ff5a7e58effeac45e627240e42893d6f0f2f52be28cb2c",
+    "examples/ch09-engineering/lesson-workspace/app/examples/feature_answer.rs": "104e4f86d72f3e476a0b16fe3a4a03ab4e7edce788f5547d2491a62d72b8f5ca",
+    "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.expected": "199eb18cb5837b9b01d8aaea0b5c2eef0d395288e0b7a1dedd6b511b2fa2efe1",
+    "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.rs": "88bd82b20931f6f033ad9aa461ea46aba1daabeb161dc8d462a3579309c07cbf",
+    "examples/ch09-engineering/lesson-workspace/app/src/lib.rs": "4b42fa928164e6c1e05c2ab8b3fac00f527f4da6fb9917558432b5605ea04cc3",
+    "examples/ch09-engineering/lesson-workspace/app/src/main.rs": "0efa551d7ac17f0a0c4abe9fdc99bacb18468f40ca73b7295cb1d9ec461b7493",
+    "examples/ch09-engineering/lesson-workspace/app/tests/features.rs": "bc4ae772e56760ed07cc5f382e2ad32ae30170db88389a7e811b7ff2b57f9cd6",
+    "examples/ch09-engineering/lesson-workspace/fixtures/repo-root-settings.toml": "b70cab18c3c40b108a4499473bfd0e3396721aff906d243cdfa2ed45a57e511f",
+    "examples/ch09-engineering/lesson-workspace/subtotal/Cargo.toml": "bd5bccc09e00f41cc0f97e0ae7ce635d5b487c7a8465106b7fbd470e9fb2d089",
+    "examples/ch09-engineering/lesson-workspace/subtotal/src/lib.rs": "8c8556cd2f690bb98d9a7fe580a2e5dfff690b33d212bd8d86606ec0d15c25b0",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "metadata_drift": [
+    {
+      "path": "Cargo.toml",
+      "old": "0f88800bd024f321b1ffe67042e7d3f8c7813bb4c740e3d24cb184d9cf9acada",
+      "new": "26e238dee27d8903e13d7984c0eabad38fe7b4c4d05a6da5666933883aad80c6"
+    }
+  ],
+  "metadata_note": "審閱期間repo根members新增examples/concurrency-stages；只metadata。展示的workspace.package/workspace.dependencies/profile.release三表逐值確認仍與舊稿一致。小workspace所有Rust/config/fixture/lock未變，命令未變。",
+  "execution": "無新增Cargo/Rust；doc-only窄改不需重跑。",
+  "limits": "只核句子與其對應既有closure，不重寫原初判；未讀新增member body或其他review。",
+  "sealed_at_utc": "2026-10-15T08:59:54.082Z"
+}

@@ -1,0 +1,86 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "2.2"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round02-control-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round02-control-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round02-ch02.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch02.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/02-02-lesson.md": "cca001c484ae1ed56c1ed38deba03f2cf739b345dd4a11392a895b1c3011775d",
+    "examples/intro-workspace/control-steps/examples/conditions.rs": "d46f7a449761358e22dc6b91eb176be4bbf9d682f823acba3591fc893c6d384e",
+    "examples/intro-workspace/control-steps/fixtures/compile-fail/if_number.rs": "f495674b4a7d313b76ddfcd87deae95165f6f122f2b422dbfc29eefae41baf70",
+    "examples/intro-workspace/control-steps/Cargo.toml": "52011d81554362fc0008e34c86caab53d1da8f6e599cb7b335e0b3b2dd5d8c6e",
+    "examples/intro-workspace/control-steps/examples/conditions_answer.rs": "6152f6bb02b4dfe8d9a1f1f30f53046c7c52fbefd3b0d3bb2727d88e59ebcb4c"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "2.2",
+      "path": "docs/chapters/02-02-lesson.md",
+      "line": 3,
+      "quote": "現在已能用 `item_total >= 300` 判斷是否達到免運門檻。接下來要真的選出運費：商品小計至少 300 元收 0 元，低於 300 元收 20 元；數量為零時，整筆訂單總額為零。"
+    },
+    {
+      "section_id": "2.2",
+      "path": "docs/chapters/02-02-lesson.md",
+      "line": 9,
+      "quote": "`if 條件 { 工作 } else { 另一項工作 }` 先算條件。得到 true 時只執行第一個 block，得到 false 時只執行 `else` 的 block。兩邊的程式不會都做一次。"
+    },
+    {
+      "section_id": "2.2",
+      "path": "docs/chapters/02-02-lesson.md",
+      "line": 21,
+      "quote": "條件必須是 `bool`。下面是完整的**預期編譯失敗**程式："
+    },
+    {
+      "section_id": "2.2",
+      "path": "docs/chapters/02-02-lesson.md",
+      "line": 31,
+      "quote": "數量為零時，答案已經是零，不必再計算商品小計或運費。"
+    },
+    {
+      "section_id": "2.2",
+      "path": "docs/chapters/02-02-lesson.md",
+      "line": 33,
+      "quote": "`return 0;` 立刻結束**這次函式呼叫**，把 0 交回呼叫者；函式後面的工作不再執行。它和函式尾端 expression 都能交出結果，差別是 `return` 能在中途離開。"
+    },
+    {
+      "section_id": "2.2",
+      "path": "docs/chapters/02-02-lesson.md",
+      "line": 45,
+      "quote": "第一章的索引 3 曾讓三項 array 越界。現在可以在讀取之前選擇路徑："
+    },
+    {
+      "section_id": "2.2",
+      "path": "docs/chapters/02-02-lesson.md",
+      "line": 55,
+      "quote": "本節使用的完整設定與上一節相同："
+    },
+    {
+      "section_id": "2.2",
+      "path": "docs/chapters/02-02-lesson.md",
+      "line": 81,
+      "quote": "若運費改為「至少 500 免運、至少 300 收 10、其他收 20」，需要超過兩條路徑。`else if` 會在前一條件不成立時，才檢查下一個條件；第一個成立的分支執行後，就不再檢查其餘分支。"
+    },
+    {
+      "section_id": "2.2",
+      "path": "docs/chapters/02-02-lesson.md",
+      "line": 91,
+      "quote": "保留上面的三段運費規則，自己寫出一個完整程式，分別顯示小計 299、300、499、500 的運費。先預測答案：20、10、10、0。完成後再對照整份來源；它沿用本頁 manifest："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

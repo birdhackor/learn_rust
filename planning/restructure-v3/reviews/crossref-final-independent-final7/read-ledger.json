@@ -1,0 +1,770 @@
+[
+  {
+    "path": "docs/chapters/01-06-lesson.md",
+    "sha256": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+    "lines": 120,
+    "read_ranges": [
+      [
+        1,
+        120
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/01-04-lesson.md",
+    "sha256": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc",
+    "lines": 83,
+    "read_ranges": [
+      [
+        1,
+        65
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/01-03-lesson.md",
+    "sha256": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+    "lines": 123,
+    "read_ranges": [
+      [
+        1,
+        105
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/03-02-lesson.md",
+    "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+    "lines": 95,
+    "read_ranges": [
+      [
+        1,
+        55
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/03-08-lesson.md",
+    "sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+    "lines": 130,
+    "read_ranges": [
+      [
+        1,
+        70
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/01-08-lesson.md",
+    "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+    "lines": 111,
+    "read_ranges": [
+      [
+        1,
+        35
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/14-08-lesson.md",
+    "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+    "lines": 175,
+    "read_ranges": [
+      [
+        1,
+        29
+      ],
+      [
+        80,
+        125
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/14-03-lesson.md",
+    "sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+    "lines": 204,
+    "read_ranges": [
+      [
+        1,
+        58
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/14-04-lesson.md",
+    "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+    "lines": 154,
+    "read_ranges": [
+      [
+        26,
+        58
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/09-06-lesson.md",
+    "sha256": "c9afa16ffac66f6df5a1173b48e3bac422c17d17322e1b2cffabd65a2689f197",
+    "lines": 150,
+    "read_ranges": [
+      [
+        13,
+        44
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/14-06-lesson.md",
+    "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+    "lines": 256,
+    "read_ranges": [
+      [
+        13,
+        28
+      ],
+      [
+        97,
+        113
+      ],
+      [
+        177,
+        195
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/14-09-lesson.md",
+    "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+    "lines": 289,
+    "read_ranges": [
+      [
+        63,
+        77
+      ],
+      [
+        109,
+        123
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/10-09-lesson.md",
+    "sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+    "lines": 249,
+    "read_ranges": [
+      [
+        81,
+        96
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/17-04-lesson.md",
+    "sha256": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa",
+    "lines": 375,
+    "read_ranges": [
+      [
+        101,
+        113
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/11-07-lesson.md",
+    "sha256": "0e40a9598a991fbdaeffd29c9c7baf6b806414c6b5f1835845c90b932c57e406",
+    "lines": 222,
+    "read_ranges": [
+      [
+        7,
+        14
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/10-05-lesson.md",
+    "sha256": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+    "lines": 218,
+    "read_ranges": [
+      [
+        54,
+        78
+      ],
+      [
+        157,
+        164
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/intro-workspace/steps/examples/memory.rs",
+    "sha256": "54dc40c93a46f7a0e3af6a4e8ebd78da172e037035bb9373c1f026e97b5e3661",
+    "lines": 17,
+    "read_ranges": [
+      [
+        1,
+        17
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/intro-workspace/steps/examples/memory_answer.rs",
+    "sha256": "11d2fde89c13aa7aceb49d6a8e114d5f6ac3cbef5eede68bcf27be6f27775c7b",
+    "lines": 15,
+    "read_ranges": [
+      [
+        1,
+        15
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/intro-workspace/steps/Cargo.toml",
+    "sha256": "ba433fca9aa7ac14673d3b3727bf391f285a6013ec75ffa2a6ba60942e245dfb",
+    "lines": 4,
+    "read_ranges": [
+      [
+        1,
+        4
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/b1-complete/src/lib.rs",
+    "sha256": "eda21ca300f6058e2d438a1961b8e2b4c9b6e740c8a3cf7dc3e2c039b0e0e9f9",
+    "lines": 290,
+    "read_ranges": [
+      [
+        1,
+        105
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/b2-complete/src/lib.rs",
+    "sha256": "e6542acd2c36f4f583a9cdd24a70e22c839a05ea5abe983a8bd6befc8f23951d",
+    "lines": 275,
+    "read_ranges": [
+      [
+        1,
+        62
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/b3-complete/src/lib.rs",
+    "sha256": "c8cc8bfedb549e4a9ec702bb74b7eac8af6264874123df07454672a4fa08e93e",
+    "lines": 580,
+    "read_ranges": [
+      [
+        1,
+        157
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/b4-complete/src/lib.rs",
+    "sha256": "3e7915eb978856e0b0410dbd1ec7b66894d8197404444a04c9a5c574e1ad846c",
+    "lines": 747,
+    "read_ranges": [
+      [
+        1,
+        277
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/b-final-starter/src/lib.rs",
+    "sha256": "4fb9e98b5a3c0f4edb1036ceb44cc79a938022e9110689c5e1c0fef26b125a43",
+    "lines": 23,
+    "read_ranges": [
+      [
+        1,
+        23
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/b-final-starter/src/report.rs",
+    "sha256": "9cbbf77fe28e9d1385b81197515dfbc69fe4c4752258c8ab77750f9e3548ccee",
+    "lines": 85,
+    "read_ranges": [
+      [
+        1,
+        85
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/b-final-starter/src/app.rs",
+    "sha256": "fe4b46ebed045e5a50307de93e393a751b8be9072a9eeb4a3a0d8e4df07d5f4e",
+    "lines": 103,
+    "read_ranges": [
+      [
+        1,
+        103
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/b-final-starter/Cargo.toml",
+    "sha256": "3fce7a1cfe12371591ae586474cf73ee1fae7d1698a8d43619af3895541ab8e5",
+    "lines": 18,
+    "read_ranges": [
+      [
+        1,
+        18
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/src/report.rs",
+    "sha256": "2cea7007b9bb1838022649908dcbe6fc445d2bd098af0795c28a3dc213783498",
+    "lines": 361,
+    "read_ranges": [
+      [
+        1,
+        361
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/src/app.rs",
+    "sha256": "7e07b31b22fed5bd4b1b2edac7093d2adaea0134ef03b859732a01cf793f1b77",
+    "lines": 258,
+    "read_ranges": [
+      [
+        1,
+        258
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/src/lib.rs",
+    "sha256": "f623dc1f88ff3c220c13eb7136b57ffd53f6a55d973cad171d21976e0d6238b1",
+    "lines": 24,
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/src/config.rs",
+    "sha256": "0c23c7c6f983f73b8856e5ef248449c92936bc060f79062545a1a3a0ec1b2739",
+    "lines": 25,
+    "read_ranges": [
+      [
+        1,
+        25
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/src/error.rs",
+    "sha256": "fb67e8e826bff7ab79df64c5227b39a6dc62253cd0858cea07cb58ab34127b3f",
+    "lines": 81,
+    "read_ranges": [
+      [
+        1,
+        81
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/src/input.rs",
+    "sha256": "2a7e50f13cc83851c23b804cdb98479867be958a41464ce765c78368438bbe1d",
+    "lines": 27,
+    "read_ranges": [
+      [
+        1,
+        27
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/src/main.rs",
+    "sha256": "0a6b62229a8e2e6c9297c73b3ad235f91271bc7dc1c7a04420e4da137a456af1",
+    "lines": 72,
+    "read_ranges": [
+      [
+        1,
+        72
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/src/test_fixture.rs",
+    "sha256": "2c5d78c5000bb07e597d89f87e03183637c94fc2a3b35cddcc72f46d31d949a4",
+    "lines": 198,
+    "read_ranges": [
+      [
+        1,
+        198
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/tests/config.rs",
+    "sha256": "c99333408f134a82a1d15b7f4a2fc90b0014534c4da1f1bfa050df821064edf9",
+    "lines": 56,
+    "read_ranges": [
+      [
+        1,
+        56
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/Cargo.toml",
+    "sha256": "989f84de7fa556027fcc254f4fb7887f3ddf16fa1ac714651633ee81019e7727",
+    "lines": 18,
+    "read_ranges": [
+      [
+        1,
+        18
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch15-projects/url-checker/README.md",
+    "sha256": "53e266824dbdc03aaf9af1eb970d32ad78167fe6dacc406a958710e2e974511a",
+    "lines": 43,
+    "read_ranges": [
+      [
+        1,
+        43
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch11-async/http-single/src/error.rs",
+    "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+    "lines": 46,
+    "read_ranges": [
+      [
+        1,
+        46
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch11-async/http-single/Cargo.toml",
+    "sha256": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f",
+    "lines": 16,
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "examples/ch11-async/local-service/Cargo.toml",
+    "sha256": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee",
+    "lines": 16,
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "mode": "本輪實際輸出的正文或source範圍；未執行Rust"
+  },
+  {
+    "path": "docs/chapters/01-07-lesson.md",
+    "sha256": "e81574e0e1ba75b2702ad6c25a144c8441d532563dc362cf6d52dc9aedb010be",
+    "lines": 115,
+    "section": "1.7",
+    "read_ranges": [
+      [
+        1,
+        115
+      ]
+    ],
+    "lexical_hits": 13,
+    "hit_lines": 12,
+    "links": 6,
+    "reviewed_reference_lines": [
+      1,
+      3,
+      7,
+      11,
+      19,
+      23,
+      31,
+      64,
+      68,
+      90,
+      98,
+      115
+    ],
+    "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。",
+    "mode": "本輪canonical全文實讀"
+  },
+  {
+    "path": "docs/chapters/18-07-lesson.md",
+    "sha256": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209",
+    "lines": 259,
+    "section": "18.7",
+    "read_ranges": [
+      [
+        1,
+        259
+      ]
+    ],
+    "lexical_hits": 32,
+    "hit_lines": 20,
+    "links": 6,
+    "reviewed_reference_lines": [
+      1,
+      3,
+      5,
+      9,
+      26,
+      36,
+      50,
+      52,
+      66,
+      90,
+      92,
+      138,
+      149,
+      153,
+      195,
+      199,
+      207,
+      209,
+      229,
+      259
+    ],
+    "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。",
+    "mode": "本輪canonical全文實讀"
+  },
+  {
+    "path": "docs/chapters/18-08-lesson.md",
+    "sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34",
+    "lines": 244,
+    "section": "18.8",
+    "read_ranges": [
+      [
+        1,
+        244
+      ]
+    ],
+    "lexical_hits": 25,
+    "hit_lines": 19,
+    "links": 4,
+    "reviewed_reference_lines": [
+      1,
+      3,
+      5,
+      9,
+      31,
+      33,
+      35,
+      43,
+      53,
+      61,
+      63,
+      85,
+      87,
+      133,
+      148,
+      172,
+      202,
+      242,
+      244
+    ],
+    "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。",
+    "mode": "本輪canonical全文實讀"
+  },
+  {
+    "path": "docs/chapters/18-09-lesson.md",
+    "sha256": "7c78f41be377d1b845d5274883b4f927370411e091b2f50761febee3965fed13",
+    "lines": 281,
+    "section": "18.9",
+    "read_ranges": [
+      [
+        1,
+        281
+      ]
+    ],
+    "lexical_hits": 24,
+    "hit_lines": 18,
+    "links": 4,
+    "reviewed_reference_lines": [
+      1,
+      5,
+      9,
+      13,
+      17,
+      25,
+      41,
+      53,
+      61,
+      63,
+      91,
+      93,
+      139,
+      156,
+      200,
+      210,
+      279,
+      281
+    ],
+    "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。",
+    "mode": "本輪canonical全文實讀"
+  },
+  {
+    "path": "docs/chapters/18-10-lesson.md",
+    "sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e",
+    "lines": 306,
+    "section": "18.10",
+    "read_ranges": [
+      [
+        1,
+        306
+      ]
+    ],
+    "lexical_hits": 28,
+    "hit_lines": 20,
+    "links": 8,
+    "reviewed_reference_lines": [
+      1,
+      5,
+      9,
+      23,
+      31,
+      43,
+      49,
+      69,
+      73,
+      75,
+      87,
+      93,
+      117,
+      119,
+      212,
+      274,
+      282,
+      284,
+      302,
+      306
+    ],
+    "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。",
+    "mode": "本輪canonical全文實讀"
+  },
+  {
+    "path": "docs/chapters/18-11-lesson.md",
+    "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+    "lines": 324,
+    "section": "18.11",
+    "read_ranges": [
+      [
+        1,
+        324
+      ]
+    ],
+    "lexical_hits": 36,
+    "hit_lines": 24,
+    "links": 3,
+    "reviewed_reference_lines": [
+      1,
+      5,
+      22,
+      30,
+      32,
+      38,
+      55,
+      63,
+      65,
+      73,
+      83,
+      91,
+      99,
+      103,
+      115,
+      121,
+      205,
+      246,
+      266,
+      270,
+      297,
+      299,
+      322,
+      324
+    ],
+    "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。",
+    "mode": "本輪canonical全文實讀"
+  },
+  {
+    "path": "docs/chapters/18-12-lesson.md",
+    "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+    "lines": 164,
+    "section": "18.12",
+    "read_ranges": [
+      [
+        1,
+        164
+      ]
+    ],
+    "lexical_hits": 10,
+    "hit_lines": 10,
+    "links": 4,
+    "reviewed_reference_lines": [
+      1,
+      3,
+      9,
+      13,
+      15,
+      21,
+      117,
+      134,
+      138,
+      154
+    ],
+    "read_note": "本輪全文親讀目前canonical頁（含所有非fence文字、snippet位置、命令與link label）；程式按引用所需讀取，未冒稱每份完整closure重審。",
+    "mode": "本輪canonical全文實讀"
+  }
+]

@@ -1,0 +1,100 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "6.1"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round06-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/06-01-lesson.md": "5df389994db35de562be09374b10686ef2b11774eb70893f2200d4d159141d0a",
+    "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs": "29b686ddbd39006071e407063d8e2207b39c21e6ed0863f31f1f0e2d4586fce7",
+    "examples/intro-workspace/trait-stages/examples/charges.rs": "e549a9efda165828e133c81d0d4a65cbed40df215b4727bf6716f18b2bbe1540",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.rs": "efade76c33ff192ef1b0460cb45199a138a8b5d24646f766b985adceb5f76810",
+    "examples/intro-workspace/trait-stages/Cargo.toml": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+    "examples/intro-workspace/trait-stages/examples/charges_answer.rs": "7ecb507c30a3d3afaa6c01a8badd1d1a6af717f1045e38e43001bda4cf1fb38e"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 3,
+      "quote": "第 3.6 節的訂單可以由單價與數量算出金額。現在還有一種組合商品，只保存整組價格。兩者的資料形狀不同，接下來卻都要回答「金額是否至少 300」。我們希望這項門檻規則保存在一處，而每種資料仍依自己的欄位取得金額。"
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 9,
+      "quote": "`Order` 保存單價 `unit_price` 與數量 `count`；`Bundle` 保存整組商品的 `price`。訂單金額要相乘，組合金額則直接讀取已保存的價格。"
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 21,
+      "quote": "**trait** 描述型別應提供的能力。本例的 **`Charge`** 只要求一個 `amount` 方法：借讀這份資料，交回一個 `i32` 金額。"
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 33,
+      "quote": "第 3.6 節的 `impl Order` 為型別定義自己的操作。現在的 **`impl Charge for Order`** 額外說明：這份實作遵守 `Charge`。方法簽名要符合 trait，body 則依 `Order` 的欄位相乘。`Bundle` 的實作以自己的 `price` 提供相同意義的結果："
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 43,
+      "quote": "第 5.1 節的泛型函式只保存、交回 `T`，不能假定每個 `T` 都能相乘或顯示。現在要在泛型 body 裡呼叫 `amount`，必須先寫出這項要求。"
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 45,
+      "quote": "**trait bound** 是對型別參數的能力要求。`T: Charge` 表示 `T` 必須實作 `Charge`，因此編譯器允許 body 依這項契約呼叫 `value.amount()`。"
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 64,
+      "quote": "`mod charge_support;` 沿用第 2.6 節的規則，從同層的 `charge_support/mod.rs` 載入模組；該資料夾沒有 `main.rs`，不會成為另一個 Cargo 範例。"
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 89,
+      "quote": "下面是完整的預期編譯失敗程式：保留 trait 定義，卻從函式的 `T` 移除 `: Charge`。"
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 95,
+      "quote": "放進第 1.2 節的獨立專案執行 `cargo check`，會得到 **E0599**：泛型 `T` 沒有可用的 `amount`。錯誤發生在檢查泛型定義時，不必等某筆訂單執行才知道。bound 表達 body 實際需要的能力，不是替計算結果作擔保。"
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 99,
+      "quote": "完整 member manifest 仍只有三個已教欄位："
+    },
+    {
+      "section_id": "6.1",
+      "path": "docs/chapters/06-01-lesson.md",
+      "line": 119,
+      "quote": "新增 `DiscountedBundle`，保存 `original_price: i32` 與 `discount: i32`。材料採非負小整數，折扣不超過原價；實作 `Charge`，讓金額為原價減折扣。使用同一份 `meets_threshold`，不要再複製一次比較。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

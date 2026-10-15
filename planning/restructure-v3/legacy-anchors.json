@@ -1,0 +1,4325 @@
+[
+  {
+    "old_path": "docs/chapters/01-01-start.md",
+    "title": "1.1 從 Python 出發，準備 Rust 環境",
+    "url": "chapters/01-01-start/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "11-python-rust"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "linux-macos"
+      },
+      {
+        "tag": "h3",
+        "id": "windows"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/01-02-first-program.md",
+    "title": "1.2 第一個可執行程式",
+    "url": "chapters/01-02-first-program/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "12"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "cargo"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/01-03-workspace.md",
+    "title": "1.3 在教材 workspace 選對 package",
+    "url": "chapters/01-03-workspace/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "13-workspace-package"
+      },
+      {
+        "tag": "h2",
+        "id": "package-crate"
+      },
+      {
+        "tag": "h2",
+        "id": "repo"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "package"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/01-04-variables.md",
+    "title": "1.4 用變數保存數字",
+    "url": "chapters/01-04-variables/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "14"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "immutable-mutable"
+      },
+      {
+        "tag": "h2",
+        "id": "shadowing"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/01-05-functions.md",
+    "title": "1.5 把計算變成函式",
+    "url": "chapters/01-05-functions/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "15"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "block"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/01-06-conditions.md",
+    "title": "1.6 依訂單大小選擇運費",
+    "url": "chapters/01-06-conditions/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "16"
+      },
+      {
+        "tag": "h2",
+        "id": "bool"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/01-07-collections.md",
+    "title": "1.7 一組資料：tuple、array 與 range",
+    "url": "chapters/01-07-collections/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "17-tuplearray-range"
+      },
+      {
+        "tag": "h2",
+        "id": "tuple"
+      },
+      {
+        "tag": "h2",
+        "id": "array"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "range"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/01-08-loops.md",
+    "title": "1.8 重複工作，用迴圈累積答案",
+    "url": "chapters/01-08-loops/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "18"
+      },
+      {
+        "tag": "h2",
+        "id": "for"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/01-09-modules.md",
+    "title": "1.9 把計算工作放進 library",
+    "url": "chapters/01-09-modules/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "19-library"
+      },
+      {
+        "tag": "h2",
+        "id": "module"
+      },
+      {
+        "tag": "h2",
+        "id": "package-crate"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "module_1"
+      },
+      {
+        "tag": "h3",
+        "id": "binary-library"
+      },
+      {
+        "tag": "h2",
+        "id": "library"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/01-10-tests.md",
+    "title": "1.10 用測試與工具回饋確認程式",
+    "url": "chapters/01-10-tests/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "110"
+      },
+      {
+        "tag": "h2",
+        "id": "assertion"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h3",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "300"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/02-01-structs.md",
+    "title": "2.1 用 struct 為資料的角色命名",
+    "url": "chapters/02-01-structs/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "21-struct"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/02-02-ownership.md",
+    "title": "2.2 值由誰管理：ownership 與 move",
+    "url": "chapters/02-02-ownership/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "22-ownership-move"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "ownership"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h3",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/02-03-references.md",
+    "title": "2.3 用 reference 借用資料",
+    "url": "chapters/02-03-references/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "23-reference"
+      },
+      {
+        "tag": "h2",
+        "id": "reference"
+      },
+      {
+        "tag": "h2",
+        "id": "reference_1"
+      },
+      {
+        "tag": "h2",
+        "id": "mutable-reference"
+      },
+      {
+        "tag": "h3",
+        "id": "let-mut-reference-mut-i32"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/02-04-borrowing.md",
+    "title": "2.4 借用用到哪裡：lifetime 與 scope",
+    "url": "chapters/02-04-borrowing/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "24-lifetime-scope"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "mutable-reference"
+      },
+      {
+        "tag": "h2",
+        "id": "reference"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/02-05-methods.md",
+    "title": "2.5 用 method 表達資料能做的工作",
+    "url": "chapters/02-05-methods/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "25-method"
+      },
+      {
+        "tag": "h2",
+        "id": "method-self"
+      },
+      {
+        "tag": "h2",
+        "id": "receiver"
+      },
+      {
+        "tag": "h2",
+        "id": "associated-function"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/02-06-slices.md",
+    "title": "2.6 用 slice 借用一段數列",
+    "url": "chapters/02-06-slices/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "26-slice"
+      },
+      {
+        "tag": "h2",
+        "id": "i32"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "slice"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/03-01-enums.md",
+    "title": "3.1 用 enum 表示一筆資料的不同情況",
+    "url": "chapters/03-01-enums/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "31-enum"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "match"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "enumpattern"
+      },
+      {
+        "tag": "h2",
+        "id": "if-let-let-else"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/03-02-option-result.md",
+    "title": "3.2 把缺值與失敗留在結果中",
+    "url": "chapters/03-02-option-result/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "32"
+      },
+      {
+        "tag": "h2",
+        "id": "option"
+      },
+      {
+        "tag": "h2",
+        "id": "result"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/03-03-generics.md",
+    "title": "3.3 泛型：保留資料形狀，替換其中型別",
+    "url": "chapters/03-03-generics/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "33"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "option-result"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/03-04-strings.md",
+    "title": "3.4 擁有文字，或借用文字",
+    "url": "chapters/03-04-strings/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "34"
+      },
+      {
+        "tag": "h2",
+        "id": "string-str"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "move"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "string"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/03-05-utf8.md",
+    "title": "3.5 文字範圍：byte 不等於你看到的字",
+    "url": "chapters/03-05-utf8/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "35-byte"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "get-none"
+      },
+      {
+        "tag": "h2",
+        "id": "range-panic"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/03-06-vectors.md",
+    "title": "3.6 用 Vec 整理長度可變的清單",
+    "url": "chapters/03-06-vectors/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "36-vec"
+      },
+      {
+        "tag": "h2",
+        "id": "vec"
+      },
+      {
+        "tag": "h3",
+        "id": "pop-remove"
+      },
+      {
+        "tag": "h2",
+        "id": "ownership"
+      },
+      {
+        "tag": "h3",
+        "id": "reference"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/04-01-traits.md",
+    "title": "4.1 用 trait 說清楚型別要提供的能力",
+    "url": "chapters/04-01-traits/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "41-trait"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "trait"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "bound"
+      },
+      {
+        "tag": "h2",
+        "id": "library"
+      },
+      {
+        "tag": "h3",
+        "id": "bound_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/04-02-capabilities.md",
+    "title": "4.2 讓資料能檢查、比較與複製",
+    "url": "chapters/04-02-capabilities/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "42"
+      },
+      {
+        "tag": "h2",
+        "id": "debug"
+      },
+      {
+        "tag": "h2",
+        "id": "partialeq"
+      },
+      {
+        "tag": "h2",
+        "id": "clone"
+      },
+      {
+        "tag": "h2",
+        "id": "copy"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/04-03-hashmaps.md",
+    "title": "4.3 用 HashMap 按名稱分組",
+    "url": "chapters/04-03-hashmaps/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "43-hashmap"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "string-str"
+      },
+      {
+        "tag": "h2",
+        "id": "map"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "ownership"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/04-04-lifetime-annotations.md",
+    "title": "4.4 把回傳 reference 的來源寫進契約",
+    "url": "chapters/04-04-lifetime-annotations/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "44-reference"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "lifetime-annotation"
+      },
+      {
+        "tag": "h2",
+        "id": "lifetime"
+      },
+      {
+        "tag": "h2",
+        "id": "owned"
+      },
+      {
+        "tag": "h2",
+        "id": "_"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/04-05-borrowed-models.md",
+    "title": "4.5 在 struct 中保存借用",
+    "url": "chapters/04-05-borrowed-models/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "45-struct"
+      },
+      {
+        "tag": "h2",
+        "id": "reference-owner"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/05-01-error-policy.md",
+    "title": "5.1 失敗是資料，何時才停止流程",
+    "url": "chapters/05-01-error-policy/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "51"
+      },
+      {
+        "tag": "h2",
+        "id": "enum"
+      },
+      {
+        "tag": "h2",
+        "id": "panic"
+      },
+      {
+        "tag": "h2",
+        "id": "unwrap-expect-panic"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/05-02-type-aliases.md",
+    "title": "5.2 為既有型別取另一個名字",
+    "url": "chapters/05-02-type-aliases/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "52"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/05-03-display.md",
+    "title": "5.3 讓錯誤資料有自己的顯示契約",
+    "url": "chapters/05-03-display/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "53"
+      },
+      {
+        "tag": "h2",
+        "id": "display"
+      },
+      {
+        "tag": "h2",
+        "id": "formatter-fmtresult"
+      },
+      {
+        "tag": "h2",
+        "id": "write"
+      },
+      {
+        "tag": "h2",
+        "id": "string"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/05-04-conversions.md",
+    "title": "5.4　From、Into 與 TryFrom：轉換是否可能失敗？",
+    "url": "chapters/05-04-conversions/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "54-frominto-tryfrom"
+      },
+      {
+        "tag": "h2",
+        "id": "from-into"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "tryfrom"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/05-05-parsing-and-borrowed-conversions.md",
+    "title": "5.5　解析文字，或借出另一種表示？",
+    "url": "chapters/05-05-parsing-and-borrowed-conversions/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "55"
+      },
+      {
+        "tag": "h2",
+        "id": "fromstr-str"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "count"
+      },
+      {
+        "tag": "h2",
+        "id": "asref"
+      },
+      {
+        "tag": "h2",
+        "id": "tostring-toowned"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/05-06-error-propagation.md",
+    "title": "5.6　? 傳遞錯誤，把決策留給呼叫者",
+    "url": "chapters/05-06-error-propagation/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "56"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "option-none"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/06-01-closures.md",
+    "title": "6.1 把小段工作和它需要的環境保存在 closure",
+    "url": "chapters/06-01-closures/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "61-closure"
+      },
+      {
+        "tag": "h2",
+        "id": "closure"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "shared-borrow"
+      },
+      {
+        "tag": "h2",
+        "id": "mutable-borrow"
+      },
+      {
+        "tag": "h2",
+        "id": "move-capture"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/06-02-associated-types.md",
+    "title": "6.2 用 associated type 指定一份實作的輸出型別",
+    "url": "chapters/06-02-associated-types/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "62-associated-type"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "trait"
+      },
+      {
+        "tag": "h2",
+        "id": "impl-output"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "equality-bound"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/06-03-callable-contracts.md",
+    "title": "6.3 用 Fn 系列描述共用函式需要的呼叫能力",
+    "url": "chapters/06-03-callable-contracts/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "63-fn"
+      },
+      {
+        "tag": "h2",
+        "id": "fnonce"
+      },
+      {
+        "tag": "h2",
+        "id": "fnmut"
+      },
+      {
+        "tag": "h2",
+        "id": "shared-access-fn"
+      },
+      {
+        "tag": "h2",
+        "id": "function-pointer"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/06-04-impl-trait.md",
+    "title": "6.4 讓函式交回可用的工作：impl Trait 與 lifetime capture",
+    "url": "chapters/06-04-impl-trait/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "64-impl-trait-lifetime-capture"
+      },
+      {
+        "tag": "h2",
+        "id": "impl-trait"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "use"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/06-05-iterators.md",
+    "title": "6.5 逐筆取得資料：Iterator、IntoIterator 與 ownership",
+    "url": "chapters/06-05-iterators/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "65-iteratorintoiterator-ownership"
+      },
+      {
+        "tag": "h2",
+        "id": "iterator-item-next"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "option"
+      },
+      {
+        "tag": "h2",
+        "id": "intoiterator-for"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "ownership"
+      },
+      {
+        "tag": "h3",
+        "id": "reference-for"
+      },
+      {
+        "tag": "h3",
+        "id": "move"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/06-06-adapters-collect.md",
+    "title": "6.6 逐筆篩選、轉換，再依目標收集",
+    "url": "chapters/06-06-adapters-collect/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "66"
+      },
+      {
+        "tag": "h2",
+        "id": "map-item-item"
+      },
+      {
+        "tag": "h2",
+        "id": "filter-item-item"
+      },
+      {
+        "tag": "h2",
+        "id": "collect"
+      },
+      {
+        "tag": "h3",
+        "id": "fromiterator"
+      },
+      {
+        "tag": "h2",
+        "id": "fold"
+      },
+      {
+        "tag": "h2",
+        "id": "result-collect"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/06-07-text-collections-sorting.md",
+    "title": "6.7 整理文字與統計，產生順序明確的報表",
+    "url": "chapters/06-07-text-collections-sorting/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "67"
+      },
+      {
+        "tag": "h2",
+        "id": "scalar"
+      },
+      {
+        "tag": "h3",
+        "id": "filter"
+      },
+      {
+        "tag": "h2",
+        "id": "entry"
+      },
+      {
+        "tag": "h2",
+        "id": "hashmap"
+      },
+      {
+        "tag": "h2",
+        "id": "truefalseorderingpartialord-ord"
+      },
+      {
+        "tag": "h2",
+        "id": "sortsort_by_key-sort_by"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/07-01-dependencies.md",
+    "title": "7.1 讓 Cargo 準備外部程式庫",
+    "url": "chapters/07-01-dependencies/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "71-cargo"
+      },
+      {
+        "tag": "h2",
+        "id": "registrypackage-crate"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "manifest"
+      },
+      {
+        "tag": "h3",
+        "id": "dependency"
+      },
+      {
+        "tag": "h2",
+        "id": "cargo-add"
+      },
+      {
+        "tag": "h2",
+        "id": "lockfile"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/07-02-documentation-tests.md",
+    "title": "7.2 從使用者角度測試 library",
+    "url": "chapters/07-02-documentation-tests/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "72-library"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "integration-test-crate"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/07-03-text-io.md",
+    "title": "7.3 讀取文字檔，把失敗交給呼叫者",
+    "url": "chapters/07-03-text-io/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "73"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "read_to_string"
+      },
+      {
+        "tag": "h2",
+        "id": "file-read"
+      },
+      {
+        "tag": "h2",
+        "id": "write"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/07-04-byte-io.md",
+    "title": "7.4 bytes 與 buffer：只處理這次有效的前段",
+    "url": "chapters/07-04-byte-io/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "74-bytes-buffer"
+      },
+      {
+        "tag": "h2",
+        "id": "byte"
+      },
+      {
+        "tag": "h2",
+        "id": "readread-n-bytes"
+      },
+      {
+        "tag": "h2",
+        "id": "read"
+      },
+      {
+        "tag": "h3",
+        "id": "bytes"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/07-05-paths-and-cli.md",
+    "title": "7.5 原生路徑與 CLI：檔名、資料、診斷各有自己的表示",
+    "url": "chapters/07-05-paths-and-cli/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "75-cli"
+      },
+      {
+        "tag": "h2",
+        "id": "pathbuf-path"
+      },
+      {
+        "tag": "h2",
+        "id": "osstringosstr"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "args_os-arguments"
+      },
+      {
+        "tag": "h3",
+        "id": "library"
+      },
+      {
+        "tag": "h2",
+        "id": "stdoutstderr-exitcode"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/07-06-clap.md",
+    "title": "7.6 clap：讓參數規則產生 owned 設定",
+    "url": "chapters/07-06-clap/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "76-clap-owned"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "derive-parser"
+      },
+      {
+        "tag": "h2",
+        "id": "try_parse_from"
+      },
+      {
+        "tag": "h2",
+        "id": "arguments"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/07-07-json-and-serde.md",
+    "title": "7.7 JSON 與 Serde：文字和 owned 資料模型",
+    "url": "chapters/07-07-json-and-serde/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "77-json-serde-owned"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "serde-serde_json"
+      },
+      {
+        "tag": "h2",
+        "id": "from_str-to_string_pretty"
+      },
+      {
+        "tag": "h2",
+        "id": "json"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "json_1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/07-08-cli-fixtures.md",
+    "title": "7.8 fixture：用專用檔案驗收真正的 CLI",
+    "url": "chapters/07-08-cli-fixtures/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "78-fixture-cli"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "tempdir-pathbuf"
+      },
+      {
+        "tag": "h2",
+        "id": "command-output"
+      },
+      {
+        "tag": "h2",
+        "id": "cargo"
+      },
+      {
+        "tag": "h2",
+        "id": "cli"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/07-09-complete-cli.md",
+    "title": "7.9 第一個完整 CLI：搜尋筆記，再交出文字或 JSON",
+    "url": "chapters/07-09-complete-cli/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "79-cli-json"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "main"
+      },
+      {
+        "tag": "h2",
+        "id": "main_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-01-box.md",
+    "title": "8.1 型別需要多大空間：Sized、DST 與 Box",
+    "url": "chapters/08-01-box/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "81-sizeddst-box"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "sizedsized"
+      },
+      {
+        "tag": "h3",
+        "id": "t-bound"
+      },
+      {
+        "tag": "h2",
+        "id": "array"
+      },
+      {
+        "tag": "h2",
+        "id": "box"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-02-drop.md",
+    "title": "8.2 用 Drop 觀察 ownership 的收尾",
+    "url": "chapters/08-02-drop/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "82-drop-ownership"
+      },
+      {
+        "tag": "h2",
+        "id": "drop"
+      },
+      {
+        "tag": "h2",
+        "id": "stdmemdrop"
+      },
+      {
+        "tag": "h3",
+        "id": "valuedrop"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "drop-owned"
+      },
+      {
+        "tag": "h2",
+        "id": "drop_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-03-deref.md",
+    "title": "8.3 用 Deref 借用包在裡面的值",
+    "url": "chapters/08-03-deref/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "83-deref"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "rustreference"
+      },
+      {
+        "tag": "h2",
+        "id": "owned"
+      },
+      {
+        "tag": "h3",
+        "id": "targettraittrait"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-04-lifetime-bounds.md",
+    "title": "8.4 型別內的借用與 'static",
+    "url": "chapters/08-04-lifetime-bounds/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "84-static"
+      },
+      {
+        "tag": "h2",
+        "id": "t-a-t"
+      },
+      {
+        "tag": "h2",
+        "id": "static-str"
+      },
+      {
+        "tag": "h2",
+        "id": "t-static"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "ownedbound"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-05-dyn.md",
+    "title": "8.5 用 dyn 保存不同型別的共同能力",
+    "url": "chapters/08-05-dyn/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "85-dyn"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "dyn-charge"
+      },
+      {
+        "tag": "h2",
+        "id": "boxowneddyn"
+      },
+      {
+        "tag": "h3",
+        "id": "handlemethod"
+      },
+      {
+        "tag": "h2",
+        "id": "impl-traitowned-dyn"
+      },
+      {
+        "tag": "h2",
+        "id": "trait-objectborrow"
+      },
+      {
+        "tag": "h2",
+        "id": "dyn-compatibility"
+      },
+      {
+        "tag": "h3",
+        "id": "traitselfsized"
+      },
+      {
+        "tag": "h3",
+        "id": "method"
+      },
+      {
+        "tag": "h3",
+        "id": "methodself"
+      },
+      {
+        "tag": "h3",
+        "id": "associated-type"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-06-error.md",
+    "title": "8.6 以Error介面借讀原因，形成完整報告",
+    "url": "chapters/08-06-error/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "86-error"
+      },
+      {
+        "tag": "h2",
+        "id": "errordebugdisplay"
+      },
+      {
+        "tag": "h2",
+        "id": "enum"
+      },
+      {
+        "tag": "h2",
+        "id": "source-static-reference"
+      },
+      {
+        "tag": "h3",
+        "id": "error-static"
+      },
+      {
+        "tag": "h2",
+        "id": "box-dyn-error"
+      },
+      {
+        "tag": "h2",
+        "id": "context"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-07-rc-weak.md",
+    "title": "8.7 用 Rc 共享 ownership，用 Weak 觀察",
+    "url": "chapters/08-07-rc-weak/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "87-rc-ownership-weak"
+      },
+      {
+        "tag": "h2",
+        "id": "rchandle"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "ownert"
+      },
+      {
+        "tag": "h2",
+        "id": "weakt"
+      },
+      {
+        "tag": "h2",
+        "id": "handlestrong"
+      },
+      {
+        "tag": "h2",
+        "id": "owner"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-08-interior-mutability.md",
+    "title": "8.8 用Cell與RefCell管理內部修改",
+    "url": "chapters/08-08-interior-mutability/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "88-cellrefcell"
+      },
+      {
+        "tag": "h2",
+        "id": "cell"
+      },
+      {
+        "tag": "h2",
+        "id": "refcell"
+      },
+      {
+        "tag": "h3",
+        "id": "guardreference"
+      },
+      {
+        "tag": "h2",
+        "id": "guardborrow"
+      },
+      {
+        "tag": "h3",
+        "id": "tryresult"
+      },
+      {
+        "tag": "h2",
+        "id": "guard"
+      },
+      {
+        "tag": "h2",
+        "id": "rcrefcell"
+      },
+      {
+        "tag": "h3",
+        "id": "strong"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-09-newtypes.md",
+    "title": "8.9 用型別邊界保護單位，再選擇可用的trait介面",
+    "url": "chapters/08-09-newtypes/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "89-trait"
+      },
+      {
+        "tag": "h2",
+        "id": "type-alias"
+      },
+      {
+        "tag": "h2",
+        "id": "newtypestruct"
+      },
+      {
+        "tag": "h2",
+        "id": "add"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "orphan-rulescrate"
+      },
+      {
+        "tag": "h3",
+        "id": "newtypedisplay"
+      },
+      {
+        "tag": "h3",
+        "id": "impl"
+      },
+      {
+        "tag": "h2",
+        "id": "coherenceimpl"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/08-10-any.md",
+    "title": "8.10 用Any辨識並取回確切資料型別",
+    "url": "chapters/08-10-any/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "810-any"
+      },
+      {
+        "tag": "h2",
+        "id": "any-staticreference"
+      },
+      {
+        "tag": "h2",
+        "id": "downcast"
+      },
+      {
+        "tag": "h2",
+        "id": "payload"
+      },
+      {
+        "tag": "h3",
+        "id": "borrowany"
+      },
+      {
+        "tag": "h2",
+        "id": "owned-downcastbox"
+      },
+      {
+        "tag": "h2",
+        "id": "typeid"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/09-01-cargo-engineering.md",
+    "title": "9.1 管理共同設定與不同建置",
+    "url": "chapters/09-01-cargo-engineering/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "91"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "profile"
+      },
+      {
+        "tag": "h2",
+        "id": "feature"
+      },
+      {
+        "tag": "h2",
+        "id": "cfg"
+      },
+      {
+        "tag": "h3",
+        "id": "cfg-bool"
+      },
+      {
+        "tag": "h3",
+        "id": "if"
+      },
+      {
+        "tag": "h2",
+        "id": "release"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/09-02-build-scripts.md",
+    "title": "9.2 在編譯程式之前執行 Rust 工作",
+    "url": "chapters/09-02-build-scripts/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "92-rust"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "result"
+      },
+      {
+        "tag": "h3",
+        "id": "stdout"
+      },
+      {
+        "tag": "h3",
+        "id": "script-host-target"
+      },
+      {
+        "tag": "h2",
+        "id": "crate"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/09-03-file-traversal.md",
+    "title": "9.3 走訪檔案，保留路徑與失敗",
+    "url": "chapters/09-03-file-traversal/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "93"
+      },
+      {
+        "tag": "h2",
+        "id": "symbolic-link"
+      },
+      {
+        "tag": "h2",
+        "id": "metadata"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "walkdir-item"
+      },
+      {
+        "tag": "h3",
+        "id": "link"
+      },
+      {
+        "tag": "h3",
+        "id": "direntry-ownership"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "link-unicode"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/09-04-content-confirmation.md",
+    "title": "9.4 從檔案候選到真正相同的內容",
+    "url": "chapters/09-04-content-confirmation/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "94"
+      },
+      {
+        "tag": "h2",
+        "id": "filerecord"
+      },
+      {
+        "tag": "h2",
+        "id": "digest"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "digest_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      },
+      {
+        "tag": "h2",
+        "id": "abb-hash"
+      },
+      {
+        "tag": "h3",
+        "id": "_6"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/10-01-send-sync.md",
+    "title": "10.1 工作交給另一個 thread：Send 與 Sync",
+    "url": "chapters/10-01-send-sync/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "101-threadsend-sync"
+      },
+      {
+        "tag": "h2",
+        "id": "thread"
+      },
+      {
+        "tag": "h2",
+        "id": "send-thread"
+      },
+      {
+        "tag": "h2",
+        "id": "sync-shared-reference-thread"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "send-sync"
+      },
+      {
+        "tag": "h3",
+        "id": "sync"
+      },
+      {
+        "tag": "h2",
+        "id": "move-capture-rc-send"
+      },
+      {
+        "tag": "h2",
+        "id": "thread-static"
+      },
+      {
+        "tag": "h2",
+        "id": "cell"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/10-02-thread-join.md",
+    "title": "10.2 thread、join 與 panic payload",
+    "url": "chapters/10-02-thread-join/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "102-threadjoin-panic-payload"
+      },
+      {
+        "tag": "h2",
+        "id": "handle"
+      },
+      {
+        "tag": "h3",
+        "id": "join"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "ownership"
+      },
+      {
+        "tag": "h2",
+        "id": "result"
+      },
+      {
+        "tag": "h2",
+        "id": "panic"
+      },
+      {
+        "tag": "h2",
+        "id": "handle_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/10-03-hrtb-callbacks.md",
+    "title": "10.3 HRTB：讓 callback 接受當次的借用",
+    "url": "chapters/10-03-hrtb-callbacks/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "103-hrtb-callback"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "a"
+      },
+      {
+        "tag": "h2",
+        "id": "fora-callback-bound"
+      },
+      {
+        "tag": "h3",
+        "id": "static"
+      },
+      {
+        "tag": "h2",
+        "id": "hrtb-capture-static"
+      },
+      {
+        "tag": "h3",
+        "id": "reference-t"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "callback"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "callback_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/10-04-scoped-threads.md",
+    "title": "10.4 scoped thread：借用外部資料，安排區段收尾",
+    "url": "chapters/10-04-scoped-threads/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "104-scoped-thread"
+      },
+      {
+        "tag": "h2",
+        "id": "scope"
+      },
+      {
+        "tag": "h3",
+        "id": "lifetime"
+      },
+      {
+        "tag": "h3",
+        "id": "context"
+      },
+      {
+        "tag": "h2",
+        "id": "owner-main"
+      },
+      {
+        "tag": "h3",
+        "id": "callback"
+      },
+      {
+        "tag": "h2",
+        "id": "scoped-handle-scope"
+      },
+      {
+        "tag": "h3",
+        "id": "sendsync"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "panic-join-scope-panic"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/10-05-channels.md",
+    "title": "10.5 channel：交接訊息，也安排工作收尾",
+    "url": "chapters/10-05-channels/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "105-channel"
+      },
+      {
+        "tag": "h2",
+        "id": "channel"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "owned-vec"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "producer"
+      },
+      {
+        "tag": "h3",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "bounded-channel"
+      },
+      {
+        "tag": "h3",
+        "id": "join"
+      },
+      {
+        "tag": "h2",
+        "id": "consumer-worker-join"
+      },
+      {
+        "tag": "h2",
+        "id": "1"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/10-06-arc-mutex.md",
+    "title": "10.6 Arc 與 Mutex：共同持有，輪流修改",
+    "url": "chapters/10-06-arc-mutex/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "106-arc-mutex"
+      },
+      {
+        "tag": "h2",
+        "id": "mutex"
+      },
+      {
+        "tag": "h3",
+        "id": "guard"
+      },
+      {
+        "tag": "h3",
+        "id": "lock-poison"
+      },
+      {
+        "tag": "h3",
+        "id": "thread"
+      },
+      {
+        "tag": "h2",
+        "id": "arc"
+      },
+      {
+        "tag": "h3",
+        "id": "arc-thread"
+      },
+      {
+        "tag": "h2",
+        "id": "arc-mutex"
+      },
+      {
+        "tag": "h3",
+        "id": "main-owner-worker-main"
+      },
+      {
+        "tag": "h3",
+        "id": "t-sync-mutex"
+      },
+      {
+        "tag": "h2",
+        "id": "guard_1"
+      },
+      {
+        "tag": "h3",
+        "id": "guard-thread"
+      },
+      {
+        "tag": "h2",
+        "id": "poison"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/10-07-rwlock-design.md",
+    "title": "10.7 RwLock 與同步設計：共享讀取，獨佔修改",
+    "url": "chapters/10-07-rwlock-design/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "107-rwlock"
+      },
+      {
+        "tag": "h2",
+        "id": "read-write"
+      },
+      {
+        "tag": "h3",
+        "id": "try_read-try_write"
+      },
+      {
+        "tag": "h2",
+        "id": "reader-writer"
+      },
+      {
+        "tag": "h2",
+        "id": "thread-reader"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "downgrade"
+      },
+      {
+        "tag": "h2",
+        "id": "reader-writer-panic-poison"
+      },
+      {
+        "tag": "h3",
+        "id": "writer-panic"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h3",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "reader"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/10-08-atomic-ordering.md",
+    "title": "10.8 atomic 與 memory ordering：單次更新與跨操作同步",
+    "url": "chapters/10-08-atomic-ordering/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "108-atomic-memory-ordering"
+      },
+      {
+        "tag": "h2",
+        "id": "atomicusize"
+      },
+      {
+        "tag": "h2",
+        "id": "load-store"
+      },
+      {
+        "tag": "h2",
+        "id": "counterrmw-join"
+      },
+      {
+        "tag": "h2",
+        "id": "atomic"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "ordering"
+      },
+      {
+        "tag": "h2",
+        "id": "seqcst"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/11-01-future-and-runtime.md",
+    "title": "11.1 Future 與 async／await：先保存工作，再取得結果",
+    "url": "chapters/11-01-future-and-runtime/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "111-future-asyncawait"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "future"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "async-block"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "output-resultawait"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/11-02-task-lifecycle.md",
+    "title": "11.2 Task 的生命週期：提交工作，也收回它的結果",
+    "url": "chapters/11-02-task-lifecycle/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "112-task"
+      },
+      {
+        "tag": "h2",
+        "id": "future"
+      },
+      {
+        "tag": "h2",
+        "id": "task"
+      },
+      {
+        "tag": "h2",
+        "id": "joinhandle-await"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "task_1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/11-03-bounded-scheduling.md",
+    "title": "11.3 有上限的工作排程：完成一份，才補一份",
+    "url": "chapters/11-03-bounded-scheduling/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "113"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      },
+      {
+        "tag": "h2",
+        "id": "_6"
+      },
+      {
+        "tag": "h2",
+        "id": "_7"
+      },
+      {
+        "tag": "h2",
+        "id": "1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/11-04-time-and-timeout.md",
+    "title": "11.4 設定等待範圍，再分辨完成、逾時與取消",
+    "url": "chapters/11-04-time-and-timeout/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "114"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "timeout"
+      },
+      {
+        "tag": "h2",
+        "id": "okoutputoutputresult"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "timeout_1"
+      },
+      {
+        "tag": "h2",
+        "id": "tokiotimer"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/11-05-cancellation-and-finish.md",
+    "title": "11.5 select!、取消與收尾：停止提交，也等到清理完成",
+    "url": "chapters/11-05-cancellation-and-finish/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "115-select"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "select-join-task"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      },
+      {
+        "tag": "h2",
+        "id": "_6"
+      },
+      {
+        "tag": "h2",
+        "id": "guard"
+      },
+      {
+        "tag": "h2",
+        "id": "ctrlc"
+      },
+      {
+        "tag": "h2",
+        "id": "cli-ready-task"
+      },
+      {
+        "tag": "h2",
+        "id": "_7"
+      },
+      {
+        "tag": "h2",
+        "id": "task"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/11-06-http-basics.md",
+    "title": "11.6 HTTP 基礎：有收到回應，和檢查通過，是兩件事",
+    "url": "chapters/11-06-http-basics/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "116-http"
+      },
+      {
+        "tag": "h2",
+        "id": "http"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "client"
+      },
+      {
+        "tag": "h2",
+        "id": "api"
+      },
+      {
+        "tag": "h2",
+        "id": "headers-body"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "http_1"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/11-07-single-async-http.md",
+    "title": "11.7 單一 async HTTP：等待回應，再決定是否讀 body",
+    "url": "chapters/11-07-single-async-http/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "117-async-http-body"
+      },
+      {
+        "tag": "h2",
+        "id": "runtimeclient-future"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "send-text"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "async"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "http-body-json"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/11-08-local-service-and-tests.md",
+    "title": "11.8 受控本機服務：讓 HTTP 測試自己安排條件",
+    "url": "chapters/11-08-local-service-and-tests/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "118-http"
+      },
+      {
+        "tag": "h2",
+        "id": "get"
+      },
+      {
+        "tag": "h2",
+        "id": "port"
+      },
+      {
+        "tag": "h2",
+        "id": "handler"
+      },
+      {
+        "tag": "h2",
+        "id": "headers"
+      },
+      {
+        "tag": "h2",
+        "id": "fixture"
+      },
+      {
+        "tag": "h2",
+        "id": "start-http"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "http"
+      },
+      {
+        "tag": "h2",
+        "id": "sleep"
+      },
+      {
+        "tag": "h2",
+        "id": "client-entered"
+      },
+      {
+        "tag": "h2",
+        "id": "client-server"
+      },
+      {
+        "tag": "h2",
+        "id": "shutdownclient"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/12-01-gat.md",
+    "title": "12.1 讓借用結果的型別跟著這次借用：GAT",
+    "url": "chapters/12-01-gat/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "121-gat"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "associated-type"
+      },
+      {
+        "tag": "h3",
+        "id": "where-self-a"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "mutable"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/12-02-variance.md",
+    "title": "12.2 借用有效性放進型別後，哪些替換仍合法？",
+    "url": "chapters/12-02-variance/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "122"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "variance"
+      },
+      {
+        "tag": "h2",
+        "id": "mut-t-t"
+      },
+      {
+        "tag": "h2",
+        "id": "cell-shared"
+      },
+      {
+        "tag": "h2",
+        "id": "function-pointer"
+      },
+      {
+        "tag": "h2",
+        "id": "reference-cell"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/12-03-raw-pointers.md",
+    "title": "12.3 raw pointer：找到位置，還不等於可以存取",
+    "url": "chapters/12-03-raw-pointers/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "123-raw-pointer"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "pointer-safe"
+      },
+      {
+        "tag": "h2",
+        "id": "dereference"
+      },
+      {
+        "tag": "h2",
+        "id": "array"
+      },
+      {
+        "tag": "h2",
+        "id": "provenance"
+      },
+      {
+        "tag": "h3",
+        "id": "raw-pointer-reference-reference"
+      },
+      {
+        "tag": "h2",
+        "id": "allocation"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/12-04-unsafe-contracts.md",
+    "title": "12.4 unsafe的責任：從呼叫契約到安全抽象",
+    "url": "chapters/12-04-unsafe-contracts/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "124-unsafe"
+      },
+      {
+        "tag": "h2",
+        "id": "unsafe-fn"
+      },
+      {
+        "tag": "h2",
+        "id": "safe"
+      },
+      {
+        "tag": "h2",
+        "id": "mutable"
+      },
+      {
+        "tag": "h3",
+        "id": "pointermutable-slice"
+      },
+      {
+        "tag": "h3",
+        "id": "borrow"
+      },
+      {
+        "tag": "h2",
+        "id": "threadunsafe-impl"
+      },
+      {
+        "tag": "h3",
+        "id": "reference"
+      },
+      {
+        "tag": "h3",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "soundness"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/12-05-c-basics.md",
+    "title": "12.5 FFI 所需的 C 基礎",
+    "url": "chapters/12-05-c-basics/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "125-ffi-c"
+      },
+      {
+        "tag": "h2",
+        "id": "array"
+      },
+      {
+        "tag": "h2",
+        "id": "c-pointer"
+      },
+      {
+        "tag": "h2",
+        "id": "pointer"
+      },
+      {
+        "tag": "h2",
+        "id": "buffer"
+      },
+      {
+        "tag": "h2",
+        "id": "malloc-free-pointer"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "source-object-file"
+      },
+      {
+        "tag": "h3",
+        "id": "prototype"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/12-06-ffi.md",
+    "title": "12.6 FFI：把 C 契約接成安全的 Rust 介面",
+    "url": "chapters/12-06-ffi/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "126-ffi-c-rust"
+      },
+      {
+        "tag": "h2",
+        "id": "pointer"
+      },
+      {
+        "tag": "h2",
+        "id": "buildrs-c-rust"
+      },
+      {
+        "tag": "h2",
+        "id": "bufferpointerstruct"
+      },
+      {
+        "tag": "h2",
+        "id": "rust-owned-cstringc"
+      },
+      {
+        "tag": "h2",
+        "id": "c-ownedownerfree"
+      },
+      {
+        "tag": "h2",
+        "id": "borrow"
+      },
+      {
+        "tag": "h2",
+        "id": "c"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/13-01-self-reference.md",
+    "title": "13.1 self-reference：資料還活著，地址也可能對不上",
+    "url": "chapters/13-01-self-reference/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "131-self-reference"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "lifetimemove"
+      },
+      {
+        "tag": "h3",
+        "id": "reference"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "box-owner"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/13-02-pin-and-unpin.md",
+    "title": "13.2 Pin 與 Unpin：把地址穩定放進介面約定",
+    "url": "chapters/13-02-pin-and-unpin/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "132-pin-unpin"
+      },
+      {
+        "tag": "h2",
+        "id": "pin-pointer-pointee"
+      },
+      {
+        "tag": "h2",
+        "id": "unpin-pinning"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "typed-self"
+      },
+      {
+        "tag": "h3",
+        "id": "wrapper"
+      },
+      {
+        "tag": "h3",
+        "id": "safe-client-get_mut"
+      },
+      {
+        "tag": "h2",
+        "id": "owner"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/13-03-poll-and-waker.md",
+    "title": "13.3 Poll、Context 與 Waker：通知之後，誰再次檢查？",
+    "url": "chapters/13-03-poll-and-waker/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "133-pollcontext-waker"
+      },
+      {
+        "tag": "h2",
+        "id": "poll"
+      },
+      {
+        "tag": "h2",
+        "id": "context-handle"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "manualamountreadiness-waker"
+      },
+      {
+        "tag": "h2",
+        "id": "poll_1"
+      },
+      {
+        "tag": "h2",
+        "id": "pending"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/13-04-controlled-event-future.md",
+    "title": "13.4 外部事件 Future：檢查與登記之間，不能漏掉通知",
+    "url": "chapters/13-04-controlled-event-future/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "134-future"
+      },
+      {
+        "tag": "h2",
+        "id": "owner"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h3",
+        "id": "future"
+      },
+      {
+        "tag": "h2",
+        "id": "poll-worker-80"
+      },
+      {
+        "tag": "h3",
+        "id": "120poll"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "state"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/13-05-small-executor.md",
+    "title": "13.5 小型 executor：收到通知，再安排下一次 poll",
+    "url": "chapters/13-05-small-executor/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "135-executor-poll"
+      },
+      {
+        "tag": "h2",
+        "id": "future"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "pending80"
+      },
+      {
+        "tag": "h3",
+        "id": "joinworker"
+      },
+      {
+        "tag": "h2",
+        "id": "pin"
+      },
+      {
+        "tag": "h3",
+        "id": "recv"
+      },
+      {
+        "tag": "h3",
+        "id": "driverfunpin"
+      },
+      {
+        "tag": "h2",
+        "id": "120"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/14-01-macro-rules.md",
+    "title": "14.1 用 macro_rules! 產生已看懂的 Rust 宣告",
+    "url": "chapters/14-01-macro-rules/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "141-macro_rules-rust"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "struct-impl"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/14-02-macro-hygiene.md",
+    "title": "14.2 macro 的名字從哪裡來，錯誤又發生在哪裡？",
+    "url": "chapters/14-02-macro-hygiene/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "142-macro"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "crate"
+      },
+      {
+        "tag": "h2",
+        "id": "crate_1"
+      },
+      {
+        "tag": "h2",
+        "id": "hygiene"
+      },
+      {
+        "tag": "h2",
+        "id": "rust"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/14-03-procedural-derive.md",
+    "title": "14.3 讓自訂 derive 讀宣告、增加 trait 實作",
+    "url": "chapters/14-03-procedural-derive/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "143-derive-trait"
+      },
+      {
+        "tag": "h2",
+        "id": "procedural-macro"
+      },
+      {
+        "tag": "h2",
+        "id": "package"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "quote-token-impl"
+      },
+      {
+        "tag": "h2",
+        "id": "entry"
+      },
+      {
+        "tag": "h2",
+        "id": "crate"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "parser"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/14-04-api-compatibility.md",
+    "title": "14.4 讓library的公開契約能驗證，也能持續維護",
+    "url": "chapters/14-04-api-compatibility/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "144-library"
+      },
+      {
+        "tag": "h2",
+        "id": "caller"
+      },
+      {
+        "tag": "h2",
+        "id": "newtype"
+      },
+      {
+        "tag": "h3",
+        "id": "default"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "source"
+      },
+      {
+        "tag": "h2",
+        "id": "pub-usemodule"
+      },
+      {
+        "tag": "h2",
+        "id": "feature"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "cratecrate"
+      },
+      {
+        "tag": "h2",
+        "id": "caller_1"
+      },
+      {
+        "tag": "h3",
+        "id": "semver"
+      },
+      {
+        "tag": "h2",
+        "id": "caller_2"
+      },
+      {
+        "tag": "h2",
+        "id": "caller_3"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/14-05-property-testing.md",
+    "title": "14.5 從明確性質產生材料，再把失敗縮成可理解的反例",
+    "url": "chapters/14-05-property-testing/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "145"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "strategy"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "fixture"
+      },
+      {
+        "tag": "h3",
+        "id": "shrinking"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/14-06-loom-miri.md",
+    "title": "14.6 用 Loom 與 Miri 檢查普通 PASS 尚未涵蓋的責任",
+    "url": "chapters/14-06-loom-miri/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "146-loom-miri-pass"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "loom"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "fetch_add"
+      },
+      {
+        "tag": "h2",
+        "id": "miri"
+      },
+      {
+        "tag": "h3",
+        "id": "nightly"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "miri_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/14-07-fair-benchmarks.md",
+    "title": "14.7 固定同一項工作，再判斷量測數字",
+    "url": "chapters/14-07-fair-benchmarks/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "147"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "criterion"
+      },
+      {
+        "tag": "h2",
+        "id": "runner"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/14-08-profiling-and-improvement.md",
+    "title": "14.8 找到配置來源，再核對改善仍完成相同工作",
+    "url": "chapters/14-08-profiling-and-improvement/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "148"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "profiler"
+      },
+      {
+        "tag": "h2",
+        "id": "profileprofile"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h3",
+        "id": "source"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-01-practice-guide.md",
+    "title": "15.1 最終練功：自己完成一個可以使用的工具",
+    "url": "chapters/15-01-practice-guide/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "151"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "a"
+      },
+      {
+        "tag": "h3",
+        "id": "a_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-02-collect-files.md",
+    "title": "15.2 A1：自己收集檔案與項目問題",
+    "url": "chapters/15-02-collect-files/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "152-a1"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "a1"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-03-confirm-content.md",
+    "title": "15.3 A2：自己確認真正相同的內容",
+    "url": "chapters/15-03-confirm-content/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "153-a2"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "a1"
+      },
+      {
+        "tag": "h3",
+        "id": "ownership"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      },
+      {
+        "tag": "h2",
+        "id": "_6"
+      },
+      {
+        "tag": "h2",
+        "id": "_7"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-04-build-report.md",
+    "title": "15.4 A3：自己做出穩定文字與 JSON 報告",
+    "url": "chapters/15-04-build-report/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "154-a3-json"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "owned-serde"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      },
+      {
+        "tag": "h2",
+        "id": "_6"
+      },
+      {
+        "tag": "h2",
+        "id": "_7"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-05-connect-cli.md",
+    "title": "15.5 A4：自己接上參數、輸出與退出狀態",
+    "url": "chapters/15-05-connect-cli/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "155-a4"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h3",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h3",
+        "id": "main"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      },
+      {
+        "tag": "h2",
+        "id": "_6"
+      },
+      {
+        "tag": "h2",
+        "id": "_7"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-06-duplicate-finder-answer.md",
+    "title": "15.6 A 完整參考版：把練習收成可用工具",
+    "url": "chapters/15-06-duplicate-finder-answer/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "156-a"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h3",
+        "id": "clap-caller-root"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h3",
+        "id": "callback-panic"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-07-check-one-url.md",
+    "title": "15.7 B1：把一份 URL 變成一份檢查結果",
+    "url": "chapters/15-07-check-one-url/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "157-b1-url"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "owned"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-08-sequential-url-batch.md",
+    "title": "15.8 B2：保留原行位置，再依序檢查清單",
+    "url": "chapters/15-08-sequential-url-batch/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "158-b2"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "owned"
+      },
+      {
+        "tag": "h2",
+        "id": "artifact-checks"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-09-bounded-url-checks.md",
+    "title": "15.9 B3：同時等待，但只保有有限份 task",
+    "url": "chapters/15-09-bounded-url-checks/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "159-b3-task"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "check-task"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "checks"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "body"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-10-stop-and-finish-url-work.md",
+    "title": "15.10 B4：停止新提交，收妥工作，再交回完整清單",
+    "url": "chapters/15-10-stop-and-finish-url-work/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "1510-b4"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      },
+      {
+        "tag": "h2",
+        "id": "_4"
+      },
+      {
+        "tag": "h2",
+        "id": "checks"
+      },
+      {
+        "tag": "h2",
+        "id": "owner"
+      },
+      {
+        "tag": "h2",
+        "id": "_5"
+      },
+      {
+        "tag": "h2",
+        "id": "ctrlc"
+      }
+    ]
+  },
+  {
+    "old_path": "docs/chapters/15-11-url-checker-answer.md",
+    "title": "15.11 B 完整工具：同一份結果，交給使用者與下一個程式",
+    "url": "chapters/15-11-url-checker-answer/",
+    "headings": [
+      {
+        "tag": "h1",
+        "id": "1511-b"
+      },
+      {
+        "tag": "h2",
+        "id": "_1"
+      },
+      {
+        "tag": "h2",
+        "id": "batch"
+      },
+      {
+        "tag": "h2",
+        "id": "cli"
+      },
+      {
+        "tag": "h2",
+        "id": "row"
+      },
+      {
+        "tag": "h2",
+        "id": "_2"
+      },
+      {
+        "tag": "h2",
+        "id": "writeflush"
+      },
+      {
+        "tag": "h2",
+        "id": "library"
+      },
+      {
+        "tag": "h2",
+        "id": "_3"
+      }
+    ]
+  }
+]

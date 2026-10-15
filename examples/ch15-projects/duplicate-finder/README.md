@@ -15,11 +15,11 @@ cargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materia
 
 固定六檔得到complete=true、2群、重複內容10bytes、空問題清單與狀態0。把root換成自己的目錄即可。root依真正CWD解讀，--manifest-path不改CWD；以shell引號保留路徑中的空白。--help和--version顯示資訊並回0。
 
-需要存成檔案時，依7.5在shell重導向stdout，並緊接查看狀態；請把報告存到掃描root之外，避免shell預先建立的報告自己也進入掃描材料。
+需要存成檔案時，依10.5在shell重導向stdout，並緊接查看狀態；請把報告存到掃描root之外，避免shell預先建立的報告自己也進入掃描材料。
 
 ## 獨立保存完整答案
 
-完整manifest欄位皆為literal。把此目錄的Cargo.toml、src、tests與fixtures保存到repo外同一資料夾，不依賴其他stage或path dependencies。依15.1選固定toolchain並先解析依賴、建立自己的lock：
+完整manifest欄位皆為literal。把此目錄的Cargo.toml、src、tests與fixtures保存到repo外同一資料夾，不依賴其他stage或path dependencies。依18.1選固定toolchain並先解析依賴、建立自己的lock：
 
 ```bash
 cargo +1.99.0 check
@@ -43,7 +43,7 @@ JSON的五個top-level欄位是complete、duplicate_bytes、groups、scan_issues
 
 完整性描述掃描，不保證出口已成功；程式明確flush後才回0或1。指標是不同路徑的邏輯重複bytes，hard-link路徑也算，不宣稱能回收同量實體空間。乘法與加法都checked，不能表示正確總量就回致命錯誤。
 
-讀前／讀後的原生路徑與openedhandle觀察是盡力而為，不是檔案系統一致快照。一般檔案問題保留且繼續；exact offender移除後從剩餘桶有限重建。私有callback違約的panic是程式作者接錯，不是正常檔案失敗政策。
+讀前／讀後的原生路徑與openedhandle觀察是盡力而為，不是檔案系統一致快照。一般檔案問題保留且繼續；確切問題檔案移除後從剩餘桶有限重建。私有callback違約的panic是程式作者接錯，不是正常檔案失敗政策。
 
 ## 從library使用與查答案
 

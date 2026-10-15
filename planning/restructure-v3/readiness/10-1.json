@@ -1,0 +1,127 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "10.1"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round10-cargo-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round10-cli-fixtures.md",
+    "planning/restructure-v3/reviews/technical-early/round10-complete-note-search.md",
+    "planning/restructure-v3/reviews/technical-early/round10-native-path-clap-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round10-serde-json.md",
+    "planning/restructure-v3/reviews/technical-early/round10-text-bytes-io-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/10-01-lesson.md": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab",
+    "examples/intro-workspace/cargo-setup/Cargo.toml": "a91b0656e41cf9060a8cc48bc4c1ae26a832160cae9f62c7a302b0f0c0303a87",
+    "examples/intro-workspace/cargo-setup/src/main.rs": "56f0bf62412665451465f79d2d0f32aa8f58440c75f3328c487d10a66fe00363",
+    "examples/intro-workspace/modules-basic/Cargo.toml": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+    "examples/intro-workspace/modules-basic/src/lib.rs": "a2730bc5b8092f7a450369a65582404dbb83895caf104941af12d8a39024e534",
+    "examples/intro-workspace/modules-basic/src/pricing.rs": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 3,
+      "quote": "前面的程式使用標準函式庫與自己寫的 library。接下來要讀檔案、處理命令列參數，也會使用別人維護的程式庫。這一節先回答：**Cargo 如何知道到哪裡找程式庫、需要哪些功能，以及使用哪一組版本？**"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 9,
+      "quote": "**dependency** 是目前 package 所需要的另一個 package。Cargo 依 manifest 找到它、準備所需的 library crate，讓我們的程式能使用其公開項目。加入依賴本身不會執行那個 library 的功能。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 11,
+      "quote": "先使用本機的 `intro-modules-basic`。它與本節 package 都在 `intro-workspace/` 下，因此從 `cargo-setup/Cargo.toml` 所在資料夾出發，先以 `..` 往上一層，再進入 `modules-basic/`。依賴的 `path` 寫成 `../modules-basic`；起點是**宣告依賴的 manifest 所在資料夾**，不是執行命令時的所在資料夾。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 19,
+      "quote": "[crates.io](https://crates.io/) 是 Cargo 預設使用的 **registry**，保存已發布 package 的名稱、版本與下載資訊。沒有指定 `path` 等其他來源時，Cargo 依名稱與版本要求從這個 registry 找依賴。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 30,
+      "quote": "**feature** 是 library 提供的具名功能開關。`clap` 的 `derive` 功能支援後面要學的宣告式參數設定，所以本例明確請求 `features = [\"derive\"]`。這個功能名稱屬於 `clap`，不會替我們自己的 package 定義一個同名 feature。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 36,
+      "quote": "以下是本節**完整** `cargo-setup/Cargo.toml`。前三個欄位仍是第一章已教的 package 名稱、版本與 edition。依賴有不只一項設定時，用 TOML 的**行內表格** `{ 欄位 = 值, 欄位 = 值 }` 放在同一組；下面的本機依賴與 `clap` 設定就是這種形式："
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 44,
+      "quote": "`4.6.7` 的三段稱為 major、minor、patch。**Semantic Versioning**，簡稱 **SemVer**，是發布者表達版本相容性的約定：對已進入 1.0 的版本，major 改動表示不相容的公開介面變更，minor 與 patch 分別用於相容的功能新增與修正。這是發布約定，並非編譯器保證 library 沒有行為問題。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 50,
+      "quote": "[docs.rs](https://docs.rs/) 提供 library 的 **API（Application Programming Interface，應用程式介面）** 文件。API 是給其他程式使用的公開介面，例如公開函式、型別與方法。crates.io 回答「有哪些版本可取得」，docs.rs 回答「這個版本提供什麼公開功能、如何使用」。例如 [clap 4.6.7 的功能清單](https://docs.rs/crate/clap/4.6.7/features) 可核對預設功能與 `derive`；呼叫特定 API 前，還要閱讀它的輸入、輸出與使用條件，下一節會實作一份這樣的文件。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 54,
+      "quote": "在 Rust 程式中，package 的連字號換成 library crate 名稱的底線，這是第 2.6 節已用過的規則。以下完整 `cargo-setup/src/main.rs` 從 `intro_modules_basic::pricing` 呼叫公開函式："
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 79,
+      "quote": "`cargo add` 將依賴加入 manifest，並更新需要的版本解析紀錄。名稱後的 `@版本` 指定版本要求，`--features derive` 加上具名功能，`--dev` 選開發依賴區段；`--manifest-path` 與 `-p` 仍明確選擇入門 workspace 與本節 package。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 81,
+      "quote": "在**自己的練習副本**可以用下列指令重建本頁兩個 registry 設定。已有同名依賴時，它會更新現有項目，不會新增第二個 `clap`："
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 92,
+      "quote": "入門 workspace 共用 `examples/intro-workspace/Cargo.lock`。它保存本次解析到的實際版本組合，也包含「依賴的依賴」。未修改設定時，後續建置會沿用紀錄；`--locked` 再要求此次操作不能修改它。通常由 Cargo 維護，不手動填一份依賴清單。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 108,
+      "quote": "這裡的 `clap` 是**要更新的依賴 package**，不同於 `cargo run -p intro-cargo-setup` 選要執行的 package。更新後檢查 manifest、lockfile 的差異，再執行適當程式與測試。不要為了讓 `--locked` 過關就刪除 lockfile；先判斷這次是否真的要改依賴。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 114,
+      "quote": "本頁真正使用的是第 2.6 節保留的最小 library，不會連帶載入本書後續章節。以下三份檔案就是這項本機依賴的設定與 library 來源；它的 binary 與其他範例沒有被本節指令選中。"
+    },
+    {
+      "section_id": "10.1",
+      "path": "docs/chapters/10-01-lesson.md",
+      "line": 138,
+      "quote": "在練習副本查出 `clap` 的版本要求、要求的 feature、lockfile 的實際版本。再說明為何 `tempfile` 放在另一個區段，以及哪個設定讓本節數字程式找到本機計價 library。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

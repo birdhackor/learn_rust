@@ -1,0 +1,184 @@
+[
+  {
+    "id": "13-01",
+    "width": 1280,
+    "title": "13.1 Send 與 Sync：檢查跨 thread 的移交與共用¶",
+    "images": [
+      {
+        "name": "13-01-1280-image0.png",
+        "alt": "上方Send移交String給另一個thread；下方Sync讓另一個thread持有原String的shared reference，原owner仍保留文字",
+        "box": {
+          "x": 288.5,
+          "y": 60.46875,
+          "width": 400,
+          "height": 680
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 0
+  },
+  {
+    "id": "13-02",
+    "width": 1280,
+    "title": "13.2 thread、join 與 panic payload¶",
+    "images": [
+      {
+        "name": "13-02-1280-image0.png",
+        "alt": "主thread與worker各自計算小計，join等待worker完成後取得200，再合併成206",
+        "box": {
+          "x": 288.5,
+          "y": -34.53125,
+          "width": 400,
+          "height": 870
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-02-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "13-03",
+    "width": 1280,
+    "title": "13.3 HRTB：讓 callback 接受當次的借用¶",
+    "images": [
+      {
+        "name": "13-03-1280-image0.png",
+        "alt": "callback提供對任一借用lifetime的能力，with_local建立80並借給callback，交出200而局部來源在函式結束",
+        "box": {
+          "x": 288.5,
+          "y": 54.96875,
+          "width": 400,
+          "height": 690
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-03-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "13-04",
+    "width": 1280,
+    "title": "13.4 scoped thread：借用外部資料，安排區段收尾¶",
+    "images": [
+      {
+        "name": "13-04-1280-image0.png",
+        "alt": "外部values與total保持有效，callback建立工作後返回，scope自動等待worker寫入200並結束body，返回後主thread讀取total",
+        "box": {
+          "x": 288.5,
+          "y": 0.46875,
+          "width": 400,
+          "height": 800
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-04-1280-answer.png",
+    "answerScroll": {
+      "client": 906,
+      "scroll": 906
+    }
+  },
+  {
+    "id": "13-01",
+    "width": 390,
+    "title": "13.1 Send 與 Sync：檢查跨 thread 的移交與共用¶",
+    "images": [
+      {
+        "name": "13-01-390-image0.png",
+        "alt": "上方Send移交String給另一個thread；下方Sync讓另一個thread持有原String的shared reference，原owner仍保留文字",
+        "box": {
+          "x": 16,
+          "y": 130.53125,
+          "width": 342.984375,
+          "height": 583.09375
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 0
+  },
+  {
+    "id": "13-02",
+    "width": 390,
+    "title": "13.2 thread、join 與 panic payload¶",
+    "images": [
+      {
+        "name": "13-02-390-image0.png",
+        "alt": "主thread與worker各自計算小計，join等待worker完成後取得200，再合併成206",
+        "box": {
+          "x": 16,
+          "y": 48.53125,
+          "width": 342.984375,
+          "height": 746.015625
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-02-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "13-03",
+    "width": 390,
+    "title": "13.3 HRTB：讓 callback 接受當次的借用¶",
+    "images": [
+      {
+        "name": "13-03-390-image0.png",
+        "alt": "callback提供對任一借用lifetime的能力，with_local建立80並借給callback，交出200而局部來源在函式結束",
+        "box": {
+          "x": 16,
+          "y": 126.53125,
+          "width": 342.984375,
+          "height": 591.671875
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-03-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  },
+  {
+    "id": "13-04",
+    "width": 390,
+    "title": "13.4 scoped thread：借用外部資料，安排區段收尾¶",
+    "images": [
+      {
+        "name": "13-04-390-image0.png",
+        "alt": "外部values與total保持有效，callback建立工作後返回，scope自動等待worker寫入200並結束body，返回後主thread讀取total",
+        "box": {
+          "x": 16,
+          "y": 78.65625,
+          "width": 343,
+          "height": 686
+        }
+      }
+    ],
+    "bodyOverflow": false,
+    "details": 1,
+    "answer": "13-04-390-answer.png",
+    "answerScroll": {
+      "client": 311,
+      "scroll": 311
+    }
+  }
+]

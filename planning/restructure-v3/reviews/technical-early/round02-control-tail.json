@@ -1,0 +1,293 @@
+{
+  "review_id": "technical-early-round02-control-tail",
+  "sealed_at_utc": "2026-10-15T06:38:31.229627+00:00",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/02-06-lesson.md",
+    "docs/chapters/02-07-lesson.md",
+    "docs/chapters/02-08-lesson.md"
+  ],
+  "reader_background": "Basic Python plus actual required main-prose chapters1 and2.1–2.5; no future chapter3 or unshown source prerequisite.",
+  "independent_initial_sealed_before_other_role_records": true,
+  "independence": "No author ledger, first-reader record, continuity/audit conclusion, root technical conclusion, or historical issue list read before sealing. Root gave scope/readiness and the broad allowed checks, not the finding.",
+  "method": "Sequential whole-page technical reread; exact owned source and selected-target closure; no blind-first-read or target-reader experiment claim.",
+  "necessary_findings": [
+    {
+      "id": "TC02T-01",
+      "classification": "selected-target source completeness and first-use timing",
+      "severity": "增加理解負擔",
+      "necessity": "required under actual-loaded-source and allow-before-use constraints",
+      "rust_semantic_error": false,
+      "location": "docs/chapters/02-07-lesson.md:74-78",
+      "quote": "--all-targets 要求涵蓋這個 package 的 library、binary、範例與測試等 target，而不是只看主要程式。此處選的是內容都已教過的 intro-control。",
+      "actual_command": "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --all-targets --locked",
+      "evidence": [
+        {
+          "path": "examples/intro-workspace/control/examples/lint_return.rs",
+          "lines": "1-4",
+          "text": "Contains #[allow(clippy::needless_return)] at line2, already in the all-targets command closure."
+        },
+        {
+          "path": "docs/chapters/02-07-lesson.md",
+          "lines": "86-100",
+          "text": "needless_return and the exact allow mechanism/scope/purpose are first explained after the all-targets command; full lint_return source appears at93."
+        },
+        {
+          "path": "examples/intro-workspace/control/examples/integration_answer.rs",
+          "lines": "1-32",
+          "text": "An automatically discovered example target, so it is included by --all-targets."
+        },
+        {
+          "path": "docs/chapters/02-07-lesson.md",
+          "lines": "104-129,145",
+          "text": "Full page sources embed manifest/lib/pricing/main, assertions_answer and lint_return elsewhere, but do not embed integration_answer."
+        },
+        {
+          "path": "docs/chapters/02-08-lesson.md",
+          "lines": "95-105",
+          "text": "integration_answer is first fully displayed on the next page."
+        }
+      ],
+      "already_taught": "Package selection, library/binary separation, assertions, cfg(test), inline test modules, use paths, and test harness roles are explained. integration_answer uses those known constructs; its issue is missing actual source from this page, not a newly needed algorithm/API.",
+      "missing_links": [
+        "The first broad Clippy invocation processes the narrow allow before the explanation that grants its meaning and deliberate purpose.",
+        "The selected command also processes an owned source file whose full code is supplied only by the following page, so this page is not the stated complete source closure for that command."
+      ],
+      "reader_impact": "A sequential reader cannot reconstruct and inspect the entire first all-targets invocation from current/prior lesson sources, or yet explain why one included function suppresses a lint. Running successfully would not prove the current claim that all selected content has already been taught.",
+      "minimal_fix": "Place the all-targets instruction after the allow explanation and after integration_answer is supplied (for example in 2.8 after its complete answer), or choose a deliberately narrower already-complete target set here and explain that selection. Ensure any retained broad formatting/check command does not silently contradict the chosen stage/source contract. Do not delete the useful exact allow lesson or introduce future APIs.",
+      "discovery": "Independent source inspection before reading author ledger, other-role records, root conclusions, or historical issue lists.",
+      "verification": "Static source/manuscript and Cargo --all-targets selection semantics; no execution in this round."
+    }
+  ],
+  "optional_findings": [],
+  "execution": {
+    "cargo_or_rustc_commands": [],
+    "reason": "Chapter3 author owns Cargo; static review sufficient.",
+    "browser_or_visual_check": false
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/02-06-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/lib.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-06-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/pricing.rs:subtotal",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-06-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/pricing.rs:shipping",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-06-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/pricing.rs:total",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-06-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/main.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-06-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-06-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/src/pricing.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-06-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/examples/order_answer/main.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-06-lesson.md",
+      "reference": "examples/intro-workspace/modules-basic/examples/order_answer/display/mod.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-07-lesson.md",
+      "reference": "examples/intro-workspace/control/examples/assertions_answer.rs:answer-checks",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-07-lesson.md",
+      "reference": "examples/intro-workspace/control/src/lib.rs:unit-tests",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-07-lesson.md",
+      "reference": "examples/intro-workspace/control/examples/lint_return.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-07-lesson.md",
+      "reference": "examples/intro-workspace/control/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-07-lesson.md",
+      "reference": "examples/intro-workspace/control/src/lib.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-07-lesson.md",
+      "reference": "examples/intro-workspace/control/src/pricing.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-07-lesson.md",
+      "reference": "examples/intro-workspace/control/src/main.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-07-lesson.md",
+      "reference": "examples/intro-workspace/control/examples/assertions_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-08-lesson.md",
+      "reference": "examples/intro-workspace/control/src/pricing.rs:total",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-08-lesson.md",
+      "reference": "examples/intro-workspace/control/src/pricing.rs:sum",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/02-08-lesson.md",
+      "reference": "examples/intro-workspace/control/src/main.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-08-lesson.md",
+      "reference": "examples/intro-workspace/control/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-08-lesson.md",
+      "reference": "examples/intro-workspace/control/src/lib.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-08-lesson.md",
+      "reference": "examples/intro-workspace/control/src/pricing.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-08-lesson.md",
+      "reference": "examples/intro-workspace/control/src/main.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/02-08-lesson.md",
+      "reference": "examples/intro-workspace/control/examples/integration_answer.rs",
+      "source_exists": true
+    }
+  ],
+  "closure": {
+    "modules_basic_binary": [
+      "src/main.rs",
+      "src/lib.rs",
+      "src/pricing.rs"
+    ],
+    "modules_basic_order_answer": [
+      "examples/order_answer/main.rs",
+      "examples/order_answer/display/mod.rs",
+      "src/lib.rs",
+      "src/pricing.rs"
+    ],
+    "control_library_test": [
+      "src/lib.rs including cfg(test) module",
+      "src/pricing.rs"
+    ],
+    "control_binary": [
+      "src/main.rs",
+      "src/lib.rs without cfg(test) module",
+      "src/pricing.rs"
+    ],
+    "control_lint_return_example": [
+      "examples/lint_return.rs",
+      "src/lib.rs without cfg(test) module",
+      "src/pricing.rs"
+    ],
+    "control_assertions_answer_test": [
+      "examples/assertions_answer.rs including its cfg(test) module",
+      "src/lib.rs without library unit-test module",
+      "src/pricing.rs"
+    ],
+    "control_integration_answer_test": [
+      "examples/integration_answer.rs including its cfg(test) module",
+      "src/lib.rs without library unit-test module",
+      "src/pricing.rs"
+    ],
+    "control_clippy_all_targets": "Includes library, binary, assertions_answer, lint_return and integration_answer plus applicable test builds; issue TC02T-01 records the early/missing source.",
+    "external_dependencies": false,
+    "build_rs_in_modules_basic": false,
+    "build_rs_in_control": false
+  },
+  "static_results": {
+    "modules_basic_binary": "180/400",
+    "modules_basic_order_answer": "goods280/total300",
+    "control_library_tests": "Four unit tests; all current assertions consistent with pricing source.",
+    "threshold_mutation": "Changing >=300 to >300 makes only shipping_threshold_includes_300 fail with left320/right300 at the asserted exact threshold.",
+    "control_lint_return": "Both functions yield160.",
+    "control_assertions_answer": "One test shipping_uses_goods_subtotal; goods280/total300.",
+    "control_integration_answer": "Two tests; run stdout goods280/total300 then sum400. --example testing excludes the four library unit tests.",
+    "my_report": "Learner-created target required by exercise; absence from repo is intentional and not an incomplete supplied answer."
+  },
+  "limits": [
+    "No new build, runtime, test, Clippy, formatter, mutation, fixture, or browser execution.",
+    "Collapsed inline complete-source blocks were read in Markdown source; their actual page/visual behavior was not checked.",
+    "Unselected chapter3 Rust source was not read or assumed."
+  ],
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    "docs/chapters/02-06-lesson.md": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+    "docs/chapters/02-07-lesson.md": "0fdb1af3846531b6dfc9f27bca568e78164256472f45e1ac83607521a6233339",
+    "docs/chapters/02-08-lesson.md": "b69bbd89d449943fd3665683069201b7f8bc829fb6d0d6b665f476c41b3b88ce",
+    "examples/intro-workspace/modules-basic/Cargo.toml": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+    "examples/intro-workspace/modules-basic/src/lib.rs": "a2730bc5b8092f7a450369a65582404dbb83895caf104941af12d8a39024e534",
+    "examples/intro-workspace/modules-basic/src/pricing.rs": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+    "examples/intro-workspace/modules-basic/src/main.rs": "83572d3c55811d1579ef9ed372dafedc16502b8b731d926b2ab5db5868423ec2",
+    "examples/intro-workspace/modules-basic/examples/order_answer/main.rs": "35dc799103c50b34828d6b4b05aab0adce46a6ff86bfef5d163ef7ef3cfde641",
+    "examples/intro-workspace/modules-basic/examples/order_answer/display/mod.rs": "5994928cbb96e5c9e5f407b5ecd09df3b596918f48fbf804ed7295677c75cbf0",
+    "examples/intro-workspace/control/Cargo.toml": "18abe91283c11f1a1f1109a64b28d1de3cf39d17dc8223e48cec3bd65df6b7bf",
+    "examples/intro-workspace/control/src/lib.rs": "aa8fc8a3b9f8f9804cbf13ebeb3a2ce5d6093f1fa8ab292fa373239fdec8d2ac",
+    "examples/intro-workspace/control/src/pricing.rs": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+    "examples/intro-workspace/control/src/main.rs": "5d78165a15d701ea5c666890114c085df879766bf7e6c1eaf0102d92ede8f87e",
+    "examples/intro-workspace/control/examples/assertions_answer.rs": "a5d624eed1ec93683354d1d0deb23f1557a3f4e5c5e60ce98c1f353c6e273066",
+    "examples/intro-workspace/control/examples/lint_return.rs": "e0f68b7ca14eb3ff532ae81717b81821738584db30f0a768d6816663043d1f80",
+    "examples/intro-workspace/control/examples/integration_answer.rs": "3ef2a593ee398e521593908f6a0679253b0ae0c01b9152b643c0865026436db9",
+    "examples/intro-workspace/Cargo.toml": "77708bcc8ed7d4cbfc5b2e01156df0f081606a1e25894fd86697008685288b87",
+    "examples/intro-workspace/Cargo.lock": "a0339cd7d528d67876df3dd1a2b1fb2169063d31e4cba666c575f6564756f8e0",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5",
+    "AGENTS.md": "04687339ba4b38681e0c7e33e19851a3b0272ec9dfe283ead91454ce939b956b",
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395"
+  }
+}

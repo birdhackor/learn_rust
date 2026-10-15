@@ -1,0 +1,23 @@
+{
+  "sealed_utc": "2026-10-15T07:50:51.457101+00:00",
+  "scope": "independentactual6.1–6.2initial",
+  "necessary_findings": 1,
+  "optional_findings": 0,
+  "files": {
+    "round06-ch06a.md": "3174a32c1bf12c5bfe0b573d48fb35239cb40139ef03b682b0759f2dd07c4558",
+    "round06-ch06a.json": "7dc12a14ea209fd0f713693c5578923076f5883b45af0fb2523815fb6963c9c5",
+    "round06-ch06a-sourcehashes.json": "fc2ad083722c5d600c05a01bb8e416f245b99704cb8b12f81eb11c8559eb3d09"
+  },
+  "source_changes": [
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial": "ab2450344449650f23553c189af2af1032be26ac133de130245ef47fc612da66",
+      "current": "0fe0c68b5753558a7b9d650faa209317c7268d0ad40ec1284952bb66117aa7bf"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial": "bdcccb63479540b1f3f2c275d50e3b6cc8c4047fdb768eea0e7014a85bda1084",
+      "current": "ce0b4e0a6f7a6475a272ba794f8e8686e2de531eb1e372b5c5af7be4be54fc51"
+    }
+  ]
+}

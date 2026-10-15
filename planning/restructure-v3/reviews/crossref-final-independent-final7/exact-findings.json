@@ -1,0 +1,35 @@
+{
+  "required": [],
+  "optional": [
+    {
+      "id": "FINAL7-O1",
+      "classification": "可選的引用精確化；非必要先備缺口",
+      "origin": {
+        "path": "docs/chapters/18-08-lesson.md",
+        "line": 53,
+        "quote": "runner借用同一份Client，取得每筆期限Duration。沿14.5，Duration具備Copy，可以把相同跨度交給每次B1 `check`；**每筆開始時各建立自己的期限**，不是整批只共用一個十秒倒數。client建立失敗仍在開始批次前處理。",
+        "sha256": "88f5224655b0d0b037c4e51795f0bd71d81be264a33f5583d9d0a12c57a92d7c"
+      },
+      "observation": "「沿14.5，Duration具備Copy」容易讓讀者以為14.5已說明具體Copy能力；14.5介紹的是時間跨度與操作，正文沒有Copy一詞。本句自身已直接說明Copy，故順序閱讀仍有必要資訊，不列必要缺陷。",
+      "true_target": {
+        "path": "docs/chapters/14-05-lesson.md",
+        "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+        "lines": 222,
+        "line": 9,
+        "quote": "標準庫 **`std::time::Duration`** 表示時間長度；`Duration::from_secs(1)` 建立1秒，`Duration::from_millis(20)` 建立20毫秒，1秒等於1000毫秒。`duration.as_millis()` 回傳總毫秒數，供本例顯示，會捨去不足1毫秒的部分。"
+      },
+      "target_detail": "14.5:9介紹Duration時間長度、from_secs/from_millis/as_millis；本輪另以全文文字搜尋確認14.5無Copy。既有Copy概念已在6.3教過，本句補具體標準型別能力即可。",
+      "minimum_change": "將「沿14.5，Duration具備Copy」改成「Duration是14.5已教的時間跨度；這個標準型別具備Copy」。其餘保留。",
+      "benefit": "明分時間跨度的前文回指與此處補充的具體型別能力，避免回14.5尋找並不存在的Copy說明。",
+      "author_action": "只讀；未改正文或Rust。root已回覆採納，由root落盤並作窄核。",
+      "current": {
+        "path": "docs/chapters/18-08-lesson.md",
+        "line": 53,
+        "quote": "runner借用同一份Client，取得每筆期限Duration。Duration 是 14.5 已教的時間跨度；這個標準型別具備 Copy，可以把相同跨度交給每次B1 `check`；**每筆開始時各建立自己的期限**，不是整批只共用一個十秒倒數。client建立失敗仍在開始批次前處理。",
+        "sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34"
+      },
+      "root_disposition": "採納",
+      "resolved_by_integrator": true
+    }
+  ]
+}

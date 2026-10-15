@@ -1,0 +1,177 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "16.5"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round16-poll-event-executor-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round16-self-reference-pin-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/16/16-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/16-05-lesson.md": "682ee2b551cda73f3589643ce3f9827570e368d10377759af42a9182fd0755e7",
+    "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch13-futures/stages/examples/executor_event/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "examples/ch13-futures/stages/examples/executor_event/runner/mod.rs": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df",
+    "examples/ch13-futures/stages/examples/executor_event/main.rs": "173327762bdba78ed56c3d8db71c4e6c0b40945f2dd2fae133e376c3b4185b7a",
+    "examples/ch13-futures/stages/examples/executor_early_notice/runner/mod.rs": "4d2a7e133bc4b9d2d971c4adccf2008c0611d8a9703953fc56256953aaba7279",
+    "examples/ch13-futures/stages/examples/executor_early_notice/main.rs": "c70fd4fb60272af991ea9b6a4b480054c86cb7ee93c8edad323c684f3342408a",
+    "examples/ch13-futures/stages/examples/executor_pinned/runner/mod.rs": "849f283a3a2506d66ab4c8d6b2ca64d29ef20ba6772aa4b33aef66d050457521",
+    "examples/ch13-futures/stages/examples/executor_pinned/main.rs": "3b102e0a8ff80f5c6abe7c4789ce89dd52a49023ab15be334e86ff73fbb00942",
+    "examples/ch13-futures/stages/examples/executor_solution/readiness/mod.rs": "b2900f5906c4167043688004f893bcb164bd5709a18fa0556229a81e919d7d08",
+    "examples/ch13-futures/stages/examples/executor_solution/runner/mod.rs": "a7d1bed3965cba804fd104c43086647810508bdf1e659ccf6f6eba2d5a2b14df",
+    "examples/ch13-futures/stages/examples/executor_solution/main.rs": "d93c4eb719c80d0ffe85effc1780777157abb7629d26e132d56a712fd70ed8ae",
+    "examples/ch13-futures/Cargo.toml": "967b0de23ab6cfa47c3450d3f57356c6d34e23f33fcece5fb27d7f82b8d4e926",
+    "examples/ch13-futures/src/lib.rs": "2b784372e0fe76ee40b7fcc35685070ee9c937721d25aa2a66b656b30d1922d2",
+    "examples/ch13-futures/src/addresses.rs": "ecc28b64aebb05adbeb3ab5a8a53f25f7e93816844cdb5ffb5fc58ed94f871d3",
+    "examples/ch13-futures/src/pinning.rs": "e52fbf2e64735c17bf2153f8d22e85c8dd1916cea2e637a05153da45b8c2a42e",
+    "examples/ch13-futures/src/polling.rs": "86aaaa646c3b17d44dfad9767c027b6c180024f5b005a47f670e942c7adaf551",
+    "examples/ch13-futures/src/readiness.rs": "2b5d14ae4112f5d8e03dfea6b98a967fe42249fdfdb8a278f0e85d611621c212",
+    "examples/ch13-futures/src/runner.rs": "164639b5c9ce64a8ca5c7bbcc0829ebfc6a6745d254c677452f329afe31c6e60",
+    "examples/ch13-futures/examples/executor_event.rs": "2456c06604755605b5eb5ae48b8980e0cfae132abf24266c6898e217470425b9",
+    "examples/ch13-futures/examples/executor_early_notice.rs": "687fb33a44fe32811e693479c80deb298be420ddf5475113a2134a3d2bba3fe4",
+    "examples/ch13-futures/examples/executor_pinned.rs": "e7542eb97d8323f0dac022a4ac3795570193506264765e3b0aa0a8e1045f03fd",
+    "examples/ch13-futures/examples/executor_solution.rs": "fee789eb7cac0ea9a42015256beca4e873f9572e4809c6ab80b27c1776cc6b21",
+    "examples/ch13-futures/examples/inline_swap.rs": "dad2a68787777585cf82b9b22b4c9e943910dc5981d64df71bbe7b530031f2b5",
+    "examples/ch13-futures/examples/box_handles.rs": "a4027c95c248fb141af796e17fed38a45f63f48b67dc156ce6037b601949280a",
+    "examples/ch13-futures/examples/field_swap_solution.rs": "c2a6047a648b4853f0edb5b982ed98f52c4306a4601cd8a219ca1bc7119f7da0",
+    "examples/ch13-futures/examples/unpin_access.rs": "0de2e89d4777b51204c65d440ff38b88ec41dd3669ba018f9832d19016392de0",
+    "examples/ch13-futures/examples/pinned_owner_swap.rs": "e9486de4049afeb4e752075e91e731394c7888c00e66092524d6d1a85b0085d6",
+    "examples/ch13-futures/examples/pinning_solution.rs": "6286d949367108d2d00de67f6ce50e6895ffe3770bc735f12e40b9ebfbd24105",
+    "examples/ch13-futures/examples/manual_poll.rs": "6060ef9dd08eaecfe8d43031ed39cc9c97e54e161e058cba4f5f2f59b632e8d3",
+    "examples/ch13-futures/examples/already_ready.rs": "72bfb1187efff3f10aa793eacccf2fce94d6ef0d491948eb95fa2434437af92b",
+    "examples/ch13-futures/examples/polling_solution.rs": "c67988fcf6c60ce57ac31eecbb5f2aa501abf0da12323a7c3843a90e4f951bb8",
+    "examples/ch13-futures/examples/event_after_poll.rs": "8526ff4104be143df302cb7b861c6397be5a06ce5c7759532bfbb3aec7628698",
+    "examples/ch13-futures/examples/event_before_poll.rs": "2b8e32b6b57489d98bec3e73eb55f8abdfa4d3d5bdc29dd66faf3d12628b7ce4",
+    "examples/ch13-futures/examples/event_solution.rs": "e91c275615dd836690117705ad8b6ece9148eb61bd1bb321a0cae47f3f873eee",
+    "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml": "e6a4b9c9d14e9ade7b5b9c7ff1cd0b56c53080aed2cffdaa8e1cb1c66b599d6a",
+    "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.rs": "73facf00cbd6bf5009ed5adccfdd251b4cd453eb7c00fa6bdc1bcdbc51e94560",
+    "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.rs": "36f90656e05584c3860c9557ae6249b0f0dd0388ec63bdaf09116e5f64e90cba",
+    "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.rs": "acd705401e4f16dee4345ed8aad999c96b9182cb4c2bf7a315d3f35afd20be8f",
+    "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.rs": "d45e8d0513919c543d76adf58985ab796f074ba066178171639bdfa73fc80ffa",
+    "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml": "4b72336031c53782ad6c2d33d84326b8a2954e01ae7d7fc45550cd6f88ea6d22",
+    "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.rs": "607a6ccbbfb4f4c8d37441be494eb2e13af65512860a70659fff0da0a038501b",
+    "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.expected": "19bb7307840ec56041dfec745a61f88160ea6130b01e6cfce9f3f52dbede1ad8",
+    "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.lock": "5da64c7aac59dca9ffe91c6f8d1f35ea707af436f5a5f77aebefe11bb67ff31a",
+    "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.lock": "e06d2cd2dd22e254033c7bf3891315c63ecca0d0c586e01bd07d7f39a17264ba",
+    "docs/assets/ch13/executor-notice.svg": "a905c8914a5b0ac9cd30e96936186bf1507180fa3dd90de92d7bb364990604b3"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 3,
+      "quote": "上一節已有外部事件 Future，main 卻仍先 join，再自行 poll。現在把「何時重新檢查」交給一個小型 **executor（執行器）**：它接手一份工作，先 poll；Pending 時等通知，收到後再 poll；Ready 時交回答案並停止。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 9,
+      "quote": "executor 已知道自己要檢查哪一份工作，通知 channel 只傳 **unit `()`**，意義是「請再檢查」。它不是數字80，也不是另一份 future ownership。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 11,
+      "quote": "沿13.5，**`mpsc::channel::<()>()`** 回傳 `Sender<()>`／`Receiver<()>`，buffer 保留尚未取走的訊息。wake 就算先於 recv，通知也能留待收取；空 buffer 且 Sender 仍存在時，recv 會 blocking 等訊息，不是一直重新 poll。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 13,
+      "quote": "**ChannelWake** 回呼持有一份 `Sender<()>`，wake 只送 unit，不持有 future、不 poll。unit 有 Send，`Sender<()>` 有 Send／Sync，也沒有短局部借用，因此滿足16.3的 Waker::from 所需 bounds；不是要求 future 也移給 worker。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 29,
+      "quote": "自訂 **`run_one<F: Future>(work: F) -> F::Output`** 沿5.1的泛型及6.4的 associated type：F 是這次呼叫的具體工作型別，bound 讓 driver 能呼叫 poll；`F::Output` 是該實作選定的結果型別。它接手 owned F，正常完成時交回 Output。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 31,
+      "quote": "work 只留在呼叫 thread，沒有移交到 thread::spawn，**不另外要求 `F: Send` 或 `'static`**。通知回呼可以跨 thread，與 future 本身在哪裡被 poll，是兩項不同責任。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 33,
+      "quote": "`Box::pin(work)` 取得 `Pin<Box<F>>` owner；每次 `as_mut()` 借出 `Pin<&mut F>`，交給 poll。這條 safe 路徑**不要求 F 有 Unpin**，也不取得可能移出 F 的普通 mutable reference。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 35,
+      "quote": "Pending 後的 recv 在 **driver 裡、poll 返回以後**才執行，沒有塞進 Future::poll。收到通知回到 loop，再借用同一工作、再 poll。Ready 分支直接 return Output，不再等通知或 poll；局部 owner／Context／Receiver 依正常流程清理。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 39,
+      "quote": "若一開始就讓 worker 供值，第一次 poll 可能直接 Ready；這合法，卻看不到通知循環。因此用具體 **StartAmount** wrapper 建立受控先後。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 45,
+      "quote": "控制 send 不等 worker 完成；worker recv 後再 event.send。**控制 channel 傳 i32，通知 channel 傳 unit，是兩份不同 channel。** poll 裡沒有 recv 或 join。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 87,
+      "quote": "**Recheck** 只有 i32 與 bool，具備 Unpin。`new(value)` 保存數字，requested 起始 false；第一次 poll 先設 true，呼叫16.3的 **`cx.waker().wake_by_ref()`**，再回 Pending；下一次才 Ready。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 111,
+      "quote": "**PinnedAnswer** 保存 i32 與 PhantomPinned，沒有 Unpin 實作；marker 在這裡只驗介面能力，不表示數字模型真的自引用。new 建普通 owned 值，尚未 pin 時仍能交接。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 133,
+      "quote": "沿第一個外部事件程式，只把 StartAmount 控制數值改120。預測兩個 channel 各傳什麼、誰再次 poll，以及 run_one 返回後為何仍要 join；不改 EventAmount 或 AmountEvent。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 157,
+      "quote": "run_one 的 Waker 保活 ChannelWake 及 Sender。**供值端消失，不代表通知 channel 已關閉**：若 AmountEvent 被丟棄而未供值，future 可能仍 Pending，通知 Sender 卻還活著，因此 recv 可以繼續等待。expect 沒有製造訊息、業務錯誤或逾時；不執行永遠 Pending 的工作來等待它自行結束。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 161,
+      "quote": "標準 Waker 允許多次通知被合併成一次後續檢查，wake 不是一通知必交一份答案，也不保證別的 task 一定先取得執行機會。這份 driver **只有一份工作，沒有多工作公平排程承諾**。原 State 的短 Mutex 仍可能等鎖；這不是通用效能或完成保證。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 167,
+      "quote": "現在地址模型、Pin、通知、事件與 driver 都已教完，可以使用原 **`ch13-futures`** package。前面的 stage 快照永久保留；下面改由完整 library 提供相同介面，名稱中的 ch13 是既有 package 名，不是本章號。"
+    },
+    {
+      "section_id": "16.5",
+      "path": "docs/chapters/16-05-lesson.md",
+      "line": 371,
+      "quote": "**`--no-run`** 讓 cargo test 只編譯、不執行。先以它確認不是編譯失敗，再執行同一個 `--test poll_after_ready` integration target："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

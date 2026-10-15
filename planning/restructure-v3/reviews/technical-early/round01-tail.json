@@ -1,0 +1,157 @@
+{
+  "review_id": "technical-early-round01-tail",
+  "sealed_at_utc": "2026-10-15T06:23:45.457819+00:00",
+  "role": "independent technical reviewer, not author",
+  "scope": {
+    "lessons": [
+      "docs/chapters/01-07-lesson.md",
+      "docs/chapters/01-08-lesson.md"
+    ],
+    "selected_sources": [
+      "examples/intro-workspace/steps/examples/memory.rs",
+      "examples/intro-workspace/steps/examples/memory_answer.rs",
+      "examples/intro-workspace/steps/examples/tuple_array.rs",
+      "examples/intro-workspace/steps/examples/tuple_array_answer.rs",
+      "examples/intro-workspace/steps/fixtures/runtime-fail/array_index.rs"
+    ],
+    "figures": [
+      "docs/assets/foundations-v3/program-process.svg",
+      "docs/assets/foundations-v3/i32-value-size-location.svg",
+      "docs/assets/foundations-v3/subtotal-frames.svg",
+      "docs/assets/foundations-v3/heap-location-content.svg",
+      "docs/assets/foundations-v3/heap-lifecycle.svg"
+    ],
+    "metadata_recheck": "1.3 displayed intro-workspace manifest after three chapter-2 members added"
+  },
+  "reader_background": "Basic Python and actual 1.1–1.6 main prose; no C/C++ or future Rust prerequisite",
+  "independent_initial_sealed_before_peer_or_historical_material": true,
+  "independence": "No author ledger, first-reader record, root disposition, historical issue/review, or peer conclusion was read before sealing. Own previously sealed prefix report was used only for source-hash comparison.",
+  "method": "Sequential whole-page technical reread, static selected-target/source/config/figure-source validation; not blind first-read or target-reader experiment.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary technical, selected-target completeness, or diagram-source correspondence defect found in 1.7–1.8 or the narrow 1.3 manifest metadata update.",
+  "execution": {
+    "cargo_commands": [],
+    "rustc_commands": [],
+    "reason": "Root requested no Cargo while chapter-2 author runs selected targets; static inspection sufficient for this scope. Previously executed 12 prefix commands were not repeated.",
+    "fixture_execution": false,
+    "visual_or_browser_execution": false
+  },
+  "static_closure": {
+    "package": "intro-steps",
+    "package_manifest": "examples/intro-workspace/steps/Cargo.toml",
+    "external_dependencies": false,
+    "src_lib_rs_exists": false,
+    "build_rs_exists": false,
+    "selected_success_targets": [
+      "memory",
+      "memory_answer",
+      "tuple_array",
+      "tuple_array_answer"
+    ],
+    "owned_mod_include_sources": [],
+    "attributes_or_clippy_allow_in_selected_sources": false,
+    "runtime_fixture": "Standalone complete source copied into the 1.2 project src/main.rs by the documented reproduction route."
+  },
+  "diagram_source_checks": [
+    {
+      "path": "docs/assets/foundations-v3/program-process.svg",
+      "xml_parse_success": true,
+      "viewBox": "0 0 336 830",
+      "technical_source_correspondence": "pass",
+      "rendered_visual_check": false
+    },
+    {
+      "path": "docs/assets/foundations-v3/i32-value-size-location.svg",
+      "xml_parse_success": true,
+      "viewBox": "0 0 336 740",
+      "technical_source_correspondence": "pass",
+      "rendered_visual_check": false
+    },
+    {
+      "path": "docs/assets/foundations-v3/subtotal-frames.svg",
+      "xml_parse_success": true,
+      "viewBox": "0 0 336 1110",
+      "technical_source_correspondence": "pass",
+      "rendered_visual_check": false
+    },
+    {
+      "path": "docs/assets/foundations-v3/heap-location-content.svg",
+      "xml_parse_success": true,
+      "viewBox": "0 0 336 940",
+      "technical_source_correspondence": "pass",
+      "rendered_visual_check": false
+    },
+    {
+      "path": "docs/assets/foundations-v3/heap-lifecycle.svg",
+      "xml_parse_success": true,
+      "viewBox": "0 0 336 1340",
+      "technical_source_correspondence": "pass",
+      "rendered_visual_check": false
+    }
+  ],
+  "changes_since_own_prefix_snapshot": [
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "old": "46da4b3b01c5ecf499262e9b4effd21501fc18d879037a1511e6d1ff3c8753af",
+      "new": "1f8bc83d5bc4795f113de8ca98f2ba49e8c94af2c43264d22effe9b98e8e27ad"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "old": "8ac8f9953ef778c7aeaac60a2028ca05d8b2ce63ad9f1a516bab2899df96c6f6",
+      "new": "f98bced86fbd54a67d0cba9e8b06dae8e8f0be1659d616ad1de990d3da33988c"
+    }
+  ],
+  "metadata_update_judgment": "Only the intro workspace members list and lock package metadata changed among the 37 prefix snapshot sources. Added manifests use only already-taught name/version/edition and no dependencies. Selected intro-steps targets remain independent, with no automatic library source.",
+  "verification_limits": [
+    "No new Cargo, rustc, Clippy, test, fixture, or runtime execution. Static expected stdout/diagnostic judgments only.",
+    "Five SVGs were read as XML source and parsed, without browser/raster rendering or screen-size readability judgment.",
+    "Heap figures are explicitly conceptual data-relation examples; no claimed runnable heap Rust implementation was checked.",
+    "Later chapter promises were not validated against unread future chapters."
+  ],
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    "AGENTS.md": "04687339ba4b38681e0c7e33e19851a3b0272ec9dfe283ead91454ce939b956b",
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    "docs/chapters/01-07-lesson.md": "017a1fa288e5545af8878f752fc7b4730ca639df1025ba8a90c4e5ffc41fc49d",
+    "docs/chapters/01-08-lesson.md": "4d1f23cea4daf930e04075fe08f544226142f8e774b20c7405d4003afa7c03cd",
+    "docs/chapters/01-03-lesson.md": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5",
+    "examples/intro-workspace/Cargo.toml": "1f8bc83d5bc4795f113de8ca98f2ba49e8c94af2c43264d22effe9b98e8e27ad",
+    "examples/intro-workspace/Cargo.lock": "f98bced86fbd54a67d0cba9e8b06dae8e8f0be1659d616ad1de990d3da33988c",
+    "examples/intro-workspace/hello/Cargo.toml": "946345ebb5bcb3465019d4d501ec888da32b198c9a87d4b2d91edb2fec085e9d",
+    "examples/intro-workspace/greeting/Cargo.toml": "83300e56501d71d423e9a1aebbfd2cd1c6c4599238ed4884fcad8e93847615c5",
+    "examples/intro-workspace/steps/Cargo.toml": "ba433fca9aa7ac14673d3b3727bf391f285a6013ec75ffa2a6ba60942e245dfb",
+    "examples/intro-workspace/control-steps/Cargo.toml": "52011d81554362fc0008e34c86caab53d1da8f6e599cb7b335e0b3b2dd5d8c6e",
+    "examples/intro-workspace/modules-basic/Cargo.toml": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+    "examples/intro-workspace/control/Cargo.toml": "18abe91283c11f1a1f1109a64b28d1de3cf39d17dc8223e48cec3bd65df6b7bf",
+    "examples/intro-workspace/steps/examples/memory.rs": "54dc40c93a46f7a0e3af6a4e8ebd78da172e037035bb9373c1f026e97b5e3661",
+    "examples/intro-workspace/steps/examples/memory_answer.rs": "11d2fde89c13aa7aceb49d6a8e114d5f6ac3cbef5eede68bcf27be6f27775c7b",
+    "examples/intro-workspace/steps/examples/tuple_array.rs": "394066df88ff1a0a49da45db0bfb34fb27528eef4a19f17b120b8bfaac61d96c",
+    "examples/intro-workspace/steps/examples/tuple_array_answer.rs": "254acbc9c4d6b8c1e6d324e75b127b3a8e3045baf6258f875f2c3b77bc1e3a6d",
+    "examples/intro-workspace/steps/fixtures/runtime-fail/array_index.rs": "78efa165166ae79f032c42a45c459f54499d7735103aaed02d20bb8d52cb0b62",
+    "docs/assets/foundations-v3/program-process.svg": "03367eb5f7d3bef3aaa637ba242b0e90a2a96d8cd0ef2536ca94132fb64db561",
+    "docs/assets/foundations-v3/i32-value-size-location.svg": "00c15a22127e47bef1c326c613aeb9ed9e521830f16aae6723041e576a48e891",
+    "docs/assets/foundations-v3/subtotal-frames.svg": "4d20deebd597037398e621e19d50132de691b599646e6d4f65bbbf7ef54ce37c",
+    "docs/assets/foundations-v3/heap-location-content.svg": "cbf0c1a2d8e130303093a37246f15096a1e08b70ed4d15175e5e1b3315b074ab",
+    "docs/assets/foundations-v3/heap-lifecycle.svg": "e53c8727d4f10625fe015d1836372806985c432ebd1271dc29711916e419cd9a"
+  },
+  "post_seal_rechecks": [
+    {
+      "checked_at_utc": "2026-10-15T06:31:06.660804+00:00",
+      "trigger": "Root explicitly reported a heading-only change; this is a prompted narrow recheck, not an independent finding.",
+      "previous_heading": "# 1.7 程式執行時，電腦如何保存資料",
+      "current_heading": "# 1.7 計算機基礎：程式、記憶體、stack 與 heap",
+      "previous_sha256": "017a1fa288e5545af8878f752fc7b4730ca639df1025ba8a90c4e5ffc41fc49d",
+      "current_sha256": "bfb2f7bfe932726dd5c3d16a61128105f1783e6bd12b9cef9ca07a9b3f06f36a",
+      "restoring_previous_heading_reproduces_previous_hash": true,
+      "new_execution_or_visual_check": false,
+      "tail_sources_and_five_svgs_unchanged": true
+    }
+  ]
+}

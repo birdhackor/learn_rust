@@ -1,0 +1,328 @@
+{
+  "review_id": "technical-early-round08-errors-tail",
+  "scope": [
+    "docs/chapters/08-06-lesson.md"
+  ],
+  "role": "independent technical reviewer, not author",
+  "independent_initial": true,
+  "reader_background": "Actual1–7,8.1–8.5;previouslyreviewed9.1–9.4notusedasprerequisite. No9.5+/10/11draftused.",
+  "independence": "Noauthorvalidation,peer/continuity/readerorhistoricalfindingsreadbeforeseal.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No technical,first-use,selected-sourceclosure,output/testcount,Result/Optionpropagationorfixture-codeissuefound.",
+  "method": "Fullmainprose/source/expectedtechnicalrereadandstaticreasoning;helpercopiescomparedbyte-for-byteagainstfullyreadsources. Notblindfirstread,readerexperimentorvisualverification.",
+  "execution": {
+    "cargo_rustc_clippy_tests": [],
+    "browser_visual": false,
+    "author_evidence_used_as_own": false
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:19:28.510719+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/chapters/08-06-lesson.md": "15b4c6f9ad3fa382090f532d2094f81f5e8779464a8c31e00cdafe5d4c8895ac",
+    "examples/intro-workspace/Cargo.lock": "81627cf6fc4300b9cfe4d03d453555138381cbea6f148e75696e8d826f096dbd",
+    "examples/intro-workspace/Cargo.toml": "8175b3dd7d3e481c83cbd3fac60b8e8bd3bd001ae11d4393a0f0e8ae1d2c1c05",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/option_question.rs": "b808b015b65c4171258db7f26557e0bdb3de40e69f9a8c284c442f37a07112bd",
+    "examples/intro-workspace/error-stages/examples/propagation/aliases/mod.rs": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+    "examples/intro-workspace/error-stages/examples/propagation/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/propagation/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/propagation/main.rs": "45a79a2094abb4b6532085313f83463f936a590b7ef9737af49e39d9e9f90eda",
+    "examples/intro-workspace/error-stages/examples/propagation/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "examples/intro-workspace/error-stages/examples/propagation/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs": "39342314705963bb06e0063679ef6b82192e8c62f01f80ba3cd9acd03057ab87",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/aliases/mod.rs": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/main.rs": "6c07510338d9803f4eb13efd7181bd80546fff0e49a288abb345d69783dba928",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/propagation_answer/propagation/mod.rs": "39342314705963bb06e0063679ef6b82192e8c62f01f80ba3cd9acd03057ab87",
+    "examples/intro-workspace/error-stages/fixtures/compile-fail/question_in_unit.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/error-stages/fixtures/compile-fail/question_in_unit.rs": "e160305097ebcf7fa46eb0ae3ca2e0e41bde1b47887986c589f937e5670098c8",
+    "examples/intro-workspace/error-stages/fixtures/compile-fail/question_without_conversion.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/error-stages/fixtures/compile-fail/question_without_conversion.rs": "153fd77d955377abfc37a909a8d64f0e5e8f4bd1ee197f0dbadf75972ca6293a",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs:manual-propagation",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs:question-propagation",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_in_unit.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_without_conversion.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/option_question.rs:second-number",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/option_question.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation/aliases/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation/formatting/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation/conversions/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation/parsing/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation_answer/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation_answer/propagation/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation_answer/aliases/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation_answer/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation_answer/formatting/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation_answer/conversions/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-06-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/propagation_answer/parsing/mod.rs",
+      "file_exists": true
+    }
+  ],
+  "command_review": [
+    "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example propagation --locked",
+    "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example option_question --locked",
+    "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example propagation --locked",
+    "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example propagation_answer --locked"
+  ],
+  "helper_identities": [
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/aliases/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/aliases/aliases/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/conversions/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/formatting/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/parsing/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/policy/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/aliases/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/aliases/aliases/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/conversions/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/formatting/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/parsing/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/policy/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs"
+    },
+    {
+      "path": "examples/intro-workspace/error-stages/examples/propagation_answer/propagation/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs"
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-error-stages",
+    "manifest": "examples/intro-workspace/error-stages/Cargo.toml",
+    "no_library": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "targets": [
+      {
+        "target": "propagation",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/propagation/main.rs",
+          "examples/intro-workspace/error-stages/examples/propagation/aliases/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation/conversions/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation/formatting/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation/parsing/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation/policy/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs"
+        ]
+      },
+      {
+        "target": "propagation_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/propagation_answer/main.rs",
+          "examples/intro-workspace/error-stages/examples/propagation_answer/aliases/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation_answer/conversions/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation_answer/formatting/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation_answer/parsing/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation_answer/policy/mod.rs",
+          "examples/intro-workspace/error-stages/examples/propagation_answer/propagation/mod.rs"
+        ]
+      },
+      {
+        "target": "option_question",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/option_question.rs"
+        ]
+      }
+    ],
+    "unit_test_command": "propagation",
+    "test_count": 12,
+    "test_breakdown": {
+      "policy": 2,
+      "formatting": 1,
+      "conversions": 3,
+      "parsing": 4,
+      "propagation": 2,
+      "aliases": 0
+    },
+    "inline": "Everyloadedsource/manifestsamepageincludingfolds. Earlierstagecopiesunchanged,nohiddenlibrary,Clippyallow,ErrortraitorlaterAPI. Only3run/1selectedtestcommand."
+  },
+  "concept_evidence": [
+    {
+      "concept": "Result ? versus explicit early-return matches",
+      "identity": "8.6:7–13 manualhelpercurrentlyownedCount/ParseCountErrorandfunction-localearlyreturn;17–26?successunwraps/errorconvertsviaFromandreturnsErr,currentfunctionreturntypeconditionsbeforecodes29.",
+      "need": "Reduce repeatederror-convert-and-returncodewhilepreservingfirstfailureandcallerpolicy3.",
+      "operation": "ParseIntError→Integer,CountError→Range from8.5;tailOk(count)stillneeded;abcskipssecondstep,101failssecond,3succeeds. MainborrowedassertResultthenmatchshortkeepscallerloopworking.",
+      "evidence_and_limits": "Nopanic/printingaddedby?;doesnotdecideentirebatchstop. UnitmainandmissingFromfixturesbothE0277forprecisedistinctreason. No unsupportedgenericTry/FromResidualmechanismneededtocopyactualResultcase.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Option ? and same-error-type propagation",
+      "identity": "8.6:84–86OptionSomeunwrap/NoneearlyreturnfromOptionfn;168stdreflexiveFrombeforecount_pairexercise.",
+      "need": "Preserveabsentseconditeminstead offakenumber,errorconversiononlywhereactualResultneedsit;countpairrequiresbothvalidateditems.",
+      "operation": "get1Someborrow→*valueCopy→Somei32,shortslicesNone. Pairparsesfirstthen secondandonlythenOk tuple;ownFromParseCountErrorsameidentityhandlesboth?.",
+      "evidence_and_limits": "NoneisnotautomaticallyarbitraryErr108. Emptyarrayprior5.5;tuplepatternprior4.3. Firstabc/second101returnsIntegerfirst,first3/second101RangeTooLarge101;nohalfOkpair.",
+      "status": "sufficient"
+    }
+  ],
+  "fixtures": [
+    {
+      "source": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_in_unit.rs",
+      "expected": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_in_unit.expected",
+      "stable_code": "E0277",
+      "reason": "UnitmaincannotpropagateResultresidual.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_without_conversion.rs",
+      "expected": "examples/intro-workspace/error-stages/fixtures/compile-fail/question_without_conversion.expected",
+      "stable_code": "E0277",
+      "reason": "NoFromParseIntErrorforCountErrorforResult?.",
+      "executed": false
+    }
+  ],
+  "static_outputs": {
+    "propagation": [
+      "0：件數 0",
+      "3：件數 3",
+      "100：件數 100",
+      "abc：無法解析整數：invalid digit found in string",
+      "-1：件數不符規則：件數 -1 不能為負數",
+      "101：件數不符規則：件數 101 超過批次上限100",
+      "呼叫者已決定報告失敗並繼續下一筆"
+    ],
+    "option_question": [
+      "零筆：None",
+      "一筆：None",
+      "兩筆：Some(20)"
+    ],
+    "propagation_answer": [
+      "第一筆解析失敗，整個函式已回傳",
+      "兩筆都成功才回傳 tuple，失敗保留原原因"
+    ]
+  },
+  "limits": "Outputs/12tests/2fixturecodesstatic,notnewRustexecution. No9.5+,10/11orvisualreview.",
+  "sealed_at_utc": "2026-10-15T08:20:13.725265+00:00"
+}

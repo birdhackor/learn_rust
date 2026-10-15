@@ -1,6 +1,6 @@
 <svg width="340" height="342" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 340 342" role="img" aria-labelledby="title desc">
   <title id="title">reference 借用原 Order，而不接手 ownership</title>
-  <desc id="desc">order 持有單價120、數量3的 Order。reference 的型別為 &amp;Order，箭頭只借用同一筆資料。對 reference 解參照會找到該 Order，沒有建立另一份 Order。</desc>
+  <desc id="desc">order 持有單價120、數量3的 Order。reference 的型別為 &amp;Order，箭頭只借用同一筆資料。沒有建立另一份 Order。</desc>
   <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#1d4ed8"/></marker></defs>
   <rect width="340" height="342" rx="12" fill="#f8fafc"/>
   <g font-family="sans-serif" font-size="20" fill="#172033">
@@ -13,6 +13,6 @@
     <rect x="20" y="207" width="300" height="91" rx="8" fill="#dcfce7" stroke="#166534" stroke-width="2"/>
     <text x="36" y="239">order：仍是 owner</text>
     <text x="36" y="269">Order：單價 120，數量 3</text>
-    <text x="22" y="326">*reference 找到這筆 Order</text>
+    <text x="22" y="326">借用同一筆 Order</text>
   </g>
 </svg>

@@ -1,0 +1,30 @@
+{
+  "sealed_utc": "2026-10-15T10:52:14.879504+00:00",
+  "source_stable": true,
+  "files": [
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b.md",
+      "sha256": "ece8325ea2b447a785c86ed41197af3fe21f58eb22e40d5377948a1616a35a0c"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b.json",
+      "sha256": "3975c037d93815434461f5551abb2dbb8295f64f48d60f04252b9c133a55e3f3"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b-sourcehashes.json",
+      "sha256": "927111d917e8543326edd1a7a79680d31f15871a78ec0552cf582507c62ed7f1"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b-checks.json",
+      "sha256": "0cb17acfbbf701151713fd2a8d4464e4ffe0f7dff5cf827cd68382222d28c954"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-ch18b-progress.json",
+      "sha256": "82a275dfba7aec09e5c6cb07e5edec391a85ccd8b5215a5431acb345f2d149b5"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/continuity-early/round18b-fixture-render-proof.json",
+      "sha256": "0bb810ba04e2be584dd3531b7af49d2f2e57cfabc9d8cc62dbbfe52a18f37ea8"
+    }
+  ]
+}

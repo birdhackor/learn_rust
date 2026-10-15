@@ -1,0 +1,555 @@
+{
+  "review_id": "round15-raw-pointer-safe-abstraction-middle",
+  "scope": [
+    "15.3",
+    "15.4"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python+實際已讀1–13及15.1–15.2；未以17.6的工具說明代替本波安全理由，也未讀15.5+當先備。",
+  "independence": "未讀作者validation/ledger、peer、reader或historical findings；按actual正文與所有selected own source建立初判。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "兩頁全文、32snippets、8selected runs/1example test（6函式）、5組完整compilefail/expected及2SVG XML/source靜態核對。",
+    "8個重複快照比較，追每個raw dereference/add/from_raw_parts_mut的來源、alignment、初始化、範圍、aliasing與回傳lifetime；檢查ReadOnlyI32 constructor/private invariants及unsafe Send/Sync全部公有操作。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "miri_or_ub_run": false,
+    "note": "沒有本波Rust/Cargo/Miri或raw memory實驗；正常輸出與compilefail診斷靜態核對，不用有限PASS當soundness證明。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:34:27.379037+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "f71fbeedefb6f784f754cda7052427df3d8bb84e825579b64071f6f9305957e7",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/assets/ch12/raw-array.svg": "1e3fe4be89e831721566567d512691379bf1d99587b7fdb738f2f24ff8bdaa9c",
+    "docs/assets/ch12/safe-split.svg": "7b6aeb6e536ea758c2a32429c30698a60a1a9c4cdbc12b26eb1ae0865f1af6c3",
+    "docs/chapters/15-03-lesson.md": "8dab364a2465746176fc776a154b507efc35ba3c4e0b89b69d9b19a96512f18e",
+    "docs/chapters/15-04-lesson.md": "3f60eb8974d39620c01dd5719914f728739bfbca6fe7507ce091d712b78ecd4f",
+    "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+    "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+    "examples/ch12-unsafe/stages/examples/contracts_complete/main.rs": "57ad881be656415f365c7acde81deb2d65096ec853dde5d9185161e164ae3668",
+    "examples/ch12-unsafe/stages/examples/raw_array.rs": "ec00d80a6d4a53a308e2693de79aca05e105957c30ff0a7f49e43824aaf36878",
+    "examples/ch12-unsafe/stages/examples/raw_construction.rs": "3a0488f94e2c0b0785b205b5f19176894b82f41757c4ac75f8992f7f28d65804",
+    "examples/ch12-unsafe/stages/examples/raw_local.rs": "b6b10b0acccc27cc5200f12e2b50c4d7b6619e27f79aece418b2bdc04634c109",
+    "examples/ch12-unsafe/stages/examples/raw_solution.rs": "c56d23b11eec610f10581192a0e6e0940052a71629137459dc6556552052d2f1",
+    "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs": "0a098b656e7b7912093b4f80e2d6993ddd2233bfed8130d9d9048f2c9484542d",
+    "examples/ch12-unsafe/stages/examples/readonly_threads/main.rs": "57ad881be656415f365c7acde81deb2d65096ec853dde5d9185161e164ae3668",
+    "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs": "dda61e9cbf87331c319d11c781ed4b5a7d2db8a050658c141f853d9246c316ef",
+    "examples/ch12-unsafe/stages/examples/safe_split/main.rs": "aca13d411d9fc8fddad12ba5ef716908109fa4f0cc0d8601375a5c771181e9ae",
+    "examples/ch12-unsafe/stages/examples/unsafe_read/contracts/mod.rs": "58df1d4937fc07ab63215454e20f359be2af157f0b8bbb909460058911e0e54f",
+    "examples/ch12-unsafe/stages/examples/unsafe_read/main.rs": "9a9068291c1961b1d286051fa136abe704ef2994b47d6a8bbb9169c90ba904bb",
+    "examples/ch12-unsafe/stages/examples/unsafe_solution/contracts/mod.rs": "dda61e9cbf87331c319d11c781ed4b5a7d2db8a050658c141f853d9246c316ef",
+    "examples/ch12-unsafe/stages/examples/unsafe_solution/main.rs": "140272fd7190952dd46ca86ca8a3704fc0fbd746e951639e48046a88e6fb5407",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.rs": "be5ddfa3e352ab719d67067460709c86c38b5eb1c2da9f728a53e9779ee8b586",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.expected": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.rs": "02bf53ece868e4f54fb6d145502267159ac3bca1f87ec29657cce24e32aa6a8d",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.rs": "d94289238708c8a9aada39e14498d59e13a8d339c2a43401afccab0d2440a07d",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.rs": "0b1139176ba851764b2faeba52717c26c66974efabd8a76a3701872dd0d54e5d",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.expected": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.rs": "05265ce1ffe9aba7e192becf533dc5e5f5d5c8bcfbfa75c9dbd4cc0927327c38",
+    "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 10,
+      "source": "examples/ch12-unsafe/stages/Cargo.toml",
+      "tag": null,
+      "included_sha256": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 14,
+      "source": "examples/ch12-unsafe/stages/src/main.rs",
+      "tag": null,
+      "included_sha256": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+      "included_lines": 3
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 49,
+      "source": "examples/ch12-unsafe/stages/examples/raw_construction.rs",
+      "tag": null,
+      "included_sha256": "3a0488f94e2c0b0785b205b5f19176894b82f41757c4ac75f8992f7f28d65804",
+      "included_lines": 16
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 79,
+      "source": "examples/ch12-unsafe/stages/examples/raw_local.rs",
+      "tag": null,
+      "included_sha256": "b6b10b0acccc27cc5200f12e2b50c4d7b6619e27f79aece418b2bdc04634c109",
+      "included_lines": 17
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 96,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.rs",
+      "tag": null,
+      "included_sha256": "02bf53ece868e4f54fb6d145502267159ac3bca1f87ec29657cce24e32aa6a8d",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 102,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.expected",
+      "tag": null,
+      "included_sha256": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 128,
+      "source": "examples/ch12-unsafe/stages/examples/raw_array.rs",
+      "tag": null,
+      "included_sha256": "ec00d80a6d4a53a308e2693de79aca05e105957c30ff0a7f49e43824aaf36878",
+      "included_lines": 23
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 164,
+      "source": "examples/ch12-unsafe/stages/examples/raw_solution.rs",
+      "tag": null,
+      "included_sha256": "c56d23b11eec610f10581192a0e6e0940052a71629137459dc6556552052d2f1",
+      "included_lines": 19
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 10,
+      "source": "examples/ch12-unsafe/stages/Cargo.toml",
+      "tag": null,
+      "included_sha256": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 14,
+      "source": "examples/ch12-unsafe/stages/src/main.rs",
+      "tag": null,
+      "included_sha256": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+      "included_lines": 3
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 33,
+      "source": "examples/ch12-unsafe/stages/examples/unsafe_read/contracts/mod.rs",
+      "tag": "read-i32",
+      "included_sha256": "bd56e83a0b1818afae7b1ae67b2067e0b1e6a67ee509b961378f89500f3a2570",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 43,
+      "source": "examples/ch12-unsafe/stages/examples/unsafe_read/contracts/mod.rs",
+      "tag": null,
+      "included_sha256": "58df1d4937fc07ab63215454e20f359be2af157f0b8bbb909460058911e0e54f",
+      "included_lines": 14
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 47,
+      "source": "examples/ch12-unsafe/stages/examples/unsafe_read/main.rs",
+      "tag": null,
+      "included_sha256": "9a9068291c1961b1d286051fa136abe704ef2994b47d6a8bbb9169c90ba904bb",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 63,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.rs",
+      "tag": null,
+      "included_sha256": "05265ce1ffe9aba7e192becf533dc5e5f5d5c8bcfbfa75c9dbd4cc0927327c38",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 69,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/unsafe_call_without_block.expected",
+      "tag": null,
+      "included_sha256": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 91,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.rs",
+      "tag": null,
+      "included_sha256": "0b1139176ba851764b2faeba52717c26c66974efabd8a76a3701872dd0d54e5d",
+      "included_lines": 11
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 97,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/split_two_index_borrows.expected",
+      "tag": null,
+      "included_sha256": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 125,
+      "source": "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs",
+      "tag": "split",
+      "included_sha256": "cb041ba9fe08b49f7f5ed0b7ff839929755c6caca70e17e1b88945f6618cd22c",
+      "included_lines": 19
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 137,
+      "source": "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs",
+      "tag": null,
+      "included_sha256": "dda61e9cbf87331c319d11c781ed4b5a7d2db8a050658c141f853d9246c316ef",
+      "included_lines": 23
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 141,
+      "source": "examples/ch12-unsafe/stages/examples/safe_split/main.rs",
+      "tag": null,
+      "included_sha256": "aca13d411d9fc8fddad12ba5ef716908109fa4f0cc0d8601375a5c771181e9ae",
+      "included_lines": 27
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 163,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.rs",
+      "tag": null,
+      "included_sha256": "be5ddfa3e352ab719d67067460709c86c38b5eb1c2da9f728a53e9779ee8b586",
+      "included_lines": 10
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 169,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_pointer_not_send.expected",
+      "tag": null,
+      "included_sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 189,
+      "source": "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs",
+      "tag": "readonly-model",
+      "included_sha256": "84e244389fad694f4ae556c86e5c1740590f0556b15f3fbfb1403f2f6c8971a6",
+      "included_lines": 25
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 197,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.rs",
+      "tag": null,
+      "included_sha256": "d94289238708c8a9aada39e14498d59e13a8d339c2a43401afccab0d2440a07d",
+      "included_lines": 31
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 203,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/readonly_source_escape.expected",
+      "tag": null,
+      "included_sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 218,
+      "source": "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs",
+      "tag": "readonly-traits",
+      "included_sha256": "c2f93f23d6ac4734e2e3c5d01a039011943456e0b5efcb680e43e11e158879e7",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 228,
+      "source": "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs",
+      "tag": null,
+      "included_sha256": "0a098b656e7b7912093b4f80e2d6993ddd2233bfed8130d9d9048f2c9484542d",
+      "included_lines": 78
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 232,
+      "source": "examples/ch12-unsafe/stages/examples/readonly_threads/main.rs",
+      "tag": null,
+      "included_sha256": "57ad881be656415f365c7acde81deb2d65096ec853dde5d9185161e164ae3668",
+      "included_lines": 31
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 256,
+      "source": "examples/ch12-unsafe/stages/examples/unsafe_solution/contracts/mod.rs",
+      "tag": null,
+      "included_sha256": "dda61e9cbf87331c319d11c781ed4b5a7d2db8a050658c141f853d9246c316ef",
+      "included_lines": 23
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 260,
+      "source": "examples/ch12-unsafe/stages/examples/unsafe_solution/main.rs",
+      "tag": null,
+      "included_sha256": "140272fd7190952dd46ca86ca8a3704fc0fbd746e951639e48046a88e6fb5407",
+      "included_lines": 26
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 270,
+      "source": "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs",
+      "tag": null,
+      "included_sha256": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+      "included_lines": 167
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 274,
+      "source": "examples/ch12-unsafe/stages/examples/contracts_complete/main.rs",
+      "tag": null,
+      "included_sha256": "57ad881be656415f365c7acde81deb2d65096ec853dde5d9185161e164ae3668",
+      "included_lines": 31
+    }
+  ],
+  "commands": [
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 53,
+      "command": "cargo run -p ch15-unsafe-stages --example raw_construction --locked",
+      "target": "raw_construction"
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 83,
+      "command": "cargo run -p ch15-unsafe-stages --example raw_local --locked",
+      "target": "raw_local"
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 131,
+      "command": "cargo run -p ch15-unsafe-stages --example raw_array --locked",
+      "target": "raw_array"
+    },
+    {
+      "chapter": "docs/chapters/15-03-lesson.md",
+      "line": 167,
+      "command": "cargo run -p ch15-unsafe-stages --example raw_solution --locked",
+      "target": "raw_solution"
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 51,
+      "command": "cargo run -p ch15-unsafe-stages --example unsafe_read --locked",
+      "target": "unsafe_read"
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 145,
+      "command": "cargo run -p ch15-unsafe-stages --example safe_split --locked",
+      "target": "safe_split"
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 236,
+      "command": "cargo run -p ch15-unsafe-stages --example readonly_threads --locked",
+      "target": "readonly_threads"
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 263,
+      "command": "cargo run -p ch15-unsafe-stages --example unsafe_solution --locked",
+      "target": "unsafe_solution"
+    },
+    {
+      "chapter": "docs/chapters/15-04-lesson.md",
+      "line": 278,
+      "command": "cargo test -p ch15-unsafe-stages --example contracts_complete --locked",
+      "target": "contracts_complete"
+    }
+  ],
+  "copy_checks": [
+    {
+      "source": "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs",
+      "tag": "read-i32",
+      "baseline": "examples/ch12-unsafe/stages/examples/unsafe_read/contracts/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs",
+      "tag": "read-i32",
+      "baseline": "examples/ch12-unsafe/stages/examples/unsafe_read/contracts/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs",
+      "tag": "split",
+      "baseline": "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/unsafe_solution/contracts/mod.rs",
+      "tag": "split",
+      "baseline": "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs",
+      "tag": "split",
+      "baseline": "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs",
+      "tag": "readonly-model",
+      "baseline": "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs",
+      "tag": "readonly-traits",
+      "baseline": "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/contracts_complete/main.rs",
+      "tag": null,
+      "baseline": "examples/ch12-unsafe/stages/examples/readonly_threads/main.rs",
+      "equal": true
+    }
+  ],
+  "selected_lock_entries": [
+    {
+      "name": "ch15-unsafe-stages",
+      "version": "0.1.0"
+    }
+  ],
+  "loaded_closures": [
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example raw_construction --locked",
+      "target": "raw_construction",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/raw_construction.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example raw_local --locked",
+      "target": "raw_local",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/raw_local.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example raw_array --locked",
+      "target": "raw_array",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/raw_array.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example raw_solution --locked",
+      "target": "raw_solution",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/raw_solution.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example unsafe_read --locked",
+      "target": "unsafe_read",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/unsafe_read/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/examples/unsafe_read/main.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example safe_split --locked",
+      "target": "safe_split",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/examples/safe_split/main.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example readonly_threads --locked",
+      "target": "readonly_threads",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/examples/readonly_threads/main.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example unsafe_solution --locked",
+      "target": "unsafe_solution",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/unsafe_solution/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/examples/unsafe_solution/main.rs"
+      ]
+    },
+    {
+      "command": "cargo test -p ch15-unsafe-stages --example contracts_complete --locked",
+      "target": "contracts_complete",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs",
+        "examples/ch12-unsafe/stages/examples/contracts_complete/main.rs"
+      ]
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "docs/chapters/15-03-lesson.md:25",
+      "finding": "raw pointer Copy不需T Copy、不保活不釋放；&raw直接從place建立，不先造ref。null/is_null/align_of不當可讀性證明；unsafe block不關borrow檢查也不驗證。"
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/raw_array.rs:6",
+      "finding": "as_mut_ptr來自整份array slice，raw期間不再經view/array存取；add1在同allocation、addlen僅one-past不dereference；回到普通索引時raw最後使用已結束。array→slice coercion先教且不冒充Deref。"
+    },
+    {
+      "source": "docs/chapters/15-04-lesson.md:35",
+      "finding": "unsafe fn caller preconditions與body unsafe block分開；edition2024 unsafe_op_in_unsafe_fn預設warning準確。安全抽象不能只去unsafe簽名而保留caller需證raw有效。"
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/safe_split/contracts/mod.rs:4",
+      "finding": "mid先檢查才pointer arithmetic；有效mut slice提供來源範圍/initialized/alignment/borrow，兩段無重疊且lifetime連唯一輸入。empty仍nonnull/aligned、add0與len端點不dereference，合法。"
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/readonly_threads/contracts/mod.rs:48",
+      "finding": "ReadOnlyI32真實&'a i32保來源，pointer從同source衍生、fields private，new/read/original維持readonly；Send移交與Sync共享理由各支持，無storage ownership或thread-affine destructor。"
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/contracts_complete/contracts/mod.rs:100",
+      "finding": "6tests涵蓋raw副本、原元素、端點、空Vec、拒mid無改動與兩種wrapper傳遞；完整答案mid3改[80,120,60,80]及len端點正確，未誇稱全soundness。"
+    },
+    {
+      "source": "docs/assets/ch12/raw-array.svg",
+      "finding": "SVG source指元素起點及one-past無第四項；safe-split source對原索引和borrow範圍，值100/120/45/60吻合。只查XML/source。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:35:11.404Z"
+}

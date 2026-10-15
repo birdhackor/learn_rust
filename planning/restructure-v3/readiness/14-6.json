@@ -1,0 +1,172 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "14.6"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round14-async-foundations-cancellation-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round14-http-local-service-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round14-root-contract-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14-followup.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/14-06-lesson.md": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+    "examples/ch11-async/stages/cancellation-steps/Cargo.toml": "ce683d76419389278a5f7bcfca114fcc1e75b1c75eac43b01186e53fe5ce787c",
+    "examples/ch11-async/stages/cancellation-steps/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch11-async/stages/cancellation-steps/examples/borrowed_join.rs": "696d4cedef57c08d8ad9d974332f202ec0e98fe87997047313a3ea189f1630b6",
+    "examples/ch11-async/stages/cancellation-steps/examples/short_guard.rs": "2adb07b48824e0c60bbef802d6e8d2719f8eca3ba54c5bcf35e43b3d0f0d4896",
+    "examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.toml": "2c2c0700b87c6b2d193ab28b589002c849566006ecf35e8649d2132401e09bf0",
+    "examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.lock": "c2cbb529ebee012ba272de76e6ca326e85c78185dfdb1464af353a858b8e9a2f",
+    "examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.rs": "147b4081aac0b2d07295d37118225a1c7a4d6410eabbcfb161d2d0eee6a9510a",
+    "examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.expected": "93374681e116242342822be425b1bab8e8e0217da2a2465dd241e57bb7cbb8de",
+    "examples/ch11-async/cancellation/src/models.rs": "57241e18dfac21600bb0f1f22e0efe5939f3ade1fbfb471a4af572d3f33ebf99",
+    "examples/ch11-async/stages/cancellation-basic/Cargo.toml": "3cc2dbf4e2d21ecea1d2bef91d1ccc3ea3b55155325dfd33556b8519238ca59e",
+    "examples/ch11-async/stages/cancellation-basic/src/models.rs": "57241e18dfac21600bb0f1f22e0efe5939f3ade1fbfb471a4af572d3f33ebf99",
+    "examples/ch11-async/stages/cancellation-basic/src/lib.rs": "cc5ff1c299691703bb4bebe5b35e0f92fcd5374b4cb215c1d9bc565fb5039deb",
+    "examples/ch11-async/stages/cancellation-basic/src/main.rs": "3ae3bf51c9bc925072971178b685fc70debe8393b4224aa723c9cd6c0fb206e4",
+    "examples/ch11-async/stages/cancellation-basic/examples/borrowed_join.rs": "ae88162e6a694ce2f2b907202a7393394aee067bfc4e4af81a6f63691158cde4",
+    "examples/ch11-async/stages/cancellation-basic/examples/prequeued_stop_solution.rs": "b06e0760f2a802e33975b06fcc5cca48bb9e9a37426bd78533aaab91490786d4",
+    "examples/ch11-async/cancellation/Cargo.toml": "b5e152c4520af53dfec4d55e5b486107d1b87b31e50d9e48225d1b427ddea8fd",
+    "examples/ch11-async/cancellation/src/lib.rs": "98230a2fbf24820874205d2c169d9c4b11e9debcbe55dfb91b5abdac0f96382e",
+    "examples/ch11-async/cancellation/src/main.rs": "8e3179ad880a5eaa56a99b2f90105d845b8044ca9e5b6b71de99d990f04bb0c3",
+    "examples/ch11-async/cancellation/examples/borrowed_join.rs": "590851520f5d6bd35c7fb8c87a6df4adf0a9e8eae1293182e4b7473e0f4dca5b",
+    "examples/ch11-async/cancellation/examples/short_guard.rs": "2adb07b48824e0c60bbef802d6e8d2719f8eca3ba54c5bcf35e43b3d0f0d4896",
+    "examples/ch11-async/cancellation/examples/prequeued_stop_solution.rs": "870ca97b9a22b87bca983058271805d977952d2be3707b9d940bf3b6da7d4855",
+    "examples/ch11-async/cancellation/tests/cli.rs": "45a218d9c329650899c53df939cc3262fa91d02566168a36dd05ad5d1847ace5",
+    "docs/assets/async-v3/borrowed-wait.svg": "c41f3b548a274393fbb6648ee61add41a17a2ac77739102b9948af4eee34e0f1"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 3,
+      "quote": "上一節讓一份直接被 timeout 持有的工作結束。現在有一批已提交的 task，又有一個停止來源：要一面等結果，一面等停止。選中停止之後，還要決定哪些工作不再提交、哪些請求取消，以及怎樣知道清理已完成。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 9,
+      "quote": "**`tokio::select!`** 是在 async 函式或 block 內使用的 macro。分支寫成 `pattern = 工作 => 處理式`；它推進各分支的等待，選到一份完成且符合 pattern 的結果，就執行那條處理式，丟棄其餘分支的等待 future。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 11,
+      "quote": "它在目前 task 內交錯推進分支，沒有因此另建 task 或 thread；某一分支若同步阻塞這條 thread，其他分支也無法繼續。**`biased;`** 使檢查順序依程式由上而下；本例把停止放前面，兩者都就緒時優先處理停止。這是明確政策，不是讓下方分支永遠得不到機會的通用公平保證。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 15,
+      "quote": "沿用14.3已完成的 controlled_work，金額80，只有一份 input0。以下程式的 tasks、已提交工作，以及 select 內的等待，分別命名成圖中的三個對象；S1／T0／W1 是追蹤標記，不是額外 Rust binding："
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 21,
+      "quote": "停止分支勝出，丟棄的是 W1。這個 JoinSet method 有 **cancellation safety（取消安全性）** 契約：若等待分支沒選中，不會因此從集合移走一份 task。借用結束後可以再借用 S1，建立新等待。Tokio mpsc 的 recv 也有對應保證：未選中的等待不會偷取一筆訊息。不能據此假定每個 API 被丟棄後都保留相同進度，14.5已看過修改不會回復。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 53,
+      "quote": "第13.6節的 std MutexGuard 代表目前持有鎖；它本身沒有 Send。若 spawn 的 future 必須保存 guard 跨過 await，這份 future 就不符合14.3的 Send 契約。外面改成 current_thread 不會免除 spawn 的要求。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 95,
+      "quote": "這條命令**預期編譯失敗**，因為 future cannot be sent between threads safely；修法是前面的短 guard 範圍，不是忽略錯誤讓它通過。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 99,
+      "quote": "現在保留14.4的五筆材料與上限2，增加完整停止政策。**Outcome::Unstarted** 表示輸入尚未提交；它不是被取消的 task。**StopEvent** 是停止來源交付的訊息：Requested 或 SignalFailed(String)。**EndReason** 是批次最後的原因，另外分 Finished 與 StopSourceClosed；來源意外關閉，不能當作使用者已要求停止。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 105,
+      "quote": "這次 Runner 的 outcomes 是 `Vec<Option<Outcome>>`，每個輸入先有一個 None 位置。classify 沿用 Id 對照分結果，record 把 Some(outcome) 放回**原輸入位置**；最後報表按輸入索引0到4輸出，與14.4的完成順序分開。組表時的 **`iterator.enumerate()`** 接手 iterator，逐筆交出 `(從0開始的usize索引, 原Item)`；這次便能同時取得原位置與 owned outcome。Vec 的 is_empty() 則回答長度是否為0。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 107,
+      "quote": "**Runner::new** 只驗上限與保存材料，先不 fill。每輪在提交前檢查停止來源，才不會把已排入的停止訊息錯過："
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 118,
+      "quote": "**`tasks.abort_all()`** 請求取消集合中尚未完成的 task，沒有把它們移出集合，也沒有等待完成。**drain（逐筆取完）** 在這裡就是持續 join_next_with_id，將每份實際結束結果交給 record，直到 None。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 122,
+      "quote": "已經完成、只是尚未回收的工作，不會被 abort_all 改寫成 Cancelled。測試用可選的 **returning** channel 建立這項證據：工作先算好 output，送 returning，之後沒有下一個 await，直接 return。**本例 current_thread** 保證 controller 取得執行機會、收到通知時，該工作已走完這段 return；這不是任意多 thread 程式只送訊息就能證明已結束的通則。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 128,
+      "quote": "`ch11-cancellation-basic` 的完整 manifest 只有 rt／macros／sync。`src/models.rs` 是前面同款模型，完整再次列出，供本 package 的 `pub mod models;` 載入："
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 179,
+      "quote": "接上 OS 訊號時才使用完成版 `ch11-cancellation`，完整 manifest 此時加 **`signal` feature**："
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 185,
+      "quote": "**`tokio::signal::ctrl_c().await`** 嘗試建立 Ctrl+C listener，等待訊號，交回 `io::Result<()>`。Ok(()) 才轉成 Requested；監聽失敗轉成 SignalFailed，不當作成功停止。建立 async 函式的 future 不等於 listener 已註冊，它要先取得執行機會。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 187,
+      "quote": "signal_controller 的 select 把 ctrl_c 放第一個分支；它先有機會進入註冊，若還在等待，第二支才送 **entered**。第二支送完後等待 pending，永不勝出。main 收到 entered，才知道 listener 已進入；**工作的 started 不代替 listener 的 entered**。若訊號或註冊失敗先到，controller 可直接送事件並結束，entered 收端則可能得到 None；main 仍要跑批次的停止收尾。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 195,
+      "quote": "Unix 上首次註冊會改變行程的 SIGINT 處理，**丟棄 listener 不會恢復原本的預設 SIGINT 行為**。本程式明確接手停止政策與退出狀態；不能指望 drop listener 就等於復原行程設定。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 199,
+      "quote": "完整 `src/lib.rs` 現在加入 controller helper 與第七項 unit test；該測試確認取消與已完成的 controller 都能回收。前面的六項 batch 測試仍完整存在："
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 205,
+      "quote": "main 需要接受可選 `--signal`。本例選 **`std::env::args()`**，Item 是 String；與10.5的 args_os 相比，它要求 arguments 為 Unicode，遇非 Unicode 可能 panic。signal_mode 略過程式名稱，只接受零參數或這個精確選項；其他輸入回用法錯誤，不啟動 task。"
+    },
+    {
+      "section_id": "14.6",
+      "path": "docs/chapters/14-06-lesson.md",
+      "line": 207,
+      "quote": "real_signal 保留 releases，另有 observer 消費 started；listener 進入之後、且0和1已開始，才印 **READY** 並 flush。提早訊號或監聽失敗時，也依實際事件結束，不保證一定印 READY。批次完成後先回收 signal controller、await observer、確認 release 收端清理，再處理傳回的錯誤。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "4.7"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch04.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/04-07-lesson.md": "dc975b8cdd2e0ee86d62d63d955e509430bad6f1019c34566cf9930d1a1fe761",
+    "examples/intro-workspace/patterns/examples/let_else.rs": "1a4226200772314e076790684ec94214d9d9dddd37054b6912c802a8172635a7",
+    "examples/intro-workspace/patterns/Cargo.toml": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/let_else_must_leave.rs": "4ef75711035de7a26ba49cad222a0e468c66065f64ab33285abe4fc5ffee7fa8",
+    "examples/intro-workspace/patterns/examples/let_else_loops.rs": "033204c010124b35b7f4e533ed1e1642a9d997b55c6578f43cf83cfe70a5f259",
+    "examples/intro-workspace/patterns/examples/quote_report.rs": "e32c8774862cd457f96f7ecc1041bf75603b642144498588182038532a75a738",
+    "examples/intro-workspace/patterns/examples/let_else_answer.rs": "83f1aa7a40879c7b2b1aff621991418178c604bff25ede0eaebfe3b09848ed0f"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "4.7",
+      "path": "docs/chapters/04-07-lesson.md",
+      "line": 3,
+      "quote": "現在的工作是：報價有金額就加 20 元運費，沒有金額就結束這次顯示。如果後續還有幾個計算步驟，我們希望先取得 amount，讓成功路徑繼續往下讀；缺值的分支則在開頭離開。"
+    },
+    {
+      "section_id": "4.7",
+      "path": "docs/chapters/04-07-lesson.md",
+      "line": 7,
+      "quote": "**`let pattern = expression else { ... };`** 先將右側值與 pattern 配對。成功時，pattern 建立的名稱留在**後面的目前 scope**中使用；失敗時執行 else，而 else 必須離開這條繼續往下的路徑。結尾的 `;` 結束整項 let 宣告。"
+    },
+    {
+      "section_id": "4.7",
+      "path": "docs/chapters/04-07-lesson.md",
+      "line": 19,
+      "quote": "match 可以把 Amount 的內容交給外層變數，Missing 分支 return；if let 可以把計算放在成功 body；let else 則把失敗先排除。三種都能完成這項工作，差異在於如何安排分類與後續名稱範圍。"
+    },
+    {
+      "section_id": "4.7",
+      "path": "docs/chapters/04-07-lesson.md",
+      "line": 48,
+      "quote": "編譯器用 **diverge** 表示不會沿這條路徑繼續到 let 後面的程式。只顯示文字仍會繼續，因此不足以處理 amount 沒有成功建立的情況；本例可以像成功版本一樣 return。"
+    },
+    {
+      "section_id": "4.7",
+      "path": "docs/chapters/04-07-lesson.md",
+      "line": 50,
+      "quote": "下面完整失敗例沒有離開 else，會得到 **E0308**，訊息指出 `else clause of let...else does not diverge`："
+    },
+    {
+      "section_id": "4.7",
+      "path": "docs/chapters/04-07-lesson.md",
+      "line": 58,
+      "quote": "離開這條路徑不一定要結束整個函式。第 2.5 節的 continue 會跳到下一次迴圈，break 會離開最近的迴圈，它們同樣能放在 let else 的失敗分支。"
+    },
+    {
+      "section_id": "4.7",
+      "path": "docs/chapters/04-07-lesson.md",
+      "line": 80,
+      "quote": "把本章的形態與上一章的文字訂單接起來。LabelledOrder 保存 owned 的 String 標籤、單價與數量；Quote 則分成 Missing、附帶整筆訂單的 Offered，以及附帶 code 的 Rejected。"
+    },
+    {
+      "section_id": "4.7",
+      "path": "docs/chapters/04-07-lesson.md",
+      "line": 107,
+      "quote": "改成出貨資料：Shipment 的 Waiting 不附帶訂單，Ready 則直接附帶一筆數字 Order。寫 `total_if_ready(shipment: &Shipment) -> i32`，先用 let else 排除 Waiting，再按剛才相同規則計價。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

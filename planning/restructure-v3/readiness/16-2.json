@@ -1,0 +1,178 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "16.2"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round16-poll-event-executor-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round16-self-reference-pin-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/16/16-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/16-02-lesson.md": "e23aa436d2fae0c6d9a0d80d17f053ae3bed168bc40a1cd42ea00fdce2a54aca",
+    "examples/ch13-futures/stages/Cargo.toml": "d05e9b547605a422282156cc294b41d358b3fe6c0eb4fc55731d52b70e4495a1",
+    "examples/ch13-futures/stages/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch13-futures/stages/examples/unpin_access.rs": "0de2e89d4777b51204c65d440ff38b88ec41dd3669ba018f9832d19016392de0",
+    "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.rs": "d45e8d0513919c543d76adf58985ab796f074ba066178171639bdfa73fc80ffa",
+    "examples/ch13-futures/stages/fixtures/compile-fail/pin_new_requires_unpin.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/ch13-futures/stages/examples/pinned_owner_swap/pinning/mod.rs": "def51b90a93c3d2ba3beae8d236a82d9155fa3f5424bbad45cbc3df05a53cd3d",
+    "examples/ch13-futures/stages/examples/pinned_owner_swap/main.rs": "0160d59235dfb83ec1123c29ca2a507405035b1f53015637424688f59af4fcda",
+    "examples/ch13-futures/stages/examples/local_pin.rs": "46d5c4efaad029128963556b2072840af2e4cdacae53e4b6161295c03cf810a5",
+    "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.rs": "bd65619ed471574ff29e9e8c0febc87f554860cf469ad7a2e920a71d9cd435fc",
+    "examples/ch13-futures/stages/fixtures/compile-fail/pinned_get_mut.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/ch13-futures/stages/examples/pinning_solution/pinning/mod.rs": "def51b90a93c3d2ba3beae8d236a82d9155fa3f5424bbad45cbc3df05a53cd3d",
+    "examples/ch13-futures/stages/examples/pinning_solution/main.rs": "b051496f6a8c048af6ffaf99403ce199d2f84426a9e590491d95a415b997eaa6",
+    "examples/ch13-futures/stages/examples/pinning_complete/pinning/mod.rs": "e52fbf2e64735c17bf2153f8d22e85c8dd1916cea2e637a05153da45b8c2a42e",
+    "examples/ch13-futures/stages/examples/pinning_complete/main.rs": "197fa4836d423b5e4b0f4b08eb59c4137d47b29da891744b6aa63fb2121d1b16",
+    "docs/assets/ch13/pin-owner-transfer.svg": "00db7097c5c53ef19f38c35c3ef874c8cf898e0efe810f01648c1e218eb546b3"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 3,
+      "quote": "上一節交換整份80／120資料，地址記錄便對不上；只交換 Box owner，內部資料則留在原位置。但普通 Box 還允許移出內容。現在要讓其他程式處理地址敏感的資料，同時維持約定：**原值需要保留位置時，不能任意移出；回收或重用空間前，也要先在原位收尾。**"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 9,
+      "quote": "**`std::pin::Pin`** 是標準函式庫的 pointer wrapper。**pointee** 是 pointer 找到的那份資料。`Pin<Ptr>` 包住 Ptr，保留位置的對象卻是 Ptr 的 pointee："
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 17,
+      "quote": "Pin 是 **library contract（函式庫契約）**：safe API 限制取得可能移出資料的能力；unsafe API 的作者則要維持約定。它沒有改寫 move 語意，也不會修正內部 pointer。錯誤 unsafe 可以破壞約定，讓後來的 safe 使用受影響，不能以編譯成功代替理由。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 21,
+      "quote": "**`Unpin`** 是 `std::marker` 中的 auto trait，沿第13.1節，由型別與欄位性質決定是否自動具備。它表示型別不依賴 pinning 保證。當 **`T: Unpin`**，Pin 可以交出普通 mutable 存取，不再額外禁止移出 T；ownership／borrowing 規則仍要遵守。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 25,
+      "quote": "**`Pin::new(pointer)`** 接手一份 pointer，回傳包住它的 Pin；safe 版本要求 pointee 有 Unpin。這次接收 `&mut i32`，得到 `Pin<&mut i32>`。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 27,
+      "quote": "**`pinned.get_mut()`** 接手這份 `Pin<&mut T>` wrapper，回傳裡面的 `&mut T`，同樣要求 T 有 Unpin。它沒有取得 T 的 ownership；不符合 bound 時是編譯拒絕，沒有執行期 Err 分支。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 49,
+      "quote": "輸出 `i32 是 Unpin，取得普通 mutable 借用後可交換：120、80`。所以「進了 Pin 一律不能 move」不正確；要看 **pointee T** 的 Unpin，不是外層 Box handle 的 Unpin。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 51,
+      "quote": "反過來，解說中的 **`!Unpin`** 表示「沒有實作 Unpin」，不是所有值從建立起就不能 move。尚未進入 pinning 約定時，仍能建立、回傳、交進 Box；需要保護的是進入約定後的位置。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 55,
+      "quote": "上一節 AddressNote 的 i32 與 raw pointer 欄位都有 Unpin。因此只把它交給 `Box::pin`，仍不能依賴 Pin 禁止移出。現在另建 **PinnedNote**，保留數字與地址記錄，增加一個 marker 欄位。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 57,
+      "quote": "**`std::marker::PhantomPinned`** 本身沒有 Unpin。放進 struct，會使外層不自動具備 Unpin；本例不另手寫 Unpin 實作。它是沒有欄位的 unit struct，值直接寫 `PhantomPinned`。`_pin` 只是本例的欄位名稱，底線表明我們不需要讀取這個標記。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 71,
+      "quote": "得到 `E0277`，因為 PhantomPinned 沒有 Unpin。這不表示它不能被安置在固定位置，而是 **safe new 不提供這條路徑**。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 75,
+      "quote": "**`Box::pin(value)`** 接手 owned T，將它放在 owned heap 空間，交回 **`Pin<Box<T>>`**。這條 safe 路徑不要求 T 有 Unpin；對沒有 Unpin 的 T，後續 safe 介面保留 pinning 限制。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 77,
+      "quote": "owner 上的 **`as_ref()`** shared 借用 wrapper，交回 `Pin<&T>`；**`as_mut()`** mutable 借用 wrapper，交回 `Pin<&mut T>`。它們都借同一份 T，沒有新配或複製一份 T，也沒有直接交出普通 `&mut T`。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 79,
+      "quote": "接著有兩種 getter。**`get_ref()`** 接手 `Pin<&T>`，交回 `&T`，可 shared 讀取；不能因此移出非 Copy 的 T。**`get_unchecked_mut()`** 則 unsafe 地接手 `Pin<&mut T>`，交回 `&mut T`：作者必須保證不透過它移出被固定的資料，並持續維持 pinning 契約。它給更大的能力，沒有取消責任。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 83,
+      "quote": "沿第3.6節 receiver 的用途，這裡寫 **`self: Pin<&Self>`** 或 **`self: Pin<&mut Self>`**，直接指定 method 接收的 wrapper。Self 仍是目前的 PinnedNote；第一種作 shared 觀察，第二種作受控修改，都沒有接手整份 PinnedNote。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 96,
+      "quote": "pinning 不只管這次 method。對依賴它的原值，儲存空間在 **Drop 返回或 panic 前，不能先被回收或重用**；回收／重用前先在原位收尾，稱為 **Drop guarantee**。第11.3節的正常清理由 owner 安排；這裡多了位置要求，不是保證任何值最終都一定被清理。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 98,
+      "quote": "**Drop 的 receiver 仍是 `&mut self`，不會自動換成 Pin。** 作者不能利用這份普通 mutable 能力移出地址敏感原值。本模型 Drop 只讀正常數字、比較地址，沒有移出或替換 Self；之後 Box 依正常流程處理空間。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 108,
+      "quote": "交換的是兩份 **`Pin<Box<PinnedNote>>`** owner；接著把 left 數字改140，再依11.3的 `mem::drop` 收尾。完整入口："
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 136,
+      "quote": "Pin 本身不等於 heap 配置。標準 **`std::pin::pin!`** macro 接手一份值，把它安置在目前的局部儲存，產生 `Pin<&mut T>`；這個操作不為 T 新建 heap 配置，對沒有 Unpin 的 T 也有 safe 路徑。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 150,
+      "quote": "普通同步函式中常稱這種方式為 stack pinning；但 async 中跨 await 保存的局部資料，使用的是外層 future 的儲存，可能在 stack，也可能在 heap。**地址約定與儲存來源是兩個問題**，不能從 Pin 或「local」一詞推定一律在哪裡。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 154,
+      "quote": "若對兩份 `Pin<&mut PinnedNote>` 呼叫 get_mut，再 swap 呢？完整負例把同一份私有欄位模型放在 pinning module，main 只用 public 介面；沒有連到後節的 library："
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 168,
+      "quote": "建立80的 PinnedNote，把 first 交給 next。用 next 的 mutable Pin 把數字改100，檢查數字與地址，再顯式 drop。預測哪個名稱仍可用、是否需要重記地址，以及 Drop 顯示什麼。"
+    },
+    {
+      "section_id": "16.2",
+      "path": "docs/chapters/16-02-lesson.md",
+      "line": 192,
+      "quote": "as_ref／as_mut 重新借用 owner，之後仍能再借。method 若接手 `Pin<&mut T>`，那份 mutable wrapper 本身不是 Copy；需要重複呼叫時，在 wrapper 上再次 as_mut，交出較短借用。下面第二個 test 以同一份 borrowed wrapper 反覆設負數和零，然後交接 owner。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

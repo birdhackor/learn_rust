@@ -1,0 +1,96 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "7.3"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round07-and14-root-wording-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round07-lifetimes.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch07.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/07-03-lesson.md": "3e692d3103181c324465281d3533aef8bf46da191ac80218dc7ec89e62ba7d79",
+    "examples/intro-workspace/lifetimes/examples/view_basic/views/mod.rs": "eb7cbb7d702d0a0de3af23e4b7e1d49957df6e9ae0674fcfd4b22fef6512781b",
+    "examples/intro-workspace/lifetimes/Cargo.toml": "5a6a50a4a6c478dd29dd81e26874b7e7661433be82ce20aea2075dc7ea2fee41",
+    "examples/intro-workspace/lifetimes/examples/view_basic/main.rs": "b16a93d9ce63c8c192faf280467ec663dfb11cd759bd5440316c2e859753a467",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/model_source_too_short.rs": "531281e354d480e19d34acc0d84e479adeca0ff5a8bb7271e0199678c4656469",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/model_source_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/lifetimes/examples/view_answer.rs": "0795c049f12ccf05d148b7a8c31a667f6afd0338974f82de985edeb6249b285a",
+    "docs/assets/lifetimes-v3/borrowed-field.svg": "7a5685938b83980930f20859792f785f453a1cd865709800cc02f124c8479a37"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 3,
+      "quote": "第 7.2 節讓函式交回借用。現在想把這份借用保存在一個模型裡，讓相關操作都從模型取得文字。我們需要保存的是已有文字的視圖，沒有需要重建 String；因此欄位保存 `&str`。"
+    },
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 7,
+      "quote": "`TextView` 的 text 欄位保存 reference。欄位的來源要求要跟著型別走，所以在型別名稱後宣告 `<'a>`，欄位寫成 `&'a str`："
+    },
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 15,
+      "quote": "TextView 持有一個 reference 值，**沒有取得被借文字的 ownership**。當程式還要經由模型使用這個欄位時，來源必須有效。將 reference 放進 struct，不會讓原 String 多活一段時間。"
+    },
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 23,
+      "quote": "直接建立 TextView 時，用欄位初始化提供 `source.as_str()`。也可以把建立工作收在 make_view：接收 `&str`，回傳包含這份借用的模型。"
+    },
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 25,
+      "quote": "回傳型別的 **`TextView<'_>`** 把第 7.2 節的 placeholder 用在型別名稱後。這裡只有一個輸入 lifetime，`'_` 依省略規則連到輸入；回傳模型的欄位便借自該來源。"
+    },
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 35,
+      "quote": "接著新增 `byte_len`，讓模型回答所借文字有幾個 bytes。`impl<'a> TextView<'a>` 的第一個 `<'a>` 宣告這個 impl 可使用的 lifetime 參數；型別後的 `<'a>` 把它用於 TextView。"
+    },
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 47,
+      "quote": "這個階段使用前兩節相同的 no-lib package，完整設定如下："
+    },
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 80,
+      "quote": "把原 String 放到內層，只讓 TextView 到外層，仍會失敗。下面是全部程式："
+    },
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 86,
+      "quote": "放進獨立練習專案執行 `cargo check`，得到 **E0597**。inside 在 block 結束時結束，外層卻還要使用 view.text；模型持有 reference，沒有接手或延長原 String。完整 `.expected` 如下："
+    },
+    {
+      "section_id": "7.3",
+      "path": "docs/chapters/07-03-lesson.md",
+      "line": 96,
+      "quote": "建立只有 text 借用欄位的 `Label<'a>`，提供 byte_len method。在內層建立內容為 Rust 的 String 及 Label，顯示標籤，再把 byte_len 的數字交到外層。外層檢查長度 4；不要把借自內層的 Label 或 `&str` 帶出去。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

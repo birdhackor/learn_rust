@@ -1,0 +1,85 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "1.4"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round01-ch01-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round01-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round01-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-source.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-visual.md",
+    "planning/restructure-v3/reviews/continuity-early/round01-ch01-report.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/01-04-lesson.md": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc",
+    "examples/intro-workspace/steps/examples/types.rs": "de551dd2760674626aff0595c332cf23093e0dd05293ae94bec6568477906526",
+    "examples/intro-workspace/steps/examples/types_answer.rs": "1f2e106fa8d9d896a552f978af6ae8d0ce7a6a0f8620573c7eb1e79c2c5fb891"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "1.4",
+      "path": "docs/chapters/01-04-lesson.md",
+      "line": 3,
+      "quote": "接下來要算一筆訂單：單價 120 元、數量 3，商品總額應是 360。先替材料命名，再讓程式算出答案。以下指令與後續本章指令都在教材 repo 根目錄執行，使用上一節的 `intro-steps` package。"
+    },
+    {
+      "section_id": "1.4",
+      "path": "docs/chapters/01-04-lesson.md",
+      "line": 7,
+      "quote": "`let price: i32 = 120;` 宣告一個叫 `price` 的**變數**，讓這個名稱對應到值 `120`；這個名稱與值的關聯也叫 binding。`=` 在這裡指定初始值，不是數學上的等號比較。名稱通常用小寫，多字以底線相連，例如 `item_total`。"
+    },
+    {
+      "section_id": "1.4",
+      "path": "docs/chapters/01-04-lesson.md",
+      "line": 9,
+      "quote": "冒號後的 `i32` 是**型別**，決定這個值可表示什麼、可以做哪些運算。`i32` 能保存有正負號的整數，範圍是 −2,147,483,648 到 2,147,483,647；本例的價錢與數量都在範圍內。`120`、`3` 則是直接寫出的整數 literal。"
+    },
+    {
+      "section_id": "1.4",
+      "path": "docs/chapters/01-04-lesson.md",
+      "line": 17,
+      "quote": "`price * count` 先讀兩個值再相乘，結果成為 `total` 的初始值。`total` 沒寫型別，編譯器仍能由兩個 `i32` 的乘法**推導**出它是 `i32`。Rust 在編譯時就要確認型別；省略標註並不等於執行時可以任意換型別。"
+    },
+    {
+      "section_id": "1.4",
+      "path": "docs/chapters/01-04-lesson.md",
+      "line": 21,
+      "quote": "Rust 的 `+`、`-`、`*` 分別做加、減、乘；`/` 做除法，`%` 取餘數。這裡沿用你已熟悉的數字，觀察 `7` 分成每份 `2` 的結果。若要小數結果，`f64` 是能表示小數的浮點數型別，材料改寫成 `7.0`、`2.0`："
+    },
+    {
+      "section_id": "1.4",
+      "path": "docs/chapters/01-04-lesson.md",
+      "line": 35,
+      "quote": "有些材料只需要非負整數。`u8` 的範圍是 0 到 255，`u32` 的範圍是 0 到 4,294,967,295；`u` 表示不帶正負號，`i` 表示可帶正負號。名稱中的數字是表示空間的 bit 數，第 1.7 節會把 bit 和記憶體連起來。選較小型別不會讓超出的值自動擴大：例如 `u8` 不能保存 `256`。"
+    },
+    {
+      "section_id": "1.4",
+      "path": "docs/chapters/01-04-lesson.md",
+      "line": 47,
+      "quote": "數值運算也必須落在型別可表示的範圍內。超出範圍稱為**溢位**；本章先用確定落在範圍內的材料，不依賴溢位後的結果。先把 `i32`、`f64`、`bool`、`char` 用清楚，比背完所有數值型別更有幫助。"
+    },
+    {
+      "section_id": "1.4",
+      "path": "docs/chapters/01-04-lesson.md",
+      "line": 51,
+      "quote": "下面是同一份完整原始碼，放在 `steps/examples/types.rs`；同頁前面的短片段都來自這個檔案："
+    },
+    {
+      "section_id": "1.4",
+      "path": "docs/chapters/01-04-lesson.md",
+      "line": 71,
+      "quote": "把訂單改成單價 80、數量 2、運費 20，顯示含運總額。再求 `9 / 2` 與 `9 % 2`。執行前應能預測三個數字：180、4、1。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

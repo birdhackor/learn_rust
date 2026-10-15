@@ -1,0 +1,75 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "4.1"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch04.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/04-01-lesson.md": "9487c85aed9cc3682591a88d62aaf046dd06abed9b6927624a606bfd3a3a697f",
+    "examples/intro-workspace/patterns/examples/enums.rs": "0ce9a9d64a262dfcb6a3704a414b75cb9e43ec5a35c9f78b8cd64e431da9cbae",
+    "examples/intro-workspace/patterns/Cargo.toml": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+    "examples/intro-workspace/patterns/examples/enums_answer.rs": "a3e4a1c2f7047c7fc09662de58dbe429df7bd6dda678cd0e9b830c9ea3ffc558"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "4.1",
+      "path": "docs/chapters/04-01-lesson.md",
+      "line": 3,
+      "quote": "前一章的 Order 同時保存單價與數量。現在收到的報價卻可能是「尚未提供」、「有金額」或「被拒絕，附上一個代碼」。只用數字 0 表示沒有報價，會把缺少資料和真正報價為零混在一起。我們需要保存的是哪一種情況，以及那個情況附帶的資料。"
+    },
+    {
+      "section_id": "4.1",
+      "path": "docs/chapters/04-01-lesson.md",
+      "line": 7,
+      "quote": "**enum** 是列出幾種可能形態的自訂型別，每種形態稱為 **variant**。一個 enum 值在當下只屬於其中一個 variant。struct 描述一筆資料同時有哪些欄位；enum 描述這筆資料是幾種情況中的哪一種。"
+    },
+    {
+      "section_id": "4.1",
+      "path": "docs/chapters/04-01-lesson.md",
+      "line": 17,
+      "quote": "這一階段只建立值，尚未讀取附帶欄位。完整程式會在 enum 前加 `#[allow(dead_code)]`：沿用第 2.7 節的 allow 形式，只讓這個型別暫時未讀取的欄位不觸發 **dead_code** lint。它不會關掉型別或 ownership 檢查；下一節真正讀欄位的程式就不需要這項 allow。先看型別本身的定義："
+    },
+    {
+      "section_id": "4.1",
+      "path": "docs/chapters/04-01-lesson.md",
+      "line": 25,
+      "quote": "Missing 不需要硬塞一個假金額，Rejected 也不必同時有金額。三種形態仍屬於**同一個 Quote 型別**，所以接受 Quote 的函式可以收到其中任一種。型別保存了「情況與其所需資料」的對應。"
+    },
+    {
+      "section_id": "4.1",
+      "path": "docs/chapters/04-01-lesson.md",
+      "line": 29,
+      "quote": "定義還不是具體報價。建立值時，用 `Quote::` 指明型別，再選 variant，提供它要求的資料："
+    },
+    {
+      "section_id": "4.1",
+      "path": "docs/chapters/04-01-lesson.md",
+      "line": 41,
+      "quote": "本章使用 `patterns/` 成員，package 名稱為 `intro-patterns`。每個例子獨立定義所需型別，沒有 library，也不會載入其他範例。完整 manifest 如下："
+    },
+    {
+      "section_id": "4.1",
+      "path": "docs/chapters/04-01-lesson.md",
+      "line": 65,
+      "quote": "定義 Shipment，包含無資料的 Waiting，以及帶有命名欄位 `count: i32` 的 Ready。分別建立等待出貨，以及可出貨 3 件的值。此時先保留這兩種情況，不把等待直接改存成數字 0。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

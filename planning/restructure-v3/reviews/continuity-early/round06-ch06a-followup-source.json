@@ -1,0 +1,38 @@
+{
+  "captured_utc": "2026-10-15T07:54:22.539911+00:00",
+  "changes": [
+    {
+      "path": "docs/chapters/06-02-lesson.md",
+      "initial": "a4c6d3934cae52521b282cd9fb52132a62d2f43a9a8ee669f79f74452ffa40c9",
+      "current": "f10544e1c8c5bba31e648e597ffa8fe05c8c48305bfaba692cdea1d8033be3f7"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial": "ab2450344449650f23553c189af2af1032be26ac133de130245ef47fc612da66",
+      "current": "0fe0c68b5753558a7b9d650faa209317c7268d0ad40ec1284952bb66117aa7bf"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial": "bdcccb63479540b1f3f2c275d50e3b6cc8c4047fdb768eea0e7014a85bda1084",
+      "current": "ce0b4e0a6f7a6475a272ba794f8e8686e2de531eb1e372b5c5af7be4be54fc51"
+    }
+  ],
+  "diffs": [
+    {
+      "path": "docs/chapters/06-02-lesson.md",
+      "diff": [
+        "--- independentinitial6a",
+        "+++ currentfollowup",
+        "@@ -4,7 +4,7 @@",
+        " ",
+        " ## Debug 把資料顯示給開發者檢查",
+        " ",
+        "-**`Debug`** 提供供開發者檢查的文字表示。`println!(\"{summary:?}\")` 中的 **`:?`** 要求用 `Debug`，原來的 `{summary}` 不會自動切換到這種顯示方式。",
+        "+**`Debug`** 提供供開發者檢查的文字表示。`println!(\"{summary:?}\")` 中的 **`:?`** 要求用 `Debug`，原來的 `{summary}` 不會自動切換到這種顯示方式。這次格式化只借讀 summary，沒有取得它的 ownership；顯示後仍能讀取它的欄位。",
+        " ",
+        " 對兩個整數欄位的摘要，我們希望一起看見型別名、欄位名與各自的值。寫在型別前面的 **`#[derive(Debug)]`**，就是要求編譯器替這個型別產生 `Debug` 實作。`#[...]` 延續第 2.7 節的 attribute 語法；`derive(...)` 列出這次希望產生的 trait。",
+        " "
+      ]
+    }
+  ]
+}

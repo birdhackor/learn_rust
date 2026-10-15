@@ -1,0 +1,96 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "15.2"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round15-and18b-root-crossref-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round15-c-and-ffi-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round15-gat-variance-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round15-raw-pointer-safe-abstraction-middle.md",
+    "planning/restructure-v3/reviews/continuity-late/15-06-root-crossref-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/15-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/15-02-lesson.md": "e87a0ee7d3577ac6d9d472acb519b57ac60eac6e23d52cb2e8caa17eddba1cc0",
+    "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+    "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+    "examples/ch12-unsafe/stages/examples/variance_references/variance/mod.rs": "68fad97329ebd267052760c2212d3689f936db7fedc333947a07b25a01305756",
+    "examples/ch12-unsafe/stages/examples/variance_references/main.rs": "4640a523722b0dbbbf180226ce119649d638a29a7f2d79c940fe1a16ade28d26",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.rs": "221f69f992a0b3d1f574203b63fd04318e42e46d8faf4907c9466419d5bd9b22",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.rs": "f07212bd6704766332b640ec4016f9534bd375191a9a92bfb10147ccbeb173ab",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.expected": "d83902e1e30c09dee3580e58c61b1ed08051895a509820a119a252c082224edb",
+    "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.rs": "ee45c5aeb8973fc03b4be7f61186f5e4b7ead5278d6a60c97cf46441d8e5b4ad",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/ch12-unsafe/stages/examples/variance_callbacks/main.rs": "7376368396063bcb137e10975ed37d15323402a6d65fb706a2dad6c9ad6c8ff2",
+    "examples/ch12-unsafe/stages/examples/variance_solution.rs": "cc60c1d4ad328750975051cc283003ce84dabe65c7c52fc6f08f95a7efc437fb",
+    "docs/assets/ch12/cell-variance.svg": "3d2662d35ef3cce5ab8956f77851d9efdd7dc64ba0b897dc33f578a3d6d42609"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "15.2",
+      "path": "docs/chapters/15-02-lesson.md",
+      "line": 3,
+      "quote": "第11.5節 已看到：固定文字的 `&'static str` 能滿足較短的借用需要。但如果把 reference 放進 Cell，或者放進 function pointer 的參數，能不能仍然用同一方向替換？"
+    },
+    {
+      "section_id": "15.2",
+      "path": "docs/chapters/15-02-lesson.md",
+      "line": 5,
+      "quote": "這次要學的是**合法替換**。我們保持同一項需求：使用端需要某種型別時，交來的另一種型別能否滿足全部契約？合法替換不修改原資料的存活，也不是數值轉型；它改變的是使用端可以依靠哪些保證。"
+    },
+    {
+      "section_id": "15.2",
+      "path": "docs/chapters/15-02-lesson.md",
+      "line": 19,
+      "quote": "沿 第7.2節 與 第11.5節 使用 **`'long: 'short`**：`'long` 至少涵蓋 `'short`。若使用端只在 `'short` 需要讀文字，已有 `'long` 的有效性就足夠。"
+    },
+    {
+      "section_id": "15.2",
+      "path": "docs/chapters/15-02-lesson.md",
+      "line": 21,
+      "quote": "**subtyping（子型別關係）** 表示某個型別能用來滿足另一個型別的要求。這裡的例子是 `&'long str` 可以作為 `&'short str` 使用。它不是 Python 類別的繼承，也沒有把短命資料變長命。"
+    },
+    {
+      "section_id": "15.2",
+      "path": "docs/chapters/15-02-lesson.md",
+      "line": 57,
+      "quote": "**variance（型變）** 描述：參數本來有合法替換關係，放進某個型別之後，關係如何改變。此處的參數可能是 lifetime，也可能是另一個型別；必須先指明正在看哪個參數。"
+    },
+    {
+      "section_id": "15.2",
+      "path": "docs/chapters/15-02-lesson.md",
+      "line": 71,
+      "quote": "讓 `saved` 的型別是 `&'static str`。現在借用這個 **reference 變數**，target 是 `&mut T`，其中 T 是 `&'static str`；target 沒有直接借到文字的 mutable 內容。"
+    },
+    {
+      "section_id": "15.2",
+      "path": "docs/chapters/15-02-lesson.md",
+      "line": 91,
+      "quote": "第11.9節 的 Cell::set 可以從 `&self` 替換內部值。因此 `Cell<T>` 對 T 也是 invariant，不能因為操作時只有 shared reference 就當成只讀。"
+    },
+    {
+      "section_id": "15.2",
+      "path": "docs/chapters/15-02-lesson.md",
+      "line": 115,
+      "quote": "第9.2節 的 `fn(i32) -> i32` 描述可呼叫的 function pointer。現在把參數與回傳值換成已教的 reference。`fn(&'a str) -> usize` 接收符合 `'a` 的文字借用，回傳 byte 數；`fn() -> &'a str` 不接收參數，交回符合 `'a` 的文字借用。"
+    },
+    {
+      "section_id": "15.2",
+      "path": "docs/chapters/15-02-lesson.md",
+      "line": 162,
+      "quote": "寫 copied_cell，收到 `&Cell<&'long str>`，在 `'long: 'short` 的條件下回傳新的 `Cell<&'short str>`。使用 第11.9節 的 get 取得 Copy 的 shared reference，再用 Cell::new 建立獨立容器；不要直接回傳原 Cell。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,1131 @@
+{
+  "review_id": "technical-early-round03-ownership",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/03-01-lesson.md",
+    "docs/chapters/03-02-lesson.md",
+    "docs/chapters/03-03-lesson.md",
+    "docs/chapters/03-04-lesson.md",
+    "docs/chapters/03-05-lesson.md",
+    "docs/chapters/03-06-lesson.md",
+    "docs/chapters/03-07-lesson.md",
+    "docs/chapters/03-08-lesson.md"
+  ],
+  "reader_background": "Basic Python and actual published chapters1–2 main prose, including fixed TC02T-01 sequence. No chapter4+ or optional supplement prerequisite.",
+  "method": "Sequential whole-page technical reread with actual selected sources/manifests/fixtures and five SVG XML sources; not blind first-read or target-reader experiment.",
+  "independent_necessary_findings": [],
+  "independent_optional_findings": [],
+  "result": "No additional independent necessary technical or selected-target completeness defect found. Root-prompted source-order/markup rechecks pass in frozen text, and are not counted as independent discoveries.",
+  "chronology": {
+    "initial_read_snapshot_at_utc": "2026-10-15T06:45:47.931410+00:00",
+    "frozen_snapshot_at_utc": "2026-10-15T06:49:05.165462+00:00",
+    "root_prompt_order": "After all8 pages, selected Rust sources and five SVGs read; before chapter3 report seal.",
+    "own_pre_prompt_status": "No own necessary finding formulated. The three ordering points and strong boundary had not been independently reported.",
+    "peer_material": "No chapter3 author ledger, freeze/validation conclusions, first-reader, continuity/audit, other reviews, or historical issues read.",
+    "preservation": "Initial hashes and both versions of changed text saved; root-prompted confirmations never counted as independent rediscovery."
+  },
+  "prompted_rechecks": [
+    {
+      "id": "ROOT03-P1",
+      "initial": "03-03:25 after function snippet22",
+      "frozen": "03-03:19 before snippet22",
+      "judgment": "Field access auto-following of reference is now explained before its first use; Copy distinction preserved.",
+      "independently_discovered": false
+    },
+    {
+      "id": "ROOT03-P2",
+      "initial": "03-06:45 after constructor snippet42",
+      "frozen": "03-06:41 before snippet44",
+      "judgment": "Self{...} constructor and same-name field shorthand now locally precede code. Basic Self=Order already appeared at7; especially the field shorthand relation needed this local introduction.",
+      "independently_discovered": false
+    },
+    {
+      "id": "ROOT03-P3",
+      "initial": "03-07:23 after sum snippet20",
+      "frozen": "03-07:17 before snippet20",
+      "judgment": "For over &[i32] produces &i32, and *value copies the integer; now explained before body code.",
+      "independently_discovered": false
+    },
+    {
+      "id": "ROOT03-P4",
+      "initial": "03-03:7 **reference（參照）**",
+      "frozen": "03-03:7 **reference**（參照）",
+      "judgment": "English-only strong boundary preserves complete definition; static markup check, no actual rendering claim.",
+      "independently_discovered": false
+    }
+  ],
+  "execution": {
+    "cargo_rustc_clippy_tests_or_fixtures": [],
+    "author_validation_used_as_independent_evidence": false,
+    "browser_or_visual_check": false,
+    "xml_parse_checks": [
+      {
+        "path": "docs/assets/ch02/move-copy.svg",
+        "xml_parses": true
+      },
+      {
+        "path": "docs/assets/ch02/reference-owner.svg",
+        "xml_parses": true
+      },
+      {
+        "path": "docs/assets/ch02/borrow-scope.svg",
+        "xml_parses": true
+      },
+      {
+        "path": "docs/assets/ch02/slice-part.svg",
+        "xml_parses": true
+      },
+      {
+        "path": "docs/assets/ch03/string-view.svg",
+        "xml_parses": true
+      }
+    ]
+  },
+  "compile_closure": {
+    "package": "intro-ownership",
+    "manifest": "examples/intro-workspace/ownership/Cargo.toml",
+    "manifest_fields": [
+      "name",
+      "version",
+      "edition"
+    ],
+    "external_dependencies": false,
+    "src_lib_rs_exists": false,
+    "build_rs_exists": false,
+    "repo_cargo_config_exists": false,
+    "selected_success_targets": [
+      "structs",
+      "public_model",
+      "structs_answer",
+      "moves",
+      "ownership_answer",
+      "shared_references",
+      "shared_answer",
+      "mutable_references",
+      "reference_binding",
+      "borrow_answer",
+      "last_use",
+      "reborrow",
+      "lifetime_answer",
+      "methods",
+      "methods_answer",
+      "slices",
+      "slices_answer",
+      "strings",
+      "text_order",
+      "strings_answer"
+    ],
+    "ordinary_example": "Single owned examples/<target>.rs defining its own model/helpers/main.",
+    "public_model": [
+      "examples/public_model/main.rs",
+      "examples/public_model/model/mod.rs"
+    ],
+    "test_cfg_derive_allow_or_future_clone_vec_api_in_selected_sources": false,
+    "unselected_supplement": "mutability_comparison and comparison fixtures not loaded by main-prose commands or used as prerequisites."
+  },
+  "documented_commands_static_checked": [
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "structs",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "public_model",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "structs_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "moves",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "ownership_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "shared_references",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "shared_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "mutable_references",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "reference_binding",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "borrow_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "last_use",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "reborrow",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "lifetime_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "methods",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "methods_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "slices",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "slices_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "strings",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "text_order",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-ownership",
+      "--example",
+      "strings_answer",
+      "--locked"
+    ]
+  ],
+  "fixture_static_checks": [
+    {
+      "name": "use_after_move",
+      "expected": "E0382",
+      "reason": "non-Copy Order moved before first.count read",
+      "executed": false
+    },
+    {
+      "name": "shared_write",
+      "expected": "E0594",
+      "reason": "assignment through shared &i32",
+      "executed": false
+    },
+    {
+      "name": "borrow_overlap",
+      "expected": "E0506",
+      "reason": "assign owner while shared reference later used",
+      "executed": false
+    },
+    {
+      "name": "double_mutable",
+      "expected": "E0499",
+      "reason": "two active mutable borrows of same count",
+      "executed": false
+    },
+    {
+      "name": "mutable_reference_move",
+      "expected": "E0382",
+      "reason": "untyped let next=parent moves &mut i32, then parent used",
+      "executed": false
+    },
+    {
+      "name": "dangling_block",
+      "expected": "E0597",
+      "reason": "reference escapes inside value block",
+      "executed": false
+    },
+    {
+      "name": "move_from_borrow",
+      "expected": "E0507",
+      "reason": "non-Copy Order moved out of &self",
+      "executed": false
+    },
+    {
+      "name": "slice_bounds",
+      "expected": "index out of bounds",
+      "reason": "length3 slice indexed3, despite original array length5",
+      "executed": false
+    },
+    {
+      "name": "string_after_move",
+      "expected": "E0382",
+      "reason": "String first used after moving to second",
+      "executed": false
+    },
+    {
+      "name": "string_borrow_overlap",
+      "expected": "E0502",
+      "reason": "as_str shared view needed after push_str mutable borrow",
+      "executed": false
+    }
+  ],
+  "static_outputs": {
+    "structs": "360→480",
+    "public_model": "count3/subtotal240",
+    "structs_answer": "160→240",
+    "moves": "second.count3/subtotal360/count3/another_count4",
+    "ownership_answer": "count3/subtotal240",
+    "shared_references": "subtotal360/original3; copied3/original3",
+    "shared_answer": "180/original count2",
+    "mutable_references": "order count4/price120; numeric4",
+    "reference_binding": "read3 then8; originals3/8",
+    "borrow_answer": "160→240",
+    "last_use": "3/3 then4 then5",
+    "reborrow": "child4,parent7",
+    "lifetime_answer": "read3,modified4,owned8",
+    "methods": "160→240,parts80/3",
+    "methods_answer": "four assertions,count0/price80/total0",
+    "slices": "len3/first120,sum380/all500/empty0/two200",
+    "slices_answer": "80/130/210/60/40,total520,empty unchanged",
+    "strings": "Hello, Rust then Hello, Rust! twice",
+    "text_order": "訂單A：已備妥/subtotal240, extracted same label",
+    "strings_answer": "Rust 教學"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/03-01-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/structs.rs:fields",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-01-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/structs.rs:instance",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-01-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/structs.rs:update",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-01-lesson.md",
+      "reference": "examples/intro-workspace/ownership/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-01-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/structs.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-01-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/public_model/model/mod.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-01-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/public_model/main.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-01-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/structs_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-02-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/moves.rs:consume",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-02-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/moves.rs:move",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-02-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/moves.rs:copy",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-02-lesson.md",
+      "reference": "examples/intro-workspace/ownership/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-02-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/moves.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-02-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-02-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/ownership_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-03-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/shared_references.rs:borrow-function",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-03-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/shared_references.rs:borrow-call",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-03-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/shared_references.rs:dereference",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-03-lesson.md",
+      "reference": "examples/intro-workspace/ownership/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-03-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/shared_references.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-03-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/shared_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-04-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/mutable_references.rs:modify-order",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-04-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/mutable_references.rs:modify-count",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-04-lesson.md",
+      "reference": "examples/intro-workspace/ownership/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-04-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/mutable_references.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-04-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/reference_binding.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-04-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-04-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/borrow_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/last_use.rs:shared-finish",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/last_use.rs:modify-after",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/reborrow.rs:helper",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/reborrow.rs:short-borrow",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/reborrow.rs:calls",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/last_use.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/reborrow.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-05-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/lifetime_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-06-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/methods.rs:read",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-06-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/methods.rs:write",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-06-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/methods.rs:take",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-06-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/methods.rs:new",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-06-lesson.md",
+      "reference": "examples/intro-workspace/ownership/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-06-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/methods.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-06-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-06-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/methods_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-07-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/slices.rs:sum",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-07-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/slices.rs:selection",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-07-lesson.md",
+      "reference": "examples/intro-workspace/ownership/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-07-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/slices.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-07-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-07-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/slices_answer.rs:increase",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-07-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/slices_answer.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/strings.rs:show",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/strings.rs:build",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/strings.rs:append",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/strings.rs:move",
+      "source_exists": true,
+      "start_marker_exists": true,
+      "end_marker_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/Cargo.toml",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/strings.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/text_order.rs",
+      "source_exists": true
+    },
+    {
+      "document": "docs/chapters/03-08-lesson.md",
+      "reference": "examples/intro-workspace/ownership/examples/strings_answer.rs",
+      "source_exists": true
+    }
+  ],
+  "initial_source_hashes": {
+    "docs/assets/ch02/borrow-scope.svg": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e",
+    "docs/assets/ch02/move-copy.svg": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e",
+    "docs/assets/ch02/reference-owner.svg": "24c26bb66f067b0d964a05b4e54cbd34359f35036192b3b9ba5a526b2c1f56dc",
+    "docs/assets/ch02/slice-part.svg": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4",
+    "docs/assets/ch03/string-view.svg": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27",
+    "docs/chapters/03-01-lesson.md": "fac86a536cb55ae8c2231dfe6509d3eefdcd9ea0d9e06f6f7cbe95e1e38b0f80",
+    "docs/chapters/03-02-lesson.md": "4abe646b523a2831e8374d80fa1f006b203feba9e4e3bec9b00aeca8fd9bc388",
+    "docs/chapters/03-03-lesson.md": "7c70a121f04a1915a49567b78fc07cef7415027cd2fb46b5c2d1506049ac04b7",
+    "docs/chapters/03-04-lesson.md": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+    "docs/chapters/03-05-lesson.md": "eae13ff2e23669eb9acaa579cf6f97126babc30770bd333807b8ce8bdb7b4ccb",
+    "docs/chapters/03-06-lesson.md": "44878d2eb2ed396b558ad46f6e0ee14fe072601b8225d9ffdbcff17c66a9e377",
+    "docs/chapters/03-07-lesson.md": "cd003be1a4fe9682b7df9a1e9360a74c26f649ae0f7d4cfaff024200badbe622",
+    "docs/chapters/03-08-lesson.md": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+    "examples/intro-workspace/Cargo.lock": "a0339cd7d528d67876df3dd1a2b1fb2169063d31e4cba666c575f6564756f8e0",
+    "examples/intro-workspace/Cargo.toml": "77708bcc8ed7d4cbfc5b2e01156df0f081606a1e25894fd86697008685288b87",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/borrow_answer.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+    "examples/intro-workspace/ownership/examples/last_use.rs": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+    "examples/intro-workspace/ownership/examples/lifetime_answer.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+    "examples/intro-workspace/ownership/examples/methods.rs": "8cd7fb3cdcf50009299b7c38a5b62ebcdfdb8195f4a6a013909fa8a28fcb3ec1",
+    "examples/intro-workspace/ownership/examples/methods_answer.rs": "d155f99fe1943045602084dcf912f85b29209b2553a55712d973234c27741af4",
+    "examples/intro-workspace/ownership/examples/moves.rs": "7356f9fe53c5744cfbb6497b1132cad48f1298c98b22aadd747aeb51976ae184",
+    "examples/intro-workspace/ownership/examples/mutable_references.rs": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+    "examples/intro-workspace/ownership/examples/ownership_answer.rs": "1e1be4d6be32a084b12fa01c151e097768a8ee6b114d094bbaad987bdc9bd367",
+    "examples/intro-workspace/ownership/examples/public_model/main.rs": "b317b4901378db03b96a5d1e2cb811ee88cc8ab1a5bb5cf45d94e78607b7bdc3",
+    "examples/intro-workspace/ownership/examples/public_model/model/mod.rs": "3eafd390446d1b457521ab144bf5e8495fc5cb77678d7c468958736ba2cee720",
+    "examples/intro-workspace/ownership/examples/reborrow.rs": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+    "examples/intro-workspace/ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+    "examples/intro-workspace/ownership/examples/shared_answer.rs": "2788556bba6d288b06dbee1190321da44936e29c6ed699c28528c0f7d09bd288",
+    "examples/intro-workspace/ownership/examples/shared_references.rs": "ef65a9a1ef397ee82c6b244a63413e42c7f98edf7a90b0a03dfd3c6862298823",
+    "examples/intro-workspace/ownership/examples/slices.rs": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+    "examples/intro-workspace/ownership/examples/slices_answer.rs": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+    "examples/intro-workspace/ownership/examples/strings.rs": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+    "examples/intro-workspace/ownership/examples/strings_answer.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+    "examples/intro-workspace/ownership/examples/structs.rs": "1d7cc967e11ba88250d9cb5b5aa1c14155081e49921fd7c9a003eb4b981ce648",
+    "examples/intro-workspace/ownership/examples/structs_answer.rs": "f9c26ea5301d08571922b1b3c788e3e3f6e38153ca909696ac9c96b63468c1e1",
+    "examples/intro-workspace/ownership/examples/text_order.rs": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.rs": "25d22714815e23ef66b3c53e6c22ba61fbc528e40997bb5773946a4cfe2ca262",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.rs": "dbc4227dfe470236aa29e846360ad749be19060390d708343a39ebea03d931be",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+  },
+  "frozen_source_hashes": {
+    "docs/assets/ch02/borrow-scope.svg": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e",
+    "docs/assets/ch02/move-copy.svg": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e",
+    "docs/assets/ch02/reference-owner.svg": "24c26bb66f067b0d964a05b4e54cbd34359f35036192b3b9ba5a526b2c1f56dc",
+    "docs/assets/ch02/slice-part.svg": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4",
+    "docs/assets/ch03/string-view.svg": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27",
+    "docs/chapters/03-01-lesson.md": "fac86a536cb55ae8c2231dfe6509d3eefdcd9ea0d9e06f6f7cbe95e1e38b0f80",
+    "docs/chapters/03-02-lesson.md": "4abe646b523a2831e8374d80fa1f006b203feba9e4e3bec9b00aeca8fd9bc388",
+    "docs/chapters/03-03-lesson.md": "db0288a22aeb87e01751792ee3d1dbb50ea61006c6098c6c51a8e7ecdcfed1b7",
+    "docs/chapters/03-04-lesson.md": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+    "docs/chapters/03-05-lesson.md": "eae13ff2e23669eb9acaa579cf6f97126babc30770bd333807b8ce8bdb7b4ccb",
+    "docs/chapters/03-06-lesson.md": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+    "docs/chapters/03-07-lesson.md": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+    "docs/chapters/03-08-lesson.md": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+    "examples/intro-workspace/Cargo.lock": "a0339cd7d528d67876df3dd1a2b1fb2169063d31e4cba666c575f6564756f8e0",
+    "examples/intro-workspace/Cargo.toml": "77708bcc8ed7d4cbfc5b2e01156df0f081606a1e25894fd86697008685288b87",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/borrow_answer.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+    "examples/intro-workspace/ownership/examples/last_use.rs": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+    "examples/intro-workspace/ownership/examples/lifetime_answer.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+    "examples/intro-workspace/ownership/examples/methods.rs": "8cd7fb3cdcf50009299b7c38a5b62ebcdfdb8195f4a6a013909fa8a28fcb3ec1",
+    "examples/intro-workspace/ownership/examples/methods_answer.rs": "d155f99fe1943045602084dcf912f85b29209b2553a55712d973234c27741af4",
+    "examples/intro-workspace/ownership/examples/moves.rs": "7356f9fe53c5744cfbb6497b1132cad48f1298c98b22aadd747aeb51976ae184",
+    "examples/intro-workspace/ownership/examples/mutable_references.rs": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+    "examples/intro-workspace/ownership/examples/ownership_answer.rs": "1e1be4d6be32a084b12fa01c151e097768a8ee6b114d094bbaad987bdc9bd367",
+    "examples/intro-workspace/ownership/examples/public_model/main.rs": "b317b4901378db03b96a5d1e2cb811ee88cc8ab1a5bb5cf45d94e78607b7bdc3",
+    "examples/intro-workspace/ownership/examples/public_model/model/mod.rs": "3eafd390446d1b457521ab144bf5e8495fc5cb77678d7c468958736ba2cee720",
+    "examples/intro-workspace/ownership/examples/reborrow.rs": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+    "examples/intro-workspace/ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+    "examples/intro-workspace/ownership/examples/shared_answer.rs": "2788556bba6d288b06dbee1190321da44936e29c6ed699c28528c0f7d09bd288",
+    "examples/intro-workspace/ownership/examples/shared_references.rs": "ef65a9a1ef397ee82c6b244a63413e42c7f98edf7a90b0a03dfd3c6862298823",
+    "examples/intro-workspace/ownership/examples/slices.rs": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+    "examples/intro-workspace/ownership/examples/slices_answer.rs": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+    "examples/intro-workspace/ownership/examples/strings.rs": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+    "examples/intro-workspace/ownership/examples/strings_answer.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+    "examples/intro-workspace/ownership/examples/structs.rs": "1d7cc967e11ba88250d9cb5b5aa1c14155081e49921fd7c9a003eb4b981ce648",
+    "examples/intro-workspace/ownership/examples/structs_answer.rs": "f9c26ea5301d08571922b1b3c788e3e3f6e38153ca909696ac9c96b63468c1e1",
+    "examples/intro-workspace/ownership/examples/text_order.rs": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.rs": "25d22714815e23ef66b3c53e6c22ba61fbc528e40997bb5773946a4cfe2ca262",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.rs": "dbc4227dfe470236aa29e846360ad749be19060390d708343a39ebea03d931be",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.expected": "c8af886bbe93c20a7838be9a35690203ff0283d2f62d496811599d8d4890d2be",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.expected": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.expected": "9bc98e93f7bbaa33ec6e4a45dde7a4f391fb4fa34bf8231cb7c05d099692527b",
+    "AGENTS.md": "04687339ba4b38681e0c7e33e19851a3b0272ec9dfe283ead91454ce939b956b",
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "changed_document_versions": [
+    {
+      "path": "docs/chapters/03-03-lesson.md",
+      "initial_sha256": "7c70a121f04a1915a49567b78fc07cef7415027cd2fb46b5c2d1506049ac04b7",
+      "frozen_sha256": "db0288a22aeb87e01751792ee3d1dbb50ea61006c6098c6c51a8e7ecdcfed1b7",
+      "initial_text": "# 3.3 shared reference 與 dereference：借讀原資料\n\n上一節的 subtotal 接手整筆 Order，只交回數字；若呼叫者還想用訂單，就得另行交回它。現在我們希望函式只讀欄位算小計，呼叫之後原訂單仍留在 main。要改的是函式取得資料的方式，乘法規則保持相同。\n\n## reference 借用既有的值\n\n**reference（參照）**是用來借用既有資料的值。它保存找到資料的資訊，並受 Rust 的有效性與存取規則檢查；可以接回第 1.7 節 pointer「到哪裡找」的角色，但不是直接取得原資料的 ownership。\n\n`&count` 建立對 count 的借用，結果型別為 `&i32`。**borrowing** 就是建立這種借用的動作。在 expression 裡的 `&` 建立 reference；型別中的 `&i32` 則說明它借用一個 i32，兩者位置與角色不同。\n\n這種 `&i32`、`&Order` 稱為 **shared reference**。它可與其他 shared borrow 一起讀取；對本章的普通數字欄位，不能透過它修改原資料。借用使用期間，原資料也必須仍有效；第 3.5 節會具體追蹤這個範圍。\n\n圖中 order 仍持有唯一一筆 Order；reference 的箭頭只表示借用，沒有產生第二份訂單：\n\n![order 仍持有 Order，reference 借用同一筆資料；dereference 找到原 Order](../assets/ch02/reference-owner.svg)\n\n## 參數改成 &Order，呼叫時提供借用\n\n`subtotal(order: &Order)` 接受 reference。函式只讀兩個數字欄位、交回小計：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:borrow-function\"\n```\n\n這裡讀 `order.count` 時，欄位存取會自動跟隨這份 reference 找到原訂單；不是讓 Order 突然具備 Copy。main 建好 Order 後，以 `&order` 建立借用並呼叫：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:borrow-call\"\n```\n\n參數沒有取得原訂單的 ownership，因此函式結束後，main 仍能讀 order.count。reference 自己用完，也不會因此清理它借用的原資料。\n\n## * 找到 reference 所指的值\n\n`*reference` 是 **dereference**，也就是解參照：沿 reference 找到所指的值。對 `i32`，可以把讀到的數字 Copy 出來：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:dereference\"\n```\n\n`count_reference` 是一份借用，`copied_count` 則是獨立的數字 3。原 count 仍是 3。`*` 放在一個 expression 前表示 dereference；放在兩個數字中間，如 `price * count`，則仍是乘法。\n\n欄位存取也可以明寫成 `(*order).count`：先 dereference，再讀欄位。括號讓整個 `*order` 成為取欄位的對象；本節完整函式採用自動跟隨 reference 的 `order.count`。\n\n## 完整範例與執行\n\n```toml\n--8<-- \"examples/intro-workspace/ownership/Cargo.toml\"\n```\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example shared_references --locked\n```\n\n```text\n借用算出的小計=360，原數量=3\n讀出的數字=3，原數字=3\n```\n\n與上一節相比，乘法答案相同；改變的是呼叫者不必先交出再收回訂單，因為這項工作只需要讀取。\n\n## 練習與完整答案\n\n寫 `total_with_shipping(order: &Order, shipping: i32) -> i32`，只借讀訂單，回傳商品小計加運費。以單價 80、數量 2、運費 20，確認結果 180，呼叫後原數量仍是 2。\n\n先確定函式沒有修改或接手訂單的需要；參數用 &Order，呼叫位置就提供 &order。完整答案沿用本頁 manifest：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_answer.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example shared_answer --locked\n```\n\n成功後顯示 `含運總額=180，原數量=2`。接下來若工作要修改同一筆訂單，就需要另一種借用權限。\n\n[下一節：mutable reference 與變數的 mut](03-04-lesson.md)\n",
+      "frozen_text": "# 3.3 shared reference 與 dereference：借讀原資料\n\n上一節的 subtotal 接手整筆 Order，只交回數字；若呼叫者還想用訂單，就得另行交回它。現在我們希望函式只讀欄位算小計，呼叫之後原訂單仍留在 main。要改的是函式取得資料的方式，乘法規則保持相同。\n\n## reference 借用既有的值\n\n**reference**（參照）是用來借用既有資料的值。它保存找到資料的資訊，並受 Rust 的有效性與存取規則檢查；可以接回第 1.7 節 pointer「到哪裡找」的角色，但不是直接取得原資料的 ownership。\n\n`&count` 建立對 count 的借用，結果型別為 `&i32`。**borrowing** 就是建立這種借用的動作。在 expression 裡的 `&` 建立 reference；型別中的 `&i32` 則說明它借用一個 i32，兩者位置與角色不同。\n\n這種 `&i32`、`&Order` 稱為 **shared reference**。它可與其他 shared borrow 一起讀取；對本章的普通數字欄位，不能透過它修改原資料。借用使用期間，原資料也必須仍有效；第 3.5 節會具體追蹤這個範圍。\n\n圖中 order 仍持有唯一一筆 Order；reference 的箭頭只表示借用，沒有產生第二份訂單：\n\n![order 仍持有 Order，reference 借用同一筆資料；dereference 找到原 Order](../assets/ch02/reference-owner.svg)\n\n## 參數改成 &Order，呼叫時提供借用\n\n`subtotal(order: &Order)` 接受 reference。函式只讀兩個數字欄位、交回小計。讀 `order.count` 時，欄位存取會自動跟隨這份 reference 找到原訂單；不是讓 Order 突然具備 Copy。\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:borrow-function\"\n```\n\nmain 建好 Order 後，以 `&order` 建立借用並呼叫：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:borrow-call\"\n```\n\n參數沒有取得原訂單的 ownership，因此函式結束後，main 仍能讀 order.count。reference 自己用完，也不會因此清理它借用的原資料。\n\n## * 找到 reference 所指的值\n\n`*reference` 是 **dereference**，也就是解參照：沿 reference 找到所指的值。對 `i32`，可以把讀到的數字 Copy 出來：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:dereference\"\n```\n\n`count_reference` 是一份借用，`copied_count` 則是獨立的數字 3。原 count 仍是 3。`*` 放在一個 expression 前表示 dereference；放在兩個數字中間，如 `price * count`，則仍是乘法。\n\n欄位存取也可以明寫成 `(*order).count`：先 dereference，再讀欄位。括號讓整個 `*order` 成為取欄位的對象；本節完整函式採用自動跟隨 reference 的 `order.count`。\n\n## 完整範例與執行\n\n```toml\n--8<-- \"examples/intro-workspace/ownership/Cargo.toml\"\n```\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example shared_references --locked\n```\n\n```text\n借用算出的小計=360，原數量=3\n讀出的數字=3，原數字=3\n```\n\n與上一節相比，乘法答案相同；改變的是呼叫者不必先交出再收回訂單，因為這項工作只需要讀取。\n\n## 練習與完整答案\n\n寫 `total_with_shipping(order: &Order, shipping: i32) -> i32`，只借讀訂單，回傳商品小計加運費。以單價 80、數量 2、運費 20，確認結果 180，呼叫後原數量仍是 2。\n\n先確定函式沒有修改或接手訂單的需要；參數用 &Order，呼叫位置就提供 &order。完整答案沿用本頁 manifest：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_answer.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example shared_answer --locked\n```\n\n成功後顯示 `含運總額=180，原數量=2`。接下來若工作要修改同一筆訂單，就需要另一種借用權限。\n\n[下一節：mutable reference 與變數的 mut](03-04-lesson.md)\n"
+    },
+    {
+      "path": "docs/chapters/03-06-lesson.md",
+      "initial_sha256": "44878d2eb2ed396b558ad46f6e0ee14fe072601b8225d9ffdbcff17c66a9e377",
+      "frozen_sha256": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+      "initial_text": "# 3.6 impl 與 method：把訂單操作放回型別\n\n目前 subtotal、set_count 都是獨立函式，第一個參數告訴我們它處理哪一筆訂單。如果希望從訂單寫出 `order.subtotal()`、`order.add_count(1)`，可以把這些操作放進 Order 的 **impl 區塊**。借讀、借改、接手的規則仍然相同。\n\n## &self 讓 method 借讀呼叫者\n\n`impl Order { ... }` 為 Order 定義操作。在其中，`Self` 代表這個 Order 型別。第一個參數若是 **self 參數**，這個函式就是 method，可以用 `值.方法名(...)` 呼叫。\n\n先只需要讀單價與數量：`&self` 是 `self: &Self` 的簡寫，代表借讀呼叫方法的那筆 Order。\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs:read\"\n```\n\n在 `order.subtotal()` 中，order 提供 self 那份借用，不需要再列進括號。方法內的 self 便是 reference；讀欄位時仍可直接用 `self.unit_price`。呼叫完成後，呼叫者保有原訂單。\n\n## &mut self 修改呼叫者\n\n要把數量加上 additional，方法需要修改借用。`&mut self` 是 `self: &mut Self` 的簡寫：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs:write\"\n```\n\n呼叫寫成 `order.add_count(1)`；order 必須宣告成 mut。這次呼叫需要獨占借用，仍受上一節的重疊使用規則限制。\n\n## self 接手整筆值\n\n若希望操作結束後交出各欄位，而呼叫者不再保留原訂單，就使用 `self`，即 `self: Self`：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs:take\"\n```\n\n這裡回傳第一章學過的 tuple `(i32, i32)`。`order.into_parts()` 把 order move 給方法，方法再交出兩個數字。因此呼叫之後不能繼續使用原 order。方法名稱不會自動決定 ownership；實際契約要看 self 參數型別。\n\n## associated function 建立第一筆值\n\n建立訂單時還沒有 order 可當 self，因此把建立函式寫在 impl 內，但不設 self 參數。這種與型別連在一起的函式稱為 **associated function**：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs:new\"\n```\n\n回傳型別 `Self` 就是 Order，`Self { ... }` 建立 Order 值。當欄位名和變數名相同，可把 `unit_price: unit_price` 簡寫成 `unit_price`，count 也是如此。\n\n呼叫時用型別名稱與 `::`：`Order::new(80, 2)`。這裡 `new` 是我們選的函式名，Rust 不會自動替每個 struct 產生這個函式；建立時仍可使用第 3.1 節的欄位寫法。\n\n## 完整程式：先建立、借讀、借改，最後接手\n\n```toml\n--8<-- \"examples/intro-workspace/ownership/Cargo.toml\"\n```\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example methods --locked\n```\n\n```text\n修改前=160，修改後=240\n接手後交出的單價=80，數量=3\n```\n\n`Order::new` 先建立 owned 值；兩次 subtotal 借讀，中間 add_count 借改，最後 into_parts 接手。依照這個順序，每一份借用都在後續動作前完成。\n\n## &self 不能交出借來的整筆 Order\n\n下面故意以 &self 借讀，卻想把整筆值交出去：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.rs\"\n```\n\n`*self` 指到借來的 Order。這個自訂型別沒有 Copy，不能經由 shared reference 把它 move 出來，編譯器回報 **E0507**。借讀並未取得接手權。若原本工作就是要交出整筆值，方法的 self 參數應表明它接收 owned 的 Self。\n\n## 練習與完整答案\n\n新增 `reset_count(&mut self)`，只把 count 歸零。用單價 80、數量 3 的訂單驗證：原小計是 240，歸零後 count 是 0、unit_price 仍是 80，小計是 0。\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods_answer.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example methods_answer --locked\n```\n\n通過四項數值檢查後，顯示 `清空後數量=0，單價=80，小計=0`。方法把訂單相關操作放在同一個型別旁，參數則繼續明確交代每次操作需要的權限。\n\n[下一節：slice](03-07-lesson.md)\n",
+      "frozen_text": "# 3.6 impl 與 method：把訂單操作放回型別\n\n目前 subtotal、set_count 都是獨立函式，第一個參數告訴我們它處理哪一筆訂單。如果希望從訂單寫出 `order.subtotal()`、`order.add_count(1)`，可以把這些操作放進 Order 的 **impl 區塊**。借讀、借改、接手的規則仍然相同。\n\n## &self 讓 method 借讀呼叫者\n\n`impl Order { ... }` 為 Order 定義操作。在其中，`Self` 代表這個 Order 型別。第一個參數若是 **self 參數**，這個函式就是 method，可以用 `值.方法名(...)` 呼叫。\n\n先只需要讀單價與數量：`&self` 是 `self: &Self` 的簡寫，代表借讀呼叫方法的那筆 Order。\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs:read\"\n```\n\n在 `order.subtotal()` 中，order 提供 self 那份借用，不需要再列進括號。方法內的 self 便是 reference；讀欄位時仍可直接用 `self.unit_price`。呼叫完成後，呼叫者保有原訂單。\n\n## &mut self 修改呼叫者\n\n要把數量加上 additional，方法需要修改借用。`&mut self` 是 `self: &mut Self` 的簡寫：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs:write\"\n```\n\n呼叫寫成 `order.add_count(1)`；order 必須宣告成 mut。這次呼叫需要獨占借用，仍受上一節的重疊使用規則限制。\n\n## self 接手整筆值\n\n若希望操作結束後交出各欄位，而呼叫者不再保留原訂單，就使用 `self`，即 `self: Self`：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs:take\"\n```\n\n這裡回傳第一章學過的 tuple `(i32, i32)`。`order.into_parts()` 把 order move 給方法，方法再交出兩個數字。因此呼叫之後不能繼續使用原 order。方法名稱不會自動決定 ownership；實際契約要看 self 參數型別。\n\n## associated function 建立第一筆值\n\n建立訂單時還沒有 order 可當 self，因此把建立函式寫在 impl 內，但不設 self 參數。這種與型別連在一起的函式稱為 **associated function**。\n\n回傳型別 `Self` 就是 Order，`Self { ... }` 建立 Order 值。當欄位名和變數名相同，可把 `unit_price: unit_price` 簡寫成 `unit_price`，count 也是如此：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs:new\"\n```\n\n呼叫時用型別名稱與 `::`：`Order::new(80, 2)`。這裡 `new` 是我們選的函式名，Rust 不會自動替每個 struct 產生這個函式；建立時仍可使用第 3.1 節的欄位寫法。\n\n## 完整程式：先建立、借讀、借改，最後接手\n\n```toml\n--8<-- \"examples/intro-workspace/ownership/Cargo.toml\"\n```\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example methods --locked\n```\n\n```text\n修改前=160，修改後=240\n接手後交出的單價=80，數量=3\n```\n\n`Order::new` 先建立 owned 值；兩次 subtotal 借讀，中間 add_count 借改，最後 into_parts 接手。依照這個順序，每一份借用都在後續動作前完成。\n\n## &self 不能交出借來的整筆 Order\n\n下面故意以 &self 借讀，卻想把整筆值交出去：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.rs\"\n```\n\n`*self` 指到借來的 Order。這個自訂型別沒有 Copy，不能經由 shared reference 把它 move 出來，編譯器回報 **E0507**。借讀並未取得接手權。若原本工作就是要交出整筆值，方法的 self 參數應表明它接收 owned 的 Self。\n\n## 練習與完整答案\n\n新增 `reset_count(&mut self)`，只把 count 歸零。用單價 80、數量 3 的訂單驗證：原小計是 240，歸零後 count 是 0、unit_price 仍是 80，小計是 0。\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/methods_answer.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example methods_answer --locked\n```\n\n通過四項數值檢查後，顯示 `清空後數量=0，單價=80，小計=0`。方法把訂單相關操作放在同一個型別旁，參數則繼續明確交代每次操作需要的權限。\n\n[下一節：slice](03-07-lesson.md)\n"
+    },
+    {
+      "path": "docs/chapters/03-07-lesson.md",
+      "initial_sha256": "cd003be1a4fe9682b7df9a1e9360a74c26f649ae0f7d4cfaff024200badbe622",
+      "frozen_sha256": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+      "initial_text": "# 3.7 slice：借用連續的一段資料\n\n第 2.3 節用固定長度的 array 計算總和。現在同一個加總函式還要處理五項價格的中間三項、全部五項，以及另一份只有兩項的資料。我們可以讓函式接受 **slice**：原資料中連續的一段，不必為每種 array 長度重寫函式。\n\n## 起點與長度決定借到哪一段\n\narray 型別 `[i32; 5]` 把長度 5 寫進型別；slice 型別 `[i32]` 不把固定長度寫進型別。本節透過 shared reference 使用它，參數型別寫成 `&[i32]`。這份 slice reference 帶著起點與長度，供程式定位原資料中的連續區間；它不另建一份元素的 array。\n\n沿用價格 `[80, 120, 200, 60, 40]`。`&prices[1..4]` 借出原索引 1、2、3，包含起點 1，不包含終點 4，得到 120、200、60 三項。\n\n![五項價格中借出原索引 1 到 3，slice 自己的索引由 0 開始](../assets/ch02/slice-part.svg)\n\n圖中的 selected 不是從原索引 0 開始。因此 `selected[0]` 讀的是原本 `prices[1]` 的 120，`selected.len()` 得到長度 3。len 是查詢長度的方法，回傳第一章已用於索引的 usize。呼叫用 `selected.len()`，不需要另給參數。\n\n## 同一個函式接不同長度\n\n函式只需逐項加總，不需知道呼叫者原本的 array 長度，因此參數改成 `&[i32]`：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices.rs:sum\"\n```\n\n對這個具體型別使用 `for value in values`，每次取得一份 `&i32`，依 slice 順序借讀一個元素。`*value` 讀出 Copy 的 i32 再加入 total。空 slice 沒有元素，迴圈一次也不執行，所以回傳初始總和 0。\n\n有了這個函式，中間三項的借用與計算可以寫成：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices.rs:selection\"\n```\n\n結果是長度 3、第一項 120，總和為 `120 + 200 + 60 = 380`。slice reference 本身可以 Copy；把 selected 傳進函式不會搬走原 array，也不會複製那三個元素。\n\n## 整段、前段、後段與空段\n\n在這份五項 array 上，省略範圍端點有以下意思：\n\n| 寫法 | 原資料中的區間 | 內容 |\n| --- | --- | --- |\n| `&prices[..]` | 開頭到結尾 | 80、120、200、60、40 |\n| `&prices[..3]` | 0 到 3，不含 3 | 80、120、200 |\n| `&prices[3..]` | 3 到結尾 | 60、40 |\n| `&prices[2..2]` | 起點等於終點 | 空段 |\n\n對一般的 `start..end`，必須滿足 `start <= end`，且 end 不超過原長度；合法空段也包含結尾的 `5..5`。建立區間時超出界線，或索引時超出該 slice 的長度，都會 panic。\n\n## 完整程式\n\n```toml\n--8<-- \"examples/intro-workspace/ownership/Cargo.toml\"\n```\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example slices --locked\n```\n\n```text\n選到的長度=3，第一項=120\n選到的總和=380\n全部總和=500\n空區間總和=0\n兩項資料的總和=200\n```\n\n五項 array 的中段、整段、空段，以及兩項 array，現在都交給同一份 sum_values。它統一處理的是「這次借來的那一段」，原 array 的長度仍各自保留。\n\n## slice 有自己的索引界線\n\n下面是完整的預期執行失敗例。函式的 position 型別用 usize，因為它作為索引：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs\"\n```\n\n它可以編譯，但執行時會因 `index out of bounds` panic：selected 長度是 3，合法索引是 0、1、2，索引 3 已經超出這份 slice。原 array 還有後面的價格，並不代表 slice 能讀到那些項目。\n\nslice reference 同樣受第 3.5 節的借用規則約束。若 selected 稍後還要讀取，就不能在那之前衝突地修改它借讀的資料。\n\n## 練習：用 mutable slice 修改指定區段\n\n現在希望只替中間兩項各加 10，保留其餘價格。型別 `&mut [i32]` 提供這一段的獨占修改借用。建立時寫 `&mut prices[1..3]`，而 prices 自己要宣告為 mut。\n\n對 `&mut [i32]` 使用 for，每次取得的是 `&mut i32`，因此可以經由 `*value` 修改原元素：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices_answer.rs:increase\"\n```\n\n把完整答案寫成：先讓原索引 1、2 加 10，檢查得到 80、130、210、60、40，總和 520；再對空段做同樣操作，確認總和仍是 520。\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices_answer.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example slices_answer --locked\n```\n\n```text\n五項價格=80、130、210、60、40\n完整總和=520，空區間沒有修改資料\n```\n\nincrease 完成借改後，main 才檢查原 array，所以讀取與修改不會重疊。下一節把 owned 資料與借用視圖的區別用到文字。\n\n[下一節：String、str 與 &str](03-08-lesson.md)\n",
+      "frozen_text": "# 3.7 slice：借用連續的一段資料\n\n第 2.3 節用固定長度的 array 計算總和。現在同一個加總函式還要處理五項價格的中間三項、全部五項，以及另一份只有兩項的資料。我們可以讓函式接受 **slice**：原資料中連續的一段，不必為每種 array 長度重寫函式。\n\n## 起點與長度決定借到哪一段\n\narray 型別 `[i32; 5]` 把長度 5 寫進型別；slice 型別 `[i32]` 不把固定長度寫進型別。本節透過 shared reference 使用它，參數型別寫成 `&[i32]`。這份 slice reference 帶著起點與長度，供程式定位原資料中的連續區間；它不另建一份元素的 array。\n\n沿用價格 `[80, 120, 200, 60, 40]`。`&prices[1..4]` 借出原索引 1、2、3，包含起點 1，不包含終點 4，得到 120、200、60 三項。\n\n![五項價格中借出原索引 1 到 3，slice 自己的索引由 0 開始](../assets/ch02/slice-part.svg)\n\n圖中的 selected 不是從原索引 0 開始。因此 `selected[0]` 讀的是原本 `prices[1]` 的 120，`selected.len()` 得到長度 3。len 是查詢長度的方法，回傳第一章已用於索引的 usize。呼叫用 `selected.len()`，不需要另給參數。\n\n## 同一個函式接不同長度\n\n函式只需逐項加總，不需知道呼叫者原本的 array 長度，因此參數改成 `&[i32]`。對這個具體型別使用 `for value in values`，每次取得一份 `&i32`，依 slice 順序借讀一個元素。`*value` 讀出 Copy 的 i32 再加入 total：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices.rs:sum\"\n```\n\n空 slice 沒有元素，迴圈一次也不執行，所以回傳初始總和 0。\n\n有了這個函式，中間三項的借用與計算可以寫成：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices.rs:selection\"\n```\n\n結果是長度 3、第一項 120，總和為 `120 + 200 + 60 = 380`。slice reference 本身可以 Copy；把 selected 傳進函式不會搬走原 array，也不會複製那三個元素。\n\n## 整段、前段、後段與空段\n\n在這份五項 array 上，省略範圍端點有以下意思：\n\n| 寫法 | 原資料中的區間 | 內容 |\n| --- | --- | --- |\n| `&prices[..]` | 開頭到結尾 | 80、120、200、60、40 |\n| `&prices[..3]` | 0 到 3，不含 3 | 80、120、200 |\n| `&prices[3..]` | 3 到結尾 | 60、40 |\n| `&prices[2..2]` | 起點等於終點 | 空段 |\n\n對一般的 `start..end`，必須滿足 `start <= end`，且 end 不超過原長度；合法空段也包含結尾的 `5..5`。建立區間時超出界線，或索引時超出該 slice 的長度，都會 panic。\n\n## 完整程式\n\n```toml\n--8<-- \"examples/intro-workspace/ownership/Cargo.toml\"\n```\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example slices --locked\n```\n\n```text\n選到的長度=3，第一項=120\n選到的總和=380\n全部總和=500\n空區間總和=0\n兩項資料的總和=200\n```\n\n五項 array 的中段、整段、空段，以及兩項 array，現在都交給同一份 sum_values。它統一處理的是「這次借來的那一段」，原 array 的長度仍各自保留。\n\n## slice 有自己的索引界線\n\n下面是完整的預期執行失敗例。函式的 position 型別用 usize，因為它作為索引：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs\"\n```\n\n它可以編譯，但執行時會因 `index out of bounds` panic：selected 長度是 3，合法索引是 0、1、2，索引 3 已經超出這份 slice。原 array 還有後面的價格，並不代表 slice 能讀到那些項目。\n\nslice reference 同樣受第 3.5 節的借用規則約束。若 selected 稍後還要讀取，就不能在那之前衝突地修改它借讀的資料。\n\n## 練習：用 mutable slice 修改指定區段\n\n現在希望只替中間兩項各加 10，保留其餘價格。型別 `&mut [i32]` 提供這一段的獨占修改借用。建立時寫 `&mut prices[1..3]`，而 prices 自己要宣告為 mut。\n\n對 `&mut [i32]` 使用 for，每次取得的是 `&mut i32`，因此可以經由 `*value` 修改原元素：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices_answer.rs:increase\"\n```\n\n把完整答案寫成：先讓原索引 1、2 加 10，檢查得到 80、130、210、60、40，總和 520；再對空段做同樣操作，確認總和仍是 520。\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/slices_answer.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example slices_answer --locked\n```\n\n```text\n五項價格=80、130、210、60、40\n完整總和=520，空區間沒有修改資料\n```\n\nincrease 完成借改後，main 才檢查原 array，所以讀取與修改不會重疊。下一節把 owned 資料與借用視圖的區別用到文字。\n\n[下一節：String、str 與 &str](03-08-lesson.md)\n"
+    }
+  ],
+  "late_workspace_metadata": {
+    "captured_at_utc": "2026-10-15T06:53:43.401904+00:00",
+    "files": {
+      "examples/intro-workspace/Cargo.toml": {
+        "sha256": "b85720032a875d06ca88e96607c0fbdf16cfb1b90507788c5ffeb76e6913e6b7",
+        "text": "[workspace]\nmembers = [\n    \"hello\",\n    \"greeting\",\n    \"steps\",\n    \"control-steps\",\n    \"modules-basic\",\n    \"control\",\n    \"ownership\",\n    \"patterns\",\n]\nresolver = \"3\"\n"
+      },
+      "examples/intro-workspace/Cargo.lock": {
+        "sha256": "814f49ab55f61166079a9a123eb144402c7fe7940480f502498a7538cc66d761",
+        "text": "# This file is automatically @generated by Cargo.\n# It is not intended for manual editing.\nversion = 4\n\n[[package]]\nname = \"intro-control\"\nversion = \"0.1.0\"\n\n[[package]]\nname = \"intro-control-steps\"\nversion = \"0.1.0\"\n\n[[package]]\nname = \"intro-greeting\"\nversion = \"0.1.0\"\n\n[[package]]\nname = \"intro-hello\"\nversion = \"0.1.0\"\n\n[[package]]\nname = \"intro-modules-basic\"\nversion = \"0.1.0\"\n\n[[package]]\nname = \"intro-ownership\"\nversion = \"0.1.0\"\n\n[[package]]\nname = \"intro-patterns\"\nversion = \"0.1.0\"\n\n[[package]]\nname = \"intro-steps\"\nversion = \"0.1.0\"\n"
+      }
+    },
+    "impact": "Only member patterns and lock package intro-patterns added. Pattern manifest independently read as name/version/edition only; no chapter4 Rust source read or required. Does not expand selected intro-ownership sources."
+  },
+  "source_hash_algorithm": "SHA-256",
+  "limits": [
+    "No Cargo/rustc/formatter/Clippy/test/runtime/mutation or browser execution.",
+    "SVG XML/source checks do not verify actual image readability.",
+    "Root-prompted confirmations are not independent discoveries.",
+    "No optional supplement or chapter4+ source/prose used to fill main-prose prerequisites."
+  ],
+  "late_material_update": {
+    "captured_at_utc": "2026-10-15T06:55:52.398022+00:00",
+    "discovery": "Own pre-seal hash guard detected a source change after the earlier freeze notice; not a newly reported defect or independent rediscovery.",
+    "files": {
+      "docs/chapters/03-03-lesson.md": {
+        "previous_sha256": "db0288a22aeb87e01751792ee3d1dbb50ea61006c6098c6c51a8e7ecdcfed1b7",
+        "previous_text": "# 3.3 shared reference 與 dereference：借讀原資料\n\n上一節的 subtotal 接手整筆 Order，只交回數字；若呼叫者還想用訂單，就得另行交回它。現在我們希望函式只讀欄位算小計，呼叫之後原訂單仍留在 main。要改的是函式取得資料的方式，乘法規則保持相同。\n\n## reference 借用既有的值\n\n**reference**（參照）是用來借用既有資料的值。它保存找到資料的資訊，並受 Rust 的有效性與存取規則檢查；可以接回第 1.7 節 pointer「到哪裡找」的角色，但不是直接取得原資料的 ownership。\n\n`&count` 建立對 count 的借用，結果型別為 `&i32`。**borrowing** 就是建立這種借用的動作。在 expression 裡的 `&` 建立 reference；型別中的 `&i32` 則說明它借用一個 i32，兩者位置與角色不同。\n\n這種 `&i32`、`&Order` 稱為 **shared reference**。它可與其他 shared borrow 一起讀取；對本章的普通數字欄位，不能透過它修改原資料。借用使用期間，原資料也必須仍有效；第 3.5 節會具體追蹤這個範圍。\n\n圖中 order 仍持有唯一一筆 Order；reference 的箭頭只表示借用，沒有產生第二份訂單：\n\n![order 仍持有 Order，reference 借用同一筆資料；dereference 找到原 Order](../assets/ch02/reference-owner.svg)\n\n## 參數改成 &Order，呼叫時提供借用\n\n`subtotal(order: &Order)` 接受 reference。函式只讀兩個數字欄位、交回小計。讀 `order.count` 時，欄位存取會自動跟隨這份 reference 找到原訂單；不是讓 Order 突然具備 Copy。\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:borrow-function\"\n```\n\nmain 建好 Order 後，以 `&order` 建立借用並呼叫：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:borrow-call\"\n```\n\n參數沒有取得原訂單的 ownership，因此函式結束後，main 仍能讀 order.count。reference 自己用完，也不會因此清理它借用的原資料。\n\n## * 找到 reference 所指的值\n\n`*reference` 是 **dereference**，也就是解參照：沿 reference 找到所指的值。對 `i32`，可以把讀到的數字 Copy 出來：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:dereference\"\n```\n\n`count_reference` 是一份借用，`copied_count` 則是獨立的數字 3。原 count 仍是 3。`*` 放在一個 expression 前表示 dereference；放在兩個數字中間，如 `price * count`，則仍是乘法。\n\n欄位存取也可以明寫成 `(*order).count`：先 dereference，再讀欄位。括號讓整個 `*order` 成為取欄位的對象；本節完整函式採用自動跟隨 reference 的 `order.count`。\n\n## 完整範例與執行\n\n```toml\n--8<-- \"examples/intro-workspace/ownership/Cargo.toml\"\n```\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example shared_references --locked\n```\n\n```text\n借用算出的小計=360，原數量=3\n讀出的數字=3，原數字=3\n```\n\n與上一節相比，乘法答案相同；改變的是呼叫者不必先交出再收回訂單，因為這項工作只需要讀取。\n\n## 練習與完整答案\n\n寫 `total_with_shipping(order: &Order, shipping: i32) -> i32`，只借讀訂單，回傳商品小計加運費。以單價 80、數量 2、運費 20，確認結果 180，呼叫後原數量仍是 2。\n\n先確定函式沒有修改或接手訂單的需要；參數用 &Order，呼叫位置就提供 &order。完整答案沿用本頁 manifest：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_answer.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example shared_answer --locked\n```\n\n成功後顯示 `含運總額=180，原數量=2`。接下來若工作要修改同一筆訂單，就需要另一種借用權限。\n\n[下一節：mutable reference 與變數的 mut](03-04-lesson.md)\n",
+        "current_sha256": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e",
+        "current_text": "# 3.3 shared reference 與 dereference：借讀原資料\n\n上一節的 subtotal 接手整筆 Order，只交回數字；若呼叫者還想用訂單，就得另行交回它。現在我們希望函式只讀欄位算小計，呼叫之後原訂單仍留在 main。要改的是函式取得資料的方式，乘法規則保持相同。\n\n## reference 借用既有的值\n\n**reference**（參照）是用來借用既有資料的值。它保存找到資料的資訊，並受 Rust 的有效性與存取規則檢查；可以接回第 1.7 節 pointer「到哪裡找」的角色，但不是直接取得原資料的 ownership。\n\n`&count` 建立對 count 的借用，結果型別為 `&i32`。**borrowing** 就是建立這種借用的動作。在 expression 裡的 `&` 建立 reference；型別中的 `&i32` 則說明它借用一個 i32，兩者位置與角色不同。\n\n這種 `&i32`、`&Order` 稱為 **shared reference**。它可與其他 shared borrow 一起讀取；對本章的普通數字欄位，不能透過它修改原資料。借用使用期間，原資料也必須仍有效；第 3.5 節會具體追蹤這個範圍。\n\n圖中 order 仍持有唯一一筆 Order；reference 的箭頭只表示借用，沒有產生第二份訂單：\n\n![order 仍持有 Order，reference 借用同一筆資料](../assets/ch02/reference-owner.svg)\n\n## 參數改成 &Order，呼叫時提供借用\n\n`subtotal(order: &Order)` 接受 reference。函式只讀兩個數字欄位、交回小計。讀 `order.count` 時，欄位存取會自動跟隨這份 reference 找到原訂單；不是讓 Order 突然具備 Copy。\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:borrow-function\"\n```\n\nmain 建好 Order 後，以 `&order` 建立借用並呼叫：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:borrow-call\"\n```\n\n參數沒有取得原訂單的 ownership，因此函式結束後，main 仍能讀 order.count。reference 自己用完，也不會因此清理它借用的原資料。\n\n## * 找到 reference 所指的值\n\n`*reference` 是 **dereference**，也就是解參照：沿 reference 找到所指的值。對 `i32`，可以把讀到的數字 Copy 出來：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs:dereference\"\n```\n\n`count_reference` 是一份借用，`copied_count` 則是獨立的數字 3。原 count 仍是 3。`*` 放在一個 expression 前表示 dereference；放在兩個數字中間，如 `price * count`，則仍是乘法。\n\n欄位存取也可以明寫成 `(*order).count`：先 dereference，再讀欄位。括號讓整個 `*order` 成為取欄位的對象；本節完整函式採用自動跟隨 reference 的 `order.count`。\n\n## 完整範例與執行\n\n```toml\n--8<-- \"examples/intro-workspace/ownership/Cargo.toml\"\n```\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_references.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example shared_references --locked\n```\n\n```text\n借用算出的小計=360，原數量=3\n讀出的數字=3，原數字=3\n```\n\n與上一節相比，乘法答案相同；改變的是呼叫者不必先交出再收回訂單，因為這項工作只需要讀取。\n\n## 練習與完整答案\n\n寫 `total_with_shipping(order: &Order, shipping: i32) -> i32`，只借讀訂單，回傳商品小計加運費。以單價 80、數量 2、運費 20，確認結果 180，呼叫後原數量仍是 2。\n\n先確定函式沒有修改或接手訂單的需要；參數用 &Order，呼叫位置就提供 &order。完整答案沿用本頁 manifest：\n\n```rust\n--8<-- \"examples/intro-workspace/ownership/examples/shared_answer.rs\"\n```\n\n```bash\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example shared_answer --locked\n```\n\n成功後顯示 `含運總額=180，原數量=2`。接下來若工作要修改同一筆訂單，就需要另一種借用權限。\n\n[下一節：mutable reference 與變數的 mut](03-04-lesson.md)\n"
+      },
+      "docs/assets/ch02/reference-owner.svg": {
+        "previous_sha256": "24c26bb66f067b0d964a05b4e54cbd34359f35036192b3b9ba5a526b2c1f56dc",
+        "previous_text": "<svg width=\"340\" height=\"342\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 342\" role=\"img\" aria-labelledby=\"title desc\">\n  <title id=\"title\">reference 借用原 Order，而不接手 ownership</title>\n  <desc id=\"desc\">order 持有單價120、數量3的 Order。reference 的型別為 &amp;Order，箭頭只借用同一筆資料。對 reference 解參照會找到該 Order，沒有建立另一份 Order。</desc>\n  <defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#1d4ed8\"/></marker></defs>\n  <rect width=\"340\" height=\"342\" rx=\"12\" fill=\"#f8fafc\"/>\n  <g font-family=\"sans-serif\" font-size=\"20\" fill=\"#172033\">\n    <text x=\"22\" y=\"34\" font-weight=\"bold\">同一筆資料，兩種角色</text>\n    <rect x=\"20\" y=\"51\" width=\"300\" height=\"82\" rx=\"8\" fill=\"#dbeafe\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n    <text x=\"36\" y=\"83\">reference：&amp;Order</text>\n    <text x=\"36\" y=\"112\">借用，沒有接手訂單</text>\n    <path d=\"M75 141V195\" stroke=\"#1d4ed8\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/>\n    <text x=\"95\" y=\"175\">&amp;order 建立借用</text>\n    <rect x=\"20\" y=\"207\" width=\"300\" height=\"91\" rx=\"8\" fill=\"#dcfce7\" stroke=\"#166534\" stroke-width=\"2\"/>\n    <text x=\"36\" y=\"239\">order：仍是 owner</text>\n    <text x=\"36\" y=\"269\">Order：單價 120，數量 3</text>\n    <text x=\"22\" y=\"326\">*reference 找到這筆 Order</text>\n  </g>\n</svg>\n",
+        "current_sha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb",
+        "current_text": "<svg width=\"340\" height=\"342\" xmlns=\"http://www.w3.org/2000/svg\" viewBox=\"0 0 340 342\" role=\"img\" aria-labelledby=\"title desc\">\n  <title id=\"title\">reference 借用原 Order，而不接手 ownership</title>\n  <desc id=\"desc\">order 持有單價120、數量3的 Order。reference 的型別為 &amp;Order，箭頭只借用同一筆資料。沒有建立另一份 Order。</desc>\n  <defs><marker id=\"arrow\" markerWidth=\"8\" markerHeight=\"8\" refX=\"7\" refY=\"4\" orient=\"auto\"><path d=\"M0 0L8 4L0 8Z\" fill=\"#1d4ed8\"/></marker></defs>\n  <rect width=\"340\" height=\"342\" rx=\"12\" fill=\"#f8fafc\"/>\n  <g font-family=\"sans-serif\" font-size=\"20\" fill=\"#172033\">\n    <text x=\"22\" y=\"34\" font-weight=\"bold\">同一筆資料，兩種角色</text>\n    <rect x=\"20\" y=\"51\" width=\"300\" height=\"82\" rx=\"8\" fill=\"#dbeafe\" stroke=\"#1d4ed8\" stroke-width=\"2\"/>\n    <text x=\"36\" y=\"83\">reference：&amp;Order</text>\n    <text x=\"36\" y=\"112\">借用，沒有接手訂單</text>\n    <path d=\"M75 141V195\" stroke=\"#1d4ed8\" stroke-width=\"3\" marker-end=\"url(#arrow)\"/>\n    <text x=\"95\" y=\"175\">&amp;order 建立借用</text>\n    <rect x=\"20\" y=\"207\" width=\"300\" height=\"91\" rx=\"8\" fill=\"#dcfce7\" stroke=\"#166534\" stroke-width=\"2\"/>\n    <text x=\"36\" y=\"239\">order：仍是 owner</text>\n    <text x=\"36\" y=\"269\">Order：單價 120，數量 3</text>\n    <text x=\"22\" y=\"326\">借用同一筆 Order</text>\n  </g>\n</svg>\n"
+      }
+    },
+    "judgment": "3.3 alt text and first reference figure now describe borrowing the same Order without the not-yet-formally-taught dereference footer. Reference role/one-original-data relation and later complete dereference section stay intact; no Rust source changed."
+  },
+  "reviewed_source_hashes": {
+    "docs/assets/ch02/borrow-scope.svg": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e",
+    "docs/assets/ch02/move-copy.svg": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e",
+    "docs/assets/ch02/reference-owner.svg": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb",
+    "docs/assets/ch02/slice-part.svg": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4",
+    "docs/assets/ch03/string-view.svg": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27",
+    "docs/chapters/03-01-lesson.md": "fac86a536cb55ae8c2231dfe6509d3eefdcd9ea0d9e06f6f7cbe95e1e38b0f80",
+    "docs/chapters/03-02-lesson.md": "4abe646b523a2831e8374d80fa1f006b203feba9e4e3bec9b00aeca8fd9bc388",
+    "docs/chapters/03-03-lesson.md": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e",
+    "docs/chapters/03-04-lesson.md": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+    "docs/chapters/03-05-lesson.md": "eae13ff2e23669eb9acaa579cf6f97126babc30770bd333807b8ce8bdb7b4ccb",
+    "docs/chapters/03-06-lesson.md": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+    "docs/chapters/03-07-lesson.md": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+    "docs/chapters/03-08-lesson.md": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+    "examples/intro-workspace/Cargo.lock": "a0339cd7d528d67876df3dd1a2b1fb2169063d31e4cba666c575f6564756f8e0",
+    "examples/intro-workspace/Cargo.toml": "77708bcc8ed7d4cbfc5b2e01156df0f081606a1e25894fd86697008685288b87",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/borrow_answer.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+    "examples/intro-workspace/ownership/examples/last_use.rs": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+    "examples/intro-workspace/ownership/examples/lifetime_answer.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+    "examples/intro-workspace/ownership/examples/methods.rs": "8cd7fb3cdcf50009299b7c38a5b62ebcdfdb8195f4a6a013909fa8a28fcb3ec1",
+    "examples/intro-workspace/ownership/examples/methods_answer.rs": "d155f99fe1943045602084dcf912f85b29209b2553a55712d973234c27741af4",
+    "examples/intro-workspace/ownership/examples/moves.rs": "7356f9fe53c5744cfbb6497b1132cad48f1298c98b22aadd747aeb51976ae184",
+    "examples/intro-workspace/ownership/examples/mutable_references.rs": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+    "examples/intro-workspace/ownership/examples/ownership_answer.rs": "1e1be4d6be32a084b12fa01c151e097768a8ee6b114d094bbaad987bdc9bd367",
+    "examples/intro-workspace/ownership/examples/public_model/main.rs": "b317b4901378db03b96a5d1e2cb811ee88cc8ab1a5bb5cf45d94e78607b7bdc3",
+    "examples/intro-workspace/ownership/examples/public_model/model/mod.rs": "3eafd390446d1b457521ab144bf5e8495fc5cb77678d7c468958736ba2cee720",
+    "examples/intro-workspace/ownership/examples/reborrow.rs": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+    "examples/intro-workspace/ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+    "examples/intro-workspace/ownership/examples/shared_answer.rs": "2788556bba6d288b06dbee1190321da44936e29c6ed699c28528c0f7d09bd288",
+    "examples/intro-workspace/ownership/examples/shared_references.rs": "ef65a9a1ef397ee82c6b244a63413e42c7f98edf7a90b0a03dfd3c6862298823",
+    "examples/intro-workspace/ownership/examples/slices.rs": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+    "examples/intro-workspace/ownership/examples/slices_answer.rs": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+    "examples/intro-workspace/ownership/examples/strings.rs": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+    "examples/intro-workspace/ownership/examples/strings_answer.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+    "examples/intro-workspace/ownership/examples/structs.rs": "1d7cc967e11ba88250d9cb5b5aa1c14155081e49921fd7c9a003eb4b981ce648",
+    "examples/intro-workspace/ownership/examples/structs_answer.rs": "f9c26ea5301d08571922b1b3c788e3e3f6e38153ca909696ac9c96b63468c1e1",
+    "examples/intro-workspace/ownership/examples/text_order.rs": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.rs": "25d22714815e23ef66b3c53e6c22ba61fbc528e40997bb5773946a4cfe2ca262",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.rs": "dbc4227dfe470236aa29e846360ad749be19060390d708343a39ebea03d931be",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.expected": "c8af886bbe93c20a7838be9a35690203ff0283d2f62d496811599d8d4890d2be",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.expected": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.expected": "9bc98e93f7bbaa33ec6e4a45dde7a4f391fb4fa34bf8231cb7c05d099692527b",
+    "AGENTS.md": "04687339ba4b38681e0c7e33e19851a3b0272ec9dfe283ead91454ce939b956b",
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "sealed_at_utc": "2026-10-15T06:56:49.305922+00:00",
+  "seal_source_hashes": {
+    "docs/assets/ch02/borrow-scope.svg": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e",
+    "docs/assets/ch02/move-copy.svg": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e",
+    "docs/assets/ch02/reference-owner.svg": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb",
+    "docs/assets/ch02/slice-part.svg": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4",
+    "docs/assets/ch03/string-view.svg": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27",
+    "docs/chapters/03-01-lesson.md": "fac86a536cb55ae8c2231dfe6509d3eefdcd9ea0d9e06f6f7cbe95e1e38b0f80",
+    "docs/chapters/03-02-lesson.md": "4abe646b523a2831e8374d80fa1f006b203feba9e4e3bec9b00aeca8fd9bc388",
+    "docs/chapters/03-03-lesson.md": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e",
+    "docs/chapters/03-04-lesson.md": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+    "docs/chapters/03-05-lesson.md": "eae13ff2e23669eb9acaa579cf6f97126babc30770bd333807b8ce8bdb7b4ccb",
+    "docs/chapters/03-06-lesson.md": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+    "docs/chapters/03-07-lesson.md": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+    "docs/chapters/03-08-lesson.md": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+    "examples/intro-workspace/Cargo.lock": "814f49ab55f61166079a9a123eb144402c7fe7940480f502498a7538cc66d761",
+    "examples/intro-workspace/Cargo.toml": "b85720032a875d06ca88e96607c0fbdf16cfb1b90507788c5ffeb76e6913e6b7",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/borrow_answer.rs": "996c7b2b2a6203af23f7f479abbce85b761e95dd8e7a6e18091ae5e086f63879",
+    "examples/intro-workspace/ownership/examples/last_use.rs": "4fed86fbdadd178ee3af2fcfd0977897fc31e2eeedc620bdf135606a63cf68f0",
+    "examples/intro-workspace/ownership/examples/lifetime_answer.rs": "acde91aa3e22ff9819a6eeb61c512be74d51ccf739d5e5f1224ffc6ed88c5964",
+    "examples/intro-workspace/ownership/examples/methods.rs": "8cd7fb3cdcf50009299b7c38a5b62ebcdfdb8195f4a6a013909fa8a28fcb3ec1",
+    "examples/intro-workspace/ownership/examples/methods_answer.rs": "d155f99fe1943045602084dcf912f85b29209b2553a55712d973234c27741af4",
+    "examples/intro-workspace/ownership/examples/moves.rs": "7356f9fe53c5744cfbb6497b1132cad48f1298c98b22aadd747aeb51976ae184",
+    "examples/intro-workspace/ownership/examples/mutable_references.rs": "eda2984c7f1e9c54beb7e8900453f741a9172598692042fdda7bbaf035e07220",
+    "examples/intro-workspace/ownership/examples/ownership_answer.rs": "1e1be4d6be32a084b12fa01c151e097768a8ee6b114d094bbaad987bdc9bd367",
+    "examples/intro-workspace/ownership/examples/public_model/main.rs": "b317b4901378db03b96a5d1e2cb811ee88cc8ab1a5bb5cf45d94e78607b7bdc3",
+    "examples/intro-workspace/ownership/examples/public_model/model/mod.rs": "3eafd390446d1b457521ab144bf5e8495fc5cb77678d7c468958736ba2cee720",
+    "examples/intro-workspace/ownership/examples/reborrow.rs": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7",
+    "examples/intro-workspace/ownership/examples/reference_binding.rs": "f50f1333e5cb8372d557264d535e1e78b5eddff4fb2b72bd689c6a09c8b4f205",
+    "examples/intro-workspace/ownership/examples/shared_answer.rs": "2788556bba6d288b06dbee1190321da44936e29c6ed699c28528c0f7d09bd288",
+    "examples/intro-workspace/ownership/examples/shared_references.rs": "ef65a9a1ef397ee82c6b244a63413e42c7f98edf7a90b0a03dfd3c6862298823",
+    "examples/intro-workspace/ownership/examples/slices.rs": "878aa12d1d9ca89612986b0464022208ebee4b92244e4bddf4b49e9ddbfba4cc",
+    "examples/intro-workspace/ownership/examples/slices_answer.rs": "d6782c8efd621912fb9ea2f515f78af9021cd47fbfdca8b4dedb4fc3629358e0",
+    "examples/intro-workspace/ownership/examples/strings.rs": "034fecafb02710d37b0a46ce467de3dedfddf9144ba31e8799a4e2cd7d86d0d3",
+    "examples/intro-workspace/ownership/examples/strings_answer.rs": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927",
+    "examples/intro-workspace/ownership/examples/structs.rs": "1d7cc967e11ba88250d9cb5b5aa1c14155081e49921fd7c9a003eb4b981ce648",
+    "examples/intro-workspace/ownership/examples/structs_answer.rs": "f9c26ea5301d08571922b1b3c788e3e3f6e38153ca909696ac9c96b63468c1e1",
+    "examples/intro-workspace/ownership/examples/text_order.rs": "be168523d453f4784a172bbc69f8cdb38cfd0135976edb683302f546432fab40",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.rs": "6b3532493e425be34c571aceee1dabfc1cf5582ee31318bab6e272aa90028aeb",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.rs": "f6891ace7ea78e9553fc336ebe005526ec9658c564e2a55d4deca35af86d9bd6",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.rs": "213a8d717d19a3093e48c23b8ca3937025de54368daf9887063da5856ff6e383",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.rs": "25d22714815e23ef66b3c53e6c22ba61fbc528e40997bb5773946a4cfe2ca262",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.rs": "d961d93c8b6f8eee41a6699cac7767929a66338c31d73eb23096686199f091d5",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.rs": "362a9874fcd469d760d99f63896c898826ad7ba0628c250b93d6b71e18b8eece",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.rs": "b8673b22fa886fa7b525b5bfdc9108b93915716c340f834d52d3209b0dcfa37e",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.rs": "8292ad666cbedc898ff6cc0158ecd5d6c535f93bfd73f86828bc2ed49f9227ca",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.rs": "dbc4227dfe470236aa29e846360ad749be19060390d708343a39ebea03d931be",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.rs": "07ca232c7093af033fb88d539ccb640b3c9bf2154f3fa28f2c09018480f1b0bd",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/borrow_overlap.expected": "c8af886bbe93c20a7838be9a35690203ff0283d2f62d496811599d8d4890d2be",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/dangling_block.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/double_mutable.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/move_from_borrow.expected": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/mutable_reference_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/shared_write.expected": "cbf518c3abf449c10ede484e3c2ae0eb198f846fd9fe7eb774be91fe2fb8c727",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/string_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/ownership/fixtures/runtime-fail/slice_bounds.expected": "9bc98e93f7bbaa33ec6e4a45dde7a4f391fb4fa34bf8231cb7c05d099692527b",
+    "AGENTS.md": "04687339ba4b38681e0c7e33e19851a3b0272ec9dfe283ead91454ce939b956b",
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5",
+    "examples/intro-workspace/patterns/Cargo.toml": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a"
+  }
+}

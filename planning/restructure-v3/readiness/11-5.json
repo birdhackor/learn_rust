@@ -1,0 +1,93 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.5"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-05-lesson.md": "936a3788cf246573cc9f93075af806f8e1b7cef938a10573de4f1508a0ddeeb6",
+    "examples/intro-workspace/type-stages/examples/static_complete/lifetime_bounds/mod.rs": "74ebe48ef260d5c2b749a0afb5e3d1162c162337352919eb945a99c4bb9390ff",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/type_bounds.rs": "dd15ef09a85a1846018e70cc89c4bcb6478031a0ccd0c0f116e09c05f9032612",
+    "examples/intro-workspace/type-stages/examples/static_reference.rs": "26c81ab7a36e5362422a4ca691b3b7d229e4667fbab265f5561349dfef482789",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/static_from_local.rs": "c8aecc2f3b32cc91a269f86f3c7b519b4e00ee75e0186c218e43e3597b2c2c8d",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/static_from_local.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/type-stages/examples/static_bound.rs": "856b7b4074f84877435efc101c0a5dd68ac620d2cfce7932255d63751c30f014",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/boxed_borrow_not_static.rs": "7c59543c836985c23b32794577139a6496916ed139582450c6f3dc4cd6faba98",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/boxed_borrow_not_static.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/type-stages/examples/static_complete/views/mod.rs": "7e0f0ac8861224da873d55bf8671f97190af0d65bbfe4ad57aeb29248098404c",
+    "examples/intro-workspace/type-stages/examples/static_complete/main.rs": "03a7d875e05c3beef26321463f02749112b14fe651d6ef95892c00e1cc04a688"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.5",
+      "path": "docs/chapters/11-05-lesson.md",
+      "line": 3,
+      "quote": "Box 擁有它保存的值，但那個值仍可能是一份 reference。`Box<&str>` 擁有借用資訊，沒有因此取得原文字。第 7 章已能描述 reference 的來源，現在要問：泛型 T 內部的借用，是否能支持指定的有效範圍？"
+    },
+    {
+      "section_id": "11.5",
+      "path": "docs/chapters/11-05-lesson.md",
+      "line": 7,
+      "quote": "第 7.2 節的 `'b: 'a` 表示 `'b` 至少涵蓋 `'a`。**`T: 'a`** 則要求 T 所包含的 lifetime 關係至少滿足 `'a`；它沒有命令某個 T 值一定存活到哪裡，也不延長來源。"
+    },
+    {
+      "section_id": "11.5",
+      "path": "docs/chapters/11-05-lesson.md",
+      "line": 15,
+      "quote": "把第 7.3 節的 borrowed field 改成借任意 T。**`?Sized + 'a`** 用加號同時列出要求：允許 T 是 DST，且 T 內的 lifetime 要能符合 `'a`。欄位自己則是 `&'a T`："
+    },
+    {
+      "section_id": "11.5",
+      "path": "docs/chapters/11-05-lesson.md",
+      "line": 21,
+      "quote": "在這個特定定義中，`&'a T` 本來就要求 `T: 'a` 才合法，Rust 能推導這項 **implied bound**（隱含要求）。明寫 `+ 'a` 是為了看清關係；刪掉它不會使這份 struct 不合法。這種推導針對相應 lifetime 要求，不表示任意 trait bound 都能省略。"
+    },
+    {
+      "section_id": "11.5",
+      "path": "docs/chapters/11-05-lesson.md",
+      "line": 48,
+      "quote": "**`'static`** 是 Rust 預留的 lifetime 名稱，不需在尖括號宣告。寫在 reference 上時，表示被借資料能在程式剩餘的執行期間保持有效。"
+    },
+    {
+      "section_id": "11.5",
+      "path": "docs/chapters/11-05-lesson.md",
+      "line": 69,
+      "quote": "第一行是把 reference 值交到外層，不是延長 inside 變數。反過來，局部 String 的借用不能只靠標註變成 static；以下完整負例執行 `cargo check` 得到 **E0597**："
+    },
+    {
+      "section_id": "11.5",
+      "path": "docs/chapters/11-05-lesson.md",
+      "line": 81,
+      "quote": "型別 bound **`T: 'static`** 要求 T 不依賴短命外部借用。String、i32、`&'static str` 都符合；借自局部 String 的 `&str` 則不能符合這項要求。"
+    },
+    {
+      "section_id": "11.5",
+      "path": "docs/chapters/11-05-lesson.md",
+      "line": 107,
+      "quote": "下面把局部 String 的 `&str` 放進 Box，再交給 require_static，會得到 **E0597**。這次不是 Box 不能保存 reference，而是裡面的借用不能符合 static："
+    },
+    {
+      "section_id": "11.5",
+      "path": "docs/chapters/11-05-lesson.md",
+      "line": 121,
+      "quote": "建立 Rust 的 String，交給第 11.4 節的 Wrapper，再交給 require_static。透過 Wrapper 追加「 教學」，確認內容 `Rust 教學`。說明為何放 owned String 能通過，而改放 `text.as_str()` 會依賴原文字。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

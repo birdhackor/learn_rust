@@ -1,0 +1,13 @@
+# 18.10 獨立技術初判
+
+必要0項；可選0項。未讀作者驗證、其他審閱或歷史問題。按current `fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e` 實讀，root先前只給版本通知，不將其修訂算自己的發現。
+
+19個owned檔、17個實際source／config／checks／example，27個snippet、4處命令、1張SVG原文；26份hash與copy證明見JSON。
+
+new與record都不fill，run每輪先查停止再提交；觀察停止後abort並逐份join，保留已完成Check與真正task故障，僅實際取消成Cancelled。pending經by_ref保存Unstarted，不捏造Id／elapsed。原行索引與gate編號的區別、停止以觀察為界、來源故障與Requested分開均正確。
+
+七項checks完整helper可讀；finish先記task／登記數，後備cleanup不會替錯誤實作補成通過。受控select借用owner、十五秒到期後仍可清理；合成完成通知限current-thread且立即返回／panic，足以建立完成尚未join。起始一過六敗、先完成record＋stop_and_finish後兩過五敗，與完整source一致。refill材料原1／4取消、3保留200、5／6未提交，正常混合9hits均相符。
+
+signal先poll listener再通知entered；早期事件仍由同一停止channel保真理由。demo在所有返回路線先等待Scheduler、listener及server；READY後即取消是2hits／130。未按時兩份held十秒到期，重複held無gate回503，清單含invalid，正常退出1；輸出失敗2。caller丟整份future不能代替等待的限制已交代。
+
+完整selected normal library閉包皆inline；四份input／single與本人B3封存一致，七個Fixture依賴檔未變，完整測試尾段精確等於checks。SVG只讀原文，圖內索引與分類對得上。未執行Cargo、HTTP、signal或瀏覽器；沒有視覺或reader實驗。

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="815" viewBox="0 0 390 815" role="img" aria-labelledby="title desc">
+  <title id="title">同一項庫存工作A與加總工作B的三種安排</title>
+  <desc id="desc">A查詢庫存並收到3件，B計算80加120得到200元。先等A時，B留到回覆之後。交錯安排則在A等待時以同一路徑完成B，再收A回覆。平行安排另假設A回覆已到而B尚未完成，兩份可執行資源在同一時刻分別處理A與B。箭頭只表示操作先後，框的大小不是量測時間。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#475569"/></marker></defs>
+  <rect width="390" height="815" rx="12" fill="#f8fafc"/>
+  <g font-family="sans-serif" font-size="22" fill="#0f172a">
+    <text x="195" y="32" text-anchor="middle" font-weight="bold">固定同一項 A、同一項 B</text>
+    <text x="24" y="69">A：查庫存，回覆 3 件</text>
+    <text x="24" y="103">B：80 + 120，得到 200 元</text>
+    <rect x="16" y="126" width="358" height="187" rx="10" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+    <text x="34" y="159" font-weight="bold">① 先等 A，再做 B</text>
+    <text x="34" y="197">發出 A → 留在等待</text>
+    <text x="34" y="232">收到 A = 3 → 計算 B</text>
+    <text x="34" y="274">B = 200 → 形成完整報告</text>
+    <rect x="16" y="337" width="358" height="187" rx="10" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+    <text x="34" y="370" font-weight="bold">② 同一路徑交錯推進</text>
+    <text x="34" y="408">發出 A → A 尚未完成</text>
+    <text x="34" y="443">先做 B = 200，仍等 A</text>
+    <text x="34" y="485">收到 A = 3 → 形成完整報告</text>
+    <rect x="16" y="548" width="358" height="218" rx="10" fill="#eff6ff" stroke="#1d4ed8" stroke-width="2"/>
+    <text x="34" y="581" font-weight="bold">③ 另有真正同時的安排</text>
+    <text x="34" y="616">假設 A 已回，B 尚未完成</text>
+    <path d="M35 631H355" stroke="#475569" stroke-width="2"/>
+    <text x="34" y="660">資源 1：處理 A 回覆</text>
+    <text x="34" y="697">資源 2：完成 B 計算</text>
+    <text x="34" y="741" font-weight="bold">此處假設兩段真的同時執行</text>
+    <text x="195" y="798" text-anchor="middle" font-size="19">箭頭：操作先後；框高不是耗時</text>
+  </g>
+</svg>

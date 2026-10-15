@@ -1,0 +1,205 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "17.3"
+  ],
+  "author": "root",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round17-api-cross-references-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-criterion-benchmark.md",
+    "planning/restructure-v3/reviews/technical-early/round17-declarative-macro-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round17-dhat-allocation-profile.md",
+    "planning/restructure-v3/reviews/technical-early/round17-library-and-string-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-loom-miri.md",
+    "planning/restructure-v3/reviews/technical-early/round17-macro-hygiene-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round17-procedural-derive-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round17-property-testing.md",
+    "planning/restructure-v3/reviews/technical-early/round17-public-api-contracts.md",
+    "planning/restructure-v3/reviews/technical-early/round17-root-cross-references-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/17-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/17-03-lesson.md": "aff60066fc4adbf85439864d9aa32d8f7d9054ef218d3bd02bf450b81c26212c",
+    "examples/ch14-macros/derive/Cargo.toml": "fcb45a22f215f019c40d9f43059322d09730b01e950b5a23d2dccd9add512437",
+    "examples/ch14-macros/derive-consumer/Cargo.toml": "ae731223a1f61462388be1df2faa68ffcbe8266ab5530abbef7655448be79b88",
+    "examples/ch14-macros/derive/src/lib.rs": "eae33bebe4429252d2e4b3e4ca213b620ec5ed21d1c2915f868f4cbbc45f2408",
+    "examples/ch14-macros/derive-consumer/src/lib.rs": "8e17e0fe726b4afedc8168c79c867b112807729494a133516c9f0b976862452f",
+    "examples/ch14-macros/derive-consumer/examples/macro_derive_demo.rs": "3e5db8124396fde2492963aa9d5703b0e3e550c0f40e8516838f908d02fafbb1",
+    "examples/ch14-macros/Cargo.toml": "29c1cb5909d8d8cd0d10a950209eb518d5db41452b400aeabdb37d064c391475",
+    "examples/ch14-macros/src/lib.rs": "61a35c3450fc7cab01dbe6b78fdcf1e59263208386e97b2efb0cb55cbe715358",
+    "examples/ch14-macros/src/hygiene.rs": "e7ed6bad0d8b2e2332be207ec7a80d117cbd045f81100646e78f9fcc0c540335",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.rs": "6431cbc222069e44921c6153b16ccd0f2b38eb8ff78de9762954592a4547cbbd",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_generic.expected": "8d28a7a96b29a1e96cc26949a88c47c768228d1becd9e45f1cf88ab77f7c611b",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.rs": "a71dce847ec0d51bdf57f051fa6a972a5426614fa9e4de032987385e63d74bde",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_enum.expected": "992c872b563a87b3c10638c4f5005b79ec83e9b9c51389e41ee29752c0e72ce8",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.rs": "e2c4adc1e6a5a0f81d3a5ec61bcf0653a23f22a60313dea05726cfe47c604ee1",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_named.expected": "da039a627eeb82d0e54ef1eafdd1374886f08cfc6de4a55efd096e27284f73c6",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.rs": "b5f9d5858bf1ba6e50d1f3898d2576af6f6a946f0d82c69d954ddf570fe4b0cf",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_two_fields.expected": "028dee00b08fcd09fca0d1ed8e5bb1308cf8cc8c86b33ccd0309da95ee6b694f",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.rs": "8b6d91a9607a990ab545611b703f254ee2f3b209ab417dea53cbbe2fa621109f",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/examples/macro_derive_bool.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/ch14-macros/derive-consumer/fixtures/cross-crate-fail/Cargo.toml": "42d7b4f149050487077bd227573a45f8217ca7738cbfd8ee5cf4a8f870d3e01c",
+    "examples/ch14-macros/derive-consumer/examples/macro_derive_solution.rs": "e18434909bb9dc17c2a0937caaacd0c023991571fcee3d6774116b2c19b5e310",
+    "docs/assets/ch14/derive-pipeline.svg": "ad2dbe412df2915c13f2b4473f2c709705b98c7d9a3237833f2034e560a8fb9d"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 3,
+      "quote": "17.1 的模板接收 Meters 這個名字，產生 struct 和 Reading 的 impl。現在換一個分工：**struct 已由使用者寫好，工具只替它增加同一份 Reading 實作**。這讓使用者在自己的宣告旁選擇功能，仍自行決定型別名字、欄位可見性及其他 derive。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 5,
+      "quote": "沿用原本的借讀工作：Meters(80)、Seconds(30) 交給 `read_value`，得到80、30，原值仍可使用。手寫 impl 或前兩節的模板都能完成；本節要學的是如何使用**已有的宣告資訊**產生 impl，而非讓普通函式在 runtime 動態建立型別。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 9,
+      "quote": "**procedural macro（以 Rust 程式處理語法的 macro）** 在編譯時執行。它接收程式的語法片段、回傳新語法，編譯器再處理結果。和 macro_rules 的模式→模板相比，我們能用普通 Rust 的 struct、enum、if、match 檢查輸入，再決定產生什麼。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 11,
+      "quote": "這次的自訂 derive 叫 **ReadingValue**。使用者將它放進 `#[derive(ReadingValue)]`，編譯器把該型別的宣告交給我們的程式；我們回傳 Reading 的 impl。derive **保留原宣告，將產生的 items 加在後面**，所以不能把原 struct 又回傳一次。ReadingValue 是工具的名字，Reading 是它會實作的 trait，兩者的角色不同。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 21,
+      "quote": "這裡沒有呼叫任何 runtime 的 Meters 值。編譯器提供的 **`proc_macro::TokenStream`** 是一串 tokens 的型別：保存名字、標點、括號群組等語法，不是裝著 Meters 值的 Vec。macro entry 的輸入及回傳都使用它。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 25,
+      "quote": "procedural macro 必須放在特殊的 **proc-macro crate**，並由另一個 crate 使用；不能在定義它的同一個 crate 套用這份 derive。這份 library 的公開 macro entry 要放在 crate 根的 lib.rs，使用 `pub fn`，接受一份 compiler TokenStream、回傳一份 compiler TokenStream。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 27,
+      "quote": "它會先被建置成能在 **host** 執行的編譯工具，再於 consumer 編譯時處理語法；這延續第12.2節區分 host 建置工作與最後成品的方式。consumer 最後執行時，用的是產生的 impl，並不再次執行 parser。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 37,
+      "quote": "選用兩個第三方 library：**syn** 將 tokens 解析成可由 Rust 欄位與 enum 讀取的語法樹；**quote** 將帶有插入位置的 Rust 語法產生為 tokens。這裡固定 syn 2.0.119、quote 1.0.47，閱讀相同版本的 API，避免混用別版介面。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 39,
+      "quote": "新的 **`[lib] proc-macro = true`** 把 derive package 的 library 設為 proc-macro crate。syn 的 `default-features = false` 沿用第10.1節的功能開關語法，本例只選：`derive` 提供型別宣告的語法樹、`parsing` 提供解析、`proc-macro` 接上編譯器的 TokenStream。quote 保留預設的 proc-macro 功能以支援最後的轉換，不需要開 syn 的 full 功能或把整份語法樹印出。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 53,
+      "quote": "proc_macro 是**編譯器提供的 crate**，不在 dependencies 向 registry 下載。syn 與 quote 則是上述第三方依賴。這幾種來源與角色要分清，才不會把 `proc-macro = true` 誤寫成一般 dependency。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 57,
+      "quote": "syn 產生的 **AST（Abstract Syntax Tree，抽象語法樹）** 把宣告整理成有結構的資料。例如 Meters 的名字、是否有泛型參數、欄位採哪種形式，可以分別讀取，而不必自己把原碼切成文字。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 59,
+      "quote": "tuple struct 的括號也能列出多個欄位型別，以逗號分開；本例只支援**沒有泛型參數、恰好一欄的 tuple struct**。產生的 reading body 固定為 `self.0`，回傳 i32。名字與外形由 macro 檢查；第0欄是否真能直接交出 i32，交給 Rust 型別檢查。因此原欄位寫 i32 的 type alias 也應可用，不依靠「欄位文字一定拼成 i32」這種不可靠的判定。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 61,
+      "quote": "本例使用的 AST 型別是 **`syn::DeriveInput`**。先看最低欄位與方法，不需要先讀 syn 的完整資料結構："
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 71,
+      "quote": "params 和 unnamed 用的是 syn 的 **Punctuated**，保存一列語法節點與它們之間的分隔符。這裡只需 `is_empty()` 判是否有參數，及 `len()` 數欄位；len 計節點，不把逗號多算一欄。不是假定每個有 len 的型別都等於 Vec，也不在這裡修改 AST。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 77,
+      "quote": "**`parse_macro_input!(input as DeriveInput)`** 是 syn 提供的解析 macro。`input` 必須是保存 compiler TokenStream 的變數；這裡的 `as DeriveInput` 是這份 macro 的輸入模式，表示用 DeriveInput 的解析規則，不是數字轉型。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 79,
+      "quote": "解析成功，結果是 DeriveInput，保存為 model。解析失敗，這份 macro 會**提早從所在函式回傳 `compile_error!` 的 tokens**，讓 compiler 報語法診斷。所在函式因而必須回傳 proc_macro::TokenStream；不在普通回傳 i32 的函式呼叫它。這次採用 syn 已為 DeriveInput 提供的解析能力，呼叫現成規則。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 81,
+      "quote": "語法能解析，不表示它符合 ReadingValue 的有限形狀。後者由我們檢查，再使用 **`syn::Error`** 產生自己的訊息。每個名字 token 有 **Span**，記錄原程式的位置資訊；`model.ident.span()` 取回型別名字的位置，讓錯誤指向使用者的宣告。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 89,
+      "quote": "這裡有兩種**名稱相同但不同**的 TokenStream："
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 104,
+      "quote": "**`quote!`** 接收一份將產生的 Rust 語法，`#name` 是插入位置：取目前 Rust 變數 name 的內容，按 **ToTokens trait** 的契約把它放入輸出。ToTokens 的角色是提供「怎麼交出語法 tokens」，Ident 已實作它，所以我們不用手寫這份 trait，也不用先把名字轉成 String。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 108,
+      "quote": "還要延續17.2的名稱來源問題。procedural macro 的輸出會在使用者那邊解析名字，不能直接套用 macro_rules 的 `$crate`。本例生成 **`::ch14_macros::Reading`**：開頭 `::` 從外部 crate 名稱出發，固定找 consumer 依賴中的 ch14_macros，而不依靠 caller 匯入的裸 Reading。"
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 126,
+      "quote": "**`#[proc_macro_derive(ReadingValue)]`** 告訴編譯器，這支 pub 函式定義名叫 ReadingValue 的 derive。函式的 Rust 名稱 derive_reading 用於實作入口；consumer 會用 ReadingValue，不是呼叫 derive_reading。它接收一份宣告的 tokens，依序解析、拒絕泛型、確認 struct、確認單欄 tuple，再回傳 impl："
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 136,
+      "quote": "consumer 的 library 先以 `use ch14_reading_derive::ReadingValue;` 取得 derive。Meters、Seconds 仍由使用者親自寫；Debug／PartialEq 沿用第6.2節觀察原值的需求，新增的 ReadingValue 只補 Reading 實作："
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 166,
+      "quote": "前面分段讀的 entry、reject 和 imports 組成下面完整的 derive/src/lib.rs。這是 compiler 真正載入的整份工具，沒有省略 parser 或生成 helper："
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 205,
+      "quote": "下面五份 fixture 都有合法的 Rust 宣告。語法能解析成 DeriveInput，再按有限形狀決定是否生成；最後一份 Flag 的形狀符合，交給 Rust 才發現 bool 不能當 i32："
+    },
+    {
+      "section_id": "17.3",
+      "path": "docs/chapters/17-03-lesson.md",
+      "line": 293,
+      "quote": "在 consumer 的新 example 建立 `type RawReading = i32;`，再由你自己宣告私有欄位的 `Millimeters(RawReading)`，替它 derive Debug、PartialEq、ReadingValue。用既有 Meters(80) 與 Millimeters(-5) 呼叫 read_value，取得 `(80, -5)`，原值都仍可使用。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

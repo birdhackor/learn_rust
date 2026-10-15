@@ -1,0 +1,647 @@
+{
+  "captured_utc": "2026-10-15T10:16:18.997863+00:00",
+  "scope": "actual1–12reviewed+actual13body/allsourcepreread→independent14.1–14.9currentfreeze; nootherrolefinding/authorvalidation or15+prior",
+  "files": [
+    {
+      "path": "docs/chapters/14-01-lesson.md",
+      "sha256": "7772154a19fd100713e33d25ce94fc985fcb8f39f087792270f8b710370e4966",
+      "bytes": 5821
+    },
+    {
+      "path": "docs/chapters/../assets/async-v3/waiting-arrangements.svg",
+      "sha256": "6c2cd8c637690416650a7264d6a786cb7ef46aa07babc1915d9dbb6a06fbdd5a",
+      "bytes": 2454
+    },
+    {
+      "path": "docs/chapters/14-02-lesson.md",
+      "sha256": "5f7917e7a6b2b87e455cc34bb2a340f814f659cd580fb0f0b5939b828917e01b",
+      "bytes": 10913
+    },
+    {
+      "path": "examples/ch11-async/foundations/src/lib.rs",
+      "sha256": "5e236a71c02c98f6fdc0861eac207fa9e812e35caed4201ed56fbfdd442c30aa",
+      "bytes": 1077
+    },
+    {
+      "path": "examples/ch11-async/stages/foundations-steps/Cargo.toml",
+      "sha256": "4365dc38d0fd841f6b8727b9850209623242f07d76a4859900313265b39b141e",
+      "bytes": 249
+    },
+    {
+      "path": "examples/ch11-async/stages/foundations-steps/src/main.rs",
+      "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+      "bytes": 71
+    },
+    {
+      "path": "examples/ch11-async/stages/foundations-steps/examples/lazy.rs",
+      "sha256": "780e6f1630cc94dfc090c939bd3eb12d2fc48a58091d8af427506d89b017bdd9",
+      "bytes": 615
+    },
+    {
+      "path": "examples/ch11-async/stages/foundations-steps/examples/block_capture.rs",
+      "sha256": "bf0039a4905ca236c5e766612c1fd586c442b374f3ce8a0250a04d706689d290",
+      "bytes": 679
+    },
+    {
+      "path": "examples/ch11-async/stages/foundations-steps/examples/explicit_future.rs",
+      "sha256": "ab0e008ee483e72988f416470211061a1c2e4c31d6a284bedbf3f40607a928ea",
+      "bytes": 455
+    },
+    {
+      "path": "examples/ch11-async/stages/foundations-steps/examples/fallible_output.rs",
+      "sha256": "b6090ba9016c46d0e6a760da5791378c6923fb147dd0f9475fb75c9c59392161",
+      "bytes": 654
+    },
+    {
+      "path": "examples/ch11-async/foundations/Cargo.toml",
+      "sha256": "e9a2670d353d632cc0baade7840dd9d43f827314865c3602f6e5417a79471ca3",
+      "bytes": 301
+    },
+    {
+      "path": "examples/ch11-async/foundations/src/main.rs",
+      "sha256": "f65655c2f167a545d31ab79e306eb588b4bdd915a370b93786fe46c1fbcf7348",
+      "bytes": 498
+    },
+    {
+      "path": "examples/ch11-async/foundations/tests/cli.rs",
+      "sha256": "0726f33417b63e067d0b3072b97d3468eb33766fff8c51f5f9a2222ae000a238",
+      "bytes": 713
+    },
+    {
+      "path": "examples/ch11-async/foundations/examples/block_capture.rs",
+      "sha256": "bf0039a4905ca236c5e766612c1fd586c442b374f3ce8a0250a04d706689d290",
+      "bytes": 679
+    },
+    {
+      "path": "examples/ch11-async/foundations/examples/explicit_future.rs",
+      "sha256": "49e302bb16e1039e94ece93c080bdb148d7ade151f19cb6130fbe917fe8303e5",
+      "bytes": 430
+    },
+    {
+      "path": "examples/ch11-async/foundations/examples/fallible_output.rs",
+      "sha256": "4d6f5d35860a6001d6724e74e40cb44b11a4bf8fd03659c271ebeab41ab2eb9b",
+      "bytes": 447
+    },
+    {
+      "path": "examples/ch11-async/foundations/examples/receipt_solution.rs",
+      "sha256": "001f732d191a0941fdd77ed3e6e1863109ba6b852f9f19a0615d8c0f0631ce73",
+      "bytes": 493
+    },
+    {
+      "path": "docs/chapters/14-03-lesson.md",
+      "sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+      "bytes": 11360
+    },
+    {
+      "path": "examples/ch11-async/stages/tasks-basic/Cargo.toml",
+      "sha256": "d1fbe4871742612192b34bd5dc2e2c8c496507c39f7c668c170926c5b9930aa0",
+      "bytes": 251
+    },
+    {
+      "path": "examples/ch11-async/stages/tasks-basic/src/lib.rs",
+      "sha256": "5f5a7b8dff5034364e62ce6a46bc63734430954952cee209090bb3ba45557c84",
+      "bytes": 710
+    },
+    {
+      "path": "examples/ch11-async/stages/tasks-basic/src/main.rs",
+      "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+      "bytes": 71
+    },
+    {
+      "path": "examples/ch11-async/stages/tasks-basic/examples/join_handle.rs",
+      "sha256": "ed350922c99be5a11c147a03669e6c3df6e93ac74a3567828913f499f153a2bd",
+      "bytes": 759
+    },
+    {
+      "path": "examples/ch11-async/stages/tasks-basic/examples/abort_and_wait.rs",
+      "sha256": "cb33146ae636f8e3cf298eef185466514ff371d40b871a90d2c8a620796f55ec",
+      "bytes": 911
+    },
+    {
+      "path": "examples/ch11-async/tasks/src/lib.rs",
+      "sha256": "874f3cd1f11e5317f4972c7843bf36ec52151daee62937d367b4917d23d3cdbd",
+      "bytes": 6155
+    },
+    {
+      "path": "examples/ch11-async/tasks/Cargo.toml",
+      "sha256": "8de4f5895912d08f8aed0a638c3205faac13a696504bfc4aa8b09394c9010bf6",
+      "bytes": 303
+    },
+    {
+      "path": "examples/ch11-async/tasks/src/main.rs",
+      "sha256": "d390d6cf34a4db9830cdcd0a7cd30f864a3adedbd4cfb51917d47af056be9c25",
+      "bytes": 279
+    },
+    {
+      "path": "examples/ch11-async/tasks/examples/join_handle.rs",
+      "sha256": "67399f908fd380b69917413c406684cd8b638a1e0ea4fd2ef64ba854924a6b6a",
+      "bytes": 753
+    },
+    {
+      "path": "examples/ch11-async/tasks/examples/abort_and_wait.rs",
+      "sha256": "e0b5fb7236b80debb688c9d53c74fa4fba420c3453c7280d398110a7c410efa3",
+      "bytes": 905
+    },
+    {
+      "path": "examples/ch11-async/tasks/tests/cli.rs",
+      "sha256": "1d0a3f4e8ecb37950a30289c72665d8088164cee580432e14eb8ea4c021a4b32",
+      "bytes": 752
+    },
+    {
+      "path": "examples/ch11-async/tasks/examples/control_closed_solution.rs",
+      "sha256": "fc71e68d0db3f903ca1919376dea9f88141fc99029c35f50b43c44ebefea3af2",
+      "bytes": 1085
+    },
+    {
+      "path": "docs/chapters/14-04-lesson.md",
+      "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+      "bytes": 7380
+    },
+    {
+      "path": "examples/ch11-async/bounded/src/lib.rs",
+      "sha256": "345d8e4f2527d3dae4d3efebc1656564bb0c6fac3ee46843639a7c71ae4a4728",
+      "bytes": 9339
+    },
+    {
+      "path": "examples/ch11-async/bounded/Cargo.toml",
+      "sha256": "cafbd7e9df2004d0ff0aefc31876253858dce7fb921a4b230847d8d0d779963b",
+      "bytes": 305
+    },
+    {
+      "path": "examples/ch11-async/bounded/src/outcomes.rs",
+      "sha256": "addfd028b352783d2a544a2b30c563bf18a8e219e7af8cc43ec2609574140f38",
+      "bytes": 1402
+    },
+    {
+      "path": "examples/ch11-async/bounded/src/main.rs",
+      "sha256": "430670ee8dbc8356015860c5b9d914940043841835e23c7466c6f704fc4647b9",
+      "bytes": 427
+    },
+    {
+      "path": "examples/ch11-async/bounded/tests/cli.rs",
+      "sha256": "b3ac98d7529c30b4a6a9b10475210170682c201ac8ad1f804396ae82961034ce",
+      "bytes": 786
+    },
+    {
+      "path": "examples/ch11-async/bounded/examples/one_slot_solution.rs",
+      "sha256": "9e6cbc3cecef08d6ea4ecb7972d06254742331c092d2e7767f272003745141b2",
+      "bytes": 1694
+    },
+    {
+      "path": "docs/chapters/../assets/async-v3/bounded-refill.svg",
+      "sha256": "d680fda0f7d8558d800be21e411011752a4f6e1caf156437b9ee15f48504905d",
+      "bytes": 1578
+    },
+    {
+      "path": "docs/chapters/14-05-lesson.md",
+      "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+      "bytes": 10361
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-steps/Cargo.toml",
+      "sha256": "53e1d73c7961f13c204daeb38c6ede28e5fc4d269e5b954e7a6b8bcfea7fba51",
+      "bytes": 302
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-steps/src/main.rs",
+      "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+      "bytes": 71
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-steps/examples/timing_measured.rs",
+      "sha256": "e84caf6bad3e9026c2e0755261bc0315db61b2a23e719a8ba69738eecfb80f28",
+      "bytes": 499
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+      "sha256": "8775dae480f55dcfb121ebaffb5123b2acd6f03b17cdbbf12d32e2138a7054f3",
+      "bytes": 599
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-steps/examples/timing_nested.rs",
+      "sha256": "86daa7a2c5b72c3c6b03de823de1bb5b913a7561e698da72ec4b44cf3264a516",
+      "bytes": 756
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-steps/examples/timing_cancelled.rs",
+      "sha256": "ae1413a62e0f70d617f1bafc3a66026c0aa8774b56dc2a9e5aa533cb7d8524c1",
+      "bytes": 524
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-steps/examples/timing_blocking.rs",
+      "sha256": "8534c0757039f6fd23501be3c9f3bebf057caf228cac9862ab5d219a06cfcd40",
+      "bytes": 575
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-clock/Cargo.toml",
+      "sha256": "0579e9d06735a5887e04bb0fccfd02e2947c9bc7ea8cf4a4a140f8e1ef77d416",
+      "bytes": 355
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-clock/src/main.rs",
+      "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+      "bytes": 71
+    },
+    {
+      "path": "examples/ch11-async/stages/timing-clock/tests/clock_and_results.rs",
+      "sha256": "cd5f7e3fe49f932a7efcfd18d7e31b175e950ce6580a202b163f4cbc4568a4bf",
+      "bytes": 1847
+    },
+    {
+      "path": "examples/ch11-async/timing/src/lib.rs",
+      "sha256": "4a0926784e4e9d05ed5dba778880ba76f83656f8f3e08d496f62eb18f4e0a8ae",
+      "bytes": 527
+    },
+    {
+      "path": "examples/ch11-async/timing/Cargo.toml",
+      "sha256": "c0c01472347761ea98bae03345bc4e32e47868c1b1ce744b5876296c1ce025e9",
+      "bytes": 522
+    },
+    {
+      "path": "examples/ch11-async/timing/tests/timing_contracts.rs",
+      "sha256": "203fa6b8d12f403e7b5c4db3df546c9efe5c13541e93d41b909efe045b0fa0e0",
+      "bytes": 2723
+    },
+    {
+      "path": "examples/ch11-async/timing/examples/timing_measured.rs",
+      "sha256": "e84caf6bad3e9026c2e0755261bc0315db61b2a23e719a8ba69738eecfb80f28",
+      "bytes": 499
+    },
+    {
+      "path": "examples/ch11-async/timing/examples/timing_outcomes.rs",
+      "sha256": "8775dae480f55dcfb121ebaffb5123b2acd6f03b17cdbbf12d32e2138a7054f3",
+      "bytes": 599
+    },
+    {
+      "path": "examples/ch11-async/timing/examples/timing_nested.rs",
+      "sha256": "86daa7a2c5b72c3c6b03de823de1bb5b913a7561e698da72ec4b44cf3264a516",
+      "bytes": 756
+    },
+    {
+      "path": "examples/ch11-async/timing/examples/timing_cancelled.rs",
+      "sha256": "ae1413a62e0f70d617f1bafc3a66026c0aa8774b56dc2a9e5aa533cb7d8524c1",
+      "bytes": 524
+    },
+    {
+      "path": "examples/ch11-async/timing/examples/timing_blocking.rs",
+      "sha256": "8534c0757039f6fd23501be3c9f3bebf057caf228cac9862ab5d219a06cfcd40",
+      "bytes": 575
+    },
+    {
+      "path": "examples/ch11-async/timing/tests/timing_solution.rs",
+      "sha256": "8bf9bbad7f0d077a81c5e1bf5894668b46e7815c52ed8b8d46afe8c9308cc5b0",
+      "bytes": 663
+    },
+    {
+      "path": "docs/chapters/14-06-lesson.md",
+      "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+      "bytes": 14015
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-steps/Cargo.toml",
+      "sha256": "ce683d76419389278a5f7bcfca114fcc1e75b1c75eac43b01186e53fe5ce787c",
+      "bytes": 296
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-steps/src/main.rs",
+      "sha256": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+      "bytes": 71
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-steps/examples/borrowed_join.rs",
+      "sha256": "696d4cedef57c08d8ad9d974332f202ec0e98fe87997047313a3ea189f1630b6",
+      "bytes": 1566
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-steps/examples/short_guard.rs",
+      "sha256": "2adb07b48824e0c60bbef802d6e8d2719f8eca3ba54c5bcf35e43b3d0f0d4896",
+      "bytes": 790
+    },
+    {
+      "path": "examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.toml",
+      "sha256": "2c2c0700b87c6b2d193ab28b589002c849566006ecf35e8649d2132401e09bf0",
+      "bytes": 223
+    },
+    {
+      "path": "examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.lock",
+      "sha256": "c2cbb529ebee012ba272de76e6ca326e85c78185dfdb1464af353a858b8e9a2f",
+      "bytes": 1805
+    },
+    {
+      "path": "examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.rs",
+      "sha256": "147b4081aac0b2d07295d37118225a1c7a4d6410eabbcfb161d2d0eee6a9510a",
+      "bytes": 620
+    },
+    {
+      "path": "examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.expected",
+      "sha256": "93374681e116242342822be425b1bab8e8e0217da2a2465dd241e57bb7cbb8de",
+      "bytes": 45
+    },
+    {
+      "path": "examples/ch11-async/cancellation/src/models.rs",
+      "sha256": "57241e18dfac21600bb0f1f22e0efe5939f3ade1fbfb471a4af572d3f33ebf99",
+      "bytes": 815
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-basic/Cargo.toml",
+      "sha256": "3cc2dbf4e2d21ecea1d2bef91d1ccc3ea3b55155325dfd33556b8519238ca59e",
+      "bytes": 258
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-basic/src/models.rs",
+      "sha256": "57241e18dfac21600bb0f1f22e0efe5939f3ade1fbfb471a4af572d3f33ebf99",
+      "bytes": 815
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-basic/src/lib.rs",
+      "sha256": "cc5ff1c299691703bb4bebe5b35e0f92fcd5374b4cb215c1d9bc565fb5039deb",
+      "bytes": 16662
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-basic/src/main.rs",
+      "sha256": "3ae3bf51c9bc925072971178b685fc70debe8393b4224aa723c9cd6c0fb206e4",
+      "bytes": 486
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-basic/examples/borrowed_join.rs",
+      "sha256": "ae88162e6a694ce2f2b907202a7393394aee067bfc4e4af81a6f63691158cde4",
+      "bytes": 238
+    },
+    {
+      "path": "examples/ch11-async/stages/cancellation-basic/examples/prequeued_stop_solution.rs",
+      "sha256": "b06e0760f2a802e33975b06fcc5cca48bb9e9a37426bd78533aaab91490786d4",
+      "bytes": 1403
+    },
+    {
+      "path": "examples/ch11-async/cancellation/Cargo.toml",
+      "sha256": "b5e152c4520af53dfec4d55e5b486107d1b87b31e50d9e48225d1b427ddea8fd",
+      "bytes": 320
+    },
+    {
+      "path": "examples/ch11-async/cancellation/src/lib.rs",
+      "sha256": "98230a2fbf24820874205d2c169d9c4b11e9debcbe55dfb91b5abdac0f96382e",
+      "bytes": 18755
+    },
+    {
+      "path": "examples/ch11-async/cancellation/src/main.rs",
+      "sha256": "8e3179ad880a5eaa56a99b2f90105d845b8044ca9e5b6b71de99d990f04bb0c3",
+      "bytes": 3955
+    },
+    {
+      "path": "examples/ch11-async/cancellation/examples/borrowed_join.rs",
+      "sha256": "590851520f5d6bd35c7fb8c87a6df4adf0a9e8eae1293182e4b7473e0f4dca5b",
+      "bytes": 232
+    },
+    {
+      "path": "examples/ch11-async/cancellation/examples/short_guard.rs",
+      "sha256": "2adb07b48824e0c60bbef802d6e8d2719f8eca3ba54c5bcf35e43b3d0f0d4896",
+      "bytes": 790
+    },
+    {
+      "path": "examples/ch11-async/cancellation/examples/prequeued_stop_solution.rs",
+      "sha256": "870ca97b9a22b87bca983058271805d977952d2be3707b9d940bf3b6da7d4855",
+      "bytes": 1373
+    },
+    {
+      "path": "examples/ch11-async/cancellation/tests/cli.rs",
+      "sha256": "45a218d9c329650899c53df939cc3262fa91d02566168a36dd05ad5d1847ace5",
+      "bytes": 1315
+    },
+    {
+      "path": "docs/chapters/../assets/async-v3/borrowed-wait.svg",
+      "sha256": "c41f3b548a274393fbb6648ee61add41a17a2ac77739102b9948af4eee34e0f1",
+      "bytes": 1678
+    },
+    {
+      "path": "docs/chapters/14-07-lesson.md",
+      "sha256": "eeecfa90ed6c35cc1c811954629015ffc63e1495319b0d5e12ac4d82b68f014e",
+      "bytes": 9030
+    },
+    {
+      "path": "examples/ch11-http/Cargo.toml",
+      "sha256": "f9c43f334457e2290087e1315090d0399ad1fa6a05c683d439c86d1469fba1c0",
+      "bytes": 368
+    },
+    {
+      "path": "examples/ch11-http/src/config.rs",
+      "sha256": "592af4c6b516069d5bd5e0ab7d12612748a5ce5205ea44071c046b456d203dc9",
+      "bytes": 415
+    },
+    {
+      "path": "examples/ch11-http/src/lib.rs",
+      "sha256": "43e0fab1e63247dae9e1c63c3e7a1bb629b3a282fd12c665b303e189b513bedd",
+      "bytes": 5713
+    },
+    {
+      "path": "examples/ch11-http/src/error.rs",
+      "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+      "bytes": 1542
+    },
+    {
+      "path": "examples/ch11-http/src/main.rs",
+      "sha256": "f30d1e2146862c66f3d369ded68c2ae224faabd77402ba016caa75116538a2f5",
+      "bytes": 1283
+    },
+    {
+      "path": "examples/ch11-http/tests/cli.rs",
+      "sha256": "f06e0b5f6b9ff7759b869e9a93208577d283cf4ee6960edc7cbe25d5000c1896",
+      "bytes": 997
+    },
+    {
+      "path": "examples/ch11-http/examples/status_line.rs",
+      "sha256": "d79e937da9a2f25cac6b416e02134476717c52e7ce43dd7fb30728b75d71c978",
+      "bytes": 887
+    },
+    {
+      "path": "docs/chapters/14-08-lesson.md",
+      "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+      "bytes": 8656
+    },
+    {
+      "path": "examples/ch11-async/stages/http-single-basic/Cargo.toml",
+      "sha256": "0e8d0918fdbfa744e9531f909e6f9ea85b75b5327099fa7bb3788f90688b9e6a",
+      "bytes": 412
+    },
+    {
+      "path": "examples/ch11-async/http-single/src/lib.rs",
+      "sha256": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a",
+      "bytes": 6283
+    },
+    {
+      "path": "examples/ch11-async/stages/http-single-basic/src/config.rs",
+      "sha256": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7",
+      "bytes": 440
+    },
+    {
+      "path": "examples/ch11-async/stages/http-single-basic/src/error.rs",
+      "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+      "bytes": 1542
+    },
+    {
+      "path": "examples/ch11-async/stages/http-single-basic/src/lib.rs",
+      "sha256": "d3342bdd072f51a26fff6b64f4728c61777833c03230d11ca123420d08b47553",
+      "bytes": 6268
+    },
+    {
+      "path": "examples/ch11-async/stages/http-single-basic/src/main.rs",
+      "sha256": "c60a35635b170b54abefd8107e38faf2989bef949b19620067903668f32f8d96",
+      "bytes": 1460
+    },
+    {
+      "path": "examples/ch11-async/stages/http-single-basic/tests/cli.rs",
+      "sha256": "cdc0405dc0b73167527febf7cbfdfc4b153ed0770582541ba18d1c04884a7f32",
+      "bytes": 1296
+    },
+    {
+      "path": "examples/ch11-async/http-single/Cargo.toml",
+      "sha256": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f",
+      "bytes": 542
+    },
+    {
+      "path": "examples/ch11-async/http-single/src/reply.rs",
+      "sha256": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0",
+      "bytes": 2968
+    },
+    {
+      "path": "examples/ch11-async/http-single/src/config.rs",
+      "sha256": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7",
+      "bytes": 440
+    },
+    {
+      "path": "examples/ch11-async/http-single/src/error.rs",
+      "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+      "bytes": 1542
+    },
+    {
+      "path": "examples/ch11-async/http-single/src/main.rs",
+      "sha256": "a7788a40e58427a6e6c41da1a367ffbefd86d3d8c489770405864a1fea96b295",
+      "bytes": 1448
+    },
+    {
+      "path": "examples/ch11-async/http-single/tests/cli.rs",
+      "sha256": "d3c0309aca5f2b611e782633decec1d9244ba7c15ebb7c410e50cfe750c47378",
+      "bytes": 1290
+    },
+    {
+      "path": "examples/ch11-async/http-single/examples/page_reply_solution.rs",
+      "sha256": "8bcbd80ad5b806409759c3bd74f0dce3494bce1e330652b0e67b89bab72569c5",
+      "bytes": 643
+    },
+    {
+      "path": "docs/chapters/14-09-lesson.md",
+      "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+      "bytes": 15990
+    },
+    {
+      "path": "examples/ch11-async/local-service/examples/basic.rs",
+      "sha256": "5595c3cb17a39e970eb935616728a55bc764c5822e4ed532a83c6ff06dfc38c0",
+      "bytes": 1951
+    },
+    {
+      "path": "examples/ch11-async/stages/local-basic/Cargo.toml",
+      "sha256": "3b5e615ea9ab37b3d860cc28b335d454ed5b6d55bab270f1afd311036e2fc8c4",
+      "bytes": 402
+    },
+    {
+      "path": "examples/ch11-async/stages/local-basic/src/main.rs",
+      "sha256": "5595c3cb17a39e970eb935616728a55bc764c5822e4ed532a83c6ff06dfc38c0",
+      "bytes": 1951
+    },
+    {
+      "path": "examples/ch11-async/local-service/src/lib.rs",
+      "sha256": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119",
+      "bytes": 7988
+    },
+    {
+      "path": "examples/ch11-async/local-service/Cargo.toml",
+      "sha256": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee",
+      "bytes": 562
+    },
+    {
+      "path": "examples/ch11-async/local-service/src/main.rs",
+      "sha256": "9d35ff99fae378d1002ecf0ade5f6cb352177d1cdee6f5fe5436784d7f1dae92",
+      "bytes": 1874
+    },
+    {
+      "path": "examples/ch11-async/local-service/tests/fixed_responses.rs",
+      "sha256": "2f86830ea1dd10dd43d40861d142e3e95acc1b029ab7d67dab632e6940353a97",
+      "bytes": 3280
+    },
+    {
+      "path": "examples/ch11-async/local-service/tests/gates.rs",
+      "sha256": "7bbbc2a8650fcc7073b30fda2bfe87fffff0161e8bba7462fc622da89aa6bea1",
+      "bytes": 3366
+    },
+    {
+      "path": "examples/ch11-async/local-service/tests/request_timeout.rs",
+      "sha256": "b0598843f37206867d05523cd91a507dfde01e4690e0d18ff309b2b44788eeef",
+      "bytes": 1533
+    },
+    {
+      "path": "examples/ch11-async/local-service/tests/absent_entered.rs",
+      "sha256": "91977962bf297bb9c846cef4c3bd0f0360b0c6c094f70271d69ebe65b1c7cd20",
+      "bytes": 2177
+    },
+    {
+      "path": "examples/ch11-async/local-service/tests/client_cancel.rs",
+      "sha256": "b313c11c70099b868dcace5165e0afa1cce321f9365dcf975bdcf283b8f3f4ac",
+      "bytes": 1346
+    },
+    {
+      "path": "examples/ch11-async/local-service/examples/closed_gate_solution.rs",
+      "sha256": "0a431c9078b03711e6c0a598315a1c5a7d669c9ec0075bc5f354b04a62b65dd6",
+      "bytes": 1636
+    },
+    {
+      "path": "examples/ch11-async/local-service/tests/shutdown_gate.rs",
+      "sha256": "d92739ae4a1539f8bdb21a149dbd0cca79c0c8bdf5d1ff54126e71b387d5fb9b",
+      "bytes": 1544
+    },
+    {
+      "path": "examples/ch11-async/local-service/tests/cli.rs",
+      "sha256": "07c8a08b6c7efefb326bc471a179dc3a64a83fc2dab2d1d4b7b3c42bf05103d3",
+      "bytes": 658
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f",
+      "bytes": 3064
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f",
+      "bytes": 66011
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    }
+  ],
+  "regions": [
+    "examples/ch11-async/foundations/src/lib.rs:totals",
+    "examples/ch11-async/tasks/src/lib.rs:outcome-model",
+    "examples/ch11-async/tasks/src/lib.rs:collect-one",
+    "examples/ch11-async/bounded/src/lib.rs:jobs",
+    "examples/ch11-async/bounded/src/lib.rs:controlled-job",
+    "examples/ch11-async/bounded/src/lib.rs:scheduler-state",
+    "examples/ch11-async/bounded/src/lib.rs:new-and-fill",
+    "examples/ch11-async/bounded/src/lib.rs:next-and-counts",
+    "examples/ch11-async/bounded/src/lib.rs:batch",
+    "examples/ch11-async/timing/src/lib.rs:two-steps",
+    "examples/ch11-async/cancellation/src/lib.rs:signal-controller",
+    "examples/ch11-http/src/lib.rs:parse-url",
+    "examples/ch11-http/src/lib.rs:model",
+    "examples/ch11-http/src/lib.rs:inspect",
+    "examples/ch11-http/src/lib.rs:render-run",
+    "examples/ch11-async/http-single/src/lib.rs:models",
+    "examples/ch11-async/local-service/examples/basic.rs:handler",
+    "examples/ch11-async/local-service/src/lib.rs:shared-state",
+    "examples/ch11-async/local-service/src/lib.rs:responses",
+    "examples/ch11-async/local-service/src/lib.rs:held-handler",
+    "examples/ch11-async/local-service/src/lib.rs:router",
+    "examples/ch11-async/local-service/src/lib.rs:controls",
+    "examples/ch11-async/local-service/src/lib.rs:shutdown",
+    "examples/ch11-async/local-service/src/lib.rs:finish-client"
+  ]
+}

@@ -1,0 +1,144 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "13.2"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round13-root-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round13-scoped-channel-lock-atomic-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round13-send-thread-hrtb-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-addendum-array.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-array-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-summary.md",
+    "planning/restructure-v3/reviews/continuity-late/13tail-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/13-02-lesson.md": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e",
+    "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+    "examples/concurrency-stages/examples/thread_join/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/thread_join/main.rs": "90a77a8021bbf6402e3e0dbdde2f1d71cd9f971e2d95f1205ee526f16103debe",
+    "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.rs": "d9db1b180bc91f0598b3fd9d0f3eb88e9c84f54c7f22f89f76cb6a20aa3082a3",
+    "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.expected": "88cc33d2d6a2d0766b29618c0b0dc8577cbd335f4117adf98cfc33068ea0f7d1",
+    "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.rs": "19d99ed8850c6151e11601410f0890052c760dfad220324453b6cecaa0ee945f",
+    "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.rs": "73b7b3449ca5c22881ce71762da1b108b0b0a6807319c02d8b87e3efe8c08284",
+    "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/examples/thread_result/workers/mod.rs": "8dae063c27b797debba09f94cb09d2ed6cb21ec57f7d436f04461c0845f18421",
+    "examples/concurrency-stages/examples/thread_result/main.rs": "a9f2cdf2dd29c3aab77bc0ca3606803ab646a3f031c64139f61f70b8fd6d4811",
+    "examples/concurrency-stages/examples/panic_worker/workers/mod.rs": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+    "examples/concurrency-stages/examples/panic_worker/main.rs": "02ad2e4ea8a577e6ffdea82d07a41691697853b8e947969b326940a81afe7fda",
+    "examples/concurrency-stages/fixtures/compile-fail/join_twice.rs": "13ea4c6d246f86c77464d1d5bca015441e0e5ef4acc9b1a5ac5296cc925fcfc4",
+    "examples/concurrency-stages/fixtures/compile-fail/join_twice.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/concurrency-stages/examples/thread_join_answer/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/thread_join_answer/main.rs": "40ded1b92481231e3099453d56f5d60ffe9dd1596cc114ea0fc0098bd8ee7eae",
+    "docs/assets/ch10/thread-join.svg": "c35ff54e7d368c6c59e4778c8096a4ecb6ee5a90d445f610a20a9f0812da437e"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 3,
+      "quote": "上一節只檢查跨 thread 的型別能力，還沒有建立工作。現在要把 `[80, 120]` 的加總交給 worker（執行這份工作的 thread），主 thread 自己計算 `[1, 2, 3]`，最後取得兩份小計，合併成206。除了正常答案，我們還要分清：工作回傳自己的 `Err`，與工作發生 panic，分別從哪一層得知。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 13,
+      "quote": "`std::thread::spawn` 接收一份不需要呼叫參數的 closure，把它交到新 thread 執行，不等待這份工作完成就交回 `JoinHandle<T>`。T 是 closure 正常回傳的型別；handle 是一份 **等待這個 thread 結束並取得結果的 owned 權限**，不是已算好的 T。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 32,
+      "quote": "spawn 本身在作業系統無法建立 thread 時可能 panic。下面處理的是 **成功建立後** 的工作結果；不把 handle 當作建立失敗時也一定拿得到的值。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 36,
+      "quote": "`handle.join()` 取得 handle 的 ownership，等待對應 thread 結束，再回傳 `thread::Result<T>`。若 thread 已結束，便不必繼續等；若尚未結束，呼叫 join 的 thread 會 **blocking（阻塞）**：暫停這次呼叫後面的工作，直到等待完成。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 51,
+      "quote": "本節沿用目前專案的 Cargo 設定，在 panic 時採 **unwind**：沿呼叫 stack 往回離開，清理遇到的局部值；工作 thread 的邊界取得 panic 資料，讓 join 回傳 Err。若改用 **abort**，panic 會直接終止整個 process，不能靠 join 取得這份 Err。這是讀取下面結果時必要的執行條件。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 55,
+      "quote": "先沿用已懂的 slice 加總。這裡的輸入採很小的 i32：80、120與1、2、3，總和都在 i32 範圍內。helper 不建立 thread，回傳的只是這份 slice 的小計："
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 78,
+      "quote": "下圖是兩條路徑的關係示意，箭頭表示流程或成果交接；縱向距離不是量測時間。右邊可以先完成，也可以在左邊計算後才開始，**唯一用來取得完整成果的等待，是 join**："
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 86,
+      "quote": "若把 join 移到主 thread 計算6之前，主 thread 會先等待 worker，再做自己的加總。206不變，但原本放在等待之前的獨立工作，現在改到等待之後。**join 放哪裡，是在選擇哪個位置需要已完成的成果。**"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 132,
+      "quote": "現在把工作改成「檢查一個金額」。沿第 4.1 節用 enum 表達可預期的拒絕：負數回傳 `Err(WorkError::Negative(...))`，零或正數回傳 `Ok(amount)`。這裡只檢查單一 i32，不做加總："
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 153,
+      "quote": "每次迴圈建立一份工作，等待它，再處理下一個金額，因此這份程式的兩行順序確定。200得到外層 Ok、內層 Ok；-1得到 **外層 Ok、內層 Err**。第二份工作完成了自己的檢查，沒有 panic。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 159,
+      "quote": "第 8.1 節的 `panic!` 會離開正常回傳路徑。一般 `panic!(\"訊息\")` 的文字 payload 可能是 String，也可能是 `&'static str`；不應依某次執行剛好出現的型別，只處理其中一種。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 161,
+      "quote": "我們沿11.11的 owned downcast，先試 String，再試 static 文字 reference。`Box<dyn Any + Send>` 也有 downcast，使用方式相同：成功交回 `Box<T>`，失敗交回 **原來的 Box，仍帶 Send 能力**，可以接著再試下一個型別。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 186,
+      "quote": "執行時還會看到標準 panic 診斷，包含發生位置。標準函式庫預設在 panic 發生時就把診斷寫到 **stderr（標準錯誤輸出）**；上面 main 的 println 則寫到 **stdout（標準輸出）**。join 收到 Err 不會回頭消除先前的診斷。這份程式處理了 worker panic，main 正常結束；不能光看到診斷就斷言 main 也發生未處理 panic。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 202,
+      "quote": "JoinHandle 沒有 Clone；等待權限只有一份。join 用掉它後，不能再等一次："
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 216,
+      "quote": "11.3的 `drop(handle)`，或讓 handle 離開 scope，則會 **detach（脫離等待）**：丟掉這份等待權限，不等待工作完成，也不要求工作停止。這個 process 還活著時，worker 可以繼續執行；main 正常結束、process 結束時，尚未完成的工作也可能來不及完成。不能用「handle 已清理」推得「工作已完成」。"
+    },
+    {
+      "section_id": "13.2",
+      "path": "docs/chapters/13-02-lesson.md",
+      "line": 222,
+      "quote": "把第一份數列 `[80, 120]` 與第二份 `[1, 2, 3]` 分別交給兩個 worker，主 thread 等待兩份成果後印出206。兩份工作都使用本節已教的 sum，資料仍採上述的小數值。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

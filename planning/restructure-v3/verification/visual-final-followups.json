@@ -1,0 +1,126 @@
+{
+  "utc": "2026-10-15T10:38:43.821Z",
+  "records": [
+    {
+      "type": "heap",
+      "width": 1280,
+      "file": "/workspace/work/tutorial-implementation-20261015/visual-final-site/heap-1280.png",
+      "interaction": null,
+      "sha256": "171054bcb4f66d2b185bab2eb274161bf515345336d1857a9734bc674d288fad",
+      "root_personally_viewed": true,
+      "geometry": {
+        "viewport": 1280,
+        "bodyWidth": 1265
+      }
+    },
+    {
+      "type": "heap",
+      "width": 390,
+      "file": "/workspace/work/tutorial-implementation-20261015/visual-final-site/heap-390.png",
+      "interaction": null,
+      "sha256": "363b46754016196f886d72bd5706055eca666fe5b6cbb8b8b78e4dba847920a6",
+      "root_personally_viewed": true,
+      "geometry": {
+        "viewport": 390,
+        "bodyWidth": 375
+      }
+    },
+    {
+      "type": "workspace-root",
+      "width": 1280,
+      "file": "/workspace/work/tutorial-implementation-20261015/visual-final-site/workspace-root-1280.png",
+      "interaction": null,
+      "sha256": "ff965085f44bed82eeca7a0db0e55911e61b0f6198dc7acff5bf8cf8888022f4",
+      "root_personally_viewed": true,
+      "geometry": {
+        "viewport": 1280,
+        "bodyWidth": 1265
+      }
+    },
+    {
+      "type": "workspace-root",
+      "width": 390,
+      "file": "/workspace/work/tutorial-implementation-20261015/visual-final-site/workspace-root-390.png",
+      "interaction": null,
+      "sha256": "7606951b8cbcfc4869db16e03b15bf106e504d412957f293b48473032bbb63f4",
+      "root_personally_viewed": true,
+      "geometry": {
+        "viewport": 390,
+        "bodyWidth": 375
+      }
+    },
+    {
+      "type": "answer-rust",
+      "width": 1280,
+      "file": "/workspace/work/tutorial-implementation-20261015/visual-final-site/answer-rust-1280.png",
+      "interaction": {
+        "before": 0,
+        "after": 0,
+        "client": 906,
+        "scroll": 906
+      },
+      "sha256": "fb834cba9d735085df6695bed45bff91bcc184ee83dd04d97d0c17bdfacb3e02",
+      "root_personally_viewed": true,
+      "geometry": {
+        "viewport": 1280,
+        "bodyWidth": 1265
+      }
+    },
+    {
+      "type": "answer-rust",
+      "width": 390,
+      "file": "/workspace/work/tutorial-implementation-20261015/visual-final-site/answer-rust-390.png",
+      "interaction": {
+        "before": 0,
+        "after": 0,
+        "client": 311,
+        "scroll": 311
+      },
+      "sha256": "51af1e27a6021730aa71108793463359a97c42456dba42a4d0d6edf245235fdc",
+      "root_personally_viewed": true,
+      "geometry": {
+        "viewport": 390,
+        "bodyWidth": 375
+      }
+    },
+    {
+      "type": "shutdown-top",
+      "width": 1280,
+      "file": "/workspace/work/tutorial-implementation-20261015/visual-final-site/shutdown-top-1280.png",
+      "interaction": null,
+      "sha256": "dec9c841230a2778859a3b20771e1b16031b20582878ece82cd9a566f1e7bc2c",
+      "root_personally_viewed": true,
+      "geometry": {
+        "viewport": 1280,
+        "bodyWidth": 1265
+      }
+    },
+    {
+      "type": "shutdown-top",
+      "width": 390,
+      "file": "/workspace/work/tutorial-implementation-20261015/visual-final-site/shutdown-top-390.png",
+      "interaction": null,
+      "sha256": "ada1030d88f7c5557d14dc8d78a04852f28b39bd8f9715f775025c5344484bd9",
+      "root_personally_viewed": true,
+      "geometry": {
+        "viewport": 390,
+        "bodyWidth": 375
+      }
+    },
+    {
+      "type": "mobile-nav-end",
+      "width": 390,
+      "file": "/workspace/work/tutorial-implementation-20261015/visual-final-site/mobile-nav-end-390.png",
+      "interaction": null,
+      "sha256": "d852b623efb69aaa2450fc12b2cc963ee5f50bc10eb270e700cddc9cd514e724",
+      "root_personally_viewed": true,
+      "geometry": {
+        "viewport": 390,
+        "bodyWidth": 375
+      }
+    }
+  ],
+  "limits": [
+    "Nine supplemental captures personally viewed. Tall heap image extends beyond this viewport; prior foundations review covers its full sequence. pre.scrollLeft remained 0; actual code scroll owner requires separate followup before claiming horizontal interaction."
+  ]
+}

@@ -1,0 +1,73 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "3.1"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round03-copy-before-diagram-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round03-ownership.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/03-01-lesson.md": "fac86a536cb55ae8c2231dfe6509d3eefdcd9ea0d9e06f6f7cbe95e1e38b0f80",
+    "examples/intro-workspace/ownership/examples/structs.rs": "1d7cc967e11ba88250d9cb5b5aa1c14155081e49921fd7c9a003eb4b981ce648",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/public_model/model/mod.rs": "3eafd390446d1b457521ab144bf5e8495fc5cb77678d7c468958736ba2cee720",
+    "examples/intro-workspace/ownership/examples/public_model/main.rs": "b317b4901378db03b96a5d1e2cb811ee88cc8ab1a5bb5cf45d94e78607b7bdc3",
+    "examples/intro-workspace/ownership/examples/structs_answer.rs": "f9c26ea5301d08571922b1b3c788e3e3f6e38153ca909696ac9c96b63468c1e1"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "3.1",
+      "path": "docs/chapters/03-01-lesson.md",
+      "line": 3,
+      "quote": "第 1.8 節把一筆訂單保存成 tuple，依位置約定哪一項是單價、哪一項是數量。看到 `order.0` 時，仍要記得這個約定。現在保留單價 120、數量 3，改讓資料直接帶著欄位名稱；計算仍是相乘，不增加另一種計價規則。"
+    },
+    {
+      "section_id": "3.1",
+      "path": "docs/chapters/03-01-lesson.md",
+      "line": 7,
+      "quote": "**struct** 是把相關欄位組合起來的自訂型別。欄位各有名稱與型別，像這裡的 `unit_price: i32` 與 `count: i32`。`Order` 是型別名稱，通常以大寫開頭："
+    },
+    {
+      "section_id": "3.1",
+      "path": "docs/chapters/03-01-lesson.md",
+      "line": 13,
+      "quote": "這段定義「一筆 Order 有什麼」，還不是一筆具體訂單。要建立**實例**，寫出型別名稱，再於大括號內逐一提供欄位值："
+    },
+    {
+      "section_id": "3.1",
+      "path": "docs/chapters/03-01-lesson.md",
+      "line": 25,
+      "quote": "`let mut order` 允許經由這個 binding 修改資料；`order.count += 1;` 只將數量由 3 加到 4，單價仍是 120。`mut` 放在持有實例的變數宣告，不是放在 struct 的欄位定義："
+    },
+    {
+      "section_id": "3.1",
+      "path": "docs/chapters/03-01-lesson.md",
+      "line": 35,
+      "quote": "本章使用 `ownership/` 成員，package 名稱是 `intro-ownership`。它沒有 `src/lib.rs`；每個例子都有自己的完整定義與 `main`，不會載入其他節的資料模型。完整設定如下："
+    },
+    {
+      "section_id": "3.1",
+      "path": "docs/chapters/03-01-lesson.md",
+      "line": 59,
+      "quote": "第 2.6 節用 `pub` 公開函式。若資料模型也放到另一個 module，外面的程式要建立它，就需要能使用型別和所需欄位。`pub struct Order` 公開型別，欄位前各自的 `pub` 公開該欄位；只公開型別，不會自動公開所有欄位。"
+    },
+    {
+      "section_id": "3.1",
+      "path": "docs/chapters/03-01-lesson.md",
+      "line": 85,
+      "quote": "建立單價 80、數量 2 的 Order。先保存小計，再把同一筆的數量加一，算出新小計；用第 2.7 節的數值 assertion 確認 160、240。先想清楚哪個變數需要 `mut`，再寫欄位更新，不要同時改掉單價。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

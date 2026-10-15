@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="336" height="830" viewBox="0 0 336 830" role="img" aria-labelledby="title desc">
+<title id="title">檔案與一次程式執行</title>
+<desc id="desc">原始碼和執行檔保存在儲存裝置。啟動執行檔形成 process P1，RAM 保存該次工作資料，CPU 使用數值完成乘法並交回結果。</desc>
+<defs>
+ <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#2563eb"/></marker>
+ <marker id="time" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#64748b"/></marker>
+</defs>
+<style>
+ text { font-family: "Noto Sans CJK TC", "Noto Sans", sans-serif; font-size:18px; fill:#172033; }
+ .heading { font-size:21px; font-weight:700; }
+ .strong { font-weight:700; }
+ .muted { fill:#475569; }
+</style>
+<rect width="336" height="830" rx="12" fill="#f8fafc"/>
+<text x="20" y="36" class="heading">
+<tspan x="20" dy="0">從檔案到一次執行</tspan>
+</text>
+<rect x="16" y="56" width="304" height="222" rx="9" fill="#fff7ed" stroke="#fb923c" stroke-width="2"/>
+<text x="30" y="85" class="strong">
+<tspan x="30" dy="0">儲存裝置</tspan>
+</text>
+<text x="30" y="112" class="muted">
+<tspan x="30" dy="0">程式結束後仍可保留檔案</tspan>
+</text>
+<rect x="34" y="130" width="268" height="48" rx="9" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+<text x="168" y="161" class="" text-anchor="middle">
+<tspan x="168" dy="0">原始碼檔 .rs</tspan>
+</text>
+<line x1="168" y1="181" x2="168" y2="219" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="184" y="207" class="">
+<tspan x="184" dy="0">編譯</tspan>
+</text>
+<rect x="34" y="225" width="268" height="38" rx="9" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+<text x="168" y="251" class="" text-anchor="middle">
+<tspan x="168" dy="0">執行檔</tspan>
+</text>
+<line x1="168" y1="280" x2="168" y2="340" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="182" y="318" class="">
+<tspan x="182" dy="0">啟動</tspan>
+</text>
+<rect x="16" y="348" width="304" height="224" rx="9" fill="#eff6ff" stroke="#60a5fa" stroke-width="2"/>
+<text x="30" y="380" class="strong">
+<tspan x="30" dy="0">process P1：這次執行</tspan>
+</text>
+<rect x="34" y="397" width="268" height="154" rx="9" fill="#fff" stroke="#94a3b8" stroke-width="2"/>
+<text x="48" y="425" class="strong">
+<tspan x="48" dy="0">RAM：工作資料</tspan>
+</text>
+<text x="48" y="456" class="">
+<tspan x="48" dy="0">price 的值：120</tspan>
+<tspan x="48" dy="27">count 的值：3</tspan>
+<tspan x="48" dy="27">計算後的結果：360</tspan>
+</text>
+<line x1="100" y1="574" x2="100" y2="676" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="20" y="614" class="">
+<tspan x="20" dy="0">提供數值</tspan>
+<tspan x="20" dy="27">120、3</tspan>
+</text>
+<line x1="264" y1="676" x2="264" y2="574" fill="none" stroke="#2563eb" stroke-width="2.5" marker-end="url(#arrow)"/>
+<text x="174" y="614" class="">
+<tspan x="174" dy="0">交回結果</tspan>
+<tspan x="174" dy="27">360</tspan>
+</text>
+<rect x="34" y="684" width="268" height="106" rx="9" fill="#f0fdf4" stroke="#4ade80" stroke-width="2"/>
+<text x="48" y="716" class="strong">
+<tspan x="48" dy="0">CPU：執行運算</tspan>
+</text>
+<text x="168" y="757" class="" text-anchor="middle">
+<tspan x="168" dy="0">120 × 3 → 360</tspan>
+</text>
+</svg>

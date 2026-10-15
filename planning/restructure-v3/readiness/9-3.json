@@ -1,0 +1,101 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "9.3"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round09-adaptors-text-sorting-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round09-closures-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round09-impl-iterator-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round09-ch09.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/09-03-lesson.md": "af37b908bf94c477a21a412fdeb780ec55b75fdb3d4dd91916e57ee22370e458",
+    "examples/intro-workspace/iterators/Cargo.toml": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+    "examples/intro-workspace/iterators/examples/impl_trait_owned.rs": "79e1aefdd4d5db8acb64b4b7cfc062f66510a52a7630bb40b412bc2e4f56b365",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_two_closures.rs": "186099a11d75f63f955fcff895acf4ef71c81663a3d2c7510574bce28e5ababa",
+    "examples/intro-workspace/iterators/examples/impl_trait_borrowed.rs": "f8c2b37206830253917fe2d4b0abcca319ee72bb9613c380c5ab8e701b93e9ef",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_source_too_short.rs": "7559d4068b0c7709d5786d9aa5483678a0028f11d536d8ba3f54f979803c0c52",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/impl_trait_implicit_capture.rs": "c929d60dcd3b5da98bc2d7c8a7fa8ec8d1ec2d29f27c3e2b9ca49de0d3fec2f8",
+    "examples/intro-workspace/iterators/examples/impl_trait_precise.rs": "fb9c5052d2bcdbf92be196f54bcad2dce9795aea10a62a9eee61f7bd3bec4ef4",
+    "examples/intro-workspace/iterators/examples/impl_trait_answer.rs": "9544397ae40869aea2b4150331e783a0cfab345bcb78bfa60c7900b9adfab6cd"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 3,
+      "quote": "上一節讓函式收到工作並執行它。現在希望函式收到設定值，建立好一份工作，交回去讓呼叫者之後反覆使用。例如保存加數 10，之後把不同輸入各加 10。"
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 9,
+      "quote": "**`impl Trait`** 在型別位置表示「符合指定 trait 的具體型別」。先看參數位置：`task: impl Fn(i32) -> i32` 接受一份有對應呼叫能力的工作。具體工作由呼叫者提供，函式 body 只能依已宣告的能力使用它。"
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 27,
+      "quote": "把 `impl Trait` 放在**回傳位置**，選擇方向反過來：由函式實作選定具體結果型別，呼叫者取得符合這份介面的結果，不能自行改選另一個型別。"
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 29,
+      "quote": "這種隱藏具體型別的介面稱為 **opaque type**。這裡隱藏的是原始碼需要寫出的型別細節，不是讓結果沒有型別，也不是把型別改成執行期任選。"
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 44,
+      "quote": "同一函式的所有回傳分支，必須有相同的具體型別。每個不同 closure 表達式都有自己的型別，所以「它們都實作 Fn」不代表能作為同一個回傳結果。"
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 52,
+      "quote": "本項工作只需要依設定選擇加或減，不需要兩種資料形狀。因此把分支放進**同一個 closure 的 body**：建立的仍是一種 closure 型別，保存的 subtract 值決定每次執行哪項算術。"
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 79,
+      "quote": "現在要交回一份讀文字 byte 長度的工作，讀的仍是既有 String 的內容，不重建另一份文字。輸入使用第 7.1 節的省略形式 `&str`，但來源 lifetime 仍然存在。回傳 closure 用 move 保存這個 shared reference 值；第 9.1 節已說明，按值保存 reference 不會取得被借文字的 ownership。"
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 81,
+      "quote": "回傳位置的 `impl Trait` 簡稱 **RPIT**（return-position impl Trait）。本專案採 edition 2024：沒有明確限制時，這個 opaque 型別會自動 capture scope 內的泛型參數，**包含 lifetime 參數，省略名稱的輸入 lifetime 也在其中**。因此下面的隱藏型別可以依賴輸入 lifetime，保存借自輸入的 reference："
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 103,
+      "quote": "有時隱含 capture 比這次實作真正使用的資料更廣。以下對照刻意保留一個 `&str` 輸入，但工作只交回固定數字 4，不讀輸入；它只為展示回傳契約的差異。"
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 111,
+      "quote": "要表達較窄的依賴，可用 **precise capture**（精確捕捉）的 `use<...>`。它放在回傳 bound，和第 2.6 節引入名稱的 use statement 是不同用途："
+    },
+    {
+      "section_id": "9.3",
+      "path": "docs/chapters/09-03-lesson.md",
+      "line": 132,
+      "quote": "寫 `make_counter`，接收起始 i32，建立可修改的計數，交回每次先加一再回傳計數的 closure。不要借用工廠結束時就消失的區域變數，改讓工作按值保存計數；回傳介面應承諾上一節相應的可修改呼叫能力。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

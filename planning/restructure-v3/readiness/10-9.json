@@ -1,0 +1,159 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "10.9"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round10-cargo-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round10-cli-fixtures.md",
+    "planning/restructure-v3/reviews/technical-early/round10-complete-note-search.md",
+    "planning/restructure-v3/reviews/technical-early/round10-native-path-clap-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round10-serde-json.md",
+    "planning/restructure-v3/reviews/technical-early/round10-text-bytes-io-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/10-09-lesson.md": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+    "examples/intro-workspace/note-search/fixtures/note.txt": "1cffe74a69086abf4c34ebc7293bc6cd0992b97bbd39cc960816ece402f432a2",
+    "examples/intro-workspace/note-search/Cargo.toml": "9a991be13051f4f07151bf462cbb54c723298fd7582cfeb0e58b8b206a33541b",
+    "examples/intro-workspace/note-search/src/config.rs": "9df86f58882ed8c94bb241d7a0060118592037bcb869974ea0e539d3c1c5f8b7",
+    "examples/intro-workspace/note-search/src/model.rs": "dba14dbf9674d7ac7420c369b5312cecbaeb104bc90878219290b3d38fd8f909",
+    "examples/intro-workspace/note-search/src/error.rs": "e166d31ffa4964bee7661847cea761d1566f3d30faabaf7ec295fdb331545a85",
+    "examples/intro-workspace/note-search/src/search.rs": "2513d8c37803964cbff17b134b37efd70d29d7b295f01d77f3c12677bdd330cd",
+    "examples/intro-workspace/note-search/src/render.rs": "b1a05b92798d5b96196f4c291719a3df3ede675c844577a8256769d51e5f1ae6",
+    "examples/intro-workspace/note-search/src/lib.rs": "835f724c9aa3597b67cbc0cad200eddfceefbe6b64ddcb7eed1c81c05c8a604c",
+    "examples/intro-workspace/note-search/src/main.rs": "65178d509012583bbbefd210f6707cc9fc339dca5b1959a9a1ba1268c07e2025",
+    "examples/intro-workspace/note-search/tests/writer.rs": "9df9a8b674ce66c1a8ed86cdbe188abd6b1996032ccd90c9c991c7172290342d",
+    "examples/intro-workspace/note-search/tests/cli.rs": "5f891844a0f5f2d16d1649a26d0bd52a38e37a99e66ae4719648ca14ae600f8c",
+    "examples/intro-workspace/note-search/examples/count_solution.rs": "56fed4073481b3b73f5f466c801adaec1e3cead0ae39fafab7e070116d346917",
+    "docs/assets/ch07/search-boundary.svg": "4acde7637d99c851a64afbe5ac53309fd71a6da4d8a18939e7d78371013517e7"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 3,
+      "quote": "前面已分別完成原生檔名、參數設定、文字讀取、JSON 與真正的 child 測試。現在把它們接成可使用的文字搜尋工具：呼叫者指定要找的文字與檔案，工具交出符合的整行及原行號，也能改用 JSON 報告。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 11,
+      "quote": "`fixtures/note.txt` 有四行，內容如下："
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 19,
+      "quote": "**ASCII（American Standard Code for Information Interchange，美國資訊交換標準碼）** 是包含英文字母、數字與基本符號等的字元編碼。本工具的 `--ignore-case` 只忽略其中 A–Z／a–z 的大小寫，其他字元保持原樣；例如 Ä 與 ä 仍不同。這個明確的小範圍讓目前的做法有完整的行為約定。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 29,
+      "quote": "lines 沿用第9.6節：LF／CRLF 分行、不包含行尾、最後的行尾不增加一行。行號從 1 開始，**空行也占原行號**；結果只是沒有符合的空行，不重新編號已保留的行。文字模式在每筆後加入 LF，並不重建原檔案的行尾格式。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 35,
+      "quote": "沿用第10.1、10.6–10.8節的依賴設定，所有版本要求與features都已教過。以下是本節完整manifest，package欄位明寫，實際版本仍由入門workspace共享Cargo.lock保存："
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 47,
+      "quote": "一筆 **Match** 保存原行號與 owned 文字；**Report** 保存 query、ignore_case 與依原行序排列的 `Vec<Match>`。報告描述搜尋資料，檔名仍由 Settings 的原生 PathBuf 保存並交給讀取工作。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 55,
+      "quote": "**AppError** 分開 EmptyQuery、Read、Encode、Output，讓「資料還沒讀到」與「報告已完成但出口失敗」有不同原因。只對 serde_json::Error 提供 From；io::Error 可能來自讀或寫，因此在發生的那一層明確放入對應 variant。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 57,
+      "quote": "Display 沿用第8.3、10.7節的 borrowed 原因格式化。自訂 method **`status(&self) -> u8`** 只依 variant 交回我們剛定的 1 或 2，最後由 main 轉成 ExitCode；它不會自行終止行程："
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 81,
+      "quote": "除了已教的 lines、is_empty、to_owned、Vec，這一步增加三項選用方法："
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 89,
+      "quote": "忽略大小寫時，把 query 與每行都轉成上述比較表示，再 contains。例如 RUST 與 Rust 都變成 rust；一行 Trust me. 轉成 trust me. 也包含 rust，因為規則查的是片段。**只轉 query 而不轉行內容，兩邊仍可能不同。**"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 113,
+      "quote": "render shared 借用 Report。文字模式依原序產生 `行號:原內容`，用已教的 format!／push_str 拼成 String；JSON 模式用第10.7節的 to_string_pretty，最後也加一個換行。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 115,
+      "quote": "這裡另選 **`String::push(character)`**：mutable 使用 String，接收一個 char，將該字元的 UTF-8 bytes 追加到內容，回傳 unit。`'\\n'` 是單一 LF 字元，和雙引號的 `\"\\n\"` 文字 view 角色不同；我們用它追加 JSON 最後的換行。JSON 編碼可能失敗時，由既有 From 交成 AppError::Encode："
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 123,
+      "quote": "接著連接真正的檔案。read_report **先檢查 query，再讀取**，因此空 query 配上不存在的檔案，仍是用法錯誤 2；正常 query 才可能遇到 Read。取得完整文字後交給純 search，回傳 owned Report，不借用已結束的檔案文字。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 135,
+      "quote": "沿用第10.6節的 try_parse_from：help／version 的 Err 是正常顯示請求；其餘用法訊息進 stderr、狀態 2。取得 Settings 後才呼叫 run。AppError 的診斷透過已教的 ToString／writeln! 交到 stderr，status 再由 ExitCode::from 建立數字結果。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 151,
+      "quote": "上面已全檔列出config.rs、model.rs、error.rs與main.rs。以下保存完整lib.rs，以及含同檔測試的search.rs、render.rs；最早的Cargo命令放在這些能力都已解釋之後，會編譯這份已完成的library。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 193,
+      "quote": "現在除了純 search 與 render，還要測兩個原本無法由它們回答的問題：**出口失敗有沒有被誤認為讀取失敗？完整 stdout 真的能作為報告解析嗎？**"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 201,
+      "quote": "CLI tests 沿用第10.8節的 TempDir、Command、Output 與借用 UTF-8 view。execute 把測試準備的 OsString array 借為 slice，逐筆 arg；**不包含程式名稱**，因為啟動 child 時 OS／Rust 已安排 argv 第一筆。這與直接傳給 try_parse_from 的完整序列分開。"
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 209,
+      "quote": "JSON 的 child test 解析**整份 stdout**，再核對全部模型角色；如果有人在資料前面插入「正在搜尋」，它就不能成為這份合法 JSON："
+    },
+    {
+      "section_id": "10.9",
+      "path": "docs/chapters/10-09-lesson.md",
+      "line": 235,
+      "quote": "使用本節 search 取得 Report，沿用第9.5節的 slice iter／fold 計算 matches 的筆數。輸入 `Rust\\nPython\\nRust Rust\\n`，預期是 2：它數符合的行，不數片段總共出現幾次。query 與原文規則不變。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

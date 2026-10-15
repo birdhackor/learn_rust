@@ -1,0 +1,119 @@
+{
+  "note": "只讀文字／source比對，非本輪測試PASS聲明。",
+  "same_checks": [
+    {
+      "checks": {
+        "path": "examples/ch15-projects/b-final-starter/checks/report-tests.rs",
+        "sha256": "c82248e0c20a180f90e36debca35a9bada973592222290223686e8f82bb8fe50",
+        "lines": 209
+      },
+      "answer": {
+        "path": "examples/ch15-projects/url-checker/src/report.rs",
+        "sha256": "2cea7007b9bb1838022649908dcbe6fc445d2bd098af0795c28a3dc213783498",
+        "lines": 361
+      },
+      "test_module_exactly_equal": true
+    },
+    {
+      "checks": {
+        "path": "examples/ch15-projects/b-final-starter/checks/app-tests.rs",
+        "sha256": "3749a8fe822c21ddd651f764462953afd27e1c01ed8b2b234437ce9624447ca6",
+        "lines": 153
+      },
+      "answer": {
+        "path": "examples/ch15-projects/url-checker/src/app.rs",
+        "sha256": "7e07b31b22fed5bd4b1b2edac7093d2adaea0134ef03b859732a01cf793f1b77",
+        "lines": 258
+      },
+      "test_module_exactly_equal": true
+    }
+  ],
+  "full_tool_files_missing_from_samepage": [],
+  "all_samepage_targets": [
+    {
+      "path": "examples/ch15-projects/url-checker/Cargo.lock",
+      "sha256": "18c26cc7576f96c28a82660d52f77e50620369f19617a9459d3561d9f8b6d4f0",
+      "lines": 1774
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/Cargo.toml",
+      "sha256": "989f84de7fa556027fcc254f4fb7887f3ddf16fa1ac714651633ee81019e7727",
+      "lines": 18
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/README.md",
+      "sha256": "53e266824dbdc03aaf9af1eb970d32ad78167fe6dacc406a958710e2e974511a",
+      "lines": 43
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt",
+      "sha256": "e89bcb35b58442ca0ff82705c99cc9c344dd8175f4bf78cdac888e54a58f94ee",
+      "lines": 5
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/app.rs",
+      "sha256": "7e07b31b22fed5bd4b1b2edac7093d2adaea0134ef03b859732a01cf793f1b77",
+      "lines": 258
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/batch.rs",
+      "sha256": "e90bc1543dc1f2ab946a59010e0f1bab59e32db869412e7927a809bd5e16642a",
+      "lines": 725
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/config.rs",
+      "sha256": "0c23c7c6f983f73b8856e5ef248449c92936bc060f79062545a1a3a0ec1b2739",
+      "lines": 25
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/error.rs",
+      "sha256": "fb67e8e826bff7ab79df64c5227b39a6dc62253cd0858cea07cb58ab34127b3f",
+      "lines": 81
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/input.rs",
+      "sha256": "2a7e50f13cc83851c23b804cdb98479867be958a41464ce765c78368438bbe1d",
+      "lines": 27
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/lib.rs",
+      "sha256": "f623dc1f88ff3c220c13eb7136b57ffd53f6a55d973cad171d21976e0d6238b1",
+      "lines": 24
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/main.rs",
+      "sha256": "0a6b62229a8e2e6c9297c73b3ad235f91271bc7dc1c7a04420e4da137a456af1",
+      "lines": 72
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/report.rs",
+      "sha256": "2cea7007b9bb1838022649908dcbe6fc445d2bd098af0795c28a3dc213783498",
+      "lines": 361
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/single.rs",
+      "sha256": "fea3a0b4e025e14b322ca61cc14da6590ee2360824268cc9b223a9e5c28c3ee4",
+      "lines": 94
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/test_fixture.rs",
+      "sha256": "2c5d78c5000bb07e597d89f87e03183637c94fc2a3b35cddcc72f46d31d949a4",
+      "lines": 198
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/tests/config.rs",
+      "sha256": "c99333408f134a82a1d15b7f4a2fc90b0014534c4da1f1bfa050df821064edf9",
+      "lines": 56
+    }
+  ],
+  "test_counts": {
+    "report": 5,
+    "app": 4,
+    "batch": 7,
+    "config_integration": 2
+  },
+  "starter_root_loads_test_fixture": false,
+  "final_root_cfg_test_fixture": true,
+  "normal_batch_comparison": "親讀B4全部normal body並比對final batch normal差異：改module路徑、移除unused original()、snippet標記；停止與排程body沿B4。",
+  "main_comparison": "親讀final main並比對starter：只將library crate路徑url_checker_starter改成url_checker。"
+}

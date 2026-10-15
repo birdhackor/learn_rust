@@ -1,0 +1,102 @@
+{
+  "checked_utc": "2026-10-15T08:31:09.986709+00:00",
+  "id": "C6b-01",
+  "status": "closed",
+  "kind": "narrow post-adoption source and actualpage followup; independentinitial unchanged",
+  "source": "Only6.6 groupingtable changed among selectedbody/Rust/SVG/fixtures/package; threeinputrows, queryNone/Some, clone/insert/update and everycumulativeRust/Pythoncountretained. Globalworkspace/lockfuturemetadata separate.",
+  "actual": "1280×800complete.390×844defaultscrollLeft0: table343px, wrapperclient=scroll=375; allheaders, labels, actions andaftercountsvisible without horizontalpan.",
+  "source_evidence": "round06-ch06b-followup-source.json",
+  "visual_evidence": "round06-ch06b-visual/followup-metadata.json",
+  "screenshots_actually_viewed": [
+    "round06-ch06b-visual/desktop-followup-three-column-grouping-table.png",
+    "round06-ch06b-visual/mobile-followup-three-column-grouping-table.png"
+  ],
+  "metadata": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "url": "http://127.0.0.1:8097/chapters/06-06-lesson/",
+      "at": "2026-10-15T08:30:24.366Z",
+      "htmlSha256": "1241b8d6adae8d306b7d0610c7a63d763f87e9c55a3d04df583837d68a3b58b9",
+      "wrapper": {
+        "client": 970,
+        "scroll": 970,
+        "left": 0
+      },
+      "table": {
+        "width": 420.671875,
+        "rows": [
+          [
+            "讀到的標籤",
+            "查詢與本次工作",
+            "處理後保存的次數"
+          ],
+          [
+            "Rust",
+            "None；複製名稱，加入1",
+            "Rust→1"
+          ],
+          [
+            "Python",
+            "None；複製名稱，加入1",
+            "Rust→1、Python→1"
+          ],
+          [
+            "Rust",
+            "Some；修改已有次數",
+            "Rust→2、Python→1"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "url": "http://127.0.0.1:8097/chapters/06-06-lesson/",
+      "at": "2026-10-15T08:30:26.366Z",
+      "htmlSha256": "1241b8d6adae8d306b7d0610c7a63d763f87e9c55a3d04df583837d68a3b58b9",
+      "wrapper": {
+        "client": 375,
+        "scroll": 375,
+        "left": 0
+      },
+      "table": {
+        "width": 343,
+        "rows": [
+          [
+            "讀到的標籤",
+            "查詢與本次工作",
+            "處理後保存的次數"
+          ],
+          [
+            "Rust",
+            "None；複製名稱，加入1",
+            "Rust→1"
+          ],
+          [
+            "Python",
+            "None；複製名稱，加入1",
+            "Rust→1、Python→1"
+          ],
+          [
+            "Rust",
+            "Some；修改已有次數",
+            "Rust→2、Python→1"
+          ]
+        ]
+      }
+    }
+  ],
+  "not_done": [
+    "NoCargo/build",
+    "Nochapter-widerereview",
+    "Norepositoryedits",
+    "Nooverwriteoriginalreport"
+  ]
+}

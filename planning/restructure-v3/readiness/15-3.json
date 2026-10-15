@@ -1,0 +1,139 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "15.3"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round15-and18b-root-crossref-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round15-c-and-ffi-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round15-gat-variance-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round15-raw-pointer-safe-abstraction-middle.md",
+    "planning/restructure-v3/reviews/continuity-late/15-06-root-crossref-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/15-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/15-03-lesson.md": "8dab364a2465746176fc776a154b507efc35ba3c4e0b89b69d9b19a96512f18e",
+    "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+    "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+    "examples/ch12-unsafe/stages/examples/raw_construction.rs": "3a0488f94e2c0b0785b205b5f19176894b82f41757c4ac75f8992f7f28d65804",
+    "examples/ch12-unsafe/stages/examples/raw_local.rs": "b6b10b0acccc27cc5200f12e2b50c4d7b6619e27f79aece418b2bdc04634c109",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.rs": "02bf53ece868e4f54fb6d145502267159ac3bca1f87ec29657cce24e32aa6a8d",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/raw_without_unsafe.expected": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+    "examples/ch12-unsafe/stages/examples/raw_array.rs": "ec00d80a6d4a53a308e2693de79aca05e105957c30ff0a7f49e43824aaf36878",
+    "examples/ch12-unsafe/stages/examples/raw_solution.rs": "c56d23b11eec610f10581192a0e6e0940052a71629137459dc6556552052d2f1",
+    "docs/assets/ch12/raw-array.svg": "1e3fe4be89e831721566567d512691379bf1d99587b7fdb738f2f24ff8bdaa9c"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 3,
+      "quote": "第3.3–3.4節的reference 把存取能力與借用有效性放進型別；第11.2節的Box 另外管理 owned 資料與清理責任。接下來要認識一種較低層的表示：儲存資料位置，卻不由型別替我們完成相同的有效性檢查。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 5,
+      "quote": "這種表示叫 **raw pointer**。本節先在單一 thread 中，從已知的局部數字與 array 建立 pointer，分開觀察建立、檢查、讀寫三種動作。直接使用 reference 已能完成這些數值修改；這次採 raw pointer，是為了理解後面安全抽象與外部函式介面所要處理的責任。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 19,
+      "quote": "raw pointer 有兩種常用型別："
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 30,
+      "quote": "`*const T` 與 `*mut T` 的 pointer 值都有 **`Copy`**，不要求 T 有 `Copy`。複製的是 pointer 資訊，不是被指向的 T；它不延長來源存活，也不增加配置的 ownership 或釋放權限。mutable raw pointer 能複製，同樣不會放寬存取有效性與衝突存取的限制；不能把它套成 mutable reference 也有 `Copy`。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 32,
+      "quote": "**allocation** 在這裡表示一份可指認的記憶體配置範圍：局部數字有自己的範圍，一個 array 的全部元素在同一範圍，Box 的 heap 資料也有其配置範圍。pointer 的合法存取必須連回對應範圍，而不是只找到一個看似合理的地址。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 36,
+      "quote": "**`&raw const place`** 直接建立指向 place 的 `*const T`；**`&raw mut place`** 建立 `*mut T`。它們是 raw borrow operator，不是先建立普通 reference 再讓借用規則失效。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 46,
+      "quote": "**alignment（對齊）** 限制某型別可從哪些地址正常存取。例如 alignment 為 4，就要求起始地址是 4 的倍數；這和 第11.1節的size 不同，size 說明佔多少 bytes。實際要求依型別與平臺查詢，不能從「地址非零」推出它已正確 aligned。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 60,
+      "quote": "**`unsafe { ... }`** 是允許執行特定低層操作的區塊。這裡需要它，因為 raw pointer dereference 的有效性不能單靠型別保證；作者要在操作前確認契約。它不關掉普通 reference 的借用檢查，也不會在執行時自動替 pointer 做驗證。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 62,
+      "quote": "**undefined behavior（UB，未定義行為）** 表示違反語言或 API 對執行的基本要求，不能再依正常的程式語意預測結果。它不等於固定會 crash 的錯誤；看似正常完成也不能使違反條件的存取變合法。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 74,
+      "quote": "**aliasing（別名存取）** 是有多條路徑可以找到相同資料。例如一份 reference 與一份 raw pointer 指向同一值。不是一看到兩份 pointer 值就有 UB；要判斷的是各路徑在何時、以哪些權限實際存取。這裡採容易核對的安排：raw 讀寫期間只使用一條路徑，不與其他 reference 交錯。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 109,
+      "quote": "現在把單一數字換成三項 array，目標只改第二項。array 的元素數量固定，所有元素屬於同一 allocation，便於在同一範圍追蹤 pointer。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 113,
+      "quote": "取得 slice 後，用 **`slice.as_mut_ptr()`** 取得指向第一項的 `*mut i32`；它不取得 allocation 的 ownership，也不讓我們自由縮長 slice。對 shared slice 使用的 **`slice.as_ptr()`** 則回傳 `*const T`，也仍依賴原資料有效。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 115,
+      "quote": "**`pointer.add(n)`** 形成往後 n 個 T 的 pointer，n 是元素數量，不是 byte 數。對本例的 i32，add(1) 跨過一個 i32，落在第二項的開頭；不需要手算地址再把整數轉回 pointer。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 117,
+      "quote": "add 本身就是 unsafe API。計算必須在來源的同一 allocation 內，或剛好形成範圍尾端的 **one-past pointer**；位移的 byte 數不能超出 `isize::MAX`，也不能發生地址 overflow。isize 是和 usize 對應的有號整數型別，這裡只用其可表示範圍描述 API 限制，沒有把實際 pointer 轉成數字。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 119,
+      "quote": "one-past pointer 指向最後一項之後的端點，**可以依 add 的契約形成，卻不能當成下一項 dereference**。它不是 null，也不是替 array 多配置一項。對這個三項 array，add(1) 指向第二項，add(3) 形成 one-past；只有前者拿來讀寫。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 143,
+      "quote": "**provenance** 指 pointer 與來源 allocation 及其允許存取範圍之間的關係。地址回答「位置在哪裡」，provenance 還涉及「這條路徑從哪個有效配置衍生、能存取哪個範圍」。"
+    },
+    {
+      "section_id": "15.3",
+      "path": "docs/chapters/15-03-lesson.md",
+      "line": 157,
+      "quote": "把材料換成 `[10, 20, 30]`，從整個 array 的 mutable slice 取得 pointer，使用 add(2) 找到第三項，讀回30並改成50。raw 存取結束後，確認原 array 是 `[10, 20, 50]`、總額80。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "review_id": "technical-early-round02-control-tail-followup",
+  "checked_at_utc": "2026-10-15T06:45:12.322370+00:00",
+  "original_finding": "TC02T-01",
+  "original_initial_judgment_preserved": true,
+  "method": "Independent narrow static post-fix check from actual manuscript, target inventory, manifests and owned source hashes; did not use author ledger/freeze claims as evidence.",
+  "status": "resolved",
+  "necessary_remaining_findings": [],
+  "checks": [
+    {
+      "location": "02-07-lesson.md:69-73",
+      "command": "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --lib --locked",
+      "actual_owned_sources": [
+        "control/src/lib.rs",
+        "control/src/pricing.rs"
+      ],
+      "judgment": "Now selects the normal library only, with no lint_return or integration_answer example target."
+    },
+    {
+      "location": "02-07-lesson.md:81-100",
+      "command": "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --example lint_return --locked",
+      "actual_owned_sources": [
+        "control/examples/lint_return.rs",
+        "control/src/lib.rs",
+        "control/src/pricing.rs"
+      ],
+      "judgment": "needless_return purpose, exact allow scope/reason and full lint_return source precede both its run and precise Clippy invocation; no sibling example is loaded."
+    },
+    {
+      "location": "02-08-lesson.md:95-129",
+      "commands": [
+        "cargo fmt --manifest-path examples/intro-workspace/Cargo.toml -p intro-control",
+        "cargo fmt --manifest-path examples/intro-workspace/Cargo.toml -p intro-control -- --check",
+        "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --all-targets --locked"
+      ],
+      "actual_owned_sources": [
+        "examples/intro-workspace/control/Cargo.toml",
+        "examples/intro-workspace/control/src/lib.rs",
+        "examples/intro-workspace/control/src/pricing.rs",
+        "examples/intro-workspace/control/src/main.rs",
+        "examples/intro-workspace/control/examples/assertions_answer.rs",
+        "examples/intro-workspace/control/examples/lint_return.rs",
+        "examples/intro-workspace/control/examples/integration_answer.rs"
+      ],
+      "judgment": "Broad package commands now follow the complete integration_answer source; current library/bin and three examples have all been supplied in current/required preceding main prose, including allow explanation."
+    }
+  ],
+  "control_sources_and_manifest_unchanged_since_initial": {
+    "examples/intro-workspace/control/Cargo.toml": true,
+    "examples/intro-workspace/control/src/lib.rs": true,
+    "examples/intro-workspace/control/src/pricing.rs": true,
+    "examples/intro-workspace/control/src/main.rs": true,
+    "examples/intro-workspace/control/examples/assertions_answer.rs": true,
+    "examples/intro-workspace/control/examples/lint_return.rs": true,
+    "examples/intro-workspace/control/examples/integration_answer.rs": true
+  },
+  "current_source_hashes": {
+    "docs/chapters/02-07-lesson.md": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886",
+    "docs/chapters/02-08-lesson.md": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880",
+    "examples/intro-workspace/control/Cargo.toml": "18abe91283c11f1a1f1109a64b28d1de3cf39d17dc8223e48cec3bd65df6b7bf",
+    "examples/intro-workspace/control/src/lib.rs": "aa8fc8a3b9f8f9804cbf13ebeb3a2ce5d6093f1fa8ab292fa373239fdec8d2ac",
+    "examples/intro-workspace/control/src/pricing.rs": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+    "examples/intro-workspace/control/src/main.rs": "5d78165a15d701ea5c666890114c085df879766bf7e6c1eaf0102d92ede8f87e",
+    "examples/intro-workspace/control/examples/assertions_answer.rs": "a5d624eed1ec93683354d1d0deb23f1557a3f4e5c5e60ce98c1f353c6e273066",
+    "examples/intro-workspace/control/examples/lint_return.rs": "e0f68b7ca14eb3ff532ae81717b81821738584db30f0a768d6816663043d1f80",
+    "examples/intro-workspace/control/examples/integration_answer.rs": "3ef2a593ee398e521593908f6a0679253b0ae0c01b9152b643c0865026436db9"
+  },
+  "verification_limits": [
+    "No Cargo/rustc/Clippy/fmt/test command or browser execution.",
+    "Source and command selection recheck, not a fresh independent discovery or whole-chapter rereview."
+  ]
+}

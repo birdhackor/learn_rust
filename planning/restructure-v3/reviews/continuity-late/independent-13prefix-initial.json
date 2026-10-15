@@ -1,0 +1,321 @@
+{
+  "role": "independent non-author continuity reviewer",
+  "route": "必要前文定點實讀後，13.1→13.4全文與全source；不是首讀盲測",
+  "prior_findings_seen": false,
+  "findings": [],
+  "sections": [
+    {
+      "section": "13-01",
+      "doc_hash": "c5b392ba306e20d36ba848860b03f669a09fabc7f76d28e5eefa168815aab654",
+      "read_doc_lines": [
+        1,
+        288
+      ],
+      "all_snippet_files_read": [
+        "examples/concurrency-stages/Cargo.toml",
+        "examples/concurrency-stages/src/main.rs",
+        "examples/concurrency-stages/examples/send_sync/contracts/mod.rs",
+        "examples/concurrency-stages/examples/send_sync/main.rs",
+        "examples/concurrency-stages/examples/cells_send/contracts/mod.rs",
+        "examples/concurrency-stages/examples/cells_send/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.expected",
+        "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.expected",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.expected",
+        "examples/concurrency-stages/examples/capture_send/contracts/mod.rs",
+        "examples/concurrency-stages/examples/capture_send/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.expected",
+        "examples/concurrency-stages/examples/borrow_bounds/contracts/mod.rs",
+        "examples/concurrency-stages/examples/borrow_bounds/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.expected",
+        "examples/concurrency-stages/examples/send_sync_answer/contracts/mod.rs",
+        "examples/concurrency-stages/examples/send_sync_answer/main.rs"
+      ],
+      "sourcehashes": {
+        "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+        "examples/concurrency-stages/src/main.rs": "05f138089b8ea0b57cc37ad7a055b1c39d35bb416a84e3b8d44aee02a33c7f48",
+        "examples/concurrency-stages/examples/send_sync/contracts/mod.rs": "1229d68ce99f4a191c995572211e341254d7cfeddfd9e13b07e6c1801b363398",
+        "examples/concurrency-stages/examples/send_sync/main.rs": "51957b840e96795b6260b8371a286d3736df03fc143909f42c73f9d1b8fea60f",
+        "examples/concurrency-stages/examples/cells_send/contracts/mod.rs": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+        "examples/concurrency-stages/examples/cells_send/main.rs": "ee7b3a3612c2b66efa80bc6e6e4f4df0f64865f875bd982c33cf4e5fffa0486b",
+        "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.rs": "e055963f805c582de1a180171e0d187dad21a99c8b66757caea2dbbe754e9507",
+        "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.rs": "c69903c795745616bbb9c380c1e6527ee6d5acc99ca9b33f3369e03e06abe8c0",
+        "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.rs": "00e923024cef8e6ff9d1ac24d7026156bdf2a20174bd107107c0caf47be3449c",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/examples/capture_send/contracts/mod.rs": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+        "examples/concurrency-stages/examples/capture_send/main.rs": "dc0c647e639212ba573a6f029c9d0962d8866e1786a6fd5585f4fc7075da2dc0",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.rs": "becc92eb86816854f5a06772f6f6de9d0225c03f6531359084433b426a0efa70",
+        "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/examples/borrow_bounds/contracts/mod.rs": "59c86469ab6b0901005645663655defe7d3de8612c48998a2ef584760ff99e18",
+        "examples/concurrency-stages/examples/borrow_bounds/main.rs": "91329108bbdfc1bb1576ec3bc4bf93bbd6201b76b9af95746d395acfa9fd46bf",
+        "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.rs": "a300e2c213c0c2c6d2ed6a38463de568f4c47b50f7b7d834aa86b3e9b968c0a9",
+        "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+        "examples/concurrency-stages/examples/send_sync_answer/contracts/mod.rs": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+        "examples/concurrency-stages/examples/send_sync_answer/main.rs": "a6f6f10d10d8372a57cccc4aafd65ddee8e3c4916f3fab759faad12437e86b22"
+      },
+      "loaded_source_coverage": "每份target根檔的pub mod所載helper均為本頁完整嵌入且實讀快照；package無lib/build script，manifest無dependencies。",
+      "rendered_full_source_missing": [],
+      "four_question_evidence": {
+        "identity": "Send移交值、Sync等價&T:Send；與Fn及static分維度。",
+        "mechanism": "普通struct由欄位能力推得；Cell/RefCell owned可移交但不共享、Rc handle計數不跨thread。",
+        "need": "先確定工作與結果可交接，再在13.2建立thread；bound helper刻意不執行thread。",
+        "operation_and_example": "batch、cells、capture、borrow_bounds與Report答案只使用已教操作；200與4只驗資料，不證明並行。",
+        "small_change": "Report換Cell欄位後Send仍可，Sync被Cell阻擋，來源在頁末已明說。"
+      }
+    },
+    {
+      "section": "13-02",
+      "doc_hash": "10afab4057f565308b0333aaaeadf12fb4c2204255e5524f23baa4820b4d247f",
+      "read_doc_lines": [
+        1,
+        251
+      ],
+      "all_snippet_files_read": [
+        "examples/concurrency-stages/Cargo.toml",
+        "examples/concurrency-stages/examples/thread_join/workers/mod.rs",
+        "examples/concurrency-stages/examples/thread_join/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.expected",
+        "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.expected",
+        "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.expected",
+        "examples/concurrency-stages/examples/thread_result/workers/mod.rs",
+        "examples/concurrency-stages/examples/thread_result/main.rs",
+        "examples/concurrency-stages/examples/panic_worker/workers/mod.rs",
+        "examples/concurrency-stages/examples/panic_worker/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/join_twice.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/join_twice.expected",
+        "examples/concurrency-stages/examples/thread_join_answer/workers/mod.rs",
+        "examples/concurrency-stages/examples/thread_join_answer/main.rs"
+      ],
+      "sourcehashes": {
+        "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+        "examples/concurrency-stages/examples/thread_join/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/thread_join/main.rs": "dbaa98bfc32bdd2ea759c55e0d135d57ab2874069192bdf90438e3ed98764764",
+        "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.rs": "d9db1b180bc91f0598b3fd9d0f3eb88e9c84f54c7f22f89f76cb6a20aa3082a3",
+        "examples/concurrency-stages/fixtures/compile-fail/spawn_borrows_local.expected": "88cc33d2d6a2d0766b29618c0b0dc8577cbd335f4117adf98cfc33068ea0f7d1",
+        "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.rs": "19d99ed8850c6151e11601410f0890052c760dfad220324453b6cecaa0ee945f",
+        "examples/concurrency-stages/fixtures/compile-fail/use_values_after_spawn.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.rs": "73b7b3449ca5c22881ce71762da1b108b0b0a6807319c02d8b87e3efe8c08284",
+        "examples/concurrency-stages/fixtures/compile-fail/thread_returns_rc.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/examples/thread_result/workers/mod.rs": "8dae063c27b797debba09f94cb09d2ed6cb21ec57f7d436f04461c0845f18421",
+        "examples/concurrency-stages/examples/thread_result/main.rs": "a9f2cdf2dd29c3aab77bc0ca3606803ab646a3f031c64139f61f70b8fd6d4811",
+        "examples/concurrency-stages/examples/panic_worker/workers/mod.rs": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+        "examples/concurrency-stages/examples/panic_worker/main.rs": "02ad2e4ea8a577e6ffdea82d07a41691697853b8e947969b326940a81afe7fda",
+        "examples/concurrency-stages/fixtures/compile-fail/join_twice.rs": "13ea4c6d246f86c77464d1d5bca015441e0e5ef4acc9b1a5ac5296cc925fcfc4",
+        "examples/concurrency-stages/fixtures/compile-fail/join_twice.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+        "examples/concurrency-stages/examples/thread_join_answer/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/thread_join_answer/main.rs": "40ded1b92481231e3099453d56f5d60ffe9dd1596cc114ea0fc0098bd8ee7eae"
+      },
+      "loaded_source_coverage": "每份target根檔的pub mod所載helper均為本頁完整嵌入且實讀快照；package無lib/build script，manifest無dependencies。",
+      "rendered_full_source_missing": [],
+      "four_question_evidence": {
+        "identity": "spawn交工作、JoinHandle是一次等待權限；join回外層thread Result。",
+        "mechanism": "F與T各有Send/static，panic unwind形成payload，drop handle detach不等待。",
+        "need": "主路徑先算6，worker算200，再於需要完整成果處join；兩份答案先都join避免漏收尾。",
+        "operation_and_example": "nested Result區分負金額拒絕與panic；payload helper處理String/static str/未知u32並測試。",
+        "small_change": "join移到主路徑計算前答案206不變、重疊安排改變；正文直接提供推論。"
+      }
+    },
+    {
+      "section": "13-03",
+      "doc_hash": "e022f3558b51fafc736371bb623fade801802c28cdfc1fcb2736570d57b3e051",
+      "read_doc_lines": [
+        1,
+        224
+      ],
+      "all_snippet_files_read": [
+        "examples/concurrency-stages/Cargo.toml",
+        "examples/concurrency-stages/examples/caller_input/higher_ranked/mod.rs",
+        "examples/concurrency-stages/examples/caller_input/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.expected",
+        "examples/concurrency-stages/examples/local_callback/higher_ranked/mod.rs",
+        "examples/concurrency-stages/examples/local_callback/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.expected",
+        "examples/concurrency-stages/examples/callback_borrow/higher_ranked/mod.rs",
+        "examples/concurrency-stages/examples/callback_borrow/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.expected",
+        "examples/concurrency-stages/examples/callback_once_hrtb/higher_ranked/mod.rs",
+        "examples/concurrency-stages/examples/callback_once_hrtb/main.rs",
+        "examples/concurrency-stages/examples/callback_projection/higher_ranked/mod.rs",
+        "examples/concurrency-stages/examples/callback_projection/main.rs",
+        "examples/concurrency-stages/examples/hrtb_answer/main.rs"
+      ],
+      "sourcehashes": {
+        "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+        "examples/concurrency-stages/examples/caller_input/higher_ranked/mod.rs": "e96c4a0a6113321a6ee102feeece6e672f4f93e3c6e8e4620f40aea76466a92c",
+        "examples/concurrency-stages/examples/caller_input/main.rs": "844741aff60d398250ea31651ab1224ff4d40083019b2fdadee3d54a07eb5937",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.rs": "3f267d03116a413f2f3fcebae2ebc1492d7d263f4b6b2e9a268f9fdf128744b4",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+        "examples/concurrency-stages/examples/local_callback/higher_ranked/mod.rs": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+        "examples/concurrency-stages/examples/local_callback/main.rs": "0cf90ec78f259d63c57a476d0f4585537228d9aea4fe9ac1da85f64ec309522a",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.rs": "135e0f39bc495b7c1a576ab2fed7a47fe11c7e555108b105dd626214a0ec3390",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.expected": "98156c76a4149a9ba9ac1b02aaed46c3ff518335e15c280d9efffbb29c2c0dfd",
+        "examples/concurrency-stages/examples/callback_borrow/higher_ranked/mod.rs": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+        "examples/concurrency-stages/examples/callback_borrow/main.rs": "fcc06e0a5e2eecb843f95bb864d6dee21ef453c44cd5ecbbe5277381ef2575cb",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.rs": "2171ebfebde5af1589c18469d4b1ed288008da374458d192a177d63c9376c520",
+        "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+        "examples/concurrency-stages/examples/callback_once_hrtb/higher_ranked/mod.rs": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+        "examples/concurrency-stages/examples/callback_once_hrtb/main.rs": "f69da17d1e3200df2439f95f6c751d8921fd3805ca63aefc49c9e0bbf981a60c",
+        "examples/concurrency-stages/examples/callback_projection/higher_ranked/mod.rs": "4a90f10ee8931a9d15e6fc7b1c657c040f094911fa3f269faa9c370c9306a9f8",
+        "examples/concurrency-stages/examples/callback_projection/main.rs": "652209acbd956950ddc8bf0e24df85b9efc25254d7a94f2da48fb05b1f77243b",
+        "examples/concurrency-stages/examples/hrtb_answer/main.rs": "ce9bf7a850f8d5d7ff0ce2aefafe52ec2babe17aba4200158e3549effdabbd62"
+      },
+      "loaded_source_coverage": "每份target根檔的pub mod所載helper均為本頁完整嵌入且實讀快照；package無lib/build script，manifest無dependencies。",
+      "rendered_full_source_missing": [],
+      "four_question_evidence": {
+        "identity": "for<a>對callback輸入lifetime通用，外層a只對呼叫選定期；與Fn呼叫次數分離。",
+        "mechanism": "with_local內建80、F接受該短借用、固定T不攜該輸入；projection另顯式連當次輸入輸出。",
+        "need": "資料改在共用函式內建立，必須讓函式自己安排當次借用，而非要求局部值配合caller a。",
+        "operation_and_example": "caller_input→失敗fixed→local→外部capture輸出→只一次→projection→兩短借用答案，各步有對照。",
+        "small_change": "callback只接static無法處理短借用；輸出若借外部String可留，借局部80不可逃出。"
+      }
+    },
+    {
+      "section": "13-04",
+      "doc_hash": "452f05337ef7610197fe9908167c9ffd5dcb447b3fda33fe6e189e345a678da9",
+      "read_doc_lines": [
+        1,
+        269
+      ],
+      "all_snippet_files_read": [
+        "examples/concurrency-stages/Cargo.toml",
+        "examples/concurrency-stages/examples/scoped_borrow/workers/mod.rs",
+        "examples/concurrency-stages/examples/scoped_borrow/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_local_source.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_local_source.expected",
+        "examples/concurrency-stages/examples/scoped_auto_wait/workers/mod.rs",
+        "examples/concurrency-stages/examples/scoped_auto_wait/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_two_mutable.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_two_mutable.expected",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_cell_shared.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_cell_shared.expected",
+        "examples/concurrency-stages/examples/scoped_borrowed_result/workers/mod.rs",
+        "examples/concurrency-stages/examples/scoped_borrowed_result/main.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_handle_escape.rs",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_handle_escape.expected",
+        "examples/concurrency-stages/examples/scoped_panic/workers/mod.rs",
+        "examples/concurrency-stages/examples/scoped_panic/main.rs",
+        "examples/concurrency-stages/fixtures/runtime-fail/scoped_auto_panic.rs",
+        "examples/concurrency-stages/fixtures/runtime-fail/scoped_auto_panic.expected",
+        "examples/concurrency-stages/examples/scoped_answer/workers/mod.rs",
+        "examples/concurrency-stages/examples/scoped_answer/main.rs"
+      ],
+      "sourcehashes": {
+        "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+        "examples/concurrency-stages/examples/scoped_borrow/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/scoped_borrow/main.rs": "3fe748f2d33fd4fbaa0724a469b14301e42a12bf2bf4c00d11a124ecb5879f13",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_local_source.rs": "54787b1f53667a5c1b5aa0967783538fb9c6430c29c648d3aec54a4f0754b4f4",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_local_source.expected": "88cc33d2d6a2d0766b29618c0b0dc8577cbd335f4117adf98cfc33068ea0f7d1",
+        "examples/concurrency-stages/examples/scoped_auto_wait/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/scoped_auto_wait/main.rs": "436da6f70b77527482c39759efad7476e40a9764c91c60fc66c8fd7971663df8",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_two_mutable.rs": "a105bf1d224f08c4b3d77719f2031052bfe6a4605b3ce468f2ab3bcd2033f337",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_two_mutable.expected": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_cell_shared.rs": "a31b8653d42acd4130c484b9f53b61abfd34fab975bfd38eadba815b1859d512",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_cell_shared.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+        "examples/concurrency-stages/examples/scoped_borrowed_result/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/scoped_borrowed_result/main.rs": "b45d7614d88fdfe756375a2980fe2adc72ab240688b6c3f9918ec7cc45592351",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_handle_escape.rs": "5226f1a55538085234eb92a74e14e921b47a29612155342c76cbedbad125a2e5",
+        "examples/concurrency-stages/fixtures/compile-fail/scoped_handle_escape.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+        "examples/concurrency-stages/examples/scoped_panic/workers/mod.rs": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+        "examples/concurrency-stages/examples/scoped_panic/main.rs": "96d9484a5569e8419614d502a2f48d7674f5d78ac367c498a6a1b138f00c46a0",
+        "examples/concurrency-stages/fixtures/runtime-fail/scoped_auto_panic.rs": "f7cd1a58db6b9e93dd5f9f70215f4841753351d3749e8d522d49f022bd992b8b",
+        "examples/concurrency-stages/fixtures/runtime-fail/scoped_auto_panic.expected": "67facfef8d01f471999393d0135edf3d1eef365bf455fc66fa0072d97be793e4",
+        "examples/concurrency-stages/examples/scoped_answer/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+        "examples/concurrency-stages/examples/scoped_answer/main.rs": "b3bf5483e8fc09dc5e4b6c1675b11261759265342fe2b5cf537cdd3e4a7c10cf"
+      },
+      "loaded_source_coverage": "每份target根檔的pub mod所載helper均為本頁完整嵌入且實讀快照；package無lib/build script，manifest無dependencies。",
+      "rendered_full_source_missing": [],
+      "four_question_evidence": {
+        "identity": "scope管理工作和借用區段；callback仍主thread執行，context.spawn才建worker。",
+        "mechanism": "env覆蓋scope；F與T Send仍在；自動等待body和手動join完整thread/TLS清理已分開。",
+        "need": "worker借讀後保留owner供push；自動等待使普通借用不遺留在區段外。",
+        "operation_and_example": "sum借讀、mutable total自動等待、外部slice成果與不可逃出handle、手動/自動panic、兩獨立Vec答案均有完整來源。",
+        "small_change": "Vec改在callback內建即不足scope，立即join不改spawn契約；兩worker借同一mutable total被拒。"
+      }
+    }
+  ],
+  "visual": {
+    "url": "http://127.0.0.1:8101",
+    "frozen_preview": true,
+    "viewports": [
+      [
+        1280,
+        800
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "actually_viewed_images": [
+      "13-01-390-image0.png",
+      "13-02-390-image0.png",
+      "13-03-390-image0.png",
+      "13-04-390-image0.png",
+      "13-01-1280-image0.png",
+      "13-02-1280-image0.png",
+      "13-03-1280-image0.png",
+      "13-04-1280-image0.png",
+      "13-03-390-answer.png",
+      "13-04-1280-answer.png"
+    ],
+    "judgment": "Send綠ownership與Sync藍reference、thread雙路徑join交回200、HRTB藍借綠成果、scope callback/body自動等待均可對應原文；手機文字可讀。長答案程式框可橫捲、折疊可開。"
+  },
+  "limitations": [
+    "未重跑Rust targets；此次是銜接與實源審閱，不代替編譯/執行驗證。",
+    "前文按必要概念實讀，未全書逐頁首讀；只對索引已讀關係主張先備證據。",
+    "桌面長圖需正常垂直捲動，截圖可能截到上端；手機完整圖已實看。"
+  ],
+  "prefix_read_index": {
+    "03-05": "full",
+    "06-01": "full",
+    "07-01": [
+      1,
+      78
+    ],
+    "07-02": [
+      106,
+      165
+    ],
+    "09-01": "full",
+    "09-02": "full",
+    "09-04": [
+      92,
+      158
+    ],
+    "11-01": "full",
+    "11-03": [
+      1,
+      55
+    ],
+    "11-05": "full",
+    "11-06": [
+      1,
+      70
+    ],
+    "11-08": "full",
+    "11-09": "full",
+    "11-11": "full",
+    "12-01": [
+      [
+        1,
+        59
+      ],
+      [
+        124,
+        168
+      ]
+    ]
+  }
+}

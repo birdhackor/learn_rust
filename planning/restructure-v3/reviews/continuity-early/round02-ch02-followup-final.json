@@ -1,0 +1,237 @@
+{
+  "kind": "post-fix narrow source+actual-page followup",
+  "at_utc": "2026-10-15T07:07:12.600014+00:00",
+  "initial_report_and_seal_unchanged": true,
+  "prompt_source": "RootadoptionmessagesafterChapter2initialseal; notindependentrediscovery",
+  "source_changes": [
+    {
+      "path": "docs/chapters/02-02-lesson.md",
+      "initial_sha256": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2",
+      "current_sha256": "cca001c484ae1ed56c1ed38deba03f2cf739b345dd4a11392a895b1c3011775d"
+    },
+    {
+      "path": "docs/chapters/02-04-lesson.md",
+      "initial_sha256": "88c06bf4a6f5e99f84339055b359eb649f5207e1a5cbeb46b33288c63d3528e6",
+      "current_sha256": "f47300de5e81aa895bb09a2335a4ed97737c0797e6168e061a1e52049a51e56b"
+    },
+    {
+      "path": "docs/chapters/02-07-lesson.md",
+      "initial_sha256": "0fdb1af3846531b6dfc9f27bca568e78164256472f45e1ac83607521a6233339",
+      "current_sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886"
+    },
+    {
+      "path": "docs/chapters/02-08-lesson.md",
+      "initial_sha256": "b69bbd89d449943fd3665683069201b7f8bc829fb6d0d6b665f476c41b3b88ce",
+      "current_sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial_sha256": "a0339cd7d528d67876df3dd1a2b1fb2169063d31e4cba666c575f6564756f8e0",
+      "current_sha256": "814f49ab55f61166079a9a123eb144402c7fe7940480f502498a7538cc66d761"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial_sha256": "77708bcc8ed7d4cbfc5b2e01156df0f081606a1e25894fd86697008685288b87",
+      "current_sha256": "b85720032a875d06ca88e96607c0fbdf16cfb1b90507788c5ffeb76e6913e6b7"
+    }
+  ],
+  "rust_sources_unchanged": true,
+  "findings": [
+    {
+      "id": "C2-01",
+      "status": "fixed andverifiedinsourceandbothviewports",
+      "source": "02-02-lesson.md:31-39",
+      "evidence": "Returnvalueandwhole-callstopparagraphnowappearsbeforefirstearly-returnprogram; absent-elseinterpretationremainsafter."
+    },
+    {
+      "id": "C2-02",
+      "status": "fixed andverifiedinsourceandbothviewports",
+      "source": "02-07-lesson.md:65-100;02-08-lesson.md:115-132",
+      "evidence": "EarlyClippyuses--lib; namedallow explanationandfulllint_returnsourceprecede--examplelint_returncommand; fullpackagefmtand--all-targetsdeferreduntilallChapter2packageexamplesprovidedat2.8. Mobilecommandrightpanalsovisuallyconfirmsflags."
+    },
+    {
+      "id": "C2-03",
+      "status": "optionalimprovementimplemented andverifiedinsourceandbothviewports",
+      "source": "02-04-lesson.md:17-26",
+      "evidence": "Threecolumnsretainbefore-remaining,condition,processed,after-remaining,batchesineachrow. Mobileallthreecolumnsvisiblewithoutlateralpanning; finalfalsehasremaining0andbatches3."
+    }
+  ],
+  "actual_page_metadata": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "page": "http://127.0.0.1:8097/chapters/02-02-lesson/",
+      "at": "2026-10-15T07:05:23.625Z",
+      "focus": "C2-01"
+    },
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "page": "http://127.0.0.1:8097/chapters/02-04-lesson/",
+      "at": "2026-10-15T07:05:24.739Z",
+      "focus": "C2-03",
+      "table": {
+        "width": 413.6875,
+        "viewportWidth": 1280,
+        "headers": [
+          "檢查前剩餘量",
+          "本次判斷與更新",
+          "完成批次"
+        ],
+        "rows": [
+          [
+            "7",
+            "true；處理 3 項，剩 4 項",
+            "1"
+          ],
+          [
+            "4",
+            "true；處理 3 項，剩 1 項",
+            "2"
+          ],
+          [
+            "1",
+            "true；處理 1 項，剩 0 項",
+            "3"
+          ],
+          [
+            "0",
+            "false；不執行 body，仍剩 0 項",
+            "3"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "page": "http://127.0.0.1:8097/chapters/02-07-lesson/",
+      "at": "2026-10-15T07:05:26.495Z",
+      "focus": "C2-02",
+      "commands": [
+        "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --lib --locked\n",
+        "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --example lint_return --locked\n"
+      ]
+    },
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "page": "http://127.0.0.1:8097/chapters/02-08-lesson/",
+      "at": "2026-10-15T07:05:27.957Z",
+      "focus": "C2-02",
+      "commands": [
+        "cargo fmt --manifest-path examples/intro-workspace/Cargo.toml -p intro-control\ncargo fmt --manifest-path examples/intro-workspace/Cargo.toml -p intro-control -- --check\n",
+        "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --all-targets --locked\n"
+      ]
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "page": "http://127.0.0.1:8097/chapters/02-02-lesson/",
+      "at": "2026-10-15T07:05:30.180Z",
+      "focus": "C2-01"
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "page": "http://127.0.0.1:8097/chapters/02-04-lesson/",
+      "at": "2026-10-15T07:05:31.304Z",
+      "focus": "C2-03",
+      "table": {
+        "width": 343,
+        "viewportWidth": 390,
+        "headers": [
+          "檢查前剩餘量",
+          "本次判斷與更新",
+          "完成批次"
+        ],
+        "rows": [
+          [
+            "7",
+            "true；處理 3 項，剩 4 項",
+            "1"
+          ],
+          [
+            "4",
+            "true；處理 3 項，剩 1 項",
+            "2"
+          ],
+          [
+            "1",
+            "true；處理 1 項，剩 0 項",
+            "3"
+          ],
+          [
+            "0",
+            "false；不執行 body，仍剩 0 項",
+            "3"
+          ]
+        ]
+      }
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "page": "http://127.0.0.1:8097/chapters/02-07-lesson/",
+      "at": "2026-10-15T07:05:33.314Z",
+      "focus": "C2-02",
+      "commands": [
+        "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --lib --locked\n",
+        "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --example lint_return --locked\n"
+      ]
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "page": "http://127.0.0.1:8097/chapters/02-08-lesson/",
+      "at": "2026-10-15T07:05:34.517Z",
+      "focus": "C2-02",
+      "commands": [
+        "cargo fmt --manifest-path examples/intro-workspace/Cargo.toml -p intro-control\ncargo fmt --manifest-path examples/intro-workspace/Cargo.toml -p intro-control -- --check\n",
+        "cargo clippy --manifest-path examples/intro-workspace/Cargo.toml -p intro-control --all-targets --locked\n"
+      ]
+    }
+  ],
+  "actually_viewed_screenshots": [
+    "desktop-followup-final-return-before-code.png",
+    "desktop-followup-final-while-three-column-table.png",
+    "desktop-followup-final-clippy-library.png",
+    "desktop-followup-final-clippy-example-after-allow.png",
+    "desktop-followup-final-full-package-after-sources.png",
+    "mobile-followup-final-return-before-code.png",
+    "mobile-followup-final-while-three-column-table.png",
+    "mobile-followup-final-clippy-library.png",
+    "mobile-followup-final-clippy-example-after-allow.png",
+    "mobile-followup-final-full-package-after-sources.png",
+    "mobile-followup-final-clippy-library-command-right.png",
+    "mobile-followup-final-clippy-example-command-right.png",
+    "mobile-followup-final-all-targets-command-right.png"
+  ],
+  "additional_config_drift": "Workspace/locknowincludeChapter4patterns member. Currentallmembermanifestsinspectedasmetadataonly: eachusesalready-taughtpackage/name/version/edition, noChapter4sourceorproseusedasprior.",
+  "execution": "NoCargo/build/testorprojectedits",
+  "scope_limit": "Onlyaffectedsourceunitsandpageviews; notfullbookorfinalstrictsiteacceptance"
+}

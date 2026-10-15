@@ -1,0 +1,109 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "13.3"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round13-root-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round13-scoped-channel-lock-atomic-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round13-send-thread-hrtb-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-addendum-array.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-array-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-summary.md",
+    "planning/restructure-v3/reviews/continuity-late/13tail-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/13-03-lesson.md": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d",
+    "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+    "examples/concurrency-stages/examples/caller_input/higher_ranked/mod.rs": "e96c4a0a6113321a6ee102feeece6e672f4f93e3c6e8e4620f40aea76466a92c",
+    "examples/concurrency-stages/examples/caller_input/main.rs": "844741aff60d398250ea31651ab1224ff4d40083019b2fdadee3d54a07eb5937",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.rs": "3f267d03116a413f2f3fcebae2ebc1492d7d263f4b6b2e9a268f9fdf128744b4",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_fixed_lifetime.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/concurrency-stages/examples/local_callback/higher_ranked/mod.rs": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+    "examples/concurrency-stages/examples/local_callback/main.rs": "0cf90ec78f259d63c57a476d0f4585537228d9aea4fe9ac1da85f64ec309522a",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.rs": "135e0f39bc495b7c1a576ab2fed7a47fe11c7e555108b105dd626214a0ec3390",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_only_static.expected": "98156c76a4149a9ba9ac1b02aaed46c3ff518335e15c280d9efffbb29c2c0dfd",
+    "examples/concurrency-stages/examples/callback_borrow/higher_ranked/mod.rs": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+    "examples/concurrency-stages/examples/callback_borrow/main.rs": "fcc06e0a5e2eecb843f95bb864d6dee21ef453c44cd5ecbbe5277381ef2575cb",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.rs": "2171ebfebde5af1589c18469d4b1ed288008da374458d192a177d63c9376c520",
+    "examples/concurrency-stages/fixtures/compile-fail/callback_local_escape.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/concurrency-stages/examples/callback_once_hrtb/higher_ranked/mod.rs": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+    "examples/concurrency-stages/examples/callback_once_hrtb/main.rs": "f69da17d1e3200df2439f95f6c751d8921fd3805ca63aefc49c9e0bbf981a60c",
+    "examples/concurrency-stages/examples/callback_projection/higher_ranked/mod.rs": "4a90f10ee8931a9d15e6fc7b1c657c040f094911fa3f269faa9c370c9306a9f8",
+    "examples/concurrency-stages/examples/callback_projection/main.rs": "652209acbd956950ddc8bf0e24df85b9efc25254d7a94f2da48fb05b1f77243b",
+    "examples/concurrency-stages/examples/hrtb_answer/main.rs": "ce9bf7a850f8d5d7ff0ce2aefafe52ec2babe17aba4200158e3549effdabbd62",
+    "docs/assets/ch10/hrtb-local.svg": "2a79b19cf773ad6245c6045b2966931f4f0dec24f58e82d430929ba91915aa08"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 3,
+      "quote": "9.2 已讓共用函式接收 callback，7.1–7.4 也能表達 reference 的來源。現在把兩者接起來：**共用函式自己建立資料，再把它借給 callback 使用，這份 callback 要提供什麼契約？**"
+    },
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 15,
+      "quote": "on_caller 接收呼叫者提供的 `&'a i32`，把這份 reference 交給 callback。沿9.2的 FnOnce 呼叫形式，把括號內的參數由空白改成 `&'a i32`：呼叫一次時借讀一個 i32，得到 owned i32。"
+    },
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 37,
+      "quote": "現在呼叫者只提供「加120」的規則，value 改由共用函式在自己的 body 裡建立。callback 呼叫結束後，共用函式只交回計算結果，局部 value 可以隨函式結束。"
+    },
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 53,
+      "quote": "問題不在加法或這份 closure 的讀取。**我們只從 bound 得知 F 能接受一個外層 `'a`，還沒有取得「函式內選擇哪段合法借用，F 都能接受」的能力。** 替 value 補同名 lifetime annotation，也不會延長來源。"
+    },
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 57,
+      "quote": "**HRTB** 是 **Higher-Ranked Trait Bounds** 的縮寫，可理解成「對所有借用 lifetime 都成立的 trait bound」。這裡要的能力是：共用函式先收到 F，之後在 body 內提供哪一段合法的 i32 借用，F 都可以接受。"
+    },
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 107,
+      "quote": "for 要求對各種 lifetime 都通用的，是傳給 callback 的輸入 reference。closure 另外保存哪些外部資料或 reference，仍依9.1的 capture 與普通 borrowing 規則；本節沒有替 F 加 `Send` 或 `'static` bound。"
+    },
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 150,
+      "quote": "`for<'a>` 描述輸入 lifetime 的通用能力；FnOnce／FnMut／Fn 描述怎麼使用 callback 自身。下面的 closure 接手 owned String，在 body 裡用11.3的 drop 消耗它，因此這份工作只提供 FnOnce 的一次按值呼叫；它仍能接受任一本次合法的 i32 借用。這個普通函式是 `std::mem::drop`，也由5.2已教的 prelude 提供名稱，所以本例不必明寫 use；它與自訂清理的 `Drop` trait 是不同的介面："
+    },
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 166,
+      "quote": "再把7.1的回傳 reference 契約放到 callback：如果希望它從 tuple 借出一個欄位，可以寫 `F: for<'a> Fn(&'a (i32, i32)) -> &'a i32`。輸入與輸出都使用同一次選定的 `'a`，表示 **每次回傳的 reference 都受當次輸入借用約束**。"
+    },
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 186,
+      "quote": "closure trait 的參數也可用 lifetime elision。已讀懂上面的明寫形式後，再看這兩組 **bound 片段**："
+    },
+    {
+      "section_id": "13.3",
+      "path": "docs/chapters/13-03-lesson.md",
+      "line": 202,
+      "quote": "寫 local_twice，在兩個相繼的內層 block 各建立80與120，借給同一個 callback。callback 會把外部 visits 加一，再把收到的數值加20。回傳 tuple `(100, 140)`；函式結束後 visits 應為2。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

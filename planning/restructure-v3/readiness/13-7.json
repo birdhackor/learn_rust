@@ -1,0 +1,183 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "13.7"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round13-root-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round13-scoped-channel-lock-atomic-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round13-send-thread-hrtb-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-addendum-array.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-array-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-summary.md",
+    "planning/restructure-v3/reviews/continuity-late/13tail-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/13-07-lesson.md": "c96f26ad8707450d399d650accd91132140788e5e5153b2373bbbcaae4892dd5",
+    "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+    "examples/concurrency-stages/examples/rwlock_guards/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/rwlock_guards/main.rs": "2159bd7b662ed0509ab6e6a01a47dabe27c29a3405a1570858f25547b736e4f7",
+    "examples/concurrency-stages/fixtures/compile-fail/rwlock_reader_no_deref_mut.rs": "62921fee0b521deea66c58e3b066c7c5d64a8717ab940b1d25d26ee1b3b5f5ef",
+    "examples/concurrency-stages/fixtures/compile-fail/rwlock_reader_no_deref_mut.expected": "018106396268d6a7b58a9dfe8e469b87a44509ceb5bcdd5757200ba813f9aab8",
+    "examples/concurrency-stages/examples/rwlock_readers/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/rwlock_readers/main.rs": "d33dba59e966e9b2b5530f8d496909dea1a9b9fdc15b9271d4b0f3c6924ba216",
+    "examples/concurrency-stages/fixtures/compile-fail/rwlock_cell_not_sync.rs": "5f2b3550c154d26e4c6ff5d8ccd9c18e69caa53feaf941fab4b164e03c1c27fa",
+    "examples/concurrency-stages/fixtures/compile-fail/rwlock_cell_not_sync.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/fixtures/compile-fail/rwlock_guards_not_send.rs": "dd1853ff1608f2540a3d3c4e0b31c7c167c9190b4e41f5011baceb7a5fcf5c3c",
+    "examples/concurrency-stages/fixtures/compile-fail/rwlock_guards_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/examples/rwlock_recheck/main.rs": "afd779c4564097334926ea9761997c8710a5ade803befb2a972b965b0b45dd4a",
+    "examples/concurrency-stages/examples/rwlock_downgrade/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/rwlock_downgrade/main.rs": "6b1817bde328259bef8e1fd6b79ab9e09908de60ce19b342f5b22def8efc76a3",
+    "examples/concurrency-stages/examples/rwlock_reader_panic/workers/mod.rs": "6cd1ea85cafb2c4f68c8694b6677fe562dfde95deb82b43a0b9126d4f87b6920",
+    "examples/concurrency-stages/examples/rwlock_reader_panic/main.rs": "1c467492c2dbeee5903a6f618e55754e9b7fa67a4170b3baed1a6952846fb740",
+    "examples/concurrency-stages/examples/rwlock_writer_panic/workers/mod.rs": "6cd1ea85cafb2c4f68c8694b6677fe562dfde95deb82b43a0b9126d4f87b6920",
+    "examples/concurrency-stages/examples/rwlock_writer_panic/main.rs": "0e862c64c85ad45db5e16aa80781f8d39bc7ddc9c3327d5b1cb7e92dd8b0a081",
+    "examples/concurrency-stages/examples/rwlock_answer/workers/mod.rs": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "examples/concurrency-stages/examples/rwlock_answer/main.rs": "12a27399a772feb9b86fa611253c937a675e5a3fca885e81c2825aa2abf681e0",
+    "docs/assets/ch10/rwlock-readers.svg": "c8c0b5a7dfdf3afa5d22325c84ad795d20039467191e71d7423aa68f21c11413"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 3,
+      "quote": "上一節用 Mutex 讓每份工作輪流取得一份獨佔 guard。現在希望 **多位呼叫者各自取得同一清單的 shared view，這些 view 可以並存；要追加資料的 writer，則等所有 view 都釋放後才修改**。材料沿用 `[80, 120]`，最後追加30得到230。本節先學這種權限分工，再討論何時釋放、重取或轉換它；不以這份小加總比較速度。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 13,
+      "quote": "**`std::sync::RwLock<T>`** 是 **reader-writer lock（讀寫鎖）**，擁有 T，並追蹤目前的讀取或寫入權限。**reader** 是持有 shared 讀取權限的呼叫者，**writer** 是持有獨佔修改權限的呼叫者：多份 read guard 可以並存；write guard 不與其他 read 或 write guard 並存。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 31,
+      "quote": "`LockResult` 沿13.6：Ok 帶回 guard，poison Err 也含已取得的 guard。**RwLock 只可能因持有 write guard 的 panic 而 poison；持 read guard 的 panic 不會讓它 poison。** 這與 Mutex 不分讀寫的 guard 有差別。PoisonError 已有 Debug，因此本節的 expect 可檢查所列的已知條件；失敗時 panic，不會替應用復原資料。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 35,
+      "quote": "要觀察「現在可不可以取得」，不讓這次檢查停在等待中，可以用 `try_read()` 或 `try_write()`。成功仍回傳各自的 guard；無法立即取得就回 Err，**不等待、也不自動重試**。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 48,
+      "quote": "`TryLockError::WouldBlock` 表示當下無法取得，**沒有新 guard**；`TryLockError::Poisoned(error)` 則表示取得後帶 poison 警告，error 仍含那份 guard。不要把兩種 Err 當成相同狀態。TryLockError 也有 Debug，所以後面的 expect 可以用在 try 的 Result。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 50,
+      "quote": "標準 RwLock 的取得優先順序由作業系統實作決定，**沒有指定 reader 或 writer 一定先取得**；等待中的 writer 可能阻擋新 reader。因此下面先只在 main 看兩份 read guard，沒有其他 writer、也沒有等待中的 writer。第二份用 try_read，不把重複 blocking read 當成普遍保證。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 54,
+      "quote": "這份 target 的完整 `workers/mod.rs`："
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 97,
+      "quote": "沿13.6，Arc 保活同一個容器；RwLock 管理內部權限。`RwLock<T>` 有 Send 需要 T:Send；**要有 Sync，則需要 T 同時有 Send 和 Sync**，因為各 reader 能各自提供對同一 T 的 shared borrowing。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 139,
+      "quote": "現在希望 **清單最多三項；若尚未滿，就追加30**。先讀到長度2，不代表稍後取得 write guard 時仍是2。標準 API 沒有把這份 read guard 直接升成 write guard 的操作；要先釋放 reader，再取得 writer。**兩份權限之間有窗口，另一條路徑可能更新清單。**"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 149,
+      "quote": "observed 是舊觀察的 usize 副本，不是仍持有的 guard。它繼續是2，但清單已是3；真正判斷 `len() < 3` 要在 **目前的 write guard** 下做，判斷到更新之間保留同一份 guard。如果用舊 observed 決定 push，就可能把已滿的清單加到四項。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 153,
+      "quote": "另一種需要是 **剛追加完30，接著讀這份寫完的狀態，同時允許其他 reader 取得讀取權限**。若先 drop writer 再 read，兩次取得之間可能已有另一份 writer 更新，讀到的就不一定是剛才那份狀態。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 155,
+      "quote": "本專案的 Rust 1.99 可以用1.92已穩定的 **`RwLockWriteGuard::downgrade(writer)`**。它取得 write guard 的 ownership，直接交回同一 RwLock 的 read guard，不回傳 Result，因為呼叫時已經持有寫權限。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 157,
+      "quote": "這個轉換是 **atomic**：沿13.6不可拆開的操作角色，這裡指從獨佔改成共享權限，中間沒有讓另一份 writer 插入的解鎖窗口。新的 reader guard 留下時，writer 仍不能取得；其他 reader 可按 RwLock 的規則取得。**它是 write→read，不是 read→write upgrade。**"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 184,
+      "quote": "沿13.2的 unwind 設定，兩種工作 panic 仍由 join 的 Err 攜帶 payload。第一份 worker 只持有 read guard，故意 panic："
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 207,
+      "quote": "現在 writer 完整 push 30後，再持著 write guard 故意 panic。後續 read 得到 poison Err，error 內含 **read guard**，因為我們呼叫的是 read；不是永遠拿不到權限，也不是自動拿到可修改的 write guard。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 209,
+      "quote": "這份例子的資料政策是：**每一筆是獨立的完整數值，已完整追加的30可以保留；確認內容依序是80、120、30後，就把這份清單當作有效狀態**。它不同於13.6要求總額與筆數一體更新的模型。檢查用5.4已教的 len、slice 與索引，先確認長度3再逐項比對；僅長度3與總和230不足以證明三項的確切內容。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 241,
+      "quote": "這三種安排可以支持不同的分工："
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 249,
+      "quote": "Mutex 也能安排共同讀取工作的流程；這裡的選擇重點是 **每位 caller 如何取得和管理自己的存取權限**。RwLock 允許 read guard 並存，不代表每次選它都比較快；實際成本還取決於工作大小、衝突與平台。這份教材的小例子不替應用做效能比較。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 253,
+      "quote": "標準 RwLock 沒有承諾固定的 **fairness（公平取得順序）**，也沒有承諾一份等待的 writer 不會長期得不到權限；長期得不到所需權限叫 **starvation（飢餓）**。不能依靠「已在等，就一定比新的 reader 先取得」安排程式正確性。try 方法也只告訴這次結果，不保證下次重試成功。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 255,
+      "quote": "一種可能的等待循環是：thread A 持有 read guard；thread B 等 write；A 又呼叫 blocking read。若平台把等待 writer 放在新 reader 前，A 等 B，B 卻要等 A 的原 read guard 釋放。**即使新操作也是 read，也不能把重複取得當成通用保證**。持 guard 時不要等待依賴它釋放的工作；本節不執行永久互等的反例。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 259,
+      "quote": "沿13.5的 deadlock 模型：A 持 lock1、等 lock2，B 持 lock2、等 lock1，就有循環。若工作真的必須同時持兩份權限，讓所有相關路徑都按照同一順序取得，比如全部先 lock1 再 lock2，便能排除 **這種相反次序的循環**。"
+    },
+    {
+      "section_id": "13.7",
+      "path": "docs/chapters/13-07-lesson.md",
+      "line": 265,
+      "quote": "main 建立 `Arc<RwLock<Vec<i32>>>`，初值80、120。先建立 writer 追加30，writer 正常完成後，再建立兩份 reader：第一份返回長度，第二份返回小計。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

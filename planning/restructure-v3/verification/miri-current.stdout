@@ -1,0 +1,15 @@
+
+running 3 tests
+test empty_storage_and_endpoints_keep_valid_views ... ok
+test invalid_mid_is_rejected_without_modifying_values ... ok
+test safe_call_modifies_two_disjoint_regions ... ok
+
+test result: ok. 3 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.37s
+
+
+running 1 test
+test copying_before_drop_keeps_a_plain_value ... ok
+
+test result: ok. 1 passed; 0 failed; 0 ignored; 0 measured; 0 filtered out; finished in 0.14s
+
+Miri兩個正常targets通過，故意UB命中指定freed allocation原因

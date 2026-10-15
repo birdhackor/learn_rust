@@ -1,0 +1,31 @@
+{
+  "kind": "post-fixsourcefollowup",
+  "at_utc": "2026-10-15T07:11:59.260508+00:00",
+  "initial_report_unchanged": true,
+  "changes": [
+    {
+      "path": "docs/assets/ch02/reference-owner.svg",
+      "initial_sha256": "24c26bb66f067b0d964a05b4e54cbd34359f35036192b3b9ba5a526b2c1f56dc",
+      "current_sha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb"
+    },
+    {
+      "path": "docs/chapters/03-02-lesson.md",
+      "initial_sha256": "4abe646b523a2831e8374d80fa1f006b203feba9e4e3bec9b00aeca8fd9bc388",
+      "current_sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89"
+    },
+    {
+      "path": "docs/chapters/03-03-lesson.md",
+      "initial_sha256": "db0288a22aeb87e01751792ee3d1dbb50ea61006c6098c6c51a8e7ecdcfed1b7",
+      "current_sha256": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e"
+    },
+    {
+      "path": "docs/chapters/03-05-lesson.md",
+      "initial_sha256": "eae13ff2e23669eb9acaa579cf6f97126babc30770bd333807b8ce8bdb7b4ccb",
+      "current_sha256": "78535d28170efdde36e18a62911cb9c4779e14bbc3559dccfe876761fe47e776"
+    }
+  ],
+  "rust_unchanged": true,
+  "C3-01": "Sourceverified: existingexactmanual/automaticcall explanationnowprecedes calls snippet at03-05:63-67; nonCopyassignmentcontrastremainsafter.",
+  "other_narrow_changes": "Copybasictextbeforefigure; referencefigure/altfocusonborrowrolewithoutadvanceddereferencelabel. Initialsufficientclassificationretained; notindependentissue rediscoveries.",
+  "visual_status": "Captured latestrebuiltpreview; screenshotsawaitactualinspectionbeforeclosure."
+}

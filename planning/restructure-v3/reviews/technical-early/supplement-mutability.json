@@ -1,0 +1,244 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent complete supplement technical acceptance",
+  "scope": [
+    "docs/supplements/python-javascript-mutability.md",
+    "Rust mutability_comparison selected target/config closure",
+    "Python names_and_objects.py",
+    "JavaScript const_binding.js"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "other_reviewer_reports_read": false,
+    "root_conclusions_used": false,
+    "prior_scope": "Own round03 only recorded this supplement as unselected. It was not a main-prose prerequisite and was not previously accepted by that record. This is a fresh independent complete supplement review.",
+    "reader_background": "Basic Python plus actual main prose through3.8 inclusive, matching the supplement's explicit position after3.8. Although reviewer has personally read1–17, no chapter4+ concept/source is used to justify supplement syntax, API or reasoning."
+  },
+  "evidence": {
+    "scope": "docs/supplements/python-javascript-mutability.md plus all three comparison programs and actual Rust selected target closure",
+    "page_hash": "b937467f71faa2d06a10eea2b6d2774d4e72d82188ee9e6e646bd2e504e46c88",
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/03-04-lesson.md",
+        "sha256": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/03-05-lesson.md",
+        "sha256": "78535d28170efdde36e18a62911cb9c4779e14bbc3559dccfe876761fe47e776"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/03-06-lesson.md",
+        "sha256": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/03-08-lesson.md",
+        "sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/supplements/python-javascript-mutability.md",
+        "sha256": "b937467f71faa2d06a10eea2b6d2774d4e72d82188ee9e6e646bd2e504e46c88"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/Cargo.lock",
+        "sha256": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/Cargo.toml",
+        "sha256": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/ownership/Cargo.toml",
+        "sha256": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/ownership/examples/mutability_comparison.rs",
+        "sha256": "47abde143fd22a9b3ca6ab2d0b6770b3aba481767b42b909274d35a61ac29c1e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/ownership/examples/reborrow.rs",
+        "sha256": "cfa6f775b4115d41027d3490b9450ae7a2d7961b8335c99cd7844232d85243f7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/ownership/examples/strings_answer.rs",
+        "sha256": "22f7511f47e6a4f5dd7edc7b28c9a824f1fb71c27526b1499ad5b334230c5927"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js",
+        "sha256": "fe4dce7f84e63fcbafb5c06ea5ce00ef59a93675372fe6948185ce6e38269a8a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py",
+        "sha256": "aa453c1322033fdb4c5b4d18af275455822d51b5b5f426178dbf01607172c622"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/intro-workspace/ownership/src/main.rs",
+        "sha256": "5d01b2ee14dd9b2dbcba67a83a7a47c1d960a0ee685f0b49af8d7d0d0ead13c6"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "snippets": [
+      {
+        "line": 12,
+        "reference": "examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py"
+      },
+      {
+        "line": 40,
+        "reference": "examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js"
+      },
+      {
+        "line": 58,
+        "reference": "examples/intro-workspace/ownership/Cargo.toml"
+      },
+      {
+        "line": 62,
+        "reference": "examples/intro-workspace/ownership/examples/mutability_comparison.rs"
+      }
+    ],
+    "commands": [
+      {
+        "line": 18,
+        "command": "python3 examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py"
+      },
+      {
+        "line": 46,
+        "command": "node examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js"
+      },
+      {
+        "line": 66,
+        "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example mutability_comparison --locked"
+      }
+    ],
+    "selected_rust_closure": {
+      "manifest": "examples/intro-workspace/ownership/Cargo.toml",
+      "target": "examples/mutability_comparison.rs",
+      "normal_library": null,
+      "build_script": null,
+      "dependencies": [],
+      "own_binary": "src/main.rs exists but not selected/loaded by --example",
+      "workspace_manifest": "examples/intro-workspace/Cargo.toml",
+      "workspace_lock": "examples/intro-workspace/Cargo.lock",
+      "other_members": "metadata only; no other member or sibling example source compiles for this selected target",
+      "cargo_configs": []
+    },
+    "manifest": {
+      "package": {
+        "name": "intro-ownership",
+        "version": "0.1.0",
+        "edition": "2024"
+      }
+    },
+    "relevant_lock_package": [
+      {
+        "name": "intro-ownership",
+        "version": "0.1.0"
+      }
+    ],
+    "prerequisite_source_evidence": [
+      {
+        "page": "03-04-lesson.md",
+        "lines": "7,23,46,62",
+        "role": "binding mut versus mutation through existing &mut; immutable reference binding can mutate referent."
+      },
+      {
+        "page": "03-05-lesson.md",
+        "lines": "11–23,47–69",
+        "role": "last-use borrow interval and automatic reborrow at typed &mut parameter; mutable reference not Copy."
+      },
+      {
+        "page": "03-06-lesson.md",
+        "lines": "7–25",
+        "role": "method receiver borrow and mutation"
+      },
+      {
+        "page": "03-08-lesson.md",
+        "lines": "9,23–27,45–51,87,116–126",
+        "role": "String::new/push_str/as_str, owned String versus &str, shared-view last-use before later mutation, append exercise and explicit optional supplement link."
+      }
+    ],
+    "counts": {
+      "full_file_snippets": 4,
+      "commands": 3,
+      "comparison_programs": 3,
+      "source_hashes": 18,
+      "loaded_rust_source_files": 1,
+      "cargo_configs": 0
+    }
+  },
+  "assessments": [
+    {
+      "item": "Python name/object distinction",
+      "judgment": "Assignments alias=items make two names refer to same list, no ownership transfer; append mutates that list and rebinding alias to[9] leaves items unchanged. Initial names/print/list assignment are basic Python and append is explained before complete script. Immutable str concatenation via += produces resulting string and rebinds name while old_name keeps original; correctly qualified += by operand type rather than saying it always mutates. Five stdout lines exactly match actual execution."
+    },
+    {
+      "item": "JavaScript const/object distinction",
+      "judgment": "Ordinary const declaration initialized, no later binding reassignment; object properties are not frozen by const. const alias=order points to same object; alias.count+=1 mutates count2→3 visible through order. Script has no imports/dependencies and only standard console output. Conditional Node availability stated; actual Node execution exits0 and prints3. MDN immutable-reference terminology is separated from Rust shared-reference capability, avoiding false equivalence."
+    },
+    {
+      "item": "Rust binding, reborrow and view",
+      "judgment": "text mutable owner can give &mut String and receive modifying push_str. reference binding is immutable but referent access is mutable. append(reference) implicitly reborrows because function parameter has explicit &mut String, so reference remains usable for following as_str/println; this mechanism is explicitly taught3.5:47–69, including non-Copy mutable-reference move counterexample. Then last use of reference precedes direct owner as_str; last use of view precedes text.push_str. Both borrow intervals valid by3.5, methods/types introduced3.8 and function/method forms earlier. Statically derived three Rust lines agree with manuscript; no chapter4+ helper/API used."
+    },
+    {
+      "item": "selected source and command closure",
+      "judgment": "Four snippet references are entire files, all helpers/imports visible. ownership manifest plain package0.1.0/edition2024, std only, no lib/buildscript or dependencies. --example selects only mutability_comparison, not default src/main or sibling examples; actual directory absence verifies lib/build scripts. Explicit intro-workspace manifest/package/example command from repo root uses independent intro workspace and its committed lock; current later members are metadata rather than prerequisites. No extra Cargo config discovered in repo/intro/package ancestry. Python and JS direct source paths require no local helper library or package installation."
+    },
+    {
+      "item": "comparison scope and limits",
+      "judgment": "Table consistently distinguishes rebinding, object/content mutation and Rust borrowing rights. Python mutable/immutable labels describe objects, JavaScript const describes binding, Rust ordinary values additionally obey borrow conflicts. Explicit ordinary numeric/order/String scope avoids asserting all shared Rust references imply deeply immutable contents. Supplement is optional after3.8 and main text does not depend on it. No browser/first-reader experiment or external-document content verification claimed."
+    }
+  ],
+  "execution": {
+    "comparison_programs": [
+      {
+        "runtime": "python3",
+        "available": true,
+        "ran": true,
+        "binary": "/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3",
+        "source": "examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py",
+        "exit_code": 0,
+        "stdout": "[1, 2, 3]\n[1, 2, 3]\n[9]\nRust\nRust 教學\n",
+        "stderr": ""
+      },
+      {
+        "runtime": "node",
+        "available": true,
+        "ran": true,
+        "binary": "/opt/codex/runtimes/codex-primary-runtime/dependencies/node/bin/node",
+        "source": "examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js",
+        "exit_code": 0,
+        "stdout": "3\n",
+        "stderr": ""
+      }
+    ],
+    "performed": [
+      "Full current supplement/source/config closure read and prerequisite3.4/3.5/3.6/3.8 source check.",
+      "Resolve4 full-file snippet references, validate3 printed commands, parse exact package/workspace lock roles and capture18 source hashes.",
+      "Execute complete supplied Python and JavaScript programs from repo root; both exit0 with empty stderr and exact documented stdout."
+    ],
+    "not_performed": [
+      "No Rust/Cargo/rustc/Clippy run or rerun; Rust output and borrow validity checked statically.",
+      "No browser, rendering/visual or reader experiment; no external official-link fetch or author/peer verification read.",
+      "No manuscript/source/config/Git changes."
+    ]
+  },
+  "conclusion": "Complete independent supplement review finds no necessary or optional technical correction within stated post3.8 basic-Python route."
+}

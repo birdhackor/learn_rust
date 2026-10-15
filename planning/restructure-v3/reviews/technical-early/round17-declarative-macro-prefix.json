@@ -1,0 +1,305 @@
+{
+  "review_id": "round17-declarative-macro-prefix",
+  "scope": [
+    "17.1"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 實際已讀1–11、12.1–12.3及13.1–13.3；本節必要前置限正文實際使用的10.9、11.10、12.1與已教Rust。未讀17.2+當先備。",
+  "independence": "未讀root作者validation/ledger、peer、reader或historical findings；由本文、actual source與commands獨立建立初判。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "全文、20snippets、全部12份owned package檔案、4run+1test及3組完整compilefail/expected靜態核對。",
+    "手寫與單名字macro的observe段exact bytes一致；逐規則核對ident、metavariable、tokens、repetition、optional comma、展開後型別和ownership。",
+    "正常minimal library閉包、單節先教後用、完整答案與SVG XML/source核對。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "macro_expansion_tool": false,
+    "note": "本波未執行Cargo/rustc或展開工具；輸出、1單元測試與3fail診斷均靜態核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:17:06.034732+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "250840780324379bbcc885c72b8ec59eda796d5615beea28e085bcbc5bd9fbab",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/assets/ch14/macro-expansion.svg": "c67dbdbf122f64ace7860e3ad0eecf059b68d589b72bdcd15b3a0cba19739f2b",
+    "docs/chapters/17-01-lesson.md": "a8ee5f3868a82137595915740897ee2968cdf0955a7f8054921ac3718c307a62",
+    "examples/macro-basics/Cargo.toml": "2d866eb00390ab44cb32f2a4986ac2594328f36c535dc048a3de36aa550b2557",
+    "examples/macro-basics/examples/manual_readings.rs": "d718b3ad662c84d28a8d196e29a7bc8dc051245fc123c303ebc27f2a5531add8",
+    "examples/macro-basics/examples/reading_empty_solution.rs": "c97c2c573d79332799594c8e85da46f41f8626430a5548dc83bce1ab4ec8b25f",
+    "examples/macro-basics/examples/reading_many.rs": "db8814073a41d01ac69511f86a53e9de6aa1d52d51c8bf8981ad42ced2bcba9e",
+    "examples/macro-basics/examples/reading_single.rs": "2f6a3d35a63bbbd6199563f5ad63f21e5f6c6b66f94a3c58c431378c9f1f5d4e",
+    "examples/macro-basics/fixtures/compile-fail/reading_bad_name.expected": "02a9daf180dcd83cc967c1f1146644f81718c9e13e61e48cbe41574fa4987cbd",
+    "examples/macro-basics/fixtures/compile-fail/reading_bad_name.rs": "4250d30b91007402553c9eaa2db65e886275f1ffba6f0c2fcebb3d793e215df9",
+    "examples/macro-basics/fixtures/compile-fail/reading_empty.expected": "19876660b8561b0ec56b0f6781f94f573c994a653c9fbf84f60f5bd9d0a95062",
+    "examples/macro-basics/fixtures/compile-fail/reading_empty.rs": "c514efaf1258d1223e791eeea8a9b67b9b7d0ea4c506636238123fba55ad208a",
+    "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.rs": "1823c8a07225843ae16edf92e6fda8f9b0a5f4b974f6389339ea754629316bad",
+    "examples/macro-basics/src/lib.rs": "83d1a0a5826934ec1700f133e00161ff7a8faa25d81b8be5465f45f4fc64a3a3",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "macro-basics",
+      "version": "0.1.0"
+    }
+  ],
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 14,
+      "source": "examples/macro-basics/Cargo.toml",
+      "tag": null,
+      "included_sha256": "2d866eb00390ab44cb32f2a4986ac2594328f36c535dc048a3de36aa550b2557",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 20,
+      "source": "examples/macro-basics/src/lib.rs",
+      "tag": null,
+      "included_sha256": "83d1a0a5826934ec1700f133e00161ff7a8faa25d81b8be5465f45f4fc64a3a3",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 26,
+      "source": "examples/macro-basics/examples/manual_readings.rs",
+      "tag": "manual-types",
+      "included_sha256": "28f9ca883e23b6db3959784af3bcccb8f1b6f1d627c22f06132a8f28ccf0f811",
+      "included_lines": 17
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 32,
+      "source": "examples/macro-basics/examples/manual_readings.rs",
+      "tag": "observe",
+      "included_sha256": "bf65c392b6c148c1339482fc02b9c07437748e2682642dbeef6238be9efa5f9a",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 40,
+      "source": "examples/macro-basics/examples/manual_readings.rs",
+      "tag": null,
+      "included_sha256": "d718b3ad662c84d28a8d196e29a7bc8dc051245fc123c303ebc27f2a5531add8",
+      "included_lines": 37
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 74,
+      "source": "examples/macro-basics/examples/reading_single.rs",
+      "tag": "single-rule",
+      "included_sha256": "dd4199d221b5ffdfce9ba2685737e37be85c812c8f47e8336ba87a9d409a29d8",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 80,
+      "source": "examples/macro-basics/examples/reading_single.rs",
+      "tag": "single-call",
+      "included_sha256": "8a6f3b325510f8d36c9fa6df6128b26e521a87ff26026cd5a25603ea55c33a86",
+      "included_lines": 2
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 90,
+      "source": "examples/macro-basics/examples/reading_single.rs",
+      "tag": "observe",
+      "included_sha256": "bf65c392b6c148c1339482fc02b9c07437748e2682642dbeef6238be9efa5f9a",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 98,
+      "source": "examples/macro-basics/examples/reading_single.rs",
+      "tag": null,
+      "included_sha256": "2f6a3d35a63bbbd6199563f5ad63f21e5f6c6b66f94a3c58c431378c9f1f5d4e",
+      "included_lines": 37
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 125,
+      "source": "examples/macro-basics/examples/reading_many.rs",
+      "tag": "repeat-rule",
+      "included_sha256": "ee76b24349ee59c4da3b588478666e9155c85311c31472bec4c74bbdc5a95043",
+      "included_lines": 14
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 129,
+      "source": "examples/macro-basics/examples/reading_many.rs",
+      "tag": "repeat-call",
+      "included_sha256": "362798599c8401fa65f80239896d5d0b36a2b4712ba96236c4af42af8ef4243a",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 135,
+      "source": "examples/macro-basics/examples/reading_many.rs",
+      "tag": "observe",
+      "included_sha256": "757478bfa0c3d368972a83bde0105307d87a7b5f87c6d0aa3b91d294483c1649",
+      "included_lines": 14
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 143,
+      "source": "examples/macro-basics/examples/reading_many.rs",
+      "tag": null,
+      "included_sha256": "db8814073a41d01ac69511f86a53e9de6aa1d52d51c8bf8981ad42ced2bcba9e",
+      "included_lines": 61
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 160,
+      "source": "examples/macro-basics/fixtures/compile-fail/reading_bad_name.rs",
+      "tag": null,
+      "included_sha256": "4250d30b91007402553c9eaa2db65e886275f1ffba6f0c2fcebb3d793e215df9",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 164,
+      "source": "examples/macro-basics/fixtures/compile-fail/reading_bad_name.expected",
+      "tag": null,
+      "included_sha256": "02a9daf180dcd83cc967c1f1146644f81718c9e13e61e48cbe41574fa4987cbd",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 170,
+      "source": "examples/macro-basics/fixtures/compile-fail/reading_empty.rs",
+      "tag": null,
+      "included_sha256": "c514efaf1258d1223e791eeea8a9b67b9b7d0ea4c506636238123fba55ad208a",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 174,
+      "source": "examples/macro-basics/fixtures/compile-fail/reading_empty.expected",
+      "tag": null,
+      "included_sha256": "19876660b8561b0ec56b0f6781f94f573c994a653c9fbf84f60f5bd9d0a95062",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 180,
+      "source": "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.rs",
+      "tag": null,
+      "included_sha256": "1823c8a07225843ae16edf92e6fda8f9b0a5f4b974f6389339ea754629316bad",
+      "included_lines": 16
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 184,
+      "source": "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.expected",
+      "tag": null,
+      "included_sha256": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-01-lesson.md",
+      "line": 200,
+      "source": "examples/macro-basics/examples/reading_empty_solution.rs",
+      "tag": null,
+      "included_sha256": "c97c2c573d79332799594c8e85da46f41f8626430a5548dc83bce1ab4ec8b25f",
+      "included_lines": 28
+    }
+  ],
+  "owned_files": [
+    "examples/macro-basics/Cargo.toml",
+    "examples/macro-basics/examples/manual_readings.rs",
+    "examples/macro-basics/examples/reading_empty_solution.rs",
+    "examples/macro-basics/examples/reading_many.rs",
+    "examples/macro-basics/examples/reading_single.rs",
+    "examples/macro-basics/fixtures/compile-fail/reading_bad_name.expected",
+    "examples/macro-basics/fixtures/compile-fail/reading_bad_name.rs",
+    "examples/macro-basics/fixtures/compile-fail/reading_empty.expected",
+    "examples/macro-basics/fixtures/compile-fail/reading_empty.rs",
+    "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.expected",
+    "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.rs",
+    "examples/macro-basics/src/lib.rs"
+  ],
+  "copy_checks": {
+    "manual_and_single_observe_exact": true
+  },
+  "commands": [
+    "cargo run -p macro-basics --example manual_readings --locked",
+    "cargo run -p macro-basics --example reading_single --locked",
+    "cargo run -p macro-basics --example reading_many --locked",
+    "cargo test -p macro-basics --example reading_many --locked",
+    "cargo run -p macro-basics --example reading_empty_solution --locked"
+  ],
+  "loaded_closures": [
+    {
+      "targets": [
+        "manual_readings",
+        "reading_single",
+        "reading_many",
+        "reading_empty_solution"
+      ],
+      "kind": "selected example run",
+      "owned_root": "各自examples/*.rs",
+      "normal_library": [
+        "examples/macro-basics/src/lib.rs"
+      ],
+      "dependencies": [],
+      "notes": "lib僅Reading與read_value；無build.rs，不載ch14-macros或後節hygiene/export source。"
+    },
+    {
+      "targets": [
+        "reading_many"
+      ],
+      "kind": "selected example test",
+      "owned_root": "examples/macro-basics/examples/reading_many.rs",
+      "normal_library": [
+        "examples/macro-basics/src/lib.rs"
+      ],
+      "tests": 1,
+      "notes": "#[cfg(test)]同檔test完整inline；test runner不執行原main。"
+    },
+    {
+      "targets": [
+        "reading_bad_name",
+        "reading_empty",
+        "reading_wrong_unit"
+      ],
+      "kind": "independent rustc compilefail",
+      "normal_library": [],
+      "dependencies": [],
+      "notes": "3份standalone來源無外部crate；穩定expected依序no rules expected、unexpected end of macro invocation、E0308。"
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "docs/chapters/17-01-lesson.md:57",
+      "finding": "macro expansion發生於編譯期；產生的普通Rust仍受type/ownership檢查。沒有以函式無法處理多筆資料誤導macro用途。"
+    },
+    {
+      "source": "docs/chapters/17-01-lesson.md:61",
+      "finding": "macro_rules、definition/invocation !位置、matcher/arrow/transcriber/分號、ident/$name/token均先於首個rule說明；textual同檔順序與實際calls一致。"
+    },
+    {
+      "source": "docs/chapters/17-01-lesson.md:111",
+      "finding": "+/*/?重複次數及分隔符／optional尾逗號先教；模板重複層次與輸入一致。空解答改兩處*，空呼叫不產生items且單獨逗號可匹配，敘述正確。"
+    },
+    {
+      "source": "examples/macro-basics/examples/reading_many.rs:43",
+      "finding": "test借讀0/30/-5後仍assert原值；newtype無Copy也不做非負驗證。struct欄位public與Reading本地實作沿11.10，沒有引入單位換算或取消型別邊界。"
+    },
+    {
+      "source": "docs/assets/ch14/macro-expansion.svg",
+      "finding": "source/XML區分名字輸入→編譯期生成struct/impl→runtime借讀80；沒有把展開當runtime動態產生型別。未作visual觀察。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:17:41.852Z"
+}

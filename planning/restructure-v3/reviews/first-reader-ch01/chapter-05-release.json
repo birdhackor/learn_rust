@@ -1,0 +1,52 @@
+{
+  "chapter": 5,
+  "first_unit": 150,
+  "last_unit": 154,
+  "entries": [
+    {
+      "source": "docs/chapters/05-01-lesson.md",
+      "file": "units/150.md",
+      "sha256": "27cc63a77820cd4d9e707856be1dd0999f271048c2edda353dce4b067872adf6",
+      "source_sha256": "25f1b41ae6846b38b0c012775e0e44992eb493b1e957d5453debd4f4baf3378a",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/05-02-lesson.md",
+      "file": "units/151.md",
+      "sha256": "1377a024a32f354e0aa711de24db7d4a493790739eadc104222ae93e3e0e3f59",
+      "source_sha256": "40d749408aba8ccf2004dc6b410d5bbe8e1e086983070cf1e13df554bab3ab18",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/05-03-lesson.md",
+      "file": "units/152.md",
+      "sha256": "615f116ac8fde4b5a10a025cb1a962b87b9fb99d7e1801f269c3f9bf3734c715",
+      "source_sha256": "27780e39eca8f727f1778633a360f083729e42062cd4fcf47e89be4375aeb9d2",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/ch03/utf8-boundaries.svg",
+          "source_sha256": "bf40798d5647ee4d3082b0efbfb769540c90751792d1796593e022c5129806fb",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch05-utf8-boundaries.png",
+          "png_sha256": "8ab51a635ddfd98ac0d3cab599616cc4eb34f468177d55697b197011dfb3de34",
+          "alt": "A、中、crab的完整區間分別為0..1、1..4、4..8；1..2只留下中的第一個byte"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/05-04-lesson.md",
+      "file": "units/153.md",
+      "sha256": "6368eaf61598d4a92071515a49938fda3119170d6a09cddffc2830fbb3d9c83f",
+      "source_sha256": "4cb07186300bda41c45650b300549d883789665aa2bcd17ddc83cf520e94df1d",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/05-05-lesson.md",
+      "file": "units/154.md",
+      "sha256": "3e2d474448de6dcf9e424af2ea2fb31d7c6e5371cf5151db7b565d587548bc0d",
+      "source_sha256": "20882bf65c17e9bdca514bf41ed27f8a80314d615bc894e06e06d7a3595f888c",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    }
+  ],
+  "route": "whole prerequisite pages;  actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed"
+}

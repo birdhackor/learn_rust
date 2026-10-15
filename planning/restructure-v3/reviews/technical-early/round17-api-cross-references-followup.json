@@ -1,0 +1,80 @@
+{
+  "review_id": "round17-api-cross-references-followup",
+  "scope": [
+    "17.4 TC17A-O1",
+    "17.4 TC17A-O2"
+  ],
+  "independent_initial": false,
+  "attribution": "root採納既有初判後提示，本次僅窄修source複查；原round17-public-api-contracts不改寫，非新發現。",
+  "status": "resolved",
+  "evidence": "實際:33已回指第6.2–6.3節、:67已回指第3.6節，對應已讀前文。新稿反向替換這兩處即可精確重建原初判page hash；其他43份source hash全部未變。",
+  "source_snapshot_at_utc": "2026-10-15T09:35:38.851946+00:00",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "f71fbeedefb6f784f754cda7052427df3d8bb84e825579b64071f6f9305957e7",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/chapters/02-05-lesson.md": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e",
+    "docs/chapters/03-06-lesson.md": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+    "docs/chapters/04-02-lesson.md": "5bbb8a9a5406962e325218feb6f35ab4adbaeccea828d6f512bc7ba07562e066",
+    "docs/chapters/06-02-lesson.md": "f10544e1c8c5bba31e648e597ffa8fe05c8c48305bfaba692cdea1d8033be3f7",
+    "docs/chapters/06-03-lesson.md": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807",
+    "docs/chapters/17-04-lesson.md": "6c5390a43e128dbbd959f89f89add695d1de31aed10b6116b9256a5a52f384aa",
+    "examples/ch14-api/Cargo.toml": "c62849529e7c0eff512385ca3b3ce9fea7e61e15a94bd30449fbb58d6fa7854a",
+    "examples/ch14-api/compatibility/consumer.rs": "5a0f921550b9d7f7ece716d65f2788df87b5efa4045f397aeac1e326f90b3899",
+    "examples/ch14-api/compatibility/v1/Cargo.lock": "a996b65d5f81f4a90e00222e1a4391511699b4d65d5e772504ab78bd6148069c",
+    "examples/ch14-api/compatibility/v1/Cargo.toml": "3fb9df4ddf3920ebecf1bce6347cd3a1ed80e0ed3bf90d66d38c83222efdce2a",
+    "examples/ch14-api/compatibility/v1/src/lib.rs": "ed7981b9708216c5a106493f062dba6eff912012b83387dfd7ab00cb7b232ba4",
+    "examples/ch14-api/compatibility/v1_1/Cargo.lock": "822b0084e099c619fa274e3cb7dc71547a1d23835e7768d48b7bd0d70e228841",
+    "examples/ch14-api/compatibility/v1_1/Cargo.toml": "ca00cdffa141c7212435e9b27c4273f070b20bcc03f8a4ed1c919b27f751f717",
+    "examples/ch14-api/compatibility/v1_1/src/lib.rs": "a96f498eec48419b170d52a3a6f4caab1ec2de953891a1c4820309b4d79f2571",
+    "examples/ch14-api/examples/consumer.rs": "324cb8012d050df7abb7ae7c44e1f37a63c1c748b1552981d3f82d4d76748483",
+    "examples/ch14-api/examples/limit_solution.rs": "844521e4a96339cb816e54fdc9e85f0ca23bbd4c18eeef4d5d02784c98892037",
+    "examples/ch14-api/examples/typed_errors.rs": "9f517443e825a2e22b76563297352d1e6867849a23f98cd55b925cb819359f32",
+    "examples/ch14-api/fixtures/cross-crate-fail/Cargo.lock": "7b810ed593267aeffd53462f5c37806eebed7a15031da8032a908a83594c7816",
+    "examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml": "6d2f47403d2e208b67863290fe2b980f513a9c760654c0e6a8ef88c8e742ac66",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.expected": "388bdc7a4e6e8182c29781d55fae41a770e567dd5d0d81056e6b136176a86712",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.rs": "9049d98096e1bf666f7e010342801ed28984e5f17f3b181b625da3c510aa3d2d",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.expected": "c376b4ed1e702a45cb10b54ea688073d63511a4ac43a8eb61471f604c7e71c1c",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.rs": "1e326081c34ceb9423af94b65f8d5513f063947dd1605ea385493b781774ee50",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.expected": "fa3b46bb839e843f9da990ecc9151edb533235701c1c55d831b1fe783f6b8a48",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.rs": "74ff54714dd7ff5caccf8323d65412b2d9fac4410bcb838b3ed08de7b787129c",
+    "examples/ch14-api/fixtures/note.txt": "1ca933853c174efc7edd3134eeae8fa7fa2e779f411391ea076843dfd8df57fc",
+    "examples/ch14-api/fixtures/runtime-fail/derived_default.expected": "2d0d674cfe17bc19af67d3b44a1d3eba16d393ba84d7ea5cf81149df5fe314cb",
+    "examples/ch14-api/fixtures/runtime-fail/derived_default.rs": "4f5c18e43b17b2e1c065c153fb96277d470b629cf2d023a7a01bbee10219c3d7",
+    "examples/ch14-api/src/errors.rs": "8e0472a9b201b0bcaa4f93452b2312bf4c2cb3f085286f574ef2a4cc3a7a8e00",
+    "examples/ch14-api/src/lib.rs": "b33bc13b239c98169218858b6812469c022d2c728926c99cdb806b55fa5a5679",
+    "examples/ch14-api/src/limits.rs": "67188064c69cc27ab2eb4168521c0f465c91d0d25991ed1c527bf8df1b2cceb5",
+    "examples/ch14-api/src/options.rs": "baf8b9f75ecac2f6f5d71aacf3e265aa0e8d7c0b5b7f69e0e3db1941d28a83c1",
+    "examples/ch14-api/src/search.rs": "c96cd01dae2befb6895c41a45b27036121f635a00eaa7fdb08c4b4727be46f71",
+    "examples/ch14-api/src/text.rs": "5b4075ad54d8b6c962aa0dfbfb2fe8b0b07496757e0d60b7c9fa02fcd793714b",
+    "examples/ch14-api/tests/public_contract.rs": "5a26a8894fe80ec68850b683bd34dc5c8a06dd2b06e0eaaff190f263451fcc47",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "changed_files": {
+    "docs/chapters/17-04-lesson.md": {
+      "before": "477a5bb48d1019593fd2497b5873b3074be5123ee5b5651419860802606afdc8",
+      "after": "6c5390a43e128dbbd959f89f89add695d1de31aed10b6116b9256a5a52f384aa"
+    }
+  },
+  "new_lines": [
+    {
+      "line": 33,
+      "text": "BatchLimit的tuple欄位沒有pub，caller不能直接寫 `BatchLimit(0)` 或改內部數字。new檢查輸入，成功才建立Self，get shared借用並交回usize。derive明選第6.2–6.3節的Debug／Clone／Copy／PartialEq；複製有效數字仍有效，這些公開能力也是caller可依賴的介面。"
+    },
+    {
+      "line": 67,
+      "text": "這兩項method仍用第3.6節的owned self接手整份設定。新的寫法 **`mut self`** 中，mut讓函式內這個self binding可修改；它沒有把參數變成 `&mut self`，caller仍交出原值。body修改指定欄位，再交回新的Self，因而可以串接呼叫，每次把前一個結果交給下一項；不用讓caller持有mutable reference。with_limit只接受已驗證的BatchLimit，不新增一條從任意usize繞過規則的路徑。"
+    }
+  ],
+  "exact_two_sentence_reconstruction": true,
+  "execution": {
+    "cargo_or_rustc": false,
+    "note": "無Rust、manifest、command變動，未重跑。"
+  },
+  "sealed_at_utc": "2026-10-15T09:35:51.179Z"
+}

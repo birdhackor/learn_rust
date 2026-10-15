@@ -1,0 +1,17 @@
+{
+  "examples/ch14-api/fixtures/runtime-fail/derived_default.expected": {
+    "sha256": "2d0d674cfe17bc19af67d3b44a1d3eba16d393ba84d7ea5cf81149df5fe314cb",
+    "content": "預設必須符合非零規則\n",
+    "role": "實際必要但正文直接說為空檔或fixture附隨expected，補入實源覆蓋"
+  },
+  "examples/ch14-model-checking/src/lib.rs": {
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "content": "\n",
+    "role": "實際必要但正文直接說為空檔或fixture附隨expected，補入實源覆蓋"
+  },
+  "examples/ch14-model-checking/fixtures/cargo-test-fail/src/lib.rs": {
+    "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+    "content": "\n",
+    "role": "實際必要但正文直接說為空檔或fixture附隨expected，補入實源覆蓋"
+  }
+}

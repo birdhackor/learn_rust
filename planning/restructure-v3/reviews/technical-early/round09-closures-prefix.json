@@ -1,0 +1,540 @@
+{
+  "review_id": "technical-early-round09-closures-prefix",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/09-01-lesson.md",
+    "docs/chapters/09-02-lesson.md"
+  ],
+  "independent_initial": true,
+  "reader_background": "Basic Python plus actual1–7 and8.1–8.2 main prose. Did not use8.3 onward,9.3 onward or11 as prerequisite.",
+  "independence": "Chapter7 and8prefix initialjudgments independently sealed before9.1→9.2. No authorverification,continuity,reader,otherreview,historicalissue or laterdraft record read before this seal.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary or optional closure capture/callability,Fn-family bound/receiver,function-pointer,first-use,sourceclosure,output/answer or fixture-code issue found.",
+  "method": "Sequential whole-page technical reread withallactualselectedfullRust/manifests/fixtures/expected plusSVGsource/XML. Static typing/ownership/borrow/call reasoning,notblindfirstread orreaderexperiment.",
+  "execution": {
+    "cargo_rustc_clippy_tests": [],
+    "browser_visual": false,
+    "author_evidence_used_as_own": false,
+    "python_checks": [
+      "hash/snippet paths",
+      "exact package manifest/no lib/build script",
+      "SVG XML parse"
+    ]
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:04:45.371957+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/assets/iterators-v3/closure-transfer.svg": "4f54b08bae8312a004d862850983245108f10df1a6077a5e1420ebf8f85039e4",
+    "docs/chapters/09-01-lesson.md": "ff8a0d0ca07cbc731287f88935e7c8a6f7bb32b9e321dd6dbefff1124a1267e9",
+    "docs/chapters/09-02-lesson.md": "1f94efb9e804d4ff18de071441b7d0b19368326c497bd284ede0d47a5456ffd0",
+    "examples/intro-workspace/Cargo.lock": "549d3112349bbc321ffa7c0c5ebdf985532bac5953f3c6a6539ef899f28adfbb",
+    "examples/intro-workspace/Cargo.toml": "e9e3773e89e2d210c65b8c5972cc1dc7d36a2e1cda6cb202c07747fb8b83b058",
+    "examples/intro-workspace/iterators/Cargo.toml": "b540dbe89b10eed2d7275d0ef841e562722569e21d0a1f3854b235bc3a0af15c",
+    "examples/intro-workspace/iterators/examples/callback_answer.rs": "ba1f83358a873d5a87af5965a13dba853a1f5c7aa9d7744d3b5ba929acfb936c",
+    "examples/intro-workspace/iterators/examples/callback_mutable.rs": "b990f9eede2e3192ff69dff9ddca72967766f48b4ad5591dc0c1329ac3333f70",
+    "examples/intro-workspace/iterators/examples/callback_once.rs": "2cd642ea021607acb3cf062f54fee8d6039a6aa49c9de9bd43d89cc7ee5a687f",
+    "examples/intro-workspace/iterators/examples/callback_shared.rs": "c4f53c552898df9683cee46d1f72c49006a30811b7c63432f63ab775fa74232c",
+    "examples/intro-workspace/iterators/examples/closure_answer.rs": "cb434f128c8c61923ffca02e05051fab4884aa9e1cd6e84c890c0ab8c6842a4b",
+    "examples/intro-workspace/iterators/examples/closure_fee.rs": "c9e7755221f7e65e26ce794a9f770fde3fc53c74d5083e5960708ea4e348f5af",
+    "examples/intro-workspace/iterators/examples/closure_inference.rs": "00feab0ced244c9c839fb090a3c72ccb81a4c9187f6f1db9272ad88810c57293",
+    "examples/intro-workspace/iterators/examples/closure_move_copy.rs": "2cf0efe5c1bb105479d451eabf2bd903abb8e503f6b71ffcc5b8d666bf8cbe86",
+    "examples/intro-workspace/iterators/examples/closure_mutable.rs": "f5788a6c9be4f3c023c311c576182957917d82ad79dfdf81c5f1f65879d183fe",
+    "examples/intro-workspace/iterators/examples/closure_owned_read.rs": "5835ab01fb74e2fabe2ce9f4f92202484c8eec9c43055a4b9a515fe70a34a2ec",
+    "examples/intro-workspace/iterators/examples/closure_shared.rs": "ef47484ca01ac4a023e37dd7fe716966ddb9be2a0b60dc7e4329dcab9f903042",
+    "examples/intro-workspace/iterators/examples/closure_take.rs": "2c1b56441e29b933afc532ad7e23eb8b7af9b91628efd1837c0be55c9310c104",
+    "examples/intro-workspace/iterators/examples/function_pointer.rs": "cd993d1931f29993ea106361a22abe88a8d56f85c994ba23f62e1d65ef345f7c",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/callback_needs_repeat.expected": "3abb7293f27dc5f61d18a839bad7074649aba4e167c25fdd1d2d0e2b49269ae7",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/callback_needs_repeat.rs": "2c63fc8e47704f98076c155234b0eed6e604a87eacaba4a73611d3aacc3c0816",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/closure_borrow_overlap.expected": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/closure_borrow_overlap.rs": "51657dcc5bc73786e4f11b3977b479f216f7db55633af6840aa0da4191f3b428",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/closure_inference.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/closure_inference.rs": "858b3f324dfc388242f8c9b850c347576cf7dd1ce716c7c5e2d98679ecda3a23",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/closure_take_twice.expected": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/closure_take_twice.rs": "6e9dad7578576e6f611e25e128bbfaeec684a6b2087db77146c238a14f0e8477",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/function_pointer_capture.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/iterators/fixtures/compile-fail/function_pointer_capture.rs": "0f322522c3ff057eb765225e6c0136d76141f8173a0b50d3615936f6755469e9",
+    "examples/intro-workspace/iterators/src/main.rs": "b4f68ff34a46f6cb43d328f17711f075301815022140e8730d2ac96290b7c6b6",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/src/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/closure_fee.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/closure_inference.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_inference.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/closure_shared.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/closure_mutable.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_borrow_overlap.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/closure_owned_read.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/closure_move_copy.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/closure_take.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_take_twice.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/closure_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "reference": "examples/intro-workspace/iterators/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/callback_once.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/callback_mutable.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/callback_needs_repeat.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/callback_shared.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/function_pointer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "reference": "examples/intro-workspace/iterators/fixtures/compile-fail/function_pointer_capture.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "reference": "examples/intro-workspace/iterators/examples/callback_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "command_review": [
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example closure_fee --locked"
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example closure_inference --locked"
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example closure_shared --locked"
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example closure_mutable --locked"
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example closure_owned_read --locked"
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example closure_move_copy --locked"
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example closure_take --locked"
+    },
+    {
+      "document": "docs/chapters/09-01-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example closure_answer --locked"
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example callback_once --locked"
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example callback_mutable --locked"
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example callback_shared --locked"
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example function_pointer --locked"
+    },
+    {
+      "document": "docs/chapters/09-02-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-iterators --example callback_answer --locked"
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-iterators",
+    "manifest": "examples/intro-workspace/iterators/Cargo.toml",
+    "no_library": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "targets": [
+      {
+        "target": "closure_fee",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/closure_fee.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "closure_inference",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/closure_inference.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "closure_shared",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/closure_shared.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "closure_mutable",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/closure_mutable.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "closure_owned_read",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/closure_owned_read.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "closure_move_copy",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/closure_move_copy.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "closure_take",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/closure_take.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "closure_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/closure_answer.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "callback_once",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/callback_once.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "callback_mutable",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/callback_mutable.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "callback_shared",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/callback_shared.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "function_pointer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/function_pointer.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      },
+      {
+        "target": "callback_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/iterators/examples/callback_answer.rs"
+        ],
+        "external_modules": [],
+        "full_inline_source": true
+      }
+    ],
+    "default_main": "9.1 explicitlyshowsdefaultsrc/main.rsandexplains--example actualwork;itdoesnotenteranyselected--example closure.",
+    "test_commands": [],
+    "self_checks": "Assertionsinsidefullprogramscheckcurrentselectedmaterials. No broad test/Clippy/fmt or all-targets command.",
+    "later_sources": "Samepackage futureexamplesnotselected;no9.3/laterAPI/librarybody needed. Helpersrun_once/call_twice/apply_shared/sum_with areallownedinlineintheirexamples.",
+    "manifest_role": "9.1:11 beforefirstcommanddefinespackage,no-lib/fullthreeknownfields;9.2:19–22 repeatscompleteconfiguration.",
+    "workspace": "intro-iterators is anintro workspace member;rootworkspaceexcludesintro. Othermembers aremetadataonly."
+  },
+  "concept_evidence": [
+    {
+      "concept": "Closure syntax, capture and call-time computation",
+      "identity": "9.1:9definesanonymousfunctionform/savedvalue/captureenvironment;23explains|amount:i32|,returnannotation/block/callbeforefirstsource28.",
+      "need": "9.1:3–5 preservesharedfreelimitwithoutrepassingtoeachorderwhileacknowledgingordinaryfunctionswithparameteralsowork.",
+      "operation": "amountprovidedatcall,free_limit300capture;280gets60,320and300get0. Creationnotexecution40.",
+      "evidence_and_limits": "Onlyfree_limitneededcapture;twoorderbranchesobserved,nosuperiority/performanceclaim. Fixedinferredtypevs5.1genericexplained44–60beforetypeconflictfixture.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Shared/mutable capture and last use",
+      "identity": "9.1:66 explainszeroargs||vsbooloperatorandStringsharedborrow;86–88mutablecountcaptureandseparatecount/tickmutrolesbeforefullsources.",
+      "need": "ReadretainedStringwithoutownershiptake,thenchangeonepreservedcounteracrosscalls.",
+      "operation": "Sharedtextcanbereadwhileclosureborrowexists;tickincrements1then2andcountreadonlyafterlasttickuse.",
+      "evidence_and_limits": "OverlapfixtureformatscountwhiletickstillusedlaterandcorrectlyE0502. Last-useborrowendnotforeverlockandnotnewcopies. Annotationmutneedcomesfromactualreceiver,notallclosures.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "move capture versus moving out at call",
+      "identity": "9.1:116–126 move storesusedenvironmentbyvalue;nonCopyStringmoves,Copyi32/&strcopyonlythemselves,notpointeeownership.",
+      "need": "Letworkowntextwhenneeded,orhandoffownedresulttolatercaller.",
+      "operation": "owned-readbodyonlyborrowsstoredStringandcanrepeat;take move||text movesStringoutandconsumesnonCopyclosure;136firstdefinesbothhandoffsbeforecode139/diagram152.",
+      "evidence_and_limits": "SourceowningStringreadtwice4;Copylimitstill300outside;copiedviewstillborrowsoriginalString;takeRustthenappend教學length11. FnOnceconsumptionnotinferredfrommovekeywordalone.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "FnOnce callback and associated Output",
+      "identity": "9.2:9callbackterm,11FnOncebyvalue,13std::ops/prelude,15dedicatedFnOnce()->TsyntaxandOutputrole,17genericF/Tbecauseclosuretypesanonymous;allbeforefirstsource26.",
+      "need": "Sharedhelperexecutescaller-providedworkwithoutknowingcapturedfields,requiringinput/output/callcapability.",
+      "operation": "run_once<T,F:FnOnce()->T>(task:F)->T callsandreturnstaskresult;ownStringtakeandnonmoving||7bothaccepted.",
+      "evidence_and_limits": "FnOncenotnecessarilyexactlyonce35,onlyminimumguarantee;nohandwrittenunstablecallmethod/tupleABIrequireslearning.6.4associatedtypeprerequisiteactuallyavailable.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "FnMut/Fn receiver and capability inclusion",
+      "identity": "9.2:39–41 FnMutmutableaccess/repetition,mutparameter;65–69 Fnsharedaccess/boundinputoutputbeforeeachsource.",
+      "need": "Twiceusesonechangingcounter;sharedhelperonlyhas&Fandmustpreservecallerwork. RepetitionitselfdoesnotdemandFnwhenFnMutsufficient.",
+      "operation": "Callerpassesnon-mutbindingtickbyvalue;callee muttaskactuallycalls1,2. apply_sharedborrowsaddfromcallerandcallerthenusesit14.",
+      "evidence_and_limits": "FnincludesFnMut/FnOnce,andFnMutincludesFnOnce85—notmutuallyexclusive;nonmutating||7acceptedbyrepeat.87explicitlydeniesFnmeanssameoutput/allindirectdataimmutable.Onlymove-outStringtakefailsFnMutE0525.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Function pointer and callable traits",
+      "identity": "9.2:91–95 definesconcretefn(i32)->i32vsFntrait,functionitem/noncapturingclosurecoercionsandnoarbitraryenvslotbeforefullsource98.",
+      "need": "ReusealreadynamedordinaryfunctionwithoutwrappingcaptureanduseexistinggenericFncontract.",
+      "operation": "add_one3→4,noncapturingdouble3→6,apply_sharedpointer3→4. Capturingbaseclosurecannotconverttofn,E0308.",
+      "evidence_and_limits": "Claims scopedtosafeRustfunctionpointershown,notunsafe/foreignABI. No dynamicdispatch,implTrait-return,lateriteratorAPIneeded.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Two complete exercises and empty input",
+      "identity": "9.1:164–166 addsvisitsmutationwhilefree_limitread;9.2:111–115definesnumericcallbacksumandFnMut/whiletask;smallnonoverflowingmaterials113.",
+      "need": "Retainshippingrulewithprocesscount,andseparateper-elementtransformationfromgenericaccumulation.",
+      "operation": "Shipping280/320incrementsvisits2;sum[1,2,3]*factor10→60,visits3. Indexedwhilechecksbounds;emptyslice&values[0..0]executeszeroiterationsandcallsnocallback.",
+      "evidence_and_limits": "Allsyntaxfromactualprior1–7plus9.1/2;no8laterformat/errorAPIor9.3-return/iteratorneeded. Assertionsandborrowendaftercallbackconsumptionmatchclaimedoutputs.",
+      "status": "sufficient"
+    }
+  ],
+  "fixtures": [
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_inference.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_inference.expected",
+      "stable_expected": "E0308",
+      "reason": "Oneinferredidentityclosurei32thenbool.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_borrow_overlap.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_borrow_overlap.expected",
+      "stable_expected": "E0502",
+      "reason": "countformattedwhilecapturedmutableborrowneededbylatercall.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_take_twice.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/closure_take_twice.expected",
+      "stable_expected": "E0382",
+      "reason": "StringmovingoutcausesFnOnceconsume;secondtakeinvalid.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/callback_needs_repeat.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/callback_needs_repeat.expected",
+      "stable_expected": "E0525",
+      "reason": "takeonlyFnOncecannotmeetFnMutrepeatbound.",
+      "executed": false
+    },
+    {
+      "source": "examples/intro-workspace/iterators/fixtures/compile-fail/function_pointer_capture.rs",
+      "expected": "examples/intro-workspace/iterators/fixtures/compile-fail/function_pointer_capture.expected",
+      "stable_expected": "E0308",
+      "reason": "basecapturingclosurecannotcoercetofn(i32)->i32.",
+      "executed": false
+    }
+  ],
+  "figure_check": {
+    "path": "docs/assets/iterators-v3/closure-transfer.svg",
+    "source_xml_only": true,
+    "xml_well_formed": true,
+    "mapping": "Threechronologicalboxes:textStringRust→takeclosureownedString→savedString;firstarrowmove-captureatcreation,secondbodymovesoutatcall. Prose150andaltagree,logicalsameownedtextnotclonetwo. Savedmayappendafterhandoff;nophysicalallocationidentityclaim.",
+    "browser_visual": false
+  },
+  "static_outputs": [
+    {
+      "target": "closure_fee",
+      "expected": [
+        "280 元訂單運費=60",
+        "320 元訂單運費=0"
+      ]
+    },
+    {
+      "target": "closure_inference",
+      "expected": [
+        "推導後的數字結果=8"
+      ]
+    },
+    {
+      "target": "closure_shared",
+      "expected": [
+        "呼叫前，原文字=Rust",
+        "closure 讀到 bytes=4",
+        "再呼叫仍是 bytes=4"
+      ]
+    },
+    {
+      "target": "closure_mutable",
+      "expected": [
+        "第一次計數=1",
+        "第二次計數=2",
+        "最後一次使用 tick 後，原計數=2"
+      ]
+    },
+    {
+      "target": "closure_owned_read",
+      "expected": [
+        "擁有文字的 closure，第一次讀到=4",
+        "第二次仍讀到=4"
+      ]
+    },
+    {
+      "target": "closure_move_copy",
+      "expected": [
+        "外面的數字=300，closure 的數字=300",
+        "外面的 reference=Rust，closure 讀到=4"
+      ]
+    },
+    {
+      "target": "closure_take",
+      "expected": [
+        "呼叫後交回的 owned 文字=Rust 教學"
+      ]
+    },
+    {
+      "target": "closure_answer",
+      "expected": [
+        "處理訂單數=2"
+      ]
+    },
+    {
+      "target": "callback_once",
+      "expected": [
+        "共用函式交回文字=Rust"
+      ]
+    },
+    {
+      "target": "callback_mutable",
+      "expected": [
+        "兩次結果=1、2，原計數=2"
+      ]
+    },
+    {
+      "target": "callback_shared",
+      "expected": [
+        "shared 借用呼叫=13",
+        "保留原工作再呼叫=14"
+      ]
+    },
+    {
+      "target": "function_pointer",
+      "expected": [
+        "function pointer 呼叫=4",
+        "不捕捉環境的 closure 轉成 pointer=6",
+        "共用 Fn 介面也接受 pointer=4"
+      ]
+    },
+    {
+      "target": "callback_answer",
+      "expected": [
+        "轉換後合計=60，處理次數=3"
+      ]
+    }
+  ],
+  "limits": "13runoutputsand5fixturecodesarestaticchecks,notfreshRustexecutions. No browserorreaderexperiment. No9.3onward/8later/11contentreviewed.",
+  "sealed_at_utc": "2026-10-15T08:06:25.626591+00:00"
+}

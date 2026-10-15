@@ -1,0 +1,70 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "8.2"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round08-errors-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08-quote-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-crossref-followup-final.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/08-02-lesson.md": "a820550d86c7919bde3602543e4a085c81579815e092ca331c71a117b61d344f",
+    "examples/intro-workspace/error-stages/examples/aliases/aliases/mod.rs": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+    "examples/intro-workspace/error-stages/examples/aliases/main.rs": "ae8dff48f777f25e0460310cd3d5955962cba6533a1a719c82a58448ffdf547c",
+    "examples/intro-workspace/error-stages/examples/alias_is_name.rs": "30daa29359dc9da8bea878a6be946d3716f972481c17e04e983e5c66da82c86a",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/aliases/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/alias_answer.rs": "f99058ae3ebe2abf766007e9c87ce882153e73c15bb1cfe1fe6e1fe38ef90b6c"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "8.2",
+      "path": "docs/chapters/08-02-lesson.md",
+      "line": 3,
+      "quote": "上一節的驗證函式交回 `Result<i32, CountError>`。同樣型別若出現在數個函式簽名，重複寫完整名稱會把每個函式的工作擠到後面。現在希望替這個已知結果型別取一個短名稱，保留原有成功、失敗與 ownership 規則。"
+    },
+    {
+      "section_id": "8.2",
+      "path": "docs/chapters/08-02-lesson.md",
+      "line": 7,
+      "quote": "**type alias**（型別別名）是既有型別的另一個名稱。`type CountResult = Result<i32, CountError>;` 讓 CountResult 表示右邊那個型別；`type` 宣告型別名稱，不是在執行時建立一份值。"
+    },
+    {
+      "section_id": "8.2",
+      "path": "docs/chapters/08-02-lesson.md",
+      "line": 19,
+      "quote": "下面的根檔案以 `pub mod aliases;`、`pub mod policy;` 載入各自同層資料夾內的 mod.rs。所有載入來源的完整內容都列於本頁。"
+    },
+    {
+      "section_id": "8.2",
+      "path": "docs/chapters/08-02-lesson.md",
+      "line": 39,
+      "quote": "若替 i32 取名 CountNumber，−1 仍是合法的 i32 值。名稱不會把前節 0 到 100 的件數規則加入型別，也不會自動呼叫 checked_count："
+    },
+    {
+      "section_id": "8.2",
+      "path": "docs/chapters/08-02-lesson.md",
+      "line": 57,
+      "quote": "這些 targets 屬於沒有 library 的 intro-error-stages。完整 member manifest："
+    },
+    {
+      "section_id": "8.2",
+      "path": "docs/chapters/08-02-lesson.md",
+      "line": 75,
+      "quote": "宣告 `PriceAndCount`，表示第 1.8 節已教的 `(i32, i32)` tuple；第一項為單價，第二項為數量。寫 subtotal 接收這個名字表示的型別，交回相乘結果。材料只用不會溢位的非負小整數。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

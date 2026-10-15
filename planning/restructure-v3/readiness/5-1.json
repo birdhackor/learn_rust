@@ -1,0 +1,88 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "5.1"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round05-cross-reference-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round05-data-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round05-data-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round05-prefix-markup-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05-version-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/05-01-lesson.md": "25f1b41ae6846b38b0c012775e0e44992eb493b1e957d5453debd4f4baf3378a",
+    "examples/intro-workspace/data-steps/examples/generic_holder.rs": "6b165e050e27bf0c98630159ed0a014982238c34aa7827efc91eabfcddcc84ed",
+    "examples/intro-workspace/data-steps/Cargo.toml": "37c9cbefb5ff5e6412887e4932d12a2063bda8f52b547e417064133c1fcb9a33",
+    "examples/intro-workspace/data-steps/examples/generic_impl.rs": "7a9d3b933e31405746cd393f88f1ba399de4441b90c30c0cf5558560e1e85458",
+    "examples/intro-workspace/data-steps/fixtures/compile-fail/generic_same_type.rs": "b6473382a600431ef5f50f97fdcd4e25974b7ea4b61ac59a728701e431d97645",
+    "examples/intro-workspace/data-steps/examples/generic_answer.rs": "c16130aa77f8f273f961600897384c764f5383d81071f4dc17a260d548a1852a"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "5.1",
+      "path": "docs/chapters/05-01-lesson.md",
+      "line": 3,
+      "quote": "第 3 章的 Order 把欄位型別寫成 i32。現在換一個小需要：把一份資料放進只有 value 欄位的盒子，有時保存數字，有時保存 bool 設定。我們希望共用「保存輸入、之後交回」的規則，而每一個盒子仍有明確的欄位型別。"
+    },
+    {
+      "section_id": "5.1",
+      "path": "docs/chapters/05-01-lesson.md",
+      "line": 7,
+      "quote": "**泛型（generics）**讓型別或函式定義使用**型別參數**。值參數收到的是 120、true 這種值；型別參數指定的是 i32、bool 這種型別。兩者不是同一類輸入。"
+    },
+    {
+      "section_id": "5.1",
+      "path": "docs/chapters/05-01-lesson.md",
+      "line": 26,
+      "quote": "`hold<T>` 在函式名後宣告 T。參數 `value: T` 和回傳 `Holder<T>` 使用同一個 T，表示輸入型別就是結果盒中資料的型別。"
+    },
+    {
+      "section_id": "5.1",
+      "path": "docs/chapters/05-01-lesson.md",
+      "line": 44,
+      "quote": "如果要直接在函式呼叫指定 T，寫 `hold::<i32>(80)`。`::<...>` 俗稱 **turbofish**：這段角括號指定型別參數，後面的普通小括號才提供值參數。"
+    },
+    {
+      "section_id": "5.1",
+      "path": "docs/chapters/05-01-lesson.md",
+      "line": 54,
+      "quote": "本節與接下來三節的階段程式放在 `data-steps/`，package 名稱是 `intro-data-steps`。它沒有 library；每個 example 都有自己的完整定義與 main。完整設定如下："
+    },
+    {
+      "section_id": "5.1",
+      "path": "docs/chapters/05-01-lesson.md",
+      "line": 79,
+      "quote": "接著把操作放到型別旁，像第 3.6 節的 Order::new。**`impl<T> Holder<T>`** 中，前面的 `<T>` 宣告這個 impl 要用的型別參數，後面的 `Holder<T>` 才使用它；impl 內的方法也能使用同一個 T。"
+    },
+    {
+      "section_id": "5.1",
+      "path": "docs/chapters/05-01-lesson.md",
+      "line": 112,
+      "quote": "**下面的 Pair 宣告一個型別參數 T，並讓兩個欄位都使用這個 T。** 因此同一筆 Pair 的 first 和 second 必須採用相同型別。"
+    },
+    {
+      "section_id": "5.1",
+      "path": "docs/chapters/05-01-lesson.md",
+      "line": 120,
+      "quote": "放入獨立練習專案執行 `cargo check`，會得到 **E0308**。兩個欄位共用的一個 T 無法同時是 i32 與 bool。"
+    },
+    {
+      "section_id": "5.1",
+      "path": "docs/chapters/05-01-lesson.md",
+      "line": 126,
+      "quote": "定義 `Pair<T, U>`：first 使用 T，second 使用 U。再寫 `pair<T, U>` 接收這兩份值，回傳同樣型別安排的 Pair。逗號分開的是兩個型別參數；每個參數仍各自對應自己的欄位。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

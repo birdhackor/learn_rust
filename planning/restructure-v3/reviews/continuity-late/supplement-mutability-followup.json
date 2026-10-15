@@ -1,0 +1,57 @@
+{
+  "type": "採納CL-SUP-MUT-LOG後只核一新增句及首次JS程式前位置",
+  "finding": "CL-SUP-MUT-LOG",
+  "status": "resolved",
+  "original_initial_preserved": "supplement-mutability.json",
+  "original_initial_sha256": "638db6b5f84e31b8da63652ded79725e5729029b96873aa2721262d7221a7458",
+  "doc": "docs/supplements/python-javascript-mutability.md",
+  "old_doc_sha256": "b937467f71faa2d06a10eea2b6d2774d4e72d82188ee9e6e646bd2e504e46c88",
+  "new_doc_sha256": "585548b715f824905c562c0a240ed5a2408fe8c707a52ca3aa4c22969e2d7b20",
+  "exact_addition": "`console.log(...)` 將括號內的值顯示到終端。",
+  "only_one_sentence_changed": true,
+  "all_four_direct_sourcehashes_unchanged": {
+    "examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py": "aa453c1322033fdb4c5b4d18af275455822d51b5b5f426178dbf01607172c622",
+    "examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js": "fe4dce7f84e63fcbafb5c06ea5ce00ef59a93675372fe6948185ce6e38269a8a",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/examples/mutability_comparison.rs": "47abde143fd22a9b3ca6ab2d0b6770b3aba481767b42b909274d35a61ac29c1e"
+  },
+  "all_bash_commands_unchanged": true,
+  "judgment": "可保留，已解決此可選建議。新句在首次完整JS程式之前，明確把console.log連到終端顯示，讀者可把程式最後一行與結果3對上。沒有新增先備或改變三種問題。",
+  "actual_site": "http://127.0.0.1:8110/supplements/python-javascript-mutability/",
+  "visual_metadata": "supplement-mutability-followup-visualmetadata.json",
+  "actually_viewed_with_view_image": {
+    "supplement-mutability-followup-1280.png": "5d1a3218c1dcaeaced6884d780b8a95cdcfa9d372fe086151e10a314651cad6f",
+    "supplement-mutability-followup-390.png": "181c2cbf8904612f295118bec7da3f976c4fbe6feafd7bcad6503fc1f27a74bc"
+  },
+  "actual_placement": [
+    {
+      "width": 1280,
+      "height": 800,
+      "httpStatus": 200,
+      "file": "supplement-mutability-followup-1280.png",
+      "placement": {
+        "text": "下面的 { count: 2 } 建立有 count 屬性的 object。alias 與 order 指到同一個 object；alias.count += 1 改的是這個 object 的屬性。 console.log(...) 將括號內的值顯示到終端。",
+        "nextBlock": "const order = { count: 2 };\nconst alias = order;\nalias.count += 1;\nconsole.log(order.count);\n",
+        "paragraphTop": 373.46875,
+        "firstJsBlockTop": 442.46875
+      },
+      "bodyOverflow": false
+    },
+    {
+      "width": 390,
+      "height": 844,
+      "httpStatus": 200,
+      "file": "supplement-mutability-followup-390.png",
+      "placement": {
+        "text": "下面的 { count: 2 } 建立有 count 屬性的 object。alias 與 order 指到同一個 object；alias.count += 1 改的是這個 object 的屬性。 console.log(...) 將括號內的值顯示到終端。",
+        "nextBlock": "const order = { count: 2 };\nconst alias = order;\nalias.count += 1;\nconsole.log(order.count);\n",
+        "paragraphTop": 368.03125,
+        "firstJsBlockTop": 491.03125
+      },
+      "bodyOverflow": false
+    }
+  ],
+  "visual_judgment": "1280×800與390×844實看新句均完整可讀、緊接首次JS程式上方；沒有浮動頁首遮住新句。",
+  "scope_limit": "只核新句、source/command hash及桌機/手機原位，不重做整頁；初判與原33節報告不改。",
+  "execution": "未跑Rust/Python/JS，未改repo。"
+}

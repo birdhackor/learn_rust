@@ -1,0 +1,61 @@
+{
+  "chapter": 12,
+  "first_unit": 220,
+  "last_unit": 223,
+  "entries": [
+    {
+      "source": "docs/chapters/12-01-lesson.md",
+      "file": "units/220.md",
+      "sha256": "6f77b4b5cd22db4be320de2709ed6d2776e7eafe2379e2a2a5c49815bf7d62cc",
+      "source_sha256": "5f7ab3792ff83635cc74b2147311ae448cd914c74f18e86c96aa54c0e3cf61f0",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/12-02-lesson.md",
+      "file": "units/221.md",
+      "sha256": "73b195f9cddb994b750b0e2ed71aea1d91dd492974900f4bfd117985da256631",
+      "source_sha256": "846d2893b7c8c692a00efa7792cf4256cde6732e35f118d104585ed72bdfba7a",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/engineering-v3/build-phases.svg",
+          "source_sha256": "4c4b51220e531dee0ef870e584f560c646620713cddb6604a760b7b5b11bf1a6",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch12-build-phases.png",
+          "png_sha256": "80ef22e5b057aa36590ae258a699c629c75b59fc2a9a2525a51b692f71ac0940",
+          "alt": "先在host編譯及執行build script，再編譯主要crate，最後執行保存建置文字的成品"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/12-03-lesson.md",
+      "file": "units/222.md",
+      "sha256": "9c142d1f475b4f583e07b9030d692acd780863dbf2bd4557abeb54dd4a73ee50",
+      "source_sha256": "35e30859aa3cfac9752493c2e76843cfcd36c65d674bfa37c79bd8dc0c7ea8b2",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/12-04-lesson.md",
+      "file": "units/223.md",
+      "sha256": "3610cb9185396d0bb237a47ff17f9ad4c48c953e84ea24d9bd25d00f961ff870",
+      "source_sha256": "55f1886f0d40f920a3dff640c0b2a3b3f0d0647951e739e805b717a750e68754",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/engineering-v3/short-read-comparison.svg",
+          "source_sha256": "8910b09b852c9ef5b56078e3b9287e4165303a3262232c80141dcbdebd06da45",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch12-short-read-comparison.png",
+          "png_sha256": "5b50b93d02a8c316961beee70c9959ac42f7a3aa07f591352317e0067a392560",
+          "alt": "左右來源交付同一串ABCDE，但每次讀取長度不同；各自填滿四格或抵達EOF後，才比較同一位置的內容"
+        },
+        {
+          "source": "docs/assets/engineering-v3/candidate-content-groups.svg",
+          "source_sha256": "0711cc1bca61f99a9103ebebd84f4977bea58dbd192f932d032f5e8086d4bc3c",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch12-candidate-content-groups.png",
+          "png_sha256": "487255cb17c8e8aeb8cb166369787799648c2ff60e47574efd5acd1e88f5b9ab",
+          "alt": "手工設定同摘要的AAA、BBB、BBB必須經各組代表比較，最後分成單一A組及兩份B組"
+        }
+      ]
+    }
+  ],
+  "route": "whole prerequisite pages;  actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed"
+}

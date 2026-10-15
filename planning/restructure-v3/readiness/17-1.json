@@ -1,0 +1,113 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "17.1"
+  ],
+  "author": "root",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round17-api-cross-references-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-criterion-benchmark.md",
+    "planning/restructure-v3/reviews/technical-early/round17-declarative-macro-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round17-dhat-allocation-profile.md",
+    "planning/restructure-v3/reviews/technical-early/round17-library-and-string-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-loom-miri.md",
+    "planning/restructure-v3/reviews/technical-early/round17-macro-hygiene-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round17-procedural-derive-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round17-property-testing.md",
+    "planning/restructure-v3/reviews/technical-early/round17-public-api-contracts.md",
+    "planning/restructure-v3/reviews/technical-early/round17-root-cross-references-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/17-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/17-01-lesson.md": "a8ee5f3868a82137595915740897ee2968cdf0955a7f8054921ac3718c307a62",
+    "examples/macro-basics/Cargo.toml": "2d866eb00390ab44cb32f2a4986ac2594328f36c535dc048a3de36aa550b2557",
+    "examples/macro-basics/src/lib.rs": "83d1a0a5826934ec1700f133e00161ff7a8faa25d81b8be5465f45f4fc64a3a3",
+    "examples/macro-basics/examples/manual_readings.rs": "d718b3ad662c84d28a8d196e29a7bc8dc051245fc123c303ebc27f2a5531add8",
+    "examples/macro-basics/examples/reading_single.rs": "2f6a3d35a63bbbd6199563f5ad63f21e5f6c6b66f94a3c58c431378c9f1f5d4e",
+    "examples/macro-basics/examples/reading_many.rs": "db8814073a41d01ac69511f86a53e9de6aa1d52d51c8bf8981ad42ced2bcba9e",
+    "examples/macro-basics/fixtures/compile-fail/reading_bad_name.rs": "4250d30b91007402553c9eaa2db65e886275f1ffba6f0c2fcebb3d793e215df9",
+    "examples/macro-basics/fixtures/compile-fail/reading_bad_name.expected": "02a9daf180dcd83cc967c1f1146644f81718c9e13e61e48cbe41574fa4987cbd",
+    "examples/macro-basics/fixtures/compile-fail/reading_empty.rs": "c514efaf1258d1223e791eeea8a9b67b9b7d0ea4c506636238123fba55ad208a",
+    "examples/macro-basics/fixtures/compile-fail/reading_empty.expected": "19876660b8561b0ec56b0f6781f94f573c994a653c9fbf84f60f5bd9d0a95062",
+    "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.rs": "1823c8a07225843ae16edf92e6fda8f9b0a5f4b974f6389339ea754629316bad",
+    "examples/macro-basics/fixtures/compile-fail/reading_wrong_unit.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/macro-basics/examples/reading_empty_solution.rs": "c97c2c573d79332799594c8e85da46f41f8626430a5548dc83bce1ab4ec8b25f",
+    "docs/assets/ch14/macro-expansion.svg": "c67dbdbf122f64ace7860e3ad0eecf059b68d589b72bdcd15b3a0cba19739f2b"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 3,
+      "quote": "10.9 已把程式分成可重用的型別與函式，11.10 又用 Meters、Seconds 保護單位。接下來有更多單位，每個型別都包一個 i32，也都需要「借讀數字，不接手原值」的介面。我們想保留各自的型別身分，同時少維護幾份相同的 struct／impl 樣板。"
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 5,
+      "quote": "本節先把普通 Rust 答案寫清楚，再用 **declarative macro（宣告式 macro）** 依輸入的語法產生相同宣告。`println!`、`vec!` 已讓我們使用過 macro；這次開始定義自己的規則。使用 `examples/macro-basics`，package 名稱為 `macro-basics`，library 路徑沿 2.6 寫成 `macro_basics`。以下指令從 repo 根目錄執行。"
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 9,
+      "quote": "Meters(80) 是路程，Seconds(30) 是等待。它們仍是兩個不同 newtype；共用的 **Reading** 只承諾借讀一個 i32，沒有承諾能把不同單位相加或互傳。`read_value` 沿 6.1 的泛型 bound，只接收提供這項能力的型別。"
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 52,
+      "quote": "普通函式已能處理這份工作，泛型也能重用讀取邏輯。重複的是上面的**型別與實作宣告**：若下一個單位也有同樣的 i32 欄位，每次都要再次寫出這份樣板。我們要改變的是宣告的來源，保留原本的型別邊界與借讀行為。"
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 56,
+      "quote": "**macro expansion（展開）** 是編譯時依 macro 規則產生 Rust 語法的步驟；產生的 Rust 仍要通過型別與 ownership 檢查。它不是程式啟動後用字串決定新型別。"
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 69,
+      "quote": "identifier、標點與 literal 都是編譯器辨認的 **token（語法記號）**。macro 匹配的是這些語法，不是先執行輸入、再像普通 match 一樣比較結果值。"
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 107,
+      "quote": "普通函式可以接收 slice 或 Vec，處理數量不同的資料；這不是非用 macro 不可的理由。本例要重用的是**輸入名字對應的 Rust 宣告**。macro 能把同一份語法樣板用在不同名字上，代價則是讀者還要追蹤輸入與展開，定義通常比普通函式難讀。"
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 111,
+      "quote": "再增加已熟悉的 Millimeters，同樣包一個 i32、提供 Reading。此時想在一次呼叫中列出三個名字，仍為每個名字產生獨立型別。"
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 113,
+      "quote": "**repetition（重複）** 用 `$(...)` 圈出一組待重複的語法，再以操作符指定次數：`+` 是至少一次，`*` 是零次或更多，`?` 是零次或一次。它們在 macro 規則中控制語法匹配與展開，不是 Rust 的數值加法或 8.6 的錯誤傳遞。"
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 157,
+      "quote": "如果把80當成型別名字，`ident` 不接受這個數字 literal。下面的失敗範例只保留產生 struct 的樣板，隔離輸入匹配問題："
+    },
+    {
+      "section_id": "17.1",
+      "path": "docs/chapters/17-01-lesson.md",
+      "line": 193,
+      "quote": "修改本節 repetition macro，允許零個名字：把輸入與樣板兩處的 `+` 改成已教的 `*`。保留可選尾逗號。先執行空呼叫，再產生原本的 Meters、Seconds，確認共用讀取仍得到80、30。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

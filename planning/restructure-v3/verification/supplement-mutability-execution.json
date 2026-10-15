@@ -1,0 +1,31 @@
+{
+  "recorded_utc": "2026-10-15T10:47:57.228801+00:00",
+  "executor": "root",
+  "source_sha256": {
+    "docs/supplements/python-javascript-mutability.md": "b937467f71faa2d06a10eea2b6d2774d4e72d82188ee9e6e646bd2e504e46c88",
+    "examples/intro-workspace/ownership/examples/mutability_comparison.rs": "47abde143fd22a9b3ca6ab2d0b6770b3aba481767b42b909274d35a61ac29c1e",
+    "examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py": "aa453c1322033fdb4c5b4d18af275455822d51b5b5f426178dbf01607172c622",
+    "examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js": "fe4dce7f84e63fcbafb5c06ea5ce00ef59a93675372fe6948185ce6e38269a8a"
+  },
+  "cases": [
+    {
+      "command": "python3 examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py",
+      "exit": 0,
+      "observed_stdout": "[1, 2, 3]\n[1, 2, 3]\n[9]\nRust\nRust 教學\n",
+      "evidence": "actual shell tool output; original command did not redirect a separate raw log"
+    },
+    {
+      "command": "node examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js",
+      "exit": 0,
+      "observed_stdout": "3\n",
+      "evidence": "actual shell tool output; original command did not redirect a separate raw log"
+    },
+    {
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-ownership --example mutability_comparison --locked",
+      "exit": 0,
+      "observed_stdout": "同一份文字=Rust 教學\n借讀視圖=Rust 教學\n借讀完成後=Rust 教學，完成\n",
+      "evidence": "supplement-mutability-rust.stdout/.stderr"
+    }
+  ],
+  "limit": "Existing programs executed and stdout compared to this page; no new mirror tests, no human usability claim."
+}

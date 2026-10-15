@@ -1,0 +1,14 @@
+{
+  "recorded_utc": "2026-10-15T10:49:18.072695+00:00",
+  "compilation_input_count": 2031,
+  "changed_inputs": [
+    "scripts/check.sh"
+  ],
+  "expected_script_only_change": [
+    "scripts/check.sh"
+  ],
+  "all_other_2030_inputs_identical": true,
+  "executed_rust_C_fixture_tail_still_identical": true,
+  "added_script_gate": "strict site build then final check-tutorial-structure.py",
+  "limit": "No new Rust execution implied by this hash/tail verification; actual execution logs separately preserved."
+}

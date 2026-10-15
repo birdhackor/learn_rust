@@ -1,0 +1,364 @@
+{
+  "review_id": "round10-complete-note-search",
+  "scope": [
+    "10.9"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 實際已讀1–9、10.1–10.8；不以另讀11/12章填補本波先備。",
+  "independence": "本波首次全文/source實讀與封存前未讀作者validation/ledger、peer、reader或historical findings；僅實際凍結稿與完整sources。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "全文、18snippet anchors/fullsource、完整package所有10份Rust來源（7src+2integration+1answer）、manifest、固定fixture與動態材料逐檔靜態核對。",
+    "逐command核對normal library closure／test filter範圍、first-use API、ASCII政策、line ownership、I/O分類、真正CLI stdout/stderr/status及flush責任。",
+    "search-boundary.svg只讀source/XML；無browser或reader實驗。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "child_process": false,
+    "fixtures_created": false,
+    "note": "8個Cargo命令、13項unique tests的結果與CLI狀態均靜態核對；無本波執行。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:04:13.285112+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "docs/assets/ch07/search-boundary.svg": "4acde7637d99c851a64afbe5ac53309fd71a6da4d8a18939e7d78371013517e7",
+    "docs/chapters/10-09-lesson.md": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+    "examples/intro-workspace/Cargo.lock": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/note-search/Cargo.toml": "9a991be13051f4f07151bf462cbb54c723298fd7582cfeb0e58b8b206a33541b",
+    "examples/intro-workspace/note-search/examples/count_solution.rs": "56fed4073481b3b73f5f466c801adaec1e3cead0ae39fafab7e070116d346917",
+    "examples/intro-workspace/note-search/fixtures/note.txt": "1cffe74a69086abf4c34ebc7293bc6cd0992b97bbd39cc960816ece402f432a2",
+    "examples/intro-workspace/note-search/src/config.rs": "9df86f58882ed8c94bb241d7a0060118592037bcb869974ea0e539d3c1c5f8b7",
+    "examples/intro-workspace/note-search/src/error.rs": "e166d31ffa4964bee7661847cea761d1566f3d30faabaf7ec295fdb331545a85",
+    "examples/intro-workspace/note-search/src/lib.rs": "835f724c9aa3597b67cbc0cad200eddfceefbe6b64ddcb7eed1c81c05c8a604c",
+    "examples/intro-workspace/note-search/src/main.rs": "65178d509012583bbbefd210f6707cc9fc339dca5b1959a9a1ba1268c07e2025",
+    "examples/intro-workspace/note-search/src/model.rs": "dba14dbf9674d7ac7420c369b5312cecbaeb104bc90878219290b3d38fd8f909",
+    "examples/intro-workspace/note-search/src/render.rs": "b1a05b92798d5b96196f4c291719a3df3ede675c844577a8256769d51e5f1ae6",
+    "examples/intro-workspace/note-search/src/search.rs": "2513d8c37803964cbff17b134b37efd70d29d7b295f01d77f3c12677bdd330cd",
+    "examples/intro-workspace/note-search/tests/cli.rs": "5f891844a0f5f2d16d1649a26d0bd52a38e37a99e66ae4719648ca14ae600f8c",
+    "examples/intro-workspace/note-search/tests/writer.rs": "9df9a8b674ce66c1a8ed86cdbe188abd6b1996032ccd90c9c991c7172290342d",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "clap",
+      "version": "4.6.7",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+      "dependencies": [
+        "clap_builder",
+        "clap_derive"
+      ]
+    },
+    {
+      "name": "intro-note-search",
+      "version": "0.1.0",
+      "dependencies": [
+        "clap",
+        "serde",
+        "serde_json",
+        "tempfile"
+      ]
+    },
+    {
+      "name": "serde",
+      "version": "1.0.229",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba",
+      "dependencies": [
+        "serde_core",
+        "serde_derive"
+      ]
+    },
+    {
+      "name": "serde_json",
+      "version": "1.0.154",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+      "dependencies": [
+        "itoa",
+        "memchr",
+        "serde",
+        "serde_core",
+        "zmij"
+      ]
+    },
+    {
+      "name": "tempfile",
+      "version": "3.27.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd",
+      "dependencies": [
+        "fastrand",
+        "getrandom",
+        "once_cell",
+        "rustix",
+        "windows-sys"
+      ]
+    }
+  ],
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 14,
+      "source": "examples/intro-workspace/note-search/fixtures/note.txt",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 38,
+      "source": "examples/intro-workspace/note-search/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 44,
+      "source": "examples/intro-workspace/note-search/src/config.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 52,
+      "source": "examples/intro-workspace/note-search/src/model.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 60,
+      "source": "examples/intro-workspace/note-search/src/error.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 98,
+      "source": "examples/intro-workspace/note-search/src/search.rs",
+      "tag": "search",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 106,
+      "source": "examples/intro-workspace/note-search/src/search.rs",
+      "tag": "search-tests",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 118,
+      "source": "examples/intro-workspace/note-search/src/render.rs",
+      "tag": "render",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 128,
+      "source": "examples/intro-workspace/note-search/src/lib.rs",
+      "tag": "run",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 142,
+      "source": "examples/intro-workspace/note-search/src/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 158,
+      "source": "examples/intro-workspace/note-search/src/lib.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 164,
+      "source": "examples/intro-workspace/note-search/src/search.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 170,
+      "source": "examples/intro-workspace/note-search/src/render.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 198,
+      "source": "examples/intro-workspace/note-search/tests/writer.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 206,
+      "source": "examples/intro-workspace/note-search/tests/cli.rs",
+      "tag": "cli-helper",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 212,
+      "source": "examples/intro-workspace/note-search/tests/cli.rs",
+      "tag": "json-cli-test",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 220,
+      "source": "examples/intro-workspace/note-search/tests/cli.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/10-09-lesson.md",
+      "line": 240,
+      "source": "examples/intro-workspace/note-search/examples/count_solution.rs",
+      "tag": null,
+      "source_anchor_found": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-note-search",
+    "no_build_script": true,
+    "dependencies": [
+      "clap4.6.7+derive/default",
+      "serde1.0.229+derive/default",
+      "serde_json1.0.154"
+    ],
+    "dev_dependencies": [
+      "tempfile3.27.0"
+    ],
+    "normal_library": [
+      "src/lib.rs",
+      "src/config.rs",
+      "src/error.rs",
+      "src/model.rs",
+      "src/render.rs",
+      "src/search.rs"
+    ],
+    "targets": {
+      "--lib search::tests": [
+        "全normal library與其cfg(test) modules均先編譯；只跑search5tests，render2filtered"
+      ],
+      "bin run": [
+        "src/main.rs+全normal library；不載tests/*.rs或count_solution"
+      ],
+      "--lib": [
+        "全normal library，search5+render2=7tests"
+      ],
+      "--test writer": [
+        "tests/writer.rs+全normal library+Cargo自動建置的本package binary"
+      ],
+      "--test cli": [
+        "tests/cli.rs+全normal library+本package binary（CARGO_BIN_EXE_intro-note-search）"
+      ],
+      "--example count_solution": [
+        "examples/count_solution.rs+全normal library（正常自動建置）"
+      ]
+    },
+    "command_order": "首個--lib命令在所有library module完整source及API說明後；writer/cli選定命令在完整integration source後。例子答案不被前面明選的--lib/--test或binaryrun提前載入。",
+    "cwd": "repo根cd到examples/intro-workspace/note-search；固定fixtures/note.txt相對此處。childtests各自TempDir current_dir，arguments不含argv0、逐筆原生arg。"
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/10-09-lesson.md:17",
+      "judgment": "連續片段非整字、一行一筆、原順序/空行行號、ASCII A-Z/a-z限定及Ä≠ä、LF/CRLF輸入與輸出統一LF皆在實作前明定。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:49",
+      "judgment": "usize Serde整數/平台範圍、Vec<Match>元素trait條件、Report全owned與Debug/PartialEq先教；config/deny_unknown_fields沿既有10.6/10.7能力。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:55",
+      "judgment": "AppError四variant及u8status先教；io::Error讀/寫兩來源在具體層封裝，不用單一From混分類。只有serde_json錯誤From到Encode。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:85",
+      "judgment": "contains(&str)、to_ascii_lowercase owned String、enumerate Item(usize,原Item)在首use前；兩邊同轉比較形式但保存原line，大小寫/owned成本說明準確。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:93",
+      "judgment": "validate_query在search與read_report入口先跑，空query先拒2、不讀missing；同AppError的?依已教reflexiveFrom，無需11章Error trait。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:103",
+      "judgment": "Rust literal \\\"與\\n在第一個有引號測試前說明，和Serde另一次JSONescape分清。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:115",
+      "judgment": "String::push(char)新API、LF char vsstr view在render前；render先得完整String，文字空結果空String，JSON仍完整Report+LF。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:125",
+      "judgment": "write_report只write_all到caller writer不自行flush；main仍持Stdout並成功後flush，失敗轉Output/status1。部分寫入不rollback界線在:31已明說。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:135",
+      "judgment": "Parserhelp/version stdout0、用法stderr2、實際error stderr/status與failstderr fallback1沿已教10.6，main沒有混入進度文字破壞JSON。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:195",
+      "judgment": "RefusingWriter非空report確保write被呼叫，PermissionDenied明確列Output非Read；受控失敗不依真實權限。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:201",
+      "judgment": "childarguments slice不含programname，和try_parse_from完整序列區別先教；真正解析整份stdout模型逐欄檢查，固定TempDir材料完整。"
+    },
+    {
+      "source": "docs/chapters/10-09-lesson.md:235",
+      "judgment": "fold只數Match行數，Rust Rust同一行一筆，答案2；不新增未教Iterator API或Clippy allow。"
+    }
+  ],
+  "fixture_materials": {
+    "fixed": {
+      "path": "examples/intro-workspace/note-search/fixtures/note.txt",
+      "text": "Rust 很清楚\\nPython\\nrust 也有資料\\n中有 Rust\\n",
+      "first_and_fourth": true
+    },
+    "dynamic": "所有childtests自建TempDir；完整source含固定UTF8 literals、引號、空結果Python、[255]、缺檔與空query；沒有repo外材料。",
+    "created_by_reviewer": false
+  },
+  "static_results": {
+    "ordinary": "1:Rust 很清楚\\n4:中有 Rust\\n",
+    "ascii_ignore": "1:Rust 很清楚\\n3:rust 也有資料\\n4:中有 Rust\\n",
+    "unicode_boundary": "queryÄ只找Ä，不找ä",
+    "blank_crlf": "Python/empty/Rust為原line3，行尾不保留",
+    "json": "只有合法Report JSON+LF，query/ignore_case/原line_number/text完整；quoted title保留原雙引號",
+    "no_matches": "正常0，文字stdout空，JSON matches[]，stderr空",
+    "empty_query_missing_file": "EmptyQuery/status2，未讀檔，stdout空",
+    "read_or_invalid_utf8": "Read/status1，stdout空，stderr讀取前綴",
+    "output_failure": "AppError::Output/PermissionDenied，writer.called true；mainflush失敗也status1",
+    "parser": "缺positional/unknown2；help/version0且stdout非空/stderr空",
+    "answer": "matches fold count2，Rust Rust不重複計行"
+  },
+  "tests": {
+    "search": 5,
+    "render": 2,
+    "writer": 1,
+    "cli": 5,
+    "total_unique": 13
+  },
+  "limits": [
+    "整頁技術重讀，不是盲首讀或真實使用者實驗。",
+    "沒有新增Cargo/Rust或child啟動，不把source中的真正CLItests冒稱本reviewer已跑。",
+    "SVG只source/XML，不稱rendered視覺驗證；未讀後章source作先備。"
+  ],
+  "sealed_at_utc": "2026-10-15T09:05:41.379Z"
+}

@@ -1,0 +1,9 @@
+{
+  "finding": "CL-13-ARRAY-SLICE",
+  "type": "root修後窄複查，非初判",
+  "new_sha256": "90a77a8021bbf6402e3e0dbdde2f1d71cd9f971e2d95f1205ee526f16103debe",
+  "old_sha256": "dbaa98bfc32bdd2ea759c55e0d135d57ab2874069192bdf90438e3ed98764764",
+  "judgment": "resolved",
+  "evidence": "先let local_values=[1,2,3]，再sum(&local_values[..])；3.7已實教整段range slice，沒有再用尚待15.3教的array reference→slice coercion。",
+  "scope": "只實讀改後thread_join/main.rs完整來源與root diff，計算仍6+200=206；未重跑，root另持執行/Clippy/fmt證據。"
+}

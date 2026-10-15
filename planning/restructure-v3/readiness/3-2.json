@@ -1,0 +1,91 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "3.2"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round03-copy-before-diagram-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round03-ownership.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round03-ch03.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/03-02-lesson.md": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+    "examples/intro-workspace/ownership/examples/moves.rs": "7356f9fe53c5744cfbb6497b1132cad48f1298c98b22aadd747aeb51976ae184",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/fixtures/compile-fail/use_after_move.rs": "dbc4227dfe470236aa29e846360ad749be19060390d708343a39ebea03d931be",
+    "examples/intro-workspace/ownership/examples/ownership_answer.rs": "1e1be4d6be32a084b12fa01c151e097768a8ee6b114d094bbaad987bdc9bd367",
+    "docs/assets/ch02/move-copy.svg": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 3,
+      "quote": "上一節的 `order` 持有一筆訂單。現在要把整筆資料交給另一個名稱，再交給計算函式。我們需要知道：交出去後，原名稱是否仍能使用？先用只有兩個數字欄位的 Order 觀察，再與 `i32` 對照。"
+    },
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 7,
+      "quote": "第 1.7 節分開了資料的位置與管理責任。**ownership** 是 Rust 管理值的規則：值由誰持有、可以從哪裡交出去，以及最終由誰負責結束。在這裡的局部變數安排中，建立 `let first = Order { ... };` 後，`first` 就持有這個值，稱為它的 **owner**。"
+    },
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 11,
+      "quote": "**move** 是把值的 ownership 交出去。我們的 Order 不會自動複製整筆值，因此 `let second = first;` 把它交給 `second`，之後不能再經由 `first` 使用這筆訂單。這是值的使用規則，不表示必須在機器上搬動幾個 bytes，也不是只有 heap 資料才會 move。"
+    },
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 13,
+      "quote": "`i32` 已具備 **`Copy`** 能力：把它指派給另一個變數時，會複製出另一個獨立數字，原來的變數仍可用。"
+    },
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 21,
+      "quote": "把參數寫成 `order: Order`，表示函式接受完整值。這個 `subtotal` 接手訂單，算出一個小計數字："
+    },
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 39,
+      "quote": "把同樣的指定換成 `i32`，結果不同："
+    },
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 47,
+      "quote": "本章已用的整數、浮點數與 bool 都有這項能力。但**自訂 struct 不會因為欄位全是數字，就自動具備 Copy**。目前的完整 Order 會 move，單獨讀出它的 `i32` 欄位則可 Copy。第 6 章再學如何讓自訂型別提供這類能力；此刻先依這兩種實際型別分辨行為。"
+    },
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 71,
+      "quote": "下面是完整的預期編譯失敗例。`first` 已交給 second，最後卻又想讀 first.count："
+    },
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 77,
+      "quote": "要重現，可放入第 1.2 節獨立練習專案的 `src/main.rs`，再執行 `cargo check`。錯誤碼 **E0382** 的重點是 `use of moved value`；訊息會連起交出與後續使用的位置。即使這筆 Order 沒有 heap 資料，限制仍成立。先依目前需要選擇交接方式，不必把診斷中尚未學過的其他建議都加進程式。"
+    },
+    {
+      "section_id": "3.2",
+      "path": "docs/chapters/03-02-lesson.md",
+      "line": 81,
+      "quote": "寫 `add_one` 接手一筆完整 Order，將數量加一，再交回完整 Order。以單價 80、數量 2，確認回傳的數量為 3、小計為 240。呼叫者將結果保存成 updated，不再使用已交出的原變數。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

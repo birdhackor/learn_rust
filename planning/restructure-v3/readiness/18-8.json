@@ -1,0 +1,137 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.8"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18b-complete-tool.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-report-cli.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-root-final-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-sequential-bounded-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-single-url-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop-reviewer-erratum.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-08-lesson.md": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34",
+    "examples/ch15-projects/b2-starter/src/lib.rs": "f75e782a71e75c7fd2948b817811c8b671b893516b23373adbdf50cf661833b3",
+    "examples/ch15-projects/b2-starter/Cargo.toml": "ccdaf00ed1fa932963872de7daeafef6f09f3ade047fad7c1f9b12daec8642a1",
+    "examples/ch15-projects/b2-starter/src/single.rs": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+    "examples/ch11-async/local-service/Cargo.toml": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee",
+    "examples/ch11-async/local-service/src/lib.rs": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119",
+    "examples/ch11-async/http-single/Cargo.toml": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f",
+    "examples/ch11-async/http-single/src/lib.rs": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a",
+    "examples/ch11-async/http-single/src/config.rs": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7",
+    "examples/ch11-async/http-single/src/error.rs": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+    "examples/ch11-async/http-single/src/reply.rs": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0",
+    "examples/ch15-projects/b2-starter/checks/batch-tests.rs": "24497b1b60d0f662e7efee8397a788afd09837394fdcd0292c2f65760bdb7cb4",
+    "examples/ch15-projects/b2-complete/Cargo.toml": "edf4a79a494b242a77d31d604eea5157a3400ffaac48f916c43ff9f1a5edc092",
+    "examples/ch15-projects/b2-complete/src/single.rs": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+    "examples/ch15-projects/b2-complete/src/lib.rs": "e6542acd2c36f4f583a9cdd24a70e22c839a05ea5abe983a8bd6befc8f23951d",
+    "examples/ch15-projects/b2-complete/examples/b2_batch_demo.rs": "4017a8a11ac2e20c4baaf868a72924825b35f6b302319997f012f186bad97ad1",
+    "docs/assets/ch15/line-index-to-results.svg": "80022f8f09795349f1778cf5634c36ca8b129383fa6232c062989e1a429e891c"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 3,
+      "quote": "上一節已有一份網址變成一份 owned `Check` 的能力。現在要處理多行文字：有空白行、重複網址，也有無法解析的行。要先回答「每份結果屬於哪一行」，再把單筆能力接成批次。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 9,
+      "quote": "假設本次本機服務的 port 是41000，材料如下。這是手工示意；真正測試仍由 `Fixture` 取得動態 port。第一列的「空白行」是說明標記，實際該行沒有文字："
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 18,
+      "quote": "`input_index` 選原始行的 **0-based 索引**：一般說的第一行是index0，第二行是index1。它不等於略過空白後在新清單中的位置。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 31,
+      "quote": "沿9.6，`text.lines()` 借用文字、逐行交回 `&str`。LF與CRLF分隔符不在行內容中；尾端換行不多產生一行，單獨CR沒有跟LF時仍是內容。這裡保存的「原行」指這份內容，不含已由lines取走的分隔符。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 33,
+      "quote": "回用第10.9、14.6節的 **`Iterator::enumerate()`**：它取得原iterator，交回新的iterator，每筆Item是 `(usize索引, 原Item)`，索引由0開始。用在lines時，就是 `(input_index, line)`；原行即使稍後略過，也已經占過自己的索引。先取得這個對應，再判斷行是否空白。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 35,
+      "quote": "新增 **`str::trim()`**：它 shared 借用文字，交回去除兩端空白的 `&str` 視圖，不修改原文字。空白依Unicode的 `White_Space` 字元集合判定，包括一般空格與全形空白。若整行只有這些字元，trim後的視圖就為空；用9.6的 `str::is_empty()` 判斷即可。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 37,
+      "quote": "本題**只用trim視圖判空**。保留下來與送進B1的仍是原 `line.to_owned()`；例如 `\" first \"` 的兩端空格仍在original中。讀行不先判URL是否有效，也沒有新增註解行或拆字詞規則。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 41,
+      "quote": "本步新增 `Input`：保存 `input_index: usize` 與 owned `original: String`。因此讀行時借用的整份文字結束後，清單仍可使用；不需要讓批次一直借用來源。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 51,
+      "quote": "選 **`Vec::is_empty()`** 作零項檢查：它 shared 借用Vec，沒有元素時回true。`prepare_inputs(&str)` 交回 `Result<Vec<Input>, InputError>`，保留後零項就回Empty。`run_sequential` 取得 `Vec<Input>` ownership，也拒絕caller直接交來的零項清單；成功Output是 `Vec<Entry>`，依輸入Vec順序保存每份結果。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 53,
+      "quote": "runner借用同一份Client，取得每筆期限Duration。Duration 是 14.5 已教的時間跨度；這個標準型別具備 Copy，可以把相同跨度交給每次B1 `check`；**每筆開始時各建立自己的期限**，不是整批只共用一個十秒倒數。client建立失敗仍在開始批次前處理。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 61,
+      "quote": "完整起始版在 `b2-starter`。把 `Cargo.toml`、整個 `src` 與 `checks/batch-tests.rs` 保存到自己的 `url-b2-work`。以下同頁列出全部起始檔；`single.rs` 已是B1答案，兩個新函式目前都只回空Ok。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 63,
+      "quote": "manifest的直接依賴與features沿B1固定版本契約。本步checks不暫停clock，所以沒有另開test-util。dev-dependency重用14.9 Fixture；複製到repo外後，**先將path換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑**，再執行Cargo，和B1相同。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 85,
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 168,
+      "quote": "第一步只改 `prepare_inputs`。建立mutable Vec，遍歷 `text.lines().enumerate()`，每份先有索引與原行；trim後不空才push owned Input。走完再以Vec的is_empty判Empty或Ok。不要在push之前解析URL，否則invalid行會被錯誤抹掉。"
+    },
+    {
+      "section_id": "18.8",
+      "path": "docs/chapters/18-08-lesson.md",
+      "line": 230,
+      "quote": "`b2_batch_demo` 以已教runtime／Fixture建立真本機材料，原index0空行、index1／3相同 `/ok`、index2是 `/notes`、index4是 `/missing`。先shutdown確認三份工作請求，再印四份結果。格式化參數沿前文借讀，直接填 `entry.check.outcome` 不搬走它，以既有Debug檢視分類；port與opaque錯誤的Debug字樣不作固定輸出契約。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

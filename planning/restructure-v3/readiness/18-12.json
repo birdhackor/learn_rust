@@ -1,0 +1,100 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.12"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18b-complete-tool.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-report-cli.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-root-final-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-sequential-bounded-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-single-url-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop-reviewer-erratum.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-12-lesson.md": "0dd7448bc31cf09d1d64409c31a4b102fb6ed50a6fc041118c0fab04132b0ba1",
+    "examples/ch15-projects/url-checker/Cargo.toml": "989f84de7fa556027fcc254f4fb7887f3ddf16fa1ac714651633ee81019e7727",
+    "examples/ch15-projects/url-checker/Cargo.lock": "18c26cc7576f96c28a82660d52f77e50620369f19617a9459d3561d9f8b6d4f0",
+    "examples/ch15-projects/url-checker/src/lib.rs": "f623dc1f88ff3c220c13eb7136b57ffd53f6a55d973cad171d21976e0d6238b1",
+    "examples/ch15-projects/url-checker/src/config.rs": "0c23c7c6f983f73b8856e5ef248449c92936bc060f79062545a1a3a0ec1b2739",
+    "examples/ch15-projects/url-checker/src/error.rs": "fb67e8e826bff7ab79df64c5227b39a6dc62253cd0858cea07cb58ab34127b3f",
+    "examples/ch15-projects/url-checker/src/input.rs": "2a7e50f13cc83851c23b804cdb98479867be958a41464ce765c78368438bbe1d",
+    "examples/ch15-projects/url-checker/src/single.rs": "fea3a0b4e025e14b322ca61cc14da6590ee2360824268cc9b223a9e5c28c3ee4",
+    "examples/ch15-projects/url-checker/src/batch.rs": "e90bc1543dc1f2ab946a59010e0f1bab59e32db869412e7927a809bd5e16642a",
+    "examples/ch15-projects/url-checker/src/report.rs": "2cea7007b9bb1838022649908dcbe6fc445d2bd098af0795c28a3dc213783498",
+    "examples/ch15-projects/url-checker/src/app.rs": "7e07b31b22fed5bd4b1b2edac7093d2adaea0134ef03b859732a01cf793f1b77",
+    "examples/ch15-projects/url-checker/src/main.rs": "0a6b62229a8e2e6c9297c73b3ad235f91271bc7dc1c7a04420e4da137a456af1",
+    "examples/ch15-projects/url-checker/src/test_fixture.rs": "2c5d78c5000bb07e597d89f87e03183637c94fc2a3b35cddcc72f46d31d949a4",
+    "examples/ch15-projects/url-checker/tests/config.rs": "c99333408f134a82a1d15b7f4a2fc90b0014534c4da1f1bfa050df821064edf9",
+    "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt": "e89bcb35b58442ca0ff82705c99cc9c344dd8175f4bf78cdac888e54a58f94ee",
+    "examples/ch15-projects/url-checker/README.md": "53e266824dbdc03aaf9af1eb970d32ad78167fe6dacc406a958710e2e974511a"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.12",
+      "path": "docs/chapters/18-12-lesson.md",
+      "line": 3,
+      "quote": "上一節完成報告映射、資料狀態與write／flush。這一節提供正式 `url-checker` 的整份可用答案：一份UTF-8網址清單，受jobs限制的HTTP工作，最後依原行排列文字或JSON。可以直接保存完整目錄建置，也可以與自己的最後工作副本逐檔比較。"
+    },
+    {
+      "section_id": "18.12",
+      "path": "docs/chapters/18-12-lesson.md",
+      "line": 9,
+      "quote": "normal library仍是18.11的app／batch／config／error／input／report／single，root以pub use提供公開入口，main連接args_os、stdout／stderr與ExitCode。正式root不再保留起點的兩項dead_code allow。"
+    },
+    {
+      "section_id": "18.12",
+      "path": "docs/chapters/18-12-lesson.md",
+      "line": 11,
+      "quote": "`src/batch.rs`另外含七項本地HTTP／停止測試；`src/report.rs`有五項，`src/app.rs`有四項，共16項lib tests。`src/lib.rs`以 **`#[cfg(test)] mod test_fixture;`** 載入本地服務，因此只有lib test harness載入它；normal binary、integration test借用的normal library不會編譯這份fixture module。名字filter只決定執行哪些測試，不能把同一library其餘module藏掉。"
+    },
+    {
+      "section_id": "18.12",
+      "path": "docs/chapters/18-12-lesson.md",
+      "line": 21,
+      "quote": "以下是全部檔案，包含library root、main、helpers、同檔tests、本機fixture、integration tests、manifest、lock、README與固定輸入。Rust片段直接引用實際可編譯來源；沒有省略imports或只顯示solution region。Cargo.lock由Cargo維護，隨整個目錄保存，不要求手抄解析項目。"
+    },
+    {
+      "section_id": "18.12",
+      "path": "docs/chapters/18-12-lesson.md",
+      "line": 103,
+      "quote": "    `examples/ch15-projects/url-checker/fixtures/invalid-urls.txt` 的**精確全文**，以 JSON 字串表示："
+    },
+    {
+      "section_id": "18.12",
+      "path": "docs/chapters/18-12-lesson.md",
+      "line": 109,
+      "quote": "    這裡的 `\\n` 各代表一個 LF 換行；`\\n \\n` 中間是一個一般空白。用編輯器建立 TXT 時，先留第0行空白，再依序填第1行 ftp、第2行一個空白、第3行 `/notes`、第4行同一份 ftp，最後保留換行。上方字串的外層雙引號不屬於 TXT。下方是**逐行預覽**；建立檔案請按精確字串保存檔首換行與單空白行，避免直接複製預覽時漏掉空白："
+    },
+    {
+      "section_id": "18.12",
+      "path": "docs/chapters/18-12-lesson.md",
+      "line": 123,
+      "quote": "在教材repo根目錄先進入`examples/ch15-projects/url-checker`，或把**整個目錄**保存到repo外。以下命令的相對檔名以該目錄為起點，`--manifest-path`不會替程式換工作目錄。"
+    },
+    {
+      "section_id": "18.12",
+      "path": "docs/chapters/18-12-lesson.md",
+      "line": 154,
+      "quote": "若要安裝成平常可呼叫的命令，新增Cargo操作 **`cargo install --path . --locked`**：`--path .`選目前本機package，建置其binary並安裝到Cargo的binary目錄，不上傳registry；--locked仍依本次lock。toolchain選擇沿前面寫在cargo後："
+    },
+    {
+      "section_id": "18.12",
+      "path": "docs/chapters/18-12-lesson.md",
+      "line": 166,
+      "quote": "本工具已完成單筆分類、原行身分、有限提交、每筆期限、停止後回收、完整報告與CLI。jobs數的是已提交尚未收回的task，完成未收也在其中；它沒有限制所有輸入／結果／格式化String的總記憶體。輸入仍須是完整可讀的UTF-8小清單。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

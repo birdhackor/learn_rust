@@ -1,0 +1,161 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "14.3"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round14-async-foundations-cancellation-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round14-http-local-service-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round14-root-contract-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14-followup.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/14-03-lesson.md": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42",
+    "examples/ch11-async/stages/tasks-basic/Cargo.toml": "d1fbe4871742612192b34bd5dc2e2c8c496507c39f7c668c170926c5b9930aa0",
+    "examples/ch11-async/stages/tasks-basic/src/lib.rs": "5f5a7b8dff5034364e62ce6a46bc63734430954952cee209090bb3ba45557c84",
+    "examples/ch11-async/stages/tasks-basic/src/main.rs": "78f380ac0f92ec30cfcaf35a998f45feb0a26a6bbe0f9ef116edb80f7a1b26fa",
+    "examples/ch11-async/stages/tasks-basic/examples/join_handle.rs": "ed350922c99be5a11c147a03669e6c3df6e93ac74a3567828913f499f153a2bd",
+    "examples/ch11-async/stages/tasks-basic/examples/abort_and_wait.rs": "cb33146ae636f8e3cf298eef185466514ff371d40b871a90d2c8a620796f55ec",
+    "examples/ch11-async/tasks/src/lib.rs": "874f3cd1f11e5317f4972c7843bf36ec52151daee62937d367b4917d23d3cdbd",
+    "examples/ch11-async/tasks/Cargo.toml": "8de4f5895912d08f8aed0a638c3205faac13a696504bfc4aa8b09394c9010bf6",
+    "examples/ch11-async/tasks/src/main.rs": "d390d6cf34a4db9830cdcd0a7cd30f864a3adedbd4cfb51917d47af056be9c25",
+    "examples/ch11-async/tasks/examples/join_handle.rs": "67399f908fd380b69917413c406684cd8b638a1e0ea4fd2ef64ba854924a6b6a",
+    "examples/ch11-async/tasks/examples/abort_and_wait.rs": "e0b5fb7236b80debb688c9d53c74fa4fba420c3453c7280d398110a7c410efa3",
+    "examples/ch11-async/tasks/tests/cli.rs": "1d0a3f4e8ecb37950a30289c72665d8088164cee580432e14eb8ea4c021a4b32",
+    "examples/ch11-async/tasks/examples/control_closed_solution.rs": "fc71e68d0db3f903ca1919376dea9f88141fc99029c35f50b43c44ebefea3af2"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 3,
+      "quote": "上一節保存 future，再由同一段程式 await。現在要把小計80的工作交出去，讓它先進入本體；main 收到「已開始」的通知後，才決定何時放行，以及何時等待結果。之後再把同樣的控制擴成四份工作，保留每份結果原來的輸入位置。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 7,
+      "quote": "**task** 是交給 runtime 排程的工作。**`tokio::spawn(work)`** 接手一份 future，把它提交為 task，交回 **`JoinHandle<T>`**；T 是工作完成的 Output。runtime 能在我們尚未 await handle 前推進 task。spawn 本身不會同步進入該工作的本體，也不保證工作最後一定完成；runtime 結束時，尚未完成的 task 會被丟棄。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 11,
+      "quote": "spawn 要在 Tokio runtime 內呼叫。本章仍用 current_thread，所以這些 task 共用該 thread，不能以建立多份 task 就宣稱 parallelism。這個 spawn API 仍要求 future 與 Output 符合 **Send + `'static`**：第13.1節的 Send 允許跨 thread 交付；`'static` bound 表示不攜帶只在短範圍有效的借用，不要求值必須活到程式結束。owned String 可以符合。即使這次選單一 thread，使用的 API 契約也沒有因此免除這兩項限制。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 15,
+      "quote": "先使用只含基本工作的 `ch11-tasks-basic`。完整 manifest 加上 **`sync` feature**，提供 Tokio 的同步工具："
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 21,
+      "quote": "本例用 **`tokio::sync::mpsc`**，名稱同樣是 multiple producer, single consumer（多個送端、單一收端）。它與第13.5節 std channel 的用途相近，這次 send／recv 是可 await 的 async 操作。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 23,
+      "quote": "**`mpsc::channel::<T>(capacity)`** 建立有界緩衝區，交回 `Sender<T>` 與 `Receiver<T>`；capacity 必須大於0。Sender 可以 clone，共用同一條 channel；Receiver 由一個接收者持有。`sender.send(value).await` 等待空位，成功交回 Ok(())，收端已關閉則交回帶原值的 SendError；它具備 Debug，可供 expect 在失敗時產生診斷。`receiver.recv().await` mutable 借用收端：有訊息得到 Some(value)，暫時沒有訊息但仍有送端時繼續等，所有送端結束且緩衝區已空才得到 None。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 34,
+      "quote": "工作 Output 是 `Result<i32, WorkError>`。**Negative(amount)** 表示小計規格不合，**ControlClosed** 表示尚未放行，release 的所有送端卻已結束；這兩者都由本體正常 return。測試另可要求放行後 panic，稍後用來區分工作錯誤與 task 失敗。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 50,
+      "quote": "**`handle.id()`** 取得 task 的 **Id**，可用於辨識與顯示；它不是我們的輸入索引，也不應假定某次固定印出幾號。Id 也支援相等比較與 Hash，稍後可用作 HashMap 的鍵。**`handle.is_finished()`** 查詢 task 此刻是否已結束，沒有等待它；false 只描述當下。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 52,
+      "quote": "**`handle.await`** 取得 `Result<T, JoinError>`。JoinError 具備 Debug 與 Display，因此可用診斷格式顯示，也能沿第8.5節以 to_string 保存文字。本例 T 已經是 `Result<i32, WorkError>`，所以有兩層："
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 74,
+      "quote": "**`handle.abort()`** 請求取消這份 async task，沒有等清理完成；接著 await handle，才取得它的結束結果。JoinError 的 **`is_cancelled()`** 辨認取消，**`is_panic()`** 辨認 panic，**`id()`** 仍能對回原 task。已完成的工作不一定因後來 abort 改成取消；本例刻意保持 release 未送，使工作仍在等待。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 88,
+      "quote": "若直接 drop JoinHandle，則是 **detach（放開這份等待把手）**：task 可繼續執行，並不等於 abort，也沒有收回結果。runtime 結束又是另一個邊界。需要結果或清理完成的證據時，應保留把手並等待。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 92,
+      "quote": "下一個問題仍用相同 started／release，改成四筆輸入。main 要按受控完成順序收報告，並且知道每份報告原來是哪一筆。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 94,
+      "quote": "**`JoinSet<T>`** 持有一組 Output 同為 T 的 task。`JoinSet::new()` 建立空集合，**`tasks.spawn(work)`** 提交並納入一份工作，交回 **AbortHandle**，可查 id 或請求 abort；它不是用來 await 結果的 JoinHandle，結果改由集合收回。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 96,
+      "quote": "**`tasks.join_next_with_id().await`** mutable 借用集合，等待並取出一份已完成的 task，得到 **`Option<Result<(Id, T), JoinError>>`**。空集合交回 None；非空但尚未有完成項目就等待。成功時帶 id 與完整 Output，JoinError 則透過 error.id 找 id。這不是輸入順序；多份都已完成時，也不要憑提交順序猜下一筆。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 98,
+      "quote": "我們用第6.5、6.6節已教的 HashMap，保存成 `HashMap<Id, usize>` 保存「task Id → 原輸入位置」。加入工作時 insert；回收後用 **`inputs.remove(&id)`** mutable 借用 map，刪掉那組資料並取得 `Option<usize>`。Some 是已移出的輸入位置；None 代表沒有那個鍵。本例每次 spawn 都先登記，因此用 expect 檢查這項內部約定。完成後 map 應空，不會留下已回收的工作。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 100,
+      "quote": "**Outcome** 保存四種主要分類：Value、WorkError、Panic、Cancelled；OtherTaskFailure(String) 則保存其他 task 失敗訊息。**Report** 將 input 和 outcome 放在一起。這是我們的報表政策，不是把所有 Err 都當成同一件事："
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 106,
+      "quote": "**collect_one** 先處理 Option，再解開 task 與工作的兩層 Result，最後移除對照並交回報告："
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 114,
+      "quote": "run_demo 為每筆建立獨立 release，started 共用一條容量4的 channel。四份 task 都送完通知並 drop 自己的 started 送端，controller 也 drop 原送端；因此 recv 迴圈在收妥四筆後才會 None。"
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 125,
+      "quote": "以下是完成版 `ch11-tasks` 的**完整設定與 library**，包含 WorkError、controlled_work、所有報表 helper、run_demo 與兩項測試。測試分別確認開始證據及四種結果；沒有尚未提供的測試 helper："
+    },
+    {
+      "section_id": "14.3",
+      "path": "docs/chapters/14-03-lesson.md",
+      "line": 180,
+      "quote": "只提交 input0、金額80，不指定 panic。收到 started 後，不送 release，改成 drop 它唯一的送端。使用 collect_one 收回報告，再確認集合沒有下一份結果、inputs 已空。這應是 WorkError::ControlClosed，還是 JoinError 的 Cancelled？"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

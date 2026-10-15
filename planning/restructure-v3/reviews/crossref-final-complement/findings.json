@@ -1,0 +1,90 @@
+[
+  {
+    "id": "XCF-C01",
+    "classification": "確定",
+    "source": {
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 74,
+      "sha256": "ed5a9511f205772cacba2f95e4c4b5b25744e59c039fdd4c656e78d090e713a7",
+      "quote": "前五項組態操作可以依序串接；前節已學過的mutable設定與method呼叫在這裡連續使用。build.rs如下："
+    },
+    "issue": "前節實際是15.5的C基礎，沒有教Rust mutable設定與method呼叫；相對節位聲稱不成立。",
+    "actual_cited_target": [
+      {
+        "path": "docs/chapters/15-05-lesson.md",
+        "line": 5,
+        "sha256": "d7a229d638429477507f1ca2beb0d742c008be9380f724d527f8ec583d15f04a",
+        "quote": "本節先做一個獨立的 C 程式：修改一個數值、加總數列、區分字串與 buffer，最後配置一份數列副本並釋放。你不需要先學過 C；下節才加入 Rust 的呼叫程式。"
+      },
+      {
+        "path": "docs/chapters/15-05-lesson.md",
+        "line": 11,
+        "sha256": "d7a229d638429477507f1ca2beb0d742c008be9380f724d527f8ec583d15f04a",
+        "quote": "C 的宣告把型別放在名稱前面。一般區域變數預設可以修改；初始化和指派用 `=`，敘述結尾用分號 `;`，一段程式用 `{ ... }` 包住。這裡不使用 Rust 的 `let`／`mut`。"
+      },
+      {
+        "path": "docs/chapters/15-05-lesson.md",
+        "line": 44,
+        "sha256": "d7a229d638429477507f1ca2beb0d742c008be9380f724d527f8ec583d15f04a",
+        "quote": "C 函式定義的順序是「回傳型別、函式名、括號內的參數型別與名稱、body」。`return 值;` 結束呼叫並交回值；沒有結果的函式用 void 作回傳型別。本節程式入口是 `int main(void)`：沒有參數，回傳 int 狀態；main 回傳 0 表示成功。"
+      }
+    ],
+    "real_earlier_evidence": [
+      {
+        "path": "docs/chapters/10-08-lesson.md",
+        "line": 77,
+        "sha256": "301e423c4f1e2cd6541442c1bb47c0bf839b335031c6a9dec281ca57c1a4c2e7",
+        "quote": "current_dir／arg 修改 Command 的設定，回傳 `&mut Command` 供接續操作；本節直接分行呼叫，不需要保存這份回傳 reference。arg 的空白仍是資料：傳入「中文 筆記.txt」一筆，就不是把「中文」與「筆記.txt」分開。也不在其中加入 shell 的引號或 `>` 語法。"
+      }
+    ],
+    "minimal_edit": {
+      "before": "前節已學過的mutable設定與method呼叫",
+      "after": "先前已學過的mutable設定與method呼叫"
+    },
+    "limit": "只改相對指引兩字；不要求改程式或重教cc::Build。"
+  },
+  {
+    "id": "XCF-O01",
+    "classification": "可選：引用精準度",
+    "source": {
+      "path": "docs/chapters/15-06-lesson.md",
+      "line": 453,
+      "sha256": "ed5a9511f205772cacba2f95e4c4b5b25744e59c039fdd4c656e78d090e713a7",
+      "quote": "第一行仍借C配置；to_owned沿第10.4節建立獨立Rust String。drop(greeting)沿第11.3節接手owner、執行對應cleanup，之後只讀saved。輸出核對內容關係，配對釋放與borrow安全則由上面C body／Rust介面契約支持。"
+    },
+    "issue": "10.4重用了ToOwned，但具體例子是&[u8]→Vec<u8>。此句的&str→String已在8.5明教，直接引用8.5更精準。",
+    "actual_cited_target": [
+      {
+        "path": "docs/chapters/10-04-lesson.md",
+        "line": 73,
+        "sha256": "3fc73a9915ecedebe2589e981615aed0271a906fdfafe7bd8741367a20bf2171",
+        "quote": "為了建立原資料，再選用 **`str::as_bytes()`**：只借出該文字的 UTF-8 byte slice `&[u8]`，不複製或解析內容。沿用第 8.5 節的 ToOwned，這份 byte slice 的 `to_owned()` 建立 `Vec<u8>`，複製 byte 值供 ShortReader 擁有；只複製 reference 本身則沒有得到 owned 資料。ToOwned 也由 prelude 提供名稱，本例仍明寫 `use std::borrow::ToOwned;` 方便對照來源，後面可直接使用這個已教的 method。"
+      }
+    ],
+    "real_earlier_evidence": [
+      {
+        "path": "docs/chapters/08-05-lesson.md",
+        "line": 123,
+        "sha256": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+        "quote": "**`ToOwned`** 從借來的資料建立owned產物。associated type **`Owned`** 指定產物型別；本節只使用以下兩份標準契約："
+      },
+      {
+        "path": "docs/chapters/08-05-lesson.md",
+        "line": 127,
+        "sha256": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+        "quote": "| `text: &str` | String | 把文字內容放進新String |"
+      },
+      {
+        "path": "docs/chapters/08-05-lesson.md",
+        "line": 130,
+        "sha256": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+        "quote": "這兩種產物不再借用原資料，可獨立保存、修改；原資料也不因此失去ownership。第 6.3 節的Clone則從借讀T取得另一個T，行為仍依型別而定。只複製&str的reference資訊，仍借原文字，與此處的str→String不同。"
+      }
+    ],
+    "minimal_edit": {
+      "before": "to_owned沿第10.4節建立獨立Rust String",
+      "after": "to_owned沿第8.5節建立獨立Rust String"
+    },
+    "limit": "ToOwned一般能力可由10.4回收理解，8.5也已在前文，故列可選精準化，非程式錯誤。"
+  }
+]

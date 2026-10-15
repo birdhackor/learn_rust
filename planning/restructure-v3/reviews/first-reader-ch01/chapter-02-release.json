@@ -1,0 +1,302 @@
+{
+  "chapter": 2,
+  "first_unit": 49,
+  "last_unit": 97,
+  "entries": [
+    {
+      "source": "docs/chapters/02-01-lesson.md",
+      "file": "units/049.md",
+      "sha256": "fcf08efdc0b16b2e9d3e4b14fd95fd94b6ec275117fa45d3dbf852c06f25ea1b",
+      "source_sha256": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3"
+    },
+    {
+      "source": "docs/chapters/02-01-lesson.md",
+      "file": "units/050.md",
+      "sha256": "1995061cb7a021edc3282dae8b752fa7747e3d81b03cdd5291be0272cc8e44b5",
+      "source_sha256": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3"
+    },
+    {
+      "source": "docs/chapters/02-01-lesson.md",
+      "file": "units/051.md",
+      "sha256": "81773ac844e5c04caa70b9eae0a1d4e800c02b06268429ec049949d9fac11b99",
+      "source_sha256": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3"
+    },
+    {
+      "source": "docs/chapters/02-01-lesson.md",
+      "file": "units/052.md",
+      "sha256": "fa815361a217a1e4f116af791d89a191d3f4730fa4d822d5ad6bcb07cd0ce5cd",
+      "source_sha256": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3"
+    },
+    {
+      "source": "docs/chapters/02-01-lesson.md",
+      "file": "units/053.md",
+      "sha256": "255cf6dd4c060f3e49f727cfe562912e7d7625d4ef47461c60f1ae44284c6357",
+      "source_sha256": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3"
+    },
+    {
+      "source": "docs/chapters/02-01-lesson.md",
+      "file": "units/054.md",
+      "sha256": "9e25950f5c48e787da2f9ffcacb92688ef5976b417469dbba622dee0f8eb6872",
+      "source_sha256": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3"
+    },
+    {
+      "source": "docs/chapters/02-02-lesson.md",
+      "file": "units/055.md",
+      "sha256": "d313169ed9772bcd9f2c9cc9da955d9c7cce928f0b341fb791f64a92c14ad9ff",
+      "source_sha256": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2"
+    },
+    {
+      "source": "docs/chapters/02-02-lesson.md",
+      "file": "units/056.md",
+      "sha256": "f01d924fe3cdeacd7238006e98932948b05ad8249839de6f4230cc3cc6f71e8c",
+      "source_sha256": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2"
+    },
+    {
+      "source": "docs/chapters/02-02-lesson.md",
+      "file": "units/057.md",
+      "sha256": "770ee4710762999b9c3b7cbcd22fc05ced4de50ec44d97fa029e0784ee702f10",
+      "source_sha256": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2"
+    },
+    {
+      "source": "docs/chapters/02-02-lesson.md",
+      "file": "units/058.md",
+      "sha256": "91c5cc0195c728c68051e292dd6bf32426fde9ea13f39c7eb9e687999803c7c8",
+      "source_sha256": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2"
+    },
+    {
+      "source": "docs/chapters/02-02-lesson.md",
+      "file": "units/059.md",
+      "sha256": "793f59eca7b9228805c4d85cb7b00c886d2bea30c4b141d9e6680efa4b9c5745",
+      "source_sha256": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2"
+    },
+    {
+      "source": "docs/chapters/02-02-lesson.md",
+      "file": "units/060.md",
+      "sha256": "9cb0f03b348c0325ec5d9c51db3af17292f245e1464eb0f3b3b347e7389d4ae0",
+      "source_sha256": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2"
+    },
+    {
+      "source": "docs/chapters/02-02-lesson.md",
+      "file": "units/061.md",
+      "sha256": "856fe66f7d44d7b281d0d238ac580316a967911a4964da7438e56e9ab9959145",
+      "source_sha256": "6cded2652535c23776ce66a0c659ad7dde86c2ffe0f335d6d09dc2c6181d23c2"
+    },
+    {
+      "source": "docs/chapters/02-03-lesson.md",
+      "file": "units/062.md",
+      "sha256": "3f76922e82d576df1d466af85d5539ff1b397d897d2c472276ae64ae4dd70a48",
+      "source_sha256": "2140dec17d8eb06bc9caa8d7325dfd7cadf48ebbd494d7f5d5c103ee5271c2c7"
+    },
+    {
+      "source": "docs/chapters/02-03-lesson.md",
+      "file": "units/063.md",
+      "sha256": "7a9b1645ee9796384f7c703fd985c5c60a254ff1b38b43ca484c816ceb4289cc",
+      "source_sha256": "2140dec17d8eb06bc9caa8d7325dfd7cadf48ebbd494d7f5d5c103ee5271c2c7"
+    },
+    {
+      "source": "docs/chapters/02-03-lesson.md",
+      "file": "units/064.md",
+      "sha256": "2be8488f4be8ca3cd8629452373b8a7dbe58b56d798d67db3b2147755f504b03",
+      "source_sha256": "2140dec17d8eb06bc9caa8d7325dfd7cadf48ebbd494d7f5d5c103ee5271c2c7"
+    },
+    {
+      "source": "docs/chapters/02-03-lesson.md",
+      "file": "units/065.md",
+      "sha256": "012837bce1fc7dd1cfc19f4eb9be7966a036b9b3f5089396fb43ec820e71d1eb",
+      "source_sha256": "2140dec17d8eb06bc9caa8d7325dfd7cadf48ebbd494d7f5d5c103ee5271c2c7"
+    },
+    {
+      "source": "docs/chapters/02-03-lesson.md",
+      "file": "units/066.md",
+      "sha256": "3ee31385f51a5ec1ab0aabdee6f453c7853b66ca6a0077209f8885f0e84c1a18",
+      "source_sha256": "2140dec17d8eb06bc9caa8d7325dfd7cadf48ebbd494d7f5d5c103ee5271c2c7"
+    },
+    {
+      "source": "docs/chapters/02-04-lesson.md",
+      "file": "units/067.md",
+      "sha256": "9651b1c2ff535332af22d128e3a07532b05abac235f27936dc626bde3cfb7c24",
+      "source_sha256": "88c06bf4a6f5e99f84339055b359eb649f5207e1a5cbeb46b33288c63d3528e6"
+    },
+    {
+      "source": "docs/chapters/02-04-lesson.md",
+      "file": "units/068.md",
+      "sha256": "ecaa801da2d6ffe34bd69693d947415000767fc308b01845eef72400f19d0166",
+      "source_sha256": "88c06bf4a6f5e99f84339055b359eb649f5207e1a5cbeb46b33288c63d3528e6"
+    },
+    {
+      "source": "docs/chapters/02-04-lesson.md",
+      "file": "units/069.md",
+      "sha256": "51aae920a8ff98f1b39926ad2ba41e52dbbfd813b93345670d0d085db0956a61",
+      "source_sha256": "88c06bf4a6f5e99f84339055b359eb649f5207e1a5cbeb46b33288c63d3528e6"
+    },
+    {
+      "source": "docs/chapters/02-04-lesson.md",
+      "file": "units/070.md",
+      "sha256": "814973834da41eef47a673ba40f6cd39a51bc76dd41f6f5432d778cd33fb13d3",
+      "source_sha256": "88c06bf4a6f5e99f84339055b359eb649f5207e1a5cbeb46b33288c63d3528e6"
+    },
+    {
+      "source": "docs/chapters/02-04-lesson.md",
+      "file": "units/071.md",
+      "sha256": "8901cfd1d7e83e91480f3dae432ed7d83f07993318d44b537ef5b1333b16c19b",
+      "source_sha256": "88c06bf4a6f5e99f84339055b359eb649f5207e1a5cbeb46b33288c63d3528e6"
+    },
+    {
+      "source": "docs/chapters/02-05-lesson.md",
+      "file": "units/072.md",
+      "sha256": "7a1e10500556a0d31fb51fd8678eb07d295a1080894f5b5f62470895ac282187",
+      "source_sha256": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e"
+    },
+    {
+      "source": "docs/chapters/02-05-lesson.md",
+      "file": "units/073.md",
+      "sha256": "d3542ba14b1a97c5c24fe3507d97a1c12fd9e75a30c8d51f00e28554c14c7777",
+      "source_sha256": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e"
+    },
+    {
+      "source": "docs/chapters/02-05-lesson.md",
+      "file": "units/074.md",
+      "sha256": "9e0db32c90a032b8f1dbbc85646f72f9ae83dfc97c9e1ae572f612d889719005",
+      "source_sha256": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e"
+    },
+    {
+      "source": "docs/chapters/02-05-lesson.md",
+      "file": "units/075.md",
+      "sha256": "5dee677415aea8aec4fa43cee87a27f74c0301b304daeb6d8bfeadcec9b0b222",
+      "source_sha256": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e"
+    },
+    {
+      "source": "docs/chapters/02-05-lesson.md",
+      "file": "units/076.md",
+      "sha256": "21f746dd42dc63e5b09a60d954138feaeb2aebefa0bb109e44106a15d4443335",
+      "source_sha256": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e"
+    },
+    {
+      "source": "docs/chapters/02-05-lesson.md",
+      "file": "units/077.md",
+      "sha256": "6d326b93619f443b04c31cd9c6e7a2db5fe3cb841230152774d82c82110baa3a",
+      "source_sha256": "db4b1a47e1002fffaafb3b3aa6f6e2eff7131052b306e52a65686ca5c488408e"
+    },
+    {
+      "source": "docs/chapters/02-06-lesson.md",
+      "file": "units/078.md",
+      "sha256": "e73a37cb01a76e72fdc6cff5a95a244793ee0d33e4106f7e3aa58ae4aa9b8f7b",
+      "source_sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3"
+    },
+    {
+      "source": "docs/chapters/02-06-lesson.md",
+      "file": "units/079.md",
+      "sha256": "674bb209133dbc19b533f206d568e0c7c5d65986798bbbcd708cc5da534aabfc",
+      "source_sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3"
+    },
+    {
+      "source": "docs/chapters/02-06-lesson.md",
+      "file": "units/080.md",
+      "sha256": "f6a32e3928495da7fe9f3207a1c6663a7f8cf3c25a23d3d37d8081c2a23fe05d",
+      "source_sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3"
+    },
+    {
+      "source": "docs/chapters/02-06-lesson.md",
+      "file": "units/081.md",
+      "sha256": "e59903a33b37dc9416f104af9e195bd783c8053c6ad3b898da4abb9f07137a8b",
+      "source_sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3"
+    },
+    {
+      "source": "docs/chapters/02-06-lesson.md",
+      "file": "units/082.md",
+      "sha256": "07781c9e47d59b59081d2d7744610bfbe26e65ac9d645e4dee9b77df9a93f7e3",
+      "source_sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3"
+    },
+    {
+      "source": "docs/chapters/02-06-lesson.md",
+      "file": "units/083.md",
+      "sha256": "4bf2839c4a9c09adb2a65e5fc4201768de2631706db3ab4156d430ca8c15e8d8",
+      "source_sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3"
+    },
+    {
+      "source": "docs/chapters/02-07-lesson.md",
+      "file": "units/084.md",
+      "sha256": "f255f9f4dc794da377eb6fb28cb342e0ac0957039d747c0facf62702be531717",
+      "source_sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886"
+    },
+    {
+      "source": "docs/chapters/02-07-lesson.md",
+      "file": "units/085.md",
+      "sha256": "074cb13f7f4e974f85ddd24c5b71b9fe64cf0240c22f22b05b26a331c78a7ff6",
+      "source_sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886"
+    },
+    {
+      "source": "docs/chapters/02-07-lesson.md",
+      "file": "units/086.md",
+      "sha256": "fc91abbbbb672b72472006caa48beb320f08d4f6f0ccedf5fa255574c3c4b4af",
+      "source_sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886"
+    },
+    {
+      "source": "docs/chapters/02-07-lesson.md",
+      "file": "units/087.md",
+      "sha256": "217f491c5e8f2822e80b958992f879eade0597898bd45f36fa34dbc70ab1dccc",
+      "source_sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886"
+    },
+    {
+      "source": "docs/chapters/02-07-lesson.md",
+      "file": "units/088.md",
+      "sha256": "70d9b171991535cc2103146e306ac4529a23187e2247d4206ca779865f11111b",
+      "source_sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886"
+    },
+    {
+      "source": "docs/chapters/02-07-lesson.md",
+      "file": "units/089.md",
+      "sha256": "2db2e1d4762cfe718856851fd10fece659488c2c4e323c9d6147da35be9f4de9",
+      "source_sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886"
+    },
+    {
+      "source": "docs/chapters/02-07-lesson.md",
+      "file": "units/090.md",
+      "sha256": "e81484da0ae72756c49e994e22fcf90e090feb1b7cfaecdcc6b60015f36bd65d",
+      "source_sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886"
+    },
+    {
+      "source": "docs/chapters/02-08-lesson.md",
+      "file": "units/091.md",
+      "sha256": "0a859ff296533209e9f537239d1ba8ee4312c3f9be87085221dee0ab49aa23d4",
+      "source_sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    },
+    {
+      "source": "docs/chapters/02-08-lesson.md",
+      "file": "units/092.md",
+      "sha256": "f12db005eff2430831b97b5b2cf9de14c9a3d19562513c9f80357c0f63e4e489",
+      "source_sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    },
+    {
+      "source": "docs/chapters/02-08-lesson.md",
+      "file": "units/093.md",
+      "sha256": "aa829c76632e70e807ca7a52b083ba359707a1d8d5d0843f8a4d53911d2e3fac",
+      "source_sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    },
+    {
+      "source": "docs/chapters/02-08-lesson.md",
+      "file": "units/094.md",
+      "sha256": "2b22b729d6e1655a9d01a1dd99bf9db337e15b48854df1c63afc0eec97fe2bc4",
+      "source_sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    },
+    {
+      "source": "docs/chapters/02-08-lesson.md",
+      "file": "units/095.md",
+      "sha256": "67333dfe1df53aa99a648dabca98d7ce327ecac310af56111005fbbb3c62e52f",
+      "source_sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    },
+    {
+      "source": "docs/chapters/02-08-lesson.md",
+      "file": "units/096.md",
+      "sha256": "cb70e9458e0ceb59ae64b8183fc950146d1589d825936cb4d34840021a4ff93e",
+      "source_sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    },
+    {
+      "source": "docs/chapters/02-08-lesson.md",
+      "file": "units/097.md",
+      "sha256": "c75cba30af6a705eaf4f6d1f5f74a47f99f1e12bdcf8865cfeca49cfcb03908d",
+      "source_sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    }
+  ],
+  "route": "H2 boundaries; actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed"
+}

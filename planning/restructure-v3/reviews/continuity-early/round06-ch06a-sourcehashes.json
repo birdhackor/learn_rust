@@ -1,0 +1,122 @@
+{
+  "captured_utc": "2026-10-15T07:45:03.985735+00:00",
+  "scope": "actual6.1–6.2 initial only, prior actual1–5; no6.3+ prose/source as prior",
+  "regions": [
+    "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs:charge-model",
+    "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs:charge-trait",
+    "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs:charge-implementations",
+    "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs:charge-bound",
+    "examples/intro-workspace/trait-stages/examples/standard_equality.rs:text",
+    "examples/intro-workspace/trait-stages/examples/standard_equality.rs:references",
+    "examples/intro-workspace/trait-stages/examples/standard_equality.rs:options"
+  ],
+  "files": [
+    {
+      "path": "docs/chapters/06-01-lesson.md",
+      "sha256": "5df389994db35de562be09374b10686ef2b11774eb70893f2200d4d159141d0a",
+      "bytes": 7179
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/charge_support/mod.rs",
+      "sha256": "29b686ddbd39006071e407063d8e2207b39c21e6ed0863f31f1f0e2d4586fce7",
+      "bytes": 1752
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/charges.rs",
+      "sha256": "e549a9efda165828e133c81d0d4a65cbed40df215b4727bf6716f18b2bbe1540",
+      "bytes": 564
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.rs",
+      "sha256": "efade76c33ff192ef1b0460cb45199a138a8b5d24646f766b985adceb5f76810",
+      "bytes": 154
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/Cargo.toml",
+      "sha256": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+      "bytes": 73
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/charges_answer.rs",
+      "sha256": "7ecb507c30a3d3afaa6c01a8badd1d1a6af717f1045e38e43001bda4cf1fb38e",
+      "bytes": 933
+    },
+    {
+      "path": "docs/chapters/06-02-lesson.md",
+      "sha256": "a4c6d3934cae52521b282cd9fb52132a62d2f43a9a8ee669f79f74452ffa40c9",
+      "bytes": 7303
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/debug.rs",
+      "sha256": "e77daf767da69e7348c871ecc70b91fb2043727fba61df9fb483704a498755fb",
+      "bytes": 281
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.rs",
+      "sha256": "e8c8eeb215523bd8a67d4af2cbfe1ba1c35b27ad0c13c2e045ce99e62cbb037a",
+      "bytes": 180
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/equality.rs",
+      "sha256": "c3a730043d5774e5462a5cfd54fedc8332f0fcdb44a5e63ef3ec80cae101ce0b",
+      "bytes": 954
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/standard_equality.rs",
+      "sha256": "e442e57e01a4c7f9bccf7a4e96076a5a106f1a6da75376c87511c0d80e98b33d",
+      "bytes": 1188
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/examples/equality_answer.rs",
+      "sha256": "5bd909d17e425094a33529f75546e1b5a837d624f8d41a8b6df7c43f35deeb6b",
+      "bytes": 746
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "sha256": "ab2450344449650f23553c189af2af1032be26ac133de130245ef47fc612da66",
+      "bytes": 266
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "sha256": "bdcccb63479540b1f3f2c275d50e3b6cc8c4047fdb768eea0e7014a85bda1084",
+      "bytes": 835
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/src/main.rs",
+      "sha256": "018c7d106ed7e348d943c40674e26c48ee5965208ace26ca9127a294908b0b30",
+      "bytes": 62,
+      "added_utc": "2026-10-15T07:46:54.157966+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/missing_bound.expected",
+      "sha256": "e03b27f19f221f0ea2a3809e0da4983870354d9db49f275f5692df404d9c0312",
+      "bytes": 6,
+      "added_utc": "2026-10-15T07:46:54.158242+00:00"
+    },
+    {
+      "path": "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.expected",
+      "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+      "bytes": 6,
+      "added_utc": "2026-10-15T07:46:54.158338+00:00"
+    }
+  ],
+  "end_recheck_utc": "2026-10-15T07:50:51.457101+00:00",
+  "end_changes": [
+    {
+      "path": "examples/intro-workspace/Cargo.toml",
+      "initial": "ab2450344449650f23553c189af2af1032be26ac133de130245ef47fc612da66",
+      "current": "0fe0c68b5753558a7b9d650faa209317c7268d0ad40ec1284952bb66117aa7bf"
+    },
+    {
+      "path": "examples/intro-workspace/Cargo.lock",
+      "initial": "bdcccb63479540b1f3f2c275d50e3b6cc8c4047fdb768eea0e7014a85bda1084",
+      "current": "ce0b4e0a6f7a6475a272ba794f8e8686e2de531eb1e372b5c5af7be4be54fc51"
+    }
+  ],
+  "end_change_note": "Only global workspace/lock added future error-stages member. Its package-only manifest was read as configuration metadata; no future source read. All6.1–6.2 bodies/selectedRust/package/config/fixture expectations unchanged at this end recheck."
+}

@@ -1,0 +1,175 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "15.5"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round15-and18b-root-crossref-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round15-c-and-ffi-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round15-gat-variance-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round15-raw-pointer-safe-abstraction-middle.md",
+    "planning/restructure-v3/reviews/continuity-late/15-06-root-crossref-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/15-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/15-05-lesson.md": "d7a229d638429477507f1ca2beb0d742c008be9380f724d527f8ec583d15f04a",
+    "examples/ch12-c-basics/main.c": "5ecc59e814841ad90957f3fc2506d02550786897873ed19c6032b70f2845b146",
+    "examples/ch12-c-basics/counts.c": "dfff9a207dfe0f8510785765e19097729e048475d2e1441fcfa397dff712dbf3",
+    "examples/ch12-c-basics/counts.h": "81e96a58f431dbc50655d77bff37b6da9e85fea54dc2c86c0c020467aff11807",
+    "examples/ch12-c-basics/fixtures/compile-fail/missing_length.c": "b49c22686e6ac8a81c3341d56b4dc0f85869eadc790dd41046af7bb00c23d4a7",
+    "examples/ch12-c-basics/fixtures/compile-fail/missing_length.expected": "d91b2c63f23b2086de51cb8e8ab0f16200033bbc712a336cba8817e4f5117ef2",
+    "examples/ch12-c-basics/checks.c": "73dc95771cb060bcc415ad207a496c69a4ab404f4d363510246d46ca9d418f31",
+    "examples/ch12-c-basics/solution.c": "a5e2d7c839c0e1d0b50cfb53073b76aa28e4dc23e4d64978c536fa9ebbbbe018",
+    "docs/assets/ch12/c-string-buffer.svg": "da375b3c849136eff7ae922089b1251b1273ef0c47e11a3970367dca02030627",
+    "docs/assets/ch12/c-compile-link.svg": "c59f53b87498b661601d7b0a462ca22f387e54753ac178317a489199b2fe1212"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 3,
+      "quote": "接下來要讓 Rust 呼叫 C 函式。**FFI（foreign function interface，外部函式介面）** 是跨程式語言呼叫函式的介面；要把它包成安全的 Rust API，就得讀懂對方的資料表示、存取條件與清理責任。第15.4節已練過這種契約分工，現在把來源換成 C。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 7,
+      "quote": "範例選 **C11**，也就是 2011 年版本的 C 標準，使用一般作業系統上的 C compiler 與標準函式庫。下方指令適用於提供 `cc` 命令的 GCC／Clang 環境；作者在 Linux、GCC 14.2 驗證。所有範例都在單一 thread 執行。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 11,
+      "quote": "C 的宣告把型別放在名稱前面。一般區域變數預設可以修改；初始化和指派用 `=`，敘述結尾用分號 `;`，一段程式用 `{ ... }` 包住。這裡不使用 Rust 的 `let`／`mut`。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 26,
+      "quote": "**header（標頭檔）** 保存型別名稱與函式宣告。`#include <stdint.h>` 讓本檔案能使用 int32_t／uint8_t；`#include <stddef.h>` 提供 size_t。開頭的 `#include` 由 **preprocessor（前置處理器）** 在編譯 C 程式前處理，把 header 的內容納入目前檔案；它不是 Rust 的 `use`。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 32,
+      "quote": "**`sizeof`** 是 C 的大小查詢運算子，結果型別是 size_t。下面的 `sizeof values` 得到整個 array 的 byte 數，`sizeof values[0]` 得到一項的 byte 數；相除得到元素數量 3。這兩個數的單位都是 byte，商才是項數。在本節固定大小型別下，sizeof 不實際讀取 values[0] 的值。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 40,
+      "quote": "array 自己確實有固定長度。但在一般的函式參數傳遞中，array 表達式會轉成**指向第一項的 pointer**，不把整個 array 和長度一起傳入。接收端若只有 pointer，sizeof 查到的就只是 pointer 本身的大小，無法取回原 array 的項數。因此本節的數列介面另外傳長度。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 44,
+      "quote": "C 函式定義的順序是「回傳型別、函式名、括號內的參數型別與名稱、body」。`return 值;` 結束呼叫並交回值；沒有結果的函式用 void 作回傳型別。本節程式入口是 `int main(void)`：沒有參數，回傳 int 狀態；main 回傳 0 表示成功。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 46,
+      "quote": "普通整數參數取得數值副本，函式內改參數不會改 caller 的原變數。若要改 caller 的原資料，就傳 pointer；**pointer 值也會被複製，但仍指向同一個原物件**。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 50,
+      "quote": "沿用 第15.3節的有效性觀念：在 dereference 前，pointer 必須來自仍存活的正確物件、符合 alignment，並且這次操作有讀寫資格。**NULL** 是標準 header 提供的 null pointer 表示，表示沒有指向可存取的物件；宣告了 pointer，或值不是 NULL，都不會自動完成存取條件。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 52,
+      "quote": "先定義本節自己的 `set_value`。**caller 必須提供仍有效、正確 aligned、可寫的一個 int32_t**，並保證這次寫入沒有衝突存取；本節直接用單一區域變數滿足。函式不保存 pointer，不配置或釋放來源，只把 value 寫到 target 指向的位置："
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 68,
+      "quote": "接下來定義 `sum_values`，收到數列第一項的 pointer 與 size_t 項數，回傳 int32_t 加總。`const int32_t *values` 表示**不能透過這份 pointer 修改元素**；它不是原資料永遠 immutable 的保證，也不替來源提供 lifetime、長度驗證或同步。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 95,
+      "quote": "C 的 **string（字串）** 是 char 的連續序列，以數值零的 char 結尾；常稱這個結尾為 **NUL**，寫成 `\\0`。`'\\0'` 的值是 0，與字元 `'0'` 不同；它也不是 NULL pointer。字串掃描需要來源仍有效，並且在可讀範圍內找到這個終止零。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 99,
+      "quote": "**buffer（緩衝區）** 則是一段供處理的儲存空間，零可以是普通資料。下面的 uint8_t array 有三項，第二項雖是零，第三項 20 仍在範圍內："
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 105,
+      "quote": "標準 header `<string.h>` 提供 **`strlen`**：收到指向有效、NUL 結尾 char 序列的 pointer，回傳第一個零之前的 byte 數，型別是 size_t；它不包含終止零，也不是 Unicode 字數或 array 容量。`strlen(word)` 因而是 4，而 `sizeof word` 是包含終止零的 5。沒有合法終止零的資料不能交給 strlen。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 123,
+      "quote": "前面 array 的儲存由所在區塊管理，區塊結束後就不能再用。現在希望練習另一種責任：向 C allocator 取得一塊儲存，由程式明確釋放。`<stdlib.h>` 提供 **`malloc(byte 數)`** 與 **`free(pointer)`**："
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 134,
+      "quote": "**在任何存取前先檢查 NULL。** `==` 比較相等；`EXIT_FAILURE`／`EXIT_SUCCESS` 是 stdlib header 提供的整數常數，用於 main 的失敗／成功狀態。本節的 malloc 失敗分支立即結束，不假裝還有可用數列。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 142,
+      "quote": "這裡真的逐項複製到**另一份配置**。只把 owned 指派給另一個 pointer，得到的仍是同一配置的別名，沒有新增資料副本或一份可另行 free 的 ownership。函式接收 pointer 也不自動取得清理責任；上面兩個讀取 helper 都明訂不保存、也不釋放。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 148,
+      "quote": "`<stdio.h>` 提供 **`printf`**，第一個參數是格式字串，後面的參數按佔位符順序填入。格式字串與 `%s` 的資料都必須是有效的 NUL 結尾 char 序列；`\\n` 表示換行。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 156,
+      "quote": "**`PRId32` 是 C macro（巨集）**：preprocessor 把這個名稱替換成適合 int32_t 的 string literal 格式片段，例如某個平臺的 `\"d\"`。C 會把相鄰的 string literals 合成一份，所以 `\"amount=%\" PRId32 \"\\n\"` 得到完整格式。這只是展開字串片段，不是 Rust 的 `format!`，也不用假定 int32_t 一定就是 int。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 186,
+      "quote": "第12.2節已分清 host 上的建置工作與最後程式的執行。這次用 **host C compiler** 編譯一個在同一臺 host 執行的 C 程式，還沒有 Rust 的跨語言建置步驟。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 188,
+      "quote": "`cc` 是此環境的 C compiler driver：協調前置處理、編譯、組譯與連結。前置處理納入 headers；編譯把 C 轉成機器指令的表示；組譯產生 **object file（目的檔，.o）**。object file 仍可能需要其他檔案的函式實作，還不是最後可執行檔。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 190,
+      "quote": "**linker（連結器）** 再把 object files 與所需函式實作組合起來，補上彼此的呼叫連結，得到可執行檔。main.c 看過 prototype，知道如何呼叫 sum_values；它的 body 則來自 counts.o。本節 cc 的一般 hosted 連結也帶入 printf／malloc 等標準函式庫所需實作。"
+    },
+    {
+      "section_id": "15.5",
+      "path": "docs/chapters/15-05-lesson.md",
+      "line": 255,
+      "quote": "檢查程式用已教的 if／!= 比對結果，失敗回 EXIT_FAILURE，成功回 EXIT_SUCCESS。這次選空輸入、正負抵消、同一 array 只讀前段、buffer 內零值，以及 pointer 修改原值；每個案例都有前面契約可用，沒有越界或 overflow："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

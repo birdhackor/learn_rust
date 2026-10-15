@@ -1,0 +1,104 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "8.4"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round08-errors-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08-quote-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-crossref-followup-final.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/08-04-lesson.md": "10b3fbb207966ec067ca57a26e4d55d47d906a8e715b1fcb86a44999f5a30d8e",
+    "examples/intro-workspace/error-stages/examples/from_into.rs": "70c1bdf44bd335690bd043a8cfffbba6d629bbf301caba1d83877e228ad7aa27",
+    "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/conversions/main.rs": "a5582724872889ecb842f271e9eff1c2d5c3ef4cfeedf47acf6b83953d9f6526",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/conversions/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/conversions/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/main.rs": "70dbc233eab6b85da036650ec766d80f7a0e469262f2fc945704ddbce9f5f43f",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 3,
+      "quote": "checked_count 雖然檢查 0 到 100，成功後卻仍交回普通 i32。另一個函式只看見 i32，無法從型別辨認它是否已通過檢查。這次建立 Count：只有符合規則的數字才能由公開操作建立這個型別，接收 Count 的工作便能使用已驗證件數。"
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 9,
+      "quote": "**`From`** 是標準的轉換 trait，使用型別參數指定來源。`From<i32>` 表示從 i32 轉過來；`impl From<i32> for i64` 的來源是 i32，目的型別與 Self 是 i64。trait 使用型別參數，沿用第 5.1、6.1 節的泛型與實作語法。"
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 11,
+      "quote": "**`From::from`** 以值接收來源，直接交回目的型別，不回傳 Result。它的介面約定是一定成功、保留有意義的原資訊，而且轉換意義明確；可能失敗的驗證不能用 panic 假裝成這種轉換。"
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 13,
+      "quote": "**`i64`** 是 64-bit 有號整數，能表示所有 i32 的整數。標準函式庫已提供 i32→i64 的 From，轉換後仍是同一個數字，因此可呼叫 `i64::from(count)`。i64 也有標準數字的 Debug 與 PartialEq，下面能用 assertion 核對結果。"
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 15,
+      "quote": "**`Into`** 從來源這一側表達轉換：`Into<i64>` 的型別參數是目的型別，`count.into()` 交出目的值。當目的型別有 `From<來源>`，標準函式庫就提供來源的 `Into<目的>`，不必再寫一份相同邏輯。這是由 From 得到 Into，不能反過來只因看見某份 Into 就假定一定有 From。"
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 19,
+      "quote": "From、Into 與稍後的 TryFrom 都在本專案 edition 2024 的 **prelude** 中，沿用第 5.2 節預先匯入名稱的角色。不需為這些標準 trait 加依賴；範例仍可明寫 `use std::convert::...;`，方便追蹤名稱來源。"
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 37,
+      "quote": "Count 的 value 仍是 i32。第 3.1 節分開型別與欄位的 pub；這次只公開 struct，**欄位沒有 pub**，因此 conversions module 外的呼叫端不能直接寫 `Count { value: -1 }`。公開的 `value(&self)` 只借讀並交回數字，沒有開放修改欄位。"
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 47,
+      "quote": "普通 i32 可能是 −1 或 101，轉成 Count 不能保證成功。**`TryFrom<i32>`** 因此要求 `try_from` 以值接收 i32，交回 `Result<Self, Self::Error>`：成功是目的型別，失敗則是這份實作選定的錯誤型別。"
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 61,
+      "quote": "Count 已保存合法 i32，反方向取回整數不需再驗證，所以適合 `From<Count> for i32`。這份實作的 Self 是 i32，來源參數則是整個 Count："
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 94,
+      "quote": "完整 member manifest 與前幾節相同，沒有 library 或額外依賴："
+    },
+    {
+      "section_id": "8.4",
+      "path": "docs/chapters/08-04-lesson.md",
+      "line": 126,
+      "quote": "寫 `count_value(value: i32) -> Result<i32, CountError>`：先以 Count::try_from 驗證，再用 i32::from 取回數字。不要重寫0到100的條件，失敗時保留原 CountError。確認0、100、−1、101四個輸入。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,357 @@
+{
+  "review_id": "round11-deref-static-middle",
+  "scope": [
+    "11.4",
+    "11.5"
+  ],
+  "role": "獨立技術／先教後用／實際 source closure 審查",
+  "independent_initial": true,
+  "reader_background": "基本 Python + 實際已讀 1–7、8.1–8.6、9.1–9.4、10.1–10.2、11.1–11.3；未用11.6或未交接章節補先備。",
+  "independence": "本波首次實讀與封存前未讀作者 validation/ledger、peer、reader 或 historical findings。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "逐頁全文、完整 selected owned source、helper/tests、manifest、fixture/expected 靜態核對。",
+    "27 snippet 的實際 anchor 與完整載入 closure；各 Wrapper 副本實際逐讀並比較同階段 bytes。",
+    "deref-coercion.svg source/XML 檢查；無視覺或讀者實驗。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "note": "沒有新增 Rust/Cargo 執行；本波結果與錯誤碼為 source 靜態核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:32:46.100574+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "docs/assets/types-v3/deref-coercion.svg": "d74fb8a3d77009bc84ecaa486cfa4bf83a002e172ac595ab72ee781c2cdb6599",
+    "docs/chapters/11-04-lesson.md": "05c14435f34625a260be02454fecb4daad4e6d8fc6d150aca0910e64808f4fab",
+    "docs/chapters/11-05-lesson.md": "936a3788cf246573cc9f93075af806f8e1b7cef938a10573de4f1508a0ddeeb6",
+    "examples/intro-workspace/Cargo.lock": "bc4d31239fe58a3e6a897c265cde1bd9a26562a62fb37406347e134c673fc38c",
+    "examples/intro-workspace/Cargo.toml": "8858a9a16546805c4b0024a3d90b2e961adfd52e9f04efb9e9f25d860b5575aa",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/coercions/main.rs": "095511a13a0a705eec9b6a3b9119e43ae38748a94e9bcfe42cfad0ee56055ae3",
+    "examples/intro-workspace/type-stages/examples/coercions/views/mod.rs": "96001e4b87c530002195500995dbc97d2c2391da9dd66884d2e8cc50feb6764d",
+    "examples/intro-workspace/type-stages/examples/deref_basic/main.rs": "82b4db94349f2805c494a34aa08d283939dd0bd1d54005e973392ef00c0e10b5",
+    "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs": "96001e4b87c530002195500995dbc97d2c2391da9dd66884d2e8cc50feb6764d",
+    "examples/intro-workspace/type-stages/examples/deref_complete/main.rs": "5ec308ea6fca418c497f43790aa81c24c08b12e1bfc1f34cb038b373c4094b52",
+    "examples/intro-workspace/type-stages/examples/deref_complete/views/mod.rs": "7e0f0ac8861224da873d55bf8671f97190af0d65bbfe4ad57aeb29248098404c",
+    "examples/intro-workspace/type-stages/examples/static_bound.rs": "856b7b4074f84877435efc101c0a5dd68ac620d2cfce7932255d63751c30f014",
+    "examples/intro-workspace/type-stages/examples/static_complete/lifetime_bounds/mod.rs": "74ebe48ef260d5c2b749a0afb5e3d1162c162337352919eb945a99c4bb9390ff",
+    "examples/intro-workspace/type-stages/examples/static_complete/main.rs": "03a7d875e05c3beef26321463f02749112b14fe651d6ef95892c00e1cc04a688",
+    "examples/intro-workspace/type-stages/examples/static_complete/views/mod.rs": "7e0f0ac8861224da873d55bf8671f97190af0d65bbfe4ad57aeb29248098404c",
+    "examples/intro-workspace/type-stages/examples/static_reference.rs": "26c81ab7a36e5362422a4ca691b3b7d229e4667fbab265f5561349dfef482789",
+    "examples/intro-workspace/type-stages/examples/type_bounds.rs": "dd15ef09a85a1846018e70cc89c4bcb6478031a0ccd0c0f116e09c05f9032612",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/boxed_borrow_not_static.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/boxed_borrow_not_static.rs": "7c59543c836985c23b32794577139a6496916ed139582450c6f3dc4cd6faba98",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/static_from_local.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/static_from_local.rs": "c8aecc2f3b32cc91a269f86f3c7b519b4e00ee75e0186c218e43e3597b2c2c8d",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_copy_bound.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_copy_bound.rs": "ecd58aab66ecd8de73ef0c63046c63cdaa6e769008d7ef0e128a97bb0214eeb0",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_move_out.expected": "f6f821b7815f0787cb35ce26ce83ae15392ba2866058f6ecd6c0beafab7147de",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_move_out.rs": "7349c6a4c639bb0e116168d93b28897a69b9718cc95fc28ca7bf599fda442e63",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 10,
+      "source": "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs",
+      "tag": "wrapper",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 18,
+      "source": "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs",
+      "tag": "deref",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 30,
+      "source": "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs",
+      "tag": "deref-mut",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 36,
+      "source": "examples/intro-workspace/type-stages/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 40,
+      "source": "examples/intro-workspace/type-stages/examples/deref_basic/views/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 46,
+      "source": "examples/intro-workspace/type-stages/examples/deref_basic/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 74,
+      "source": "examples/intro-workspace/type-stages/examples/coercions/views/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 80,
+      "source": "examples/intro-workspace/type-stages/examples/coercions/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 104,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_move_out.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 108,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_move_out.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 116,
+      "source": "examples/intro-workspace/type-stages/examples/deref_complete/views/mod.rs",
+      "tag": "into-inner",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 122,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_copy_bound.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 126,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/wrapper_copy_bound.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 138,
+      "source": "examples/intro-workspace/type-stages/examples/deref_complete/views/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-04-lesson.md",
+      "line": 144,
+      "source": "examples/intro-workspace/type-stages/examples/deref_complete/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 18,
+      "source": "examples/intro-workspace/type-stages/examples/static_complete/lifetime_bounds/mod.rs",
+      "tag": "borrowed",
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 26,
+      "source": "examples/intro-workspace/type-stages/Cargo.toml",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 30,
+      "source": "examples/intro-workspace/type-stages/examples/type_bounds.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 57,
+      "source": "examples/intro-workspace/type-stages/examples/static_reference.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 72,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/static_from_local.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 76,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/static_from_local.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 88,
+      "source": "examples/intro-workspace/type-stages/examples/static_bound.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 110,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/boxed_borrow_not_static.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 114,
+      "source": "examples/intro-workspace/type-stages/fixtures/compile-fail/boxed_borrow_not_static.expected",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 126,
+      "source": "examples/intro-workspace/type-stages/examples/static_complete/lifetime_bounds/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 132,
+      "source": "examples/intro-workspace/type-stages/examples/static_complete/views/mod.rs",
+      "tag": null,
+      "source_anchor_found": true
+    },
+    {
+      "chapter": "docs/chapters/11-05-lesson.md",
+      "line": 138,
+      "source": "examples/intro-workspace/type-stages/examples/static_complete/main.rs",
+      "tag": null,
+      "source_anchor_found": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-type-stages",
+    "no_lib": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "targets": {
+      "deref_basic": [
+        "examples/deref_basic/main.rs",
+        "examples/deref_basic/views/mod.rs"
+      ],
+      "coercions": [
+        "examples/coercions/main.rs",
+        "examples/coercions/views/mod.rs"
+      ],
+      "deref_complete": [
+        "examples/deref_complete/main.rs",
+        "examples/deref_complete/views/mod.rs（test模式含2tests）"
+      ],
+      "type_bounds": [
+        "examples/type_bounds.rs（自己的 Borrowed，未載完整 static helper）"
+      ],
+      "static_reference": [
+        "examples/static_reference.rs（自己的 choose_label）"
+      ],
+      "static_bound": [
+        "examples/static_bound.rs（自己的 require_static/Message Drop）"
+      ],
+      "static_complete": [
+        "examples/static_complete/main.rs",
+        "examples/static_complete/lifetime_bounds/mod.rs（3tests）",
+        "examples/static_complete/views/mod.rs（2tests）"
+      ]
+    },
+    "commands": "7 selected run + 2 selected example test；所有命令指定 manifest/package/example/--locked。"
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/11-04-lesson.md:13",
+      "judgment": "Deref/Target/receiver lifetime 回指已有 associated type/lifetime elision，Target:?Sized 與 self.value 借用在實作首用前。DerefMut 要有 Deref、沿用 Target、&mut self→&mut Target 說明在首用前。"
+    },
+    {
+      "source": "docs/chapters/11-04-lesson.md:25",
+      "judgment": "*wrapped 經 Deref 存取位置與 Copy 讀取，不授予 String move；Box 特例在:101明分。into_inner consumes self/field move 並明示沒有 Drop。"
+    },
+    {
+      "source": "docs/chapters/11-04-lesson.md:63",
+      "judgment": "reference coercion 於預期型別位置；Wrapper<String>→String→str、Vec→slice、mutable→shared 允許方向正確；method lookup 的 autoderef/autoborrow 與實際 push_str/as_str source 對得上。"
+    },
+    {
+      "source": "docs/chapters/11-04-lesson.md:119",
+      "judgment": "Deref 不繼承 Target 的 owned trait bounds；Copy fixture 確為 Wrapper 未實作 Copy 的 E0277。"
+    },
+    {
+      "source": "docs/chapters/11-05-lesson.md:7",
+      "judgment": "T:'a 約束型別所含 lifetime，不延長某份值；?Sized+'a 與 &'a T implied bound 都在首次 Borrowed snippet 前後準確說明，且明確說明明寫 'a 可省但任意 trait bound 不可類推。"
+    },
+    {
+      "source": "docs/chapters/11-05-lesson.md:48",
+      "judgment": "'static 是預留 lifetime；literal 的有效性不依局部 reference 變數；單一 reference 輸入的 choose_label 回傳契約仍連 candidate，較長 literal 可縮短符合。"
+    },
+    {
+      "source": "docs/chapters/11-05-lesson.md:81",
+      "judgment": "T:'static 不要求這份值一直活著；owned String/i32/literal 可通過、Box<&局部str>仍依來源。Message 的 Drop 在內層 block 結束先執行，與輸出及 source 一致。"
+    }
+  ],
+  "fixtures": [
+    {
+      "name": "wrapper_move_out",
+      "error_code": "E0507",
+      "checked": "完整 source/expected 靜態，未重跑"
+    },
+    {
+      "name": "wrapper_copy_bound",
+      "error_code": "E0277",
+      "checked": "完整 source/expected 靜態，未重跑"
+    },
+    {
+      "name": "static_from_local",
+      "error_code": "E0597",
+      "checked": "完整 source/expected 靜態，未重跑"
+    },
+    {
+      "name": "boxed_borrow_not_static",
+      "error_code": "E0597",
+      "checked": "完整 source/expected 靜態，未重跑"
+    }
+  ],
+  "static_outputs": {
+    "deref_basic": "80,80,100",
+    "coercions": "5,5,Rust!,2,101",
+    "deref_complete": "取回owned文字=Rust 教學",
+    "type_bounds": "四項皆 Rust，區分 T=String/str/&str 及 Box<&str>",
+    "static_reference": "兩項皆 Rust",
+    "static_bound": "80,Rust,Rust；id1清理先於block已結束",
+    "static_complete": "literal也能滿足借用契約=Rust；owned模型通過static bound=Rust 教學"
+  },
+  "copy_checks": [
+    "deref_basic/views 與 coercions/views bytes 完全相同",
+    "deref_complete/views 與 static_complete/views bytes 完全相同"
+  ],
+  "limits": [
+    "整頁技術重讀，非盲首讀。",
+    "未看 rendered SVG/browser；未讀11.6以後當先備。",
+    "此波無 Cargo 成功／失敗重新執行證據。"
+  ],
+  "sealed_at_utc": "2026-10-15T08:33:28.920Z"
+}

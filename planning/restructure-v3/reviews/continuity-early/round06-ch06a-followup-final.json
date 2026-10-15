@@ -1,0 +1,50 @@
+{
+  "checked_utc": "2026-10-15T07:54:48.439510+00:00",
+  "id": "C6a-01",
+  "status": "closed",
+  "kind": "narrow post-adoption source and actualpage followup, initialjudgment retained",
+  "source": "Only6.2firstDebugparagraph now states formatting shared-borrows summary, takes no ownership, permits later fieldread; all initiallyselectedRust/fixtures/package unchanged. Globalfutureworkspace metadata drift separate.",
+  "actual": "Both1280×800 and390×844actualpage show basicborrow/reuse rule beforefirstDebugprogram; DOMconfirms ordering. Nofmtinternals/newsyntax added.",
+  "source_evidence": "round06-ch06a-followup-source.json",
+  "render_evidence": "round06-ch06a-visual/followup-metadata.json",
+  "screenshots_actually_viewed": [
+    "round06-ch06a-visual/desktop-followup-debug-borrow-before-code.png",
+    "round06-ch06a-visual/mobile-followup-debug-borrow-before-code.png"
+  ],
+  "metadata": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "url": "http://127.0.0.1:8097/chapters/06-02-lesson/",
+      "at": "2026-10-15T07:54:24.924Z",
+      "htmlSha256": "cb247f8304fa74ec72a7c16fab6cad9bf2816a2f10a8b0e3805c46408249f656",
+      "rule": "Debug 提供供開發者檢查的文字表示。println!(\"{summary:?}\") 中的 :? 要求用 Debug，原來的 {summary} 不會自動切換到這種顯示方式。這次格式化只借讀 summary，沒有取得它的 ownership；顯示後仍能讀取它的欄位。",
+      "ruleBeforeFirstCode": true,
+      "firstCode": "#[derive(Debug)]\n\nstruct OrderSummary {\n\n    amount: i32,\n\n    count: i32,\n\n}\n\n\n\nfn main() {\n\n    let summary = OrderSummary {\n\n        amount: 360,\n\n        count: 3,\n\n    };\n\n    println!(\"整筆資料={summary:?}\");\n\n    assert_eq!(summary.amount, 360);\n\n    assert_eq!(summary.count, 3);\n\n}\n",
+      "rawAsteriskParagraphs": []
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "url": "http://127.0.0.1:8097/chapters/06-02-lesson/",
+      "at": "2026-10-15T07:54:26.709Z",
+      "htmlSha256": "cb247f8304fa74ec72a7c16fab6cad9bf2816a2f10a8b0e3805c46408249f656",
+      "rule": "Debug 提供供開發者檢查的文字表示。println!(\"{summary:?}\") 中的 :? 要求用 Debug，原來的 {summary} 不會自動切換到這種顯示方式。這次格式化只借讀 summary，沒有取得它的 ownership；顯示後仍能讀取它的欄位。",
+      "ruleBeforeFirstCode": true,
+      "firstCode": "#[derive(Debug)]\n\nstruct OrderSummary {\n\n    amount: i32,\n\n    count: i32,\n\n}\n\n\n\nfn main() {\n\n    let summary = OrderSummary {\n\n        amount: 360,\n\n        count: 3,\n\n    };\n\n    println!(\"整筆資料={summary:?}\");\n\n    assert_eq!(summary.amount, 360);\n\n    assert_eq!(summary.count, 3);\n\n}\n",
+      "rawAsteriskParagraphs": []
+    }
+  ],
+  "not_done": [
+    "NoCargo/build",
+    "Noexpandedreviewof6.3+yet",
+    "Norepositoryedits",
+    "Nooverwritinginitialreport"
+  ]
+}

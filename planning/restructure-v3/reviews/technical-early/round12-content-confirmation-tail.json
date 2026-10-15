@@ -1,0 +1,723 @@
+{
+  "review_id": "round12-content-confirmation-tail",
+  "scope": [
+    "12.4"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python+實際1–11、12.1–12.3；不以已讀13/17能力填補本節先備。",
+  "independence": "未讀作者validation/ledger或peer/reader/歷史問題；封存前收到root版本提示：同頁完整scan、fixed fixture與streams全檔已搬到首次Cargo前。按實讀7c6341...新稿查核，不宣稱獨立發現／重現舊時序問題。",
+  "necessary_findings": [],
+  "optional_findings": [
+    {
+      "id": "TC12T-O1",
+      "classification": "optional",
+      "kind": "同頁方向詞不符目前source排列",
+      "source": "docs/chapters/12-04-lesson.md:52",
+      "evidence": "「其餘檔案由答案／測試在各自TempDir建立，完整內容保存在上面的程式中」；該句之上只有重列的scan dependency與接下來三份固定材料，TempDir建立程式實際在下方candidate tests、groups main及files_groups tests。",
+      "reader_impact": "讀者可能回頭搜尋不存在於上方的動態fixture建立程式；所有材料實際仍完整inline，執行閉包不缺，故不升為必要技術問題。",
+      "suggested_change": "「上面的程式中」改成「下方的答案與測試程式中」。",
+      "independence_note": "此項是目前新稿實讀的小方向詞問題；先前root通知的source-order搬移不是自己的獨立發現。"
+    }
+  ],
+  "result": "必要問題0；可選方向詞精確度1。",
+  "method": [
+    "全文、34snippets、獨立四成員lesson workspace全部18owned檔與實際path scan dependency完整source、5runs+1workspace all-targets test靜態核對。",
+    "核對6streams tests、2candidate tests、10files/groups tests（Unix10／其他平台9），真實fixture bytes、受控TempDir資料與2SVG XML/source。",
+    "實讀blake3 1.8.7 Hash/Hasher cached API及default std features；排除上層ch09-content舊lib/其他targets，不以全repo概念作載入要求。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "filesystem_test_run": false,
+    "note": "本波未跑Rust/Cargo、未建立hard link或TempDir材料；18項Unix tests與輸出為靜態核對（其他平台17項）。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:26:16.511318+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/assets/engineering-v3/candidate-content-groups.svg": "0711cc1bca61f99a9103ebebd84f4977bea58dbd192f932d032f5e8086d4bc3c",
+    "docs/assets/engineering-v3/short-read-comparison.svg": "8910b09b852c9ef5b56078e3b9287e4165303a3262232c80141dcbdebd06da45",
+    "docs/chapters/12-04-lesson.md": "7c6341a95b41053d26bdca48d58d84d2ba76d7c905b0e5b1eb205fb5674826bf",
+    "examples/ch09-content/lesson-workspace/Cargo.lock": "0061cea6ba37214a5effc07bf23694ba07f26b9c0bf8d31907655a5f56d74caf",
+    "examples/ch09-content/lesson-workspace/Cargo.toml": "e21b8b6f8b79f1951045e3e4e1758af9a41c5c5cabc483eb63a0246cfbe205a5",
+    "examples/ch09-content/lesson-workspace/checked-files/Cargo.toml": "49404433875c77a9605eea803380a2381477affc1fce472c84755bd534ce4264",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/candidates.rs": "50aed7433859a79b2185a54aec11867ca501a59c1a2741126dab10717bf197d4",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/main.rs": "0add04aa9e8eb8fd2674576598e0c3d2b410630c5ff2221cc3a7d78298928571",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/file_confirmation.rs": "a5c254204049564c400dd9f8861b034373ce1ad1b1f702721acc9912758f8dc1",
+    "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs": "064dbe5c907ef32753da2c054579f6f6b9636eb34e9a679442d8cd13a7007187",
+    "examples/ch09-content/lesson-workspace/groups/Cargo.toml": "cb027d81c94ccfd8ac48ad6de098e6d442d4935e261f2d3da30298ed58b8be8b",
+    "examples/ch09-content/lesson-workspace/groups/src/lib.rs": "c5b7d75d460d3fd35c85cb863bb5a1f007651edd2b38e214092342cb5351e712",
+    "examples/ch09-content/lesson-workspace/groups/src/main.rs": "6e5ba2cf244a0f271c55a37dc5052d2ebd5d67cabe5c53916420db2a23df006b",
+    "examples/ch09-content/lesson-workspace/groups/tests/files_groups.rs": "4ddf97dbd5d334fb301c027b98b07656cb635c65b7262c138dabcc7d891b0533",
+    "examples/ch09-content/lesson-workspace/size/Cargo.toml": "e1345ee9e8b65656417ffdcfc9abbab08f0a3a4bb5b5d6ad9bc06cce69f0df87",
+    "examples/ch09-content/lesson-workspace/size/src/main.rs": "72b77f2af72e32ac21ef6aa7f3b65f7f96aa1f76272a02f82d13e93c15268ce6",
+    "examples/ch09-content/lesson-workspace/streams/Cargo.toml": "8d2a5fbcbb4a21508dbdd9e057ed030f9fac14abaecc5d8645bb8812842cc003",
+    "examples/ch09-content/lesson-workspace/streams/src/lib.rs": "202292bca873e510489885658f096460b5ddb14480f1c5367f02d30249cab97f",
+    "examples/ch09-content/lesson-workspace/streams/src/main.rs": "55b76610e3a7456a5571c2ccc792968639c8b539e5e96e9c6e5c2965d1cd0e87",
+    "examples/ch09-content/lesson-workspace/streams/src/readers.rs": "acbe127b2d079a46f6a92497621d78d0d404b6c6ed8bd9013ea0b16ab8c9434c",
+    "examples/ch09-content/lesson-workspace/streams/tests/streams.rs": "4743135e855741a6ed6d1367db169811792cbef7c39012f1f781ae9561ac413d",
+    "examples/ch09-files/Cargo.toml": "f11d8eabef03672f39cd9051f1f2cfd990ffa8abab0545ad24aedde9c27ba640",
+    "examples/ch09-files/fixtures/tree/.hidden/third.txt": "8cdc25affa8f5596abad0771e21fb098e26a1d786de961d96b6510915a386899",
+    "examples/ch09-files/fixtures/tree/first.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/fixtures/tree/nested/second.txt": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "examples/ch09-files/src/lib.rs": "4e2a6babc78a01f9e8f41dbe0492df1ffec6fffabe36ebe4f7d219ccee2acebf",
+    "examples/ch09-files/src/scan.rs": "e9635e1b8beb72d33a812bbaae8e669a1f4191fed612cc8a4669387f11bc48ae",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "external_source_hashes": {
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/blake3-1.8.7/src/lib.rs": "a187904c4b12ea7c100557c0f167cc91a034e391ddeb56c9db65f7d400a4b566",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/blake3-1.8.7/Cargo.toml": "b10a23f248f27cef9b745adf8b25b2f4b7e0271f171fa268721df43f2bb25d25"
+  },
+  "small_workspace_lock": {
+    "version": 4,
+    "package": [
+      {
+        "name": "arrayvec",
+        "version": "0.7.8",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "d3fb67a6e08acf24fdeccbac2cb6ac4305825bd1f117462e0e6f2f193345ad56"
+      },
+      {
+        "name": "bitflags",
+        "version": "2.13.2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "3ded4057c258ba199e2d26386d3af3780957ecaee6c4ef4041c6b4b8b97c0b06"
+      },
+      {
+        "name": "blake3",
+        "version": "1.8.7",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "6d9e454fc11f76977dc803893aff6304ed33d6a26efae8696573bea74baa27ae",
+        "dependencies": [
+          "arrayvec",
+          "cc",
+          "cfg-if",
+          "constant_time_eq",
+          "cpufeatures"
+        ]
+      },
+      {
+        "name": "cc",
+        "version": "1.8.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "6651c9ed80effdc7db0ff72512157f901af5e3549e341e24b1dd4887d836d838",
+        "dependencies": [
+          "find-msvc-tools",
+          "shlex"
+        ]
+      },
+      {
+        "name": "cfg-if",
+        "version": "1.0.5",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600"
+      },
+      {
+        "name": "ch09-files",
+        "version": "0.1.0",
+        "dependencies": [
+          "walkdir"
+        ]
+      },
+      {
+        "name": "constant_time_eq",
+        "version": "0.4.2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "3d52eff69cd5e647efe296129160853a42795992097e8af39800e1060caeea9b"
+      },
+      {
+        "name": "cpufeatures",
+        "version": "0.3.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "5ca28b0ae3115b884660db4118d803791fd6756b6e88f39c0f3f7859060d7566",
+        "dependencies": [
+          "libc"
+        ]
+      },
+      {
+        "name": "errno",
+        "version": "0.3.14",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "39cab71617ae0d63f51a36d69f866391735b51691dbda63cf6f96d042b63efeb",
+        "dependencies": [
+          "libc",
+          "windows-sys"
+        ]
+      },
+      {
+        "name": "fastrand",
+        "version": "2.5.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "da7c62ceae207dd37ea5b845da6a0696c799f85e97da1ab5b7910be3c1c80223"
+      },
+      {
+        "name": "find-msvc-tools",
+        "version": "0.1.14",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "aedcfb3409746eddb02b9e19ebda1c3394f759a152e48ee875a0844d1b955484"
+      },
+      {
+        "name": "getrandom",
+        "version": "0.4.3",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "300e883d756b2e4ec94e02791f39b04b522276138852cfc41d9fb7e904106099",
+        "dependencies": [
+          "cfg-if",
+          "libc",
+          "r-efi"
+        ]
+      },
+      {
+        "name": "lesson-checked-files",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3",
+          "ch09-files",
+          "lesson-content-streams",
+          "tempfile"
+        ]
+      },
+      {
+        "name": "lesson-content-groups",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3",
+          "ch09-files",
+          "lesson-checked-files",
+          "lesson-content-streams",
+          "tempfile"
+        ]
+      },
+      {
+        "name": "lesson-content-streams",
+        "version": "0.1.0",
+        "dependencies": [
+          "blake3"
+        ]
+      },
+      {
+        "name": "lesson-file-sizes",
+        "version": "0.1.0",
+        "dependencies": [
+          "ch09-files"
+        ]
+      },
+      {
+        "name": "libc",
+        "version": "0.2.190",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78"
+      },
+      {
+        "name": "linux-raw-sys",
+        "version": "0.12.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "32a66949e030da00e8c7d4434b251670a91556f4144941d37452769c25d58a53"
+      },
+      {
+        "name": "once_cell",
+        "version": "1.21.4",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "9f7c3e4beb33f85d45ae3e3a1792185706c8e16d043238c593331cc7cd313b50"
+      },
+      {
+        "name": "r-efi",
+        "version": "6.0.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "f8dcc9c7d52a811697d2151c701e0d08956f92b0e24136cf4cf27b57a6a0d9bf"
+      },
+      {
+        "name": "rustix",
+        "version": "1.1.5",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "891efababe418670775f199f0d233d84843c227a0949a883ce15b37c78d6629d",
+        "dependencies": [
+          "bitflags",
+          "errno",
+          "libc",
+          "linux-raw-sys",
+          "windows-sys"
+        ]
+      },
+      {
+        "name": "same-file",
+        "version": "1.0.6",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502",
+        "dependencies": [
+          "winapi-util"
+        ]
+      },
+      {
+        "name": "shlex",
+        "version": "2.0.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "f8fadd59c855ef2080decdef8ff161eb6661b86933c9d82e5ba29dc602a55aba"
+      },
+      {
+        "name": "tempfile",
+        "version": "3.27.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "32497e9a4c7b38532efcdebeef879707aa9f794296a4f0244f6f69e9bc8574bd",
+        "dependencies": [
+          "fastrand",
+          "getrandom",
+          "once_cell",
+          "rustix",
+          "windows-sys"
+        ]
+      },
+      {
+        "name": "walkdir",
+        "version": "2.5.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "29790946404f91d9c5d06f9874efddea1dc06c5efe94541a7d6863108e3a5e4b",
+        "dependencies": [
+          "same-file",
+          "winapi-util"
+        ]
+      },
+      {
+        "name": "winapi-util",
+        "version": "0.1.11",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "c2a7b1c03c876122aa43f3020e6c3c3ee5c05081c9a00739faf7503aeba10d22",
+        "dependencies": [
+          "windows-sys"
+        ]
+      },
+      {
+        "name": "windows-link",
+        "version": "0.2.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "f0805222e57f7521d6a62e36fa9163bc891acd422f971defe97d64e70d0a4fe5"
+      },
+      {
+        "name": "windows-sys",
+        "version": "0.61.2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "ae137229bcbd6cdf0f7b80a31df61766145077ddf49416a728b02cb3921ff3fc",
+        "dependencies": [
+          "windows-link"
+        ]
+      }
+    ]
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 27,
+      "source": "examples/ch09-content/lesson-workspace/Cargo.toml",
+      "tag": null,
+      "included_sha256": "e21b8b6f8b79f1951045e3e4e1758af9a41c5c5cabc483eb63a0246cfbe205a5",
+      "included_lines": 20
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 41,
+      "source": "examples/ch09-files/Cargo.toml",
+      "tag": null,
+      "included_sha256": "f11d8eabef03672f39cd9051f1f2cfd990ffa8abab0545ad24aedde9c27ba640",
+      "included_lines": 12
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 45,
+      "source": "examples/ch09-files/src/lib.rs",
+      "tag": null,
+      "included_sha256": "4e2a6babc78a01f9e8f41dbe0492df1ffec6fffabe36ebe4f7d219ccee2acebf",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 49,
+      "source": "examples/ch09-files/src/scan.rs",
+      "tag": null,
+      "included_sha256": "e9635e1b8beb72d33a812bbaae8e669a1f4191fed612cc8a4669387f11bc48ae",
+      "included_lines": 160
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 57,
+      "source": "examples/ch09-files/fixtures/tree/first.txt",
+      "tag": null,
+      "included_sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 63,
+      "source": "examples/ch09-files/fixtures/tree/nested/second.txt",
+      "tag": null,
+      "included_sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 69,
+      "source": "examples/ch09-files/fixtures/tree/.hidden/third.txt",
+      "tag": null,
+      "included_sha256": "8cdc25affa8f5596abad0771e21fb098e26a1d786de961d96b6510915a386899",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 80,
+      "source": "examples/ch09-content/lesson-workspace/size/Cargo.toml",
+      "tag": null,
+      "included_sha256": "e1345ee9e8b65656417ffdcfc9abbab08f0a3a4bb5b5d6ad9bc06cce69f0df87",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 86,
+      "source": "examples/ch09-content/lesson-workspace/size/src/main.rs",
+      "tag": null,
+      "included_sha256": "72b77f2af72e32ac21ef6aa7f3b65f7f96aa1f76272a02f82d13e93c15268ce6",
+      "included_lines": 26
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 102,
+      "source": "examples/ch09-content/lesson-workspace/streams/Cargo.toml",
+      "tag": null,
+      "included_sha256": "8d2a5fbcbb4a21508dbdd9e057ed030f9fac14abaecc5d8645bb8812842cc003",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 119,
+      "source": "examples/ch09-content/lesson-workspace/streams/src/lib.rs",
+      "tag": "hash",
+      "included_sha256": "4cc33fc5ca2e532d9d8dc656a2c9bf169663f411ec693c85f501c2bfaabcaba7",
+      "included_lines": 19
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 135,
+      "source": "examples/ch09-content/lesson-workspace/streams/src/lib.rs",
+      "tag": "fill",
+      "included_sha256": "b16c6fb917371758c10301a2bdc380efb0d4c4a964f919c77e964070daceaaf7",
+      "included_lines": 15
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 143,
+      "source": "examples/ch09-content/lesson-workspace/streams/src/lib.rs",
+      "tag": "equal",
+      "included_sha256": "c658c06b1a38289c76586a6686cb1daa465b18870d7a7ed19740bb8e0e60768e",
+      "included_lines": 29
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 151,
+      "source": "examples/ch09-content/lesson-workspace/streams/src/readers.rs",
+      "tag": "short",
+      "included_sha256": "c8d017d59962ed1db7329b6a3149092cab6d10f3c33001d7e074092d0a45a3f1",
+      "included_lines": 29
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 159,
+      "source": "examples/ch09-content/lesson-workspace/streams/src/readers.rs",
+      "tag": "failure",
+      "included_sha256": "2adda1d7fed208effbf4728c04ccb48aaeb12614b4c6393bdea0bc1fef8e7c34",
+      "included_lines": 25
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 166,
+      "source": "examples/ch09-content/lesson-workspace/streams/src/main.rs",
+      "tag": null,
+      "included_sha256": "55b76610e3a7456a5571c2ccc792968639c8b539e5e96e9c6e5c2965d1cd0e87",
+      "included_lines": 20
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 176,
+      "source": "examples/ch09-content/lesson-workspace/streams/src/lib.rs",
+      "tag": null,
+      "included_sha256": "202292bca873e510489885658f096460b5ddb14480f1c5367f02d30249cab97f",
+      "included_lines": 78
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 180,
+      "source": "examples/ch09-content/lesson-workspace/streams/src/readers.rs",
+      "tag": null,
+      "included_sha256": "acbe127b2d079a46f6a92497621d78d0d404b6c6ed8bd9013ea0b16ab8c9434c",
+      "included_lines": 63
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 199,
+      "source": "examples/ch09-content/lesson-workspace/checked-files/Cargo.toml",
+      "tag": null,
+      "included_sha256": "49404433875c77a9605eea803380a2381477affc1fce472c84755bd534ce4264",
+      "included_lines": 14
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 205,
+      "source": "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs",
+      "tag": "issues",
+      "included_sha256": "2c9c48992145b97d9793737a006bb2b7646f88dd3f61fa3082bd928188cd6135",
+      "included_lines": 41
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 211,
+      "source": "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs",
+      "tag": "observe",
+      "included_sha256": "5edbe1b8069c311b83a707b8bf3c4c15d98b9c44a9dc9f64eecd269807a5c840",
+      "included_lines": 52
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 217,
+      "source": "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs",
+      "tag": "hash",
+      "included_sha256": "94635a709e2c9bc7915cc9b4592190bdf90f316fb59ebc8b3dc2c574aea5e0aa",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 223,
+      "source": "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs",
+      "tag": "equal",
+      "included_sha256": "c36812751cba3d1af68c48085b2da678bd41cb2ddbc3c09a1052b46bd1fe61ed",
+      "included_lines": 16
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 233,
+      "source": "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs",
+      "tag": null,
+      "included_sha256": "064dbe5c907ef32753da2c054579f6f6b9636eb34e9a679442d8cd13a7007187",
+      "included_lines": 144
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 239,
+      "source": "examples/ch09-content/lesson-workspace/checked-files/examples/file_confirmation.rs",
+      "tag": null,
+      "included_sha256": "a5c254204049564c400dd9f8861b034373ce1ad1b1f702721acc9912758f8dc1",
+      "included_lines": 32
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 255,
+      "source": "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/candidates.rs",
+      "tag": null,
+      "included_sha256": "50aed7433859a79b2185a54aec11867ca501a59c1a2741126dab10717bf197d4",
+      "included_lines": 83
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 263,
+      "source": "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/main.rs",
+      "tag": null,
+      "included_sha256": "0add04aa9e8eb8fd2674576598e0c3d2b410630c5ff2221cc3a7d78298928571",
+      "included_lines": 24
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 277,
+      "source": "examples/ch09-content/lesson-workspace/groups/Cargo.toml",
+      "tag": null,
+      "included_sha256": "cb027d81c94ccfd8ac48ad6de098e6d442d4935e261f2d3da30298ed58b8be8b",
+      "included_lines": 15
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 297,
+      "source": "examples/ch09-content/lesson-workspace/groups/src/lib.rs",
+      "tag": "refine",
+      "included_sha256": "a635df61e729718fe9d08e284dbff359fa39678775508bb845346d762129909d",
+      "included_lines": 57
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 317,
+      "source": "examples/ch09-content/lesson-workspace/groups/src/lib.rs",
+      "tag": "metrics",
+      "included_sha256": "11a9af192af610a5d5af7c08b502965f4ac945ce2ea2c588c84e012d306b32f5",
+      "included_lines": 26
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 323,
+      "source": "examples/ch09-content/lesson-workspace/groups/src/lib.rs",
+      "tag": null,
+      "included_sha256": "c5b7d75d460d3fd35c85cb863bb5a1f007651edd2b38e214092342cb5351e712",
+      "included_lines": 95
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 340,
+      "source": "examples/ch09-content/lesson-workspace/groups/src/main.rs",
+      "tag": null,
+      "included_sha256": "6e5ba2cf244a0f271c55a37dc5052d2ebd5d67cabe5c53916420db2a23df006b",
+      "included_lines": 48
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 362,
+      "source": "examples/ch09-content/lesson-workspace/streams/tests/streams.rs",
+      "tag": null,
+      "included_sha256": "4743135e855741a6ed6d1367db169811792cbef7c39012f1f781ae9561ac413d",
+      "included_lines": 98
+    },
+    {
+      "chapter": "docs/chapters/12-04-lesson.md",
+      "line": 366,
+      "source": "examples/ch09-content/lesson-workspace/groups/tests/files_groups.rs",
+      "tag": null,
+      "included_sha256": "4ddf97dbd5d334fb301c027b98b07656cb635c65b7262c138dabcc7d891b0533",
+      "included_lines": 244
+    }
+  ],
+  "commands": [
+    "cargo run --manifest-path examples/ch09-content/lesson-workspace/Cargo.toml -p lesson-file-sizes --locked",
+    "cargo run --manifest-path examples/ch09-content/lesson-workspace/Cargo.toml -p lesson-content-streams --locked",
+    "cargo run --manifest-path examples/ch09-content/lesson-workspace/Cargo.toml -p lesson-checked-files --example file_confirmation --locked",
+    "cargo run --manifest-path examples/ch09-content/lesson-workspace/Cargo.toml -p lesson-checked-files --example candidate_digests --locked",
+    "cargo run --manifest-path examples/ch09-content/lesson-workspace/Cargo.toml -p lesson-content-groups --locked",
+    "cargo test --manifest-path examples/ch09-content/lesson-workspace/Cargo.toml --workspace --all-targets --locked"
+  ],
+  "owned_workspace_files": [
+    "examples/ch09-content/lesson-workspace/Cargo.lock",
+    "examples/ch09-content/lesson-workspace/Cargo.toml",
+    "examples/ch09-content/lesson-workspace/checked-files/Cargo.toml",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/candidates.rs",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/main.rs",
+    "examples/ch09-content/lesson-workspace/checked-files/examples/file_confirmation.rs",
+    "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs",
+    "examples/ch09-content/lesson-workspace/groups/Cargo.toml",
+    "examples/ch09-content/lesson-workspace/groups/src/lib.rs",
+    "examples/ch09-content/lesson-workspace/groups/src/main.rs",
+    "examples/ch09-content/lesson-workspace/groups/tests/files_groups.rs",
+    "examples/ch09-content/lesson-workspace/size/Cargo.toml",
+    "examples/ch09-content/lesson-workspace/size/src/main.rs",
+    "examples/ch09-content/lesson-workspace/streams/Cargo.toml",
+    "examples/ch09-content/lesson-workspace/streams/src/lib.rs",
+    "examples/ch09-content/lesson-workspace/streams/src/main.rs",
+    "examples/ch09-content/lesson-workspace/streams/src/readers.rs",
+    "examples/ch09-content/lesson-workspace/streams/tests/streams.rs"
+  ],
+  "test_counts": {
+    "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/candidates.rs": 2,
+    "examples/ch09-content/lesson-workspace/groups/tests/files_groups.rs": 10,
+    "examples/ch09-content/lesson-workspace/streams/tests/streams.rs": 6
+  },
+  "source_order": {
+    "scan_full_line": 49,
+    "streams_full_line": 176
+  },
+  "loaded_closures": [
+    {
+      "target": "lesson-file-sizes binary",
+      "own_sources": [
+        "size/src/main.rs"
+      ],
+      "path_libraries": [
+        "ch09-files/src/lib.rs",
+        "ch09-files/src/scan.rs"
+      ],
+      "notes": "size無lib，無streams／checked／groups source。scan完整source與5/5/6固定材料在首run前。"
+    },
+    {
+      "target": "lesson-content-streams binary",
+      "own_sources": [
+        "streams/src/main.rs",
+        "streams/src/lib.rs",
+        "streams/src/readers.rs"
+      ],
+      "third_party": [
+        "blake3 1.8.7"
+      ],
+      "notes": "complete library與readers在首streams run前；不載files/groups。"
+    },
+    {
+      "target": "lesson-checked-files examples file_confirmation / candidate_digests",
+      "own_sources": [
+        "checked-files/src/lib.rs",
+        "各自example根",
+        "candidate_digests/candidates.rs僅candidate target"
+      ],
+      "path_libraries": [
+        "ch09-files/src/lib.rs + scan.rs",
+        "streams/src/lib.rs + readers.rs"
+      ],
+      "notes": "candidate helper與同檔tests僅在其自己的target，前一個file_confirmation不提前載入。"
+    },
+    {
+      "target": "lesson-content-groups binary",
+      "own_sources": [
+        "groups/src/lib.rs",
+        "groups/src/main.rs"
+      ],
+      "path_libraries": [
+        "checked-files/src/lib.rs",
+        "ch09-files/src/lib.rs + scan.rs",
+        "streams/src/lib.rs + readers.rs（透過checked-files）"
+      ],
+      "notes": "tempfile是main正常依賴，Hash受控鍵不冒充真實碰撞。"
+    },
+    {
+      "target": "small workspace --workspace --all-targets test",
+      "own_sources": [
+        "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/candidates.rs",
+        "examples/ch09-content/lesson-workspace/checked-files/examples/candidate_digests/main.rs",
+        "examples/ch09-content/lesson-workspace/checked-files/examples/file_confirmation.rs",
+        "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs",
+        "examples/ch09-content/lesson-workspace/groups/src/lib.rs",
+        "examples/ch09-content/lesson-workspace/groups/src/main.rs",
+        "examples/ch09-content/lesson-workspace/groups/tests/files_groups.rs",
+        "examples/ch09-content/lesson-workspace/size/src/main.rs",
+        "examples/ch09-content/lesson-workspace/streams/src/lib.rs",
+        "examples/ch09-content/lesson-workspace/streams/src/main.rs",
+        "examples/ch09-content/lesson-workspace/streams/src/readers.rs",
+        "examples/ch09-content/lesson-workspace/streams/tests/streams.rs"
+      ],
+      "path_libraries": [
+        "ch09-files/src/lib.rs",
+        "ch09-files/src/scan.rs"
+      ],
+      "notes": "只四個members，載其lib/bin/examples/tests；不執行path dependency ch09-files自己的main/tests。所有owned source/API到命令前已教，Unix18tests／其他平台17。"
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "examples/ch09-content/lesson-workspace/streams/src/lib.rs:31",
+      "finding": "fill_chunk只讀remaining非空slice到滿或EOF，Interrupted重試；equal比較有效前段，左右error不當false；true需雙方EOF。9001跨buffer、尾差與空來源tests充分針對該契約。"
+    },
+    {
+      "source": "examples/ch09-content/lesson-workspace/checked-files/src/lib.rs:80",
+      "finding": "open前觀察、opened handle/path兩方對原Snapshot、讀後再verify；左右failure指確切record。成功不代表原子快照或抗替換／未來不變，本文限制充分。"
+    },
+    {
+      "source": "examples/ch09-content/lesson-workspace/groups/src/lib.rs:13",
+      "finding": "每候選比較每組代表，A/B/B不漏B組；same native path去重，singleton hash完整驗收，reference借自輸入，sort callback &&FileRecord對type。失敗只Err，caller移確切失敗者再重建有有限進展。"
+    },
+    {
+      "source": "examples/ch09-content/lesson-workspace/groups/src/lib.rs:78",
+      "finding": "u64::try_from錯誤TryFromIntError、checked_mul/add及u64::MAX首用均先教；0/1path與empty bytes指標為0；hard links按path雙計但不冒充可回收空間。"
+    },
+    {
+      "source": "docs/chapters/12-04-lesson.md:427",
+      "finding": "練習三份真實AAA/BBB/BBB皆3bytes、forced emptydigest僅受控key，分組1/2後metrics0+3=3；完整答案不把同摘要三份直接算6。"
+    },
+    {
+      "source": "docs/assets/engineering-v3/short-read-comparison.svg",
+      "finding": "圖四格左ABC/D/E、右逐byte，fill後ABCD/E與4096實作角色一致；另一圖分候選桶與真正group，兩圖只核source/XML。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:27:05.582Z"
+}

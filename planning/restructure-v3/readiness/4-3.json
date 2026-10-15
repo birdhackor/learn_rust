@@ -1,0 +1,96 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "4.3"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-cross-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round04-patterns-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04a.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round04-ch04b.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch04.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/04-03-lesson.md": "42d2fb6ad95eeacaf4d01ed3a84155f7f065763ded9bbb1538212671849b5352",
+    "examples/intro-workspace/patterns/examples/destructure.rs": "3f2170e715dcb87d67258964d6f3eb45892951677d76a4ea46b65d94d7a51b87",
+    "examples/intro-workspace/patterns/Cargo.toml": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+    "examples/intro-workspace/patterns/examples/pattern_places.rs": "4b6838c8ae6dacbee9079a5cc4793b7abfa894733f97df35a6fca153783ceb5f",
+    "examples/intro-workspace/patterns/examples/nested_patterns.rs": "7af61eebb9fbc18a62e95722791b9e8005a55d704df4096be6388c16277ff14e",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/refutable_let.rs": "9ba10b51182aeee8694a7edda483f25d8be337a8ace34ba8a167c0ce5cb39ee3",
+    "examples/intro-workspace/patterns/examples/destructure_answer.rs": "e749b6afda35408a48324df952ac96e516c659d4cfdf6d7809cd04ce1ed0e163"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 3,
+      "quote": "上一節用 Amount(amount) 先確認形態，再把金額命名為 amount。第一章的 `let (price, count, ready) = order;` 也在做相近的事：按資料的形狀，替其中各部分建立名稱。這一節讓這些解構方式接成同一條規則。"
+    },
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 7,
+      "quote": "`let pattern = expression;` 先取得右側的值，再依左側 pattern 建立 binding。只有一個名稱的 `let price = 120;` 是最簡單的形式；tuple pattern 則把數個名稱放進相同的小括號形狀。"
+    },
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 23,
+      "quote": "Order 的兩個欄位已在第 3 章學過。pattern 也用 Order 加大括號，逐欄對應："
+    },
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 64,
+      "quote": "函式參數名稱的位置也能放 pattern。例如參數收到一個 `(i32, i32)`，就在進入函式時把它拆成 price、count："
+    },
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 70,
+      "quote": "簽名最外面的括號仍是參數清單，裡面的 `(price, count)` 則是**一個 tuple 參數**的 pattern；冒號後的 `(i32, i32)` 說明這一個參數的型別。呼叫要提供 `subtotal((120, 3))`，不是兩個分開的參數。"
+    },
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 94,
+      "quote": "如果工作請求可能是「處理一筆 Order」或「取消」，可以定義 Request，把既有的 Order 放進其中一種 variant。建立時先建 Order，再將它放進 Request::Order；解構時也沿相同外框，由外向內對應："
+    },
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 108,
+      "quote": "tuple、array、struct 的上述解構，對該型別的每個值都能配對成功，稱為 **irrefutable pattern**。例如一個三格 tuple 一定有那三格，不能等執行後才突然變成兩格。"
+    },
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 110,
+      "quote": "相對地，`Quote::Amount(amount)` 可能遇到 Missing 而失敗，稱為 **refutable pattern**。match 能在這個 arm 不符時繼續試下一個；普通 let、函式參數、for 的 pattern 則沒有這種失敗分支，所以必須使用不能配對失敗的 pattern。"
+    },
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 118,
+      "quote": "在獨立練習專案執行 `cargo check`，錯誤 **E0005** 指出 `refutable pattern in local binding`。show 接受的是完整 Quote 型別，可能收到 Missing，不能無條件建立 amount。現在可以改用上一節的 match，為 Missing 安排明確工作；第 4.6、4.7 節會再教兩種適合單一成功形態的寫法。"
+    },
+    {
+      "section_id": "4.3",
+      "path": "docs/chapters/04-03-lesson.md",
+      "line": 122,
+      "quote": "把訂單 tuple 改成 `(80, 2, false)`，忽略第三格，將前兩格提供給剛才接收 tuple 的 subtotal，應得到 160。再從 `[80, 120, 200, 60]` 只取首尾並相加，應得到 140。最後建立相同單價與數量的 Order，將 unit_price 解構成 price，確認小計同樣是 160。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

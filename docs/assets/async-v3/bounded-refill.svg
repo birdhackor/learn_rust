@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="566" viewBox="0 0 390 566" role="img" aria-labelledby="title desc">
+<title id="title">回收一份，才補一份</title><desc id="desc">上限二。開始集合追蹤零與一，尚未提交二三四。取出一的工作錯誤報告後，集合只剩零，再補二成為零與二。</desc>
+<rect width="390" height="566" rx="14" fill="#f7fafc"/>
+<g font-family="sans-serif" font-size="22" fill="#172033">
+<text x="24" y="37" font-weight="700">上限 2：回收後才補入</text>
+<rect x="18" y="58" width="354" height="110" rx="12" fill="#eef5ff" stroke="#2563eb" stroke-width="2"/>
+<text x="34" y="90" font-weight="700">① 集合追蹤：0、1</text><text x="34" y="122">pending：2、3、4</text><text x="34" y="152">報告：空</text>
+<text x="34" y="207">↓ 放行 1，取回工作錯誤</text>
+<rect x="18" y="228" width="354" height="110" rx="12" fill="#fff7ed" stroke="#c2410c" stroke-width="2"/>
+<text x="34" y="260" font-weight="700">② 集合只剩：0</text><text x="34" y="292">pending：2、3、4</text><text x="34" y="322">報告：input 1 的錯誤</text>
+<text x="34" y="377">↓ fill 取下一筆 2 並提交</text>
+<rect x="18" y="398" width="354" height="110" rx="12" fill="#ecfdf5" stroke="#047857" stroke-width="2"/>
+<text x="34" y="430" font-weight="700">③ 集合追蹤：0、2</text><text x="34" y="462">pending：3、4</text><text x="34" y="492">報告：仍是 input 1 的錯誤</text>
+<text x="24" y="547" font-size="20">同一個 0 始終保留；箭頭表示先後</text></g></svg>

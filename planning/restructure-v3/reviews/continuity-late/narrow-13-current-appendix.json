@@ -1,0 +1,15 @@
+{
+  "type": "修後current preview窄核；不改原初判",
+  "source_recheck": "13prefix-array-recheck.json",
+  "prose_recheck": "13prefix-root-prose-recheck.json",
+  "built_from": "current docs overlay for13.2/13.3; current thread_join/main.rs overlay before frozen snippet root",
+  "current_source_sha256": "90a77a8021bbf6402e3e0dbdde2f1d71cd9f971e2d95f1205ee526f16103debe",
+  "actually_viewed_screenshots": {
+    "current-13-02-1280.png": "2bfdb3dbc6fdecbc602865de2918592e25b10850388831a0fee4e382929713b2",
+    "current-13-02-390.png": "6b1bbec1f19e9182529147e5bb48f565d1e872bfd34a3eb1d4e5c0863c10b4e1",
+    "current-13-03-1280.png": "55f6f6994fa01f44c1c1eabca8abf917809a3ce85fcad072d5745f1c432e258b",
+    "current-13-03-390.png": "486342566e8c1bbaae1e43f38f1e3c84a43d743f303a7f4522c526ab79a2ccc5"
+  },
+  "judgment": "兩viewport實際顯示local_values及[..]；helper/second新指向清楚；長code局部橫捲正常。",
+  "limitations": "未重跑Rust；純正文/source嵌入與先教後用窄核。"
+}

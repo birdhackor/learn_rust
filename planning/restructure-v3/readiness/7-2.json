@@ -1,0 +1,100 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "7.2"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round07-and14-root-wording-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round07-lifetimes.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch07.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/07-02-lesson.md": "b8935241be3b9415cd7f6a0cf2c59aaf4e2441bc2153d121af6f331959db41fb",
+    "examples/intro-workspace/lifetimes/examples/source_scope.rs": "6e98c465017b19c06de2150e44beae29e7f36b7558ceb3bb376e8ae904f536df",
+    "examples/intro-workspace/lifetimes/Cargo.toml": "5a6a50a4a6c478dd29dd81e26874b7e7661433be82ce20aea2075dc7ea2fee41",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/local_output.rs": "22287214629e749c4cbd4dd38f1cfd70e29f87f59f5edc2d457a4ac3d6949983",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/local_output.expected": "1deedf20ef4f126469fe5dbd9778a4796e5216b353d5054bd45ca611b51c831f",
+    "examples/intro-workspace/lifetimes/examples/owned_output.rs": "69357c0c58896c96ad6e60b6c72f5ddb81009e6db5cf144fadbab7cd475706bf",
+    "examples/intro-workspace/lifetimes/examples/placeholder.rs": "cdb0629f661538cab39205d0344f6ab8ded6c6c927b564fe8875055f0debc50f",
+    "examples/intro-workspace/lifetimes/examples/outlives.rs": "0760550aee771e733bcac9f7eabaceed3d19c0e9a48fefe4d5323d5cfceafef9",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/missing_outlives.rs": "9a9572fd9e2fa4fa95c99525bd206e46cdafbcf690f9461b0d3f5bf2a5956fed",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/missing_outlives.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/intro-workspace/lifetimes/examples/source_complete/source/mod.rs": "6b2e37cc42b0d358c25613c092c588c83b7f3888b01709088bfada6f375584ad",
+    "examples/intro-workspace/lifetimes/examples/source_complete/main.rs": "9d1e7dbb1b1da512938eb67a4cf6a8ca84a03b2e6ddbe0c94ae9834ac8b82faf"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 3,
+      "quote": "第 7.1 節的 longer 可以交回任一輸入，所以輸出使用期間，兩個候選來源都必須有效。現在沿用外層 outside、內層 inside，分清兩種不同需要：有時只需要借第一段；有時來源即將結束，卻要留下可獨立使用的文字。改變需要後，函式的簽名與工作也跟著改變。"
+    },
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 7,
+      "quote": "先把規格改成「一定回傳 first」。第二參數仍可以傳入，但這個小例刻意不使用它；參數位置的 `_` 沿用第 4 章的忽略 pattern，不建立名稱。"
+    },
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 15,
+      "quote": "這份契約讓呼叫者知道：回傳借用依賴 first 的來源；第二段不必為了**回傳結果的後續使用**繼續有效。兩個參數在呼叫當下仍然都必須是有效的 reference。"
+    },
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 52,
+      "quote": "若函式自己建立一份 String，它在函式結束時就要交接或清理。下面試圖交回借自這份區域文字的 `&str`；即使宣告 `'a`，仍不能讓 inside 留下："
+    },
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 58,
+      "quote": "放進獨立練習專案執行 `cargo check`，會得到 **E0515**：不能交回借自區域變數的值。`'a` 只描述關係，不會建立可以繼續借用的文字空間。這份完整 `.expected` 是："
+    },
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 98,
+      "quote": "有時希望在型別位置明確標出 lifetime，但不需要替它命名。**placeholder lifetime** 寫成 `'_`，意思是讓 Rust 依省略規則推導這裡的 lifetime；它不是新的具名參數，也不會延長資料。"
+    },
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 122,
+      "quote": "現在加入第 5.2 節的 Option：優先文字可能缺少，缺少時才借用 backup。`Option<&str>` 是「可能有一份文字 reference」；`Some(text)` 有借用，None 沒有。`Some(\"\")` 仍是有值，只是內容為空，不能當成缺少。"
+    },
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 124,
+      "quote": "我們把優先來源標成 `'a`，backup 標成 `'b`，回傳 `&'a str`。要讓 None 分支也能交出 backup，必須保證 `'b` **至少涵蓋** `'a` 所需的區間。"
+    },
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 126,
+      "quote": "這種關係稱為 **outlives bound**，寫成 `'b: 'a`。冒號左邊的 `'b` 至少與右邊 `'a` 一樣長，也可以更長；不要求嚴格更長。"
+    },
+    {
+      "section_id": "7.2",
+      "path": "docs/chapters/07-02-lesson.md",
+      "line": 166,
+      "quote": "寫 `first_nonempty`：第一段非空就回傳第一段；第一段為空才回傳第二段；兩段皆空時仍回傳第二段的空片段。這次沒有 Option，判斷的是現有文字的長度，不是資料是否缺少。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

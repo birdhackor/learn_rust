@@ -1,0 +1,222 @@
+{
+  "review_id": "round12-build-script",
+  "scope": [
+    "12.2"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python + 實際已讀1–9、10.1–10.8、11全章與12.1；未讀12.3以後當先備。",
+  "independence": "未讀作者validation/ledger或其他角色結論。Parent交接已通知root曾窄改command時序；首次actual閱讀就是846d2893…版本，不把原問題或該修正算自己獨立發現。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "所讀修訂後版本無新增必要或可選技術問題。",
+  "method": [
+    "全文、8個完整snippets、selectedpackage全部7份Rust（含build.rs/fixture）、manifest/integrationtest/兩個examples、根inherited設定及lock逐項靜態核對。",
+    "核對buildscript/主要crate/runtime四階段、各命令selectedsource與環境值追蹤、env!/option_env!契約和失敗字串。",
+    "build-phases.svg僅source/XML；無browser或reader實驗。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "binary_run": false,
+    "note": "8個Cargo命令、1個成品直接執行與1個rustc故意失敗命令均靜態核對；沒有本波Rust/Cargo執行。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:01:22.848536+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "b05e2c8a8edceac54b0504c8551cb51144b53279166e29cad7eceb760132b01a",
+    "Cargo.toml": "26e238dee27d8903e13d7984c0eabad38fe7b4c4d05a6da5666933883aad80c6",
+    "docs/assets/engineering-v3/build-phases.svg": "4c4b51220e531dee0ef870e584f560c646620713cddb6604a760b7b5b11bf1a6",
+    "docs/chapters/12-02-lesson.md": "846d2893b7c8c692a00efa7792cf4256cde6732e35f118d104585ed72bdfba7a",
+    "examples/ch09-build-script/Cargo.toml": "08729d8f5e96d5f6cff7d2e1e590140e2bb653f135f0f23116765bba2e7bebf9",
+    "examples/ch09-build-script/build.rs": "5455cbca7f20f25b814391d6c1d6fb69b4e688b873d7461db27efc9fdd6d69da",
+    "examples/ch09-build-script/examples/build_identity_solution.rs": "26ceb212c87ec0a61272262499764cb1116244ac65b8229f4a1ca4880a500381",
+    "examples/ch09-build-script/examples/optional_build_tag.rs": "cd25f33ab9c3315783adbb397a503cd2d6ce75ed56a940f6235646a4d3aa6256",
+    "examples/ch09-build-script/fixtures/compile-fail/missing_env.expected": "41a8371db3dfb6efbb1c4a58ced7fdbdbd03d46989485280a91cc7b502e30c5d",
+    "examples/ch09-build-script/fixtures/compile-fail/missing_env.rs": "02f1a6ac65299be704f8ea4d65a4584a114952ea44f0ade5144542edc85a593a",
+    "examples/ch09-build-script/src/lib.rs": "a36ae85a666aacc2fc6fd85d07abe53b7c6838e6e81df5e039fb32752cd8eab4",
+    "examples/ch09-build-script/src/main.rs": "4b01daa93b0e485eaf5176aea6aa9681400f68a0fd90a6b45ef36934ff178bbf",
+    "examples/ch09-build-script/tests/embedded.rs": "74e7cd2be08fdbda72e15c9c7e5eba307faecdf9b348cacc69723131769331b9",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "ch09-build-script",
+      "version": "0.1.0"
+    }
+  ],
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/12-02-lesson.md",
+      "line": 16,
+      "source": "examples/ch09-build-script/Cargo.toml",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-02-lesson.md",
+      "line": 47,
+      "source": "examples/ch09-build-script/build.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-02-lesson.md",
+      "line": 59,
+      "source": "examples/ch09-build-script/src/lib.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-02-lesson.md",
+      "line": 65,
+      "source": "examples/ch09-build-script/src/main.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-02-lesson.md",
+      "line": 102,
+      "source": "examples/ch09-build-script/fixtures/compile-fail/missing_env.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-02-lesson.md",
+      "line": 118,
+      "source": "examples/ch09-build-script/examples/optional_build_tag.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-02-lesson.md",
+      "line": 150,
+      "source": "examples/ch09-build-script/tests/embedded.rs",
+      "tag": null,
+      "complete_source": true
+    },
+    {
+      "chapter": "docs/chapters/12-02-lesson.md",
+      "line": 174,
+      "source": "examples/ch09-build-script/examples/build_identity_solution.rs",
+      "tag": null,
+      "complete_source": true
+    }
+  ],
+  "selected_target_closure": {
+    "package": "ch09-build-script",
+    "workspace": "教材repo根Cargo.toml/Cargo.lock；不是lesson-workspace",
+    "inherited_fields": "version0.1.0/edition2024/rust-version1.99/publishfalse；根profile.release既有設定。",
+    "dependencies": [],
+    "build_dependencies": [],
+    "build_script": "build=build.rs，所有Cargo targets先建置host可執行script並執行。script只有std，沒有額外mod或generated source。",
+    "targets": {
+      "cargo run main": [
+        "build.rs（host）",
+        "src/lib.rs（env!三值）",
+        "src/main.rs"
+      ],
+      "cargo check wrong": [
+        "build.rs印cargo::error後Cargo拒絕建置；不把既有成品runtime失敗當作此check結果"
+      ],
+      "optional_build_tag": [
+        "build.rs",
+        "src/lib.rs（正常library自動建置）",
+        "examples/optional_build_tag.rs"
+      ],
+      "--test embedded": [
+        "build.rs",
+        "src/lib.rs",
+        "src/main.rs（integration選定時Cargo自動建置）",
+        "tests/embedded.rs；不提前選未說明的examples"
+      ],
+      "build_identity_solution": [
+        "build.rs",
+        "src/lib.rs",
+        "examples/build_identity_solution.rs"
+      ],
+      "--all-targets after answer": [
+        "build.rs",
+        "src/lib.rs",
+        "src/main.rs",
+        "tests/embedded.rs",
+        "examples/optional_build_tag.rs",
+        "examples/build_identity_solution.rs"
+      ]
+    },
+    "standalone_failure": "rustc僅missing_env.rs，沒有Cargo/buildscript；必須不提供LEARN_RUST_INTENTIONALLY_MISSING_VALUE。",
+    "cwd_and_paths": "所有命令repo根；dev成品預設root target/debug/ch09-build-script（Windows.exe差別明說），直接執行沒有Cargo再建置。"
+  },
+  "concept_evidence": [
+    {
+      "source": "docs/chapters/12-02-lesson.md:5",
+      "judgment": "buildscript先編譯為host程式、執行成功後才主要crate；build入口相對package根及Cargo慣用自動發現先教。"
+    },
+    {
+      "source": "docs/chapters/12-02-lesson.md:21",
+      "judgment": "env::var runtime Result<String,VarError>、NotPresent/NotUnicode含OsString、有限mode政策與CARGO_CFG_TARGET_OS來源先教；script的cfg!看host不混主要target。"
+    },
+    {
+      "source": "docs/chapters/12-02-lesson.md:31",
+      "judgment": "stdout逐行cargo::協定、rerun-if-changed/env-changed、rustc-env與error角色在build.rs前；先驗有限mode防止任意文字注入多行協定，error加unit return仍使Cargo失敗正確。"
+    },
+    {
+      "source": "docs/chapters/12-02-lesson.md:54",
+      "judgment": "env!編譯期static文字/缺值或非Unicode編譯錯誤，不runtime重新讀；固定TEACHING_MODE/target/host文字在library三函式給出，hostbool明說只存true/false文字。"
+    },
+    {
+      "source": "docs/chapters/12-02-lesson.md:74",
+      "judgment": "Bash NAME=value只該命令子行程的環境先教；demo→practice Cargo觸發重建，直接LESSON_MODE=demo成品仍practice的比較對source成立。"
+    },
+    {
+      "source": "docs/chapters/12-02-lesson.md:113",
+      "judgment": "option_env!為編譯期Option<&'static str>，缺值None非Unicode仍編譯錯誤；compiler/Cargo追蹤source環境macro變動，無需額外script讀取。"
+    },
+    {
+      "source": "docs/chapters/12-02-lesson.md:132",
+      "judgment": "OUT_DIR是script生成檔目的地且可能留前次輸出；build-dependencies host/normaldependencies主要crate分工足夠，本例皆不用。linker/兩個link協定僅明示後續路線，未偷需C/ABI實作。"
+    },
+    {
+      "source": "docs/chapters/12-02-lesson.md:147",
+      "judgment": "selected--test embedded只載已提供targets，Linux/Windows2tests、其他OS1；CARGO_PKG_NAME首用前教並在完整answer後才all-targets，因此無未教example API提前編譯。"
+    }
+  ],
+  "fixture": {
+    "path": "examples/ch09-build-script/fixtures/compile-fail/missing_env.rs",
+    "expected": "environment variable `LEARN_RUST_INTENTIONALLY_MISSING_VALUE` not defined at compile time",
+    "precondition": "該環境值未提供；正文已交代",
+    "executed": false
+  },
+  "static_results": {
+    "mode_default": "LESSON_MODE缺值→demo",
+    "mode_demo": "Cargo run→demo",
+    "mode_practice": "Cargo run→practice",
+    "runtime_override": "上一成品practice，直接runtime LESSON_MODE=demo仍practice",
+    "invalid_mode": "cargo check失敗，LESSON_MODE 只接受 demo 或 practice",
+    "non_unicode_mode": "script cargo::error失敗，沒有rustc-env把原native值當協定",
+    "optional_absent": "編譯時沒有額外標記",
+    "optional_lab": "編譯時的額外標記=lab",
+    "identity": "package=ch09-build-script; mode=practice; target=<主要target OS>",
+    "linux_target": "target_os linux / host_windows_text false（Linux host本機build）；跨target不作錯誤等同"
+  },
+  "tests": {
+    "linux_or_windows": 2,
+    "other_os": 1,
+    "note": "同名targetOS test用互斥cfg，沒有重複定義；是靜態數目，不是實跑。"
+  },
+  "version_note": {
+    "first_read_hash": "846d2893b7c8c692a00efa7792cf4256cde6732e35f118d104585ed72bdfba7a",
+    "prompted_revision": "root已先通知command時序窄改；本review只確認當前--test embedded與頁尾--all-targets的actualclosure，不推測未讀原版。"
+  },
+  "limits": [
+    "整頁技術重讀，非盲首讀；不宣稱重現root先前修正。",
+    "無新增Rust/Cargo/成品run或cross-target實測。",
+    "SVG只XML/source，不稱rendered視覺檢查；root其他members只metadata，不讀未授權source。"
+  ],
+  "sealed_at_utc": "2026-10-15T09:02:29.638Z"
+}

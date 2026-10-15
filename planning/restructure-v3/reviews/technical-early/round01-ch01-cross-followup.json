@@ -1,0 +1,66 @@
+{
+  "review_id": "technical-early-round01-ch01-cross-followup",
+  "saved_at_utc": "2026-10-15T06:40:19.428276+00:00",
+  "role": "technical cross-review and narrow post-fix source check",
+  "independent_initial_judgments_preserved": [
+    "round01-prefix.md/json",
+    "round01-tail.md/json",
+    "round02-control-tail.md/json"
+  ],
+  "peer_material_first_read_after_round02_tail_seal": "/workspace/work/tutorial-implementation-20261015/continuity-early/round01-ch01-report.md",
+  "peer_report_sha256": "0f6861aac183529decc5639f9baef2a7a12f4efc60d3d593a0b5f69cdeb33cf0",
+  "not_an_independent_reproduction": "Both items are prompted by the continuity report, after all relevant independent initial judgments were sealed. Do not count them as second independent discoveries.",
+  "first_reader_material_read": false,
+  "items": [
+    {
+      "id": "C1-01",
+      "peer_classification": "necessary, 增加理解負擔",
+      "own_initial_status": "Not reported in independent tail; whole-page semantic/source check passed but missed the local before-code ordering requirement for the first indexed write.",
+      "cross_judgment": "Agree with narrow required order fix; not a Rust factual error and not a whole-section conceptual failure.",
+      "evidence": [
+        "1.5 explained rebinding a name, and 1.8 earlier taught reading an indexed element; applying mut to element write is a new local relation.",
+        "The original explanation already taught counts[1]=2 and the mut requirement, but came after the first repeat source use.",
+        "Current 1.8:53 moves that exact explanation ahead of the repeat snippet at55–57."
+      ],
+      "benefit": "Reader has the meaning and permission condition for indexed element mutation before interpreting the first use.",
+      "minimal_change_and_cost": "Moved existing paragraph only; no new concept, API, example, or diagram.",
+      "disposition": "Adopted; narrow source-order recheck passes.",
+      "proof": "Moving the current paragraph back below the snippet exactly reproduces the original independently sealed 1.8 hash.",
+      "new_cargo_or_visual_check": false
+    },
+    {
+      "id": "C1-02",
+      "peer_classification": "optional formatting improvement",
+      "own_initial_status": "No visual verification in independent technical tail; not reported. This is not an independently observed rendering bug.",
+      "cross_judgment": "Agree with optional nature and minimal markup edit; roles/definitions were already complete.",
+      "evidence": [
+        "Current 1.7:9 emphasizes only process/RAM/CPU before the Chinese parenthetical explanation.",
+        "Current 1.7:19 emphasizes only bit/byte before the parenthetical explanation.",
+        "Full names, Chinese meanings and required mechanisms remain unchanged."
+      ],
+      "benefit": "Removes the reported literal emphasis-marker noise and restores scan emphasis without expanding already sufficient definitions.",
+      "minimal_change_and_cost": "Five strong-boundary edits, no wording or conceptual expansion.",
+      "disposition": "Adopted; source-markup recheck passes. Rendered behavior still belongs to actual page recheck.",
+      "proof": "Undoing only these five emphasis-boundary changes exactly reproduces the previously sealed heading-only updated 1.7 hash.",
+      "new_cargo_or_visual_check": false
+    }
+  ],
+  "current_source_hashes": {
+    "docs/chapters/01-07-lesson.md": "cf49b1d604a23ed49d28f10d592b6ee662d7a46803062681c8fa7f2c97f6bcee",
+    "docs/chapters/01-08-lesson.md": "d64133800925f9ded95a43efe017914a502de000096bafda6c4b7637789571c6"
+  },
+  "rust_sources_and_svg_hashes_unchanged": {
+    "examples/intro-workspace/steps/Cargo.toml": true,
+    "examples/intro-workspace/steps/examples/memory.rs": true,
+    "examples/intro-workspace/steps/examples/memory_answer.rs": true,
+    "examples/intro-workspace/steps/examples/tuple_array.rs": true,
+    "examples/intro-workspace/steps/examples/tuple_array_answer.rs": true,
+    "examples/intro-workspace/steps/fixtures/runtime-fail/array_index.rs": true,
+    "docs/assets/foundations-v3/program-process.svg": true,
+    "docs/assets/foundations-v3/i32-value-size-location.svg": true,
+    "docs/assets/foundations-v3/subtotal-frames.svg": true,
+    "docs/assets/foundations-v3/heap-location-content.svg": true,
+    "docs/assets/foundations-v3/heap-lifecycle.svg": true
+  },
+  "execution_limits": "No Cargo/rustc/Markdown renderer/browser/visual execution in this cross-review. Original peer screenshots/DOM findings are attributed to the continuity reviewer, not claimed as own observation."
+}

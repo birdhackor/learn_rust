@@ -1,0 +1,145 @@
+{
+  "type": "root-prompted narrow source followup after own initial seals",
+  "scopes": [
+    "15.6",
+    "18.8"
+  ],
+  "date": "2026-10-15",
+  "attribution": "Root supplied both15.6 crossreference corrections after own15 initial seal and optional18.8 precision after ownB2 seal. These are not independent new findings. Original initial findings/hashes remain unchanged.",
+  "checks": [
+    {
+      "scope": "15.6:74",
+      "old": "前節已學過的mutable設定與method呼叫",
+      "new": "先前已學過的mutable設定與method呼叫",
+      "judgment": "resolved",
+      "source_evidence": "15.5 preceding page teaches C. Actual earlier3.6 defines &mut self and method mutation before15.6 build settings; broad earlier reference accurate."
+    },
+    {
+      "scope": "15.6:453",
+      "old": "to_owned沿第10.4節建立獨立Rust String",
+      "new": "to_owned沿第8.5節建立獨立Rust String",
+      "judgment": "resolved",
+      "source_evidence": "8.5:123–130 explicitly &str→String and independent ownership.10.4:73 uses byte slice→Vec<u8>. Greeting.as_str borrowed C text to_owned copied Rust String before drop(greeting) matches8.5."
+    },
+    {
+      "scope": "18.8:53",
+      "old": "沿14.5，Duration具備Copy",
+      "new": "Duration 是 14.5 已教的時間跨度；這個標準型別具備 Copy",
+      "judgment": "resolved",
+      "source_evidence": "14.5:9 defines std Duration as time span but does not teach Copy there. Revised reference narrowly points to time span; this sentence itself supplies standard Duration Copy before sequential runner reuse. Each B1 check still creates independent timeout."
+    }
+  ],
+  "original_document_hashes": {
+    "15.6": "ed5a9511f205772cacba2f95e4c4b5b25744e59c039fdd4c656e78d090e713a7",
+    "18.8": "88f5224655b0d0b037c4e51795f0bd71d81be264a33f5583d9d0a12c57a92d7c"
+  },
+  "current_document_hashes": {
+    "15.6": "9d61d616276c916246f3d83967d34ead056dc35a282e61dfadc8da5c78b2e9ba",
+    "18.8": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34"
+  },
+  "exact_delta_proofs": [
+    "Reverse only two15.6 word replacements recovers own first seal hash",
+    "Root18.8-before file matches own initial hash; applying only stated one-sentence replacement exactly yields current"
+  ],
+  "unchanged_selected_owned_source_config_files": [
+    "/workspace/learn_rust/examples/ch11-async/http-single/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/http-single/src/config.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/src/error.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/src/reply.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/local-service/src/lib.rs",
+    "/workspace/learn_rust/examples/ch12-c-basics/checks.c",
+    "/workspace/learn_rust/examples/ch12-c-basics/counts.c",
+    "/workspace/learn_rust/examples/ch12-c-basics/counts.h",
+    "/workspace/learn_rust/examples/ch12-c-basics/fixtures/compile-fail/missing_length.c",
+    "/workspace/learn_rust/examples/ch12-c-basics/main.c",
+    "/workspace/learn_rust/examples/ch12-c-basics/solution.c",
+    "/workspace/learn_rust/examples/ch12-ffi/Cargo.toml",
+    "/workspace/learn_rust/examples/ch12-ffi/build.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/c/tutorial.c",
+    "/workspace/learn_rust/examples/ch12-ffi/c/tutorial.h",
+    "/workspace/learn_rust/examples/ch12-ffi/examples/borrowed_label.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/examples/buffer_count.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/examples/ffi_solution.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/examples/owned_greeting.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/examples/scalar_call.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/src/lib.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/src/sys.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/Cargo.toml",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/build.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/c/tutorial.c",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/c/tutorial.h",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/examples/buffer_count.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/src/lib.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/buffer/src/sys.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/label/Cargo.toml",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/label/build.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/label/c/tutorial.c",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/label/c/tutorial.h",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/label/examples/borrowed_label.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/label/src/lib.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/label/src/sys.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/Cargo.toml",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/build.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/c/tutorial.c",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/c/tutorial.h",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/examples/scalar_call.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/src/lib.rs",
+    "/workspace/learn_rust/examples/ch12-ffi/stages/scalar/src/sys.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b2-complete/Cargo.toml",
+    "/workspace/learn_rust/examples/ch15-projects/b2-complete/examples/b2_batch_demo.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b2-complete/src/lib.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b2-complete/src/single.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b2-starter/Cargo.toml",
+    "/workspace/learn_rust/examples/ch15-projects/b2-starter/checks/batch-tests.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b2-starter/src/lib.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b2-starter/src/single.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b3-complete/Cargo.toml",
+    "/workspace/learn_rust/examples/ch15-projects/b3-complete/examples/b3_bounded_demo.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b3-complete/src/input.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b3-complete/src/lib.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b3-complete/src/single.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b3-starter/Cargo.toml",
+    "/workspace/learn_rust/examples/ch15-projects/b3-starter/checks/bounded-tests.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b3-starter/src/input.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b3-starter/src/lib.rs",
+    "/workspace/learn_rust/examples/ch15-projects/b3-starter/src/single.rs"
+  ],
+  "source_hashes": [
+    {
+      "path": "/workspace/learn_rust/docs/chapters/15-06-lesson.md",
+      "sha256": "9d61d616276c916246f3d83967d34ead056dc35a282e61dfadc8da5c78b2e9ba"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/18-08-lesson.md",
+      "sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/root-followups-1034/18-08-before.md",
+      "sha256": "88f5224655b0d0b037c4e51795f0bd71d81be264a33f5583d9d0a12c57a92d7c"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/03-06-lesson.md",
+      "sha256": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/08-05-lesson.md",
+      "sha256": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/10-04-lesson.md",
+      "sha256": "3fc73a9915ecedebe2589e981615aed0271a906fdfafe7bd8741367a20bf2171"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/14-05-lesson.md",
+      "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194"
+    }
+  ],
+  "execution": "Static exact diff, source/reference and hash review only; no Cargo, Rust, C, HTTP or browser. No manuscript/source/config changes by reviewer.",
+  "conclusion": "All three root-prompted narrow edits resolve their stated reference precision; no additional finding."
+}

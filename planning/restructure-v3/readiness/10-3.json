@@ -1,0 +1,134 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "10.3"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round10-cargo-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round10-cli-fixtures.md",
+    "planning/restructure-v3/reviews/technical-early/round10-complete-note-search.md",
+    "planning/restructure-v3/reviews/technical-early/round10-native-path-clap-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round10-serde-json.md",
+    "planning/restructure-v3/reviews/technical-early/round10-text-bytes-io-middle.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round10-ch10.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/10-03-lesson.md": "0ef86d599bc6a201968cededd1b0971904d3b0a957545558e6654170f626deca",
+    "examples/intro-workspace/io-text/fixtures/note.txt": "a581105a3e3bce0d0ae0ff57955745e4c5df376a9a751acec1f5f5e08a6be213",
+    "examples/intro-workspace/io-text/src/main.rs": "399032ac09c3425516bf4ba059ae5697fea6310d482acfbb88e33327f73cd353",
+    "examples/intro-workspace/io-text/examples/file_handle.rs": "1567df1d2cf4727874a38defaf6fa4d53ac927c90f7897711a53ce3c13e70414",
+    "examples/intro-workspace/io-text/examples/write_note.rs": "a133e5579239493b758e2cfc9a368e277f3fb3cdf806a65a1f2a2e5dcedb267b",
+    "examples/intro-workspace/io-text/Cargo.toml": "c722b0e121ef7e98d464e18f54ca26e3de4df4f3f60d828b7d880c01736caa87",
+    "examples/intro-workspace/io-text/examples/text_io_solution.rs": "636e686ac05866e33939820519792f25b89d18a2379c69d5cb6f0f893438cb75"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 3,
+      "quote": "第 8 章已能解析文字、保留具體錯誤，再由呼叫者決定是否繼續。現在文字來自檔案：我們要讀出一份筆記，保留換行與中文；檔案不存在，或內容不是 UTF-8 時，也要得到可處理的失敗。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 7,
+      "quote": "本節使用 `intro-io-text` package。從 repo 根目錄切到它的資料夾，**本節的全部指令都在這個資料夾執行**："
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 34,
+      "quote": "**I/O** 是 input/output（輸入／輸出），此處指程式讀取或寫入外部資料。`std::fs` 是 filesystem（檔案系統）module，提供讀檔操作；`std::io` 提供 I/O 的共同結果與能力。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 36,
+      "quote": "本節先使用 **`fs::read_to_string(filename)`**：傳入 `&str` 表示的檔名，它開啟並讀完整檔案。成功回傳 owned 的 `String`，內容必須是合法 UTF-8。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 38,
+      "quote": "結果型別是 **`io::Result<String>`**，等同 `Result<String, io::Error>`。這延續第 8.2 節的 type alias：`io::Result` 替 I/O 工作固定錯誤型別為 **`io::Error`**，角括號只需要指定成功型別。它仍然是已教的 Ok／Err，沒有新的結果容器。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 40,
+      "quote": "`io::Error` 保存這次 I/O 失敗；它已提供 Debug 與 Display，可以檢查或顯示。其 **`kind()`** method 借用錯誤，交回 **`io::ErrorKind`**：一個描述錯誤類別的 enum。本次先用兩個 variants："
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 69,
+      "quote": "剛才需要的是整份文字，所以一次呼叫就能完成。另一項需要是**把讀出的文字接在既有前綴之後**。先保留一個開啟的檔案，再指定文字要追加到哪裡，能把這兩份狀態分開。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 71,
+      "quote": "**`std::fs::File`** 是開啟檔案的操作對象，管理和作業系統之間的檔案資源。`File::open(filename)` 以唯讀方式嘗試開啟檔案，回傳 `io::Result<File>`；取得 File 本身不代表已取得完整內容。正常離開 scope 時，File 會關閉它管理的檔案資源。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 73,
+      "quote": "**`std::io::Read`** 是讀取來源的 trait，提供讀取資料的操作。File 已實作它；沿用第 6.1 節的規則，先 `use std::io::Read;`，才能以點號呼叫其 methods。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 75,
+      "quote": "本次選用 **`file.read_to_string(&mut text)`**。它 mutable 借用 File，從目前位置讀到來源結尾，把合法 UTF-8 文字**追加**到給定的 String，不清除原內容。成功回傳 `io::Result<usize>` 中的**本次讀入 byte 數量**，不是 String 追加後的總長度。讀取會往後推進 File 的位置，因此 file 需要 mutable 存取。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 99,
+      "quote": "現在要把相同的 `\"Rust\\n中\\n\"` 存成 `note-output.txt`，再讀回確認。**`File::create(filename)`** 回傳 `io::Result<File>` 中可寫入的檔案：不存在就建立；**已存在就清空原內容**。因此範例只使用本 package 中專用的 `note-output.txt`，沒有拿教材輸入檔當輸出。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 101,
+      "quote": "**`std::io::Write`** 是寫入出口的 trait。File 已提供它；先引入 Write，再用第 8.3 節的 **`write!`** 格式化文字到這個出口。這次 `write!` 的結果是 **`io::Result<()>`**：Ok 表示這次寫入完成，Err 保存 I/O 原因。它不固定寫到終端機，也不自動加換行；換行來自傳入文字。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 117,
+      "quote": "以下測試只讀教材提供的範例檔，沒有寫入共享檔案。Cargo 在執行 package 的測試時，以 package 根目錄作工作目錄，所以同樣的 `fixtures/...` 指到同一份材料。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 140,
+      "quote": "這個 package 沒有 library 或第三方依賴。完整 `Cargo.toml`："
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 158,
+      "quote": "`write_note.rs` 已在前面完整列出。實際輸入材料只有開頭的三份檔案：`note.txt` 的完整文字已列出，`empty.txt` 是 **0 bytes、完全沒有內容**；`not-utf8.bin` 的完整 byte 序列只有 **255** 一項（十六進位 FF），沒有換行。這是原始 bytes，不能在文字編輯器輸入三個字元 `255` 來代替。教材已提供這個檔案，不需讀者先操作尚未介紹的 binary API。"
+    },
+    {
+      "section_id": "10.3",
+      "path": "docs/chapters/10-03-lesson.md",
+      "line": 164,
+      "quote": "寫 `total_file_bytes(first: &str, second: &str) -> io::Result<usize>`。依序呼叫本節的 fs::read_to_string，兩份都成功才回傳文字 byte 長度之和；任一步失敗就保留 io::Error，以 `?` 傳回 caller。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

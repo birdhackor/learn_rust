@@ -1,0 +1,380 @@
+{
+  "sealed_utc": "2026-10-15T08:44:33.338998+00:00",
+  "role": "independentcontinuityandrenderedpagereviewer",
+  "scope": "actual7.1→7.4 plusallloadedsource/config/tests/answers/fixtures; prioractual1–6 only",
+  "contamination_control": {
+    "not_read": [
+      "authorvalidation/ledger",
+      "reader/technicalconclusions",
+      "known/historicalaudit",
+      "rootdispositions",
+      "chapter8+body/source"
+    ],
+    "no_known_ch7_findings_supplied": true,
+    "not_blind_firstreader": true
+  },
+  "necessary_findings": [],
+  "optional_findings": [],
+  "concept_checks": [
+    {
+      "concept": "單一來源回傳與lifetime elision",
+      "first_needed_position": "7.1:7–15；完整same呼叫者26",
+      "actual_prior": "3.5有效借用區間、3.8&str、1.6函式回傳型別",
+      "q1_identity_role": {
+        "status": "已足夠",
+        "answer": "same交回收到的文字reference，elision是省略標註的推導規則。"
+      },
+      "q2_mechanism_property": {
+        "status": "已足夠",
+        "answer": "只有一個輸入lifetime時，省略輸出連到它；沒有消除lifetime或另建內容。"
+      },
+      "q2_need_purpose": {
+        "status": "已足夠",
+        "answer": "7.1:3先提出自己回傳借用時，呼叫者要知道哪些來源繼續有效；單來源是兩來源選取前可理解的基礎。"
+      },
+      "q3_operation_and_followup": {
+        "status": "已足夠",
+        "answer": "same(source.as_str())保存&str，來源main中有效，最後顯示仍可使用。小prototype前7已說原樣交回借用，精確推導規則15在完整呼叫者前。"
+      },
+      "q4_example_relationship_and_limits": {
+        "status": "已足夠",
+        "answer": "single_source顯示Rust、長度4，僅支持借回同來源；不能推出來源結束後仍可用。"
+      },
+      "source_quotes_positions": [
+        "7.1:7「原樣交回借用」",
+        "7.1:13「回傳值必須連到輸入的借用來源」",
+        "7.1:15「只有一個輸入lifetime」"
+      ]
+    },
+    {
+      "concept": "具名lifetime parameter與兩候選來源契約",
+      "first_needed_position": "7.1:57–67；caller74",
+      "actual_prior": "5.1泛型宣告、5.3byte len、3.5原資料有效要求",
+      "q1_identity_role": {
+        "status": "已足夠",
+        "answer": "單引號參數描述有效範圍關係，&'a str連起兩候選與輸出；不指資料型別。"
+      },
+      "q2_mechanism_property": {
+        "status": "已足夠",
+        "answer": "輸出使用區間須兩候選都支持；不要求String同時建立／結束，不延長scope。"
+      },
+      "q2_need_purpose": {
+        "status": "已足夠",
+        "answer": "原需求7.1:3是從兩段選一段且不另建String，caller需要兩候選來源要求，不是用選到內容猜可保留多久。"
+      },
+      "q3_operation_and_followup": {
+        "status": "已足夠",
+        "answer": "first/second依byte長度選、等長第一；a宣告與位置57/59先說，65/67在跨scope呼叫前完整交代來源要求。"
+      },
+      "q4_example_relationship_and_limits": {
+        "status": "已足夠",
+        "answer": "交換13/2長度使兩個arm都運作；ab/CD等長異內容能看見第一規則；too_short即使outside較長仍E0597，不能以一次執行內容縮窄簽名。"
+      },
+      "source_quotes_positions": [
+        "7.1:39「不是比較lifetime」",
+        "7.1:65「同時由兩個候選來源支持」",
+        "7.1:109「只檢查長度2無法分辨」"
+      ]
+    },
+    {
+      "concept": "只連第一來源的不同規格",
+      "first_needed_position": "7.2:7–15；save-first20",
+      "actual_prior": "7.1兩來源契約、4章_ pattern、block尾端expression",
+      "q1_identity_role": {
+        "status": "已足夠",
+        "answer": "first_text承諾總回傳first，第二輸入不與輸出a相連。"
+      },
+      "q2_mechanism_property": {
+        "status": "已足夠",
+        "answer": "輸出不再依賴第二來源；兩reference呼叫當下仍有效。"
+      },
+      "q2_need_purpose": {
+        "status": "已足夠",
+        "answer": "7.2:3/7明示新需要只是借第一段，並非讓任選兩段的longer逃過原要求。"
+      },
+      "q3_operation_and_followup": {
+        "status": "已足夠",
+        "answer": "a標first與輸出，_:&str忽略第二；inside結束後saved仍借outer outside。"
+      },
+      "q4_example_relationship_and_limits": {
+        "status": "已足夠",
+        "answer": "同樣Rust tutorial可在不同位置用，原因是規格與簽名；23/48公平指出不是印出內容決定，也沒延長inside。"
+      },
+      "source_quotes_positions": [
+        "7.2:7「一定回傳first」",
+        "7.2:15「兩個參數在呼叫當下仍然都必須…有效」",
+        "7.2:23「已經是另一個規格」"
+      ]
+    },
+    {
+      "concept": "owned文字結果與來源獨立",
+      "first_needed_position": "7.2:50–78",
+      "actual_prior": "3.8String::new/push_str、3.2move/清理、6.3Clone與reference差別",
+      "q1_identity_role": {
+        "status": "已足夠",
+        "answer": "copy_text是自訂函式，借來源建立新String，再move出函式。"
+      },
+      "q2_mechanism_property": {
+        "status": "已足夠",
+        "answer": "新文字有自己的資源；a不能救local reference，String可在來源結束後使用，也可與原文字分開修改。"
+      },
+      "q2_need_purpose": {
+        "status": "已足夠",
+        "answer": "7.2:3/52原來源即將結束卻要留內容；70明說代價是另一份內容儲存，非只是複製視圖。"
+      },
+      "q3_operation_and_followup": {
+        "status": "已足夠",
+        "answer": "&str輸入→String輸出，內層來源可結束，原String追加也不改copied。"
+      },
+      "q4_example_relationship_and_limits": {
+        "status": "已足夠",
+        "answer": "local_output E0515對照新owned可帶出；original加tutorial而copied仍Rust使獨立修改可見。不能從相同顯示反推相同ownership。"
+      },
+      "source_quotes_positions": [
+        "7.2:58「a只描述關係」",
+        "7.2:70「需要儲存另一份內容」",
+        "7.2:94「與來源分開保存、修改」"
+      ]
+    },
+    {
+      "concept": "placeholder lifetime",
+      "first_needed_position": "7.2:98–106",
+      "actual_prior": "7.1唯一輸入elision",
+      "q1_identity_role": {
+        "status": "已足夠",
+        "answer": "'_標示此處lifetime交省略規則推導，不是新的具名共用參數。"
+      },
+      "q2_mechanism_property": {
+        "status": "已足夠",
+        "answer": "兩個'_的字面相同不指定同源，唯一輸入規則才建立關係；多輸入仍不能自選。"
+      },
+      "q2_need_purpose": {
+        "status": "已足夠",
+        "answer": "本小節教明寫位置的性質，沒有承諾新演算法優勢；108明說稍後struct型別位置要用，目前same簡例驗證不改來源。"
+      },
+      "q3_operation_and_followup": {
+        "status": "已足夠",
+        "answer": "same_placeholder(&'_str)->&'_str，由輸入取得Rust借用；來源main仍有效。"
+      },
+      "q4_example_relationship_and_limits": {
+        "status": "已足夠",
+        "answer": "輸出Rust／長度4只支持既有單來源規則；不能把'_當延長scope或兩輸入輸出關係的替代標註。"
+      },
+      "source_quotes_positions": [
+        "7.2:98「依省略規則推導」",
+        "7.2:106「不是靠字面相同指定共同來源」",
+        "7.2:108「struct的型別位置也會用到」"
+      ]
+    },
+    {
+      "concept": "outlives bound與fallback",
+      "first_needed_position": "7.2:122–132",
+      "actual_prior": "5.2OptionSome/None、7.1a關係、泛型多參數",
+      "q1_identity_role": {
+        "status": "已足夠",
+        "answer": "'b: 'a表示b至少涵蓋a，可等長；借用關係不是owner整個scope。"
+      },
+      "q2_mechanism_property": {
+        "status": "已足夠",
+        "answer": "backup標b要能支持輸出a，None才能交回它；不讓資料多活，亦承認可用共同參數寫類似契約。"
+      },
+      "q2_need_purpose": {
+        "status": "已足夠",
+        "answer": "122先提出可能缺優先文字、缺時要借backup；124給輸出a的需求，b涵蓋a恰能提供該備援，不假造比共同a更有能力。"
+      },
+      "q3_operation_and_followup": {
+        "status": "已足夠",
+        "answer": "Option<&astr>＋&bstr→&astr；Some取text、None取backup，呼叫結果內層用完。"
+      },
+      "q4_example_relationship_and_limits": {
+        "status": "已足夠",
+        "answer": "presentRust/absentbackup兩路與Some空文字不改選backup可見；缺bound完整fixture在泛型定義不保證b支持a，穩定診斷已提供。"
+      },
+      "source_quotes_positions": [
+        "7.2:124「None分支…保證b至少涵蓋a」",
+        "7.2:126「不要求嚴格更長」",
+        "7.2:132「仍可用一個共同參數…」"
+      ]
+    },
+    {
+      "concept": "借用欄位模型、make_view與owned數字",
+      "first_needed_position": "7.3:3/7/15/17/25/35–43",
+      "actual_prior": "3.1struct/pub、5.1泛型impl、7.2placeholder、5.3str.len",
+      "q1_identity_role": {
+        "status": "已足夠",
+        "answer": "TextView持有reference值，外部source持文字；a寫型別／欄位，impl先宣告再用。"
+      },
+      "q2_mechanism_property": {
+        "status": "已足夠",
+        "answer": "make_view唯一輸入連TextView<'_>欄位，沒有複製內容；byte_len借模型與文字交ownedusize，可獨立保留。"
+      },
+      "q2_need_purpose": {
+        "status": "已足夠",
+        "answer": "3/76要把已有文字視圖及相關查詢收在一個模型，不重建String；96練習只要數字可在來源結束前算完帶走。"
+      },
+      "q3_operation_and_followup": {
+        "status": "已足夠",
+        "answer": "直接source.as_str()或make_view建模，byte_len沿self.text.len；使用欄位時外部來源有效。"
+      },
+      "q4_example_relationship_and_limits": {
+        "status": "已足夠",
+        "answer": "實際圖上view.text→下sourceString借用箭頭；成功兩建法同源且owner可讀，E0597否定模型延長來源，答案只帶usize4出內層。"
+      },
+      "source_quotes_positions": [
+        "7.3:3「已有文字的視圖，沒有需要重建String」",
+        "7.3:15「沒有取得…ownership」",
+        "7.3:43「owned的usize」",
+        "7.3:76「文字視圖與相關查詢放在一起」"
+      ]
+    },
+    {
+      "concept": "receiver elision與欄位原來源輸出",
+      "first_needed_position": "7.4:3/7–27；caller34",
+      "actual_prior": "3.6&self、7.1elision、7.3借用欄位、sharedreferenceCopy",
+      "q1_identity_role": {
+        "status": "已足夠",
+        "answer": "三對象source／view／&self分開；text省略輸出連receiver，original明寫a連欄位原來源。"
+      },
+      "q2_mechanism_property": {
+        "status": "已足夠",
+        "answer": "相同self.text body可Copy共享reference，但簽名對caller給不同要求；output連receiver時不只借到call結束。"
+      },
+      "q2_need_purpose": {
+        "status": "已足夠",
+        "answer": "3/82原文欲外部String仍在、模型內層結束後還借文字；只有需此用途時明寫原來源，普通text適合借模型時用。"
+      },
+      "q3_operation_and_followup": {
+        "status": "已足夠",
+        "answer": "impl<a>中text(&self)->&str與original(&self)->&astr，先立刻用text，再用original取saved出block。"
+      },
+      "q4_example_relationship_and_limits": {
+        "status": "已足夠",
+        "answer": "成功saved活過model、失敗改text被指出viewE0597，持續原文字存在不夠；表三對象＋已教圖與程式支持借用層次，無需fmt等內部。"
+      },
+      "source_quotes_positions": [
+        "7.4:15「省略的輸出…連到receiver」",
+        "7.4:17「不是把&self固定成a」",
+        "7.4:25「不一定只到函式呼叫結束」",
+        "7.4:82兩種用途分界"
+      ]
+    },
+    {
+      "concept": "TextPair兩欄獨立來源",
+      "first_needed_position": "7.4:86–94；two_models146",
+      "actual_prior": "7.3structlife、7.4original、泛型多參數、7.2outlives",
+      "q1_identity_role": {
+        "status": "已足夠",
+        "answer": "TextPair<a,b>各欄各自借來源，methods分別交a或b。"
+      },
+      "q2_mechanism_property": {
+        "status": "已足夠",
+        "answer": "first_source輸出只依賴first，沒有把b或model保活，也不需要b:a因不讓second供first區間。"
+      },
+      "q2_need_purpose": {
+        "status": "已足夠",
+        "answer": "86希望first外層保留、second內層用完後只留下first；不是任意多加名字。"
+      },
+      "q3_operation_and_followup": {
+        "status": "已足夠",
+        "answer": "pair在兩來源都有效時查總bytes與second，最後first_source交外層saved。"
+      },
+      "q4_example_relationship_and_limits": {
+        "status": "已足夠",
+        "answer": "13+4=17、secondnote可讀，innerpair與second結束後saved仍Rusttutorial；測試同樣檢查跨model/secondscope。不能推出整個pair也可帶出。"
+      },
+      "source_quotes_positions": [
+        "7.4:86「最後希望只保留第一份借用」",
+        "7.4:94「輸出只依賴第一來源」",
+        "7.4:159「不是把…pair或second保留下來」"
+      ]
+    }
+  ],
+  "source_scope": {
+    "frozen_files": 44,
+    "note": "43actualpage-referenced/source/globalfiles initially saved, plusstageunuseddefaultmainactuallyread as closuremetadata",
+    "hashes": "round07-ch07-sourcehashes.json",
+    "frozen": "round07-ch07-frozen",
+    "end_changes": [
+      {
+        "path": "examples/intro-workspace/Cargo.toml",
+        "initial": "8858a9a16546805c4b0024a3d90b2e961adfd52e9f04efb9e9f25d860b5575aa",
+        "current": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304"
+      },
+      {
+        "path": "examples/intro-workspace/Cargo.lock",
+        "initial": "bc4d31239fe58a3e6a897c265cde1bd9a26562a62fb37406347e134c673fc38c",
+        "current": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d"
+      }
+    ],
+    "frozen_copy_mismatches": [],
+    "loaded_closure": "No-libintro-lifetimes earlyexamplesloadonlyselforsamepagestagehelpers. Finalintro-lifetimes-completelibraryloadscomplete source.rs/views.rs afterallfunction/modelteaching. Bothpackageonlyname/version/edition, nobuild.rs/dependencies/.cargo config. Fullmanifest/source/main/answers/testsatactualscopeallinline.",
+    "full_inline_DOM": "Allfullinclude blocks matchsource afterwhitespace/snippet-marker normalization; everypartialregion hasfullsamepagefile; all6fixtureexpectedinline andread.",
+    "tests": "source_complete stage4tests pluscomplete6librarytests actuallyread, notrun. Finaltests compare&strcontents andtieab/CD, notonlylength.",
+    "global_metadata": "Workspace/lockread as configurationmetadata; currentfuturemembersnotusedasprior; endcopies/diffsavedwhenchanged.",
+    "not_done": [
+      "NoCargo/build",
+      "Norepo/source/configedits",
+      "Noreadingfuturechaptersbeforeownseal"
+    ]
+  },
+  "render": {
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "actual_screenshots_viewed": [
+      "round07-ch07-visual/desktop-two-source-contract.png",
+      "round07-ch07-visual/desktop-two-branch-scope.png",
+      "round07-ch07-visual/desktop-owned-output-independent.png",
+      "round07-ch07-visual/desktop-outlives-fallback.png",
+      "round07-ch07-visual/desktop-borrowed-field-figure.png",
+      "round07-ch07-visual/desktop-receiver-and-field-source.png",
+      "round07-ch07-visual/desktop-two-field-sources.png",
+      "round07-ch07-visual/desktop-complete-source-tests-tail.png",
+      "round07-ch07-visual/desktop-complete-model-tests-tail.png",
+      "round07-ch07-visual/mobile-two-source-contract.png",
+      "round07-ch07-visual/mobile-two-branch-scope.png",
+      "round07-ch07-visual/mobile-owned-output-independent.png",
+      "round07-ch07-visual/mobile-outlives-fallback.png",
+      "round07-ch07-visual/mobile-borrowed-field-figure.png",
+      "round07-ch07-visual/mobile-receiver-and-field-source.png",
+      "round07-ch07-visual/mobile-two-field-sources.png",
+      "round07-ch07-visual/mobile-complete-source-tests-tail.png",
+      "round07-ch07-visual/mobile-complete-model-tests-tail.png",
+      "round07-ch07-visual/mobile-complete-source-tests-tail-left.png",
+      "round07-ch07-visual/mobile-complete-model-tests-tail-left.png"
+    ],
+    "screenshot_count": 20,
+    "actual_image": [
+      {
+        "path": "docs/assets/lifetimes-v3/borrowed-field.svg",
+        "page": "07-03-lesson",
+        "sha256": "7a5685938b83980930f20859792f785f453a1cd865709800cc02f124c8479a37",
+        "desktop_and_mobile_size": [
+          340,
+          360
+        ],
+        "meaning": "TopviewTextView<a>field&a str, blueborrowarrowdown towardexternalsourceStringRusttutorial; explicitarrowlegend saysborrow/noanothercontent. Adjacent19mapsview.text/sourceowner. Main19/21pxandsource-validity16pxallreadable bothviews;servedhashmatchesfrozen.",
+        "actually_viewed": [
+          "desktop1280x800",
+          "mobile390x844"
+        ]
+      }
+    ],
+    "other_pages_images": 0,
+    "details_count_allpages": 0,
+    "longpage_evidence": "7.4fullsource.rs/tests-tail,fullviews.rs/tests-tailandfollowingmain viewedbothsizes. Twomobileextra-leftcapturesresetlocatorautomaticcodehorizontalpan; fullcode stilllocallyscrollable.",
+    "all_full_source_matches": true,
+    "raw_asterisk_paragraphs": [],
+    "metadata": "round07-ch07-visual/metadata.json",
+    "necessary_diagram_judgment": "No missingnecessaryfigure identified.7.1scopeblocks/tableandprior3.5borrowconcepts suffice;7.4three-objecttableandexplicitmethodcontractsplus7.3fielddiagramestablishneededtwo-borrowdistinction.",
+    "limitations": "Focusedactualrelationships andcompleteinlineDOM/sourceclosure, not everypixel ofeverylongpage; partialnavpreviewnotfinalstrictsite."
+  },
+  "next_step": "Reportsealed7 then independentlyread8 andsealbefore9. Nootherroleconclusionsneedtoberead."
+}

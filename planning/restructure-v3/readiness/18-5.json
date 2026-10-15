@@ -1,0 +1,100 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.5"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18a-cli-complete-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-collection-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-content-report-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18a-option-order-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/18A-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-05-lesson.md": "759c1dd6cd374e7a9863e9482f6e662df1313b0dc0a4fe6a23c7dd227e6bc27d",
+    "examples/ch15-projects/a4-starter/Cargo.toml": "458eb9ac1d079f53addd605fbd011614b958600c00ca44cce9922dc05ac2ab73",
+    "examples/ch15-projects/a4-starter/src/app.rs": "7660a84167a7ad6a91aaae9bf886283be9446c180e5728ca15b09754eaeb604e",
+    "examples/ch15-projects/a4-starter/src/main.rs": "f45b816daa9e5bd9399e2e7c980e2859e1a76ff584c72cd3ed69cf9fcb909286",
+    "examples/ch15-projects/a4-starter/src/lib.rs": "2a6ce946703416068c2f9e0e10adbb440d6d548d69088af66de7985fe5b3f5b5",
+    "examples/ch15-projects/a4-starter/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "examples/ch15-projects/a4-starter/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "examples/ch15-projects/a4-starter/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "examples/ch15-projects/a4-starter/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "examples/ch15-projects/a4-starter/src/metrics.rs": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+    "examples/ch15-projects/a4-starter/src/report.rs": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705",
+    "examples/ch15-projects/a4-starter/checks/app-tests.rs": "04214db9cc611921e18e258b5981c02d86a9c4866e850e429649981258d13030",
+    "examples/ch15-projects/a4-starter/checks/cli-tests.rs": "81b43bc488634e3bd3a7d8f5adedbcdb0cbca6c215d237c271ed249d05a10ca2",
+    "examples/ch15-projects/a4-complete/Cargo.toml": "92879593c8aa0a44d4a10b0d8a050a0896bb23f0809a8ad2d80641f975cabe47",
+    "examples/ch15-projects/a4-complete/src/lib.rs": "2a6ce946703416068c2f9e0e10adbb440d6d548d69088af66de7985fe5b3f5b5",
+    "examples/ch15-projects/a4-complete/src/collection.rs": "0e4d873003f43d3a5666fd684b46670b295268b6ad3e910bd1a938af79410c6a",
+    "examples/ch15-projects/a4-complete/src/content.rs": "3e64e0a5af803fe68e7eb505af04cfe5f019e66df34e1a1293d53b19f74d394f",
+    "examples/ch15-projects/a4-complete/src/stream.rs": "0080b8a9dd651f35f71cd941ca337eb960e97aee6094383850ac44216e04b962",
+    "examples/ch15-projects/a4-complete/src/files.rs": "116bff031cc30923644dd7ec7be256f4a695be8d6da249591e4cae8c40e1673e",
+    "examples/ch15-projects/a4-complete/src/metrics.rs": "35c8dfd0ceb7969b2db6c034419dc3fc830c5530debc59739e38c8871bcdb4eb",
+    "examples/ch15-projects/a4-complete/src/report.rs": "27d3741acc42a67135859ef9699f56ef07c756bfa8010cd042a1836f2e41e705",
+    "examples/ch15-projects/a4-complete/src/app.rs": "a75b1312788a3249c5005881fa4d50dcf1dbc7e0358832fdeb16a15835ecdaf7",
+    "examples/ch15-projects/a4-complete/src/main.rs": "e16dc9535529296ed9db24de5a3b8013847be6b1b6357090c7e1ea377c019983",
+    "examples/ch15-projects/a4-complete/tests/cli.rs": "2aa98c160c35c1b3bc0f0de32b98005ac7615c5c174bff5256defadc3f0da604",
+    "docs/assets/projects-a-v3/report-delivery.svg": "b01fa04ed53134446d661ac9e426c80fb59a9f6672e8febdcae40ec71e4c18a3"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.5",
+      "path": "docs/chapters/18-05-lesson.md",
+      "line": 3,
+      "quote": "A3 已能建立正確報告，但示範固定 root，遇到失敗仍依教材材料使用 expect。現在讓使用者自己指定一個目錄，選文字或 JSON，並讓呼叫者從退出狀態知道工作是否完成。掃描與報告已經寫過，本階段只接這些成果；不用重寫前三階段。"
+    },
+    {
+      "section_id": "18.5",
+      "path": "docs/chapters/18-05-lesson.md",
+      "line": 7,
+      "quote": "工具接受一個 root，預設輸出文字；`--json` 選同一份資料的 JSON。root 可以有中文與空白，仍是一筆原生 argument。`--help`／`--version` 顯示資訊，不要求先掃描一個目錄。"
+    },
+    {
+      "section_id": "18.5",
+      "path": "docs/chapters/18-05-lesson.md",
+      "line": 26,
+      "quote": "所以不能先看 complete 回 0／1，再把輸出結果丟掉。**先寫出、再 flush；兩步都成功才選 0／1，任何一步 Err 都是 2。** complete 描述掃描，沒有宣稱出口成功；若已送出部分 JSON 後失敗，也不能撤回那些 bytes 或再補一份假完整報告。"
+    },
+    {
+      "section_id": "18.5",
+      "path": "docs/chapters/18-05-lesson.md",
+      "line": 34,
+      "quote": "本頁直接提供 A4 完整 manifest 與全部 source。collection／content／files／stream／metrics／report 都是 A3 成果，保留自己的完成版；app 與 main 是本節的接線位置。下面先定位待做處，再收完整起始檔。"
+    },
+    {
+      "section_id": "18.5",
+      "path": "docs/chapters/18-05-lesson.md",
+      "line": 50,
+      "quote": "RunError 以 enum 保存 RootError、ReportError、serde_json::Error 與輸出的 io::Error。每個 From 將原值放進自己的 variant，支援第 8.4、8.6 節的 `?`；Display 依分類給人看。RootError 原本只有 Debug，這裡直接配對它的三種情況，用 inner io::Error 的既有 Display 或已知的文字說明。"
+    },
+    {
+      "section_id": "18.5",
+      "path": "docs/chapters/18-05-lesson.md",
+      "line": 156,
+      "quote": "把 `checks/app-tests.rs` 整個含條件屬性的 tests module 加到 app.rs 末尾。再建立工作資料夾的 `tests/cli.rs`，放入 `checks/cli-tests.rs` 全檔；checks 不是自動 target，這次只有後者在 tests 目錄後才會成為 integration test。"
+    },
+    {
+      "section_id": "18.5",
+      "path": "docs/chapters/18-05-lesson.md",
+      "line": 226,
+      "quote": "Unix 的非 Unicode fixture 使用已教 OsStringExt，保存原生名字再用同 root 的 Debug 位置核對診斷；不依不可預測的權限失敗。root link 則使用 12.3 的 symlink。它們只是平台有條件材料，核心其他流程仍使用原生 PathBuf。"
+    },
+    {
+      "section_id": "18.5",
+      "path": "docs/chapters/18-05-lesson.md",
+      "line": 232,
+      "quote": "[A4 完成快照](https://github.com/birdhackor/learn_rust/tree/main/examples/ch15-projects/a4-complete) 保存真正可執行的本階段答案。完整答案的全部檔案如下。collection／content／report／app 各自已含同檔驗收，tests/cli.rs 也已在正確目錄，不再追加 checks。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

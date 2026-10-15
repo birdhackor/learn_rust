@@ -1,0 +1,150 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "14.7"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round14-async-foundations-cancellation-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round14-http-local-service-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round14-root-contract-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14-followup.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/14-07-lesson.md": "eeecfa90ed6c35cc1c811954629015ffc63e1495319b0d5e12ac4d82b68f014e",
+    "examples/ch11-http/Cargo.toml": "f9c43f334457e2290087e1315090d0399ad1fa6a05c683d439c86d1469fba1c0",
+    "examples/ch11-http/src/config.rs": "592af4c6b516069d5bd5e0ab7d12612748a5ce5205ea44071c046b456d203dc9",
+    "examples/ch11-http/src/lib.rs": "43e0fab1e63247dae9e1c63c3e7a1bb629b3a282fd12c665b303e189b513bedd",
+    "examples/ch11-http/src/error.rs": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+    "examples/ch11-http/src/main.rs": "f30d1e2146862c66f3d369ded68c2ae224faabd77402ba016caa75116538a2f5",
+    "examples/ch11-http/tests/cli.rs": "f06e0b5f6b9ff7759b869e9a93208577d283cf4ee6960edc7cbe25d5000c1896",
+    "examples/ch11-http/examples/status_line.rs": "d79e937da9a2f25cac6b416e02134476717c52e7ce43dd7fb30728b75d71c978"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 3,
+      "quote": "現在要檢查一個網址：收到最終回應後，交代 final URL、HTTP status，以及是否符合「2xx才通過」的規格。使用者還能選擇讀不讀 body。先用同步介面把資料與失敗階段看清楚，下一節保留相同政策，再換成 async 等待。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 7,
+      "quote": "**URL** 是 Uniform Resource Locator（統一資源定位符），例如 `https://example.org/notes?lang=rust#intro`。其中 https 是 **scheme**，example.org 是主機，/notes 是 path，?lang=rust 是 query，#intro 是 fragment。它們有不同用途；fragment 不作為 HTTP 請求內容送給 server。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 9,
+      "quote": "**HTTP** 是 Hypertext Transfer Protocol（超文字傳輸協定）。**client** 發出 request（請求），**server** 依協定交回 response（回應）。本例使用 **GET**，表示取得指定資源；**HTTPS** 是透過 TLS（Transport Layer Security，傳輸層安全協定）保護的 HTTP，涉及連線加密及對方身分驗證。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 11,
+      "quote": "response 包含 **status code（狀態碼）**、**headers（標頭）** 與可能有的 **body（內容）**。例如200通常表示成功，404表示找不到資源；HTTP 的404回應本身仍是收到的一份回應。連線失敗、在期限內沒收到最終回應，則沒有這份可供檢查的結果。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 13,
+      "quote": "本工具訂出政策：200到299這個 **2xx** 範圍為 passed=true；其他 HTTP status 仍交出報告，passed=false。若回應要求 **redirect（重新導向）**，client 可依新位置再請求；所以輸入 URL 與最終 URL 可能不同。這次最多允許5次 redirect，超過則是取得最終回應失敗。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 17,
+      "quote": "package 在 `examples/ch11-http/`，名稱為 `ch11-http`。它使用 **reqwest** 的 blocking（阻塞）client：呼叫 send／text 時，目前 thread 等它們完成或失敗。這份 binary 使用普通 main，不在本節的 async runtime 內呼叫 blocking client。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 25,
+      "quote": "第10.6節的 clap Parser 產生參數解析，這次 Settings 保存 owned URL 文字，以及兩個 bool 開關：`--body` 要讀完整內容；`--direct` 要直接連線、關閉 proxy。**proxy（代理伺服器）** 可代為轉交請求，client 預設可能採系統／環境設定；direct 讓本次明確選擇不使用它。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 35,
+      "quote": "`url::Url` 是解析後的 owned URL 型別，提供 Debug；**`Url::parse(input)`** 回傳 `Result<Url, url::ParseError>`，解析錯誤有 Debug／Display。**`url.scheme()`** 借出 scheme 文字，**`url.as_str()`** 借出正規化後的完整文字；例如大寫 HTTPS 會規範成 https。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 43,
+      "quote": "**Inspection** 保存最終地址、數字 status、passed 與 `Option<String>` 的 body。**None 是沒有要求讀 body**；Some(空字串) 是已讀而內容為空。不能把兩者都顯示成「內容不存在」："
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 51,
+      "quote": "這次選用的 API 依操作先後如下。它們是 reqwest blocking module 的介面，不回傳讓我們 await 的工作："
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 63,
+      "quote": "reqwest::Error 有 Debug／Display，**`is_timeout()`** 回答是否屬於逾時失敗。`.build()` 也可能失敗，與送出請求後才發生的 Request 錯誤分開記錄。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 65,
+      "quote": "拿到 Response 後，**`response.status()`** 交回可 Copy 的 StatusCode；`is_success()` 判2xx，`as_u16()` 取得數字。**`response.url()`** 借出最終 Url。先把這兩份資料保存，再決定讀不讀 body，因為 **`response.text()`** 會接手 Response，讀完整內容並交回 `Result<String, reqwest::Error>`。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 69,
+      "quote": "**固定 reqwest 0.13.5 的 blocking send 與 text 各自套用等待期限**，不是兩階段共用同一份10秒預算。因此不能把這份工具宣稱為整個檢查最多10秒。下一節 async client 的總期限契約另行說明。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 79,
+      "quote": "完整 **`src/error.rs`** 將 Url／Scheme／Client／Request／Body／Output 分開，Display 產生可閱讀診斷。status() 是本工具自訂的 method：輸入問題回退出數字2，其餘操作失敗回1，和 Response 的 HTTP status 是不同欄位與用途。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 85,
+      "quote": "render 沿用第10.4節的泛型 Write，輸出報告後也檢查 flush；run 在取得報告、完整輸出成功後才交回 passed。HTTP404的流程是 **Ok(false)**；連線、讀 body 或輸出失敗才是 AppError："
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 93,
+      "quote": "完整 **`src/lib.rs`** 包含兩個 module 宣告、所有函式與四項 unit tests。RefuseFlush 是同檔完整測試 writer：write 先保存 bytes，flush 則交出 PermissionDenied。它用第10.4節的 Write 實作及 io::Error／ErrorKind，驗證「寫入已接受」仍不能掩蓋 flush 失敗。"
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 99,
+      "quote": "完整 **`src/main.rs`** 用 args_os、try_parse_from 與 error.print 接上第10.6節的 clap 流程；錯誤參數在送網路請求前拒絕。檢查未通過也是退出1，但有完整報告；AppError 則將診斷寫 stderr："
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 114,
+      "quote": "完整 **`tests/cli.rs`** 包含 execute helper，以真正 binary 驗 help 與三種輸入錯誤；它們也都在網路前結束："
+    },
+    {
+      "section_id": "14.7",
+      "path": "docs/chapters/14-07-lesson.md",
+      "line": 135,
+      "quote": "寫 status_line，借用 Inspection，產生 owned String：passed=true 使用「通過」，false 使用「HTTP 未通過」，並保留 final URL 與 status。只用人工200／404報告驗證，不為格式化練習發出請求。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

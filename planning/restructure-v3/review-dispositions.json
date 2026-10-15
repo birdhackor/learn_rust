@@ -1,0 +1,919 @@
+[
+  {
+    "id": "C1-01",
+    "source": "continuity-early/round01-ch01-report.md",
+    "reviewer_classification": "necessary, understanding burden",
+    "root_disposition": "adopt",
+    "reason": "元素寫入與mut許可先於首次程式使用，僅移既有說明而不增加先備或篇幅。",
+    "changed_path": "docs/chapters/01-08-lesson.md",
+    "change": "existing mut-element explanation moved before repeat snippet",
+    "sha256": "d64133800925f9ded95a43efe017914a502de000096bafda6c4b7637789571c6",
+    "verification": "accepted: independent source and rendered followup; initial judgment preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-source.md",
+      "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-visual.md",
+      "planning/restructure-v3/reviews/technical-early/round01-ch01-cross-followup.md"
+    ]
+  },
+  {
+    "id": "C1-02",
+    "source": "continuity-early/round01-ch01-report.md",
+    "reviewer_classification": "optional rendering",
+    "root_disposition": "adopt",
+    "reason": "五個首次術語可正常粗體，去除字面星號；含義與例子無變動。",
+    "changed_path": "docs/chapters/01-07-lesson.md",
+    "change": "strong delimiters enclose only English terms",
+    "sha256": "cf49b1d604a23ed49d28f10d592b6ee662d7a46803062681c8fa7f2c97f6bcee",
+    "verification": "accepted: independent source and rendered followup; initial judgment preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-source.md",
+      "planning/restructure-v3/reviews/continuity-early/round01-ch01-followup-visual.md",
+      "planning/restructure-v3/reviews/technical-early/round01-ch01-cross-followup.md"
+    ]
+  },
+  {
+    "id": "TC02T-01",
+    "source": "planning/restructure-v3/reviews/technical-early/round02-control-tail.md",
+    "reviewer_classification": "necessary, loaded-source/first-use order",
+    "root_disposition": "adopt",
+    "reason": "精確選已教library，再對已教example做Clippy；整包格式及all-targets等全部來源已教後再用。保留有理由的具名allow，不加新API。",
+    "changed_paths": [
+      "docs/chapters/02-07-lesson.md",
+      "docs/chapters/02-08-lesson.md"
+    ],
+    "verification": "accepted: independent source followup; author ran the two selected Clippy commands, source hashes unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round02-control-tail-followup.md"
+    ]
+  },
+  {
+    "id": "FR01-setup-path-scope",
+    "source": "planning/restructure-v3/reviews/first-reader-ch01/report.md",
+    "reviewer_classification": "conditional practical setup gaps and bounded path inference",
+    "root_disposition": "retain",
+    "reason": "讀者沒有觀察到安裝失敗。各OS工具與外部安裝來源已交代，基本Python入口允許使用既有終端；必要操作均有完整repo-root命令。簡稱路徑可由1.3明示的member位置推得，先保留其當時猶豫作真實首讀證據，不把各OS排障擴成主文。後續若實際操作失敗則回查對應分支。",
+    "verification": "chapter1 only; not a fresh OS installation test"
+  },
+  {
+    "id": "C2-01",
+    "source": "continuity-early/round02-ch02.md",
+    "reviewer_classification": "necessary, first-use order",
+    "root_disposition": "adopt",
+    "reason": "將既有return 0精確動作前移到首次snippet前；不增加先備或篇幅。",
+    "changed_paths": [
+      "docs/chapters/02-02-lesson.md"
+    ],
+    "sha256": {
+      "docs/chapters/02-02-lesson.md": "cca001c484ae1ed56c1ed38deba03f2cf739b345dd4a11392a895b1c3011775d"
+    },
+    "verification": "accepted: independent narrow source and actual desktop/mobile followup, initial judgment preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md"
+    ]
+  },
+  {
+    "id": "C2-02",
+    "source": "continuity-early/round02-ch02.md",
+    "reviewer_classification": "necessary, first-use order",
+    "root_disposition": "adopt",
+    "reason": "與TC02T-01合併：先限定已教targets，完整來源與allow都可用後才用all-targets。",
+    "changed_paths": [
+      "docs/chapters/02-07-lesson.md",
+      "docs/chapters/02-08-lesson.md"
+    ],
+    "sha256": {
+      "docs/chapters/02-07-lesson.md": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886",
+      "docs/chapters/02-08-lesson.md": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880"
+    },
+    "verification": "accepted: independent narrow source and actual desktop/mobile followup, initial judgment preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md"
+    ]
+  },
+  {
+    "id": "C2-03",
+    "source": "continuity-early/round02-ch02.md",
+    "reviewer_classification": "optional layout",
+    "root_disposition": "adopt",
+    "reason": "採納三欄表以保留全部條件/處理量/更新後量/批次，又可於手機同時比對。",
+    "changed_paths": [
+      "docs/chapters/02-04-lesson.md"
+    ],
+    "sha256": {
+      "docs/chapters/02-04-lesson.md": "f47300de5e81aa895bb09a2335a4ed97737c0797e6168e061a1e52049a51e56b"
+    },
+    "verification": "accepted: independent narrow source and actual desktop/mobile followup, initial judgment preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round02-ch02-followup-final.md"
+    ]
+  },
+  {
+    "id": "R3-reference-caption",
+    "source": "root actual mobile page sample",
+    "reviewer_classification": "necessary, first-use order",
+    "root_disposition": "adopt",
+    "reason": "第一張reference圖此刻只教借用同一Order，移除尚未介紹的*reference，正式dereference仍留正文原位置。",
+    "changed_paths": [
+      "docs/chapters/03-03-lesson.md",
+      "docs/assets/ch02/reference-owner.svg"
+    ],
+    "sha256": {
+      "docs/chapters/03-03-lesson.md": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e",
+      "docs/assets/ch02/reference-owner.svg": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb"
+    },
+    "verification": "accepted: independent source/rendered followup; root optional classification calibrated where applicable",
+    "root_final_classification": "optional: introduction order / figure focus",
+    "classification_reason": "獨立銜接初判指出原圖已給新詞的最小操作角色，無需把文字尚在後面等同未教。保留root原先必要分類作歷史；最終採校準後分級，仍採納窄修正以聚焦當前圖用途/讓文字更早可用，不算另一個必要缺陷或獨立重現。",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md"
+    ]
+  },
+  {
+    "id": "R3-copy-before-figure",
+    "source": "root chapter3 full reread plus actual mobile move-copy figure",
+    "reviewer_classification": "necessary, first-use order",
+    "root_disposition": "adopt",
+    "reason": "首次圖已以Copy解釋第二份數字，基本契約應先可用；只前移原一般說明，後段保留具體數值觀察，不擴寫trait機制。",
+    "changed_paths": [
+      "docs/chapters/03-02-lesson.md"
+    ],
+    "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+    "verification": "accepted: independent source/rendered followup; root optional classification calibrated where applicable",
+    "root_final_classification": "optional: introduction order / figure focus",
+    "classification_reason": "獨立銜接初判指出原圖已給新詞的最小操作角色，無需把文字尚在後面等同未教。保留root原先必要分類作歷史；最終採校準後分級，仍採納窄修正以聚焦當前圖用途/讓文字更早可用，不算另一個必要缺陷或獨立重現。",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round03-copy-before-diagram-followup.md",
+      "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md"
+    ]
+  },
+  {
+    "id": "C3-01",
+    "source": "continuity-early/round03-ch03.md",
+    "reviewer_classification": "necessary, first-use automatic reborrow rule",
+    "root_disposition": "adopt",
+    "reason": "讀者需在add_one(parent)後再用parent之前知道這個已知參數型別的呼叫可自動reborrow；僅前移原兩種呼叫解釋，不擴寫規則。",
+    "changed_paths": [
+      "docs/chapters/03-05-lesson.md"
+    ],
+    "verification": "accepted: independent source/rendered followup; root optional classification calibrated where applicable",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round03-ch03-followup-final.md"
+    ]
+  },
+  {
+    "id": "I4-fixture-expectations",
+    "source": "root check-fixtures.py closure and filesystem check",
+    "reviewer_classification": "necessary, maintenance verification integration",
+    "root_disposition": "adopt",
+    "reason": "全書失敗範例harness要求同名非空.expected；補10份並核對已保存實測stderr，不改Rust或教學正文，不重跑成功targets。",
+    "changed_directory": "examples/intro-workspace/patterns/fixtures/compile-fail",
+    "verification": "accepted: actual complete harness passed all 309 intentional failure fixtures; exact stdout/stderr logs retained by root"
+  },
+  {
+    "id": "I1-fixture-expectations",
+    "source": "root check-fixtures.py closure and filesystem check",
+    "reviewer_classification": "necessary, maintenance verification integration",
+    "root_disposition": "adopt",
+    "reason": "全書失敗範例harness要求同名非空.expected；補5份並核對已保存實測stderr，不改Rust或教學正文，不重跑成功targets。",
+    "changed_directory": "examples/intro-workspace/steps/fixtures",
+    "verification": "accepted: actual complete harness passed all 309 intentional failure fixtures; exact stdout/stderr logs retained by root"
+  },
+  {
+    "id": "C4a-01",
+    "source": "continuity-early/round04-ch04a.md",
+    "reviewer_classification": "necessary first-use order",
+    "root_disposition": "adopt",
+    "reason": "match整體值需在回傳運費的首次snippet前已有基本規則；只前移原首句，具體結果分析仍在code後。",
+    "changed_paths": [
+      "docs/chapters/04-02-lesson.md"
+    ],
+    "verification": "accepted: independent source and actual desktop/mobile narrow followup; initial judgment preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round04-ch04a-followup-final.md",
+      "planning/restructure-v3/reviews/technical-early/round04-patterns-cross-followup.md"
+    ]
+  },
+  {
+    "id": "C4a-02",
+    "source": "continuity-early/round04-ch04a.md",
+    "reviewer_classification": "optional rendering",
+    "root_disposition": "adopt",
+    "reason": "首次pattern定義在實頁出現字面星號；strong只包英文名稱，括註含義不變。",
+    "changed_paths": [
+      "docs/chapters/04-02-lesson.md"
+    ],
+    "verification": "accepted: independent source and actual desktop/mobile narrow followup; initial judgment preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round04-ch04a-followup-final.md",
+      "planning/restructure-v3/reviews/technical-early/round04-patterns-cross-followup.md"
+    ]
+  },
+  {
+    "id": "TC04T-O1",
+    "source": "technical-early/round04-patterns-tail.md",
+    "reviewer_classification": "optional accuracy of previous-teaching reference",
+    "root_disposition": "adopt",
+    "reason": "裸return;在當句已先教足，刪已教的以免誤認前文已有此確切形式；不擴寫unit/return其他變體。",
+    "changed_paths": [
+      "docs/chapters/04-07-lesson.md"
+    ],
+    "verification": "accepted: independent technical source followup; no Rust change",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round04-patterns-cross-followup.md"
+    ]
+  },
+  {
+    "id": "C4b-01",
+    "source": "continuity-early/round04-ch04b.md",
+    "reviewer_classification": "optional mobile table readability",
+    "root_disposition": "adopt",
+    "reason": "三欄保留全部前值、回傳、body動作、後值，手機可同時比較，不改規則或Rust。",
+    "verification": "accepted: independent actual desktop/mobile followup and root actual mobile view",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round04-ch04b-followup-final.md"
+    ]
+  },
+  {
+    "id": "TC05T-O1",
+    "source": "technical-early/round05-data-tail.md",
+    "reviewer_classification": "optional cross-reference precision",
+    "root_disposition": "adopt",
+    "reason": "5.5兩處上一節實際指5.3，改明確節號；不改Rust。",
+    "verification": "accepted: independent technical narrow source followup; Rust unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round05-cross-reference-followup.md"
+    ]
+  },
+  {
+    "id": "C5-01",
+    "source": "continuity-early/round05-ch05.md",
+    "reviewer_classification": "optional cross-reference precision",
+    "root_disposition": "adopt; same gap as TC05T-O1",
+    "reason": "新5.4教Vec，text-only前身在5.3，明指節號協助回查。",
+    "verification": "accepted: independent source and actual desktop/mobile narrow followup; originals/version note preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round05-ch05-followup-final.md"
+    ]
+  },
+  {
+    "id": "C5-02",
+    "source": "continuity-early/round05-ch05.md",
+    "reviewer_classification": "optional raw Markdown emphasis",
+    "root_disposition": "adopt",
+    "reason": "只調strong邊界，移除首次術語可見星號，語意及Rust未變。",
+    "verification": "accepted: independent source and actual desktop/mobile narrow followup; originals/version note preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round05-ch05-followup-final.md"
+    ]
+  },
+  {
+    "id": "TC06P-O1",
+    "source": "technical-early/round06-traits-prefix.md",
+    "reviewer_classification": "optional numeric wording precision",
+    "root_disposition": "adopt",
+    "reason": "欄位i32及題目材料都是整數，非負小數改非負小整數避免短暫混淆。",
+    "verification": "accepted: independent technical source narrow followup; continuity actual-page narrow followup for C6a-01; Rust unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round06-prefix-followup.md"
+    ]
+  },
+  {
+    "id": "R6-PartialEq-crossref",
+    "source": "root full read of chapter6 final author text",
+    "reviewer_classification": "optional cross-reference precision",
+    "root_disposition": "adopt",
+    "reason": "6.5首次回收PartialEq明指6.2，避免上一節指到associated type。",
+    "verification": "accepted: independent technical tail confirms current precise source; initial-view/version limitation retained",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round06-traits-tail.md"
+    ]
+  },
+  {
+    "id": "R1-frame-emphasis",
+    "source": "root diagnostic of actual built HTML; not independent reproduction",
+    "reviewer_classification": "optional literal Markdown delimiter",
+    "root_disposition": "adopt",
+    "reason": "1.7圖後B解說顯示字面星號，A/B/C統一strong只包標記，內容及SVG/Rust不變。",
+    "verification": "root inspected actual mobile frame figure and A/B/C after correction; literal emphasis diagnostic now zero across current preview; Rust/SVG unchanged"
+  },
+  {
+    "id": "C6a-01",
+    "source": "continuity-early/round06-ch06a.md",
+    "reviewer_classification": "necessary first-use formatting ownership contract",
+    "root_disposition": "adopt",
+    "reason": "第一份非Copy struct Debug後仍讀欄位，先說println格式化借讀即可，不需提前教Formatter。",
+    "verification": "accepted: independent technical source narrow followup; continuity actual-page narrow followup for C6a-01; Rust unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round06-prefix-followup.md",
+      "planning/restructure-v3/reviews/continuity-early/round06-ch06a-followup-final.md"
+    ]
+  },
+  {
+    "id": "R6-map-intrinsic-size",
+    "source": "root actual desktop/mobile figure sampling",
+    "reviewer_classification": "optional visual comparison burden",
+    "root_disposition": "adopt",
+    "reason": "map圖原僅viewBox，桌面擴至article全寬而關係跨多屏；補intrinsic420×680，文字、位置、箭頭語意不變。",
+    "verification": "root personally viewed capped whole diagram in actual desktop/mobile pages; independent continuity tail also viewed current figure, no need to imply reproduction of old layout",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round06-ch06b.md"
+    ]
+  },
+  {
+    "id": "C6b-01",
+    "source": "continuity-early/round06-ch06b.md",
+    "reviewer_classification": "optional mobile state-table readability",
+    "root_disposition": "adopt",
+    "reason": "將查詢與動作合為一欄，保留三列全部key、前後計數與結果，手機可同時比較。",
+    "changed_paths": [
+      "docs/chapters/06-06-lesson.md"
+    ],
+    "sha256": "c22dc2544ddca5f26d854f450028df0fc315ecd114d8db8b9a9ced81efbce549",
+    "verification": "accepted: independent narrow source and actual desktop/mobile followup CLOSED; root actual both-sizes view; Rust unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round06-ch06b-followup-final.md"
+    ]
+  },
+  {
+    "id": "R-scope-correction-11-13",
+    "source": "root checked approved Astra proposed-outline.json chapter11 and13 against own author messages",
+    "reviewer_classification": "coordinator scope correction",
+    "root_disposition": "withdraw unsolicited API additions",
+    "reason": "root曾誤將Cow/Condvar/Barrier/thread-local API列作必須保留；核對核准大綱未包含這些新增API，已通知兩作者撤回。保留原有scoped-thread對thread-local清理角色的文字即可。",
+    "verification": "authors acknowledged correction; fetched extra sources remain marked excluded or unread; no new teaching bodies/code introduced"
+  },
+  {
+    "id": "R11-numeric-wording",
+    "source": "root full text read 11.6; prior chapter6 numeric precision finding made comparison salient",
+    "reviewer_classification": "optional numeric wording precision",
+    "root_disposition": "adopt",
+    "reason": "i32欄位與乘法沿用非負小整數，取代可能被讀作fraction的非負小數，兩字窄修，沒有新API或篇幅。",
+    "changed_paths": [
+      "docs/chapters/11-06-lesson.md"
+    ],
+    "sha256": "ec492344b90ad5c776fd17550cde8540c2241161b42d13a70ce72632d6dbb76f",
+    "verification": "accepted: both chapter11 independent initial reviews cover actual current wording; not counted as rediscovery"
+  },
+  {
+    "id": "C8-01",
+    "changed_paths": [
+      "docs/chapters/08-06-lesson.md"
+    ],
+    "reviewer_classification": "optional mobile execution-table readability",
+    "root_disposition": "adopt",
+    "reason": "保留三組輸入、先後步驟、兩種錯誤與早退，只合併中間兩欄，讓手機可同時比對輸入與結果。",
+    "before_sha256": "15b4c6f9ad3fa382090f532d2094f81f5e8779464a8c31e00cdafe5d4c8895ac",
+    "sha256": "b6e62b122ad05f778802179ebaabc88c8263a2f51a644ca9469e490344f9a129",
+    "verification": "accepted: independent narrow followup CLOSED; original initial judgments preserved; Rust unchanged",
+    "source": "continuity-early/round08-ch08.md",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round08-crossref-followup-final.md"
+    ]
+  },
+  {
+    "id": "ACREF-01",
+    "changed_paths": [
+      "docs/chapters/01-08-lesson.md"
+    ],
+    "reviewer_classification": "necessary cross-reference accuracy",
+    "root_disposition": "adopt",
+    "reason": "1.7為記憶體基礎；明指1.6實際錯誤例子，避免回查錯頁。",
+    "before_sha256": "d64133800925f9ded95a43efe017914a502de000096bafda6c4b7637789571c6",
+    "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+    "verification": "accepted: independent narrow followup CLOSED; original initial judgments preserved; Rust unchanged",
+    "source": "prefix-crossref-author-check/report.md",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round08-crossref-followup-final.md"
+    ]
+  },
+  {
+    "id": "ACREF-02",
+    "changed_paths": [
+      "docs/chapters/11-11-lesson.md"
+    ],
+    "reviewer_classification": "optional chapter-transition precision",
+    "root_disposition": "adopt",
+    "reason": "與實際第12章設定、build script、檔案走訪與內容比較一致；不再暗示重組本章pointer範例。",
+    "before_sha256": "05671751b4f39bd66f7e05ade583afcaa2d861b4ef1e9d9a046f28245b362665",
+    "sha256": "5e87899ccd41749a6a6eb79f6923f101e0d9a6629c6a3a03e73e759456adbca2",
+    "verification": "accepted: independent narrow followup CLOSED; original initial judgments preserved; Rust unchanged",
+    "source": "prefix-crossref-author-check/report.md",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round08-crossref-followup-final.md"
+    ]
+  },
+  {
+    "id": "TC11F-01",
+    "source": "technical-early/round11-cells-newtypes-any-final.md",
+    "reviewer_classification": "necessary first-use syntax",
+    "root_disposition": "adopt",
+    "reason": "尚未教分組use，兩helper改成各一行已教use；不修改前置章或增加概念。",
+    "changed_paths": [
+      "examples/intro-workspace/type-stages/examples/recorder/cells/mod.rs",
+      "examples/intro-workspace/type-stages/examples/any_type_id/payloads/mod.rs"
+    ],
+    "verification": "selected recorder/any_type_id Clippy -D warnings passed; independent narrow followup CLOSED, other71 sources unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md"
+    ]
+  },
+  {
+    "id": "TC12P-O1",
+    "source": "technical-early/round12-cargo-engineering-prefix.md",
+    "reviewer_classification": "optional command/source-order wording",
+    "root_disposition": "adopt",
+    "reason": "明說all-targets也會載入下方完整答案，只用本節已教介面，取代來源已全部列出的時序誤導。",
+    "changed_paths": [
+      "docs/chapters/12-01-lesson.md"
+    ],
+    "verification": "independent narrow followup CLOSED; source and commands unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round12-cargo-order-followup.md"
+    ]
+  },
+  {
+    "id": "R12-embedded-test-order",
+    "source": "root actual full read 12.2 and loaded integration-test closure",
+    "reviewer_classification": "necessary first-use command/source order",
+    "root_disposition": "adopt",
+    "reason": "CARGO_PKG_NAME及完整答案教學之前只test embedded；整包all-targets移至頁尾，正常library/build closure已教且完整內嵌。",
+    "changed_paths": [
+      "docs/chapters/12-02-lesson.md"
+    ],
+    "verification": "author actual --test embedded passed two tests; no Rust changed; independent technical initial review inspected current version, not counted as rediscovery",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round12-build-script.md"
+    ]
+  },
+  {
+    "id": "C9-01",
+    "source": "continuity-early/round09-ch09.md",
+    "reviewer_classification": "optional mobile table readability",
+    "root_disposition": "adopt",
+    "reason": "保留三建立方式、Item、shared/mutable/owned來源與各自後果，合併來源及後果欄，讓手機同列核對。",
+    "changed_paths": [
+      "docs/chapters/09-04-lesson.md"
+    ],
+    "before_sha256": "af1cd2280166c7e5b70cbe1b67dea4f09efb7001d5a81b948b7070833751e1b1",
+    "sha256": "19526bf5c5f0dd57f1bf6ac6cb090116d9c69fdedbd7a6beb0bd74d1e63bee3a",
+    "verification": "accepted: independent narrow followup CLOSED; original initial judgments preserved; Rust unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round09-ch09-followup-final.md"
+    ]
+  },
+  {
+    "id": "C9-02",
+    "source": "continuity-early/round09-ch09.md",
+    "reviewer_classification": "optional mobile table readability",
+    "root_disposition": "adopt",
+    "reason": "保留三methods兩狀態全部行為與回傳，明標兩狀態合欄，讓手機可同看API與後果。",
+    "changed_paths": [
+      "docs/chapters/09-06-lesson.md"
+    ],
+    "before_sha256": "d8be1e5ed7a5ac9c930e1b2b412fbe3b8efd80ea513be061913cff919f59d68d",
+    "sha256": "c9afa16ffac66f6df5a1173b48e3bac422c17d17322e1b2cffabd65a2689f197",
+    "verification": "accepted: independent narrow followup CLOSED; original initial judgments preserved; Rust unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round09-ch09-followup-final.md"
+    ]
+  },
+  {
+    "id": "R12-full-source-before-command",
+    "source": "root full read of12.4",
+    "reviewer_classification": "plan conformance: full loaded source availability before first command; no missing API claimed",
+    "root_disposition": "adopt",
+    "reason": "所有API與scan都已教；只將同頁已有完整scan/fixture與streams來源移至首次執行之前，讓讀者可先取得實際載入檔案再操作，不增加內容或先備。",
+    "changed_paths": [
+      "docs/chapters/12-04-lesson.md"
+    ],
+    "before_sha256": "eaf2e0526c1979e1601af0ff3f91ade1d716f0a6ac88fcfa78f676abe0820a37",
+    "sha256": "7c6341a95b41053d26bdca48d58d84d2ba76d7c905b0e5b1eb205fb5674826bf",
+    "verification": "accepted: technical current-source followup and independent continuity initial on current source/render; initial reviewers explicitly note known post-edit version scope",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round12-content-direction-followup.md",
+      "planning/restructure-v3/reviews/continuity-early/round12-ch12.md"
+    ]
+  },
+  {
+    "id": "TC12T-O1",
+    "source": "technical-early/round12-content-confirmation-tail.md",
+    "reviewer_classification": "optional directional wording",
+    "root_disposition": "adopt",
+    "reason": "root前移完整scan輸入區塊後，TempDir答案與tests位於下方；精確改方向，保留材料與Rust不變。",
+    "changed_paths": [
+      "docs/chapters/12-04-lesson.md"
+    ],
+    "before_sha256": "7c6341a95b41053d26bdca48d58d84d2ba76d7c905b0e5b1eb205fb5674826bf",
+    "sha256": "55f1886f0d40f920a3dff640c0b2a3b3f0d0647951e739e805b717a750e68754",
+    "verification": "accepted: independent narrow followup CLOSED; original initial judgments preserved; Rust unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round12-content-direction-followup.md"
+    ]
+  },
+  {
+    "id": "TC17A-O1",
+    "source": "technical-early/round17-public-api-contracts.md",
+    "reviewer_classification": "optional cross-reference accuracy",
+    "root_disposition": "adopt",
+    "reason": "回查實際Debug/PartialEq及Clone/Copy章，避免導向4.2 match。",
+    "changed_paths": [
+      "docs/chapters/17-04-lesson.md"
+    ],
+    "before_sha256": "477a5bb48d1019593fd2497b5873b3074be5123ee5b5651419860802606afdc8",
+    "sha256": "1de43733b00d7beb68b6db16529eaf1cf0dc0e330fd7ca1443220724a70e4e1e",
+    "verification": "accepted: independent narrow followup CLOSED; original initial judgments preserved; Rust unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round17-api-cross-references-followup.md"
+    ]
+  },
+  {
+    "id": "TC17A-O2",
+    "source": "technical-early/round17-public-api-contracts.md",
+    "reviewer_classification": "optional cross-reference accuracy",
+    "root_disposition": "adopt",
+    "reason": "owned self已在3.6 method教，2.5是流程控制回收，不指錯回查。",
+    "changed_paths": [
+      "docs/chapters/17-04-lesson.md"
+    ],
+    "before_sha256": "1de43733b00d7beb68b6db16529eaf1cf0dc0e330fd7ca1443220724a70e4e1e",
+    "sha256": "6c5390a43e128dbbd959f89f89add695d1de31aed10b6116b9256a5a52f384aa",
+    "verification": "accepted: independent narrow followup CLOSED; original initial judgments preserved; Rust unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round17-api-cross-references-followup.md"
+    ]
+  },
+  {
+    "id": "C10-01",
+    "source": "continuity-early/round10-ch10.md",
+    "reviewer_classification": "optional acronym lookup",
+    "root_disposition": "adopt",
+    "reason": "首次正式定義API補完整英文與中文意義，幫基本Python讀者對照英文文件，保留原公開函式/型別/method例子而不擴充機制。",
+    "changed_paths": [
+      "docs/chapters/10-01-lesson.md"
+    ],
+    "before_sha256": "2d8fdc5ae52f16c2bce057f6b59f272f79af58d051e932a88ee8b1d552aa6564",
+    "sha256": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab",
+    "verification": "accepted: independent source and actual desktop/mobile narrow followup on current 8102 preview; original stale8097 render attempt recorded honestly",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/continuity-early/round10-ch10-followup-final.md"
+    ]
+  },
+  {
+    "id": "R17-grouping-reference",
+    "source": "root semantic cross-reference packet check against actual6.5/6.6",
+    "reviewer_classification": "optional cross-reference precision",
+    "root_disposition": "adopt",
+    "reason": "三處完整分組/累加改明指6.6；最後insert覆寫仍指實際先教覆寫的6.5，不盲隨proposal將所有4.3映同一節。",
+    "changed_paths": [
+      "docs/chapters/17-05-lesson.md"
+    ],
+    "before_sha256": "a49384aee9702b4a08b9033a1557424b62a5579fa2f7c5c11f6433b667419c0d",
+    "sha256": "06e860e87aa7895cbeb270a7cb6abf336fc3d3e800cba58d5ace29086cc9b9b6",
+    "verification": "accepted: independent narrow source followup; only prose changed, original initial judgment and source/command hashes preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round17-root-cross-references-followup.md"
+    ]
+  },
+  {
+    "id": "R17-manifest-crossrefs",
+    "source": "root semantic cross-reference packet check against actual1.3/12.1",
+    "reviewer_classification": "optional cross-reference precision",
+    "root_disposition": "adopt",
+    "reason": "name/version/edition在1.2–1.3，最低rust-version與publish及workspace共同值在12.1；兩處回收完整對應，不把最低版本宣告誤指入門workspace。",
+    "changed_paths": [
+      "docs/chapters/17-04-lesson.md"
+    ],
+    "before_sha256": "6c5390a43e128dbbd959f89f89add695d1de31aed10b6116b9256a5a52f384aa",
+    "sha256": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa",
+    "verification": "accepted: independent narrow source followup; only prose changed, original initial judgment and source/command hashes preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round17-root-cross-references-followup.md"
+    ]
+  },
+  {
+    "id": "W11-15-005-implementation",
+    "root_disposition": "adopt",
+    "reason": "沿已核准27項掃描處置，把兩個真實計數實作直接具名，不以模型泛稱；Loom的模型術語保留。",
+    "changed_paths": [
+      "docs/chapters/17-08-lesson.md"
+    ],
+    "verification": "accepted: both independent current chapter17 reviews completed after actual prose implementation",
+    "evidence": {
+      "path": "docs/chapters/17-08-lesson.md",
+      "before_sha256": "9bef664f3f934f704916c2e205c3757c20f7904aac41953acdfadb6a7cadd491",
+      "after_sha256": "8ff6edb77f3d98afd663717b4b2e9fe10b93dd6b20890f69cfe5613c02c19898",
+      "replacements": [
+        {
+          "before": "cloned為true呼叫原模型count_cloned，false呼叫改善模型count_borrowed",
+          "after": "cloned為true呼叫count_cloned實作，false呼叫count_borrowed實作"
+        },
+        {
+          "before": "## 先profile原模型，再用同一範圍profile改善模型",
+          "after": "## 先profile count_cloned，再用同一範圍profile count_borrowed"
+        },
+        {
+          "before": "展開原模型與借讀模型的完整程式",
+          "after": "展開兩個計數實作的完整程式"
+        },
+        {
+          "before": "| 觀察項目 | 原模型：clone | 改善模型：借讀 |",
+          "after": "| 觀察項目 | count_cloned：clone | count_borrowed：借讀 |"
+        },
+        {
+          "before": "這份零結果有原模型的非零追蹤作對照",
+          "after": "這份零結果有count_cloned的非零追蹤作對照"
+        },
+        {
+          "before": "原模型只為了contains建立candidate，沒有把它交出或在下一行使用。改善模型改為as_str借讀",
+          "after": "count_cloned只為了contains建立candidate，沒有把它交出或在下一行使用。count_borrowed改為as_str借讀"
+        }
+      ],
+      "scope": "prose only; Rust/config/commands/snippets unchanged"
+    },
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round17-dhat-allocation-profile.md",
+      "planning/restructure-v3/reviews/continuity-late/17-summary.md"
+    ]
+  },
+  {
+    "id": "R17-library-identity",
+    "root_disposition": "adopt",
+    "reason": "第15章分階段helper與此節完整library分清楚，避免把先前無lib快照誤稱為已載入的整個library。",
+    "changed_paths": [
+      "docs/chapters/17-06-lesson.md"
+    ],
+    "verification": "accepted: independent narrow source followup; only prose changed, original initial judgment and source/command hashes preserved",
+    "evidence": {
+      "path": "docs/chapters/17-06-lesson.md",
+      "before_sha256": "e38d0dd8516cddc7b49f1535aa00c40f860437ed8d68a1c073db1cc1b7172586",
+      "after_sha256": "40b995a63f8ae50f07264ccb014d8e5f090796c8f2658c6279fc6b5aeb12dca5",
+      "replacements": [
+        {
+          "before": "一般dependency是15.4已教的 library，供後面的Miri測試使用",
+          "after": "一般dependency把第15.1–15.4節已教的helper整理成完整library，來源在下方同頁列出，供後面的Miri測試使用"
+        }
+      ],
+      "scope": "prose only; Rust/config/commands/snippets unchanged"
+    },
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round17-library-and-string-followup.md"
+    ]
+  },
+  {
+    "id": "TC17B-O1",
+    "source": "planning/restructure-v3/reviews/technical-early/round17-criterion-benchmark.md",
+    "reviewer_classification": "optional first-use clarity",
+    "root_disposition": "adopt",
+    "reason": "在實例前補具體From轉換結果，讓讀者不用從泛型契約推測這個標準impl。",
+    "changed_paths": [
+      "docs/chapters/17-07-lesson.md"
+    ],
+    "sha256": "82260e42f6632bbed298ad38bfda5d0e762a8c963348bfcf0ce5de45f7030eb0",
+    "verification": "accepted: independent narrow source followup; only prose changed, original initial judgment and source/command hashes preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round17-library-and-string-followup.md"
+    ]
+  },
+  {
+    "id": "R13-original-audit-nearby-cues",
+    "root_disposition": "adopt",
+    "reason": "原27項A0610-C04/O06在重寫稿仍有模糊遠指與懸冒號；依核准處置具名helper與caller，測試目的改完整句。於technical與fresh continuity13prefix初判皆封存後才改。",
+    "evidence": [
+      {
+        "path": "docs/chapters/13-02-lesson.md",
+        "sha256": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e",
+        "before": "為了不讓一次 panic 的實際型別替兩種文字契約代答，完整測試直接建立 String、static 文字與 u32 的 payload，分別核對文字與未知型別的報告：",
+        "after": "為了不讓一次 panic 的實際型別替兩種文字契約代答，完整測試直接建立 String、static 文字與 u32 的 payload，分別核對文字與未知型別的報告。"
+      },
+      {
+        "path": "docs/chapters/13-03-lesson.md",
+        "sha256": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d",
+        "before": "這份 bound 說明輸出的有效性；具體選哪個 reference，仍由選擇器的 body 決定。下面的完整例子才把它指定成第二個欄位。",
+        "after": "這份 bound 說明輸出的有效性；具體選哪個 reference，仍由選擇器的 body 決定。先看共用的 `sum_selected` helper；後面的 `callback_projection/main.rs` 傳入 second，才固定選擇第二個欄位。"
+      }
+    ],
+    "verification": "accepted: independent technical and continuity narrow followups; original initial judgments preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round13-root-prefix-followup.md",
+      "planning/restructure-v3/reviews/continuity-late/13prefix-root-prose-recheck.md"
+    ]
+  },
+  {
+    "id": "CL-13-ARRAY-SLICE",
+    "source": "planning/restructure-v3/reviews/continuity-late/13prefix-addendum-array.md",
+    "reviewer_classification": "necessary actual first-use dependency",
+    "root_disposition": "adopt",
+    "reason": "使用3.7已教的array全範圍slice寫法，避免把15.3才首次教的array reference unsizing帶回thread入門；同章owned source rg查僅此一個array literal呼叫。",
+    "changed_paths": [
+      "examples/concurrency-stages/examples/thread_join/main.rs"
+    ],
+    "sha256": "90a77a8021bbf6402e3e0dbdde2f1d71cd9f971e2d95f1205ee526f16103debe",
+    "verification": "accepted: root ran target (6+200=206), selected strict Clippy and fmt; independent technical and continuity source followups resolved, original judgments/addendum preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round13-root-prefix-followup.md",
+      "planning/restructure-v3/reviews/continuity-late/13prefix-array-recheck.md"
+    ]
+  },
+  {
+    "id": "R14-offline-test-prose",
+    "root_disposition": "adopt",
+    "reason": "原W11-15-004處置延伸相鄰同類句：說明離線測試實際驗證範圍即可，不加作者未隱藏來源的自我驗收敘事。必要的離線/HTTP界線保留。",
+    "evidence": [
+      {
+        "path": "docs/chapters/14-07-lesson.md",
+        "before": "它們沒有送 HTTP，沒有靠隱藏的本地 server 取得成功。",
+        "after": "這些測試沒有發出 HTTP 請求。",
+        "sha256": "eeecfa90ed6c35cc1c811954629015ffc63e1495319b0d5e12ac4d82b68f014e"
+      },
+      {
+        "path": "docs/chapters/14-08-lesson.md",
+        "before": "這些結果沒有驗證真實網路；也沒有隱藏下一節的 server helper。",
+        "after": "這些結果沒有驗證真實網路。",
+        "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf"
+      }
+    ],
+    "verification": "accepted: independent technical narrow followup, current continuity initial, and completed frozen reader packets cover current version; source/commands unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round07-and14-root-wording-followup.md"
+    ]
+  },
+  {
+    "id": "R18-answer-route-and-prose",
+    "root_disposition": "adopt",
+    "reviewer_classification": "18B prerequisite reader integration finding plus root optional plain-language cleanup",
+    "reason": "18.1的B答案入口要符合核准split：18.11引導整合、18.12全部core/tests/fixture。相鄰普通artifact/core敘事改自然中文，實際快照與命令不變。",
+    "evidence": [
+      {
+        "path": "docs/chapters/18-01-lesson.md",
+        "before": "A 的全部檔案在 18.6 同頁，B 的核心與測試分別在 18.11、18.12 收完整。",
+        "after": "A 的全部檔案在 18.6 同頁，B 在 18.11 完成最後整合，18.12 提供全部檔案的完整答案。",
+        "sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0"
+      },
+      {
+        "path": "docs/chapters/18-05-lesson.md",
+        "before": "答案只有本節要接的工作，完整 artifact 中的 core 仍是前面成果：",
+        "after": "下面定位本節要接的工作；完整程式的其餘核心仍沿用前面的成果：",
+        "sha256": "759c1dd6cd374e7a9863e9482f6e662df1313b0dc0a4fe6a23c7dd227e6bc27d"
+      },
+      {
+        "path": "docs/chapters/18-06-lesson.md",
+        "before": "四個 stage 的原 artifact 仍保持原樣。",
+        "after": "四個階段的原快照仍保持原樣。",
+        "sha256": "0d3112fc092f4d730391bb884b2c9f55c06126e459cc8a84397f7fba54ed4e60"
+      }
+    ],
+    "verification": "accepted: both independent technical and continuity initial reviews cover actual current18.1/5/6, with version timing and prior hash rejection transparently recorded",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round18a-collection-prefix.md",
+      "planning/restructure-v3/reviews/technical-early/round18a-cli-complete-tail.md",
+      "planning/restructure-v3/reviews/continuity-late/18A-summary.md"
+    ]
+  },
+  {
+    "id": "XR07-relative-two-sections",
+    "source": "planning/restructure-v3/reviews/crossref-final-independent/report.md",
+    "reviewer_classification": "optional precise range",
+    "root_disposition": "adopt",
+    "reason": "7.4的前兩節可能誤讀成7.2/7.3；source helper實收7.1/7.2函式，直接指章節讓讀者可正確回查。",
+    "changed_paths": [
+      "docs/chapters/07-04-lesson.md"
+    ],
+    "sha256": "21a01d6a373aa5db5df05479d23e7b40c0119fcc98116e6f8af3f210b32acc64",
+    "verification": "accepted: independent technical and actual desktop/mobile continuity narrow followups; source/commands unchanged, original first-reader records kept",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round07-and14-root-wording-followup.md",
+      "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-final.md"
+    ]
+  },
+  {
+    "id": "TC18M-O1",
+    "source": "planning/restructure-v3/reviews/technical-early/round18a-content-report-middle.md",
+    "reviewer_classification": "optional type precision",
+    "root_disposition": "adopt",
+    "reason": "path_debug實為Option<String>，明分兩個String欄位與Option欄位的排序，避免型別敘述與實際source矛盾。技術/late銜接原初判先封存後才改。",
+    "changed_paths": [
+      "docs/chapters/18-04-lesson.md"
+    ],
+    "sha256": "a58875058db18e69dd510130ff1a0c399ec50516e9b8d71bfde660c988c19195",
+    "verification": "accepted: independent technical source followup plus continuity actual desktop/mobile narrow followup; original initials preserved, no source/config/commands changes",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round18a-option-order-followup.md",
+      "planning/restructure-v3/reviews/continuity-late/18A-root-prose-recheck.md"
+    ]
+  },
+  {
+    "id": "R18B-small-prose-and-source-link",
+    "root_disposition": "adopt",
+    "reason": "去掉觀察期限誤留的s；中文延伸閱讀改成作者本輪實際取得並閱讀的原始教材Markdown，避免已確認404來源。",
+    "evidence": [
+      {
+        "path": "docs/chapters/18-09-lesson.md",
+        "before": "觀察期限s能處理",
+        "after": "觀察期限能處理",
+        "sha256": "7c78f41be377d1b845d5274883b4f927370411e091b2f50761febee3965fed13"
+      },
+      {
+        "path": "docs/chapters/18-10-lesson.md",
+        "before": "https://course.rs/advance-practice/graceful-shutdown.html",
+        "after": "https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md",
+        "sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e"
+      }
+    ],
+    "verification": "accepted: both independent current18B initials plus applicable final source/rendered followup; author originals preserved"
+  },
+  {
+    "id": "XCF-C01-and-O01",
+    "source": "planning/restructure-v3/reviews/crossref-final-complement/report.md",
+    "reviewer_classification": "one confirmed relative reference and one optional precise type-conversion source",
+    "root_disposition": "adopt both",
+    "reason": "C基礎不是Rust mutable設定method的前節；str的ToOwned→String直接回8.5，而10.4是bytes→Vec。兩處只修文字引用，實際契約/程式不變。",
+    "changed_paths": [
+      "docs/chapters/15-06-lesson.md"
+    ],
+    "sha256": "9d61d616276c916246f3d83967d34ead056dc35a282e61dfadc8da5c78b2e9ba",
+    "verification": "accepted: independent technical source and continuity source/desktop/mobile narrow followups closed; initial seals preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round15-and18b-root-crossref-followup.md",
+      "planning/restructure-v3/reviews/continuity-late/15-06-root-crossref-recheck.md"
+    ]
+  },
+  {
+    "id": "XCF-18B-Duration-reference",
+    "source": "planning/restructure-v3/reviews/crossref-final-independent-final7/report.md",
+    "reviewer_classification": "optional precision",
+    "root_disposition": "adopt",
+    "reason": "14.5已教Duration跨度但未教Copy；本節當場教Copy，將回指範圍寫精確。",
+    "changed_paths": [
+      "docs/chapters/18-08-lesson.md"
+    ],
+    "sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34",
+    "verification": "accepted: technical narrow and current continuity initial resolved; later C14 correction additionally teaches Copy in14.5. Original target/finding and timed narrow reports remain history."
+  },
+  {
+    "id": "C14-01-through-C14-03",
+    "source": "planning/restructure-v3/reviews/continuity-early/round14-ch14.md",
+    "reviewer_classification": "necessary1; optional2",
+    "root_disposition": "adopt all three",
+    "reason": "補明Duration Copy以追第一次按值重用；短補外部錯誤格式契約，將現有Client Send/Sync短說移至首次spawn前。無Rust/Cargo/範例命令變動。",
+    "changed_paths": [
+      "docs/chapters/14-05-lesson.md",
+      "docs/chapters/14-03-lesson.md",
+      "docs/chapters/14-09-lesson.md"
+    ],
+    "sha256": {
+      "docs/chapters/14-05-lesson.md": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f",
+      "docs/chapters/14-03-lesson.md": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42",
+      "docs/chapters/14-09-lesson.md": "cb3206ccfd5d9d6034cd0dc94001a496378b518fe61fa507acea64217425b7c2"
+    },
+    "verification": "accepted: independent technical/source and continuity actual desktop/mobile followups CLOSED; original AI reader report frozen, separate revision reread finds no remaining necessary gap for these three groups; original313 hashes unchanged",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/round14-root-contract-followup.md",
+      "planning/restructure-v3/reviews/continuity-early/round14-ch14-followup-final.md",
+      "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md",
+      "planning/restructure-v3/reviews/first-reader-ch01/report-ch14-followup.md"
+    ]
+  },
+  {
+    "id": "C18B-01-and-C18B-02",
+    "source": "planning/restructure-v3/reviews/continuity-early/round18b-ch18b.md",
+    "reviewer_classification": "necessary2; optional0",
+    "root_disposition": "adopt both",
+    "reason": "在首次借讀result取Id前明示Id Copy，並區分測試材料的精確JSON字串與逐行預覽，以重建檔首LF及單空白行，保留原索引1/3/4。無Rust/manifest/真fixture/全站config改動。",
+    "changed_paths": [
+      "docs/chapters/18-10-lesson.md",
+      "docs/chapters/18-11-lesson.md",
+      "docs/chapters/18-12-lesson.md"
+    ],
+    "sha256": {
+      "docs/chapters/18-10-lesson.md": "80c9c6fc9cb984b8964b1cd9efe9042d1be109a126224ff51bc8a207f686757b",
+      "docs/chapters/18-11-lesson.md": "2c5ddcff7574478104eeed31ec1e79998b2f5696d9168c29c4611eb00841bc00",
+      "docs/chapters/18-12-lesson.md": "0dd7448bc31cf09d1d64409c31a4b102fb6ed50a6fc041118c0fab04132b0ba1"
+    },
+    "verification": "accepted: independent technical source and continuity current source/actual desktop/mobile/JSON-DOM followups CLOSED, with root separate byte-exact actual-DOM proof; originals preserved"
+  },
+  {
+    "id": "CL-SUP-MUT-LOG",
+    "source": "planning/restructure-v3/reviews/continuity-late/supplement-mutability.md",
+    "reviewer_classification": "optional clarity for Python-only reader",
+    "root_disposition": "adopt",
+    "reason": "在首次JS完整程式前用一句補console.log的顯示用途，讓Python起點讀者能逐行對上輸出；不增加程式或API使用。",
+    "changed_paths": [
+      "docs/supplements/python-javascript-mutability.md"
+    ],
+    "sha256": "585548b715f824905c562c0a240ed5a2408fe8c707a52ca3aa4c22969e2d7b20",
+    "verification": "accepted: independent technical narrow source and continuity actual desktop/mobile followups resolved; original initials preserved",
+    "verification_reports": [
+      "planning/restructure-v3/reviews/technical-early/supplement-mutability-followup.md",
+      "planning/restructure-v3/reviews/continuity-late/supplement-mutability-followup.md"
+    ]
+  },
+  {
+    "id": "FR14-reading-scope-and-unknowns",
+    "source": "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md",
+    "reviewer_classification": "bounded AI reading evidence with disclosed prior terminology and deferred internals",
+    "root_disposition": "retain route corrections and limits; no extra chapter14 expansion",
+    "reason": "後續241/274/306補足當時尚待例證；runtime內部在16，協定/TLS等內部不是本組library呼叫的先備。uN的unsigned/bit命名已在1.4建立；API實際回傳型別見14來源，不需要背完整數範圍。Bodytimeout與pool重用未實驗不冒稱通過。保留自帶詞彙曝光與同包答案已見的限制，不以AI首讀代替真人或程式執行。",
+    "original_report_sha256": "7caa6ed081ec2aa308ce9416fca30ab70dd9031d95a4fcc4c4933c0998313451",
+    "verification": "original312 route records and report sealed; chapter14 revision reread tracked separately"
+  }
+]

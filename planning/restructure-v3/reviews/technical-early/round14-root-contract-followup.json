@@ -1,0 +1,276 @@
+{
+  "type": "root-prompted narrow technical source followup after independent initial seals",
+  "scope": [
+    "14.3",
+    "14.5",
+    "14.9"
+  ],
+  "date": "2026-10-15",
+  "attribution": "C14 changes were supplied by root after own chapter14 initial seals. This is targeted followup, not independent rediscovery. Original reports and source hashes unchanged. No other peer findings read.",
+  "original_initial_artifacts": [
+    "/workspace/work/tutorial-implementation-20261015/technical-early/round14-async-foundations-cancellation-prefix.json",
+    "/workspace/work/tutorial-implementation-20261015/technical-early/round14-http-local-service-tail.json"
+  ],
+  "before_current_docs": [
+    {
+      "path": "/workspace/learn_rust/docs/chapters/14-03-lesson.md",
+      "original_initial_sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+      "root_saved_before": "/workspace/work/tutorial-implementation-20261015/root-followups-1038/14-03-lesson.md",
+      "root_saved_before_sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+      "current_sha256": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42",
+      "exact_diff": "--- \n+++ \n@@ -20,7 +20,7 @@\n \n 本例用 **`tokio::sync::mpsc`**，名稱同樣是 multiple producer, single consumer（多個送端、單一收端）。它與第13.5節 std channel 的用途相近，這次 send／recv 是可 await 的 async 操作。\n \n-**`mpsc::channel::<T>(capacity)`** 建立有界緩衝區，交回 `Sender<T>` 與 `Receiver<T>`；capacity 必須大於0。Sender 可以 clone，共用同一條 channel；Receiver 由一個接收者持有。`sender.send(value).await` 等待空位，成功交回 Ok(())，收端已關閉則交回帶原值的 SendError。`receiver.recv().await` mutable 借用收端：有訊息得到 Some(value)，暫時沒有訊息但仍有送端時繼續等，所有送端結束且緩衝區已空才得到 None。\n+**`mpsc::channel::<T>(capacity)`** 建立有界緩衝區，交回 `Sender<T>` 與 `Receiver<T>`；capacity 必須大於0。Sender 可以 clone，共用同一條 channel；Receiver 由一個接收者持有。`sender.send(value).await` 等待空位，成功交回 Ok(())，收端已關閉則交回帶原值的 SendError；它具備 Debug，可供 expect 在失敗時產生診斷。`receiver.recv().await` mutable 借用收端：有訊息得到 Some(value)，暫時沒有訊息但仍有送端時繼續等，所有送端結束且緩衝區已空才得到 None。\n \n 本節用 unit `()` 作不帶額外資料的通知，兩條 channel 的角色固定如下：\n \n@@ -49,7 +49,7 @@\n \n **`handle.id()`** 取得 task 的 **Id**，可用於辨識與顯示；它不是我們的輸入索引，也不應假定某次固定印出幾號。Id 也支援相等比較與 Hash，稍後可用作 HashMap 的鍵。**`handle.is_finished()`** 查詢 task 此刻是否已結束，沒有等待它；false 只描述當下。\n \n-**`handle.await`** 取得 `Result<T, JoinError>`。本例 T 已經是 `Result<i32, WorkError>`，所以有兩層：\n+**`handle.await`** 取得 `Result<T, JoinError>`。JoinError 具備 Debug 與 Display，因此可用診斷格式顯示，也能沿第8.5節以 to_string 保存文字。本例 T 已經是 `Result<i32, WorkError>`，所以有兩層：\n \n | 取得的值 | 意義 |\n | --- | --- |\n"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/14-05-lesson.md",
+      "original_initial_sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+      "root_saved_before": "/workspace/work/tutorial-implementation-20261015/root-followups-1038/14-05-lesson.md",
+      "root_saved_before_sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+      "current_sha256": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f",
+      "exact_diff": "--- \n+++ \n@@ -6,7 +6,7 @@\n \n ## Duration 是一段長度，Instant 用來量經過時間\n \n-標準庫 **`std::time::Duration`** 表示時間長度；`Duration::from_secs(1)` 建立1秒，`Duration::from_millis(20)` 建立20毫秒，1秒等於1000毫秒。`duration.as_millis()` 回傳總毫秒數，供本例顯示，會捨去不足1毫秒的部分。\n+標準庫 **`std::time::Duration`** 表示時間長度；`Duration::from_secs(1)` 建立1秒，`Duration::from_millis(20)` 建立20毫秒，1秒等於1000毫秒。`duration.as_millis()` 回傳總毫秒數，供本例顯示，會捨去不足1毫秒的部分。Duration 具備 **Copy**；把同一份時間跨度按值交給 sleep 或 timeout 後，原 binding 仍可再用。\n \n **`std::time::Instant::now()`** 取得適合量經過時間的單調時間點；之後 `start.elapsed()` 得到 Duration。它不是年月日鐘面，也不把別台機器的時間點拿來相減。本例從呼叫 sleep 前開始量，包含等待與這次排程的時間。\n \n@@ -40,7 +40,7 @@\n \n ## timeout 包住哪一份工作？\n \n-**`tokio::time::timeout(limit, work)`** 接手本例的一份 future，建立帶期限的等待；呼叫時就記下 deadline，緊接著 await 取得 **`Result<T, Elapsed>`**。T 是原工作 Output，Elapsed 是 Tokio 的逾時錯誤，也能用 Display 顯示。\n+**`tokio::time::timeout(limit, work)`** 接手本例的一份 future，建立帶期限的等待；呼叫時就記下 deadline，緊接著 await 取得 **`Result<T, Elapsed>`**。T 是原工作 Output，Elapsed 是 Tokio 的逾時錯誤，具備 Debug 與 Display，可供 expect 的診斷與文字顯示。\n \n 原工作完成得到 Ok(output)；仍沒完成而期限已到得到 Err(Elapsed)。這份 wrapper 結束並 drop 它持有的工作，取消後續執行。本節都直接包住一份未 spawn 的 future；若持有的是另一份 task 的把手，還要分辨把手與 task，下一節再追那種責任。\n \n"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/14-09-lesson.md",
+      "original_initial_sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+      "root_saved_before": "/workspace/work/tutorial-implementation-20261015/root-followups-1038/14-09-lesson.md",
+      "root_saved_before_sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+      "current_sha256": "cb3206ccfd5d9d6034cd0dc94001a496378b518fe61fa507acea64217425b7c2",
+      "exact_diff": "--- \n+++ \n@@ -142,6 +142,8 @@\n --8<-- \"examples/ch11-async/local-service/src/lib.rs\"\n ```\n \n+Client 支援 Send／Sync，owned client 能移進 spawn 工作，對應第14.3節的 Send 要求。\n+\n 完整 **`src/main.rs`** 先spawn client，等entered，再放行並取得結果；每個失敗分支都先收client、shutdown server，才panic。成功路徑也先保存server結果，再assert，避免assert提前離開使資源責任不明：\n \n ```rust\n@@ -186,7 +188,7 @@\n \n ## 獨立gate指定完成順序\n \n-這次提交/held/0與/held/1。**`client.clone()`** 交出另一個Client值，共用內部連線池與設定，不是重新建另一份獨立pool；Client支援Send／Sync，owned client能移進spawn工作。\n+這次提交/held/0與/held/1。**`client.clone()`** 交出另一個Client值，共用內部連線池與設定，不是重新建另一份獨立pool。\n \n 先以有限期限收到兩份entered，順序可0／1或1／0；兩份client都尚未完成。只放行1並收回，0仍在等待，再放行0。這證明完成順序來自獨立gate控制，不靠固定sleep。\n \n"
+    }
+  ],
+  "checks": [
+    {
+      "id": "C14-Duration",
+      "judgment": "resolved",
+      "current_doc": "14.5:9",
+      "api_evidence": "std Duration has Clone/Copy derive; cached core time.rs stable duration since1.3.0 corroborates public long-standing trait, with source provenance explicitly nightly2026-10-01 rather than claiming pinned1.99 source. Tokio1.53.3 sleep.rs:123 and timeout.rs:86 take Duration by value. Copy therefore leaves original binding usable; no shared deadline semantics are implied.",
+      "order": "First Duration definition line9 precedes full timing_measured and repeated timeout(limit,...) source. No later knowledge needed."
+    },
+    {
+      "id": "C14-format-traits",
+      "judgment": "resolved",
+      "current_doc": [
+        "14.3:23",
+        "14.3:52",
+        "14.5:43"
+      ],
+      "api_evidence": "Tokio1.53.3 mpsc/error.rs:10 impl<T> Debug for SendError<T> has no T:Debug bound, supports expect and preserves ownedT in tuple field. JoinError runtime/task/error.rs:135 Display and:155 Debug support diagnostic formatting;8.5:121 blanket Display→ToString connection correct. Elapsed time/error.rs:46 deriveDebug and:111 Display support expect diagnostic and display.",
+      "order": "SendError paragraph before first controlled_work full source expect. JoinError paragraph before first join_handle full source Debug, and before later tasks::classify to_string. Elapsed paragraph before timing_outcomes/other timeout sources requiring formatting."
+    },
+    {
+      "id": "C14-Client-SendSync",
+      "judgment": "resolved",
+      "current_doc": "14.9:145",
+      "api_evidence": "Reqwest0.13.5 src/lib.rs:334–336 asserts Client Send+Sync+Clone; Client stores Arc<ClientRef> and derivesClone in async_impl/client.rs. local-service/main.rs:13 spawn async move owns client and address, then inspect(&client,...) across await. Send permits moving Client, Sync also supports shared borrow Send; values are owned with static bounds as already14.3 described.",
+      "order": "Moved statement precedes first spawned client full-main snippet. Earlier minimal local-basic spawns server and directly awaits client, so no earlier client-spawn gap. Later clone/shared-pool description retained without duplicating Send/Sync sentence."
+    }
+  ],
+  "commands_and_snippet_references_unchanged": true,
+  "unchanged_owned_rust_and_manifest_files_against_own_initial": [
+    "/workspace/learn_rust/examples/ch11-async/bounded/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/bounded/examples/one_slot_solution.rs",
+    "/workspace/learn_rust/examples/ch11-async/bounded/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/bounded/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/bounded/src/outcomes.rs",
+    "/workspace/learn_rust/examples/ch11-async/bounded/tests/cli.rs",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/examples/borrowed_join.rs",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/examples/prequeued_stop_solution.rs",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/examples/short_guard.rs",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/fixtures/cross-crate-fail/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/fixtures/cross-crate-fail/examples/held_guard.rs",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/src/models.rs",
+    "/workspace/learn_rust/examples/ch11-async/cancellation/tests/cli.rs",
+    "/workspace/learn_rust/examples/ch11-async/foundations/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/foundations/examples/block_capture.rs",
+    "/workspace/learn_rust/examples/ch11-async/foundations/examples/explicit_future.rs",
+    "/workspace/learn_rust/examples/ch11-async/foundations/examples/fallible_output.rs",
+    "/workspace/learn_rust/examples/ch11-async/foundations/examples/receipt_solution.rs",
+    "/workspace/learn_rust/examples/ch11-async/foundations/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/foundations/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/foundations/tests/cli.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/http-single/examples/page_reply_solution.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/src/config.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/src/error.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/src/reply.rs",
+    "/workspace/learn_rust/examples/ch11-async/http-single/tests/cli.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/local-service/examples/basic.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/examples/closed_gate_solution.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/tests/absent_entered.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/tests/cli.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/tests/client_cancel.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/tests/fixed_responses.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/tests/gates.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/tests/request_timeout.rs",
+    "/workspace/learn_rust/examples/ch11-async/local-service/tests/shutdown_gate.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/examples/borrowed_join.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/examples/prequeued_stop_solution.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-basic/src/models.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-steps/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-steps/examples/borrowed_join.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-steps/examples/short_guard.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/cancellation-steps/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/examples/block_capture.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/examples/explicit_future.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/examples/fallible_output.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/examples/lazy.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/foundations-steps/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/src/config.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/src/error.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/tests/cli.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/local-basic/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/stages/local-basic/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/examples/abort_and_wait.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/examples/join_handle.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-clock/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-clock/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-clock/tests/clock_and_results.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_blocking.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_cancelled.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_measured.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_nested.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+    "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/tasks/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/tasks/examples/abort_and_wait.rs",
+    "/workspace/learn_rust/examples/ch11-async/tasks/examples/control_closed_solution.rs",
+    "/workspace/learn_rust/examples/ch11-async/tasks/examples/join_handle.rs",
+    "/workspace/learn_rust/examples/ch11-async/tasks/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/tasks/src/main.rs",
+    "/workspace/learn_rust/examples/ch11-async/tasks/tests/cli.rs",
+    "/workspace/learn_rust/examples/ch11-async/timing/Cargo.toml",
+    "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_blocking.rs",
+    "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_cancelled.rs",
+    "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_measured.rs",
+    "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_nested.rs",
+    "/workspace/learn_rust/examples/ch11-async/timing/examples/timing_outcomes.rs",
+    "/workspace/learn_rust/examples/ch11-async/timing/src/lib.rs",
+    "/workspace/learn_rust/examples/ch11-async/timing/tests/timing_contracts.rs",
+    "/workspace/learn_rust/examples/ch11-async/timing/tests/timing_solution.rs"
+  ],
+  "file_hashes": [
+    {
+      "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.5/src/async_impl/client.rs",
+      "sha256": "5b7e2556d122a75cd8d3ef62a33d45e430c8eff229a33bc3f53fc7e9af2d97de"
+    },
+    {
+      "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.5/src/lib.rs",
+      "sha256": "ed6cd55caeafcd6d188893972af62d4d1fbd64d7247af1a331595f6f316b752c"
+    },
+    {
+      "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/runtime/task/error.rs",
+      "sha256": "0c84e9189f351c6e1eb0c5865b9df84a928ed4602b06fd5c2e71fb7c43eb1e27"
+    },
+    {
+      "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/sync/mpsc/error.rs",
+      "sha256": "6f050e72bed278c454585e3a7e428be94d60e0e0ecc0b87fca3b372bc5a52128"
+    },
+    {
+      "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/time/error.rs",
+      "sha256": "48dee729b01f8fe1eeea99b516ce99b76733c01e49e788b3764ab478acef1837"
+    },
+    {
+      "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/time/sleep.rs",
+      "sha256": "9c5b5af7bf954b86cad5a127b0edf2f677a1bf46b0c73b08afff9f48311521c9"
+    },
+    {
+      "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/tokio-1.53.3/src/time/timeout.rs",
+      "sha256": "5b1b20cb77de63fb5071b696ac644706a9749e0aeb6dbea57220834cba6dc953"
+    },
+    {
+      "path": "/workspace/.learn-rust-tools/rustup/toolchains/nightly-2026-10-01-x86_64-unknown-linux-gnu/lib/rustlib/src/rust/library/core/src/time.rs",
+      "sha256": "375024e28d85a12d312aaa12ab54c289bda39573fbcccfe696488723b086d1f3"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/08-05-lesson.md",
+      "sha256": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/14-03-lesson.md",
+      "sha256": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/14-05-lesson.md",
+      "sha256": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f"
+    },
+    {
+      "path": "/workspace/learn_rust/docs/chapters/14-09-lesson.md",
+      "sha256": "cb3206ccfd5d9d6034cd0dc94001a496378b518fe61fa507acea64217425b7c2"
+    },
+    {
+      "path": "/workspace/learn_rust/examples/ch11-async/local-service/src/main.rs",
+      "sha256": "9d35ff99fae378d1002ecf0ade5f6cb352177d1cdee6f5fe5436784d7f1dae92"
+    },
+    {
+      "path": "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/examples/join_handle.rs",
+      "sha256": "ed350922c99be5a11c147a03669e6c3df6e93ac74a3567828913f499f153a2bd"
+    },
+    {
+      "path": "/workspace/learn_rust/examples/ch11-async/stages/tasks-basic/src/lib.rs",
+      "sha256": "5f5a7b8dff5034364e62ce6a46bc63734430954952cee209090bb3ba45557c84"
+    },
+    {
+      "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_measured.rs",
+      "sha256": "e84caf6bad3e9026c2e0755261bc0315db61b2a23e719a8ba69738eecfb80f28"
+    },
+    {
+      "path": "/workspace/learn_rust/examples/ch11-async/stages/timing-steps/examples/timing_outcomes.rs",
+      "sha256": "8775dae480f55dcfb121ebaffb5123b2acd6f03b17cdbbf12d32e2138a7054f3"
+    },
+    {
+      "path": "/workspace/learn_rust/examples/ch11-async/tasks/src/lib.rs",
+      "sha256": "874f3cd1f11e5317f4972c7843bf36ec52151daee62937d367b4917d23d3cdbd"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/root-followups-1038/14-03-lesson.md",
+      "sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/root-followups-1038/14-05-lesson.md",
+      "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/root-followups-1038/14-09-lesson.md",
+      "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/technical-early/round14-async-foundations-cancellation-prefix.json",
+      "sha256": "ec463b39fcfbbff9eb97b2b4fe5519a336e82f9efa3ac78446a01fddf3d3c543"
+    },
+    {
+      "path": "/workspace/work/tutorial-implementation-20261015/technical-early/round14-http-local-service-tail.json",
+      "sha256": "ded74880ef0a1bc11d7fde9bafbc6975dcd443bdddc600d5bb89d5094664f8a3"
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Exact before/current diff and own-initial hash comparison",
+      "Pinned Tokio/Reqwest source reads and local owned first-use/order check",
+      "Hash comparison of chapter14 selected owned Rust/manifests"
+    ],
+    "not_performed": [
+      "No Rust/Cargo/Clippy/test/HTTP/browser execution",
+      "No manuscript/source/config edits",
+      "No other peer finding/author verification read"
+    ]
+  },
+  "conclusion": "All three requested C14 groups technically correct and moved/explained before needed use. No additional finding. Stop after saving."
+}

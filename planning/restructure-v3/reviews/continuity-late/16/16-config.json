@@ -1,0 +1,76 @@
+{
+  "wave": "16",
+  "findings": [],
+  "notes": {
+    "16-01": [
+      "self-reference是同一值內的位置關係；controlled_work保存owned收端，recv等待借那份收端，圖不是compiler layout承諾。",
+      "lifetime管來源有效期、move交ownership、地址穩定管所指資料位置。swap整個AddressNote連saved一起交接；swap Box只交handle；swap value只改欄位內容。ptr::eq只比地址，不證明可解參考。",
+      "14.3的等待必須繼續找到同一收端；值仍存活不能自行修正內部記錄，因此需要下一節介面約定。i32模型隔離String heap變因，不拿相同內容代答相同位置。",
+      "實讀14.1–3完整normal與stage source後讀本節；reference負例、no-lib manifest/main、三種交換完整module/main、四tests均實讀。normal五module尚未載入，無後文helper。",
+      "兩值都80仍有兩個false；只交換i32則true；再remember才明確重記。前者驗位置，後者驗內容及更新責任，原句與四tests共同支持。"
+    ],
+    "16-02": [
+      "Pin包pointer，約定作用在pointee；Unpin表示該T不依賴pinning，!Unpin不表示建立起就不能move。",
+      "safe Pin::new/get_mut要T:Unpin；Box::pin和pin!提供!Unpin safe安置。as_ref/as_mut重借同一T；PhantomPinned阻止自動Unpin。受控unsafe getter不移整份Self，Drop仍以&mut self負責原位收尾。",
+      "在交接owner及修改數字時維持原位置，並在回收/重用前完成原位Drop；普通Box做不到這份後續API限制。數字模型與local pin對照使位置約定、ownership和儲存來源分開。",
+      "全部methods/SAFETY/Drop、兩負例與expected、local_pin、答案和三tests全讀。receiver Pin<&Self>/Pin<&mut Self>在完整模型前教；mutable wrapper重借在完整tests前教。",
+      "i32進Pin仍可get_mut後swap；PinnedNote不能由safe get_mut取普通mutable；轉交Pin<Box>後改100不重記，Drop見100且地址一致。local wrapper交接不延長來源。"
+    ],
+    "16-03": [
+      "Future::poll借工作回當次Poll；Pending無Output，Ready帶Output。driver再次執行；Context借Waker，owned Waker clone只保活通知位置。",
+      "WakeCounter::wake只短鎖加計數，不poll。ManualAmount每次Pending換成本次Waker；release先授權再take/wake；poll用Unpin get_mut更新狀態。Ready後再poll的panic是模型政策，safe契約仍不許UB。",
+      "等待條件可能變化時要讓負責的driver重查，且通知不能被誤認為已產生答案。保留最近owned handle，分開短Context借用和後續通知責任，不忙等。",
+      "observer、全部model/methods、四tests、三main/答案、完整runtime-fail與expected都讀完；take/wake/wake_by_ref、Wake required receiver及Waker::from bounds在使用前說明。",
+      "換第二Context而未release仍Pending；release只通知第二觀察器1次，poll仍2、completed false，第3次才Ready。先release則首次Ready且通知0；clone可在原Context結束後通知。"
+    ],
+    "16-04": [
+      "EventAmount和AmountEvent各持Arc，共用一份State；future私有completed/polls不共享。事件handle以按值send只供一次，並非std Sender限制。",
+      "同guard內取答案或登記最新Waker；事件同鎖存值取通知，解鎖才wake。clone新handle和drop舊handle也在鎖外；避免漏通知及回呼再取State鎖的等待循環。",
+      "外部worker與driver先後無法靠sleep猜；兩邊即使每次都加鎖，分開檢查與登記仍會漏通知。同鎖將兩種先後接成可繼續的流程，鎖外wake讓回呼能看到已存資料。",
+      "完整readiness、observer、兩順序main、答案、四tests含ReadinessObserver、一次send負例/expected均讀。控制channel、join與真正poll分置；poll沒有recv/join，Mutex本身可能等鎖的界線明說。",
+      "先供120再poll可直接Ready且通知0；先兩次Pending換Context再供80，只通知第二份，第三poll才取80。回呼讀0不take答案，main仍可poll取0；drop未供值event不自動完成。"
+    ],
+    "16-05": [
+      "單工作executor接手owned F並保有同一Pin<Box<F>>；事件供i32、回呼送unit、driver再次poll，三份責任分開。",
+      "run_one先poll，Pending後在driver recv，Ready立即return且不重poll；buffer保留早通知。StartAmount先讓內層登記才送控制值；Recheck在poll內wake後Pending。PinnedAnswer無Unpin也能由shared Pin讀Copy數字。",
+      "不再讓main先join後手動猜重查時機；仍維持16.4資料同步。通知不攜future/Output，所以future無須跨thread，F不用Send/static/Unpin；Waker回呼仍須自己的跨thread bounds。",
+      "早期三runner快照/答案先讀，normal完整root及五module直到本節165行後才讀。normal18tests、16入口、所有nested manifest/lock與負例/expected都讀；四module逐bytes等同已讀完整tests快照，runner新三tests全讀。",
+      "控制值改120只改i32控制channel，unit通知不變；早wake仍兩次poll，PinnedAnswer首次Ready不recv。run_one返回後worker可能仍收尾，仍需join；供值端消失不等於通知Sender關閉，不能保證終止。"
+    ]
+  },
+  "concept_evidence": {
+    "16-01": [
+      {"location":"同一份工作裡，可能有指向內部的借用","quote":"不是每份 future 都實際自我參照，但使用端不能把所有 future 都當成沒有這種關係。","interpretation":"有限地址模型服務共同介面動機，不推斷每個future實際layout。"},
+      {"location":"改成地址記錄，先觀察整份值交換","quote":"true 不能單獨證明可 dereference；false 足以看出記錄與目前欄位位置不一致。","interpretation":"地址觀察與unsafe存取分開，沒有用有限true結果證明一般安全。"},
+      {"location":"換 Box owner，裡面的資料留在哪裡？","quote":"普通 Box 仍允許移出內容，或透過 mutable 存取替換資料","interpretation":"owner交換成功不代答後續禁止移出原值的需求。"}
+    ],
+    "16-02": [
+      {"location":"Pin 包住 pointer，約定作用在 pointee","quote":"Pin 是 library contract","interpretation":"safe介面限制與unsafe作者持續責任共同維持位置，不改寫move。"},
+      {"location":"method 接收哪一份 wrapper？","quote":"constructor 只寫 saved；set_value 只寫數字。","interpretation":"具體指出unsafe能力只用於哪些操作，不只引用unsafe getter簽名。"},
+      {"location":"Drop 也必須維持原位關係","quote":"Drop 的 receiver 仍是 &mut self，不會自動換成 Pin。","interpretation":"特殊receiver不是Drop責任替身，有限模型的Drop只讀/比較，不移出Self。"},
+      {"location":"固定也能使用局部儲存","quote":"地址約定與儲存來源是兩個問題","interpretation":"local Pin借用不可逃來源；async外層儲存不一律stack。"}
+    ],
+    "16-03": [
+      {"location":"一次 poll，回答現在能不能交出結果","quote":"Pending 後，future 還要安排條件改變時的通知","interpretation":"Pending不是錯誤或立刻忙等指示，driver與future有各自責任。"},
+      {"location":"Context 借出通知 handle，Waker 可以保存","quote":"Pending 之後要保存的是 owned clone","interpretation":"短Context借用來源與owned通知權限分開，不延長借用。"},
+      {"location":"Pending 每次保存目前 Context","quote":"每次 Pending 都保存本次 Context 的 Waker","interpretation":"同工作可換負責通知位置，兩counter答案實際驗最近一次。"},
+      {"location":"兩次 poll 中間，只發通知","quote":"第三行資料已授權，通知也到達，poll 次數卻仍是1","interpretation":"同一組狀態觀察直接區別事件/通知/poll/Output，不靠印出通知推測執行。"}
+    ],
+    "16-04": [
+      {"location":"每次存取都加鎖，仍可能漏通知","quote":"同一份 guard 內完成「取到答案，或在沒有答案時登記這次 Waker」","interpretation":"固定需要是兩種先後都能取答案；錯誤四步與正確兩順序說明同鎖設計的作用。"},
+      {"location":"先更新，離鎖後才 wake","quote":"回呼等解鎖，持鎖端卻等回呼返回","interpretation":"鎖外回呼目的由實際等待循環支持；ReadinessObserver test在同State再取鎖檢查。"},
+      {"location":"poll 取走結果，或保存最新 handle","quote":"舊 handle 的 Drop 也在解鎖後","interpretation":"不把任意回呼物件清理放入State臨界區，具體block傳出owned tuple及顯式drop可對應。"}
+    ],
+    "16-05": [
+      {"location":"只有一份工作，通知不必攜帶 future","quote":"通知 channel 只傳 unit ()，意義是「請再檢查」","interpretation":"executor已知道工作身分，所以通知不需轉交工作或答案。"},
+      {"location":"先讓內層登記，再啟動事件","quote":"首次 Pending 表示已完成16.4的通知登記","interpretation":"StartAmount為觀察通知循環安排受控先後，不改State事件同步；控制和通知兩channel清楚。"},
+      {"location":"driver 不需要 F 有 Unpin","quote":"Box::pin 提供共用介面，不是讓每份工作都必須先等待","interpretation":"!Unpin可立即Ready與Unpin可Pending，兩維度由三對照分開。"},
+      {"location":"能完成什麼，也要說清不能繼續的條件","quote":"供值端消失，不代表通知 channel 已關閉","interpretation":"仍保有Sender，recv的expect不能製造事件；正常完成模型不誇成通用終止/公平保證。"},
+      {"location":"接回完整 library，保留所有原測試","quote":"root 一次宣告五個 module，因此到這裡才讓它參與編譯","interpretation":"16.1–4 stage無lib、target-local最小快照；到16.5整library才完整載入，不能靠選target隱藏未知module。"}
+    ]
+  },
+  "loaded_sources":"所有直接snippet完整實源、target-local pub mod、normal五module與本地path依賴、全部tests/fixture/expected/answer/manifest/兩份lock均讀。無未列入的owned Rust/config檔。早節no-lib直到16.5才切normal library。",
+  "prefix_actual_read":"14.1–14.3完整正文及全部normal/stage source/helper/tests/manifests/answers，詳14-prefix-read-index.json；13/15及其他必要前綴沿原28節實讀索引，不聲稱全書01–12完整通讀。",
+  "visual":"真正Chromium1280×800及390×844；全部7張原位圖雙viewport，長圖桌機補上緣；長折疊答案及16.5完整五module正常展開。code內實際水平scrollLeft326，body無橫向溢出。詳visual-evidence.json。",
+  "limitations":["獨立非作者銜接/實頁初判，未看16作者驗證、ledger或其他16 review finding；非首次盲讀，未假借自己的Rust知識當作已教。","第14章只為本波補讀必要前綴14.1–3，不代替原14審閱，不讀14.4–9補16。","原28節initial與總報保留，此波另存追加；未修改repo、未spawn、未執行Rust。"]
+}

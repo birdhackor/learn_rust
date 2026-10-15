@@ -1,0 +1,116 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "11.1"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round11-cells-newtypes-any-final.md",
+    "planning/restructure-v3/reviews/technical-early/round11-deref-static-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round11-dyn-error-rc-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round11-grouped-use-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round11-sized-box-drop-prefix.md",
+    "planning/restructure-v3/reviews/continuity-early/round11-ch11.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/11-01-lesson.md": "01206a2c8b69a641f4b04083178c43cb5a528bd097ef2c5edd490256231c3776",
+    "examples/intro-workspace/type-stages/examples/size_support/mod.rs": "191f7931ce3f6e6bb72ed7623dfc34a75358f720411c5437c718671bb9d1161f",
+    "examples/intro-workspace/type-stages/Cargo.toml": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "examples/intro-workspace/type-stages/examples/sizes.rs": "af185ba59384187407558d1305da202bf365d02a2b7ccdf05055173b8e5b9773",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/sized_default.rs": "e86bd3dfa2067613c5ce883b6cf8f531e867918a2c62515370935747d7126b23",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/sized_default.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/intro-workspace/type-stages/examples/array_support/mod.rs": "61b65958349e919194c2a457570951fe755372a9a1291a281ec71029e3ecf340",
+    "examples/intro-workspace/type-stages/examples/const_generics.rs": "a82aec6518d096d7d89ea8efec88f9a77d122048e23bc5cfd7f947556cd549dd",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/const_generic_length.rs": "ffb466fc8d0632c2b61909b02de7fb5638b93756a5f747d48aaff83ab94fda50",
+    "examples/intro-workspace/type-stages/fixtures/compile-fail/const_generic_length.expected": "358b95f8eb03a7a2729d09306a533bbcf4696ca590fc594ce6a9d655f2a85d27",
+    "examples/intro-workspace/type-stages/examples/array_bytes_answer.rs": "041c5caab9c68c51d44654fab8710a27095c2155957ad4185e2a79387bd3c748"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 3,
+      "quote": "第 3.7 節用 slice 借不同長度的資料，第 3.8 節用 `&str` 借文字。現在比較兩件事：三項 i32 array 本身需要 12 bytes；同一個 `&str` 型別卻可以借 5 bytes 的 Rust!，也可以借 13 bytes 的 Rust tutorial。型別大小與這次借到的資料大小，究竟在哪裡分開？"
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 7,
+      "quote": "`i32` 使用 4 bytes，`[i32; 3]` 使用 12 bytes。array 改成 `[10, 20, 30]` 或 `[80, 120, 200]`，都不改變這個型別需要的空間；把長度改成 2，則換成另一個型別 `[i32; 2]`。"
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 9,
+      "quote": "**`Sized`** 是標準 trait，表示這個型別的大小在編譯時可確定。編譯器依型別判斷它，不需要我們寫方法或自行實作。一般區域變數與按值傳入的參數，需要這種已知大小的表示。Sized 由第 5.2 節的 prelude 提供，不用另外 use。"
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 11,
+      "quote": "先用標準函式 **`std::mem::size_of::<T>()`** 查詢：它不接收值，要求 T 是 Sized，回傳 usize，單位是 bytes。`std::mem` 是標準函式庫處理記憶體相關工作的 module；這裡只查大小。`::<T>` 沿用第 5.1 節的 turbofish，明選要查的型別。"
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 23,
+      "quote": "**DST** 是 **dynamically sized type**，也就是大小不能只由型別在編譯時確定的型別。第 3 章的 str 與 `[i32]` 都是例子：str 可以有不同的 byte 長度，`[i32]` 可以有不同的項目數。"
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 35,
+      "quote": "標準函式 **`std::mem::size_of_val(value)`** 接收一份 `&T`，回傳被借資料的 bytes；它也接受 DST。要把這種能力放進泛型函式，需明寫 **`T: ?Sized`**，解除預設的 Sized 要求："
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 45,
+      "quote": "本節使用無 library 的 `intro-type-stages` package。所有設定如下，每個 example 只載入自己的 helper："
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 88,
+      "quote": "下面完整失敗例把 borrowed_bytes 寫成 `<T>`，少了 `?Sized`："
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 94,
+      "quote": "放進第 1.2 節的獨立練習專案執行 `cargo check`，得到 **E0277**。word 的型別是 `&str`，對應參數 `&T` 時，T 是 str；str 不符合這個函式預設的 Sized 要求。只接收 reference，沒有自動改掉泛型參數的 bound。"
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 104,
+      "quote": "slice 已能讓函式借不同長度的資料。若希望簽名保留**完整 array 型別與固定長度**，又不想為長度 2、3 各寫一份函式，就可以將長度也設成泛型參數。"
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 106,
+      "quote": "**常數泛型（const generics）** 讓參數代表編譯時選定的值。`<T, const N: usize>` 中，T 是型別參數，N 是 usize 型別的常數值參數。`[T; N]` 在型別位置使用 N，每次選定 T 與 N 後，仍是一個大小固定的 array 型別。"
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 151,
+      "quote": "執行 `cargo check` 得到 **E0308**：預期 `&[i32; 3]`，實際是 `&[i32; 2]`。Rust 不會在執行時替它補一項或改選 N。完整 `.expected` 如下："
+    },
+    {
+      "section_id": "11.1",
+      "path": "docs/chapters/11-01-lesson.md",
+      "line": 159,
+      "quote": "寫 `array_bytes<T, const N: usize>`，借完整 array，以 N 乘上 `size_of::<T>()` 回傳它需要的 bytes。array 的大小等於元素大小乘上項目數，因此這個乘法適用。T 仍有預設的 Sized 要求。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "chapter": 9,
+  "first_unit": 193,
+  "last_unit": 199,
+  "entries": [
+    {
+      "source": "docs/chapters/09-01-lesson.md",
+      "file": "units/193.md",
+      "sha256": "9487fe16cc351b3d1e657b4b26699edec28ddef3540627de7bda8ca0d065346e",
+      "source_sha256": "ff8a0d0ca07cbc731287f88935e7c8a6f7bb32b9e321dd6dbefff1124a1267e9",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/iterators-v3/closure-transfer.svg",
+          "source_sha256": "4f54b08bae8312a004d862850983245108f10df1a6077a5e1420ebf8f85039e4",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch09-closure-transfer.png",
+          "png_sha256": "d4d1a490efeff211c84e3e48ec76ab1045ee243b900e1eebdc557b0eee643fa5",
+          "alt": "先建立 take 保存 text 的 String，再呼叫 take，將 owned String 交給 saved"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/09-02-lesson.md",
+      "file": "units/194.md",
+      "sha256": "0e7a72089110c5809cea6d93b9c9b977aed133222194d4338fa958ef88b73e46",
+      "source_sha256": "1f94efb9e804d4ff18de071441b7d0b19368326c497bd284ede0d47a5456ffd0",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/09-03-lesson.md",
+      "file": "units/195.md",
+      "sha256": "3bf8402af14c9c675695b37a579b26e0cfabc3ae664570f52a6b7b24ab965f30",
+      "source_sha256": "af37b908bf94c477a21a412fdeb780ec55b75fdb3d4dd91916e57ee22370e458",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/09-04-lesson.md",
+      "file": "units/196.md",
+      "sha256": "7bee8ab4f36a70b33a3231101142ebe7da22ec22cc2a63befdd4afb389c7f2c0",
+      "source_sha256": "af1cd2280166c7e5b70cbe1b67dea4f09efb7001d5a81b948b7070833751e1b1",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/iterators-v3/iterator-next.svg",
+          "source_sha256": "f2512c81d7e13a13c933e05b228aeb7a4291b4fd76895000c7e0e0821df69749",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch09-iterator-next.png",
+          "png_sha256": "be14c2f7259732d25ac4cd74d0731a692c76ff6c998f4a03c8a6ccc2c74c14f0",
+          "alt": "同一份 Countdown 的 remaining 由 3 到 2、1、0，next 分別交出 Some 3、2、1，最後交出 None"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/09-05-lesson.md",
+      "file": "units/197.md",
+      "sha256": "61082c195016adcf480356f14296e1d797f715a64700f0dae3e5d15aa4364054",
+      "source_sha256": "256e3a7a8380bee5e863db21b94d89e11578304f1ba8194147b6b12515eea71e",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/iterators-v3/adaptor-pipeline.svg",
+          "source_sha256": "9f76ea92d5a61b0c93cf91d4ee6f4db71714631afd93497fffd23b99eecbca4a",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch09-adaptor-pipeline.png",
+          "png_sha256": "e09f4046ece6afd46fe2d3bf697619e9021e486888a5f88d331a95737a1b963e",
+          "alt": "slice iterator 的 Item 是 shared 數字，filter 借用 Item 判斷，map 取 Copy 數字轉換，collect 保存 owned i32 清單"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/09-06-lesson.md",
+      "file": "units/198.md",
+      "sha256": "519381c3970692965cd5ecc8a531cbf8fd752afc39b8bd32bad643042f640897",
+      "source_sha256": "d8be1e5ed7a5ac9c930e1b2b412fbe3b8efd80ea513be061913cff919f59d68d",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/09-07-lesson.md",
+      "file": "units/199.md",
+      "sha256": "eee73e9f302ec6012a82421df35418e9f22a6084624c4d2eea1fee6d105634ec",
+      "source_sha256": "fce1c2a012b97dcf775ba970e78f9cc500c2ab39fcc8cf59fef7189536ad91ba",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    }
+  ],
+  "route": "whole prerequisite pages;  actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed"
+}

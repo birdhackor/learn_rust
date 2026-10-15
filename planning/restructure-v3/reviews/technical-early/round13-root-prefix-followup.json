@@ -1,0 +1,118 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "prompted narrow followup, not independent discovery",
+  "scope": [
+    "13.2 purpose punctuation",
+    "13.3 helper/caller distinction",
+    "13.2 thread_join explicit slice"
+  ],
+  "source_initial_report": "round13-send-thread-hrtb-prefix.md/json",
+  "attribution": "Root notified only after own 13 initial seal. First two edits follow root/late continuity crosscheck; array/slice edit follows fresh late continuity CL-13-ARRAY-SLICE. My original initial review did not identify these; it is preserved unchanged.",
+  "result": "All three adopted corrections verified in actual source; no remaining issue in this narrow scope.",
+  "assessments": [
+    {
+      "item": "purpose sentence",
+      "evidence": "13.2:187",
+      "result": "Period ends purpose sentence without suggesting full test source immediately follows before numeric literal syntax paragraph."
+    },
+    {
+      "item": "callback selection",
+      "evidence": "13.3:168 plus higher_ranked/mod.rs and callback_projection/main.rs",
+      "result": "Generic sum_selected bound constrains returned lifetime, not selected tuple field. It appears first; second function and explicit function pointer later choose field1, yielding120+6=126. New wording precisely locates each role."
+    },
+    {
+      "item": "CL-13-ARRAY-SLICE",
+      "evidence": "thread_join/main.rs:10–11, unchanged workers::sum, 3.7:39",
+      "result": "Named fixed array plus explicit &local_values[..] uses already taught full-range slice construction. No implicit &[i32;3]→&[i32] coercion is needed before its15.3 introduction. Local1+2+3=6, worker80+120=200, total206 preserved. Same selected helper/module/manifest closure."
+    }
+  ],
+  "evidence": {
+    "records": [
+      {
+        "path": "docs/chapters/13-02-lesson.md",
+        "initial_sha256": "10afab4057f565308b0333aaaeadf12fb4c2204255e5524f23baa4820b4d247f",
+        "current_sha256": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e",
+        "change": {
+          "before": "為了不讓一次 panic 的實際型別替兩種文字契約代答，完整測試直接建立 String、static 文字與 u32 的 payload，分別核對文字與未知型別的報告：",
+          "after": "為了不讓一次 panic 的實際型別替兩種文字契約代答，完整測試直接建立 String、static 文字與 u32 的 payload，分別核對文字與未知型別的報告。"
+        }
+      },
+      {
+        "path": "docs/chapters/13-03-lesson.md",
+        "initial_sha256": "e022f3558b51fafc736371bb623fade801802c28cdfc1fcb2736570d57b3e051",
+        "current_sha256": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d",
+        "change": {
+          "before": "下面的完整例子才把它指定成第二個欄位。",
+          "after": "先看共用的 `sum_selected` helper；後面的 `callback_projection/main.rs` 傳入 second，才固定選擇第二個欄位。"
+        }
+      },
+      {
+        "path": "examples/concurrency-stages/examples/thread_join/main.rs",
+        "initial_sha256": "dbaa98bfc32bdd2ea759c55e0d135d57ab2874069192bdf90438e3ed98764764",
+        "current_sha256": "90a77a8021bbf6402e3e0dbdde2f1d71cd9f971e2d95f1205ee526f16103debe",
+        "change": {
+          "before": "    let local_total = sum(&[1, 2, 3]);",
+          "after": "    let local_values = [1, 2, 3];\n    let local_total = sum(&local_values[..]);"
+        }
+      }
+    ],
+    "changed_since_initial": [
+      "Cargo.lock",
+      "Cargo.toml",
+      "docs/chapters/13-02-lesson.md",
+      "docs/chapters/13-03-lesson.md",
+      "examples/concurrency-stages/examples/thread_join/main.rs"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/docs/chapters/13-02-lesson.md",
+        "sha256": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/13-03-lesson.md",
+        "sha256": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/concurrency-stages/examples/thread_join/main.rs",
+        "sha256": "90a77a8021bbf6402e3e0dbdde2f1d71cd9f971e2d95f1205ee526f16103debe"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/03-07-lesson.md",
+        "sha256": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/concurrency-stages/examples/thread_join/workers/mod.rs",
+        "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/concurrency-stages/examples/callback_projection/higher_ranked/mod.rs",
+        "sha256": "4a90f10ee8931a9d15e6fc7b1c657c040f094911fa3f269faa9c370c9306a9f8"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/concurrency-stages/examples/callback_projection/main.rs",
+        "sha256": "652209acbd956950ddc8bf0e24df85b9efc25254d7a94f2da48fb05b1f77243b"
+      },
+      {
+        "path": "/workspace/work/tutorial-implementation-20261015/root-followups-0944/13-02-lesson.md.diff",
+        "sha256": "dc96610f94bd2d8927c267f217cc5afc6794e53fb89fd920a98d5051e51fc544"
+      },
+      {
+        "path": "/workspace/work/tutorial-implementation-20261015/root-followups-0944/13-03-lesson.md.diff",
+        "sha256": "8e8260db3ca6ea9ecaac4aa92304015f1ebd99f9b541caf164ad8a311d8e6426"
+      },
+      {
+        "path": "/workspace/work/tutorial-implementation-20261015/root-followups-0944/thread_join-main.diff",
+        "sha256": "69ba514ee374b6cd1af14acc7eda0b786ef2c183f477980396c091b8dd18222a"
+      },
+      {
+        "path": "/workspace/work/tutorial-implementation-20261015/root-followups-0944/thread_join-main.before.rs",
+        "sha256": "dbaa98bfc32bdd2ea759c55e0d135d57ab2874069192bdf90438e3ed98764764"
+      }
+    ]
+  },
+  "execution": {
+    "own_cargo_or_rustc_runs": 0,
+    "root_reported_checks": "Root reported selected output206, Clippy and fmt success; not counted as own runs."
+  },
+  "limits": "No broader chapter13 re-review; original findings/hashes unchanged. Metadata-only Cargo.toml/lock differences since original snapshot are recorded; all other original scoped files are unchanged except the three stated paths."
+}

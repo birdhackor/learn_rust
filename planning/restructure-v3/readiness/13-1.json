@@ -1,0 +1,143 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "13.1"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round13-root-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round13-scoped-channel-lock-atomic-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round13-send-thread-hrtb-prefix.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-addendum-array.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-array-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-root-prose-recheck.md",
+    "planning/restructure-v3/reviews/continuity-late/13prefix-summary.md",
+    "planning/restructure-v3/reviews/continuity-late/13tail-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/13-01-lesson.md": "c5b392ba306e20d36ba848860b03f669a09fabc7f76d28e5eefa168815aab654",
+    "examples/concurrency-stages/Cargo.toml": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+    "examples/concurrency-stages/src/main.rs": "05f138089b8ea0b57cc37ad7a055b1c39d35bb416a84e3b8d44aee02a33c7f48",
+    "examples/concurrency-stages/examples/send_sync/contracts/mod.rs": "1229d68ce99f4a191c995572211e341254d7cfeddfd9e13b07e6c1801b363398",
+    "examples/concurrency-stages/examples/send_sync/main.rs": "51957b840e96795b6260b8371a286d3736df03fc143909f42c73f9d1b8fea60f",
+    "examples/concurrency-stages/examples/cells_send/contracts/mod.rs": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+    "examples/concurrency-stages/examples/cells_send/main.rs": "ee7b3a3612c2b66efa80bc6e6e4f4df0f64865f875bd982c33cf4e5fffa0486b",
+    "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.rs": "e055963f805c582de1a180171e0d187dad21a99c8b66757caea2dbbe754e9507",
+    "examples/concurrency-stages/fixtures/compile-fail/cell_not_sync.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.rs": "c69903c795745616bbb9c380c1e6527ee6d5acc99ca9b33f3369e03e06abe8c0",
+    "examples/concurrency-stages/fixtures/compile-fail/refcell_not_sync.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.rs": "00e923024cef8e6ff9d1ac24d7026156bdf2a20174bd107107c0caf47be3449c",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/examples/capture_send/contracts/mod.rs": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+    "examples/concurrency-stages/examples/capture_send/main.rs": "dc0c647e639212ba573a6f029c9d0962d8866e1786a6fd5585f4fc7075da2dc0",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.rs": "becc92eb86816854f5a06772f6f6de9d0225c03f6531359084433b426a0efa70",
+    "examples/concurrency-stages/fixtures/compile-fail/rc_capture_not_send.expected": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "examples/concurrency-stages/examples/borrow_bounds/contracts/mod.rs": "59c86469ab6b0901005645663655defe7d3de8612c48998a2ef584760ff99e18",
+    "examples/concurrency-stages/examples/borrow_bounds/main.rs": "91329108bbdfc1bb1576ec3bc4bf93bbd6201b76b9af95746d395acfa9fd46bf",
+    "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.rs": "a300e2c213c0c2c6d2ed6a38463de568f4c47b50f7b7d834aa86b3e9b968c0a9",
+    "examples/concurrency-stages/fixtures/compile-fail/send_borrow_not_static.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/concurrency-stages/examples/send_sync_answer/contracts/mod.rs": "99ac5b7d4ee4c884ca479e0dc6c148425dbd6591048e4219683aceb5d5e85a83",
+    "examples/concurrency-stages/examples/send_sync_answer/main.rs": "a6f6f10d10d8372a57cccc4aafd65ddee8e3c4916f3fab759faad12437e86b22",
+    "docs/assets/ch10/send-sync.svg": "936141fc68e09cc82db071da91d796481aefa8d3f7108be1c26ec1a68aa8ce72"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 3,
+      "quote": "前面已能把清單與計算工作保存成值。接下來想讓一份數列的計算在另一條執行路徑上進行，原路徑繼續準備其他資料。交接之前，要先回答兩個問題：**整份資料能否交給另一方？若保留原資料，借用它的 reference 能否交給另一方？**"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 9,
+      "quote": "**thread（執行緒）** 是程式內能獨立推進工作的一條執行路徑。它有自己的呼叫進度與 stack；同一程式的不同 thread，也可能透過適當的介面接觸共同資料。`main` 起初就在一個 thread 上執行。普通函式呼叫仍沿當前路徑進行，不會因為呼叫另一個函式，就自動建立另一個 thread。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 11,
+      "quote": "**concurrency（並行）** 表示多份工作的進行期間可以重疊，例如這份工作等結果時，另一份工作繼續。**parallelism（平行）** 則是實際在同一時刻執行多份工作。作業系統的排程會安排哪個 thread 何時取得執行機會；多個 thread 可能交錯執行，也可能在不同 CPU 核心同時執行。建立多個 thread 本身，不保證工作一定更快或輸出有固定順序。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 15,
+      "quote": "本章從教材 repo 根目錄執行命令。第 12.1 節已解釋根 workspace 的共同欄位；下面是本章 member 的**完整** `Cargo.toml`，採用該 workspace 的 version、edition、rust-version 與 publish。沒有 dependencies，也沒有 `src/lib.rs`："
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 29,
+      "quote": "**`Send`** 是一個 trait，表示這種值可以安全地跨 thread 移交。交出 owned String 時，新持有者接手文字與清理責任；交出一份 reference 值時，交出的是借用資訊，不會取得被借資料的 ownership。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 31,
+      "quote": "Send 屬於 **marker trait（標記能力的 trait）**：它表達一項型別性質，沒有像 Charge 的 amount 或 Clone 的 clone 那樣提供操作方法。它也是 **auto trait**，編譯器會依型別及其組成判定能否提供這項能力。以普通 struct 為例，欄位都符合 Send 時，這個 struct 也能自動符合。Send／Sync 不是6.2中可用 derive 生成的項目。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 43,
+      "quote": "**`Sync`** 回答的是 shared borrowing：如果 `&T` 可以安全地移交到另一個 thread，T 就符合 Sync。精確地說："
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 63,
+      "quote": "本章使用根 workspace 中的 `concurrency-stages` package，**沒有 library**。每個 example 都只載入自己的完整根程式與 module；`pub mod contracts;` 與 `use crate::contracts::...` 沿用第 2.6 節的模組分工。這份 target 的 contracts 只包含剛教的兩個檢查函式。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 91,
+      "quote": "11.9 的 Cell 可以透過 shared receiver 更新值，RefCell 則透過 guard 管理活躍借用。它們的介面沒有提供不同 thread 之間的同步：**同步** 是限制衝突操作如何進行，或建立工作之間先後關係的機制，後面會具體學習。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 93,
+      "quote": "以 Rc 計數、Cell 內容或 RefCell 狀態的普通讀寫而言，不同 thread 對同一個記憶體位置有未同步的衝突存取，且至少一方寫入，就可能形成 **data race（資料競爭）**。這些管理資訊也屬於資料；不能只看自己是否打算修改外面的業務欄位。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 105,
+      "quote": "Cell／RefCell 的 Send 還取決於內部 T 是否 Send；表中採用的 i32 符合，數值清單 `Vec<i32>` 也符合。**「可以移交整份容器」與「可以讓不同 thread 共用 shared reference」是兩個不同要求。** 例如移交 Cell 的 owner，就沒有因此在舊位置留下另一份可用的 shared reference；原有 borrowing 規則也禁止把還被借用的 owned 值隨意移走。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 162,
+      "quote": "Rc 的問題連它的管理資訊也包括在內。11.8 的 `Rc::clone` 建立新 handle，strong 加一；清理 handle 時，strong 也會改變。若讓兩個 thread 各持一個 handle，這些操作就可能碰到同一份計數。Rc 的契約限定單一 thread，所以連 `Rc<i32>` 也不符合 Send，不是只要內部 i32 能 Send 就足夠。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 204,
+      "quote": "這次仍收到 `E0277`。owner 與 another 先共用同一份配置，another 又被 closure 接手；shared ownership 關係沒有因為 move capture 消失。這份工作在當前 thread 讀數字本身是合法的，失敗的是把含 Rc 的工作交給 Send bound。**Fn 系列描述怎麼呼叫；Send／Sync 描述跨 thread 怎麼使用，兩者不能互相代替。**"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 208,
+      "quote": "Sync／Send 沒有說來源會活多久。借用局部 String 的 `&str` 可以符合 Send，但來源仍必須在借用用完之前有效；11.5 的 `'static` bound 是另一個要求。"
+    },
+    {
+      "section_id": "13.1",
+      "path": "docs/chapters/13-01-lesson.md",
+      "line": 258,
+      "quote": "建立 Report，欄位為 `label: String` 與 `visits: Cell<i32>`。標籤為Rust，次數從0開始；先交給 require_send，接手後依Cell介面增加兩次，確認文字仍Rust、次數為2。只用小數值，避免加法溢位。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

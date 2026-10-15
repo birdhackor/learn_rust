@@ -1,0 +1,55 @@
+{
+  "id": "C10-01",
+  "status": "CLOSED",
+  "role": "known adopted optionalfinding narrowfollowup; afterindependent11seal09:54:20",
+  "utc": "2026-10-15T09:58:14.612073+00:00",
+  "source": {
+    "captured_utc": "2026-10-15T09:54:57.393167+00:00",
+    "known_adopted": "C10-01 after own11initial sealed; narrow followup not independentfinding",
+    "changes_vs_initial": [
+      {
+        "path": "docs/chapters/10-01-lesson.md",
+        "before": "2d8fdc5ae52f16c2bce057f6b59f272f79af58d051e932a88ee8b1d552aa6564",
+        "after": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab"
+      }
+    ]
+  },
+  "previewcopy_sha256": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab",
+  "source_copy_equals_current": true,
+  "actual_render": [
+    {
+      "name": "desktop",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "at": "2026-10-15T09:57:19.815Z",
+      "url": "http://127.0.0.1:8102/chapters/10-01-lesson/",
+      "html_sha256": "0403df537b262a8d33e3c2e221b0b9e49c77c4dfdcc0ef55b76e11897dd7fa8c",
+      "paragraph": "docs.rs 提供 library 的 API（Application Programming Interface，應用程式介面） 文件。API 是給其他程式使用的公開介面，例如公開函式、型別與方法。crates.io 回答「有哪些版本可取得」，docs.rs 回答「這個版本提供什麼公開功能、如何使用」。例如 clap 4.6.7 的功能清單 可核對預設功能與 derive；呼叫特定 API 前，還要閱讀它的輸入、輸出與使用條件，下一節會實作一份這樣的文件。",
+      "strong": [
+        "API（Application Programming Interface，應用程式介面）"
+      ]
+    },
+    {
+      "name": "mobile",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "at": "2026-10-15T09:57:21.671Z",
+      "url": "http://127.0.0.1:8102/chapters/10-01-lesson/",
+      "html_sha256": "0403df537b262a8d33e3c2e221b0b9e49c77c4dfdcc0ef55b76e11897dd7fa8c",
+      "paragraph": "docs.rs 提供 library 的 API（Application Programming Interface，應用程式介面） 文件。API 是給其他程式使用的公開介面，例如公開函式、型別與方法。crates.io 回答「有哪些版本可取得」，docs.rs 回答「這個版本提供什麼公開功能、如何使用」。例如 clap 4.6.7 的功能清單 可核對預設功能與 derive；呼叫特定 API 前，還要閱讀它的輸入、輸出與使用條件，下一節會實作一份這樣的文件。",
+      "strong": [
+        "API（Application Programming Interface，應用程式介面）"
+      ]
+    }
+  ],
+  "screenshots_actually_viewed": [
+    "desktop-api-expansion.png",
+    "mobile-api-expansion.png"
+  ],
+  "result": "Application Programming Interface／應用程式介面實頁完整可讀，原公開函式型別method角色與docs.rs/crates.io分工保留；全初判85檔只有doc10.1一行差，無Rust/manifest/command改；原初判保留。",
+  "version_note": "8097oldHTML initiallynoexpansion/locatorTimeout30s，未稱新稿通過；root另8102freshpreview，copyhash與current相同後實際兩尺寸檢查。不是全章重審或全站驗收。"
+}

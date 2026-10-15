@@ -1,0 +1,479 @@
+{
+  "captured_utc": "2026-10-15T10:36:09.838198+00:00",
+  "scope": "18B18.7–18.12 initial own canonical/full source closure, no peer/authorfinding",
+  "note": "18.7首次body已實讀後立即snapshot，同次current並保存hash；18.8–12正文僅自動複製bytes，尚未讀。root已告知18.8回指currentf71c74及18.9/10doc/link窄修，以current初判不倒稱舊版重現。",
+  "files": [
+    {
+      "path": "docs/chapters/18-07-lesson.md",
+      "sha256": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209",
+      "bytes": 18259
+    },
+    {
+      "path": "examples/ch15-projects/b1-starter/src/lib.rs",
+      "sha256": "1d12898ed14744ef3945e226c8b844c7d03c377a287b1210d5e1f015a470eda1",
+      "bytes": 1564
+    },
+    {
+      "path": "examples/ch15-projects/b1-starter/Cargo.toml",
+      "sha256": "a7903bd9469d606139e031cba89e54df00cfea41afb6fe06ae2b509d46fe4f4c",
+      "bytes": 488
+    },
+    {
+      "path": "examples/ch11-async/local-service/Cargo.toml",
+      "sha256": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee",
+      "bytes": 562
+    },
+    {
+      "path": "examples/ch11-async/local-service/src/lib.rs",
+      "sha256": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119",
+      "bytes": 7988
+    },
+    {
+      "path": "examples/ch11-async/http-single/Cargo.toml",
+      "sha256": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f",
+      "bytes": 542
+    },
+    {
+      "path": "examples/ch11-async/http-single/src/lib.rs",
+      "sha256": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a",
+      "bytes": 6283
+    },
+    {
+      "path": "examples/ch11-async/http-single/src/config.rs",
+      "sha256": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7",
+      "bytes": 440
+    },
+    {
+      "path": "examples/ch11-async/http-single/src/error.rs",
+      "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+      "bytes": 1542
+    },
+    {
+      "path": "examples/ch11-async/http-single/src/reply.rs",
+      "sha256": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0",
+      "bytes": 2968
+    },
+    {
+      "path": "examples/ch15-projects/b1-starter/checks/single-tests.rs",
+      "sha256": "cdd5ece5a407556733c94c91670122ae98627bcfd6a06c7ff80784d57ee59a14",
+      "bytes": 7945
+    },
+    {
+      "path": "examples/ch15-projects/b1-complete/src/lib.rs",
+      "sha256": "eda21ca300f6058e2d438a1961b8e2b4c9b6e740c8a3cf7dc3e2c039b0e0e9f9",
+      "bytes": 10565
+    },
+    {
+      "path": "examples/ch15-projects/b1-complete/Cargo.toml",
+      "sha256": "3beeec75230397b5bcbd265a65b7a518f688dfe90f56bcd526da028ae367de43",
+      "bytes": 480
+    },
+    {
+      "path": "examples/ch15-projects/b1-complete/examples/b1_single_demo.rs",
+      "sha256": "c18f8f5cde18af03d3306c09a3592b74fa06b970beefecf4dc6b5b1c7e7a6496",
+      "bytes": 1107
+    },
+    {
+      "path": "docs/assets/ch15/one-url-result.svg",
+      "sha256": "bcfe5079689e15848e3d027cd1be2c6651dbe83ac4532df787a3771102a2d44f",
+      "bytes": 2804
+    },
+    {
+      "path": "docs/chapters/18-08-lesson.md",
+      "sha256": "f71c74937f99791d0f4c1160a168c7f0993c3e10b0003beddca14bfe4adfba34",
+      "bytes": 14043
+    },
+    {
+      "path": "examples/ch15-projects/b2-starter/src/lib.rs",
+      "sha256": "f75e782a71e75c7fd2948b817811c8b671b893516b23373adbdf50cf661833b3",
+      "bytes": 791
+    },
+    {
+      "path": "examples/ch15-projects/b2-starter/Cargo.toml",
+      "sha256": "ccdaf00ed1fa932963872de7daeafef6f09f3ade047fad7c1f9b12daec8642a1",
+      "bytes": 405
+    },
+    {
+      "path": "examples/ch15-projects/b2-starter/src/single.rs",
+      "sha256": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+      "bytes": 2619
+    },
+    {
+      "path": "examples/ch15-projects/b2-starter/checks/batch-tests.rs",
+      "sha256": "24497b1b60d0f662e7efee8397a788afd09837394fdcd0292c2f65760bdb7cb4",
+      "bytes": 8990
+    },
+    {
+      "path": "examples/ch15-projects/b2-complete/Cargo.toml",
+      "sha256": "edf4a79a494b242a77d31d604eea5157a3400ffaac48f916c43ff9f1a5edc092",
+      "bytes": 397
+    },
+    {
+      "path": "examples/ch15-projects/b2-complete/src/single.rs",
+      "sha256": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+      "bytes": 2619
+    },
+    {
+      "path": "examples/ch15-projects/b2-complete/src/lib.rs",
+      "sha256": "e6542acd2c36f4f583a9cdd24a70e22c839a05ea5abe983a8bd6befc8f23951d",
+      "bytes": 10343
+    },
+    {
+      "path": "examples/ch15-projects/b2-complete/examples/b2_batch_demo.rs",
+      "sha256": "4017a8a11ac2e20c4baaf868a72924825b35f6b302319997f012f186bad97ad1",
+      "bytes": 1082
+    },
+    {
+      "path": "docs/assets/ch15/line-index-to-results.svg",
+      "sha256": "80022f8f09795349f1778cf5634c36ca8b129383fa6232c062989e1a429e891c",
+      "bytes": 2115
+    },
+    {
+      "path": "docs/chapters/18-09-lesson.md",
+      "sha256": "7c78f41be377d1b845d5274883b4f927370411e091b2f50761febee3965fed13",
+      "bytes": 17929
+    },
+    {
+      "path": "examples/ch15-projects/b3-starter/src/lib.rs",
+      "sha256": "3d26395634365c9eaaa64d9a3bdecc3d7cd34860723ebc85a73b0e7ad91e0bb5",
+      "bytes": 2685
+    },
+    {
+      "path": "examples/ch15-projects/b3-starter/Cargo.toml",
+      "sha256": "362e5d9be46aa6af8162c631977be6e142a7e082e5263d491b186b0f3e55bc2c",
+      "bytes": 483
+    },
+    {
+      "path": "examples/ch15-projects/b3-starter/src/input.rs",
+      "sha256": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e",
+      "bytes": 628
+    },
+    {
+      "path": "examples/ch15-projects/b3-starter/src/single.rs",
+      "sha256": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+      "bytes": 2619
+    },
+    {
+      "path": "examples/ch15-projects/b3-starter/checks/bounded-tests.rs",
+      "sha256": "6275fd6977eda5f0a295e4d938141867b1768881ea101a754447e9d172810795",
+      "bytes": 16848
+    },
+    {
+      "path": "examples/ch15-projects/b3-complete/Cargo.toml",
+      "sha256": "a80c0838e1d89350770f811ec085c4f9789f6e64c345590df0b982e7ffe78e28",
+      "bytes": 475
+    },
+    {
+      "path": "examples/ch15-projects/b3-complete/src/input.rs",
+      "sha256": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e",
+      "bytes": 628
+    },
+    {
+      "path": "examples/ch15-projects/b3-complete/src/single.rs",
+      "sha256": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+      "bytes": 2619
+    },
+    {
+      "path": "examples/ch15-projects/b3-complete/src/lib.rs",
+      "sha256": "c8cc8bfedb549e4a9ec702bb74b7eac8af6264874123df07454672a4fa08e93e",
+      "bytes": 20816
+    },
+    {
+      "path": "examples/ch15-projects/b3-complete/examples/b3_bounded_demo.rs",
+      "sha256": "ada8dee892b7aca77f1b73ee5f55584149f6b447b2e1a29336f2e584f45ac8dd",
+      "bytes": 1188
+    },
+    {
+      "path": "docs/assets/ch15/bounded-url-slots.svg",
+      "sha256": "8053366aa07ef231914ff9023d41530e49e1a63a9175a3389024ea516c734fcf",
+      "bytes": 2372
+    },
+    {
+      "path": "docs/chapters/18-10-lesson.md",
+      "sha256": "fc8ae402527c5a0c67ea9a44429de9ce8c1988aad3293fbb1e0fb9ecbeedea6e",
+      "bytes": 20083
+    },
+    {
+      "path": "examples/ch15-projects/b4-starter/src/lib.rs",
+      "sha256": "4f53dcf35cbf0b7526fc92b1805337eaf01195b3ffb80da85ef856a7a776bb1d",
+      "bytes": 5765
+    },
+    {
+      "path": "examples/ch15-projects/b4-starter/Cargo.toml",
+      "sha256": "33375bcde6288f93359d66908ef30703f6e1da6704de7e67d3beab417ef425df",
+      "bytes": 423
+    },
+    {
+      "path": "examples/ch15-projects/b4-starter/src/input.rs",
+      "sha256": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e",
+      "bytes": 628
+    },
+    {
+      "path": "examples/ch15-projects/b4-starter/src/single.rs",
+      "sha256": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+      "bytes": 2619
+    },
+    {
+      "path": "examples/ch15-projects/b4-starter/checks/stop-tests.rs",
+      "sha256": "6335e4aa19a6a8dcbdf9e7a1df30c56ebf606c5c6dcb562f10c440e2cde2f64c",
+      "bytes": 18687
+    },
+    {
+      "path": "examples/ch15-projects/b4-complete/Cargo.toml",
+      "sha256": "e21e318f76291c7aa621821f006003945d66c5df06d7ace94e888693d0b4b75e",
+      "bytes": 415
+    },
+    {
+      "path": "examples/ch15-projects/b4-complete/src/input.rs",
+      "sha256": "965f36eac8c875330d19fce3a1f37116d613dbdc1ce64de72c0fe76e26b1e24e",
+      "bytes": 628
+    },
+    {
+      "path": "examples/ch15-projects/b4-complete/src/single.rs",
+      "sha256": "0c825b4cc899d914e8e2d14ef52113b8e21535d1c928fc5d7aa6b256ad4890be",
+      "bytes": 2619
+    },
+    {
+      "path": "examples/ch15-projects/b4-complete/src/lib.rs",
+      "sha256": "3e7915eb978856e0b0410dbd1ec7b66894d8197404444a04c9a5c574e1ad846c",
+      "bytes": 26402
+    },
+    {
+      "path": "examples/ch15-projects/b4-complete/examples/b4_signal_demo.rs",
+      "sha256": "5ea8a19548526e0b7f39070b54bce05899bdde510f5525b74d31bb130f6c40ad",
+      "bytes": 5486
+    },
+    {
+      "path": "docs/assets/ch15/stop-url-work.svg",
+      "sha256": "95ab1e126e46778b36a3f53ec4462e957af55547f4ffe5c7e070a5899ed290dc",
+      "bytes": 2861
+    },
+    {
+      "path": "docs/chapters/18-11-lesson.md",
+      "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a",
+      "bytes": 21745
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/report.rs",
+      "sha256": "9cbbf77fe28e9d1385b81197515dfbc69fe4c4752258c8ab77750f9e3548ccee",
+      "bytes": 2572
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/error.rs",
+      "sha256": "fb67e8e826bff7ab79df64c5227b39a6dc62253cd0858cea07cb58ab34127b3f",
+      "bytes": 2411
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/config.rs",
+      "sha256": "0c23c7c6f983f73b8856e5ef248449c92936bc060f79062545a1a3a0ec1b2739",
+      "bytes": 727
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/test_fixture.rs",
+      "sha256": "2c5d78c5000bb07e597d89f87e03183637c94fc2a3b35cddcc72f46d31d949a4",
+      "bytes": 7081
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/Cargo.toml",
+      "sha256": "3fce7a1cfe12371591ae586474cf73ee1fae7d1698a8d43619af3895541ab8e5",
+      "bytes": 599
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/app.rs",
+      "sha256": "fe4b46ebed045e5a50307de93e393a751b8be9072a9eeb4a3a0d8e4df07d5f4e",
+      "bytes": 3275
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/Cargo.lock",
+      "sha256": "25040ee3574d979a13d4eb3dc814eb4355b96574247f9a41a2e073a23739d2f0",
+      "bytes": 44477
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/lib.rs",
+      "sha256": "4fb9e98b5a3c0f4edb1036ceb44cc79a938022e9110689c5e1c0fef26b125a43",
+      "bytes": 452
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/input.rs",
+      "sha256": "2a7e50f13cc83851c23b804cdb98479867be958a41464ce765c78368438bbe1d",
+      "bytes": 578
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/single.rs",
+      "sha256": "fea3a0b4e025e14b322ca61cc14da6590ee2360824268cc9b223a9e5c28c3ee4",
+      "bytes": 2341
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/batch.rs",
+      "sha256": "3715d19dde1a15f66c229496dcacb3230ed39b489a5aa0ac333d834a1cf535d1",
+      "bytes": 6790
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/src/main.rs",
+      "sha256": "9b85de0b0572caee99943479331e952af4e90e08b5a0ddc9c05950154b6fa0cf",
+      "bytes": 2286
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/tests/config.rs",
+      "sha256": "9eb63464adf95b510e4aa2973828531f93307ba1b8fdd49ccea2d6449a395fb5",
+      "bytes": 1865
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt",
+      "sha256": "e89bcb35b58442ca0ff82705c99cc9c344dd8175f4bf78cdac888e54a58f94ee",
+      "bytes": 42
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/checks/report-tests.rs",
+      "sha256": "c82248e0c20a180f90e36debca35a9bada973592222290223686e8f82bb8fe50",
+      "bytes": 8029
+    },
+    {
+      "path": "examples/ch15-projects/b-final-starter/checks/app-tests.rs",
+      "sha256": "3749a8fe822c21ddd651f764462953afd27e1c01ed8b2b234437ce9624447ca6",
+      "bytes": 5033
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/report.rs",
+      "sha256": "2cea7007b9bb1838022649908dcbe6fc445d2bd098af0795c28a3dc213783498",
+      "bytes": 12822
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/app.rs",
+      "sha256": "7e07b31b22fed5bd4b1b2edac7093d2adaea0134ef03b859732a01cf793f1b77",
+      "bytes": 8326
+    },
+    {
+      "path": "docs/assets/ch15/url-report-boundary.svg",
+      "sha256": "f60e2e1d1e8bcf996fcf094c4aa14befa560bda768d2ef425113dac12f5afa8b",
+      "bytes": 2767
+    },
+    {
+      "path": "docs/chapters/18-12-lesson.md",
+      "sha256": "a9a8b4533644c5c13f2527fe3d6d94d7f7d324ebbf9cf76798dcb5cd8826baf0",
+      "bytes": 9660
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/Cargo.toml",
+      "sha256": "989f84de7fa556027fcc254f4fb7887f3ddf16fa1ac714651633ee81019e7727",
+      "bytes": 591
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/Cargo.lock",
+      "sha256": "18c26cc7576f96c28a82660d52f77e50620369f19617a9459d3561d9f8b6d4f0",
+      "bytes": 44469
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/lib.rs",
+      "sha256": "f623dc1f88ff3c220c13eb7136b57ffd53f6a55d973cad171d21976e0d6238b1",
+      "bytes": 444
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/config.rs",
+      "sha256": "0c23c7c6f983f73b8856e5ef248449c92936bc060f79062545a1a3a0ec1b2739",
+      "bytes": 727
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/error.rs",
+      "sha256": "fb67e8e826bff7ab79df64c5227b39a6dc62253cd0858cea07cb58ab34127b3f",
+      "bytes": 2411
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/input.rs",
+      "sha256": "2a7e50f13cc83851c23b804cdb98479867be958a41464ce765c78368438bbe1d",
+      "bytes": 578
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/single.rs",
+      "sha256": "fea3a0b4e025e14b322ca61cc14da6590ee2360824268cc9b223a9e5c28c3ee4",
+      "bytes": 2341
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/batch.rs",
+      "sha256": "e90bc1543dc1f2ab946a59010e0f1bab59e32db869412e7927a809bd5e16642a",
+      "bytes": 26001
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/main.rs",
+      "sha256": "0a6b62229a8e2e6c9297c73b3ad235f91271bc7dc1c7a04420e4da137a456af1",
+      "bytes": 2254
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/src/test_fixture.rs",
+      "sha256": "2c5d78c5000bb07e597d89f87e03183637c94fc2a3b35cddcc72f46d31d949a4",
+      "bytes": 7081
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/tests/config.rs",
+      "sha256": "c99333408f134a82a1d15b7f4a2fc90b0014534c4da1f1bfa050df821064edf9",
+      "bytes": 1857
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/fixtures/invalid-urls.txt",
+      "sha256": "e89bcb35b58442ca0ff82705c99cc9c344dd8175f4bf78cdac888e54a58f94ee",
+      "bytes": 42
+    },
+    {
+      "path": "examples/ch15-projects/url-checker/README.md",
+      "sha256": "53e266824dbdc03aaf9af1eb970d32ad78167fe6dacc406a958710e2e974511a",
+      "bytes": 3721
+    },
+    {
+      "path": "Cargo.toml",
+      "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f",
+      "bytes": 3064
+    },
+    {
+      "path": "Cargo.lock",
+      "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f",
+      "bytes": 66011
+    },
+    {
+      "path": "rust-toolchain.toml",
+      "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+      "bytes": 86
+    }
+  ],
+  "regions": [
+    "examples/ch15-projects/b1-starter/src/lib.rs:models",
+    "examples/ch15-projects/b1-starter/src/lib.rs:helpers",
+    "examples/ch15-projects/b1-starter/src/lib.rs:stub",
+    "examples/ch15-projects/b1-starter/checks/single-tests.rs:observation-helper",
+    "examples/ch15-projects/b1-starter/checks/single-tests.rs:timeout-test",
+    "examples/ch15-projects/b2-starter/src/lib.rs:models",
+    "examples/ch15-projects/b2-starter/checks/batch-tests.rs:input-test",
+    "examples/ch15-projects/b2-starter/checks/batch-tests.rs:gate-helpers",
+    "examples/ch15-projects/b2-starter/checks/batch-tests.rs:mixed-test",
+    "examples/ch15-projects/b2-starter/checks/batch-tests.rs:gate-test",
+    "examples/ch15-projects/b3-starter/src/lib.rs:models",
+    "examples/ch15-projects/b3-starter/src/lib.rs:state",
+    "examples/ch15-projects/b3-starter/src/lib.rs:constructor",
+    "examples/ch15-projects/b3-starter/checks/bounded-tests.rs:drain",
+    "examples/ch15-projects/b3-starter/checks/bounded-tests.rs:guards",
+    "examples/ch15-projects/b3-starter/checks/bounded-tests.rs:task-lab",
+    "examples/ch15-projects/b3-starter/checks/bounded-tests.rs:completed-test",
+    "examples/ch15-projects/b3-starter/checks/bounded-tests.rs:held-test",
+    "examples/ch15-projects/b3-starter/checks/bounded-tests.rs:mixed-test",
+    "examples/ch15-projects/b4-starter/src/lib.rs:models",
+    "examples/ch15-projects/b4-starter/src/lib.rs:state",
+    "examples/ch15-projects/b4-starter/src/lib.rs:constructor",
+    "examples/ch15-projects/b4-starter/src/lib.rs:runner",
+    "examples/ch15-projects/b4-starter/checks/stop-tests.rs:cleanup",
+    "examples/ch15-projects/b4-starter/checks/stop-tests.rs:control",
+    "examples/ch15-projects/b4-starter/checks/stop-tests.rs:completed-test",
+    "examples/ch15-projects/b4-starter/checks/stop-tests.rs:prequeued-test",
+    "examples/ch15-projects/b4-starter/checks/stop-tests.rs:refill-test",
+    "examples/ch15-projects/b4-complete/src/lib.rs:signal",
+    "examples/ch15-projects/b-final-starter/src/report.rs:model",
+    "examples/ch15-projects/b-final-starter/src/report.rs:render",
+    "examples/ch15-projects/b-final-starter/src/error.rs:error",
+    "examples/ch15-projects/b-final-starter/src/config.rs:settings",
+    "examples/ch15-projects/b-final-starter/src/test_fixture.rs:ready-probe",
+    "examples/ch15-projects/b-final-starter/src/app.rs:run",
+    "examples/ch15-projects/b-final-starter/src/report.rs:map",
+    "examples/ch15-projects/b-final-starter/checks/report-tests.rs:map-test",
+    "examples/ch15-projects/b-final-starter/checks/report-tests.rs:status-test",
+    "examples/ch15-projects/b-final-starter/checks/app-tests.rs:writer",
+    "examples/ch15-projects/b-final-starter/checks/app-tests.rs:flush-test"
+  ]
+}

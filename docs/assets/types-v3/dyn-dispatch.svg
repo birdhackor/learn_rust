@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="690" viewBox="0 0 390 690" role="img" aria-labelledby="title desc">
+ <title id="title">同樣的Box dyn Charge handle找到不同資料與method實作</title>
+ <desc id="desc">第一個handle包含找到Order資料與Order method表的資訊，amount讀80乘1得到80。第二個handle找到Bundle資料與Bundle method表，amount讀固定價格120。箭頭表示找到資料或method入口，不表示移轉ownership或複製資料；圖不是實際ABI布局。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="690" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="34" text-anchor="middle" font-weight="bold">同型別handle，不同資料</text>
+  <rect x="20" y="60" width="350" height="84" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="40" y="94">values[0]</text><text x="40" y="128" font-weight="bold">Box&lt;dyn Charge&gt;</text>
+  <path d="M100 146V198" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M290 146V198" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="25" y="178">資料</text><text x="160" y="178">method表</text>
+  <rect x="20" y="210" width="160" height="94" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="40" y="245" font-weight="bold">Order</text><text x="40" y="282">80 × 1</text>
+  <rect x="210" y="210" width="160" height="94" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="225" y="245" font-weight="bold">Order表</text><text x="225" y="282">amount入口</text>
+  <text x="195" y="342" text-anchor="middle">呼叫amount得到80</text>
+  <rect x="20" y="369" width="350" height="84" rx="10" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="40" y="403">values[1]</text><text x="40" y="437" font-weight="bold">Box&lt;dyn Charge&gt;</text>
+  <path d="M100 455V507" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <path d="M290 455V507" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+  <text x="25" y="487">資料</text><text x="160" y="487">method表</text>
+  <rect x="20" y="519" width="160" height="94" rx="10" fill="#ecfdf5" stroke="#059669" stroke-width="2"/>
+  <text x="40" y="554" font-weight="bold">Bundle</text><text x="40" y="591">price: 120</text>
+  <rect x="210" y="519" width="160" height="94" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="225" y="554" font-weight="bold">Bundle表</text><text x="225" y="591">amount入口</text>
+  <text x="195" y="651" text-anchor="middle">呼叫amount得到120</text>
+  <text x="195" y="683" text-anchor="middle">箭頭：找到資料／method</text>
+ </g>
+</svg>

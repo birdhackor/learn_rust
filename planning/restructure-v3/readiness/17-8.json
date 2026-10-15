@@ -1,0 +1,134 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "17.8"
+  ],
+  "author": "root",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round17-api-cross-references-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-criterion-benchmark.md",
+    "planning/restructure-v3/reviews/technical-early/round17-declarative-macro-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round17-dhat-allocation-profile.md",
+    "planning/restructure-v3/reviews/technical-early/round17-library-and-string-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-loom-miri.md",
+    "planning/restructure-v3/reviews/technical-early/round17-macro-hygiene-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round17-procedural-derive-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round17-property-testing.md",
+    "planning/restructure-v3/reviews/technical-early/round17-public-api-contracts.md",
+    "planning/restructure-v3/reviews/technical-early/round17-root-cross-references-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/17-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/17-08-lesson.md": "8ff6edb77f3d98afd663717b4b2e9fe10b93dd6b20890f69cfe5613c02c19898",
+    "examples/ch14-profiling/src/lib.rs": "a57e6ac616bd68cfef0d17d1a80e94fb04237006a06344086ae4cc88b162575c",
+    "examples/ch14-profiling/tests/repeated_results.rs": "fbc98bee75f8b1ce2d7ac15d04d190bd779dda143016ae9b77713d2e500f8d2b",
+    "examples/ch14-profiling/Cargo.toml": "89f66e3c2ee8143e56c45d9f0347b7abb27acc5268d6cbbcae80fecb4bac16ca",
+    "examples/ch14-performance/Cargo.toml": "94ca37c793af418c5dec68b48d8d4d162b844d844d663bec9f2c5bd87768b221",
+    "examples/ch14-performance/src/lib.rs": "bd0b9932612439aca85ff21ce952749dbf93f89b3c4861bb0bfadc3092c54ee1",
+    "examples/ch14-profiling/examples/allocation_cloned.rs": "afe7199c0b7fc1d7de8462a0b55e37e812ad7bdf12759bda5c4d589ff60e23af",
+    "examples/ch14-profiling/examples/allocation_borrowed.rs": "e0ccb93fe67e3fc02fd6783645012782f286b8138a74c209b0fc61d861a656e6",
+    "examples/ch14-profiling/examples/allocation_solution.rs": "86dcd0d789ec1ac556fa7794f7fcab4774a762a144e796018fb9bde07fa2bfae",
+    "examples/ch14-profiling/profiles/cloned.stdout.txt": "a494f76ab7a829a22d9583d7f0453c732c5e3b2fdfd3ab9896b577f15ca3ecb5",
+    "examples/ch14-profiling/profiles/cloned.stderr.txt": "955d7a88fb13999ead3bdecc16e271c47949cd3593e5bf55f3b10783f962646d",
+    "examples/ch14-profiling/profiles/borrowed.stdout.txt": "c7e15c9c3872a1d4a3abf6e4fad4763a5a1873625d1d73a4af5d8543394ae1a6",
+    "examples/ch14-profiling/profiles/borrowed.stderr.txt": "1dfb40c43dd8b86f51e74abfb80bc0cb3ee5af70b20957f204f0b16407a6e1fd",
+    "examples/ch14-profiling/profiles/solution.stdout.txt": "19d313943f7e833ee388c4ef38e78eb2c839a27da06b3e10138ed3def12969d9",
+    "examples/ch14-profiling/profiles/solution.stderr.txt": "28254398fcdfd63e542e8212d0f5318040e011519e55683a2dd7c8a71fc49c54",
+    "docs/assets/ch14/profile-boundary.svg": "68ae7c3c8e56b64dd6c3a329f74453e651c4a2318778a847f1db236d890f9c6d",
+    "docs/assets/ch14/profile-source.svg": "2aa142ed3bb90bd7d42e544733712d8168c75fe286f085a96d8d749867f69627"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 3,
+      "quote": "17.7的兩輪量測中，借讀方法的時間估計較小，但總時間沒有告訴我們clone、複製文字與釋放各占多少。現在先回答其中一項可驗證的問題：**count_cloned真的在每行建立新的heap配置嗎？改成只借讀，這項配置工作是否消失，而答案仍相同？**"
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 5,
+      "quote": "**profiling（剖析）** 是在執行程式時收集所選資源或工作的位置與用量。這一節選 **allocation profile（配置剖析）**，記錄heap配置的數量、大小與來源呼叫鏈。它回答「記錄到哪些配置」，不回答哪個函式占了最多CPU時間；找CPU熱點需要對應的CPU profile資料。"
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 11,
+      "quote": "仍用17.7的256行，query是Rust，每4行一行符合；一行Rust Rust仍只算1。因此每次得到64，重複100次要完成相同256行巡訪100次，**累計符合行數6400**。"
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 25,
+      "quote": "library透過已教的path dependency使用17.7真實函式。新的 **dhat** dependency只給後面的profile examples使用，放dev-dependencies，版本要求0.3.3由Cargo.lock固定："
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 58,
+      "quote": "**allocator（配置器）** 負責取得及釋放heap儲存空間。dhat提供的 **`dhat::Alloc`** 包住系統配置器，在配置發生時加入追蹤；它沒有替我們改搜尋規則。這項工具是固定版的實驗性profile程式庫，本教材只驗證下面小型範圍，不讓它成為一般程式的必要配置器。"
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 60,
+      "quote": "Rust的新attribute **`#[global_allocator]`** 指定這個可執行程式使用哪個全域配置器；同一份程式只能有一個這項選擇。下面的 **`static` item** 宣告整份程式可使用的值，格式是名稱、型別、初始值與分號；不同於main內每次執行才建立的let binding。"
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 84,
+      "quote": "材料在build之前建立，整段profile只借讀它，不realloc或延長這份Vec。dhat會忽略範圍外建立、期間只借讀的配置；材料**仍然在heap上**，但不算本次新增配置。因此報告的零不能解讀成整個程式沒有用記憶體。"
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 105,
+      "quote": "`allocation_cloned`先建立256行，核對每次64行符合，然後只追蹤100次count_cloned。下方的 `target/dhat-cloned.json` 是以目前工作目錄為起點的相對路徑；本教材從repo根目錄執行，target目錄由Cargo建置建立。這份main完整包含準備、追蹤、snapshot與停止："
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 111,
+      "quote": "為了讓profile能指出來源位置，本次在release中保留 **debug information（除錯資訊）**：編譯器另外保存來源位置給工具使用。它不把opt-level改成dev的0。"
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 113,
+      "quote": "新設定 **`CARGO_PROFILE_RELEASE_DEBUG=1`** 對應release profile的debug=1。放在一條shell命令前，表示只替該命令提供這個環境變數；不修改root Cargo.toml。仍明確使用--release："
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 156,
+      "quote": "配置的數量回答「多少」，**backtrace（呼叫鏈紀錄）** 回答「從哪些函式呼叫到了這份配置」。同一配置來源的記錄會聚合成 **PP（program point，程式位置）**；來源相同的25,600次配置可以放在同一PP，不是每一份配置都列一個新節點。"
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 158,
+      "quote": "開啟 [DHAT viewer](https://nnethercote.github.io/dh_view/dh_view.html)，按 **Load…** 選本次 `target/dhat-cloned.json`，把 **Sort metric** 改選 **Total (bytes)**。這個選項按來源的累計配置bytes排序。下面解釋我們要讀的欄位，不需要把工具提供的每種排序都當成已教："
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 176,
+      "quote": "count_cloned只為了contains建立candidate，沒有把它交出或在下一行使用。count_borrowed改為as_str借讀，仍按同一query／相同case規則巡訪完整清單。這項改動去掉的是判斷用複本，不是省略不符合的行、降低結果需求或不再做100次計數。"
+    },
+    {
+      "section_id": "17.8",
+      "path": "docs/chapters/17-08-lesson.md",
+      "line": 186,
+      "quote": "保留同一count_cloned／Rustquery／100次，只把清單換成64行。先依17.7分布預測：每次16行符合，累計1600；配置次數與累計bytes應隨巡訪行數變少。最長行仍15 bytes，所以「每次一份短命candidate」的峰值未必跟著變小。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

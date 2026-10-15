@@ -1,0 +1,83 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "5.3"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round05-cross-reference-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round05-data-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round05-data-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round05-prefix-markup-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05-version-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round05-ch05.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/05-03-lesson.md": "27780e39eca8f727f1778633a360f083729e42062cd4fcf47e89be4375aeb9d2",
+    "examples/intro-workspace/data-steps/examples/utf8.rs": "c71aa5ebc36777b1508664c0d796b572ece9f6e270d7fd843d1ce639ecf0ee6e",
+    "examples/intro-workspace/data-steps/Cargo.toml": "37c9cbefb5ff5e6412887e4932d12a2063bda8f52b547e417064133c1fcb9a33",
+    "examples/intro-workspace/data-steps/fixtures/runtime-fail/utf8_boundary.rs": "d5f242c03f3224b79710370b43627183dbfed717ff2f9f72e77789410f5ca7de",
+    "examples/intro-workspace/data-steps/examples/utf8_answer/text/mod.rs": "73efe1c88f1d5b5e12eb3b95ad89e2af0d0a6fe87e9c09e828fa3f56c09eb213",
+    "examples/intro-workspace/data-steps/examples/utf8_answer/main.rs": "5d874fe4204e912901ac0f46f0c2c3034cba7a9a4f8694f8f5470e3e6ae2505e",
+    "docs/assets/ch03/utf8-boundaries.svg": "bf40798d5647ee4d3082b0efbfb769540c90751792d1796593e022c5129806fb"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "5.3",
+      "path": "docs/chapters/05-03-lesson.md",
+      "line": 3,
+      "quote": "第 3.8 節已能建立 String，並透過 &str 借讀整段內容。現在想從 `A中🦀` 只取出「中」。數值 slice 的區間按元素編號；UTF-8 文字的區間則按 byte 位置，還必須保持有效的文字分界。"
+    },
+    {
+      "section_id": "5.3",
+      "path": "docs/chapters/05-03-lesson.md",
+      "line": 7,
+      "quote": "第 1.4 節的 **char** 保存一個 **Unicode scalar（純量值）**，也就是 Unicode 中可用來表示文字的一個基本數值。char literal 用單引號，例如 `'中'`；雙引號的 `\"中\"` 是一段文字的 &str，兩者型別不同。"
+    },
+    {
+      "section_id": "5.3",
+      "path": "docs/chapters/05-03-lesson.md",
+      "line": 9,
+      "quote": "**UTF-8** 將一個 scalar 編成 1 到 4 個 bytes。這是文字內容的編碼規則，不是說 Rust 的 char 型別本身占 1 到 4 bytes。**str 的 len() 回傳 UTF-8 的 byte 數量，型別為 usize**，不直接回答有幾個 scalar。"
+    },
+    {
+      "section_id": "5.3",
+      "path": "docs/chapters/05-03-lesson.md",
+      "line": 29,
+      "quote": "**`text.get(start..end)`** 在接收者為 &str 時，按 byte range 取得文字。回傳型別是 **`Option<&str>`**：成功時 Some 保存借來的文字視圖；失敗時回傳 None，不為這項範圍失敗而 panic，也不另建 String。"
+    },
+    {
+      "section_id": "5.3",
+      "path": "docs/chapters/05-03-lesson.md",
+      "line": 43,
+      "quote": "本頁使用沒有 library 的 intro-data-steps。main 用單引號建立 char，也用 String 保存整段內容；char 沿用第一章的文字顯示方式："
+    },
+    {
+      "section_id": "5.3",
+      "path": "docs/chapters/05-03-lesson.md",
+      "line": 72,
+      "quote": "也能以 `&text[start..end]` 借讀一段 str，但它要求相同的合法 range；不合法時會 panic。單一整數索引不能用來取得「第幾個 char」，也不是取得一個 byte 的文字接口。"
+    },
+    {
+      "section_id": "5.3",
+      "path": "docs/chapters/05-03-lesson.md",
+      "line": 84,
+      "quote": "寫 `selected_byte_len(text: &str, start: usize, end: usize) -> Option<usize>`。先以 get 借到區段；Some 時交回 Some 中的 byte 長度，None 時仍交回 None。交回的是 owned 的 usize 數字，不是文字 reference。"
+    },
+    {
+      "section_id": "5.3",
+      "path": "docs/chapters/05-03-lesson.md",
+      "line": 92,
+      "quote": "Clippy 的 **manual_map** lint 會建議把這種 match 改成較短的 Option 操作。本節正在對照 Some 與 None 兩條路，而且較短形式需要後面的新語法，所以刻意保留已教的 match。沿用第 2.7 節，只在 selected_byte_len 前加 `#[allow(clippy::manual_map)]`，不關掉其他檢查。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

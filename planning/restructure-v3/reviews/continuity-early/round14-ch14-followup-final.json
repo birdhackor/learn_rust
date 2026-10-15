@@ -1,0 +1,194 @@
+{
+  "utc": "2026-10-15T10:54:36.120510+00:00",
+  "scope": "knownadoptedC14-01/02/03narrowfollowup only; original10:35:13initialunchanged",
+  "verdict": "CLOSED allthree",
+  "rows": [
+    {
+      "id": "C14-01",
+      "status": "CLOSED",
+      "source": "14.5:9同段明說DurationCopy，按值交sleep/timeout仍可用原binding；在所有例子之前。",
+      "render": "duration-copy desktop/mobile已親看，段落完整無裁切。"
+    },
+    {
+      "id": "C14-02",
+      "status": "CLOSED",
+      "source": "14.3:23 TokioSendErrorDebug在basiclib前；:52 JoinErrorDebug/Display/toString在join_handle前；14.5:43 ElapsedDebug/Display在隔離clocktests前。",
+      "render": "senderror-debug/joinerror-format/elapsed-format各desktop/mobile六圖已親看，與source同句，先於相關完整code。"
+    },
+    {
+      "id": "C14-03",
+      "status": "CLOSED",
+      "source": "14.9:145既有ClientSendSync短說移至首spawn client的main前，:191clone共享pool說明保留且不重複短說。",
+      "render": "client-spawn desktop/mobile兩圖已親看，同屏可見能力句→main導讀→Client移入spawn。"
+    }
+  ],
+  "changes": [
+    {
+      "path": "docs/chapters/14-03-lesson.md",
+      "before_sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+      "after_sha256": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42"
+    },
+    {
+      "path": "docs/chapters/14-05-lesson.md",
+      "before_sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+      "after_sha256": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f"
+    },
+    {
+      "path": "docs/chapters/14-09-lesson.md",
+      "before_sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+      "after_sha256": "cb3206ccfd5d9d6034cd0dc94001a496378b518fe61fa507acea64217425b7c2"
+    }
+  ],
+  "rust_manifests_commands_changed": false,
+  "all_other_120_snapshot_files_stable": true,
+  "preview": "8110currentformalbuiltbyparent; revieweronlyreadonlybrowser",
+  "render_metadata": [
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "name": "desktop",
+      "page": "http://127.0.0.1:8110/chapters/14-03-lesson/",
+      "at": "2026-10-15T10:53:38.246Z",
+      "htmlSha256": "3d61a732ceb646694911478ef297e8d0b70157c0b842cccf6c3985fbaac7dfe6",
+      "sourceSha256": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42",
+      "text": "mpsc::channel::<T>(capacity) 建立有界緩衝區，交回 Sender<T> 與 Receiver<T>；capacity 必須大於0。Sender 可以 clone，共用同一條 channel；Receiver 由一個接收者持有。sender.send(value).await 等待空位，成功交回 Ok(())，收端已關閉則交回帶原值的 SendError；它具備 Debug，可供 expect 在失敗時產生診斷。receiver.recv().await mutable 借用收端：有訊息得到 Some(value)，暫時沒有訊息但仍有送端時繼續等，所有送端結束且緩衝區已空才得到 None。",
+      "screenshot": "desktop-senderror-debug.png"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "name": "desktop",
+      "page": "http://127.0.0.1:8110/chapters/14-03-lesson/",
+      "at": "2026-10-15T10:53:39.388Z",
+      "htmlSha256": "3d61a732ceb646694911478ef297e8d0b70157c0b842cccf6c3985fbaac7dfe6",
+      "sourceSha256": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42",
+      "text": "handle.await 取得 Result<T, JoinError>。JoinError 具備 Debug 與 Display，因此可用診斷格式顯示，也能沿第8.5節以 to_string 保存文字。本例 T 已經是 Result<i32, WorkError>，所以有兩層：",
+      "screenshot": "desktop-joinerror-format.png"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "name": "desktop",
+      "page": "http://127.0.0.1:8110/chapters/14-05-lesson/",
+      "at": "2026-10-15T10:53:40.561Z",
+      "htmlSha256": "1af773ffdad2b56292d7a5f6d9e893cc66131f5cb169d14c33cb553b87cafade",
+      "sourceSha256": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f",
+      "text": "標準庫 std::time::Duration 表示時間長度；Duration::from_secs(1) 建立1秒，Duration::from_millis(20) 建立20毫秒，1秒等於1000毫秒。duration.as_millis() 回傳總毫秒數，供本例顯示，會捨去不足1毫秒的部分。Duration 具備 Copy；把同一份時間跨度按值交給 sleep 或 timeout 後，原 binding 仍可再用。",
+      "screenshot": "desktop-duration-copy.png"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "name": "desktop",
+      "page": "http://127.0.0.1:8110/chapters/14-05-lesson/",
+      "at": "2026-10-15T10:53:42.303Z",
+      "htmlSha256": "1af773ffdad2b56292d7a5f6d9e893cc66131f5cb169d14c33cb553b87cafade",
+      "sourceSha256": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f",
+      "text": "tokio::time::timeout(limit, work) 接手本例的一份 future，建立帶期限的等待；呼叫時就記下 deadline，緊接著 await 取得 Result<T, Elapsed>。T 是原工作 Output，Elapsed 是 Tokio 的逾時錯誤，具備 Debug 與 Display，可供 expect 的診斷與文字顯示。",
+      "screenshot": "desktop-elapsed-format.png"
+    },
+    {
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "name": "desktop",
+      "page": "http://127.0.0.1:8110/chapters/14-09-lesson/",
+      "at": "2026-10-15T10:53:44.146Z",
+      "htmlSha256": "428fa3972ff53139270432c2d3ac7dc98aa0fed3064ba2044cb44a8ef6e897b9",
+      "sourceSha256": "cb3206ccfd5d9d6034cd0dc94001a496378b518fe61fa507acea64217425b7c2",
+      "text": "Client 支援 Send／Sync，owned client 能移進 spawn 工作，對應第14.3節的 Send 要求。",
+      "screenshot": "desktop-client-spawn.png"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "name": "mobile",
+      "page": "http://127.0.0.1:8110/chapters/14-03-lesson/",
+      "at": "2026-10-15T10:53:46.358Z",
+      "htmlSha256": "3d61a732ceb646694911478ef297e8d0b70157c0b842cccf6c3985fbaac7dfe6",
+      "sourceSha256": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42",
+      "text": "mpsc::channel::<T>(capacity) 建立有界緩衝區，交回 Sender<T> 與 Receiver<T>；capacity 必須大於0。Sender 可以 clone，共用同一條 channel；Receiver 由一個接收者持有。sender.send(value).await 等待空位，成功交回 Ok(())，收端已關閉則交回帶原值的 SendError；它具備 Debug，可供 expect 在失敗時產生診斷。receiver.recv().await mutable 借用收端：有訊息得到 Some(value)，暫時沒有訊息但仍有送端時繼續等，所有送端結束且緩衝區已空才得到 None。",
+      "screenshot": "mobile-senderror-debug.png"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "name": "mobile",
+      "page": "http://127.0.0.1:8110/chapters/14-03-lesson/",
+      "at": "2026-10-15T10:53:47.650Z",
+      "htmlSha256": "3d61a732ceb646694911478ef297e8d0b70157c0b842cccf6c3985fbaac7dfe6",
+      "sourceSha256": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42",
+      "text": "handle.await 取得 Result<T, JoinError>。JoinError 具備 Debug 與 Display，因此可用診斷格式顯示，也能沿第8.5節以 to_string 保存文字。本例 T 已經是 Result<i32, WorkError>，所以有兩層：",
+      "screenshot": "mobile-joinerror-format.png"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "name": "mobile",
+      "page": "http://127.0.0.1:8110/chapters/14-05-lesson/",
+      "at": "2026-10-15T10:53:48.884Z",
+      "htmlSha256": "1af773ffdad2b56292d7a5f6d9e893cc66131f5cb169d14c33cb553b87cafade",
+      "sourceSha256": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f",
+      "text": "標準庫 std::time::Duration 表示時間長度；Duration::from_secs(1) 建立1秒，Duration::from_millis(20) 建立20毫秒，1秒等於1000毫秒。duration.as_millis() 回傳總毫秒數，供本例顯示，會捨去不足1毫秒的部分。Duration 具備 Copy；把同一份時間跨度按值交給 sleep 或 timeout 後，原 binding 仍可再用。",
+      "screenshot": "mobile-duration-copy.png"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "name": "mobile",
+      "page": "http://127.0.0.1:8110/chapters/14-05-lesson/",
+      "at": "2026-10-15T10:53:50.194Z",
+      "htmlSha256": "1af773ffdad2b56292d7a5f6d9e893cc66131f5cb169d14c33cb553b87cafade",
+      "sourceSha256": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f",
+      "text": "tokio::time::timeout(limit, work) 接手本例的一份 future，建立帶期限的等待；呼叫時就記下 deadline，緊接著 await 取得 Result<T, Elapsed>。T 是原工作 Output，Elapsed 是 Tokio 的逾時錯誤，具備 Debug 與 Display，可供 expect 的診斷與文字顯示。",
+      "screenshot": "mobile-elapsed-format.png"
+    },
+    {
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "name": "mobile",
+      "page": "http://127.0.0.1:8110/chapters/14-09-lesson/",
+      "at": "2026-10-15T10:53:51.627Z",
+      "htmlSha256": "428fa3972ff53139270432c2d3ac7dc98aa0fed3064ba2044cb44a8ef6e897b9",
+      "sourceSha256": "cb3206ccfd5d9d6034cd0dc94001a496378b518fe61fa507acea64217425b7c2",
+      "text": "Client 支援 Send／Sync，owned client 能移進 spawn 工作，對應第14.3節的 Send 要求。",
+      "screenshot": "mobile-client-spawn.png"
+    }
+  ],
+  "screenshots_personally_viewed": [
+    "desktop-senderror-debug.png",
+    "desktop-joinerror-format.png",
+    "desktop-duration-copy.png",
+    "desktop-elapsed-format.png",
+    "desktop-client-spawn.png",
+    "mobile-senderror-debug.png",
+    "mobile-joinerror-format.png",
+    "mobile-duration-copy.png",
+    "mobile-elapsed-format.png",
+    "mobile-client-spawn.png"
+  ],
+  "viewports": [
+    "1280×800",
+    "390×844"
+  ],
+  "no_cargo_build": true
+}

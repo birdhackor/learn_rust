@@ -1,0 +1,478 @@
+{
+  "review_id": "round17-property-testing",
+  "scope": [
+    "17.5"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python與實際前綴，已讀17.1–17.4；不以未讀15內容補本節。",
+  "independence": "初判封存前未讀root作者validation/ledger、peer、reader或historical findings。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "全文、18snippets、全部11owned檔、正常library/example/3test targets與隔離cargo-test-fail library/test/manifest/lock完整靜態核對。",
+    "實讀proptest 1.12.0 Config/RngSeed、Just、vec strategy、prop_assert_eq來源，4外部hash；SVG只查XML/source。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "property_cases_generated": false,
+    "note": "本波沒有執行Cargo或生成／縮減材料；2+3+1正常test數、固定seed負例與輸出為靜態核對。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:31:22.238197+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "f71fbeedefb6f784f754cda7052427df3d8bb84e825579b64071f6f9305957e7",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/assets/ch14/property-shrinking.svg": "3504ea9bb7f1ab23579b22fde41b36b9d220c3385bbb86a78d232887ce0b9eb7",
+    "docs/chapters/17-05-lesson.md": "a49384aee9702b4a08b9033a1557424b62a5579fa2f7c5c11f6433b667419c0d",
+    "examples/ch14-property/Cargo.toml": "7b51966b7dabc2b309b5c0a375ef962857054e7c3b666870984c7c8abe084946",
+    "examples/ch14-property/examples/counts.rs": "2ee2859c2baf1deba16dfcd7e9a2287215a0fde711725b7ce4a9d886971b9c75",
+    "examples/ch14-property/fixtures/cargo-test-fail/Cargo.lock": "aabe22bf6aeb5838f54bf3ae75f319ea3984c2ca707f04046881c979558c2577",
+    "examples/ch14-property/fixtures/cargo-test-fail/Cargo.toml": "ebc3d9aa27a31132637b473af0852b8d9e051e47d29653db1a81276160eb835a",
+    "examples/ch14-property/fixtures/cargo-test-fail/src/lib.rs": "97fa818396d46acd36e32715e76a8012796b341f072ffcbcb37d10e02f6f0169",
+    "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.expected": "a0eb82bf3c0513a66d91ccd921064567b1cce9db1d3f7595b94574af8bdb0778",
+    "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.rs": "7913e0baa3056fc27c5df700ca374027c78332d64220494284c94adb2fd80ca9",
+    "examples/ch14-property/src/lib.rs": "91ed50b6c98017ea586579736e4b7678f05a08f1bfc0741e23fed66df4635b2f",
+    "examples/ch14-property/tests/composition_solution.rs": "1a3cf96451b767e6a4ef3d915a24174bbdd343f877bf0555dec274e9a7f2e90f",
+    "examples/ch14-property/tests/properties.rs": "8bd00a96c9f5ecfd3d3177b7c454a05fec61fcb1d4919adf4d9ae0e6d7134a15",
+    "examples/ch14-property/tests/regressions.rs": "bfb77238c68476fefd5908b8ad7939ab95d7ce98b2882294e74c0a9401981cc2",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "external_source_hashes": {
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proptest-1.12.0/src/test_runner/config.rs": "859370d645380d751c6c5ca2736b6fbd8d13735b5321cc26e52f5c01559ce100",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proptest-1.12.0/src/strategy/just.rs": "a777a605fa92652f62213c13549658473a447e96d566f8a92ec9adfdd43bccaa",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proptest-1.12.0/src/sugar.rs": "3a362145f02f8da7a8e1662650f6a9920af198b02a41979ac395f013c00ea1e8",
+    "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/proptest-1.12.0/src/collection.rs": "5cfa1d934fa1f8379d298d6f6aec0800263dfd434869959ca973c0d576270fc2"
+  },
+  "selected_lock_entries": [
+    {
+      "name": "ch14-property",
+      "version": "0.1.0",
+      "dependencies": [
+        "proptest"
+      ]
+    },
+    {
+      "name": "proptest",
+      "version": "1.12.0",
+      "source": "registry+https://github.com/rust-lang/crates.io-index",
+      "checksum": "b8530004ccb15eae51c7e40009fbe317f341f804db54dc033eec1c50be28cfa0",
+      "dependencies": [
+        "bitflags",
+        "chacha20",
+        "core_detect",
+        "num-traits",
+        "rand",
+        "rand_xorshift",
+        "regex-syntax",
+        "unarray"
+      ]
+    }
+  ],
+  "fixture_lock": {
+    "version": 4,
+    "package": [
+      {
+        "name": "autocfg",
+        "version": "1.5.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "f2032f911046de80f0a198e0901378627c33f59ea0ac00e363d481118bd70a53"
+      },
+      {
+        "name": "bitflags",
+        "version": "2.13.2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "3ded4057c258ba199e2d26386d3af3780957ecaee6c4ef4041c6b4b8b97c0b06"
+      },
+      {
+        "name": "cfg-if",
+        "version": "1.0.5",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "4e7648175b45a9a48536d676f68d918270699102aa8dab5496df06904c914600"
+      },
+      {
+        "name": "ch14-property",
+        "version": "0.1.0"
+      },
+      {
+        "name": "ch14-property-negative",
+        "version": "0.1.0",
+        "dependencies": [
+          "ch14-property",
+          "proptest"
+        ]
+      },
+      {
+        "name": "chacha20",
+        "version": "0.10.2",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "65c35e4b699c7e15ccbe7ee35c005e4fc0a278d22238a2857e6ce2dadeda1b06",
+        "dependencies": [
+          "cfg-if",
+          "cpufeatures",
+          "rand_core"
+        ]
+      },
+      {
+        "name": "core_detect",
+        "version": "1.0.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "7f8f80099a98041a3d1622845c271458a2d73e688351bf3cb999266764b81d48"
+      },
+      {
+        "name": "cpufeatures",
+        "version": "0.3.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "5ca28b0ae3115b884660db4118d803791fd6756b6e88f39c0f3f7859060d7566",
+        "dependencies": [
+          "libc"
+        ]
+      },
+      {
+        "name": "getrandom",
+        "version": "0.4.3",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "300e883d756b2e4ec94e02791f39b04b522276138852cfc41d9fb7e904106099",
+        "dependencies": [
+          "cfg-if",
+          "libc",
+          "r-efi",
+          "rand_core"
+        ]
+      },
+      {
+        "name": "libc",
+        "version": "0.2.190",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "ce5d3ddc6d3fa000eb1536d85e147bfe31aacaba692ed6a876f95cb7c855be78"
+      },
+      {
+        "name": "num-traits",
+        "version": "0.2.19",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "071dfc062690e90b734c0b2273ce72ad0ffa95f0c74596bc250dcfd960262841",
+        "dependencies": [
+          "autocfg"
+        ]
+      },
+      {
+        "name": "proptest",
+        "version": "1.12.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "b8530004ccb15eae51c7e40009fbe317f341f804db54dc033eec1c50be28cfa0",
+        "dependencies": [
+          "bitflags",
+          "chacha20",
+          "core_detect",
+          "num-traits",
+          "rand",
+          "rand_xorshift",
+          "regex-syntax",
+          "unarray"
+        ]
+      },
+      {
+        "name": "r-efi",
+        "version": "6.0.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "f8dcc9c7d52a811697d2151c701e0d08956f92b0e24136cf4cf27b57a6a0d9bf"
+      },
+      {
+        "name": "rand",
+        "version": "0.10.3",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "65c9fb96cbc91e3478eaae79a69fcd3f1ae4ad052e471fe6732fff548984b4af",
+        "dependencies": [
+          "getrandom",
+          "rand_core"
+        ]
+      },
+      {
+        "name": "rand_core",
+        "version": "0.10.1",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "63b8176103e19a2643978565ca18b50549f6101881c443590420e4dc998a3c69"
+      },
+      {
+        "name": "rand_xorshift",
+        "version": "0.5.0",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "60aa6af80be32871323012e02e6e65f8a7cc7890931ae421d217ad8fe0df2ccf",
+        "dependencies": [
+          "rand_core"
+        ]
+      },
+      {
+        "name": "regex-syntax",
+        "version": "0.8.11",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "d6f6ff9a378485b298a5286656da665ba74413d36db0979633275d2e708145d4"
+      },
+      {
+        "name": "unarray",
+        "version": "0.1.4",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "eaea85b334db583fe3274d12b4cd1880032beab409c0d774be044d4480ab9a94"
+      }
+    ]
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 12,
+      "source": "examples/ch14-property/Cargo.toml",
+      "tag": null,
+      "included_sha256": "7b51966b7dabc2b309b5c0a375ef962857054e7c3b666870984c7c8abe084946",
+      "included_lines": 11
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 32,
+      "source": "examples/ch14-property/src/lib.rs",
+      "tag": "frequencies",
+      "included_sha256": "b55498cd9e47526c3333a249241d1bec37038e64c5b5b9aef134c9ab72ee8fd6",
+      "included_lines": 19
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 38,
+      "source": "examples/ch14-property/src/lib.rs",
+      "tag": "total-count",
+      "included_sha256": "eb05663b7fc22ce81e92a51d018935f732e62f4f37a7ea18c85ae51716ecd5bf",
+      "included_lines": 8
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 44,
+      "source": "examples/ch14-property/src/lib.rs",
+      "tag": null,
+      "included_sha256": "91ed50b6c98017ea586579736e4b7678f05a08f1bfc0741e23fed66df4635b2f",
+      "included_lines": 34
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 48,
+      "source": "examples/ch14-property/examples/counts.rs",
+      "tag": null,
+      "included_sha256": "2ee2859c2baf1deba16dfcd7e9a2287215a0fde711725b7ce4a9d886971b9c75",
+      "included_lines": 16
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 88,
+      "source": "examples/ch14-property/tests/properties.rs",
+      "tag": "property-imports",
+      "included_sha256": "a5eca82d195c028d7dd6e045e6086b7468f407af419fa66a8836290e74385b8d",
+      "included_lines": 8
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 98,
+      "source": "examples/ch14-property/tests/properties.rs",
+      "tag": "properties",
+      "included_sha256": "5df54416dc61f9470d1d9533af3e4dadd71343a8c06ee62b0cd39ac8d5ff5243",
+      "included_lines": 26
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 104,
+      "source": "examples/ch14-property/tests/properties.rs",
+      "tag": null,
+      "included_sha256": "8bd00a96c9f5ecfd3d3177b7c454a05fec61fcb1d4919adf4d9ae0e6d7134a15",
+      "included_lines": 39
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 120,
+      "source": "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.rs",
+      "tag": "broken-counter",
+      "included_sha256": "7b53c7a29ec2d594c8462f9cf429d95b549f6123ee558ac6c2b9e0eaa947f6d5",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 138,
+      "source": "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.rs",
+      "tag": "replay-config",
+      "included_sha256": "c6b7f3872fc60f0306f54f04cac1fd8d3ef1a088b31fb48676fa6c3a908aed52",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 142,
+      "source": "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.rs",
+      "tag": "failing-property",
+      "included_sha256": "f521c6d91500804d985ed001be16a4853ea31ca91b45c9ba0cf0cbf438b4cc34",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 148,
+      "source": "examples/ch14-property/fixtures/cargo-test-fail/Cargo.toml",
+      "tag": null,
+      "included_sha256": "ebc3d9aa27a31132637b473af0852b8d9e051e47d29653db1a81276160eb835a",
+      "included_lines": 14
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 154,
+      "source": "examples/ch14-property/fixtures/cargo-test-fail/src/lib.rs",
+      "tag": null,
+      "included_sha256": "97fa818396d46acd36e32715e76a8012796b341f072ffcbcb37d10e02f6f0169",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 158,
+      "source": "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.rs",
+      "tag": null,
+      "included_sha256": "7913e0baa3056fc27c5df700ca374027c78332d64220494284c94adb2fd80ca9",
+      "included_lines": 39
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 162,
+      "source": "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.expected",
+      "tag": null,
+      "included_sha256": "a0eb82bf3c0513a66d91ccd921064567b1cce9db1d3f7595b94574af8bdb0778",
+      "included_lines": 4
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 193,
+      "source": "examples/ch14-property/tests/regressions.rs",
+      "tag": "zero-regression",
+      "included_sha256": "e8eaf50e461235fbc3b477c1472c7a6b6e6bac44c199a9b65c046a84bf0a682b",
+      "included_lines": 8
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 203,
+      "source": "examples/ch14-property/tests/regressions.rs",
+      "tag": null,
+      "included_sha256": "bfb77238c68476fefd5908b8ad7939ab95d7ce98b2882294e74c0a9401981cc2",
+      "included_lines": 31
+    },
+    {
+      "chapter": "docs/chapters/17-05-lesson.md",
+      "line": 221,
+      "source": "examples/ch14-property/tests/composition_solution.rs",
+      "tag": null,
+      "included_sha256": "1a3cf96451b767e6a4ef3d915a24174bbdd343f877bf0555dec274e9a7f2e90f",
+      "included_lines": 33
+    }
+  ],
+  "owned_files": [
+    "examples/ch14-property/Cargo.toml",
+    "examples/ch14-property/examples/counts.rs",
+    "examples/ch14-property/fixtures/cargo-test-fail/Cargo.lock",
+    "examples/ch14-property/fixtures/cargo-test-fail/Cargo.toml",
+    "examples/ch14-property/fixtures/cargo-test-fail/src/lib.rs",
+    "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.expected",
+    "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.rs",
+    "examples/ch14-property/src/lib.rs",
+    "examples/ch14-property/tests/composition_solution.rs",
+    "examples/ch14-property/tests/properties.rs",
+    "examples/ch14-property/tests/regressions.rs"
+  ],
+  "commands": [
+    "cargo run -p ch14-property --example counts --locked",
+    "cargo test -p ch14-property --test properties --locked",
+    "cargo test --manifest-path examples/ch14-property/fixtures/cargo-test-fail/Cargo.toml --test overwritten_count --locked",
+    "cargo test -p ch14-property --test regressions --locked",
+    "cargo test -p ch14-property --test composition_solution --locked",
+    "cargo test -p ch14-property --locked"
+  ],
+  "loaded_closures": [
+    {
+      "target": "example counts",
+      "owned": [
+        "examples/counts.rs",
+        "src/lib.rs"
+      ],
+      "notes": "normal lib只有frequencies/count_of/total_count；無後文helper。"
+    },
+    {
+      "target": "--test properties",
+      "owned": [
+        "tests/properties.rs",
+        "src/lib.rs"
+      ],
+      "tests": 2,
+      "third_party": "proptest 1.12.0，std-only，default-features=false",
+      "notes": "64成功新case目標、生成域-3..4與長度0..32、兩獨立判準，預設persistence角色已教。"
+    },
+    {
+      "target": "--test regressions",
+      "owned": [
+        "tests/regressions.rs",
+        "src/lib.rs"
+      ],
+      "tests": 3
+    },
+    {
+      "target": "--test composition_solution",
+      "owned": [
+        "tests/composition_solution.rs",
+        "src/lib.rs"
+      ],
+      "tests": 1
+    },
+    {
+      "target": "cargo test -p ch14-property",
+      "owned": [
+        "src/lib.rs",
+        "tests/properties.rs",
+        "tests/regressions.rs",
+        "tests/composition_solution.rs",
+        "examples/counts.rs（可能編譯，不跑main）"
+      ],
+      "tests": 6,
+      "notes": "答案完整呈現後才整包test，不納隔離負例。"
+    },
+    {
+      "target": "isolated --test overwritten_count expected fail",
+      "owned": [
+        "fixtures/cargo-test-fail/src/lib.rs",
+        "fixtures/cargo-test-fail/tests/overwritten_count.rs",
+        "path依賴正常src/lib.rs"
+      ],
+      "expected": "minimal failing input: values = [\\n    0,\\n    0,\\n]",
+      "notes": "固定RngSeed20261014、None failure persistence，錯誤counter獨立，不將負例混正常tests。"
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "examples/ch14-property/src/lib.rs:4",
+      "finding": "同鍵get_mut累加、missing才insert；count_of不插零group，values()借usize總數不依map順序。原輸入長度界線保總和不溢位。"
+    },
+    {
+      "source": "docs/chapters/17-05-lesson.md:79",
+      "finding": "strategy非已生成Vec；range/length上界、proptest! in/config語法、successful cases而非test數量均先教；prop_assert_eq實際取值，本文只傳Copy。"
+    },
+    {
+      "source": "examples/ch14-property/tests/properties.rs:12",
+      "finding": "正群組+守恆與逐鍵從原清單direct count分開，oracle不依自身答案。7鍵完整覆蓋本策略域但未冒稱所有i32。"
+    },
+    {
+      "source": "examples/ch14-property/fixtures/cargo-test-fail/tests/overwritten_count.rs:21",
+      "finding": "Just0固定值不縮，Vec可縮長度；覆寫1對長2失敗、長1成功、長0成功，兩0反例合理。seed版本限制與failure persistence None說明正確。"
+    },
+    {
+      "source": "examples/ch14-property/tests/composition_solution.rs:11",
+      "finding": "copy left/right項目進joined後比較每鍵可加性；原輸入仍在、至多62筆。本文明說零實作也可滿足可加性，不能替代前兩性質。"
+    },
+    {
+      "source": "docs/assets/ch14/property-shrinking.svg",
+      "finding": "source/XML清楚標手工示意4→2→1，沒有冒充工具實際trace或數學唯一最小性。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:31:59.819Z"
+}

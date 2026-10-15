@@ -1,0 +1,127 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "14.8"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round14-async-foundations-cancellation-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round14-http-local-service-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round14-root-contract-followup.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round14-ch14.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14-followup.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch14.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/14-08-lesson.md": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+    "examples/ch11-async/stages/http-single-basic/Cargo.toml": "0e8d0918fdbfa744e9531f909e6f9ea85b75b5327099fa7bb3788f90688b9e6a",
+    "examples/ch11-async/http-single/src/lib.rs": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a",
+    "examples/ch11-async/stages/http-single-basic/src/config.rs": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7",
+    "examples/ch11-async/stages/http-single-basic/src/error.rs": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+    "examples/ch11-async/stages/http-single-basic/src/lib.rs": "d3342bdd072f51a26fff6b64f4728c61777833c03230d11ca123420d08b47553",
+    "examples/ch11-async/stages/http-single-basic/src/main.rs": "c60a35635b170b54abefd8107e38faf2989bef949b19620067903668f32f8d96",
+    "examples/ch11-async/stages/http-single-basic/tests/cli.rs": "cdc0405dc0b73167527febf7cbfdfc4b153ed0770582541ba18d1c04884a7f32",
+    "examples/ch11-async/http-single/Cargo.toml": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f",
+    "examples/ch11-async/http-single/src/reply.rs": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0",
+    "examples/ch11-async/http-single/src/config.rs": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7",
+    "examples/ch11-async/http-single/src/error.rs": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+    "examples/ch11-async/http-single/src/main.rs": "a7788a40e58427a6e6c41da1a367ffbefd86d3d8c489770405864a1fea96b295",
+    "examples/ch11-async/http-single/tests/cli.rs": "d3c0309aca5f2b611e782633decec1d9244ba7c15ebb7c410e50cfe750c47378",
+    "examples/ch11-async/http-single/examples/page_reply_solution.rs": "8bcbd80ad5b806409759c3bd74f0dce3494bce1e330652b0e67b89bab72569c5"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 3,
+      "quote": "上一節已分清 Response、HTTP通過與 body。本節保留相同規格，改用 async client：由一份工作依序等待回應、視選項等待 body，再輸出。這還不是同時檢查多個 URL 的工具。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 7,
+      "quote": "這次使用 **`reqwest::Client`**，不是 blocking module 的 Client。它保存連線設定與可重用的 **connection pool（連線池）**：同一 client 的多次請求有機會重用已建立的連線，不必每筆都重新建 client。這是資源重用的能力，不保證每次都能重用，也不是本節量出的效能結果。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 9,
+      "quote": "把 builder 工作獨立成普通 **build_client(direct, limit)**；caller 擁有 Client，再用 shared reference 借給 async inspect。inspect 接手這次的 Url，read_body 是 bool，完成後交回 owned Inspection。這項分工讓後面的本地測試能重用同一 client 與明確的期限。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 11,
+      "quote": "早期 `ch11-http-single-basic` 的完整 manifest：Tokio 仍用 rt／macros，增加本例連線所需 **`net`** 與已教的 time；尚未加入 JSON model："
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 19,
+      "quote": "普通 `client.get(url)` 建立 RequestBuilder。**`.send()`** 交回一份 Output 為 `Result<Response, reqwest::Error>` 的 future；`.send().await` 才取得這份結果。**`response.text()`** 接手 Response，交回一份 Output 為 `Result<String, reqwest::Error>` 的 future，再 await 取得完整文字。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 21,
+      "quote": "固定 reqwest 0.13.5 的 send 是**普通 future 工廠**，呼叫時便做請求與期限的準備，隨即 await。沿用14.2的區分，不能因為它交回 future，就把呼叫時點說成完全不做事。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 25,
+      "quote": "這份 async Client 的 **`.timeout(limit)` 是同一請求的總期限**：涵蓋連線到完整 body，redirect 或拿到 headers 不會重新給一次預算。若收到 headers 前逾時是 Request；已得到 status、讀 body 才失敗則是 Body。這與上一節 blocking send／text 各自等待的介面契約不同。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 29,
+      "quote": "本次 Inspection 增加 **`elapsed_ms: u128`**，保存非負的總毫秒數。它用14.5的 std Instant，從準備 GET 前量到建立報告前；若要求 body，包含等待它的時間。不含 parse_http_url、build_client 或之後的 writer 輸出，也不是 Tokio 的虛擬測試時鐘。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 39,
+      "quote": "設定與階段錯誤仍沿用上一節政策。以下是本版實際載入的全部 module，先給完整 `src/config.rs`、`src/error.rs`："
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 91,
+      "quote": "接著增加不同的資料需求：body 應是 `{\"title\":\"筆記\",\"revision\":3}`，要取得能獨立保存的 PageRecord。第10.7節已教 Serde／Deserialize／from_str，現在把它們接到已取得的 HTTP 報告；不因 HTTP200就假定 revision 必定是 i32。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 93,
+      "quote": "**PageRecord** 的 title 是 owned String，revision 是 i32。`#[derive(Deserialize)]` 依欄位解碼，沿用 `#[serde(deny_unknown_fields)]` 拒絕多出的欄位；缺欄位、JSON語法錯誤、型別不合也會失敗。文字 `\"3\"` 不會自動當成數字3。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 95,
+      "quote": "**ReplyError** 保留三個階段："
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 103,
+      "quote": "**decode_page(&inspection)** 先按這個順序檢查。`serde_json::from_str::<PageRecord>(text.as_str())` 借用文字並回傳 `Result<PageRecord, serde_json::Error>`；錯誤有 Debug／Display。成功結果的欄位全 owned，沒有把 title 借在 Inspection 裡，原報告結束後 PageRecord 仍可使用。"
+    },
+    {
+      "section_id": "14.8",
+      "path": "docs/chapters/14-08-lesson.md",
+      "line": 107,
+      "quote": "完成版改用 `ch11-http-single`，manifest 此時加入實際使用的 Serde／serde_json："
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

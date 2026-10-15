@@ -1,0 +1,13 @@
+{
+  "result": "PASS",
+  "process_exit_code": 0,
+  "scope": "Exact Rust/C/fixture tail of scripts/check.sh: intro workspace +two nested lesson workspaces +root fmt/strict Clippy/all-target tests/doctests +fixture/C checks. Docs/site acceptance runs separately after final nav; no claim those passed yet.",
+  "input_count": 2031,
+  "changed_inputs": [],
+  "stdout": "check-all-rust-final.stdout",
+  "stderr": "check-all-rust-final.stderr",
+  "fixture_summary": [
+    "已驗證 309 個故意失敗的教學範例",
+    "已驗證3個C11正常程式及1個指定編譯失敗"
+  ]
+}

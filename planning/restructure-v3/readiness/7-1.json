@@ -1,0 +1,104 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "7.1"
+  ],
+  "author": "author_v3_ch02",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round07-and14-root-wording-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round07-lifetimes.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-after.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-before.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07-crossref-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round07-ch07.md",
+    "planning/restructure-v3/reviews/first-reader-ch01/report-ch07.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/07-01-lesson.md": "e61b02fe9a59f512d953a679fbc6ea016f7631ffda0d859fa21abce9370d720b",
+    "examples/intro-workspace/lifetimes/examples/single_source.rs": "47bc47e5fad9def368243ea7a9d7138314d00e0b26157fd880c6d35c7886473d",
+    "examples/intro-workspace/lifetimes/Cargo.toml": "5a6a50a4a6c478dd29dd81e26874b7e7661433be82ce20aea2075dc7ea2fee41",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/ambiguous_output.rs": "7e62a1dfdd999fce950e211fdc46d87a58728537812d18dcb93b0714178fc4a5",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/ambiguous_output.expected": "62934d1cbb3455c6eb0b88cc241c3cfe346f3c34a05821382550391ab60d4c41",
+    "examples/intro-workspace/lifetimes/examples/source_basic/source/mod.rs": "080dd414cf1d1910d068fa2ef7aa2e411619d98ec6836e80c8973f83ed55020e",
+    "examples/intro-workspace/lifetimes/examples/source_basic/main.rs": "114cd0a438febb1fbbcc6a85531d5ee0e3b28955340ccd6b6a84670bb6bb4193",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/source_too_short.rs": "6511018dc9ab8f84c274305ca905bf81b8e98aa7fe4ba1c0b17fbbb64e002ced",
+    "examples/intro-workspace/lifetimes/fixtures/compile-fail/source_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/intro-workspace/lifetimes/examples/shorter_answer.rs": "423ecd42673632c505cc2570df66106d9f0a76a802182aa0e10294df4e96108b"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 3,
+      "quote": "第 3.5 節已知道：使用 reference 時，原資料必須仍有效。第 5.3 節的 `text.get(start..end)` 還讓我們取得借來的文字片段。現在要自己寫一個函式，從兩段文字中選一段借給呼叫者，不另建 String。呼叫者需要知道：保存這個結果時，哪份原文字必須繼續有效？"
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 7,
+      "quote": "先只接收一段文字，原樣交回借用。`same` 沒有建立新文字，也沒有接手 String："
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 15,
+      "quote": "這種簽名可以不寫 lifetime annotation（標註）。Rust 的 **lifetime elision** 是一組省略標註時的推導規則：當函式只有一個輸入 lifetime，省略的輸出 lifetime 就連到它。這不是 reference 沒有 lifetime，而是這個來源關係已足夠明確。"
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 39,
+      "quote": "接下來要選 **byte 長度較長**的一段；等長時選第一段。沿用第 5.3 節的 `str.len()`，這不是比較中文字數，也不是比較 lifetime。"
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 47,
+      "quote": "放進第 1.2 節的獨立練習專案 `src/main.rs`，執行 `cargo check`，會得到 **E0106**：輸出的借用要連到哪個輸入，簽名沒有說明。對一般函式，省略的各個 reference 輸入先分別具有自己的 lifetime；這裡有兩個可能來源，不能套用前面的唯一輸入規則。"
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 57,
+      "quote": "**lifetime parameter** 是用來描述借用有效範圍之間關係的泛型參數。它以單引號開頭，例如 `'a`；與第 5.1 節的型別參數一樣，先在函式名稱後的尖括號宣告，再用於簽名。不過它描述的是有效範圍關係，不是資料型別。"
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 71,
+      "quote": "outside 先保存 `Rust tutorial`，內層 inside 保存 `hi`。在內層選擇並顯示結果，兩份來源都還有效："
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 86,
+      "quote": "這個 folder example 的根是 `examples/source_basic/main.rs`。其中的 `mod source;` 載入旁邊的 `source/mod.rs`，`use crate::source::...` 仍依第 2.6 節從**這個 example 的根**找到函式。完整 helper 只有 same 與 longer："
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 113,
+      "quote": "把結果帶到內層外面，情況就不同。下面是完整失敗例，函式已經有 `'a`，不是忘了補標註："
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 119,
+      "quote": "執行 `cargo check` 會得到 **E0597**：inside 在 block 結束時結束，selected 卻在外面還要使用。即使本次 outside 比較長，呼叫者仍依 longer 的簽名檢查兩個可能來源，不能把本次內容的比較結果當成較窄的來源契約。"
+    },
+    {
+      "section_id": "7.1",
+      "path": "docs/chapters/07-01-lesson.md",
+      "line": 131,
+      "quote": "寫 `shorter`，借回 byte 長度較短的一段，等長時選第一段。用 outside 的 `Rust tutorial` 與內層 inside 的 `hi`，交換參數測兩次；都應印出 hi。再用 ab、CD 檢查等長規則。結果仍可能來自任一參數，因此保留兩來源的 lifetime 關係。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

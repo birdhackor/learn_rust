@@ -1,0 +1,374 @@
+{
+  "review_id": "technical-early-round04-patterns-prefix",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/04-01-lesson.md",
+    "docs/chapters/04-02-lesson.md",
+    "docs/chapters/04-03-lesson.md"
+  ],
+  "reader_background": "Basic Python plus actual chapters1–3 main prose already read. No 4.4–4.7, Option, Result, Vec, generics or derive prerequisite.",
+  "independent_initial": true,
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary technical, actual-selected-target closure, first-use prerequisite, output or expected-error-code mismatch found in 4.1–4.3.",
+  "independence": "No chapter4 author ledger, validation/freeze conclusions, first-reader, continuity/audit, peer reviews, or historical issues read before sealing. Root's unrelated notice about a chapter3 Copy followup is not used as chapter4 evidence.",
+  "method": "Sequential whole-page technical reread and all actual referenced Rust/manifests/fixtures; static output, type and pattern reasoning. Not blind first-read, reader experiment or browser validation.",
+  "execution": {
+    "cargo_rustc_clippy_test_or_fixture_commands": [],
+    "reason": "No source uncertainty required execution; author validation results not used as independent evidence.",
+    "browser_visual": false
+  },
+  "source_snapshot_at_utc": "2026-10-15T07:00:41.505813+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "04687339ba4b38681e0c7e33e19851a3b0272ec9dfe283ead91454ce939b956b",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/chapters/04-01-lesson.md": "9487c85aed9cc3682591a88d62aaf046dd06abed9b6927624a606bfd3a3a697f",
+    "docs/chapters/04-02-lesson.md": "262f9c33eb424515abb9be65146314d24d08650610a54674ce7977f43cfcf1da",
+    "docs/chapters/04-03-lesson.md": "42d2fb6ad95eeacaf4d01ed3a84155f7f065763ded9bbb1538212671849b5352",
+    "examples/intro-workspace/Cargo.lock": "814f49ab55f61166079a9a123eb144402c7fe7940480f502498a7538cc66d761",
+    "examples/intro-workspace/Cargo.toml": "b85720032a875d06ca88e96607c0fbdf16cfb1b90507788c5ffeb76e6913e6b7",
+    "examples/intro-workspace/patterns/Cargo.toml": "1cc36b3f8a432967cf2c5a4e0bd7e6046bc488f0ca4420aa062ea12801e8237a",
+    "examples/intro-workspace/patterns/examples/destructure.rs": "3f2170e715dcb87d67258964d6f3eb45892951677d76a4ea46b65d94d7a51b87",
+    "examples/intro-workspace/patterns/examples/destructure_answer.rs": "e749b6afda35408a48324df952ac96e516c659d4cfdf6d7809cd04ce1ed0e163",
+    "examples/intro-workspace/patterns/examples/enums.rs": "0ce9a9d64a262dfcb6a3704a414b75cb9e43ec5a35c9f78b8cd64e431da9cbae",
+    "examples/intro-workspace/patterns/examples/enums_answer.rs": "a3e4a1c2f7047c7fc09662de58dbe429df7bd6dda678cd0e9b830c9ea3ffc558",
+    "examples/intro-workspace/patterns/examples/match_answer.rs": "498ec18345a8bf0687106d369e014ab0b6a70a75d10b405850d771f06b80c734",
+    "examples/intro-workspace/patterns/examples/match_numbers.rs": "d53e1f7c5df21c34c220decffcc7f9db12293a5199d3d4cdf7bd4082fc2a6c28",
+    "examples/intro-workspace/patterns/examples/match_quotes.rs": "a7b5f8b04a4d1dca0c239e4af556a8073e75b3bf1970ab63e17c4e7c956ebe42",
+    "examples/intro-workspace/patterns/examples/nested_patterns.rs": "7af61eebb9fbc18a62e95722791b9e8005a55d704df4096be6388c16277ff14e",
+    "examples/intro-workspace/patterns/examples/pattern_places.rs": "4b6838c8ae6dacbee9079a5cc4793b7abfa894733f97df35a6fca153783ceb5f",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/arm_type.rs": "0ca3497d2d23c5bf804323202656294b9fceec74298fdfcc8ab92fb2a131b099",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/missing_variant.rs": "2cfeca3dd70afac5f0d8577265268af6864081a7556f8c95521344f31fdd2feb",
+    "examples/intro-workspace/patterns/fixtures/compile-fail/refutable_let.rs": "9ba10b51182aeee8694a7edda483f25d8be337a8ace34ba8a167c0ce5cb39ee3",
+    "examples/intro-workspace/patterns/src/main.rs": "9d77c241170f05328e057efed81ad48b15cb9ce56ca87821ccf28a1c05365fc0",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/04-01-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/enums.rs:definition",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-01-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/enums.rs:values",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-01-lesson.md",
+      "reference": "examples/intro-workspace/patterns/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-01-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/enums.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-01-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/enums_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-02-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/match_numbers.rs:function",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-02-lesson.md",
+      "reference": "examples/intro-workspace/patterns/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-02-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/match_numbers.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-02-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/match_quotes.rs:show",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-02-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/match_quotes.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-02-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/missing_variant.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-02-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/arm_type.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-02-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/match_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/destructure.rs:tuple-array",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/destructure.rs:struct",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/destructure.rs:rest",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/destructure.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/pattern_places.rs:parameter",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/pattern_places.rs:for",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/pattern_places.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/nested_patterns.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/fixtures/compile-fail/refutable_let.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/04-03-lesson.md",
+      "reference": "examples/intro-workspace/patterns/examples/destructure_answer.rs",
+      "file_exists": true
+    }
+  ],
+  "compile_closure": {
+    "package": "intro-patterns",
+    "package_manifest": "examples/intro-workspace/patterns/Cargo.toml",
+    "fields": [
+      "name",
+      "version",
+      "edition"
+    ],
+    "external_dependencies": false,
+    "library_exists": false,
+    "build_rs_exists": false,
+    "repo_cargo_config_exists": false,
+    "selected_success_targets": [
+      "enums",
+      "enums_answer",
+      "match_numbers",
+      "match_quotes",
+      "match_answer",
+      "destructure",
+      "pattern_places",
+      "nested_patterns",
+      "destructure_answer"
+    ],
+    "owned_sources": "Each target is one examples/<name>.rs containing every model/helper/main it uses; no mod/include or implicit library.",
+    "new_allow": "#[allow(dead_code)] on enum in enums/enums_answer only; meaning/scope/reason taught in4.1:17 before full source use, following general allow form from2.7.",
+    "unselected_future_sources": "New examples added later to same no-lib package do not become prerequisites for these narrow commands."
+  },
+  "documented_commands_static_checked": [
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "enums",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "enums_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "match_numbers",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "match_quotes",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "match_answer",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "destructure",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "pattern_places",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "nested_patterns",
+      "--locked"
+    ],
+    [
+      "cargo",
+      "run",
+      "--manifest-path",
+      "examples/intro-workspace/Cargo.toml",
+      "-p",
+      "intro-patterns",
+      "--example",
+      "destructure_answer",
+      "--locked"
+    ]
+  ],
+  "static_outputs": {
+    "enums": "Fixed message: Missing, Amount120, Rejected code37 established; no data-dependent output claimed.",
+    "enums_answer": "Fixed message: Waiting and Ready count3 established.",
+    "match_numbers": "20,10,0 for tiers0,1,2.",
+    "match_quotes": "Missing message, Amount0, Amount120, Rejected37 distinct.",
+    "match_answer": "Waiting statistical contribution0, Ready3.",
+    "destructure": "Tuple subtotal360,array ends120/40,Order price80/count2,only price200.",
+    "pattern_places": "Tuple parameter subtotal360; two order subtotals sum520.",
+    "nested_patterns": "Request::Order subtotal360; Cancel cancellation message.",
+    "destructure_answer": "Tuple/Order subtotals160, first+last140; three numeric assertions correct."
+  },
+  "fixture_static_checks": [
+    {
+      "name": "missing_variant.rs",
+      "error": "E0004",
+      "reason": "Quote::Missing omitted from match of the full enum type."
+    },
+    {
+      "name": "arm_type.rs",
+      "error": "E0308",
+      "reason": "Exhaustive numeric match arms produce incompatible i32/bool."
+    },
+    {
+      "name": "refutable_let.rs",
+      "error": "E0005",
+      "reason": "Ordinary let uses Amount pattern that can fail for Missing."
+    }
+  ],
+  "prerequisite_judgments": [
+    {
+      "point": "Parameter tuple-pattern signature",
+      "evidence": "4.3:64 says the parameter-name position can be a pattern and receives one(i32,i32); earlier1.6 taught fn parameter-name:type and1.8 tuple type. This directly composes into fn subtotal((price,count):(i32,i32));4.3:70 reinforces nesting and call shape.",
+      "status": "sufficient, not a required new arbitrary rule deferred until70"
+    },
+    {
+      "point": "Copy/move in numeric destructuring",
+      "evidence": "All destructured payloads here are i32/bool; previously taught Copy/owned parameter behavior applies. Text4.3:37 explicitly defers String pattern ownership to4.5, without using it now.",
+      "status": "sufficient; no future borrow-pattern API needed"
+    },
+    {
+      "point": "Missing vs Amount0 and statistical0",
+      "evidence": "4.1:3/25/37 distinguishes absent data and real0;4.2:74 observes Amount0 arm;4.2:96 explicitly chooses0 only as Waiting's statistical result.",
+      "status": "sufficient; no reversal of representation rationale"
+    }
+  ],
+  "limits": [
+    "No command or expected-failure diagnostic was executed; results are static checks.",
+    "No SVGs/images are part of these three pages; no browser/layout check performed.",
+    "Only actual selected targets were reviewed; 4.4–4.7 bodies/unused source not read as prerequisites."
+  ],
+  "sealed_at_utc": "2026-10-15T07:02:21.945699+00:00",
+  "metadata_hashes_at_seal": {
+    "examples/intro-workspace/Cargo.toml": "b85720032a875d06ca88e96607c0fbdf16cfb1b90507788c5ffeb76e6913e6b7",
+    "examples/intro-workspace/Cargo.lock": "814f49ab55f61166079a9a123eb144402c7fe7940480f502498a7538cc66d761"
+  }
+}

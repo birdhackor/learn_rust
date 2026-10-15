@@ -1,0 +1,41 @@
+{
+  "reviewed_status": "accepted",
+  "scope": "one optional supplement after3.8, counted separately from131canonical",
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "file_sha256": {
+    "docs/supplements/python-javascript-mutability.md": "585548b715f824905c562c0a240ed5a2408fe8c707a52ca3aa4c22969e2d7b20",
+    "examples/intro-workspace/ownership/examples/mutability_comparison.rs": "47abde143fd22a9b3ca6ab2d0b6770b3aba481767b42b909274d35a61ac29c1e",
+    "examples/intro-workspace/ownership/Cargo.toml": "430381f73faf2bed4ee8b38db95d144c7274e47cd75a53515dc9e3e0a42df81b",
+    "examples/intro-workspace/ownership/fixtures/comparisons/names_and_objects.py": "aa453c1322033fdb4c5b4d18af275455822d51b5b5f426178dbf01607172c622",
+    "examples/intro-workspace/ownership/fixtures/comparisons/const_binding.js": "fe4dce7f84e63fcbafb5c06ea5ce00ef59a93675372fe6948185ce6e38269a8a",
+    "examples/intro-workspace/Cargo.toml": "5af920e23475dff3a979436e5c5e49e87fee9a0919be1b6d615c6848e797f304",
+    "examples/intro-workspace/Cargo.lock": "041088f61f048d2ddf8be67bc0d952c69395b47e650561e84525f838c4f2349d"
+  },
+  "teaching_positions": [
+    {
+      "path": "docs/supplements/python-javascript-mutability.md",
+      "line": 7,
+      "quote": "Python 的指派讓名稱綁到物件；一般名稱之後可以重新綁定。物件本身則依型別有不同規則：list 可以修改內容，str 不可以修改既有字串內容。這裡的 mutable 或 immutable 描述物件，不是名稱能否重新指派。"
+    },
+    {
+      "path": "docs/supplements/python-javascript-mutability.md",
+      "line": 37,
+      "quote": "下面的 `{ count: 2 }` 建立有 count 屬性的 object。alias 與 order 指到同一個 object；`alias.count += 1` 改的是這個 object 的屬性。 `console.log(...)` 將括號內的值顯示到終端。"
+    },
+    {
+      "path": "docs/supplements/python-javascript-mutability.md",
+      "line": 75,
+      "quote": "reference 這個 binding 沒有 mut，也能提供 append 所需的修改借用，因為它持有的是 &mut String。它沒有換成另一份 reference，修改的是借來的 String。接著 view 是 &str，只借讀；main 在最後一次使用 view 之後才再追加文字，避免與仍在使用的 shared 借用衝突。"
+    }
+  ],
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/supplement-mutability.md",
+    "planning/restructure-v3/reviews/technical-early/supplement-mutability-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/supplement-mutability.md",
+    "planning/restructure-v3/reviews/continuity-late/supplement-mutability-followup.md"
+  ],
+  "execution_evidence": "planning/restructure-v3/verification/supplement-mutability-execution.json",
+  "root_acceptance": "Independent full initial reports plus optional console output role followups adjudicated; existing three programs actually executed and outputs match. AI/static/visual is not human usability proof."
+}

@@ -393,7 +393,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "ch11-cancellation-basic"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
+name = "ch11-cancellation-steps"
+version = "0.1.0"
+dependencies = [
+ "ch11-tasks",
+ "tokio",
+]
+
+[[package]]
 name = "ch11-foundations"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
+name = "ch11-foundations-steps"
 version = "0.1.0"
 dependencies = [
  "tokio",
@@ -421,6 +443,25 @@ dependencies = [
 ]
 
 [[package]]
+name = "ch11-http-single-basic"
+version = "0.1.0"
+dependencies = [
+ "clap",
+ "reqwest",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "ch11-local-basic"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "ch11-http-single",
+ "tokio",
+]
+
+[[package]]
 name = "ch11-local-service"
 version = "0.1.0"
 dependencies = [
@@ -437,7 +478,29 @@ dependencies = [
 ]
 
 [[package]]
+name = "ch11-tasks-basic"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
 name = "ch11-timing"
+version = "0.1.0"
+dependencies = [
+ "ch11-foundations",
+ "tokio",
+]
+
+[[package]]
+name = "ch11-timing-clock"
+version = "0.1.0"
+dependencies = [
+ "tokio",
+]
+
+[[package]]
+name = "ch11-timing-steps"
 version = "0.1.0"
 dependencies = [
  "ch11-foundations",
@@ -512,6 +575,35 @@ dependencies = [
  "quote",
  "syn 2.0.119",
 ]
+
+[[package]]
+name = "ch15-ffi-buffer"
+version = "0.1.0"
+dependencies = [
+ "cc",
+]
+
+[[package]]
+name = "ch15-ffi-label"
+version = "0.1.0"
+dependencies = [
+ "cc",
+]
+
+[[package]]
+name = "ch15-ffi-scalar"
+version = "0.1.0"
+dependencies = [
+ "cc",
+]
+
+[[package]]
+name = "ch15-unsafe-stages"
+version = "0.1.0"
+
+[[package]]
+name = "ch16-future-stages"
+version = "0.1.0"
 
 [[package]]
 name = "chacha20"
@@ -615,6 +707,10 @@ dependencies = [
  "bytes",
  "memchr",
 ]
+
+[[package]]
+name = "concurrency-stages"
+version = "0.1.0"
 
 [[package]]
 name = "constant_time_eq"
@@ -1340,6 +1436,10 @@ name = "lru-slab"
 version = "0.1.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "4050469837a6ff301cd14c1f8f24f88549e6d548f24f64e2148eb0f72cebc51f"
+
+[[package]]
+name = "macro-basics"
+version = "0.1.0"
 
 [[package]]
 name = "matchers"

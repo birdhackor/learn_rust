@@ -1,0 +1,86 @@
+[
+  {
+    "path": "examples/ch15-projects/materials/duplicate-demo/.saved/notes-c.txt",
+    "bytes_hex": "527573740a",
+    "size": 5,
+    "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/materials/duplicate-demo/different.txt",
+    "bytes_hex": "727573740a",
+    "size": 5,
+    "sha256": "87ee07307593493b96730dcbb36fd51e9fa4ba189696dad60758e89e6e7750bf",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/materials/duplicate-demo/empty-a.bin",
+    "bytes_hex": "",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/materials/duplicate-demo/empty-b.bin",
+    "bytes_hex": "",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/materials/duplicate-demo/notes-a.txt",
+    "bytes_hex": "527573740a",
+    "size": 5,
+    "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/materials/duplicate-demo/sub/notes-b.txt",
+    "bytes_hex": "527573740a",
+    "size": 5,
+    "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/.saved/notes-c.txt",
+    "bytes_hex": "527573740a",
+    "size": 5,
+    "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/different.txt",
+    "bytes_hex": "727573740a",
+    "size": 5,
+    "sha256": "87ee07307593493b96730dcbb36fd51e9fa4ba189696dad60758e89e6e7750bf",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/empty-a.bin",
+    "bytes_hex": "",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/empty-b.bin",
+    "bytes_hex": "",
+    "size": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/notes-a.txt",
+    "bytes_hex": "527573740a",
+    "size": 5,
+    "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  },
+  {
+    "path": "examples/ch15-projects/duplicate-finder/fixtures/duplicate-demo/sub/notes-b.txt",
+    "bytes_hex": "527573740a",
+    "size": 5,
+    "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50",
+    "read_method": "2026-10-15 complete raw bytes printed; fixture freeze added after source read"
+  }
+]

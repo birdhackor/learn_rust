@@ -1,0 +1,12 @@
+{
+  "sealed_utc": "2026-10-15T07:27:40.166824+00:00",
+  "scope": "independent actual chapter4.4–4.7 initial",
+  "necessary_findings": 0,
+  "optional_findings": 1,
+  "files": {
+    "round04-ch04b.md": "925173e8426209dd22d68c2b1d6ec87a40f61c559257c8fd816033598b608e02",
+    "round04-ch04b.json": "4b8bfc493bf152f8359bf83a0250b34eb8b073c6108b4bbf00deb5d5422e4d75",
+    "round04-ch04b-sourcehashes.json": "d2c816f8db57a6a8fc3548ae231913d165af356705781bfa9e5761669c39b6bf"
+  },
+  "source_changes": []
+}

@@ -1,0 +1,11 @@
+{
+  "captured_utc": "2026-10-15T09:54:57.393167+00:00",
+  "known_adopted": "C10-01 after own11initial sealed; narrow followup not independentfinding",
+  "changes_vs_initial": [
+    {
+      "path": "docs/chapters/10-01-lesson.md",
+      "before": "2d8fdc5ae52f16c2bce057f6b59f272f79af58d051e932a88ee8b1d552aa6564",
+      "after": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab"
+    }
+  ]
+}

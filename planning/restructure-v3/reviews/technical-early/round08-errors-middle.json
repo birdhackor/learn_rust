@@ -1,0 +1,713 @@
+{
+  "review_id": "technical-early-round08-errors-middle",
+  "role": "independent technical reviewer, not author",
+  "scope": [
+    "docs/chapters/08-03-lesson.md",
+    "docs/chapters/08-04-lesson.md",
+    "docs/chapters/08-05-lesson.md"
+  ],
+  "independent_initial": true,
+  "reader_background": "Basic Python and actual1–7,8.1/8.2. Reviewer previously sealed9.1/9.2 in separate assigned wave, but none of their concepts used to fill8.3–8.5 prerequisites. No8.6,9.3onward,10/11 draft or source used.",
+  "independence": "No chapter8 author verification/ledger,continuity,reader,peer or known-findings report read before initial seal.",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "No necessary or optional technical,first-use,configuration/sourceclosure,format/conversion/parsing/AsRef/ToOwned contract,output/answer or test-count issue found.",
+  "method": "Sequential whole-page technical reread;allactualselectedfullsource read or exactbyte-compared to fully read identical helper;statictype/ownership/API/output reasoning. Not blindfirstread,readerexperiment or browserverification.",
+  "execution": {
+    "cargo_rustc_clippy_tests": [],
+    "browser_visual": false,
+    "author_execution_used_as_own": false,
+    "python_checks": [
+      "hash/snippet marker paths",
+      "exact3fieldmanifest/no library/buildscript",
+      "18actualhelperfile bytes compared against fully readbaseversions"
+    ]
+  },
+  "source_snapshot_at_utc": "2026-10-15T08:09:33.607527+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/chapters/08-03-lesson.md": "3502f84b5de589e26c1c6d6ee64bfc1f7da197b8ca6de40f78924a1580d29a66",
+    "docs/chapters/08-04-lesson.md": "10b3fbb207966ec067ca57a26e4d55d47d906a8e715b1fcb86a44999f5a30d8e",
+    "docs/chapters/08-05-lesson.md": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+    "examples/intro-workspace/Cargo.lock": "549d3112349bbc321ffa7c0c5ebdf985532bac5953f3c6a6539ef899f28adfbb",
+    "examples/intro-workspace/Cargo.toml": "e9e3773e89e2d210c65b8c5972cc1dc7d36a2e1cda6cb202c07747fb8b83b058",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/as_ref.rs": "1933b8b6e325c5c570c6f19f4604e25d11ced9fd96df4bb960a868e3412f8af4",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/main.rs": "70dbc233eab6b85da036650ec766d80f7a0e469262f2fc945704ddbce9f5f43f",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/conversions/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/conversions/main.rs": "a5582724872889ecb842f271e9eff1c2d5c3ef4cfeedf47acf6b83953d9f6526",
+    "examples/intro-workspace/error-stages/examples/conversions/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/display/main.rs": "1dc1d6b642bde7ec3e428612a4a2106baab26f766f5d4c949efd445f3a55d059",
+    "examples/intro-workspace/error-stages/examples/display/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/display_answer.rs": "0e82ea0752a59936003cc0f6b3afd52d5dc0ed21fae84d385c37d4ab3edc5c9e",
+    "examples/intro-workspace/error-stages/examples/from_into.rs": "70c1bdf44bd335690bd043a8cfffbba6d629bbf301caba1d83877e228ad7aa27",
+    "examples/intro-workspace/error-stages/examples/integer_parsing.rs": "3fae898f10055629512fdd9ab7da45bf6249e612adbb6760262f8069d89e26d0",
+    "examples/intro-workspace/error-stages/examples/owned_text/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/owned_text/main.rs": "4626ae246fd6116014787dd45396a2fe6e4a80a8a688fd9fdbb217e5f365b816",
+    "examples/intro-workspace/error-stages/examples/owned_text/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/parsing/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/parsing/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/parsing/main.rs": "ab072061fe922054bff2adfed8d42657bc079390cf70b1893a1a3a44be2d75f8",
+    "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "examples/intro-workspace/error-stages/examples/parsing/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/main.rs": "df24380e4cd1eb4df14e1866c65a0068a5b9853ffdbf553962139163aef394ee",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "document": "docs/chapters/08-03-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs:count-display",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-03-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/display/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-03-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-03-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-03-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-03-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/display_answer.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/from_into.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs:count-model",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs:count-try-from",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs:count-from",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversions/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversions/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversions/formatting/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversion_answer/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversion_answer/conversions/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversion_answer/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/conversion_answer/formatting/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/integer_parsing.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs:parse-count-error",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs:parse-error-from",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs:count-from-str",
+      "file_exists": true,
+      "start_exists": true,
+      "end_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/as_ref.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/owned_text/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/Cargo.toml",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing/conversions/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing/formatting/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/owned_text/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/owned_text/formatting/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing_answer/main.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing_answer/parsing/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing_answer/conversions/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing_answer/policy/mod.rs",
+      "file_exists": true
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "reference": "examples/intro-workspace/error-stages/examples/parsing_answer/formatting/mod.rs",
+      "file_exists": true
+    }
+  ],
+  "command_review": [
+    {
+      "document": "docs/chapters/08-03-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example display --locked"
+    },
+    {
+      "document": "docs/chapters/08-03-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example display --locked"
+    },
+    {
+      "document": "docs/chapters/08-03-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example display_answer --locked"
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example from_into --locked"
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversions --locked"
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversions --locked"
+    },
+    {
+      "document": "docs/chapters/08-04-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversion_answer --locked"
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example integer_parsing --locked"
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example parsing --locked"
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example as_ref --locked"
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example owned_text --locked"
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "command": "cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example parsing --locked"
+    },
+    {
+      "document": "docs/chapters/08-05-lesson.md",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example parsing_answer --locked"
+    }
+  ],
+  "actual_helper_identities": [
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/conversion_answer/conversions/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/conversion_answer/formatting/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/conversion_answer/policy/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/conversions/formatting/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/conversions/policy/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/owned_text/formatting/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/owned_text/policy/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/parsing/conversions/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/parsing/formatting/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/parsing/policy/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/parsing_answer/conversions/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/parsing_answer/formatting/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/parsing_answer/parsing/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs"
+    },
+    {
+      "actual_path": "examples/intro-workspace/error-stages/examples/parsing_answer/policy/mod.rs",
+      "identical_to_fully_read": "examples/intro-workspace/error-stages/examples/display/policy/mod.rs"
+    }
+  ],
+  "selected_target_closure": {
+    "package": "intro-error-stages",
+    "manifest": "examples/intro-workspace/error-stages/Cargo.toml",
+    "no_library": true,
+    "no_build_script": true,
+    "dependencies": [],
+    "single_file_targets": [
+      {
+        "target": "display_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/display_answer.rs"
+        ]
+      },
+      {
+        "target": "from_into",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/from_into.rs"
+        ]
+      },
+      {
+        "target": "integer_parsing",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/integer_parsing.rs"
+        ]
+      },
+      {
+        "target": "as_ref",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/as_ref.rs"
+        ]
+      }
+    ],
+    "folder_targets": [
+      {
+        "target": "display",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/display/main.rs",
+          "examples/intro-workspace/error-stages/examples/display/policy/mod.rs",
+          "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs"
+        ]
+      },
+      {
+        "target": "conversions",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/conversions/main.rs",
+          "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs",
+          "examples/intro-workspace/error-stages/examples/conversions/policy/mod.rs",
+          "examples/intro-workspace/error-stages/examples/conversions/formatting/mod.rs"
+        ]
+      },
+      {
+        "target": "conversion_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/conversion_answer/main.rs",
+          "examples/intro-workspace/error-stages/examples/conversion_answer/conversions/mod.rs",
+          "examples/intro-workspace/error-stages/examples/conversion_answer/policy/mod.rs",
+          "examples/intro-workspace/error-stages/examples/conversion_answer/formatting/mod.rs"
+        ]
+      },
+      {
+        "target": "parsing",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/parsing/main.rs",
+          "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs",
+          "examples/intro-workspace/error-stages/examples/parsing/conversions/mod.rs",
+          "examples/intro-workspace/error-stages/examples/parsing/policy/mod.rs",
+          "examples/intro-workspace/error-stages/examples/parsing/formatting/mod.rs"
+        ]
+      },
+      {
+        "target": "owned_text",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/owned_text/main.rs",
+          "examples/intro-workspace/error-stages/examples/owned_text/policy/mod.rs",
+          "examples/intro-workspace/error-stages/examples/owned_text/formatting/mod.rs"
+        ]
+      },
+      {
+        "target": "parsing_answer",
+        "loaded_owned_sources": [
+          "examples/intro-workspace/error-stages/examples/parsing_answer/main.rs",
+          "examples/intro-workspace/error-stages/examples/parsing_answer/parsing/mod.rs",
+          "examples/intro-workspace/error-stages/examples/parsing_answer/conversions/mod.rs",
+          "examples/intro-workspace/error-stages/examples/parsing_answer/policy/mod.rs",
+          "examples/intro-workspace/error-stages/examples/parsing_answer/formatting/mod.rs"
+        ]
+      }
+    ],
+    "test_counts": {
+      "display": {
+        "policy": 2,
+        "formatting": 1,
+        "total": 3
+      },
+      "conversions": {
+        "policy": 2,
+        "formatting": 1,
+        "conversions": 3,
+        "total": 6
+      },
+      "parsing": {
+        "policy": 2,
+        "formatting": 1,
+        "conversions": 3,
+        "parsing": 4,
+        "total": 10
+      }
+    },
+    "inline": "Everyloadedhelperincludingtestbodyshownwithinitsownpage,withfoldsactuallyinspected/bytecompared. No aliases neededbythisscope,nopropagation,?operator,stdError orfutureconversion APIs hiddeninsource. Allcommandsselectspecific--example;nofuturetargetorlibloads.",
+    "configuration": "Sameknownthreefieldmanifest,no dependency/features. Members/lockmetadataonly;normalrunexcludescfgtestbody. No broadfmt/Clippy/alltargets commands or newallowattribute."
+  },
+  "concept_evidence": [
+    {
+      "concept": "Display/fmt/Formatter and formatter-result contract",
+      "identity": "8.3:7–13 definesDisplayvsDebug,{}use,std::fmt formattingmoduleandfmtmethodborrow;17–28definesFormatterstate,outer&mutvsinner'_ andfmt::Result aliasResult<(),fmt::Error>.",
+      "need": "8.3:3 shareduserfacingerrorwordinginoneplace,ratherthanrepeatingcallermatchsentences.",
+      "operation": "34write!destination/format/value/no newline/returnsfmtResult beforeDisplayimpl39;36borrowedselfpatterns& i32 andarmtailresults.42format!returnsownedStringwithoutprintingandborrowsvalues.",
+      "evidence_and_limits": "Negative(-3)debugvsuserChinesevsstoredString;businessCountErrorisnotfmtwriteerror30. Failurepropagationiswrite!result,notinventingfmtErrorforinvalidcount. Fullfmtfailurepathnotmockedexplicit92.7.2/7.3lifetimeplaceholderandreceiverrolesactualprior.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "From/Into/i64 and TryFrom validated Count",
+      "identity": "8.4:9–19 definesFromsourceparameter/frombyvalue/infalliblemeaningfulconversion,i64representability,Into destination,From→Intoonlydirection,targetinference/prelude.37–39privatefieldandnonCopyCount;47–57TryFromResultandassociatedError beforeimpl.",
+      "need": "8.4:3 ordinaryi32doesnotcommunicatevalidation;Count'ssafe publiccreationpreserves0..100invariant.",
+      "operation": "TryFromcallschecked_countandconstructsSelfonlyOk;value(&self)returnsnumberwithoutmutation,From<Count>fori32consumestypedCount. Bothintegerconversionstylespreserve3;valid0/3/100roundtrip,invalid−1/101retainreason.",
+      "evidence_and_limits": "Countfieldsprivateoutsideconversions;publicvaluegettersharedonly.90explicitlyqualifiesmoduleinternalscanaccessfieldandmustmaintainrule. No invalidFromthatpanics,no lossyascast,no hiddenconstructor/Copy/Defaultderivation.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "FromStr/parse and layered errors",
+      "identity": "8.5:9 definesFromStrmethodselftype/Errassociated;11declaresi32decimalform/sign/no surroundingwhitespace/representability;13ParseIntErrorcapabilities;15importandparse::<i32>beforefirstfullprogram20.",
+      "need": "Textformatfailureabcvsrepresentableinteger101failingCountpolicyneedseparatediagnosticcategories.",
+      "operation": "38–47ParseCountErrorInteger/Rangepreserveoriginalerrorvalues,Self::VariantandborrowedDisplay;53infallibleFromwrapping;63–69CountFromStrexplicitparsei32thenTryFromwithout?.",
+      "evidence_and_limits": "Malformedempty/abc/3space/overflowclassifiedInteger;−1/101classifiedRangewithpayload. Countownednumberdoesnotborrowtext,validatedbyinnerStringscopeendtest. Displaytextnotassumedparseableback91.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "AsRef generic view, nested reference and Borrow comparison",
+      "identity": "8.5:95–99AsRef<T>/as_ref(&self)->&Tcheapinfallibleview,noStringallocation;generic& T bodylen;bothStringand&strsupport,borrowedargumentis&&str.",
+      "need": "Usecommontextbyteviewwithoutparsingorowningtextcopy.",
+      "operation": "Label{id,text}derivedEq/Hashidentitybothfields,butAsRefprojectsjusttext;receiverelisionrole101beforefullsource104.",
+      "evidence_and_limits": "Labelsid1/2remainunequalwhileasrefRustsame;thereforeprojectioncannotfulfillBorrow<str>sameEq/Hashidentitypromise117. GenericTisconcretesizedStringor&str,soactualcalls&owned/&borrowedneednounintroduced?Sizedrule.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "ToString/ToOwned concrete outputs versus reference clone",
+      "identity": "8.5:121ToStringborrows/returnsStringviaDisplayblanketimplementation;123Ownedassociatedtypeandtable127–130str→String,slicei32→Veci32 withnewcontent;132prelude/namesbeforefullmain135.",
+      "need": "Preserveformattederrororindependentmodifiabletext/listratherthanjustborrowexistingview.",
+      "operation": "error.to_string()retainsoriginalerror;original.as_str().to_owned()newStringappend教學;borrowedsliceto_owned()Vecpush30withoutsourcechange.",
+      "evidence_and_limits": "149explicitlylimitsclaimtheseoutputsremoveborrow,notarbitraryto_owneddeepownership.6.3referenceCloneonlyborrowinfo remainsdistinct. Output4linesandassertionsmatchsource.",
+      "status": "sufficient"
+    },
+    {
+      "concept": "Complete tests/exercises without future APIs",
+      "identity": "8.3answerLimitErrorfieldsbothchange;8.4count_valueusesTryFrom/Fromandmatch;8.5parse_countAsRef+parse,and161introducestupleforpattern/otherbinding/ownedblockbeforetests.",
+      "need": "Keepselectedmessagecontract,validationroundtrip,andString/&strsourceindependenceobservable.",
+      "operation": "Displaytarget3tests,conversions6,parsing10exactfunctions;parseanswer100twosourcescompareand101Rangeerror.",
+      "evidence_and_limits": "Allcfg/test/assertions/formatpaniccontractsfromactualpriorpages;no?earlyuse,noclosuremappingAPI,nofuturestdErrorrequired.18helpercopiesexactbyteidenticaltoknownsamekind.",
+      "status": "sufficient"
+    }
+  ],
+  "fixtures": "No compile-fail or runtime-fail fixture is referenced by8.3–8.5. Invalidparse/countinputsareordinaryResultcasesinselectedrun/tests,notunreviewedpackagefixtures.",
+  "static_outputs": [
+    {
+      "target": "display",
+      "expected": [
+        "開發者檢查=Negative(-3)",
+        "使用者訊息=件數 -3 不能為負數",
+        "存成String=處理失敗：件數 -3 不能為負數"
+      ]
+    },
+    {
+      "target": "display_answer",
+      "expected": [
+        "件數 101 超過上限 100",
+        "件數 151 超過上限 150"
+      ]
+    },
+    {
+      "target": "from_into",
+      "expected": [
+        "From：3",
+        "Into：3",
+        "原本的 i32：3"
+      ]
+    },
+    {
+      "target": "conversions",
+      "expected": [
+        "已驗證件數：0",
+        "取回 i32：0",
+        "已驗證件數：3",
+        "取回 i32：3",
+        "已驗證件數：100",
+        "取回 i32：100",
+        "轉換失敗：件數 -1 不能為負數",
+        "轉換失敗：件數 101 超過批次上限100"
+      ]
+    },
+    {
+      "target": "conversion_answer",
+      "expected": [
+        "轉換往返保留有效件數，也保留失敗原因"
+      ]
+    },
+    {
+      "target": "integer_parsing",
+      "expected": [
+        "兩種寫法都取得整數 3",
+        "解析 \"abc\" 失敗：invalid digit found in string",
+        "解析 \"3 \" 失敗：invalid digit found in string",
+        "解析 \"2147483648\" 失敗：number too large to fit in target type"
+      ]
+    },
+    {
+      "target": "parsing",
+      "expected": [
+        "兩種寫法都取得件數 3",
+        "0：有效件數 0",
+        "100：有效件數 100",
+        "abc：無法解析整數：invalid digit found in string",
+        "-1：件數不符規則：件數 -1 不能為負數",
+        "101：件數不符規則：件數 101 超過批次上限100",
+        "原文字仍可使用：+3"
+      ]
+    },
+    {
+      "target": "as_ref",
+      "expected": [
+        "&str 與 String 都有 4 bytes",
+        "String 仍在：Rust",
+        "Label 身分不同，借出的標籤文字相同"
+      ]
+    },
+    {
+      "target": "owned_text",
+      "expected": [
+        "保存顯示文字：件數 -1 不能為負數",
+        "原錯誤仍可顯示：件數 -1 不能為負數",
+        "原文字：Rust；owned 複本：Rust 教學",
+        "原 array 有 2 筆；owned Vec 有 3 筆"
+      ]
+    },
+    {
+      "target": "parsing_answer",
+      "expected": [
+        "兩種來源都取得件數 100",
+        "原 String 仍在：100",
+        "失敗原因：件數不符規則：件數 101 超過批次上限100"
+      ]
+    }
+  ],
+  "limits": "10runoutputs/3+6+10testcountscheckedstatically,nofreshcompilerexecution. Noformatwritefailureexperimentorbrowser/readerexperiment. No8.6or9.3+used.",
+  "workspace_metadata_update": {
+    "before": {
+      "examples/intro-workspace/Cargo.toml": "e9e3773e89e2d210c65b8c5972cc1dc7d36a2e1cda6cb202c07747fb8b83b058",
+      "examples/intro-workspace/Cargo.lock": "549d3112349bbc321ffa7c0c5ebdf985532bac5953f3c6a6539ef899f28adfbb"
+    },
+    "after": {
+      "examples/intro-workspace/Cargo.toml": "8175b3dd7d3e481c83cbd3fac60b8e8bd3bd001ae11d4393a0f0e8ae1d2c1c05",
+      "examples/intro-workspace/Cargo.lock": "81627cf6fc4300b9cfe4d03d453555138381cbea6f148e75696e8d826f096dbd"
+    },
+    "checked_actual_contents": "Workspace now includes latercargo-setup/cargo-docs/cargo-docs-answer;lockincludesothermembers'registrydependencies. Resolverunchanged andintro-error-stageslockentry remainsdependency-free. No latermembermanifest/source read orneededbytechnicalselectedclosure."
+  },
+  "sealed_source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "bd837ff218e4d22e4b3a656b23a244e6d0f35035f2790db936088b7d2601c7bb",
+    "Cargo.toml": "d8698aa09253d4203376f4416f717de675ef302b2a0ba686913013a437ce8259",
+    "docs/chapters/08-03-lesson.md": "3502f84b5de589e26c1c6d6ee64bfc1f7da197b8ca6de40f78924a1580d29a66",
+    "docs/chapters/08-04-lesson.md": "10b3fbb207966ec067ca57a26e4d55d47d906a8e715b1fcb86a44999f5a30d8e",
+    "docs/chapters/08-05-lesson.md": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+    "examples/intro-workspace/Cargo.lock": "81627cf6fc4300b9cfe4d03d453555138381cbea6f148e75696e8d826f096dbd",
+    "examples/intro-workspace/Cargo.toml": "8175b3dd7d3e481c83cbd3fac60b8e8bd3bd001ae11d4393a0f0e8ae1d2c1c05",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/as_ref.rs": "1933b8b6e325c5c570c6f19f4604e25d11ced9fd96df4bb960a868e3412f8af4",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/main.rs": "70dbc233eab6b85da036650ec766d80f7a0e469262f2fc945704ddbce9f5f43f",
+    "examples/intro-workspace/error-stages/examples/conversion_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/conversions/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/conversions/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/conversions/main.rs": "a5582724872889ecb842f271e9eff1c2d5c3ef4cfeedf47acf6b83953d9f6526",
+    "examples/intro-workspace/error-stages/examples/conversions/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/display/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/display/main.rs": "1dc1d6b642bde7ec3e428612a4a2106baab26f766f5d4c949efd445f3a55d059",
+    "examples/intro-workspace/error-stages/examples/display/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/display_answer.rs": "0e82ea0752a59936003cc0f6b3afd52d5dc0ed21fae84d385c37d4ab3edc5c9e",
+    "examples/intro-workspace/error-stages/examples/from_into.rs": "70c1bdf44bd335690bd043a8cfffbba6d629bbf301caba1d83877e228ad7aa27",
+    "examples/intro-workspace/error-stages/examples/integer_parsing.rs": "3fae898f10055629512fdd9ab7da45bf6249e612adbb6760262f8069d89e26d0",
+    "examples/intro-workspace/error-stages/examples/owned_text/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/owned_text/main.rs": "4626ae246fd6116014787dd45396a2fe6e4a80a8a688fd9fdbb217e5f365b816",
+    "examples/intro-workspace/error-stages/examples/owned_text/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/parsing/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/parsing/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/parsing/main.rs": "ab072061fe922054bff2adfed8d42657bc079390cf70b1893a1a3a44be2d75f8",
+    "examples/intro-workspace/error-stages/examples/parsing/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "examples/intro-workspace/error-stages/examples/parsing/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/conversions/mod.rs": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/formatting/mod.rs": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/main.rs": "df24380e4cd1eb4df14e1866c65a0068a5b9853ffdbf553962139163aef394ee",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/parsing/mod.rs": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "examples/intro-workspace/error-stages/examples/parsing_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "sealed_at_utc": "2026-10-15T08:12:21.324469+00:00"
+}

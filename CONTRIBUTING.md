@@ -7,9 +7,9 @@ bash scripts/bootstrap.sh
 bash scripts/check.sh
 ```
 
-bootstrap.sh 可重複執行，會檢查 uv 是否至少為 0.13.0，缺少或版本不足時安裝固定版本；再明確安裝一般 GIL 版本的 Python 3.14，並以 --locked 確保依賴設定與鎖定檔一致。check.sh 會建置文件、檢查 Rust 格式、執行 Clippy 與測試，再確認故意失敗的 Rust 範例、C11 正常程式與指定編譯失敗都符合契約。
+bootstrap.sh 可重複執行，會檢查 uv 是否至少為 0.13.0，缺少或版本不足時安裝固定版本；再明確安裝一般 GIL 版本的 Python 3.14，並以 --locked 確保依賴設定與鎖定檔一致。check.sh 會嚴格建置文件、驗證章節／舊連結／來源與審閱指紋、檢查 Rust 格式、執行 Clippy 與測試，再確認故意失敗的 Rust 範例、C11 正常程式與指定編譯失敗都符合契約。
 
-第14章的 Miri 另用固定 nightly 執行，CI 也包含這項檢查。在已載入 scripts/env.sh 的 shell 中：
+第17章的 Miri 另用固定 nightly 執行，CI 也包含這項檢查。在已載入 scripts/env.sh 的 shell 中：
 
 ```bash
 rustup toolchain install nightly-2026-10-01 --profile minimal --component miri --component rust-src
@@ -78,11 +78,13 @@ uv run --locked --python '3.14+gil' zensical serve --dev-addr 0.0.0.0:8000
 
 ## 新增教學章節
 
+正式介紹第 12 章工程設定前的階段範例位於 `examples/intro-workspace/`，使用獨立 workspace 與 lockfile；根 workspace 排除此樹，`scripts/check.sh` 另行執行它的格式、Clippy、測試及文件測試。學生完整看到的 member manifest 明寫 `name`、`version`、`edition`，不提前借用工程設定章的繼承。選取早期 target 時，其 library、module、helper 和測試也不可載入後節能力；需要時保存獨立階段版本。
+
 1. 先讀 [clear-tutorial](.agents/skills/clear-tutorial/SKILL.md)、術語指引及對應的中英文教材，保存實際來源與借鑑內容。依實際已寫出的前文核對先備；大綱上的節點不等於已教。
-2. 每節正文放 `docs/chapters/NN-MM-*.md`，真實程式放 `examples/chNN-*/`。範例、練習答案、測試與設定都只使用此處之前已教的能力；本節的新能力先說明用途與契約，再用於程式。
+2. 每節正文放 `docs/chapters/NN-MM-lesson.md`，真實程式放 `examples/chNN-*/`。範例、練習答案、測試與設定都只使用此處之前已教的能力；本節的新能力先說明用途與契約，再用於程式。
 3. 文件以 snippets 引用實際原始碼，使用 rust 語法標示；引用路徑相對於專案根目錄。後節新增能力時保留早節範例，不讓共享source把未教的derive／API帶回前頁。
-4. 平行作者依 `planning/implementation-status.md` 分工，各自保存先備紀錄；由協調者整合 Cargo workspace／lock與導覽。來源研究可先平行，正文與程式等真正的前置稿完成才寫。
-5. 完成後執行 bash scripts/check.sh，另實跑有意義的輸入與輸出。凍結版本，再分開保存順序首讀、技術與銜接初判及修後複查；實看桌面與手機的SVG／圖文位置。導覽的公開釋出另行確認。
+4. 平行作者依 `planning/restructure-v3/status.md` 分工，各自保存先備紀錄；由協調者整合 Cargo workspace／lock與導覽。來源研究可先平行，正文與程式等真正的前置稿完成才寫。
+5. 完成後執行 bash scripts/check.sh，另實跑有意義的輸入與輸出。凍結版本，再分開保存順序首讀、技術與銜接初判及修後複查；實看桌面與手機的SVG／圖文位置。完成本輪已授權範圍的全部驗收後，才更新正式導覽與公開站點。
 
 故意不能編譯的最小範例放在 `fixtures/compile-fail/`；故意panic的範例放在 `fixtures/runtime-fail/`。每個 `.rs` 配同名 `.expected`，填必要錯誤碼或panic文字。它們不是正常Cargo target；檢查器會確認失敗原因符合正文，不因任意錯誤就判通過。
 
@@ -114,4 +116,6 @@ bash scripts/check.sh
 
 部署使用 GitHub Actions 自帶的 GITHUB_TOKEN，workflow 僅在部署 job 授予 pages: write 與 id-token: write，不需要額外 repository secret。啟用 Pages 的管理操作須由具有權限的使用者先完成。
 
-未發布章節以 zensical.toml 的 `exclude_docs` 排除；通過審閱後，加入相應 `!chapters/NN-*.md` 規則與 nav。維護者本機可以暫開草稿導覽做畫面檢查，推送main時以實際已驗收的批次為準。公開進度與部署證據記在 `planning/implementation-status.md`。
+新版導覽以 `planning/restructure-v3/sections.json` 的18章順序為準。109個舊頁保留為對照入口與890個原段落anchor，不再維護第二套正文；新增草稿先以獨立work預覽，正式nav只納入完成驗收的內容。公開進度與部署證據記在 `planning/restructure-v3/status.md`。
+
+第12章另有兩個只載入當下材料的巢狀workspace：`examples/ch09-engineering/lesson-workspace/`與`examples/ch09-content/lesson-workspace/`；check.sh分別驗證fmt、Clippy、全部targets與文件測試。根workspace的全書檢查是維護者驗收，不是要求初學者在早章先編譯後章。

@@ -1,0 +1,467 @@
+{
+  "review_id": "round15-gat-variance-prefix",
+  "scope": [
+    "15.1",
+    "15.2"
+  ],
+  "role": "獨立技術／先教後用／實際source closure審查",
+  "independent_initial": true,
+  "reader_background": "基本Python+實際已讀1–13、尤其11.9 guard/interior mutability、7/11.5 lifetime與9.2function pointer；已讀17.1–17.5與17.6正文但未以17解釋補15先備。未讀15.3+當先備。",
+  "independence": "未讀作者validation/ledger、peer、reader或historical findings；按root授權因17.6需要實際15前綴而先審本波。",
+  "necessary_findings": [],
+  "optional_findings": [],
+  "result": "未發現必要或可選技術修正。",
+  "method": [
+    "兩頁全文、30snippets、5selected run/1example test（3函式）、5組完整compilefail/expected與2SVG XML/source靜態核對。",
+    "6項snapshot bytes比較確認early helper及complete snapshot不混入後節能力；各actual target module與no-lib manifest閉包完整。"
+  ],
+  "execution": {
+    "cargo_or_rustc": false,
+    "note": "本波未執行Rust/Cargo；lifetime/type關係、輸出與expected診斷均為靜態核對，未做reader/visual實驗。"
+  },
+  "source_snapshot_at_utc": "2026-10-15T09:32:46.701979+00:00",
+  "source_hash_algorithm": "SHA-256",
+  "source_hashes": {
+    ".agents/skills/clear-tutorial/SKILL.md": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f",
+    ".agents/skills/clear-tutorial/references/calibration.md": "cdf34d540890305c9d8cb575d72b0bf293644bfa684d59c20508bfd6f6bedc3c",
+    ".agents/skills/clear-tutorial/references/review-protocol.md": "aa482b1ed4fdc28c74d7a0ba520034d7cc3d9db22d1ad344daed42a934299395",
+    ".agents/skills/clear-tutorial/references/rust-terminology.md": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd",
+    "AGENTS.md": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4",
+    "Cargo.lock": "f71fbeedefb6f784f754cda7052427df3d8bb84e825579b64071f6f9305957e7",
+    "Cargo.toml": "f9c1c20a272b10eab149ec50e49ff98f4ea774a4e35f54ef0691d3ca4423b7f0",
+    "docs/assets/ch12/cell-variance.svg": "3d2662d35ef3cce5ab8956f77851d9efdd7dc64ba0b897dc33f578a3d6d42609",
+    "docs/assets/ch12/gat-borrows.svg": "35f53e602a2287524f67ecc743309ddf81b4dcdb8bb1e28e759b9b560a3dc7b3",
+    "docs/chapters/15-01-lesson.md": "4d4b83c88f8ba6ccfcac7866d71b7a0730e55a2f5afed39f4e3d7f7ce8ef3b4b",
+    "docs/chapters/15-02-lesson.md": "e87a0ee7d3577ac6d9d472acb519b57ac60eac6e23d52cb2e8caa17eddba1cc0",
+    "examples/ch12-unsafe/stages/Cargo.toml": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+    "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+    "examples/ch12-unsafe/stages/examples/gat_complete/main.rs": "87a819749e77075f6918aec8353fac04afc4c785b8a4edb479426ad65364c4a1",
+    "examples/ch12-unsafe/stages/examples/gat_solution.rs": "d60c0d4c64845ca684696de07ea2bd52beef6ec8de8dbd3d0294e62358142ebd",
+    "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs": "ef541e5bd9598efcbfab50be3c730585b74223554719984a277e72caea242677",
+    "examples/ch12-unsafe/stages/examples/gat_views/main.rs": "87a819749e77075f6918aec8353fac04afc4c785b8a4edb479426ad65364c4a1",
+    "examples/ch12-unsafe/stages/examples/variance_callbacks/main.rs": "7376368396063bcb137e10975ed37d15323402a6d65fb706a2dad6c9ad6c8ff2",
+    "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+    "examples/ch12-unsafe/stages/examples/variance_references/main.rs": "4640a523722b0dbbbf180226ce119649d638a29a7f2d79c940fe1a16ade28d26",
+    "examples/ch12-unsafe/stages/examples/variance_references/variance/mod.rs": "68fad97329ebd267052760c2212d3689f936db7fedc333947a07b25a01305756",
+    "examples/ch12-unsafe/stages/examples/variance_solution.rs": "cc60c1d4ad328750975051cc283003ce84dabe65c7c52fc6f08f95a7efc437fb",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.expected": "db9b0a861a4d072c963491b101255b726ab04d032aacffbb751e48aa927afffe",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.rs": "3b62cb6b3de53f40f17ed6079b630769693b1678a967ef62d5416493c0e71a63",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.rs": "70433146de34a5f82f244102def92225e5705ef2de36bc08dd47ee8785841a26",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.expected": "d83902e1e30c09dee3580e58c61b1ed08051895a509820a119a252c082224edb",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.rs": "f07212bd6704766332b640ec4016f9534bd375191a9a92bfb10147ccbeb173ab",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.expected": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.rs": "ee45c5aeb8973fc03b4be7f61186f5e4b7ead5278d6a60c97cf46441d8e5b4ad",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.expected": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.rs": "221f69f992a0b3d1f574203b63fd04318e42e46d8faf4907c9466419d5bd9b22",
+    "examples/ch12-unsafe/stages/src/main.rs": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228",
+    "scripts/env.sh": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+  },
+  "snippet_checks": [
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 12,
+      "source": "examples/ch12-unsafe/stages/Cargo.toml",
+      "tag": null,
+      "included_sha256": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 18,
+      "source": "examples/ch12-unsafe/stages/src/main.rs",
+      "tag": null,
+      "included_sha256": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+      "included_lines": 3
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 22,
+      "source": "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+      "tag": "models",
+      "included_sha256": "6bf5abb4ee72123b6cb05afd41e46f082ed0ccfa3e93ab9cc1760df9f7759e5e",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 51,
+      "source": "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+      "tag": "trait",
+      "included_sha256": "ec76c7f45be5cbd1a546792a04d3425614dd765963eb7d9c7e24c59ed9d7d528",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 63,
+      "source": "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+      "tag": "impls",
+      "included_sha256": "93d01d41d005077366ce83902453271bb1881a2e956d36e33d3059dd2232f97b",
+      "included_lines": 21
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 75,
+      "source": "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+      "tag": "helper",
+      "included_sha256": "1852efde575cf2f7720de90758624ef3ba539119f499d94b84e8d6a594523328",
+      "included_lines": 3
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 83,
+      "source": "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+      "tag": null,
+      "included_sha256": "ef541e5bd9598efcbfab50be3c730585b74223554719984a277e72caea242677",
+      "included_lines": 52
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 89,
+      "source": "examples/ch12-unsafe/stages/examples/gat_views/main.rs",
+      "tag": null,
+      "included_sha256": "87a819749e77075f6918aec8353fac04afc4c785b8a4edb479426ad65364c4a1",
+      "included_lines": 32
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 110,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.rs",
+      "tag": null,
+      "included_sha256": "3b62cb6b3de53f40f17ed6079b630769693b1678a967ef62d5416493c0e71a63",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 116,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_missing_bound.expected",
+      "tag": null,
+      "included_sha256": "db9b0a861a4d072c963491b101255b726ab04d032aacffbb751e48aa927afffe",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 124,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.rs",
+      "tag": null,
+      "included_sha256": "70433146de34a5f82f244102def92225e5705ef2de36bc08dd47ee8785841a26",
+      "included_lines": 30
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 130,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/gat_owner_too_short.expected",
+      "tag": null,
+      "included_sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 148,
+      "source": "examples/ch12-unsafe/stages/examples/gat_solution.rs",
+      "tag": null,
+      "included_sha256": "d60c0d4c64845ca684696de07ea2bd52beef6ec8de8dbd3d0294e62358142ebd",
+      "included_lines": 38
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 156,
+      "source": "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs",
+      "tag": null,
+      "included_sha256": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+      "included_lines": 101
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 160,
+      "source": "examples/ch12-unsafe/stages/examples/gat_complete/main.rs",
+      "tag": null,
+      "included_sha256": "87a819749e77075f6918aec8353fac04afc4c785b8a4edb479426ad65364c4a1",
+      "included_lines": 32
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 10,
+      "source": "examples/ch12-unsafe/stages/Cargo.toml",
+      "tag": null,
+      "included_sha256": "0484ab39b3ffd6f3ef8b0428584a708e8768a301058abb56d6f3ed0675fd7f2d",
+      "included_lines": 6
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 14,
+      "source": "examples/ch12-unsafe/stages/src/main.rs",
+      "tag": null,
+      "included_sha256": "f78526cccde9a324fb2ca45dbedcacec33df9638da1005ba67a8d0c40b822b8b",
+      "included_lines": 3
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 28,
+      "source": "examples/ch12-unsafe/stages/examples/variance_references/variance/mod.rs",
+      "tag": "references",
+      "included_sha256": "b3a0935d55f2df0ed596f9e08704574926d9c121cb805ef4f82f7a40f94ad423",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 36,
+      "source": "examples/ch12-unsafe/stages/examples/variance_references/variance/mod.rs",
+      "tag": null,
+      "included_sha256": "68fad97329ebd267052760c2212d3689f936db7fedc333947a07b25a01305756",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 40,
+      "source": "examples/ch12-unsafe/stages/examples/variance_references/main.rs",
+      "tag": null,
+      "included_sha256": "4640a523722b0dbbbf180226ce119649d638a29a7f2d79c940fe1a16ade28d26",
+      "included_lines": 23
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 78,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.rs",
+      "tag": null,
+      "included_sha256": "221f69f992a0b3d1f574203b63fd04318e42e46d8faf4907c9466419d5bd9b22",
+      "included_lines": 13
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 84,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_mutable_target.expected",
+      "tag": null,
+      "included_sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 102,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.rs",
+      "tag": null,
+      "included_sha256": "f07212bd6704766332b640ec4016f9534bd375191a9a92bfb10147ccbeb173ab",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 108,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_cell.expected",
+      "tag": null,
+      "included_sha256": "d83902e1e30c09dee3580e58c61b1ed08051895a509820a119a252c082224edb",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 129,
+      "source": "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs",
+      "tag": "callbacks",
+      "included_sha256": "fc010d0deb8eb4f288e8184081f21b8eabb2973d3d580d7eeeff261a64de14ef",
+      "included_lines": 9
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 135,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.rs",
+      "tag": null,
+      "included_sha256": "ee45c5aeb8973fc03b4be7f61186f5e4b7ead5278d6a60c97cf46441d8e5b4ad",
+      "included_lines": 7
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 141,
+      "source": "examples/ch12-unsafe/stages/fixtures/compile-fail/variance_input_reverse.expected",
+      "tag": null,
+      "included_sha256": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+      "included_lines": 1
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 151,
+      "source": "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs",
+      "tag": null,
+      "included_sha256": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+      "included_lines": 21
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 155,
+      "source": "examples/ch12-unsafe/stages/examples/variance_callbacks/main.rs",
+      "tag": null,
+      "included_sha256": "7376368396063bcb137e10975ed37d15323402a6d65fb706a2dad6c9ad6c8ff2",
+      "included_lines": 22
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 169,
+      "source": "examples/ch12-unsafe/stages/examples/variance_solution.rs",
+      "tag": null,
+      "included_sha256": "cc60c1d4ad328750975051cc283003ce84dabe65c7c52fc6f08f95a7efc437fb",
+      "included_lines": 16
+    }
+  ],
+  "commands": [
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 93,
+      "command": "cargo run -p ch15-unsafe-stages --example gat_views --locked",
+      "target": "gat_views"
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 151,
+      "command": "cargo run -p ch15-unsafe-stages --example gat_solution --locked",
+      "target": "gat_solution"
+    },
+    {
+      "chapter": "docs/chapters/15-01-lesson.md",
+      "line": 163,
+      "command": "cargo test -p ch15-unsafe-stages --example gat_complete --locked",
+      "target": "gat_complete"
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 44,
+      "command": "cargo run -p ch15-unsafe-stages --example variance_references --locked",
+      "target": "variance_references"
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 158,
+      "command": "cargo run -p ch15-unsafe-stages --example variance_callbacks --locked",
+      "target": "variance_callbacks"
+    },
+    {
+      "chapter": "docs/chapters/15-02-lesson.md",
+      "line": 172,
+      "command": "cargo run -p ch15-unsafe-stages --example variance_solution --locked",
+      "target": "variance_solution"
+    }
+  ],
+  "copy_checks": [
+    {
+      "source": "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs",
+      "tag": "models",
+      "baseline": "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs",
+      "tag": "trait",
+      "baseline": "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs",
+      "tag": "impls",
+      "baseline": "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs",
+      "tag": "helper",
+      "baseline": "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/gat_complete/main.rs",
+      "baseline": "examples/ch12-unsafe/stages/examples/gat_views/main.rs",
+      "equal": true
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs",
+      "tag": "references",
+      "baseline": "examples/ch12-unsafe/stages/examples/variance_references/variance/mod.rs",
+      "equal": true
+    }
+  ],
+  "selected_lock_entries": [
+    {
+      "name": "ch15-unsafe-stages",
+      "version": "0.1.0"
+    }
+  ],
+  "loaded_closures": [
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example gat_views --locked",
+      "target": "gat_views",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/gat_views/gat/mod.rs",
+        "examples/ch12-unsafe/stages/examples/gat_views/main.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example gat_solution --locked",
+      "target": "gat_solution",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/gat_solution.rs"
+      ]
+    },
+    {
+      "command": "cargo test -p ch15-unsafe-stages --example gat_complete --locked",
+      "target": "gat_complete",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs",
+        "examples/ch12-unsafe/stages/examples/gat_complete/main.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example variance_references --locked",
+      "target": "variance_references",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/variance_references/main.rs",
+        "examples/ch12-unsafe/stages/examples/variance_references/variance/mod.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example variance_callbacks --locked",
+      "target": "variance_callbacks",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/variance_callbacks/main.rs",
+        "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs"
+      ]
+    },
+    {
+      "command": "cargo run -p ch15-unsafe-stages --example variance_solution --locked",
+      "target": "variance_solution",
+      "normal_library": [],
+      "dependencies": [],
+      "owned_sources": [
+        "examples/ch12-unsafe/stages/examples/variance_solution.rs"
+      ]
+    }
+  ],
+  "contract_checks": [
+    {
+      "source": "docs/chapters/15-01-lesson.md:35",
+      "finding": "GAT lifetime參數與每次receiver borrow相連，Self:'a在本trait所需bound準確，不誤解static/永久借用。Numbers slice及GuardedNumbers Ref各保留實際責任，generic helper不冒稱未知View有Deref/索引能力。"
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/gat_complete/gat/mod.rs:87",
+      "finding": "guard持有時try_borrow_mut被拒，drop後可寫；Result::is_err先於test source教。完整答案借mut slice修改原Vec、再push，3項合計260對source。"
+    },
+    {
+      "source": "docs/chapters/15-02-lesson.md:63",
+      "finding": "&mut T外層lifetime協變、T不變分清；Cell即shared API仍可寫所以對T不變，按值移交也不能改variance。負例不實際執行失效存取。"
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/variance_callbacks/variance/mod.rs:12",
+      "finding": "函式input contravariance/return covariance與'long:'short helper方向正確；不把這次literal觀察代替泛型body關係。反向不能只加相反bound仍聲稱原契約。"
+    },
+    {
+      "source": "examples/ch12-unsafe/stages/examples/variance_solution.rs:3",
+      "finding": "get複製reference後另建Cell，局部note只寫新Cell，原staticCell保留Rust。圖的禁止關係是假設，不是實際UB；GAT圖是兩次不同borrow不代表固定長短。"
+    }
+  ],
+  "sealed_at_utc": "2026-10-15T09:33:19.014Z"
+}

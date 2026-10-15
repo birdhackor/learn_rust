@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="570" viewBox="0 0 340 570" role="img" aria-labelledby="title desc">
+  <title id="title">建置與執行的四個階段</title>
+  <desc id="desc">Cargo 先編譯 host 的 build script，script 執行時讀取模式並交付 TEACHING_MODE，主要 crate 編譯時以 env macro 固定文字，最後成品執行而不再讀取模式。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#39536a"/></marker></defs>
+  <g font-family="Noto Sans CJK TC, sans-serif" font-size="24" fill="#16354b" text-anchor="middle">
+    <rect x="10" y="10" width="320" height="100" rx="12" fill="#e7f1fa" stroke="#39536a"/>
+    <text x="170" y="49">1. 編譯 build.rs</text><text x="170" y="83">供 host 執行</text>
+    <path d="M170 115 V150" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="10" y="155" width="320" height="110" rx="12" fill="#e7f1fa" stroke="#39536a"/>
+    <text x="170" y="190">2. 執行 script</text><text x="170" y="221">讀 LESSON_MODE</text><text x="170" y="251">交付 TEACHING_MODE</text>
+    <path d="M170 270 V305" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="10" y="310" width="320" height="100" rx="12" fill="#edf5e4" stroke="#39536a"/>
+    <text x="170" y="349">3. 編譯主要 crate</text><text x="170" y="383">env! 固定文字</text>
+    <path d="M170 415 V450" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="10" y="455" width="320" height="105" rx="12" fill="#edf5e4" stroke="#39536a"/>
+    <text x="170" y="491">4. 執行成品</text><text x="170" y="525">不重新讀模式</text>
+  </g>
+</svg>

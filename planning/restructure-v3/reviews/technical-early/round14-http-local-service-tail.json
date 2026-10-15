@@ -1,0 +1,1202 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "14.7",
+    "14.8",
+    "14.9"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "prior_knowledge": "Basic Python + actually read chapters 1–13 and 14.1–14.6. No 15/16/17 source is needed to repair prerequisites.",
+    "method": "Full 14.7→14.9 prose, every selected owned source/helper/test/manifest and normal path-dependency library. Source comparison of unchanged basic/full copies is explicitly used; not a blind-reader experiment."
+  },
+  "evidence": {
+    "scope": [
+      "14.7",
+      "14.8",
+      "14.9"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/axum-0.8.9/src/response/redirect.rs",
+        "sha256": "9e2701b2fe093b9a2f68d3fc65487e1fe1d09028e6593fe9882333d644b90a51"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/axum-0.8.9/src/serve/mod.rs",
+        "sha256": "063ccc352890e97c82d497b32888cf261921bb99687240120643d1d85c59324a"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.5/src/async_impl/client.rs",
+        "sha256": "5b7e2556d122a75cd8d3ef62a33d45e430c8eff229a33bc3f53fc7e9af2d97de"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.5/src/async_impl/request.rs",
+        "sha256": "997fdd44c27a25df909f0ea93dcae94a6bf07bf57d63b5901b68ddebba2e3a90"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.5/src/async_impl/response.rs",
+        "sha256": "ab12ec2046e4037e0ba370279362c9a8bbc7bcd5f8b08cfff43c86c28e40eaee"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.5/src/blocking/client.rs",
+        "sha256": "c451ef06fe74bd4dce581ea0d2514c6944e6d72ff97703b1e5d133bf7a3d8c25"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.5/src/blocking/response.rs",
+        "sha256": "0ef0d5bfed59109238316f0f6dddf44dcfe68843f4491c59d24fab166cd766f4"
+      },
+      {
+        "path": "/workspace/.learn-rust-tools/cargo/registry/src/index.crates.io-1949cf8c6b5b557f/reqwest-0.13.5/src/redirect.rs",
+        "sha256": "7d1e8c0b99e92c8bdd815e71b0e2ec1e0b40b9e346012651e5288d04b4e0d576"
+      },
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-07-lesson.md",
+        "sha256": "de90e990ee41a14145e03871084b12e949f8f10a8a1ff398c592afea17a282c8"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-08-lesson.md",
+        "sha256": "3a066862ac5216cecc773bdd60867ccc7454580b40873a70ca68290af301c8e2"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/14-09-lesson.md",
+        "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/Cargo.toml",
+        "sha256": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/README.md",
+        "sha256": "164859ae6401afd23c262ee331037a9cb13f2a3f01e87be5cf56514f7cde5ecc"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/examples/page_reply_solution.rs",
+        "sha256": "8bcbd80ad5b806409759c3bd74f0dce3494bce1e330652b0e67b89bab72569c5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/config.rs",
+        "sha256": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/error.rs",
+        "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/lib.rs",
+        "sha256": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/main.rs",
+        "sha256": "a7788a40e58427a6e6c41da1a367ffbefd86d3d8c489770405864a1fea96b295"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/src/reply.rs",
+        "sha256": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/http-single/tests/cli.rs",
+        "sha256": "d3c0309aca5f2b611e782633decec1d9244ba7c15ebb7c410e50cfe750c47378"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/Cargo.toml",
+        "sha256": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/README.md",
+        "sha256": "6827bf91d74361f458cc79bfe84a025ec031851d86d480e4ed27f20c8adffde0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/examples/basic.rs",
+        "sha256": "5595c3cb17a39e970eb935616728a55bc764c5822e4ed532a83c6ff06dfc38c0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/examples/closed_gate_solution.rs",
+        "sha256": "0a431c9078b03711e6c0a598315a1c5a7d669c9ec0075bc5f354b04a62b65dd6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/src/lib.rs",
+        "sha256": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/src/main.rs",
+        "sha256": "9d35ff99fae378d1002ecf0ade5f6cb352177d1cdee6f5fe5436784d7f1dae92"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/tests/absent_entered.rs",
+        "sha256": "91977962bf297bb9c846cef4c3bd0f0360b0c6c094f70271d69ebe65b1c7cd20"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/tests/cli.rs",
+        "sha256": "07c8a08b6c7efefb326bc471a179dc3a64a83fc2dab2d1d4b7b3c42bf05103d3"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/tests/client_cancel.rs",
+        "sha256": "b313c11c70099b868dcace5165e0afa1cce321f9365dcf975bdcf283b8f3f4ac"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/tests/fixed_responses.rs",
+        "sha256": "2f86830ea1dd10dd43d40861d142e3e95acc1b029ab7d67dab632e6940353a97"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/tests/gates.rs",
+        "sha256": "7bbbc2a8650fcc7073b30fda2bfe87fffff0161e8bba7462fc622da89aa6bea1"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/tests/request_timeout.rs",
+        "sha256": "b0598843f37206867d05523cd91a507dfde01e4690e0d18ff309b2b44788eeef"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/local-service/tests/shutdown_gate.rs",
+        "sha256": "d92739ae4a1539f8bdb21a149dbd0cca79c0c8bdf5d1ff54126e71b387d5fb9b"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/Cargo.toml",
+        "sha256": "0e8d0918fdbfa744e9531f909e6f9ea85b75b5327099fa7bb3788f90688b9e6a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/src/config.rs",
+        "sha256": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/src/error.rs",
+        "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/src/lib.rs",
+        "sha256": "d3342bdd072f51a26fff6b64f4728c61777833c03230d11ca123420d08b47553"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/src/main.rs",
+        "sha256": "c60a35635b170b54abefd8107e38faf2989bef949b19620067903668f32f8d96"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/http-single-basic/tests/cli.rs",
+        "sha256": "cdc0405dc0b73167527febf7cbfdfc4b153ed0770582541ba18d1c04884a7f32"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/local-basic/Cargo.toml",
+        "sha256": "3b5e615ea9ab37b3d860cc28b335d454ed5b6d55bab270f1afd311036e2fc8c4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-async/stages/local-basic/src/main.rs",
+        "sha256": "5595c3cb17a39e970eb935616728a55bc764c5822e4ed532a83c6ff06dfc38c0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-http/Cargo.toml",
+        "sha256": "f9c43f334457e2290087e1315090d0399ad1fa6a05c683d439c86d1469fba1c0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-http/examples/status_line.rs",
+        "sha256": "d79e937da9a2f25cac6b416e02134476717c52e7ce43dd7fb30728b75d71c978"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-http/src/config.rs",
+        "sha256": "592af4c6b516069d5bd5e0ab7d12612748a5ce5205ea44071c046b456d203dc9"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-http/src/error.rs",
+        "sha256": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-http/src/lib.rs",
+        "sha256": "43e0fab1e63247dae9e1c63c3e7a1bb629b3a282fd12c665b303e189b513bedd"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-http/src/main.rs",
+        "sha256": "f30d1e2146862c66f3d369ded68c2ae224faabd77402ba016caa75116538a2f5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch11-http/tests/cli.rs",
+        "sha256": "f06e0b5f6b9ff7759b869e9a93208577d283cf4ee6960edc7cbe25d5000c1896"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch11-async/http-single/Cargo.toml",
+      "examples/ch11-async/http-single/README.md",
+      "examples/ch11-async/http-single/examples/page_reply_solution.rs",
+      "examples/ch11-async/http-single/src/config.rs",
+      "examples/ch11-async/http-single/src/error.rs",
+      "examples/ch11-async/http-single/src/lib.rs",
+      "examples/ch11-async/http-single/src/main.rs",
+      "examples/ch11-async/http-single/src/reply.rs",
+      "examples/ch11-async/http-single/tests/cli.rs",
+      "examples/ch11-async/local-service/Cargo.toml",
+      "examples/ch11-async/local-service/README.md",
+      "examples/ch11-async/local-service/examples/basic.rs",
+      "examples/ch11-async/local-service/examples/closed_gate_solution.rs",
+      "examples/ch11-async/local-service/src/lib.rs",
+      "examples/ch11-async/local-service/src/main.rs",
+      "examples/ch11-async/local-service/tests/absent_entered.rs",
+      "examples/ch11-async/local-service/tests/cli.rs",
+      "examples/ch11-async/local-service/tests/client_cancel.rs",
+      "examples/ch11-async/local-service/tests/fixed_responses.rs",
+      "examples/ch11-async/local-service/tests/gates.rs",
+      "examples/ch11-async/local-service/tests/request_timeout.rs",
+      "examples/ch11-async/local-service/tests/shutdown_gate.rs",
+      "examples/ch11-async/stages/http-single-basic/Cargo.toml",
+      "examples/ch11-async/stages/http-single-basic/src/config.rs",
+      "examples/ch11-async/stages/http-single-basic/src/error.rs",
+      "examples/ch11-async/stages/http-single-basic/src/lib.rs",
+      "examples/ch11-async/stages/http-single-basic/src/main.rs",
+      "examples/ch11-async/stages/http-single-basic/tests/cli.rs",
+      "examples/ch11-async/stages/local-basic/Cargo.toml",
+      "examples/ch11-async/stages/local-basic/src/main.rs",
+      "examples/ch11-http/Cargo.toml",
+      "examples/ch11-http/examples/status_line.rs",
+      "examples/ch11-http/src/config.rs",
+      "examples/ch11-http/src/error.rs",
+      "examples/ch11-http/src/lib.rs",
+      "examples/ch11-http/src/main.rs",
+      "examples/ch11-http/tests/cli.rs"
+    ],
+    "loaded_owned_files": [
+      "examples/ch11-async/http-single/Cargo.toml",
+      "examples/ch11-async/http-single/examples/page_reply_solution.rs",
+      "examples/ch11-async/http-single/src/config.rs",
+      "examples/ch11-async/http-single/src/error.rs",
+      "examples/ch11-async/http-single/src/lib.rs",
+      "examples/ch11-async/http-single/src/main.rs",
+      "examples/ch11-async/http-single/src/reply.rs",
+      "examples/ch11-async/http-single/tests/cli.rs",
+      "examples/ch11-async/local-service/Cargo.toml",
+      "examples/ch11-async/local-service/examples/basic.rs",
+      "examples/ch11-async/local-service/examples/closed_gate_solution.rs",
+      "examples/ch11-async/local-service/src/lib.rs",
+      "examples/ch11-async/local-service/src/main.rs",
+      "examples/ch11-async/local-service/tests/absent_entered.rs",
+      "examples/ch11-async/local-service/tests/cli.rs",
+      "examples/ch11-async/local-service/tests/client_cancel.rs",
+      "examples/ch11-async/local-service/tests/fixed_responses.rs",
+      "examples/ch11-async/local-service/tests/gates.rs",
+      "examples/ch11-async/local-service/tests/request_timeout.rs",
+      "examples/ch11-async/local-service/tests/shutdown_gate.rs",
+      "examples/ch11-async/stages/http-single-basic/Cargo.toml",
+      "examples/ch11-async/stages/http-single-basic/src/config.rs",
+      "examples/ch11-async/stages/http-single-basic/src/error.rs",
+      "examples/ch11-async/stages/http-single-basic/src/lib.rs",
+      "examples/ch11-async/stages/http-single-basic/src/main.rs",
+      "examples/ch11-async/stages/http-single-basic/tests/cli.rs",
+      "examples/ch11-async/stages/local-basic/Cargo.toml",
+      "examples/ch11-async/stages/local-basic/src/main.rs",
+      "examples/ch11-http/Cargo.toml",
+      "examples/ch11-http/examples/status_line.rs",
+      "examples/ch11-http/src/config.rs",
+      "examples/ch11-http/src/error.rs",
+      "examples/ch11-http/src/lib.rs",
+      "examples/ch11-http/src/main.rs",
+      "examples/ch11-http/tests/cli.rs"
+    ],
+    "snippet_references": [
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 22,
+        "source": "examples/ch11-http/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 30,
+        "source": "examples/ch11-http/src/config.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 40,
+        "source": "examples/ch11-http/src/lib.rs",
+        "anchor": "parse-url"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 46,
+        "source": "examples/ch11-http/src/lib.rs",
+        "anchor": "model"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 72,
+        "source": "examples/ch11-http/src/lib.rs",
+        "anchor": "inspect"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 82,
+        "source": "examples/ch11-http/src/error.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 88,
+        "source": "examples/ch11-http/src/lib.rs",
+        "anchor": "render-run"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 96,
+        "source": "examples/ch11-http/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 102,
+        "source": "examples/ch11-http/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 117,
+        "source": "examples/ch11-http/tests/cli.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 140,
+        "source": "examples/ch11-http/examples/status_line.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 14,
+        "source": "examples/ch11-async/stages/http-single-basic/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 32,
+        "source": "examples/ch11-async/http-single/src/lib.rs",
+        "anchor": "models"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 42,
+        "source": "examples/ch11-async/stages/http-single-basic/src/config.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 46,
+        "source": "examples/ch11-async/stages/http-single-basic/src/error.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 52,
+        "source": "examples/ch11-async/stages/http-single-basic/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 58,
+        "source": "examples/ch11-async/stages/http-single-basic/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 73,
+        "source": "examples/ch11-async/stages/http-single-basic/tests/cli.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 110,
+        "source": "examples/ch11-async/http-single/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 116,
+        "source": "examples/ch11-async/http-single/src/reply.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 122,
+        "source": "examples/ch11-async/http-single/src/config.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 126,
+        "source": "examples/ch11-async/http-single/src/error.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 130,
+        "source": "examples/ch11-async/http-single/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 136,
+        "source": "examples/ch11-async/http-single/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 140,
+        "source": "examples/ch11-async/http-single/tests/cli.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 157,
+        "source": "examples/ch11-async/http-single/examples/page_reply_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 12,
+        "source": "examples/ch11-async/local-service/examples/basic.rs",
+        "anchor": "handler"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 46,
+        "source": "examples/ch11-async/stages/local-basic/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 52,
+        "source": "examples/ch11-async/stages/local-basic/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 70,
+        "source": "examples/ch11-async/local-service/src/lib.rs",
+        "anchor": "shared-state"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 92,
+        "source": "examples/ch11-async/local-service/src/lib.rs",
+        "anchor": "responses"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 98,
+        "source": "examples/ch11-async/local-service/src/lib.rs",
+        "anchor": "held-handler"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 104,
+        "source": "examples/ch11-async/local-service/src/lib.rs",
+        "anchor": "router"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 116,
+        "source": "examples/ch11-async/local-service/src/lib.rs",
+        "anchor": "controls"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 126,
+        "source": "examples/ch11-async/local-service/src/lib.rs",
+        "anchor": "shutdown"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 130,
+        "source": "examples/ch11-async/local-service/src/lib.rs",
+        "anchor": "finish-client"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 138,
+        "source": "examples/ch11-async/local-service/Cargo.toml",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 142,
+        "source": "examples/ch11-async/local-service/src/lib.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 148,
+        "source": "examples/ch11-async/local-service/src/main.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 168,
+        "source": "examples/ch11-async/local-service/examples/basic.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 180,
+        "source": "examples/ch11-async/local-service/tests/fixed_responses.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 196,
+        "source": "examples/ch11-async/local-service/tests/gates.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 212,
+        "source": "examples/ch11-async/local-service/tests/request_timeout.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 228,
+        "source": "examples/ch11-async/local-service/tests/absent_entered.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 242,
+        "source": "examples/ch11-async/local-service/tests/client_cancel.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 256,
+        "source": "examples/ch11-async/local-service/examples/closed_gate_solution.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 268,
+        "source": "examples/ch11-async/local-service/tests/shutdown_gate.rs",
+        "anchor": null
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 272,
+        "source": "examples/ch11-async/local-service/tests/cli.rs",
+        "anchor": null
+      }
+    ],
+    "commands": [
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 108,
+        "command": "cargo run -p ch11-http --locked -- --help"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 109,
+        "command": "cargo test -p ch11-http --lib --locked"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 121,
+        "command": "cargo test -p ch11-http --test cli --locked"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 127,
+        "command": "cargo run -p ch11-http --locked -- https://example.org"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 128,
+        "command": "cargo run -p ch11-http --locked -- https://example.org --body"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 144,
+        "command": "cargo run -p ch11-http --example status_line --locked"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 145,
+        "command": "cargo test -p ch11-http --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-07-lesson.md",
+        "line": 146,
+        "command": "cargo clippy -p ch11-http --all-targets --locked -- -D warnings"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 64,
+        "command": "cargo run -p ch11-http-single-basic --locked -- --help"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 65,
+        "command": "cargo test -p ch11-http-single-basic --lib --locked"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 77,
+        "command": "cargo test -p ch11-http-single-basic --test cli --locked"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 83,
+        "command": "cargo run -p ch11-http-single-basic --locked -- https://example.org"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 84,
+        "command": "cargo run -p ch11-http-single-basic --locked -- https://example.org --body"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 144,
+        "command": "cargo test -p ch11-http-single --lib --locked"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 145,
+        "command": "cargo test -p ch11-http-single --test cli --locked"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 161,
+        "command": "cargo run -p ch11-http-single --example page_reply_solution --locked"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 169,
+        "command": "cargo test -p ch11-http-single-basic -p ch11-http-single --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-08-lesson.md",
+        "line": 170,
+        "command": "cargo clippy -p ch11-http-single-basic -p ch11-http-single --all-targets --locked -- -D warnings"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 58,
+        "command": "cargo run -p ch11-local-basic --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 152,
+        "command": "cargo run -p ch11-local-service --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 184,
+        "command": "cargo test -p ch11-local-service --test fixed_responses --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 200,
+        "command": "cargo test -p ch11-local-service --test gates --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 216,
+        "command": "cargo test -p ch11-local-service --test request_timeout --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 232,
+        "command": "cargo test -p ch11-local-service --test absent_entered --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 246,
+        "command": "cargo test -p ch11-local-service --test client_cancel --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 260,
+        "command": "cargo run -p ch11-local-service --example closed_gate_solution --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 276,
+        "command": "cargo test -p ch11-local-service --test shutdown_gate --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 277,
+        "command": "cargo test -p ch11-local-service --test cli --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 283,
+        "command": "cargo test -p ch11-local-basic -p ch11-local-service --all-targets --locked"
+      },
+      {
+        "document": "docs/chapters/14-09-lesson.md",
+        "line": 284,
+        "command": "cargo clippy -p ch11-local-basic -p ch11-local-service --all-targets --locked -- -D warnings"
+      }
+    ],
+    "package_manifests": {
+      "examples/ch11-async/http-single/Cargo.toml": {
+        "package": {
+          "name": "ch11-http-single",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "derive"
+            ]
+          },
+          "reqwest": {
+            "version": "0.13.5",
+            "default-features": false,
+            "features": [
+              "rustls"
+            ]
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time"
+            ]
+          },
+          "url": "2.5.8",
+          "serde": {
+            "version": "1.0.229",
+            "features": [
+              "derive"
+            ]
+          },
+          "serde_json": "1.0.154"
+        }
+      },
+      "examples/ch11-async/local-service/Cargo.toml": {
+        "package": {
+          "name": "ch11-local-service",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "axum": {
+            "version": "0.8.9",
+            "default-features": false,
+            "features": [
+              "http1",
+              "tokio"
+            ]
+          },
+          "ch11-http-single": {
+            "path": "../http-single"
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time",
+              "sync"
+            ]
+          }
+        },
+        "dev-dependencies": {
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "test-util"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/stages/http-single-basic/Cargo.toml": {
+        "package": {
+          "name": "ch11-http-single-basic",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "derive"
+            ]
+          },
+          "reqwest": {
+            "version": "0.13.5",
+            "default-features": false,
+            "features": [
+              "rustls"
+            ]
+          },
+          "url": "2.5.8",
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time"
+            ]
+          }
+        }
+      },
+      "examples/ch11-async/stages/local-basic/Cargo.toml": {
+        "package": {
+          "name": "ch11-local-basic",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "ch11-http-single": {
+            "path": "../../http-single"
+          },
+          "axum": {
+            "version": "0.8.9",
+            "default-features": false,
+            "features": [
+              "http1",
+              "tokio"
+            ]
+          },
+          "tokio": {
+            "version": "1.53.3",
+            "default-features": false,
+            "features": [
+              "rt",
+              "macros",
+              "net",
+              "time",
+              "sync"
+            ]
+          }
+        }
+      },
+      "examples/ch11-http/Cargo.toml": {
+        "package": {
+          "name": "ch11-http",
+          "version": {
+            "workspace": true
+          },
+          "edition": {
+            "workspace": true
+          },
+          "rust-version": {
+            "workspace": true
+          },
+          "publish": {
+            "workspace": true
+          }
+        },
+        "dependencies": {
+          "clap": {
+            "version": "4.6.7",
+            "features": [
+              "derive"
+            ]
+          },
+          "reqwest": {
+            "version": "0.13.5",
+            "default-features": false,
+            "features": [
+              "blocking",
+              "rustls"
+            ]
+          },
+          "url": "2.5.8"
+        }
+      }
+    },
+    "selected_lock_entries": [
+      {
+        "name": "axum",
+        "version": "0.8.9",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "31b698c5f9a010f6573133b09e0de5408834d0c82f8d7475a89fc1867a71cd90",
+        "dependencies": [
+          "axum-core",
+          "bytes",
+          "futures-util",
+          "http",
+          "http-body",
+          "http-body-util",
+          "hyper",
+          "hyper-util",
+          "itoa",
+          "matchit",
+          "memchr",
+          "mime",
+          "percent-encoding",
+          "pin-project-lite",
+          "serde_core",
+          "sync_wrapper",
+          "tokio",
+          "tower",
+          "tower-layer",
+          "tower-service"
+        ]
+      },
+      {
+        "name": "ch11-http",
+        "version": "0.1.0",
+        "dependencies": [
+          "clap",
+          "reqwest",
+          "url"
+        ]
+      },
+      {
+        "name": "ch11-http-single",
+        "version": "0.1.0",
+        "dependencies": [
+          "clap",
+          "reqwest",
+          "serde",
+          "serde_json",
+          "tokio",
+          "url"
+        ]
+      },
+      {
+        "name": "ch11-http-single-basic",
+        "version": "0.1.0",
+        "dependencies": [
+          "clap",
+          "reqwest",
+          "tokio",
+          "url"
+        ]
+      },
+      {
+        "name": "ch11-local-basic",
+        "version": "0.1.0",
+        "dependencies": [
+          "axum",
+          "ch11-http-single",
+          "tokio"
+        ]
+      },
+      {
+        "name": "ch11-local-service",
+        "version": "0.1.0",
+        "dependencies": [
+          "axum",
+          "ch11-http-single",
+          "tokio"
+        ]
+      },
+      {
+        "name": "clap",
+        "version": "4.6.7",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "aa8876b300ab35ba921adea3dfd70157a46249b33f95c9084ae5709785478946",
+        "dependencies": [
+          "clap_builder",
+          "clap_derive"
+        ]
+      },
+      {
+        "name": "reqwest",
+        "version": "0.13.5",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "16a1cfa75cc186dd73d5818e510e042e40927bccc9c236b061cea97e1eb08029",
+        "dependencies": [
+          "base64",
+          "bytes",
+          "futures-channel",
+          "futures-core",
+          "futures-util",
+          "http",
+          "http-body",
+          "http-body-util",
+          "hyper",
+          "hyper-rustls",
+          "hyper-util",
+          "js-sys",
+          "log",
+          "percent-encoding",
+          "pin-project-lite",
+          "quinn",
+          "rustls",
+          "rustls-pki-types",
+          "rustls-platform-verifier",
+          "sync_wrapper",
+          "tokio",
+          "tokio-rustls",
+          "tower",
+          "tower-http",
+          "tower-service",
+          "url",
+          "wasm-bindgen",
+          "wasm-bindgen-futures",
+          "web-sys"
+        ]
+      },
+      {
+        "name": "serde",
+        "version": "1.0.229",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "4148590afebada386688f18773da617792bf2ef03ffc1e4cbd2b1d45b023e0ba",
+        "dependencies": [
+          "serde_core",
+          "serde_derive"
+        ]
+      },
+      {
+        "name": "serde_json",
+        "version": "1.0.154",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "e7e9cc8b1b85264074fbcc02a88680c4096b1e47df8f739dceb03bf482f04bd6",
+        "dependencies": [
+          "itoa",
+          "memchr",
+          "serde",
+          "serde_core",
+          "zmij"
+        ]
+      },
+      {
+        "name": "tokio",
+        "version": "1.53.3",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "ce3335fa71841cda333a58d7615b03901380ecf09d59b3296d21f8bbac0dde4e",
+        "dependencies": [
+          "bytes",
+          "libc",
+          "mio",
+          "pin-project-lite",
+          "signal-hook-registry",
+          "socket2",
+          "tokio-macros",
+          "windows-sys 0.61.2"
+        ]
+      },
+      {
+        "name": "url",
+        "version": "2.5.8",
+        "source": "registry+https://github.com/rust-lang/crates.io-index",
+        "checksum": "ff67a8a4397373c3ef660812acab3268222035010ab8680ec4215f38ba3d0eed",
+        "dependencies": [
+          "form_urlencoded",
+          "idna",
+          "percent-encoding",
+          "serde"
+        ]
+      }
+    ],
+    "counts": {
+      "owned_files": 37,
+      "loaded_owned_files": 35,
+      "hashes": 53,
+      "external_api_hashes": 8,
+      "snippets": 48,
+      "commands": 30,
+      "test_functions": 26
+    }
+  },
+  "assessments": [
+    {
+      "section": "14.7",
+      "evidence": "ch11-http seven complete files and cached reqwest blocking API",
+      "judgment": "URL components/fragment, HTTP status versus transport/request failure, 2xx policy, redirect5, proxy/direct and selected TLS feature roles are accurate. Typed stage errors preserve HTTP status for Body failure and separate process exit codes. No charset means UTF-8 replacement decoding and no body-size cap as stated. Pinned blocking ClientBuilder timeout is retained separately and supplied to send wait and response.text wait; claim is deliberately not a shared 10-second total. Normal main is synchronous. Four unit and two CLI tests are offline; two optional public URL commands have no deterministic-output or speed claim. Status-line exercise keeps 200/404 report semantics."
+    },
+    {
+      "section": "14.8",
+      "evidence": "http-single-basic six complete files, completed http-single nine files including uncompiled README, pinned reqwest async implementation",
+      "judgment": "Async send is an ordinary factory and creates total timeout before polling; same timeout is passed into Response/body. Client sharing/pool, owned final_url before consuming response, elapsed boundary and u128 measurement match source. Basic package has no JSON dependency/module; completed normal library really loads fully taught reply.rs. Three core+one reply unit and two CLI tests match counts. JSON policy checks failed HTTP, then absent body, then Deserialize schema; owned title survives report scope. Artificial report/example is clearly distinguished from real HTTP."
+    },
+    {
+      "section": "14.9 minimal and fixture",
+      "evidence": "no-lib local-basic two files, local-service normal lib/main and all complete examples, normal http-single path dependency; cached axum serve/redirect",
+      "judgment": "Router/get function values, tuple IntoResponse, loopback bind port0 with continuously held listener and serve IntoFuture conversion are correctly taught before selected source. WithGracefulShutdown is IntoFuture, not itself Future, and task+service result layers are checked. Complete Fixture contains every owned helper before its first command. State/Path extraction and short Mutex guard remove preserve Send across await; entered precedes headers and is distinct from ready. Option::take consumes each release sender; shutdown closes gates before signaling and awaiting server, while finish_client separately aborts+awaits client. Assertions follow owned-resource cleanup."
+    },
+    {
+      "section": "14.9 tests and solution",
+      "evidence": "seven isolated integration targets, nine total test functions, closed_gate_solution",
+      "judgment": "fixed_responses tests three fixed statuses plus one redirect (hits5), loop rejection after initial+5 followed redirects (hits6), and simultaneous distinct dynamic ports. gates uses independent releases and checks no premature completion/reused/outside release. request_timeout waits real entered then pauses and resumes before cleanup; only Request/header-phase deadline is claimed. absent_entered first obtains real completed /loop result under15-second notification budget, then virtual5-second entered timeout and preserves original redirect error. client_cancel preserves hits and still shuts server. Closing unopened gate sends normal503 body before shutdown completes, not Request failure. Finite CLI stdout matches source. Each newly introduced test API/source precedes exact --test target; all-targets comes after complete source."
+    }
+  ],
+  "checks": {
+    "performed": [
+      "Read three complete pages and all 37 owned files; 35 compilable source/config files have full inline snippets. Two READMEs are documentation and not compiler-loaded.",
+      "Validate 48 snippet paths/exact anchors and 30 Cargo command lines.",
+      "Parse five selected manifests and pinned root-lock entries; inspect normal path dependency http-single including reply.rs/cfg(test) boundary.",
+      "Review 26 test functions across blocking/basic/full/fixture packages and every answer/helper.",
+      "Read/hash eight cached reqwest0.13.5/axum0.8.9 API files to check timeout/redirect/text/serve contracts."
+    ],
+    "not_performed": [
+      "No Cargo/rustc/Clippy/tests or binary executed.",
+      "No public/local HTTP request, socket binding, timer pause, browser or reader experiment performed."
+    ]
+  },
+  "conclusion": "No necessary or optional technical correction found in current 14.7–14.9."
+}

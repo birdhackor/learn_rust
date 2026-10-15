@@ -1,0 +1,26 @@
+{
+  "docs/chapters/18-01-lesson.md": {
+    "sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0",
+    "read_before_refresh": false
+  },
+  "docs/chapters/18-02-lesson.md": {
+    "sha256": "cd7c87d654ab92944d6d0e9b186fe7b791ee2577ba05161be80478a68ff0b7a8",
+    "read_before_refresh": false
+  },
+  "docs/chapters/18-03-lesson.md": {
+    "sha256": "e5c04133e7ed5866dfe72ccff82bb94a572d6d487c3fa4026e5530b1c799fed3",
+    "read_before_refresh": false
+  },
+  "docs/chapters/18-04-lesson.md": {
+    "sha256": "e4d3cc6aa7a95081ebbea26e108bf3eb1c3fb0a0f0069c353a64fc01efde37d6",
+    "read_before_refresh": false
+  },
+  "docs/chapters/18-05-lesson.md": {
+    "sha256": "759c1dd6cd374e7a9863e9482f6e662df1313b0dc0a4fe6a23c7dd227e6bc27d",
+    "read_before_refresh": false
+  },
+  "docs/chapters/18-06-lesson.md": {
+    "sha256": "0d3112fc092f4d730391bb884b2c9f55c06126e459cc8a84397f7fba54ed4e60",
+    "read_before_refresh": false
+  }
+}

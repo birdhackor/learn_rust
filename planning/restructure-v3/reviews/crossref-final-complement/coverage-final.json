@@ -1,0 +1,638 @@
+{
+  "scope": "canonical第1章排除1.7，第6／10／15／16章；未掃自己4／9／12／18A的outgoing引用。必要引用目標按需實讀。",
+  "counting": "按正文source line計reference_locations；同一行多個引用另計mentions。排除fenced code、snippet directives、數值版本、純程式時間／token位置／圖內方位。補查中文第一章、下列、剛才、先前、同頁、上圖／下圖等。章或範圍引用以實際能力落點核對，非舊mapping。",
+  "counts": {
+    "pages": 33,
+    "lines_read": 6073,
+    "reference_locations": 524,
+    "reference_mentions": 648,
+    "section_mentions": 229,
+    "chapter_mentions": 11,
+    "relative_mentions": 408,
+    "excluded_candidate_mentions": 39,
+    "definite_findings": 1,
+    "optional_findings": 1,
+    "source_hash_drift": 0
+  },
+  "pages": [
+    {
+      "path": "docs/chapters/01-01-lesson.md",
+      "lines": 90,
+      "sha256": "f67a72cfbbbd2557c856aa9efc5284a42b8eb8feb899ec2994949c12d03c6275",
+      "read_ranges": [
+        [
+          1,
+          90
+        ]
+      ],
+      "reference_locations": 11,
+      "reference_mentions": 11,
+      "section_mentions": 0,
+      "chapter_mentions": 2,
+      "relative_mentions": 9,
+      "final_sha256": "f67a72cfbbbd2557c856aa9efc5284a42b8eb8feb899ec2994949c12d03c6275",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/01-02-lesson.md",
+      "lines": 87,
+      "sha256": "d9e129971cb9ec8234de1046a936c6f2be99b09396059c2c1a2ff81a38651c22",
+      "read_ranges": [
+        [
+          1,
+          87
+        ]
+      ],
+      "reference_locations": 10,
+      "reference_mentions": 11,
+      "section_mentions": 0,
+      "chapter_mentions": 0,
+      "relative_mentions": 11,
+      "final_sha256": "d9e129971cb9ec8234de1046a936c6f2be99b09396059c2c1a2ff81a38651c22",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/01-03-lesson.md",
+      "lines": 123,
+      "sha256": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+      "read_ranges": [
+        [
+          1,
+          123
+        ]
+      ],
+      "reference_locations": 10,
+      "reference_mentions": 13,
+      "section_mentions": 0,
+      "chapter_mentions": 0,
+      "relative_mentions": 13,
+      "final_sha256": "03ae122568dbb6c36812815148adb19bd337481c37421f3c82f5163a97bdc5c1",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/01-04-lesson.md",
+      "lines": 83,
+      "sha256": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc",
+      "read_ranges": [
+        [
+          1,
+          83
+        ]
+      ],
+      "reference_locations": 5,
+      "reference_mentions": 8,
+      "section_mentions": 1,
+      "chapter_mentions": 0,
+      "relative_mentions": 7,
+      "final_sha256": "cd61ce46e34365921fe5bca0f86918ab567f29638fe57a9db203c3ab653f04cc",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/01-05-lesson.md",
+      "lines": 78,
+      "sha256": "88627f3d2734717abff22fc4929ec6c8a24cfe33c7975a7d5b4a1cd60ec671c1",
+      "read_ranges": [
+        [
+          1,
+          78
+        ]
+      ],
+      "reference_locations": 5,
+      "reference_mentions": 6,
+      "section_mentions": 0,
+      "chapter_mentions": 0,
+      "relative_mentions": 6,
+      "final_sha256": "88627f3d2734717abff22fc4929ec6c8a24cfe33c7975a7d5b4a1cd60ec671c1",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/01-06-lesson.md",
+      "lines": 120,
+      "sha256": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+      "read_ranges": [
+        [
+          1,
+          120
+        ]
+      ],
+      "reference_locations": 7,
+      "reference_mentions": 7,
+      "section_mentions": 0,
+      "chapter_mentions": 0,
+      "relative_mentions": 7,
+      "final_sha256": "53f814748fb6aa665fd39796da94a51becda827dbbfd083b66c8d40492babb1b",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/01-08-lesson.md",
+      "lines": 111,
+      "sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+      "read_ranges": [
+        [
+          1,
+          111
+        ]
+      ],
+      "reference_locations": 10,
+      "reference_mentions": 11,
+      "section_mentions": 2,
+      "chapter_mentions": 3,
+      "relative_mentions": 6,
+      "final_sha256": "56108b46f7f6fb886ed76d048052239d0688dd8227a5ec7140292200d9a40584",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/06-01-lesson.md",
+      "lines": 133,
+      "sha256": "5df389994db35de562be09374b10686ef2b11774eb70893f2200d4d159141d0a",
+      "read_ranges": [
+        [
+          1,
+          133
+        ]
+      ],
+      "reference_locations": 14,
+      "reference_mentions": 17,
+      "section_mentions": 8,
+      "chapter_mentions": 1,
+      "relative_mentions": 8,
+      "final_sha256": "5df389994db35de562be09374b10686ef2b11774eb70893f2200d4d159141d0a",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/06-02-lesson.md",
+      "lines": 141,
+      "sha256": "f10544e1c8c5bba31e648e597ffa8fe05c8c48305bfaba692cdea1d8033be3f7",
+      "read_ranges": [
+        [
+          1,
+          141
+        ]
+      ],
+      "reference_locations": 16,
+      "reference_mentions": 16,
+      "section_mentions": 2,
+      "chapter_mentions": 0,
+      "relative_mentions": 14,
+      "final_sha256": "f10544e1c8c5bba31e648e597ffa8fe05c8c48305bfaba692cdea1d8033be3f7",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/06-03-lesson.md",
+      "lines": 98,
+      "sha256": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807",
+      "read_ranges": [
+        [
+          1,
+          98
+        ]
+      ],
+      "reference_locations": 9,
+      "reference_mentions": 11,
+      "section_mentions": 3,
+      "chapter_mentions": 0,
+      "relative_mentions": 8,
+      "final_sha256": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/06-04-lesson.md",
+      "lines": 146,
+      "sha256": "aa304cf004199a6d7fe5925854539614d1781f80072f40f77e3fff4dfea53cba",
+      "read_ranges": [
+        [
+          1,
+          146
+        ]
+      ],
+      "reference_locations": 8,
+      "reference_mentions": 10,
+      "section_mentions": 4,
+      "chapter_mentions": 0,
+      "relative_mentions": 6,
+      "final_sha256": "aa304cf004199a6d7fe5925854539614d1781f80072f40f77e3fff4dfea53cba",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/06-05-lesson.md",
+      "lines": 147,
+      "sha256": "2b15a18fcedcfe1d602caaddbb570b6e921f776a67ea932f49f965a7d3a947f5",
+      "read_ranges": [
+        [
+          1,
+          147
+        ]
+      ],
+      "reference_locations": 12,
+      "reference_mentions": 14,
+      "section_mentions": 5,
+      "chapter_mentions": 0,
+      "relative_mentions": 9,
+      "final_sha256": "2b15a18fcedcfe1d602caaddbb570b6e921f776a67ea932f49f965a7d3a947f5",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/06-06-lesson.md",
+      "lines": 138,
+      "sha256": "c22dc2544ddca5f26d854f450028df0fc315ecd114d8db8b9a9ced81efbce549",
+      "read_ranges": [
+        [
+          1,
+          138
+        ]
+      ],
+      "reference_locations": 15,
+      "reference_mentions": 15,
+      "section_mentions": 5,
+      "chapter_mentions": 0,
+      "relative_mentions": 10,
+      "final_sha256": "c22dc2544ddca5f26d854f450028df0fc315ecd114d8db8b9a9ced81efbce549",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/10-01-lesson.md",
+      "lines": 150,
+      "sha256": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab",
+      "read_ranges": [
+        [
+          1,
+          150
+        ]
+      ],
+      "reference_locations": 16,
+      "reference_mentions": 20,
+      "section_mentions": 5,
+      "chapter_mentions": 1,
+      "relative_mentions": 14,
+      "final_sha256": "ee3b7ee380d8110caf1e433c684190f6b12389bba3477e5b9b5a1fff21acd1ab",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/10-02-lesson.md",
+      "lines": 160,
+      "sha256": "394da63f7182a1c977beae9f11180ce370e1efe18851f4fbb0964a5dca4fb79a",
+      "read_ranges": [
+        [
+          1,
+          160
+        ]
+      ],
+      "reference_locations": 13,
+      "reference_mentions": 16,
+      "section_mentions": 6,
+      "chapter_mentions": 0,
+      "relative_mentions": 10,
+      "final_sha256": "394da63f7182a1c977beae9f11180ce370e1efe18851f4fbb0964a5dca4fb79a",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/10-03-lesson.md",
+      "lines": 180,
+      "sha256": "0ef86d599bc6a201968cededd1b0971904d3b0a957545558e6654170f626deca",
+      "read_ranges": [
+        [
+          1,
+          180
+        ]
+      ],
+      "reference_locations": 17,
+      "reference_mentions": 18,
+      "section_mentions": 7,
+      "chapter_mentions": 1,
+      "relative_mentions": 10,
+      "final_sha256": "0ef86d599bc6a201968cededd1b0971904d3b0a957545558e6654170f626deca",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/10-04-lesson.md",
+      "lines": 206,
+      "sha256": "3fc73a9915ecedebe2589e981615aed0271a906fdfafe7bd8741367a20bf2171",
+      "read_ranges": [
+        [
+          1,
+          206
+        ]
+      ],
+      "reference_locations": 18,
+      "reference_mentions": 22,
+      "section_mentions": 7,
+      "chapter_mentions": 0,
+      "relative_mentions": 15,
+      "final_sha256": "3fc73a9915ecedebe2589e981615aed0271a906fdfafe7bd8741367a20bf2171",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/10-05-lesson.md",
+      "lines": 218,
+      "sha256": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+      "read_ranges": [
+        [
+          1,
+          218
+        ]
+      ],
+      "reference_locations": 19,
+      "reference_mentions": 31,
+      "section_mentions": 15,
+      "chapter_mentions": 0,
+      "relative_mentions": 16,
+      "final_sha256": "4e6a04dc914b90e51355003dc6bfc0f7734dfa2f3a3ff3e003733be2d1fe55e8",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/10-06-lesson.md",
+      "lines": 130,
+      "sha256": "1a66bbad509d726af4d6c6b8697c854ce1878fba9dd23b3311f22d471130a99c",
+      "read_ranges": [
+        [
+          1,
+          130
+        ]
+      ],
+      "reference_locations": 17,
+      "reference_mentions": 21,
+      "section_mentions": 10,
+      "chapter_mentions": 0,
+      "relative_mentions": 11,
+      "final_sha256": "1a66bbad509d726af4d6c6b8697c854ce1878fba9dd23b3311f22d471130a99c",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/10-07-lesson.md",
+      "lines": 240,
+      "sha256": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+      "read_ranges": [
+        [
+          1,
+          240
+        ]
+      ],
+      "reference_locations": 22,
+      "reference_mentions": 29,
+      "section_mentions": 13,
+      "chapter_mentions": 0,
+      "relative_mentions": 16,
+      "final_sha256": "4199ad8b74b917794bfa2cdea3fc92c95a7ecf582b3d606393fb463f6a93526e",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/10-08-lesson.md",
+      "lines": 160,
+      "sha256": "301e423c4f1e2cd6541442c1bb47c0bf839b335031c6a9dec281ca57c1a4c2e7",
+      "read_ranges": [
+        [
+          1,
+          160
+        ]
+      ],
+      "reference_locations": 19,
+      "reference_mentions": 24,
+      "section_mentions": 8,
+      "chapter_mentions": 0,
+      "relative_mentions": 16,
+      "final_sha256": "301e423c4f1e2cd6541442c1bb47c0bf839b335031c6a9dec281ca57c1a4c2e7",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/10-09-lesson.md",
+      "lines": 249,
+      "sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+      "read_ranges": [
+        [
+          1,
+          249
+        ]
+      ],
+      "reference_locations": 31,
+      "reference_mentions": 41,
+      "section_mentions": 20,
+      "chapter_mentions": 1,
+      "relative_mentions": 20,
+      "final_sha256": "65e47b59a1715e2928ed498294e693de554e246be011eeb00f191d674d295c55",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/15-01-lesson.md",
+      "lines": 169,
+      "sha256": "4d4b83c88f8ba6ccfcac7866d71b7a0730e55a2f5afed39f4e3d7f7ce8ef3b4b",
+      "read_ranges": [
+        [
+          1,
+          169
+        ]
+      ],
+      "reference_locations": 14,
+      "reference_mentions": 21,
+      "section_mentions": 11,
+      "chapter_mentions": 0,
+      "relative_mentions": 10,
+      "final_sha256": "4d4b83c88f8ba6ccfcac7866d71b7a0730e55a2f5afed39f4e3d7f7ce8ef3b4b",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/15-02-lesson.md",
+      "lines": 178,
+      "sha256": "e87a0ee7d3577ac6d9d472acb519b57ac60eac6e23d52cb2e8caa17eddba1cc0",
+      "read_ranges": [
+        [
+          1,
+          178
+        ]
+      ],
+      "reference_locations": 17,
+      "reference_mentions": 20,
+      "section_mentions": 8,
+      "chapter_mentions": 0,
+      "relative_mentions": 12,
+      "final_sha256": "e87a0ee7d3577ac6d9d472acb519b57ac60eac6e23d52cb2e8caa17eddba1cc0",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/15-03-lesson.md",
+      "lines": 173,
+      "sha256": "8dab364a2465746176fc776a154b507efc35ba3c4e0b89b69d9b19a96512f18e",
+      "read_ranges": [
+        [
+          1,
+          173
+        ]
+      ],
+      "reference_locations": 15,
+      "reference_mentions": 19,
+      "section_mentions": 6,
+      "chapter_mentions": 0,
+      "relative_mentions": 13,
+      "final_sha256": "8dab364a2465746176fc776a154b507efc35ba3c4e0b89b69d9b19a96512f18e",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/15-04-lesson.md",
+      "lines": 287,
+      "sha256": "3f60eb8974d39620c01dd5719914f728739bfbca6fe7507ce091d712b78ecd4f",
+      "read_ranges": [
+        [
+          1,
+          287
+        ]
+      ],
+      "reference_locations": 30,
+      "reference_mentions": 34,
+      "section_mentions": 17,
+      "chapter_mentions": 0,
+      "relative_mentions": 17,
+      "final_sha256": "3f60eb8974d39620c01dd5719914f728739bfbca6fe7507ce091d712b78ecd4f",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/15-05-lesson.md",
+      "lines": 302,
+      "sha256": "d7a229d638429477507f1ca2beb0d742c008be9380f724d527f8ec583d15f04a",
+      "read_ranges": [
+        [
+          1,
+          302
+        ]
+      ],
+      "reference_locations": 26,
+      "reference_mentions": 29,
+      "section_mentions": 5,
+      "chapter_mentions": 0,
+      "relative_mentions": 24,
+      "final_sha256": "d7a229d638429477507f1ca2beb0d742c008be9380f724d527f8ec583d15f04a",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/15-06-lesson.md",
+      "lines": 579,
+      "sha256": "ed5a9511f205772cacba2f95e4c4b5b25744e59c039fdd4c656e78d090e713a7",
+      "read_ranges": [
+        [
+          1,
+          579
+        ]
+      ],
+      "reference_locations": 35,
+      "reference_mentions": 46,
+      "section_mentions": 20,
+      "chapter_mentions": 0,
+      "relative_mentions": 26,
+      "final_sha256": "ed5a9511f205772cacba2f95e4c4b5b25744e59c039fdd4c656e78d090e713a7",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/16-01-lesson.md",
+      "lines": 168,
+      "sha256": "a02196df700ac59c39a0d5d0a73a457d54661a69110d145086deac890aca84a3",
+      "read_ranges": [
+        [
+          1,
+          168
+        ]
+      ],
+      "reference_locations": 16,
+      "reference_mentions": 21,
+      "section_mentions": 10,
+      "chapter_mentions": 1,
+      "relative_mentions": 10,
+      "final_sha256": "a02196df700ac59c39a0d5d0a73a457d54661a69110d145086deac890aca84a3",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/16-02-lesson.md",
+      "lines": 212,
+      "sha256": "e23aa436d2fae0c6d9a0d80d17f053ae3bed168bc40a1cd42ea00fdce2a54aca",
+      "read_ranges": [
+        [
+          1,
+          212
+        ]
+      ],
+      "reference_locations": 16,
+      "reference_mentions": 18,
+      "section_mentions": 5,
+      "chapter_mentions": 0,
+      "relative_mentions": 13,
+      "final_sha256": "e23aa436d2fae0c6d9a0d80d17f053ae3bed168bc40a1cd42ea00fdce2a54aca",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/16-03-lesson.md",
+      "lines": 209,
+      "sha256": "a95a5c1a963f7dce7c6be06c75e077f696a4dd6ffc01cc5d26f77155452e81d1",
+      "read_ranges": [
+        [
+          1,
+          209
+        ]
+      ],
+      "reference_locations": 15,
+      "reference_mentions": 22,
+      "section_mentions": 9,
+      "chapter_mentions": 0,
+      "relative_mentions": 13,
+      "final_sha256": "a95a5c1a963f7dce7c6be06c75e077f696a4dd6ffc01cc5d26f77155452e81d1",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/16-04-lesson.md",
+      "lines": 226,
+      "sha256": "812dd287942e8bdfe9835c8dafe5f0039b76bd2058c0c7c2a12937b411faa1d1",
+      "read_ranges": [
+        [
+          1,
+          226
+        ]
+      ],
+      "reference_locations": 17,
+      "reference_mentions": 18,
+      "section_mentions": 4,
+      "chapter_mentions": 0,
+      "relative_mentions": 14,
+      "final_sha256": "812dd287942e8bdfe9835c8dafe5f0039b76bd2058c0c7c2a12937b411faa1d1",
+      "unchanged_during_review": true
+    },
+    {
+      "path": "docs/chapters/16-05-lesson.md",
+      "lines": 382,
+      "sha256": "682ee2b551cda73f3589643ce3f9827570e368d10377759af42a9182fd0755e7",
+      "read_ranges": [
+        [
+          1,
+          382
+        ]
+      ],
+      "reference_locations": 19,
+      "reference_mentions": 28,
+      "section_mentions": 13,
+      "chapter_mentions": 1,
+      "relative_mentions": 14,
+      "final_sha256": "682ee2b551cda73f3589643ce3f9827570e368d10377759af42a9182fd0755e7",
+      "unchanged_during_review": true
+    }
+  ],
+  "constraints": {
+    "repo_mutations": false,
+    "cargo_runs": false,
+    "subagents": false,
+    "other_audit_findings_read": false
+  },
+  "limits": "語意引用掃描；未重跑程式，未做全書技術或網站版面審查。local source availability採已讀正文／snippet指向，不把URL存在當能力已教證據。",
+  "instructions": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+    },
+    {
+      "path": ".agents/skills/clear-tutorial/SKILL.md",
+      "sha256": "e3890d1adbf84fc530016d45a5019a4dcc614c65d75efe3c42e9ab25e0b1618f"
+    },
+    {
+      "path": ".agents/skills/clear-tutorial/references/writing-prompt.md",
+      "sha256": "c83a3ee311ecaf3f06068321fc1c4d7eb0232e3fece2c4ed7f9ba4965a566826"
+    },
+    {
+      "path": ".agents/skills/clear-tutorial/references/rust-terminology.md",
+      "sha256": "711c6027313c8135ec387337dedeef7b64a96b7f85bf837e2d11b91e994774cd"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "chapter": 6,
+  "first_unit": 155,
+  "last_unit": 160,
+  "entries": [
+    {
+      "source": "docs/chapters/06-01-lesson.md",
+      "file": "units/155.md",
+      "sha256": "059b04ed3c364541b9c726445f8533bbde397080cf027d02b015116da16b6218",
+      "source_sha256": "5df389994db35de562be09374b10686ef2b11774eb70893f2200d4d159141d0a",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/06-02-lesson.md",
+      "file": "units/156.md",
+      "sha256": "5cc649ec8edf7c0511fa14ebfde0de169d9448e1c541304df810725d673f78b8",
+      "source_sha256": "f10544e1c8c5bba31e648e597ffa8fe05c8c48305bfaba692cdea1d8033be3f7",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/06-03-lesson.md",
+      "file": "units/157.md",
+      "sha256": "ff17209135e06f5da914f177e3dc09c097e05c76a3c9cab21e5c88279bfb0517",
+      "source_sha256": "5a2de0ca59151643d07bfed212b014e36f275975cdbd9074d283d5aede346807",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/06-04-lesson.md",
+      "file": "units/158.md",
+      "sha256": "3c8cbfdd21ff490b7ebb3c9123f398627f87f80dae3a1fbd0c6af278d815e8e5",
+      "source_sha256": "aa304cf004199a6d7fe5925854539614d1781f80072f40f77e3fff4dfea53cba",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/06-05-lesson.md",
+      "file": "units/159.md",
+      "sha256": "796a73a83575ae360b75fb6636550ea54306c0fce9227bfd5e6056ef103994c7",
+      "source_sha256": "2b15a18fcedcfe1d602caaddbb570b6e921f776a67ea932f49f965a7d3a947f5",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence",
+      "images": [
+        {
+          "source": "docs/assets/traits-v3/map-query.svg",
+          "source_sha256": "634c559c2141a9e2bda9e4616a1e0b5eaebc29e64428ab06250ab9b7900aba20",
+          "view_png": "/workspace/work/tutorial-implementation-20261015/reader-ch01/figures/ch06-map-query.png",
+          "png_sha256": "fec66b961dda87b8469849e909948e219a96ca88fe5122abd9384cfa64ac154d",
+          "alt": "查詢視圖借query的Rust文字，get依內容查找；found借的是counts內的usize值2"
+        }
+      ]
+    },
+    {
+      "source": "docs/chapters/06-06-lesson.md",
+      "file": "units/160.md",
+      "sha256": "71eba17637482dfabe731b0aaa5afba84afe49414de423299e6c915111b2defb",
+      "source_sha256": "c22dc2544ddca5f26d854f450028df0fc315ecd114d8db8b9a9ced81efbce549",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    }
+  ],
+  "route": "whole prerequisite pages;  actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed"
+}

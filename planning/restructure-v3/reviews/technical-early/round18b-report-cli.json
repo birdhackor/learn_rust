@@ -1,0 +1,479 @@
+{
+  "reviewer": "technical_v3_ch01_07",
+  "review_type": "independent source-first technical initial judgment",
+  "scope": [
+    "18.11"
+  ],
+  "sealed_at_utc": "2026-10-15",
+  "findings": {
+    "necessary": [],
+    "optional": []
+  },
+  "independence": {
+    "author_validation_read": false,
+    "peer_reviews_read": false,
+    "historical_findings_read": false,
+    "prior_knowledge": "Basic Python plus personally read actual1–17 and18.1–18.10, with18.10 independently sealed first. No18.12 source/body used to fill this section."
+  },
+  "evidence": {
+    "scope": [
+      "18.11"
+    ],
+    "file_hashes": [
+      {
+        "path": "/workspace/learn_rust/AGENTS.md",
+        "sha256": "704c01fd5d277417810ff55ed5f0c88b5b1cda1b4a1dd213fbdd0d608964ddb4"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.lock",
+        "sha256": "95d79485763a80e8863a676299fdf0ef8b2feb9aaf0f566d68f61aa8bbfcca2f"
+      },
+      {
+        "path": "/workspace/learn_rust/Cargo.toml",
+        "sha256": "7e456fae9a304afb06454212d0b5939adc43a916d2591fb41ee86832e37c9b6f"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/assets/ch15/url-report-boundary.svg",
+        "sha256": "f60e2e1d1e8bcf996fcf094c4aa14befa560bda768d2ef425113dac12f5afa8b"
+      },
+      {
+        "path": "/workspace/learn_rust/docs/chapters/18-11-lesson.md",
+        "sha256": "39fd79710a11a0eaf852666ba19e73c35c420dcb0635d3411a57b5a90ddd580a"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/Cargo.lock",
+        "sha256": "25040ee3574d979a13d4eb3dc814eb4355b96574247f9a41a2e073a23739d2f0"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/Cargo.toml",
+        "sha256": "3fce7a1cfe12371591ae586474cf73ee1fae7d1698a8d43619af3895541ab8e5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/README.md",
+        "sha256": "153395a8cd67f0dc23fe3459d88648f88da156f6f69fb749f80b404fadf1f2a7"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/checks/app-tests.rs",
+        "sha256": "3749a8fe822c21ddd651f764462953afd27e1c01ed8b2b234437ce9624447ca6"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/checks/report-tests.rs",
+        "sha256": "c82248e0c20a180f90e36debca35a9bada973592222290223686e8f82bb8fe50"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt",
+        "sha256": "e89bcb35b58442ca0ff82705c99cc9c344dd8175f4bf78cdac888e54a58f94ee"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/app.rs",
+        "sha256": "fe4b46ebed045e5a50307de93e393a751b8be9072a9eeb4a3a0d8e4df07d5f4e"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/batch.rs",
+        "sha256": "3715d19dde1a15f66c229496dcacb3230ed39b489a5aa0ac333d834a1cf535d1"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/config.rs",
+        "sha256": "0c23c7c6f983f73b8856e5ef248449c92936bc060f79062545a1a3a0ec1b2739"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/error.rs",
+        "sha256": "fb67e8e826bff7ab79df64c5227b39a6dc62253cd0858cea07cb58ab34127b3f"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/input.rs",
+        "sha256": "2a7e50f13cc83851c23b804cdb98479867be958a41464ce765c78368438bbe1d"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/lib.rs",
+        "sha256": "4fb9e98b5a3c0f4edb1036ceb44cc79a938022e9110689c5e1c0fef26b125a43"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/main.rs",
+        "sha256": "9b85de0b0572caee99943479331e952af4e90e08b5a0ddc9c05950154b6fa0cf"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/report.rs",
+        "sha256": "9cbbf77fe28e9d1385b81197515dfbc69fe4c4752258c8ab77750f9e3548ccee"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/single.rs",
+        "sha256": "fea3a0b4e025e14b322ca61cc14da6590ee2360824268cc9b223a9e5c28c3ee4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/src/test_fixture.rs",
+        "sha256": "2c5d78c5000bb07e597d89f87e03183637c94fc2a3b35cddcc72f46d31d949a4"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/b-final-starter/tests/config.rs",
+        "sha256": "9eb63464adf95b510e4aa2973828531f93307ba1b8fdd49ccea2d6449a395fb5"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/app.rs",
+        "sha256": "7e07b31b22fed5bd4b1b2edac7093d2adaea0134ef03b859732a01cf793f1b77"
+      },
+      {
+        "path": "/workspace/learn_rust/examples/ch15-projects/url-checker/src/report.rs",
+        "sha256": "2cea7007b9bb1838022649908dcbe6fc445d2bd098af0795c28a3dc213783498"
+      },
+      {
+        "path": "/workspace/learn_rust/rust-toolchain.toml",
+        "sha256": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+      },
+      {
+        "path": "/workspace/learn_rust/scripts/env.sh",
+        "sha256": "8d94ddf1a936eb5e1305677cb8d7becb27310caa5a5c55ab15661f01b1d5ffe5"
+      }
+    ],
+    "owned_files": [
+      "examples/ch15-projects/b-final-starter/Cargo.lock",
+      "examples/ch15-projects/b-final-starter/Cargo.toml",
+      "examples/ch15-projects/b-final-starter/README.md",
+      "examples/ch15-projects/b-final-starter/checks/app-tests.rs",
+      "examples/ch15-projects/b-final-starter/checks/report-tests.rs",
+      "examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt",
+      "examples/ch15-projects/b-final-starter/src/app.rs",
+      "examples/ch15-projects/b-final-starter/src/batch.rs",
+      "examples/ch15-projects/b-final-starter/src/config.rs",
+      "examples/ch15-projects/b-final-starter/src/error.rs",
+      "examples/ch15-projects/b-final-starter/src/input.rs",
+      "examples/ch15-projects/b-final-starter/src/lib.rs",
+      "examples/ch15-projects/b-final-starter/src/main.rs",
+      "examples/ch15-projects/b-final-starter/src/report.rs",
+      "examples/ch15-projects/b-final-starter/src/single.rs",
+      "examples/ch15-projects/b-final-starter/src/test_fixture.rs",
+      "examples/ch15-projects/b-final-starter/tests/config.rs",
+      "examples/ch15-projects/url-checker/src/app.rs",
+      "examples/ch15-projects/url-checker/src/report.rs"
+    ],
+    "selected_library_owned_rust_files": [
+      "examples/ch15-projects/b-final-starter/src/lib.rs",
+      "examples/ch15-projects/b-final-starter/src/app.rs",
+      "examples/ch15-projects/b-final-starter/src/batch.rs",
+      "examples/ch15-projects/b-final-starter/src/config.rs",
+      "examples/ch15-projects/b-final-starter/src/error.rs",
+      "examples/ch15-projects/b-final-starter/src/input.rs",
+      "examples/ch15-projects/b-final-starter/src/report.rs",
+      "examples/ch15-projects/b-final-starter/src/single.rs"
+    ],
+    "selected_after_append_test_material": [
+      "examples/ch15-projects/b-final-starter/checks/app-tests.rs",
+      "examples/ch15-projects/b-final-starter/checks/report-tests.rs"
+    ],
+    "unloaded_but_read_sources": [
+      "examples/ch15-projects/b-final-starter/src/main.rs",
+      "examples/ch15-projects/b-final-starter/src/test_fixture.rs",
+      "examples/ch15-projects/b-final-starter/tests/config.rs"
+    ],
+    "replacement_answer_files": [
+      "examples/ch15-projects/url-checker/src/app.rs",
+      "examples/ch15-projects/url-checker/src/report.rs"
+    ],
+    "snippets": [
+      {
+        "line": 35,
+        "reference": "examples/ch15-projects/b-final-starter/src/report.rs:model"
+      },
+      {
+        "line": 60,
+        "reference": "examples/ch15-projects/b-final-starter/src/report.rs:render"
+      },
+      {
+        "line": 68,
+        "reference": "examples/ch15-projects/b-final-starter/src/error.rs:error"
+      },
+      {
+        "line": 78,
+        "reference": "examples/ch15-projects/b-final-starter/src/config.rs:settings"
+      },
+      {
+        "line": 88,
+        "reference": "examples/ch15-projects/b-final-starter/src/test_fixture.rs:ready-probe"
+      },
+      {
+        "line": 94,
+        "reference": "examples/ch15-projects/b-final-starter/Cargo.toml"
+      },
+      {
+        "line": 110,
+        "reference": "examples/ch15-projects/b-final-starter/src/app.rs:run"
+      },
+      {
+        "line": 130,
+        "reference": "examples/ch15-projects/b-final-starter/Cargo.lock"
+      },
+      {
+        "line": 136,
+        "reference": "examples/ch15-projects/b-final-starter/src/lib.rs"
+      },
+      {
+        "line": 142,
+        "reference": "examples/ch15-projects/b-final-starter/src/input.rs"
+      },
+      {
+        "line": 148,
+        "reference": "examples/ch15-projects/b-final-starter/src/single.rs"
+      },
+      {
+        "line": 154,
+        "reference": "examples/ch15-projects/b-final-starter/src/batch.rs"
+      },
+      {
+        "line": 160,
+        "reference": "examples/ch15-projects/b-final-starter/src/config.rs"
+      },
+      {
+        "line": 166,
+        "reference": "examples/ch15-projects/b-final-starter/src/error.rs"
+      },
+      {
+        "line": 172,
+        "reference": "examples/ch15-projects/b-final-starter/src/report.rs"
+      },
+      {
+        "line": 178,
+        "reference": "examples/ch15-projects/b-final-starter/src/app.rs"
+      },
+      {
+        "line": 184,
+        "reference": "examples/ch15-projects/b-final-starter/src/main.rs"
+      },
+      {
+        "line": 190,
+        "reference": "examples/ch15-projects/b-final-starter/src/test_fixture.rs"
+      },
+      {
+        "line": 196,
+        "reference": "examples/ch15-projects/b-final-starter/tests/config.rs"
+      },
+      {
+        "line": 202,
+        "reference": "examples/ch15-projects/b-final-starter/fixtures/invalid-urls.txt"
+      },
+      {
+        "line": 223,
+        "reference": "examples/ch15-projects/b-final-starter/src/report.rs:map"
+      },
+      {
+        "line": 237,
+        "reference": "examples/ch15-projects/b-final-starter/checks/report-tests.rs"
+      },
+      {
+        "line": 243,
+        "reference": "examples/ch15-projects/b-final-starter/checks/app-tests.rs"
+      },
+      {
+        "line": 249,
+        "reference": "examples/ch15-projects/b-final-starter/checks/report-tests.rs:map-test"
+      },
+      {
+        "line": 259,
+        "reference": "examples/ch15-projects/b-final-starter/checks/report-tests.rs:status-test"
+      },
+      {
+        "line": 273,
+        "reference": "examples/ch15-projects/b-final-starter/checks/app-tests.rs:writer"
+      },
+      {
+        "line": 277,
+        "reference": "examples/ch15-projects/b-final-starter/checks/app-tests.rs:flush-test"
+      },
+      {
+        "line": 306,
+        "reference": "examples/ch15-projects/url-checker/src/report.rs"
+      },
+      {
+        "line": 312,
+        "reference": "examples/ch15-projects/url-checker/src/app.rs"
+      }
+    ],
+    "commands": [
+      {
+        "line": 208,
+        "command": "cargo +1.99.0 check --lib --locked"
+      },
+      {
+        "line": 209,
+        "command": "cargo +1.99.0 test --lib --locked"
+      },
+      {
+        "line": 246,
+        "command": "cargo +1.99.0 test --lib --locked"
+      },
+      {
+        "line": 319,
+        "command": "cargo +1.99.0 test --lib --locked"
+      }
+    ],
+    "copy_proofs": [
+      "B-final input/single implementations equal own sealed B4 after removing snippet marker lines",
+      "B-final batch equals B4 implementation except root module imports and removed unused Entry.original method",
+      "Both full replacement answer cfg(test) suffixes exactly equal corresponding starter check files"
+    ],
+    "manifest": {
+      "package": {
+        "name": "url-checker-starter",
+        "version": "0.1.0",
+        "edition": "2024",
+        "rust-version": "1.99",
+        "publish": false
+      },
+      "dependencies": {
+        "clap": {
+          "version": "4.6.7",
+          "features": [
+            "derive"
+          ]
+        },
+        "serde": {
+          "version": "1.0.229",
+          "features": [
+            "derive"
+          ]
+        },
+        "serde_json": "1.0.154",
+        "reqwest": {
+          "version": "0.13.5",
+          "default-features": false,
+          "features": [
+            "rustls"
+          ]
+        },
+        "tokio": {
+          "version": "1.53.3",
+          "default-features": false,
+          "features": [
+            "rt",
+            "macros",
+            "net",
+            "time",
+            "sync",
+            "signal"
+          ]
+        },
+        "url": "2.5.8"
+      },
+      "dev-dependencies": {
+        "axum": {
+          "version": "0.8.9",
+          "default-features": false,
+          "features": [
+            "http1",
+            "tokio"
+          ]
+        },
+        "tempfile": "3.27.0"
+      }
+    },
+    "standalone_lock": {
+      "lines": 1774,
+      "packages": 183,
+      "root": [
+        {
+          "name": "url-checker-starter",
+          "version": "0.1.0",
+          "dependencies": [
+            "axum",
+            "clap",
+            "reqwest",
+            "serde",
+            "serde_json",
+            "tempfile",
+            "tokio",
+            "url"
+          ]
+        }
+      ],
+      "path_dependencies": false
+    },
+    "fixture_bytes": [
+      10,
+      102,
+      116,
+      112,
+      58,
+      47,
+      47,
+      104,
+      111,
+      115,
+      116,
+      47,
+      105,
+      116,
+      101,
+      109,
+      10,
+      32,
+      10,
+      47,
+      110,
+      111,
+      116,
+      101,
+      115,
+      10,
+      102,
+      116,
+      112,
+      58,
+      47,
+      47,
+      104,
+      111,
+      115,
+      116,
+      47,
+      105,
+      116,
+      101,
+      109,
+      10
+    ],
+    "counts": {
+      "owned_files": 19,
+      "hashes": 26,
+      "snippets": 29,
+      "commands": 4,
+      "initial_lib_tests": 0,
+      "appended_checks": 9,
+      "full_replacement_tests": 9,
+      "config_tests_unselected_this_section": 2,
+      "svg_xml": 1
+    }
+  },
+  "assessments": [
+    {
+      "item": "owned report mapping and format",
+      "judgment": "Row contains only owned Serde-capable data; Option/u16/u128 support and null semantics taught before first model. Each input retained once in existing order, duplicate URL distinct. Checked original/timing moved before outcome match; only HTTP fills final URL/status/passed; Input/Request detail uses true error text, Timeout has no invented status, TaskFailure/Cancelled/Unstarted no fake Check/time. Requested sets batch cancelled independently from item cancelled; SignalFailed/Closed remain typed fatal errors. Text render JSON-quotes original/final_url/detail and Options, preserving generated one-row-per-line; JSON pretty includes trailing LF and roundtrips full model."
+    },
+    {
+      "item": "priority and actual output",
+      "judgment": "Report.status computes130 before failed1 before allpassed0. write_report renders then write_all+flush and only then reads data status, so Encode/Output causes main2 even when cancelled. Complete ControlledWriter tests distinguish refusedwrite versus acceptedbytes/failedflush, using fixed PermissionDenied rather than filesystem assumptions. Main stdout data/stderr diagnostics/help+version display output all use checked write_output; fatal ignores its own diagnostic failure and still returns2. Error source retains actual io/reqwest/serde chains, while String signal/controller reasons have no invented source. Read is explicitly distinguished from io→Output From."
+    },
+    {
+      "item": "CLI, lifetime and boundaries",
+      "judgment": "Clap default_value_t typed numeric role, usize/u64 parsing versus positive validation and native filename explained before use. validate jobs then timeout before file read; missing filename with zero config returns config first, UTF8 read/Empty fatal. run owns Scheduler outside borrowed run wait, registers listener before submitting work, awaits listener on every returned normal/Requested/source-error route, then builds owned report. check_text caller keeps stop sender or requests stop and awaits; no false automatic cleanup-on-drop guarantee."
+    },
+    {
+      "item": "source closure and reproducibility",
+      "judgment": "Starter normal library only8 files and declared private modules, no mod test_fixture; own cfg(test) is appended only via two checks, dependency axum dev features do not themselves compile unused Fixture source. Complete answer app/report use crate paths and exact same cfg(test) suffixes as two check files, so replacing those full files in starter root gives exactly9 tests, no hidden final batch tests. B-final input/single implementations equal already-read B4; batch diff is root path plus removed unused Entry.original only. Full uncompiled main/config integration/test_fixture supplied and read, ready_response body-read and timeout role distinct from product finalheaders. Standalone lock parsed1774lines/183packages, direct pinned versions correct and no pathdeps; workspace root lock versus copied directory lock explained."
+    },
+    {
+      "item": "test progression and SVG",
+      "judgment": "Nine checks: initial source-fatal/format/config tests pass3, mapping adds2→5, status adds1→6, output completes remaining3→9; synthetic panic guarded5seconds and abort+await on observation expiry. Manual report timing/input cases are explicitly not HTTP evidence. Fixture exact blank/ftp/space/notes/duplicate bytes align with indexes1/3/4. Source boundary SVG connects Batch→Report→render→write+flush→0/1/130 and source/encoding/output failure2 correctly. No rendered visual claim."
+    }
+  ],
+  "execution": {
+    "performed": [
+      "Read entire current18.11, all owned Rust/config/check/fixture material for starter and its two full replacement files.",
+      "Prove exact check suffixes and prior-core implementation matches; parse standalone manifest and complete lock structure; resolve29 snippets/four commands and capture26 hashes.",
+      "Static nine-test progression, output failure priority, source chains, CLI/source lifetime and one SVG XML review."
+    ],
+    "not_performed": [
+      "No Cargo/rustc/Clippy/tests/CLI/HTTP execution, timer control, browser or reader experiment.",
+      "One README hashed but not read or used as evidence."
+    ]
+  },
+  "conclusion": "No necessary or optional technical correction found in measured18.11."
+}

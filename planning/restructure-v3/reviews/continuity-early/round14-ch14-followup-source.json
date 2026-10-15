@@ -1,0 +1,22 @@
+{
+  "utc": "2026-10-15T10:53:08.765712+00:00",
+  "known_adopted_changes": true,
+  "changes": [
+    {
+      "path": "docs/chapters/14-03-lesson.md",
+      "before_sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+      "after_sha256": "83f75035694bb35cb3312db869913d5df758e27d49ab5aa4d7b21b2ee33ede42"
+    },
+    {
+      "path": "docs/chapters/14-05-lesson.md",
+      "before_sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+      "after_sha256": "9beaab3af9f93e4c3b5f65aae7cde69026db426d5811110b1ec14cb39343309f"
+    },
+    {
+      "path": "docs/chapters/14-09-lesson.md",
+      "before_sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+      "after_sha256": "cb3206ccfd5d9d6034cd0dc94001a496378b518fe61fa507acea64217425b7c2"
+    }
+  ],
+  "scope": "C14-01/02/03 narrowly source+render, notnewindependentfinding"
+}

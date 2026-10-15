@@ -1,0 +1,321 @@
+[
+  {
+    "reference_group": "13.1 → 11.5",
+    "path": "docs/chapters/11-05-lesson.md",
+    "sha256": "936a3788cf246573cc9f93075af806f8e1b7cef938a10573de4f1508a0ddeeb6",
+    "lines": 148,
+    "read_range": [
+      1,
+      148
+    ],
+    "note": "Sized/?Sized及static型別bound；不把型別bound等同值永久存在。"
+  },
+  {
+    "reference_group": "11.4 → 11.3",
+    "path": "docs/chapters/11-03-lesson.md",
+    "sha256": "376a205191cf19ed9b01de2b838586ad84f1341abe6c928d9136f504016c66d1",
+    "lines": 157,
+    "read_range": [
+      60,
+      140
+    ],
+    "note": "Drop型別不能直接移出non-Copy欄位，目標實際有E0509，不誤報。"
+  },
+  {
+    "reference_group": "11.2 → 3.6",
+    "path": "docs/chapters/03-06-lesson.md",
+    "sha256": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+    "lines": 94,
+    "read_range": [
+      1,
+      94
+    ],
+    "note": "3.6真正有shared receiver移出值E0507，不只3.3才談此限制。"
+  },
+  {
+    "reference_group": "12.4 → 2.6",
+    "path": "docs/chapters/02-06-lesson.md",
+    "sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+    "lines": 143,
+    "read_range": [
+      97,
+      128
+    ],
+    "note": "folder example/main.rs與mod檔案規則確實在2.6。"
+  },
+  {
+    "reference_group": "13.3 → 7.4",
+    "path": "docs/chapters/07-04-lesson.md",
+    "sha256": "21a01d6a373aa5db5df05479d23e7b40c0119fcc98116e6f8af3f210b32acc64",
+    "lines": 179,
+    "read_range": [
+      1,
+      95
+    ],
+    "note": "original明連原來源而非短模型；HRTB外部借用輸出回指正確。"
+  },
+  {
+    "reference_group": "12.3及12.4",
+    "path": "docs/chapters/12-03-lesson.md",
+    "sha256": "35e30859aa3cfac9752493c2e76843cfcd36c65d674bfa37c79bd8dc0c7ea8b2",
+    "lines": 211,
+    "read_range": [
+      1,
+      211
+    ],
+    "note": "只讀非fence主文；metadata/原生路徑/錯誤/borrowed-key/排序各自分工。"
+  },
+  {
+    "reference_group": "12.4 → 7.1/7.2",
+    "path": "docs/chapters/07-02-lesson.md",
+    "sha256": "b8935241be3b9415cd7f6a0cf2c59aaf4e2441bc2153d121af6f331959db41fb",
+    "lines": 199,
+    "read_range": [
+      96,
+      164
+    ],
+    "note": "placeholder與outlives；返回ContentGroup的單一slice來源不是捏造的static。"
+  },
+  {
+    "reference_group": "18.3 → 12.4",
+    "path": "docs/chapters/12-04-lesson.md",
+    "sha256": "55f1886f0d40f920a3dff640c0b2a3b3f0d0647951e739e805b717a750e68754",
+    "lines": 377,
+    "read_range": [
+      272,
+      355
+    ],
+    "note": "singleton仍hash驗可讀及前後觀察，確切失敗者移除後重建，按路徑metrics。"
+  },
+  {
+    "reference_group": "18.3實作責任",
+    "path": "examples/ch09-content/lesson-workspace/groups/src/lib.rs",
+    "sha256": "c5b7d75d460d3fd35c85cb863bb5a1f007651edd2b38e214092342cb5351e712",
+    "lines": 95,
+    "read_range": [
+      1,
+      95
+    ],
+    "note": "完整source親讀：逐組代表比較、singleton驗證、原生排序及checked metrics。"
+  },
+  {
+    "reference_group": "13.2及13.3",
+    "path": "docs/chapters/13-02-lesson.md",
+    "sha256": "a254b105f9e5a2f509c00a73513eb1604a51d0c314ed3c04cf32931d02f6b36e",
+    "lines": 251,
+    "read_range": [
+      1,
+      251
+    ],
+    "note": "目前版本全文；spawn/join、thread Result、panic downcast、detach與兩份join。"
+  },
+  {
+    "reference_group": "13.3及後文HRTB",
+    "path": "docs/chapters/13-03-lesson.md",
+    "sha256": "5d6be8548750a18a4f07754df44d23df4ab22798f4764a1ecdaed69e83cbf25d",
+    "lines": 224,
+    "read_range": [
+      1,
+      224
+    ],
+    "note": "目前版本全文；外層a、for binder、固定T可借外部，以及每次輸出連當次輸入。"
+  },
+  {
+    "reference_group": "17.6 → 13.8",
+    "path": "docs/chapters/13-08-lesson.md",
+    "sha256": "b111cb10d4c1dfddb8986cc1ee89902eafa89e78fca5b6329bc09b8df3f64a79",
+    "lines": 240,
+    "read_range": [
+      55,
+      91
+    ],
+    "note": "兩條路徑各加一次是lost-update段，不是後面三加二的五次counter段；不誤報。"
+  },
+  {
+    "reference_group": "13.7 → 13.6/13.5",
+    "path": "docs/chapters/13-07-lesson.md",
+    "sha256": "c96f26ad8707450d399d650accd91132140788e5e5153b2373bbbcaae4892dd5",
+    "lines": 294,
+    "read_range": [
+      1,
+      294
+    ],
+    "note": "非fence主文；read/write/guard/poison、downgrade、fairness及deadlock分工。"
+  },
+  {
+    "reference_group": "14.8 → 14.5",
+    "path": "docs/chapters/14-05-lesson.md",
+    "sha256": "c76052717f30eafc27f40c7cccd133c618c9a5526949796ce9cb610af2bf5194",
+    "lines": 222,
+    "read_range": [
+      7,
+      15
+    ],
+    "note": "std Duration與Instant真的在14.5；後段Tokio虛擬時鐘不是此測量來源。"
+  },
+  {
+    "reference_group": "14.4 → 14.3",
+    "path": "docs/chapters/14-04-lesson.md",
+    "sha256": "515b65df29e13d8041dffb39d27123b3d784446952876ae41854bffe9f642679",
+    "lines": 154,
+    "read_range": [
+      1,
+      154
+    ],
+    "note": "完整正文；controlled_work/collect_one/JoinSet沿實際14.3，非後文executor。"
+  },
+  {
+    "reference_group": "14.6及14.7",
+    "path": "docs/chapters/14-06-lesson.md",
+    "sha256": "01cf1821062ad321d4fa452cd6e39a2fde1bc42b792df556a3866ae00aaeb714",
+    "lines": 256,
+    "read_range": [
+      1,
+      256
+    ],
+    "note": "非fence主文；borrowed等待/task/abort/drain/短guard與控制訊號責任。"
+  },
+  {
+    "reference_group": "14.7及14.8",
+    "path": "docs/chapters/14-07-lesson.md",
+    "sha256": "eeecfa90ed6c35cc1c811954629015ffc63e1495319b0d5e12ac4d82b68f014e",
+    "lines": 153,
+    "read_range": [
+      1,
+      153
+    ],
+    "note": "非fence主文；blocking API/HTTP通過/body與固定版期限，與14.8不同但不錯指。"
+  },
+  {
+    "reference_group": "14.8及14.9",
+    "path": "docs/chapters/14-08-lesson.md",
+    "sha256": "e34c4c9eb62be9827e2704c7d8862b6b47c9610ba4b4d6895b345f54099a0ecf",
+    "lines": 175,
+    "read_range": [
+      1,
+      175
+    ],
+    "note": "非fence主文；Future工廠回指14.2、stdInstant回指14.5、Serde回指10.7。"
+  },
+  {
+    "reference_group": "14.9前綴回指",
+    "path": "docs/chapters/14-09-lesson.md",
+    "sha256": "4509539a27758b21e566f7d18c3af0aa675d5d21d91b7fa1a703607681567dd6",
+    "lines": 289,
+    "read_range": [
+      1,
+      253
+    ],
+    "note": "非fence主文；IntoFuture本節首教，Arc/atomic/tuple與短guard可回13.6/13.8/11.10/14.6。"
+  },
+  {
+    "reference_group": "17.1–17.4",
+    "path": "docs/chapters/17-01-lesson.md",
+    "sha256": "a8ee5f3868a82137595915740897ee2968cdf0955a7f8054921ac3718c307a62",
+    "lines": 211,
+    "read_range": [
+      1,
+      211
+    ],
+    "note": "非fence主文；newtype/Reading與產生宣告，不把macro當runtime函式。"
+  },
+  {
+    "reference_group": "17.2–17.3",
+    "path": "docs/chapters/17-02-lesson.md",
+    "sha256": "4aa35385366a486d4e354ed7975a11209684e73c903d97f71605b42592d8b863",
+    "lines": 255,
+    "read_range": [
+      1,
+      253
+    ],
+    "note": "非fence主文；textual/path scope、$crate、hygiene、compile_error與隔離workspace都確實有教。"
+  },
+  {
+    "reference_group": "17.3 → 12.2",
+    "path": "docs/chapters/17-03-lesson.md",
+    "sha256": "aff60066fc4adbf85439864d9aa32d8f7d9054ef218d3bd02bf450b81c26212c",
+    "lines": 311,
+    "read_range": [
+      1,
+      311
+    ],
+    "note": "非fence主文；proc-macro host角色與consumer成品分開，12.2實際教建置工作/成品區別。"
+  },
+  {
+    "reference_group": "18.6 → 17.4",
+    "path": "docs/chapters/17-04-lesson.md",
+    "sha256": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa",
+    "lines": 375,
+    "read_range": [
+      1,
+      375
+    ],
+    "note": "非fence主文；private/newtype/Default/non_exhaustive/pubuse/來源與行為相容性。"
+  },
+  {
+    "reference_group": "17.5 → 6.5/6.6",
+    "path": "docs/chapters/17-05-lesson.md",
+    "sha256": "06e860e87aa7895cbeb270a7cb6abf336fc3d3e800cba58d5ace29086cc9b9b6",
+    "lines": 238,
+    "read_range": [
+      1,
+      238
+    ],
+    "note": "非fence主文；HashMap覆寫與同鍵累加回指實際已教的兩項不同工作。"
+  },
+  {
+    "reference_group": "17.6 → 13/15",
+    "path": "docs/chapters/17-06-lesson.md",
+    "sha256": "40b995a63f8ae50f07264ccb014d8e5f090796c8f2658c6279fc6b5aeb12dca5",
+    "lines": 264,
+    "read_range": [
+      1,
+      264
+    ],
+    "note": "非fence主文；Loom只用有限模型，Miri引用15.4安全切分與15.3 raw來源責任。"
+  },
+  {
+    "reference_group": "17.8 → 17.7",
+    "path": "docs/chapters/17-07-lesson.md",
+    "sha256": "82260e42f6632bbed298ad38bfda5d0e762a8c963348bfcf0ce5de45f7030eb0",
+    "lines": 235,
+    "read_range": [
+      1,
+      235
+    ],
+    "note": "非fence主文；相同source/合成分布/兩輪bench與計時邊界，實際有64/256材料。"
+  },
+  {
+    "reference_group": "17.8 → 17.7/11.3/5.2",
+    "path": "docs/chapters/17-08-lesson.md",
+    "sha256": "8ff6edb77f3d98afd663717b4b2e9fe10b93dd6b20890f69cfe5613c02c19898",
+    "lines": 246,
+    "read_range": [
+      1,
+      246
+    ],
+    "note": "非fence主文；配置追蹤和普通bench證據分開；drop+prelude回指沒有宣稱5.2先教Drop。"
+  },
+  {
+    "reference_group": "18.5 → 10.8",
+    "path": "docs/chapters/10-08-lesson.md",
+    "sha256": "301e423c4f1e2cd6541442c1bb47c0bf839b335031c6a9dec281ca57c1a4c2e7",
+    "lines": 160,
+    "read_range": [
+      64,
+      152
+    ],
+    "note": "Command/arg/current_dir、CARGO_BIN_EXE_<name>與--test都有實際教學，不誤指14.2為唯一起點。"
+  },
+  {
+    "reference_group": "18.6 → 7.3",
+    "path": "docs/chapters/07-03-lesson.md",
+    "sha256": "3e692d3103181c324465281d3533aef8bf46da191ac80218dc7ec89e62ba7d79",
+    "lines": 115,
+    "read_range": [
+      23,
+      31
+    ],
+    "note": "TextView<'_>回傳模型的省略正是Source<'_>的既有形式，無須誤改成只有7.1。"
+  }
+]

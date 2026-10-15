@@ -1,0 +1,4662 @@
+[
+  {
+    "path": "examples/ch12-unsafe/Cargo.toml",
+    "sha256": "d3c9301856f032cacafd7fc18a43eb8f38615ae75752c85b8cf84eb266beb20c",
+    "bytes": 136,
+    "lines": 6,
+    "read_ranges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/gat_solution.rs",
+    "sha256": "d60c0d4c64845ca684696de07ea2bd52beef6ec8de8dbd3d0294e62358142ebd",
+    "bytes": 784,
+    "lines": 38,
+    "read_ranges": [
+      [
+        1,
+        38
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/gat_views.rs",
+    "sha256": "e02be337b7a02aefb9bbde321973b0e98f3a0e29a5fb272c557809db4129b882",
+    "bytes": 920,
+    "lines": 30,
+    "read_ranges": [
+      [
+        1,
+        30
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/raw_array.rs",
+    "sha256": "ec00d80a6d4a53a308e2693de79aca05e105957c30ff0a7f49e43824aaf36878",
+    "bytes": 954,
+    "lines": 23,
+    "read_ranges": [
+      [
+        1,
+        23
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/raw_construction.rs",
+    "sha256": "3a0488f94e2c0b0785b205b5f19176894b82f41757c4ac75f8992f7f28d65804",
+    "bytes": 548,
+    "lines": 16,
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/raw_local.rs",
+    "sha256": "b6b10b0acccc27cc5200f12e2b50c4d7b6619e27f79aece418b2bdc04634c109",
+    "bytes": 608,
+    "lines": 17,
+    "read_ranges": [
+      [
+        1,
+        17
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/raw_solution.rs",
+    "sha256": "c56d23b11eec610f10581192a0e6e0940052a71629137459dc6556552052d2f1",
+    "bytes": 691,
+    "lines": 19,
+    "read_ranges": [
+      [
+        1,
+        19
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/readonly_threads.rs",
+    "sha256": "b74fff7ccd849c1fcd836c856e2ca1692253d231e1f6c817d0d5ab291c0eccb1",
+    "bytes": 951,
+    "lines": 29,
+    "read_ranges": [
+      [
+        1,
+        29
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/safe_split.rs",
+    "sha256": "9db0c1fd9dc281e9aa97aa765e6293da4704f8f6d53705957974683bbd30423c",
+    "bytes": 786,
+    "lines": 25,
+    "read_ranges": [
+      [
+        1,
+        25
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/unsafe_read.rs",
+    "sha256": "c464719516fc81d1afcb8879ea1f2021a422a09e6d1df767da47c0ede99e5dd1",
+    "bytes": 417,
+    "lines": 10,
+    "read_ranges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/unsafe_solution.rs",
+    "sha256": "6b27a09b8674e9d86b2928a9aa25ea047520cbda7b4e144922e8a8c15b49f176",
+    "bytes": 725,
+    "lines": 24,
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/variance_callbacks.rs",
+    "sha256": "f694c477166ebcc3919123fd326f9710710d48372b552f7745b8932ed2f3ba3e",
+    "bytes": 537,
+    "lines": 20,
+    "read_ranges": [
+      [
+        1,
+        20
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/variance_references.rs",
+    "sha256": "7fdd76979833d54890bc1d13d7c856e0e9c0984b819cb98b4592a984f477c2e6",
+    "bytes": 583,
+    "lines": 21,
+    "read_ranges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/examples/variance_solution.rs",
+    "sha256": "cc60c1d4ad328750975051cc283003ce84dabe65c7c52fc6f08f95a7efc437fb",
+    "bytes": 517,
+    "lines": 16,
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/gat_missing_bound.expected",
+    "sha256": "db9b0a861a4d072c963491b101255b726ab04d032aacffbb751e48aa927afffe",
+    "bytes": 33,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/gat_missing_bound.rs",
+    "sha256": "3b62cb6b3de53f40f17ed6079b630769693b1678a967ef62d5416493c0e71a63",
+    "bytes": 100,
+    "lines": 7,
+    "read_ranges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/gat_owner_too_short.expected",
+    "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/gat_owner_too_short.rs",
+    "sha256": "70433146de34a5f82f244102def92225e5705ef2de36bc08dd47ee8785841a26",
+    "bytes": 495,
+    "lines": 30,
+    "read_ranges": [
+      [
+        1,
+        30
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/raw_pointer_not_send.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/raw_pointer_not_send.rs",
+    "sha256": "be5ddfa3e352ab719d67067460709c86c38b5eb1c2da9f728a53e9779ee8b586",
+    "bytes": 220,
+    "lines": 10,
+    "read_ranges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/raw_without_unsafe.expected",
+    "sha256": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/raw_without_unsafe.rs",
+    "sha256": "02bf53ece868e4f54fb6d145502267159ac3bca1f87ec29657cce24e32aa6a8d",
+    "bytes": 138,
+    "lines": 6,
+    "read_ranges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/readonly_source_escape.expected",
+    "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/readonly_source_escape.rs",
+    "sha256": "d94289238708c8a9aada39e14498d59e13a8d339c2a43401afccab0d2440a07d",
+    "bytes": 709,
+    "lines": 31,
+    "read_ranges": [
+      [
+        1,
+        31
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/split_two_index_borrows.expected",
+    "sha256": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/split_two_index_borrows.rs",
+    "sha256": "0b1139176ba851764b2faeba52717c26c66974efabd8a76a3701872dd0d54e5d",
+    "bytes": 225,
+    "lines": 11,
+    "read_ranges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/unsafe_call_without_block.expected",
+    "sha256": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/unsafe_call_without_block.rs",
+    "sha256": "05265ce1ffe9aba7e192becf533dc5e5f5d5c8bcfbfa75c9dbd4cc0927327c38",
+    "bytes": 402,
+    "lines": 12,
+    "read_ranges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/variance_cell.expected",
+    "sha256": "d83902e1e30c09dee3580e58c61b1ed08051895a509820a119a252c082224edb",
+    "bytes": 33,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/variance_cell.rs",
+    "sha256": "f07212bd6704766332b640ec4016f9534bd375191a9a92bfb10147ccbeb173ab",
+    "bytes": 135,
+    "lines": 7,
+    "read_ranges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/variance_input_reverse.expected",
+    "sha256": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "bytes": 34,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/variance_input_reverse.rs",
+    "sha256": "ee45c5aeb8973fc03b4be7f61186f5e4b7ead5278d6a60c97cf46441d8e5b4ad",
+    "bytes": 143,
+    "lines": 7,
+    "read_ranges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/variance_mutable_target.expected",
+    "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/fixtures/compile-fail/variance_mutable_target.rs",
+    "sha256": "221f69f992a0b3d1f574203b63fd04318e42e46d8faf4907c9466419d5bd9b22",
+    "bytes": 296,
+    "lines": 13,
+    "read_ranges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/src/contracts.rs",
+    "sha256": "a1c3b7aace96c91c17b30e49f04072c4aaac6435b238d03aa11c22a5de0e743d",
+    "bytes": 6000,
+    "lines": 167,
+    "read_ranges": [
+      [
+        1,
+        167
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/src/gat.rs",
+    "sha256": "9c8bfb27bf5eded95da8b99e411187e0aa3aafa4aea5f3635d6c9635183cdbac",
+    "bytes": 2363,
+    "lines": 101,
+    "read_ranges": [
+      [
+        1,
+        101
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/src/lib.rs",
+    "sha256": "6ed58edfdf2f63adb063cb601bee812a20e133fa51acce9ad7c46a356523c7cf",
+    "bytes": 50,
+    "lines": 3,
+    "read_ranges": [
+      [
+        1,
+        3
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-unsafe/src/variance.rs",
+    "sha256": "0a8a877d0f4907c5fdfc42a78e6f3930c1b2181c134fa87859ba69f4e2fc0898",
+    "bytes": 554,
+    "lines": 21,
+    "read_ranges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/Cargo.toml",
+    "sha256": "c63efb8533165dfd83f7f4d5584634ae0da22a94acb3a707927295626cbd870f",
+    "bytes": 169,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/build.rs",
+    "sha256": "c4accf1747c5d3885b23d66729c7ba6ee0f70ee1cb21a3991b06b2ceb9a13af5",
+    "bytes": 285,
+    "lines": 10,
+    "read_ranges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/c/tutorial.c",
+    "sha256": "a812216a2ea7eb6d0f5713680ce045767cbb350e08b352c4a436a80597290309",
+    "bytes": 1057,
+    "lines": 49,
+    "read_ranges": [
+      [
+        1,
+        49
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/c/tutorial.h",
+    "sha256": "9ecb778f1c0237eae7c97fef9a023eae4b119ec3db994b6f7e6bf3f0e10ecf65",
+    "bytes": 1234,
+    "lines": 33,
+    "read_ranges": [
+      [
+        1,
+        33
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/examples/borrowed_label.rs",
+    "sha256": "5cf760bbf402b4b30a3a8577b88f6745bd18669759ed2b156e57d549048bf978",
+    "bytes": 427,
+    "lines": 16,
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/examples/buffer_count.rs",
+    "sha256": "c33e9257456d3dba2ed73fcd6b65b6de736c3d18381e7d6abc11bac1e166b50e",
+    "bytes": 427,
+    "lines": 10,
+    "read_ranges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/examples/ffi_solution.rs",
+    "sha256": "36475b2170016b6225bc33026d9cb8c9fef20d187786974d6c0c48c03f2c1830",
+    "bytes": 757,
+    "lines": 22,
+    "read_ranges": [
+      [
+        1,
+        22
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/examples/owned_greeting.rs",
+    "sha256": "44b4c7b801890ce886d1a613530b7bc0928741d2956732477d49d8a8431046ed",
+    "bytes": 493,
+    "lines": 17,
+    "read_ranges": [
+      [
+        1,
+        17
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/examples/scalar_call.rs",
+    "sha256": "d257807977f0da4a1eef47c270ba39c1f2ced1988c6c03c1f178eb45f16537dc",
+    "bytes": 91,
+    "lines": 5,
+    "read_ranges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.expected",
+    "sha256": "a9a531622165c7235fac2d4b022d4e239ad4acdb6ac50a04e03d53b660101aea",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/fixtures/compile-fail/cstr_owner_too_short.rs",
+    "sha256": "b600232b35c179592054fd07f6593b453d519de4019605008671067a0be0c1fd",
+    "bytes": 199,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.expected",
+    "sha256": "9d5bdfd30fd746cb62c0f251e6e257050dcc38aa8d43d29b91952611a583717e",
+    "bytes": 29,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/fixtures/compile-fail/extern_block_without_unsafe.rs",
+    "sha256": "7c763eba4ddd0febc0422f32dd30c29435284644948b7d877106697be063ff0c",
+    "bytes": 63,
+    "lines": 5,
+    "read_ranges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.expected",
+    "sha256": "48c3f82a77c3b8a6b730bf7b29776aee0d05c43031f9f967c41415da2b483916",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/fixtures/compile-fail/foreign_call_without_unsafe.rs",
+    "sha256": "1af081f04d4dc58a98899cb5be98073d321ba7b43f28faff8596c36f47fd3f78",
+    "bytes": 118,
+    "lines": 7,
+    "read_ranges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.expected",
+    "sha256": "d723d4594aee7fcb25e097de1c1ce1f477abd7a95853766dbc50758f588763a9",
+    "bytes": 13,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/fixtures/compile-fail/struct_without_repr_c.rs",
+    "sha256": "2dd71b93380d1c8bfba0b7f0792a28f040a5a28462752c7e54a6ffed7671ae45",
+    "bytes": 182,
+    "lines": 12,
+    "read_ranges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/src/lib.rs",
+    "sha256": "0739016349249bf5ffe4e008a99a7d8606b572a66e19a12b4faba301c3a5ff2a",
+    "bytes": 5521,
+    "lines": 183,
+    "read_ranges": [
+      [
+        1,
+        183
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-ffi/src/sys.rs",
+    "sha256": "30edb686f9a4fe09e3a818c33a3b0657e3f03af64c71bc12a57582dc6b220a91",
+    "bytes": 618,
+    "lines": 28,
+    "read_ranges": [
+      [
+        1,
+        28
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-c-basics/checks.c",
+    "sha256": "73dc95771cb060bcc415ad207a496c69a4ab404f4d363510246d46ca9d418f31",
+    "bytes": 839,
+    "lines": 37,
+    "read_ranges": [
+      [
+        1,
+        37
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-c-basics/counts.c",
+    "sha256": "dfff9a207dfe0f8510785765e19097729e048475d2e1441fcfa397dff712dbf3",
+    "bytes": 656,
+    "lines": 29,
+    "read_ranges": [
+      [
+        1,
+        29
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-c-basics/counts.h",
+    "sha256": "81e96a58f431dbc50655d77bff37b6da9e85fea54dc2c86c0c020467aff11807",
+    "bytes": 835,
+    "lines": 16,
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-c-basics/fixtures/compile-fail/missing_length.c",
+    "sha256": "b49c22686e6ac8a81c3341d56b4dc0f85869eadc790dd41046af7bb00c23d4a7",
+    "bytes": 155,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-c-basics/fixtures/compile-fail/missing_length.expected",
+    "sha256": "d91b2c63f23b2086de51cb8e8ab0f16200033bbc712a336cba8817e4f5117ef2",
+    "bytes": 30,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-c-basics/main.c",
+    "sha256": "5ecc59e814841ad90957f3fc2506d02550786897873ed19c6032b70f2845b146",
+    "bytes": 1412,
+    "lines": 47,
+    "read_ranges": [
+      [
+        1,
+        47
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch12-c-basics/solution.c",
+    "sha256": "a5e2d7c839c0e1d0b50cfb53073b76aa28e4dc23e4d64978c536fa9ebbbbe018",
+    "bytes": 813,
+    "lines": 32,
+    "read_ranges": [
+      [
+        1,
+        32
+      ]
+    ],
+    "adoption": "親讀完整原source/manifest/build/C/test/fixture/sidecar，未用僅region替代全文",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/11-05-lesson.md",
+    "sha256": "936a3788cf246573cc9f93075af806f8e1b7cef938a10573de4f1508a0ddeeb6",
+    "read_ranges": [
+      [
+        1,
+        148
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/11-09-lesson.md",
+    "sha256": "8f935f8c0f04181dd4321c8505c8ac8aac8c27813e4a1a1d7a8dec865d795925",
+    "read_ranges": [
+      [
+        1,
+        254
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/12-01-lesson.md",
+    "sha256": "5f7ab3792ff83635cc74b2147311ae448cd914c74f18e86c96aa54c0e3cf61f0",
+    "read_ranges": [
+      [
+        1,
+        202
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/12-02-lesson.md",
+    "sha256": "846d2893b7c8c692a00efa7792cf4256cde6732e35f118d104585ed72bdfba7a",
+    "read_ranges": [
+      [
+        1,
+        193
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/13-01-lesson.md",
+    "sha256": "c5b392ba306e20d36ba848860b03f669a09fabc7f76d28e5eefa168815aab654",
+    "read_ranges": [
+      [
+        1,
+        288
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/11-06-lesson.md",
+    "sha256": "ec492344b90ad5c776fd17550cde8540c2241161b42d13a70ce72632d6dbb76f",
+    "read_ranges": [
+      [
+        1,
+        100
+      ],
+      [
+        210,
+        250
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/07-01-lesson.md",
+    "sha256": "e61b02fe9a59f512d953a679fbc6ea016f7631ffda0d859fa21abce9370d720b",
+    "read_ranges": [
+      [
+        1,
+        145
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/07-02-lesson.md",
+    "sha256": "b8935241be3b9415cd7f6a0cf2c59aaf4e2441bc2153d121af6f331959db41fb",
+    "read_ranges": [
+      [
+        1,
+        199
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/Cargo.toml",
+    "sha256": "788b6953c21ca39f0c4f5ed355956de0afcd9d1334e98bf18b2d43a832fbaa12",
+    "bytes": 72,
+    "lines": 4,
+    "read_ranges": [
+      [
+        1,
+        4
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/type_bounds.rs",
+    "sha256": "dd15ef09a85a1846018e70cc89c4bcb6478031a0ccd0c0f116e09c05f9032612",
+    "bytes": 672,
+    "lines": 25,
+    "read_ranges": [
+      [
+        1,
+        25
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/static_complete/lifetime_bounds/mod.rs",
+    "sha256": "74ebe48ef260d5c2b749a0afb5e3d1162c162337352919eb945a99c4bb9390ff",
+    "bytes": 1469,
+    "lines": 51,
+    "read_ranges": [
+      [
+        1,
+        51
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/static_reference.rs",
+    "sha256": "26c81ab7a36e5362422a4ca691b3b7d229e4667fbab265f5561349dfef482789",
+    "bytes": 485,
+    "lines": 16,
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/cell_values/cells/mod.rs",
+    "sha256": "a4af681704fc471e3adfff5d42ff444f79d701a15c7fcc7629a75c14971d2794",
+    "bytes": 313,
+    "lines": 19,
+    "read_ranges": [
+      [
+        1,
+        19
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/refcell_guards.rs",
+    "sha256": "9e2a8da327f72e245074c4dd36bd7c79638c8f73be3eb3a10878f70601a26800",
+    "bytes": 607,
+    "lines": 26,
+    "read_ranges": [
+      [
+        1,
+        26
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/try_borrows.rs",
+    "sha256": "c63fa094ac4c3c8e337588d796091072a4a96a9deeeee8da9a4ccef3aa6168ca",
+    "bytes": 1022,
+    "lines": 33,
+    "read_ranges": [
+      [
+        1,
+        33
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/recorder/cells/mod.rs",
+    "sha256": "db8feb7034acd85f6e2c6ea7d94678d49c60871be96fd17bbef0c378168249d3",
+    "bytes": 516,
+    "lines": 29,
+    "read_ranges": [
+      [
+        1,
+        29
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/recorder/main.rs",
+    "sha256": "5251b2d6d6fa3522352318bb60e4653dc819ac10dba5ffd19730a97d501e738f",
+    "bytes": 487,
+    "lines": 21,
+    "read_ranges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/trait-stages/examples/associated.rs",
+    "sha256": "1105dacc52be55109dbd9f2b797778b3e6597ef04a0df54e6efeb7cf18bec0f5",
+    "bytes": 913,
+    "lines": 26,
+    "read_ranges": [
+      [
+        1,
+        26
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/trait-stages/examples/associated_support/mod.rs",
+    "sha256": "8116faa4739db768fdabd25015c468879d42e9621743633def82579ee9449ba1",
+    "bytes": 1965,
+    "lines": 81,
+    "read_ranges": [
+      [
+        1,
+        81
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch09-build-script/Cargo.toml",
+    "sha256": "08729d8f5e96d5f6cff7d2e1e590140e2bb653f135f0f23116765bba2e7bebf9",
+    "bytes": 161,
+    "lines": 7,
+    "read_ranges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch09-build-script/build.rs",
+    "sha256": "5455cbca7f20f25b814391d6c1d6fb69b4e688b873d7461db27efc9fdd6d69da",
+    "bytes": 1122,
+    "lines": 33,
+    "read_ranges": [
+      [
+        1,
+        33
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch09-build-script/src/lib.rs",
+    "sha256": "a36ae85a666aacc2fc6fd85d07abe53b7c6838e6e81df5e039fb32752cd8eab4",
+    "bytes": 219,
+    "lines": 11,
+    "read_ranges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch09-build-script/src/main.rs",
+    "sha256": "4b01daa93b0e485eaf5176aea6aa9681400f68a0fd90a6b45ef36934ff178bbf",
+    "bytes": 311,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/Cargo.toml",
+    "sha256": "f121830c787e5a9441cb24373fc93d4a780af5f78849a85d9a345c5055083a9e",
+    "bytes": 143,
+    "lines": 6,
+    "read_ranges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/send_sync/contracts/mod.rs",
+    "sha256": "1229d68ce99f4a191c995572211e341254d7cfeddfd9e13b07e6c1801b363398",
+    "bytes": 240,
+    "lines": 11,
+    "read_ranges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/send_sync/main.rs",
+    "sha256": "51957b840e96795b6260b8371a286d3736df03fc143909f42c73f9d1b8fea60f",
+    "bytes": 767,
+    "lines": 33,
+    "read_ranges": [
+      [
+        1,
+        33
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/thread_join/workers/mod.rs",
+    "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "bytes": 170,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/local_callback/higher_ranked/mod.rs",
+    "sha256": "9a0ea1f8a3053326d006d5d160c290854e9b6808e26f838e647cc2a74e68808b",
+    "bytes": 188,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/local_callback/main.rs",
+    "sha256": "0cf90ec78f259d63c57a476d0f4585537228d9aea4fe9ac1da85f64ec309522a",
+    "bytes": 222,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/callback_projection/higher_ranked/mod.rs",
+    "sha256": "4a90f10ee8931a9d15e6fc7b1c657c040f094911fa3f269faa9c370c9306a9f8",
+    "bytes": 349,
+    "lines": 14,
+    "read_ranges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/callback_projection/main.rs",
+    "sha256": "652209acbd956950ddc8bf0e24df85b9efc25254d7a94f2da48fb05b1f77243b",
+    "bytes": 318,
+    "lines": 14,
+    "read_ranges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "adoption": "必要前置實際完整source親讀",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/11-01-lesson.md",
+    "sha256": "01206a2c8b69a641f4b04083178c43cb5a528bd097ef2c5edd490256231c3776",
+    "read_ranges": [
+      [
+        1,
+        181
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/11-02-lesson.md",
+    "sha256": "b36a80e90643d0be470e9708dd7b118c994d9c44118ccd5c0ed16b38df53991a",
+    "read_ranges": [
+      [
+        1,
+        165
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/11-03-lesson.md",
+    "sha256": "376a205191cf19ed9b01de2b838586ad84f1341abe6c928d9136f504016c66d1",
+    "read_ranges": [
+      [
+        1,
+        157
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/11-04-lesson.md",
+    "sha256": "05c14435f34625a260be02454fecb4daad4e6d8fc6d150aca0910e64808f4fab",
+    "read_ranges": [
+      [
+        1,
+        154
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/13-04-lesson.md",
+    "sha256": "452f05337ef7610197fe9908167c9ffd5dcb447b3fda33fe6e189e345a678da9",
+    "read_ranges": [
+      [
+        1,
+        269
+      ]
+    ],
+    "prior_read_record": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "same_hash_as_prior_read": true,
+    "adoption": "前輪15章本人已實讀actual prefix；僅hash未變者承接，本文不是第二次全文實讀聲稱。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/size_support/mod.rs",
+    "sha256": "191f7931ce3f6e6bb72ed7623dfc34a75358f720411c5437c718671bb9d1161f",
+    "bytes": 802,
+    "lines": 27,
+    "read_ranges": [
+      [
+        1,
+        27
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/sizes.rs",
+    "sha256": "af185ba59384187407558d1305da202bf365d02a2b7ccdf05055173b8e5b9773",
+    "bytes": 936,
+    "lines": 23,
+    "read_ranges": [
+      [
+        1,
+        23
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/boxes.rs",
+    "sha256": "f511debff2129a798c8433205ead208119b21f12fd2ed52a867a1a8d58c366c8",
+    "bytes": 642,
+    "lines": 24,
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/coercions/views/mod.rs",
+    "sha256": "96001e4b87c530002195500995dbc97d2c2391da9dd66884d2e8cc50feb6764d",
+    "bytes": 479,
+    "lines": 26,
+    "read_ranges": [
+      [
+        1,
+        26
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/coercions/main.rs",
+    "sha256": "095511a13a0a705eec9b6a3b9119e43ae38748a94e9bcfe42cfad0ee56055ae3",
+    "bytes": 806,
+    "lines": 34,
+    "read_ranges": [
+      [
+        1,
+        34
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/drop_scope.rs",
+    "sha256": "bbb61c12466c19419b326a1df506c3c433db36013de9e47dd446b52a337b6671",
+    "bytes": 547,
+    "lines": 24,
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/drop_early.rs",
+    "sha256": "a752675ecd7b2d17cadd5d3b3a3a39ff3be7450aaeca510a3a8045999927da60",
+    "bytes": 381,
+    "lines": 20,
+    "read_ranges": [
+      [
+        1,
+        20
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/drop_fields.rs",
+    "sha256": "15b7b0f51371f8cf4656949a45eb6ca8d45b309c9e0fb04619e66d3f7bfcccbb",
+    "bytes": 522,
+    "lines": 28,
+    "read_ranges": [
+      [
+        1,
+        28
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/type-stages/examples/drop_solution.rs",
+    "sha256": "bb73af0d0965cb1fda231924c0f109a94ebf4f2f13320e9a17cfcf81f4b78320",
+    "bytes": 418,
+    "lines": 20,
+    "read_ranges": [
+      [
+        1,
+        20
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_answer/main.rs",
+    "sha256": "b3bf5483e8fc09dc5e4b6c1675b11261759265342fe2b5cf537cdd3e4a7c10cf",
+    "bytes": 1257,
+    "lines": 39,
+    "read_ranges": [
+      [
+        1,
+        39
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_answer/workers/mod.rs",
+    "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "bytes": 170,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_auto_wait/main.rs",
+    "sha256": "436da6f70b77527482c39759efad7476e40a9764c91c60fc66c8fd7971663df8",
+    "bytes": 460,
+    "lines": 22,
+    "read_ranges": [
+      [
+        1,
+        22
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_auto_wait/workers/mod.rs",
+    "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "bytes": 170,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_borrow/main.rs",
+    "sha256": "3fe748f2d33fd4fbaa0724a469b14301e42a12bf2bf4c00d11a124ecb5879f13",
+    "bytes": 577,
+    "lines": 23,
+    "read_ranges": [
+      [
+        1,
+        23
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_borrow/workers/mod.rs",
+    "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "bytes": 170,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_borrowed_result/main.rs",
+    "sha256": "b45d7614d88fdfe756375a2980fe2adc72ab240688b6c3f9918ec7cc45592351",
+    "bytes": 688,
+    "lines": 27,
+    "read_ranges": [
+      [
+        1,
+        27
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_borrowed_result/workers/mod.rs",
+    "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "bytes": 170,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_panic/main.rs",
+    "sha256": "96d9484a5569e8419614d502a2f48d7674f5d78ac367c498a6a1b138f00c46a0",
+    "bytes": 734,
+    "lines": 26,
+    "read_ranges": [
+      [
+        1,
+        26
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/scoped_panic/workers/mod.rs",
+    "sha256": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+    "bytes": 1259,
+    "lines": 40,
+    "read_ranges": [
+      [
+        1,
+        40
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_cell_shared.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_cell_shared.rs",
+    "sha256": "a31b8653d42acd4130c484b9f53b61abfd34fab975bfd38eadba815b1859d512",
+    "bytes": 310,
+    "lines": 13,
+    "read_ranges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_handle_escape.expected",
+    "sha256": "e9bf1137607ac0f1a97c1ef96af0f69ca102aac3ec29e77ec42ecd3221fa8c68",
+    "bytes": 34,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_handle_escape.rs",
+    "sha256": "5226f1a55538085234eb92a74e14e921b47a29612155342c76cbedbad125a2e5",
+    "bytes": 217,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_local_source.expected",
+    "sha256": "88cc33d2d6a2d0766b29618c0b0dc8577cbd335f4117adf98cfc33068ea0f7d1",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_local_source.rs",
+    "sha256": "54787b1f53667a5c1b5aa0967783538fb9c6430c29c648d3aec54a4f0754b4f4",
+    "bytes": 297,
+    "lines": 12,
+    "read_ranges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_two_mutable.expected",
+    "sha256": "18b9cf50040c499529fcb208a259718960d1502425c2d8fb656492afde66f023",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/scoped_two_mutable.rs",
+    "sha256": "a105bf1d224f08c4b3d77719f2031052bfe6a4605b3ce468f2ab3bcd2033f337",
+    "bytes": 316,
+    "lines": 16,
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/runtime-fail/scoped_auto_panic.expected",
+    "sha256": "67facfef8d01f471999393d0135edf3d1eef365bf455fc66fa0072d97be793e4",
+    "bytes": 25,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/runtime-fail/scoped_auto_panic.rs",
+    "sha256": "f7cd1a58db6b9e93dd5f9f70215f4841753351d3749e8d522d49f022bd992b8b",
+    "bytes": 337,
+    "lines": 14,
+    "read_ranges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "adoption": "15.3/4前實際全文親讀之必要前置；13.4依root正式stage04 gate後才讀入",
+    "prior_read_ledger": "/workspace/work/ch15-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/Cargo.toml",
+    "sha256": "967b0de23ab6cfa47c3450d3f57356c6d34e23f33fcece5fb27d7f82b8d4e926",
+    "bytes": 137,
+    "lines": 6,
+    "read_ranges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/already_ready.rs",
+    "sha256": "72bfb1187efff3f10aa793eacccf2fce94d6ef0d491948eb95fa2434437af92b",
+    "bytes": 952,
+    "lines": 31,
+    "read_ranges": [
+      [
+        1,
+        31
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/box_handles.rs",
+    "sha256": "a4027c95c248fb141af796e17fed38a45f63f48b67dc156ce6037b601949280a",
+    "bytes": 840,
+    "lines": 28,
+    "read_ranges": [
+      [
+        1,
+        28
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/event_after_poll.rs",
+    "sha256": "8526ff4104be143df302cb7b861c6397be5a06ce5c7759532bfbb3aec7628698",
+    "bytes": 1699,
+    "lines": 50,
+    "read_ranges": [
+      [
+        1,
+        50
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/event_before_poll.rs",
+    "sha256": "2b8e32b6b57489d98bec3e73eb55f8abdfa4d3d5bdc29dd66faf3d12628b7ce4",
+    "bytes": 1037,
+    "lines": 31,
+    "read_ranges": [
+      [
+        1,
+        31
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/event_solution.rs",
+    "sha256": "e91c275615dd836690117705ad8b6ece9148eb61bd1bb321a0cae47f3f873eee",
+    "bytes": 2072,
+    "lines": 54,
+    "read_ranges": [
+      [
+        1,
+        54
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/executor_early_notice.rs",
+    "sha256": "687fb33a44fe32811e693479c80deb298be420ddf5475113a2134a3d2bba3fe4",
+    "bytes": 221,
+    "lines": 8,
+    "read_ranges": [
+      [
+        1,
+        8
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/executor_event.rs",
+    "sha256": "2456c06604755605b5eb5ae48b8980e0cfae132abf24266c6898e217470425b9",
+    "bytes": 654,
+    "lines": 19,
+    "read_ranges": [
+      [
+        1,
+        19
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/executor_pinned.rs",
+    "sha256": "e7542eb97d8323f0dac022a4ac3795570193506264765e3b0aa0a8e1045f03fd",
+    "bytes": 228,
+    "lines": 8,
+    "read_ranges": [
+      [
+        1,
+        8
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/executor_solution.rs",
+    "sha256": "fee789eb7cac0ea9a42015256beca4e873f9572e4809c6ab80b27c1776cc6b21",
+    "bytes": 658,
+    "lines": 19,
+    "read_ranges": [
+      [
+        1,
+        19
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/field_swap_solution.rs",
+    "sha256": "c2a6047a648b4853f0edb5b982ed98f52c4306a4601cd8a219ca1bc7119f7da0",
+    "bytes": 650,
+    "lines": 24,
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/inline_swap.rs",
+    "sha256": "dad2a68787777585cf82b9b22b4c9e943910dc5981d64df71bbe7b530031f2b5",
+    "bytes": 858,
+    "lines": 28,
+    "read_ranges": [
+      [
+        1,
+        28
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/manual_poll.rs",
+    "sha256": "6060ef9dd08eaecfe8d43031ed39cc9c97e54e161e058cba4f5f2f59b632e8d3",
+    "bytes": 1619,
+    "lines": 50,
+    "read_ranges": [
+      [
+        1,
+        50
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/pinned_owner_swap.rs",
+    "sha256": "e9486de4049afeb4e752075e91e731394c7888c00e66092524d6d1a85b0085d6",
+    "bytes": 1065,
+    "lines": 36,
+    "read_ranges": [
+      [
+        1,
+        36
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/pinning_solution.rs",
+    "sha256": "6286d949367108d2d00de67f6ce50e6895ffe3770bc735f12e40b9ebfbd24105",
+    "bytes": 407,
+    "lines": 13,
+    "read_ranges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/polling_solution.rs",
+    "sha256": "c67988fcf6c60ce57ac31eecbb5f2aa501abf0da12323a7c3843a90e4f951bb8",
+    "bytes": 1749,
+    "lines": 45,
+    "read_ranges": [
+      [
+        1,
+        45
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/examples/unpin_access.rs",
+    "sha256": "0de2e89d4777b51204c65d440ff38b88ec41dd3669ba018f9832d19016392de0",
+    "bytes": 410,
+    "lines": 13,
+    "read_ranges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.lock",
+    "sha256": "e06d2cd2dd22e254033c7bf3891315c63ecca0d0c586e01bd07d7f39a17264ba",
+    "bytes": 255,
+    "lines": 14,
+    "read_ranges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cargo-test-fail/Cargo.toml",
+    "sha256": "4b72336031c53782ad6c2d33d84326b8a2954e01ae7d7fc45550cd6f88ea6d22",
+    "bytes": 156,
+    "lines": 10,
+    "read_ranges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.expected",
+    "sha256": "19bb7307840ec56041dfec745a61f88160ea6130b01e6cfce9f3f52dbede1ad8",
+    "bytes": 43,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cargo-test-fail/tests/poll_after_ready.rs",
+    "sha256": "607a6ccbbfb4f4c8d37441be494eb2e13af65512860a70659fff0da0a038501b",
+    "bytes": 689,
+    "lines": 22,
+    "read_ranges": [
+      [
+        1,
+        22
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/compile-fail/pin_new_requires_unpin.rs",
+    "sha256": "d45e8d0513919c543d76adf58985ab796f074ba066178171639bdfa73fc80ffa",
+    "bytes": 145,
+    "lines": 7,
+    "read_ranges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.expected",
+    "sha256": "f1f10512aef688783e72228eac90052c4477e5fc328ff82296757e6fb41f09af",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/compile-fail/reference_blocks_swap.rs",
+    "sha256": "acd705401e4f16dee4345ed8aad999c96b9182cb4c2bf7a315d3f35afd20be8f",
+    "bytes": 462,
+    "lines": 21,
+    "read_ranges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.lock",
+    "sha256": "5da64c7aac59dca9ffe91c6f8d1f35ea707af436f5a5f77aebefe11bb67ff31a",
+    "bytes": 250,
+    "lines": 14,
+    "read_ranges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/Cargo.toml",
+    "sha256": "e6a4b9c9d14e9ade7b5b9c7ff1cd0b56c53080aed2cffdaa8e1cb1c66b599d6a",
+    "bytes": 151,
+    "lines": 10,
+    "read_ranges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.expected",
+    "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/examples/event_send_once.rs",
+    "sha256": "36f90656e05584c3860c9557ae6249b0f0dd0388ec63bdaf09116e5f64e90cba",
+    "bytes": 138,
+    "lines": 7,
+    "read_ranges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/fixtures/cross-crate-fail/examples/pinned_get_mut.rs",
+    "sha256": "73facf00cbd6bf5009ed5adccfdd251b4cd453eb7c00fa6bdc1bcdbc51e94560",
+    "bytes": 216,
+    "lines": 8,
+    "read_ranges": [
+      [
+        1,
+        8
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/src/addresses.rs",
+    "sha256": "ecc28b64aebb05adbeb3ab5a8a53f25f7e93816844cdb5ffb5fc58ed94f871d3",
+    "bytes": 2668,
+    "lines": 92,
+    "read_ranges": [
+      [
+        1,
+        92
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/src/lib.rs",
+    "sha256": "2b784372e0fe76ee40b7fcc35685070ee9c937721d25aa2a66b656b30d1922d2",
+    "bytes": 88,
+    "lines": 5,
+    "read_ranges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/src/pinning.rs",
+    "sha256": "e52fbf2e64735c17bf2153f8d22e85c8dd1916cea2e637a05153da45b8c2a42e",
+    "bytes": 3371,
+    "lines": 102,
+    "read_ranges": [
+      [
+        1,
+        102
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/src/polling.rs",
+    "sha256": "86aaaa646c3b17d44dfad9767c027b6c180024f5b005a47f670e942c7adaf551",
+    "bytes": 6386,
+    "lines": 209,
+    "read_ranges": [
+      [
+        1,
+        209
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/src/readiness.rs",
+    "sha256": "2b5d14ae4112f5d8e03dfea6b98a967fe42249fdfdb8a278f0e85d611621c212",
+    "bytes": 7467,
+    "lines": 234,
+    "read_ranges": [
+      [
+        1,
+        234
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch13-futures/src/runner.rs",
+    "sha256": "164639b5c9ce64a8ca5c7bbcc0829ebfc6a6745d254c677452f329afe31c6e60",
+    "bytes": 4468,
+    "lines": 175,
+    "read_ranges": [
+      [
+        1,
+        175
+      ]
+    ],
+    "adoption": "完整實讀既有Rust、tests、fixture、sidecar、manifest及生成lock；本次純準備未執行，不把原預期字串當本次實測。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/13-05-lesson.md",
+    "sha256": "c845832a2d68530200fb59fc705bbc9f128df007922888a0f5c388cdb9728481",
+    "bytes": 19240,
+    "lines": 272,
+    "read_ranges": [
+      [
+        1,
+        272
+      ]
+    ],
+    "adoption": "全文親讀已freeze正文；channel端點/緩衝/關閉/SendSync與ArcMutex/guard/poison/鎖順序可用。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/13-06-lesson.md",
+    "sha256": "6f3d25a1cbab3fc40b75594280cd0c957878a70665d2f49b542349c747d26e24",
+    "bytes": 17335,
+    "lines": 269,
+    "read_ranges": [
+      [
+        1,
+        269
+      ]
+    ],
+    "adoption": "全文親讀已freeze正文；channel端點/緩衝/關閉/SendSync與ArcMutex/guard/poison/鎖順序可用。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_single/workers/mod.rs",
+    "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "bytes": 170,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_single/main.rs",
+    "sha256": "a1a5d52c42c6b7f4552c06f161b2bf28ddec9e20587ab59e5b179344f5708be6",
+    "bytes": 723,
+    "lines": 25,
+    "read_ranges": [
+      [
+        1,
+        25
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.rs",
+    "sha256": "05d22888681ab3a20d2e93519a50f162ba99858b64e77c081e572b5e5cefe618",
+    "bytes": 235,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/channel_value_moved.expected",
+    "sha256": "e3324044717813905ff07e0cb8a2b5810844f8fe222a7b731b058fc1ab8d45bf",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_drain/main.rs",
+    "sha256": "82fbeec6cc8c1de790e499f8b327934d4bc2065d11acd2346e37fc9026319e5a",
+    "bytes": 618,
+    "lines": 18,
+    "read_ranges": [
+      [
+        1,
+        18
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_recover/workers/mod.rs",
+    "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "bytes": 170,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_recover/main.rs",
+    "sha256": "d9288ec2828fa19eedfd86ceb84228dc25f6cab310d162450b211adaf295345d",
+    "bytes": 644,
+    "lines": 23,
+    "read_ranges": [
+      [
+        1,
+        23
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.rs",
+    "sha256": "4b11ed927b6bbb28ef4117d03e1ceec705ac3d8e77d6d95dd4047410bc7324d8",
+    "bytes": 363,
+    "lines": 15,
+    "read_ranges": [
+      [
+        1,
+        15
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/channel_rc_message.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_producers/messages/mod.rs",
+    "sha256": "ba226ed5ec6a7acbd3957fe3cdc803947e3252bbeb35803d1152c9ea94fad1ab",
+    "bytes": 330,
+    "lines": 13,
+    "read_ranges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_producers/main.rs",
+    "sha256": "5653bf89211dce7e3894a6c7ecae8a96f70f9ecc26b020dfb0b2c8672ab36288",
+    "bytes": 1133,
+    "lines": 33,
+    "read_ranges": [
+      [
+        1,
+        33
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_bounded/bounded_messages/mod.rs",
+    "sha256": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+    "bytes": 299,
+    "lines": 14,
+    "read_ranges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_bounded/main.rs",
+    "sha256": "3daf6e81c8f18cef69de2c298f25695c99440de8499c71ab3f775845eb87d63f",
+    "bytes": 780,
+    "lines": 25,
+    "read_ranges": [
+      [
+        1,
+        25
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_stop/bounded_messages/mod.rs",
+    "sha256": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+    "bytes": 299,
+    "lines": 14,
+    "read_ranges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_stop/main.rs",
+    "sha256": "b78a7167a758eb29f8f29a82d8e5b36dbd7685a87d6436ccdeb2ea6d1a072001",
+    "bytes": 804,
+    "lines": 24,
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_answer/bounded_messages/mod.rs",
+    "sha256": "f4f479abcd81f4432db0fc5956c95cb27258106fd96ea82db8f4c925ec12e3cc",
+    "bytes": 299,
+    "lines": 14,
+    "read_ranges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/channel_answer/main.rs",
+    "sha256": "784588d5e8247ef9d783fff5f04e72471227a6730c896c7f429bb02e66e87196",
+    "bytes": 1189,
+    "lines": 33,
+    "read_ranges": [
+      [
+        1,
+        33
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/mutex_guard/main.rs",
+    "sha256": "fcba5280879da0b62c48bc2ff110a7635174725a4f0e06673b8b3fa01ea7101f",
+    "bytes": 506,
+    "lines": 18,
+    "read_ranges": [
+      [
+        1,
+        18
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/arc_shared_read/main.rs",
+    "sha256": "ce4ae2f1f309e270b35adcf776732fac313f62516749553e6a6d01bba1580537",
+    "bytes": 746,
+    "lines": 24,
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.rs",
+    "sha256": "e8b1bdba69a0c75ea9560b239311409fead2846adb10bfde900e761c622a0ff2",
+    "bytes": 340,
+    "lines": 13,
+    "read_ranges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/arc_cell_not_send.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.rs",
+    "sha256": "11a2b939b67b0eb8d2ddc9af4f948d037dc6a7ef5da3faa64664f267b5e450e6",
+    "bytes": 139,
+    "lines": 7,
+    "read_ranges": [
+      [
+        1,
+        7
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/arc_no_deref_mut.expected",
+    "sha256": "018106396268d6a7b58a9dfe8e469b87a44509ceb5bcdd5757200ba813f9aab8",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.rs",
+    "sha256": "a800476756cfce262a8a6825d18493c7a5b236e1c41cdde459bbe675e7a29c08",
+    "bytes": 421,
+    "lines": 16,
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/rc_mutex_not_send.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/arc_mutex/main.rs",
+    "sha256": "e7ee31786a6929bb17cb341072caa7e0a1d66c454b6eef24cf738b76bc6dfa6b",
+    "bytes": 793,
+    "lines": 24,
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/mutex_cell/main.rs",
+    "sha256": "436d8442ddefb6ba6a7435981f981800f16213a9c621125f0e05fc988efe6234",
+    "bytes": 859,
+    "lines": 25,
+    "read_ranges": [
+      [
+        1,
+        25
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.rs",
+    "sha256": "b61a092ba66888b45113dfd4ab938b64ef9dec9cc6e1e561ddb408df588cf517",
+    "bytes": 225,
+    "lines": 11,
+    "read_ranges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/fixtures/compile-fail/mutex_guard_not_send.expected",
+    "sha256": "7dd22f1dc9232d673c5d6f1354af49043359702f187da0bab6c4eaca7c358c36",
+    "bytes": 6,
+    "lines": 1,
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/mutex_poison/workers/mod.rs",
+    "sha256": "e4cc7b1a41114599e8531f62798c0b387cd03d7b5f5bd438e5ee9808ebca1d09",
+    "bytes": 1259,
+    "lines": 40,
+    "read_ranges": [
+      [
+        1,
+        40
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/mutex_poison/main.rs",
+    "sha256": "19702d31b97a6a89457b89da33db19bc6f6a9292433d47daa7c86040ce38385d",
+    "bytes": 1625,
+    "lines": 53,
+    "read_ranges": [
+      [
+        1,
+        53
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/mutex_answer/workers/mod.rs",
+    "sha256": "2e4c93f0d4a0947fa16fa0f9b17512ee0fc83cfbb958ad657f1f8deb375930a4",
+    "bytes": 170,
+    "lines": 9,
+    "read_ranges": [
+      [
+        1,
+        9
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/concurrency-stages/examples/mutex_answer/main.rs",
+    "sha256": "15bfde9955c62f0b62066192cbf10c6dcaaa0d32ee414189dce4e6c79c85fa95",
+    "bytes": 1578,
+    "lines": 47,
+    "read_ranges": [
+      [
+        1,
+        47
+      ]
+    ],
+    "adoption": "親讀13.5/6同頁所有完整source、helper、manifest、fixture及expected；不執行其他作者已驗targets。",
+    "prior_read_ledger": "/workspace/work/ch16-v3/research/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/02-06-lesson.md",
+    "sha256": "16fda35d786482b2c99128ce387dec798b0914ff9bb4f47c620e1890233dc1f3",
+    "lines": 143,
+    "read_ranges": [
+      [
+        1,
+        143
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/02-07-lesson.md",
+    "sha256": "fa1430b7033ff849560647d6ec3cd0f9cff6a8c1bc28823942bde7e8a43b7886",
+    "lines": 157,
+    "read_ranges": [
+      [
+        1,
+        157
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/02-08-lesson.md",
+    "sha256": "ad8163f12c41cb1f58eac79f1516c2185e2b7e2a124217b3824321d1b07b7880",
+    "read_ranges": [
+      [
+        1,
+        136
+      ]
+    ],
+    "adoption": "全文實讀；前置或舊內容遷移參考，繼承設定不載入新快照。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/modules-basic/Cargo.toml",
+    "sha256": "7fedd21178e5d358d22279cb5882bc44e4600a5ef30bee728d3faa14ed16766b",
+    "read_ranges": [
+      [
+        1,
+        4
+      ]
+    ],
+    "adoption": "全文實讀；前置或舊內容遷移參考，繼承設定不載入新快照。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/modules-basic/src/lib.rs",
+    "sha256": "a2730bc5b8092f7a450369a65582404dbb83895caf104941af12d8a39024e534",
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "全文實讀；前置或舊內容遷移參考，繼承設定不載入新快照。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/modules-basic/src/pricing.rs",
+    "sha256": "83cab126fea5ef425d2ae81615f69244b90cf614c748f6658ae9bd8e2ee270ef",
+    "read_ranges": [
+      [
+        1,
+        31
+      ]
+    ],
+    "adoption": "全文實讀；前置或舊內容遷移參考，繼承設定不載入新快照。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/tooling/Cargo.toml",
+    "sha256": "6aeb0532bba89ed689a8beb38bc25e4361f336cfdf6a7fb071e36c0b8a97f788",
+    "read_ranges": [
+      [
+        1,
+        17
+      ]
+    ],
+    "adoption": "全文實讀；前置或舊內容遷移參考，繼承設定不載入新快照。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/tooling/src/lib.rs",
+    "sha256": "5d075ff1d2531a8a17c750237f0017d1e196ee1367a2c6225163f397bf720612",
+    "read_ranges": [
+      [
+        1,
+        31
+      ]
+    ],
+    "adoption": "全文實讀；前置或舊內容遷移參考，繼承設定不載入新快照。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/tooling/src/main.rs",
+    "sha256": "7c918afbca141f0e34683af0a63138491cd55caa89ba832929b4c6eac86a07d7",
+    "read_ranges": [
+      [
+        1,
+        8
+      ]
+    ],
+    "adoption": "全文實讀；前置或舊內容遷移參考，繼承設定不載入新快照。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/tooling/tests/public_orders.rs",
+    "sha256": "f66a2222efdcf3e3c0a01362c417ad81fa7a66af8a58080a1ebe50598489e34b",
+    "read_ranges": [
+      [
+        1,
+        13
+      ]
+    ],
+    "adoption": "全文實讀；前置或舊內容遷移參考，繼承設定不載入新快照。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/08-01-lesson.md",
+    "sha256": "6b6e05083de08537dfecc183be29d55efea0867fe12f0706d09a926476098df4",
+    "read_ranges": [
+      [
+        1,
+        192
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/08-02-lesson.md",
+    "sha256": "a820550d86c7919bde3602543e4a085c81579815e092ca331c71a117b61d344f",
+    "read_ranges": [
+      [
+        1,
+        95
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/08-03-lesson.md",
+    "sha256": "3502f84b5de589e26c1c6d6ee64bfc1f7da197b8ca6de40f78924a1580d29a66",
+    "read_ranges": [
+      [
+        1,
+        115
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/08-04-lesson.md",
+    "sha256": "10b3fbb207966ec067ca57a26e4d55d47d906a8e715b1fcb86a44999f5a30d8e",
+    "read_ranges": [
+      [
+        1,
+        164
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/08-05-lesson.md",
+    "sha256": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+    "read_ranges": [
+      [
+        1,
+        255
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/09-01-lesson.md",
+    "sha256": "ff8a0d0ca07cbc731287f88935e7c8a6f7bb32b9e321dd6dbefff1124a1267e9",
+    "read_ranges": [
+      [
+        1,
+        184
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/09-02-lesson.md",
+    "sha256": "1f94efb9e804d4ff18de071441b7d0b19368326c497bd284ede0d47a5456ffd0",
+    "read_ranges": [
+      [
+        1,
+        131
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/09-03-lesson.md",
+    "sha256": "af37b908bf94c477a21a412fdeb780ec55b75fdb3d4dd91916e57ee22370e458",
+    "read_ranges": [
+      [
+        1,
+        152
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/propagation/aliases/mod.rs",
+    "sha256": "3815daec85810773acf35a1efd01a7ea104ce31e1a8dee2c777fd8e879667c7a",
+    "read_ranges": [
+      [
+        1,
+        8
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/propagation/conversions/mod.rs",
+    "sha256": "8590ab89fff6aa575e29ea33bc028acf72b050d34f10496236755fc4200aa56d",
+    "read_ranges": [
+      [
+        1,
+        72
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/propagation/formatting/mod.rs",
+    "sha256": "72e1560d13d47bac6487ce01e24971cd7126e2e2faeed469ea9fe8936c5bbfe7",
+    "read_ranges": [
+      [
+        1,
+        26
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/propagation/main.rs",
+    "sha256": "45a79a2094abb4b6532085313f83463f936a590b7ef9737af49e39d9e9f90eda",
+    "read_ranges": [
+      [
+        1,
+        23
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/propagation/parsing/mod.rs",
+    "sha256": "0edb852a9378d378cb3685dfa9639efde15e897a12ecab59720631c25fbda99b",
+    "read_ranges": [
+      [
+        1,
+        106
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/propagation/policy/mod.rs",
+    "sha256": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "read_ranges": [
+      [
+        1,
+        37
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/propagation/propagation/mod.rs",
+    "sha256": "39342314705963bb06e0063679ef6b82192e8c62f01f80ba3cd9acd03057ab87",
+    "read_ranges": [
+      [
+        1,
+        60
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/integer_parsing.rs",
+    "sha256": "3fae898f10055629512fdd9ab7da45bf6249e612adbb6760262f8069d89e26d0",
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/as_ref.rs",
+    "sha256": "1933b8b6e325c5c570c6f19f4604e25d11ced9fd96df4bb960a868e3412f8af4",
+    "read_ranges": [
+      [
+        1,
+        39
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/error-stages/examples/owned_text/main.rs",
+    "sha256": "4626ae246fd6116014787dd45396a2fe6e4a80a8a688fd9fdbb217e5f365b816",
+    "read_ranges": [
+      [
+        1,
+        34
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/iterator_next.rs",
+    "sha256": "289bcf204a35cbfbdb58cb41b2c0a6a34c28e4f97152e023d502dcd99c3eca86",
+    "read_ranges": [
+      [
+        1,
+        36
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/iterator_for.rs",
+    "sha256": "eda6da4a938d0fb1e939f3327adb3859ac8c0504683563fcf890b70e2323481f",
+    "read_ranges": [
+      [
+        1,
+        34
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/iterator_sources.rs",
+    "sha256": "a9b72f9f5d7e1de77cb610b8c2fa14007021bc3a641bf681222e19ef825bd3cf",
+    "read_ranges": [
+      [
+        1,
+        58
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/iterator_ownership.rs",
+    "sha256": "e8d38ab63cbfafa295c9e4b6f230990b31d96fe028f3c55b107c0b8adde1700c",
+    "read_ranges": [
+      [
+        1,
+        27
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/iterator_borrowed_forms.rs",
+    "sha256": "22a3afbd391b09ed0cae959cda9631b09fda19749d2fc88092775aaa853c7fe2",
+    "read_ranges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-text/.gitignore",
+    "sha256": "849f1adfe607a3e973c4d92fc0512aab5934c92665d105f78737e6baf6e7cae2",
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-text/Cargo.toml",
+    "sha256": "4ac7757ca02db2480ec0fb367f0c4fc042e2767a4617ebce2628a11f75a51201",
+    "read_ranges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-text/examples/file_handle.rs",
+    "sha256": "1567df1d2cf4727874a38defaf6fa4d53ac927c90f7897711a53ce3c13e70414",
+    "read_ranges": [
+      [
+        1,
+        42
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-text/examples/text_io_solution.rs",
+    "sha256": "636e686ac05866e33939820519792f25b89d18a2379c69d5cb6f0f893438cb75",
+    "read_ranges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-text/examples/write_note.rs",
+    "sha256": "a133e5579239493b758e2cfc9a368e277f3fb3cdf806a65a1f2a2e5dcedb267b",
+    "read_ranges": [
+      [
+        1,
+        23
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-text/fixtures/empty.txt",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "read_ranges": [
+      [
+        1,
+        0
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-text/fixtures/not-utf8.bin",
+    "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-text/fixtures/note.txt",
+    "sha256": "a581105a3e3bce0d0ae0ff57955745e4c5df376a9a751acec1f5f5e08a6be213",
+    "read_ranges": [
+      [
+        1,
+        2
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-text/src/main.rs",
+    "sha256": "399032ac09c3425516bf4ba059ae5697fea6310d482acfbb88e33327f73cd353",
+    "read_ranges": [
+      [
+        1,
+        57
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-bytes/Cargo.toml",
+    "sha256": "7d984111b01b5b3751695086b7dab33d27916b66213f65336b97fbe8273657a2",
+    "read_ranges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-bytes/examples/byte_count_solution.rs",
+    "sha256": "1a9bd1ffe6aa8a6512a76b8100132fefe764187e15b4bea71b54907231c781e2",
+    "read_ranges": [
+      [
+        1,
+        37
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-bytes/examples/error_reader.rs",
+    "sha256": "2f3ea5f823dbbd60077317314003640a67a360a1e4ff551d8b6ad56d7f1db60a",
+    "read_ranges": [
+      [
+        1,
+        59
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-bytes/examples/short_reader.rs",
+    "sha256": "50d28700048bf3ef057dc37d2cacca58a0a5fdb095c1504dff354e6d8678a0e1",
+    "read_ranges": [
+      [
+        1,
+        94
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-bytes/examples/short_writer.rs",
+    "sha256": "b421cc76c53abf6f454845ed0f549ff133dff16ef7a225dbaa71cca73c69090e",
+    "read_ranges": [
+      [
+        1,
+        81
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-bytes/src/lib.rs",
+    "sha256": "b4c6beeca2694dfbdecd3a6dc7d33ca2580b9dc87a592455cb14ec375f349f81",
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/io-bytes/src/main.rs",
+    "sha256": "cd9bcb0723d4c80e5cefbfa599d46c15ee45c2de0c7a744351c2791efb084723",
+    "read_ranges": [
+      [
+        1,
+        18
+      ]
+    ],
+    "adoption": "實際完整讀取；binary fixture以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/path-cli/.gitignore",
+    "sha256": "23536c20979471d611e8d190a58b0731050a8234a64bfffaa30f7614230aa829",
+    "read_ranges": [
+      [
+        1,
+        2
+      ]
+    ],
+    "adoption": "實際全文讀取；遷移前先檢查完整來源閉包。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/path-cli/Cargo.toml",
+    "sha256": "72b9ae9bc42424f05c4421735fa1ff43c0d1e03c87d3660e76380733bac875d2",
+    "read_ranges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "adoption": "實際全文讀取；遷移前先檢查完整來源閉包。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/path-cli/examples/argument_pair_solution.rs",
+    "sha256": "25a656c4bdee4191d4a142def05402412ef167a69d559821141fb4322afce20b",
+    "read_ranges": [
+      [
+        1,
+        50
+      ]
+    ],
+    "adoption": "實際全文讀取；遷移前先檢查完整來源閉包。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/path-cli/examples/os_strings.rs",
+    "sha256": "2f2b0d8ceb0aad5bc08b4299ece2b5118726545152babb4302a0d5e6926dabee",
+    "read_ranges": [
+      [
+        1,
+        24
+      ]
+    ],
+    "adoption": "實際全文讀取；遷移前先檢查完整來源閉包。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/path-cli/examples/path_types.rs",
+    "sha256": "b4c72588edc038a837e803f28bee7a9ff726eab28ff5e3856985cc15601c0370",
+    "read_ranges": [
+      [
+        1,
+        17
+      ]
+    ],
+    "adoption": "實際全文讀取；遷移前先檢查完整來源閉包。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/path-cli/examples/working_directory.rs",
+    "sha256": "8bcba0175b70732d280241b9eacecd9295599795cf079140bdab4119d04685f3",
+    "read_ranges": [
+      [
+        1,
+        19
+      ]
+    ],
+    "adoption": "實際全文讀取；遷移前先檢查完整來源閉包。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/path-cli/src/lib.rs",
+    "sha256": "6d65f527caef1fb4db94e59f3f716e663d0a82a19815e4443106dcd2c1984424",
+    "read_ranges": [
+      [
+        1,
+        71
+      ]
+    ],
+    "adoption": "實際全文讀取；遷移前先檢查完整來源閉包。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/path-cli/src/main.rs",
+    "sha256": "9c5c0564801905595349e1abeb13a51e594462806aa95dc1431379db32828021",
+    "read_ranges": [
+      [
+        1,
+        54
+      ]
+    ],
+    "adoption": "實際全文讀取；遷移前先檢查完整來源閉包。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/clap/Cargo.toml",
+    "sha256": "e1ba65683182bc7cdd372b2abd83c5617bd53d9a922dd5d84cc90d114e286991",
+    "read_ranges": [
+      [
+        1,
+        11
+      ]
+    ],
+    "adoption": "全文實讀後遷移，未知API與helper先核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/clap/src/main.rs",
+    "sha256": "2ca79cf8de9a7a749d9ee6b054c1572ca66efaa3c323fdf4104103714907e138",
+    "read_ranges": [
+      [
+        1,
+        37
+      ]
+    ],
+    "adoption": "全文實讀後遷移，未知API與helper先核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/clap/src/lib.rs",
+    "sha256": "edca0e0379f2fb8a5cb9d146901a6d3f7152e2dc5b04bd911a776f273c8e34a4",
+    "read_ranges": [
+      [
+        1,
+        95
+      ]
+    ],
+    "adoption": "全文實讀後遷移，未知API與helper先核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/clap/examples/flag_solution.rs",
+    "sha256": "ca1f376a0080652341a6394d704d661125b2ea0fb04290194203ae321f1b3ab2",
+    "read_ranges": [
+      [
+        1,
+        37
+      ]
+    ],
+    "adoption": "全文實讀後遷移，未知API與helper先核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/07-04-lesson.md",
+    "sha256": "532b1238409b30864e44957d90cd3416b3e520518faff6cd0c1879aef7c8acc6",
+    "read_ranges": [
+      [
+        1,
+        179
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/07-03-lesson.md",
+    "sha256": "3e692d3103181c324465281d3533aef8bf46da191ac80218dc7ec89e62ba7d79",
+    "read_ranges": [
+      [
+        1,
+        115
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/lifetimes/examples/view_basic/views/mod.rs",
+    "sha256": "eb7cbb7d702d0a0de3af23e4b7e1d49957df6e9ae0674fcfd4b22fef6512781b",
+    "read_ranges": [
+      [
+        1,
+        19
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/lifetimes/complete/src/views.rs",
+    "sha256": "696bd8c2ab83a054e5ebc6f7cabf250fa0b4a40ca192a7630220b9cacb76b8b1",
+    "read_ranges": [
+      [
+        1,
+        79
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/Cargo.toml",
+    "sha256": "268193af55b12f28b120fc3234f387baf07452730b63b611fd7f84789e5b9d15",
+    "read_ranges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/fixtures/quoted-title.json",
+    "sha256": "c6d189fb9fef04f0b8c079ef628d2fb5812f1ce257bb392f3e6e8ba9844bdba4",
+    "read_ranges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/fixtures/unknown-field.json",
+    "sha256": "7219d52232d4554e25f2ae3352de50f497b84e5ffef401f2c1eec19da74ec16d",
+    "read_ranges": [
+      [
+        1,
+        6
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/fixtures/notebook.json",
+    "sha256": "f38fbd09edfc230e497af6d0742d74faa79b7c3ed27a692f4e8bfc0c6dc63102",
+    "read_ranges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/fixtures/broken-syntax.json",
+    "sha256": "15c0680da9ba7e7ce1481594612e8e2ddb08ef61be67826645f931c7ebce3e13",
+    "read_ranges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/fixtures/not-utf8.bin",
+    "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89",
+    "read_ranges": [
+      [
+        1,
+        1
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/fixtures/number-out-of-range.json",
+    "sha256": "897ef1d15b3217a9a6feb32fd26374e1b2990587d7732f40124899b6fc383689",
+    "read_ranges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/fixtures/wrong-value-type.json",
+    "sha256": "a58060bbc21ad21d9a09d1313f93216501a69be5ed656e36300f936e55f10ce1",
+    "read_ranges": [
+      [
+        1,
+        5
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/fixtures/missing-title.json",
+    "sha256": "a853f5b8f4f9553f7e97069dfb3b3afaf85ca7cde590270aaa4487a5eadb2dc2",
+    "read_ranges": [
+      [
+        1,
+        4
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/src/model.rs",
+    "sha256": "40889f6c69e2fdf08e705fd37040805bdcc0df2c75c2e4552ec13462085b61ed",
+    "read_ranges": [
+      [
+        1,
+        10
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/src/main.rs",
+    "sha256": "50e0c4bd8e1f2913f4325868704a054dd7f0fdf6410135e59869afdb32f81b18",
+    "read_ranges": [
+      [
+        1,
+        32
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/src/codec.rs",
+    "sha256": "05b1a6a3733d1baadb4f9446b0fd14d3ab00d9449f4914628ab4a289b7a4a6a9",
+    "read_ranges": [
+      [
+        1,
+        63
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/src/files.rs",
+    "sha256": "2c21914517b6a44e92d9a73714d6e42c7a2caf31887134411739237dfd5c89fe",
+    "read_ranges": [
+      [
+        1,
+        70
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/src/lib.rs",
+    "sha256": "b671e33093da9e0733127c9cb0ec7b28d1bc0fe302677e078263a60cad5f5f1f",
+    "read_ranges": [
+      [
+        1,
+        3
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/examples/json_solution.rs",
+    "sha256": "8945c67cf91395f332bfdbbae45b69b484116f7cec0127822d0d705ed15cde23",
+    "read_ranges": [
+      [
+        1,
+        22
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/json/examples/file_errors.rs",
+    "sha256": "f24d263fd4d97fed6f8933467adba38e9782ecb021e90e72683c08dd8b3c87e1",
+    "read_ranges": [
+      [
+        1,
+        19
+      ]
+    ],
+    "adoption": "實際全文讀取；binary以完整bytes repr核對。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/fixtures/Cargo.toml",
+    "sha256": "6a255a354dc368f0b215ef25d2d20b5cafc019866193684d08d8ae7f19169793",
+    "read_ranges": [
+      [
+        1,
+        14
+      ]
+    ],
+    "adoption": "實際全文讀取後遷移為獨立snapshot，不載root繼承設定或外部library。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/fixtures/tests/cli.rs",
+    "sha256": "4085d0f3fcd806279de44047a09c4537d1f64e1ba59c3e76ab4497ff95e67f1b",
+    "read_ranges": [
+      [
+        1,
+        98
+      ]
+    ],
+    "adoption": "實際全文讀取後遷移為獨立snapshot，不載root繼承設定或外部library。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/fixtures/tests/directory.rs",
+    "sha256": "9b4e6b9fcd4122fcbf46b510ce68ded1ab66d4e4232d35cf378e4c76a9af1a38",
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "實際全文讀取後遷移為獨立snapshot，不載root繼承設定或外部library。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/fixtures/src/main.rs",
+    "sha256": "b75dcf4f029df107df8e42989721434ccbce6b45ddd65ff95d449608640ae151",
+    "read_ranges": [
+      [
+        1,
+        50
+      ]
+    ],
+    "adoption": "實際全文讀取後遷移為獨立snapshot，不載root繼承設定或外部library。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/09-05-lesson.md",
+    "sha256": "256e3a7a8380bee5e863db21b94d89e11578304f1ba8194147b6b12515eea71e",
+    "read_ranges": [
+      [
+        1,
+        179
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/09-07-lesson.md",
+    "sha256": "fce1c2a012b97dcf775ba970e78f9cc500c2ab39fcc8cf59fef7189536ad91ba",
+    "read_ranges": [
+      [
+        1,
+        134
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/adapter_map.rs",
+    "sha256": "4f072ab8cc955327f4ccfe19c9cbca92ad8a2f1e20448cc05d5a5d9479d61826",
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/adapter_filter.rs",
+    "sha256": "7483c71ceec5565a216fc7b28104adbf0ae72ace843fce43b7a957e21b2c8cca",
+    "read_ranges": [
+      [
+        1,
+        15
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/adapter_collect.rs",
+    "sha256": "5a7fce5307e53b6cc3081d376353b03d034b0fb11c8931e3db4ac741212f040d",
+    "read_ranges": [
+      [
+        1,
+        51
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/adapter_results.rs",
+    "sha256": "d26429a5193797b540818748fd5be2a0069685044168376d39244cf7db657b40",
+    "read_ranges": [
+      [
+        1,
+        33
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/adapter_fold.rs",
+    "sha256": "39472221df45190c61172164c21d2005f2254f86bfa775a68502c2b0047c0ac8",
+    "read_ranges": [
+      [
+        1,
+        19
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/text_units.rs",
+    "sha256": "9e0db4b945036d79475663f56e26224d3583f8dc4259b1f0031a96ac0f1611ed",
+    "read_ranges": [
+      [
+        1,
+        21
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/text_counts.rs",
+    "sha256": "8c1aff6c857d0f4cd5743f887e8ff81e1867479e00db3f124ee710ea70b68a73",
+    "read_ranges": [
+      [
+        1,
+        35
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/intro-workspace/iterators/examples/text_report.rs",
+    "sha256": "260f609a249f2f1aba8dd54c6b89de1796321ccebd4d74ddb7cf75bbabfa4533",
+    "read_ranges": [
+      [
+        1,
+        71
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/Cargo.toml",
+    "sha256": "9ae9b063cfd6f1905ab8fd5f71f100ea7cb3cdb7d7abd2f07f48e93a8c0a967d",
+    "read_ranges": [
+      [
+        1,
+        16
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/tests/cli.rs",
+    "sha256": "7a171823e1e233421088993fa5477c1f4e0e5f69e4595b3029a7d85224b097f3",
+    "read_ranges": [
+      [
+        1,
+        156
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/tests/writer.rs",
+    "sha256": "b019db0ad1c06de383792745ca90d74d41262b6bf2f0d8471bc4cc60000d4814",
+    "read_ranges": [
+      [
+        1,
+        33
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/fixtures/note.txt",
+    "sha256": "1cffe74a69086abf4c34ebc7293bc6cd0992b97bbd39cc960816ece402f432a2",
+    "read_ranges": [
+      [
+        1,
+        4
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/src/config.rs",
+    "sha256": "9df86f58882ed8c94bb241d7a0060118592037bcb869974ea0e539d3c1c5f8b7",
+    "read_ranges": [
+      [
+        1,
+        19
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/src/render.rs",
+    "sha256": "b1a05b92798d5b96196f4c291719a3df3ede675c844577a8256769d51e5f1ae6",
+    "read_ranges": [
+      [
+        1,
+        48
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/src/model.rs",
+    "sha256": "dba14dbf9674d7ac7420c369b5312cecbaeb104bc90878219290b3d38fd8f909",
+    "read_ranges": [
+      [
+        1,
+        17
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/src/main.rs",
+    "sha256": "5b442db8a826a026e4064ce4b6a6bca10f76fcbc5ebeb11a49d68c620901da82",
+    "read_ranges": [
+      [
+        1,
+        52
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/src/search.rs",
+    "sha256": "2513d8c37803964cbff17b134b37efd70d29d7b295f01d77f3c12677bdd330cd",
+    "read_ranges": [
+      [
+        1,
+        113
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/src/lib.rs",
+    "sha256": "835f724c9aa3597b67cbc0cad200eddfceefbe6b64ddcb7eed1c81c05c8a604c",
+    "read_ranges": [
+      [
+        1,
+        43
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/src/error.rs",
+    "sha256": "e166d31ffa4964bee7661847cea761d1566f3d30faabaf7ec295fdb331545a85",
+    "read_ranges": [
+      [
+        1,
+        38
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "examples/ch07-cli/search/examples/count_solution.rs",
+    "sha256": "16f71b8209f9e8e71cc2f6c8a9cc378c1ccbf9dcaa2de0f33206392edf05a28f",
+    "read_ranges": [
+      [
+        1,
+        12
+      ]
+    ],
+    "adoption": "10.9前實際全文讀取；核對9.5 fold/Vec內容比較與9.6分行/順序，舊CLI遷為完整永久snapshot，拒絕root繼承。",
+    "prior_read_ledger": "/workspace/work/tutorial-implementation-20261015/ch10-preparation/local-read-manifest.json",
+    "unchanged_current": true
+  },
+  {
+    "path": "docs/chapters/02-01-lesson.md",
+    "sha256": "3f4a08ce6855a7ef6aa4958252afced2606628405f52ac8b2ba726f38aec85c3",
+    "lines": 118,
+    "read_ranges": [
+      [
+        1,
+        118
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/02-03-lesson.md",
+    "sha256": "2140dec17d8eb06bc9caa8d7325dfd7cadf48ebbd494d7f5d5c103ee5271c2c7",
+    "lines": 92,
+    "read_ranges": [
+      [
+        1,
+        92
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/03-01-lesson.md",
+    "sha256": "fac86a536cb55ae8c2231dfe6509d3eefdcd9ea0d9e06f6f7cbe95e1e38b0f80",
+    "lines": 99,
+    "read_ranges": [
+      [
+        1,
+        99
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/03-02-lesson.md",
+    "sha256": "0296152bf09f2790021d59b2160d4401e516c343226d44582d08f1e514fb7d89",
+    "lines": 95,
+    "read_ranges": [
+      [
+        1,
+        95
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/03-03-lesson.md",
+    "sha256": "bc8358469780765d19d9a02efb854702226a921df9cc51bd7bce17d7e3629e9e",
+    "lines": 82,
+    "read_ranges": [
+      [
+        1,
+        82
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/03-04-lesson.md",
+    "sha256": "e1b2c1b92f2ad9d041496983f2cb0f27a48e582a22611aedd56e07d3dea643a1",
+    "lines": 88,
+    "read_ranges": [
+      [
+        1,
+        88
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/03-05-lesson.md",
+    "sha256": "78535d28170efdde36e18a62911cb9c4779e14bbc3559dccfe876761fe47e776",
+    "lines": 144,
+    "read_ranges": [
+      [
+        1,
+        144
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/03-06-lesson.md",
+    "sha256": "1a79b7c3d9e59570f7b7561b7c3b28c6192ea7c22a438788e6de3faf8e2a51c8",
+    "lines": 94,
+    "read_ranges": [
+      [
+        1,
+        94
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/03-07-lesson.md",
+    "sha256": "12d6d39f46483e135d4778a03f8836b3c3d33f95e228f76959b4ffeef95ad0c8",
+    "lines": 109,
+    "read_ranges": [
+      [
+        1,
+        109
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/03-08-lesson.md",
+    "sha256": "17a2f900184f13a8de3be55630107c9b262b55eeca3032b08fdc624687c06143",
+    "lines": 130,
+    "read_ranges": [
+      [
+        1,
+        130
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/04-01-lesson.md",
+    "sha256": "9487c85aed9cc3682591a88d62aaf046dd06abed9b6927624a606bfd3a3a697f",
+    "lines": 79,
+    "read_ranges": [
+      [
+        1,
+        79
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/04-05-lesson.md",
+    "sha256": "8284e571e9214f593c57dbb24870b1915d59cd910aba3268d927e58334804765",
+    "lines": 147,
+    "read_ranges": [
+      [
+        1,
+        147
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/04-06-lesson.md",
+    "sha256": "1131e9b5ea0981c4e8149ae0975b0f4d33269ae91ea17974615437eb2799aeeb",
+    "lines": 99,
+    "read_ranges": [
+      [
+        1,
+        99
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/05-01-lesson.md",
+    "sha256": "25f1b41ae6846b38b0c012775e0e44992eb493b1e957d5453debd4f4baf3378a",
+    "lines": 140,
+    "read_ranges": [
+      [
+        1,
+        140
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/05-02-lesson.md",
+    "sha256": "40d749408aba8ccf2004dc6b410d5bbe8e1e086983070cf1e13df554bab3ab18",
+    "lines": 122,
+    "read_ranges": [
+      [
+        1,
+        122
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/05-03-lesson.md",
+    "sha256": "27780e39eca8f727f1778633a360f083729e42062cd4fcf47e89be4375aeb9d2",
+    "lines": 123,
+    "read_ranges": [
+      [
+        1,
+        123
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/05-04-lesson.md",
+    "sha256": "4cb07186300bda41c45650b300549d883789665aa2bcd17ddc83cf520e94df1d",
+    "lines": 141,
+    "read_ranges": [
+      [
+        1,
+        141
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  },
+  {
+    "path": "docs/chapters/05-05-lesson.md",
+    "sha256": "20882bf65c17e9bdca514bf41ed27f8a80314d615bc894e06e06d7a3595f888c",
+    "lines": 161,
+    "read_ranges": [
+      [
+        1,
+        161
+      ]
+    ],
+    "prior_read_ledger": "planning/restructure-v3/sources-ch06.md",
+    "unchanged_current": true,
+    "scope_note": "作者本人的先前實稿全文實讀紀錄；本次重新核對所有候選引用。"
+  }
+]

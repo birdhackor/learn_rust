@@ -1,0 +1,141 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "12.1"
+  ],
+  "author": "author_v3_foundations",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round12-build-script.md",
+    "planning/restructure-v3/reviews/technical-early/round12-cargo-engineering-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round12-cargo-order-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round12-content-confirmation-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round12-content-direction-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round12-file-walking.md",
+    "planning/restructure-v3/reviews/continuity-early/round12-ch12.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/12-01-lesson.md": "5f7ab3792ff83635cc74b2147311ae448cd914c74f18e86c96aa54c0e3cf61f0",
+    "examples/ch09-engineering/lesson-workspace/Cargo.toml": "6e97ad43a088d7dd8efc40b78dd98ba1670eceada51900c929d973cb10318813",
+    "examples/ch09-engineering/lesson-workspace/subtotal/Cargo.toml": "bd5bccc09e00f41cc0f97e0ae7ce635d5b487c7a8465106b7fbd470e9fb2d089",
+    "examples/ch09-engineering/lesson-workspace/subtotal/src/lib.rs": "8c8556cd2f690bb98d9a7fe580a2e5dfff690b33d212bd8d86606ec0d15c25b0",
+    "examples/ch09-engineering/lesson-workspace/app/Cargo.toml": "e32735dd8ab2b1fea9ff5a7e58effeac45e627240e42893d6f0f2f52be28cb2c",
+    "examples/ch09-engineering/lesson-workspace/app/src/lib.rs": "4b42fa928164e6c1e05c2ab8b3fac00f527f4da6fb9917558432b5605ea04cc3",
+    "examples/ch09-engineering/lesson-workspace/app/src/main.rs": "0efa551d7ac17f0a0c4abe9fdc99bacb18468f40ca73b7295cb1d9ec461b7493",
+    "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.rs": "88bd82b20931f6f033ad9aa461ea46aba1daabeb161dc8d462a3579309c07cbf",
+    "examples/ch09-engineering/lesson-workspace/app/tests/features.rs": "bc4ae772e56760ed07cc5f382e2ad32ae30170db88389a7e811b7ff2b57f9cd6",
+    "examples/ch09-engineering/lesson-workspace/fixtures/repo-root-settings.toml": "b70cab18c3c40b108a4499473bfd0e3396721aff906d243cdfa2ed45a57e511f",
+    "examples/ch09-engineering/lesson-workspace/app/examples/feature_answer.rs": "104e4f86d72f3e476a0b16fe3a4a03ab4e7edce788f5547d2491a62d72b8f5ca"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 3,
+      "quote": "第1.3節已能在workspace選package，第10.1節也已宣告本機與第三方依賴。現在想讓幾個一起維護的package共用版本欄位，並讓使用者選擇是否編入批次功能。這一節要分清：**共同設定由誰採用、這次有哪些介面，以及編譯使用哪組設定？**"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 9,
+      "quote": "本頁使用獨立的`examples/ch09-engineering/lesson-workspace/`。它有自己的完整根設定與lockfile，不使用外層舊`ch09-engineering` package。以下命令都從**教材repo根目錄**執行，明寫`--manifest-path`選到這一份："
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 31,
+      "quote": "`[workspace.package]`保存成員可採用的共同package欄位。`version`與`edition`已在前文介紹；本節再用兩項："
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 38,
+      "quote": "成員寫`version.workspace = true`，表示「我的version採用workspace.package中的共同值」。`edition.workspace = true`等欄位也是相同形式，**不是把edition設為布林值**。TOML的點號在這裡指定設定欄位的層級；`true`表示採用。每個成員自己的`name`仍分別填寫。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 42,
+      "quote": "根表中的`path = \"subtotal\"`從**workspace根manifest所在資料夾**出發。第10.1節直接在成員宣告的dependency path，則從那份成員manifest出發；同樣要找到subtotal，從app出發會是`../subtotal`。把共同來源移到根表後，起點也跟著改變。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 46,
+      "quote": "**profile**是一組編譯設定。一般`cargo build`／`run`使用`dev`；加`--release`改用`release`。這與Rust edition、要執行哪個package都不同。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 52,
+      "quote": "profile須寫在**workspace根manifest**，成員manifest的profile設定會被Cargo忽略。以下是本頁小workspace的**完整**`Cargo.toml`；members與resolver回用第1.3節，後面三組是剛介紹的共同設定與profile："
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 74,
+      "quote": "第10.1節的`features = [\"derive\"]`選擇的是dependency提供的功能。現在要替**自己的app package**定義名為`batch`的feature，控制是否提供兩筆小計函式。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 86,
+      "quote": "這與第10.1節dependency設定中的`default-features = false`分工不同：後者控制那項**依賴**的預設功能，這裡的命令列旗標則選本次建置package的功能。若同一dependency被多個使用者請求不同功能，Cargo通常會合併它們所需的功能，因此feature適合增加能同時存在的能力。本例關掉batch後，單筆介面與160的答案仍保留。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 90,
+      "quote": "第2.7節的`#[cfg(test)]`已依測試建置決定是否納入module。這種依建置條件保留或排除程式的做法叫**條件編譯**。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 102,
+      "quote": "`cfg!(feature = \"batch\")`是另一個macro，依建置條件產生true或false，可以保存或顯示。它**不會排除包住自己的程式**。普通`if`即使條件是false，裡面的名稱與型別仍須通過編譯檢查。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 106,
+      "quote": "這裡的**編譯目標平台**是程式準備在哪種平台執行；**host**是執行編譯工具的本機。沒有另選平台時，兩者通常相同。crate內的cfg看自己的編譯目標，不是在每次執行時重新偵測；`--release`也不會把Linux程式變成Windows程式。前文的example target則指Cargo選出的某個建置成果，這兩種target用途須依上下文分清。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 142,
+      "quote": "**integration test**位於package的`tests/`，每份檔案是獨立測試crate，從公開library介面呼叫；不是把測試函式直接放進主要binary的main。assertion與`#[test]`沿用第2.7節。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 150,
+      "quote": "下面分別驗證預設、關閉預設與全部功能。前兩次features.rs中的測試數應為2與1，全部功能又回到2。`--all-targets`指所選package的library、binary、examples、tests等建置成果，**不是所有作業系統**；本頁的完整來源包含下方練習答案，整包檢查也會編譯它；其中只用本節已教的介面。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 165,
+      "quote": "本頁的小workspace與第1.3節的入門workspace各有自己的根。教材repo還有較大的維護workspace，後續章節會明選其中的package。它同樣以members列成員、以`-p`選package，共用自己的Cargo.lock及target資料夾；`exclude = [\"examples/intro-workspace\"]`則將入門workspace從這份成員管理中排除，沒有把兩份lockfile混成一份。"
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 167,
+      "quote": "下面精確節錄**教材repo根Cargo.toml**的三組設定，不是另一份可直接執行的完整manifest，也不要拿它覆蓋repo根檔案："
+    },
+    {
+      "section_id": "12.1",
+      "path": "docs/chapters/12-01-lesson.md",
+      "line": 179,
+      "quote": "寫一個example，每次都確認單筆80×2仍為160；只有batch啟用時，才呼叫`two_orders([80, 0], [120, 1])`並確認120。分別用`--no-default-features`與預設設定執行，先預測哪行會消失。不能把可選呼叫只包在普通if中。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

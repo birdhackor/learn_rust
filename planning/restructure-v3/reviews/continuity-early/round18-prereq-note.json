@@ -1,0 +1,14 @@
+{
+  "utc": "2026-10-15T10:50:06.601220+00:00",
+  "scope": "18.1 fullbody + singleactualinclude as18Bmethodprereq; no18.2–6/authorledger/peerfindings read",
+  "files": [
+    {
+      "path": "docs/chapters/18-01-lesson.md",
+      "sha256": "7c5e1ff0580dbe604ef1482b409f184750e642c078ef795a2e182ff27b8398d0"
+    },
+    {
+      "path": "examples/ch15-projects/materials/duplicate-demo/notes-a.txt",
+      "sha256": "886d4df24227a4a4e8918c2c09a0f6d47091aa4b0824206caf4982dafbe66f50"
+    }
+  ]
+}

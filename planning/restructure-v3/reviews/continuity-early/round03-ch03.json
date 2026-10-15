@@ -1,0 +1,314 @@
+{
+  "kind": "sealed independent initial continuity/page judgment",
+  "sealed_at_utc": "2026-10-15T07:03:31.060510+00:00",
+  "role": "independent continuity/page; notauthor/technical/firstreader",
+  "reader_background": "BasicPythonplusactualChapter1-2teaching",
+  "scope": [
+    "docs/chapters/03-01-lesson.md",
+    "docs/chapters/03-02-lesson.md",
+    "docs/chapters/03-03-lesson.md",
+    "docs/chapters/03-04-lesson.md",
+    "docs/chapters/03-05-lesson.md",
+    "docs/chapters/03-06-lesson.md",
+    "docs/chapters/03-07-lesson.md",
+    "docs/chapters/03-08-lesson.md"
+  ],
+  "independence": {
+    "chapter3_author_ledger_read": false,
+    "chapter3_technical_firstreader_conclusions_read": false,
+    "old_audits_read": false,
+    "root_chapter3_newissue_details_read": false,
+    "generic_root_notice": "OneunnamedSVGbeingrepaired; noidentityorrelationshipprovided. Notcountedasindependentissueprompt.",
+    "blind_firstread_claim": false
+  },
+  "initial_counts": {
+    "necessary": 1,
+    "optional": 0
+  },
+  "findings": [
+    {
+      "id": "C3-01",
+      "independent_initial": true,
+      "necessity": "necessary",
+      "severity": "增加理解負擔",
+      "confidence": "medium",
+      "type": [
+        "時序",
+        "隱含操作",
+        "先備依賴"
+      ],
+      "page": "docs/chapters/03-05-lesson.md:63-71",
+      "first_actual_dependency": {
+        "source": "examples/intro-workspace/ownership/examples/reborrow.rs:18-20",
+        "quote": "add_one(&mut *parent);\nadd_one(parent);\nprintln!(\"parent 最後讀到={}\", *parent);",
+        "needed_relation": "Known &mut i32 parameter allows automatic reborrow atsecondcall, so parent remainsusableforthirdline."
+      },
+      "prior_teaching": [
+        {
+          "position": "03-02-lesson.md:11,19-25",
+          "meaning": "Ownership transfer and consuming value parameter"
+        },
+        {
+          "position": "03-04-lesson.md:7-23",
+          "meaning": "Mutable reference anddereference"
+        },
+        {
+          "position": "03-05-lesson.md:55-61",
+          "meaning": "Explicit &mut *parent creates shorter childborrow; parentcanresumeafterchildlastuse"
+        }
+      ],
+      "before_quote": "函式參數也能收到這種較短的借用。",
+      "explanation_after": {
+        "position": "03-05-lesson.md:69-71",
+        "quote": "第二個呼叫的參數型別已明定是 &mut i32；在這種呼叫位置，Rust 可以自動 reborrow…之後 parent 仍可使用。這不表示 mutable reference 能像 i32 一樣 Copy。"
+      },
+      "already_sufficient": "Manualreborrow identity/purpose andfull-unit automaticoperation explanationarecomplete. No need forfullcoercion/type-inference internals.",
+      "impact": "Before explanation, successful parentreuse may be assigned anincorrectCopy rationale. Narrow explain-before-program dependency only; not a blocking whole-sectiongap.",
+      "smallest_fix": "Move existing paragraph69 before calls snippet with below-first/second wording. Keep move comparison andfailurefixtureafter.",
+      "visual_evidence": [
+        "desktop-auto-reborrow-calls.png",
+        "mobile-auto-reborrow-calls.png"
+      ],
+      "prompted_by_other_role": false,
+      "status_at_initial_seal": "unfixed"
+    }
+  ],
+  "positive_evidence": [
+    {
+      "unit": "3.1",
+      "roles_operations": "Namedtypedfields7, instantiation13, fieldread21, fieldmutation25, separatepubtype/field59, positionalformat69 before correspondingnewuse.",
+      "need": "Tuple positionambiguity3; retain120x3 andnamedroleswithoutchangingrule.",
+      "example": "Sameorder360then480; fieldsbynameignoreliteralordering19; pubmodel helperfullyinline.",
+      "judgment": "sufficient"
+    },
+    {
+      "unit": "3.2",
+      "roles_operations": "Owner/localscopecleanup7-9, move11, ownedparameter19-25, i32Copyplainmechanism visibleinfirstdiagram15, formaltypecontrast43-45 beforefullprogram; mutparameterbeforeanswer81.",
+      "need": "Whetheroriginalnamecanbeusedafterassignment/passing3.",
+      "example": "Orderfirstunusable/secondowner versus count3andindependentanother_count4; valueownershipsemanticnotphysicalheapmovement.",
+      "judgment": "sufficient atinitialsource; proseCopyintro latermovedbeforefigurebyotherwork, notcounted asmy independentissue"
+    },
+    {
+      "unit": "3.3",
+      "roles_operations": "Reference/borrowing/&expressionversustype/sharedpermission7-11; borrowedfunctionandautofieldfollow19; &order25; deref35 beforeprogram; *versusmultiplyandparentheses41-43.",
+      "need": "Readsubtotalwhilecallerkeepssameorder3,64.",
+      "example": "OneownerOrderandreferencearrow; parentorderreadableafterborrowedcall; i32dereferencecopiesnumberwithoutmakingwholeOrderCopy.",
+      "judgment": "sufficient; earlyfigure*referenceplainfind-rolewasproportionatepreviewininitialsource; actualpageviewusednewfigurewithoutthatlabel"
+    },
+    {
+      "unit": "3.4",
+      "roles_operations": "Exclusive&mutandownermut7; numeric*write17; referencebindingnotreassigned23; mutablebindingtoanother& reference46.",
+      "need": "Updateoriginalorderwithouttransferringit3.",
+      "example": "Count3→4whileprice120; separateborrow-targetswitch3→8doesnotmodifyoriginalnumbers; exacttwo-mutobjects62.",
+      "judgment": "sufficient"
+    },
+    {
+      "unit": "3.5",
+      "roles_operations": "Scopeversusreferencevalidprograminterval7-11; lastuse17-23; shared/mutableoverlap37/45; explicitreborrow55-61; automaticreborrow69-71; dangling79-85.",
+      "need": "Two sharedreads, mutableborrow, thenownerwrite3; temporarychildborrows; keepowned8ratherthandangle.",
+      "example": "Blueuseintervalendsatlastreadwhilegraynamescopecontinues; failuremoveofreadchangesoverlap; separateownedblockresultprotects8.",
+      "judgment": "sufficient exceptC3-01; annotationandbranchanalysisreasonablydeferred"
+    },
+    {
+      "unit": "3.6",
+      "roles_operations": "Impl/Self/method/self7-9, &mutself19, ownedself29, associatedfn39, Selfliteral/fieldshorthand41, chosennewfnname47.",
+      "need": "Placeknownorderoperationsbesidetypeandcallfromvaluewithoutchangingread/write/takecontract3,92.",
+      "example": "New80x2→read160→mutatecount3→read240→takeparts; signaturecontracts, notmethodnames, controlownership35.",
+      "judgment": "sufficient; noclaimfreefunctionscannotperformwork"
+    },
+    {
+      "unit": "3.7",
+      "roles_operations": "Slicecontinuity/locationlength7, range1..4beforefigure9, relativeindexandlen13, foreach&i32beforefunction17; sharedslicereferenceCopy31beforeactualsubsequentreuseinfullprogram; bounds44; &mutslice/yield&muti32beforeanswer84-86.",
+      "need": "Samefunctionmusthandle middle3/all5/other2 withoutonefunctionperarraylength3.",
+      "example": "Samevaluescolumnwitharray1↔slice0; totals380/500/0/200; mutableansweronlyoriginalindices1/2andemptyviewdoesnothing.",
+      "judgment": "sufficient; nounderlyingiteratortraitneeded"
+    },
+    {
+      "unit": "3.8",
+      "roles_operations": "UTF8bytesroleand&str7-9; ownedStringandcleanup21; new/push_str/as_str23 beforebuild; nonCopyString45; labelledmodelownedfieldandmethods93-95 beforefullsource.",
+      "need": "Buildappendableordertextversusborrowonlydisplay3; combinedmodelkeepsknownnumericrule.",
+      "example": "OwnerandborrowarrowsmeetoneHello,Rustcontent; append!withouttakingending; moveandborrowoverlapfailures; LabelledOrderownedlabelin/outandborrowedappend.",
+      "judgment": "sufficient; noUnicodecuttingreasoningneededuntil5.3; PythonJSsupplementnotreadorused"
+    }
+  ],
+  "source_version": {
+    "initial_hash_manifest": "round03-ch03-sourcehashes.json",
+    "frozen_initial_copies": "round03-ch03-frozen/",
+    "drift_detected": [
+      "docs/chapters/03-02-lesson.md",
+      "docs/chapters/03-03-lesson.md",
+      "docs/assets/ch02/reference-owner.svg"
+    ],
+    "initial_copies_full_hash_verified": true,
+    "chapter3_3_actualpage_uses_changed_figure": true,
+    "rust_sources_changed_during_review": false,
+    "do_not_count_as_independent_findings": "LaterCopyproseintroanddeletedearlydereferencelabelwereversionchangesobservedafterinitialsourcereading, notmy initialdefects."
+  },
+  "actual_page_images": [
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-02-lesson/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "at_utc": "2026-10-15T06:57:27.441Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch02/move-copy.svg",
+      "served_sha256": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e",
+      "alt": "Order 從 first 交到 second，原 first 不可再用；i32 則在兩個變數中保有獨立數字",
+      "actually_viewed": true,
+      "screenshot": "desktop-move-copy-context.png"
+    },
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-03-lesson/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "at_utc": "2026-10-15T06:57:28.387Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch02/reference-owner.svg",
+      "served_sha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb",
+      "alt": "order 仍持有 Order，reference 借用同一筆資料",
+      "actually_viewed": true,
+      "screenshot": "desktop-reference-owner-context.png"
+    },
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-05-lesson/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "at_utc": "2026-10-15T06:57:30.110Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch02/borrow-scope.svg",
+      "served_sha256": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e",
+      "alt": "owner 保留在 main 裡，shared reference 在最後一次讀取後完成借用，後面才修改原資料",
+      "actually_viewed": true,
+      "screenshot": "desktop-borrow-scope-context.png"
+    },
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-07-lesson/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "at_utc": "2026-10-15T06:57:32.067Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch02/slice-part.svg",
+      "served_sha256": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4",
+      "alt": "五項價格中借出原索引 1 到 3，slice 自己的索引由 0 開始",
+      "actually_viewed": true,
+      "screenshot": "desktop-slice-part-context.png"
+    },
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-08-lesson/",
+      "viewport": {
+        "width": 1280,
+        "height": 800
+      },
+      "at_utc": "2026-10-15T06:57:33.159Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch03/string-view.svg",
+      "served_sha256": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27",
+      "alt": "greeting 持有 Hello, Rust 的文字資源，as_str 提供借讀同一段文字的 &str 視圖",
+      "actually_viewed": true,
+      "screenshot": "desktop-string-view-context.png"
+    },
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-02-lesson/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "at_utc": "2026-10-15T06:57:36.084Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch02/move-copy.svg",
+      "served_sha256": "d746a4a4520d7e70cf17d87b6135269a81373a2eea558f4060a1b2549499d15e",
+      "alt": "Order 從 first 交到 second，原 first 不可再用；i32 則在兩個變數中保有獨立數字",
+      "actually_viewed": true,
+      "screenshot": "mobile-move-copy-context.png"
+    },
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-03-lesson/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "at_utc": "2026-10-15T06:57:37.010Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch02/reference-owner.svg",
+      "served_sha256": "2c9bd13905a4c0471f5c555cb4d758b45b9a526806ab81cd0670f335333259bb",
+      "alt": "order 仍持有 Order，reference 借用同一筆資料",
+      "actually_viewed": true,
+      "screenshot": "mobile-reference-owner-context.png"
+    },
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-05-lesson/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "at_utc": "2026-10-15T06:57:38.699Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch02/borrow-scope.svg",
+      "served_sha256": "be356a096a8619d74a2c8083848a3dd94b5ad7f1872f640bebfe1da9bc720e7e",
+      "alt": "owner 保留在 main 裡，shared reference 在最後一次讀取後完成借用，後面才修改原資料",
+      "actually_viewed": true,
+      "screenshot": "mobile-borrow-scope-context.png"
+    },
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-07-lesson/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "at_utc": "2026-10-15T06:57:40.396Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch02/slice-part.svg",
+      "served_sha256": "45a3931ea351e54b0ef8cf1acb3aaded408e14508b32aa73d178e8b5c8859eb4",
+      "alt": "五項價格中借出原索引 1 到 3，slice 自己的索引由 0 開始",
+      "actually_viewed": true,
+      "screenshot": "mobile-slice-part-context.png"
+    },
+    {
+      "page": "http://127.0.0.1:8097/chapters/03-08-lesson/",
+      "viewport": {
+        "width": 390,
+        "height": 844
+      },
+      "at_utc": "2026-10-15T06:57:41.431Z",
+      "actual_asset_url": "http://127.0.0.1:8097/assets/ch03/string-view.svg",
+      "served_sha256": "1984156e753c7124dbe2776290db8736244056395c4397c63e8b30b04cc79b27",
+      "alt": "greeting 持有 Hello, Rust 的文字資源，as_str 提供借讀同一段文字的 &str 視圖",
+      "actually_viewed": true,
+      "screenshot": "mobile-string-view-context.png"
+    }
+  ],
+  "visual_scope": {
+    "viewports": [
+      {
+        "width": 1280,
+        "height": 800
+      },
+      {
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "images_viewed": [
+      "docs/assets/ch02/move-copy.svg",
+      "docs/assets/ch02/reference-owner.svg (changedversion)",
+      "docs/assets/ch02/borrow-scope.svg",
+      "docs/assets/ch02/slice-part.svg",
+      "docs/assets/ch03/string-view.svg"
+    ],
+    "meaningful_correspondences": "OwnershiptransferversusindependentCopy; referenceversusownerofoneOrder; last-useblueintervalversusgraynamescope; originalarrayandrelative sliceindexesonsamevalues; managerandborrowarrowsintooneStringcontent.",
+    "other_views": [
+      "desktop/mobileauto-reborrowcalls",
+      "desktop/mobilesliceendpointtable"
+    ],
+    "all_eight_pages_loaded_and_topcaptured_both_sizes": true,
+    "all_full_page_layouts_visually_reviewed": false,
+    "no_missing_necessary_image_observed": true,
+    "preview": "Actualsources/styles/currentfiguresandpartialnavat127.0.0.1:8097; notfinalstrictsite"
+  },
+  "execution": "NoCargo/build/test/sourceorconfigedits",
+  "limitations": [
+    "No reallearnerorblindfirstreader claim",
+    "No technicalexecutionacceptance",
+    "No fullbookorfinalstrictsiteacceptance",
+    "Mixedinitialsourceandnew3.3visualversionexplicitlyrecorded"
+  ]
+}

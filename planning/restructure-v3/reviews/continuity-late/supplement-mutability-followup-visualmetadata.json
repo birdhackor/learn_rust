@@ -1,0 +1,28 @@
+[
+  {
+    "width": 1280,
+    "height": 800,
+    "httpStatus": 200,
+    "file": "supplement-mutability-followup-1280.png",
+    "placement": {
+      "text": "下面的 { count: 2 } 建立有 count 屬性的 object。alias 與 order 指到同一個 object；alias.count += 1 改的是這個 object 的屬性。 console.log(...) 將括號內的值顯示到終端。",
+      "nextBlock": "const order = { count: 2 };\nconst alias = order;\nalias.count += 1;\nconsole.log(order.count);\n",
+      "paragraphTop": 373.46875,
+      "firstJsBlockTop": 442.46875
+    },
+    "bodyOverflow": false
+  },
+  {
+    "width": 390,
+    "height": 844,
+    "httpStatus": 200,
+    "file": "supplement-mutability-followup-390.png",
+    "placement": {
+      "text": "下面的 { count: 2 } 建立有 count 屬性的 object。alias 與 order 指到同一個 object；alias.count += 1 改的是這個 object 的屬性。 console.log(...) 將括號內的值顯示到終端。",
+      "nextBlock": "const order = { count: 2 };\nconst alias = order;\nalias.count += 1;\nconsole.log(order.count);\n",
+      "paragraphTop": 368.03125,
+      "firstJsBlockTop": 491.03125
+    },
+    "bodyOverflow": false
+  }
+]

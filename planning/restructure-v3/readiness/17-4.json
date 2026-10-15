@@ -1,0 +1,197 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "17.4"
+  ],
+  "author": "root",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_late",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round17-api-cross-references-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-criterion-benchmark.md",
+    "planning/restructure-v3/reviews/technical-early/round17-declarative-macro-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round17-dhat-allocation-profile.md",
+    "planning/restructure-v3/reviews/technical-early/round17-library-and-string-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round17-loom-miri.md",
+    "planning/restructure-v3/reviews/technical-early/round17-macro-hygiene-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round17-procedural-derive-tail.md",
+    "planning/restructure-v3/reviews/technical-early/round17-property-testing.md",
+    "planning/restructure-v3/reviews/technical-early/round17-public-api-contracts.md",
+    "planning/restructure-v3/reviews/technical-early/round17-root-cross-references-followup.md",
+    "planning/restructure-v3/reviews/continuity-late/17-summary.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/17-04-lesson.md": "f70fc55f59a265b5552c8c62d9d04383330abd2688451aa856b5bf53cd367daa",
+    "examples/ch14-api/src/limits.rs": "67188064c69cc27ab2eb4168521c0f465c91d0d25991ed1c527bf8df1b2cceb5",
+    "examples/ch14-api/fixtures/runtime-fail/derived_default.rs": "4f5c18e43b17b2e1c065c153fb96277d470b629cf2d023a7a01bbee10219c3d7",
+    "examples/ch14-api/src/options.rs": "baf8b9f75ecac2f6f5d71aacf3e265aa0e8d7c0b5b7f69e0e3db1941d28a83c1",
+    "examples/ch14-api/src/errors.rs": "8e0472a9b201b0bcaa4f93452b2312bf4c2cb3f085286f574ef2a4cc3a7a8e00",
+    "examples/ch14-api/src/search.rs": "c96cd01dae2befb6895c41a45b27036121f635a00eaa7fdb08c4b4727be46f71",
+    "examples/ch14-api/src/lib.rs": "b33bc13b239c98169218858b6812469c022d2c728926c99cdb806b55fa5a5679",
+    "examples/ch14-api/src/text.rs": "5b4075ad54d8b6c962aa0dfbfb2fe8b0b07496757e0d60b7c9fa02fcd793714b",
+    "examples/ch14-api/Cargo.toml": "c62849529e7c0eff512385ca3b3ce9fea7e61e15a94bd30449fbb58d6fa7854a",
+    "examples/ch14-api/examples/consumer.rs": "324cb8012d050df7abb7ae7c44e1f37a63c1c748b1552981d3f82d4d76748483",
+    "examples/ch14-api/examples/typed_errors.rs": "9f517443e825a2e22b76563297352d1e6867849a23f98cd55b925cb819359f32",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.rs": "1e326081c34ceb9423af94b65f8d5513f063947dd1605ea385493b781774ee50",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.rs": "9049d98096e1bf666f7e010342801ed28984e5f17f3b181b625da3c510aa3d2d",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.rs": "74ff54714dd7ff5caccf8323d65412b2d9fac4410bcb838b3ed08de7b787129c",
+    "examples/ch14-api/fixtures/cross-crate-fail/Cargo.toml": "6d2f47403d2e208b67863290fe2b980f513a9c760654c0e6a8ef88c8e742ac66",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_limit.expected": "c376b4ed1e702a45cb10b54ea688073d63511a4ac43a8eb61471f604c7e71c1c",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/non_exhaustive_match.expected": "388bdc7a4e6e8182c29781d55fae41a770e567dd5d0d81056e6b136176a86712",
+    "examples/ch14-api/fixtures/cross-crate-fail/examples/private_module.expected": "fa3b46bb839e843f9da990ecc9151edb533235701c1c55d831b1fe783f6b8a48",
+    "examples/ch14-api/compatibility/v1/src/lib.rs": "ed7981b9708216c5a106493f062dba6eff912012b83387dfd7ab00cb7b232ba4",
+    "examples/ch14-api/compatibility/v1_1/src/lib.rs": "a96f498eec48419b170d52a3a6f4caab1ec2de953891a1c4820309b4d79f2571",
+    "examples/ch14-api/compatibility/consumer.rs": "5a0f921550b9d7f7ece716d65f2788df87b5efa4045f397aeac1e326f90b3899",
+    "examples/ch14-api/compatibility/v1/Cargo.toml": "3fb9df4ddf3920ebecf1bce6347cd3a1ed80e0ed3bf90d66d38c83222efdce2a",
+    "examples/ch14-api/compatibility/v1_1/Cargo.toml": "ca00cdffa141c7212435e9b27c4273f070b20bcc03f8a4ed1c919b27f751f717",
+    "examples/ch14-api/examples/limit_solution.rs": "844521e4a96339cb816e54fdc9e85f0ca23bbd4c18eeef4d5d02784c98892037",
+    "examples/ch14-api/fixtures/note.txt": "1ca933853c174efc7edd3134eeae8fa7fa2e779f411391ea076843dfd8df57fc",
+    "examples/ch14-api/tests/public_contract.rs": "5a26a8894fe80ec68850b683bd34dc5c8a06dd2b06e0eaaff190f263451fcc47"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 3,
+      "quote": "10.9的搜尋工具已把設定、純搜尋、報告與I/O分開。現在要把搜尋工作交給其他程式使用：caller選擇大小寫與最多幾筆結果，再取得原行文字。library改內部檔案或增加設定時，希望原本合法的caller能繼續使用，也保持原來的搜尋意義。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 5,
+      "quote": "**API（application programming interface，應用程式介面）** 對這份library而言，包含caller可使用的公有名稱與型別，以及輸入、結果、失敗和ownership的約定。加上pub只能讓名稱可見，不會自動說清「成功」代表什麼。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 21,
+      "quote": "這些約定來自目前的工作需求；後面的型別與測試要支持它們。private欄位、Default與feature都有各自的作用，不能把其中一項當成「整份API一定相容」的證明。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 25,
+      "quote": "11.10已用newtype區分路程單位。這次BatchLimit包住usize，另外要求 **invariant（不變條件）**：library提供的每個有效上限都在1到1000。建構、複製與預設入口都要保留這項條件，不能只驗證某一個new呼叫。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 27,
+      "quote": "失敗先用LimitError保存Zero或TooLarge原值，Display與Error沿第11.7節。這裡在**enum整體**加新attribute **`#[non_exhaustive]`**，表示將來可能增加variant。定義它的crate內仍可窮舉目前variant；外部crate分類時必須另留一個接住其餘值的分支。已知variant仍可在外部建構，這項enum標記不會把它們變成私有。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 45,
+      "quote": "**`std::default::Default`** 是提供預設值的標準trait。它要求Sized，並提供簽名 **`fn default() -> Self`**：沒有receiver或輸入，直接建立一個Self，沒有Result失敗分支。Default由標準prelude帶進名稱範圍，因此能寫 `impl Default` 與 `BatchLimit::default()`。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 47,
+      "quote": "**`#[derive(Default)]`** 在每個欄位型別都有Default時，使用各欄位的預設值組成struct；它不會呼叫我們的驗證new。usize的預設是0，bool的預設是false。對BatchLimit直接derive，就得到不符合非零規則的0。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 65,
+      "quote": "Options保存ignore_case與有效BatchLimit，兩欄都私有。這次可以derive Default：bool沿標準預設false，BatchLimit則使用前面的手動預設100，兩項都符合Options約定。caller從預設開始，再以 **`with_ignore_case(self, bool)`** 或 **`with_limit(self, BatchLimit)`** 選擇新設定。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 67,
+      "quote": "這兩項method仍用第3.6節的owned self接手整份設定。新的寫法 **`mut self`** 中，mut讓函式內這個self binding可修改；它沒有把參數變成 `&mut self`，caller仍交出原值。body修改指定欄位，再交回新的Self，因而可以串接呼叫，每次把前一個結果交給下一項；不用讓caller持有mutable reference。with_limit只接受已驗證的BatchLimit，不新增一條從任意usize繞過規則的路徑。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 79,
+      "quote": "SearchError也在enum整體標non_exhaustive。EmptyQuery表示caller提供空搜尋文字；Read擁有原io::Error。Display只說這一層context，source沿第11.7節借出下層原因，保留外層reference仍借self的契約："
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 107,
+      "quote": "**re-export（重導出）** 用 `pub use` 讓已有的公有item也能從另一條公有路徑使用。`mod options;` 保留私有module，`pub use options::Options;` 則讓外部能用 `ch14_api::Options`。Options仍是同一個型別，沒有複製定義或建立alias wrapper；外部也沒有因此取得 `ch14_api::options` 這條私有路徑。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 109,
+      "quote": "同理，library root重導出前面已教的BatchLimit、錯誤、結果與函式。本package另定義名為text的feature並預設啟用；啟用時提供 **`render_text(&[Hit]) -> String`**，借結果形成 `行號:原文字`、每筆有LF的文字報告，沿10.9的表示規則。12.1的cfg控制text module與這項公有函式；未啟用時這項函式不在本次介面中，搜尋能力仍在。後面會展示實作與對應manifest："
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 119,
+      "quote": "12.1已教feature定義／啟用與cfg，本例text只增加 **`render_text(&[Hit]) -> String`**：借用結果，沿10.9的format與push_str形成 `行號:原文字`，每筆有LF。它沒有修改搜尋規則、Options預設或結果ownership。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 215,
+      "quote": "以下三份source是故意不能編譯的fixture。前兩份分別嘗試繞過BatchLimit的私有建構、窮舉外部non_exhaustive enum；第三份用私有module路徑取得Options。正確用法已在前面教過：驗證new、保留其他error分支、從root公有路徑import。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 231,
+      "quote": "因此fixture有自己的package，透過10.1已教的path dependency依賴真正ch14-api。以下literal package欄位回收第1.2–1.3與12.1節的設定：name、version、edition與最低rust-version都明寫，publish=false禁止上傳。空的 **`[workspace]`** 讓這個目錄成為另一份workspace根，不加入外面的教材workspace；它的Cargo.lock也獨立保存，避免一般tests把故意失敗目標當正常範例建置。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 237,
+      "quote": "已在第1.3節使用的 **`--manifest-path 路徑`** 明選本次Cargo從哪一份manifest開始；路徑從目前repo根目錄給出。下面只check選定example，預期非零結束與對應錯誤，不是應修成綠燈的一般測試："
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 261,
+      "quote": "**source compatibility（來源相容）** 問原合法caller不改程式碼，能否在新版繼續編譯；**behavior compatibility（行為相容）** 另問結果是否仍符合原約定。能編譯只是前一項，不能替預設值、輸出規則或失敗分類作保證。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 273,
+      "quote": "兩個library用**同一份實體consumer.rs**，不是把caller同步改寫成適應新版："
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 279,
+      "quote": "兩份manifest都是前面已教的隔離workspace。新設定 **`[[bin]]`** 描述一個binary target；name指定Cargo目標名稱，path以**該manifest目錄**為起點，選擇共用的 `../consumer.rs`，不要求入口一定是src/main.rs。package名稱相同，因此consumer都借助 `api_contract_demo` library名稱；version則各自指定真正的1.0.0／1.1.0。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 300,
+      "quote": "**SemVer（semantic versioning，語意化版本）** 以major.minor.patch表示版本。對1.0.0以後的公有API，patch修正錯誤而保留相容契約；minor增加相容能力；不相容修改使用新的major。版本號是在表達維護者的承諾，Cargo不會自動證明程式符合它。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 316,
+      "quote": "以 `BatchLimit::new(1)` 建立有效上限，從Options預設開始。查 `Rust`，材料為 `Python\\nRust第一行\\nRust第二行\\n`，預期只有一筆，原行號2、文字Rust第一行。用assert核對，說明為何上限1不會讓它變成原第1行。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 334,
+      "quote": "tests/public_contract.rs是真正外部crate，只走公有入口，核對邊界值／有效default、ASCII與原行資料、零結果、空query優先、Error原因，以及text開關。檔案成功測試用repo的fixtures/note.txt；Cargo執行這份package的integration tests時，以package根目錄作工作目錄，因此 `Path::new(\"fixtures/note.txt\")` 指向已提供材料。"
+    },
+    {
+      "section_id": "17.4",
+      "path": "docs/chapters/17-04-lesson.md",
+      "line": 362,
+      "quote": "**`cargo package`** 在本機把package組成`.crate`壓縮檔，再解開並編譯檢查，不上傳到registry。**`--list`** 只列將被打包的檔案，不建立壓縮檔；**`--allow-dirty`** 允許目前尚未提交的變更參與這次本機打包，不表示這份內容已提交或發布。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

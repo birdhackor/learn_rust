@@ -1,0 +1,95 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "6.2"
+  ],
+  "author": "author_v3_ch01",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round06-prefix-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round06-traits-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06a.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round06-ch06b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/06-02-lesson.md": "f10544e1c8c5bba31e648e597ffa8fe05c8c48305bfaba692cdea1d8033be3f7",
+    "examples/intro-workspace/trait-stages/examples/debug.rs": "e77daf767da69e7348c871ecc70b91fb2043727fba61df9fb483704a498755fb",
+    "examples/intro-workspace/trait-stages/fixtures/compile-fail/not_debug.rs": "e8c8eeb215523bd8a67d4af2cbfe1ba1c35b27ad0c13c2e045ce99e62cbb037a",
+    "examples/intro-workspace/trait-stages/examples/equality.rs": "c3a730043d5774e5462a5cfd54fedc8332f0fcdb44a5e63ef3ec80cae101ce0b",
+    "examples/intro-workspace/trait-stages/examples/standard_equality.rs": "e442e57e01a4c7f9bccf7a4e96076a5a106f1a6da75376c87511c0d80e98b33d",
+    "examples/intro-workspace/trait-stages/Cargo.toml": "bf22ea0e24e449c70861282ff9b2a9e4777fe97dd1764b55b4e16264a897f371",
+    "examples/intro-workspace/trait-stages/examples/equality_answer.rs": "5bd909d17e425094a33529f75546e1b5a837d624f8d41a8b6df7c43f35deeb6b"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 3,
+      "quote": "前面顯示訂單時，總是分別選出金額、數量。若要一次檢查整筆摘要，或判斷兩份摘要是否相等，就需要型別提供相應能力。標準函式庫已有 `Debug` 與 `PartialEq`；這次先選定我們希望它們對欄位做什麼，再請編譯器產生實作。"
+    },
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 7,
+      "quote": "**`Debug`** 提供供開發者檢查的文字表示。`println!(\"{summary:?}\")` 中的 **`:?`** 要求用 `Debug`，原來的 `{summary}` 不會自動切換到這種顯示方式。這次格式化只借讀 summary，沒有取得它的 ownership；顯示後仍能讀取它的欄位。"
+    },
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 9,
+      "quote": "對兩個整數欄位的摘要，我們希望一起看見型別名、欄位名與各自的值。寫在型別前面的 **`#[derive(Debug)]`**，就是要求編譯器替這個型別產生 `Debug` 實作。`#[...]` 延續第 2.7 節的 attribute 語法；`derive(...)` 列出這次希望產生的 trait。"
+    },
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 27,
+      "quote": "若移除 attribute，欄位仍各自能顯示，但整個型別沒有 `Debug`。下面是完整的預期編譯失敗例，會得到 **E0277**："
+    },
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 35,
+      "quote": "兩筆摘要的金額相同、數量不同，這裡應算不同摘要。我們選擇「全部欄位都相等，整筆才相等」。"
+    },
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 37,
+      "quote": "**`PartialEq`** 提供 `==` 與 `!=` 的相等比較能力，結果是 `bool`。數字本來就有相應實作；自訂 struct 不會自動取得它。`#[derive(PartialEq)]` 產生逐欄比較，因此每個欄位也必須有 `PartialEq`。"
+    },
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 62,
+      "quote": "接著要讓摘要帶有文字標籤。先把後面會用到的標準規則說清楚：`String` 已提供 `Debug` 與 `PartialEq`，比較的是文字內容；兩份獨立建立、內容同為 `Rust` 的 String 會相等。`&str` 也能使用這兩項能力，仍以所借文字的內容判斷相等。"
+    },
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 74,
+      "quote": "`usize` 和前面的整數一樣，已有 `Debug` 與 `PartialEq`。shared reference 在被借型別有相應能力時，也能以 `Debug` 顯示被借值、以 `PartialEq` 比較被借值。因此兩份分別借自不同變數、內容同為 2 的 `&usize`，比較仍相等："
+    },
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 84,
+      "quote": "第 5.2 節的 `Option<T>` 是 enum。標準函式庫在 `T` 有 `PartialEq` 時，也提供 `Option<T>` 的相等比較：兩個 `None` 相等；`Some` 與 `None` 不相等；兩個 `Some` 要看裡面的值是否相等。`T` 有 `Debug` 時，整份 Option 也能 Debug 顯示，例如 `Some(2)` 或 `None`。"
+    },
+    {
+      "section_id": "6.2",
+      "path": "docs/chapters/06-02-lesson.md",
+      "line": 122,
+      "quote": "定義有 `label: String`、`amount: i32` 的摘要，產生 `Debug`、`PartialEq`。用已教的文字建立方式各自建立兩筆「訂單A」、金額280的摘要，先確認整筆相等；再只把第二筆金額增加20。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

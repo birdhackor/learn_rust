@@ -1,0 +1,123 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "8.1"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round08-errors-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round08-errors-tail.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08-quote-note.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-ch08.md",
+    "planning/restructure-v3/reviews/continuity-early/round08-crossref-followup-final.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/08-01-lesson.md": "6b6e05083de08537dfecc183be29d55efea0867fe12f0706d09a926476098df4",
+    "examples/intro-workspace/error-stages/examples/policy/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/policy/main.rs": "949f8ee0a1035fdfcb4d5c31e39727d37b186b8b155691cfb6589b9dcdf2b98a",
+    "examples/intro-workspace/error-stages/fixtures/runtime-fail/panic_contract.rs": "2cdd692bc6d5c8327f69ec96de98cdbeca2a4621de83a8103dbac9f25a93e55e",
+    "examples/intro-workspace/error-stages/examples/unwrapping/main.rs": "ddd96f2c671880b5c833bb782928c509106f211c47302579b6f17f82e91bfc36",
+    "examples/intro-workspace/error-stages/fixtures/runtime-fail/unwrap_error.rs": "a7d6d0563ab48a745369c25554cbee88064134a320f19e627597767c45d85c72",
+    "examples/intro-workspace/error-stages/fixtures/runtime-fail/expect_error.rs": "6d25be136315e8cd77e4758341d8db716f038eb4e22d0fdc382d6ee296ce7a4c",
+    "examples/intro-workspace/error-stages/fixtures/compile-fail/unwrap_without_debug.rs": "a83af15232565031500d05bb6d0f58e4a94e5a02aa10fe4202d79ec6d8b66768",
+    "examples/intro-workspace/error-stages/Cargo.toml": "da22230eeed456f0f919383a7c66268f091f0fed0de1e9d7dc7f03f0aef977e4",
+    "examples/intro-workspace/error-stages/examples/unwrapping/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063",
+    "examples/intro-workspace/error-stages/examples/policy_answer/main.rs": "6b37c00a2a86fdcb61cc99e66edbae2222e3d00dfcd7b91382c23cbf055690eb",
+    "examples/intro-workspace/error-stages/examples/policy_answer/policy/mod.rs": "9cbb2ded8f5d212054faa0a24a9e4a3f3ba25d76682e575ba6deb131cfa0d063"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 3,
+      "quote": "第 5.2 節已用 Result 保存除數零的失敗。現在要檢查批次件數：**0 到 100 都合法**，負數與超過上限各有不同原因。呼叫者收到幾筆資料，就要逐筆報告，不能因第一筆不合法而略過其餘資料。"
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 9,
+      "quote": "`CountError` 包含 `Negative(i32)` 與 `TooLarge(i32)`，分別保存負數、超過上限的原因，以及被拒絕的原數字。這沿用第 4.1 節帶資料的 enum；`pub enum` 讓其他 module 也能用其 variant 做 pattern 配對。"
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 23,
+      "quote": "下面的 main 用第 4.2 節的 match 分辨 Ok 與 Err。Err arm 只顯示原因的 Debug 文字，迴圈接著處理下一筆；沒有把被拒絕的數字當成合法件數："
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 48,
+      "quote": "**`panic!`** 是主動觸發 panic 的 macro。前面的索引越界或 assertion 失敗也曾停止正常流程；現在可以直接寫 `panic!(\"原因={value}\")`，格式字串插入值的方式與 println 相同。"
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 52,
+      "quote": "下面是完整的**預期執行失敗**程式。它另外規定 `take_positive` 只接受正數，故意傳入 0 來觀察 panic；這不是把前面的批次規則改成不接受零："
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 62,
+      "quote": "**`unwrap()`** 與 **`expect(message)`** 是 Result、Option 提供的方法。它們以 `self` 接收整份結果，成功時交出裡面的值；若該結果型別不是 Copy，呼叫會消耗它，不能再用原名稱。`message` 是你提供的 `&str` 說明。"
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 64,
+      "quote": "標準 `Result<T, E>` 只有在 T、E **兩者都是 Copy** 時才有 Copy。本頁的 CountError 沒有 Copy，因此 `Result<i32, CountError>` 會 move 進這些方法；裡面的成功數字是 Copy，不代表整份結果也能 Copy。"
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 73,
+      "quote": "Result 的兩個方法都要求錯誤型別有 **Debug**，即使這次預期只會取得 Ok，也要符合這項型別契約。CountError 已提供 Debug；Option 的 None 則沒有錯誤值需要顯示。"
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 120,
+      "quote": "panic 訊息包含 `本案例故意沒有預期中的數字`。這個訊息刻意標明失敗示範；實際用於有保證的流程時，應像前面的固定批次、索引例子，寫出**為什麼預期有值**。"
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 122,
+      "quote": "若缺少 Debug，Result 的 unwrap 呼叫連編譯契約也不符合。下面是完整的**預期編譯失敗**程式："
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 128,
+      "quote": "放入獨立練習專案執行 `cargo check`，診斷 **E0277** 指出 CountError 缺少 Debug。這和第 6.1、6.2 節使用某項能力前必須提供相應 trait 的關係相同。"
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 132,
+      "quote": "第 6.2 節已比較整份 Option。標準 **`Result<T, E>`** 在 T 與 E **兩者都有 PartialEq** 時，也能比較：Ok 與 Err 不相等；同為 Ok 比成功值，同為 Err 比錯誤值。T 與 E 兩者都有 Debug 時，整份 Result 也能 Debug 顯示。"
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 136,
+      "quote": "下面是 policy 範例實際載入的**完整** `policy/mod.rs`，包含前面的定義與兩項測試。第一項確認 0、100 都合法；第二項確認 −1、101 分別保留原因與原值："
+    },
+    {
+      "section_id": "8.1",
+      "path": "docs/chapters/08-01-lesson.md",
+      "line": 164,
+      "quote": "寫 `show_input` 接收 i32，呼叫 checked_count：合法時顯示件數；Negative 時顯示「不能為負數」與原值；TooLarge 時顯示「超過批次上限100」與原值。讓 −1、0、100、101 都依序被處理，最後顯示四筆都已回報。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

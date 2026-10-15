@@ -1,0 +1,123 @@
+{
+  "reviewed_status": "accepted",
+  "section_ids": [
+    "18.7"
+  ],
+  "author": "prepare_early_dependency_inventory",
+  "technical_reviewer": "technical_v3_ch01_07",
+  "continuity_reviewer": "continuity_v3_ch01_07",
+  "root_acceptance": "Root adjudicated the independent reports and applicable followups for this current page. Frozen source positions locate actual teaching, not an automated proof of comprehension.",
+  "review_reports": [
+    "planning/restructure-v3/reviews/technical-early/round18b-complete-tool.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-report-cli.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-root-final-followup.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-sequential-bounded-middle.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-single-url-prefix.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop-reviewer-erratum.md",
+    "planning/restructure-v3/reviews/technical-early/round18b-stop.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b-followup-final.md",
+    "planning/restructure-v3/reviews/continuity-early/round18b-ch18b.md"
+  ],
+  "file_sha256": {
+    "docs/chapters/18-07-lesson.md": "5d94feea19a82e47dc2296a82c3e3d9294b7d932f61f508e8c84463403720209",
+    "examples/ch15-projects/b1-starter/src/lib.rs": "1d12898ed14744ef3945e226c8b844c7d03c377a287b1210d5e1f015a470eda1",
+    "examples/ch15-projects/b1-starter/Cargo.toml": "a7903bd9469d606139e031cba89e54df00cfea41afb6fe06ae2b509d46fe4f4c",
+    "examples/ch11-async/local-service/Cargo.toml": "63d50b3f3a47c262b9563ce63776758b42812b4e25d0bc7b93da8604e16797ee",
+    "examples/ch11-async/local-service/src/lib.rs": "ae4f9ce76e149d467d6ad008e114c29fb357ee86f240a4dfb43fc39de434b119",
+    "examples/ch11-async/http-single/Cargo.toml": "2f315178dcb61fa29821eff073bbadcddb706ae4041b30a03056682b2ed70e4f",
+    "examples/ch11-async/http-single/src/lib.rs": "19b174bc219f18b0e08b51aaf641871cc268fd425ce7800e8b2394814d79c68a",
+    "examples/ch11-async/http-single/src/config.rs": "af62a76feb0e0413cad56369ce8e19e416126fc62036876b2c22ca5bce0262e7",
+    "examples/ch11-async/http-single/src/error.rs": "fd053a9d90d8c499a7abbd7e1d512631721045b21503bf46becdcf45a71e0d71",
+    "examples/ch11-async/http-single/src/reply.rs": "7a139b1940c7a5cd2b69f83ccd0dadb3ccc726d6a3016db0e19c0c49399891c0",
+    "examples/ch15-projects/b1-starter/checks/single-tests.rs": "cdd5ece5a407556733c94c91670122ae98627bcfd6a06c7ff80784d57ee59a14",
+    "examples/ch15-projects/b1-complete/src/lib.rs": "eda21ca300f6058e2d438a1961b8e2b4c9b6e740c8a3cf7dc3e2c039b0e0e9f9",
+    "examples/ch15-projects/b1-complete/Cargo.toml": "3beeec75230397b5bcbd265a65b7a518f688dfe90f56bcd526da028ae367de43",
+    "examples/ch15-projects/b1-complete/examples/b1_single_demo.rs": "c18f8f5cde18af03d3306c09a3592b74fa06b970beefecf4dc6b5b1c7e7a6496",
+    "docs/assets/ch15/one-url-result.svg": "bcfe5079689e15848e3d027cd1be2c6651dbe83ac4532df787a3771102a2d44f"
+  },
+  "teaching_positions": [
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 3,
+      "quote": "第 14 章已能送出 async HTTP 請求，也能用本機服務控制結果。現在開始專案 B：網址檢查器。工具要回答的第一個問題很小：給一份原始網址文字，最後是否得到 2xx？若失敗，究竟是輸入不合法、請求失敗，還是等待逾時？"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 9,
+      "quote": "沿用 14.9 的 `Fixture`，每次由作業系統選擇本機 port。以下 `/ok` 等名稱都指它提供的路徑；真正送出的網址形如 `http://127.0.0.1:本次port/ok`。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 11,
+      "quote": "**scheme** 是 URL 中冒號前的部分，例如 `http`、`https` 或 `file`；本工具只接受前兩種。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 30,
+      "quote": "把答案表示成 `Check`：`original` 擁有原文字，`outcome` 保存本次分類。`Outcome::Http` 擁有最後 URL，另存 `u16` 狀態碼與 `bool` 通過判定；其他情況各有自己的 variant。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 48,
+      "quote": "起始檔 在 `examples/ch15-projects/b1-starter`。請把其中完整的 `Cargo.toml` 與 `src/lib.rs` 保存到自己的 `url-b1-work` 目錄，另保存 `checks/single-tests.rs`，稍後才加入測試。下方先解釋要修改的位置，再提供全部起始檔與 checks；不需要到外部網站補齊程式。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 52,
+      "quote": "`[dev-dependencies]` 可供測試與 example targets 使用，普通 library 不依賴 `Fixture`。測試重用 14.9 的 `ch11-local-service`，以已教的 path dependency 指向它的 package。起始檔的相對路徑適用於原 repo 位置；**複製到 repo 外後，先把那一行 `path` 換成你電腦上教材 `examples/ch11-async/local-service` 的實際絕對路徑，再執行 Cargo**。例如教材在 `/work/learn_rust`，就填 `/work/learn_rust/examples/ch11-async/local-service`。這只是選定既有測試材料，不必再寫一份 server。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 66,
+      "quote": "這份 client 保留 14.8 的建立與重用方式，但**不設定 reqwest 的請求期限**。本題把預算放在 14.5 的 `tokio::time::timeout`：之後整份單筆工作由 caller 提供同一個 `Duration`，現在先包住 GET 到 final headers。不是另外再設定一個互相競爭的十秒預算。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 90,
+      "quote": "以下沿用第14.8–14.9節已完成的服務。`ch11-local-service` 的 normal library 依賴 `ch11-http-single`，後者的 root 會載入 config／error／reply；所以這些設定與完整來源一起列在下面。這些 module 仍只是編譯進 library，不表示測試會啟動 HTTP CLI 或解碼 JSON。測試準備的 `/ready` 會讀完約定的小 body，產品 `check` 的工作則只到 final headers。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 149,
+      "quote": "驗收重用 `Fixture::start` 的 ready 確認與動態 port、`url` 的固定路徑、`next_started` 的 handler 通知、`release` 的一次使用 gate，最後用 `shutdown` 收尾。這些介面與 server／client 各自等待的規則都來自 14.9。本節不靠公共網站的固定輸出，也不用 sleep 猜測請求已進入。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 153,
+      "quote": "held 測試還需要 `held_request(limit)`。它建立一份 gate、把 client 與網址 move 進 request task，再等待 handler 回報已進入第零份 gate。沿 14.3／14.9 的 `spawn` 要求，task 擁有 client 與文字；`Check` 的欄位使用可 `Send` 的 `String`、數值、`Option` 與這些具體錯誤型別，因此 Output 可交回 task 的等待者，沒有借用 fixture 的資料。成功交回 `(Fixture, JoinHandle<Check>)`，交回時尚未放行。起始版根本不送網路，因此通知也不會出現；加一個五秒的**觀察期限** 才能指出這種錯碼，然後 abort／await request task，再 shutdown server。測試用 `expect` 或 `panic!` 報材料、契約不符；這不是正式網址檢查器對一般輸入的處理方式。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 159,
+      "quote": "逾時測試另有一個需要先說清的等待形式：具體的 `&mut JoinHandle<Check>` 也可作為等待 task 的 Future，Output 和直接 `request.await` 一樣是 `Result<Check, JoinError>`。借用等待保留 handle 的 owner，適合把等待放進測試的 timeout。若這個 timeout 到期，丟掉的是借用的等待，**task 還在跑**；仍需用原 handle abort，再 await 收尾。若已取得成功等待的 Output，就使用那份結果，不從同一把 handle 再取一次。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 193,
+      "quote": "第一步只處理輸入。用 `parse_http_url(original.as_str())`，失敗立即組合 `Check`：保留 `original`、`None` 耗時、真正的 `Outcome::Input(issue)`。成功先保留 `Url`，其餘仍可用尚未完成的標記。重跑測試，應先讓輸入那一項通過。"
+    },
+    {
+      "section_id": "18.7",
+      "path": "docs/chapters/18-07-lesson.md",
+      "line": 243,
+      "quote": "`b1_single_demo` 使用已教的 `#[tokio::main(flavor = \"current_thread\")]` 建立 runtime。先 ready、建立 loopback client、取得 `/redirect` 網址，再呼叫 `check`。完成後先 shutdown server，確認它處理初始網址與最後 `/ok` 兩份請求，才印出結果；ready 不計入這兩次。"
+    }
+  ],
+  "limits": [
+    "AI role-based static reading is not a human usability test.",
+    "Execution evidence is separately recorded by authors/root; not attributed to static reviewers.",
+    "Root global acceptance and publication still require all remaining chapters, issues and final site/fixture checks."
+  ]
+}

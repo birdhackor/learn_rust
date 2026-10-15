@@ -1,0 +1,382 @@
+[
+  {
+    "path": "docs/chapters/11-01-lesson.md",
+    "sha256": "01206a2c8b69a641f4b04083178c43cb5a528bd097ef2c5edd490256231c3776",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 11.1 型別需要多大空間：Sized、DST 與常數泛型"
+      },
+      {
+        "line": 5,
+        "quote": "## Sized 說明型別本身的大小"
+      },
+      {
+        "line": 11,
+        "quote": "先用標準函式 **`std::mem::size_of::<T>()`** 查詢：它不接收值，要求 T 是 Sized，回傳 usize，單位是 bytes。`std::mem` 是標準函式庫處理記憶體相關工作的 module；這裡只查大小。`::<T>` 沿用第 5.1 節的 turbofish，明選要查的型別。"
+      },
+      {
+        "line": 13,
+        "quote": "泛型參數 `<T>` 預設包含 `T: Sized`，所以以下 fixed_bytes 能把 T 交給 size_of："
+      },
+      {
+        "line": 21,
+        "quote": "## DST 的資料大小要看實際借到的內容"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/11-02-lesson.md",
+    "sha256": "b36a80e90643d0be470e9708dd7b118c994d9c44118ccd5c0ed16b38df53991a",
+    "read_lines": [
+      {
+        "line": 27,
+        "quote": "**`Box<T>`** 是標準函式庫提供的 owned pointer 型別，負責它管理的 T 與配置。Box 由 prelude 提供，不用另加 use。對本節這些非零大小的值，**`Box::new(value)`** 取得 value，為它安排 heap 空間，交回 Box。"
+      },
+      {
+        "line": 31,
+        "quote": "先用一個 i32 看清楚如何借讀、借改與交接，再把這些操作用回數字鏈。`*boxed` 找到 Box 管理的值；`&*boxed` 借讀它，`&mut *boxed` 借改它："
+      },
+      {
+        "line": 39,
+        "quote": "此時 `*second` 讀出的是 i32，可以 Copy 來顯示與比較。只有 second 繼續管理這份配置，原 first 不能再用。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/11-03-lesson.md",
+    "sha256": "376a205191cf19ed9b01de2b838586ad84f1341abe6c928d9136f504016c66d1",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 11.3 用 Drop 觀察 ownership 的收尾"
+      },
+      {
+        "line": 5,
+        "quote": "## Drop 提供自訂收尾工作"
+      },
+      {
+        "line": 47,
+        "quote": "標準函式 **`std::mem::drop(value)`** 接收值、回傳 unit。非 Copy 的值 move 進去，在函式返回前完成正常清理，呼叫者不能再使用原值。用 `use std::mem::drop;` 引入後可直接寫 drop；它是普通函式，沒有 `!`。"
+      },
+      {
+        "line": 49,
+        "quote": "下面仍只有 Tracked 與 main，先 move 給 second，再顯式清理："
+      },
+      {
+        "line": 72,
+        "quote": "Drop 的方法只收到 `&mut self`，不是接手整份值。若讓一般流程直接呼叫收尾方法，原值卻仍由呼叫者持有，後續使用與自動清理的責任就不再清楚。Rust 禁止直接呼叫它；提早收尾使用接收 owned 值的 std::mem::drop。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/11-04-lesson.md",
+    "sha256": "05c14435f34625a260be02454fecb4daad4e6d8fc6d150aca0910e64808f4fab",
+    "read_lines": [
+      {
+        "line": 27,
+        "quote": "要透過外層修改內容，再實作 **`DerefMut`**。它同樣位於 std::ops，要求型別已有 Deref，沿用相同 Target；`deref_mut(&mut self) -> &mut Self::Target` 把 mutable 借用連到原欄位："
+      },
+      {
+        "line": 69,
+        "quote": "標準 Vec 也有 `Deref<Target = [T]>`，所以 `&Wrapper<Vec<i32>>` 能提供 `&[i32]`。mutable 形式透過 DerefMut 提供 `&mut T`；mutable 也能依需要提供 shared 借用，shared 則不能因此變成 mutable 權限。"
+      },
+      {
+        "line": 89,
+        "quote": "自動借用轉換=5"
+      },
+      {
+        "line": 119,
+        "quote": "Target 的其他 trait 也不會自動變成外層的能力。以下完整負例要求 owned 輸入有 Copy，傳入 Wrapper 而得到 **E0277**；雖然欄位是 i32，Wrapper 本身並未實作 Copy："
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/11-05-lesson.md",
+    "sha256": "936a3788cf246573cc9f93075af806f8e1b7cef938a10573de4f1508a0ddeeb6",
+    "read_lines": [
+      {
+        "line": 5,
+        "quote": "## `T: 'a` 約束型別內的借用"
+      },
+      {
+        "line": 7,
+        "quote": "第 7.2 節的 `'b: 'a` 表示 `'b` 至少涵蓋 `'a`。**`T: 'a`** 則要求 T 所包含的 lifetime 關係至少滿足 `'a`；它沒有命令某個 T 值一定存活到哪裡，也不延長來源。"
+      },
+      {
+        "line": 50,
+        "quote": "前面使用的文字 literal 本來就有 `&'static str` 型別。保存這份 reference 的局部變數結束，不會使 literal 文字跟著消失。"
+      },
+      {
+        "line": 52,
+        "quote": "較長的有效性也能符合較短的要求。下面 choose_label 回傳 candidate，或固定 literal Rust；簽名依第 7.1 節的唯一輸入省略規則，仍把回傳契約連到 candidate。literal 足以提供這項較短的借用，不必把整個函式改成只能接受 static 來源。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/11-06-lesson.md",
+    "sha256": "ec492344b90ad5c776fd17550cde8540c2241161b42d13a70ce72632d6dbb76f",
+    "read_lines": [
+      {
+        "line": 228,
+        "quote": "需要保留這種 method 時，可以個別限定 **`where Self: Sized`**。**where clause** 把 bound 寫在簽名尾端、body 或分號前；這個 method 只供已知 Sized 的 Self 呼叫，不放進可動態呼叫介面。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/11-09-lesson.md",
+    "sha256": "8f935f8c0f04181dd4321c8505c8ac8aac8c27813e4a1a1d7a8dec865d795925",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 11.9 用 Cell 與 RefCell 管理內部修改"
+      },
+      {
+        "line": 15,
+        "quote": "若介面由自己決定，可以改用 `&mut self`；但要實作既定的 shared 介面，就需要在型別內安排受控的修改方式。**interior mutability** 指能經 shared reference 修改內部狀態的設計。Cell 和 RefCell 是標準庫提供的兩種介面，仍需遵守各自的安全條件；普通 `&T` 不會因此都能修改 T。"
+      },
+      {
+        "line": 78,
+        "quote": "| `borrow()` | `Ref<'_, T>` | 可同時有多份 shared guard，不能有 mutable guard。 |"
+      },
+      {
+        "line": 83,
+        "quote": "衝突時，borrow／borrow_mut 會 panic。檢查發生在呼叫時，不能因程式通過編譯就假設一定成功。以下完整程式先建立兩份 shared guard，兩份都 drop 後才取得 mutable guard；修改完成再 drop writable，讓讀取恢復："
+      },
+      {
+        "line": 100,
+        "quote": "下面刻意省略 drop(view)。即使 println! 已是 view 的最後讀取，接下來仍會在 borrow_mut panic："
+      },
+      {
+        "line": 116,
+        "quote": "- `try_borrow()` 回傳 `Result<Ref<'_, T>, BorrowError>`。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/12-01-lesson.md",
+    "sha256": "5f7ab3792ff83635cc74b2147311ae448cd914c74f18e86c96aa54c0e3cf61f0",
+    "read_lines": [
+      {
+        "line": 31,
+        "quote": "`[workspace.package]`保存成員可採用的共同package欄位。`version`與`edition`已在前文介紹；本節再用兩項："
+      },
+      {
+        "line": 38,
+        "quote": "成員寫`version.workspace = true`，表示「我的version採用workspace.package中的共同值」。`edition.workspace = true`等欄位也是相同形式，**不是把edition設為布林值**。TOML的點號在這裡指定設定欄位的層級；`true`表示採用。每個成員自己的`name`仍分別填寫。"
+      },
+      {
+        "line": 44,
+        "quote": "## profile選編譯設定"
+      },
+      {
+        "line": 46,
+        "quote": "**profile**是一組編譯設定。一般`cargo build`／`run`使用`dev`；加`--release`改用`release`。這與Rust edition、要執行哪個package都不同。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/12-02-lesson.md",
+    "sha256": "846d2893b7c8c692a00efa7792cf4256cde6732e35f118d104585ed72bdfba7a",
+    "read_lines": [
+      {
+        "line": 11,
+        "quote": "build script自己也要先編譯成能在host執行的程式。Cargo執行它，成功後才編譯主要crate，最後才有讀者啟動的成品。"
+      },
+      {
+        "line": 27,
+        "quote": "第12.1節已區分host與target。script內的`cfg!(target_os = \"windows\")`判斷這支script自己的目標，也就是host；若要知道主要crate的target，應讀Cargo傳入的資料。一般本機建置時兩者碰巧相同，跨平台建置時就可能不同。"
+      },
+      {
+        "line": 37,
+        "quote": "| `cargo::rerun-if-changed=build.rs` | 縮小檔案變動追蹤範圍。script本身需要重編時，Cargo也會處理並重新執行。 |"
+      },
+      {
+        "line": 132,
+        "quote": "Cargo執行script時還提供`OUT_DIR`，指向這次建置使用的輸出目錄。生成供編譯使用的檔案應寫到這裡，保持原始碼目錄作為輸入。OUT_DIR可能留有前次檔案，script須自行管理需要重建的內容。本節只交付文字設定，因此沒有生成檔案或加入讀生成檔案的macro。"
+      },
+      {
+        "line": 134,
+        "quote": "若script自己需要第三方Rust library，放在package的`[build-dependencies]`，供host上的script編譯使用；`[dependencies]`則供主要crate。兩組須各自明確宣告。本例只用標準函式庫，所以完整manifest沒有這兩個區段，也沒有隱藏的第三方helper。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/13-01-lesson.md",
+    "sha256": "c5b392ba306e20d36ba848860b03f669a09fabc7f76d28e5eefa168815aab654",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 13.1 Send 與 Sync：檢查跨 thread 的移交與共用"
+      },
+      {
+        "line": 31,
+        "quote": "Send 屬於 **marker trait（標記能力的 trait）**：它表達一項型別性質，沒有像 Charge 的 amount 或 Clone 的 clone 那樣提供操作方法。它也是 **auto trait**，編譯器會依型別及其組成判定能否提供這項能力。以普通 struct 為例，欄位都符合 Send 時，這個 struct 也能自動符合。Send／Sync 不是6.2中可用 derive 生成的項目。"
+      },
+      {
+        "line": 93,
+        "quote": "以 Rc 計數、Cell 內容或 RefCell 狀態的普通讀寫而言，不同 thread 對同一個記憶體位置有未同步的衝突存取，且至少一方寫入，就可能形成 **data race（資料競爭）**。這些管理資訊也屬於資料；不能只看自己是否打算修改外面的業務欄位。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/13-04-lesson.md",
+    "sha256": "452f05337ef7610197fe9908167c9ffd5dcb447b3fda33fe6e189e345a678da9",
+    "read_lines": [
+      {
+        "line": 13,
+        "quote": "`std::thread::scope` 建立一段管理 scoped threads 的區段。它接收一份 callback，向 callback 提供 `&Scope`：這個 **Scope context** 是在本區段建立工作、追蹤收尾的管理物件。callback 在呼叫 scope 的 thread 執行；用 context 的 spawn method 才建立新的 worker。"
+      },
+      {
+        "line": 17,
+        "quote": "先分清一個清理界線。**thread-local data（執行緒局部資料）** 是每個 thread 各自持有的一份資料，與函式 body 裡的一般局部變數不同；它可能在工作 body 返回後才繼續清理。本節只需知道這種資料的角色，不使用其 API。Rust 1.99 的 scope 自動等待保證工作 body 完成，thread-local 的清理可能仍在進行；下面 ScopedJoinHandle 的手動 join 則連這種清理也會等待。不要把這兩種等待概括成相同範圍。"
+      },
+      {
+        "line": 39,
+        "quote": "13.3 的 for 在這裡派上用場。scope 自己安排 context 的借用有效期，F 要能接受各次合法的這種借用；`'env` 仍描述捕捉的外部來源。T 位於 for 的選擇之外，是 callback 整體交回的結果，不把 context 的局部借用帶到外面。scope 的 callback 沒有 Send bound，因為它在呼叫的 thread 執行。"
+      },
+      {
+        "line": 266,
+        "quote": "- [`thread::scope` 的 lifetime、等待與 panic](https://doc.rust-lang.org/std/thread/fn.scope.html)、[`Scope::spawn`](https://doc.rust-lang.org/std/thread/struct.Scope.html#method.spawn)。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/13-05-lesson.md",
+    "sha256": "c845832a2d68530200fb59fc705bbc9f128df007922888a0f5c388cdb9728481",
+    "read_lines": [
+      {
+        "line": 17,
+        "quote": "`mpsc::channel::<T>()` 建立一個 channel，回傳 `(Sender<T>, Receiver<T>)`。`Sender<T>` 是傳送權限，`Receiver<T>` 是接收權限；這個 tuple 的兩個值連到同一個 channel。T 是每份訊息的型別。下面只摘 API 簽名，供閱讀介面，不是有完整 body 的獨立程式："
+      },
+      {
+        "line": 20,
+        "quote": "pub fn channel<T>() -> (Sender<T>, Receiver<T>)"
+      },
+      {
+        "line": 23,
+        "quote": "channel 會保留已送入、尚未取走的訊息；這段待收空間叫 **buffer（緩衝區）**。這個 channel 沒有預先設定訊息數量上限，送得比收得快時，待收訊息可能累積並占用更多記憶體。這不表示電腦有無限記憶體。"
+      },
+      {
+        "line": 27,
+        "quote": "`sender.send(value)` 回傳 `Result<(), SendError<T>>`：成功交回 unit，失敗帶回未送值。它不為了等 buffer 空位而 blocking。"
+      },
+      {
+        "line": 31,
+        "quote": "send 的 receiver 是 `&self`，會保留 Sender，能再送下一份；訊息參數是 owned T。recv 的 receiver 也是 `&self`，每次成功取走一份 T，能再收下一份。**send 成功只表示本次傳送被 channel 接受，不保證接收方最後一定收到，更不保證已完成處理**：接收端仍可能在成功傳送後被丟棄。"
+      },
+      {
+        "line": 180,
+        "quote": "SyncSender 的 `send(&self, value: T)` 仍回傳 `Result<(), SendError<T>>`，但 buffer 滿時會 blocking，直到有空位或 Receiver 消失。成功放入有容量的 buffer，仍不表示對方已取走或處理；接收方消失時得到 Err，未送值仍可取回。SyncSender 也可 clone 成連到同 channel 的額外傳送權限，所有端點同樣要納入收尾。"
+      },
+      {
+        "line": 269,
+        "quote": "- [`channel`](https://doc.rust-lang.org/std/sync/mpsc/fn.channel.html)、[`Sender::send` 與 clone](https://doc.rust-lang.org/std/sync/mpsc/struct.Sender.html)、[`Receiver::recv` 的 buffer／關閉契約](https://doc.rust-lang.org/std/sync/mpsc/struct.Receiver.html#method.recv)。"
+      },
+      {
+        "line": 270,
+        "quote": "- [`SendError<T>` 的未送值](https://doc.rust-lang.org/std/sync/mpsc/struct.SendError.html)、[`sync_channel`](https://doc.rust-lang.org/std/sync/mpsc/fn.sync_channel.html)、[`SyncSender::send`](https://doc.rust-lang.org/std/sync/mpsc/struct.SyncSender.html#method.send)。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/13-06-lesson.md",
+    "sha256": "6f3d25a1cbab3fc40b75594280cd0c957878a70665d2f49b542349c747d26e24",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 13.6 Arc 與 Mutex：共同持有，輪流修改"
+      },
+      {
+        "line": 13,
+        "quote": "## Mutex 管理一份獨佔存取權限"
+      },
+      {
+        "line": 66,
+        "quote": "## Arc 保活同一份資料，不替內容取得修改權限"
+      },
+      {
+        "line": 179,
+        "quote": "沿13.5的等待循環來看：若 main 仍保留 total 的 guard，就去 join 一份要 lock 同一 total 的 worker，main 等 worker 結束，worker 等 main 解鎖，形成 deadlock。前面 main 的內層 block 在 join 之前結束，就是解除這項依賴；不是「讀完 guard 最後一行」就會自動解鎖。"
+      },
+      {
+        "line": 181,
+        "quote": "同一個 thread 若尚未釋放 guard，又對同一個 Mutex 呼叫 lock，官方契約不指定確切結果：第二次可能 panic，也可能形成 deadlock，**不保證正常返回**。不要把它當成可以重複取得同一鎖的介面；本節不執行永久等待的反例。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/14-02-lesson.md",
+    "sha256": "5f7917e7a6b2b87e455cc34bb2a340f814f659cd580fb0f0b5939b828917e01b",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 14.2 Future 與 async／await：先保存工作，再取得結果"
+      },
+      {
+        "line": 7,
+        "quote": "**future** 是代表一份可能稍後完成工作的值。它保存需要的資料與進度，完成時交出結果；工作也可能一直沒有完成。標準函式庫的 **`std::future::Future` trait** 描述這項能力，associated type **`Output`** 指定完成後交出的型別。這裡沿用第6.4節的 associated type：同一個實作把來源型別與結果型別連起來。"
+      },
+      {
+        "line": 9,
+        "quote": "普通的 `fn total_now(...) -> i32` 呼叫時執行本體，交回 i32。在宣告前加 **`async`**，`async fn total_later(...) -> i32` 的呼叫則交回 future；箭頭的 i32 是那份工作的 **Output**，不是呼叫當下交回的型別。async 函式本體留到工作被執行時才進入，這是本例所說的 **lazy（延後執行）**。"
+      },
+      {
+        "line": 11,
+        "quote": "在 async 函式內寫 **`work.await`**，會推進並等待 work，取得它的 Output。`.await` 是語法，不是 method，不加括號。若結果尚未就緒，周圍的 async 工作能保存進度並暫停；若已就緒就繼續，**每次 await 不一定真的暫停**。"
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/14-03-lesson.md",
+    "sha256": "551617d5c6d4f3e723669eb70a5fb3ab2624a97f0d7e852d67d3d56528ca7e0f",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 14.3 spawn、JoinHandle 與 JoinSet：執行工作並收回結果"
+      },
+      {
+        "line": 7,
+        "quote": "**task** 是交給 runtime 排程的工作。**`tokio::spawn(work)`** 接手一份 future，把它提交為 task，交回 **`JoinHandle<T>`**；T 是工作完成的 Output。runtime 能在我們尚未 await handle 前推進 task。spawn 本身不會同步進入該工作的本體，也不保證工作最後一定完成；runtime 結束時，尚未完成的 task 會被丟棄。"
+      },
+      {
+        "line": 32,
+        "quote": "放行訊息沒送、送端仍活著時，工作不能越過 release.recv；不是等了某個毫秒數就假定工作已開始。"
+      },
+      {
+        "line": 36,
+        "quote": "完整 `src/lib.rs` 只有 WorkError 和 controlled_work，沒有後面才要教的工作集合："
+      },
+      {
+        "line": 125,
+        "quote": "以下是完成版 `ch11-tasks` 的**完整設定與 library**，包含 WorkError、controlled_work、所有報表 helper、run_demo 與兩項測試。測試分別確認開始證據及四種結果；沒有尚未提供的測試 helper："
+      }
+    ]
+  },
+  {
+    "path": "docs/chapters/17-06-lesson.md",
+    "sha256": "40b995a63f8ae50f07264ccb014d8e5f090796c8f2658c6279fc6b5aeb12dca5",
+    "read_lines": [
+      {
+        "line": 1,
+        "quote": "# 17.6 用 Loom 與 Miri 檢查普通 PASS 尚未涵蓋的責任"
+      },
+      {
+        "line": 5,
+        "quote": "本節分別使用 Loom 的小型並行模型與 Miri 的執行解譯。先明說要檢查的關係，再選工具與材料，最後保存成功或反例的界線；工具不能替這兩個問題彼此作答。"
+      },
+      {
+        "line": 21,
+        "quote": "選用 **`loom::model`**：它接收沒有引數、回傳 unit 的 closure，重複執行這份 body、每次換一條模型路徑。這份 closure 要有 `Fn() + Send + Sync + 'static` 能力，本例不捕捉外部狀態，在 body 裡重新建立資料。**count 必須每次從0新建**，不能把上一次探索的結果帶進下一次。"
+      },
+      {
+        "line": 35,
+        "quote": "本例保持有限：**兩個 worker、一個共享 atomic、各增加一次，沒有等待迴圈、隨機來源或外部 I/O**。加上執行 model body 的協調路徑，共三條模型 thread。這樣能集中觀察遺失更新；更多 thread、操作或迴圈會讓可能狀態大幅增加，不能直接把真實服務整個塞入小模型。"
+      },
+      {
+        "line": 131,
+        "quote": "這項modeltest通過，表示**這份有限模型在此次探索範圍沒有找到違反最終2的路徑**。理由仍包括RMW及兩份join；不是PASS替Relaxed增加了發布其他資料的能力，也不是把load/store改成SeqCst就能代替這次修法。"
+      }
+    ]
+  }
+]

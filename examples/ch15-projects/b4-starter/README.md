@@ -1,6 +1,6 @@
 # B4：停止與完整輸入對應的起始版
 
-對應15.10。沿B3提供Input／single、有限fill與設定檢查；record、stop_and_finish、run三個body尚未完成。new只準備資料，不先提交；固定Finished不是功能成立。普通target零tests。
+對應18.10。沿B3提供Input／single、有限fill與設定檢查；record、stop_and_finish、run三個body尚未完成。new只準備資料，不先提交；固定Finished不是功能成立。普通target零tests。
 
 將Cargo.toml、整個src及checks/stop-tests.rs保存到自己的url-b4-work。repo外先把dev-dependency ch11-local-service的path換成你電腦上教材examples/ch11-async/local-service的實際絕對路徑，再選固定toolchain：
 
@@ -15,4 +15,4 @@ cargo +1.99.0 test --lib
 
 tests直接持有Scheduler／Fixture，用有限借用等待觀察；任何出口先收回所有已提交children、再shutdown server，才assert／panic。synthetic task故障是受控材料，不當正常網路失敗；其panic hook不是test失敗。
 
-參考答案在b4-complete。正式CLI／JSON與退出優先序接續15.11；全部最終功能仍依原規劃，stage副本不累加成讀者作業。
+參考答案在b4-complete。正式CLI／JSON與退出優先序接續18.11；全部最終功能仍依原規劃，stage副本不累加成讀者作業。

@@ -1,0 +1,50 @@
+{
+  "chapter": 8,
+  "first_unit": 187,
+  "last_unit": 192,
+  "entries": [
+    {
+      "source": "docs/chapters/08-01-lesson.md",
+      "file": "units/187.md",
+      "sha256": "c9e986117cac900e183346d60bddaaa75f1e7f7112fc454e9df2bc410d5011e0",
+      "source_sha256": "6b6e05083de08537dfecc183be29d55efea0867fe12f0706d09a926476098df4",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/08-02-lesson.md",
+      "file": "units/188.md",
+      "sha256": "441aba789db7530e4a9db54f1c2378121d458483986493703ea0321fcec947ae",
+      "source_sha256": "a820550d86c7919bde3602543e4a085c81579815e092ca331c71a117b61d344f",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/08-03-lesson.md",
+      "file": "units/189.md",
+      "sha256": "bd183899d2815f3400216e49e987557cc5eda8a174b6db3f2b1ee9f4fb0ff1bf",
+      "source_sha256": "3502f84b5de589e26c1c6d6ee64bfc1f7da197b8ca6de40f78924a1580d29a66",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/08-04-lesson.md",
+      "file": "units/190.md",
+      "sha256": "26cf130fe5a530632c290248fe3f604c3dc9d14d2b072ffe4516eea343e79d67",
+      "source_sha256": "10b3fbb207966ec067ca57a26e4d55d47d906a8e715b1fcb86a44999f5a30d8e",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/08-05-lesson.md",
+      "file": "units/191.md",
+      "sha256": "ce03adecb5e5159b414ef3a281d89f6f19826c57031fc9d6ac7f5509c6c32109",
+      "source_sha256": "d66336c2545e8e1ca714ed2bcf5243d23265fbebd8fac644d9ce4b429a4b65e3",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    },
+    {
+      "source": "docs/chapters/08-06-lesson.md",
+      "file": "units/192.md",
+      "sha256": "79ce2dddecf873e2e178eaad49dab33b9d436952acf781ced357f552a997c6b0",
+      "source_sha256": "15b4c6f9ad3fa382090f532d2094f81f5e8779464a8c31e00cdafe5d4c8895ac",
+      "reading_mode": "ordinary prerequisite page reading; not staged first-use evidence"
+    }
+  ],
+  "route": "whole prerequisite pages;  actual snippet engine expanded inline; source order and fold markers retained; necessary complete source folds included, no optional external links followed"
+}
