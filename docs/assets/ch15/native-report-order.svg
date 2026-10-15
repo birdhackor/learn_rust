@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="500" viewBox="0 0 340 500" role="img" aria-labelledby="title desc">
+  <title id="title">先排原生路徑，再轉成報告文字</title>
+  <desc id="desc">原生位置a.txt和a/b先以Path的組成部分比較，a/b在前。排序後再轉String，保留a/b與a.txt的順序。若先改成String再排序，句點和斜線的文字順序會讓a.txt在前，改變本題的原生路徑規則。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#39536a"/></marker></defs>
+  <rect width="340" height="500" rx="12" fill="#ffffff"/>
+  <g font-family="sans-serif" text-anchor="middle" fill="#16354b">
+    <rect x="15" y="10" width="310" height="85" rx="12" fill="#e7f1fa" stroke="#39536a"/>
+    <text x="170" y="44" font-size="21">原生位置（PathBuf）</text>
+    <text x="170" y="78" font-size="23">a.txt　a/b</text>
+    <path d="M170 101 V155" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="60" y="115" width="220" height="24" fill="#ffffff"/>
+    <text x="170" y="135" font-size="18">先按路徑組成部分比較</text>
+    <rect x="15" y="162" width="310" height="90" rx="12" fill="#edf5e4" stroke="#39536a"/>
+    <text x="170" y="196" font-size="21">原生位置已排好</text>
+    <text x="170" y="232" font-size="23">a/b　a.txt</text>
+    <path d="M170 258 V312" stroke="#39536a" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="60" y="272" width="220" height="24" fill="#ffffff"/>
+    <text x="170" y="292" font-size="18">轉成文字，保留原排列</text>
+    <rect x="15" y="319" width="310" height="90" rx="12" fill="#e7f1fa" stroke="#39536a"/>
+    <text x="170" y="353" font-size="21">報告文字（String）</text>
+    <text x="170" y="389" font-size="23">a/b　a.txt</text>
+    <text x="170" y="451" font-size="18">若先按 String 排，a.txt 會在前</text>
+    <text x="170" y="483" font-size="18">本題要保存原生位置的順序</text>
+  </g>
+</svg>

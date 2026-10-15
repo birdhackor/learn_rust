@@ -1,0 +1,14 @@
+[package]
+name = "url-b4"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+publish = false
+
+[dependencies]
+reqwest = { version = "0.13.5", default-features = false, features = ["rustls"] }
+tokio = { version = "1.53.3", default-features = false, features = ["rt", "macros", "net", "time", "sync", "signal"] }
+url = "2.5.8"
+
+[dev-dependencies]
+ch11-local-service = { path = "../../ch11-async/local-service" }

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="664" viewBox="0 0 340 664" role="img" aria-labelledby="title desc">
+  <title id="title">原行索引跟著每份輸入走</title>
+  <desc id="desc">原始四行索引0到3。索引0空白略過，1和3的相同網址U各保存。保留1、2、3後依序取得HTTP、Input、HTTP結果，索引不改。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#365a79"/></marker></defs>
+  <rect width="340" height="664" rx="12" fill="#f8fafc"/>
+  <g font-family="system-ui, sans-serif" font-size="18" text-anchor="middle" fill="#17324d">
+    <text x="170" y="31">U＝材料中的同一份 /ok URL</text>
+    <rect x="26" y="49" width="288" height="153" rx="8" fill="#dcebf9" stroke="#365a79"/>
+    <text x="170" y="77">原文字：先取得行索引</text>
+    <text x="170" y="106">0：空白　　1：U</text>
+    <text x="170" y="135">2：/notes　3：U</text>
+    <text x="170" y="173">原行內容含空格也不改寫</text>
+    <path d="M170 203V239" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="170" y="267">trim 視圖只判空白</text>
+    <text x="170" y="295">index0略過；其他 to_owned</text>
+    <path d="M170 304V334" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="26" y="346" width="288" height="83" rx="8" fill="#e0f1e9" stroke="#29704f"/>
+    <text x="170" y="374">Input Vec：原索引不壓縮</text>
+    <text x="170" y="405">(1, U)　(2, /notes)　(3, U)</text>
+    <path d="M170 430V462" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="170" y="491">取一份 → await → 保存</text>
+    <text x="170" y="520">有 Input 問題仍繼續下一份</text>
+    <path d="M170 529V557" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="26" y="569" width="288" height="76" rx="8" fill="#dcebf9" stroke="#365a79"/>
+    <text x="170" y="598">Entry Vec：每份都有對應</text>
+    <text x="170" y="629">1：200　2：Input　3：200</text>
+  </g>
+</svg>

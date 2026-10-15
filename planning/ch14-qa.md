@@ -1,6 +1,6 @@
 # 第14章 QA 閉環與發布待辦
 
-第14章四份original、TECH／CONT cross與FIRST四單位LOCAL均已封存並由Root全文讀完，review／cross／local閉環。唯一修後學生稿為 `ch14-review-fixed-v10`。Root已完成受影響四段的8張兩裝置實頁，但**完整候選check、實際nightly Miri CI與發布仍待Root**。本整理者曾寫14.1–14.3 macro與14.6 Loom／Miri部分，本次只協調、引用封存報告與Root proof，不能代獨立QA背書或把Root執行／畫面算成本人的新驗證。
+第14章四份original、TECH／CONT cross與FIRST四單位LOCAL均已封存並由Root全文讀完。**候選完整檢查、固定nightly Miri、遠端CI及公開部署確認均已完成**，證據見文末。唯一修後學生稿為 `ch14-review-fixed-v10`；以下保留各角色封存時的狀態，不回填原判。本整理者曾寫14.1–14.3 macro與14.6 Loom／Miri部分，本次只協調、引用封存報告與Root proof，不能代獨立QA背書或把Root執行／畫面算成本人的新驗證。
 
 ## 封存報告與角色
 
@@ -73,3 +73,7 @@ Root已全文核全部original／followup與本彙整。release14-candidate只�
 首次完整check退出101，raw保留release14-check-attempt-enospc.log：磁碟ENOSPC伴linker SIGBUS。僅刪完整檢查已結束的共用generated debug快取，保全source、測量profiles、rawlog與screenshots，不碰作者工作target；清理proof另存。重做本地完整驗證將dev／test除錯符號設0、關incremental，opt-level與debug_assertions保持；未更改教材profile、原測量資料或CI普通profile。完整check退出0：strict、fmt、all-target Clippy、all-target及doc tests通過，442個test target結果／261項tests零失敗，158指定negative、C正常3與指定compile-fail1均通過。普通benchmark target僅Cargo test驗收模式，不重作原Criterion／DHAT測量。
 
 候選另真執行固定nightly-2026-10-01的check-miri.sh退出0：實際setup sysroot後，3個miri_contracts與1個owner答案通過，隔離故意UB命中指定freed allocation。正常host未執行故意UB；raw為release14-miri-check.log，Miri PASS只支持選定輸入路徑。遠端CI也新增實際安裝固定miri／rust-src及執行此script；公開部署／遠端成功仍待確認。
+
+## 公開部署與遠端Miri確認
+
+已提交並push 680133581c1c9f1399b327389a3b1f7938c202ff。[Actions38670598992](https://github.com/birdhackor/learn_rust/actions/runs/38670598992) completed success；Root另核兩個步驟Prepare fixed Miri toolchain／Check selected pure Rust paths with Miri皆completed success，證據release14-actions-jobs-success.json。CI使用普通profile，沒有沿用本地省空間的debug符號設定。Root實際核首頁＋98小節共99頁HTTP200/H1精確，九SVG逐SHA符合v10，尚未釋出的15.1為404；release14-live-http.json記逐頁結果。正式CI與公開確認不回填為original／cross的新執行。

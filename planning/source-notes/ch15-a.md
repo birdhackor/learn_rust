@@ -1,8 +1,8 @@
 # 最終實戰 A：引導寫作與驗收來源研究
 
 - 日期：2026-10-14；供作者與技術審閱使用，不作首次閱讀提示。
-- 目前僅研究來源、拆分引導與驗收；**尚未撰寫 A 正文、骨架或參考實作**。
-- 實作關卡：實際完成的 7.9、9.3–9.4、8.6 與 14.4 前文可用後，由 root 釋出；規劃標題不解除阻擋。
+- 研究初期只拆分來源、引導與驗收。Root 逐節釋出 actual 前文後，15.1 共同入口、15.2～15.5 四份引導階段已實作；15.6 完整參考版也已完成作者自查，等待 root 讀實際正文與 source。作者自查不代表獨立首讀或正式發布 QA。
+- 各階段均按實際依賴釋出；15.6 已實讀 actual A4／8.6／14.4 才寫。下方「尚等」「未開寫」記錄保留研究當時的階段，不改成早已取得後文。規劃標題不解除阻擋。
 - 契約沿用 `curriculum-plan-v2.md` 第 5 節 A 與 15.1–15.6，不加刪除／同步／監控等功能。
 
 ## 實際重讀的中英文工具教材
@@ -80,7 +80,7 @@ Rustlings 的 hint metadata 也有過早使用 boxed error 等材料，**不整�
 
 ## A 的完整參考版邊界
 
-預定總量約 800–1,200 行手寫 Rust，包含測試與 fixtures；不計 dependency、lock、生成碼、正文或所有階段快照的累積。目前沒有程式，**不能宣稱已達千行或測試通過**。
+預定總量約 800–1,200 行手寫 Rust，包含測試與 fixtures；不計 dependency、lock、生成碼、正文或所有階段快照的累積。目前已有共同引導、資料材料與A1收集階段；**不能宣稱已達完整工具的千行範圍或A全部功能測試通過**。
 
 保持一個 root、同步處理、size → BLAKE3 → 真正 bytes 判定、多個真內容群組、Unicode 策略、可觀察 metadata 前後變化與讀取失敗、項目錯誤繼續、穩定文字／JSON、exit 0／1／2。沒有刪除、硬連結整理、監控、並行 hash、精確可回收量或一致快照。
 
@@ -90,4 +90,85 @@ Rustlings 的 hint metadata 也有過早使用 boxed error 等材料，**不整�
 
 - 保留第 9 章的候選桶／多真內容群與不對齊短讀取示意，A 以自己的具體資料回收，不重畫不同名稱讓讀者重新對應。
 - 必要時加階段資料流 SVG：檔案資料與項目問題一路如何到最終報告；不用箭頭把 error 畫成被忽略的旁路。
-- 尚未產生 A SVG，也未檢查實際桌面／手機版面。作者研究不能代替正文、程式、首讀與技術驗收。
+- A1 沒有新增 SVG；15.1／15.2 作者已看實際桌面／手機頁面，範圍見author-ledger。後續與完整工具尚未驗收；作者研究與局部實頁檢查不能代替獨立首讀、技術及發布驗收。
+
+## 15.1 開寫前的補讀與具體材料
+
+- 再實讀 English／繁中 Book I/O Project 的任務入口與 TDD 對應章，採已知能力組合成工具、先保存需求／失敗原因／小步完成與真正執行，不搬用未教placeholder macro或Book預先使用trait object的安排。
+- 共同頁只需已實讀7章（最新gate ch07-complete-prerequisite-v10）與9.1 tooling-v1；B只保留任務導覽，不用Tokio／Waker／unsafe或HTTP Rust API。
+- 新建真實A材料六檔：三份Rust LF5bytes（包含一般與點開頭子目錄）、一份rust LF5bytes、兩份空檔。作者以原bytes驗證兩組與依路徑重複內容10bytes；不是已執行A掃描程式的證據。
+- Repo外Cargo new首次實跑發現此環境沒有rustup default，repo內toolchain檔的選擇不延伸到外部資料夾。實讀 [rustup Overrides](https://rust-lang.github.io/rustup/overrides.html) 的command shorthand與選取順序，先教cargo +1.99.0再示範；外部new/check/test重試全通過，沒有修改全機預設。
+- 15.1資料表、里程碑、Cargo命令與判斷折疊在作者scratch生成頁桌面／手機已親看；沒有SVG與A核心code，詳細範圍保存author-ledger。
+
+
+## 15.2 開寫前的實際閱讀與取捨
+
+- 實讀 root 的 `ch15-entry-prerequisite-v1` 全六 units；同一份六檔素材、workingcopy、里程碑與toolchain契約接到A1，沒有改題。
+- 實讀 `ch09-files-prerequisite-v3` 全七 units與全部scan.rs；另讀對應8項tests。該gate未存tests本體，所以對照當下repo中root已核的tests/scan.rs，不把archive範圍擴稱為含tests。
+- 另實讀8.4 actual `ch08-complete-prerequisite-v8` 004-001至004-004，核固定literal的 `&'static str`；不是只因9.3提名就算教過。A1無Box／dyn／Deref／Error::source等需要後續gate的caller。
+- 再實開 [English Rust Cookbook Directory Traversal](https://rust-lang-nursery.github.io/rust-cookbook/file/dir.html) 與 [中文Rusty Book目錄訪問](https://rusty.course.rs/files/dir.html) 必要全文，觀察走訪library分工、metadata與成功項目的關係。採 walker 管待辦、我們保存政策；不用filter_map(Result::ok)、直接unwrap metadata、lossy文字作身分、跟link或排除hidden等與本題不同的做法。中文頁舊error_chain框架不搬入。
+- 再實讀 [walkdir 2.5 WalkDir](https://docs.rs/walkdir/2.5.0/walkdir/struct.WalkDir.html) description、IntoIterator、new、follow_links、follow_root_links：遇到Err仍能繼續，但打不開目錄不能得到其內內容；內部follow預設false、root follow預設true，需要分開控制。
+- 再實讀 [DirEntry](https://docs.rs/walkdir/2.5.0/walkdir/struct.DirEntry.html) path／into_path／file_type／metadata必要段：path借用、into_path交owner；file_type不額外查詢，資訊不會固定未來。selectedAPI只用9.3已教部分。
+- A1工作版不用未知todo!／unimplemented!，只用已教enum／Result／Vec與明示固定結果。驗收檔放checks不自動編入，正文先教此路徑契約並要求加到同檔tests；完整快照真的編入完全相同八項，不把zerotests聲稱功能完成。
+
+### 承接7.5 flush修正
+
+Root回報7.5真實no-LF stdout緩衝bug並已修：write_all完成後還須flush，flush失敗不能回成功。15A的A4／完整版將明確檢查flush，分類為致命輸出2，不依報告有LF；目前A1只提供固定資料的階段demo，沒有承諾finalCLI退出契約。需在A4正式開寫時實讀root修後actual，而不是把此作者訊息當正文先備。
+
+
+## 15.3 寫前補讀（2026-10-14）
+
+已實讀actual15.2 v2七units與9.4 v4九units、必要完整source/tests，明確知道元件第一次FileIssue返回後不交partialgroup，caller才負責保存原生offender與重建其餘桶。本stage採用同A1型別本體，外部chaptercrate只供來源比對。
+
+再次線上實讀English Cookbook Hashing的SHA-256file例（Context update有效buffer前段、EOF），中文Rusty Book對應SHA-256filebody；只借鏡分批讀取與說明次序，不搬anyhow/error_chain/ring/data_encoding/BufReader等不必要依賴。兩份是同例的英中版本，不當成兩個獨立效果證據。
+
+正式BLAKE3 1.8.7 Hasher new／update／finalize本體已重讀：update依序接受&[u8]、finalize借狀態交Hash，沒有消耗或清空。File.metadata官方method段已讀，回ioResultMetadata觀察handle對應資料；由9.4已有before/afterpath+handle檢查承接。沒有用未教update_reader/mmap/rayon或強調未測效能倍數。
+
+新增helper只用已有FnMut與owned/borrowed基本能力，正文在首次source前解釋每份輸入／輸出／borrow／offender契約；受控 failed read 與 forced bucket 檢查不靠 sleep／權限或真實 hash 碰撞。
+
+
+15.3作者實作與stage證據已保存author-ledger：A1同一型別來源、FnMut讓測試提供實際失敗reader、原生offender移除後從有限remaining重建、20tests與外部workingcopy一步步回饋、真正桌面／手機SVG與提示。作者自查不是獨立首讀或正式releaseQA；A3/A4/完整A尚未開寫。
+
+
+## 15.4 寫前來源與選用契約
+
+- 新實讀English Cookbook StructuredData（unstructured JSON／nested TOMLstruct）與中文RustyBook encoding/structured.html對應body。採先固定資料shape／回查實際值；不搬Value/json!、raw string、TOML、byteorder、endian或error_chain。首次誤開中文encoding/complex.html不可用，改正實讀structured頁，沒有把失敗頁算完成。
+- 官方Serde data-model必要option/string/seq/struct段、Serialize的Option<T>/Vec<T>/u64相關實作重讀；serde_json to_string_pretty精確版URL首次InternalError，latest實際回1.0.154內容並已读ResultString與Serialize要求／errors。不是假定API名字近似就有契約。
+- 快取精確serde_json-1.0.154/src/ser.rs選serialize_none/some/unit/u64再核：None到null、Some依內容、u64數字；普通模型走derive，不使用這些内部方法作學生API。Option<T>:Ord官方conditionalimpl已讀，實際ordering政策再核後正文先教。
+- 7.7 actual重新讀owned模型／from_str/to_string_pretty／escaping／typederrors／unit tests；6.7再讀Ordering/Ord/sort/stable不等固定輸出的完整tie關係；9.4重讀metrics/hardlink/checked integer actual。7.5 v11 005-006正文與Stdoutflush source已實讀，支援A3固定示範寫出；最終CLI狀態仍在A4。
+
+
+### 15.4 新選 Option 借用能力與作者成果
+
+- Clippy 指出 manual_map 後，沒有直接套用未知介面。實讀 Rust 1.99 標準文件 Option::as_ref 的 selected body（https://doc.rust-lang.org/std/option/enum.Option.html#method.as_ref）：&Option<T> 得 Option<&T>，map 消耗含 reference 的暫時值，原值保持可用。正文在 issue-rows source 前先教此關係與 AsRef trait 的區別，再改兩份 helper。
+- 先前 fresh 英語 Cookbook／中文 Rusty Book structured-data 段落用來安排固定資料形狀、typed model、編碼後讀回；沒有採用其 Value／json!／raw string 或舊 error_chain。官方 Serde 與 serde_json 1.0.154 支持所選 u64／Option／Vec／owned struct 能力。
+- A3 stage 只增加 metrics／report、三個待做 body、同一份九項驗收與兩個唯一 example。作者實跑 baseline20→新增驗收21pass8fail→排序22pass7fail→報告27pass2fail→文字29pass，真六檔 text／JSON 都10bytes兩群。獨立讀者／技術／銜接審閱與正式發布QA仍由root另排。
+
+
+### 15.5 尚等 A3 actual gate：先讀来源與必要前文
+
+- 已實讀 actual7.6 clap-v7 全六units與7.8 fixture-v8 全七units：PathBuf positional／bool long flag／Parser try_parse_from 的原生序列契約／Error Display/use_stderr/exit_code/print；TempDir lifetime與Command真正child、Output/ExitStatus、env! target路徑、UTF8 borrowedview均是已有能力。A4選--json boolflag，不引入未教的clap ValueEnum。
+- 新讀 English Book12.3 task拆分／typed Result替代輸入panic／smallmain（包含BoxdynError提前preview原文）與12.6以重導向揭示出口混入診斷，再將資料與錯誤分流。繁中12.3实际讀108–167與495以後對應段；繁中12.6第二次讀bodytimeout，改讀簡體對應，不能把只有URL/timeout算成功。
+- 本頁此刻只研究與讀前文，沒有A4正文或code；完成15.4之後等root实际gate再開寫。
+
+
+### 15.5 來源研究接到實作
+
+- 簡體 Book12.6 已實際讀26–130全部對應正文，採重導向顯示資料／診斷分流與smallmain安排。繁中12.3對應選段與EN12.3實讀，不複製未教BoxdynError preview、process::exit或當時未知的unwrap_or_else。
+- clap精確4.6.7 docs URL不可達；latest實返4.6.7 Parser完整selectedtry_parse_from契約。已再核快取clap_builder-4.6.7 error/mod.rs 218–241 use_stderr／exit_code與843–856 Display實作，Display寫formatted訊息，caller's write_output能接手write＋flush。沒有將failedURL算成功查閱。
+- 本題另外明訂partial1與fatal2，stdout只交Report或requestedhelp，項目診斷保留在Report。Stdout實際flush與typedOutputfatal，不假定Book eprintln或process::exit能代做本題交付保證。
+- 7.9 actual009-005/007 writer與source再核作controlledwriter先備；15.4 actual report-v5全八units再讀。A4沒有新增Rust／thirdpartyAPI；let _刻意忽略已致命診斷的Result在main source前解釋，並非忽略工作結果。
+
+
+### 15.6 寫前 fresh EN／ZH API 研究
+
+- English Book14.2 Exporting a Convenient Public API（97–221）與簡體對應109–236實際閱讀：借pubuse解耦caller路徑與作者檔案安排。Book範例仍pubmod；本題採actual14.4已教的private mod＋rootpubuse，並保留publicpayload型別的可使用名稱，不假稱舊stage公開module刪掉也相容。
+- Actual14.4十一units與8.6六units已實讀，不靠header或名詞清單；Error要求Debug+Display與source借用／dyn lifetime、Someborrowownedcause、Display只目前context避免重複皆有正文支持。
+- 最後toolscope不新增cratepublish/featureflags/async/hashalgorithm/delete；本題同一CLI公開metadata仍publish=false。只重整入口、必要StdError報告器和重疊驗收。
+
+### 15.6 選用標準原因與完整答案
+
+- 官方std::error::Error的source方法selected body已實讀，回Option<&(dyn Error+'static)>借thiserror既有原因。TryFromIntError官方頁的首輪find沒有命中，不算取得；後來以標準HTML方法擷取實際impl Error段成功，支持當下選用能力。最初可選HTML parser套件未安裝，改stdlib處理，不增專案dependency。
+- serde_json Error頁首輪搜尋沒有取得StdError段，沒有把failedfind當完成；精確快取serde_json1.0.154/src/error.rs的StdError impl與Display再讀，Rust實際編譯source借出也通過。正文只選用共同Error/source，不教或暗用nightly sources、downcast、額外JSONValueAPI。
+- A4 public module與最終private module＋rootpubuse是另一package的介面安排，沒有破壞已凍結stage。ownedReport、scan_report、payload名稱、私有callback違約與一般檔案partial的差別，在15.6正文各首次需要之前說清。
+- 最終只一份可用答案：核心995行＋662行必要tests/fixture，共1657；stagecopies不累加。17Unix驗收、獨立literalcopy、realCLI／textJSON／輸出故障與實際桌面手機原位閱讀都有作者證據，範圍與限制在ledger。完整答案現在已實作；root前置核讀／獨立首讀／發布QA仍分開進行。

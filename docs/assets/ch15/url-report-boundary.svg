@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="780" viewBox="0 0 360 780" role="img" aria-labelledby="title desc">
+<title id="title">從停止後Batch到完整報告與退出狀態</title>
+<desc id="desc">Batch保留每筆原行，映射成owned Report，選文字或JSON，完成write_all與flush後才交0、1或130；來源、編碼或出口失敗交fatal2。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#365b91" stroke-width="1.4"/></marker><marker id="failure" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto"><path d="M0 0L6 3L0 6" fill="none" stroke="#a3650c" stroke-width="1.4"/></marker></defs>
+<rect width="360" height="780" rx="14" fill="#f6f8fb"/>
+<g font-family="sans-serif" font-size="20" fill="#19334d">
+<rect x="16" y="16" width="328" height="110" rx="11" fill="#e8efff" stroke="#4b73ae"/>
+<text x="30" y="44" font-weight="bold">Batch：已全收尾的原行</text>
+<text x="30" y="73">原 index、original</text><text x="30" y="102">已完成／取消／未開始</text>
+<path d="M180 132V157" stroke="#365b91" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="166" width="328" height="114" rx="11" fill="#eaf4ef" stroke="#588a6a"/>
+<text x="30" y="194" font-weight="bold">owned Report</text><text x="30" y="223">cancelled、items 原序</text><text x="30" y="252">沒有資料的欄位保 null</text>
+<path d="M180 286V311" stroke="#365b91" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="320" width="328" height="82" rx="11" fill="#e8efff" stroke="#4b73ae"/>
+<text x="30" y="350" font-weight="bold">借同一份 Report</text><text x="30" y="380">文字逐行 或 完整 JSON</text>
+<path d="M180 408V433" stroke="#365b91" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="442" width="328" height="86" rx="11" fill="#eaf4ef" stroke="#588a6a"/>
+<text x="30" y="472" font-weight="bold">write_all → flush</text><text x="30" y="502">兩者成功，出口才完成</text>
+<path d="M180 534V559" stroke="#365b91" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="568" width="328" height="100" rx="11" fill="#eaf4ef" stroke="#588a6a"/>
+<text x="30" y="596" font-weight="bold">完成出口後的資料狀態</text><text x="30" y="625">Requested → 130</text><text x="30" y="652">否則：未過 1／全過 0</text>
+<path d="M344 80H350 M344 360H350 M344 485H350 M350 80V732H344" stroke="#a3650c" stroke-width="2" fill="none" marker-end="url(#failure)"/>
+<rect x="16" y="700" width="328" height="64" rx="11" fill="#fff2dc" stroke="#a3650c"/>
+<text x="30" y="727" font-weight="bold">來源／編碼／出口失敗</text><text x="30" y="753">fatal 2 優先於 0／1／130</text>
+</g></svg>

@@ -726,6 +726,98 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "92773504d58c093f6de2459af4af33faa518c13451eb8f2b5698ed3d36e7c813"
 
 [[package]]
+name = "duplicate-a1"
+version = "0.1.0"
+dependencies = [
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
+name = "duplicate-a1-starter"
+version = "0.1.0"
+dependencies = [
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
+name = "duplicate-a2"
+version = "0.1.0"
+dependencies = [
+ "blake3",
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
+name = "duplicate-a2-starter"
+version = "0.1.0"
+dependencies = [
+ "blake3",
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
+name = "duplicate-a3"
+version = "0.1.0"
+dependencies = [
+ "blake3",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
+name = "duplicate-a3-starter"
+version = "0.1.0"
+dependencies = [
+ "blake3",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
+name = "duplicate-a4"
+version = "0.1.0"
+dependencies = [
+ "blake3",
+ "clap",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
+name = "duplicate-a4-starter"
+version = "0.1.0"
+dependencies = [
+ "blake3",
+ "clap",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
+name = "duplicate-finder"
+version = "0.1.0"
+dependencies = [
+ "blake3",
+ "clap",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "walkdir",
+]
+
+[[package]]
 name = "either"
 version = "1.19.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -2219,6 +2311,114 @@ dependencies = [
  "idna",
  "percent-encoding",
  "serde",
+]
+
+[[package]]
+name = "url-b1"
+version = "0.1.0"
+dependencies = [
+ "ch11-local-service",
+ "reqwest",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "url-b1-starter"
+version = "0.1.0"
+dependencies = [
+ "ch11-local-service",
+ "reqwest",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "url-b2"
+version = "0.1.0"
+dependencies = [
+ "ch11-local-service",
+ "reqwest",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "url-b2-starter"
+version = "0.1.0"
+dependencies = [
+ "ch11-local-service",
+ "reqwest",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "url-b3"
+version = "0.1.0"
+dependencies = [
+ "ch11-local-service",
+ "reqwest",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "url-b3-starter"
+version = "0.1.0"
+dependencies = [
+ "ch11-local-service",
+ "reqwest",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "url-b4"
+version = "0.1.0"
+dependencies = [
+ "ch11-local-service",
+ "reqwest",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "url-b4-starter"
+version = "0.1.0"
+dependencies = [
+ "ch11-local-service",
+ "reqwest",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "url-checker"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "clap",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "tokio",
+ "url",
+]
+
+[[package]]
+name = "url-checker-starter"
+version = "0.1.0"
+dependencies = [
+ "axum",
+ "clap",
+ "reqwest",
+ "serde",
+ "serde_json",
+ "tempfile",
+ "tokio",
+ "url",
 ]
 
 [[package]]

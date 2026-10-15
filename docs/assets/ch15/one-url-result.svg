@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="340" height="680" viewBox="0 0 340 680" role="img" aria-labelledby="title desc">
+  <title id="title">一份原文字、一份 owned 結果</title>
+  <desc id="desc">原文字保留。解析失敗不開始請求；成功後開始計時，期限包住GET與redirect至最後headers。保存HTTP欄位後drop回應，或保存請求失敗與逾時。合成Check。</desc>
+  <defs>
+    <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#365a79"/></marker>
+    <marker id="input-arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8" fill="#a64b12"/></marker>
+  </defs>
+  <rect width="340" height="680" rx="12" fill="#f8fafc"/>
+  <g font-family="system-ui, sans-serif" font-size="18" text-anchor="middle" fill="#17324d">
+    <rect x="52" y="18" width="272" height="66" rx="8" fill="#dcebf9" stroke="#365a79"/>
+    <text x="188" y="44">original：原文字</text><text x="188" y="69">一直保留，不改寫</text>
+    <path d="M188 85V108" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="52" y="119" width="272" height="82" rx="8" fill="#fff" stroke="#365a79"/>
+    <text x="188" y="145">解析 URL／檢查 scheme</text><text x="188" y="169" fill="#a64b12">失敗 → Input，時間 None</text><text x="188" y="192">成功 → owned Url</text>
+    <path d="M188 202V230" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="188" y="255">成功才開始計時</text>
+    <path d="M188 264V283" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="52" y="294" width="272" height="178" rx="8" fill="#e0f1e9" stroke="#29704f" stroke-width="2"/>
+    <text x="188" y="321">Tokio timeout：預設 10 秒</text>
+    <text x="188" y="354">GET → 最多 5 次 redirect</text>
+    <text x="188" y="389">final headers ／請求失敗</text>
+    <text x="188" y="420">或期限到期</text>
+    <text x="188" y="453">完成這次等待後記時間</text>
+    <path d="M188 473V497" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="188" y="522">HTTP：存欄位、drop 回應</text>
+    <text x="188" y="548">Request／Timeout 無最後回應</text>
+    <text x="188" y="574">不主動讀完 body</text>
+    <path d="M188 582V600" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+    <rect x="52" y="611" width="272" height="51" rx="8" fill="#dcebf9" stroke="#365a79"/>
+    <text x="188" y="643">Check：原文＋時間＋分類</text>
+  </g>
+  <path d="M52 51H21V630H48" fill="none" stroke="#365a79" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M52 169H38V649H48" fill="none" stroke="#a64b12" stroke-width="2" marker-end="url(#input-arrow)"/>
+</svg>

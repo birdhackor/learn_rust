@@ -28,6 +28,7 @@ chapters/**
 !chapters/12-*.md
 !chapters/13-*.md
 !chapters/14-*.md
+!chapters/15-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -156,6 +157,19 @@ nav = [
     { "14.6 用 Loom 與 Miri 檢查普通 PASS 尚未涵蓋的責任" = "chapters/14-06-loom-miri.md" },
     { "14.7 固定同一項工作，再判斷量測數字" = "chapters/14-07-fair-benchmarks.md" },
     { "14.8 找到配置來源，再核對改善仍完成相同工作" = "chapters/14-08-profiling-and-improvement.md" },
+  ] },
+  { "第 15 章：最終練功：引導實作與完整參考版" = [
+    { "15.1 最終練功：自己完成一個可以使用的工具" = "chapters/15-01-practice-guide.md" },
+    { "15.2 A1：自己收集檔案與項目問題" = "chapters/15-02-collect-files.md" },
+    { "15.3 A2：自己確認真正相同的內容" = "chapters/15-03-confirm-content.md" },
+    { "15.4 A3：自己做出穩定文字與 JSON 報告" = "chapters/15-04-build-report.md" },
+    { "15.5 A4：自己接上參數、輸出與退出狀態" = "chapters/15-05-connect-cli.md" },
+    { "15.6 A 完整參考版：把練習收成可用工具" = "chapters/15-06-duplicate-finder-answer.md" },
+    { "15.7 B1：把一份 URL 變成一份檢查結果" = "chapters/15-07-check-one-url.md" },
+    { "15.8 B2：保留原行位置，再依序檢查清單" = "chapters/15-08-sequential-url-batch.md" },
+    { "15.9 B3：同時等待，但只保有有限份 task" = "chapters/15-09-bounded-url-checks.md" },
+    { "15.10 B4：停止新提交，收妥工作，再交回完整清單" = "chapters/15-10-stop-and-finish-url-work.md" },
+    { "15.11 B 完整工具：同一份結果，交給使用者與下一個程式" = "chapters/15-11-url-checker-answer.md" },
   ] },
 ]
 

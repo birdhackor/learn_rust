@@ -4,7 +4,7 @@
 
 [線上閱讀](https://birdhackor.github.io/learn_rust/)｜[課程規劃](planning/curriculum-plan-v2.md)｜[實作與發布進度](planning/implementation-status.md)
 
-讀者起點是基本 Python。教學與範例依已教概念排列，進階篇與最後的引導型專案也包含在課程中；完成審閱的章節逐批發布。
+讀者起點是基本 Python。全書共 15 章、109 小節，教學與範例依已教概念排列，進階篇也是完整課程的一部分。最後以重複檔案搜尋器、網址檢查器兩個引導型專案練習，各有可編譯起點、分步驗收、提示與可實際使用的完整參考版。
 
 ## 開始開發
 

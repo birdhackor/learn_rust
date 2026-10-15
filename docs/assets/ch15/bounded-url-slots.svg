@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="800" viewBox="0 0 360 800" role="img" aria-labelledby="title desc">
+<title id="title">jobs 二：收取一份後才補入下一份</title>
+<desc id="desc">最初零與一占兩個名額，二仍是待辦資料。一完成但尚未收取時仍占名額。收取一後才提交二，最後依索引整理一、二、零的完成結果為零、一、二。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="none" stroke="#9a5b0b" stroke-width="1.5"/></marker></defs>
+<rect width="360" height="800" rx="12" fill="#f8fafc"/>
+<g font-family="sans-serif" font-size="20" fill="#17263a">
+<text x="20" y="32" font-weight="700">手工示意：jobs = 2</text>
+<rect x="16" y="48" width="328" height="148" rx="10" fill="#e7f0ff" stroke="#3264a5"/>
+<text x="30" y="77" font-weight="700">1. 初始 fill</text>
+<text x="30" y="108">pending：Input 2（只有資料）</text>
+<text x="30" y="139">JoinSet：task 0、task 1</text>
+<text x="30" y="170">len = 2；Id 各登記原 Input</text>
+<path d="M180 199V226" stroke="#9a5b0b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="238" width="328" height="136" rx="10" fill="#fff2d8" stroke="#9a5b0b"/>
+<text x="30" y="269" font-weight="700">2. task 1 已完成，尚未收取</text>
+<text x="30" y="300">JoinSet：task 0、task 1</text>
+<text x="30" y="331">len 仍為 2；不能補 task 2</text>
+<text x="30" y="360">完成不等於空出名額</text>
+<path d="M180 377V416" stroke="#9a5b0b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="428" width="328" height="150" rx="10" fill="#e7f0ff" stroke="#3264a5"/>
+<text x="30" y="459" font-weight="700">3. next 收取 1 → fill 補入 2</text>
+<text x="30" y="490">已保存：Entry 1</text>
+<text x="30" y="521">JoinSet：task 0、task 2</text>
+<text x="30" y="552">len = 2；pending 已空</text>
+<path d="M180 581V620" stroke="#9a5b0b" stroke-width="2" marker-end="url(#arrow)"/>
+<rect x="16" y="632" width="328" height="150" rx="10" fill="#e8f5ee" stroke="#30754e"/>
+<text x="30" y="663" font-weight="700">4. 再收取 2、0，集合才空</text>
+<text x="30" y="694">完成順序：Entry 1、2、0</text>
+<text x="30" y="725">按 input_index 排序</text>
+<text x="30" y="756">報告順序：Entry 0、1、2</text>
+</g></svg>
