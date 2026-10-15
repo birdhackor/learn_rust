@@ -33,6 +33,14 @@ members = [
     "examples/ch12-unsafe",
     "examples/ch12-ffi",
     "examples/ch13-futures",
+    "examples/ch14-api",
+    "examples/ch14-property",
+    "examples/ch14-performance",
+    "examples/ch14-profiling",
+    "examples/ch14-model-checking",
+    "examples/ch14-macros",
+    "examples/ch14-macros/derive",
+    "examples/ch14-macros/derive-consumer",
 ]
 resolver = "3"
 

@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="710" viewBox="0 0 400 710" role="img" aria-labelledby="title desc">
+  <title id="title">同名value，追蹤兩個來源</title>
+  <desc id="desc">caller的value借用Seconds的30；模板的value保存左邊Meters的reference。右邊輸入保留caller來源，所以結果80、30沒有被改成兩筆80。箭頭表示名稱解析來源。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#315c89"/></marker><marker id="caller-arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0 L8 4 L0 8 Z" fill="#39735b"/></marker></defs>
+  <rect width="400" height="710" rx="14" fill="#f5f8fc"/>
+  <g font-family="sans-serif" font-size="24" fill="#182b42">
+    <text x="24" y="36">同名 value，不同來源</text>
+    <rect x="24" y="66" width="352" height="104" rx="10" fill="#e7f5ee" stroke="#39735b"/>
+    <text x="42" y="103">caller 的 value</text>
+    <text x="42" y="139">借用 Seconds(30)</text>
+    <path d="M376 120 H388 V508 H376" fill="none" stroke="#39735b" stroke-width="2" marker-end="url(#caller-arrow)"/>
+    <text x="108" y="213">右輸入保留此來源</text>
+    <rect x="24" y="244" width="352" height="104" rx="10" fill="#e4eefb" stroke="#315c89"/>
+    <text x="42" y="281">模板自己的 value</text>
+    <text x="42" y="317">保存左邊 Meters 的借用</text>
+    <path d="M76 354 V406" fill="none" stroke="#315c89" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="108" y="391">樣板名字找自己的 let</text>
+    <rect x="24" y="422" width="352" height="120" rx="10" fill="#f0eafb" stroke="#70559b"/>
+    <text x="42" y="459">讀左：樣板 value → 80</text>
+    <text x="42" y="495">讀右：caller value → 30</text>
+    <text x="42" y="531">不是兩個80</text>
+    <path d="M76 548 V600" fill="none" stroke="#315c89" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="108" y="585">依各自來源借讀</text>
+    <rect x="24" y="616" width="352" height="70" rx="10" fill="#e7f5ee" stroke="#39735b"/>
+    <text x="42" y="659">結果 (80, 30)，原值仍在</text>
+  </g>
+</svg>

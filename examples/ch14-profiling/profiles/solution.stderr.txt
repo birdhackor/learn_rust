@@ -1,0 +1,7 @@
+   Compiling ch14-profiling v0.1.0 (/workspace/learn_rust/examples/ch14-profiling)
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.23s
+     Running `target/release/examples/allocation_solution`
+dhat: Total:     81,600 bytes in 6,400 blocks
+dhat: At t-gmax: 15 bytes in 1 blocks
+dhat: At t-end:  0 bytes in 0 blocks
+dhat: The data has been saved to target/dhat-solution.json, and is viewable with dhat/dh_view.html

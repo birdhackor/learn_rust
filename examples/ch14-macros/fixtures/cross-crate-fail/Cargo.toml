@@ -1,0 +1,10 @@
+[package]
+name = "ch14-macros-cross-crate-fail"
+version = "0.1.0"
+edition = "2024"
+publish = false
+
+[dependencies]
+ch14-macros = { path = "../.." }
+
+[workspace]

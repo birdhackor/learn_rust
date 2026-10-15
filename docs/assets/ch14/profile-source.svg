@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="600" viewBox="0 0 390 600" role="img" aria-labelledby="title desc">
+<title id="title">實際報告中連回source的配置來源鏈</title><desc id="desc">節錄相同配置來源的四層，箭頭表示呼叫到下一層：allocation_cloned的main第18行呼叫repeat_counts第12行，再呼叫count_cloned第21行的String clone；省略更靠近配置器的標準函式庫框架。這份來源累計25600 blocks和326400 bytes。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+<rect width="390" height="600" rx="12" fill="#f8fafc"/>
+<g font-family="sans-serif" font-size="24" fill="#0f172a">
+<text x="195" y="38" text-anchor="middle" font-weight="bold">沿來源鏈回查clone</text>
+<rect x="20" y="60" width="350" height="80" rx="10" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+<text x="40" y="94" font-weight="bold">allocation_cloned::main</text><text x="40" y="125">example第18行</text>
+<path d="M195 144V173" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="20" y="190" width="350" height="80" rx="10" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+<text x="40" y="224" font-weight="bold">repeat_counts</text><text x="40" y="255">ch14-profiling第12行</text>
+<path d="M195 274V303" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="20" y="320" width="350" height="80" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="40" y="354" font-weight="bold">count_cloned</text><text x="40" y="385">ch14-performance第21行</text>
+<path d="M195 404V433" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="20" y="450" width="350" height="80" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="40" y="484" font-weight="bold">String的Clone</text><text x="40" y="515">後續配置框架已省略</text>
+<text x="195" y="561" text-anchor="middle">同一來源：25,600 blocks</text>
+<text x="195" y="591" text-anchor="middle">累計326,400 bytes</text>
+</g></svg>

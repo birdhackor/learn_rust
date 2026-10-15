@@ -27,6 +27,7 @@ chapters/**
 !chapters/11-*.md
 !chapters/12-*.md
 !chapters/13-*.md
+!chapters/14-*.md
 """
 nav = [
   { "首頁" = "index.md" },
@@ -145,6 +146,16 @@ nav = [
     { "13.3 Poll、Context 與 Waker：通知之後，誰再次檢查？" = "chapters/13-03-poll-and-waker.md" },
     { "13.4 外部事件 Future：檢查與登記之間，不能漏掉通知" = "chapters/13-04-controlled-event-future.md" },
     { "13.5 小型 executor：收到通知，再安排下一次 poll" = "chapters/13-05-small-executor.md" },
+  ] },
+  { "第 14 章：macro、API 設計、驗證與效能" = [
+    { "14.1 用 macro_rules! 產生已看懂的 Rust 宣告" = "chapters/14-01-macro-rules.md" },
+    { "14.2 macro 的名字從哪裡來，錯誤又發生在哪裡？" = "chapters/14-02-macro-hygiene.md" },
+    { "14.3 讓自訂 derive 讀宣告、增加 trait 實作" = "chapters/14-03-procedural-derive.md" },
+    { "14.4 讓library的公開契約能驗證，也能持續維護" = "chapters/14-04-api-compatibility.md" },
+    { "14.5 從明確性質產生材料，再把失敗縮成可理解的反例" = "chapters/14-05-property-testing.md" },
+    { "14.6 用 Loom 與 Miri 檢查普通 PASS 尚未涵蓋的責任" = "chapters/14-06-loom-miri.md" },
+    { "14.7 固定同一項工作，再判斷量測數字" = "chapters/14-07-fair-benchmarks.md" },
+    { "14.8 找到配置來源，再核對改善仍完成相同工作" = "chapters/14-08-profiling-and-improvement.md" },
   ] },
 ]
 

@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="620" viewBox="0 0 400 620" role="img" aria-labelledby="title desc">
+  <title id="title">同一個分開讀寫的模型，可有不同結果</title>
+  <desc id="desc">兩欄是同一份read加store程式的兩次可能探索，並非同一時間的兩份counter。各次count重新從0開始。甲依序A讀0、A存1、B讀1、B存2，結果2。乙依序A讀0、B讀0、A存1、B存1，結果1，反駁各增加一次應得到2的要求。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#34516d"/></marker></defs>
+  <rect width="400" height="620" rx="12" fill="#ffffff"/>
+  <g font-family="sans-serif" font-size="24" fill="#17324a" text-anchor="middle">
+    <text x="200" y="35">兩次可能路徑的示意</text>
+    <text x="200" y="73">每次重新建立 count = 0</text>
+    <path d="M200 88V111" fill="none" stroke="#34516d" stroke-width="3"/>
+    <path d="M200 111H102V138" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M200 111H298V138" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="12" y="150" width="180" height="370" rx="12" fill="#eaf1fa" stroke="#34516d"/>
+    <rect x="208" y="150" width="180" height="370" rx="12" fill="#fff1ed" stroke="#b14f34"/>
+    <text x="102" y="187">交錯甲</text><text x="298" y="187">交錯乙</text>
+    <text x="102" y="236">A 讀0</text><text x="298" y="236">A 讀0</text>
+    <path d="M102 250V271" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M298 250V271" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="102" y="309">A 存1</text><text x="298" y="309">B 讀0</text>
+    <path d="M102 323V344" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M298 323V344" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="102" y="382">B 讀1</text><text x="298" y="382">A 存1</text>
+    <path d="M102 396V417" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M298 396V417" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="102" y="455">B 存2</text><text x="298" y="455">B 存1</text>
+    <text x="102" y="499">結果2</text><text x="298" y="499">結果1</text>
+    <text x="200" y="565">只看到甲，無法排除乙</text>
+    <text x="200" y="602">箭頭：該次路徑的先後</text>
+  </g>
+</svg>

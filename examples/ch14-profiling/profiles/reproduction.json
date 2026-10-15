@@ -1,0 +1,194 @@
+{
+  "date_utc": "2026-10-14",
+  "cwd": "/workspace/learn_rust",
+  "environment": {
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.0\nLLVM version: 23.1.1\n",
+    "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)\n",
+    "dhat": "0.3.3",
+    "profile": "release opt-level=3, overflow-checks=true, debug=1",
+    "scope": "100 complete count calls; prepared input and stdout/assert/drop input excluded; allocator tracking overhead included but elapsed not used"
+  },
+  "runs": [
+    {
+      "command": [
+        "cargo",
+        "run",
+        "-p",
+        "ch14-profiling",
+        "--example",
+        "allocation_cloned",
+        "--release",
+        "--locked"
+      ],
+      "environment_override": {
+        "CARGO_PROFILE_RELEASE_DEBUG": "1"
+      },
+      "exit_code": 0,
+      "stdout": "累計符合行數=6400\n累計配置=25600 blocks，326400 bytes\n受追蹤bytes峰值=15\nsnapshot時仍活著的受追蹤bytes=0\n",
+      "stderr": "   Compiling proc-macro2 v1.0.107\n   Compiling quote v1.0.47\n   Compiling libc v0.2.190\n   Compiling unicode-ident v1.0.27\n   Compiling serde_core v1.0.229\n   Compiling object v0.37.3\n   Compiling zmij v1.0.23\n   Compiling memchr v2.8.3\n   Compiling cfg-if v1.0.5\n   Compiling parking_lot_core v0.9.12\n   Compiling syn v3.0.9\n   Compiling serde_json v1.0.154\n   Compiling smallvec v1.16.3\n   Compiling gimli v0.32.3\n   Compiling adler2 v2.0.1\n   Compiling scopeguard v1.2.0\n   Compiling serde v1.0.229\n   Compiling lock_api v0.4.14\n   Compiling miniz_oxide v0.8.9\n   Compiling rustc-demangle v0.1.28\n   Compiling addr2line v0.25.1\n   Compiling itoa v1.0.18\n   Compiling serde_derive v1.0.229\n   Compiling parking_lot v0.12.5\n   Compiling thousands v0.2.0\n   Compiling rustc-hash v1.1.0\n   Compiling mintex v0.1.4\n   Compiling ch14-performance v0.1.0 (/workspace/learn_rust/examples/ch14-performance)\n   Compiling lazy_static v1.5.1\n   Compiling ch14-profiling v0.1.0 (/workspace/learn_rust/examples/ch14-profiling)\n   Compiling backtrace v0.3.76\n   Compiling dhat v0.3.3\n    Finished `release` profile [optimized + debuginfo] target(s) in 11.95s\n     Running `target/release/examples/allocation_cloned`\ndhat: Total:     326,400 bytes in 25,600 blocks\ndhat: At t-gmax: 15 bytes in 1 blocks\ndhat: At t-end:  0 bytes in 0 blocks\ndhat: The data has been saved to target/dhat-cloned.json, and is viewable with dhat/dh_view.html\n",
+      "fresh_json_exists": true,
+      "expected_total_hits": 6400,
+      "profile_path": "examples/ch14-profiling/profiles/cloned.json",
+      "profile_sha256": "c5be975a4116a1aba4bf6dce4b9765a413b1a8a059210c1fd377b0ccc35709c9",
+      "json_summary": {
+        "dhatFileVersion": 2,
+        "mode": "rust-heap",
+        "verb": "Allocated",
+        "bklt": true,
+        "bkacc": false,
+        "cmd": "target/release/examples/allocation_cloned",
+        "pid": 186795
+      },
+      "pp_count": 1,
+      "snapshot_metrics": {
+        "total_blocks": 25600,
+        "total_bytes": 326400,
+        "max_bytes": 15,
+        "curr_bytes": 0
+      },
+      "report_metrics": {
+        "total_blocks": 25600,
+        "total_bytes": 326400,
+        "at_global_peak_bytes": 15,
+        "at_end_bytes": 0
+      },
+      "report_frames": [
+        "[root]",
+        "0x55d9b4ff2f1f: <alloc::alloc::Global as core::alloc::Allocator>::allocate (alloc/src/alloc.rs:541:14)",
+        "0x55d9b4ff2f1f: <alloc::raw_vec::RawVecInner>::try_allocate_in (src/raw_vec/mod.rs:466:47)",
+        "0x55d9b4ff2f1f: <alloc::raw_vec::RawVecInner>::with_capacity_in (src/raw_vec/mod.rs:435:15)",
+        "0x55d9b4ff2f1f: <alloc::raw_vec::RawVec<u8>>::with_capacity_in (src/raw_vec/mod.rs:177:20)",
+        "0x55d9b4ff2f1f: <alloc::vec::Vec<u8>>::with_capacity_in (src/vec/mod.rs:969:20)",
+        "0x55d9b4ff2f1f: <u8 as <[_]>::to_vec_in::ConvertVec>::to_vec::<alloc::alloc::Global> (alloc/src/slice.rs:448:29)",
+        "0x55d9b4ff2f1f: <[u8]>::to_vec_in::<alloc::alloc::Global> (alloc/src/slice.rs:400:16)",
+        "0x55d9b4ff2f1f: <alloc::vec::Vec<u8> as core::clone::Clone>::clone (src/vec/mod.rs:3878:9)",
+        "0x55d9b4ff2f1f: <alloc::string::String as core::clone::Clone>::clone (alloc/src/string.rs:2389:32)",
+        "0x55d9b4fbaccc: ch14_performance::count_cloned (ch14-performance/src/lib.rs:21:38)",
+        "0x55d9b4fba9b4: ch14_profiling::repeat_counts (ch14-profiling/src/lib.rs:12:13)",
+        "0x55d9b4f788bf: allocation_cloned::main (ch14-profiling/examples/allocation_cloned.rs:18:22)"
+      ],
+      "viewer_load_verified": true,
+      "viewer_evidence": "/workspace/work/ch14-profiling-research/viewer-evidence/cloned.txt"
+    },
+    {
+      "command": [
+        "cargo",
+        "run",
+        "-p",
+        "ch14-profiling",
+        "--example",
+        "allocation_borrowed",
+        "--release",
+        "--locked"
+      ],
+      "environment_override": {
+        "CARGO_PROFILE_RELEASE_DEBUG": "1"
+      },
+      "exit_code": 0,
+      "stdout": "累計符合行數=6400\n累計配置=0 blocks，0 bytes\n受追蹤bytes峰值=0\nsnapshot時仍活著的受追蹤bytes=0\n",
+      "stderr": "   Compiling ch14-profiling v0.1.0 (/workspace/learn_rust/examples/ch14-profiling)\n    Finished `release` profile [optimized + debuginfo] target(s) in 0.18s\n     Running `target/release/examples/allocation_borrowed`\ndhat: Total:     0 bytes in 0 blocks\ndhat: At t-gmax: 0 bytes in 0 blocks\ndhat: At t-end:  0 bytes in 0 blocks\ndhat: The data has been saved to target/dhat-borrowed.json, and is viewable with dhat/dh_view.html\n",
+      "fresh_json_exists": true,
+      "expected_total_hits": 6400,
+      "profile_path": "examples/ch14-profiling/profiles/borrowed.json",
+      "profile_sha256": "514c2c24d9ecb996a821095491400482bc93c1efb23951f502b942cc42b22fc2",
+      "json_summary": {
+        "dhatFileVersion": 2,
+        "mode": "rust-heap",
+        "verb": "Allocated",
+        "bklt": true,
+        "bkacc": false,
+        "cmd": "target/release/examples/allocation_borrowed",
+        "pid": 187411
+      },
+      "pp_count": 0,
+      "snapshot_metrics": {
+        "total_blocks": 0,
+        "total_bytes": 0,
+        "max_bytes": 0,
+        "curr_bytes": 0
+      },
+      "report_metrics": {
+        "total_blocks": 0,
+        "total_bytes": 0,
+        "at_global_peak_bytes": 0,
+        "at_end_bytes": 0
+      },
+      "report_frames": [
+        "[root]"
+      ],
+      "viewer_load_verified": true,
+      "viewer_evidence": "/workspace/work/ch14-profiling-research/viewer-evidence/borrowed.txt"
+    },
+    {
+      "command": [
+        "cargo",
+        "run",
+        "-p",
+        "ch14-profiling",
+        "--example",
+        "allocation_solution",
+        "--release",
+        "--locked"
+      ],
+      "environment_override": {
+        "CARGO_PROFILE_RELEASE_DEBUG": "1"
+      },
+      "exit_code": 0,
+      "stdout": "累計符合行數=1600\n累計配置=6400 blocks，81600 bytes\n受追蹤bytes峰值=15\nsnapshot時仍活著的受追蹤bytes=0\n",
+      "stderr": "   Compiling ch14-profiling v0.1.0 (/workspace/learn_rust/examples/ch14-profiling)\n    Finished `release` profile [optimized + debuginfo] target(s) in 0.23s\n     Running `target/release/examples/allocation_solution`\ndhat: Total:     81,600 bytes in 6,400 blocks\ndhat: At t-gmax: 15 bytes in 1 blocks\ndhat: At t-end:  0 bytes in 0 blocks\ndhat: The data has been saved to target/dhat-solution.json, and is viewable with dhat/dh_view.html\n",
+      "fresh_json_exists": true,
+      "expected_total_hits": 1600,
+      "profile_path": "examples/ch14-profiling/profiles/solution.json",
+      "profile_sha256": "f858873a8c10fb4af37145853202b1490de253dadf1a093418c7823364f522a4",
+      "json_summary": {
+        "dhatFileVersion": 2,
+        "mode": "rust-heap",
+        "verb": "Allocated",
+        "bklt": true,
+        "bkacc": false,
+        "cmd": "target/release/examples/allocation_solution",
+        "pid": 187435
+      },
+      "pp_count": 1,
+      "snapshot_metrics": {
+        "total_blocks": 6400,
+        "total_bytes": 81600,
+        "max_bytes": 15,
+        "curr_bytes": 0
+      },
+      "report_metrics": {
+        "total_blocks": 6400,
+        "total_bytes": 81600,
+        "at_global_peak_bytes": 15,
+        "at_end_bytes": 0
+      },
+      "report_frames": [
+        "[root]",
+        "0x561247be6f1f: <alloc::alloc::Global as core::alloc::Allocator>::allocate (alloc/src/alloc.rs:541:14)",
+        "0x561247be6f1f: <alloc::raw_vec::RawVecInner>::try_allocate_in (src/raw_vec/mod.rs:466:47)",
+        "0x561247be6f1f: <alloc::raw_vec::RawVecInner>::with_capacity_in (src/raw_vec/mod.rs:435:15)",
+        "0x561247be6f1f: <alloc::raw_vec::RawVec<u8>>::with_capacity_in (src/raw_vec/mod.rs:177:20)",
+        "0x561247be6f1f: <alloc::vec::Vec<u8>>::with_capacity_in (src/vec/mod.rs:969:20)",
+        "0x561247be6f1f: <u8 as <[_]>::to_vec_in::ConvertVec>::to_vec::<alloc::alloc::Global> (alloc/src/slice.rs:448:29)",
+        "0x561247be6f1f: <[u8]>::to_vec_in::<alloc::alloc::Global> (alloc/src/slice.rs:400:16)",
+        "0x561247be6f1f: <alloc::vec::Vec<u8> as core::clone::Clone>::clone (src/vec/mod.rs:3878:9)",
+        "0x561247be6f1f: <alloc::string::String as core::clone::Clone>::clone (alloc/src/string.rs:2389:32)",
+        "0x561247baeccc: ch14_performance::count_cloned (ch14-performance/src/lib.rs:21:38)",
+        "0x561247bae9b4: ch14_profiling::repeat_counts (ch14-profiling/src/lib.rs:12:13)",
+        "0x561247b6c83f: allocation_solution::main (ch14-profiling/examples/allocation_solution.rs:15:22)"
+      ],
+      "viewer_load_verified": true,
+      "viewer_evidence": "/workspace/work/ch14-profiling-research/viewer-evidence/solution.txt"
+    }
+  ],
+  "teaching_source_sha256": {
+    "examples/ch14-profiling/Cargo.toml": "89f66e3c2ee8143e56c45d9f0347b7abb27acc5268d6cbbcae80fecb4bac16ca",
+    "examples/ch14-profiling/examples/allocation_borrowed.rs": "e0ccb93fe67e3fc02fd6783645012782f286b8138a74c209b0fc61d861a656e6",
+    "examples/ch14-profiling/examples/allocation_cloned.rs": "afe7199c0b7fc1d7de8462a0b55e37e812ad7bdf12759bda5c4d589ff60e23af",
+    "examples/ch14-profiling/examples/allocation_solution.rs": "86dcd0d789ec1ac556fa7794f7fcab4774a762a144e796018fb9bde07fa2bfae",
+    "examples/ch14-profiling/src/lib.rs": "a57e6ac616bd68cfef0d17d1a80e94fb04237006a06344086ae4cc88b162575c",
+    "examples/ch14-profiling/tests/repeated_results.rs": "fbc98bee75f8b1ce2d7ac15d04d190bd779dda143016ae9b77713d2e500f8d2b"
+  },
+  "shared_workspace_lock_sha256": "1e104f31a9842905deaed85cf1d90a5685c7ce7018b666b0c9df5aa278e6db27"
+}

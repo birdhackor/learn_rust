@@ -1,0 +1,4 @@
+累計符合行數=1600
+累計配置=6400 blocks，81600 bytes
+受追蹤bytes峰值=15
+snapshot時仍活著的受追蹤bytes=0

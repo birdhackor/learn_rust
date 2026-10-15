@@ -1,0 +1,7 @@
+   Compiling ch14-profiling v0.1.0 (/workspace/learn_rust/examples/ch14-profiling)
+    Finished `release` profile [optimized + debuginfo] target(s) in 0.18s
+     Running `target/release/examples/allocation_borrowed`
+dhat: Total:     0 bytes in 0 blocks
+dhat: At t-gmax: 0 bytes in 0 blocks
+dhat: At t-end:  0 bytes in 0 blocks
+dhat: The data has been saved to target/dhat-borrowed.json, and is viewable with dhat/dh_view.html

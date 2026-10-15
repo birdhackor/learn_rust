@@ -76,3 +76,5 @@
 - 第11章已發布36df167；Actions38655225227成功，Root80公開頁面與9SVG精確、12.1為404。QA見ch11-qa.md。候選首次ENOSPC失敗保留，清舊生成快取後完整check0，198tests＋120negative。
 
 - 第12章已發布5649161；Actions38656033726成功，Root86公開頁面與7SVG精確、13.1為404；公開GAT兩尺寸停留無topchip遮末框。完整check213tests／134negative／C正常3＋指定compilefail1通過，Miri CI留第14章。
+
+- 第13章已發布67160f7；Actions38669335058成功，Root91公開頁面與7SVG精確、14.1為404；完整check231tests／139negative／C3正常＋1指定負例。

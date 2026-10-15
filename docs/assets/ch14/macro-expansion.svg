@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="720" viewBox="0 0 400 720" role="img" aria-labelledby="title desc">
+  <title id="title">從名字展開型別，再執行借讀</title>
+  <desc id="desc">編譯時，reading_type接收Meters識別字，以同一名字產生struct與Reading實作；程式執行後，read_value才借讀Meters的80。</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="5" orient="auto"><path d="M0 0 L10 5 L0 10 Z" fill="#315c89"/></marker></defs>
+  <rect width="400" height="720" rx="14" fill="#f5f8fc"/>
+  <g font-family="sans-serif" font-size="24" fill="#182b42">
+    <text x="24" y="36">先產生宣告，再執行</text>
+    <rect x="24" y="66" width="352" height="104" rx="10" fill="#e4eefb" stroke="#315c89"/>
+    <text x="42" y="103">reading_type!(Meters)</text>
+    <text x="42" y="139">輸入名字，不是數字值</text>
+    <path d="M76 176 V228" fill="none" stroke="#315c89" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="108" y="213">編譯時匹配 ident</text>
+    <rect x="24" y="244" width="352" height="104" rx="10" fill="#e4eefb" stroke="#315c89"/>
+    <text x="42" y="281">模板中的 name = Meters</text>
+    <text x="42" y="317">同一名字放進兩個位置</text>
+    <path d="M76 354 V406" fill="none" stroke="#315c89" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="108" y="391">編譯時展開宣告</text>
+    <rect x="24" y="422" width="352" height="104" rx="10" fill="#e4eefb" stroke="#315c89"/>
+    <text x="42" y="459">struct Meters，欄位 i32</text>
+    <text x="42" y="495">impl Reading for Meters</text>
+    <path d="M76 532 V584" fill="none" stroke="#315c89" stroke-width="3" marker-end="url(#arrow)"/>
+    <text x="108" y="569">編譯後，執行程式</text>
+    <rect x="24" y="600" width="352" height="86" rx="10" fill="#e7f5ee" stroke="#39735b"/>
+    <text x="42" y="637">read_value 借用 Meters(80)</text>
+    <text x="42" y="673">交回80，原值仍在</text>
+  </g>
+</svg>

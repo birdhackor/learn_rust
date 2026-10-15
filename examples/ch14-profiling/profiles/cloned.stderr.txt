@@ -1,0 +1,38 @@
+   Compiling proc-macro2 v1.0.107
+   Compiling quote v1.0.47
+   Compiling libc v0.2.190
+   Compiling unicode-ident v1.0.27
+   Compiling serde_core v1.0.229
+   Compiling object v0.37.3
+   Compiling zmij v1.0.23
+   Compiling memchr v2.8.3
+   Compiling cfg-if v1.0.5
+   Compiling parking_lot_core v0.9.12
+   Compiling syn v3.0.9
+   Compiling serde_json v1.0.154
+   Compiling smallvec v1.16.3
+   Compiling gimli v0.32.3
+   Compiling adler2 v2.0.1
+   Compiling scopeguard v1.2.0
+   Compiling serde v1.0.229
+   Compiling lock_api v0.4.14
+   Compiling miniz_oxide v0.8.9
+   Compiling rustc-demangle v0.1.28
+   Compiling addr2line v0.25.1
+   Compiling itoa v1.0.18
+   Compiling serde_derive v1.0.229
+   Compiling parking_lot v0.12.5
+   Compiling thousands v0.2.0
+   Compiling rustc-hash v1.1.0
+   Compiling mintex v0.1.4
+   Compiling ch14-performance v0.1.0 (/workspace/learn_rust/examples/ch14-performance)
+   Compiling lazy_static v1.5.1
+   Compiling ch14-profiling v0.1.0 (/workspace/learn_rust/examples/ch14-profiling)
+   Compiling backtrace v0.3.76
+   Compiling dhat v0.3.3
+    Finished `release` profile [optimized + debuginfo] target(s) in 11.95s
+     Running `target/release/examples/allocation_cloned`
+dhat: Total:     326,400 bytes in 25,600 blocks
+dhat: At t-gmax: 15 bytes in 1 blocks
+dhat: At t-end:  0 bytes in 0 blocks
+dhat: The data has been saved to target/dhat-cloned.json, and is viewable with dhat/dh_view.html

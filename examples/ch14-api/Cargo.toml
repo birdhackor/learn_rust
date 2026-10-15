@@ -1,0 +1,14 @@
+# --8<-- [start:package]
+[package]
+name = "ch14-api"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+publish.workspace = true
+# --8<-- [end:package]
+
+# --8<-- [start:features]
+[features]
+default = ["text"]
+text = []
+# --8<-- [end:features]

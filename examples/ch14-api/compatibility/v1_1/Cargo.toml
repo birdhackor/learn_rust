@@ -1,0 +1,12 @@
+[package]
+name = "api-contract-demo"
+version = "1.1.0"
+edition = "2024"
+rust-version = "1.99"
+publish = false
+
+[[bin]]
+name = "api-consumer"
+path = "../consumer.rs"
+
+[workspace]

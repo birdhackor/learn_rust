@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600" role="img" aria-labelledby="title desc">
+  <title id="title">Box清理後，raw pointer不能保活原配置</title>
+  <desc id="desc">上半部owner保活heap的i32值80，raw pointer指向同一配置而不擁有它。下半部drop owner已釋放配置，舊pointer資訊仍存在，卻不能再dereference。垂直箭頭表示先後，橫向虛線是已失效的指向，不是有效讀取。</desc>
+  <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M0 0L8 4L0 8" fill="#34516d"/></marker></defs>
+  <rect width="400" height="600" rx="12" fill="#ffffff"/>
+  <g font-family="sans-serif" font-size="24" fill="#17324a" text-anchor="middle">
+    <text x="200" y="36">同一個 heap allocation</text>
+    <rect x="12" y="64" width="164" height="96" rx="12" fill="#eaf1fa" stroke="#34516d"/>
+    <text x="94" y="102">owner：Box</text><text x="94" y="137">保活資料</text>
+    <rect x="236" y="64" width="152" height="96" rx="12" fill="#eaf5e8" stroke="#3e6a3f"/>
+    <text x="312" y="102">i32</text><text x="312" y="137">80</text>
+    <path d="M180 108H223" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="12" y="205" width="164" height="83" rx="12" fill="#fff8e5" stroke="#86743d"/>
+    <text x="94" y="240">pointer</text><text x="94" y="274">不保活資料</text>
+    <path d="M180 244H310V177" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <path d="M200 299V351" fill="none" stroke="#34516d" stroke-width="3" marker-end="url(#arrow)"/>
+    <rect x="242" y="302" width="146" height="39" fill="#ffffff"/>
+    <text x="312" y="329">drop(owner)</text>
+    <rect x="12" y="378" width="164" height="101" rx="12" fill="#fff8e5" stroke="#86743d"/>
+    <text x="94" y="418">舊 pointer</text><text x="94" y="453">資訊仍在</text>
+    <rect x="236" y="378" width="152" height="101" rx="12" fill="#fff1ed" stroke="#b14f34" stroke-dasharray="7 5"/>
+    <text x="312" y="418">已釋放</text><text x="312" y="453">不能存取</text>
+    <path d="M180 427H223" fill="none" stroke="#b14f34" stroke-width="3" stroke-dasharray="5 5" marker-end="url(#arrow)"/>
+    <text x="200" y="534">舊資訊不延長資料有效性</text>
+    <text x="200" y="576">之後的 *pointer 是 UB</text>
+  </g>
+</svg>

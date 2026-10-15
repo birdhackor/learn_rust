@@ -1,0 +1,11 @@
+{
+  "report": "/workspace/learn_rust/planning/reviews/ch14-technical-v8.md",
+  "sha256": "93cfeddf35415a2e942cf0b6b99de7429244f1fc5c485d13d5959416b0313423",
+  "snapshot_manifest_sha256": "b36fa91e3a812dfec05fc3ee7341297637d8e8be0da405e187f6f4a5007be683",
+  "full_BODY": 64,
+  "all_archive_sources": 134,
+  "actual_views": 22,
+  "necessary": 2,
+  "optional": 1,
+  "phase": "Immutable original independent TECH14; no peers/cross"
+}

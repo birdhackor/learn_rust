@@ -30,6 +30,12 @@ jobs:
         run: bash scripts/bootstrap.sh
       - name: Build documentation and check Rust examples
         run: bash scripts/check.sh
+      - name: Prepare fixed Miri toolchain
+        run: |
+          source scripts/env.sh
+          rustup toolchain install nightly-2026-10-01 --profile minimal --component miri --component rust-src
+      - name: Check selected pure Rust paths with Miri
+        run: bash scripts/check-miri.sh
       - name: Upload documentation preview
         uses: actions/upload-artifact@043fb46d1a93c77aae656e7c1c64a875d1fc6a0a # v7.0.1
         with:

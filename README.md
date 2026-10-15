@@ -43,6 +43,8 @@ scripts/bootstrap.sh    本機、Cloud 與 CI 的環境準備
 scripts/env.sh          共用工具路徑與快取設定
 scripts/check.sh        文件建置、格式、Clippy 與測試
 scripts/check-fixtures.py 故意失敗範例的編譯／panic 契約
+scripts/check-c-examples.py C11 正常程式與指定編譯失敗
+scripts/check-miri.sh    固定 nightly 的純 Rust 路徑與 Miri 負例
 planning/               課程、來源研究、作者先備與審閱紀錄
 .github/workflows/      GitHub Actions 建置檢查
 ```

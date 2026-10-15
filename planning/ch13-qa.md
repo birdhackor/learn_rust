@@ -1,6 +1,6 @@
 # 第13章 QA 彙整與發布待辦
 
-三份 original、兩份 cross 與 FIRST 單單位 LOCAL 已封存，**review／cross／LOCAL 閉環已完成**。本文件只做協調彙整，不是新的獨立 QA。我不是第13章作者，曾參與第14章作者工作；以下實驗與親看畫面均明列原執行角色，不算本人的新證據。候選完整 check 與公開發布尚未完成。
+三份 original、兩份 cross 與 FIRST 單單位 LOCAL 已封存；**候選完整檢查與公開部署確認也已完成**，證據見文末。下文保留各角色封存當時的狀態，不回填原判。本文件只做協調彙整，不是新的獨立 QA。我不是第13章作者，曾參與第14章作者工作；以下實驗與親看畫面均明列原執行角色，不算本人的新證據。
 
 ## 已封存報告
 
@@ -50,3 +50,7 @@ Root處置及範圍依 `planning/reviews/ch13-root-disposition-v6.md`、`ch13-mi
 ## Root候選完整驗證
 
 Root已全文讀三original、兩cross、FIRST LOCAL與本彙整。release13-candidate只納入已審1–13章90小節＋首頁；本章49學生檔working／INDEX／candidate均精確符合v6，六封存report SHA保持。Cargo僅新增Std-only ch13-futures，候選獨立lock與導覽不含14／15；Miri workflow／script留14章。完整bash scripts/check.sh退出0：strict build、fmt、all-target Clippy、all-target及doc tests、139指定negative、3正常C11與1指定C compile-fail皆通過。399個test target結果，231項tests通過、零失敗；來源與lock獨立，僅重用前章生成快取。公開部署仍待完成，候選PASS不替代Actions／公開HTTP證據。
+
+## 公開部署確認
+
+已提交並push 67160f7de0f77b644d97309cb763b1419ba57036。[Actions38669335058](https://github.com/birdhackor/learn_rust/actions/runs/38669335058) completed success。Root實際核對首頁＋90小節共91頁HTTP200／H1精確，七SVG逐SHA符合v6，未釋出的14.1為404；逐頁proof在release13-live-http.json。公開確認與本地候選分開，沒有回填角色原始執行／視覺範圍。

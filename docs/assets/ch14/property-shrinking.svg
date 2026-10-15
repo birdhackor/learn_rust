@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="620" viewBox="0 0 390 620" role="img" aria-labelledby="title desc">
+ <title id="title">重複鍵被覆寫的反例如何縮短</title>
+ <desc id="desc">手工示意，不是工具原始trace。錯誤計數器把每筆零的次數覆寫成一，所以四筆零總次數一不等於輸入長四。縮成兩筆仍一不等於二；再縮成一筆則一等於一，不再失敗。保留兩筆零作簡單反例。箭頭表示試更短材料，非傳遞ownership。</desc>
+ <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+ <rect width="390" height="620" rx="12" fill="#f8fafc"/>
+ <g font-family="sans-serif" font-size="24" fill="#0f172a">
+  <text x="195" y="35" text-anchor="middle" font-weight="bold">縮短後仍要維持失敗</text>
+  <text x="195" y="71" text-anchor="middle">手工示意：每次insert 1</text>
+  <rect x="20" y="93" width="350" height="103" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="40" y="133" font-weight="bold">[0, 0, 0, 0]</text><text x="40" y="174">總次數1 ≠ 長度4：失敗</text>
+  <path d="M60 199V235" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/><text x="90" y="224">試更短材料</text>
+  <rect x="20" y="250" width="350" height="103" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="40" y="290" font-weight="bold">[0, 0]</text><text x="40" y="331">總次數1 ≠ 長度2：失敗</text>
+  <path d="M60 356V392" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/><text x="90" y="381">再試縮成一筆</text>
+  <rect x="20" y="407" width="350" height="103" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="40" y="447" font-weight="bold">[0]</text><text x="40" y="488">總次數1 = 長度1：通過</text>
+  <text x="195" y="553" text-anchor="middle">一筆已不呈現錯誤</text>
+  <text x="195" y="590" text-anchor="middle" font-weight="bold">保留兩筆[0, 0]作反例</text>
+ </g>
+</svg>

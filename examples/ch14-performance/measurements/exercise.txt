@@ -1,0 +1,6 @@
+setup_and_borrowed/64   time:   [2.3148 µs 2.4005 µs 2.5066 µs]
+Found 3 outliers among 30 measurements (10.00%)
+  3 (10.00%) high severe
+
+setup_and_borrowed/256  time:   [8.8326 µs 8.9113 µs 8.9930 µs]
+

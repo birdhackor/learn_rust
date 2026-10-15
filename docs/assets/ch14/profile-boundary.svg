@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="390" height="680" viewBox="0 0 390 680" role="img" aria-labelledby="title desc">
+<title id="title">Profiler只追蹤選定範圍的新配置</title><desc id="desc">同一行程先在追蹤前準備並持有行清單；橘框內開始Profiler後做100次count並取得snapshot，再drop停止追蹤和寫報告，最後印數字與清單收尾。箭頭表示執行順序，清單不因新配置零而不存在。</desc>
+<defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#334155"/></marker></defs>
+<rect width="390" height="680" rx="12" fill="#f8fafc"/>
+<g font-family="sans-serif" font-size="24" fill="#0f172a">
+<text x="195" y="39" text-anchor="middle" font-weight="bold">追蹤開始前的清單仍在</text>
+<rect x="20" y="65" width="350" height="107" rx="10" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+<text x="40" y="107" font-weight="bold">main準備256行</text><text x="40" y="146">核對每次符合64行</text>
+<path d="M195 176V210" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="20" y="232" width="350" height="206" rx="10" fill="#ffedd5" stroke="#ea580c" stroke-width="2"/>
+<text x="40" y="274" font-weight="bold">build開始追蹤</text><text x="40" y="316">重複完整count 100次</text><text x="40" y="358">原清單只借讀，不擴容</text><text x="40" y="400">get取得數字snapshot</text>
+<path d="M195 442V476" stroke="#334155" stroke-width="3" marker-end="url(#arrow)"/>
+<rect x="20" y="498" width="350" height="107" rx="10" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+<text x="40" y="540" font-weight="bold">drop停止，寫JSON</text><text x="40" y="580">再印數字，清單後續收尾</text>
+<text x="195" y="650" text-anchor="middle" font-weight="bold">零新配置 ≠ 零heap使用</text>
+</g></svg>

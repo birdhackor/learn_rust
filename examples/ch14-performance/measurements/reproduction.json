@@ -1,0 +1,106 @@
+{
+  "environment": {
+    "date_utc": "2026-10-14T18:40:36.956927+00:00",
+    "platform": "Linux-6.18.44-x86_64-with-glibc2.41",
+    "machine": "x86_64",
+    "cpu_model": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "logical_cpu_count": 5,
+    "cpu_quota": "400000 100000",
+    "versions": {
+      "rustc": "rustc 1.99.0 (b940084d7 2026-09-28)\nbinary: rustc\ncommit-hash: b940084d7eb6a299eb4bfeb8e34901bc051e7ac4\ncommit-date: 2026-09-28\nhost: x86_64-unknown-linux-gnu\nrelease: 1.99.0\nLLVM version: 23.1.1",
+      "cargo": "cargo 1.99.0 (5f94df478 2026-08-27)"
+    },
+    "criterion_version": "0.8.2",
+    "profile": {
+      "release": {
+        "opt-level": 3,
+        "overflow-checks": true
+      }
+    },
+    "workload": {
+      "query": "Rust",
+      "rows": [
+        64,
+        256
+      ],
+      "hit_fraction": "1/4",
+      "matching_text": "Rust Rust notes",
+      "other_text": "Python notes",
+      "bytes": [
+        816,
+        3264
+      ]
+    },
+    "timing_scope": "Entire count function on reused prebuilt slice; cloned candidate creation/destruction included; setup/assert/report excluded",
+    "routine_order": [
+      "borrowed/64",
+      "cloned/64",
+      "borrowed/256",
+      "cloned/256"
+    ],
+    "limitations": "Shared managed environment, other work may contend; fixed ASCII short-line synthetic distribution, warm repeated input, two consecutive runs, no causal or whole-CLI conclusion"
+  },
+  "records": [
+    {
+      "name": "run-1",
+      "command": "cargo bench -p ch14-performance --bench line_counts --locked",
+      "exit_code": 0,
+      "load_before": [
+        0.63916015625,
+        0.58056640625,
+        0.328125
+      ],
+      "load_after": [
+        0.7197265625,
+        0.60205078125,
+        0.33984375
+      ],
+      "stdout": "borrowed/64             time:   [1.1836 µs 1.1878 µs 1.1916 µs]\n\ncloned/64               time:   [1.9844 µs 1.9921 µs 2.0016 µs]\nFound 2 outliers among 30 measurements (6.67%)\n  1 (3.33%) high mild\n  1 (3.33%) high severe\n\nborrowed/256            time:   [4.7328 µs 4.8768 µs 5.0779 µs]\nFound 3 outliers among 30 measurements (10.00%)\n  1 (3.33%) high mild\n  2 (6.67%) high severe\n\ncloned/256              time:   [7.9136 µs 7.9525 µs 8.0103 µs]\nFound 4 outliers among 30 measurements (13.33%)\n  3 (10.00%) high mild\n  1 (3.33%) high severe\n\n",
+      "stderr": "    Finished `bench` profile [optimized] target(s) in 0.05s\n     Running benches/line_counts.rs (target/release/deps/line_counts-eee37270370f82f4)\nBenchmarking borrowed/64\nBenchmarking borrowed/64: Warming up for 500.00 ms\nBenchmarking borrowed/64: Collecting 30 samples in estimated 2.0005 s (1.7M iterations)\nBenchmarking borrowed/64: Analyzing\nBenchmarking cloned/64\nBenchmarking cloned/64: Warming up for 500.00 ms\nBenchmarking cloned/64: Collecting 30 samples in estimated 2.0008 s (1.0M iterations)\nBenchmarking cloned/64: Analyzing\nBenchmarking borrowed/256\nBenchmarking borrowed/256: Warming up for 500.00 ms\nBenchmarking borrowed/256: Collecting 30 samples in estimated 2.0020 s (424k iterations)\nBenchmarking borrowed/256: Analyzing\nBenchmarking cloned/256\nBenchmarking cloned/256: Warming up for 500.00 ms\nBenchmarking cloned/256: Collecting 30 samples in estimated 2.0017 s (251k iterations)\nBenchmarking cloned/256: Analyzing\n"
+    },
+    {
+      "name": "run-2",
+      "command": "cargo bench -p ch14-performance --bench line_counts --locked",
+      "exit_code": 0,
+      "load_before": [
+        0.7197265625,
+        0.60205078125,
+        0.33984375
+      ],
+      "load_after": [
+        0.76318359375,
+        0.61572265625,
+        0.34765625
+      ],
+      "stdout": "borrowed/64             time:   [1.2069 µs 1.2139 µs 1.2222 µs]\n                        change: [+2.0148% +2.6774% +3.4811%] (p = 0.00 < 0.05)\n                        Performance has regressed.\nFound 2 outliers among 30 measurements (6.67%)\n  1 (3.33%) high mild\n  1 (3.33%) high severe\n\ncloned/64               time:   [2.0423 µs 2.1505 µs 2.3081 µs]\n                        change: [+4.0125% +8.0423% +12.572%] (p = 0.00 < 0.05)\n                        Performance has regressed.\nFound 5 outliers among 30 measurements (16.67%)\n  3 (10.00%) high mild\n  2 (6.67%) high severe\n\nborrowed/256            time:   [4.8133 µs 4.8523 µs 4.9032 µs]\n                        change: [−1.3327% +1.1179% +3.0893%] (p = 0.37 > 0.05)\n                        No change in performance detected.\nFound 4 outliers among 30 measurements (13.33%)\n  1 (3.33%) high mild\n  3 (10.00%) high severe\n\ncloned/256              time:   [8.1772 µs 8.3994 µs 8.6472 µs]\n                        change: [+1.5832% +3.3704% +5.7865%] (p = 0.00 < 0.05)\n                        Performance has regressed.\nFound 3 outliers among 30 measurements (10.00%)\n  2 (6.67%) high mild\n  1 (3.33%) high severe\n\n",
+      "stderr": "    Finished `bench` profile [optimized] target(s) in 0.05s\n     Running benches/line_counts.rs (target/release/deps/line_counts-eee37270370f82f4)\nBenchmarking borrowed/64\nBenchmarking borrowed/64: Warming up for 500.00 ms\nBenchmarking borrowed/64: Collecting 30 samples in estimated 2.0004 s (1.4M iterations)\nBenchmarking borrowed/64: Analyzing\nBenchmarking cloned/64\nBenchmarking cloned/64: Warming up for 500.00 ms\nBenchmarking cloned/64: Collecting 30 samples in estimated 2.0009 s (993k iterations)\nBenchmarking cloned/64: Analyzing\nBenchmarking borrowed/256\nBenchmarking borrowed/256: Warming up for 500.00 ms\nBenchmarking borrowed/256: Collecting 30 samples in estimated 2.0019 s (417k iterations)\nBenchmarking borrowed/256: Analyzing\nBenchmarking cloned/256\nBenchmarking cloned/256: Warming up for 500.00 ms\nBenchmarking cloned/256: Collecting 30 samples in estimated 2.0000 s (248k iterations)\nBenchmarking cloned/256: Analyzing\n"
+    },
+    {
+      "name": "exercise",
+      "command": "cargo bench -p ch14-performance --bench line_setup_solution --locked",
+      "exit_code": 0,
+      "load_before": [
+        0.76318359375,
+        0.61572265625,
+        0.34765625
+      ],
+      "load_after": [
+        0.7822265625,
+        0.62255859375,
+        0.3515625
+      ],
+      "stdout": "setup_and_borrowed/64   time:   [2.3148 µs 2.4005 µs 2.5066 µs]\nFound 3 outliers among 30 measurements (10.00%)\n  3 (10.00%) high severe\n\nsetup_and_borrowed/256  time:   [8.8326 µs 8.9113 µs 8.9930 µs]\n\n",
+      "stderr": "   Compiling ch14-performance v0.1.0 (/workspace/learn_rust/examples/ch14-performance)\n    Finished `bench` profile [optimized] target(s) in 1.91s\n     Running benches/line_setup_solution.rs (target/release/deps/line_setup_solution-29f19d65d494bdcc)\nBenchmarking setup_and_borrowed/64\nBenchmarking setup_and_borrowed/64: Warming up for 500.00 ms\nBenchmarking setup_and_borrowed/64: Collecting 30 samples in estimated 2.0009 s (856k iterations)\nBenchmarking setup_and_borrowed/64: Analyzing\nBenchmarking setup_and_borrowed/256\nBenchmarking setup_and_borrowed/256: Warming up for 500.00 ms\nBenchmarking setup_and_borrowed/256: Collecting 30 samples in estimated 2.0018 s (164k iterations)\nBenchmarking setup_and_borrowed/256: Analyzing\n"
+    }
+  ],
+  "source_sha256": {
+    "examples/ch14-performance/tests/count_contracts.rs": "afeed4e348a2216faa9c4c451557a1056f566147c0a4466a68e0b3ba4349fc12",
+    "examples/ch14-performance/src/lib.rs": "bd0b9932612439aca85ff21ce952749dbf93f89b3c4861bb0bfadc3092c54ee1",
+    "examples/ch14-performance/benches/line_counts.rs": "717586a7b8334b70df5f0b6c8c7056359499142e51a708c42a04e6f023ce1433",
+    "examples/ch14-performance/benches/line_setup_solution.rs": "b9fc284363f11187f097dcc06a9f72c5807a049406c0783f1c838061b5024115",
+    "examples/ch14-performance/examples/benchmark_inputs.rs": "52861204c3f12e35789da05ba6f7cd61afb9725fcfb73e1c03062908ab92d042",
+    "examples/ch14-performance/Cargo.toml": "94ca37c793af418c5dec68b48d8d4d162b844d844d663bec9f2c5bd87768b221",
+    "Cargo.lock": "0b054ade516cdb3e0ecdab68b4f355a5175ae77db0c4ec1018ca6388ee9f8c10",
+    "rust-toolchain.toml": "2ad6f15416572b4836585087f1d4abc53b8fa2dbd616f8dacfaa587ed6714228"
+  }
+}

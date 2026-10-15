@@ -1,0 +1,11 @@
+[package]
+name = "ch14-loom-negative"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+publish = false
+
+[dev-dependencies]
+loom = "=0.7.2"
+
+[workspace]

@@ -1,0 +1,14 @@
+[package]
+name = "ch14-property-negative"
+version = "0.1.0"
+edition = "2024"
+rust-version = "1.99"
+publish = false
+
+[dependencies]
+ch14-property = { path = "../.." }
+
+[dev-dependencies]
+proptest = { version = "1.12.0", default-features = false, features = ["std"] }
+
+[workspace]
