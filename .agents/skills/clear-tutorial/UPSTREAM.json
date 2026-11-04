@@ -10,7 +10,8 @@
     "references/writing-prompt.md、references/review-protocol.md、references/calibration.md：逐位元組複製。",
     "README.md：說明通用準則與本地 Rust 術語指引的文件分工、來源與維護方式。",
     "references/rust-terminology.md：新增 learn_rust 專案的中英文術語約定，記錄使用者已確認的偏好與寫作時的概念區別。",
-    "UPSTREAM.json：記錄本次直接來源與原始檔案雜湊；未沿用來源對更早版本的雜湊。"
+    "UPSTREAM.json：記錄本次直接來源與原始檔案雜湊；未沿用來源對更早版本的雜湊。",
+    "2026-11-04：SKILL.md與README.md加入learn_rust的審閱資料保存約定，詳細紀錄不作網站建置輸入；通用參考檔保持原始bytes。"
   ],
   "excluded_files": [
     {

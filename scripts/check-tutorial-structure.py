@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Validate the v3 migration's manifests, source references, and built HTML.
+"""Validate the current curriculum, executable source references, and built HTML.
 
 Run with the repository's .venv/bin/python to use its locked Markdown/snippets
 engine. This is structural evidence, never a pedagogical or compilation review.
@@ -9,24 +9,21 @@ from __future__ import annotations
 
 import argparse
 from collections import Counter
-import hashlib
 from html.parser import HTMLParser
 import json
+from datetime import UTC, datetime
+from importlib.metadata import version
 from pathlib import Path
 import re
 import sys
+import subprocess
 import tempfile
 import tomllib
 from urllib.parse import unquote, urlsplit
 
 
-EXPECTED = (18, 131, 109, 27, 890)
-EXPECTED_ISSUES = {
-    *(f"A0105-{n:03d}" for n in range(1, 8)),
-    *(f"A0610-C{n:02d}" for n in range(1, 5)),
-    *(f"A0610-O{n:02d}" for n in range(1, 7)),
-    *(f"W11-15-{n:03d}" for n in range(1, 11)),
-}
+LEGACY_PAGES = 109
+LEGACY_ANCHORS = 890
 
 
 def normalized(value):
@@ -118,12 +115,11 @@ class Checker:
     def __init__(self, root, report, site_dir=None):
         self.root = root.resolve()
         self.report = report
-        self.plan = self.root / "planning/restructure-v3"
+        self.curriculum = self.root / "curriculum"
         self.site_arg = site_dir
         self.rendered = {}
         self.built = {}
         self.snippet_sources = {}
-        self.evidence_cache = {}
 
     def load(self, path):
         try:
@@ -156,32 +152,31 @@ class Checker:
             self.report.error(f"{context}: invalid/duplicate {field}: {duplicates}")
 
     def run(self):
-        manifest = self.load(self.plan / "sections.json")
-        mappings = self.load(self.plan / "migration-map.json")
-        issues = self.load(self.plan / "issue-dispositions.json")
-        anchors = self.load(self.plan / "legacy-anchors.json")
+        manifest = self.load(self.curriculum / "sections.json")
+        mappings = self.load(self.curriculum / "migration-map.json")
+        anchors = self.load(self.curriculum / "legacy-anchors.json")
         try:
             config = tomllib.loads((self.root / "zensical.toml").read_text(encoding="utf-8"))["project"]
         except (OSError, ValueError, KeyError) as exc:
             self.report.error(f"zensical.toml: {exc}")
             return
-        if not isinstance(manifest, dict) or not all(isinstance(x, list) for x in (mappings, issues, anchors)):
-            self.report.error("Expected sections.json object and migration/dispositions/anchors arrays")
+        if not isinstance(manifest, dict) or not all(isinstance(x, list) for x in (mappings, anchors)):
+            self.report.error("Expected sections.json object and migration/anchors arrays")
             return
         sections, chapters = manifest.get("sections"), manifest.get("chapters")
         if not all(isinstance(x, list) for x in (sections, chapters)) or not all(
-            isinstance(row, dict) for rows in (sections, chapters, mappings, issues, anchors) for row in rows
+            isinstance(row, dict) for rows in (sections, chapters, mappings, anchors) for row in rows
         ):
-            self.report.error("Manifest entries must be objects in chapters/sections/migration/dispositions/anchors arrays")
+            self.report.error("Manifest entries must be objects in chapters/sections/migration/anchors arrays")
             return
-        for rows, count, label in zip((chapters, sections, mappings, issues), EXPECTED[:4],
-                                      ("chapters", "sections", "legacy mappings", "issue dispositions")):
-            if len(rows) != count:
-                self.report.error(f"Expected {count} {label}, found {len(rows)}")
+        if manifest.get("schema_version") != 1 or not chapters or not sections:
+            self.report.error("Expected schema_version=1 and nonempty chapters/sections")
+            return
+        if len(mappings) != LEGACY_PAGES:
+            self.report.error(f"Expected {LEGACY_PAGES} legacy mappings, found {len(mappings)}")
         for rows, fields, label in ((sections, ("id", "path"), "sections"),
                                     (chapters, ("number",), "chapters"),
                                     (mappings, ("old_id", "old_path"), "migration-map"),
-                                    (issues, ("id",), "issue-dispositions"),
                                     (anchors, ("old_path", "url"), "legacy-anchors")):
             for field in fields:
                 self.unique(rows, field, label)
@@ -191,8 +186,6 @@ class Checker:
         self.sections = {row["id"]: row for row in sections}
         self.positions = {row["id"]: i for i, row in enumerate(sections)}
         self.old = {row["old_id"]: row for row in mappings}
-        if {row["id"] for row in issues} != EXPECTED_ISSUES:
-            self.report.error("issue-dispositions: ids differ from the original 27 audit findings")
         extra = {str(p.relative_to(self.root)) for p in (self.root / "docs/chapters").glob("*-lesson.md")} - {r["path"] for r in sections}
         if extra:
             self.report.error(f"Canonical lesson files absent from sections.json: {sorted(extra)}")
@@ -207,8 +200,7 @@ class Checker:
                     self.report.error(f"{row['path']}: expected one H1 {expected!r}; found {page.h1s!r}")
                 if page:
                     self.check_links(path, page, built=False)
-            self.check_readiness(row)
-        self.check_issues(issues)
+            self.check_sources(row)
         if self.report.final or self.site_arg is not None:
             self.check_site(sections, anchors)
         else:
@@ -216,8 +208,8 @@ class Checker:
 
     def check_manifest(self, chapters, sections, mappings, anchors):
         expected_ids = []
-        if [c["number"] for c in chapters] != list(range(1, EXPECTED[0] + 1)):
-            self.report.error("chapters: expected numeric order 1–18")
+        if [c["number"] for c in chapters] != list(range(1, len(chapters) + 1)):
+            self.report.error("chapters: expected consecutive numeric order starting at 1")
         for chapter in chapters:
             ids = chapter.get("section_ids", [])
             if not isinstance(ids, list):
@@ -233,7 +225,7 @@ class Checker:
         if mapping_paths != {row["old_path"] for row in anchors}:
             self.report.error("migration-map old_path coverage differs from independently captured legacy-anchors")
         anchor_count = sum(len(row.get("headings", [])) for row in anchors)
-        if len(anchors) != EXPECTED[2] or anchor_count != EXPECTED[4]:
+        if len(anchors) != LEGACY_PAGES or anchor_count != LEGACY_ANCHORS:
             self.report.error(f"Expected 109 legacy pages / 890 captured heading anchors; found {len(anchors)} / {anchor_count}")
         for old in mappings:
             self.file(old["old_path"], f"legacy {old['old_id']}")
@@ -265,15 +257,6 @@ class Checker:
             for old_id in row.get("old_ids", []):
                 if old_id not in self.old or ident not in self.old[old_id].get("new_ids", []):
                     self.report.error(f"{ident}: old_id {old_id} has no reverse migration mapping")
-            for source in row.get("source_ranges", []):
-                old_id = source.get("old_id")
-                if old_id not in self.old or source.get("path") != self.old[old_id]["old_path"]:
-                    self.report.error(f"{ident}: source_ranges entry does not identify a known old source: {source}")
-                elif old_id not in row.get("old_ids", []):
-                    self.report.error(f"{ident}: source_ranges old_id {old_id} missing from old_ids")
-                start, end = source.get("start_line"), source.get("end_line")
-                if not isinstance(start, int) or not isinstance(end, int) or not 1 <= start <= end:
-                    self.report.error(f"{ident}: invalid original source range {source}")
             for prereq in row.get("prerequisites", []):
                 if prereq not in self.positions or self.positions[prereq] >= self.positions[ident]:
                     self.report.error(f"{ident}: prerequisite {prereq} is unknown or not earlier")
@@ -343,51 +326,9 @@ class Checker:
             self.report.error(f"{path.relative_to(self.root)}: Markdown/snippet expansion failed: {exc}")
         return None
 
-    def check_reference(self, value, context):
-        """Evidence location: path string, {path,line,quote}, or a list thereof."""
-        if isinstance(value, list):
-            if not value:
-                self.report.incomplete(f"{context}: missing evidence locations")
-            for item in value:
-                self.check_reference(item, context)
-            return
-        if isinstance(value, str):
-            self.file(value, context)
-            return
-        if isinstance(value, dict):
-            path = self.file(value.get("path"), context)
-            if path and "line" in value:
-                lines = path.read_text(encoding="utf-8").splitlines()
-                line = value["line"]
-                if not isinstance(line, int) or not 1 <= line <= len(lines):
-                    self.report.error(f"{context}: line {line!r} does not exist")
-                elif not value.get("quote") or value["quote"] not in lines[line - 1]:
-                    self.report.error(f"{context}: quote not found on {value['path']}:{line}")
-            return
-        self.report.incomplete(f"{context}: missing evidence location")
-
-    def check_readiness(self, row):
+    def check_sources(self, row):
+        """Check the current source contract without replaying historical reviews."""
         ident = row["id"]
-        if row.get("status") != "accepted":
-            self.report.incomplete(f"{ident}: status={row.get('status')!r}; final requires accepted")
-            return
-        path = self.file(row.get("readiness_evidence"), f"{ident} readiness_evidence")
-        if not path:
-            return
-        if path not in self.evidence_cache:
-            self.evidence_cache[path] = self.load(path)
-        evidence = self.evidence_cache[path]
-        if not isinstance(evidence, dict):
-            self.report.error(f"{ident}: readiness evidence must be a JSON object")
-            return
-        if evidence.get("reviewed_status") != "accepted" or ident not in evidence.get("section_ids", []):
-            self.report.incomplete(f"{ident}: readiness evidence must independently accept this section")
-        people = [evidence.get(k) for k in ("author", "technical_reviewer", "continuity_reviewer")]
-        if any(not isinstance(p, str) or not p.strip() for p in people) or len(set(people)) != 3:
-            self.report.error(f"{ident}: author/technical_reviewer/continuity_reviewer must be three distinct identities")
-        if row.get("owner") != evidence.get("author"):
-            self.report.error(f"{ident}: section owner must match evidence author")
-        self.check_reference(evidence.get("review_reports"), f"{ident} review_reports")
         available = row.get("first_available_at")
         if not isinstance(available, str) or available not in self.positions or self.positions[available] > self.positions[ident]:
             self.report.error(f"{ident}: first_available_at must be an existing section no later than itself")
@@ -395,62 +336,17 @@ class Checker:
         if not isinstance(loaded, list) or any(not isinstance(p, str) for p in loaded):
             self.report.error(f"{ident}: loaded_teaching_sources must list actual repository file paths")
             return
-        required = {row["path"], *loaded}
+        if len(loaded) != len(set(loaded)):
+            self.report.error(f"{ident}: duplicate loaded_teaching_sources")
+        for value in loaded:
+            self.file(value, f"{ident} teaching source")
         if row.get("manifest"):
-            if isinstance(row["manifest"], str):
-                required.add(row["manifest"])
-            else:
-                self.report.error(f"{ident}: manifest must be an actual repository file path")
+            self.file(row["manifest"], f"{ident} Cargo manifest")
             if not isinstance(row.get("command"), str) or not row["command"].strip():
                 self.report.error(f"{ident}: manifest requires a concrete command")
         for source in self.snippet_sources.get((self.root / row["path"]).resolve(), set()):
-            if source.is_relative_to(self.root):
-                required.add(str(source.relative_to(self.root)))
-                if str(source.relative_to(self.root)) not in loaded:
-                    self.report.error(f"{ident}: included source missing from loaded_teaching_sources: {source.relative_to(self.root)}")
-        hashes = evidence.get("file_sha256", {})
-        if not isinstance(hashes, dict):
-            self.report.error(f"{ident}: file_sha256 must be a path → SHA256 object")
-            return
-        # Validate every frozen file, including additional closure files declared
-        # by reviewers, rather than accepting hashes merely because they exist.
-        for value in sorted(required | set(hashes)):
-            source = self.file(value, f"{ident} source closure")
-            if source and hashes.get(value) != hashlib.sha256(source.read_bytes()).hexdigest():
-                self.report.error(f"{ident}: missing/stale SHA256 for {value}; freeze and review the current files")
-        positions = evidence.get("teaching_positions", [])
-        own_positions = [p for p in positions if isinstance(p, dict) and p.get("section_id") == ident]
-        if not own_positions:
-            self.report.incomplete(f"{ident}: missing actual teaching_positions in readiness evidence")
-        for position in own_positions:
-            self.check_reference(position, f"{ident} teaching_positions")
-            if not {"line", "quote"} <= position.keys():
-                self.report.error(f"{ident}: teaching position requires an actual line and quote")
-            if position.get("path") != row["path"]:
-                self.report.error(f"{ident}: teaching_positions must locate teaching in this canonical page")
-
-    def check_issues(self, issues):
-        for row in issues:
-            ident = row["id"]
-            if row.get("original_path") not in {x["old_path"] for x in self.old.values()}:
-                self.report.error(f"{ident}: original_path is not a known old page")
-            if not row.get("original_quote") or not isinstance(row.get("original_line"), int):
-                self.report.error(f"{ident}: missing original quoted finding/line")
-            if not row.get("decision") or not row.get("benefit_and_minimal_change"):
-                self.report.error(f"{ident}: missing decision or concrete reason")
-            if row.get("implementation_status") != "accepted":
-                self.report.incomplete(f"{ident}: implementation_status={row.get('implementation_status')!r}; final requires accepted")
-                continue
-            locations = row.get("new_locations", [])
-            if not isinstance(locations, list) or not locations:
-                self.report.incomplete(f"{ident}: accepted disposition requires actual new_locations")
-            else:
-                for location in locations:
-                    if isinstance(location, str) and location in self.sections:
-                        self.file(self.sections[location]["path"], f"{ident} new_locations")
-                    else:
-                        self.check_reference(location, f"{ident} new_locations")
-            self.check_reference(row.get("verification"), f"{ident} verification")
+            if source.is_relative_to(self.root) and str(source.relative_to(self.root)) not in loaded:
+                self.report.error(f"{ident}: included source missing from loaded_teaching_sources: {source.relative_to(self.root)}")
 
     def built_page(self, path):
         if path not in self.built:
@@ -557,7 +453,7 @@ class Checker:
 
 
 def self_test():
-    """Small regression harness: broken targets/anchors, frozen source drift."""
+    """Regression harness for links, source declarations, and real snippets."""
     with tempfile.TemporaryDirectory(prefix="tutorial-structure-") as temp:
         root = Path(temp)
         (root / "site").mkdir()
@@ -577,36 +473,26 @@ def self_test():
         check.check_links(source, HTML('<a href="/elsewhere/">outside prefix</a>'), built=True)
         assert "deployed site prefix" in report.errors[-1]
         assert HTML('<p id="same"></p><p id="same"></p>').duplicates == {"same"}
-        # Verify the accepted evidence gate rejects stale file hashes and
-        # author-as-reviewer even when all expected fields are present.
         lesson = root / "lesson.md"
         lesson.write_text("# 1.1 Lesson\n", encoding="utf-8")
-        review = root / "review.md"
-        review.write_text("Independent review.\n", encoding="utf-8")
-        evidence = {"reviewed_status": "accepted", "section_ids": ["1.1"], "author": "a",
-                    "technical_reviewer": "b", "continuity_reviewer": "c", "review_reports": ["review.md"],
-                    "file_sha256": {"lesson.md": hashlib.sha256(lesson.read_bytes()).hexdigest()},
-                    "teaching_positions": [{"section_id": "1.1", "path": "lesson.md", "line": 1, "quote": "Lesson"}]}
-        freeze = root / "freeze.json"
-        freeze.write_text(json.dumps(evidence), encoding="utf-8")
-        row = {"id": "1.1", "path": "lesson.md", "status": "accepted", "owner": "a",
-               "readiness_evidence": "freeze.json", "first_available_at": "1.1", "loaded_teaching_sources": []}
+        row = {"id": "1.1", "path": "lesson.md", "first_available_at": "1.1", "loaded_teaching_sources": []}
         clean = Report()
         ready = Checker(root, clean)
         ready.positions = {"1.1": 0}
-        ready.check_readiness(row)
+        ready.check_sources(row)
         assert not clean.errors and not clean.pending, (clean.errors, clean.pending)
+        # Prose edits are valid without old review files or reviewer identities.
         lesson.write_text("# 1.1 Changed\n", encoding="utf-8")
-        ready.check_readiness(row)
-        assert any("stale SHA256" in x for x in clean.errors)
-        evidence["technical_reviewer"] = "a"
-        ready.evidence_cache[freeze] = evidence
-        ready.check_readiness(row)
-        assert any("three distinct" in x for x in clean.errors)
+        ready.check_sources(row)
+        assert not clean.errors and not clean.pending
+        row["loaded_teaching_sources"] = ["missing.rs"]
+        ready.check_sources(row)
+        assert any("missing.rs" in message for message in clean.pending)
+        row["loaded_teaching_sources"] = []
         try:
             import markdown  # noqa: F401 — optional locked engine for exact snippets
         except ImportError:
-            print("self-test: exact snippets checks skipped; use .venv/bin/python to include them")
+            raise RuntimeError("self-test requires the locked site dependency group") from None
         else:
             snippet = root / "code.rs"
             snippet.write_text('// --8<-- [start:ok]\nlet value = 1;\n// --8<-- [end:ok]\n', encoding="utf-8")
@@ -623,25 +509,49 @@ def self_test():
             lost.write_text('--8<-- "missing.rs"\n', encoding="utf-8")
             assert ready.render(lost) is None
             assert "missing.rs" in clean.errors[-1]
-    print("self-test: link/image/anchor, deployment prefix, duplicate id, frozen source drift, and reviewer independence checks passed")
+    print("self-test: link/image/anchor, deployment prefix, duplicate id, current source declarations, and exact snippets passed")
 
 
 def main():
     parser = argparse.ArgumentParser(description=__doc__)
     mode = parser.add_mutually_exclusive_group()
     mode.add_argument("--draft", action="store_true", help="report unfinished migration work (exit 2), never claim a partial pass")
-    mode.add_argument("--final", action="store_true", help="require all accepted evidence, source closures, navigation, and built-site checks")
+    mode.add_argument("--final", action="store_true", help="require current source declarations, navigation, and built-site checks")
     parser.add_argument("--root", type=Path, default=Path(__file__).resolve().parents[1])
     parser.add_argument("--site-dir", type=Path, help="check this existing built site; final defaults to configured site_dir")
     parser.add_argument("--max-messages", type=int, default=35, help="maximum detailed messages per severity")
+    parser.add_argument("--write-build-info", action="store_true", help="write build-info.json after successful final site validation")
     parser.add_argument("--self-test", action="store_true", help="run temporary-fixture regression checks only")
     args = parser.parse_args()
     if args.self_test:
         self_test()
         return 0
     report = Report(final=args.final, limit=max(1, args.max_messages))
-    Checker(args.root, report, args.site_dir).run()
-    return report.finish()
+    checker = Checker(args.root, report, args.site_dir)
+    checker.run()
+    result = report.finish()
+    if args.write_build_info:
+        if result or not args.final or not hasattr(checker, "site"):
+            parser.error("--write-build-info requires successful --final site validation")
+        try:
+            revision = subprocess.check_output(["git", "rev-parse", "HEAD"], cwd=checker.root, stderr=subprocess.DEVNULL, text=True).strip()
+            modified = bool(subprocess.check_output(["git", "status", "--porcelain", "--untracked-files=normal"], cwd=checker.root, text=True).strip())
+        except (OSError, subprocess.CalledProcessError):
+            revision, modified = None, None
+        info = {
+            "schema_version": 1,
+            "source_revision": revision,
+            "source_modified": modified,
+            "validated_at": datetime.now(UTC).isoformat(),
+            "builder": "zensical",
+            "builder_version": version("zensical"),
+            "sections": len(checker.sections),
+            "legacy_pages": LEGACY_PAGES,
+            "legacy_anchors": LEGACY_ANCHORS,
+            "structural_validation": "passed",
+        }
+        (checker.site / "build-info.json").write_text(json.dumps(info, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    return result
 
 
 if __name__ == "__main__":

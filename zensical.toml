@@ -2,7 +2,7 @@
 site_name = "Rust 教學"
 site_description = "面向具備基本 Python 經驗讀者的正體中文 Rust 教學。"
 docs_dir = "docs"
-site_dir = "site"
+site_dir = "outputs/site"
 strict = true
 site_url = "https://birdhackor.github.io/learn_rust/"
 repo_url = "https://github.com/birdhackor/learn_rust"
