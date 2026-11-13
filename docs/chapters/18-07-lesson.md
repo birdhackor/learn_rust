@@ -138,8 +138,8 @@ manifest 沿 10.1 的版本要求寫法，`0.13.5` 等仍是相容版本要求�
 repo 外沿 18.1 指定固定 toolchain。在自己的起始目錄執行：
 
 ```bash
-cargo +1.99.0 check --lib
-cargo +1.99.0 test --lib
+cargo +1.100.0 check --lib
+cargo +1.100.0 test --lib
 ```
 
 此時編譯應成功，測試是零項。這只確認起始版能編譯，尚未證明它能檢查網址。在教材 repo 根目錄可改用 `cargo check -p url-b1-starter --lib --locked`。
@@ -183,7 +183,7 @@ held 測試還需要 `held_request(limit)`。它建立一份 gate、把 client �
 現在把完整 `checks/single-tests.rs` 追加到工作副本的 `src/lib.rs` 末尾。它自帶 `#[cfg(test)] mod tests`，不要再包一層。`malformed.elapsed_ms == None` 使用前面說明的具體 `Option<u128>` 比較能力；其他資料以 `match` 驗指定 variant。
 
 ```bash
-cargo +1.99.0 test --lib
+cargo +1.100.0 test --lib
 ```
 
 起始版六項應失敗：輸入被錯誤地當成固定 scheme，合法網址也沒有送出請求。held 的兩項會各由五秒觀察期限 失敗並收尾；失敗時間是測試邊界，不是起始版已經有正確的工作期限。先讀診斷，再開始修改 `check`。

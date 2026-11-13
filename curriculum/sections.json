@@ -143,7 +143,8 @@
         "11.8",
         "11.9",
         "11.10",
-        "11.11"
+        "11.11",
+        "11.12"
       ]
     },
     {
@@ -1396,7 +1397,7 @@
         6,
         7
       ],
-      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example policy --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example unwrapping --locked\ncargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example policy --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example policy_answer --locked",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example policy --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example unwrapping --locked\ncargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example policy --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example policy_answer --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example never_return --locked",
       "manifest": "examples/intro-workspace/error-stages/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/intro-workspace/error-stages/examples/policy/policy/mod.rs",
@@ -1409,7 +1410,8 @@
         "examples/intro-workspace/error-stages/Cargo.toml",
         "examples/intro-workspace/error-stages/examples/unwrapping/policy/mod.rs",
         "examples/intro-workspace/error-stages/examples/policy_answer/main.rs",
-        "examples/intro-workspace/error-stages/examples/policy_answer/policy/mod.rs"
+        "examples/intro-workspace/error-stages/examples/policy_answer/policy/mod.rs",
+        "examples/intro-workspace/error-stages/examples/never_return.rs"
       ],
       "first_available_at": "8.1"
     },
@@ -1475,7 +1477,7 @@
         6,
         7
       ],
-      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example from_into --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversions --locked\ncargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversions --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversion_answer --locked",
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example from_into --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversions --locked\ncargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversions --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversion_answer --locked\ncargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example infallible_conversion --locked",
       "manifest": "examples/intro-workspace/error-stages/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/intro-workspace/error-stages/examples/from_into.rs",
@@ -1487,7 +1489,8 @@
         "examples/intro-workspace/error-stages/examples/conversion_answer/main.rs",
         "examples/intro-workspace/error-stages/examples/conversion_answer/conversions/mod.rs",
         "examples/intro-workspace/error-stages/examples/conversion_answer/policy/mod.rs",
-        "examples/intro-workspace/error-stages/examples/conversion_answer/formatting/mod.rs"
+        "examples/intro-workspace/error-stages/examples/conversion_answer/formatting/mod.rs",
+        "examples/intro-workspace/error-stages/examples/infallible_conversion.rs"
       ],
       "first_available_at": "8.4"
     },
@@ -2445,6 +2448,26 @@
       "first_available_at": "11.11"
     },
     {
+      "id": "11.12",
+      "chapter": 11,
+      "order": 12,
+      "title": "用 DropGuard 在批次失敗時回復原清單",
+      "path": "docs/chapters/11-12-lesson.md",
+      "old_ids": [],
+      "prerequisite_chapters": [
+        8,
+        9,
+        10
+      ],
+      "command": "cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-type-stages --example drop_guard --locked\ncargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-type-stages --example drop_guard --locked",
+      "manifest": "examples/intro-workspace/type-stages/Cargo.toml",
+      "loaded_teaching_sources": [
+        "examples/intro-workspace/type-stages/Cargo.toml",
+        "examples/intro-workspace/type-stages/examples/drop_guard.rs"
+      ],
+      "first_available_at": "11.12"
+    },
+    {
       "id": "12.1",
       "chapter": 12,
       "order": 1,
@@ -2470,7 +2493,8 @@
         "examples/ch09-engineering/lesson-workspace/app/fixtures/compile-fail/cfg_bool_is_not_removal.rs",
         "examples/ch09-engineering/lesson-workspace/app/tests/features.rs",
         "examples/ch09-engineering/lesson-workspace/fixtures/repo-root-settings.toml",
-        "examples/ch09-engineering/lesson-workspace/app/examples/feature_answer.rs"
+        "examples/ch09-engineering/lesson-workspace/app/examples/feature_answer.rs",
+        "examples/ch09-engineering/lesson-workspace/fixtures/dependency-cooldown.toml"
       ],
       "first_available_at": "12.1"
     },
@@ -3971,7 +3995,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 new duplicate-finder\ncargo +1.99.0 check\ncargo +1.99.0 test --locked",
+      "command": "cargo +1.100.0 new duplicate-finder\ncargo +1.100.0 check\ncargo +1.100.0 test --locked",
       "manifest": null,
       "loaded_teaching_sources": [
         "examples/ch15-projects/materials/duplicate-demo/notes-a.txt"
@@ -4006,7 +4030,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 check\ncargo +1.99.0 test --locked\ncargo test -p duplicate-a1 --locked\ncargo run --example inventory --locked",
+      "command": "cargo +1.100.0 check\ncargo +1.100.0 test --locked\ncargo test -p duplicate-a1 --locked\ncargo run --example inventory --locked",
       "manifest": "examples/ch15-projects/a1-starter/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/a1-starter/Cargo.toml",
@@ -4048,7 +4072,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 check\ncargo +1.99.0 test --locked\ncargo +1.99.0 test --locked\ncargo test -p duplicate-a2 --locked\ncargo run --example a2_groups --locked",
+      "command": "cargo +1.100.0 check\ncargo +1.100.0 test --locked\ncargo +1.100.0 test --locked\ncargo test -p duplicate-a2 --locked\ncargo run --example a2_groups --locked",
       "manifest": "examples/ch15-projects/a2-starter/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/a2-starter/Cargo.toml",
@@ -4097,7 +4121,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 check\ncargo +1.99.0 test --locked\ncargo test -p duplicate-a3 --locked\ncargo run --example a3_text --locked\ncargo run --example a3_json --locked",
+      "command": "cargo +1.100.0 check\ncargo +1.100.0 test --locked\ncargo test -p duplicate-a3 --locked\ncargo run --example a3_text --locked\ncargo run --example a3_json --locked",
       "manifest": "examples/ch15-projects/a3-starter/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/a3-starter/Cargo.toml",
@@ -4151,7 +4175,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 check\ncargo +1.99.0 test --locked\ncargo +1.99.0 test --locked\ncargo +1.99.0 test --test cli --locked\ncargo test -p duplicate-a4 --locked\ncargo run --quiet -p duplicate-a4 --locked -- examples/ch15-projects/materials/duplicate-demo\ncargo run --quiet -p duplicate-a4 --locked -- examples/ch15-projects/materials/duplicate-demo --json",
+      "command": "cargo +1.100.0 check\ncargo +1.100.0 test --locked\ncargo +1.100.0 test --locked\ncargo +1.100.0 test --test cli --locked\ncargo test -p duplicate-a4 --locked\ncargo run --quiet -p duplicate-a4 --locked -- examples/ch15-projects/materials/duplicate-demo\ncargo run --quiet -p duplicate-a4 --locked -- examples/ch15-projects/materials/duplicate-demo --json",
       "manifest": "examples/ch15-projects/a4-starter/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/a4-starter/Cargo.toml",
@@ -4209,7 +4233,7 @@
         16,
         17
       ],
-      "command": "cargo build -p duplicate-finder --release --locked\ncargo test -p duplicate-finder --locked\ncargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materials/duplicate-demo\ncargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materials/duplicate-demo --json\ncargo doc -p duplicate-finder --no-deps --locked\ncargo +1.99.0 check\ncargo +1.99.0 test --locked\ncargo +1.99.0 build --release --locked\ncargo +1.99.0 run --quiet --locked -- fixtures/duplicate-demo --json\ncargo +1.99.0 install --path . --root ../duplicate-finder-installed --locked",
+      "command": "cargo build -p duplicate-finder --release --locked\ncargo test -p duplicate-finder --locked\ncargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materials/duplicate-demo\ncargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materials/duplicate-demo --json\ncargo doc -p duplicate-finder --no-deps --locked\ncargo +1.100.0 check\ncargo +1.100.0 test --locked\ncargo +1.100.0 build --release --locked\ncargo +1.100.0 run --quiet --locked -- fixtures/duplicate-demo --json\ncargo +1.100.0 install --path . --root ../duplicate-finder-installed --locked",
       "manifest": "examples/ch15-projects/duplicate-finder/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/duplicate-finder/src/lib.rs",
@@ -4258,7 +4282,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 check --lib\ncargo +1.99.0 test --lib\ncargo +1.99.0 test --lib\ncargo run --quiet -p url-b1 --example b1_single_demo --locked",
+      "command": "cargo +1.100.0 check --lib\ncargo +1.100.0 test --lib\ncargo +1.100.0 test --lib\ncargo run --quiet -p url-b1 --example b1_single_demo --locked",
       "manifest": "examples/ch15-projects/b1-starter/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/b1-starter/src/lib.rs",
@@ -4306,7 +4330,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 check --lib\ncargo +1.99.0 test --lib\ncargo run --quiet -p url-b2 --example b2_batch_demo --locked",
+      "command": "cargo +1.100.0 check --lib\ncargo +1.100.0 test --lib\ncargo run --quiet -p url-b2 --example b2_batch_demo --locked",
       "manifest": "examples/ch15-projects/b2-starter/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/b2-starter/src/lib.rs",
@@ -4356,7 +4380,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 check --lib\ncargo +1.99.0 test --lib",
+      "command": "cargo +1.100.0 check --lib\ncargo +1.100.0 test --lib",
       "manifest": "examples/ch15-projects/b3-starter/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/b3-starter/src/lib.rs",
@@ -4408,7 +4432,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 check --lib\ncargo +1.99.0 test --lib\ncargo run --quiet -p url-b4 --example b4_signal_demo --locked",
+      "command": "cargo +1.100.0 check --lib\ncargo +1.100.0 test --lib\ncargo run --quiet -p url-b4 --example b4_signal_demo --locked",
       "manifest": "examples/ch15-projects/b4-starter/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/b4-starter/src/lib.rs",
@@ -4460,7 +4484,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 check --lib --locked\ncargo +1.99.0 test --lib --locked\ncargo +1.99.0 test --lib --locked",
+      "command": "cargo +1.100.0 check --lib --locked\ncargo +1.100.0 test --lib --locked\ncargo +1.100.0 test --lib --locked",
       "manifest": "examples/ch15-projects/b-final-starter/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/b-final-starter/src/report.rs",
@@ -4513,7 +4537,7 @@
         16,
         17
       ],
-      "command": "cargo +1.99.0 build --release --locked\ncargo +1.99.0 run --quiet --locked -- fixtures/invalid-urls.txt --json\ncargo +1.99.0 test --lib --locked\ncargo +1.99.0 test --test config --locked\ncargo +1.99.0 clippy --lib --bin url-checker --test config --locked -- -D warnings\ncargo +1.99.0 install --path . --locked",
+      "command": "cargo +1.100.0 build --release --locked\ncargo +1.100.0 run --quiet --locked -- fixtures/invalid-urls.txt --json\ncargo +1.100.0 test --lib --locked\ncargo +1.100.0 test --test config --locked\ncargo +1.100.0 clippy --lib --bin url-checker --test config --locked -- -D warnings\ncargo +1.100.0 install --path . --locked",
       "manifest": "examples/ch15-projects/url-checker/Cargo.toml",
       "loaded_teaching_sources": [
         "examples/ch15-projects/url-checker/Cargo.toml",

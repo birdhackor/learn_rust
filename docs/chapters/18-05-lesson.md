@@ -145,8 +145,8 @@ main 已提供：完整 args_os 交給 Parser，成功就呼叫 run，u8 狀態�
 在自己的練習資料夾先解析依賴，再核對原成果：
 
 ```bash
-cargo +1.99.0 check
-cargo +1.99.0 test --locked
+cargo +1.100.0 check
+cargo +1.100.0 test --locked
 ```
 
 此時 Unix 原 29 項測試應通過，A4 兩份 checks 都還沒有自動加入。這只能確認 A3 仍在，不能當作 CLI 已完成。
@@ -192,8 +192,8 @@ report helper 直接建立 A3 的報告模型：完整材料沒有 issues；部�
 先執行下面兩個命令，看到 A4 要求失敗，再寫自己的實作。一般 test 若遇到 library target 失敗就會先停，未必繼續到 CLI；因此再沿用 10.8 的 --test cli，直接選 child 驗收：
 
 ```bash
-cargo +1.99.0 test --locked
-cargo +1.99.0 test --test cli --locked
+cargo +1.100.0 test --locked
+cargo +1.100.0 test --test cli --locked
 ```
 
 用法與 help 等現成接線，或只看狀態 2 的負面檢查，可能先通過；不能代表 run 真正做過掃描。建議先補 write_report，讓受控輸出成功／失敗與 0／1 都成立，再補 run 接線。原 29 項不需刪除或重寫。

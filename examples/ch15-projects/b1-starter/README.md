@@ -14,8 +14,8 @@ cargo test -p url-b1-starter --lib --locked
 自己練習時，把完整`Cargo.toml`、`src/lib.rs`與`checks/single-tests.rs`保存到repo外目錄。manifest的`[dev-dependencies]`重用14.9服務；**先將`ch11-local-service`的path換成你電腦上教材`examples/ch11-async/local-service`的實際絕對路徑**。例如教材在`/work/learn_rust`，填`/work/learn_rust/examples/ch11-async/local-service`。其他直接依賴與features沿literal manifest；在工作目錄：
 
 ```bash
-cargo +1.99.0 check --all-targets
-cargo +1.99.0 test --lib
+cargo +1.100.0 check --all-targets
+cargo +1.100.0 test --lib
 ```
 
 未追加checks前0項；追加後6項失敗。依正文逐步改`check`：輸入分類先使1項通過，HTTP分類與gate放行使5項通過，完整Tokio工作期限使6項通過。

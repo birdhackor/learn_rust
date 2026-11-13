@@ -65,18 +65,18 @@ A 的根目錄可以包含一般檔案與子目錄，包括上述點開頭的名
 
 在教材 repo 之外，選一個自有練習資料夾並開啟終端機，讓自己的 Cargo.toml、Cargo.lock 與實作進度各自管理。先沿用 1.2 的 Cargo new 建立 A 的工作位置。
 
-教材 repo 的 rust-toolchain.toml 選定 Rust 1.99.0，這份選擇不會自動套到 repo 外的新資料夾。這裡使用 **`cargo +1.99.0`**：由 rustup 為這次命令選取已安裝的 1.99.0 toolchain；`+1.99.0` 放在 Cargo 子命令前，不是 dependency 的版本要求，也不修改全機預設。後面的練習命令同樣保留這份選擇：
+教材 repo 的 rust-toolchain.toml 選定 Rust 1.100.0，這份選擇不會自動套到 repo 外的新資料夾。這裡使用 **`cargo +1.100.0`**：由 rustup 為這次命令選取已安裝的 1.100.0 toolchain；`+1.100.0` 放在 Cargo 子命令前，不是 dependency 的版本要求，也不修改全機預設。後面的練習命令同樣保留這份選擇：
 
 ```bash
-cargo +1.99.0 new duplicate-finder
+cargo +1.100.0 new duplicate-finder
 cd duplicate-finder
-cargo +1.99.0 check
-cargo +1.99.0 test --locked
+cargo +1.100.0 check
+cargo +1.100.0 test --locked
 ```
 
 這時還是 Cargo 產生的起點。check 確認它能編譯；test 可能顯示零項，因為你還沒加入行為測試。 **零項通過沒有證明它已會掃描或判定重複。** 下一節會給 A1 所需的 manifest 設定、起始檔與資料介面，再從這裡加入功能。
 
-之後先在自己的程式中使用 `cargo +1.99.0 check`、`cargo +1.99.0 test --locked`，再用 2.7 已教的 fmt／Clippy 檢查，也在子命令前選同一份 toolchain。新增依賴時按 10.1 先更新設定與解析版本，接著以 lock 保存；不要在 lock 尚未更新時把 --locked 的拒絕當成程式行為失敗。完成的 repo 快照命令則會明示 package 與目錄，沿用 12.1 的 workspace 選擇。
+之後先在自己的程式中使用 `cargo +1.100.0 check`、`cargo +1.100.0 test --locked`，再用 2.7 已教的 fmt／Clippy 檢查，也在子命令前選同一份 toolchain。新增依賴時按 10.1 先更新設定與解析版本，接著以 lock 保存；不要在 lock 尚未更新時把 --locked 的拒絕當成程式行為失敗。完成的 repo 快照命令則會明示 package 與目錄，沿用 12.1 的 workspace 選擇。
 
 ## 每次只完成一個能判斷的里程碑
 

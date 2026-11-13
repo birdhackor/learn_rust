@@ -19,9 +19,9 @@ demo本機port和elapsed可變，固定答案為原URL `/redirect`、最後URL `
 repo外參考：複製完整manifest、src與examples；**先把dev-dependency `ch11-local-service`的path改為你電腦上教材`examples/ch11-async/local-service`的實際絕對路徑**。在快照目錄執行：
 
 ```bash
-cargo +1.99.0 check --all-targets
-cargo +1.99.0 test --lib
-cargo +1.99.0 run --quiet --example b1_single_demo
+cargo +1.100.0 check --all-targets
+cargo +1.100.0 test --lib
+cargo +1.100.0 run --quiet --example b1_single_demo
 ```
 
 固定API核對reqwest0.13.5、Tokio1.53.3、url2.5.8。這是引導階段快照，最終B工具另整合；練習工作量不累加所有stage副本。

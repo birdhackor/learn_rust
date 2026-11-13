@@ -32,7 +32,7 @@ examples/ch09-engineering/lesson-workspace/
 
 | 欄位 | 意義 |
 | --- | --- |
-| `rust-version = "1.99"` | package宣告至少需要Rust 1.99；它不是替電腦安裝或選擇工具鏈的指令。教材選工具鏈仍由`rust-toolchain.toml`負責。 |
+| `rust-version = "1.100"` | package宣告至少需要Rust 1.100；它不是替電腦安裝或選擇工具鏈的指令。教材選工具鏈仍由`rust-toolchain.toml`負責。 |
 | `publish = false` | 不允許透過Cargo把這份教材package發布到crates.io，仍能在本機建置與執行。 |
 
 成員寫`version.workspace = true`，表示「我的version採用workspace.package中的共同值」。`edition.workspace = true`等欄位也是相同形式，**不是把edition設為布林值**。TOML的點號在這裡指定設定欄位的層級；`true`表示採用。每個成員自己的`name`仍分別填寫。
@@ -40,6 +40,14 @@ examples/ch09-engineering/lesson-workspace/
 依賴也有共同表：`[workspace.dependencies]`保存可供成員採用的來源或版本設定。成員還須在自己的`[dependencies]`寫`lesson-subtotal.workspace = true`，才建立這項dependency；只在根設定列出，不會讓所有成員自動取得library。
 
 根表中的`path = "subtotal"`從**workspace根manifest所在資料夾**出發。第10.1節直接在成員宣告的dependency path，則從那份成員manifest出發；同樣要找到subtotal，從app出發會是`../subtotal`。把共同來源移到根表後，起點也跟著改變。
+
+## Cargo lint：共同規則仍由成員採用
+
+第 10.1 節已看到未使用依賴警告。**lint** 是工具對可疑或不合規則之處的檢查；`warn` 顯示警告，`deny` 讓這項診斷使命令失敗，`allow` 不回報這項檢查。本節選 `unused_dependencies = "deny"`，要求正式使用的小 workspace 不留下未使用依賴。
+
+Cargo 自己的規則放在 **`[lints.cargo]`**，不是 rustc 或 Clippy 的設定表。要共用時，根 manifest 寫 **`[workspace.lints.cargo]`**，成員再以 **`[lints]`** 中的 `workspace = true` 明確採用。只在根表列規則，不會自動套到每個成員。
+
+下面的完整根設定及兩份成員設定都包含這項選擇。app 確實使用 lesson-subtotal，所以正常命令仍能完成；若刪去使用卻保留 dependency，符合第 10.1 節檢查範圍的 cargo check 就會拒絕它。這裡只規範這份小 workspace，不把第 10.1 節刻意展示的分階段宣告一起改成錯誤。
 
 ## profile選編譯設定
 
@@ -173,6 +181,24 @@ release的數字仍是160與280，建置訊息改成release，產物預設放在
 共同package欄位的語義與小workspace相同；後續成員寫`version.workspace = true`等形式，就是從這裡採用。共同dependency這次叫ch01-basics，path從教材repo根開始，因此是`examples/ch01-basics`；只有明選它的成員才會依賴它。本頁選用的是另一份小workspace的lesson-subtotal，沒有因此載入舊第一章library。
 
 兩處release都使用opt-level 3與整數溢位檢查。改用哪份manifest決定你進入哪個workspace，`-p`再決定該workspace中的package；共用欄位不會把所有成員程式串成一個執行檔。
+
+## 依賴冷卻期：先等待，再選新版本
+
+第 10.1 節的 Cargo.lock 保存實際選到的版本。另一種需要是：重新解析依賴時，先等新發布的版本經過一段觀察時間，再允許選用。Rust 1.100 的 **dependency cooldown（依賴冷卻期）** 用發布時間篩選候選版本，並不取代 lockfile。
+
+這屬於 **Cargo configuration（Cargo 本身的設定）**。若要讓自己的練習專案等待三天，在該專案根目錄建立 `.cargo/config.toml`，內容如下；它不是 Cargo.toml 的 package 設定，也不需要新的環境變數或 token：
+
+```toml
+--8<-- "examples/ch09-engineering/lesson-workspace/fixtures/dependency-cooldown.toml"
+```
+
+`[registry]` 指從 registry 選依賴版本的共同設定，`global-min-publish-age` 指定最低發布時間。本教材將這份內容保存為示範檔，不自動改動讀者或維護者的全域設定。
+
+例如相容的 1.2.0 已發布十天、1.2.1 只發布一天，解析時會先略過 1.2.1。已存在於 Cargo.lock 的版本仍會保留；設定冷卻期不會把它們移除。registry 若沒有提供版本發布時間，也無法依此排除；cargo install 不使用這項冷卻期。這提供觀察新版本的時間，不證明等待過的版本必然安全，依賴更新仍須審查。
+
+這個十天／一天的比較是設定行為的示意，不是即時 registry 的實測。固定現有依賴的可重現性仍由 Cargo.lock 與 --locked 處理。
+
+[Cargo lint 設定](https://doc.rust-lang.org/1.100.0/cargo/reference/lints.html)、[最低發布時間設定](https://doc.rust-lang.org/1.100.0/cargo/reference/config.html#registryglobal-min-publish-age)
 
 ## 練習：關掉批次，保留單筆
 

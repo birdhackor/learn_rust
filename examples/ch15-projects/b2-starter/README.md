@@ -14,8 +14,8 @@ cargo test -p url-b2-starter --lib --locked
 自行練習：保存完整Cargo.toml、src與checks/batch-tests.rs到repo外工作目錄。先把dev-dependency ch11-local-service的path換成你電腦上教材examples/ch11-async/local-service的絕對路徑，再跑：
 
 ```bash
-cargo +1.99.0 check --all-targets
-cargo +1.99.0 test --lib
+cargo +1.100.0 check --all-targets
+cargo +1.100.0 test --lib
 ```
 
 接著把完整checks/batch-tests.rs追加到src/lib.rs，它已自帶test module；六項真失敗。先完成prepare_inputs使兩項通過，再完成run_sequential使六項通過。不改這份快照保存自己的答案。

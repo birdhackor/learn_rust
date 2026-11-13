@@ -357,7 +357,7 @@ cargo clippy -p ch14-api --all-targets --all-features --locked
 cargo doc -p ch14-api --no-deps --locked
 ```
 
-文件建立沿10.2，不代替doctests或caller測試。root的rust-version沿第12.1節宣告最低支援版本；選新的語法或dependency時，要核對這項版本與支援平台，不只是自己的機器剛好能編譯。本例固定工具鏈就是所宣告的1.99。
+文件建立沿10.2，不代替doctests或caller測試。root的rust-version沿第12.1節宣告最低支援版本；選新的語法或dependency時，要核對這項版本與支援平台，不只是自己的機器剛好能編譯。本例固定工具鏈就是所宣告的1.100。
 
 **`cargo package`** 在本機把package組成`.crate`壓縮檔，再解開並編譯檢查，不上傳到registry。**`--list`** 只列將被打包的檔案，不建立壓縮檔；**`--allow-dirty`** 允許目前尚未提交的變更參與這次本機打包，不表示這份內容已提交或發布。
 

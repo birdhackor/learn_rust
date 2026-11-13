@@ -14,7 +14,7 @@
 
 scoped thread 可以借用非 static 的外部資料。scope 返回前，會自動等待本區段中未被手動 join 的工作 body 完成，所以那些借用不會被留到區段外繼續使用。普通 borrowed 資料必須在這段工作仍需要它時保持有效。
 
-先分清一個清理界線。**thread-local data（執行緒局部資料）** 是每個 thread 各自持有的一份資料，與函式 body 裡的一般局部變數不同；它可能在工作 body 返回後才繼續清理。本節只需知道這種資料的角色，不使用其 API。Rust 1.99 的 scope 自動等待保證工作 body 完成，thread-local 的清理可能仍在進行；下面 ScopedJoinHandle 的手動 join 則連這種清理也會等待。不要把這兩種等待概括成相同範圍。
+先分清一個清理界線。**thread-local data（執行緒局部資料）** 是每個 thread 各自持有的一份資料，與函式 body 裡的一般局部變數不同；它可能在工作 body 返回後才繼續清理。本節只需知道這種資料的角色，不使用其 API。Rust 1.100 的 scope 自動等待保證工作 body 完成，thread-local 的清理可能仍在進行；下面 ScopedJoinHandle 的手動 join 則連這種清理也會等待。不要把這兩種等待概括成相同範圍。
 
 ### 兩個 lifetime 各自描述哪一段關係
 

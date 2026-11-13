@@ -2,11 +2,11 @@
 
 本起點沿18.10完整排程、單筆與signal流程，只有三個未完動作：src/report.rs的build_report、Report.status，以及src/app.rs的write_report。render與寫出helper已提供；起點可編譯，回空items／狀態0不代表功能成立。
 
-完整保存本目錄（包含Cargo.lock、src、checks、fixtures）到自己的repo外目錄，明選已安裝Rust1.99.0：
+完整保存本目錄（包含Cargo.lock、src、checks、fixtures）到自己的repo外目錄，明選已安裝Rust1.100.0：
 
 ```bash
-cargo +1.99.0 check --all-targets --locked
-cargo +1.99.0 test --lib --locked
+cargo +1.100.0 check --all-targets --locked
+cargo +1.100.0 test --lib --locked
 ```
 
 起點library零tests。將checks/report-tests.rs整份追加到src/report.rs，checks/app-tests.rs整份追加到src/app.rs，各自已有cfg與module。先得到3通過／6失敗；補映射後5／4、補狀態後6／3、補編碼／write／flush後9／0，重跑相同--lib檢查。imports與helper的角色在18.11先教，完整答案另在相鄰url-checker，這裡不隱藏新題目的完整實作。

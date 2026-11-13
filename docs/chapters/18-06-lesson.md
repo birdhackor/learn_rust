@@ -224,10 +224,10 @@ Unix 最終應有 8 項核心、7 項 CLI、1 項外部 API 與 1 項文件測�
 把本頁 Cargo.toml、全部 src、tests、fixtures 保存到 repo 之外的一個空資料夾；名稱可以自行選擇。進入那個 package 根目錄，使用18.1的toolchain選擇與獨立lock：
 
 ```bash
-cargo +1.99.0 check
-cargo +1.99.0 test --locked
-cargo +1.99.0 build --release --locked
-cargo +1.99.0 run --quiet --locked -- fixtures/duplicate-demo --json
+cargo +1.100.0 check
+cargo +1.100.0 test --locked
+cargo +1.100.0 build --release --locked
+cargo +1.100.0 run --quiet --locked -- fixtures/duplicate-demo --json
 ```
 
 check先解析並建立這份資料夾自己的Cargo.lock；後面--locked不會改解析結果。run以此CWD找到剛保存的六份fixture，結果仍是完整、兩群、10bytes。它不需要前四個stage或教材的其他package。
@@ -235,7 +235,7 @@ check先解析並建立這份資料夾自己的Cargo.lock；後面--locked不會
 **`cargo install --path .`** 以目前目錄的package建置並安裝binary，之後不用再用cargo run啟動；這是本機安裝，不上傳registry。本例另用 **`--root ../duplicate-finder-installed`** 指定安裝目錄，執行檔放在其bin子目錄；不用改預設安裝位置或PATH。仍從自有完整答案的根目錄執行：
 
 ```bash
-cargo +1.99.0 install --path . --root ../duplicate-finder-installed --locked
+cargo +1.100.0 install --path . --root ../duplicate-finder-installed --locked
 ../duplicate-finder-installed/bin/duplicate-finder fixtures/duplicate-demo --json
 ```
 

@@ -118,8 +118,8 @@ analyze 已接好這三份工作：接手 A1 files，累積內容問題，確認
 從自己的練習資料夾先解析新依賴、檢查 source：
 
 ```bash
-cargo +1.99.0 check
-cargo +1.99.0 test --locked
+cargo +1.100.0 check
+cargo +1.100.0 test --locked
 ```
 
 此時 A1 的原有驗收應仍通過：Unix 八項，其他平台五項；A2 的需求還沒有加入，它們不能證明已找到重複群。
@@ -153,7 +153,7 @@ cargo +1.99.0 test --locked
 再次執行：
 
 ```bash
-cargo +1.99.0 test --locked
+cargo +1.100.0 test --locked
 ```
 
 起始版應出現新增行為的失敗：material_bytes 的實際群組數還是 0，而預期為 2；大小篩選也沒有呼叫 hash。支援來源與舊 A1 的部分測試仍會通過，通過這些不代表三個待做函式完成。

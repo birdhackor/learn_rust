@@ -152,7 +152,7 @@ observed 是舊觀察的 usize 副本，不是仍持有的 guard。它繼續是2
 
 另一種需要是 **剛追加完30，接著讀這份寫完的狀態，同時允許其他 reader 取得讀取權限**。若先 drop writer 再 read，兩次取得之間可能已有另一份 writer 更新，讀到的就不一定是剛才那份狀態。
 
-本專案的 Rust 1.99 可以用1.92已穩定的 **`RwLockWriteGuard::downgrade(writer)`**。它取得 write guard 的 ownership，直接交回同一 RwLock 的 read guard，不回傳 Result，因為呼叫時已經持有寫權限。
+本專案的 Rust 1.100 可以用1.92已穩定的 **`RwLockWriteGuard::downgrade(writer)`**。它取得 write guard 的 ownership，直接交回同一 RwLock 的 read guard，不回傳 Result，因為呼叫時已經持有寫權限。
 
 這個轉換是 **atomic**：沿13.6不可拆開的操作角色，這裡指從獨佔改成共享權限，中間沒有讓另一份 writer 插入的解鎖窗口。新的 reader guard 留下時，writer 仍不能取得；其他 reader 可按 RwLock 的規則取得。**它是 write→read，不是 read→write upgrade。**
 

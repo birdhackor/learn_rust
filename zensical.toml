@@ -116,6 +116,7 @@ nav = [
     { "11.9 用 Cell 與 RefCell 管理內部修改" = "chapters/11-09-lesson.md" },
     { "11.10 用 newtype 保護單位與選擇運算介面" = "chapters/11-10-lesson.md" },
     { "11.11 用 Any 辨識並取回確切資料型別" = "chapters/11-11-lesson.md" },
+    { "11.12 用 DropGuard 在批次失敗時回復原清單" = "chapters/11-12-lesson.md" },
   ] },
   { "第 12 章：Cargo工程設定與檔案處理" = [
     { "12.1 Cargo工程設定：共同設定與不同建置" = "chapters/12-01-lesson.md" },

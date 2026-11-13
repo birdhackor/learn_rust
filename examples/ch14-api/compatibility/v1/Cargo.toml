@@ -2,7 +2,7 @@
 name = "api-contract-demo"
 version = "1.0.0"
 edition = "2024"
-rust-version = "1.99"
+rust-version = "1.100"
 publish = false
 
 [[bin]]

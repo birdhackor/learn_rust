@@ -139,8 +139,8 @@ task正常交回的仍是typed `single::Check`，其中Input／Request／Timeout
 沿18.1選toolchain，在自己的工作目錄先確認起始library：
 
 ```bash
-cargo +1.99.0 check --lib
-cargo +1.99.0 test --lib
+cargo +1.100.0 check --lib
+cargo +1.100.0 test --lib
 ```
 
 此時測試零項；固定None與空Ok都沒有完成排程或設定驗證。
@@ -187,7 +187,7 @@ test owner直接保有Scheduler。沿Rust的module可見性，內部 `tests` 子
     --8<-- "examples/ch15-projects/b3-starter/checks/bounded-tests.rs"
     ```
 
-現在把完整 `checks/bounded-tests.rs` 追加到 `src/lib.rs`，它自帶cfg與tests module，不再包一層。`cargo +1.99.0 test --lib` 應一項通過、六項失敗：完成未收取實驗已有一份task，空fill沒有補工所以符合那項上限檢查；其他結果與收取都缺少。單項綠燈不代表排程已完成。
+現在把完整 `checks/bounded-tests.rs` 追加到 `src/lib.rs`，它自帶cfg與tests module，不再包一層。`cargo +1.100.0 test --lib` 應一項通過、六項失敗：完成未收取實驗已有一份task，空fill沒有補工所以符合那項上限檢查；其他結果與收取都缺少。單項綠燈不代表排程已完成。
 
 ## 自己接上三個 body
 

@@ -19,9 +19,9 @@ demo得到index1／2／3／4四份結果：兩份200、Input、404。真Fixture�
 repo外：複製完整manifest、src與examples，先把dev-dependency ch11-local-service的path換成教材examples/ch11-async/local-service的實際絕對路徑。在快照目錄：
 
 ```bash
-cargo +1.99.0 check --all-targets
-cargo +1.99.0 test --lib
-cargo +1.99.0 run --quiet --example b2_batch_demo
+cargo +1.100.0 check --all-targets
+cargo +1.100.0 test --lib
+cargo +1.100.0 run --quiet --example b2_batch_demo
 ```
 
 single.rs沿actual B1 core，只移除與舊test module之間的尾端分隔空白，程式內容相同；本步只接輸入與依序結果，沒有CLIJSON／JoinSet／取消。最終工具另整合，stages不累加成練習負擔。
