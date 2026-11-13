@@ -121,6 +121,31 @@ cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-sta
 cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example conversions --locked
 ```
 
+## 用 never type 表達不可能產生的錯誤
+
+前面的 i32→Count 需要驗證，所以 Error 是 CountError；i32→i64 則能保留所有來源整數，不需要失敗結果。直接做後一種轉換時，使用 i64::from 就足夠。
+
+如果某段共同流程使用 TryFrom 介面，標準函式庫也為已提供 From 的轉換提供 TryFrom；此時仍回傳 Result，但錯誤型別是 **`std::convert::Infallible`**。從 Rust 1.100 起，這個名稱是第 8.1 節 **`!`** 的 type alias，沒有任何可建立的值。因此 `Result<i64, !>` 可以是 Ok，卻不可能建立 `Err(錯誤值)`。
+
+以下 convert 以 `T: TryFrom<i32>` 要求目的型別提供轉換，交回 `Result<T, T::Error>`；`T::Error` 是該實作選定的 associated type。這沿用第 5.1 節泛型函式與第 6.4 節的輸出關係，讓同一個 helper 可以保留不同目的型別的錯誤契約。本次指定目的為 i64，觀察錯誤分支不可能成立的情況，沒有為保證成功的工作新增一次驗證：
+
+```rust
+--8<-- "examples/intro-workspace/error-stages/examples/infallible_conversion.rs"
+```
+
+```bash
+cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example infallible_conversion --locked
+```
+
+```text
+沒有Err分支的轉換=3
+Infallible別名的轉換=-1
+```
+
+第 4.3 節的普通 let pattern 必須涵蓋所有可能的形態。這裡 `let Ok(value)` 能通過，是因為 Err 的內容不可能存在；不是讓 let 忽略失敗。第二筆能指定 `Result<i64, Infallible>`，則確認別名與 `!` 是同一個型別。這項保證只說不會回傳 Err，不保證任意使用這個簽名的函式不會 panic。
+
+延伸閱讀：[never type](https://doc.rust-lang.org/1.100.0/std/primitive.never.html)、[Infallible](https://doc.rust-lang.org/1.100.0/std/convert/type.Infallible.html)。
+
 ## 練習與完整答案
 
 寫 `count_value(value: i32) -> Result<i32, CountError>`：先以 Count::try_from 驗證，再用 i32::from 取回數字。不要重寫0到100的條件，失敗時保留原 CountError。確認0、100、−1、101四個輸入。

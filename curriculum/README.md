@@ -1,6 +1,6 @@
 # 課程結構與來源
 
-目前教材共18章131節。`sections.json`保存章節順序、先備、小節路徑與實際程式來源；`migration-map.json`及`legacy-anchors.json`保留109個舊入口與890個段落anchor。這些檔案供目前教材的結構檢查使用，不表示已重新完成教學審閱。
+目前教材共18章132節。`sections.json`保存章節順序、先備、小節路徑與實際程式來源；`migration-map.json`及`legacy-anchors.json`保留109個舊入口與890個段落anchor。這些檔案供目前教材的結構檢查使用，不表示已重新完成教學審閱。
 
 | 章 | 主題 | 小節數 |
 | --- | --- | --- |
@@ -14,7 +14,7 @@
 | 8 | [錯誤、格式化與轉換](../docs/chapters/08-01-lesson.md) | 6 |
 | 9 | [closure與Iterator](../docs/chapters/09-01-lesson.md) | 7 |
 | 10 | [Cargo生態系、I/O與第一個CLI](../docs/chapters/10-01-lesson.md) | 9 |
-| 11 | [smart pointer、資源與進階型別](../docs/chapters/11-01-lesson.md) | 11 |
+| 11 | [smart pointer、資源與進階型別](../docs/chapters/11-01-lesson.md) | 12 |
 | 12 | [Cargo工程設定與檔案處理](../docs/chapters/12-01-lesson.md) | 4 |
 | 13 | [thread、同步與atomic](../docs/chapters/13-01-lesson.md) | 8 |
 | 14 | [async、HTTP與受控測試](../docs/chapters/14-01-lesson.md) | 9 |
@@ -77,5 +77,7 @@
 - [第18章A外部來源實讀](sources/restructure-v3/sources-ch18a.md)
 - [第18章B實讀來源與寫作取捨](sources/restructure-v3/sources-ch18b.md)
 - [1.7 外部來源實讀與採用紀錄](sources/restructure-v3/sources-foundations.md)
+
+- [Rust 1.100 更新的來源、先備與採用範圍](sources/rust-1.100.md)
 
 新增或改寫教材時，更新目前結構與必要來源索引；詳細審閱、指紋、截圖及完整log依[貢獻指南](../CONTRIBUTING.md)保存。歷史審閱不作網站建置輸入。

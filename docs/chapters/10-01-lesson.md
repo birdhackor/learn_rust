@@ -74,6 +74,16 @@ cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-cargo-set
 
 這確認本機 library 的依賴與呼叫能連起來；此程式尚未呼叫 `clap`，因此不能拿這個結果當成參數解析行為的檢查。
 
+## 未使用依賴的警告：先分清宣告與真正使用
+
+Rust 1.100 的 Cargo 預設會以 **`cargo::unused_dependencies`** 警告沒有被使用的依賴。宣告 dependency 只讓它可供程式使用，並不表示程式已經呼叫它。
+
+本節刻意先宣告 clap，main 目前只使用 intro-modules-basic，所以前面的 cargo check 可能出現 `unused dependency` 並指向 clap。這個階段要觀察的是依賴設定與本機 library 呼叫，警告不表示商品加總失敗；第 10.6 節會在真正使用 clap 的 package 中介紹參數解析。自己的專案若已不需要這項依賴，就應移除，或把它放在確實使用它的 package。
+
+Cargo 必須看到可能使用該依賴的各個建置目標，才能判定整項 dependency 沒有用途。例如只選 `--bin 名稱` 時，另一個 binary 仍可能使用它，所以不一定會出現警告；目前也不檢查 dev-dependencies。沒有警告不能證明所有設定都已用到。第 12.1 節再教如何設定 Cargo lint 的嚴格程度。
+
+[Cargo unused_dependencies 文件](https://doc.rust-lang.org/1.100.0/cargo/reference/lints.html#unused_dependencies)
+
 ## 用 cargo add 修改設定
 
 `cargo add` 將依賴加入 manifest，並更新需要的版本解析紀錄。名稱後的 `@版本` 指定版本要求，`--features derive` 加上具名功能，`--dev` 選開發依賴區段；`--manifest-path` 與 `-p` 仍明確選擇入門 workspace 與本節 package。

@@ -18,4 +18,4 @@ cargo run --quiet -p url-b4 --example b4_signal_demo --locked
 
 一般caller使用run_batch並await到結果，以停止channel要求中止。不要drop整個run_batch future當作已等完children。需要像測試一樣保留owner時，自己持有Scheduler，借用run；失敗時另stop_and_finish並await，最後into_batch接手owner。run一次；Input由prepare_inputs取得或保有同等唯一遞增原索引。
 
-repo外複製整個manifest／src／examples，先改Fixture絕對path，再沿18.1用cargo +1.99.0。普通sync／signal features沿14.6；直接版本要求／lock沿10.1。正式CLI／JSON及完整fatal2 > cancel130 > item failure1 > success0在18.11整合，最終功能不縮。
+repo外複製整個manifest／src／examples，先改Fixture絕對path，再沿18.1用cargo +1.100.0。普通sync／signal features沿14.6；直接版本要求／lock沿10.1。正式CLI／JSON及完整fatal2 > cancel130 > item failure1 > success0在18.11整合，最終功能不縮。

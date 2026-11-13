@@ -5,8 +5,8 @@
 將Cargo.toml、整個src及checks/stop-tests.rs保存到自己的url-b4-work。repo外先把dev-dependency ch11-local-service的path換成你電腦上教材examples/ch11-async/local-service的實際絕對路徑，再選固定toolchain：
 
 ```bash
-cargo +1.99.0 check --all-targets
-cargo +1.99.0 test --lib
+cargo +1.100.0 check --all-targets
+cargo +1.100.0 test --lib
 ```
 
 正文先教typed理由／每筆分類、by_ref、取消與全join、控制helper，再把整個checks/stop-tests.rs追加到src/lib.rs；它自帶cfg與test module，不再包一層。起始版應1項通過、6項失敗，提供好的設定檢查不是停止已完成。

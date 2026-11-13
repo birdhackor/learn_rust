@@ -133,8 +133,8 @@ normal library仍是18.11的app／batch／config／error／input／report／sing
 | 4 | `ftp://host/item` | 保留為另一份輸入 |
 
 ```bash
-cargo +1.99.0 build --release --locked
-cargo +1.99.0 run --quiet --locked -- fixtures/invalid-urls.txt --json
+cargo +1.100.0 build --release --locked
+cargo +1.100.0 run --quiet --locked -- fixtures/invalid-urls.txt --json
 ```
 
 run的退出狀態不是只看終端機有沒有報告。沿10.5在上一條命令後緊接 `echo $?`（PowerShell使用 `echo $LASTEXITCODE`），應觀察1；不要因非零就把這份正確保存Input問題的報告改成成功0。
@@ -144,9 +144,9 @@ run的退出狀態不是只看終端機有沒有報告。沿10.5在上一條命�
 這次讓 Clippy 回報的警告也使檢查失敗：`--` 將後面的選項交給 Clippy，`-D warnings` 把警告提升為錯誤。沿2.7，沒有警告仍不代表功能已正確。
 
 ```bash
-cargo +1.99.0 test --lib --locked
-cargo +1.99.0 test --test config --locked
-cargo +1.99.0 clippy --lib --bin url-checker --test config --locked -- -D warnings
+cargo +1.100.0 test --lib --locked
+cargo +1.100.0 test --test config --locked
+cargo +1.100.0 clippy --lib --bin url-checker --test config --locked -- -D warnings
 ```
 
 完整答案有16項library tests及2項config integration tests；保留B4的有限本機HTTP／停止驗收，加本節報告與writer checks；各觀察期限只守測試，不變成產品整批期限。真正binary另以本機受控服務與明確請求進入通知驗CLI及SIGINT；這些與lib tests分開記錄。手動使用時，Ctrl+C須讓程式自己收尾並交出130；強制終止不提供這份完成證據。
@@ -154,7 +154,7 @@ cargo +1.99.0 clippy --lib --bin url-checker --test config --locked -- -D warnin
 若要安裝成平常可呼叫的命令，新增Cargo操作 **`cargo install --path . --locked`**：`--path .`選目前本機package，建置其binary並安裝到Cargo的binary目錄，不上傳registry；--locked仍依本次lock。toolchain選擇沿前面寫在cargo後：
 
 ```bash
-cargo +1.99.0 install --path . --locked
+cargo +1.100.0 install --path . --locked
 ```
 
 shell能找到Cargo binary目錄後，便可用`url-checker 自己的清單.txt --json`。README也列建置、執行、測試、輸出政策與限制。本參考版按實際檔案行數計核心825、測試898、本機Fixture198，共1921行Rust（含空白與snippet標記，不含lock）；新練習只補前述三個動作，不要求一次手寫全部參考tests，也不累加階段副本。這份工具仍讀完整小清單、保存所有結果；jobs限制已提交tasks，不限制整張輸入與報告的記憶體。

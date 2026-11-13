@@ -57,6 +57,24 @@ cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-sta
 
 若要單獨觀察，把完整程式放入第 1.2 節獨立練習專案的 `src/main.rs`，執行 `cargo run`。先看到 `開始檢查內部契約`，接著在失敗訊息中看到 `內部契約要求正數，實際值=0`；不會看到最後的「檢查後」。它沒有回傳一個成功件數讓 main 繼續。
 
+## never type：不會交回正常值的分支
+
+第 1.6 節的 unit 型別 `()` 有一個值 `()`；沒有有用結果的函式仍能正常返回。**never type `!`** 則沒有任何值。函式簽名寫 `-> !`，表示這個呼叫不會正常交回一個值，不能把它解讀成「返回空值」。
+
+例如 stop 用 panic 停止正常流程；positive 的合法分支則仍須交回 i32：
+
+```rust
+--8<-- "examples/intro-workspace/error-stages/examples/never_return.rs"
+```
+
+```bash
+cargo run --manifest-path examples/intro-workspace/Cargo.toml -p intro-error-stages --example never_return --locked
+```
+
+輸出 `正常分支的值=3`。若改傳 0，stop 會 panic，不會交回一個數字讓 positive 繼續。編譯器允許 `!` 在需要其他型別的位置進行 **coercion（隱式轉換）**：這裡 else 分支不會產生值，因此不妨礙正常分支交回 i32。它沒有在執行時把某個「空值」變成數字。
+
+`-> !` 在先前的 stable 已可使用；Rust 1.100 的新增能力是讓 `!` 出現在更多型別位置。第 8.4 節會在轉換介面中，用它表示不可能產生的錯誤結果。
+
 ## unwrap 與 expect：取出值，並替失敗選擇 panic
 
 **`unwrap()`** 與 **`expect(message)`** 是 Result、Option 提供的方法。它們以 `self` 接收整份結果，成功時交出裡面的值；若該結果型別不是 Copy，呼叫會消耗它，不能再用原名稱。`message` 是你提供的 `&str` 說明。

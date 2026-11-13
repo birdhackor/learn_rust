@@ -211,8 +211,8 @@ main沿10.6取完整args_os。help／version或用法訊息也交write_output確
 repo外依18.1明選已安裝的工具鏈，在自己的目錄：
 
 ```bash
-cargo +1.99.0 check --lib --locked
-cargo +1.99.0 test --lib --locked
+cargo +1.100.0 check --lib --locked
+cargo +1.100.0 test --lib --locked
 ```
 
 起點可編譯，library零tests。隨附lock供整個目錄在repo外使用；在教材repo內，Cargo沿workspace根的lock。兩者有各自的範圍，不要求讀者手改lock內容。
@@ -249,7 +249,7 @@ ControlledWriter用兩個bool分開控制拒寫／拒flush，bytes保存實收�
     --8<-- "examples/ch15-projects/b-final-starter/checks/app-tests.rs"
     ```
 
-現在把checks/report-tests.rs整份追加到src/report.rs，checks/app-tests.rs整份追加到src/app.rs；每份自帶cfg及tests module，不再包一層。執行相同的`cargo +1.99.0 test --lib --locked`，起點應3項通過、6項失敗；只完成映射後5／4。這是同一份九項checks，下面的例子對照前表：
+現在把checks/report-tests.rs整份追加到src/report.rs，checks/app-tests.rs整份追加到src/app.rs；每份自帶cfg及tests module，不再包一層。執行相同的`cargo +1.100.0 test --lib --locked`，起點應3項通過、6項失敗；只完成映射後5／4。這是同一份九項checks，下面的例子對照前表：
 
 ```rust
 --8<-- "examples/ch15-projects/b-final-starter/checks/report-tests.rs:map-test"
@@ -322,7 +322,7 @@ app.rs imports加入`use crate::report::render;`。編碼失敗用RunError::Enco
 在自己的工作目錄，用同一個library target核對九項全過：
 
 ```bash
-cargo +1.99.0 test --lib --locked
+cargo +1.100.0 test --lib --locked
 ```
 
 現在資料保留原input_index／original，未知欄位用null，型別錯誤仍有原因；出口完成後才交0／1／130，編碼、write或flush失敗則fatal2。這三個小步已把Batch接到工具邊界。下一節直接保存正式完整工具，再驗真正binary與使用限制。

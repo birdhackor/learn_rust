@@ -4,7 +4,7 @@
 
 自己完成 src/report.rs 的 order_issues、build_report、render_text。固定 Overflow／空清單／空文字只標示待做，沒有計算結果的意義。原生 PathBuf 排好才轉成 Unicode 報告，diagnostic Debug 只供辨認。
 
-保存完整 manifest 與 source 到自己的練習資料夾，保留自己的 A2 進度。先用 cargo +1.99.0 check 解析新依賴，再以 cargo +1.99.0 test --locked 確認舊成果。
+保存完整 manifest 與 source 到自己的練習資料夾，保留自己的 A2 進度。先用 cargo +1.100.0 check 解析新依賴，再以 cargo +1.100.0 test --locked 確認舊成果。
 
 checks/report-tests.rs 不是自動 test target；把整個含條件屬性的 tests module 加到 report.rs 末尾後，才真正驗收 A3。新增九項包含 native 排序、兩種 issues、完整性、JSON 往返、控制字元、checked 指標與 Unix 非 Unicode／hard links。起始版固定 Overflow 會使溢位檢查碰巧通過；不能拿它當成果。
 

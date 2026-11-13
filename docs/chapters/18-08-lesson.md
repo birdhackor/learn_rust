@@ -133,8 +133,8 @@ manifest的直接依賴與features沿B1固定版本契約。本步checks不暫�
 自己的工作目錄沿18.1選toolchain。先確認起始library可編譯；尚未追加checks時應零項測試，空Ok沒有完成讀行與Empty規則：
 
 ```bash
-cargo +1.99.0 check --lib
-cargo +1.99.0 test --lib
+cargo +1.100.0 check --lib
+cargo +1.100.0 test --lib
 ```
 
 六項checks驗：owned行與索引／空白與重複、零有效行、runner直接收到零項、全invalid、混合結果與繼續處理、held兩筆等待與對應。第一項只驗讀行，所以first／second是任意非空文字，不要求是URL；把來源String放在內層scope，取得Input後來源已結束，接著仍能檢查其owned內容。CRLF與單獨CR沿前面規則；空白材料中的 `　` 是U+3000全形空白。
@@ -161,7 +161,7 @@ held材料用兩份gate，沿B1的有限觀察期限。`BatchTask` 是8.2的type
     --8<-- "examples/ch15-projects/b2-starter/checks/batch-tests.rs"
     ```
 
-現在把完整 `checks/batch-tests.rs` 追加到 `src/lib.rs`，它自帶 `#[cfg(test)] mod tests`，不要再包一層。再執行 `cargo +1.99.0 test --lib`：六項應失敗。固定空清單沒有保留行，也沒送出held請求；最後一項由觀察期限有限收尾。
+現在把完整 `checks/batch-tests.rs` 追加到 `src/lib.rs`，它自帶 `#[cfg(test)] mod tests`，不要再包一層。再執行 `cargo +1.100.0 test --lib`：六項應失敗。固定空清單沒有保留行，也沒送出held請求；最後一項由觀察期限有限收尾。
 
 ## 自己完成兩個變化
 

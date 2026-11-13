@@ -2,11 +2,11 @@
 
 這是 18.9 的獨立起點，不是可用的批次檢查器。Input／讀行與 single core 已完成；fill、next、run_bounded 尚未實作。三個 stub 可編譯，不表示功能成立。
 
-將 Cargo.toml、整個 src、checks/bounded-tests.rs 保存到自己的 url-b3-work。repo 外先把 dev-dependency ch11-local-service 的 path 換成教材 examples/ch11-async/local-service 的實際絕對路徑，再用 Rust 1.99.0：
+將 Cargo.toml、整個 src、checks/bounded-tests.rs 保存到自己的 url-b3-work。repo 外先把 dev-dependency ch11-local-service 的 path 換成教材 examples/ch11-async/local-service 的實際絕對路徑，再用 Rust 1.100.0：
 
 ```bash
-cargo +1.99.0 check --all-targets
-cargo +1.99.0 test --lib
+cargo +1.100.0 check --all-targets
+cargo +1.100.0 test --lib
 ```
 
 尚未加入 checks 時是零項 test。正文介紹所有 helper／收尾契約後，把完整 checks/bounded-tests.rs 追加到 src/lib.rs；它已含 cfg 與 tests module，不再包一層。再跑 test 應有六項失敗、一項通過，不能當作完成。

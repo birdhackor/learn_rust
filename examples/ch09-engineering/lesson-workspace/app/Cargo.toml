@@ -11,3 +11,6 @@ lesson-subtotal.workspace = true
 [features]
 default = ["batch"]
 batch = []
+
+[lints]
+workspace = true

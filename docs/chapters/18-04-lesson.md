@@ -133,8 +133,8 @@ JSON 則使用 10.7 的 to_string_pretty，把同一份 Report 編碼；讓格�
 在自己的練習資料夾先解析依賴與驗證舊成果：
 
 ```bash
-cargo +1.99.0 check
-cargo +1.99.0 test --locked
+cargo +1.100.0 check
+cargo +1.100.0 test --locked
 ```
 
 此時 A1／A2 的既有測試應通過：Unix 20 項，其他平台不編入三項 Unix fixtures。A3 還沒有加入驗收，不能把舊成果當成報告已完成。
@@ -163,7 +163,7 @@ cargo +1.99.0 test --locked
     --8<-- "examples/ch15-projects/a3-starter/checks/report-tests.rs"
     ```
 
-再次執行 `cargo +1.99.0 test --locked`，起始版應在期待成功建報告處得到固定 Overflow。溢位測試可能碰巧通過，不能據此認定它真的算過單群或累加。
+再次執行 `cargo +1.100.0 test --locked`，起始版應在期待成功建報告處得到固定 Overflow。溢位測試可能碰巧通過，不能據此認定它真的算過單群或累加。
 
 建議先完成 order_issues，再完成 build_report，最後寫 render_text。排序使用 9.7 的 Ordering／sort_by；比欄位 Equal 才進下一層，不需要新的排序框架。build_report 保留原生 key 到排好才轉表示，指標使用 metrics 的兩份 helper 與 `?`；render_text 則使用已有 format／push_str，格式中的 LF 沿用前文。
 

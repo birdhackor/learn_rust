@@ -73,7 +73,7 @@ manifest 採獨立的 package 欄位，不依賴教材 workspace 的繼承設定
 先從自己的練習資料夾解析依賴、檢查起始檔能編譯：
 
 ```bash
-cargo +1.99.0 check
+cargo +1.100.0 check
 ```
 
 這還沒有加入驗收，check 成功只證明介面能編譯。
@@ -101,7 +101,7 @@ for 借用 report.files 以檢查長度，之後 into_iter 才接手記錄，map
 加入整份驗收後，從自己的工作資料夾執行：
 
 ```bash
-cargo +1.99.0 test --locked
+cargo +1.100.0 test --locked
 ```
 
 起始版應出現**行為失敗**。例如 six_material_files 這項測試會在期待合法 root 成功時得到固定 NotDirectory；其他測試還會發現沒有保留 walker 錯誤。這和找不到 module、缺少 import、lock 尚未更新的編譯或設定失敗不同。先修好檔案與設定問題，才用 assertion 回饋完成函式。

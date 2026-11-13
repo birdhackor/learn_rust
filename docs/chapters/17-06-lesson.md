@@ -144,7 +144,7 @@ Miri會進入所選測試呼叫到的Rust body，包含safe API內部的unsafe�
 
 Miri緊貼編譯器內部介面，需要 **nightly工具鏈**及對應component。nightly是按日發布的Rust版本；本頁固定已驗證可安裝的 **nightly-2026-10-01**，不以會隨日期改變的`nightly`代稱。
 
-以下指令中，`+nightly-2026-10-01`只為該次命令選工具鏈；主專案的rust-toolchain.toml繼續使用stable 1.99。`--profile minimal`選最小工具組，`--component miri`加入解譯工具；**rust-src**是同版本標準庫的原始碼，供Miri準備解譯用的標準庫：
+以下指令中，`+nightly-2026-10-01`只為該次命令選工具鏈；主專案的rust-toolchain.toml繼續使用stable 1.100。`--profile minimal`選最小工具組，`--component miri`加入解譯工具；**rust-src**是同版本標準庫的原始碼，供Miri準備解譯用的標準庫：
 
 ```bash
 rustup toolchain install nightly-2026-10-01 --profile minimal --component miri

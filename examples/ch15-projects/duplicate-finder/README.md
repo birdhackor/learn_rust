@@ -22,10 +22,10 @@ cargo run --quiet -p duplicate-finder --locked -- examples/ch15-projects/materia
 完整manifest欄位皆為literal。把此目錄的Cargo.toml、src、tests與fixtures保存到repo外同一資料夾，不依賴其他stage或path dependencies。依18.1選固定toolchain並先解析依賴、建立自己的lock：
 
 ```bash
-cargo +1.99.0 check
-cargo +1.99.0 test --locked
-cargo +1.99.0 build --release --locked
-cargo +1.99.0 run --locked -- fixtures/duplicate-demo --json
+cargo +1.100.0 check
+cargo +1.100.0 test --locked
+cargo +1.100.0 build --release --locked
+cargo +1.100.0 run --locked -- fixtures/duplicate-demo --json
 ```
 
 最後一行使用此 package 隨附的六檔 fixture，同樣得到10bytes／兩群；連同fixtures保存便可重做。要用自己的資料，將root換成自己的目錄。Cargo.lock保存這一份解析結果，下一次使用--locked核對它。

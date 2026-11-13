@@ -165,8 +165,8 @@ runner的等待沿14.6：每輪try_recv先取已排入事件，Empty繼續、Dis
     ```
 
 ```bash
-cargo +1.99.0 check --lib
-cargo +1.99.0 test --lib
+cargo +1.100.0 check --lib
+cargo +1.100.0 test --lib
 ```
 
 此時可編譯，零項test。固定Finished沒有提交、收取或觀察停止。
@@ -303,6 +303,6 @@ cargo run --quiet -p url-b4 --example b4_signal_demo --locked
 
 現在停止仍能保有原行對應與實際成果；下一節把這份已驗收的Batch接到真正CLI、穩定文字／JSON與完整錯誤政策，提供獨立可用版本。階段快照不累加成讀者反覆作業。
 
-延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.99.0/std/iter/trait.Iterator.html#method.by_ref)。
+延伸閱讀：[Tokio Graceful Shutdown](https://tokio.rs/tokio/topics/shutdown)、[RustCourse優雅關閉](https://github.com/sunface/rust-course/blob/main/src/advance-practice/graceful-shutdown.md)、[Tokio1.53.3 ctrl_c](https://docs.rs/tokio/1.53.3/tokio/signal/fn.ctrl_c.html)、[Iterator::by_ref](https://doc.rust-lang.org/1.100.0/std/iter/trait.Iterator.html#method.by_ref)。
 
 [下一節：報告映射與最後 CLI 整合](18-11-lesson.md)

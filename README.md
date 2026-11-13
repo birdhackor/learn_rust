@@ -4,7 +4,7 @@
 
 [線上閱讀](https://birdhackor.github.io/learn_rust/)｜[課程結構與來源](curriculum/README.md)｜[維護指南](CONTRIBUTING.md)｜[歷史紀錄](ARCHIVES.md)
 
-讀者起點是基本 Python。全書共18章131小節，教學與範例依已教概念排列，進階篇也是完整課程的一部分。最後以重複檔案搜尋器、網址檢查器兩個引導型專案練習，各有可編譯起點、分步驗收、提示與可實際使用的完整參考版。
+讀者起點是基本 Python。全書共18章132小節，教學與範例依已教概念排列，進階篇也是完整課程的一部分。最後以重複檔案搜尋器、網址檢查器兩個引導型專案練習，各有可編譯起點、分步驗收、提示與可實際使用的完整參考版。
 
 ## 取得教材
 
@@ -48,7 +48,7 @@ bash scripts/check.sh
 | Python | 3.14，一般GIL版本；`.python-version`保留pyenv相容格式 |
 | uv | 最低0.13.0；安裝腳本與CI使用0.13.0 |
 | Zensical | 0.0.70；`site`群組，版本固定在 `uv.lock` |
-| Rust | 1.99.0；版本與元件固定在 `rust-toolchain.toml` |
+| Rust | 1.100.0；版本與元件固定在 `rust-toolchain.toml` |
 | Rust edition | 2024 |
 
 ## 專案結構

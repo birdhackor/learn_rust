@@ -205,6 +205,6 @@ cargo test --manifest-path examples/intro-workspace/Cargo.toml -p intro-type-sta
 
 應顯示 count3，兩項測試通過，檢查同數值不同型別、只修改原 i32、owned 失敗後仍能取回並追加原 String。
 
-本章依需要選擇不同責任：Box 接手單一值，Rc 管理共同存活，Cell／RefCell 管理內部修改；newtype 建立型別邊界，dyn 與 Any 分別提供共同操作與確切型別辨識。下一章先處理 Cargo 的共用工程設定，再將路徑與錯誤介面用於檔案工作。
+本章依需要選擇不同責任：Box 接手單一值，Rc 管理共同存活，Cell／RefCell 管理內部修改；newtype 建立型別邊界，dyn 與 Any 分別提供共同操作與確切型別辨識。下一節整合 closure、Drop 與借用介面，在批次操作失敗時回復原資料。
 
-[下一章：Cargo 工程設定與檔案處理](12-01-lesson.md)
+[下一節：用 DropGuard 在批次失敗時回復原清單](11-12-lesson.md)

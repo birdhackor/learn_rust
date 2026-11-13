@@ -4,7 +4,7 @@
 
 本節建立小型本地 C 函式庫，先確認版本函式能連結，再處理三種資料關係：借用一般 byte buffer、借用 Rust-owned C string，以及接手 C 配置的固定字串。這些工作都可用純 Rust 完成；選它們是為了讓跨語言的型別、呼叫、borrow 與 cleanup 可逐項核對，不是宣稱必須使用 C 或會更快。
 
-沿用 Linux x86_64、GCC14.2、Rust1.99／edition2024 的驗證環境，C 採 C11。C source 隨 package 提供，不需另外下載大型 C library；host C compiler 與標準函式庫的準備沿第15.5節。例子同步執行，C 不保存輸入 pointer，也不回頭呼叫 Rust。
+沿用 Linux x86_64、GCC14.2、Rust1.100／edition2024 的驗證環境，C 採 C11。C source 隨 package 提供，不需另外下載大型 C library；host C compiler 與標準函式庫的準備沿第15.5節。例子同步執行，C 不保存輸入 pointer，也不回頭呼叫 Rust。
 
 ## 先對齊一個沒有 pointer 的函式
 
